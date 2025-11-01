@@ -7,7 +7,7 @@
     "scripts": {
         "start": "node out/index.js",
         "compile": "tsc",
-        "dev": "tsx watch src/index.ts",
+        "dev": "tsx watch src/api.ts",
         "build": "tsx src/index.ts",
         "fmt": "dprint fmt"
     },
