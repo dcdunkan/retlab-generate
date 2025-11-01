@@ -1,0 +1,5 @@
+onlyBuiltDependencies:
+  - dprint
+  - esbuild
+  - tree-sitter
+  - tree-sitter-java

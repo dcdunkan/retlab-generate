@@ -1,0 +1,555 @@
+{
+  "projectVersion": 1,
+  "files": [
+    "app.apk"
+  ],
+  "treeExpansions": [
+    [
+      "Source code",
+      "app.apk"
+    ],
+    [
+      "in.etuwa",
+      "Source code",
+      "app.apk"
+    ],
+    [
+      "etlabstaff.p022ui.library.bookrecord",
+      "in.etuwa",
+      "Source code",
+      "app.apk"
+    ],
+    [
+      "app",
+      "in.etuwa",
+      "Source code",
+      "app.apk"
+    ],
+    [
+      "repository",
+      "data",
+      "app",
+      "in.etuwa",
+      "Source code",
+      "app.apk"
+    ],
+    [
+      "preference",
+      "data",
+      "app",
+      "in.etuwa",
+      "Source code",
+      "app.apk"
+    ],
+    [
+      "network",
+      "data",
+      "app",
+      "in.etuwa",
+      "Source code",
+      "app.apk"
+    ]
+  ],
+  "codeData": {
+    "comments": [],
+    "renames": []
+  },
+  "openTabs": [
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.AppConstant",
+      "subPath": "java",
+      "caret": 6191,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.Resource",
+      "subPath": "java",
+      "caret": 2360,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.Status",
+      "subPath": "java",
+      "caret": 553,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.ToastExtKt",
+      "subPath": "java",
+      "caret": 920,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.ResolvUtilKt",
+      "subPath": "java",
+      "caret": 688,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.RecycleExtKt",
+      "subPath": "java",
+      "caret": 566,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.FileUtils",
+      "subPath": "java",
+      "caret": 941,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.PrograssExtKt",
+      "subPath": "java",
+      "caret": 583,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.DashboardItems",
+      "subPath": "java",
+      "caret": 1762,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.utils.CustomEditText",
+      "subPath": "java",
+      "caret": 1732,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.preference.SharedPrefManager",
+      "subPath": "java",
+      "caret": 10662,
+      "view": {
+        "x": 0,
+        "y": 212
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.db.MyDataBase",
+      "subPath": "java",
+      "caret": 2055,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.db.MyDataBaseKt",
+      "subPath": "java",
+      "caret": 771,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.network.ApiClient",
+      "subPath": "java",
+      "caret": 2228,
+      "view": {
+        "x": 0,
+        "y": 467
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AddRequestDialogBindingImpl",
+      "subPath": "java",
+      "caret": 583,
+      "view": {
+        "x": 0,
+        "y": 242
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.ActivityResetBinding",
+      "subPath": "java",
+      "caret": 375,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.ActivityVerifiedCertificateBinding",
+      "subPath": "java",
+      "caret": 375,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AddCompanyDialogBinding",
+      "subPath": "java",
+      "caret": 600,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AddCounsellingDialogBindingImpl",
+      "subPath": "java",
+      "caret": 660,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AddRequestDialogBinding",
+      "subPath": "java",
+      "caret": 621,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AssignmentFragmentBinding",
+      "subPath": "java",
+      "caret": 678,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AssignmentResultFragmentBindingImpl",
+      "subPath": "java",
+      "caret": 653,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AssignmentSemListDialogBindingImpl",
+      "subPath": "java",
+      "caret": 476,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.AttendanceByDayDialogBinding",
+      "subPath": "java",
+      "caret": 488,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.ChangeInTimetableFragmentBinding",
+      "subPath": "java",
+      "caret": 452,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.databinding.ActivityBatchPercentageBinding",
+      "subPath": "java",
+      "caret": 441,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.di.ModulesKt",
+      "subPath": "java",
+      "caret": 32747,
+      "view": {
+        "x": 0,
+        "y": 7442
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.repository.ActivityPointRepository",
+      "subPath": "java",
+      "caret": 2156,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.repository.LoginRepository",
+      "subPath": "java",
+      "caret": 3083,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.network.ApiHelper",
+      "subPath": "java",
+      "caret": 191612,
+      "view": {
+        "x": 0,
+        "y": 31687
+      },
+      "active": true,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.network.ApiEndPoints",
+      "subPath": "java",
+      "caret": 31231,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.network.ApiService",
+      "subPath": "java",
+      "caret": 102067,
+      "view": {
+        "x": 0,
+        "y": 3428
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.network.ApiServiceImpl",
+      "subPath": "java",
+      "caret": 100530,
+      "view": {
+        "x": 0,
+        "y": 3142
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.network.ApiClientLeave",
+      "subPath": "java",
+      "caret": 2238,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "in.etuwa.app.data.network.ApiClientStore",
+      "subPath": "java",
+      "caret": 2238,
+      "view": {
+        "x": 0,
+        "y": 467
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    }
+  ],
+  "cacheDir": "/home/dunks/.cache/jadx/projects/app-4ae583269bb8caa0fb5fb7cfd676efbb",
+  "enableLiveReload": false,
+  "searchHistory": [
+    "addAchievementUrlApiCall"
+  ],
+  "pluginOptions": {}
+}

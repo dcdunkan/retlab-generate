@@ -1,0 +1,126 @@
+package in.etuwa.app.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.cardview.widget.CardView;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import in.etuwa.app.R;
+
+/* loaded from: classes3.dex */
+public final class RowSportBinding implements ViewBinding {
+    public final TextView awardTv;
+    public final LinearLayout comletionLayout;
+    public final TextView dateTv;
+    public final TextView deleteBtn;
+    public final TextView editBtn;
+    public final TextView editBtnHr;
+    public final TextView eventTv;
+    public final TextView eventType;
+    public final TextView levelTv;
+    public final TextView organizedTv;
+    private final CardView rootView;
+    public final TextView slNo;
+    public final TextView titleTv;
+    public final TextView viewBtnHr;
+    public final TextView yearTv;
+
+    private RowSportBinding(CardView rootView, TextView awardTv, LinearLayout comletionLayout, TextView dateTv, TextView deleteBtn, TextView editBtn, TextView editBtnHr, TextView eventTv, TextView eventType, TextView levelTv, TextView organizedTv, TextView slNo, TextView titleTv, TextView viewBtnHr, TextView yearTv) {
+        this.rootView = rootView;
+        this.awardTv = awardTv;
+        this.comletionLayout = comletionLayout;
+        this.dateTv = dateTv;
+        this.deleteBtn = deleteBtn;
+        this.editBtn = editBtn;
+        this.editBtnHr = editBtnHr;
+        this.eventTv = eventTv;
+        this.eventType = eventType;
+        this.levelTv = levelTv;
+        this.organizedTv = organizedTv;
+        this.slNo = slNo;
+        this.titleTv = titleTv;
+        this.viewBtnHr = viewBtnHr;
+        this.yearTv = yearTv;
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    public CardView getRoot() {
+        return this.rootView;
+    }
+
+    public static RowSportBinding inflate(LayoutInflater inflater) {
+        return inflate(inflater, null, false);
+    }
+
+    public static RowSportBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
+        View inflate = inflater.inflate(R.layout.row_sport, parent, false);
+        if (attachToParent) {
+            parent.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    public static RowSportBinding bind(View rootView) {
+        int i = R.id.award_tv;
+        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+        if (textView != null) {
+            i = R.id.comletion_layout;
+            LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+            if (linearLayout != null) {
+                i = R.id.date_tv;
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView2 != null) {
+                    i = R.id.delete_btn;
+                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView3 != null) {
+                        i = R.id.edit_btn;
+                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView4 != null) {
+                            i = R.id.edit_btn_hr;
+                            TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                            if (textView5 != null) {
+                                i = R.id.event_tv;
+                                TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView6 != null) {
+                                    i = R.id.event_type;
+                                    TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView7 != null) {
+                                        i = R.id.level_tv;
+                                        TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                        if (textView8 != null) {
+                                            i = R.id.organized_tv;
+                                            TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                            if (textView9 != null) {
+                                                i = R.id.sl_no;
+                                                TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                if (textView10 != null) {
+                                                    i = R.id.title_tv;
+                                                    TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                    if (textView11 != null) {
+                                                        i = R.id.view_btn_hr;
+                                                        TextView textView12 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                        if (textView12 != null) {
+                                                            i = R.id.year_tv;
+                                                            TextView textView13 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                            if (textView13 != null) {
+                                                                return new RowSportBinding((CardView) rootView, textView, linearLayout, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13);
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
+    }
+}

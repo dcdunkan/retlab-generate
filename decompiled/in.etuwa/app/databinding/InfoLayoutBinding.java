@@ -1,0 +1,47 @@
+package in.etuwa.app.databinding;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import in.etuwa.app.R;
+
+/* loaded from: classes3.dex */
+public final class InfoLayoutBinding implements ViewBinding {
+    public final TextView infoDialog;
+    private final ScrollView rootView;
+
+    private InfoLayoutBinding(ScrollView rootView, TextView infoDialog) {
+        this.rootView = rootView;
+        this.infoDialog = infoDialog;
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    public ScrollView getRoot() {
+        return this.rootView;
+    }
+
+    public static InfoLayoutBinding inflate(LayoutInflater inflater) {
+        return inflate(inflater, null, false);
+    }
+
+    public static InfoLayoutBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
+        View inflate = inflater.inflate(R.layout.info_layout, parent, false);
+        if (attachToParent) {
+            parent.addView(inflate);
+        }
+        return bind(inflate);
+    }
+
+    public static InfoLayoutBinding bind(View rootView) {
+        int i = R.id.info_dialog;
+        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+        if (textView != null) {
+            return new InfoLayoutBinding((ScrollView) rootView, textView);
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
+    }
+}

@@ -1,0 +1,109 @@
+package in.etuwa.app.databinding;
+
+import android.util.SparseIntArray;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingComponent;
+import androidx.databinding.ViewDataBinding;
+import com.google.android.material.textfield.TextInputEditText;
+import in.etuwa.app.R;
+import in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedViewModel;
+
+/* loaded from: classes3.dex */
+public class DialogAddCourseAttendedBindingImpl extends DialogAddCourseAttendedBinding {
+    private static final ViewDataBinding.IncludedLayouts sIncludes = null;
+    private static final SparseIntArray sViewsWithIds;
+    private long mDirtyFlags;
+    private final ScrollView mboundView0;
+    private final FrameLayout mboundView1;
+    private final ViewProgressBarBinding mboundView11;
+
+    @Override // androidx.databinding.ViewDataBinding
+    protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
+        return false;
+    }
+
+    static {
+        SparseIntArray sparseIntArray = new SparseIntArray();
+        sViewsWithIds = sparseIntArray;
+        sparseIntArray.put(R.id.reg_title, 3);
+        sparseIntArray.put(R.id.et_name, 4);
+        sparseIntArray.put(R.id.et_orgaanised_by, 5);
+        sparseIntArray.put(R.id.et_duration, 6);
+        sparseIntArray.put(R.id.spinner_year, 7);
+        sparseIntArray.put(R.id.et_achievements, 8);
+        sparseIntArray.put(R.id.lt_from_date, 9);
+        sparseIntArray.put(R.id.et_from_date, 10);
+        sparseIntArray.put(R.id.lt_end_date, 11);
+        sparseIntArray.put(R.id.et_end_date, 12);
+        sparseIntArray.put(R.id.completion_card, 13);
+        sparseIntArray.put(R.id.completion_file_name, 14);
+        sparseIntArray.put(R.id.completion_select, 15);
+        sparseIntArray.put(R.id.add_btn, 16);
+        sparseIntArray.put(R.id.update_btn, 17);
+        sparseIntArray.put(R.id.progress_view, 18);
+        sparseIntArray.put(R.id.upload_progressbar, 19);
+        sparseIntArray.put(R.id.progress_text, 20);
+    }
+
+    public DialogAddCourseAttendedBindingImpl(DataBindingComponent bindingComponent, View root) {
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
+    }
+
+    private DialogAddCourseAttendedBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
+        super(bindingComponent, root, 0, (TextView) bindings[16], (LinearLayout) bindings[13], (TextView) bindings[14], (TextView) bindings[15], (TextInputEditText) bindings[8], (TextInputEditText) bindings[6], (TextView) bindings[12], (TextView) bindings[10], (TextInputEditText) bindings[4], (TextInputEditText) bindings[5], (CardView) bindings[11], (CardView) bindings[9], (TextView) bindings[20], (CardView) bindings[18], (TextView) bindings[3], (Spinner) bindings[7], (TextView) bindings[17], (ProgressBar) bindings[19]);
+        this.mDirtyFlags = -1L;
+        ScrollView scrollView = (ScrollView) bindings[0];
+        this.mboundView0 = scrollView;
+        scrollView.setTag(null);
+        FrameLayout frameLayout = (FrameLayout) bindings[1];
+        this.mboundView1 = frameLayout;
+        frameLayout.setTag(null);
+        Object obj = bindings[2];
+        this.mboundView11 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
+        setRootTag(root);
+        invalidateAll();
+    }
+
+    @Override // androidx.databinding.ViewDataBinding
+    public void invalidateAll() {
+        synchronized (this) {
+            this.mDirtyFlags = 2L;
+        }
+        requestRebind();
+    }
+
+    @Override // androidx.databinding.ViewDataBinding
+    public boolean hasPendingBindings() {
+        synchronized (this) {
+            return this.mDirtyFlags != 0;
+        }
+    }
+
+    @Override // androidx.databinding.ViewDataBinding
+    public boolean setVariable(int variableId, Object variable) {
+        if (10 != variableId) {
+            return false;
+        }
+        setAddCourseAttendedViewModel((AddCourseAttendedViewModel) variable);
+        return true;
+    }
+
+    @Override // in.etuwa.app.databinding.DialogAddCourseAttendedBinding
+    public void setAddCourseAttendedViewModel(AddCourseAttendedViewModel AddCourseAttendedViewModel) {
+        this.mAddCourseAttendedViewModel = AddCourseAttendedViewModel;
+    }
+
+    @Override // androidx.databinding.ViewDataBinding
+    protected void executeBindings() {
+        synchronized (this) {
+            this.mDirtyFlags = 0L;
+        }
+    }
+}
