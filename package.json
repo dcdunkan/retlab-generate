@@ -3,12 +3,12 @@
     "version": "0.0.0",
     "type": "module",
     "description": "Reverse engineering etlab android application",
-    "main": "out/index.js",
+    "main": "out/api.js",
     "scripts": {
-        "start": "node out/index.js",
+        "start": "node out/api.js",
         "compile": "tsc",
         "dev": "tsx watch src/api.ts",
-        "build": "tsx src/index.ts",
+        "build": "tsx src/api.ts",
         "fmt": "dprint fmt"
     },
     "keywords": [],

@@ -1,4 +1,4 @@
-enum ApiEndpoints {
+export enum ApiEndPoints {
     ACADEMIC_FEES_URL = "app/acadamicfees",
     ACADEMIC_FEE_CONF_URL = "app/acadamicfeeconfirm",
     ACADEMIC_FEE_RECEIPT_URL = "app/acadamicfeereceipt",
