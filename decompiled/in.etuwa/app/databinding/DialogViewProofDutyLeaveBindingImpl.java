@@ -58,7 +58,7 @@ public class DialogViewProofDutyLeaveBindingImpl extends DialogViewProofDutyLeav
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (244 != variableId) {
+        if (245 != variableId) {
             return false;
         }
         setViewProofDutyLeaveViewModel((ViewProofDutyLeaveViewModel) variable);

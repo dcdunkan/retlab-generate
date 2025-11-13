@@ -82,7 +82,7 @@ public class DialogAddQualifiedExaminationBindingImpl extends DialogAddQualified
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (19 != variableId) {
+        if (20 != variableId) {
             return false;
         }
         setAddQualifiedExaminationViewModel((AddQualifiedExaminationViewModel) variable);

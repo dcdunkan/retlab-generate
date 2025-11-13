@@ -61,7 +61,7 @@ public class SpecialClassFragmentBindingImpl extends SpecialClassFragmentBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (204 != variableId) {
+        if (205 != variableId) {
             return false;
         }
         setSpecialClassViewModel((SpecialClassViewModel) variable);

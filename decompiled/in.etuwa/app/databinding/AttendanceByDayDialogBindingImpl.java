@@ -96,7 +96,7 @@ public class AttendanceByDayDialogBindingImpl extends AttendanceByDayDialogBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (35 != variableId) {
+        if (36 != variableId) {
             return false;
         }
         setAttendanceDayDialogViewModel((AttendanceDayDialogViewModel) variable);

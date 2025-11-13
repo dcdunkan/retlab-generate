@@ -3,6 +3,8 @@ package in.etuwa.app.ui.dashboard;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import in.etuwa.app.data.model.Semester;
+import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.dash.DashResponse;
 import in.etuwa.app.data.model.dash.LibraryResponse;
 import in.etuwa.app.data.model.dash.MaintenanceResponse;
@@ -22,6 +24,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import java.util.ArrayList;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
@@ -40,10 +43,11 @@ import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
 /* compiled from: DashboardViewModel.kt */
-@Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0019\n\u0002\u0010\b\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002B\r\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\u0006\u0010*\u001a\u00020+J\u0012\u0010,\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\r0\u0007J\u0010\u0010-\u001a\u00020+2\b\u0010.\u001a\u0004\u0018\u00010/J\u0006\u00100\u001a\u00020+J\u0012\u00101\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\r0\u0007J\u0006\u00102\u001a\u00020+J\u0012\u00103\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00170\r0\u0007J\u0006\u00104\u001a\u00020+J\u0006\u00105\u001a\u00020+J\u0012\u00106\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\r0\u0007J\u0006\u00107\u001a\u00020+J\u0012\u00108\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001b0\r0\u0007J\u0012\u00109\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\r0\u0007J\u0012\u0010:\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\r0\u0007J\u0006\u0010;\u001a\u00020+J\u0012\u0010<\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020#0\r0\u0007J\u0006\u0010=\u001a\u00020+J\u0012\u0010>\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020'0\r0\u0007J\u0006\u0010?\u001a\u00020+J\u0012\u0010@\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0\r0\u0007J\u0006\u0010A\u001a\u00020+J\u0006\u0010B\u001a\u00020+J\b\u0010C\u001a\u00020+H\u0014JF\u0010D\u001a\u00020+2\u0006\u0010E\u001a\u00020/2\u0006\u0010F\u001a\u00020/2\u0006\u0010G\u001a\u00020/2\u0006\u0010H\u001a\u00020/2\u0006\u0010.\u001a\u00020I2\u0006\u0010J\u001a\u00020/2\u0006\u0010K\u001a\u00020/2\u0006\u0010L\u001a\u00020\bR\u001c\u0010\u0006\u001a\u0010\u0012\f\u0012\n \t*\u0004\u0018\u00010\b0\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\b0\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0013R\u001a\u0010\u0014\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\r0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00170\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0018\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\r0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001b0\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001c\u001a\u00020\u001d8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b \u0010!\u001a\u0004\b\u001e\u0010\u001fR\u001a\u0010\"\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020#0\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010$\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010&\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020'0\r0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010(\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0\r0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lin/etuwa/app/ui/dashboard/DashboardViewModel;", "Landroidx/lifecycle/ViewModel;", "Lorg/koin/core/component/KoinComponent;", "dashRepository", "Lin/etuwa/app/data/repository/DashRepository;", "(Lin/etuwa/app/data/repository/DashRepository;)V", "_isSetUpCalled", "Landroidx/lifecycle/MutableLiveData;", "", "kotlin.jvm.PlatformType", "compositeDisposable", "Lio/reactivex/disposables/CompositeDisposable;", "courseSurveyPendingResponse", "Lin/etuwa/app/utils/Resource;", "Lin/etuwa/app/data/model/main/CourseSurveyPending;", "dashResponse", "Lin/etuwa/app/data/model/dash/DashResponse;", "isSetUpCalled", "Landroidx/lifecycle/LiveData;", "()Landroidx/lifecycle/LiveData;", "libraryResponse", "Lin/etuwa/app/data/model/dash/LibraryResponse;", "maintenanceResponse", "Lin/etuwa/app/data/model/dash/MaintenanceResponse;", "noticeResponse", "Lin/etuwa/app/data/model/noticeboard/NoticeResponse;", "poSurveyPendingResponse", "Lin/etuwa/app/data/model/main/POSurveyPending;", "preference", "Lin/etuwa/app/data/preference/SharedPrefManager;", "getPreference", "()Lin/etuwa/app/data/preference/SharedPrefManager;", "preference$delegate", "Lkotlin/Lazy;", "surveyMandatoryResponse", "Lin/etuwa/app/data/model/main/SurveyMandatory;", "surveyPendingResponse", "Lin/etuwa/app/data/model/main/SurveyPending;", "surveyResponse", "Lin/etuwa/app/data/model/dash/PendingSurvey;", "tableResponse", "Lin/etuwa/app/data/model/timetable/TimetableResponse;", "getCourseSurveyStatus", "", "getCourseSurveyStatusResponse", "getDashData", "hostel", "", "getLibrary", "getLibraryResponse", "getMaintenance", "getMaintenanceResponse", "getNotice", "getPendingSurveyStatus", "getPendingSurveyStatusResponse", "getPoSurveyStatus", "getPoSurveyStatusResponse", "getResponse", "getResponse2", "getSurveyMandatoryStatus", "getSurveyMandatoryStatusResponse", "getSurveyStatus", "getSurveyStatusResponse", "getTableData", "getTimeTableResponse", "markSetUpCalled", "markSetUpNotCalled", "onCleared", "storeUpdateResponse", "batchId", "semId", "semName", "hostelStatus", "", "course", "img", "logout_status", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¤\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u001b\n\u0002\u0010\b\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002B\r\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0002\u0010\u0005J\u0006\u00100\u001a\u000201J\u0012\u00102\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b0\u0007J\u0006\u00103\u001a\u000201J\u0012\u00104\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000b0\u0007J\u0010\u00105\u001a\u0002012\b\u00106\u001a\u0004\u0018\u000107J\u0006\u00108\u001a\u000201J\u0012\u00109\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00170\u000b0\u0007J\u0006\u0010:\u001a\u000201J\u0012\u0010;\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u000b0\u0007J\u0006\u0010<\u001a\u000201J\u0006\u0010=\u001a\u000201J\u0012\u0010>\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020+0\u000b0\u0007J\u0006\u0010?\u001a\u000201J\u0012\u0010@\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001d0\u000b0\u0007J\u0012\u0010A\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u000b0\u0007J\u0012\u0010B\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001b0\u000b0\u0007J\u0006\u0010C\u001a\u000201J\"\u0010D\u001a\u001e\u0012\u001a\u0012\u0018\u0012\u0014\u0012\u0012\u0012\u0004\u0012\u00020&0%j\b\u0012\u0004\u0012\u00020&`'0\u000b0\u0007J\u0006\u0010E\u001a\u000201J\u0012\u0010F\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0\u000b0\u0007J\u0006\u0010G\u001a\u000201J\u0012\u0010H\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020-0\u000b0\u0007J\u0006\u0010I\u001a\u000201J\u0012\u0010J\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020/0\u000b0\u0007J\u0006\u0010K\u001a\u000201J\u0006\u0010L\u001a\u000201J\b\u0010M\u001a\u000201H\u0014JF\u0010N\u001a\u0002012\u0006\u0010O\u001a\u0002072\u0006\u0010P\u001a\u0002072\u0006\u0010Q\u001a\u0002072\u0006\u0010R\u001a\u0002072\u0006\u00106\u001a\u00020S2\u0006\u0010T\u001a\u0002072\u0006\u0010U\u001a\u0002072\u0006\u0010V\u001a\u00020\bR\u001c\u0010\u0006\u001a\u0010\u0012\f\u0012\n \t*\u0004\u0018\u00010\b0\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\b0\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0015R\u001a\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00170\u000b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0018\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001b0\u000b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001c\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001d0\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001e\u001a\u00020\u001f8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\"\u0010#\u001a\u0004\b \u0010!R*\u0010$\u001a\u001e\u0012\u001a\u0012\u0018\u0012\u0014\u0012\u0012\u0012\u0004\u0012\u00020&0%j\b\u0012\u0004\u0012\u00020&`'0\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010(\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010*\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020+0\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010,\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020-0\u000b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010.\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020/0\u000b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006W"}, d2 = {"Lin/etuwa/app/ui/dashboard/DashboardViewModel;", "Landroidx/lifecycle/ViewModel;", "Lorg/koin/core/component/KoinComponent;", "dashRepository", "Lin/etuwa/app/data/repository/DashRepository;", "(Lin/etuwa/app/data/repository/DashRepository;)V", "_isSetUpCalled", "Landroidx/lifecycle/MutableLiveData;", "", "kotlin.jvm.PlatformType", "abcViewResponse", "Lin/etuwa/app/utils/Resource;", "Lin/etuwa/app/data/model/dash/AbcResponse;", "compositeDisposable", "Lio/reactivex/disposables/CompositeDisposable;", "courseSurveyPendingResponse", "Lin/etuwa/app/data/model/main/CourseSurveyPending;", "dashResponse", "Lin/etuwa/app/data/model/dash/DashResponse;", "isSetUpCalled", "Landroidx/lifecycle/LiveData;", "()Landroidx/lifecycle/LiveData;", "libraryResponse", "Lin/etuwa/app/data/model/dash/LibraryResponse;", "maintenanceResponse", "Lin/etuwa/app/data/model/dash/MaintenanceResponse;", "noticeResponse", "Lin/etuwa/app/data/model/noticeboard/NoticeResponse;", "poSurveyPendingResponse", "Lin/etuwa/app/data/model/main/POSurveyPending;", "preference", "Lin/etuwa/app/data/preference/SharedPrefManager;", "getPreference", "()Lin/etuwa/app/data/preference/SharedPrefManager;", "preference$delegate", "Lkotlin/Lazy;", "semResponse", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/Semester;", "Lkotlin/collections/ArrayList;", "surveyMandatoryResponse", "Lin/etuwa/app/data/model/main/SurveyMandatory;", "surveyPendingResponse", "Lin/etuwa/app/data/model/main/SurveyPending;", "surveyResponse", "Lin/etuwa/app/data/model/dash/PendingSurvey;", "tableResponse", "Lin/etuwa/app/data/model/timetable/TimetableResponse;", "getAbcData", "", "getAbcResponse", "getCourseSurveyStatus", "getCourseSurveyStatusResponse", "getDashData", "hostel", "", "getLibrary", "getLibraryResponse", "getMaintenance", "getMaintenanceResponse", "getNotice", "getPendingSurveyStatus", "getPendingSurveyStatusResponse", "getPoSurveyStatus", "getPoSurveyStatusResponse", "getResponse", "getResponse2", "getSemesterData", "getSemesterResponse", "getSurveyMandatoryStatus", "getSurveyMandatoryStatusResponse", "getSurveyStatus", "getSurveyStatusResponse", "getTableData", "getTimeTableResponse", "markSetUpCalled", "markSetUpNotCalled", "onCleared", "storeUpdateResponse", "batchId", "semId", "semName", "hostelStatus", "", "course", "img", "logout_status", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DashboardViewModel extends ViewModel implements KoinComponent {
     private final MutableLiveData<Boolean> _isSetUpCalled;
+    private final MutableLiveData<Resource<AbcResponse>> abcViewResponse;
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<CourseSurveyPending>> courseSurveyPendingResponse;
     private final DashRepository dashRepository;
@@ -56,6 +60,7 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
 
     /* renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
+    private final MutableLiveData<Resource<ArrayList<Semester>>> semResponse;
     private final MutableLiveData<Resource<SurveyMandatory>> surveyMandatoryResponse;
     private final MutableLiveData<Resource<SurveyPending>> surveyPendingResponse;
     private final MutableLiveData<Resource<PendingSurvey>> surveyResponse;
@@ -100,6 +105,8 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
         this.poSurveyPendingResponse = new MutableLiveData<>();
         this.courseSurveyPendingResponse = new MutableLiveData<>();
         this.surveyMandatoryResponse = new MutableLiveData<>();
+        this.semResponse = new MutableLiveData<>();
+        this.abcViewResponse = new MutableLiveData<>();
         MutableLiveData<Boolean> mutableLiveData = new MutableLiveData<>(false);
         this._isSetUpCalled = mutableLiveData;
         this.isSetUpCalled = mutableLiveData;
@@ -149,7 +156,7 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(noticeResponse));
             }
         };
-        Consumer<? super NoticeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda16
+        Consumer<? super NoticeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
                 DashboardViewModel.getNotice$lambda$0(Function1.this, obj);
@@ -166,7 +173,7 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 return Unit.INSTANCE;
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda17
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
                 DashboardViewModel.getNotice$lambda$1(Function1.this, obj);
@@ -188,6 +195,76 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
 
     public final MutableLiveData<Resource<NoticeResponse>> getResponse2() {
         return this.noticeResponse;
+    }
+
+    public final void getSemesterData() {
+        this.semResponse.postValue(Resource.INSTANCE.loading(null));
+        CompositeDisposable compositeDisposable = this.compositeDisposable;
+        Single<ArrayList<Semester>> observeOn = this.dashRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getSemesterData$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(ArrayList<Semester> arrayList) {
+                invoke2(arrayList);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(ArrayList<Semester> arrayList) {
+                MutableLiveData mutableLiveData;
+                mutableLiveData = DashboardViewModel.this.semResponse;
+                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+            }
+        };
+        Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda18
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                DashboardViewModel.getSemesterData$lambda$2(Function1.this, obj);
+            }
+        };
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getSemesterData$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                MutableLiveData mutableLiveData;
+                mutableLiveData = DashboardViewModel.this.semResponse;
+                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+            }
+        };
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda19
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                DashboardViewModel.getSemesterData$lambda$3(Function1.this, obj);
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void getSemesterData$lambda$2(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void getSemesterData$lambda$3(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    public final MutableLiveData<Resource<ArrayList<Semester>>> getSemesterResponse() {
+        return this.semResponse;
     }
 
     public final void getDashData(String hostel) {
@@ -212,10 +289,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(dashResponse));
             }
         };
-        Consumer<? super DashResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda5
+        Consumer<? super DashResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getDashData$lambda$2(Function1.this, obj);
+                DashboardViewModel.getDashData$lambda$4(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getDashData$2
@@ -236,22 +313,22 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda6
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getDashData$lambda$3(Function1.this, obj);
+                DashboardViewModel.getDashData$lambda$5(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getDashData$lambda$2(Function1 tmp0, Object obj) {
+    public static final void getDashData$lambda$4(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getDashData$lambda$3(Function1 tmp0, Object obj) {
+    public static final void getDashData$lambda$5(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -282,10 +359,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(timetableResponse));
             }
         };
-        Consumer<? super TimetableResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda18
+        Consumer<? super TimetableResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getTableData$lambda$4(Function1.this, obj);
+                DashboardViewModel.getTableData$lambda$6(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getTableData$2
@@ -306,22 +383,22 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda19
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getTableData$lambda$5(Function1.this, obj);
+                DashboardViewModel.getTableData$lambda$7(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getTableData$lambda$4(Function1 tmp0, Object obj) {
+    public static final void getTableData$lambda$6(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getTableData$lambda$5(Function1 tmp0, Object obj) {
+    public static final void getTableData$lambda$7(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -362,10 +439,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(libraryResponse));
             }
         };
-        Consumer<? super LibraryResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda9
+        Consumer<? super LibraryResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda14
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getLibrary$lambda$6(Function1.this, obj);
+                DashboardViewModel.getLibrary$lambda$8(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getLibrary$2
@@ -386,22 +463,22 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda10
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda15
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getLibrary$lambda$7(Function1.this, obj);
+                DashboardViewModel.getLibrary$lambda$9(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getLibrary$lambda$6(Function1 tmp0, Object obj) {
+    public static final void getLibrary$lambda$8(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getLibrary$lambda$7(Function1 tmp0, Object obj) {
+    public static final void getLibrary$lambda$9(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -435,7 +512,7 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
         Consumer<? super MaintenanceResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getMaintenance$lambda$8(Function1.this, obj);
+                DashboardViewModel.getMaintenance$lambda$10(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getMaintenance$2
@@ -459,19 +536,19 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
         compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda11
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getMaintenance$lambda$9(Function1.this, obj);
+                DashboardViewModel.getMaintenance$lambda$11(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getMaintenance$lambda$8(Function1 tmp0, Object obj) {
+    public static final void getMaintenance$lambda$10(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getMaintenance$lambda$9(Function1 tmp0, Object obj) {
+    public static final void getMaintenance$lambda$11(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -502,10 +579,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(pendingSurvey));
             }
         };
-        Consumer<? super PendingSurvey> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda12
+        Consumer<? super PendingSurvey> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda16
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getSurveyStatus$lambda$10(Function1.this, obj);
+                DashboardViewModel.getSurveyStatus$lambda$12(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getSurveyStatus$2
@@ -526,22 +603,22 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda13
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda17
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getSurveyStatus$lambda$11(Function1.this, obj);
+                DashboardViewModel.getSurveyStatus$lambda$13(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getSurveyStatus$lambda$10(Function1 tmp0, Object obj) {
+    public static final void getSurveyStatus$lambda$12(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getSurveyStatus$lambda$11(Function1 tmp0, Object obj) {
+    public static final void getSurveyStatus$lambda$13(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -572,10 +649,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(surveyPending));
             }
         };
-        Consumer<? super SurveyPending> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda14
+        Consumer<? super SurveyPending> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda20
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getPendingSurveyStatus$lambda$12(Function1.this, obj);
+                DashboardViewModel.getPendingSurveyStatus$lambda$14(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getPendingSurveyStatus$2
@@ -596,22 +673,22 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda15
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda21
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getPendingSurveyStatus$lambda$13(Function1.this, obj);
+                DashboardViewModel.getPendingSurveyStatus$lambda$15(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getPendingSurveyStatus$lambda$12(Function1 tmp0, Object obj) {
+    public static final void getPendingSurveyStatus$lambda$14(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getPendingSurveyStatus$lambda$13(Function1 tmp0, Object obj) {
+    public static final void getPendingSurveyStatus$lambda$15(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -642,10 +719,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(pOSurveyPending));
             }
         };
-        Consumer<? super POSurveyPending> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda1
+        Consumer<? super POSurveyPending> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getPoSurveyStatus$lambda$14(Function1.this, obj);
+                DashboardViewModel.getPoSurveyStatus$lambda$16(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getPoSurveyStatus$2
@@ -666,22 +743,22 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getPoSurveyStatus$lambda$15(Function1.this, obj);
+                DashboardViewModel.getPoSurveyStatus$lambda$17(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getPoSurveyStatus$lambda$14(Function1 tmp0, Object obj) {
+    public static final void getPoSurveyStatus$lambda$16(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getPoSurveyStatus$lambda$15(Function1 tmp0, Object obj) {
+    public static final void getPoSurveyStatus$lambda$17(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -712,10 +789,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(courseSurveyPending));
             }
         };
-        Consumer<? super CourseSurveyPending> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda7
+        Consumer<? super CourseSurveyPending> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda12
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getCourseSurveyStatus$lambda$16(Function1.this, obj);
+                DashboardViewModel.getCourseSurveyStatus$lambda$18(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getCourseSurveyStatus$2
@@ -736,22 +813,22 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda8
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda13
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getCourseSurveyStatus$lambda$17(Function1.this, obj);
+                DashboardViewModel.getCourseSurveyStatus$lambda$19(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getCourseSurveyStatus$lambda$16(Function1 tmp0, Object obj) {
+    public static final void getCourseSurveyStatus$lambda$18(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getCourseSurveyStatus$lambda$17(Function1 tmp0, Object obj) {
+    public static final void getCourseSurveyStatus$lambda$19(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
@@ -782,10 +859,10 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.success(surveyMandatory));
             }
         };
-        Consumer<? super SurveyMandatory> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda3
+        Consumer<? super SurveyMandatory> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getSurveyMandatoryStatus$lambda$18(Function1.this, obj);
+                DashboardViewModel.getSurveyMandatoryStatus$lambda$20(Function1.this, obj);
             }
         };
         final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getSurveyMandatoryStatus$2
@@ -806,28 +883,98 @@ public final class DashboardViewModel extends ViewModel implements KoinComponent
                 mutableLiveData.postValue(Resource.INSTANCE.exception(th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DashboardViewModel.getSurveyMandatoryStatus$lambda$19(Function1.this, obj);
+                DashboardViewModel.getSurveyMandatoryStatus$lambda$21(Function1.this, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getSurveyMandatoryStatus$lambda$18(Function1 tmp0, Object obj) {
+    public static final void getSurveyMandatoryStatus$lambda$20(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getSurveyMandatoryStatus$lambda$19(Function1 tmp0, Object obj) {
+    public static final void getSurveyMandatoryStatus$lambda$21(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     public final MutableLiveData<Resource<SurveyMandatory>> getSurveyMandatoryStatusResponse() {
         return this.surveyMandatoryResponse;
+    }
+
+    public final void getAbcData() {
+        this.abcViewResponse.postValue(Resource.INSTANCE.loading(null));
+        CompositeDisposable compositeDisposable = this.compositeDisposable;
+        Single<AbcResponse> observeOn = this.dashRepository.getAbcViewApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<AbcResponse, Unit> function1 = new Function1<AbcResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getAbcData$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(AbcResponse abcResponse) {
+                invoke2(abcResponse);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(AbcResponse abcResponse) {
+                MutableLiveData mutableLiveData;
+                mutableLiveData = DashboardViewModel.this.abcViewResponse;
+                mutableLiveData.postValue(Resource.INSTANCE.success(abcResponse));
+            }
+        };
+        Consumer<? super AbcResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda22
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                DashboardViewModel.getAbcData$lambda$22(Function1.this, obj);
+            }
+        };
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$getAbcData$2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
+                invoke2(th);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Throwable th) {
+                MutableLiveData mutableLiveData;
+                mutableLiveData = DashboardViewModel.this.abcViewResponse;
+                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+            }
+        };
+        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.DashboardViewModel$$ExternalSyntheticLambda23
+            @Override // io.reactivex.functions.Consumer
+            public final void accept(Object obj) {
+                DashboardViewModel.getAbcData$lambda$23(Function1.this, obj);
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void getAbcData$lambda$22(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void getAbcData$lambda$23(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        tmp0.invoke(obj);
+    }
+
+    public final MutableLiveData<Resource<AbcResponse>> getAbcResponse() {
+        return this.abcViewResponse;
     }
 
     @Override // androidx.lifecycle.ViewModel

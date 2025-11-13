@@ -69,7 +69,7 @@ public class ReplyDialogBindingImpl extends ReplyDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (184 != variableId) {
+        if (185 != variableId) {
             return false;
         }
         setReplyViewModel((ReplyViewModel) variable);

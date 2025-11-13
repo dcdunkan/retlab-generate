@@ -67,7 +67,7 @@ public class ActivityPointFragmentBindingImpl extends ActivityPointFragmentBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (6 != variableId) {
+        if (7 != variableId) {
             return false;
         }
         setActivityPointViewModel((ActivityPointViewModel) variable);

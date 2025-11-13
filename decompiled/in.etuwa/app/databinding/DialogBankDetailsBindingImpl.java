@@ -80,7 +80,7 @@ public class DialogBankDetailsBindingImpl extends DialogBankDetailsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (37 != variableId) {
+        if (38 != variableId) {
             return false;
         }
         setBankDetailsViewModel((BankDetailsViewModel) variable);

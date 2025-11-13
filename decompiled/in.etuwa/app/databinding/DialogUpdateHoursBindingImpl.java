@@ -62,7 +62,7 @@ public class DialogUpdateHoursBindingImpl extends DialogUpdateHoursBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (236 != variableId) {
+        if (237 != variableId) {
             return false;
         }
         setUpdateHoursDirectViewModel((UpdateHoursDirectViewModel) variable);

@@ -65,7 +65,7 @@ public class GrievanceFragmentBindingImpl extends GrievanceFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (102 != variableId) {
+        if (103 != variableId) {
             return false;
         }
         setGrievanceViewModel((GrievanceViewModel) variable);

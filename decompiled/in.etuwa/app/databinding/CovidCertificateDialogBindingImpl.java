@@ -67,7 +67,7 @@ public class CovidCertificateDialogBindingImpl extends CovidCertificateDialogBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (64 != variableId) {
+        if (65 != variableId) {
             return false;
         }
         setCovidCertificateDialogViewModel((CovidCertificateDialogViewModel) variable);

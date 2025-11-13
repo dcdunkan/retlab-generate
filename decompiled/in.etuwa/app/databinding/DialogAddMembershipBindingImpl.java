@@ -84,7 +84,7 @@ public class DialogAddMembershipBindingImpl extends DialogAddMembershipBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (14 != variableId) {
+        if (15 != variableId) {
             return false;
         }
         setAddMembershipViewModel((AddMembershipViewModel) variable);

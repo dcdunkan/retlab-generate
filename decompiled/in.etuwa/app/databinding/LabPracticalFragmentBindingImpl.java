@@ -65,7 +65,7 @@ public class LabPracticalFragmentBindingImpl extends LabPracticalFragmentBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (124 != variableId) {
+        if (125 != variableId) {
             return false;
         }
         setLabPracticalViewModel((LabPracticalViewModel) variable);

@@ -63,7 +63,7 @@ public class ChatFragmentBindingImpl extends ChatFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (52 != variableId) {
+        if (53 != variableId) {
             return false;
         }
         setChatViewModel((ChatViewModel) variable);

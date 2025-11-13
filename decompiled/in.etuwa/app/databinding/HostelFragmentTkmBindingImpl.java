@@ -65,7 +65,7 @@ public class HostelFragmentTkmBindingImpl extends HostelFragmentTkmBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (110 != variableId) {
+        if (111 != variableId) {
             return false;
         }
         setHostelMainViewModel((HostelMainViewModel) variable);

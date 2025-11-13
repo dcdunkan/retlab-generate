@@ -88,7 +88,7 @@ public class DialogAddCourseAttendedBindingImpl extends DialogAddCourseAttendedB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (10 != variableId) {
+        if (11 != variableId) {
             return false;
         }
         setAddCourseAttendedViewModel((AddCourseAttendedViewModel) variable);

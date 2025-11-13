@@ -65,7 +65,7 @@ public class FragmentProjectWorkBindingImpl extends FragmentProjectWorkBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (167 != variableId) {
+        if (168 != variableId) {
             return false;
         }
         setProjectWorkViewModel((ProjectWorkViewModel) variable);

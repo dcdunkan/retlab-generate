@@ -65,7 +65,7 @@ public class FragmentRegistrationBindingImpl extends FragmentRegistrationBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (180 != variableId) {
+        if (181 != variableId) {
             return false;
         }
         setRegistrationViewModel((RegistrationViewModel) variable);

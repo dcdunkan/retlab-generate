@@ -67,7 +67,7 @@ public class OnlineClassFragmentBindingImpl extends OnlineClassFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (149 != variableId) {
+        if (150 != variableId) {
             return false;
         }
         setOnlineClassViewModel((OnlineClassViewModel) variable);

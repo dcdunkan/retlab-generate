@@ -85,7 +85,7 @@ public class ApplyInternshipBindingImpl extends ApplyInternshipBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (25 != variableId) {
+        if (26 != variableId) {
             return false;
         }
         setApplyInternshipViewModel((ApplyInternshipViewModel) variable);

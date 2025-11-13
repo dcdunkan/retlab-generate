@@ -58,7 +58,7 @@ public class DialogViewProofBindingImpl extends DialogViewProofBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (245 != variableId) {
+        if (246 != variableId) {
             return false;
         }
         setViewProofViewModel((ViewProofViewModel) variable);

@@ -84,7 +84,7 @@ public class DialogAddUpdatePublicationBindingImpl extends DialogAddUpdatePublic
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (18 != variableId) {
+        if (19 != variableId) {
             return false;
         }
         setAddPublicationViewModel((AddPublicationViewModel) variable);

@@ -81,7 +81,7 @@ public class AttendanceFragmentBindingImpl extends AttendanceFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (36 != variableId) {
+        if (37 != variableId) {
             return false;
         }
         setAttendanceViewModel((AttendanceViewModel) variable);

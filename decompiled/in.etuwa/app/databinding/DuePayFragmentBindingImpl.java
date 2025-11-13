@@ -66,7 +66,7 @@ public class DuePayFragmentBindingImpl extends DuePayFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (72 != variableId) {
+        if (73 != variableId) {
             return false;
         }
         setDuePayViewModel((DuePayViewModel) variable);

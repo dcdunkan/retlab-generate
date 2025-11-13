@@ -62,7 +62,7 @@ public class DialogChangePasswordBindingImpl extends DialogChangePasswordBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (50 != variableId) {
+        if (51 != variableId) {
             return false;
         }
         setChangePasswordDialogViewModel((ChangePasswordViewModel) variable);

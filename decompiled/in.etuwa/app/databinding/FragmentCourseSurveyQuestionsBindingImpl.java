@@ -60,7 +60,7 @@ public class FragmentCourseSurveyQuestionsBindingImpl extends FragmentCourseSurv
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (61 != variableId) {
+        if (62 != variableId) {
             return false;
         }
         setCourseSurveyQuestionsViewModel((CourseSurveyQuestionsViewModel) variable);

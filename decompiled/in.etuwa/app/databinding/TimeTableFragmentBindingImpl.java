@@ -70,7 +70,7 @@ public class TimeTableFragmentBindingImpl extends TimeTableFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (221 != variableId) {
+        if (222 != variableId) {
             return false;
         }
         setTimeTableViewModel((TimeTableViewModel) variable);

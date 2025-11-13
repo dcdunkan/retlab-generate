@@ -57,7 +57,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (132 != variableId) {
+        if (133 != variableId) {
             return false;
         }
         setMainViewModel((MainViewModel) variable);

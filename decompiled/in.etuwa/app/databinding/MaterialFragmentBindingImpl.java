@@ -68,7 +68,7 @@ public class MaterialFragmentBindingImpl extends MaterialFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (135 != variableId) {
+        if (136 != variableId) {
             return false;
         }
         setMaterialViewModel((MaterialViewModel) variable);

@@ -91,7 +91,7 @@ public class FragmentQuizQuestionsBindingImpl extends FragmentQuizQuestionsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (176 != variableId) {
+        if (177 != variableId) {
             return false;
         }
         setQuizQuestionsViewModel((QuizQuestionsViewModel) variable);

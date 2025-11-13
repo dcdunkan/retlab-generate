@@ -85,7 +85,7 @@ public class DialogAddPositionHeldBindingImpl extends DialogAddPositionHeldBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (16 != variableId) {
+        if (17 != variableId) {
             return false;
         }
         setAddPositionHeldViewModel((AddPositionHeldViewModel) variable);

@@ -67,7 +67,7 @@ public class FragmentSurveyBindingImpl extends FragmentSurveyBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (217 != variableId) {
+        if (218 != variableId) {
             return false;
         }
         setSurveyViewModel((SurveyViewModel) variable);

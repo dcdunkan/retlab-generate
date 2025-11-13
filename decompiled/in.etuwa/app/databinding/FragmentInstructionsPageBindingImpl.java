@@ -53,7 +53,7 @@ public class FragmentInstructionsPageBindingImpl extends FragmentInstructionsPag
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (118 != variableId) {
+        if (119 != variableId) {
             return false;
         }
         setInstructionsPageViewModel((InstructionsPageViewModel) variable);

@@ -59,7 +59,7 @@ public class FragmentLabBindingImpl extends FragmentLabBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (125 != variableId) {
+        if (126 != variableId) {
             return false;
         }
         setLabViewModel((LabViewModel) variable);

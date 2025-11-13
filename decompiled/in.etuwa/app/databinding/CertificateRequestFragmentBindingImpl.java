@@ -63,7 +63,7 @@ public class CertificateRequestFragmentBindingImpl extends CertificateRequestFra
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (48 != variableId) {
+        if (49 != variableId) {
             return false;
         }
         setCertificateRequestViewModel((CertificateRequestViewModel) variable);

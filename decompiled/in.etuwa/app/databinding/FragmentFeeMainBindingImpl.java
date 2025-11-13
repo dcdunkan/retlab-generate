@@ -69,7 +69,7 @@ public class FragmentFeeMainBindingImpl extends FragmentFeeMainBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (92 != variableId) {
+        if (93 != variableId) {
             return false;
         }
         setFeeMainViewModel((FeeMainViewModel) variable);

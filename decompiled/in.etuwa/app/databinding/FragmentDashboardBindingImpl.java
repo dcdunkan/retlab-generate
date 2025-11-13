@@ -93,7 +93,7 @@ public class FragmentDashboardBindingImpl extends FragmentDashboardBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (68 != variableId) {
+        if (69 != variableId) {
             return false;
         }
         setDashboardViewModel((DashboardViewModel) variable);

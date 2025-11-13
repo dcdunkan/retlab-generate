@@ -79,7 +79,7 @@ public class DialogMessBookingBindingImpl extends DialogMessBookingBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (139 != variableId) {
+        if (140 != variableId) {
             return false;
         }
         setMessBookingViewModel((MessBookingViewModel) variable);

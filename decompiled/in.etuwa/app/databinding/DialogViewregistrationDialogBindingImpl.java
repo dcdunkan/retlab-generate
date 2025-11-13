@@ -71,7 +71,7 @@ public class DialogViewregistrationDialogBindingImpl extends DialogViewregistrat
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (246 != variableId) {
+        if (247 != variableId) {
             return false;
         }
         setViewRegistrationViewModel((ViewRegistrationViewModel) variable);

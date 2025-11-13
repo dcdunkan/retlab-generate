@@ -74,7 +74,7 @@ public class DialogSecurityQrBindingImpl extends DialogSecurityQrBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (195 != variableId) {
+        if (196 != variableId) {
             return false;
         }
         setSecurityQrViewModel((SecurityQrViewModel) variable);

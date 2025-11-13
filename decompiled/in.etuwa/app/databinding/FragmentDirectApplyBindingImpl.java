@@ -63,7 +63,7 @@ public class FragmentDirectApplyBindingImpl extends FragmentDirectApplyBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (70 != variableId) {
+        if (71 != variableId) {
             return false;
         }
         setDirectApplyViewModel((DirectApplyViewModel) variable);

@@ -81,7 +81,7 @@ public class FragmentFieldsBindingImpl extends FragmentFieldsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (95 != variableId) {
+        if (96 != variableId) {
             return false;
         }
         setFieldsViewModel((FieldsViewModel) variable);

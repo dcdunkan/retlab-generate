@@ -64,7 +64,7 @@ public class DialogPersonalDetailsBindingImpl extends DialogPersonalDetailsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (159 != variableId) {
+        if (160 != variableId) {
             return false;
         }
         setPersonalDetailsViewModel((PersonalDetailsViewModel) variable);

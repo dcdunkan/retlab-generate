@@ -63,7 +63,7 @@ public class DialogTransportFeePayBindingImpl extends DialogTransportFeePayBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (228 != variableId) {
+        if (229 != variableId) {
             return false;
         }
         setTrasportFeePayViewModel((TrasportFeePayViewModel) variable);

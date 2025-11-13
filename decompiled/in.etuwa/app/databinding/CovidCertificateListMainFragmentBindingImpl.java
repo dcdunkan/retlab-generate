@@ -59,7 +59,7 @@ public class CovidCertificateListMainFragmentBindingImpl extends CovidCertificat
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (65 != variableId) {
+        if (66 != variableId) {
             return false;
         }
         setCovidCertificateListMainViewModel((CovidCertificateListMainViewModel) variable);

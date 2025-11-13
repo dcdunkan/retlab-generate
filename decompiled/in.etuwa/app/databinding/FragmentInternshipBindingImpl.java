@@ -65,7 +65,7 @@ public class FragmentInternshipBindingImpl extends FragmentInternshipBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (120 != variableId) {
+        if (121 != variableId) {
             return false;
         }
         setInternshipViewModel((InternshipViewModel) variable);

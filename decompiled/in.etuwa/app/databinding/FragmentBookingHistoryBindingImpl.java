@@ -63,7 +63,7 @@ public class FragmentBookingHistoryBindingImpl extends FragmentBookingHistoryBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (39 != variableId) {
+        if (40 != variableId) {
             return false;
         }
         setBookingHistoryViewModel((BookingHistoryViewModel) variable);

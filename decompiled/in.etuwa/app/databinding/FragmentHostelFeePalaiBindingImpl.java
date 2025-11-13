@@ -79,7 +79,7 @@ public class FragmentHostelFeePalaiBindingImpl extends FragmentHostelFeePalaiBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (153 != variableId) {
+        if (154 != variableId) {
             return false;
         }
         setPalaiHostelViewModel((PalaiHostelViewModel) variable);

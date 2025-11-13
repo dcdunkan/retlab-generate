@@ -68,7 +68,7 @@ public class FragmentProgramOutcomeBindingImpl extends FragmentProgramOutcomeBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (166 != variableId) {
+        if (167 != variableId) {
             return false;
         }
         setProgramOutcomeViewModel((ProgramOutcomeViewModel) variable);

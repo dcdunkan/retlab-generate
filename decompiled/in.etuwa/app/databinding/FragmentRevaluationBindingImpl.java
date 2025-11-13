@@ -69,7 +69,7 @@ public class FragmentRevaluationBindingImpl extends FragmentRevaluationBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (190 != variableId) {
+        if (191 != variableId) {
             return false;
         }
         setRevaluationViewModel((RevaluationViewModel) variable);

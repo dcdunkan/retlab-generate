@@ -8,19 +8,23 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
 /* compiled from: ExamCourseResponse.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b)\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B\u009d\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\u0006\u0010\n\u001a\u00020\b\u0012\u0006\u0010\u000b\u001a\u00020\b\u0012\u0006\u0010\f\u001a\u00020\b\u0012\u0006\u0010\r\u001a\u00020\b\u0012\u0006\u0010\u000e\u001a\u00020\b\u0012\u0006\u0010\u000f\u001a\u00020\b\u0012\u0006\u0010\u0010\u001a\u00020\b\u0012\u0006\u0010\u0011\u001a\u00020\b\u0012\u0006\u0010\u0012\u001a\u00020\b\u0012\u0006\u0010\u0013\u001a\u00020\b\u0012\u0016\u0010\u0014\u001a\u0012\u0012\u0004\u0012\u00020\u00160\u0015j\b\u0012\u0004\u0012\u00020\u0016`\u0017¢\u0006\u0002\u0010\u0018J\t\u0010,\u001a\u00020\u0003HÆ\u0003J\t\u0010-\u001a\u00020\bHÆ\u0003J\t\u0010.\u001a\u00020\bHÆ\u0003J\t\u0010/\u001a\u00020\bHÆ\u0003J\t\u00100\u001a\u00020\bHÆ\u0003J\t\u00101\u001a\u00020\bHÆ\u0003J\t\u00102\u001a\u00020\bHÆ\u0003J\t\u00103\u001a\u00020\bHÆ\u0003J\u0019\u00104\u001a\u0012\u0012\u0004\u0012\u00020\u00160\u0015j\b\u0012\u0004\u0012\u00020\u0016`\u0017HÆ\u0003J\t\u00105\u001a\u00020\u0003HÆ\u0003J\t\u00106\u001a\u00020\u0003HÆ\u0003J\t\u00107\u001a\u00020\u0003HÆ\u0003J\t\u00108\u001a\u00020\bHÆ\u0003J\t\u00109\u001a\u00020\bHÆ\u0003J\t\u0010:\u001a\u00020\bHÆ\u0003J\t\u0010;\u001a\u00020\bHÆ\u0003J\t\u0010<\u001a\u00020\bHÆ\u0003JÃ\u0001\u0010=\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\b2\b\b\u0002\u0010\r\u001a\u00020\b2\b\b\u0002\u0010\u000e\u001a\u00020\b2\b\b\u0002\u0010\u000f\u001a\u00020\b2\b\b\u0002\u0010\u0010\u001a\u00020\b2\b\b\u0002\u0010\u0011\u001a\u00020\b2\b\b\u0002\u0010\u0012\u001a\u00020\b2\b\b\u0002\u0010\u0013\u001a\u00020\b2\u0018\b\u0002\u0010\u0014\u001a\u0012\u0012\u0004\u0012\u00020\u00160\u0015j\b\u0012\u0004\u0012\u00020\u0016`\u0017HÆ\u0001J\u0013\u0010>\u001a\u00020\u00032\b\u0010?\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010@\u001a\u00020AHÖ\u0001J\t\u0010B\u001a\u00020\bHÖ\u0001R\u0011\u0010\r\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0011\u0010\u0012\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001aR\u0011\u0010\u0011\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001aR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u0011\u0010\u0010\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u001aR!\u0010\u0014\u001a\u0012\u0012\u0004\u0012\u00020\u00160\u0015j\b\u0012\u0004\u0012\u00020\u0016`\u0017¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u0011\u0010\t\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u001aR\u0011\u0010\f\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u001aR\u0011\u0010\u0013\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\u001aR\u0011\u0010\u000f\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\u001aR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u001eR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\u001eR\u0011\u0010\u000e\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001aR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u001aR\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u001eR\u0011\u0010\n\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b*\u0010\u001aR\u0011\u0010\u000b\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u001a¨\u0006C"}, d2 = {"Lin/etuwa/app/data/model/examregister/ExamCourseResponse;", "", FirebaseAnalytics.Event.LOGIN, "", "is_registered", "can_update", "registration_slip", "name", "", "degree", AttendanceDayDialogKt.ARG_SEM, FirebaseAnalytics.Param.START_DATE, FirebaseAnalytics.Param.END_DATE, "academicyear", "month", "exam_year", "category", "batch_id", "admission_no", Constants.IPC_BUNDLE_KEY_SEND_ERROR, "course", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/examregister/ExamCourse;", "Lkotlin/collections/ArrayList;", "(ZZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;)V", "getAcademicyear", "()Ljava/lang/String;", "getAdmission_no", "getBatch_id", "getCan_update", "()Z", "getCategory", "getCourse", "()Ljava/util/ArrayList;", "getDegree", "getEnd_date", "getError", "getExam_year", "getLogin", "getMonth", "getName", "getRegistration_slip", "getSemester", "getStart_date", "component1", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "copy", "equals", "other", "hashCode", "", "toString", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b1\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001BÍ\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\b\u0012\u0006\u0010\n\u001a\u00020\b\u0012\u0006\u0010\u000b\u001a\u00020\b\u0012\u0006\u0010\f\u001a\u00020\b\u0012\u0006\u0010\r\u001a\u00020\b\u0012\u0006\u0010\u000e\u001a\u00020\b\u0012\u0006\u0010\u000f\u001a\u00020\b\u0012\u0006\u0010\u0010\u001a\u00020\b\u0012\u0006\u0010\u0011\u001a\u00020\b\u0012\u0006\u0010\u0012\u001a\u00020\b\u0012\u0006\u0010\u0013\u001a\u00020\b\u0012\u0006\u0010\u0014\u001a\u00020\u0003\u0012\u0006\u0010\u0015\u001a\u00020\u0003\u0012\u0006\u0010\u0016\u001a\u00020\u0003\u0012\u0016\u0010\u0017\u001a\u0012\u0012\u0004\u0012\u00020\u00190\u0018j\b\u0012\u0004\u0012\u00020\u0019`\u001a\u0012\u0016\u0010\u001b\u001a\u0012\u0012\u0004\u0012\u00020\u001c0\u0018j\b\u0012\u0004\u0012\u00020\u001c`\u001a¢\u0006\u0002\u0010\u001dJ\t\u00105\u001a\u00020\u0003HÆ\u0003J\t\u00106\u001a\u00020\bHÆ\u0003J\t\u00107\u001a\u00020\bHÆ\u0003J\t\u00108\u001a\u00020\bHÆ\u0003J\t\u00109\u001a\u00020\bHÆ\u0003J\t\u0010:\u001a\u00020\bHÆ\u0003J\t\u0010;\u001a\u00020\bHÆ\u0003J\t\u0010<\u001a\u00020\bHÆ\u0003J\t\u0010=\u001a\u00020\u0003HÆ\u0003J\t\u0010>\u001a\u00020\u0003HÆ\u0003J\t\u0010?\u001a\u00020\u0003HÆ\u0003J\t\u0010@\u001a\u00020\u0003HÆ\u0003J\u0019\u0010A\u001a\u0012\u0012\u0004\u0012\u00020\u00190\u0018j\b\u0012\u0004\u0012\u00020\u0019`\u001aHÆ\u0003J\u0019\u0010B\u001a\u0012\u0012\u0004\u0012\u00020\u001c0\u0018j\b\u0012\u0004\u0012\u00020\u001c`\u001aHÆ\u0003J\t\u0010C\u001a\u00020\u0003HÆ\u0003J\t\u0010D\u001a\u00020\u0003HÆ\u0003J\t\u0010E\u001a\u00020\bHÆ\u0003J\t\u0010F\u001a\u00020\bHÆ\u0003J\t\u0010G\u001a\u00020\bHÆ\u0003J\t\u0010H\u001a\u00020\bHÆ\u0003J\t\u0010I\u001a\u00020\bHÆ\u0003Jû\u0001\u0010J\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\b2\b\b\u0002\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\f\u001a\u00020\b2\b\b\u0002\u0010\r\u001a\u00020\b2\b\b\u0002\u0010\u000e\u001a\u00020\b2\b\b\u0002\u0010\u000f\u001a\u00020\b2\b\b\u0002\u0010\u0010\u001a\u00020\b2\b\b\u0002\u0010\u0011\u001a\u00020\b2\b\b\u0002\u0010\u0012\u001a\u00020\b2\b\b\u0002\u0010\u0013\u001a\u00020\b2\b\b\u0002\u0010\u0014\u001a\u00020\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\b\b\u0002\u0010\u0016\u001a\u00020\u00032\u0018\b\u0002\u0010\u0017\u001a\u0012\u0012\u0004\u0012\u00020\u00190\u0018j\b\u0012\u0004\u0012\u00020\u0019`\u001a2\u0018\b\u0002\u0010\u001b\u001a\u0012\u0012\u0004\u0012\u00020\u001c0\u0018j\b\u0012\u0004\u0012\u00020\u001c`\u001aHÆ\u0001J\u0013\u0010K\u001a\u00020\u00032\b\u0010L\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010M\u001a\u00020NHÖ\u0001J\t\u0010O\u001a\u00020\bHÖ\u0001R\u0011\u0010\u0014\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0011\u0010\r\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u0011\u0010\u0012\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010!R\u0011\u0010\u0011\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b#\u0010!R\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\u001fR\u0011\u0010\u0010\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b%\u0010!R\u0011\u0010\u0016\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\u001fR!\u0010\u0017\u001a\u0012\u0012\u0004\u0012\u00020\u00190\u0018j\b\u0012\u0004\u0012\u00020\u0019`\u001a¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u0011\u0010\t\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b)\u0010!R\u0011\u0010\f\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b*\u0010!R\u0011\u0010\u0013\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b+\u0010!R\u0011\u0010\u000f\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b,\u0010!R\u0011\u0010\u0015\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u001fR!\u0010\u001b\u001a\u0012\u0012\u0004\u0012\u00020\u001c0\u0018j\b\u0012\u0004\u0012\u00020\u001c`\u001a¢\u0006\b\n\u0000\u001a\u0004\b.\u0010(R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u001fR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u001fR\u0011\u0010\u000e\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b0\u0010!R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b1\u0010!R\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b2\u0010\u001fR\u0011\u0010\n\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b3\u0010!R\u0011\u0010\u000b\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b4\u0010!¨\u0006P"}, d2 = {"Lin/etuwa/app/data/model/examregister/ExamCourseResponse;", "", FirebaseAnalytics.Event.LOGIN, "", "is_registered", "can_update", "registration_slip", "name", "", "degree", AttendanceDayDialogKt.ARG_SEM, FirebaseAnalytics.Param.START_DATE, FirebaseAnalytics.Param.END_DATE, "academicyear", "month", "exam_year", "category", "batch_id", "admission_no", Constants.IPC_BUNDLE_KEY_SEND_ERROR, "abc_id_verification", "fee_status", "check_box_status", "course", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/examregister/ExamCourse;", "Lkotlin/collections/ArrayList;", "fixedHeadGroup", "Lin/etuwa/app/data/model/examregister/FixedHeadGroup;", "(ZZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/util/ArrayList;Ljava/util/ArrayList;)V", "getAbc_id_verification", "()Z", "getAcademicyear", "()Ljava/lang/String;", "getAdmission_no", "getBatch_id", "getCan_update", "getCategory", "getCheck_box_status", "getCourse", "()Ljava/util/ArrayList;", "getDegree", "getEnd_date", "getError", "getExam_year", "getFee_status", "getFixedHeadGroup", "getLogin", "getMonth", "getName", "getRegistration_slip", "getSemester", "getStart_date", "component1", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component2", "component20", "component21", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "copy", "equals", "other", "hashCode", "", "toString", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final /* data */ class ExamCourseResponse {
+    private final boolean abc_id_verification;
     private final String academicyear;
     private final String admission_no;
     private final String batch_id;
     private final boolean can_update;
     private final String category;
+    private final boolean check_box_status;
     private final ArrayList<ExamCourse> course;
     private final String degree;
     private final String end_date;
     private final String error;
     private final String exam_year;
+    private final boolean fee_status;
+    private final ArrayList<FixedHeadGroup> fixedHeadGroup;
     private final boolean is_registered;
     private final boolean login;
     private final String month;
@@ -69,13 +73,32 @@ public final /* data */ class ExamCourseResponse {
         return this.error;
     }
 
-    public final ArrayList<ExamCourse> component17() {
-        return this.course;
+    /* renamed from: component17, reason: from getter */
+    public final boolean getAbc_id_verification() {
+        return this.abc_id_verification;
+    }
+
+    /* renamed from: component18, reason: from getter */
+    public final boolean getFee_status() {
+        return this.fee_status;
+    }
+
+    /* renamed from: component19, reason: from getter */
+    public final boolean getCheck_box_status() {
+        return this.check_box_status;
     }
 
     /* renamed from: component2, reason: from getter */
     public final boolean getIs_registered() {
         return this.is_registered;
+    }
+
+    public final ArrayList<ExamCourse> component20() {
+        return this.course;
+    }
+
+    public final ArrayList<FixedHeadGroup> component21() {
+        return this.fixedHeadGroup;
     }
 
     /* renamed from: component3, reason: from getter */
@@ -113,7 +136,7 @@ public final /* data */ class ExamCourseResponse {
         return this.end_date;
     }
 
-    public final ExamCourseResponse copy(boolean login, boolean is_registered, boolean can_update, boolean registration_slip, String name, String degree, String semester, String start_date, String end_date, String academicyear, String month, String exam_year, String category, String batch_id, String admission_no, String error, ArrayList<ExamCourse> course) {
+    public final ExamCourseResponse copy(boolean login, boolean is_registered, boolean can_update, boolean registration_slip, String name, String degree, String semester, String start_date, String end_date, String academicyear, String month, String exam_year, String category, String batch_id, String admission_no, String error, boolean abc_id_verification, boolean fee_status, boolean check_box_status, ArrayList<ExamCourse> course, ArrayList<FixedHeadGroup> fixedHeadGroup) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(degree, "degree");
         Intrinsics.checkNotNullParameter(semester, "semester");
@@ -127,7 +150,8 @@ public final /* data */ class ExamCourseResponse {
         Intrinsics.checkNotNullParameter(admission_no, "admission_no");
         Intrinsics.checkNotNullParameter(error, "error");
         Intrinsics.checkNotNullParameter(course, "course");
-        return new ExamCourseResponse(login, is_registered, can_update, registration_slip, name, degree, semester, start_date, end_date, academicyear, month, exam_year, category, batch_id, admission_no, error, course);
+        Intrinsics.checkNotNullParameter(fixedHeadGroup, "fixedHeadGroup");
+        return new ExamCourseResponse(login, is_registered, can_update, registration_slip, name, degree, semester, start_date, end_date, academicyear, month, exam_year, category, batch_id, admission_no, error, abc_id_verification, fee_status, check_box_status, course, fixedHeadGroup);
     }
 
     public boolean equals(Object other) {
@@ -138,15 +162,18 @@ public final /* data */ class ExamCourseResponse {
             return false;
         }
         ExamCourseResponse examCourseResponse = (ExamCourseResponse) other;
-        return this.login == examCourseResponse.login && this.is_registered == examCourseResponse.is_registered && this.can_update == examCourseResponse.can_update && this.registration_slip == examCourseResponse.registration_slip && Intrinsics.areEqual(this.name, examCourseResponse.name) && Intrinsics.areEqual(this.degree, examCourseResponse.degree) && Intrinsics.areEqual(this.semester, examCourseResponse.semester) && Intrinsics.areEqual(this.start_date, examCourseResponse.start_date) && Intrinsics.areEqual(this.end_date, examCourseResponse.end_date) && Intrinsics.areEqual(this.academicyear, examCourseResponse.academicyear) && Intrinsics.areEqual(this.month, examCourseResponse.month) && Intrinsics.areEqual(this.exam_year, examCourseResponse.exam_year) && Intrinsics.areEqual(this.category, examCourseResponse.category) && Intrinsics.areEqual(this.batch_id, examCourseResponse.batch_id) && Intrinsics.areEqual(this.admission_no, examCourseResponse.admission_no) && Intrinsics.areEqual(this.error, examCourseResponse.error) && Intrinsics.areEqual(this.course, examCourseResponse.course);
+        return this.login == examCourseResponse.login && this.is_registered == examCourseResponse.is_registered && this.can_update == examCourseResponse.can_update && this.registration_slip == examCourseResponse.registration_slip && Intrinsics.areEqual(this.name, examCourseResponse.name) && Intrinsics.areEqual(this.degree, examCourseResponse.degree) && Intrinsics.areEqual(this.semester, examCourseResponse.semester) && Intrinsics.areEqual(this.start_date, examCourseResponse.start_date) && Intrinsics.areEqual(this.end_date, examCourseResponse.end_date) && Intrinsics.areEqual(this.academicyear, examCourseResponse.academicyear) && Intrinsics.areEqual(this.month, examCourseResponse.month) && Intrinsics.areEqual(this.exam_year, examCourseResponse.exam_year) && Intrinsics.areEqual(this.category, examCourseResponse.category) && Intrinsics.areEqual(this.batch_id, examCourseResponse.batch_id) && Intrinsics.areEqual(this.admission_no, examCourseResponse.admission_no) && Intrinsics.areEqual(this.error, examCourseResponse.error) && this.abc_id_verification == examCourseResponse.abc_id_verification && this.fee_status == examCourseResponse.fee_status && this.check_box_status == examCourseResponse.check_box_status && Intrinsics.areEqual(this.course, examCourseResponse.course) && Intrinsics.areEqual(this.fixedHeadGroup, examCourseResponse.fixedHeadGroup);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v34 */
-    /* JADX WARN: Type inference failed for: r0v35 */
+    /* JADX WARN: Type inference failed for: r0v42 */
+    /* JADX WARN: Type inference failed for: r0v43 */
     /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
     /* JADX WARN: Type inference failed for: r2v2, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r2v30, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r2v32, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r2v4, types: [boolean] */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -166,15 +193,33 @@ public final /* data */ class ExamCourseResponse {
             i4 = 1;
         }
         int i5 = (i3 + i4) * 31;
-        boolean z2 = this.registration_slip;
-        return ((((((((((((((((((((((((((i5 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.name.hashCode()) * 31) + this.degree.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.start_date.hashCode()) * 31) + this.end_date.hashCode()) * 31) + this.academicyear.hashCode()) * 31) + this.month.hashCode()) * 31) + this.exam_year.hashCode()) * 31) + this.category.hashCode()) * 31) + this.batch_id.hashCode()) * 31) + this.admission_no.hashCode()) * 31) + this.error.hashCode()) * 31) + this.course.hashCode();
+        ?? r23 = this.registration_slip;
+        int i6 = r23;
+        if (r23 != 0) {
+            i6 = 1;
+        }
+        int hashCode = (((((((((((((((((((((((((i5 + i6) * 31) + this.name.hashCode()) * 31) + this.degree.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.start_date.hashCode()) * 31) + this.end_date.hashCode()) * 31) + this.academicyear.hashCode()) * 31) + this.month.hashCode()) * 31) + this.exam_year.hashCode()) * 31) + this.category.hashCode()) * 31) + this.batch_id.hashCode()) * 31) + this.admission_no.hashCode()) * 31) + this.error.hashCode()) * 31;
+        ?? r24 = this.abc_id_verification;
+        int i7 = r24;
+        if (r24 != 0) {
+            i7 = 1;
+        }
+        int i8 = (hashCode + i7) * 31;
+        ?? r25 = this.fee_status;
+        int i9 = r25;
+        if (r25 != 0) {
+            i9 = 1;
+        }
+        int i10 = (i8 + i9) * 31;
+        boolean z2 = this.check_box_status;
+        return ((((i10 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.course.hashCode()) * 31) + this.fixedHeadGroup.hashCode();
     }
 
     public String toString() {
-        return "ExamCourseResponse(login=" + this.login + ", is_registered=" + this.is_registered + ", can_update=" + this.can_update + ", registration_slip=" + this.registration_slip + ", name=" + this.name + ", degree=" + this.degree + ", semester=" + this.semester + ", start_date=" + this.start_date + ", end_date=" + this.end_date + ", academicyear=" + this.academicyear + ", month=" + this.month + ", exam_year=" + this.exam_year + ", category=" + this.category + ", batch_id=" + this.batch_id + ", admission_no=" + this.admission_no + ", error=" + this.error + ", course=" + this.course + ")";
+        return "ExamCourseResponse(login=" + this.login + ", is_registered=" + this.is_registered + ", can_update=" + this.can_update + ", registration_slip=" + this.registration_slip + ", name=" + this.name + ", degree=" + this.degree + ", semester=" + this.semester + ", start_date=" + this.start_date + ", end_date=" + this.end_date + ", academicyear=" + this.academicyear + ", month=" + this.month + ", exam_year=" + this.exam_year + ", category=" + this.category + ", batch_id=" + this.batch_id + ", admission_no=" + this.admission_no + ", error=" + this.error + ", abc_id_verification=" + this.abc_id_verification + ", fee_status=" + this.fee_status + ", check_box_status=" + this.check_box_status + ", course=" + this.course + ", fixedHeadGroup=" + this.fixedHeadGroup + ")";
     }
 
-    public ExamCourseResponse(boolean z, boolean z2, boolean z3, boolean z4, String name, String degree, String semester, String start_date, String end_date, String academicyear, String month, String exam_year, String category, String batch_id, String admission_no, String error, ArrayList<ExamCourse> course) {
+    public ExamCourseResponse(boolean z, boolean z2, boolean z3, boolean z4, String name, String degree, String semester, String start_date, String end_date, String academicyear, String month, String exam_year, String category, String batch_id, String admission_no, String error, boolean z5, boolean z6, boolean z7, ArrayList<ExamCourse> course, ArrayList<FixedHeadGroup> fixedHeadGroup) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(degree, "degree");
         Intrinsics.checkNotNullParameter(semester, "semester");
@@ -188,6 +233,7 @@ public final /* data */ class ExamCourseResponse {
         Intrinsics.checkNotNullParameter(admission_no, "admission_no");
         Intrinsics.checkNotNullParameter(error, "error");
         Intrinsics.checkNotNullParameter(course, "course");
+        Intrinsics.checkNotNullParameter(fixedHeadGroup, "fixedHeadGroup");
         this.login = z;
         this.is_registered = z2;
         this.can_update = z3;
@@ -204,7 +250,11 @@ public final /* data */ class ExamCourseResponse {
         this.batch_id = batch_id;
         this.admission_no = admission_no;
         this.error = error;
+        this.abc_id_verification = z5;
+        this.fee_status = z6;
+        this.check_box_status = z7;
         this.course = course;
+        this.fixedHeadGroup = fixedHeadGroup;
     }
 
     public final boolean getLogin() {
@@ -271,7 +321,23 @@ public final /* data */ class ExamCourseResponse {
         return this.error;
     }
 
+    public final boolean getAbc_id_verification() {
+        return this.abc_id_verification;
+    }
+
+    public final boolean getFee_status() {
+        return this.fee_status;
+    }
+
+    public final boolean getCheck_box_status() {
+        return this.check_box_status;
+    }
+
     public final ArrayList<ExamCourse> getCourse() {
         return this.course;
+    }
+
+    public final ArrayList<FixedHeadGroup> getFixedHeadGroup() {
+        return this.fixedHeadGroup;
     }
 }

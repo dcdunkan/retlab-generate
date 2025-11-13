@@ -73,7 +73,7 @@ public class DialogAddTransRegBindingImpl extends DialogAddTransRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (227 != variableId) {
+        if (228 != variableId) {
             return false;
         }
         setTransportRegistrationViewModel((TransportRegistrationViewModel) variable);

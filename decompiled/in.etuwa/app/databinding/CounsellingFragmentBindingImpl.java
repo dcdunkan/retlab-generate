@@ -65,7 +65,7 @@ public class CounsellingFragmentBindingImpl extends CounsellingFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (60 != variableId) {
+        if (61 != variableId) {
             return false;
         }
         setCounsellingViewModel((CounsellingViewModel) variable);

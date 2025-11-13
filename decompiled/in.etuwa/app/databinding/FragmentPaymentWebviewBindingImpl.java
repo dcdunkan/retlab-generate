@@ -58,7 +58,7 @@ public class FragmentPaymentWebviewBindingImpl extends FragmentPaymentWebviewBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (158 != variableId) {
+        if (159 != variableId) {
             return false;
         }
         setPaymentWebViewViewModel((PaymentWebViewViewModel) variable);

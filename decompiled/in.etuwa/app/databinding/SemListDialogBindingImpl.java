@@ -66,7 +66,7 @@ public class SemListDialogBindingImpl extends SemListDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (196 != variableId) {
+        if (197 != variableId) {
             return false;
         }
         setSemListDialogViewModel((SemListDialogViewModel) variable);

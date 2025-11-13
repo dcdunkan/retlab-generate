@@ -69,7 +69,7 @@ public class ChangeProPicDialogBindingImpl extends ChangeProPicDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (51 != variableId) {
+        if (52 != variableId) {
             return false;
         }
         setChangeProPicDialogViewModel((ChangeProPicDialogViewModel) variable);

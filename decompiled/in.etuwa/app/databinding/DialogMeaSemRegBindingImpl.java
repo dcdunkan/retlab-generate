@@ -119,7 +119,7 @@ public class DialogMeaSemRegBindingImpl extends DialogMeaSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (136 != variableId) {
+        if (137 != variableId) {
             return false;
         }
         setMeaSemRegViewModel((MeaSemRegViewModel) variable);

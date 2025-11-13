@@ -63,7 +63,7 @@ public class SyllabusFragmentBindingImpl extends SyllabusFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (218 != variableId) {
+        if (219 != variableId) {
             return false;
         }
         setSyllabusViewModel((SyllabusViewModel) variable);

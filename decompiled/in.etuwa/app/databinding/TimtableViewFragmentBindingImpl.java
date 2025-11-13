@@ -58,7 +58,7 @@ public class TimtableViewFragmentBindingImpl extends TimtableViewFragmentBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (222 != variableId) {
+        if (223 != variableId) {
             return false;
         }
         setTimetableViewViewModel((TimetableViewViewModel) variable);

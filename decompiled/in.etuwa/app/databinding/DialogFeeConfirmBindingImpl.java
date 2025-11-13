@@ -62,7 +62,7 @@ public class DialogFeeConfirmBindingImpl extends DialogFeeConfirmBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (88 != variableId) {
+        if (89 != variableId) {
             return false;
         }
         setFeeConfirmViewModel((FeeConfirmViewModel) variable);

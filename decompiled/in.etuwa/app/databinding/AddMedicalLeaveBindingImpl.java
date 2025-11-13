@@ -71,7 +71,7 @@ public class AddMedicalLeaveBindingImpl extends AddMedicalLeaveBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (13 != variableId) {
+        if (14 != variableId) {
             return false;
         }
         setAddMedicalLeaveViewModel((AddMedicalLeaveViewModel) variable);

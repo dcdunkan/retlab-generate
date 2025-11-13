@@ -65,7 +65,7 @@ public class FragmentAchievementsBindingImpl extends FragmentAchievementsBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (4 != variableId) {
+        if (5 != variableId) {
             return false;
         }
         setAchievementsViewModel((AchievementsViewModel) variable);

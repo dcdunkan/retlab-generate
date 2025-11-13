@@ -82,7 +82,7 @@ public class DialogAsietTransportRegistrationBindingImpl extends DialogAsietTran
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (29 != variableId) {
+        if (30 != variableId) {
             return false;
         }
         setAsietTransRegViewModel((AsietTransRegViewModel) variable);

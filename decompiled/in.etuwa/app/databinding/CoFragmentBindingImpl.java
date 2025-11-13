@@ -63,7 +63,7 @@ public class CoFragmentBindingImpl extends CoFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (55 != variableId) {
+        if (56 != variableId) {
             return false;
         }
         setCoViewModel((CoViewModel) variable);

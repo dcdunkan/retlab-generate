@@ -81,7 +81,7 @@ public class DialogAddAchievementsBindingImpl extends DialogAddAchievementsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (7 != variableId) {
+        if (8 != variableId) {
             return false;
         }
         setAddAchievementsViewModel((AddAchievementsViewModel) variable);

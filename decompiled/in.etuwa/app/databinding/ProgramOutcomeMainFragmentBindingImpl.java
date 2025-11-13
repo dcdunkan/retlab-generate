@@ -60,7 +60,7 @@ public class ProgramOutcomeMainFragmentBindingImpl extends ProgramOutcomeMainFra
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (165 != variableId) {
+        if (166 != variableId) {
             return false;
         }
         setProgramOutcomeMainViewModel((ProgramOutcomeMainViewModel) variable);

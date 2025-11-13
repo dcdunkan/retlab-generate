@@ -80,7 +80,7 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (129 != variableId) {
+        if (130 != variableId) {
             return false;
         }
         setLoginViewModel((LoginViewModel) variable);

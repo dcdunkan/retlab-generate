@@ -64,7 +64,7 @@ public class FragmentHostelAttendanceBindingImpl extends FragmentHostelAttendanc
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (107 != variableId) {
+        if (108 != variableId) {
             return false;
         }
         setHostelAttendanceViewModel((HostelAttendanceViewModel) variable);

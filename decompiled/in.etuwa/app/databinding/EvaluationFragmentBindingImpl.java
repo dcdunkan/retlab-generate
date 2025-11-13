@@ -63,7 +63,7 @@ public class EvaluationFragmentBindingImpl extends EvaluationFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (77 != variableId) {
+        if (78 != variableId) {
             return false;
         }
         setEvaluationViewModel((EvaluationViewModel) variable);

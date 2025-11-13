@@ -68,7 +68,7 @@ public class ReviewDialogBindingImpl extends ReviewDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (192 != variableId) {
+        if (193 != variableId) {
             return false;
         }
         setReviewDialogViewModel((ReviewDialogViewModel) variable);

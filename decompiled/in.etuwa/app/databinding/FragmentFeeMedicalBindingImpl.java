@@ -71,7 +71,7 @@ public class FragmentFeeMedicalBindingImpl extends FragmentFeeMedicalBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (93 != variableId) {
+        if (94 != variableId) {
             return false;
         }
         setFeeMedicalViewModel((FeeMedicalViewModel) variable);

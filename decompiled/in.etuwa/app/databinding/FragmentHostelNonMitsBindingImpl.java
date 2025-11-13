@@ -79,7 +79,7 @@ public class FragmentHostelNonMitsBindingImpl extends FragmentHostelNonMitsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (114 != variableId) {
+        if (115 != variableId) {
             return false;
         }
         setHostelNonMitsViewModel((HostelNonMitsViewModel) variable);

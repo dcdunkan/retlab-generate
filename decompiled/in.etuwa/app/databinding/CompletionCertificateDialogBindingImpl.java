@@ -67,7 +67,7 @@ public class CompletionCertificateDialogBindingImpl extends CompletionCertificat
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (58 != variableId) {
+        if (59 != variableId) {
             return false;
         }
         setCompletionCertificateDialogViewModel((CompletionCertificateDialogViewModel) variable);

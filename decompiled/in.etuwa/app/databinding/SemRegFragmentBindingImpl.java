@@ -126,7 +126,7 @@ public class SemRegFragmentBindingImpl extends SemRegFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (198 != variableId) {
+        if (199 != variableId) {
             return false;
         }
         setSemRegViewModel((SemRegViewModel) variable);

@@ -63,7 +63,7 @@ public class FragmentAttendanceByDayBindingImpl extends FragmentAttendanceByDayB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (33 != variableId) {
+        if (34 != variableId) {
             return false;
         }
         setAttendanceByDayViewModel((AttendanceByDayViewModel) variable);

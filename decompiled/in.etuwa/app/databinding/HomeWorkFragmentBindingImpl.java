@@ -66,7 +66,7 @@ public class HomeWorkFragmentBindingImpl extends HomeWorkFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (104 != variableId) {
+        if (105 != variableId) {
             return false;
         }
         setHomeWorkViewModel((HomeWorkViewModel) variable);

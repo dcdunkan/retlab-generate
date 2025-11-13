@@ -68,7 +68,7 @@ public class FragmentStoreBindingImpl extends FragmentStoreBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (208 != variableId) {
+        if (209 != variableId) {
             return false;
         }
         setStoreViewModel((StoreViewModel) variable);

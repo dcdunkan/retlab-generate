@@ -76,7 +76,7 @@ public class DialogGatewayTwoBindingImpl extends DialogGatewayTwoBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (97 != variableId) {
+        if (98 != variableId) {
             return false;
         }
         setGatewayTwoViewModel((GatewayTwoViewModel) variable);

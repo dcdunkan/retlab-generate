@@ -77,7 +77,7 @@ public class FragmentFeeArtsBindingImpl extends FragmentFeeArtsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (87 != variableId) {
+        if (88 != variableId) {
             return false;
         }
         setFeeArtsViewModel((FeeArtsViewModel) variable);

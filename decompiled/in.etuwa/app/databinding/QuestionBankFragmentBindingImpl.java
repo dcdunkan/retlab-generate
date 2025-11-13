@@ -68,7 +68,7 @@ public class QuestionBankFragmentBindingImpl extends QuestionBankFragmentBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (174 != variableId) {
+        if (175 != variableId) {
             return false;
         }
         setQuestionBankViewModel((QuestionBankViewModel) variable);

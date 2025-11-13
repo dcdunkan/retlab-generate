@@ -65,7 +65,7 @@ public class FragmentSportBindingImpl extends FragmentSportBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (205 != variableId) {
+        if (206 != variableId) {
             return false;
         }
         setSportViewModel((SportViewModel) variable);

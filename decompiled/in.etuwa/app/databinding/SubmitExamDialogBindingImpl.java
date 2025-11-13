@@ -68,7 +68,7 @@ public class SubmitExamDialogBindingImpl extends SubmitExamDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (214 != variableId) {
+        if (215 != variableId) {
             return false;
         }
         setSubmitExamDialogViewModel((SubmitExamDialogViewModel) variable);

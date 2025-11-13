@@ -85,7 +85,7 @@ public class AddCounsellingDialogBindingImpl extends AddCounsellingDialogBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (9 != variableId) {
+        if (10 != variableId) {
             return false;
         }
         setAddCounsellingDialogViewModel((AddCounsellingViewModel) variable);

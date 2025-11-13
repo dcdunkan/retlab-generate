@@ -5094,293 +5094,296 @@ public final class R {
         public static int baseline_logout_24 = 0x7f08008e;
         public static int baseline_minus_24 = 0x7f08008f;
         public static int baseline_remove_red_eye_24 = 0x7f080090;
-        public static int bg_home = 0x7f080091;
-        public static int bg_login = 0x7f080092;
-        public static int book = 0x7f080093;
-        public static int bookpng = 0x7f080094;
-        public static int btech_dash = 0x7f080095;
-        public static int bus_pass = 0x7f08009e;
-        public static int cardpayment = 0x7f0800aa;
-        public static int certificaterequest = 0x7f0800ab;
-        public static int chat = 0x7f0800ac;
-        public static int check_box_drawable = 0x7f0800ad;
-        public static int circle = 0x7f0800ae;
-        public static int circular_login_bg = 0x7f0800af;
-        public static int circulars = 0x7f0800b0;
-        public static int classroom = 0x7f0800b1;
-        public static int classteacher = 0x7f0800b2;
-        public static int comment_shape = 0x7f0800b3;
-        public static int counselling = 0x7f0800c8;
-        public static int covid_certificate = 0x7f0800c9;
-        public static int dialog_background = 0x7f0800d2;
-        public static int dotpng = 0x7f0800d3;
-        public static int dots = 0x7f0800d4;
-        public static int down_arrow_btn = 0x7f0800d5;
-        public static int down_arrow_red = 0x7f0800d6;
-        public static int due = 0x7f0800d7;
-        public static int duecertificate = 0x7f0800d8;
-        public static int dutyleave = 0x7f0800d9;
-        public static int etlablogo = 0x7f0800db;
-        public static int etlablogooo = 0x7f0800dc;
-        public static int etuwa = 0x7f0800dd;
-        public static int exam3 = 0x7f0800de;
-        public static int exam_registration = 0x7f0800df;
-        public static int examschedule = 0x7f0800e0;
-        public static int fab_filter = 0x7f0800e2;
-        public static int fab_filter_new = 0x7f0800e3;
-        public static int fee = 0x7f0800e4;
-        public static int fivedots = 0x7f0800e5;
-        public static int fiveperiod = 0x7f0800e6;
-        public static int fourdots = 0x7f0800e7;
-        public static int fourperiod = 0x7f0800e8;
-        public static int gateway = 0x7f0800e9;
-        public static int green_btn_btn = 0x7f0800ec;
-        public static int green_circle = 0x7f0800ed;
-        public static int green_fragment = 0x7f0800ee;
-        public static int green_hostel = 0x7f0800ef;
-        public static int greenfiveredone = 0x7f0800f0;
-        public static int greenfiveredthree = 0x7f0800f1;
-        public static int greenfiveredtwo = 0x7f0800f2;
-        public static int greenfourredfour = 0x7f0800f3;
-        public static int greenfourredone = 0x7f0800f4;
-        public static int greenfourredthree = 0x7f0800f5;
-        public static int greenfourredtwo = 0x7f0800f6;
-        public static int greenoneredfive = 0x7f0800f7;
-        public static int greenoneredfour = 0x7f0800f8;
-        public static int greenoneredone = 0x7f0800f9;
-        public static int greenoneredseven = 0x7f0800fa;
-        public static int greenoneredsix = 0x7f0800fb;
-        public static int greenoneredthree = 0x7f0800fc;
-        public static int greenoneredtwo = 0x7f0800fd;
-        public static int greensevenredone = 0x7f0800fe;
-        public static int greensevenredzero = 0x7f0800ff;
-        public static int greensixredone = 0x7f080100;
-        public static int greensixredtwo = 0x7f080101;
-        public static int greenthreeredfive = 0x7f080102;
-        public static int greenthreeredfour = 0x7f080103;
-        public static int greenthreeredone = 0x7f080104;
-        public static int greenthreeredthree = 0x7f080105;
-        public static int greenthreeredtwo = 0x7f080106;
-        public static int greentworedfive = 0x7f080107;
-        public static int greentworedfour = 0x7f080108;
-        public static int greentworedone = 0x7f080109;
-        public static int greentworedsix = 0x7f08010a;
-        public static int greentworedthree = 0x7f08010b;
-        public static int greentworedtwo = 0x7f08010c;
-        public static int greenzeroredfive = 0x7f08010d;
-        public static int greenzeroredfour = 0x7f08010e;
-        public static int greenzeroredone = 0x7f08010f;
-        public static int greenzeroredseven = 0x7f080110;
-        public static int greenzeroredsix = 0x7f080111;
-        public static int greenzeroredthree = 0x7f080112;
-        public static int greenzeroredtwo = 0x7f080113;
-        public static int grievance = 0x7f080114;
-        public static int hod = 0x7f080115;
-        public static int holiday = 0x7f080116;
-        public static int holiday2 = 0x7f080117;
-        public static int holiday3 = 0x7f080118;
-        public static int holiday_fragment = 0x7f080119;
-        public static int homeworks = 0x7f08011a;
-        public static int hostel = 0x7f08011b;
-        public static int hostelleaves = 0x7f08011c;
-        public static int house_new = 0x7f08011d;
-        public static int ic_add = 0x7f08011e;
-        public static int ic_arrow_down_white = 0x7f080121;
-        public static int ic_arrow_right = 0x7f080123;
-        public static int ic_arrow_right_black = 0x7f080124;
-        public static int ic_arrow_right_primary = 0x7f080125;
-        public static int ic_baseline_arrow_back = 0x7f080126;
-        public static int ic_book = 0x7f080127;
-        public static int ic_button_checked = 0x7f080128;
-        public static int ic_button_unchecked = 0x7f080129;
-        public static int ic_by_day_24dp = 0x7f08012a;
-        public static int ic_calendar = 0x7f08012b;
-        public static int ic_calendar_black = 0x7f08012c;
-        public static int ic_calendar_notifi = 0x7f08012d;
-        public static int ic_calender = 0x7f08012e;
-        public static int ic_card_travel_24 = 0x7f080135;
-        public static int ic_check_circle_disabled = 0x7f080137;
-        public static int ic_check_circle_primary = 0x7f080138;
-        public static int ic_cloud_upload_white = 0x7f08013c;
-        public static int ic_collapse = 0x7f08013d;
-        public static int ic_college = 0x7f08013e;
-        public static int ic_college_primary = 0x7f08013f;
-        public static int ic_cross_wrong = 0x7f080140;
-        public static int ic_cry = 0x7f080141;
-        public static int ic_date = 0x7f080142;
-        public static int ic_date_primary = 0x7f080143;
-        public static int ic_delete = 0x7f080144;
-        public static int ic_delete_black = 0x7f080145;
-        public static int ic_download_white = 0x7f080146;
-        public static int ic_edit = 0x7f080147;
-        public static int ic_edit_black = 0x7f080148;
-        public static int ic_expand = 0x7f080149;
-        public static int ic_eye = 0x7f08014a;
-        public static int ic_filter = 0x7f08014b;
-        public static int ic_filter_sems = 0x7f08014c;
-        public static int ic_five = 0x7f08014d;
-        public static int ic_four = 0x7f08014e;
-        public static int ic_home = 0x7f08014f;
-        public static int ic_hostel = 0x7f080150;
-        public static int ic_hourrequest = 0x7f080151;
-        public static int ic_insert_photo = 0x7f080153;
-        public static int ic_keyboard_arrow_right_black = 0x7f080154;
-        public static int ic_launcher_background = 0x7f080156;
-        public static int ic_launcher_foreground = 0x7f080157;
-        public static int ic_leave = 0x7f080158;
-        public static int ic_logout = 0x7f080159;
-        public static int ic_mail = 0x7f08015d;
-        public static int ic_message = 0x7f08015e;
-        public static int ic_money = 0x7f08015f;
-        public static int ic_notifications = 0x7f080164;
-        public static int ic_one = 0x7f080165;
-        public static int ic_password = 0x7f080167;
-        public static int ic_person = 0x7f080168;
-        public static int ic_person_white = 0x7f080169;
-        public static int ic_play_circle = 0x7f08016a;
-        public static int ic_present = 0x7f08016b;
-        public static int ic_profile = 0x7f08016c;
-        public static int ic_profile_arrow_down = 0x7f08016d;
-        public static int ic_profile_arrow_up = 0x7f08016e;
-        public static int ic_search = 0x7f080170;
-        public static int ic_sem = 0x7f080172;
-        public static int ic_send = 0x7f080173;
-        public static int ic_sent_item = 0x7f080174;
-        public static int ic_six = 0x7f080176;
-        public static int ic_smile = 0x7f080177;
-        public static int ic_sort = 0x7f080178;
-        public static int ic_subject = 0x7f080179;
-        public static int ic_three = 0x7f08017a;
-        public static int ic_time = 0x7f08017b;
-        public static int ic_timetable = 0x7f08017c;
-        public static int ic_two = 0x7f08017d;
-        public static int ic_update_profile_btn = 0x7f08017e;
-        public static int ic_user = 0x7f08017f;
-        public static int ic_user_profile = 0x7f080180;
-        public static int icon = 0x7f080181;
-        public static int inbox = 0x7f080182;
-        public static int internship = 0x7f080185;
-        public static int lab1 = 0x7f080186;
-        public static int lab2 = 0x7f080187;
-        public static int lab3 = 0x7f080188;
-        public static int laboratory = 0x7f080189;
-        public static int leave = 0x7f08018a;
-        public static int leaves = 0x7f08018b;
-        public static int leaves_hostel = 0x7f08018c;
-        public static int live = 0x7f08018d;
-        public static int livetwo = 0x7f08018e;
-        public static int materials = 0x7f0801a4;
-        public static int mess = 0x7f0801a5;
-        public static int module = 0x7f0801a6;
-        public static int na = 0x7f0801cc;
-        public static int na2 = 0x7f0801cd;
-        public static int not_applicable = 0x7f0801cf;
-        public static int not_applicable_two = 0x7f0801d0;
-        public static int not_available_circle = 0x7f0801d1;
-        public static int notavailable = 0x7f0801d2;
-        public static int notice = 0x7f0801d3;
-        public static int noticeboard = 0x7f0801d4;
-        public static int notification = 0x7f0801d5;
-        public static int onedot = 0x7f0801e3;
-        public static int oneperiod = 0x7f0801e4;
-        public static int oneperiods = 0x7f0801e5;
-        public static int pay_fee = 0x7f0801e6;
-        public static int pay_now_background = 0x7f0801e7;
-        public static int placements = 0x7f0801e8;
-        public static int present_hostel = 0x7f0801ea;
-        public static int present_reject_hostel = 0x7f0801eb;
-        public static int profile = 0x7f0801ec;
-        public static int program_outcme = 0x7f0801ed;
-        public static int question_completed = 0x7f0801ee;
-        public static int question_default = 0x7f0801ef;
-        public static int question_man_not_attended = 0x7f0801f0;
-        public static int question_not_attended = 0x7f0801f1;
-        public static int questionbank = 0x7f0801f2;
-        public static int quiz = 0x7f0801f3;
-        public static int receipt = 0x7f0801f4;
-        public static int receiptnew = 0x7f0801f5;
-        public static int receipts = 0x7f0801f6;
-        public static int red_circle = 0x7f0801f7;
-        public static int red_fragment = 0x7f0801f8;
-        public static int registration = 0x7f0801f9;
-        public static int reject_absent_hostel = 0x7f0801fa;
-        public static int reject_hostel = 0x7f0801fb;
-        public static int remarks = 0x7f0801fc;
-        public static int remove_bg = 0x7f0801fd;
-        public static int result = 0x7f0801fe;
-        public static int results = 0x7f0801ff;
-        public static int revaluation = 0x7f080200;
-        public static int round_shape_button = 0x7f080201;
-        public static int semreg = 0x7f080202;
-        public static int sentmsg = 0x7f080203;
-        public static int sentmsgggg = 0x7f080204;
-        public static int series = 0x7f080205;
-        public static int sevenperiod = 0x7f080206;
-        public static int shape_gradient = 0x7f080207;
-        public static int shape_live_btn = 0x7f080208;
-        public static int shape_monthly_heading = 0x7f080209;
-        public static int shape_new_background = 0x7f08020a;
-        public static int shape_new_selected = 0x7f08020b;
-        public static int shape_new_unselected = 0x7f08020c;
-        public static int shape_rectangle_black = 0x7f08020d;
-        public static int shape_rectangle_blue = 0x7f08020e;
-        public static int shape_rectangle_white = 0x7f08020f;
-        public static int shape_right_round = 0x7f080210;
-        public static int shape_round = 0x7f080211;
-        public static int shape_round_corner = 0x7f080212;
-        public static int shape_round_corner_blue = 0x7f080213;
-        public static int shape_round_corner_blue_new = 0x7f080214;
-        public static int shape_round_corner_fill_dark = 0x7f080215;
-        public static int shape_round_corner_fill_green = 0x7f080216;
-        public static int shape_round_corner_fill_inactive = 0x7f080217;
-        public static int shape_round_corner_fill_red = 0x7f080218;
-        public static int shape_round_corner_fill_red2 = 0x7f080219;
-        public static int shape_round_corner_fill_unselect = 0x7f08021a;
-        public static int shape_round_corner_fill_white = 0x7f08021b;
-        public static int shape_round_corner_green = 0x7f08021c;
-        public static int shape_round_corner_pic = 0x7f08021d;
-        public static int shape_round_corner_red = 0x7f08021e;
-        public static int shape_round_corner_regis = 0x7f08021f;
-        public static int shape_round_corner_white = 0x7f080220;
-        public static int shape_round_cornor_color = 0x7f080221;
-        public static int shape_round_fill = 0x7f080222;
-        public static int shape_round_fill_red = 0x7f080223;
-        public static int shape_round_heading_due = 0x7f080224;
-        public static int shape_round_lightblue = 0x7f080225;
-        public static int shape_sharp_completed = 0x7f080226;
-        public static int shape_sharp_corner_fill_blue = 0x7f080227;
-        public static int shape_sharp_corner_fill_dark = 0x7f080228;
-        public static int shape_sharp_corner_fill_dark2 = 0x7f080229;
-        public static int shape_sharp_corner_fill_green = 0x7f08022a;
-        public static int shape_sharp_corner_fill_red = 0x7f08022b;
-        public static int shape_sharp_corner_fill_white = 0x7f08022c;
-        public static int shape_sharp_fill_primary = 0x7f08022d;
-        public static int shape_sharp_unselected = 0x7f08022e;
-        public static int shape_sharpe_corner = 0x7f08022f;
-        public static int singledot = 0x7f080230;
-        public static int sixdots = 0x7f080231;
-        public static int sixperiod = 0x7f080232;
-        public static int stationary = 0x7f080233;
-        public static int subjects = 0x7f080234;
-        public static int survey = 0x7f080236;
-        public static int teachers = 0x7f080237;
-        public static int threeee = 0x7f080239;
-        public static int threeperiod = 0x7f08023a;
-        public static int ticket = 0x7f08023b;
-        public static int ticklist = 0x7f08023c;
-        public static int timetable = 0x7f08023d;
-        public static int transport = 0x7f080240;
-        public static int tutorials = 0x7f080241;
-        public static int twodots = 0x7f080242;
-        public static int twoodots = 0x7f080243;
-        public static int twoperiod = 0x7f080244;
-        public static int twosdots = 0x7f080245;
-        public static int uniform = 0x7f080246;
-        public static int up_arrow_btn = 0x7f080247;
-        public static int up_arrow_green = 0x7f080248;
-        public static int user = 0x7f080249;
-        public static int video_lectures_nw = 0x7f08024a;
-        public static int videolectures = 0x7f08024b;
+        public static int bg_edittext_modern = 0x7f080091;
+        public static int bg_home = 0x7f080092;
+        public static int bg_login = 0x7f080093;
+        public static int book = 0x7f080094;
+        public static int bookpng = 0x7f080095;
+        public static int btech_dash = 0x7f080096;
+        public static int bus_pass = 0x7f08009f;
+        public static int cardpayment = 0x7f0800ab;
+        public static int certificaterequest = 0x7f0800ac;
+        public static int chat = 0x7f0800ad;
+        public static int check_box_drawable = 0x7f0800ae;
+        public static int circle = 0x7f0800af;
+        public static int circular_login_bg = 0x7f0800b0;
+        public static int circulars = 0x7f0800b1;
+        public static int classroom = 0x7f0800b2;
+        public static int classteacher = 0x7f0800b3;
+        public static int comment_shape = 0x7f0800b4;
+        public static int counselling = 0x7f0800c9;
+        public static int covid_certificate = 0x7f0800ca;
+        public static int dialog_background = 0x7f0800d3;
+        public static int dotpng = 0x7f0800d4;
+        public static int dots = 0x7f0800d5;
+        public static int down_arrow_btn = 0x7f0800d6;
+        public static int down_arrow_red = 0x7f0800d7;
+        public static int due = 0x7f0800d8;
+        public static int duecertificate = 0x7f0800d9;
+        public static int dutyleave = 0x7f0800da;
+        public static int etlablogo = 0x7f0800dc;
+        public static int etlablogooo = 0x7f0800dd;
+        public static int etuwa = 0x7f0800de;
+        public static int exam3 = 0x7f0800df;
+        public static int exam_registration = 0x7f0800e0;
+        public static int examschedule = 0x7f0800e1;
+        public static int fab_filter = 0x7f0800e3;
+        public static int fab_filter_new = 0x7f0800e4;
+        public static int fee = 0x7f0800e5;
+        public static int fivedots = 0x7f0800e6;
+        public static int fiveperiod = 0x7f0800e7;
+        public static int fourdots = 0x7f0800e8;
+        public static int fourperiod = 0x7f0800e9;
+        public static int gateway = 0x7f0800ea;
+        public static int green_btn_btn = 0x7f0800ed;
+        public static int green_circle = 0x7f0800ee;
+        public static int green_fragment = 0x7f0800ef;
+        public static int green_hostel = 0x7f0800f0;
+        public static int greenfiveredone = 0x7f0800f1;
+        public static int greenfiveredthree = 0x7f0800f2;
+        public static int greenfiveredtwo = 0x7f0800f3;
+        public static int greenfourredfour = 0x7f0800f4;
+        public static int greenfourredone = 0x7f0800f5;
+        public static int greenfourredthree = 0x7f0800f6;
+        public static int greenfourredtwo = 0x7f0800f7;
+        public static int greenoneredfive = 0x7f0800f8;
+        public static int greenoneredfour = 0x7f0800f9;
+        public static int greenoneredone = 0x7f0800fa;
+        public static int greenoneredseven = 0x7f0800fb;
+        public static int greenoneredsix = 0x7f0800fc;
+        public static int greenoneredthree = 0x7f0800fd;
+        public static int greenoneredtwo = 0x7f0800fe;
+        public static int greensevenredone = 0x7f0800ff;
+        public static int greensevenredzero = 0x7f080100;
+        public static int greensixredone = 0x7f080101;
+        public static int greensixredtwo = 0x7f080102;
+        public static int greenthreeredfive = 0x7f080103;
+        public static int greenthreeredfour = 0x7f080104;
+        public static int greenthreeredone = 0x7f080105;
+        public static int greenthreeredthree = 0x7f080106;
+        public static int greenthreeredtwo = 0x7f080107;
+        public static int greentworedfive = 0x7f080108;
+        public static int greentworedfour = 0x7f080109;
+        public static int greentworedone = 0x7f08010a;
+        public static int greentworedsix = 0x7f08010b;
+        public static int greentworedthree = 0x7f08010c;
+        public static int greentworedtwo = 0x7f08010d;
+        public static int greenzeroredfive = 0x7f08010e;
+        public static int greenzeroredfour = 0x7f08010f;
+        public static int greenzeroredone = 0x7f080110;
+        public static int greenzeroredseven = 0x7f080111;
+        public static int greenzeroredsix = 0x7f080112;
+        public static int greenzeroredthree = 0x7f080113;
+        public static int greenzeroredtwo = 0x7f080114;
+        public static int grievance = 0x7f080115;
+        public static int hod = 0x7f080116;
+        public static int holiday = 0x7f080117;
+        public static int holiday2 = 0x7f080118;
+        public static int holiday3 = 0x7f080119;
+        public static int holiday_fragment = 0x7f08011a;
+        public static int homeworks = 0x7f08011b;
+        public static int hostel = 0x7f08011c;
+        public static int hostelleaves = 0x7f08011d;
+        public static int house_new = 0x7f08011e;
+        public static int ic_add = 0x7f08011f;
+        public static int ic_arrow_down_white = 0x7f080122;
+        public static int ic_arrow_right = 0x7f080124;
+        public static int ic_arrow_right_black = 0x7f080125;
+        public static int ic_arrow_right_primary = 0x7f080126;
+        public static int ic_baseline_arrow_back = 0x7f080127;
+        public static int ic_book = 0x7f080128;
+        public static int ic_button_checked = 0x7f080129;
+        public static int ic_button_unchecked = 0x7f08012a;
+        public static int ic_by_day_24dp = 0x7f08012b;
+        public static int ic_calendar = 0x7f08012c;
+        public static int ic_calendar_black = 0x7f08012d;
+        public static int ic_calendar_notifi = 0x7f08012e;
+        public static int ic_calender = 0x7f08012f;
+        public static int ic_card_travel_24 = 0x7f080136;
+        public static int ic_check_circle_disabled = 0x7f080138;
+        public static int ic_check_circle_primary = 0x7f080139;
+        public static int ic_cloud_upload_white = 0x7f08013d;
+        public static int ic_collapse = 0x7f08013e;
+        public static int ic_college = 0x7f08013f;
+        public static int ic_college_primary = 0x7f080140;
+        public static int ic_cross_wrong = 0x7f080141;
+        public static int ic_cry = 0x7f080142;
+        public static int ic_date = 0x7f080143;
+        public static int ic_date_primary = 0x7f080144;
+        public static int ic_delete = 0x7f080145;
+        public static int ic_delete_black = 0x7f080146;
+        public static int ic_download_white = 0x7f080147;
+        public static int ic_edit = 0x7f080148;
+        public static int ic_edit_black = 0x7f080149;
+        public static int ic_expand = 0x7f08014a;
+        public static int ic_eye = 0x7f08014b;
+        public static int ic_filter = 0x7f08014c;
+        public static int ic_filter_sems = 0x7f08014d;
+        public static int ic_five = 0x7f08014e;
+        public static int ic_four = 0x7f08014f;
+        public static int ic_home = 0x7f080150;
+        public static int ic_hostel = 0x7f080151;
+        public static int ic_hourrequest = 0x7f080152;
+        public static int ic_insert_photo = 0x7f080154;
+        public static int ic_keyboard_arrow_right_black = 0x7f080155;
+        public static int ic_launcher_background = 0x7f080157;
+        public static int ic_launcher_foreground = 0x7f080158;
+        public static int ic_leave = 0x7f080159;
+        public static int ic_logout = 0x7f08015a;
+        public static int ic_mail = 0x7f08015e;
+        public static int ic_message = 0x7f08015f;
+        public static int ic_money = 0x7f080160;
+        public static int ic_notifications = 0x7f080165;
+        public static int ic_one = 0x7f080166;
+        public static int ic_password = 0x7f080168;
+        public static int ic_person = 0x7f080169;
+        public static int ic_person_white = 0x7f08016a;
+        public static int ic_play_circle = 0x7f08016b;
+        public static int ic_present = 0x7f08016c;
+        public static int ic_profile = 0x7f08016d;
+        public static int ic_profile_arrow_down = 0x7f08016e;
+        public static int ic_profile_arrow_up = 0x7f08016f;
+        public static int ic_search = 0x7f080171;
+        public static int ic_sem = 0x7f080173;
+        public static int ic_send = 0x7f080174;
+        public static int ic_sent_item = 0x7f080175;
+        public static int ic_six = 0x7f080177;
+        public static int ic_smile = 0x7f080178;
+        public static int ic_sort = 0x7f080179;
+        public static int ic_subject = 0x7f08017a;
+        public static int ic_three = 0x7f08017b;
+        public static int ic_time = 0x7f08017c;
+        public static int ic_timetable = 0x7f08017d;
+        public static int ic_two = 0x7f08017e;
+        public static int ic_update_profile_btn = 0x7f08017f;
+        public static int ic_user = 0x7f080180;
+        public static int ic_user_profile = 0x7f080181;
+        public static int icon = 0x7f080182;
+        public static int inbox = 0x7f080183;
+        public static int internship = 0x7f080186;
+        public static int lab1 = 0x7f080187;
+        public static int lab2 = 0x7f080188;
+        public static int lab3 = 0x7f080189;
+        public static int laboratory = 0x7f08018a;
+        public static int leave = 0x7f08018b;
+        public static int leaves = 0x7f08018c;
+        public static int leaves_hostel = 0x7f08018d;
+        public static int live = 0x7f08018e;
+        public static int livetwo = 0x7f08018f;
+        public static int materials = 0x7f0801a5;
+        public static int mess = 0x7f0801a6;
+        public static int module = 0x7f0801a7;
+        public static int na = 0x7f0801cd;
+        public static int na2 = 0x7f0801ce;
+        public static int not_applicable = 0x7f0801d0;
+        public static int not_applicable_two = 0x7f0801d1;
+        public static int not_available_circle = 0x7f0801d2;
+        public static int notavailable = 0x7f0801d3;
+        public static int notice = 0x7f0801d4;
+        public static int noticeboard = 0x7f0801d5;
+        public static int notification = 0x7f0801d6;
+        public static int onedot = 0x7f0801e4;
+        public static int oneperiod = 0x7f0801e5;
+        public static int oneperiods = 0x7f0801e6;
+        public static int pay_fee = 0x7f0801e7;
+        public static int pay_now_background = 0x7f0801e8;
+        public static int placements = 0x7f0801e9;
+        public static int present_hostel = 0x7f0801eb;
+        public static int present_reject_hostel = 0x7f0801ec;
+        public static int profile = 0x7f0801ed;
+        public static int program_outcme = 0x7f0801ee;
+        public static int question_completed = 0x7f0801ef;
+        public static int question_default = 0x7f0801f0;
+        public static int question_man_not_attended = 0x7f0801f1;
+        public static int question_not_attended = 0x7f0801f2;
+        public static int questionbank = 0x7f0801f3;
+        public static int quiz = 0x7f0801f4;
+        public static int receipt = 0x7f0801f5;
+        public static int receiptnew = 0x7f0801f6;
+        public static int receipts = 0x7f0801f7;
+        public static int red_circle = 0x7f0801f8;
+        public static int red_fragment = 0x7f0801f9;
+        public static int registration = 0x7f0801fa;
+        public static int reject_absent_hostel = 0x7f0801fb;
+        public static int reject_hostel = 0x7f0801fc;
+        public static int remarks = 0x7f0801fd;
+        public static int remove_bg = 0x7f0801fe;
+        public static int result = 0x7f0801ff;
+        public static int results = 0x7f080200;
+        public static int revaluation = 0x7f080201;
+        public static int round_shape_button = 0x7f080202;
+        public static int semreg = 0x7f080203;
+        public static int sentmsg = 0x7f080204;
+        public static int sentmsgggg = 0x7f080205;
+        public static int series = 0x7f080206;
+        public static int sevenperiod = 0x7f080207;
+        public static int shape_gradient = 0x7f080208;
+        public static int shape_live_btn = 0x7f080209;
+        public static int shape_monthly_heading = 0x7f08020a;
+        public static int shape_new_background = 0x7f08020b;
+        public static int shape_new_selected = 0x7f08020c;
+        public static int shape_new_unselected = 0x7f08020d;
+        public static int shape_rectangle_black = 0x7f08020e;
+        public static int shape_rectangle_blue = 0x7f08020f;
+        public static int shape_rectangle_white = 0x7f080210;
+        public static int shape_right_round = 0x7f080211;
+        public static int shape_round = 0x7f080212;
+        public static int shape_round_corner = 0x7f080213;
+        public static int shape_round_corner_blue = 0x7f080214;
+        public static int shape_round_corner_blue_new = 0x7f080215;
+        public static int shape_round_corner_fill_dark = 0x7f080216;
+        public static int shape_round_corner_fill_green = 0x7f080217;
+        public static int shape_round_corner_fill_inactive = 0x7f080218;
+        public static int shape_round_corner_fill_red = 0x7f080219;
+        public static int shape_round_corner_fill_red2 = 0x7f08021a;
+        public static int shape_round_corner_fill_unselect = 0x7f08021b;
+        public static int shape_round_corner_fill_white = 0x7f08021c;
+        public static int shape_round_corner_green = 0x7f08021d;
+        public static int shape_round_corner_pic = 0x7f08021e;
+        public static int shape_round_corner_red = 0x7f08021f;
+        public static int shape_round_corner_regis = 0x7f080220;
+        public static int shape_round_corner_white = 0x7f080221;
+        public static int shape_round_cornor_color = 0x7f080222;
+        public static int shape_round_fill = 0x7f080223;
+        public static int shape_round_fill_red = 0x7f080224;
+        public static int shape_round_green = 0x7f080225;
+        public static int shape_round_heading_due = 0x7f080226;
+        public static int shape_round_lightblue = 0x7f080227;
+        public static int shape_round_red = 0x7f080228;
+        public static int shape_sharp_completed = 0x7f080229;
+        public static int shape_sharp_corner_fill_blue = 0x7f08022a;
+        public static int shape_sharp_corner_fill_dark = 0x7f08022b;
+        public static int shape_sharp_corner_fill_dark2 = 0x7f08022c;
+        public static int shape_sharp_corner_fill_green = 0x7f08022d;
+        public static int shape_sharp_corner_fill_red = 0x7f08022e;
+        public static int shape_sharp_corner_fill_white = 0x7f08022f;
+        public static int shape_sharp_fill_primary = 0x7f080230;
+        public static int shape_sharp_unselected = 0x7f080231;
+        public static int shape_sharpe_corner = 0x7f080232;
+        public static int singledot = 0x7f080233;
+        public static int sixdots = 0x7f080234;
+        public static int sixperiod = 0x7f080235;
+        public static int stationary = 0x7f080236;
+        public static int subjects = 0x7f080237;
+        public static int survey = 0x7f080239;
+        public static int teachers = 0x7f08023a;
+        public static int threeee = 0x7f08023c;
+        public static int threeperiod = 0x7f08023d;
+        public static int ticket = 0x7f08023e;
+        public static int ticklist = 0x7f08023f;
+        public static int timetable = 0x7f080240;
+        public static int transport = 0x7f080243;
+        public static int tutorials = 0x7f080244;
+        public static int twodots = 0x7f080245;
+        public static int twoodots = 0x7f080246;
+        public static int twoperiod = 0x7f080247;
+        public static int twosdots = 0x7f080248;
+        public static int uniform = 0x7f080249;
+        public static int up_arrow_btn = 0x7f08024a;
+        public static int up_arrow_green = 0x7f08024b;
+        public static int user = 0x7f08024c;
+        public static int video_lectures_nw = 0x7f08024d;
+        public static int videolectures = 0x7f08024e;
 
         /* JADX INFO: Added by JADX */
         public static final int _avd_hide_password__0_res_0x7f080000 = 0x7f080000;
@@ -5758,475 +5761,475 @@ public final class R {
         public static final int background_transparent = 0x7f080083;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_checkbox_checked_mtrl = 0x7f080096;
+        public static final int btn_checkbox_checked_mtrl = 0x7f080097;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_checkbox_checked_to_unchecked_mtrl_animation = 0x7f080097;
+        public static final int btn_checkbox_checked_to_unchecked_mtrl_animation = 0x7f080098;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_checkbox_unchecked_mtrl = 0x7f080098;
+        public static final int btn_checkbox_unchecked_mtrl = 0x7f080099;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_checkbox_unchecked_to_checked_mtrl_animation = 0x7f080099;
+        public static final int btn_checkbox_unchecked_to_checked_mtrl_animation = 0x7f08009a;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_radio_off_mtrl = 0x7f08009a;
+        public static final int btn_radio_off_mtrl = 0x7f08009b;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_radio_off_to_on_mtrl_animation = 0x7f08009b;
+        public static final int btn_radio_off_to_on_mtrl_animation = 0x7f08009c;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_radio_on_mtrl = 0x7f08009c;
+        public static final int btn_radio_on_mtrl = 0x7f08009d;
 
         /* JADX INFO: Added by JADX */
-        public static final int btn_radio_on_to_off_mtrl_animation = 0x7f08009d;
+        public static final int btn_radio_on_to_off_mtrl_animation = 0x7f08009e;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_background_shape_fill = 0x7f08009f;
+        public static final int calendar_background_shape_fill = 0x7f0800a0;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_background_shape_rounded = 0x7f0800a0;
+        public static final int calendar_background_shape_rounded = 0x7f0800a1;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_background_shape_rounded_end = 0x7f0800a1;
+        public static final int calendar_background_shape_rounded_end = 0x7f0800a2;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_background_shape_rounded_single = 0x7f0800a2;
+        public static final int calendar_background_shape_rounded_single = 0x7f0800a3;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_background_shape_rounded_start = 0x7f0800a3;
+        public static final int calendar_background_shape_rounded_start = 0x7f0800a4;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_background_shape_rounded_today = 0x7f0800a4;
+        public static final int calendar_background_shape_rounded_today = 0x7f0800a5;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_background_shape_selected = 0x7f0800a5;
+        public static final int calendar_background_shape_selected = 0x7f0800a6;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_date_shape_form = 0x7f0800a6;
+        public static final int calendar_date_shape_form = 0x7f0800a7;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_days_of_week_bar_shadow = 0x7f0800a7;
+        public static final int calendar_days_of_week_bar_shadow = 0x7f0800a8;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_ic_arrow_left = 0x7f0800a8;
+        public static final int calendar_ic_arrow_left = 0x7f0800a9;
 
         /* JADX INFO: Added by JADX */
-        public static final int calendar_ic_arrow_right = 0x7f0800a9;
+        public static final int calendar_ic_arrow_right = 0x7f0800aa;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_full_open_on_phone = 0x7f0800b4;
+        public static final int common_full_open_on_phone = 0x7f0800b5;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_dark = 0x7f0800b5;
+        public static final int common_google_signin_btn_icon_dark = 0x7f0800b6;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_dark_focused = 0x7f0800b6;
+        public static final int common_google_signin_btn_icon_dark_focused = 0x7f0800b7;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_dark_normal = 0x7f0800b7;
+        public static final int common_google_signin_btn_icon_dark_normal = 0x7f0800b8;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_dark_normal_background = 0x7f0800b8;
+        public static final int common_google_signin_btn_icon_dark_normal_background = 0x7f0800b9;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_disabled = 0x7f0800b9;
+        public static final int common_google_signin_btn_icon_disabled = 0x7f0800ba;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_light = 0x7f0800ba;
+        public static final int common_google_signin_btn_icon_light = 0x7f0800bb;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_light_focused = 0x7f0800bb;
+        public static final int common_google_signin_btn_icon_light_focused = 0x7f0800bc;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_light_normal = 0x7f0800bc;
+        public static final int common_google_signin_btn_icon_light_normal = 0x7f0800bd;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_icon_light_normal_background = 0x7f0800bd;
+        public static final int common_google_signin_btn_icon_light_normal_background = 0x7f0800be;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_dark = 0x7f0800be;
+        public static final int common_google_signin_btn_text_dark = 0x7f0800bf;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_dark_focused = 0x7f0800bf;
+        public static final int common_google_signin_btn_text_dark_focused = 0x7f0800c0;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_dark_normal = 0x7f0800c0;
+        public static final int common_google_signin_btn_text_dark_normal = 0x7f0800c1;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_dark_normal_background = 0x7f0800c1;
+        public static final int common_google_signin_btn_text_dark_normal_background = 0x7f0800c2;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_disabled = 0x7f0800c2;
+        public static final int common_google_signin_btn_text_disabled = 0x7f0800c3;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_light = 0x7f0800c3;
+        public static final int common_google_signin_btn_text_light = 0x7f0800c4;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_light_focused = 0x7f0800c4;
+        public static final int common_google_signin_btn_text_light_focused = 0x7f0800c5;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_light_normal = 0x7f0800c5;
+        public static final int common_google_signin_btn_text_light_normal = 0x7f0800c6;
 
         /* JADX INFO: Added by JADX */
-        public static final int common_google_signin_btn_text_light_normal_background = 0x7f0800c6;
+        public static final int common_google_signin_btn_text_light_normal_background = 0x7f0800c7;
 
         /* JADX INFO: Added by JADX */
-        public static final int confusing_shape = 0x7f0800c7;
+        public static final int confusing_shape = 0x7f0800c8;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_item_background = 0x7f0800ca;
+        public static final int day_item_background = 0x7f0800cb;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_picker_item_background = 0x7f0800cb;
+        public static final int day_picker_item_background = 0x7f0800cc;
 
         /* JADX INFO: Added by JADX */
-        public static final int default_shape = 0x7f0800cc;
+        public static final int default_shape = 0x7f0800cd;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_fab_background = 0x7f0800cd;
+        public static final int design_fab_background = 0x7f0800ce;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_ic_visibility = 0x7f0800ce;
+        public static final int design_ic_visibility = 0x7f0800cf;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_ic_visibility_off = 0x7f0800cf;
+        public static final int design_ic_visibility_off = 0x7f0800d0;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_password_eye = 0x7f0800d0;
+        public static final int design_password_eye = 0x7f0800d1;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_snackbar_background = 0x7f0800d1;
+        public static final int design_snackbar_background = 0x7f0800d2;
 
         /* JADX INFO: Added by JADX */
-        public static final int error_shape = 0x7f0800da;
+        public static final int error_shape = 0x7f0800db;
 
         /* JADX INFO: Added by JADX */
-        public static final int fab_add = 0x7f0800e1;
+        public static final int fab_add = 0x7f0800e2;
 
         /* JADX INFO: Added by JADX */
-        public static final int googleg_disabled_color_18 = 0x7f0800ea;
+        public static final int googleg_disabled_color_18 = 0x7f0800eb;
 
         /* JADX INFO: Added by JADX */
-        public static final int googleg_standard_color_18 = 0x7f0800eb;
+        public static final int googleg_standard_color_18 = 0x7f0800ec;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_arrow_back_black_24 = 0x7f08011f;
+        public static final int ic_arrow_back_black_24 = 0x7f080120;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_arrow_down_24dp = 0x7f080120;
+        public static final int ic_arrow_down_24dp = 0x7f080121;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_arrow_left = 0x7f080122;
+        public static final int ic_arrow_left = 0x7f080123;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_call_answer = 0x7f08012f;
+        public static final int ic_call_answer = 0x7f080130;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_call_answer_low = 0x7f080130;
+        public static final int ic_call_answer_low = 0x7f080131;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_call_answer_video = 0x7f080131;
+        public static final int ic_call_answer_video = 0x7f080132;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_call_answer_video_low = 0x7f080132;
+        public static final int ic_call_answer_video_low = 0x7f080133;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_call_decline = 0x7f080133;
+        public static final int ic_call_decline = 0x7f080134;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_call_decline_low = 0x7f080134;
+        public static final int ic_call_decline_low = 0x7f080135;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_check_black_24dp = 0x7f080136;
+        public static final int ic_check_black_24dp = 0x7f080137;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_clear_black_24 = 0x7f080139;
+        public static final int ic_clear_black_24 = 0x7f08013a;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_clear_black_24dp = 0x7f08013a;
+        public static final int ic_clear_black_24dp = 0x7f08013b;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_clock_black_24dp = 0x7f08013b;
+        public static final int ic_clock_black_24dp = 0x7f08013c;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_info_outline_black_24dp = 0x7f080152;
+        public static final int ic_info_outline_black_24dp = 0x7f080153;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_keyboard_black_24dp = 0x7f080155;
+        public static final int ic_keyboard_black_24dp = 0x7f080156;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_m3_chip_check = 0x7f08015a;
+        public static final int ic_m3_chip_check = 0x7f08015b;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_m3_chip_checked_circle = 0x7f08015b;
+        public static final int ic_m3_chip_checked_circle = 0x7f08015c;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_m3_chip_close = 0x7f08015c;
+        public static final int ic_m3_chip_close = 0x7f08015d;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_mtrl_checked_circle = 0x7f080160;
+        public static final int ic_mtrl_checked_circle = 0x7f080161;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_mtrl_chip_checked_black = 0x7f080161;
+        public static final int ic_mtrl_chip_checked_black = 0x7f080162;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_mtrl_chip_checked_circle = 0x7f080162;
+        public static final int ic_mtrl_chip_checked_circle = 0x7f080163;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_mtrl_chip_close_circle = 0x7f080163;
+        public static final int ic_mtrl_chip_close_circle = 0x7f080164;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_pan_tool_black_24dp = 0x7f080166;
+        public static final int ic_pan_tool_black_24dp = 0x7f080167;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_refresh_black_24dp = 0x7f08016f;
+        public static final int ic_refresh_black_24dp = 0x7f080170;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_search_black_24 = 0x7f080171;
+        public static final int ic_search_black_24 = 0x7f080172;
 
         /* JADX INFO: Added by JADX */
-        public static final int ic_site_settings = 0x7f080175;
+        public static final int ic_site_settings = 0x7f080176;
 
         /* JADX INFO: Added by JADX */
-        public static final int indeterminate_static = 0x7f080183;
+        public static final int indeterminate_static = 0x7f080184;
 
         /* JADX INFO: Added by JADX */
-        public static final int info_shape = 0x7f080184;
+        public static final int info_shape = 0x7f080185;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_avd_hide_password = 0x7f08018f;
+        public static final int m3_avd_hide_password = 0x7f080190;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_avd_show_password = 0x7f080190;
+        public static final int m3_avd_show_password = 0x7f080191;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_bottom_sheet_drag_handle = 0x7f080191;
+        public static final int m3_bottom_sheet_drag_handle = 0x7f080192;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_password_eye = 0x7f080192;
+        public static final int m3_password_eye = 0x7f080193;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_popupmenu_background_overlay = 0x7f080193;
+        public static final int m3_popupmenu_background_overlay = 0x7f080194;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_radiobutton_ripple = 0x7f080194;
+        public static final int m3_radiobutton_ripple = 0x7f080195;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_selection_control_ripple = 0x7f080195;
+        public static final int m3_selection_control_ripple = 0x7f080196;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_tabs_background = 0x7f080196;
+        public static final int m3_tabs_background = 0x7f080197;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_tabs_line_indicator = 0x7f080197;
+        public static final int m3_tabs_line_indicator = 0x7f080198;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_tabs_rounded_line_indicator = 0x7f080198;
+        public static final int m3_tabs_rounded_line_indicator = 0x7f080199;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_tabs_transparent_background = 0x7f080199;
+        public static final int m3_tabs_transparent_background = 0x7f08019a;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_cursor_drawable = 0x7f08019a;
+        public static final int material_cursor_drawable = 0x7f08019b;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_calendar_black_24dp = 0x7f08019b;
+        public static final int material_ic_calendar_black_24dp = 0x7f08019c;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_clear_black_24dp = 0x7f08019c;
+        public static final int material_ic_clear_black_24dp = 0x7f08019d;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_edit_black_24dp = 0x7f08019d;
+        public static final int material_ic_edit_black_24dp = 0x7f08019e;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_keyboard_arrow_left_black_24dp = 0x7f08019e;
+        public static final int material_ic_keyboard_arrow_left_black_24dp = 0x7f08019f;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_keyboard_arrow_next_black_24dp = 0x7f08019f;
+        public static final int material_ic_keyboard_arrow_next_black_24dp = 0x7f0801a0;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_keyboard_arrow_previous_black_24dp = 0x7f0801a0;
+        public static final int material_ic_keyboard_arrow_previous_black_24dp = 0x7f0801a1;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_keyboard_arrow_right_black_24dp = 0x7f0801a1;
+        public static final int material_ic_keyboard_arrow_right_black_24dp = 0x7f0801a2;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_menu_arrow_down_black_24dp = 0x7f0801a2;
+        public static final int material_ic_menu_arrow_down_black_24dp = 0x7f0801a3;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_ic_menu_arrow_up_black_24dp = 0x7f0801a3;
+        public static final int material_ic_menu_arrow_up_black_24dp = 0x7f0801a4;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_bottomsheet_drag_handle = 0x7f0801a7;
+        public static final int mtrl_bottomsheet_drag_handle = 0x7f0801a8;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button = 0x7f0801a8;
+        public static final int mtrl_checkbox_button = 0x7f0801a9;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_checked_unchecked = 0x7f0801a9;
+        public static final int mtrl_checkbox_button_checked_unchecked = 0x7f0801aa;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_icon = 0x7f0801aa;
+        public static final int mtrl_checkbox_button_icon = 0x7f0801ab;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_icon_checked_indeterminate = 0x7f0801ab;
+        public static final int mtrl_checkbox_button_icon_checked_indeterminate = 0x7f0801ac;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_icon_checked_unchecked = 0x7f0801ac;
+        public static final int mtrl_checkbox_button_icon_checked_unchecked = 0x7f0801ad;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_icon_indeterminate_checked = 0x7f0801ad;
+        public static final int mtrl_checkbox_button_icon_indeterminate_checked = 0x7f0801ae;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_icon_indeterminate_unchecked = 0x7f0801ae;
+        public static final int mtrl_checkbox_button_icon_indeterminate_unchecked = 0x7f0801af;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_icon_unchecked_checked = 0x7f0801af;
+        public static final int mtrl_checkbox_button_icon_unchecked_checked = 0x7f0801b0;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_icon_unchecked_indeterminate = 0x7f0801b0;
+        public static final int mtrl_checkbox_button_icon_unchecked_indeterminate = 0x7f0801b1;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_checkbox_button_unchecked_checked = 0x7f0801b1;
+        public static final int mtrl_checkbox_button_unchecked_checked = 0x7f0801b2;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_dialog_background = 0x7f0801b2;
+        public static final int mtrl_dialog_background = 0x7f0801b3;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_dropdown_arrow = 0x7f0801b3;
+        public static final int mtrl_dropdown_arrow = 0x7f0801b4;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_arrow_drop_down = 0x7f0801b4;
+        public static final int mtrl_ic_arrow_drop_down = 0x7f0801b5;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_arrow_drop_up = 0x7f0801b5;
+        public static final int mtrl_ic_arrow_drop_up = 0x7f0801b6;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_cancel = 0x7f0801b6;
+        public static final int mtrl_ic_cancel = 0x7f0801b7;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_check_mark = 0x7f0801b7;
+        public static final int mtrl_ic_check_mark = 0x7f0801b8;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_checkbox_checked = 0x7f0801b8;
+        public static final int mtrl_ic_checkbox_checked = 0x7f0801b9;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_checkbox_unchecked = 0x7f0801b9;
+        public static final int mtrl_ic_checkbox_unchecked = 0x7f0801ba;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_error = 0x7f0801ba;
+        public static final int mtrl_ic_error = 0x7f0801bb;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_ic_indeterminate = 0x7f0801bb;
+        public static final int mtrl_ic_indeterminate = 0x7f0801bc;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_navigation_bar_item_background = 0x7f0801bc;
+        public static final int mtrl_navigation_bar_item_background = 0x7f0801bd;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_popupmenu_background = 0x7f0801bd;
+        public static final int mtrl_popupmenu_background = 0x7f0801be;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_popupmenu_background_overlay = 0x7f0801be;
+        public static final int mtrl_popupmenu_background_overlay = 0x7f0801bf;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb = 0x7f0801bf;
+        public static final int mtrl_switch_thumb = 0x7f0801c0;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_checked = 0x7f0801c0;
+        public static final int mtrl_switch_thumb_checked = 0x7f0801c1;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_checked_pressed = 0x7f0801c1;
+        public static final int mtrl_switch_thumb_checked_pressed = 0x7f0801c2;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_checked_unchecked = 0x7f0801c2;
+        public static final int mtrl_switch_thumb_checked_unchecked = 0x7f0801c3;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_pressed = 0x7f0801c3;
+        public static final int mtrl_switch_thumb_pressed = 0x7f0801c4;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_pressed_checked = 0x7f0801c4;
+        public static final int mtrl_switch_thumb_pressed_checked = 0x7f0801c5;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_pressed_unchecked = 0x7f0801c5;
+        public static final int mtrl_switch_thumb_pressed_unchecked = 0x7f0801c6;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_unchecked = 0x7f0801c6;
+        public static final int mtrl_switch_thumb_unchecked = 0x7f0801c7;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_unchecked_checked = 0x7f0801c7;
+        public static final int mtrl_switch_thumb_unchecked_checked = 0x7f0801c8;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_thumb_unchecked_pressed = 0x7f0801c8;
+        public static final int mtrl_switch_thumb_unchecked_pressed = 0x7f0801c9;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_track = 0x7f0801c9;
+        public static final int mtrl_switch_track = 0x7f0801ca;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_switch_track_decoration = 0x7f0801ca;
+        public static final int mtrl_switch_track_decoration = 0x7f0801cb;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_tabs_default_indicator = 0x7f0801cb;
+        public static final int mtrl_tabs_default_indicator = 0x7f0801cc;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_empty_icon = 0x7f0801ce;
+        public static final int navigation_empty_icon = 0x7f0801cf;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_action_background = 0x7f0801d6;
+        public static final int notification_action_background = 0x7f0801d7;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_bg = 0x7f0801d7;
+        public static final int notification_bg = 0x7f0801d8;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_bg_low = 0x7f0801d8;
+        public static final int notification_bg_low = 0x7f0801d9;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_bg_low_normal = 0x7f0801d9;
+        public static final int notification_bg_low_normal = 0x7f0801da;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_bg_low_pressed = 0x7f0801da;
+        public static final int notification_bg_low_pressed = 0x7f0801db;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_bg_normal = 0x7f0801db;
+        public static final int notification_bg_normal = 0x7f0801dc;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_bg_normal_pressed = 0x7f0801dc;
+        public static final int notification_bg_normal_pressed = 0x7f0801dd;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_icon_background = 0x7f0801dd;
+        public static final int notification_icon_background = 0x7f0801de;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_oversize_large_icon_bg = 0x7f0801de;
+        public static final int notification_oversize_large_icon_bg = 0x7f0801df;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_icon_bg = 0x7f0801df;
+        public static final int notification_template_icon_bg = 0x7f0801e0;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_icon_low_bg = 0x7f0801e0;
+        public static final int notification_template_icon_low_bg = 0x7f0801e1;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_tile_bg = 0x7f0801e1;
+        public static final int notification_tile_bg = 0x7f0801e2;
 
         /* JADX INFO: Added by JADX */
-        public static final int notify_panel_notification_icon_bg = 0x7f0801e2;
+        public static final int notify_panel_notification_icon_bg = 0x7f0801e3;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_list_divider_material = 0x7f0801e9;
+        public static final int preference_list_divider_material = 0x7f0801ea;
 
         /* JADX INFO: Added by JADX */
-        public static final int success_shape = 0x7f080235;
+        public static final int success_shape = 0x7f080238;
 
         /* JADX INFO: Added by JADX */
-        public static final int test_level_drawable = 0x7f080238;
+        public static final int test_level_drawable = 0x7f08023b;
 
         /* JADX INFO: Added by JADX */
-        public static final int tooltip_frame_dark = 0x7f08023e;
+        public static final int tooltip_frame_dark = 0x7f080241;
 
         /* JADX INFO: Added by JADX */
-        public static final int tooltip_frame_light = 0x7f08023f;
+        public static final int tooltip_frame_light = 0x7f080242;
 
         /* JADX INFO: Added by JADX */
-        public static final int warning_shape = 0x7f08024c;
+        public static final int warning_shape = 0x7f08024f;
 
         private drawable() {
         }
@@ -6574,1588 +6577,1593 @@ public final class R {
         public static int covid_select_second = 0x7f0a01ee;
         public static int covid_upload = 0x7f0a01ef;
         public static int covid_upload_second = 0x7f0a01f0;
-        public static int credits = 0x7f0a01f2;
-        public static int cs_action_taken = 0x7f0a01f3;
-        public static int cs_applicant = 0x7f0a01f4;
-        public static int cs_comment = 0x7f0a01f5;
-        public static int cs_concern = 0x7f0a01f6;
-        public static int cs_concern_studies = 0x7f0a01f7;
-        public static int cs_counselling_history = 0x7f0a01f8;
-        public static int cs_counselling_session_required = 0x7f0a01f9;
-        public static int cs_date = 0x7f0a01fa;
-        public static int cs_delete = 0x7f0a01fb;
-        public static int cs_edit = 0x7f0a01fc;
-        public static int cs_impact_home = 0x7f0a01fd;
-        public static int cs_impact_relationship = 0x7f0a01fe;
-        public static int cs_impact_studies = 0x7f0a01ff;
-        public static int cs_number = 0x7f0a0200;
-        public static int cs_phisical = 0x7f0a0201;
-        public static int cs_physically_emotionally = 0x7f0a0202;
-        public static int cs_relationship = 0x7f0a0203;
-        public static int cs_reminder_btn = 0x7f0a0204;
-        public static int cs_reminder_txt = 0x7f0a0205;
-        public static int cs_review_btn = 0x7f0a0206;
-        public static int cs_status = 0x7f0a0207;
-        public static int cs_type = 0x7f0a0208;
-        public static int cs_view = 0x7f0a0209;
-        public static int cv_coverage_row = 0x7f0a020f;
-        public static int cv_dash = 0x7f0a0210;
-        public static int cv_sgpa = 0x7f0a0211;
-        public static int cv_timetable = 0x7f0a0212;
-        public static int cv_vision_mission = 0x7f0a0213;
-        public static int dash2 = 0x7f0a0215;
-        public static int dash_attendance_for_sem = 0x7f0a0216;
-        public static int dash_period = 0x7f0a0217;
-        public static int dash_sub = 0x7f0a0218;
-        public static int dash_tabs = 0x7f0a0219;
-        public static int dash_time_table_pager = 0x7f0a021a;
-        public static int dash_user_dept = 0x7f0a021b;
-        public static int dash_user_name = 0x7f0a021c;
-        public static int dash_user_roll_no = 0x7f0a021d;
-        public static int dash_user_sem = 0x7f0a021e;
-        public static int dashlyt = 0x7f0a021f;
-        public static int data_no_tv = 0x7f0a0221;
-        public static int date = 0x7f0a0222;
-        public static int date1 = 0x7f0a0223;
-        public static int date10 = 0x7f0a0224;
-        public static int date2 = 0x7f0a0225;
-        public static int date3 = 0x7f0a0226;
-        public static int date4 = 0x7f0a0227;
-        public static int date5 = 0x7f0a0228;
-        public static int date6 = 0x7f0a0229;
-        public static int date7 = 0x7f0a022a;
-        public static int date8 = 0x7f0a022b;
-        public static int date9 = 0x7f0a022c;
-        public static int date_leave = 0x7f0a022d;
-        public static int date_of_leave_tv = 0x7f0a022e;
-        public static int date_title = 0x7f0a0230;
-        public static int date_tv = 0x7f0a0231;
-        public static int datelt1 = 0x7f0a0232;
-        public static int datelt10 = 0x7f0a0233;
-        public static int datelt2 = 0x7f0a0234;
-        public static int datelt3 = 0x7f0a0235;
-        public static int datelt4 = 0x7f0a0236;
-        public static int datelt5 = 0x7f0a0237;
-        public static int datelt6 = 0x7f0a0238;
-        public static int datelt7 = 0x7f0a0239;
-        public static int datelt8 = 0x7f0a023a;
-        public static int datelt9 = 0x7f0a023b;
-        public static int dayMarker = 0x7f0a023e;
-        public static int deal_btn = 0x7f0a0246;
-        public static int deal_btn_view = 0x7f0a0247;
-        public static int delete_assignment = 0x7f0a024c;
-        public static int delete_btn = 0x7f0a024d;
-        public static int delete_exm = 0x7f0a024e;
-        public static int delete_home_work = 0x7f0a024f;
-        public static int delete_tutorial = 0x7f0a0250;
-        public static int department_due = 0x7f0a0252;
-        public static int department_group = 0x7f0a0253;
-        public static int department_no = 0x7f0a0254;
-        public static int department_yes = 0x7f0a0255;
-        public static int dept_no = 0x7f0a0257;
-        public static int dept_yes = 0x7f0a0258;
-        public static int description_tv = 0x7f0a0259;
-        public static int descriptive_answer = 0x7f0a025a;
-        public static int descriptive_answer_lyt = 0x7f0a025b;
-        public static int descriptive_is_attended = 0x7f0a025c;
-        public static int descriptive_mark = 0x7f0a025d;
-        public static int descriptive_question = 0x7f0a025e;
-        public static int detail_layout = 0x7f0a0264;
-        public static int detail_tv = 0x7f0a0265;
-        public static int details = 0x7f0a0266;
-        public static int details_tv = 0x7f0a0267;
-        public static int direct_apply_btn = 0x7f0a026b;
-        public static int discount_lyt = 0x7f0a0270;
-        public static int distance_et = 0x7f0a0272;
-        public static int distance_re = 0x7f0a0273;
-        public static int distance_tv = 0x7f0a0274;
-        public static int district = 0x7f0a0275;
-        public static int district_itr = 0x7f0a0276;
-        public static int dob = 0x7f0a0278;
-        public static int down_btn = 0x7f0a027a;
-        public static int download_btn = 0x7f0a027b;
-        public static int dsc1_lyt = 0x7f0a0285;
-        public static int dsc2_lyt = 0x7f0a0286;
-        public static int dsc3_lyt = 0x7f0a0287;
-        public static int due_admission_no = 0x7f0a0288;
-        public static int due_amount = 0x7f0a0289;
-        public static int due_batch = 0x7f0a028a;
-        public static int due_check_box = 0x7f0a028b;
-        public static int due_has_due = 0x7f0a028c;
-        public static int due_head = 0x7f0a028d;
-        public static int due_layout = 0x7f0a028e;
-        public static int due_lt = 0x7f0a028f;
-        public static int due_pay_amt = 0x7f0a0290;
-        public static int due_pay_balance = 0x7f0a0291;
-        public static int due_pay_head = 0x7f0a0292;
-        public static int due_pay_stat = 0x7f0a0293;
-        public static int due_status = 0x7f0a0294;
-        public static int due_tv = 0x7f0a0295;
-        public static int dues_lt = 0x7f0a0296;
-        public static int dues_tv = 0x7f0a0297;
-        public static int duration_tv = 0x7f0a0298;
-        public static int duty_apply_btn = 0x7f0a0299;
-        public static int duty_btn = 0x7f0a029a;
-        public static int duty_card = 0x7f0a029b;
-        public static int duty_description = 0x7f0a029c;
-        public static int duty_header_apply = 0x7f0a029d;
-        public static int duty_header_aprov = 0x7f0a029e;
-        public static int duty_header_hour_aprove = 0x7f0a029f;
-        public static int duty_headr_hour_aply = 0x7f0a02a0;
-        public static int duty_last_date = 0x7f0a02a1;
-        public static int duty_name = 0x7f0a02a2;
-        public static int duty_select = 0x7f0a02a3;
-        public static int duty_status = 0x7f0a02a4;
-        public static int duty_type = 0x7f0a02a5;
-        public static int duty_upload = 0x7f0a02a6;
-        public static int e_grand_group = 0x7f0a02a7;
-        public static int e_grand_no = 0x7f0a02a8;
-        public static int e_grand_yes = 0x7f0a02a9;
-        public static int edit_btn = 0x7f0a02af;
-        public static int edit_btn_hr = 0x7f0a02b0;
-        public static int educational_btn = 0x7f0a02b3;
-        public static int elective1 = 0x7f0a02b5;
-        public static int elective1_lyt = 0x7f0a02b6;
-        public static int elective2 = 0x7f0a02b7;
-        public static int elective2_lyt = 0x7f0a02b8;
-        public static int elective3 = 0x7f0a02b9;
-        public static int elective3_lyt = 0x7f0a02ba;
-        public static int email = 0x7f0a02bb;
-        public static int email_tv = 0x7f0a02bc;
-        public static int end = 0x7f0a02be;
-        public static int end_date_tv = 0x7f0a02c0;
-        public static int engineer_detail_btn = 0x7f0a02c2;
-        public static int engnr_amount_lbl = 0x7f0a02c3;
-        public static int engnr_balance_lbl = 0x7f0a02c4;
-        public static int engnr_discount_lbl = 0x7f0a02c5;
-        public static int engnr_fee_name = 0x7f0a02c6;
-        public static int engnr_paid_lbl = 0x7f0a02c7;
-        public static int engnr_paying_lbl = 0x7f0a02c8;
-        public static int engnr_scholorship_lbl = 0x7f0a02c9;
-        public static int equip_asset_type = 0x7f0a02cc;
-        public static int equip_fecility = 0x7f0a02cd;
-        public static int equip_status = 0x7f0a02ce;
-        public static int equip_type = 0x7f0a02cf;
-        public static int error_lyt = 0x7f0a02d0;
-        public static int error_tv = 0x7f0a02d1;
-        public static int et__date_of_birth = 0x7f0a02d3;
-        public static int et_aadhaar_number = 0x7f0a02d4;
-        public static int et_aadhar_no = 0x7f0a02d5;
-        public static int et_abc_id = 0x7f0a02d6;
-        public static int et_academic_details = 0x7f0a02d7;
-        public static int et_accno = 0x7f0a02d8;
-        public static int et_accounts_details = 0x7f0a02d9;
-        public static int et_achievements = 0x7f0a02da;
-        public static int et_address = 0x7f0a02db;
-        public static int et_agency = 0x7f0a02dc;
-        public static int et_amount = 0x7f0a02dd;
-        public static int et_amount_paid = 0x7f0a02de;
-        public static int et_annual_income = 0x7f0a02df;
-        public static int et_author = 0x7f0a02e0;
-        public static int et_award = 0x7f0a02e1;
-        public static int et_back_paper_count = 0x7f0a02e2;
-        public static int et_bank_name = 0x7f0a02e3;
-        public static int et_booking_date = 0x7f0a02e4;
-        public static int et_booking_day = 0x7f0a02e5;
-        public static int et_branch_name = 0x7f0a02e6;
-        public static int et_bus_details = 0x7f0a02e7;
-        public static int et_comment_msg = 0x7f0a02e8;
-        public static int et_company = 0x7f0a02e9;
-        public static int et_company_address = 0x7f0a02ea;
-        public static int et_company_name = 0x7f0a02eb;
-        public static int et_concession_details = 0x7f0a02ec;
-        public static int et_conference = 0x7f0a02ed;
-        public static int et_confirm_accno = 0x7f0a02ee;
-        public static int et_confirm_pass = 0x7f0a02ef;
-        public static int et_contact_num = 0x7f0a02f0;
-        public static int et_credits_earned = 0x7f0a02f1;
-        public static int et_cs_concern = 0x7f0a02f2;
-        public static int et_cs_concern_home = 0x7f0a02f3;
-        public static int et_current_password = 0x7f0a02f4;
-        public static int et_date = 0x7f0a02f5;
-        public static int et_date2 = 0x7f0a02f6;
-        public static int et_date_payment = 0x7f0a02f7;
-        public static int et_dept_details = 0x7f0a02f8;
-        public static int et_dept_lib = 0x7f0a02f9;
-        public static int et_description = 0x7f0a02fa;
-        public static int et_descriptive = 0x7f0a02fb;
-        public static int et_details = 0x7f0a02fc;
-        public static int et_distance = 0x7f0a02fd;
-        public static int et_due_details = 0x7f0a02fe;
-        public static int et_duration = 0x7f0a02ff;
-        public static int et_earned_credits = 0x7f0a0300;
-        public static int et_edition = 0x7f0a0301;
-        public static int et_email_id = 0x7f0a0302;
-        public static int et_end_date = 0x7f0a0303;
-        public static int et_exact_boarding_point = 0x7f0a0304;
-        public static int et_fine_details = 0x7f0a0305;
-        public static int et_first_name = 0x7f0a0306;
-        public static int et_from_date = 0x7f0a0307;
-        public static int et_from_date2 = 0x7f0a0308;
-        public static int et_gr_subject = 0x7f0a0309;
-        public static int et_hostel_details = 0x7f0a030a;
-        public static int et_ifsc_code = 0x7f0a030b;
-        public static int et_isbn = 0x7f0a030c;
-        public static int et_journel = 0x7f0a030d;
-        public static int et_lab_one = 0x7f0a030e;
-        public static int et_lab_one_details = 0x7f0a030f;
-        public static int et_lab_two = 0x7f0a0310;
-        public static int et_lab_two_details = 0x7f0a0311;
-        public static int et_last_name = 0x7f0a0312;
-        public static int et_library_details = 0x7f0a0313;
-        public static int et_membership_id = 0x7f0a0314;
-        public static int et_middle_name = 0x7f0a0315;
-        public static int et_mobile_number = 0x7f0a0316;
-        public static int et_mode_payment = 0x7f0a0317;
-        public static int et_month_year = 0x7f0a0318;
-        public static int et_name = 0x7f0a0319;
-        public static int et_name_address = 0x7f0a031a;
-        public static int et_name_of_house = 0x7f0a031b;
-        public static int et_new_password = 0x7f0a031c;
-        public static int et_orgaanised_by = 0x7f0a031d;
-        public static int et_other_details = 0x7f0a031e;
-        public static int et_parent_email = 0x7f0a031f;
-        public static int et_parent_no = 0x7f0a0320;
-        public static int et_parents_mob = 0x7f0a0321;
-        public static int et_period_discontinued = 0x7f0a0322;
-        public static int et_phone = 0x7f0a0323;
-        public static int et_phone_number = 0x7f0a0324;
-        public static int et_place_birth = 0x7f0a0325;
-        public static int et_publication = 0x7f0a0326;
-        public static int et_quantity = 0x7f0a0327;
-        public static int et_reason = 0x7f0a0328;
-        public static int et_reason1 = 0x7f0a0329;
-        public static int et_reason2 = 0x7f0a032a;
-        public static int et_reason3 = 0x7f0a032b;
-        public static int et_ref_no = 0x7f0a032c;
-        public static int et_remarks = 0x7f0a032d;
-        public static int et_remind = 0x7f0a032e;
-        public static int et_reply_msg = 0x7f0a032f;
-        public static int et_review = 0x7f0a0330;
-        public static int et_score = 0x7f0a0331;
-        public static int et_sem1 = 0x7f0a0332;
-        public static int et_sem2 = 0x7f0a0333;
-        public static int et_sem3 = 0x7f0a0334;
-        public static int et_sem_academic_due = 0x7f0a0335;
-        public static int et_sem_account_due = 0x7f0a0336;
-        public static int et_sem_amount = 0x7f0a0337;
-        public static int et_sem_bank_name = 0x7f0a0338;
-        public static int et_sem_bus_due = 0x7f0a0339;
-        public static int et_sem_count_back_paper = 0x7f0a033a;
-        public static int et_sem_department_due = 0x7f0a033b;
-        public static int et_sem_earned_credit = 0x7f0a033c;
-        public static int et_sem_fee_concession_category = 0x7f0a033d;
-        public static int et_sem_hostel_due = 0x7f0a033e;
-        public static int et_sem_library_due = 0x7f0a033f;
-        public static int et_sem_mode_of_payment = 0x7f0a0340;
-        public static int et_sem_month_year = 0x7f0a0341;
-        public static int et_sem_one = 0x7f0a0342;
-        public static int et_sem_paid_date = 0x7f0a0343;
-        public static int et_sem_ref_no = 0x7f0a0344;
-        public static int et_sem_submit_btn = 0x7f0a0345;
-        public static int et_strength = 0x7f0a0346;
-        public static int et_sub1 = 0x7f0a0347;
-        public static int et_sub2 = 0x7f0a0348;
-        public static int et_sub3 = 0x7f0a0349;
-        public static int et_title = 0x7f0a034a;
-        public static int et_to_date = 0x7f0a034b;
-        public static int et_to_date2 = 0x7f0a034c;
-        public static int etlab = 0x7f0a034d;
-        public static int event_name_view = 0x7f0a034e;
-        public static int event_tv = 0x7f0a034f;
-        public static int event_type = 0x7f0a0350;
-        public static int exam_amount = 0x7f0a0351;
-        public static int exam_answerscript = 0x7f0a0352;
-        public static int exam_att_tv = 0x7f0a0353;
-        public static int exam_card = 0x7f0a0354;
-        public static int exam_check_box = 0x7f0a0355;
-        public static int exam_concession = 0x7f0a0356;
-        public static int exam_description = 0x7f0a0357;
-        public static int exam_download = 0x7f0a0358;
-        public static int exam_grade = 0x7f0a0359;
-        public static int exam_group = 0x7f0a035a;
-        public static int exam_msg = 0x7f0a035b;
-        public static int exam_name = 0x7f0a035c;
-        public static int exam_no = 0x7f0a035d;
-        public static int exam_pager = 0x7f0a035e;
-        public static int exam_result = 0x7f0a035f;
-        public static int exam_result_lyt = 0x7f0a0360;
-        public static int exam_revaluation = 0x7f0a0361;
-        public static int exam_revaluation_amnt = 0x7f0a0362;
-        public static int exam_revaluation_type = 0x7f0a0363;
-        public static int exam_script_amnt = 0x7f0a0364;
-        public static int exam_select = 0x7f0a0365;
-        public static int exam_sub_head = 0x7f0a0366;
-        public static int exam_subject = 0x7f0a0367;
-        public static int exam_type = 0x7f0a0368;
-        public static int exam_upload = 0x7f0a0369;
-        public static int exam_yes = 0x7f0a036a;
-        public static int exit_btn = 0x7f0a036c;
-        public static int exm_download = 0x7f0a036d;
-        public static int exm_issue_date = 0x7f0a036e;
-        public static int exm_last_date = 0x7f0a036f;
-        public static int exm_sem = 0x7f0a0370;
-        public static int exm_status = 0x7f0a0371;
-        public static int exm_title = 0x7f0a0372;
-        public static int exm_upload_btn = 0x7f0a0373;
-        public static int expand_ass_layout = 0x7f0a0375;
-        public static int expand_hw_layout = 0x7f0a0376;
-        public static int expand_layout = 0x7f0a0377;
-        public static int fabChange = 0x7f0a0379;
-        public static int fabHostelFee = 0x7f0a037a;
-        public static int fabSpecial = 0x7f0a037b;
-        public static int fab_add_counselling = 0x7f0a037c;
-        public static int fab_add_grievance = 0x7f0a037d;
-        public static int fab_add_leave = 0x7f0a037e;
-        public static int fab_add_sem_reg = 0x7f0a037f;
-        public static int fab_add_sub_reg = 0x7f0a0380;
-        public static int fab_add_trans_reg = 0x7f0a0381;
-        public static int fab_ass = 0x7f0a0382;
-        public static int fab_assignment_result_semester = 0x7f0a0383;
-        public static int fab_assignment_semester = 0x7f0a0384;
-        public static int fab_date = 0x7f0a0385;
-        public static int fab_date_filter = 0x7f0a0386;
-        public static int fab_date_picker = 0x7f0a0387;
-        public static int fab_internal_result_semester = 0x7f0a0388;
-        public static int fab_module_result_semester = 0x7f0a038a;
-        public static int fab_series_semester = 0x7f0a038b;
-        public static int fab_session = 0x7f0a038c;
-        public static int fab_subject_semester = 0x7f0a038d;
-        public static int fab_tutorial_result_semester = 0x7f0a038e;
-        public static int fab_univ = 0x7f0a038f;
-        public static int fab_video_semester = 0x7f0a0390;
-        public static int father_name = 0x7f0a0392;
-        public static int father_number = 0x7f0a0393;
-        public static int father_occ = 0x7f0a0394;
-        public static int feeLayout = 0x7f0a0395;
-        public static int fee_details_lt = 0x7f0a0396;
-        public static int fee_details_tv = 0x7f0a0397;
-        public static int fee_due = 0x7f0a0398;
-        public static int fee_engnr_amt = 0x7f0a0399;
-        public static int fee_engnr_balance = 0x7f0a039a;
-        public static int fee_engnr_check_box = 0x7f0a039b;
-        public static int fee_engnr_head = 0x7f0a039c;
-        public static int fee_head = 0x7f0a039d;
-        public static int fee_layout = 0x7f0a039e;
-        public static int fee_lyt = 0x7f0a039f;
-        public static int fee_no = 0x7f0a03a0;
-        public static int fee_paid_group = 0x7f0a03a1;
-        public static int fee_receipt = 0x7f0a03a2;
-        public static int fee_receipt_lyt = 0x7f0a03a3;
-        public static int fee_transport_check_box = 0x7f0a03a4;
-        public static int fee_yes = 0x7f0a03a5;
-        public static int file_name = 0x7f0a03a6;
-        public static int file_name_second = 0x7f0a03a7;
-        public static int file_type_answer = 0x7f0a03a8;
-        public static int file_type_is_attended = 0x7f0a03a9;
-        public static int file_type_mark = 0x7f0a03aa;
-        public static int file_type_question = 0x7f0a03ab;
-        public static int file_type_view_btn = 0x7f0a03ac;
-        public static int fill_name = 0x7f0a03af;
-        public static int filter_all = 0x7f0a03b2;
-        public static int filter_group = 0x7f0a03b3;
-        public static int filter_notsubmited = 0x7f0a03b4;
-        public static int filter_submited = 0x7f0a03b5;
-        public static int filter_submitted = 0x7f0a03b6;
-        public static int final_questions_lyt = 0x7f0a03b7;
-        public static int fine = 0x7f0a03b8;
-        public static int fine_layout = 0x7f0a03b9;
-        public static int finish_btn = 0x7f0a03ba;
-        public static int first_dose_btn = 0x7f0a03bb;
-        public static int fromDate = 0x7f0a03c9;
-        public static int from_date = 0x7f0a03ca;
-        public static int from_date_tv = 0x7f0a03cb;
-        public static int full_screen_qr_btn = 0x7f0a03cd;
-        public static int funded_details_btn = 0x7f0a03cf;
-        public static int ge_subject = 0x7f0a03d0;
-        public static int gender = 0x7f0a03d1;
-        public static int general_details_arrowBtn = 0x7f0a03d2;
-        public static int generate_btn = 0x7f0a03d3;
-        public static int global_elec_lt = 0x7f0a03d7;
-        public static int global_elec_third_lt = 0x7f0a03d8;
-        public static int global_elec_tv = 0x7f0a03d9;
-        public static int global_elective1 = 0x7f0a03da;
-        public static int global_elective2 = 0x7f0a03db;
-        public static int global_elective3 = 0x7f0a03dc;
-        public static int global_elective_lyt = 0x7f0a03dd;
-        public static int gr_action_taken = 0x7f0a03df;
-        public static int gr_comment = 0x7f0a03e0;
-        public static int gr_complaint = 0x7f0a03e1;
-        public static int gr_date = 0x7f0a03e2;
-        public static int gr_date_of_reply = 0x7f0a03e3;
-        public static int gr_delete = 0x7f0a03e4;
-        public static int gr_details = 0x7f0a03e5;
-        public static int gr_edit = 0x7f0a03e6;
-        public static int gr_grievant = 0x7f0a03e7;
-        public static int gr_number = 0x7f0a03e8;
-        public static int gr_post_date = 0x7f0a03e9;
-        public static int gr_reminder_btn = 0x7f0a03ea;
-        public static int gr_reminder_txt = 0x7f0a03eb;
-        public static int gr_reply = 0x7f0a03ec;
-        public static int gr_reply_details = 0x7f0a03ed;
-        public static int gr_status = 0x7f0a03ee;
-        public static int gr_subject = 0x7f0a03ef;
-        public static int gr_title = 0x7f0a03f0;
-        public static int gr_type = 0x7f0a03f1;
-        public static int gr_upload_path = 0x7f0a03f2;
-        public static int gr_view = 0x7f0a03f3;
-        public static int grade_tv = 0x7f0a03f4;
-        public static int graduate_btn = 0x7f0a03f5;
-        public static int griv_title = 0x7f0a03f8;
-        public static int hFeeSearchBtn = 0x7f0a03fc;
-        public static int head_tv = 0x7f0a03fd;
-        public static int help_btn = 0x7f0a03ff;
-        public static int hod_email = 0x7f0a0402;
-        public static int hod_image = 0x7f0a0403;
-        public static int hod_name = 0x7f0a0404;
-        public static int hod_phone = 0x7f0a0405;
-        public static int hod_remark_layout = 0x7f0a0406;
-        public static int hod_subject = 0x7f0a0407;
-        public static int home_work_download = 0x7f0a040a;
-        public static int home_work_issue_date = 0x7f0a040b;
-        public static int home_work_last_date = 0x7f0a040c;
-        public static int home_work_late_date = 0x7f0a040d;
-        public static int home_work_late_status = 0x7f0a040e;
-        public static int home_work_sem = 0x7f0a040f;
-        public static int home_work_status = 0x7f0a0410;
-        public static int home_work_subject = 0x7f0a0411;
-        public static int home_work_title = 0x7f0a0412;
-        public static int home_work_upload_btn = 0x7f0a0413;
-        public static int honor_minor_lt = 0x7f0a0415;
-        public static int honor_minor_tv = 0x7f0a0416;
-        public static int honour_group = 0x7f0a0417;
-        public static int honour_lyt = 0x7f0a0418;
-        public static int honour_no = 0x7f0a0419;
-        public static int honour_yes = 0x7f0a041a;
-        public static int hostFeeAmount = 0x7f0a041c;
-        public static int hostFeeFine = 0x7f0a041d;
-        public static int hostJDate = 0x7f0a041e;
-        public static int hostName = 0x7f0a041f;
-        public static int hostPayMsg = 0x7f0a0420;
-        public static int hostPayNext = 0x7f0a0421;
-        public static int hostReAmount = 0x7f0a0422;
-        public static int hostReDate = 0x7f0a0423;
-        public static int hostReHostel = 0x7f0a0424;
-        public static int hostReInst = 0x7f0a0425;
-        public static int hostReNo = 0x7f0a0426;
-        public static int hostReciptDate = 0x7f0a0427;
-        public static int hostRecycPayName = 0x7f0a0428;
-        public static int hostRecycPayable = 0x7f0a0429;
-        public static int hostRoom = 0x7f0a042a;
-        public static int hostTotPayebl = 0x7f0a042b;
-        public static int hostdialPayable = 0x7f0a042c;
-        public static int hostdiloPayAmount = 0x7f0a042d;
-        public static int hostdiloPaySchol = 0x7f0a042e;
-        public static int hostelPayNextdate = 0x7f0a042f;
-        public static int hostelPayNow = 0x7f0a0430;
-        public static int hostelReDate = 0x7f0a0431;
-        public static int hostelReNo = 0x7f0a0432;
-        public static int hostelWeb = 0x7f0a0433;
-        public static int hostel_applied_for_re = 0x7f0a0434;
-        public static int hostel_due = 0x7f0a0435;
-        public static int hostel_fee_detail = 0x7f0a0436;
-        public static int hostel_fee_name = 0x7f0a0437;
-        public static int hostel_group = 0x7f0a0438;
-        public static int hostel_installment = 0x7f0a0439;
-        public static int hostel_late_fee = 0x7f0a043a;
-        public static int hostel_main_adjustment = 0x7f0a043b;
-        public static int hostel_main_amount = 0x7f0a043c;
-        public static int hostel_main_balance = 0x7f0a043d;
-        public static int hostel_main_paid = 0x7f0a043e;
-        public static int hostel_main_payable = 0x7f0a043f;
-        public static int hostel_main_scholarship = 0x7f0a0440;
-        public static int hostel_month = 0x7f0a0441;
-        public static int hostel_name = 0x7f0a0442;
-        public static int hostel_name_tv = 0x7f0a0443;
-        public static int hostel_new_registration = 0x7f0a0444;
-        public static int hostel_no = 0x7f0a0445;
-        public static int hostel_pay_btn = 0x7f0a0446;
-        public static int hostel_payment_method = 0x7f0a0447;
-        public static int hostel_receipt_amount = 0x7f0a0448;
-        public static int hostel_receipt_date = 0x7f0a0449;
-        public static int hostel_receipt_no = 0x7f0a044a;
-        public static int hostel_tv = 0x7f0a044b;
-        public static int hostel_web_view = 0x7f0a044c;
-        public static int hostel_yes = 0x7f0a044d;
-        public static int hour_spinner = 0x7f0a044e;
-        public static int hour_tv = 0x7f0a044f;
-        public static int house_name_itr = 0x7f0a0450;
-        public static int hw_card = 0x7f0a0451;
-        public static int hw_detail_layout = 0x7f0a0452;
-        public static int hw_details = 0x7f0a0453;
-        public static int hw_details_layout = 0x7f0a0454;
-        public static int hw_feedback_layout = 0x7f0a0455;
-        public static int hw_select = 0x7f0a0456;
-        public static int hw_teacher_feedback = 0x7f0a0457;
-        public static int hw_toggle = 0x7f0a0458;
-        public static int hw_upload = 0x7f0a0459;
-        public static int id_tv = 0x7f0a045e;
-        public static int ifsc = 0x7f0a0460;
-        public static int ifsc_et = 0x7f0a0461;
-        public static int ifsc_tv = 0x7f0a0462;
-        public static int image = 0x7f0a0465;
-        public static int inbox_badge = 0x7f0a0468;
-        public static int inbox_content = 0x7f0a0469;
-        public static int inbox_coordinate_layout = 0x7f0a046a;
-        public static int inbox_date = 0x7f0a046b;
-        public static int inbox_from = 0x7f0a046c;
-        public static int inbox_layout = 0x7f0a046d;
-        public static int inbox_subject = 0x7f0a046e;
-        public static int inbox_view = 0x7f0a046f;
-        public static int index_tv = 0x7f0a0472;
-        public static int info_btn = 0x7f0a0474;
-        public static int info_date = 0x7f0a0475;
-        public static int info_dialog = 0x7f0a0476;
-        public static int info_time_table_home = 0x7f0a0477;
-        public static int info_title = 0x7f0a0478;
-        public static int info_type = 0x7f0a0479;
-        public static int installment_check = 0x7f0a047a;
-        public static int installment_head = 0x7f0a047b;
-        public static int installment_main_check = 0x7f0a047c;
-        public static int installment_name = 0x7f0a047d;
-        public static int internal_layout = 0x7f0a047e;
-        public static int internal_mark = 0x7f0a047f;
-        public static int internal_mark_tv = 0x7f0a0480;
-        public static int internal_sem_text = 0x7f0a0481;
-        public static int internshipFromDate = 0x7f0a0482;
-        public static int internshipToDate = 0x7f0a0483;
-        public static int internship_from = 0x7f0a0484;
-        public static int internship_status = 0x7f0a0485;
-        public static int internship_to = 0x7f0a0486;
-        public static int ipg_download_btn = 0x7f0a0489;
-        public static int is_hostler_tv = 0x7f0a048a;
-        public static int itr_lyt = 0x7f0a048e;
-        public static int iv_dash = 0x7f0a048f;
-        public static int iv_pro_pic = 0x7f0a0490;
-        public static int iv_signature = 0x7f0a0491;
-        public static int iv_yt_thumbnail = 0x7f0a0492;
-        public static int join_date = 0x7f0a0493;
-        public static int journal_name_tv = 0x7f0a0494;
-        public static int kmea_amount_tv = 0x7f0a0497;
-        public static int kmea_fine_tv = 0x7f0a0498;
-        public static int kmea_month_tv = 0x7f0a0499;
-        public static int kmea_total_tv = 0x7f0a049a;
-        public static int lab_due_amount = 0x7f0a049b;
-        public static int lab_due_date = 0x7f0a049c;
-        public static int lab_due_equipment_name = 0x7f0a049d;
-        public static int lab_due_lab_name = 0x7f0a049e;
-        public static int lab_due_paid_date = 0x7f0a049f;
-        public static int lab_due_status = 0x7f0a04a0;
-        public static int lab_exp_output = 0x7f0a04a1;
-        public static int lab_exp_record = 0x7f0a04a2;
-        public static int lab_exp_topic = 0x7f0a04a3;
-        public static int lab_exp_viva = 0x7f0a04a4;
-        public static int lab_list_name = 0x7f0a04a5;
-        public static int lab_one_group = 0x7f0a04a6;
-        public static int lab_one_no = 0x7f0a04a7;
-        public static int lab_one_yes = 0x7f0a04a8;
-        public static int lab_practical_attendance = 0x7f0a04a9;
-        public static int lab_practical_name = 0x7f0a04aa;
-        public static int lab_two_group = 0x7f0a04ab;
-        public static int lab_two_no = 0x7f0a04ac;
-        public static int lab_two_yes = 0x7f0a04ad;
-        public static int late_layout = 0x7f0a04af;
-        public static int layoutPayConfirm = 0x7f0a04b1;
-        public static int layoutPayable = 0x7f0a04b2;
-        public static int leave_available = 0x7f0a04b3;
-        public static int leave_pager = 0x7f0a04b4;
-        public static int leave_taken = 0x7f0a04b5;
-        public static int leave_type_hostel = 0x7f0a04b6;
-        public static int level_tv = 0x7f0a04bc;
-        public static int library_btn = 0x7f0a04bd;
-        public static int library_card = 0x7f0a04be;
-        public static int library_due = 0x7f0a04bf;
-        public static int library_group = 0x7f0a04c0;
-        public static int library_no = 0x7f0a04c1;
-        public static int library_yes = 0x7f0a04c2;
-        public static int line = 0x7f0a04c4;
-        public static int linearArtsFee = 0x7f0a04c8;
-        public static int linearEngnrFee = 0x7f0a04c9;
-        public static int linearHost = 0x7f0a04ca;
-        public static int linearHostel = 0x7f0a04cb;
-        public static int linearLibraryBooks = 0x7f0a04cc;
-        public static int linearcoverage1 = 0x7f0a04cd;
-        public static int linearcoverage2 = 0x7f0a04ce;
-        public static int linearcoverage3 = 0x7f0a04cf;
-        public static int linearcoverage4 = 0x7f0a04d0;
-        public static int linearcoverage5 = 0x7f0a04d1;
-        public static int linearcoverage6 = 0x7f0a04d2;
-        public static int linearcoverage7 = 0x7f0a04d3;
-        public static int linearcoverage8 = 0x7f0a04d4;
-        public static int linearhour1 = 0x7f0a04d5;
-        public static int linearlt = 0x7f0a04d6;
-        public static int linearplay = 0x7f0a04d7;
-        public static int live = 0x7f0a04da;
-        public static int live_date = 0x7f0a04db;
-        public static int live_details = 0x7f0a04dc;
-        public static int live_title = 0x7f0a04dd;
-        public static int live_type = 0x7f0a04de;
-        public static int loader = 0x7f0a04df;
-        public static int login_btn = 0x7f0a04e1;
-        public static int login_lyt = 0x7f0a04e2;
-        public static int login_main_lyt = 0x7f0a04e3;
-        public static int logout_btn = 0x7f0a04e4;
-        public static int logout_lyt = 0x7f0a04e5;
-        public static int lt_date = 0x7f0a04e6;
-        public static int lt_end_date = 0x7f0a04e7;
-        public static int lt_from_date = 0x7f0a04e8;
-        public static int main_container = 0x7f0a04eb;
-        public static int manage_activity_btn = 0x7f0a04ec;
-        public static int manage_activity_name = 0x7f0a04ed;
-        public static int manage_activity_point = 0x7f0a04ee;
-        public static int manage_activity_sem = 0x7f0a04ef;
-        public static int manage_btn = 0x7f0a04f0;
-        public static int manage_details = 0x7f0a04f1;
-        public static int manage_status = 0x7f0a04f2;
-        public static int material_date = 0x7f0a0500;
-        public static int material_download_btn = 0x7f0a0501;
-        public static int material_link = 0x7f0a0505;
-        public static int material_module = 0x7f0a0508;
-        public static int material_name = 0x7f0a0509;
-        public static int material_sem = 0x7f0a050a;
-        public static int material_title = 0x7f0a0511;
-        public static int max_qty_tv = 0x7f0a0514;
-        public static int mbits_lyt = 0x7f0a0515;
-        public static int mcq_option = 0x7f0a0516;
-        public static int mcq_option_view = 0x7f0a0517;
-        public static int mdc1_lyt = 0x7f0a0518;
-        public static int mdc2_lyt = 0x7f0a0519;
-        public static int mdc3_lyt = 0x7f0a051a;
-        public static int mdc_subjects_container = 0x7f0a051b;
-        public static int medical_date_f = 0x7f0a051d;
-        public static int medical_date_to = 0x7f0a051e;
-        public static int medical_reason = 0x7f0a051f;
-        public static int medical_remark = 0x7f0a0520;
-        public static int medical_view_side = 0x7f0a0521;
-        public static int member_since_tv = 0x7f0a0522;
-        public static int membership_details_btn = 0x7f0a0523;
-        public static int menu = 0x7f0a0524;
-        public static int merchant_name_tv = 0x7f0a0525;
-        public static int mess_booking_date = 0x7f0a0526;
-        public static int mess_breakfast = 0x7f0a0527;
-        public static int mess_delete_btn = 0x7f0a0528;
-        public static int mess_dinner = 0x7f0a0529;
-        public static int mess_gcek_btn = 0x7f0a052a;
-        public static int mess_layout = 0x7f0a052b;
-        public static int mess_lunch = 0x7f0a052c;
-        public static int mess_menu = 0x7f0a052d;
-        public static int mess_menu2 = 0x7f0a052e;
-        public static int mess_menu_1 = 0x7f0a052f;
-        public static int mess_name2 = 0x7f0a0530;
-        public static int mess_qty = 0x7f0a0531;
-        public static int mess_quantity = 0x7f0a0532;
-        public static int mess_snacks = 0x7f0a0533;
-        public static int mess_status = 0x7f0a0534;
-        public static int mess_type = 0x7f0a0535;
-        public static int method_layout = 0x7f0a0537;
-        public static int minor2_lyt = 0x7f0a053a;
-        public static int minor3_lyt = 0x7f0a053b;
-        public static int minor_group = 0x7f0a053c;
-        public static int minor_lyt = 0x7f0a053d;
-        public static int minor_no = 0x7f0a053e;
-        public static int minor_subjects_container = 0x7f0a053f;
-        public static int minor_yes = 0x7f0a0540;
-        public static int mis_colg = 0x7f0a0541;
-        public static int mis_dept = 0x7f0a0542;
-        public static int mission_btn = 0x7f0a0543;
-        public static int mits_hostel_webview = 0x7f0a0544;
-        public static int mobile_number_tv = 0x7f0a0545;
-        public static int module = 0x7f0a0546;
-        public static int module_layout = 0x7f0a0547;
-        public static int module_sem_tv = 0x7f0a0548;
-        public static int monSpin = 0x7f0a0549;
-        public static int month_layout = 0x7f0a054d;
-        public static int month_lbl = 0x7f0a054e;
-        public static int month_tv = 0x7f0a0554;
-        public static int month_year_cgpa_et = 0x7f0a0555;
-        public static int mooc_details_btn = 0x7f0a0556;
-        public static int mother_name = 0x7f0a0557;
-        public static int mother_num = 0x7f0a0558;
-        public static int mother_occ = 0x7f0a0559;
-        public static int mt_academic_detail = 0x7f0a055b;
-        public static int mt_account_detail = 0x7f0a055c;
-        public static int mt_address = 0x7f0a055d;
-        public static int mt_amount = 0x7f0a055e;
-        public static int mt_amount_paid = 0x7f0a055f;
-        public static int mt_back_papers = 0x7f0a0560;
-        public static int mt_bank_name = 0x7f0a0561;
-        public static int mt_bus_detail = 0x7f0a0562;
-        public static int mt_concession_detsils = 0x7f0a0563;
-        public static int mt_date_payment = 0x7f0a0564;
-        public static int mt_dept_detail = 0x7f0a0565;
-        public static int mt_dept_lib = 0x7f0a0566;
-        public static int mt_descriptive = 0x7f0a0567;
-        public static int mt_exact_boarding_point = 0x7f0a0568;
-        public static int mt_hostel_detail = 0x7f0a0569;
-        public static int mt_lab_one_details = 0x7f0a056a;
-        public static int mt_lab_two_details = 0x7f0a056b;
-        public static int mt_library_detail = 0x7f0a056c;
-        public static int mt_library_details = 0x7f0a056d;
-        public static int mt_mode_payment = 0x7f0a056e;
-        public static int mt_month_year = 0x7f0a056f;
-        public static int mt_parent_email = 0x7f0a0570;
-        public static int mt_parent_no = 0x7f0a0571;
-        public static int mt_reason1 = 0x7f0a0572;
-        public static int mt_reason2 = 0x7f0a0573;
-        public static int mt_reason3 = 0x7f0a0574;
-        public static int mt_ref_no = 0x7f0a0575;
-        public static int mt_remarks = 0x7f0a0576;
-        public static int mt_sem1 = 0x7f0a0577;
-        public static int mt_sem2 = 0x7f0a0578;
-        public static int mt_sem3 = 0x7f0a0579;
-        public static int mt_strength = 0x7f0a057a;
-        public static int mt_sub1 = 0x7f0a057b;
-        public static int mt_sub2 = 0x7f0a057c;
-        public static int mt_sub3 = 0x7f0a057d;
-        public static int multiple_answer_lyt = 0x7f0a0595;
-        public static int name = 0x7f0a0597;
-        public static int name_et = 0x7f0a0598;
-        public static int name_layout = 0x7f0a0599;
-        public static int name_of_leave = 0x7f0a059a;
-        public static int name_of_parent_itr = 0x7f0a059b;
-        public static int name_re = 0x7f0a059c;
-        public static int name_tv = 0x7f0a059d;
-        public static int new_registration_btn = 0x7f0a05ab;
-        public static int next_btn = 0x7f0a05ac;
-        public static int next_eight = 0x7f0a05ad;
-        public static int next_five = 0x7f0a05ae;
-        public static int next_four = 0x7f0a05af;
-        public static int next_one = 0x7f0a05b0;
-        public static int next_seven = 0x7f0a05b1;
-        public static int next_six = 0x7f0a05b2;
-        public static int next_store_btn = 0x7f0a05b3;
-        public static int next_three = 0x7f0a05b4;
-        public static int next_two = 0x7f0a05b5;
-        public static int no_data = 0x7f0a05b8;
-        public static int no_data_lyt = 0x7f0a05b9;
-        public static int no_data_tv = 0x7f0a05ba;
-        public static int no_of_entries = 0x7f0a05bb;
-        public static int not_covered = 0x7f0a05bf;
-        public static int not_covered_home = 0x7f0a05c0;
-        public static int not_covered_module = 0x7f0a05c1;
-        public static int not_marked_text = 0x7f0a05c2;
-        public static int not_registered_btn = 0x7f0a05c3;
-        public static int notice_content = 0x7f0a05c4;
-        public static int notice_create = 0x7f0a05c5;
-        public static int notice_cv = 0x7f0a05c6;
-        public static int notice_date = 0x7f0a05c7;
-        public static int notice_heading = 0x7f0a05c8;
-        public static int notice_text = 0x7f0a05c9;
-        public static int number = 0x7f0a05cd;
-        public static int number_tv = 0x7f0a05ce;
-        public static int option1 = 0x7f0a05e3;
-        public static int option2 = 0x7f0a05e4;
-        public static int option3 = 0x7f0a05e5;
-        public static int option4 = 0x7f0a05e6;
-        public static int option5 = 0x7f0a05e7;
-        public static int option_1 = 0x7f0a05e8;
-        public static int option_2 = 0x7f0a05e9;
-        public static int option_3 = 0x7f0a05ea;
-        public static int option_4 = 0x7f0a05eb;
-        public static int option_5 = 0x7f0a05ec;
-        public static int option_6 = 0x7f0a05ed;
-        public static int order_history_btn = 0x7f0a05ee;
-        public static int order_history_layout = 0x7f0a05ef;
-        public static int organised_by = 0x7f0a05f0;
-        public static int organized_tv = 0x7f0a05f1;
-        public static int original_cert_lyt = 0x7f0a05f2;
-        public static int other_company_layout = 0x7f0a05f3;
-        public static int other_details_btn = 0x7f0a05f4;
-        public static int outcome_btn = 0x7f0a05f5;
-        public static int page_eight = 0x7f0a05fa;
-        public static int page_five = 0x7f0a05fb;
-        public static int page_four = 0x7f0a05fc;
-        public static int page_one = 0x7f0a05fd;
-        public static int page_seven = 0x7f0a05fe;
-        public static int page_six = 0x7f0a05ff;
-        public static int page_three = 0x7f0a0600;
-        public static int page_two = 0x7f0a0601;
-        public static int paid_lbl = 0x7f0a0602;
-        public static int parent_details_lyt = 0x7f0a0607;
-        public static int password = 0x7f0a0609;
-        public static int pathway_tv = 0x7f0a060d;
-        public static int pay_btn = 0x7f0a060e;
-        public static int pay_btn_lyt = 0x7f0a060f;
-        public static int pay_confirm_btn = 0x7f0a0610;
-        public static int pay_due_btn = 0x7f0a0611;
-        public static int pay_fee_arts_btn = 0x7f0a0612;
-        public static int pay_fee_btn = 0x7f0a0613;
-        public static int pay_fee_engnr_btn = 0x7f0a0614;
-        public static int pay_fee_medical_btn = 0x7f0a0615;
-        public static int pay_later_btn = 0x7f0a0616;
-        public static int pay_later_lyt = 0x7f0a0617;
-        public static int pay_lyt = 0x7f0a0618;
-        public static int pay_now_btn = 0x7f0a0619;
-        public static int pay_online_btn = 0x7f0a061a;
-        public static int pay_slip_btn = 0x7f0a061b;
-        public static int pay_store_btn = 0x7f0a061c;
-        public static int pay_tkm_btn = 0x7f0a061d;
-        public static int pay_transport_btn = 0x7f0a061e;
-        public static int payable_lbl = 0x7f0a061f;
-        public static int payment_gateway_btn = 0x7f0a0620;
-        public static int period1 = 0x7f0a0623;
-        public static int period2 = 0x7f0a0624;
-        public static int period3 = 0x7f0a0625;
-        public static int period4 = 0x7f0a0626;
-        public static int period5 = 0x7f0a0627;
-        public static int period6 = 0x7f0a0628;
-        public static int period7 = 0x7f0a0629;
-        public static int period8 = 0x7f0a062a;
-        public static int personal_details = 0x7f0a062b;
-        public static int personal_details_lyt = 0x7f0a062c;
-        public static int phone_re = 0x7f0a062d;
-        public static int phone_tv = 0x7f0a062e;
-        public static int pin = 0x7f0a062f;
-        public static int pin_code_itr = 0x7f0a0630;
-        public static int pl_apply_btn = 0x7f0a0631;
-        public static int pl_company_name = 0x7f0a0632;
-        public static int pl_date = 0x7f0a0633;
-        public static int pl_description = 0x7f0a0634;
-        public static int pl_last_date = 0x7f0a0635;
-        public static int place_et = 0x7f0a0636;
-        public static int place_tv = 0x7f0a0637;
-        public static int player_view = 0x7f0a0638;
-        public static int po_survey_btn = 0x7f0a0639;
-        public static int port_tv = 0x7f0a063b;
-        public static int position_details_btn = 0x7f0a063d;
-        public static int post_office_itr = 0x7f0a0640;
-        public static int pre_book_btn = 0x7f0a0641;
-        public static int pref_lyt_five = 0x7f0a0642;
-        public static int pref_lyt_four = 0x7f0a0643;
-        public static int pref_lyt_one = 0x7f0a0644;
-        public static int pref_lyt_three = 0x7f0a0645;
-        public static int pref_lyt_two = 0x7f0a0646;
-        public static int present = 0x7f0a064a;
-        public static int prev_sem_lt = 0x7f0a064c;
-        public static int prev_sem_tv = 0x7f0a064d;
-        public static int previous_btn = 0x7f0a064f;
-        public static int price = 0x7f0a0650;
-        public static int print_btn_hr = 0x7f0a0651;
-        public static int profile_card = 0x7f0a0652;
-        public static int profile_image = 0x7f0a0653;
-        public static int profile_personal_expandableView = 0x7f0a0654;
-        public static int prog_name = 0x7f0a0655;
-        public static int progress_bar = 0x7f0a0656;
-        public static int progress_bar_univ = 0x7f0a0657;
-        public static int progress_text = 0x7f0a065a;
-        public static int progress_view = 0x7f0a065b;
-        public static int project_details_btn = 0x7f0a065c;
-        public static int proof_view = 0x7f0a065d;
-        public static int push_cardview = 0x7f0a065e;
-        public static int push_date = 0x7f0a065f;
-        public static int push_layout = 0x7f0a0660;
-        public static int push_msg = 0x7f0a0661;
-        public static int push_time = 0x7f0a0662;
-        public static int push_title = 0x7f0a0663;
-        public static int q_txt = 0x7f0a0664;
-        public static int qr_download_btn = 0x7f0a0665;
-        public static int qr_image_view = 0x7f0a0666;
-        public static int quality_details_btn = 0x7f0a0667;
-        public static int question = 0x7f0a0668;
-        public static int question_image = 0x7f0a0669;
-        public static int question_layout = 0x7f0a066a;
-        public static int question_lyt_1 = 0x7f0a066b;
-        public static int question_lyt_2 = 0x7f0a066c;
-        public static int question_lyt_3 = 0x7f0a066d;
-        public static int question_lyt_4 = 0x7f0a066e;
-        public static int question_lyt_5 = 0x7f0a066f;
-        public static int question_no = 0x7f0a0670;
-        public static int question_tv = 0x7f0a0671;
-        public static int quiz_btn = 0x7f0a0672;
-        public static int quiz_end_time = 0x7f0a0673;
-        public static int quiz_name = 0x7f0a0674;
-        public static int quiz_question = 0x7f0a0675;
-        public static int quiz_question_no = 0x7f0a0676;
-        public static int quiz_questions_multiple = 0x7f0a0677;
-        public static int quiz_start_time = 0x7f0a0678;
-        public static int quiz_text = 0x7f0a0679;
-        public static int quiz_type = 0x7f0a067a;
-        public static int radio_btn = 0x7f0a067c;
-        public static int re_enter_acc_et = 0x7f0a067f;
-        public static int readmission_re = 0x7f0a0680;
-        public static int reason_cgpa_et = 0x7f0a0681;
-        public static int reason_layout = 0x7f0a0682;
-        public static int reason_leave = 0x7f0a0683;
-        public static int reason_text = 0x7f0a0684;
-        public static int reason_tv = 0x7f0a0685;
-        public static int receipt_amount = 0x7f0a0686;
-        public static int receipt_amt = 0x7f0a0687;
-        public static int receipt_btn = 0x7f0a0688;
-        public static int receipt_card = 0x7f0a0689;
-        public static int receipt_date = 0x7f0a068a;
-        public static int receipt_download = 0x7f0a068b;
-        public static int receipt_gcek_btn = 0x7f0a068c;
-        public static int receipt_installment = 0x7f0a068d;
-        public static int receipt_no = 0x7f0a068e;
-        public static int receipt_pay_method = 0x7f0a068f;
-        public static int receipt_refund = 0x7f0a0690;
-        public static int receipt_status = 0x7f0a0691;
-        public static int receipt_tkm_btn = 0x7f0a0692;
-        public static int reciept_fee_amount = 0x7f0a0693;
-        public static int reciept_fee_batch = 0x7f0a0694;
-        public static int reciept_fee_date = 0x7f0a0695;
-        public static int reciept_fee_layout = 0x7f0a0696;
-        public static int reciept_fee_method = 0x7f0a0697;
-        public static int reciept_fee_re_no = 0x7f0a0698;
-        public static int reciept_fee_status = 0x7f0a0699;
-        public static int recyc_HostelFee = 0x7f0a069b;
-        public static int recyc_feerecip = 0x7f0a069c;
-        public static int recyc_payment = 0x7f0a069d;
-        public static int refund_policy_btn = 0x7f0a069f;
-        public static int reg_btn = 0x7f0a06a0;
-        public static int reg_lyt = 0x7f0a06a1;
-        public static int reg_no = 0x7f0a06a2;
-        public static int reg_slip_btn = 0x7f0a06a3;
-        public static int reg_title = 0x7f0a06a4;
-        public static int reg_tkm_btn = 0x7f0a06a5;
-        public static int register_btn = 0x7f0a06a6;
-        public static int register_layout = 0x7f0a06a7;
-        public static int register_lyt = 0x7f0a06a8;
-        public static int registered_btn = 0x7f0a06a9;
-        public static int registration_type_hr = 0x7f0a06aa;
-        public static int registration_webview = 0x7f0a06ab;
-        public static int reject_btn = 0x7f0a06ac;
-        public static int rejects_tv = 0x7f0a06ad;
-        public static int remarks_re = 0x7f0a06ae;
-        public static int remind_btn = 0x7f0a06af;
-        public static int remove_btn = 0x7f0a06b0;
-        public static int remove_btn_four = 0x7f0a06b1;
-        public static int remove_btn_one = 0x7f0a06b2;
-        public static int remove_btn_three = 0x7f0a06b3;
-        public static int remove_btn_two = 0x7f0a06b4;
-        public static int reply_btn = 0x7f0a06b5;
-        public static int reply_btn_send = 0x7f0a06b6;
-        public static int reply_comment_text = 0x7f0a06b7;
-        public static int reply_comment_user_img = 0x7f0a06b8;
-        public static int reply_comment_user_name = 0x7f0a06b9;
-        public static int reply_layout = 0x7f0a06ba;
-        public static int reply_text = 0x7f0a06bb;
-        public static int reply_user_img = 0x7f0a06bc;
-        public static int reply_user_name = 0x7f0a06bd;
-        public static int required_tv = 0x7f0a06bf;
-        public static int resetWebView = 0x7f0a06c0;
-        public static int reset_btn = 0x7f0a06c1;
-        public static int result_assignment_name = 0x7f0a06c2;
-        public static int result_assignment_score = 0x7f0a06c3;
-        public static int result_assignment_subject = 0x7f0a06c4;
-        public static int result_internal_score = 0x7f0a06c5;
-        public static int result_internal_subject = 0x7f0a06c6;
-        public static int result_module_score = 0x7f0a06c7;
-        public static int result_module_subject = 0x7f0a06c8;
-        public static int result_pager = 0x7f0a06c9;
-        public static int result_session_score = 0x7f0a06ca;
-        public static int result_session_subject = 0x7f0a06cb;
-        public static int result_status = 0x7f0a06cc;
-        public static int retype_acc_lyt = 0x7f0a06cd;
-        public static int retype_acc_no_et = 0x7f0a06ce;
-        public static int retype_acc_no_tv = 0x7f0a06cf;
-        public static int revaluation_check_box = 0x7f0a06d0;
-        public static int revaluation_cv = 0x7f0a06d1;
-        public static int revaluation_fee = 0x7f0a06d2;
-        public static int revaluation_fee_lyt = 0x7f0a06d3;
-        public static int revaluation_lt = 0x7f0a06d4;
-        public static int review_btn = 0x7f0a06d6;
-        public static int revoke_btn = 0x7f0a06d7;
-        public static int revoke_lyt = 0x7f0a06d8;
-        public static int room_no = 0x7f0a06df;
-        public static int room_no_tv = 0x7f0a06e0;
-        public static int root = 0x7f0a06e1;
-        public static int row_header_container = 0x7f0a06e3;
-        public static int row_header_textview = 0x7f0a06e4;
-        public static int rv_action_levels = 0x7f0a06e7;
-        public static int rv_activity_point = 0x7f0a06e8;
-        public static int rv_admission = 0x7f0a06e9;
-        public static int rv_admission_history = 0x7f0a06ea;
-        public static int rv_assignment = 0x7f0a06eb;
-        public static int rv_attendance = 0x7f0a06ec;
-        public static int rv_booking = 0x7f0a06ed;
-        public static int rv_booking_history = 0x7f0a06ee;
-        public static int rv_books = 0x7f0a06ef;
-        public static int rv_books_records = 0x7f0a06f0;
-        public static int rv_calender = 0x7f0a06f1;
-        public static int rv_cell_members = 0x7f0a06f2;
-        public static int rv_certificate_request = 0x7f0a06f3;
-        public static int rv_change_timetable = 0x7f0a06f4;
-        public static int rv_chat = 0x7f0a06f5;
-        public static int rv_circular = 0x7f0a06f6;
-        public static int rv_co = 0x7f0a06f7;
-        public static int rv_college_list = 0x7f0a06f8;
-        public static int rv_comment = 0x7f0a06f9;
-        public static int rv_counselling = 0x7f0a06fa;
-        public static int rv_course = 0x7f0a06fb;
-        public static int rv_dash = 0x7f0a06fc;
-        public static int rv_dash_table_view = 0x7f0a06fd;
-        public static int rv_dates = 0x7f0a06fe;
-        public static int rv_descriptive_quiz = 0x7f0a06ff;
-        public static int rv_due = 0x7f0a0700;
-        public static int rv_due_pay = 0x7f0a0701;
-        public static int rv_duty_direct_leave = 0x7f0a0702;
-        public static int rv_duty_leave = 0x7f0a0703;
-        public static int rv_educational = 0x7f0a0704;
-        public static int rv_evaluation = 0x7f0a0705;
-        public static int rv_exam = 0x7f0a0706;
-        public static int rv_exam_docs = 0x7f0a0707;
-        public static int rv_exam_receipt = 0x7f0a0708;
-        public static int rv_exam_revaluation = 0x7f0a0709;
-        public static int rv_exam_subject = 0x7f0a070a;
-        public static int rv_experiment = 0x7f0a070b;
-        public static int rv_fee = 0x7f0a070c;
-        public static int rv_fee_arts = 0x7f0a070d;
-        public static int rv_fee_engnr = 0x7f0a070e;
-        public static int rv_fee_medical = 0x7f0a070f;
-        public static int rv_fee_receipt = 0x7f0a0710;
-        public static int rv_gr_docs = 0x7f0a0711;
-        public static int rv_grievance = 0x7f0a0712;
-        public static int rv_home_work = 0x7f0a0713;
-        public static int rv_hostel_att_view = 0x7f0a0714;
-        public static int rv_hostel_fee = 0x7f0a0715;
-        public static int rv_hostel_fee_admission = 0x7f0a0716;
-        public static int rv_hostel_fee_details = 0x7f0a0717;
-        public static int rv_hours = 0x7f0a0718;
-        public static int rv_hw_docs = 0x7f0a0719;
-        public static int rv_inbox = 0x7f0a071a;
-        public static int rv_info = 0x7f0a071b;
-        public static int rv_internship = 0x7f0a071c;
-        public static int rv_lab_due = 0x7f0a071d;
-        public static int rv_lab_equipment = 0x7f0a071e;
-        public static int rv_lab_list = 0x7f0a071f;
-        public static int rv_lab_safety = 0x7f0a0720;
-        public static int rv_leave = 0x7f0a0721;
-        public static int rv_live = 0x7f0a0722;
-        public static int rv_manage_activity_point = 0x7f0a0723;
-        public static int rv_materials = 0x7f0a0724;
-        public static int rv_medical = 0x7f0a0725;
-        public static int rv_membership = 0x7f0a0726;
-        public static int rv_mess = 0x7f0a0727;
-        public static int rv_monthly = 0x7f0a0728;
-        public static int rv_monthly_history = 0x7f0a0729;
-        public static int rv_mooc = 0x7f0a072a;
-        public static int rv_msg = 0x7f0a072b;
-        public static int rv_multiple_quiz = 0x7f0a072c;
-        public static int rv_notice = 0x7f0a072d;
-        public static int rv_online_class = 0x7f0a072e;
-        public static int rv_order_history = 0x7f0a072f;
-        public static int rv_outcome = 0x7f0a0730;
-        public static int rv_participation = 0x7f0a0731;
-        public static int rv_placement = 0x7f0a0732;
-        public static int rv_position = 0x7f0a0733;
-        public static int rv_practical = 0x7f0a0734;
-        public static int rv_project = 0x7f0a0735;
-        public static int rv_publication = 0x7f0a0736;
-        public static int rv_push = 0x7f0a0737;
-        public static int rv_question = 0x7f0a0738;
-        public static int rv_question_no = 0x7f0a0739;
-        public static int rv_quiz = 0x7f0a073a;
-        public static int rv_receipts = 0x7f0a073b;
-        public static int rv_reg_history = 0x7f0a073c;
-        public static int rv_reg_history_transport = 0x7f0a073d;
-        public static int rv_reg_list = 0x7f0a073e;
-        public static int rv_registration = 0x7f0a073f;
-        public static int rv_remark = 0x7f0a0740;
-        public static int rv_reply = 0x7f0a0741;
-        public static int rv_research = 0x7f0a0742;
-        public static int rv_result_assignment = 0x7f0a0743;
-        public static int rv_result_internal = 0x7f0a0744;
-        public static int rv_result_list = 0x7f0a0745;
-        public static int rv_result_module_test = 0x7f0a0746;
-        public static int rv_result_session = 0x7f0a0747;
-        public static int rv_scholarship = 0x7f0a0748;
-        public static int rv_sem_history = 0x7f0a0749;
-        public static int rv_sem_list = 0x7f0a074a;
-        public static int rv_semester_no = 0x7f0a074b;
-        public static int rv_session_sem_list = 0x7f0a074c;
-        public static int rv_special_timetable = 0x7f0a074d;
-        public static int rv_specific = 0x7f0a074e;
-        public static int rv_store = 0x7f0a074f;
-        public static int rv_sub_coverage = 0x7f0a0750;
-        public static int rv_sub_status = 0x7f0a0751;
-        public static int rv_subject = 0x7f0a0752;
-        public static int rv_subject_plan = 0x7f0a0753;
-        public static int rv_survey = 0x7f0a0754;
-        public static int rv_survey_questions = 0x7f0a0755;
-        public static int rv_syllabus = 0x7f0a0756;
-        public static int rv_teacher = 0x7f0a0757;
-        public static int rv_teacher_survey = 0x7f0a0758;
-        public static int rv_timetable = 0x7f0a0759;
-        public static int rv_transport = 0x7f0a075a;
-        public static int rv_transport_fee = 0x7f0a075b;
-        public static int rv_transport_fee_history = 0x7f0a075c;
-        public static int rv_tutorial = 0x7f0a075d;
-        public static int rv_univ_exams = 0x7f0a075e;
-        public static int rv_univ_sem_list = 0x7f0a075f;
-        public static int rv_univ_subjects = 0x7f0a0760;
-        public static int rv_upload_quiz = 0x7f0a0761;
-        public static int rv_videos = 0x7f0a0762;
-        public static int safety_measures = 0x7f0a0763;
-        public static int safety_number = 0x7f0a0764;
-        public static int safety_text = 0x7f0a0765;
-        public static int save_btn = 0x7f0a0768;
-        public static int scholarships_details_btn = 0x7f0a076d;
-        public static int scholorship_lbl = 0x7f0a076e;
-        public static int search_btn = 0x7f0a0777;
-        public static int second_dose_btn = 0x7f0a0780;
-        public static int segment_view = 0x7f0a0783;
-        public static int select_all_checkBox = 0x7f0a0784;
-        public static int select_tv = 0x7f0a0786;
-        public static int semSpin = 0x7f0a0789;
-        public static int sem_category = 0x7f0a078a;
-        public static int sem_date = 0x7f0a078b;
-        public static int sem_date_eight = 0x7f0a078c;
-        public static int sem_date_five = 0x7f0a078d;
-        public static int sem_date_four = 0x7f0a078e;
-        public static int sem_date_one = 0x7f0a078f;
-        public static int sem_date_seven = 0x7f0a0790;
-        public static int sem_date_six = 0x7f0a0791;
-        public static int sem_date_three = 0x7f0a0792;
-        public static int sem_date_two = 0x7f0a0793;
-        public static int sem_edit_btn = 0x7f0a0794;
-        public static int sem_history_btn = 0x7f0a0795;
-        public static int sem_last_attended = 0x7f0a0796;
-        public static int sem_list_univ = 0x7f0a0797;
-        public static int sem_name = 0x7f0a0798;
-        public static int sem_question_lyt = 0x7f0a0799;
-        public static int sem_reg_academic = 0x7f0a079a;
-        public static int sem_reg_academic_due = 0x7f0a079b;
-        public static int sem_reg_account = 0x7f0a079c;
-        public static int sem_reg_account_due = 0x7f0a079d;
-        public static int sem_reg_adm_no = 0x7f0a079e;
-        public static int sem_reg_amount = 0x7f0a079f;
-        public static int sem_reg_applied_for = 0x7f0a07a0;
-        public static int sem_reg_back_paper = 0x7f0a07a1;
-        public static int sem_reg_back_paper_count = 0x7f0a07a2;
-        public static int sem_reg_bank = 0x7f0a07a3;
-        public static int sem_reg_bus = 0x7f0a07a4;
-        public static int sem_reg_bus_due = 0x7f0a07a5;
-        public static int sem_reg_department = 0x7f0a07a6;
-        public static int sem_reg_department_due = 0x7f0a07a7;
-        public static int sem_reg_e_grand = 0x7f0a07a8;
-        public static int sem_reg_earned_credit = 0x7f0a07a9;
-        public static int sem_reg_email = 0x7f0a07aa;
-        public static int sem_reg_exam_appear = 0x7f0a07ab;
-        public static int sem_reg_fee_concession = 0x7f0a07ac;
-        public static int sem_reg_fee_paid = 0x7f0a07ad;
-        public static int sem_reg_fee_receipt = 0x7f0a07ae;
-        public static int sem_reg_gender = 0x7f0a07af;
-        public static int sem_reg_hostel = 0x7f0a07b0;
-        public static int sem_reg_hostel_due = 0x7f0a07b1;
-        public static int sem_reg_library = 0x7f0a07b2;
-        public static int sem_reg_library_due = 0x7f0a07b3;
-        public static int sem_reg_month_year = 0x7f0a07b4;
-        public static int sem_reg_name = 0x7f0a07b5;
-        public static int sem_reg_payment_mode = 0x7f0a07b6;
-        public static int sem_reg_phone = 0x7f0a07b7;
-        public static int sem_reg_profile_image = 0x7f0a07b8;
-        public static int sem_reg_ref_no = 0x7f0a07b9;
-        public static int sem_reg_remark_by_hod = 0x7f0a07ba;
-        public static int sem_reg_remark_by_teacher = 0x7f0a07bb;
-        public static int sem_reg_status = 0x7f0a07bc;
-        public static int sem_reg_univ_no = 0x7f0a07bd;
-        public static int sem_status = 0x7f0a07be;
-        public static int sem_tab = 0x7f0a07bf;
-        public static int sem_tv = 0x7f0a07c0;
-        public static int sem_viewpager = 0x7f0a07c1;
-        public static int semester_details_lyt = 0x7f0a07c2;
-        public static int semester_lyt = 0x7f0a07c3;
-        public static int semester_name_hr = 0x7f0a07c4;
-        public static int semester_text = 0x7f0a07c5;
-        public static int semester_tv = 0x7f0a07c6;
-        public static int series_layout = 0x7f0a07c7;
-        public static int session_sem = 0x7f0a07c8;
-        public static int sgpa = 0x7f0a07c9;
-        public static int sgpa_btn = 0x7f0a07ca;
-        public static int sgpa_cgpa_lt = 0x7f0a07cb;
-        public static int sgpa_cgpa_tv = 0x7f0a07cc;
-        public static int sgpa_et = 0x7f0a07cd;
-        public static int sgpa_mark = 0x7f0a07ce;
-        public static int sgpa_tv = 0x7f0a07cf;
-        public static int share_app_btn = 0x7f0a07d0;
-        public static int side_bar_attendance = 0x7f0a07d7;
-        public static int sl_no = 0x7f0a07db;
-        public static int sortBtn = 0x7f0a07e1;
-        public static int sort_all = 0x7f0a07e2;
-        public static int sort_new = 0x7f0a07e3;
-        public static int sort_old = 0x7f0a07e4;
-        public static int source_book_name = 0x7f0a07e5;
-        public static int specific_btn = 0x7f0a07e9;
-        public static int spin_layout = 0x7f0a07ea;
-        public static int spinnerHostelFeeMonth = 0x7f0a07ec;
-        public static int spinnerHostelFeeYear = 0x7f0a07ed;
-        public static int spinnerPort = 0x7f0a07ee;
-        public static int spinnerTon = 0x7f0a07ef;
-        public static int spinnerVehicle = 0x7f0a07f0;
-        public static int spinnerZone = 0x7f0a07f1;
-        public static int spinner_academic_year = 0x7f0a07f2;
-        public static int spinner_additional_elective1 = 0x7f0a07f3;
-        public static int spinner_additional_elective2 = 0x7f0a07f4;
-        public static int spinner_additional_elective3 = 0x7f0a07f5;
-        public static int spinner_aec1 = 0x7f0a07f6;
-        public static int spinner_aec2 = 0x7f0a07f7;
-        public static int spinner_aec3 = 0x7f0a07f8;
-        public static int spinner_behaviour = 0x7f0a07f9;
-        public static int spinner_boarding = 0x7f0a07fa;
-        public static int spinner_category = 0x7f0a07fb;
-        public static int spinner_catogory = 0x7f0a07fc;
-        public static int spinner_certificate_list = 0x7f0a07fd;
-        public static int spinner_clg_list = 0x7f0a07fe;
-        public static int spinner_company_names = 0x7f0a07ff;
-        public static int spinner_competition = 0x7f0a0800;
-        public static int spinner_councelling_before = 0x7f0a0801;
-        public static int spinner_councelling_meet = 0x7f0a0802;
-        public static int spinner_councelling_type = 0x7f0a0803;
-        public static int spinner_cstore_subject = 0x7f0a0804;
-        public static int spinner_defaulter = 0x7f0a0805;
-        public static int spinner_dsc1 = 0x7f0a0806;
-        public static int spinner_dsc2 = 0x7f0a0807;
-        public static int spinner_dsc3 = 0x7f0a0808;
-        public static int spinner_duty_head = 0x7f0a0809;
-        public static int spinner_elective1 = 0x7f0a080a;
-        public static int spinner_elective2 = 0x7f0a080b;
-        public static int spinner_elective3 = 0x7f0a080c;
-        public static int spinner_fee_method = 0x7f0a080d;
-        public static int spinner_fill = 0x7f0a080e;
-        public static int spinner_gender = 0x7f0a080f;
-        public static int spinner_global_elective = 0x7f0a0810;
-        public static int spinner_grievance = 0x7f0a0811;
-        public static int spinner_honour = 0x7f0a0812;
-        public static int spinner_hostel_fee = 0x7f0a0813;
-        public static int spinner_hostel_fee_method = 0x7f0a0814;
-        public static int spinner_hostler = 0x7f0a0815;
-        public static int spinner_index = 0x7f0a0816;
-        public static int spinner_installment = 0x7f0a0817;
-        public static int spinner_layout = 0x7f0a0818;
-        public static int spinner_layout2 = 0x7f0a0819;
-        public static int spinner_leave = 0x7f0a081a;
-        public static int spinner_leave_type = 0x7f0a081b;
-        public static int spinner_level = 0x7f0a081c;
-        public static int spinner_lt = 0x7f0a081d;
-        public static int spinner_mdc1 = 0x7f0a081e;
-        public static int spinner_mdc2 = 0x7f0a081f;
-        public static int spinner_mdc3 = 0x7f0a0820;
-        public static int spinner_mess_menu = 0x7f0a0821;
-        public static int spinner_mess_type = 0x7f0a0822;
-        public static int spinner_minor = 0x7f0a0823;
-        public static int spinner_minor2 = 0x7f0a0824;
-        public static int spinner_minor3 = 0x7f0a0825;
-        public static int spinner_module = 0x7f0a0826;
-        public static int spinner_no_of_year = 0x7f0a0827;
-        public static int spinner_original_cert = 0x7f0a0828;
-        public static int spinner_pathway = 0x7f0a0829;
-        public static int spinner_pr = 0x7f0a082a;
-        public static int spinner_pre = 0x7f0a082b;
-        public static int spinner_preference_five = 0x7f0a082c;
-        public static int spinner_preference_four = 0x7f0a082d;
-        public static int spinner_preference_one = 0x7f0a082e;
-        public static int spinner_preference_three = 0x7f0a082f;
-        public static int spinner_preference_two = 0x7f0a0830;
-        public static int spinner_present_hostel = 0x7f0a0831;
-        public static int spinner_readmission = 0x7f0a0832;
-        public static int spinner_religion = 0x7f0a0833;
-        public static int spinner_request_opted = 0x7f0a0834;
-        public static int spinner_sem = 0x7f0a0835;
-        public static int spinner_sem_reg = 0x7f0a0836;
-        public static int spinner_semester = 0x7f0a0837;
-        public static int spinner_semester2 = 0x7f0a0838;
-        public static int spinner_semester_applied = 0x7f0a0839;
-        public static int spinner_semester_last_attended = 0x7f0a083a;
-        public static int spinner_session = 0x7f0a083b;
-        public static int spinner_since = 0x7f0a083c;
-        public static int spinner_store_department = 0x7f0a083d;
-        public static int spinner_store_semester = 0x7f0a083e;
-        public static int spinner_subjects = 0x7f0a083f;
-        public static int spinner_type = 0x7f0a0840;
-        public static int spinner_year = 0x7f0a0841;
-        public static int spinner_year_transport = 0x7f0a0842;
-        public static int sports_details_btn = 0x7f0a0845;
-        public static int staff_name_tv = 0x7f0a084d;
-        public static int start = 0x7f0a084f;
-        public static int start_date_tv = 0x7f0a0853;
-        public static int state = 0x7f0a0854;
-        public static int state_itr = 0x7f0a0855;
-        public static int stationary_pager = 0x7f0a0858;
-        public static int status = 0x7f0a0859;
-        public static int status_btn = 0x7f0a085b;
-        public static int status_hr = 0x7f0a085c;
-        public static int status_leave = 0x7f0a085d;
-        public static int status_lyt = 0x7f0a085e;
-        public static int status_re = 0x7f0a085f;
-        public static int status_tv = 0x7f0a0860;
-        public static int store_check_box = 0x7f0a0862;
-        public static int store_title = 0x7f0a0863;
-        public static int store_title_price = 0x7f0a0864;
-        public static int street_itr = 0x7f0a0865;
-        public static int strength_lyt = 0x7f0a0866;
-        public static int sub_atten = 0x7f0a0868;
-        public static int sub_name = 0x7f0a0869;
-        public static int sub_name_tv = 0x7f0a086a;
-        public static int sub_total = 0x7f0a086b;
-        public static int sub_tv = 0x7f0a086c;
-        public static int subject_card = 0x7f0a086d;
-        public static int subject_class = 0x7f0a086e;
-        public static int subject_head = 0x7f0a086f;
-        public static int subject_layout = 0x7f0a0870;
-        public static int subject_mark = 0x7f0a0871;
-        public static int subject_name1 = 0x7f0a0872;
-        public static int subject_name2 = 0x7f0a0873;
-        public static int subject_name3 = 0x7f0a0874;
-        public static int subject_name4 = 0x7f0a0875;
-        public static int subject_name5 = 0x7f0a0876;
-        public static int subject_name6 = 0x7f0a0877;
-        public static int subject_name7 = 0x7f0a0878;
-        public static int subject_name8 = 0x7f0a0879;
-        public static int subject_plan_lyt = 0x7f0a087a;
-        public static int subject_progress_bar = 0x7f0a087b;
-        public static int subject_score_btn = 0x7f0a087c;
-        public static int subject_teacher_name = 0x7f0a087d;
-        public static int subject_tv = 0x7f0a087e;
-        public static int subjects_btn = 0x7f0a087f;
-        public static int subjects_container = 0x7f0a0880;
-        public static int subjects_lyt = 0x7f0a0881;
-        public static int submit_answer = 0x7f0a0883;
-        public static int submit_btn = 0x7f0a0885;
-        public static int submitted_view = 0x7f0a0886;
-        public static int submitted_view_home = 0x7f0a0887;
-        public static int submitted_view_module = 0x7f0a0888;
-        public static int suggest_btn = 0x7f0a0889;
-        public static int supply_lt = 0x7f0a088c;
-        public static int supply_tv = 0x7f0a088d;
-        public static int sur_teach_btn = 0x7f0a088f;
-        public static int sur_teach_name = 0x7f0a0890;
-        public static int sur_teach_status = 0x7f0a0891;
-        public static int sur_teach_sub_name = 0x7f0a0892;
-        public static int survey_do = 0x7f0a0893;
-        public static int survey_last_date = 0x7f0a0894;
-        public static int survey_name = 0x7f0a0895;
-        public static int survey_session = 0x7f0a0896;
-        public static int survey_status = 0x7f0a0897;
-        public static int swipe_layout = 0x7f0a0898;
-        public static int swipe_layout2 = 0x7f0a0899;
-        public static int swipe_layout_history = 0x7f0a089a;
-        public static int swipe_receipt_layout = 0x7f0a089b;
-        public static int syllabus_btn = 0x7f0a089d;
-        public static int tableAcadamicFeeConfirm = 0x7f0a089f;
-        public static int tableDutyFull = 0x7f0a08a0;
-        public static int tableDutyHour = 0x7f0a08a1;
-        public static int tableLayoutFeeConfirm = 0x7f0a08a2;
-        public static int tabs = 0x7f0a08a3;
-        public static int teacher_email = 0x7f0a08b1;
-        public static int teacher_img = 0x7f0a08b2;
-        public static int teacher_name = 0x7f0a08b3;
-        public static int teacher_phone = 0x7f0a08b4;
-        public static int teacher_remark_layout = 0x7f0a08b5;
-        public static int teacher_subject = 0x7f0a08b6;
-        public static int teacher_survey_question = 0x7f0a08b7;
-        public static int teacher_survey_question_no = 0x7f0a08b8;
-        public static int teacher_survey_questions_multiple = 0x7f0a08b9;
-        public static int text = 0x7f0a08ba;
-        public static int text2 = 0x7f0a08bb;
-        public static int text_view_id = 0x7f0a08c6;
-        public static int third_additional_elective1 = 0x7f0a08cd;
-        public static int third_additional_elective2 = 0x7f0a08ce;
-        public static int third_additional_elective3 = 0x7f0a08cf;
-        public static int third_additional_elective4 = 0x7f0a08d0;
-        public static int third_elective1 = 0x7f0a08d1;
-        public static int third_elective2 = 0x7f0a08d2;
-        public static int third_elective3 = 0x7f0a08d3;
-        public static int third_global_elective1 = 0x7f0a08d4;
-        public static int third_program_elective1 = 0x7f0a08d5;
-        public static int third_program_elective2 = 0x7f0a08d6;
-        public static int third_program_elective3 = 0x7f0a08d7;
-        public static int time_table_subject = 0x7f0a08db;
-        public static int time_table_teacher_name = 0x7f0a08dc;
-        public static int time_table_time_period = 0x7f0a08dd;
-        public static int timetable_change_date = 0x7f0a08de;
-        public static int timetable_change_period = 0x7f0a08df;
-        public static int timetable_change_place = 0x7f0a08e0;
-        public static int timetable_change_teacher = 0x7f0a08e1;
-        public static int timetable_pager = 0x7f0a08e2;
-        public static int timetable_side = 0x7f0a08e3;
-        public static int timetable_special_date = 0x7f0a08e4;
-        public static int timetable_special_period = 0x7f0a08e5;
-        public static int timetable_special_subject = 0x7f0a08e6;
-        public static int timetable_special_teacher = 0x7f0a08e7;
-        public static int title_container = 0x7f0a08ea;
-        public static int title_tv = 0x7f0a08ec;
-        public static int toDate = 0x7f0a08ed;
-        public static int to_date_tv = 0x7f0a08ee;
-        public static int ton_tv = 0x7f0a08f4;
-        public static int topic_toggle = 0x7f0a08f7;
-        public static int topic_tv = 0x7f0a08f8;
-        public static int topic_view = 0x7f0a08f9;
-        public static int topic_view2 = 0x7f0a08fa;
-        public static int total_amount = 0x7f0a08fb;
-        public static int total_cv = 0x7f0a08fc;
-        public static int total_point = 0x7f0a08fd;
-        public static int transport_adjustment_tv = 0x7f0a0909;
-        public static int transport_amount_tv = 0x7f0a090a;
-        public static int transport_balance_tv = 0x7f0a090b;
-        public static int transport_fee_btn = 0x7f0a090c;
-        public static int transport_history_btn = 0x7f0a090d;
-        public static int transport_paid_tv = 0x7f0a090e;
-        public static int transport_particular_tv = 0x7f0a090f;
-        public static int transport_particular_tv_paid = 0x7f0a0910;
-        public static int transport_reg_boarding = 0x7f0a0911;
-        public static int transport_reg_btn = 0x7f0a0912;
-        public static int transport_reg_date = 0x7f0a0913;
-        public static int transport_reg_start_date = 0x7f0a0914;
-        public static int transport_reg_status = 0x7f0a0915;
-        public static int transport_reg_year = 0x7f0a0916;
-        public static int transport_status_tv = 0x7f0a0917;
-        public static int tutorial_card = 0x7f0a091b;
-        public static int tutorial_details = 0x7f0a091c;
-        public static int tutorial_download = 0x7f0a091d;
-        public static int tutorial_issue_date = 0x7f0a091e;
-        public static int tutorial_last_date = 0x7f0a091f;
-        public static int tutorial_name = 0x7f0a0920;
-        public static int tutorial_result_layout = 0x7f0a0921;
-        public static int tutorial_select = 0x7f0a0922;
-        public static int tutorial_sem = 0x7f0a0923;
-        public static int tutorial_sem_tv = 0x7f0a0924;
-        public static int tutorial_status = 0x7f0a0925;
-        public static int tutorial_title = 0x7f0a0926;
-        public static int tutorial_upload = 0x7f0a0927;
-        public static int tvDay = 0x7f0a0928;
-        public static int tvMessage = 0x7f0a0929;
-        public static int tv_academic_year = 0x7f0a092a;
-        public static int tv_action_date = 0x7f0a092b;
-        public static int tv_action_level = 0x7f0a092c;
-        public static int tv_action_taken = 0x7f0a092d;
-        public static int tv_amount = 0x7f0a092e;
-        public static int tv_balance = 0x7f0a092f;
-        public static int tv_category = 0x7f0a0930;
-        public static int tv_create_date = 0x7f0a0931;
-        public static int tv_date = 0x7f0a0932;
-        public static int tv_date_exam = 0x7f0a0933;
-        public static int tv_degree = 0x7f0a0934;
-        public static int tv_description = 0x7f0a0935;
-        public static int tv_doc = 0x7f0a0936;
-        public static int tv_doc_down_btn = 0x7f0a0937;
-        public static int tv_due_total = 0x7f0a0938;
-        public static int tv_earned_credit = 0x7f0a0939;
-        public static int tv_end_date = 0x7f0a093a;
-        public static int tv_error = 0x7f0a093b;
-        public static int tv_fee_arts_total = 0x7f0a093c;
-        public static int tv_fee_engnr_total = 0x7f0a093d;
-        public static int tv_fee_medical_total = 0x7f0a093e;
-        public static int tv_fine = 0x7f0a093f;
-        public static int tv_fixed = 0x7f0a0940;
-        public static int tv_from = 0x7f0a0941;
-        public static int tv_gr_doc = 0x7f0a0942;
-        public static int tv_gr_doc_down_btn = 0x7f0a0943;
-        public static int tv_gr_no = 0x7f0a0944;
-        public static int tv_head = 0x7f0a0945;
-        public static int tv_hostel_total = 0x7f0a0946;
-        public static int tv_instalment = 0x7f0a0947;
-        public static int tv_mark = 0x7f0a0948;
-        public static int tv_module_name = 0x7f0a0949;
-        public static int tv_month = 0x7f0a094a;
-        public static int tv_name = 0x7f0a094b;
-        public static int tv_no = 0x7f0a094c;
-        public static int tv_paid = 0x7f0a094d;
-        public static int tv_payment_method = 0x7f0a094e;
-        public static int tv_price = 0x7f0a094f;
-        public static int tv_processed_by = 0x7f0a0950;
-        public static int tv_product_name = 0x7f0a0951;
-        public static int tv_receipt_date = 0x7f0a0952;
-        public static int tv_receipt_no = 0x7f0a0953;
-        public static int tv_register = 0x7f0a0954;
-        public static int tv_remark = 0x7f0a0955;
-        public static int tv_remark_by = 0x7f0a0956;
-        public static int tv_scholarship = 0x7f0a0957;
-        public static int tv_sem = 0x7f0a0958;
-        public static int tv_sem_reg_file_path = 0x7f0a0959;
-        public static int tv_semester = 0x7f0a095a;
-        public static int tv_sgpa = 0x7f0a095b;
-        public static int tv_size_limit = 0x7f0a095c;
-        public static int tv_start_date = 0x7f0a095d;
-        public static int tv_status = 0x7f0a095e;
-        public static int tv_store_total = 0x7f0a095f;
-        public static int tv_sub = 0x7f0a0960;
-        public static int tv_sub_category = 0x7f0a0961;
-        public static int tv_sub_name = 0x7f0a0962;
-        public static int tv_subtotal = 0x7f0a0963;
-        public static int tv_time_exam = 0x7f0a0964;
-        public static int tv_title = 0x7f0a0965;
-        public static int tv_title_dash = 0x7f0a0966;
-        public static int tv_total = 0x7f0a0967;
-        public static int tv_total_amount = 0x7f0a0968;
-        public static int tv_total_price = 0x7f0a0969;
-        public static int tv_transport_total = 0x7f0a096a;
-        public static int tv_transport_view = 0x7f0a096b;
-        public static int tv_unit_price = 0x7f0a096c;
-        public static int tv_year = 0x7f0a096d;
-        public static int tvassignment = 0x7f0a096e;
-        public static int type_lt = 0x7f0a096f;
-        public static int type_re = 0x7f0a0970;
-        public static int type_tv = 0x7f0a0971;
-        public static int univ_Pager = 0x7f0a0974;
-        public static int univ_credit = 0x7f0a0975;
-        public static int univ_exam_attendance = 0x7f0a0976;
-        public static int univ_exam_credit = 0x7f0a0977;
-        public static int univ_exam_mark = 0x7f0a0978;
-        public static int univ_exam_subject = 0x7f0a0979;
-        public static int univ_grade = 0x7f0a097a;
-        public static int univ_sem = 0x7f0a097b;
-        public static int univ_status = 0x7f0a097c;
-        public static int univ_subject = 0x7f0a097d;
-        public static int univ_subject_name = 0x7f0a097e;
-        public static int univ_tabs = 0x7f0a097f;
-        public static int university_previous_layout = 0x7f0a0980;
-        public static int up_btn = 0x7f0a0983;
-        public static int update_btn = 0x7f0a0984;
-        public static int update_hours_btn = 0x7f0a0985;
-        public static int update_lyt = 0x7f0a0986;
-        public static int updation_btn = 0x7f0a0987;
-        public static int updation_layout = 0x7f0a0988;
-        public static int upload_gr_btn = 0x7f0a0989;
-        public static int upload_lyt = 0x7f0a098a;
-        public static int upload_progressbar = 0x7f0a098b;
-        public static int user_icon = 0x7f0a098d;
-        public static int username = 0x7f0a098e;
-        public static int verified_certificate_WV = 0x7f0a098f;
-        public static int verified_certificate_download = 0x7f0a0990;
-        public static int verified_layout = 0x7f0a0991;
-        public static int verify_btn = 0x7f0a0992;
-        public static int video_card = 0x7f0a0994;
-        public static int video_layout = 0x7f0a0995;
-        public static int view1 = 0x7f0a0996;
-        public static int view2 = 0x7f0a0997;
-        public static int view4 = 0x7f0a0998;
-        public static int viewNoData = 0x7f0a0999;
-        public static int view_btn = 0x7f0a099a;
-        public static int view_btn_hr = 0x7f0a099b;
-        public static int view_clicked = 0x7f0a099c;
-        public static int view_due_certificate = 0x7f0a099d;
-        public static int view_due_receipt = 0x7f0a099e;
-        public static int view_equipment = 0x7f0a099f;
-        public static int view_evaluation = 0x7f0a09a0;
-        public static int view_experiments = 0x7f0a09a1;
-        public static int view_gr_doc_btn = 0x7f0a09a2;
-        public static int view_instruction_btn = 0x7f0a09a3;
-        public static int view_proof_btn = 0x7f0a09a5;
-        public static int view_receipt = 0x7f0a09a6;
-        public static int view_reg_hostel = 0x7f0a09a7;
-        public static int view_register_btn = 0x7f0a09a8;
-        public static int view_reply_doc_btn = 0x7f0a09a9;
-        public static int view_reply_text = 0x7f0a09aa;
-        public static int view_reply_user_img = 0x7f0a09ab;
-        public static int view_reply_user_name = 0x7f0a09ac;
-        public static int view_transport_buspass = 0x7f0a09ae;
-        public static int view_transport_receipt = 0x7f0a09af;
-        public static int view_uni_status = 0x7f0a09b4;
-        public static int vis_colg = 0x7f0a09b5;
-        public static int vis_dept = 0x7f0a09b6;
-        public static int vision_btn = 0x7f0a09b9;
-        public static int webView = 0x7f0a09ba;
-        public static int webview = 0x7f0a09bb;
-        public static int with_btn = 0x7f0a09c1;
-        public static int with_tv = 0x7f0a09c3;
-        public static int without_btn = 0x7f0a09c5;
-        public static int without_tv = 0x7f0a09c6;
-        public static int wv_thumbnail = 0x7f0a09ca;
-        public static int yearSpin = 0x7f0a09cd;
-        public static int year_tv = 0x7f0a09ce;
-        public static int yt_player = 0x7f0a09cf;
-        public static int zone_tv = 0x7f0a09d0;
+        public static int create_btn = 0x7f0a01f2;
+        public static int credits = 0x7f0a01f3;
+        public static int cs_action_taken = 0x7f0a01f4;
+        public static int cs_applicant = 0x7f0a01f5;
+        public static int cs_comment = 0x7f0a01f6;
+        public static int cs_concern = 0x7f0a01f7;
+        public static int cs_concern_studies = 0x7f0a01f8;
+        public static int cs_counselling_history = 0x7f0a01f9;
+        public static int cs_counselling_session_required = 0x7f0a01fa;
+        public static int cs_date = 0x7f0a01fb;
+        public static int cs_delete = 0x7f0a01fc;
+        public static int cs_edit = 0x7f0a01fd;
+        public static int cs_impact_home = 0x7f0a01fe;
+        public static int cs_impact_relationship = 0x7f0a01ff;
+        public static int cs_impact_studies = 0x7f0a0200;
+        public static int cs_number = 0x7f0a0201;
+        public static int cs_phisical = 0x7f0a0202;
+        public static int cs_physically_emotionally = 0x7f0a0203;
+        public static int cs_relationship = 0x7f0a0204;
+        public static int cs_reminder_btn = 0x7f0a0205;
+        public static int cs_reminder_txt = 0x7f0a0206;
+        public static int cs_review_btn = 0x7f0a0207;
+        public static int cs_status = 0x7f0a0208;
+        public static int cs_type = 0x7f0a0209;
+        public static int cs_view = 0x7f0a020a;
+        public static int cv_coverage_row = 0x7f0a0210;
+        public static int cv_dash = 0x7f0a0211;
+        public static int cv_sgpa = 0x7f0a0212;
+        public static int cv_timetable = 0x7f0a0213;
+        public static int cv_vision_mission = 0x7f0a0214;
+        public static int dash2 = 0x7f0a0216;
+        public static int dash_attendance_for_sem = 0x7f0a0217;
+        public static int dash_period = 0x7f0a0218;
+        public static int dash_sub = 0x7f0a0219;
+        public static int dash_tabs = 0x7f0a021a;
+        public static int dash_time_table_pager = 0x7f0a021b;
+        public static int dash_user_dept = 0x7f0a021c;
+        public static int dash_user_name = 0x7f0a021d;
+        public static int dash_user_roll_no = 0x7f0a021e;
+        public static int dash_user_sem = 0x7f0a021f;
+        public static int dashlyt = 0x7f0a0220;
+        public static int data_no_tv = 0x7f0a0222;
+        public static int date = 0x7f0a0223;
+        public static int date1 = 0x7f0a0224;
+        public static int date10 = 0x7f0a0225;
+        public static int date2 = 0x7f0a0226;
+        public static int date3 = 0x7f0a0227;
+        public static int date4 = 0x7f0a0228;
+        public static int date5 = 0x7f0a0229;
+        public static int date6 = 0x7f0a022a;
+        public static int date7 = 0x7f0a022b;
+        public static int date8 = 0x7f0a022c;
+        public static int date9 = 0x7f0a022d;
+        public static int date_leave = 0x7f0a022e;
+        public static int date_of_leave_tv = 0x7f0a022f;
+        public static int date_title = 0x7f0a0231;
+        public static int date_tv = 0x7f0a0232;
+        public static int datelt1 = 0x7f0a0233;
+        public static int datelt10 = 0x7f0a0234;
+        public static int datelt2 = 0x7f0a0235;
+        public static int datelt3 = 0x7f0a0236;
+        public static int datelt4 = 0x7f0a0237;
+        public static int datelt5 = 0x7f0a0238;
+        public static int datelt6 = 0x7f0a0239;
+        public static int datelt7 = 0x7f0a023a;
+        public static int datelt8 = 0x7f0a023b;
+        public static int datelt9 = 0x7f0a023c;
+        public static int dayMarker = 0x7f0a023f;
+        public static int deal_btn = 0x7f0a0247;
+        public static int deal_btn_view = 0x7f0a0248;
+        public static int delete_assignment = 0x7f0a024d;
+        public static int delete_btn = 0x7f0a024e;
+        public static int delete_exm = 0x7f0a024f;
+        public static int delete_home_work = 0x7f0a0250;
+        public static int delete_tutorial = 0x7f0a0251;
+        public static int department_due = 0x7f0a0253;
+        public static int department_group = 0x7f0a0254;
+        public static int department_no = 0x7f0a0255;
+        public static int department_yes = 0x7f0a0256;
+        public static int dept_no = 0x7f0a0258;
+        public static int dept_yes = 0x7f0a0259;
+        public static int description_tv = 0x7f0a025a;
+        public static int descriptive_answer = 0x7f0a025b;
+        public static int descriptive_answer_lyt = 0x7f0a025c;
+        public static int descriptive_is_attended = 0x7f0a025d;
+        public static int descriptive_mark = 0x7f0a025e;
+        public static int descriptive_question = 0x7f0a025f;
+        public static int detail_layout = 0x7f0a0265;
+        public static int detail_tv = 0x7f0a0266;
+        public static int details = 0x7f0a0267;
+        public static int details_tv = 0x7f0a0268;
+        public static int direct_apply_btn = 0x7f0a026c;
+        public static int discount_lyt = 0x7f0a0271;
+        public static int distance_et = 0x7f0a0273;
+        public static int distance_re = 0x7f0a0274;
+        public static int distance_tv = 0x7f0a0275;
+        public static int district = 0x7f0a0276;
+        public static int district_itr = 0x7f0a0277;
+        public static int dob = 0x7f0a0279;
+        public static int down_btn = 0x7f0a027b;
+        public static int download_btn = 0x7f0a027c;
+        public static int dsc1_lyt = 0x7f0a0286;
+        public static int dsc2_lyt = 0x7f0a0287;
+        public static int dsc3_lyt = 0x7f0a0288;
+        public static int due_admission_no = 0x7f0a0289;
+        public static int due_amount = 0x7f0a028a;
+        public static int due_batch = 0x7f0a028b;
+        public static int due_check_box = 0x7f0a028c;
+        public static int due_has_due = 0x7f0a028d;
+        public static int due_head = 0x7f0a028e;
+        public static int due_layout = 0x7f0a028f;
+        public static int due_lt = 0x7f0a0290;
+        public static int due_pay_amt = 0x7f0a0291;
+        public static int due_pay_balance = 0x7f0a0292;
+        public static int due_pay_head = 0x7f0a0293;
+        public static int due_pay_stat = 0x7f0a0294;
+        public static int due_status = 0x7f0a0295;
+        public static int due_tv = 0x7f0a0296;
+        public static int dues_lt = 0x7f0a0297;
+        public static int dues_tv = 0x7f0a0298;
+        public static int duration_tv = 0x7f0a0299;
+        public static int duty_apply_btn = 0x7f0a029a;
+        public static int duty_btn = 0x7f0a029b;
+        public static int duty_card = 0x7f0a029c;
+        public static int duty_description = 0x7f0a029d;
+        public static int duty_header_apply = 0x7f0a029e;
+        public static int duty_header_aprov = 0x7f0a029f;
+        public static int duty_header_hour_aprove = 0x7f0a02a0;
+        public static int duty_headr_hour_aply = 0x7f0a02a1;
+        public static int duty_last_date = 0x7f0a02a2;
+        public static int duty_name = 0x7f0a02a3;
+        public static int duty_select = 0x7f0a02a4;
+        public static int duty_status = 0x7f0a02a5;
+        public static int duty_type = 0x7f0a02a6;
+        public static int duty_upload = 0x7f0a02a7;
+        public static int e_grand_group = 0x7f0a02a8;
+        public static int e_grand_no = 0x7f0a02a9;
+        public static int e_grand_yes = 0x7f0a02aa;
+        public static int edit_btn = 0x7f0a02b0;
+        public static int edit_btn_hr = 0x7f0a02b1;
+        public static int educational_btn = 0x7f0a02b4;
+        public static int elective1 = 0x7f0a02b6;
+        public static int elective1_lyt = 0x7f0a02b7;
+        public static int elective2 = 0x7f0a02b8;
+        public static int elective2_lyt = 0x7f0a02b9;
+        public static int elective3 = 0x7f0a02ba;
+        public static int elective3_lyt = 0x7f0a02bb;
+        public static int email = 0x7f0a02bc;
+        public static int email_tv = 0x7f0a02bd;
+        public static int end = 0x7f0a02bf;
+        public static int end_date_tv = 0x7f0a02c1;
+        public static int engineer_detail_btn = 0x7f0a02c3;
+        public static int engnr_amount_lbl = 0x7f0a02c4;
+        public static int engnr_balance_lbl = 0x7f0a02c5;
+        public static int engnr_discount_lbl = 0x7f0a02c6;
+        public static int engnr_fee_name = 0x7f0a02c7;
+        public static int engnr_paid_lbl = 0x7f0a02c8;
+        public static int engnr_paying_lbl = 0x7f0a02c9;
+        public static int engnr_scholorship_lbl = 0x7f0a02ca;
+        public static int equip_asset_type = 0x7f0a02cd;
+        public static int equip_fecility = 0x7f0a02ce;
+        public static int equip_status = 0x7f0a02cf;
+        public static int equip_type = 0x7f0a02d0;
+        public static int error_lyt = 0x7f0a02d1;
+        public static int error_tv = 0x7f0a02d2;
+        public static int et__date_of_birth = 0x7f0a02d4;
+        public static int et_aadhaar_number = 0x7f0a02d5;
+        public static int et_aadhar_no = 0x7f0a02d6;
+        public static int et_abc_id = 0x7f0a02d7;
+        public static int et_academic_details = 0x7f0a02d8;
+        public static int et_accno = 0x7f0a02d9;
+        public static int et_accounts_details = 0x7f0a02da;
+        public static int et_achievements = 0x7f0a02db;
+        public static int et_address = 0x7f0a02dc;
+        public static int et_agency = 0x7f0a02dd;
+        public static int et_amount = 0x7f0a02de;
+        public static int et_amount_paid = 0x7f0a02df;
+        public static int et_annual_income = 0x7f0a02e0;
+        public static int et_author = 0x7f0a02e1;
+        public static int et_award = 0x7f0a02e2;
+        public static int et_back_paper_count = 0x7f0a02e3;
+        public static int et_bank_name = 0x7f0a02e4;
+        public static int et_booking_date = 0x7f0a02e5;
+        public static int et_booking_day = 0x7f0a02e6;
+        public static int et_branch_name = 0x7f0a02e7;
+        public static int et_bus_details = 0x7f0a02e8;
+        public static int et_comment_msg = 0x7f0a02e9;
+        public static int et_company = 0x7f0a02ea;
+        public static int et_company_address = 0x7f0a02eb;
+        public static int et_company_name = 0x7f0a02ec;
+        public static int et_concession_details = 0x7f0a02ed;
+        public static int et_conference = 0x7f0a02ee;
+        public static int et_confirm_accno = 0x7f0a02ef;
+        public static int et_confirm_pass = 0x7f0a02f0;
+        public static int et_contact_num = 0x7f0a02f1;
+        public static int et_credits_earned = 0x7f0a02f2;
+        public static int et_cs_concern = 0x7f0a02f3;
+        public static int et_cs_concern_home = 0x7f0a02f4;
+        public static int et_current_password = 0x7f0a02f5;
+        public static int et_date = 0x7f0a02f6;
+        public static int et_date2 = 0x7f0a02f7;
+        public static int et_date_payment = 0x7f0a02f8;
+        public static int et_dept_details = 0x7f0a02f9;
+        public static int et_dept_lib = 0x7f0a02fa;
+        public static int et_description = 0x7f0a02fb;
+        public static int et_descriptive = 0x7f0a02fc;
+        public static int et_details = 0x7f0a02fd;
+        public static int et_distance = 0x7f0a02fe;
+        public static int et_due_details = 0x7f0a02ff;
+        public static int et_duration = 0x7f0a0300;
+        public static int et_earned_credits = 0x7f0a0301;
+        public static int et_edition = 0x7f0a0302;
+        public static int et_email_id = 0x7f0a0303;
+        public static int et_end_date = 0x7f0a0304;
+        public static int et_exact_boarding_point = 0x7f0a0305;
+        public static int et_fine_details = 0x7f0a0306;
+        public static int et_first_name = 0x7f0a0307;
+        public static int et_from_date = 0x7f0a0308;
+        public static int et_from_date2 = 0x7f0a0309;
+        public static int et_gr_subject = 0x7f0a030a;
+        public static int et_hostel_details = 0x7f0a030b;
+        public static int et_ifsc_code = 0x7f0a030c;
+        public static int et_isbn = 0x7f0a030d;
+        public static int et_journel = 0x7f0a030e;
+        public static int et_lab_one = 0x7f0a030f;
+        public static int et_lab_one_details = 0x7f0a0310;
+        public static int et_lab_two = 0x7f0a0311;
+        public static int et_lab_two_details = 0x7f0a0312;
+        public static int et_last_name = 0x7f0a0313;
+        public static int et_library_details = 0x7f0a0314;
+        public static int et_membership_id = 0x7f0a0315;
+        public static int et_middle_name = 0x7f0a0316;
+        public static int et_mobile_number = 0x7f0a0317;
+        public static int et_mode_payment = 0x7f0a0318;
+        public static int et_month_year = 0x7f0a0319;
+        public static int et_name = 0x7f0a031a;
+        public static int et_name_address = 0x7f0a031b;
+        public static int et_name_of_house = 0x7f0a031c;
+        public static int et_new_password = 0x7f0a031d;
+        public static int et_orgaanised_by = 0x7f0a031e;
+        public static int et_other_details = 0x7f0a031f;
+        public static int et_parent_email = 0x7f0a0320;
+        public static int et_parent_no = 0x7f0a0321;
+        public static int et_parents_mob = 0x7f0a0322;
+        public static int et_period_discontinued = 0x7f0a0323;
+        public static int et_phone = 0x7f0a0324;
+        public static int et_phone_number = 0x7f0a0325;
+        public static int et_place_birth = 0x7f0a0326;
+        public static int et_publication = 0x7f0a0327;
+        public static int et_quantity = 0x7f0a0328;
+        public static int et_reason = 0x7f0a0329;
+        public static int et_reason1 = 0x7f0a032a;
+        public static int et_reason2 = 0x7f0a032b;
+        public static int et_reason3 = 0x7f0a032c;
+        public static int et_ref_no = 0x7f0a032d;
+        public static int et_remarks = 0x7f0a032e;
+        public static int et_remind = 0x7f0a032f;
+        public static int et_reply_msg = 0x7f0a0330;
+        public static int et_review = 0x7f0a0331;
+        public static int et_score = 0x7f0a0332;
+        public static int et_sem1 = 0x7f0a0333;
+        public static int et_sem2 = 0x7f0a0334;
+        public static int et_sem3 = 0x7f0a0335;
+        public static int et_sem_academic_due = 0x7f0a0336;
+        public static int et_sem_account_due = 0x7f0a0337;
+        public static int et_sem_amount = 0x7f0a0338;
+        public static int et_sem_bank_name = 0x7f0a0339;
+        public static int et_sem_bus_due = 0x7f0a033a;
+        public static int et_sem_count_back_paper = 0x7f0a033b;
+        public static int et_sem_department_due = 0x7f0a033c;
+        public static int et_sem_earned_credit = 0x7f0a033d;
+        public static int et_sem_fee_concession_category = 0x7f0a033e;
+        public static int et_sem_hostel_due = 0x7f0a033f;
+        public static int et_sem_library_due = 0x7f0a0340;
+        public static int et_sem_mode_of_payment = 0x7f0a0341;
+        public static int et_sem_month_year = 0x7f0a0342;
+        public static int et_sem_one = 0x7f0a0343;
+        public static int et_sem_paid_date = 0x7f0a0344;
+        public static int et_sem_ref_no = 0x7f0a0345;
+        public static int et_sem_submit_btn = 0x7f0a0346;
+        public static int et_series_details = 0x7f0a0347;
+        public static int et_strength = 0x7f0a0348;
+        public static int et_sub1 = 0x7f0a0349;
+        public static int et_sub2 = 0x7f0a034a;
+        public static int et_sub3 = 0x7f0a034b;
+        public static int et_title = 0x7f0a034c;
+        public static int et_to_date = 0x7f0a034d;
+        public static int et_to_date2 = 0x7f0a034e;
+        public static int etlab = 0x7f0a034f;
+        public static int event_name_view = 0x7f0a0350;
+        public static int event_tv = 0x7f0a0351;
+        public static int event_type = 0x7f0a0352;
+        public static int exam_amount = 0x7f0a0353;
+        public static int exam_answerscript = 0x7f0a0354;
+        public static int exam_att_tv = 0x7f0a0355;
+        public static int exam_card = 0x7f0a0356;
+        public static int exam_check_box = 0x7f0a0357;
+        public static int exam_concession = 0x7f0a0358;
+        public static int exam_description = 0x7f0a0359;
+        public static int exam_download = 0x7f0a035a;
+        public static int exam_grade = 0x7f0a035b;
+        public static int exam_group = 0x7f0a035c;
+        public static int exam_msg = 0x7f0a035d;
+        public static int exam_name = 0x7f0a035e;
+        public static int exam_no = 0x7f0a035f;
+        public static int exam_pager = 0x7f0a0360;
+        public static int exam_result = 0x7f0a0361;
+        public static int exam_result_lyt = 0x7f0a0362;
+        public static int exam_revaluation = 0x7f0a0363;
+        public static int exam_revaluation_amnt = 0x7f0a0364;
+        public static int exam_revaluation_type = 0x7f0a0365;
+        public static int exam_script_amnt = 0x7f0a0366;
+        public static int exam_select = 0x7f0a0367;
+        public static int exam_sub_head = 0x7f0a0368;
+        public static int exam_subject = 0x7f0a0369;
+        public static int exam_type = 0x7f0a036a;
+        public static int exam_upload = 0x7f0a036b;
+        public static int exam_yes = 0x7f0a036c;
+        public static int exit_btn = 0x7f0a036e;
+        public static int exm_download = 0x7f0a036f;
+        public static int exm_issue_date = 0x7f0a0370;
+        public static int exm_last_date = 0x7f0a0371;
+        public static int exm_sem = 0x7f0a0372;
+        public static int exm_status = 0x7f0a0373;
+        public static int exm_title = 0x7f0a0374;
+        public static int exm_upload_btn = 0x7f0a0375;
+        public static int expand_ass_layout = 0x7f0a0377;
+        public static int expand_hw_layout = 0x7f0a0378;
+        public static int expand_layout = 0x7f0a0379;
+        public static int fabChange = 0x7f0a037b;
+        public static int fabHostelFee = 0x7f0a037c;
+        public static int fabSpecial = 0x7f0a037d;
+        public static int fab_add_counselling = 0x7f0a037e;
+        public static int fab_add_grievance = 0x7f0a037f;
+        public static int fab_add_leave = 0x7f0a0380;
+        public static int fab_add_sem_reg = 0x7f0a0381;
+        public static int fab_add_sub_reg = 0x7f0a0382;
+        public static int fab_add_trans_reg = 0x7f0a0383;
+        public static int fab_ass = 0x7f0a0384;
+        public static int fab_assignment_result_semester = 0x7f0a0385;
+        public static int fab_assignment_semester = 0x7f0a0386;
+        public static int fab_date = 0x7f0a0387;
+        public static int fab_date_filter = 0x7f0a0388;
+        public static int fab_date_picker = 0x7f0a0389;
+        public static int fab_internal_result_semester = 0x7f0a038a;
+        public static int fab_module_result_semester = 0x7f0a038c;
+        public static int fab_series_semester = 0x7f0a038d;
+        public static int fab_session = 0x7f0a038e;
+        public static int fab_subject_semester = 0x7f0a038f;
+        public static int fab_tutorial_result_semester = 0x7f0a0390;
+        public static int fab_univ = 0x7f0a0391;
+        public static int fab_video_semester = 0x7f0a0392;
+        public static int father_name = 0x7f0a0394;
+        public static int father_number = 0x7f0a0395;
+        public static int father_occ = 0x7f0a0396;
+        public static int feeLayout = 0x7f0a0397;
+        public static int fee_details_lt = 0x7f0a0398;
+        public static int fee_details_tv = 0x7f0a0399;
+        public static int fee_due = 0x7f0a039a;
+        public static int fee_engnr_amt = 0x7f0a039b;
+        public static int fee_engnr_balance = 0x7f0a039c;
+        public static int fee_engnr_check_box = 0x7f0a039d;
+        public static int fee_engnr_head = 0x7f0a039e;
+        public static int fee_head = 0x7f0a039f;
+        public static int fee_layout = 0x7f0a03a0;
+        public static int fee_lyt = 0x7f0a03a1;
+        public static int fee_no = 0x7f0a03a2;
+        public static int fee_paid_group = 0x7f0a03a3;
+        public static int fee_receipt = 0x7f0a03a4;
+        public static int fee_receipt_lyt = 0x7f0a03a5;
+        public static int fee_transport_check_box = 0x7f0a03a6;
+        public static int fee_yes = 0x7f0a03a7;
+        public static int file_name = 0x7f0a03a8;
+        public static int file_name_second = 0x7f0a03a9;
+        public static int file_type_answer = 0x7f0a03aa;
+        public static int file_type_is_attended = 0x7f0a03ab;
+        public static int file_type_mark = 0x7f0a03ac;
+        public static int file_type_question = 0x7f0a03ad;
+        public static int file_type_view_btn = 0x7f0a03ae;
+        public static int fill_name = 0x7f0a03b1;
+        public static int filter_all = 0x7f0a03b4;
+        public static int filter_group = 0x7f0a03b5;
+        public static int filter_notsubmited = 0x7f0a03b6;
+        public static int filter_submited = 0x7f0a03b7;
+        public static int filter_submitted = 0x7f0a03b8;
+        public static int final_questions_lyt = 0x7f0a03b9;
+        public static int fine = 0x7f0a03ba;
+        public static int fine_layout = 0x7f0a03bb;
+        public static int finish_btn = 0x7f0a03bc;
+        public static int first_dose_btn = 0x7f0a03bd;
+        public static int fromDate = 0x7f0a03cb;
+        public static int from_date = 0x7f0a03cc;
+        public static int from_date_tv = 0x7f0a03cd;
+        public static int full_screen_qr_btn = 0x7f0a03cf;
+        public static int funded_details_btn = 0x7f0a03d1;
+        public static int ge_subject = 0x7f0a03d2;
+        public static int gender = 0x7f0a03d3;
+        public static int general_details_arrowBtn = 0x7f0a03d4;
+        public static int generate_btn = 0x7f0a03d5;
+        public static int global_elec_lt = 0x7f0a03d9;
+        public static int global_elec_third_lt = 0x7f0a03da;
+        public static int global_elec_tv = 0x7f0a03db;
+        public static int global_elective1 = 0x7f0a03dc;
+        public static int global_elective2 = 0x7f0a03dd;
+        public static int global_elective3 = 0x7f0a03de;
+        public static int global_elective_lyt = 0x7f0a03df;
+        public static int gr_action_taken = 0x7f0a03e1;
+        public static int gr_comment = 0x7f0a03e2;
+        public static int gr_complaint = 0x7f0a03e3;
+        public static int gr_date = 0x7f0a03e4;
+        public static int gr_date_of_reply = 0x7f0a03e5;
+        public static int gr_delete = 0x7f0a03e6;
+        public static int gr_details = 0x7f0a03e7;
+        public static int gr_edit = 0x7f0a03e8;
+        public static int gr_grievant = 0x7f0a03e9;
+        public static int gr_number = 0x7f0a03ea;
+        public static int gr_post_date = 0x7f0a03eb;
+        public static int gr_reminder_btn = 0x7f0a03ec;
+        public static int gr_reminder_txt = 0x7f0a03ed;
+        public static int gr_reply = 0x7f0a03ee;
+        public static int gr_reply_details = 0x7f0a03ef;
+        public static int gr_status = 0x7f0a03f0;
+        public static int gr_subject = 0x7f0a03f1;
+        public static int gr_title = 0x7f0a03f2;
+        public static int gr_type = 0x7f0a03f3;
+        public static int gr_upload_path = 0x7f0a03f4;
+        public static int gr_view = 0x7f0a03f5;
+        public static int grade_tv = 0x7f0a03f6;
+        public static int graduate_btn = 0x7f0a03f7;
+        public static int griv_title = 0x7f0a03fa;
+        public static int hFeeSearchBtn = 0x7f0a03fe;
+        public static int head_tv = 0x7f0a03ff;
+        public static int help_btn = 0x7f0a0401;
+        public static int hod_email = 0x7f0a0404;
+        public static int hod_image = 0x7f0a0405;
+        public static int hod_name = 0x7f0a0406;
+        public static int hod_phone = 0x7f0a0407;
+        public static int hod_remark_layout = 0x7f0a0408;
+        public static int hod_subject = 0x7f0a0409;
+        public static int home_work_download = 0x7f0a040c;
+        public static int home_work_issue_date = 0x7f0a040d;
+        public static int home_work_last_date = 0x7f0a040e;
+        public static int home_work_late_date = 0x7f0a040f;
+        public static int home_work_late_status = 0x7f0a0410;
+        public static int home_work_sem = 0x7f0a0411;
+        public static int home_work_status = 0x7f0a0412;
+        public static int home_work_subject = 0x7f0a0413;
+        public static int home_work_title = 0x7f0a0414;
+        public static int home_work_upload_btn = 0x7f0a0415;
+        public static int honor_minor_lt = 0x7f0a0417;
+        public static int honor_minor_tv = 0x7f0a0418;
+        public static int honour_group = 0x7f0a0419;
+        public static int honour_lyt = 0x7f0a041a;
+        public static int honour_no = 0x7f0a041b;
+        public static int honour_yes = 0x7f0a041c;
+        public static int hostFeeAmount = 0x7f0a041e;
+        public static int hostFeeFine = 0x7f0a041f;
+        public static int hostJDate = 0x7f0a0420;
+        public static int hostName = 0x7f0a0421;
+        public static int hostPayMsg = 0x7f0a0422;
+        public static int hostPayNext = 0x7f0a0423;
+        public static int hostReAmount = 0x7f0a0424;
+        public static int hostReDate = 0x7f0a0425;
+        public static int hostReHostel = 0x7f0a0426;
+        public static int hostReInst = 0x7f0a0427;
+        public static int hostReNo = 0x7f0a0428;
+        public static int hostReciptDate = 0x7f0a0429;
+        public static int hostRecycPayName = 0x7f0a042a;
+        public static int hostRecycPayable = 0x7f0a042b;
+        public static int hostRoom = 0x7f0a042c;
+        public static int hostTotPayebl = 0x7f0a042d;
+        public static int hostdialPayable = 0x7f0a042e;
+        public static int hostdiloPayAmount = 0x7f0a042f;
+        public static int hostdiloPaySchol = 0x7f0a0430;
+        public static int hostelPayNextdate = 0x7f0a0431;
+        public static int hostelPayNow = 0x7f0a0432;
+        public static int hostelReDate = 0x7f0a0433;
+        public static int hostelReNo = 0x7f0a0434;
+        public static int hostelWeb = 0x7f0a0435;
+        public static int hostel_applied_for_re = 0x7f0a0436;
+        public static int hostel_due = 0x7f0a0437;
+        public static int hostel_fee_detail = 0x7f0a0438;
+        public static int hostel_fee_name = 0x7f0a0439;
+        public static int hostel_group = 0x7f0a043a;
+        public static int hostel_installment = 0x7f0a043b;
+        public static int hostel_late_fee = 0x7f0a043c;
+        public static int hostel_main_adjustment = 0x7f0a043d;
+        public static int hostel_main_amount = 0x7f0a043e;
+        public static int hostel_main_balance = 0x7f0a043f;
+        public static int hostel_main_paid = 0x7f0a0440;
+        public static int hostel_main_payable = 0x7f0a0441;
+        public static int hostel_main_scholarship = 0x7f0a0442;
+        public static int hostel_month = 0x7f0a0443;
+        public static int hostel_name = 0x7f0a0444;
+        public static int hostel_name_tv = 0x7f0a0445;
+        public static int hostel_new_registration = 0x7f0a0446;
+        public static int hostel_no = 0x7f0a0447;
+        public static int hostel_pay_btn = 0x7f0a0448;
+        public static int hostel_payment_method = 0x7f0a0449;
+        public static int hostel_receipt_amount = 0x7f0a044a;
+        public static int hostel_receipt_date = 0x7f0a044b;
+        public static int hostel_receipt_no = 0x7f0a044c;
+        public static int hostel_tv = 0x7f0a044d;
+        public static int hostel_web_view = 0x7f0a044e;
+        public static int hostel_yes = 0x7f0a044f;
+        public static int hour_spinner = 0x7f0a0450;
+        public static int hour_tv = 0x7f0a0451;
+        public static int house_name_itr = 0x7f0a0452;
+        public static int hw_card = 0x7f0a0453;
+        public static int hw_detail_layout = 0x7f0a0454;
+        public static int hw_details = 0x7f0a0455;
+        public static int hw_details_layout = 0x7f0a0456;
+        public static int hw_feedback_layout = 0x7f0a0457;
+        public static int hw_select = 0x7f0a0458;
+        public static int hw_teacher_feedback = 0x7f0a0459;
+        public static int hw_toggle = 0x7f0a045a;
+        public static int hw_upload = 0x7f0a045b;
+        public static int id_tv = 0x7f0a0460;
+        public static int ifsc = 0x7f0a0462;
+        public static int ifsc_et = 0x7f0a0463;
+        public static int ifsc_tv = 0x7f0a0464;
+        public static int image = 0x7f0a0467;
+        public static int inbox_badge = 0x7f0a046a;
+        public static int inbox_content = 0x7f0a046b;
+        public static int inbox_coordinate_layout = 0x7f0a046c;
+        public static int inbox_date = 0x7f0a046d;
+        public static int inbox_from = 0x7f0a046e;
+        public static int inbox_layout = 0x7f0a046f;
+        public static int inbox_subject = 0x7f0a0470;
+        public static int inbox_view = 0x7f0a0471;
+        public static int index_tv = 0x7f0a0474;
+        public static int info_btn = 0x7f0a0476;
+        public static int info_date = 0x7f0a0477;
+        public static int info_dialog = 0x7f0a0478;
+        public static int info_time_table_home = 0x7f0a0479;
+        public static int info_title = 0x7f0a047a;
+        public static int info_type = 0x7f0a047b;
+        public static int installment_check = 0x7f0a047c;
+        public static int installment_head = 0x7f0a047d;
+        public static int installment_main_check = 0x7f0a047e;
+        public static int installment_name = 0x7f0a047f;
+        public static int internal_layout = 0x7f0a0480;
+        public static int internal_mark = 0x7f0a0481;
+        public static int internal_mark_tv = 0x7f0a0482;
+        public static int internal_sem_text = 0x7f0a0483;
+        public static int internshipFromDate = 0x7f0a0484;
+        public static int internshipToDate = 0x7f0a0485;
+        public static int internship_from = 0x7f0a0486;
+        public static int internship_status = 0x7f0a0487;
+        public static int internship_to = 0x7f0a0488;
+        public static int ipg_download_btn = 0x7f0a048b;
+        public static int is_hostler_tv = 0x7f0a048c;
+        public static int itr_lyt = 0x7f0a0490;
+        public static int iv_dash = 0x7f0a0491;
+        public static int iv_pro_pic = 0x7f0a0492;
+        public static int iv_signature = 0x7f0a0493;
+        public static int iv_yt_thumbnail = 0x7f0a0494;
+        public static int join_date = 0x7f0a0495;
+        public static int journal_name_tv = 0x7f0a0496;
+        public static int kmea_amount_tv = 0x7f0a0499;
+        public static int kmea_fine_tv = 0x7f0a049a;
+        public static int kmea_month_tv = 0x7f0a049b;
+        public static int kmea_total_tv = 0x7f0a049c;
+        public static int lab_due_amount = 0x7f0a049d;
+        public static int lab_due_date = 0x7f0a049e;
+        public static int lab_due_equipment_name = 0x7f0a049f;
+        public static int lab_due_lab_name = 0x7f0a04a0;
+        public static int lab_due_paid_date = 0x7f0a04a1;
+        public static int lab_due_status = 0x7f0a04a2;
+        public static int lab_exp_output = 0x7f0a04a3;
+        public static int lab_exp_record = 0x7f0a04a4;
+        public static int lab_exp_topic = 0x7f0a04a5;
+        public static int lab_exp_viva = 0x7f0a04a6;
+        public static int lab_list_name = 0x7f0a04a7;
+        public static int lab_one_group = 0x7f0a04a8;
+        public static int lab_one_no = 0x7f0a04a9;
+        public static int lab_one_yes = 0x7f0a04aa;
+        public static int lab_practical_attendance = 0x7f0a04ab;
+        public static int lab_practical_name = 0x7f0a04ac;
+        public static int lab_two_group = 0x7f0a04ad;
+        public static int lab_two_no = 0x7f0a04ae;
+        public static int lab_two_yes = 0x7f0a04af;
+        public static int late_layout = 0x7f0a04b1;
+        public static int layoutPayConfirm = 0x7f0a04b3;
+        public static int layoutPayable = 0x7f0a04b4;
+        public static int leave_available = 0x7f0a04b5;
+        public static int leave_pager = 0x7f0a04b6;
+        public static int leave_taken = 0x7f0a04b7;
+        public static int leave_type_hostel = 0x7f0a04b8;
+        public static int level_tv = 0x7f0a04be;
+        public static int library_btn = 0x7f0a04bf;
+        public static int library_card = 0x7f0a04c0;
+        public static int library_due = 0x7f0a04c1;
+        public static int library_group = 0x7f0a04c2;
+        public static int library_no = 0x7f0a04c3;
+        public static int library_yes = 0x7f0a04c4;
+        public static int line = 0x7f0a04c6;
+        public static int linearArtsFee = 0x7f0a04ca;
+        public static int linearEngnrFee = 0x7f0a04cb;
+        public static int linearHost = 0x7f0a04cc;
+        public static int linearHostel = 0x7f0a04cd;
+        public static int linearLibraryBooks = 0x7f0a04ce;
+        public static int linearcoverage1 = 0x7f0a04cf;
+        public static int linearcoverage2 = 0x7f0a04d0;
+        public static int linearcoverage3 = 0x7f0a04d1;
+        public static int linearcoverage4 = 0x7f0a04d2;
+        public static int linearcoverage5 = 0x7f0a04d3;
+        public static int linearcoverage6 = 0x7f0a04d4;
+        public static int linearcoverage7 = 0x7f0a04d5;
+        public static int linearcoverage8 = 0x7f0a04d6;
+        public static int linearhour1 = 0x7f0a04d7;
+        public static int linearlt = 0x7f0a04d8;
+        public static int linearplay = 0x7f0a04d9;
+        public static int live = 0x7f0a04dc;
+        public static int live_date = 0x7f0a04dd;
+        public static int live_details = 0x7f0a04de;
+        public static int live_title = 0x7f0a04df;
+        public static int live_type = 0x7f0a04e0;
+        public static int loader = 0x7f0a04e1;
+        public static int login_btn = 0x7f0a04e3;
+        public static int login_lyt = 0x7f0a04e4;
+        public static int login_main_lyt = 0x7f0a04e5;
+        public static int logout_btn = 0x7f0a04e6;
+        public static int logout_lyt = 0x7f0a04e7;
+        public static int lt_date = 0x7f0a04e8;
+        public static int lt_end_date = 0x7f0a04e9;
+        public static int lt_from_date = 0x7f0a04ea;
+        public static int main_container = 0x7f0a04ed;
+        public static int manage_activity_btn = 0x7f0a04ee;
+        public static int manage_activity_name = 0x7f0a04ef;
+        public static int manage_activity_point = 0x7f0a04f0;
+        public static int manage_activity_sem = 0x7f0a04f1;
+        public static int manage_btn = 0x7f0a04f2;
+        public static int manage_details = 0x7f0a04f3;
+        public static int manage_status = 0x7f0a04f4;
+        public static int material_date = 0x7f0a0502;
+        public static int material_download_btn = 0x7f0a0503;
+        public static int material_link = 0x7f0a0507;
+        public static int material_module = 0x7f0a050a;
+        public static int material_name = 0x7f0a050b;
+        public static int material_sem = 0x7f0a050c;
+        public static int material_title = 0x7f0a0513;
+        public static int max_qty_tv = 0x7f0a0516;
+        public static int mbits_lyt = 0x7f0a0517;
+        public static int mcq_option = 0x7f0a0518;
+        public static int mcq_option_view = 0x7f0a0519;
+        public static int mdc1_lyt = 0x7f0a051a;
+        public static int mdc2_lyt = 0x7f0a051b;
+        public static int mdc3_lyt = 0x7f0a051c;
+        public static int mdc_subjects_container = 0x7f0a051d;
+        public static int medical_date_f = 0x7f0a051f;
+        public static int medical_date_to = 0x7f0a0520;
+        public static int medical_reason = 0x7f0a0521;
+        public static int medical_remark = 0x7f0a0522;
+        public static int medical_view_side = 0x7f0a0523;
+        public static int member_since_tv = 0x7f0a0524;
+        public static int membership_details_btn = 0x7f0a0525;
+        public static int menu = 0x7f0a0526;
+        public static int merchant_name_tv = 0x7f0a0527;
+        public static int mess_booking_date = 0x7f0a0528;
+        public static int mess_breakfast = 0x7f0a0529;
+        public static int mess_delete_btn = 0x7f0a052a;
+        public static int mess_dinner = 0x7f0a052b;
+        public static int mess_gcek_btn = 0x7f0a052c;
+        public static int mess_layout = 0x7f0a052d;
+        public static int mess_lunch = 0x7f0a052e;
+        public static int mess_menu = 0x7f0a052f;
+        public static int mess_menu2 = 0x7f0a0530;
+        public static int mess_menu_1 = 0x7f0a0531;
+        public static int mess_name2 = 0x7f0a0532;
+        public static int mess_qty = 0x7f0a0533;
+        public static int mess_quantity = 0x7f0a0534;
+        public static int mess_snacks = 0x7f0a0535;
+        public static int mess_status = 0x7f0a0536;
+        public static int mess_type = 0x7f0a0537;
+        public static int method_layout = 0x7f0a0539;
+        public static int minor2_lyt = 0x7f0a053c;
+        public static int minor3_lyt = 0x7f0a053d;
+        public static int minor_group = 0x7f0a053e;
+        public static int minor_lyt = 0x7f0a053f;
+        public static int minor_no = 0x7f0a0540;
+        public static int minor_subjects_container = 0x7f0a0541;
+        public static int minor_yes = 0x7f0a0542;
+        public static int mis_colg = 0x7f0a0543;
+        public static int mis_dept = 0x7f0a0544;
+        public static int mission_btn = 0x7f0a0545;
+        public static int mits_hostel_webview = 0x7f0a0546;
+        public static int mobile_number_tv = 0x7f0a0547;
+        public static int module = 0x7f0a0548;
+        public static int module_layout = 0x7f0a0549;
+        public static int module_sem_tv = 0x7f0a054a;
+        public static int monSpin = 0x7f0a054b;
+        public static int month_layout = 0x7f0a054f;
+        public static int month_lbl = 0x7f0a0550;
+        public static int month_tv = 0x7f0a0556;
+        public static int month_year_cgpa_et = 0x7f0a0557;
+        public static int mooc_details_btn = 0x7f0a0558;
+        public static int mother_name = 0x7f0a0559;
+        public static int mother_num = 0x7f0a055a;
+        public static int mother_occ = 0x7f0a055b;
+        public static int mt_academic_detail = 0x7f0a055d;
+        public static int mt_account_detail = 0x7f0a055e;
+        public static int mt_address = 0x7f0a055f;
+        public static int mt_amount = 0x7f0a0560;
+        public static int mt_amount_paid = 0x7f0a0561;
+        public static int mt_back_papers = 0x7f0a0562;
+        public static int mt_bank_name = 0x7f0a0563;
+        public static int mt_bus_detail = 0x7f0a0564;
+        public static int mt_concession_detsils = 0x7f0a0565;
+        public static int mt_date_payment = 0x7f0a0566;
+        public static int mt_dept_detail = 0x7f0a0567;
+        public static int mt_dept_lib = 0x7f0a0568;
+        public static int mt_descriptive = 0x7f0a0569;
+        public static int mt_exact_boarding_point = 0x7f0a056a;
+        public static int mt_hostel_detail = 0x7f0a056b;
+        public static int mt_lab_one_details = 0x7f0a056c;
+        public static int mt_lab_two_details = 0x7f0a056d;
+        public static int mt_library_detail = 0x7f0a056e;
+        public static int mt_library_details = 0x7f0a056f;
+        public static int mt_mode_payment = 0x7f0a0570;
+        public static int mt_month_year = 0x7f0a0571;
+        public static int mt_parent_email = 0x7f0a0572;
+        public static int mt_parent_no = 0x7f0a0573;
+        public static int mt_reason1 = 0x7f0a0574;
+        public static int mt_reason2 = 0x7f0a0575;
+        public static int mt_reason3 = 0x7f0a0576;
+        public static int mt_ref_no = 0x7f0a0577;
+        public static int mt_remarks = 0x7f0a0578;
+        public static int mt_sem1 = 0x7f0a0579;
+        public static int mt_sem2 = 0x7f0a057a;
+        public static int mt_sem3 = 0x7f0a057b;
+        public static int mt_strength = 0x7f0a057c;
+        public static int mt_sub1 = 0x7f0a057d;
+        public static int mt_sub2 = 0x7f0a057e;
+        public static int mt_sub3 = 0x7f0a057f;
+        public static int multiple_answer_lyt = 0x7f0a0597;
+        public static int name = 0x7f0a0599;
+        public static int name_et = 0x7f0a059a;
+        public static int name_layout = 0x7f0a059b;
+        public static int name_of_leave = 0x7f0a059c;
+        public static int name_of_parent_itr = 0x7f0a059d;
+        public static int name_re = 0x7f0a059e;
+        public static int name_tv = 0x7f0a059f;
+        public static int new_registration_btn = 0x7f0a05ad;
+        public static int next_btn = 0x7f0a05ae;
+        public static int next_eight = 0x7f0a05af;
+        public static int next_five = 0x7f0a05b0;
+        public static int next_four = 0x7f0a05b1;
+        public static int next_one = 0x7f0a05b2;
+        public static int next_seven = 0x7f0a05b3;
+        public static int next_six = 0x7f0a05b4;
+        public static int next_store_btn = 0x7f0a05b5;
+        public static int next_three = 0x7f0a05b6;
+        public static int next_two = 0x7f0a05b7;
+        public static int no_data = 0x7f0a05ba;
+        public static int no_data_lyt = 0x7f0a05bb;
+        public static int no_data_tv = 0x7f0a05bc;
+        public static int no_of_entries = 0x7f0a05bd;
+        public static int not_covered = 0x7f0a05c1;
+        public static int not_covered_home = 0x7f0a05c2;
+        public static int not_covered_module = 0x7f0a05c3;
+        public static int not_marked_text = 0x7f0a05c4;
+        public static int not_registered_btn = 0x7f0a05c5;
+        public static int notice_content = 0x7f0a05c6;
+        public static int notice_create = 0x7f0a05c7;
+        public static int notice_cv = 0x7f0a05c8;
+        public static int notice_date = 0x7f0a05c9;
+        public static int notice_heading = 0x7f0a05ca;
+        public static int notice_text = 0x7f0a05cb;
+        public static int number = 0x7f0a05cf;
+        public static int number_tv = 0x7f0a05d0;
+        public static int option1 = 0x7f0a05e5;
+        public static int option2 = 0x7f0a05e6;
+        public static int option3 = 0x7f0a05e7;
+        public static int option4 = 0x7f0a05e8;
+        public static int option5 = 0x7f0a05e9;
+        public static int option_1 = 0x7f0a05ea;
+        public static int option_2 = 0x7f0a05eb;
+        public static int option_3 = 0x7f0a05ec;
+        public static int option_4 = 0x7f0a05ed;
+        public static int option_5 = 0x7f0a05ee;
+        public static int option_6 = 0x7f0a05ef;
+        public static int order_history_btn = 0x7f0a05f0;
+        public static int order_history_layout = 0x7f0a05f1;
+        public static int organised_by = 0x7f0a05f2;
+        public static int organized_tv = 0x7f0a05f3;
+        public static int original_cert_lyt = 0x7f0a05f4;
+        public static int other_company_layout = 0x7f0a05f5;
+        public static int other_details_btn = 0x7f0a05f6;
+        public static int outcome_btn = 0x7f0a05f7;
+        public static int page_eight = 0x7f0a05fc;
+        public static int page_five = 0x7f0a05fd;
+        public static int page_four = 0x7f0a05fe;
+        public static int page_one = 0x7f0a05ff;
+        public static int page_seven = 0x7f0a0600;
+        public static int page_six = 0x7f0a0601;
+        public static int page_three = 0x7f0a0602;
+        public static int page_two = 0x7f0a0603;
+        public static int paid_lbl = 0x7f0a0604;
+        public static int parent_details_lyt = 0x7f0a0609;
+        public static int password = 0x7f0a060b;
+        public static int pathway_tv = 0x7f0a060f;
+        public static int pay_btn = 0x7f0a0610;
+        public static int pay_btn_lyt = 0x7f0a0611;
+        public static int pay_confirm_btn = 0x7f0a0612;
+        public static int pay_due_btn = 0x7f0a0613;
+        public static int pay_fee_arts_btn = 0x7f0a0614;
+        public static int pay_fee_btn = 0x7f0a0615;
+        public static int pay_fee_engnr_btn = 0x7f0a0616;
+        public static int pay_fee_medical_btn = 0x7f0a0617;
+        public static int pay_later_btn = 0x7f0a0618;
+        public static int pay_later_lyt = 0x7f0a0619;
+        public static int pay_lyt = 0x7f0a061a;
+        public static int pay_now_btn = 0x7f0a061b;
+        public static int pay_online_btn = 0x7f0a061c;
+        public static int pay_slip_btn = 0x7f0a061d;
+        public static int pay_store_btn = 0x7f0a061e;
+        public static int pay_tkm_btn = 0x7f0a061f;
+        public static int pay_transport_btn = 0x7f0a0620;
+        public static int payable_lbl = 0x7f0a0621;
+        public static int payment_gateway_btn = 0x7f0a0622;
+        public static int period1 = 0x7f0a0625;
+        public static int period2 = 0x7f0a0626;
+        public static int period3 = 0x7f0a0627;
+        public static int period4 = 0x7f0a0628;
+        public static int period5 = 0x7f0a0629;
+        public static int period6 = 0x7f0a062a;
+        public static int period7 = 0x7f0a062b;
+        public static int period8 = 0x7f0a062c;
+        public static int personal_details = 0x7f0a062d;
+        public static int personal_details_lyt = 0x7f0a062e;
+        public static int phone_re = 0x7f0a062f;
+        public static int phone_tv = 0x7f0a0630;
+        public static int pin = 0x7f0a0631;
+        public static int pin_code_itr = 0x7f0a0632;
+        public static int pl_apply_btn = 0x7f0a0633;
+        public static int pl_company_name = 0x7f0a0634;
+        public static int pl_date = 0x7f0a0635;
+        public static int pl_description = 0x7f0a0636;
+        public static int pl_last_date = 0x7f0a0637;
+        public static int place_et = 0x7f0a0638;
+        public static int place_tv = 0x7f0a0639;
+        public static int player_view = 0x7f0a063a;
+        public static int po_survey_btn = 0x7f0a063b;
+        public static int port_tv = 0x7f0a063d;
+        public static int position_details_btn = 0x7f0a063f;
+        public static int post_office_itr = 0x7f0a0642;
+        public static int pre_book_btn = 0x7f0a0643;
+        public static int pref_lyt_five = 0x7f0a0644;
+        public static int pref_lyt_four = 0x7f0a0645;
+        public static int pref_lyt_one = 0x7f0a0646;
+        public static int pref_lyt_three = 0x7f0a0647;
+        public static int pref_lyt_two = 0x7f0a0648;
+        public static int present = 0x7f0a064c;
+        public static int prev_sem_lt = 0x7f0a064e;
+        public static int prev_sem_tv = 0x7f0a064f;
+        public static int previous_btn = 0x7f0a0651;
+        public static int price = 0x7f0a0652;
+        public static int print_btn_hr = 0x7f0a0653;
+        public static int profile_card = 0x7f0a0654;
+        public static int profile_image = 0x7f0a0655;
+        public static int profile_personal_expandableView = 0x7f0a0656;
+        public static int prog_name = 0x7f0a0657;
+        public static int progress_bar = 0x7f0a0658;
+        public static int progress_bar_univ = 0x7f0a0659;
+        public static int progress_text = 0x7f0a065c;
+        public static int progress_view = 0x7f0a065d;
+        public static int project_details_btn = 0x7f0a065e;
+        public static int proof_view = 0x7f0a065f;
+        public static int push_cardview = 0x7f0a0660;
+        public static int push_date = 0x7f0a0661;
+        public static int push_layout = 0x7f0a0662;
+        public static int push_msg = 0x7f0a0663;
+        public static int push_time = 0x7f0a0664;
+        public static int push_title = 0x7f0a0665;
+        public static int q_txt = 0x7f0a0666;
+        public static int qr_download_btn = 0x7f0a0667;
+        public static int qr_image_view = 0x7f0a0668;
+        public static int quality_details_btn = 0x7f0a0669;
+        public static int question = 0x7f0a066a;
+        public static int question_image = 0x7f0a066b;
+        public static int question_layout = 0x7f0a066c;
+        public static int question_lyt_1 = 0x7f0a066d;
+        public static int question_lyt_2 = 0x7f0a066e;
+        public static int question_lyt_3 = 0x7f0a066f;
+        public static int question_lyt_4 = 0x7f0a0670;
+        public static int question_lyt_5 = 0x7f0a0671;
+        public static int question_no = 0x7f0a0672;
+        public static int question_tv = 0x7f0a0673;
+        public static int quiz_btn = 0x7f0a0674;
+        public static int quiz_end_time = 0x7f0a0675;
+        public static int quiz_name = 0x7f0a0676;
+        public static int quiz_question = 0x7f0a0677;
+        public static int quiz_question_no = 0x7f0a0678;
+        public static int quiz_questions_multiple = 0x7f0a0679;
+        public static int quiz_start_time = 0x7f0a067a;
+        public static int quiz_text = 0x7f0a067b;
+        public static int quiz_type = 0x7f0a067c;
+        public static int radio_btn = 0x7f0a067e;
+        public static int re_enter_acc_et = 0x7f0a0681;
+        public static int readmission_re = 0x7f0a0682;
+        public static int reason_cgpa_et = 0x7f0a0683;
+        public static int reason_layout = 0x7f0a0684;
+        public static int reason_leave = 0x7f0a0685;
+        public static int reason_text = 0x7f0a0686;
+        public static int reason_tv = 0x7f0a0687;
+        public static int receipt_amount = 0x7f0a0688;
+        public static int receipt_amt = 0x7f0a0689;
+        public static int receipt_btn = 0x7f0a068a;
+        public static int receipt_card = 0x7f0a068b;
+        public static int receipt_date = 0x7f0a068c;
+        public static int receipt_download = 0x7f0a068d;
+        public static int receipt_gcek_btn = 0x7f0a068e;
+        public static int receipt_installment = 0x7f0a068f;
+        public static int receipt_no = 0x7f0a0690;
+        public static int receipt_pay_method = 0x7f0a0691;
+        public static int receipt_refund = 0x7f0a0692;
+        public static int receipt_status = 0x7f0a0693;
+        public static int receipt_tkm_btn = 0x7f0a0694;
+        public static int reciept_fee_amount = 0x7f0a0695;
+        public static int reciept_fee_batch = 0x7f0a0696;
+        public static int reciept_fee_date = 0x7f0a0697;
+        public static int reciept_fee_layout = 0x7f0a0698;
+        public static int reciept_fee_method = 0x7f0a0699;
+        public static int reciept_fee_re_no = 0x7f0a069a;
+        public static int reciept_fee_status = 0x7f0a069b;
+        public static int recyc_HostelFee = 0x7f0a069d;
+        public static int recyc_feerecip = 0x7f0a069e;
+        public static int recyc_payment = 0x7f0a069f;
+        public static int refund_policy_btn = 0x7f0a06a1;
+        public static int reg_btn = 0x7f0a06a2;
+        public static int reg_lyt = 0x7f0a06a3;
+        public static int reg_no = 0x7f0a06a4;
+        public static int reg_slip_btn = 0x7f0a06a5;
+        public static int reg_title = 0x7f0a06a6;
+        public static int reg_tkm_btn = 0x7f0a06a7;
+        public static int register_btn = 0x7f0a06a8;
+        public static int register_layout = 0x7f0a06a9;
+        public static int register_lyt = 0x7f0a06aa;
+        public static int registered_btn = 0x7f0a06ab;
+        public static int registration_type_hr = 0x7f0a06ac;
+        public static int registration_webview = 0x7f0a06ad;
+        public static int reject_btn = 0x7f0a06ae;
+        public static int rejects_tv = 0x7f0a06af;
+        public static int remarks_re = 0x7f0a06b0;
+        public static int remind_btn = 0x7f0a06b1;
+        public static int remove_btn = 0x7f0a06b2;
+        public static int remove_btn_four = 0x7f0a06b3;
+        public static int remove_btn_one = 0x7f0a06b4;
+        public static int remove_btn_three = 0x7f0a06b5;
+        public static int remove_btn_two = 0x7f0a06b6;
+        public static int reply_btn = 0x7f0a06b7;
+        public static int reply_btn_send = 0x7f0a06b8;
+        public static int reply_comment_text = 0x7f0a06b9;
+        public static int reply_comment_user_img = 0x7f0a06ba;
+        public static int reply_comment_user_name = 0x7f0a06bb;
+        public static int reply_layout = 0x7f0a06bc;
+        public static int reply_text = 0x7f0a06bd;
+        public static int reply_user_img = 0x7f0a06be;
+        public static int reply_user_name = 0x7f0a06bf;
+        public static int required_tv = 0x7f0a06c1;
+        public static int resetWebView = 0x7f0a06c2;
+        public static int reset_btn = 0x7f0a06c3;
+        public static int result_assignment_name = 0x7f0a06c4;
+        public static int result_assignment_score = 0x7f0a06c5;
+        public static int result_assignment_subject = 0x7f0a06c6;
+        public static int result_internal_score = 0x7f0a06c7;
+        public static int result_internal_subject = 0x7f0a06c8;
+        public static int result_module_score = 0x7f0a06c9;
+        public static int result_module_subject = 0x7f0a06ca;
+        public static int result_pager = 0x7f0a06cb;
+        public static int result_session_score = 0x7f0a06cc;
+        public static int result_session_subject = 0x7f0a06cd;
+        public static int result_status = 0x7f0a06ce;
+        public static int retype_acc_lyt = 0x7f0a06cf;
+        public static int retype_acc_no_et = 0x7f0a06d0;
+        public static int retype_acc_no_tv = 0x7f0a06d1;
+        public static int revaluation_check_box = 0x7f0a06d2;
+        public static int revaluation_cv = 0x7f0a06d3;
+        public static int revaluation_fee = 0x7f0a06d4;
+        public static int revaluation_fee_lyt = 0x7f0a06d5;
+        public static int revaluation_lt = 0x7f0a06d6;
+        public static int review_btn = 0x7f0a06d8;
+        public static int revoke_btn = 0x7f0a06d9;
+        public static int revoke_lyt = 0x7f0a06da;
+        public static int room_no = 0x7f0a06e1;
+        public static int room_no_tv = 0x7f0a06e2;
+        public static int root = 0x7f0a06e3;
+        public static int row_header_container = 0x7f0a06e5;
+        public static int row_header_textview = 0x7f0a06e6;
+        public static int rv_action_levels = 0x7f0a06e9;
+        public static int rv_activity_point = 0x7f0a06ea;
+        public static int rv_admission = 0x7f0a06eb;
+        public static int rv_admission_history = 0x7f0a06ec;
+        public static int rv_assignment = 0x7f0a06ed;
+        public static int rv_attendance = 0x7f0a06ee;
+        public static int rv_booking = 0x7f0a06ef;
+        public static int rv_booking_history = 0x7f0a06f0;
+        public static int rv_books = 0x7f0a06f1;
+        public static int rv_books_records = 0x7f0a06f2;
+        public static int rv_calender = 0x7f0a06f3;
+        public static int rv_cell_members = 0x7f0a06f4;
+        public static int rv_certificate_request = 0x7f0a06f5;
+        public static int rv_change_timetable = 0x7f0a06f6;
+        public static int rv_chat = 0x7f0a06f7;
+        public static int rv_circular = 0x7f0a06f8;
+        public static int rv_co = 0x7f0a06f9;
+        public static int rv_college_list = 0x7f0a06fa;
+        public static int rv_comment = 0x7f0a06fb;
+        public static int rv_counselling = 0x7f0a06fc;
+        public static int rv_course = 0x7f0a06fd;
+        public static int rv_dash = 0x7f0a06fe;
+        public static int rv_dash_table_view = 0x7f0a06ff;
+        public static int rv_dates = 0x7f0a0700;
+        public static int rv_descriptive_quiz = 0x7f0a0701;
+        public static int rv_due = 0x7f0a0702;
+        public static int rv_due_pay = 0x7f0a0703;
+        public static int rv_duty_direct_leave = 0x7f0a0704;
+        public static int rv_duty_leave = 0x7f0a0705;
+        public static int rv_educational = 0x7f0a0706;
+        public static int rv_evaluation = 0x7f0a0707;
+        public static int rv_exam = 0x7f0a0708;
+        public static int rv_exam_docs = 0x7f0a0709;
+        public static int rv_exam_receipt = 0x7f0a070a;
+        public static int rv_exam_revaluation = 0x7f0a070b;
+        public static int rv_exam_subject = 0x7f0a070c;
+        public static int rv_experiment = 0x7f0a070d;
+        public static int rv_fee = 0x7f0a070e;
+        public static int rv_fee_arts = 0x7f0a070f;
+        public static int rv_fee_engnr = 0x7f0a0710;
+        public static int rv_fee_medical = 0x7f0a0711;
+        public static int rv_fee_receipt = 0x7f0a0712;
+        public static int rv_gr_docs = 0x7f0a0713;
+        public static int rv_grievance = 0x7f0a0714;
+        public static int rv_home_work = 0x7f0a0715;
+        public static int rv_hostel_att_view = 0x7f0a0716;
+        public static int rv_hostel_fee = 0x7f0a0717;
+        public static int rv_hostel_fee_admission = 0x7f0a0718;
+        public static int rv_hostel_fee_details = 0x7f0a0719;
+        public static int rv_hours = 0x7f0a071a;
+        public static int rv_hw_docs = 0x7f0a071b;
+        public static int rv_inbox = 0x7f0a071c;
+        public static int rv_info = 0x7f0a071d;
+        public static int rv_internship = 0x7f0a071e;
+        public static int rv_lab_due = 0x7f0a071f;
+        public static int rv_lab_equipment = 0x7f0a0720;
+        public static int rv_lab_list = 0x7f0a0721;
+        public static int rv_lab_safety = 0x7f0a0722;
+        public static int rv_leave = 0x7f0a0723;
+        public static int rv_live = 0x7f0a0724;
+        public static int rv_manage_activity_point = 0x7f0a0725;
+        public static int rv_materials = 0x7f0a0726;
+        public static int rv_medical = 0x7f0a0727;
+        public static int rv_membership = 0x7f0a0728;
+        public static int rv_mess = 0x7f0a0729;
+        public static int rv_monthly = 0x7f0a072a;
+        public static int rv_monthly_history = 0x7f0a072b;
+        public static int rv_mooc = 0x7f0a072c;
+        public static int rv_msg = 0x7f0a072d;
+        public static int rv_multiple_quiz = 0x7f0a072e;
+        public static int rv_notice = 0x7f0a072f;
+        public static int rv_online_class = 0x7f0a0730;
+        public static int rv_order_history = 0x7f0a0731;
+        public static int rv_outcome = 0x7f0a0732;
+        public static int rv_participation = 0x7f0a0733;
+        public static int rv_placement = 0x7f0a0734;
+        public static int rv_position = 0x7f0a0735;
+        public static int rv_practical = 0x7f0a0736;
+        public static int rv_project = 0x7f0a0737;
+        public static int rv_publication = 0x7f0a0738;
+        public static int rv_push = 0x7f0a0739;
+        public static int rv_question = 0x7f0a073a;
+        public static int rv_question_no = 0x7f0a073b;
+        public static int rv_quiz = 0x7f0a073c;
+        public static int rv_receipts = 0x7f0a073d;
+        public static int rv_reg_history = 0x7f0a073e;
+        public static int rv_reg_history_transport = 0x7f0a073f;
+        public static int rv_reg_list = 0x7f0a0740;
+        public static int rv_registration = 0x7f0a0741;
+        public static int rv_remark = 0x7f0a0742;
+        public static int rv_reply = 0x7f0a0743;
+        public static int rv_research = 0x7f0a0744;
+        public static int rv_result_assignment = 0x7f0a0745;
+        public static int rv_result_internal = 0x7f0a0746;
+        public static int rv_result_list = 0x7f0a0747;
+        public static int rv_result_module_test = 0x7f0a0748;
+        public static int rv_result_session = 0x7f0a0749;
+        public static int rv_scholarship = 0x7f0a074a;
+        public static int rv_sem_history = 0x7f0a074b;
+        public static int rv_sem_list = 0x7f0a074c;
+        public static int rv_semester_no = 0x7f0a074d;
+        public static int rv_session_sem_list = 0x7f0a074e;
+        public static int rv_special_timetable = 0x7f0a074f;
+        public static int rv_specific = 0x7f0a0750;
+        public static int rv_store = 0x7f0a0751;
+        public static int rv_sub_coverage = 0x7f0a0752;
+        public static int rv_sub_status = 0x7f0a0753;
+        public static int rv_subject = 0x7f0a0754;
+        public static int rv_subject_plan = 0x7f0a0755;
+        public static int rv_survey = 0x7f0a0756;
+        public static int rv_survey_questions = 0x7f0a0757;
+        public static int rv_syllabus = 0x7f0a0758;
+        public static int rv_teacher = 0x7f0a0759;
+        public static int rv_teacher_survey = 0x7f0a075a;
+        public static int rv_timetable = 0x7f0a075b;
+        public static int rv_transport = 0x7f0a075c;
+        public static int rv_transport_fee = 0x7f0a075d;
+        public static int rv_transport_fee_history = 0x7f0a075e;
+        public static int rv_tutorial = 0x7f0a075f;
+        public static int rv_univ_exams = 0x7f0a0760;
+        public static int rv_univ_sem_list = 0x7f0a0761;
+        public static int rv_univ_subjects = 0x7f0a0762;
+        public static int rv_upload_quiz = 0x7f0a0763;
+        public static int rv_videos = 0x7f0a0764;
+        public static int safety_measures = 0x7f0a0765;
+        public static int safety_number = 0x7f0a0766;
+        public static int safety_text = 0x7f0a0767;
+        public static int save_btn = 0x7f0a076a;
+        public static int scholarships_details_btn = 0x7f0a076f;
+        public static int scholorship_lbl = 0x7f0a0770;
+        public static int search_btn = 0x7f0a0779;
+        public static int second_dose_btn = 0x7f0a0782;
+        public static int segment_view = 0x7f0a0785;
+        public static int select_all_checkBox = 0x7f0a0786;
+        public static int select_lyt = 0x7f0a0788;
+        public static int select_tv = 0x7f0a0789;
+        public static int semSpin = 0x7f0a078c;
+        public static int sem_category = 0x7f0a078d;
+        public static int sem_date = 0x7f0a078e;
+        public static int sem_date_eight = 0x7f0a078f;
+        public static int sem_date_five = 0x7f0a0790;
+        public static int sem_date_four = 0x7f0a0791;
+        public static int sem_date_one = 0x7f0a0792;
+        public static int sem_date_seven = 0x7f0a0793;
+        public static int sem_date_six = 0x7f0a0794;
+        public static int sem_date_three = 0x7f0a0795;
+        public static int sem_date_two = 0x7f0a0796;
+        public static int sem_edit_btn = 0x7f0a0797;
+        public static int sem_history_btn = 0x7f0a0798;
+        public static int sem_last_attended = 0x7f0a0799;
+        public static int sem_list_univ = 0x7f0a079a;
+        public static int sem_name = 0x7f0a079b;
+        public static int sem_question_lyt = 0x7f0a079c;
+        public static int sem_reg_academic = 0x7f0a079d;
+        public static int sem_reg_academic_due = 0x7f0a079e;
+        public static int sem_reg_account = 0x7f0a079f;
+        public static int sem_reg_account_due = 0x7f0a07a0;
+        public static int sem_reg_adm_no = 0x7f0a07a1;
+        public static int sem_reg_amount = 0x7f0a07a2;
+        public static int sem_reg_applied_for = 0x7f0a07a3;
+        public static int sem_reg_back_paper = 0x7f0a07a4;
+        public static int sem_reg_back_paper_count = 0x7f0a07a5;
+        public static int sem_reg_bank = 0x7f0a07a6;
+        public static int sem_reg_bus = 0x7f0a07a7;
+        public static int sem_reg_bus_due = 0x7f0a07a8;
+        public static int sem_reg_department = 0x7f0a07a9;
+        public static int sem_reg_department_due = 0x7f0a07aa;
+        public static int sem_reg_e_grand = 0x7f0a07ab;
+        public static int sem_reg_earned_credit = 0x7f0a07ac;
+        public static int sem_reg_email = 0x7f0a07ad;
+        public static int sem_reg_exam_appear = 0x7f0a07ae;
+        public static int sem_reg_fee_concession = 0x7f0a07af;
+        public static int sem_reg_fee_paid = 0x7f0a07b0;
+        public static int sem_reg_fee_receipt = 0x7f0a07b1;
+        public static int sem_reg_gender = 0x7f0a07b2;
+        public static int sem_reg_hostel = 0x7f0a07b3;
+        public static int sem_reg_hostel_due = 0x7f0a07b4;
+        public static int sem_reg_library = 0x7f0a07b5;
+        public static int sem_reg_library_due = 0x7f0a07b6;
+        public static int sem_reg_month_year = 0x7f0a07b7;
+        public static int sem_reg_name = 0x7f0a07b8;
+        public static int sem_reg_payment_mode = 0x7f0a07b9;
+        public static int sem_reg_phone = 0x7f0a07ba;
+        public static int sem_reg_profile_image = 0x7f0a07bb;
+        public static int sem_reg_ref_no = 0x7f0a07bc;
+        public static int sem_reg_remark_by_hod = 0x7f0a07bd;
+        public static int sem_reg_remark_by_teacher = 0x7f0a07be;
+        public static int sem_reg_status = 0x7f0a07bf;
+        public static int sem_reg_univ_no = 0x7f0a07c0;
+        public static int sem_status = 0x7f0a07c1;
+        public static int sem_tab = 0x7f0a07c2;
+        public static int sem_tv = 0x7f0a07c3;
+        public static int sem_viewpager = 0x7f0a07c4;
+        public static int semester_details_lyt = 0x7f0a07c5;
+        public static int semester_lyt = 0x7f0a07c6;
+        public static int semester_name_hr = 0x7f0a07c7;
+        public static int semester_text = 0x7f0a07c8;
+        public static int semester_tv = 0x7f0a07c9;
+        public static int series_layout = 0x7f0a07ca;
+        public static int session_sem = 0x7f0a07cb;
+        public static int sgpa = 0x7f0a07cc;
+        public static int sgpa_btn = 0x7f0a07cd;
+        public static int sgpa_cgpa_lt = 0x7f0a07ce;
+        public static int sgpa_cgpa_tv = 0x7f0a07cf;
+        public static int sgpa_et = 0x7f0a07d0;
+        public static int sgpa_mark = 0x7f0a07d1;
+        public static int sgpa_tv = 0x7f0a07d2;
+        public static int share_app_btn = 0x7f0a07d3;
+        public static int side_bar_attendance = 0x7f0a07da;
+        public static int sl_no = 0x7f0a07de;
+        public static int sortBtn = 0x7f0a07e4;
+        public static int sort_all = 0x7f0a07e5;
+        public static int sort_new = 0x7f0a07e6;
+        public static int sort_old = 0x7f0a07e7;
+        public static int source_book_name = 0x7f0a07e8;
+        public static int specific_btn = 0x7f0a07ec;
+        public static int spin_layout = 0x7f0a07ed;
+        public static int spinnerHostelFeeMonth = 0x7f0a07ef;
+        public static int spinnerHostelFeeYear = 0x7f0a07f0;
+        public static int spinnerPort = 0x7f0a07f1;
+        public static int spinnerTon = 0x7f0a07f2;
+        public static int spinnerVehicle = 0x7f0a07f3;
+        public static int spinnerZone = 0x7f0a07f4;
+        public static int spinner_academic_year = 0x7f0a07f5;
+        public static int spinner_additional_elective1 = 0x7f0a07f6;
+        public static int spinner_additional_elective2 = 0x7f0a07f7;
+        public static int spinner_additional_elective3 = 0x7f0a07f8;
+        public static int spinner_aec1 = 0x7f0a07f9;
+        public static int spinner_aec2 = 0x7f0a07fa;
+        public static int spinner_aec3 = 0x7f0a07fb;
+        public static int spinner_behaviour = 0x7f0a07fc;
+        public static int spinner_boarding = 0x7f0a07fd;
+        public static int spinner_category = 0x7f0a07fe;
+        public static int spinner_catogory = 0x7f0a07ff;
+        public static int spinner_certificate_list = 0x7f0a0800;
+        public static int spinner_clg_list = 0x7f0a0801;
+        public static int spinner_company_names = 0x7f0a0802;
+        public static int spinner_competition = 0x7f0a0803;
+        public static int spinner_councelling_before = 0x7f0a0804;
+        public static int spinner_councelling_meet = 0x7f0a0805;
+        public static int spinner_councelling_type = 0x7f0a0806;
+        public static int spinner_cstore_subject = 0x7f0a0807;
+        public static int spinner_defaulter = 0x7f0a0808;
+        public static int spinner_dsc1 = 0x7f0a0809;
+        public static int spinner_dsc2 = 0x7f0a080a;
+        public static int spinner_dsc3 = 0x7f0a080b;
+        public static int spinner_duty_head = 0x7f0a080c;
+        public static int spinner_elective1 = 0x7f0a080d;
+        public static int spinner_elective2 = 0x7f0a080e;
+        public static int spinner_elective3 = 0x7f0a080f;
+        public static int spinner_fee_method = 0x7f0a0810;
+        public static int spinner_fill = 0x7f0a0811;
+        public static int spinner_gender = 0x7f0a0812;
+        public static int spinner_global_elective = 0x7f0a0813;
+        public static int spinner_grievance = 0x7f0a0814;
+        public static int spinner_honour = 0x7f0a0815;
+        public static int spinner_hostel_fee = 0x7f0a0816;
+        public static int spinner_hostel_fee_method = 0x7f0a0817;
+        public static int spinner_hostler = 0x7f0a0818;
+        public static int spinner_index = 0x7f0a0819;
+        public static int spinner_installment = 0x7f0a081a;
+        public static int spinner_layout = 0x7f0a081b;
+        public static int spinner_layout2 = 0x7f0a081c;
+        public static int spinner_leave = 0x7f0a081d;
+        public static int spinner_leave_type = 0x7f0a081e;
+        public static int spinner_level = 0x7f0a081f;
+        public static int spinner_lt = 0x7f0a0820;
+        public static int spinner_mdc1 = 0x7f0a0821;
+        public static int spinner_mdc2 = 0x7f0a0822;
+        public static int spinner_mdc3 = 0x7f0a0823;
+        public static int spinner_mess_menu = 0x7f0a0824;
+        public static int spinner_mess_type = 0x7f0a0825;
+        public static int spinner_minor = 0x7f0a0826;
+        public static int spinner_minor2 = 0x7f0a0827;
+        public static int spinner_minor3 = 0x7f0a0828;
+        public static int spinner_module = 0x7f0a0829;
+        public static int spinner_no_of_year = 0x7f0a082a;
+        public static int spinner_original_cert = 0x7f0a082b;
+        public static int spinner_pathway = 0x7f0a082c;
+        public static int spinner_pr = 0x7f0a082d;
+        public static int spinner_pre = 0x7f0a082e;
+        public static int spinner_preference_five = 0x7f0a082f;
+        public static int spinner_preference_four = 0x7f0a0830;
+        public static int spinner_preference_one = 0x7f0a0831;
+        public static int spinner_preference_three = 0x7f0a0832;
+        public static int spinner_preference_two = 0x7f0a0833;
+        public static int spinner_present_hostel = 0x7f0a0834;
+        public static int spinner_readmission = 0x7f0a0835;
+        public static int spinner_religion = 0x7f0a0836;
+        public static int spinner_request_opted = 0x7f0a0837;
+        public static int spinner_sem = 0x7f0a0838;
+        public static int spinner_sem_reg = 0x7f0a0839;
+        public static int spinner_semester = 0x7f0a083a;
+        public static int spinner_semester2 = 0x7f0a083b;
+        public static int spinner_semester_applied = 0x7f0a083c;
+        public static int spinner_semester_last_attended = 0x7f0a083d;
+        public static int spinner_session = 0x7f0a083e;
+        public static int spinner_since = 0x7f0a083f;
+        public static int spinner_store_department = 0x7f0a0840;
+        public static int spinner_store_semester = 0x7f0a0841;
+        public static int spinner_subjects = 0x7f0a0842;
+        public static int spinner_type = 0x7f0a0843;
+        public static int spinner_year = 0x7f0a0844;
+        public static int spinner_year_transport = 0x7f0a0845;
+        public static int sports_details_btn = 0x7f0a0848;
+        public static int staff_name_tv = 0x7f0a0850;
+        public static int start = 0x7f0a0852;
+        public static int start_date_tv = 0x7f0a0856;
+        public static int state = 0x7f0a0857;
+        public static int state_itr = 0x7f0a0858;
+        public static int stationary_pager = 0x7f0a085b;
+        public static int status = 0x7f0a085c;
+        public static int status_btn = 0x7f0a085e;
+        public static int status_hr = 0x7f0a085f;
+        public static int status_leave = 0x7f0a0860;
+        public static int status_lyt = 0x7f0a0861;
+        public static int status_re = 0x7f0a0862;
+        public static int status_tv = 0x7f0a0863;
+        public static int store_check_box = 0x7f0a0865;
+        public static int store_title = 0x7f0a0866;
+        public static int store_title_price = 0x7f0a0867;
+        public static int street_itr = 0x7f0a0868;
+        public static int strength_lyt = 0x7f0a0869;
+        public static int sub_atten = 0x7f0a086b;
+        public static int sub_name = 0x7f0a086c;
+        public static int sub_name_tv = 0x7f0a086d;
+        public static int sub_total = 0x7f0a086e;
+        public static int sub_tv = 0x7f0a086f;
+        public static int subject_card = 0x7f0a0870;
+        public static int subject_class = 0x7f0a0871;
+        public static int subject_head = 0x7f0a0872;
+        public static int subject_layout = 0x7f0a0873;
+        public static int subject_mark = 0x7f0a0874;
+        public static int subject_name1 = 0x7f0a0875;
+        public static int subject_name2 = 0x7f0a0876;
+        public static int subject_name3 = 0x7f0a0877;
+        public static int subject_name4 = 0x7f0a0878;
+        public static int subject_name5 = 0x7f0a0879;
+        public static int subject_name6 = 0x7f0a087a;
+        public static int subject_name7 = 0x7f0a087b;
+        public static int subject_name8 = 0x7f0a087c;
+        public static int subject_plan_lyt = 0x7f0a087d;
+        public static int subject_progress_bar = 0x7f0a087e;
+        public static int subject_score_btn = 0x7f0a087f;
+        public static int subject_teacher_name = 0x7f0a0880;
+        public static int subject_tv = 0x7f0a0881;
+        public static int subjects_btn = 0x7f0a0882;
+        public static int subjects_container = 0x7f0a0883;
+        public static int subjects_lyt = 0x7f0a0884;
+        public static int submit_answer = 0x7f0a0886;
+        public static int submit_btn = 0x7f0a0888;
+        public static int submitted_view = 0x7f0a0889;
+        public static int submitted_view_home = 0x7f0a088a;
+        public static int submitted_view_module = 0x7f0a088b;
+        public static int suggest_btn = 0x7f0a088c;
+        public static int supply_lt = 0x7f0a088f;
+        public static int supply_tv = 0x7f0a0890;
+        public static int sur_teach_btn = 0x7f0a0892;
+        public static int sur_teach_name = 0x7f0a0893;
+        public static int sur_teach_status = 0x7f0a0894;
+        public static int sur_teach_sub_name = 0x7f0a0895;
+        public static int survey_do = 0x7f0a0896;
+        public static int survey_last_date = 0x7f0a0897;
+        public static int survey_name = 0x7f0a0898;
+        public static int survey_session = 0x7f0a0899;
+        public static int survey_status = 0x7f0a089a;
+        public static int swipe_layout = 0x7f0a089b;
+        public static int swipe_layout2 = 0x7f0a089c;
+        public static int swipe_layout_history = 0x7f0a089d;
+        public static int swipe_receipt_layout = 0x7f0a089e;
+        public static int syllabus_btn = 0x7f0a08a0;
+        public static int tableAcadamicFeeConfirm = 0x7f0a08a2;
+        public static int tableDutyFull = 0x7f0a08a3;
+        public static int tableDutyHour = 0x7f0a08a4;
+        public static int tableLayoutFeeConfirm = 0x7f0a08a5;
+        public static int tabs = 0x7f0a08a6;
+        public static int teacher_email = 0x7f0a08b4;
+        public static int teacher_img = 0x7f0a08b5;
+        public static int teacher_name = 0x7f0a08b6;
+        public static int teacher_phone = 0x7f0a08b7;
+        public static int teacher_remark_layout = 0x7f0a08b8;
+        public static int teacher_subject = 0x7f0a08b9;
+        public static int teacher_survey_question = 0x7f0a08ba;
+        public static int teacher_survey_question_no = 0x7f0a08bb;
+        public static int teacher_survey_questions_multiple = 0x7f0a08bc;
+        public static int text = 0x7f0a08bd;
+        public static int text2 = 0x7f0a08be;
+        public static int text_view_id = 0x7f0a08c9;
+        public static int third_additional_elective1 = 0x7f0a08d0;
+        public static int third_additional_elective2 = 0x7f0a08d1;
+        public static int third_additional_elective3 = 0x7f0a08d2;
+        public static int third_additional_elective4 = 0x7f0a08d3;
+        public static int third_elective1 = 0x7f0a08d4;
+        public static int third_elective2 = 0x7f0a08d5;
+        public static int third_elective3 = 0x7f0a08d6;
+        public static int third_global_elective1 = 0x7f0a08d7;
+        public static int third_program_elective1 = 0x7f0a08d8;
+        public static int third_program_elective2 = 0x7f0a08d9;
+        public static int third_program_elective3 = 0x7f0a08da;
+        public static int time_table_subject = 0x7f0a08de;
+        public static int time_table_teacher_name = 0x7f0a08df;
+        public static int time_table_time_period = 0x7f0a08e0;
+        public static int timetable_change_date = 0x7f0a08e1;
+        public static int timetable_change_period = 0x7f0a08e2;
+        public static int timetable_change_place = 0x7f0a08e3;
+        public static int timetable_change_teacher = 0x7f0a08e4;
+        public static int timetable_pager = 0x7f0a08e5;
+        public static int timetable_side = 0x7f0a08e6;
+        public static int timetable_special_date = 0x7f0a08e7;
+        public static int timetable_special_period = 0x7f0a08e8;
+        public static int timetable_special_subject = 0x7f0a08e9;
+        public static int timetable_special_teacher = 0x7f0a08ea;
+        public static int title_container = 0x7f0a08ed;
+        public static int title_tv = 0x7f0a08ef;
+        public static int toDate = 0x7f0a08f0;
+        public static int to_date_tv = 0x7f0a08f1;
+        public static int ton_tv = 0x7f0a08f7;
+        public static int toolbar = 0x7f0a08f8;
+        public static int topic_toggle = 0x7f0a08fb;
+        public static int topic_tv = 0x7f0a08fc;
+        public static int topic_view = 0x7f0a08fd;
+        public static int topic_view2 = 0x7f0a08fe;
+        public static int total_amount = 0x7f0a08ff;
+        public static int total_cv = 0x7f0a0900;
+        public static int total_point = 0x7f0a0901;
+        public static int transport_adjustment_tv = 0x7f0a090d;
+        public static int transport_amount_tv = 0x7f0a090e;
+        public static int transport_balance_tv = 0x7f0a090f;
+        public static int transport_fee_btn = 0x7f0a0910;
+        public static int transport_history_btn = 0x7f0a0911;
+        public static int transport_paid_tv = 0x7f0a0912;
+        public static int transport_particular_tv = 0x7f0a0913;
+        public static int transport_particular_tv_paid = 0x7f0a0914;
+        public static int transport_reg_boarding = 0x7f0a0915;
+        public static int transport_reg_btn = 0x7f0a0916;
+        public static int transport_reg_date = 0x7f0a0917;
+        public static int transport_reg_start_date = 0x7f0a0918;
+        public static int transport_reg_status = 0x7f0a0919;
+        public static int transport_reg_year = 0x7f0a091a;
+        public static int transport_status_tv = 0x7f0a091b;
+        public static int tutorial_card = 0x7f0a091f;
+        public static int tutorial_details = 0x7f0a0920;
+        public static int tutorial_download = 0x7f0a0921;
+        public static int tutorial_issue_date = 0x7f0a0922;
+        public static int tutorial_last_date = 0x7f0a0923;
+        public static int tutorial_name = 0x7f0a0924;
+        public static int tutorial_result_layout = 0x7f0a0925;
+        public static int tutorial_select = 0x7f0a0926;
+        public static int tutorial_sem = 0x7f0a0927;
+        public static int tutorial_sem_tv = 0x7f0a0928;
+        public static int tutorial_status = 0x7f0a0929;
+        public static int tutorial_title = 0x7f0a092a;
+        public static int tutorial_upload = 0x7f0a092b;
+        public static int tvDay = 0x7f0a092c;
+        public static int tvMessage = 0x7f0a092d;
+        public static int tv_academic_year = 0x7f0a092e;
+        public static int tv_action_date = 0x7f0a092f;
+        public static int tv_action_level = 0x7f0a0930;
+        public static int tv_action_taken = 0x7f0a0931;
+        public static int tv_additional_fees = 0x7f0a0932;
+        public static int tv_amount = 0x7f0a0933;
+        public static int tv_balance = 0x7f0a0934;
+        public static int tv_category = 0x7f0a0935;
+        public static int tv_create_date = 0x7f0a0936;
+        public static int tv_date = 0x7f0a0937;
+        public static int tv_date_exam = 0x7f0a0938;
+        public static int tv_degree = 0x7f0a0939;
+        public static int tv_description = 0x7f0a093a;
+        public static int tv_doc = 0x7f0a093b;
+        public static int tv_doc_down_btn = 0x7f0a093c;
+        public static int tv_due_total = 0x7f0a093d;
+        public static int tv_earned_credit = 0x7f0a093e;
+        public static int tv_end_date = 0x7f0a093f;
+        public static int tv_error = 0x7f0a0940;
+        public static int tv_fee_arts_total = 0x7f0a0941;
+        public static int tv_fee_engnr_total = 0x7f0a0942;
+        public static int tv_fee_medical_total = 0x7f0a0943;
+        public static int tv_fine = 0x7f0a0944;
+        public static int tv_fixed = 0x7f0a0945;
+        public static int tv_from = 0x7f0a0946;
+        public static int tv_gr_doc = 0x7f0a0947;
+        public static int tv_gr_doc_down_btn = 0x7f0a0948;
+        public static int tv_gr_no = 0x7f0a0949;
+        public static int tv_head = 0x7f0a094a;
+        public static int tv_hostel_total = 0x7f0a094b;
+        public static int tv_instalment = 0x7f0a094c;
+        public static int tv_mark = 0x7f0a094d;
+        public static int tv_module_name = 0x7f0a094e;
+        public static int tv_month = 0x7f0a094f;
+        public static int tv_name = 0x7f0a0950;
+        public static int tv_no = 0x7f0a0951;
+        public static int tv_paid = 0x7f0a0952;
+        public static int tv_payment_method = 0x7f0a0953;
+        public static int tv_price = 0x7f0a0954;
+        public static int tv_processed_by = 0x7f0a0955;
+        public static int tv_product_name = 0x7f0a0956;
+        public static int tv_receipt_date = 0x7f0a0957;
+        public static int tv_receipt_no = 0x7f0a0958;
+        public static int tv_register = 0x7f0a0959;
+        public static int tv_remark = 0x7f0a095a;
+        public static int tv_remark_by = 0x7f0a095b;
+        public static int tv_scholarship = 0x7f0a095c;
+        public static int tv_sem = 0x7f0a095d;
+        public static int tv_sem_reg_file_path = 0x7f0a095e;
+        public static int tv_semester = 0x7f0a095f;
+        public static int tv_sgpa = 0x7f0a0960;
+        public static int tv_size_limit = 0x7f0a0961;
+        public static int tv_start_date = 0x7f0a0962;
+        public static int tv_status = 0x7f0a0963;
+        public static int tv_store_total = 0x7f0a0964;
+        public static int tv_sub = 0x7f0a0965;
+        public static int tv_sub_category = 0x7f0a0966;
+        public static int tv_sub_name = 0x7f0a0967;
+        public static int tv_subtotal = 0x7f0a0968;
+        public static int tv_time_exam = 0x7f0a0969;
+        public static int tv_title = 0x7f0a096a;
+        public static int tv_title_dash = 0x7f0a096b;
+        public static int tv_total = 0x7f0a096c;
+        public static int tv_total_amount = 0x7f0a096d;
+        public static int tv_total_price = 0x7f0a096e;
+        public static int tv_transport_total = 0x7f0a096f;
+        public static int tv_transport_view = 0x7f0a0970;
+        public static int tv_unit_price = 0x7f0a0971;
+        public static int tv_year = 0x7f0a0972;
+        public static int tvassignment = 0x7f0a0973;
+        public static int type_lt = 0x7f0a0974;
+        public static int type_re = 0x7f0a0975;
+        public static int type_tv = 0x7f0a0976;
+        public static int univ_Pager = 0x7f0a0979;
+        public static int univ_credit = 0x7f0a097a;
+        public static int univ_exam_attendance = 0x7f0a097b;
+        public static int univ_exam_credit = 0x7f0a097c;
+        public static int univ_exam_mark = 0x7f0a097d;
+        public static int univ_exam_subject = 0x7f0a097e;
+        public static int univ_grade = 0x7f0a097f;
+        public static int univ_sem = 0x7f0a0980;
+        public static int univ_status = 0x7f0a0981;
+        public static int univ_subject = 0x7f0a0982;
+        public static int univ_subject_name = 0x7f0a0983;
+        public static int univ_tabs = 0x7f0a0984;
+        public static int university_previous_layout = 0x7f0a0985;
+        public static int up_btn = 0x7f0a0988;
+        public static int update_btn = 0x7f0a0989;
+        public static int update_hours_btn = 0x7f0a098a;
+        public static int update_lyt = 0x7f0a098b;
+        public static int updation_btn = 0x7f0a098c;
+        public static int updation_layout = 0x7f0a098d;
+        public static int upload_gr_btn = 0x7f0a098e;
+        public static int upload_lyt = 0x7f0a098f;
+        public static int upload_progressbar = 0x7f0a0990;
+        public static int user_icon = 0x7f0a0992;
+        public static int username = 0x7f0a0993;
+        public static int verified_certificate_WV = 0x7f0a0994;
+        public static int verified_certificate_download = 0x7f0a0995;
+        public static int verified_layout = 0x7f0a0996;
+        public static int verify_btn = 0x7f0a0997;
+        public static int video_card = 0x7f0a0999;
+        public static int video_layout = 0x7f0a099a;
+        public static int view1 = 0x7f0a099b;
+        public static int view2 = 0x7f0a099c;
+        public static int view4 = 0x7f0a099d;
+        public static int viewNoData = 0x7f0a099e;
+        public static int view_btn = 0x7f0a099f;
+        public static int view_btn_hr = 0x7f0a09a0;
+        public static int view_clicked = 0x7f0a09a1;
+        public static int view_due_certificate = 0x7f0a09a2;
+        public static int view_due_receipt = 0x7f0a09a3;
+        public static int view_equipment = 0x7f0a09a4;
+        public static int view_evaluation = 0x7f0a09a5;
+        public static int view_experiments = 0x7f0a09a6;
+        public static int view_gr_doc_btn = 0x7f0a09a7;
+        public static int view_instruction_btn = 0x7f0a09a8;
+        public static int view_proof_btn = 0x7f0a09aa;
+        public static int view_receipt = 0x7f0a09ab;
+        public static int view_reg_hostel = 0x7f0a09ac;
+        public static int view_register_btn = 0x7f0a09ad;
+        public static int view_reply_doc_btn = 0x7f0a09ae;
+        public static int view_reply_text = 0x7f0a09af;
+        public static int view_reply_user_img = 0x7f0a09b0;
+        public static int view_reply_user_name = 0x7f0a09b1;
+        public static int view_transport_buspass = 0x7f0a09b3;
+        public static int view_transport_receipt = 0x7f0a09b4;
+        public static int view_uni_status = 0x7f0a09b9;
+        public static int vis_colg = 0x7f0a09ba;
+        public static int vis_dept = 0x7f0a09bb;
+        public static int vision_btn = 0x7f0a09be;
+        public static int webView = 0x7f0a09bf;
+        public static int webview = 0x7f0a09c0;
+        public static int with_btn = 0x7f0a09c6;
+        public static int with_tv = 0x7f0a09c8;
+        public static int without_btn = 0x7f0a09ca;
+        public static int without_tv = 0x7f0a09cb;
+        public static int wv_thumbnail = 0x7f0a09cf;
+        public static int yearSpin = 0x7f0a09d2;
+        public static int year_tv = 0x7f0a09d3;
+        public static int yt_player = 0x7f0a09d4;
+        public static int zone_tv = 0x7f0a09d5;
 
         /* JADX INFO: Added by JADX */
         public static final int ALT = 0x7f0a0000;
@@ -8656,1303 +8664,1303 @@ public final class R {
         public static final int cradle = 0x7f0a01f1;
 
         /* JADX INFO: Added by JADX */
-        public static final int currentDateLabel = 0x7f0a020a;
+        public static final int currentDateLabel = 0x7f0a020b;
 
         /* JADX INFO: Added by JADX */
-        public static final int currentState = 0x7f0a020b;
+        public static final int currentState = 0x7f0a020c;
 
         /* JADX INFO: Added by JADX */
-        public static final int custom = 0x7f0a020c;
+        public static final int custom = 0x7f0a020d;
 
         /* JADX INFO: Added by JADX */
-        public static final int customPanel = 0x7f0a020d;
+        public static final int customPanel = 0x7f0a020e;
 
         /* JADX INFO: Added by JADX */
-        public static final int cut = 0x7f0a020e;
+        public static final int cut = 0x7f0a020f;
 
         /* JADX INFO: Added by JADX */
-        public static final int dark = 0x7f0a0214;
+        public static final int dark = 0x7f0a0215;
 
         /* JADX INFO: Added by JADX */
-        public static final int dataBinding = 0x7f0a0220;
+        public static final int dataBinding = 0x7f0a0221;
 
         /* JADX INFO: Added by JADX */
-        public static final int date_picker_actions = 0x7f0a022f;
+        public static final int date_picker_actions = 0x7f0a0230;
 
         /* JADX INFO: Added by JADX */
-        public static final int dayIcon = 0x7f0a023c;
+        public static final int dayIcon = 0x7f0a023d;
 
         /* JADX INFO: Added by JADX */
-        public static final int dayLabel = 0x7f0a023d;
+        public static final int dayLabel = 0x7f0a023e;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_1 = 0x7f0a023f;
+        public static final int day_1 = 0x7f0a0240;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_2 = 0x7f0a0240;
+        public static final int day_2 = 0x7f0a0241;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_3 = 0x7f0a0241;
+        public static final int day_3 = 0x7f0a0242;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_4 = 0x7f0a0242;
+        public static final int day_4 = 0x7f0a0243;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_5 = 0x7f0a0243;
+        public static final int day_5 = 0x7f0a0244;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_6 = 0x7f0a0244;
+        public static final int day_6 = 0x7f0a0245;
 
         /* JADX INFO: Added by JADX */
-        public static final int day_7 = 0x7f0a0245;
+        public static final int day_7 = 0x7f0a0246;
 
         /* JADX INFO: Added by JADX */
-        public static final int decelerate = 0x7f0a0248;
+        public static final int decelerate = 0x7f0a0249;
 
         /* JADX INFO: Added by JADX */
-        public static final int decelerateAndComplete = 0x7f0a0249;
+        public static final int decelerateAndComplete = 0x7f0a024a;
 
         /* JADX INFO: Added by JADX */
-        public static final int decor_content_parent = 0x7f0a024a;
+        public static final int decor_content_parent = 0x7f0a024b;
 
         /* JADX INFO: Added by JADX */
-        public static final int default_activity_button = 0x7f0a024b;
+        public static final int default_activity_button = 0x7f0a024c;
 
         /* JADX INFO: Added by JADX */
-        public static final int deltaRelative = 0x7f0a0251;
+        public static final int deltaRelative = 0x7f0a0252;
 
         /* JADX INFO: Added by JADX */
-        public static final int dependency_ordering = 0x7f0a0256;
+        public static final int dependency_ordering = 0x7f0a0257;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_bottom_sheet = 0x7f0a025f;
+        public static final int design_bottom_sheet = 0x7f0a0260;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_menu_item_action_area = 0x7f0a0260;
+        public static final int design_menu_item_action_area = 0x7f0a0261;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_menu_item_action_area_stub = 0x7f0a0261;
+        public static final int design_menu_item_action_area_stub = 0x7f0a0262;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_menu_item_text = 0x7f0a0262;
+        public static final int design_menu_item_text = 0x7f0a0263;
 
         /* JADX INFO: Added by JADX */
-        public static final int design_navigation_view = 0x7f0a0263;
+        public static final int design_navigation_view = 0x7f0a0264;
 
         /* JADX INFO: Added by JADX */
-        public static final int dialog_button = 0x7f0a0268;
+        public static final int dialog_button = 0x7f0a0269;
 
         /* JADX INFO: Added by JADX */
-        public static final int dimensions = 0x7f0a0269;
+        public static final int dimensions = 0x7f0a026a;
 
         /* JADX INFO: Added by JADX */
-        public static final int direct = 0x7f0a026a;
+        public static final int direct = 0x7f0a026b;
 
         /* JADX INFO: Added by JADX */
-        public static final int disableHome = 0x7f0a026c;
+        public static final int disableHome = 0x7f0a026d;
 
         /* JADX INFO: Added by JADX */
-        public static final int disableIntraAutoTransition = 0x7f0a026d;
+        public static final int disableIntraAutoTransition = 0x7f0a026e;
 
         /* JADX INFO: Added by JADX */
-        public static final int disablePostScroll = 0x7f0a026e;
+        public static final int disablePostScroll = 0x7f0a026f;
 
         /* JADX INFO: Added by JADX */
-        public static final int disableScroll = 0x7f0a026f;
+        public static final int disableScroll = 0x7f0a0270;
 
         /* JADX INFO: Added by JADX */
-        public static final int disjoint = 0x7f0a0271;
+        public static final int disjoint = 0x7f0a0272;
 
         /* JADX INFO: Added by JADX */
-        public static final int divider = 0x7f0a0277;
+        public static final int divider = 0x7f0a0278;
 
         /* JADX INFO: Added by JADX */
-        public static final int down = 0x7f0a0279;
+        public static final int down = 0x7f0a027a;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragAnticlockwise = 0x7f0a027c;
+        public static final int dragAnticlockwise = 0x7f0a027d;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragClockwise = 0x7f0a027d;
+        public static final int dragClockwise = 0x7f0a027e;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragDown = 0x7f0a027e;
+        public static final int dragDown = 0x7f0a027f;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragEnd = 0x7f0a027f;
+        public static final int dragEnd = 0x7f0a0280;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragLeft = 0x7f0a0280;
+        public static final int dragLeft = 0x7f0a0281;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragRight = 0x7f0a0281;
+        public static final int dragRight = 0x7f0a0282;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragStart = 0x7f0a0282;
+        public static final int dragStart = 0x7f0a0283;
 
         /* JADX INFO: Added by JADX */
-        public static final int dragUp = 0x7f0a0283;
+        public static final int dragUp = 0x7f0a0284;
 
         /* JADX INFO: Added by JADX */
-        public static final int dropdown_menu = 0x7f0a0284;
+        public static final int dropdown_menu = 0x7f0a0285;
 
         /* JADX INFO: Added by JADX */
-        public static final int easeIn = 0x7f0a02aa;
+        public static final int easeIn = 0x7f0a02ab;
 
         /* JADX INFO: Added by JADX */
-        public static final int easeInOut = 0x7f0a02ab;
+        public static final int easeInOut = 0x7f0a02ac;
 
         /* JADX INFO: Added by JADX */
-        public static final int easeOut = 0x7f0a02ac;
+        public static final int easeOut = 0x7f0a02ad;
 
         /* JADX INFO: Added by JADX */
-        public static final int east = 0x7f0a02ad;
+        public static final int east = 0x7f0a02ae;
 
         /* JADX INFO: Added by JADX */
-        public static final int edge = 0x7f0a02ae;
+        public static final int edge = 0x7f0a02af;
 
         /* JADX INFO: Added by JADX */
-        public static final int edit_query = 0x7f0a02b1;
+        public static final int edit_query = 0x7f0a02b2;
 
         /* JADX INFO: Added by JADX */
-        public static final int edit_text_id = 0x7f0a02b2;
+        public static final int edit_text_id = 0x7f0a02b3;
 
         /* JADX INFO: Added by JADX */
-        public static final int elastic = 0x7f0a02b4;
+        public static final int elastic = 0x7f0a02b5;
 
         /* JADX INFO: Added by JADX */
-        public static final int embed = 0x7f0a02bd;
+        public static final int embed = 0x7f0a02be;
 
         /* JADX INFO: Added by JADX */
-        public static final int endToStart = 0x7f0a02bf;
+        public static final int endToStart = 0x7f0a02c0;
 
         /* JADX INFO: Added by JADX */
-        public static final int end_padder = 0x7f0a02c1;
+        public static final int end_padder = 0x7f0a02c2;
 
         /* JADX INFO: Added by JADX */
-        public static final int enterAlways = 0x7f0a02ca;
+        public static final int enterAlways = 0x7f0a02cb;
 
         /* JADX INFO: Added by JADX */
-        public static final int enterAlwaysCollapsed = 0x7f0a02cb;
+        public static final int enterAlwaysCollapsed = 0x7f0a02cc;
 
         /* JADX INFO: Added by JADX */
-        public static final int escape = 0x7f0a02d2;
+        public static final int escape = 0x7f0a02d3;
 
         /* JADX INFO: Added by JADX */
-        public static final int exitUntilCollapsed = 0x7f0a036b;
+        public static final int exitUntilCollapsed = 0x7f0a036d;
 
         /* JADX INFO: Added by JADX */
-        public static final int expand_activities_button = 0x7f0a0374;
+        public static final int expand_activities_button = 0x7f0a0376;
 
         /* JADX INFO: Added by JADX */
-        public static final int expanded_menu = 0x7f0a0378;
+        public static final int expanded_menu = 0x7f0a037a;
 
         /* JADX INFO: Added by JADX */
-        public static final int fab_label = 0x7f0a0389;
+        public static final int fab_label = 0x7f0a038b;
 
         /* JADX INFO: Added by JADX */
-        public static final int fade = 0x7f0a0391;
+        public static final int fade = 0x7f0a0393;
 
         /* JADX INFO: Added by JADX */
-        public static final int fill = 0x7f0a03ad;
+        public static final int fill = 0x7f0a03af;
 
         /* JADX INFO: Added by JADX */
-        public static final int fill_horizontal = 0x7f0a03ae;
+        public static final int fill_horizontal = 0x7f0a03b0;
 
         /* JADX INFO: Added by JADX */
-        public static final int fill_vertical = 0x7f0a03b0;
+        public static final int fill_vertical = 0x7f0a03b2;
 
         /* JADX INFO: Added by JADX */
-        public static final int filled = 0x7f0a03b1;
+        public static final int filled = 0x7f0a03b3;
 
         /* JADX INFO: Added by JADX */
-        public static final int fitCenter = 0x7f0a03bc;
+        public static final int fitCenter = 0x7f0a03be;
 
         /* JADX INFO: Added by JADX */
-        public static final int fitEnd = 0x7f0a03bd;
+        public static final int fitEnd = 0x7f0a03bf;
 
         /* JADX INFO: Added by JADX */
-        public static final int fitStart = 0x7f0a03be;
+        public static final int fitStart = 0x7f0a03c0;
 
         /* JADX INFO: Added by JADX */
-        public static final int fitToContents = 0x7f0a03bf;
+        public static final int fitToContents = 0x7f0a03c1;
 
         /* JADX INFO: Added by JADX */
-        public static final int fitXY = 0x7f0a03c0;
+        public static final int fitXY = 0x7f0a03c2;
 
         /* JADX INFO: Added by JADX */
-        public static final int fixed = 0x7f0a03c1;
+        public static final int fixed = 0x7f0a03c3;
 
         /* JADX INFO: Added by JADX */
-        public static final int flip = 0x7f0a03c2;
+        public static final int flip = 0x7f0a03c4;
 
         /* JADX INFO: Added by JADX */
-        public static final int floating = 0x7f0a03c3;
+        public static final int floating = 0x7f0a03c5;
 
         /* JADX INFO: Added by JADX */
-        public static final int forever = 0x7f0a03c4;
+        public static final int forever = 0x7f0a03c6;
 
         /* JADX INFO: Added by JADX */
-        public static final int forwardButton = 0x7f0a03c5;
+        public static final int forwardButton = 0x7f0a03c7;
 
         /* JADX INFO: Added by JADX */
-        public static final int fragment_container_view_tag = 0x7f0a03c6;
+        public static final int fragment_container_view_tag = 0x7f0a03c8;
 
         /* JADX INFO: Added by JADX */
-        public static final int friday = 0x7f0a03c7;
+        public static final int friday = 0x7f0a03c9;
 
         /* JADX INFO: Added by JADX */
-        public static final int fridayLabel = 0x7f0a03c8;
+        public static final int fridayLabel = 0x7f0a03ca;
 
         /* JADX INFO: Added by JADX */
-        public static final int frost = 0x7f0a03cc;
+        public static final int frost = 0x7f0a03ce;
 
         /* JADX INFO: Added by JADX */
-        public static final int fullscreen_header = 0x7f0a03ce;
+        public static final int fullscreen_header = 0x7f0a03d0;
 
         /* JADX INFO: Added by JADX */
-        public static final int ghost_view = 0x7f0a03d4;
+        public static final int ghost_view = 0x7f0a03d6;
 
         /* JADX INFO: Added by JADX */
-        public static final int ghost_view_holder = 0x7f0a03d5;
+        public static final int ghost_view_holder = 0x7f0a03d7;
 
         /* JADX INFO: Added by JADX */
-        public static final int glide_custom_view_target_tag = 0x7f0a03d6;
+        public static final int glide_custom_view_target_tag = 0x7f0a03d8;
 
         /* JADX INFO: Added by JADX */
-        public static final int gone = 0x7f0a03de;
+        public static final int gone = 0x7f0a03e0;
 
         /* JADX INFO: Added by JADX */
-        public static final int graph = 0x7f0a03f6;
+        public static final int graph = 0x7f0a03f8;
 
         /* JADX INFO: Added by JADX */
-        public static final int graph_wrap = 0x7f0a03f7;
+        public static final int graph_wrap = 0x7f0a03f9;
 
         /* JADX INFO: Added by JADX */
-        public static final int group_divider = 0x7f0a03f9;
+        public static final int group_divider = 0x7f0a03fb;
 
         /* JADX INFO: Added by JADX */
-        public static final int grouping = 0x7f0a03fa;
+        public static final int grouping = 0x7f0a03fc;
 
         /* JADX INFO: Added by JADX */
-        public static final int groups = 0x7f0a03fb;
+        public static final int groups = 0x7f0a03fd;
 
         /* JADX INFO: Added by JADX */
-        public static final int header_title = 0x7f0a03fe;
+        public static final int header_title = 0x7f0a0400;
 
         /* JADX INFO: Added by JADX */
-        public static final int hide_ime_id = 0x7f0a0400;
+        public static final int hide_ime_id = 0x7f0a0402;
 
         /* JADX INFO: Added by JADX */
-        public static final int hideable = 0x7f0a0401;
+        public static final int hideable = 0x7f0a0403;
 
         /* JADX INFO: Added by JADX */
-        public static final int home = 0x7f0a0408;
+        public static final int home = 0x7f0a040a;
 
         /* JADX INFO: Added by JADX */
-        public static final int homeAsUp = 0x7f0a0409;
+        public static final int homeAsUp = 0x7f0a040b;
 
         /* JADX INFO: Added by JADX */
-        public static final int honorRequest = 0x7f0a0414;
+        public static final int honorRequest = 0x7f0a0416;
 
         /* JADX INFO: Added by JADX */
-        public static final int horizontal_only = 0x7f0a041b;
+        public static final int horizontal_only = 0x7f0a041d;
 
         /* JADX INFO: Added by JADX */
-        public static final int icon = 0x7f0a045a;
+        public static final int icon = 0x7f0a045c;
 
         /* JADX INFO: Added by JADX */
-        public static final int icon_frame = 0x7f0a045b;
+        public static final int icon_frame = 0x7f0a045d;
 
         /* JADX INFO: Added by JADX */
-        public static final int icon_group = 0x7f0a045c;
+        public static final int icon_group = 0x7f0a045e;
 
         /* JADX INFO: Added by JADX */
-        public static final int icon_only = 0x7f0a045d;
+        public static final int icon_only = 0x7f0a045f;
 
         /* JADX INFO: Added by JADX */
-        public static final int ifRoom = 0x7f0a045f;
+        public static final int ifRoom = 0x7f0a0461;
 
         /* JADX INFO: Added by JADX */
-        public static final int ignore = 0x7f0a0463;
+        public static final int ignore = 0x7f0a0465;
 
         /* JADX INFO: Added by JADX */
-        public static final int ignoreRequest = 0x7f0a0464;
+        public static final int ignoreRequest = 0x7f0a0466;
 
         /* JADX INFO: Added by JADX */
-        public static final int imageView4 = 0x7f0a0466;
+        public static final int imageView4 = 0x7f0a0468;
 
         /* JADX INFO: Added by JADX */
-        public static final int immediateStop = 0x7f0a0467;
+        public static final int immediateStop = 0x7f0a0469;
 
         /* JADX INFO: Added by JADX */
-        public static final int included = 0x7f0a0470;
+        public static final int included = 0x7f0a0472;
 
         /* JADX INFO: Added by JADX */
-        public static final int indeterminate = 0x7f0a0471;
+        public static final int indeterminate = 0x7f0a0473;
 
         /* JADX INFO: Added by JADX */
-        public static final int info = 0x7f0a0473;
+        public static final int info = 0x7f0a0475;
 
         /* JADX INFO: Added by JADX */
-        public static final int invisible = 0x7f0a0487;
+        public static final int invisible = 0x7f0a0489;
 
         /* JADX INFO: Added by JADX */
-        public static final int inward = 0x7f0a0488;
+        public static final int inward = 0x7f0a048a;
 
         /* JADX INFO: Added by JADX */
-        public static final int is_pooling_container_tag = 0x7f0a048b;
+        public static final int is_pooling_container_tag = 0x7f0a048d;
 
         /* JADX INFO: Added by JADX */
-        public static final int italic = 0x7f0a048c;
+        public static final int italic = 0x7f0a048e;
 
         /* JADX INFO: Added by JADX */
-        public static final int item_touch_helper_previous_elevation = 0x7f0a048d;
+        public static final int item_touch_helper_previous_elevation = 0x7f0a048f;
 
         /* JADX INFO: Added by JADX */
-        public static final int jumpToEnd = 0x7f0a0495;
+        public static final int jumpToEnd = 0x7f0a0497;
 
         /* JADX INFO: Added by JADX */
-        public static final int jumpToStart = 0x7f0a0496;
+        public static final int jumpToStart = 0x7f0a0498;
 
         /* JADX INFO: Added by JADX */
-        public static final int labeled = 0x7f0a04ae;
+        public static final int labeled = 0x7f0a04b0;
 
         /* JADX INFO: Added by JADX */
-        public static final int layout = 0x7f0a04b0;
+        public static final int layout = 0x7f0a04b2;
 
         /* JADX INFO: Added by JADX */
-        public static final int left = 0x7f0a04b7;
+        public static final int left = 0x7f0a04b9;
 
         /* JADX INFO: Added by JADX */
-        public static final int leftToRight = 0x7f0a04b8;
+        public static final int leftToRight = 0x7f0a04ba;
 
         /* JADX INFO: Added by JADX */
-        public static final int left_bottom = 0x7f0a04b9;
+        public static final int left_bottom = 0x7f0a04bb;
 
         /* JADX INFO: Added by JADX */
-        public static final int left_top = 0x7f0a04ba;
+        public static final int left_top = 0x7f0a04bc;
 
         /* JADX INFO: Added by JADX */
-        public static final int legacy = 0x7f0a04bb;
+        public static final int legacy = 0x7f0a04bd;
 
         /* JADX INFO: Added by JADX */
-        public static final int light = 0x7f0a04c3;
+        public static final int light = 0x7f0a04c5;
 
         /* JADX INFO: Added by JADX */
-        public static final int line1 = 0x7f0a04c5;
+        public static final int line1 = 0x7f0a04c7;
 
         /* JADX INFO: Added by JADX */
-        public static final int line3 = 0x7f0a04c6;
+        public static final int line3 = 0x7f0a04c8;
 
         /* JADX INFO: Added by JADX */
-        public static final int linear = 0x7f0a04c7;
+        public static final int linear = 0x7f0a04c9;
 
         /* JADX INFO: Added by JADX */
-        public static final int listMode = 0x7f0a04d8;
+        public static final int listMode = 0x7f0a04da;
 
         /* JADX INFO: Added by JADX */
-        public static final int list_item = 0x7f0a04d9;
+        public static final int list_item = 0x7f0a04db;
 
         /* JADX INFO: Added by JADX */
-        public static final int locale = 0x7f0a04e0;
+        public static final int locale = 0x7f0a04e2;
 
         /* JADX INFO: Added by JADX */
-        public static final int ltr = 0x7f0a04e9;
+        public static final int ltr = 0x7f0a04eb;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_side_sheet = 0x7f0a04ea;
+        public static final int m3_side_sheet = 0x7f0a04ec;
 
         /* JADX INFO: Added by JADX */
-        public static final int many_days_picker = 0x7f0a04f3;
+        public static final int many_days_picker = 0x7f0a04f5;
 
         /* JADX INFO: Added by JADX */
-        public static final int marquee = 0x7f0a04f4;
+        public static final int marquee = 0x7f0a04f6;
 
         /* JADX INFO: Added by JADX */
-        public static final int masked = 0x7f0a04f5;
+        public static final int masked = 0x7f0a04f7;
 
         /* JADX INFO: Added by JADX */
-        public static final int match_constraint = 0x7f0a04f6;
+        public static final int match_constraint = 0x7f0a04f8;
 
         /* JADX INFO: Added by JADX */
-        public static final int match_parent = 0x7f0a04f7;
+        public static final int match_parent = 0x7f0a04f9;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_display = 0x7f0a04f8;
+        public static final int material_clock_display = 0x7f0a04fa;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_display_and_toggle = 0x7f0a04f9;
+        public static final int material_clock_display_and_toggle = 0x7f0a04fb;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_face = 0x7f0a04fa;
+        public static final int material_clock_face = 0x7f0a04fc;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_hand = 0x7f0a04fb;
+        public static final int material_clock_hand = 0x7f0a04fd;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_level = 0x7f0a04fc;
+        public static final int material_clock_level = 0x7f0a04fe;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_period_am_button = 0x7f0a04fd;
+        public static final int material_clock_period_am_button = 0x7f0a04ff;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_period_pm_button = 0x7f0a04fe;
+        public static final int material_clock_period_pm_button = 0x7f0a0500;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_period_toggle = 0x7f0a04ff;
+        public static final int material_clock_period_toggle = 0x7f0a0501;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_hour_text_input = 0x7f0a0502;
+        public static final int material_hour_text_input = 0x7f0a0504;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_hour_tv = 0x7f0a0503;
+        public static final int material_hour_tv = 0x7f0a0505;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_label = 0x7f0a0504;
+        public static final int material_label = 0x7f0a0506;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_minute_text_input = 0x7f0a0506;
+        public static final int material_minute_text_input = 0x7f0a0508;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_minute_tv = 0x7f0a0507;
+        public static final int material_minute_tv = 0x7f0a0509;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_textinput_timepicker = 0x7f0a050b;
+        public static final int material_textinput_timepicker = 0x7f0a050d;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker_cancel_button = 0x7f0a050c;
+        public static final int material_timepicker_cancel_button = 0x7f0a050e;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker_container = 0x7f0a050d;
+        public static final int material_timepicker_container = 0x7f0a050f;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker_mode_button = 0x7f0a050e;
+        public static final int material_timepicker_mode_button = 0x7f0a0510;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker_ok_button = 0x7f0a050f;
+        public static final int material_timepicker_ok_button = 0x7f0a0511;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker_view = 0x7f0a0510;
+        public static final int material_timepicker_view = 0x7f0a0512;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_value_index = 0x7f0a0512;
+        public static final int material_value_index = 0x7f0a0514;
 
         /* JADX INFO: Added by JADX */
-        public static final int matrix = 0x7f0a0513;
+        public static final int matrix = 0x7f0a0515;
 
         /* JADX INFO: Added by JADX */
-        public static final int media_actions = 0x7f0a051c;
+        public static final int media_actions = 0x7f0a051e;
 
         /* JADX INFO: Added by JADX */
-        public static final int message = 0x7f0a0536;
+        public static final int message = 0x7f0a0538;
 
         /* JADX INFO: Added by JADX */
-        public static final int middle = 0x7f0a0538;
+        public static final int middle = 0x7f0a053a;
 
         /* JADX INFO: Added by JADX */
-        public static final int mini = 0x7f0a0539;
+        public static final int mini = 0x7f0a053b;
 
         /* JADX INFO: Added by JADX */
-        public static final int monday = 0x7f0a054a;
+        public static final int monday = 0x7f0a054c;
 
         /* JADX INFO: Added by JADX */
-        public static final int mondayLabel = 0x7f0a054b;
+        public static final int mondayLabel = 0x7f0a054d;
 
         /* JADX INFO: Added by JADX */
-        public static final int month_grid = 0x7f0a054c;
+        public static final int month_grid = 0x7f0a054e;
 
         /* JADX INFO: Added by JADX */
-        public static final int month_navigation_bar = 0x7f0a054f;
+        public static final int month_navigation_bar = 0x7f0a0551;
 
         /* JADX INFO: Added by JADX */
-        public static final int month_navigation_fragment_toggle = 0x7f0a0550;
+        public static final int month_navigation_fragment_toggle = 0x7f0a0552;
 
         /* JADX INFO: Added by JADX */
-        public static final int month_navigation_next = 0x7f0a0551;
+        public static final int month_navigation_next = 0x7f0a0553;
 
         /* JADX INFO: Added by JADX */
-        public static final int month_navigation_previous = 0x7f0a0552;
+        public static final int month_navigation_previous = 0x7f0a0554;
 
         /* JADX INFO: Added by JADX */
-        public static final int month_title = 0x7f0a0553;
+        public static final int month_title = 0x7f0a0555;
 
         /* JADX INFO: Added by JADX */
-        public static final int motion_base = 0x7f0a055a;
+        public static final int motion_base = 0x7f0a055c;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_anchor_parent = 0x7f0a057e;
+        public static final int mtrl_anchor_parent = 0x7f0a0580;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_day_selector_frame = 0x7f0a057f;
+        public static final int mtrl_calendar_day_selector_frame = 0x7f0a0581;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_days_of_week = 0x7f0a0580;
+        public static final int mtrl_calendar_days_of_week = 0x7f0a0582;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_frame = 0x7f0a0581;
+        public static final int mtrl_calendar_frame = 0x7f0a0583;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_main_pane = 0x7f0a0582;
+        public static final int mtrl_calendar_main_pane = 0x7f0a0584;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_months = 0x7f0a0583;
+        public static final int mtrl_calendar_months = 0x7f0a0585;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_selection_frame = 0x7f0a0584;
+        public static final int mtrl_calendar_selection_frame = 0x7f0a0586;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_text_input_frame = 0x7f0a0585;
+        public static final int mtrl_calendar_text_input_frame = 0x7f0a0587;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_year_selector_frame = 0x7f0a0586;
+        public static final int mtrl_calendar_year_selector_frame = 0x7f0a0588;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_card_checked_layer_id = 0x7f0a0587;
+        public static final int mtrl_card_checked_layer_id = 0x7f0a0589;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_child_content_container = 0x7f0a0588;
+        public static final int mtrl_child_content_container = 0x7f0a058a;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_internal_children_alpha_tag = 0x7f0a0589;
+        public static final int mtrl_internal_children_alpha_tag = 0x7f0a058b;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_motion_snapshot_view = 0x7f0a058a;
+        public static final int mtrl_motion_snapshot_view = 0x7f0a058c;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_fullscreen = 0x7f0a058b;
+        public static final int mtrl_picker_fullscreen = 0x7f0a058d;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header = 0x7f0a058c;
+        public static final int mtrl_picker_header = 0x7f0a058e;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_selection_text = 0x7f0a058d;
+        public static final int mtrl_picker_header_selection_text = 0x7f0a058f;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_title_and_selection = 0x7f0a058e;
+        public static final int mtrl_picker_header_title_and_selection = 0x7f0a0590;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_toggle = 0x7f0a058f;
+        public static final int mtrl_picker_header_toggle = 0x7f0a0591;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_text_input_date = 0x7f0a0590;
+        public static final int mtrl_picker_text_input_date = 0x7f0a0592;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_text_input_range_end = 0x7f0a0591;
+        public static final int mtrl_picker_text_input_range_end = 0x7f0a0593;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_text_input_range_start = 0x7f0a0592;
+        public static final int mtrl_picker_text_input_range_start = 0x7f0a0594;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_title_text = 0x7f0a0593;
+        public static final int mtrl_picker_title_text = 0x7f0a0595;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_view_tag_bottom_padding = 0x7f0a0594;
+        public static final int mtrl_view_tag_bottom_padding = 0x7f0a0596;
 
         /* JADX INFO: Added by JADX */
-        public static final int multiply = 0x7f0a0596;
+        public static final int multiply = 0x7f0a0598;
 
         /* JADX INFO: Added by JADX */
-        public static final int nav_controller_view_tag = 0x7f0a059e;
+        public static final int nav_controller_view_tag = 0x7f0a05a0;
 
         /* JADX INFO: Added by JADX */
-        public static final int nav_host_fragment_container = 0x7f0a059f;
+        public static final int nav_host_fragment_container = 0x7f0a05a1;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_bar_item_active_indicator_view = 0x7f0a05a0;
+        public static final int navigation_bar_item_active_indicator_view = 0x7f0a05a2;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_bar_item_icon_container = 0x7f0a05a1;
+        public static final int navigation_bar_item_icon_container = 0x7f0a05a3;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_bar_item_icon_view = 0x7f0a05a2;
+        public static final int navigation_bar_item_icon_view = 0x7f0a05a4;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_bar_item_labels_group = 0x7f0a05a3;
+        public static final int navigation_bar_item_labels_group = 0x7f0a05a5;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_bar_item_large_label_view = 0x7f0a05a4;
+        public static final int navigation_bar_item_large_label_view = 0x7f0a05a6;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_bar_item_small_label_view = 0x7f0a05a5;
+        public static final int navigation_bar_item_small_label_view = 0x7f0a05a7;
 
         /* JADX INFO: Added by JADX */
-        public static final int navigation_header_container = 0x7f0a05a6;
+        public static final int navigation_header_container = 0x7f0a05a8;
 
         /* JADX INFO: Added by JADX */
-        public static final int negativeButton = 0x7f0a05a7;
+        public static final int negativeButton = 0x7f0a05a9;
 
         /* JADX INFO: Added by JADX */
-        public static final int never = 0x7f0a05a8;
+        public static final int never = 0x7f0a05aa;
 
         /* JADX INFO: Added by JADX */
-        public static final int neverCompleteToEnd = 0x7f0a05a9;
+        public static final int neverCompleteToEnd = 0x7f0a05ab;
 
         /* JADX INFO: Added by JADX */
-        public static final int neverCompleteToStart = 0x7f0a05aa;
+        public static final int neverCompleteToStart = 0x7f0a05ac;
 
         /* JADX INFO: Added by JADX */
-        public static final int noScroll = 0x7f0a05b6;
+        public static final int noScroll = 0x7f0a05b8;
 
         /* JADX INFO: Added by JADX */
-        public static final int noState = 0x7f0a05b7;
+        public static final int noState = 0x7f0a05b9;
 
         /* JADX INFO: Added by JADX */
-        public static final int none = 0x7f0a05bc;
+        public static final int none = 0x7f0a05be;
 
         /* JADX INFO: Added by JADX */
-        public static final int normal = 0x7f0a05bd;
+        public static final int normal = 0x7f0a05bf;
 
         /* JADX INFO: Added by JADX */
-        public static final int north = 0x7f0a05be;
+        public static final int north = 0x7f0a05c0;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_background = 0x7f0a05ca;
+        public static final int notification_background = 0x7f0a05cc;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_main_column = 0x7f0a05cb;
+        public static final int notification_main_column = 0x7f0a05cd;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_main_column_container = 0x7f0a05cc;
+        public static final int notification_main_column_container = 0x7f0a05ce;
 
         /* JADX INFO: Added by JADX */
-        public static final int off = 0x7f0a05cf;
+        public static final int off = 0x7f0a05d1;
 
         /* JADX INFO: Added by JADX */
-        public static final int on = 0x7f0a05d0;
+        public static final int on = 0x7f0a05d2;
 
         /* JADX INFO: Added by JADX */
-        public static final int onAttachStateChangeListener = 0x7f0a05d1;
+        public static final int onAttachStateChangeListener = 0x7f0a05d3;
 
         /* JADX INFO: Added by JADX */
-        public static final int onDateChanged = 0x7f0a05d2;
+        public static final int onDateChanged = 0x7f0a05d4;
 
         /* JADX INFO: Added by JADX */
-        public static final int onInterceptTouchReturnSwipe = 0x7f0a05d3;
+        public static final int onInterceptTouchReturnSwipe = 0x7f0a05d5;
 
         /* JADX INFO: Added by JADX */
-        public static final int one_day_picker = 0x7f0a05d4;
+        public static final int one_day_picker = 0x7f0a05d6;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_bar_text_view = 0x7f0a05d5;
+        public static final int open_search_bar_text_view = 0x7f0a05d7;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_background = 0x7f0a05d6;
+        public static final int open_search_view_background = 0x7f0a05d8;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_clear_button = 0x7f0a05d7;
+        public static final int open_search_view_clear_button = 0x7f0a05d9;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_content_container = 0x7f0a05d8;
+        public static final int open_search_view_content_container = 0x7f0a05da;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_divider = 0x7f0a05d9;
+        public static final int open_search_view_divider = 0x7f0a05db;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_dummy_toolbar = 0x7f0a05da;
+        public static final int open_search_view_dummy_toolbar = 0x7f0a05dc;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_edit_text = 0x7f0a05db;
+        public static final int open_search_view_edit_text = 0x7f0a05dd;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_header_container = 0x7f0a05dc;
+        public static final int open_search_view_header_container = 0x7f0a05de;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_root = 0x7f0a05dd;
+        public static final int open_search_view_root = 0x7f0a05df;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_scrim = 0x7f0a05de;
+        public static final int open_search_view_scrim = 0x7f0a05e0;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_search_prefix = 0x7f0a05df;
+        public static final int open_search_view_search_prefix = 0x7f0a05e1;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_status_bar_spacer = 0x7f0a05e0;
+        public static final int open_search_view_status_bar_spacer = 0x7f0a05e2;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_toolbar = 0x7f0a05e1;
+        public static final int open_search_view_toolbar = 0x7f0a05e3;
 
         /* JADX INFO: Added by JADX */
-        public static final int open_search_view_toolbar_container = 0x7f0a05e2;
+        public static final int open_search_view_toolbar_container = 0x7f0a05e4;
 
         /* JADX INFO: Added by JADX */
-        public static final int outline = 0x7f0a05f6;
+        public static final int outline = 0x7f0a05f8;
 
         /* JADX INFO: Added by JADX */
-        public static final int outward = 0x7f0a05f7;
+        public static final int outward = 0x7f0a05f9;
 
         /* JADX INFO: Added by JADX */
-        public static final int overshoot = 0x7f0a05f8;
+        public static final int overshoot = 0x7f0a05fa;
 
         /* JADX INFO: Added by JADX */
-        public static final int packed = 0x7f0a05f9;
+        public static final int packed = 0x7f0a05fb;
 
         /* JADX INFO: Added by JADX */
-        public static final int parallax = 0x7f0a0603;
+        public static final int parallax = 0x7f0a0605;
 
         /* JADX INFO: Added by JADX */
-        public static final int parent = 0x7f0a0604;
+        public static final int parent = 0x7f0a0606;
 
         /* JADX INFO: Added by JADX */
-        public static final int parentPanel = 0x7f0a0605;
+        public static final int parentPanel = 0x7f0a0607;
 
         /* JADX INFO: Added by JADX */
-        public static final int parentRelative = 0x7f0a0606;
+        public static final int parentRelative = 0x7f0a0608;
 
         /* JADX INFO: Added by JADX */
-        public static final int parent_matrix = 0x7f0a0608;
+        public static final int parent_matrix = 0x7f0a060a;
 
         /* JADX INFO: Added by JADX */
-        public static final int password_toggle = 0x7f0a060a;
+        public static final int password_toggle = 0x7f0a060c;
 
         /* JADX INFO: Added by JADX */
-        public static final int path = 0x7f0a060b;
+        public static final int path = 0x7f0a060d;
 
         /* JADX INFO: Added by JADX */
-        public static final int pathRelative = 0x7f0a060c;
+        public static final int pathRelative = 0x7f0a060e;
 
         /* JADX INFO: Added by JADX */
-        public static final int peekHeight = 0x7f0a0621;
+        public static final int peekHeight = 0x7f0a0623;
 
         /* JADX INFO: Added by JADX */
-        public static final int percent = 0x7f0a0622;
+        public static final int percent = 0x7f0a0624;
 
         /* JADX INFO: Added by JADX */
-        public static final int pooling_container_listener_holder_tag = 0x7f0a063a;
+        public static final int pooling_container_listener_holder_tag = 0x7f0a063c;
 
         /* JADX INFO: Added by JADX */
-        public static final int position = 0x7f0a063c;
+        public static final int position = 0x7f0a063e;
 
         /* JADX INFO: Added by JADX */
-        public static final int positiveButton = 0x7f0a063e;
+        public static final int positiveButton = 0x7f0a0640;
 
         /* JADX INFO: Added by JADX */
-        public static final int postLayout = 0x7f0a063f;
+        public static final int postLayout = 0x7f0a0641;
 
         /* JADX INFO: Added by JADX */
-        public static final int preferences_detail = 0x7f0a0647;
+        public static final int preferences_detail = 0x7f0a0649;
 
         /* JADX INFO: Added by JADX */
-        public static final int preferences_header = 0x7f0a0648;
+        public static final int preferences_header = 0x7f0a064a;
 
         /* JADX INFO: Added by JADX */
-        public static final int preferences_sliding_pane_layout = 0x7f0a0649;
+        public static final int preferences_sliding_pane_layout = 0x7f0a064b;
 
         /* JADX INFO: Added by JADX */
-        public static final int pressed = 0x7f0a064b;
+        public static final int pressed = 0x7f0a064d;
 
         /* JADX INFO: Added by JADX */
-        public static final int previousButton = 0x7f0a064e;
+        public static final int previousButton = 0x7f0a0650;
 
         /* JADX INFO: Added by JADX */
-        public static final int progress_circular = 0x7f0a0658;
+        public static final int progress_circular = 0x7f0a065a;
 
         /* JADX INFO: Added by JADX */
-        public static final int progress_horizontal = 0x7f0a0659;
+        public static final int progress_horizontal = 0x7f0a065b;
 
         /* JADX INFO: Added by JADX */
-        public static final int radio = 0x7f0a067b;
+        public static final int radio = 0x7f0a067d;
 
         /* JADX INFO: Added by JADX */
-        public static final int range_picker = 0x7f0a067d;
+        public static final int range_picker = 0x7f0a067f;
 
         /* JADX INFO: Added by JADX */
-        public static final int ratio = 0x7f0a067e;
+        public static final int ratio = 0x7f0a0680;
 
         /* JADX INFO: Added by JADX */
-        public static final int rectangles = 0x7f0a069a;
+        public static final int rectangles = 0x7f0a069c;
 
         /* JADX INFO: Added by JADX */
-        public static final int recycler_view = 0x7f0a069e;
+        public static final int recycler_view = 0x7f0a06a0;
 
         /* JADX INFO: Added by JADX */
-        public static final int report_drawn = 0x7f0a06be;
+        public static final int report_drawn = 0x7f0a06c0;
 
         /* JADX INFO: Added by JADX */
-        public static final int reverseSawtooth = 0x7f0a06d5;
+        public static final int reverseSawtooth = 0x7f0a06d7;
 
         /* JADX INFO: Added by JADX */
-        public static final int right = 0x7f0a06d9;
+        public static final int right = 0x7f0a06db;
 
         /* JADX INFO: Added by JADX */
-        public static final int rightToLeft = 0x7f0a06da;
+        public static final int rightToLeft = 0x7f0a06dc;
 
         /* JADX INFO: Added by JADX */
-        public static final int right_bottom = 0x7f0a06db;
+        public static final int right_bottom = 0x7f0a06dd;
 
         /* JADX INFO: Added by JADX */
-        public static final int right_icon = 0x7f0a06dc;
+        public static final int right_icon = 0x7f0a06de;
 
         /* JADX INFO: Added by JADX */
-        public static final int right_side = 0x7f0a06dd;
+        public static final int right_side = 0x7f0a06df;
 
         /* JADX INFO: Added by JADX */
-        public static final int right_top = 0x7f0a06de;
+        public static final int right_top = 0x7f0a06e0;
 
         /* JADX INFO: Added by JADX */
-        public static final int rounded = 0x7f0a06e2;
+        public static final int rounded = 0x7f0a06e4;
 
         /* JADX INFO: Added by JADX */
-        public static final int row_index_key = 0x7f0a06e5;
+        public static final int row_index_key = 0x7f0a06e7;
 
         /* JADX INFO: Added by JADX */
-        public static final int rtl = 0x7f0a06e6;
+        public static final int rtl = 0x7f0a06e8;
 
         /* JADX INFO: Added by JADX */
-        public static final int saturday = 0x7f0a0766;
+        public static final int saturday = 0x7f0a0768;
 
         /* JADX INFO: Added by JADX */
-        public static final int saturdayLabel = 0x7f0a0767;
+        public static final int saturdayLabel = 0x7f0a0769;
 
         /* JADX INFO: Added by JADX */
-        public static final int save_non_transition_alpha = 0x7f0a0769;
+        public static final int save_non_transition_alpha = 0x7f0a076b;
 
         /* JADX INFO: Added by JADX */
-        public static final int save_overlay_view = 0x7f0a076a;
+        public static final int save_overlay_view = 0x7f0a076c;
 
         /* JADX INFO: Added by JADX */
-        public static final int sawtooth = 0x7f0a076b;
+        public static final int sawtooth = 0x7f0a076d;
 
         /* JADX INFO: Added by JADX */
-        public static final int scale = 0x7f0a076c;
+        public static final int scale = 0x7f0a076e;
 
         /* JADX INFO: Added by JADX */
-        public static final int screen = 0x7f0a076f;
+        public static final int screen = 0x7f0a0771;
 
         /* JADX INFO: Added by JADX */
-        public static final int scroll = 0x7f0a0770;
+        public static final int scroll = 0x7f0a0772;
 
         /* JADX INFO: Added by JADX */
-        public static final int scrollIndicatorDown = 0x7f0a0771;
+        public static final int scrollIndicatorDown = 0x7f0a0773;
 
         /* JADX INFO: Added by JADX */
-        public static final int scrollIndicatorUp = 0x7f0a0772;
+        public static final int scrollIndicatorUp = 0x7f0a0774;
 
         /* JADX INFO: Added by JADX */
-        public static final int scrollView = 0x7f0a0773;
+        public static final int scrollView = 0x7f0a0775;
 
         /* JADX INFO: Added by JADX */
-        public static final int scrollable = 0x7f0a0774;
+        public static final int scrollable = 0x7f0a0776;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_badge = 0x7f0a0775;
+        public static final int search_badge = 0x7f0a0777;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_bar = 0x7f0a0776;
+        public static final int search_bar = 0x7f0a0778;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_button = 0x7f0a0778;
+        public static final int search_button = 0x7f0a077a;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_close_btn = 0x7f0a0779;
+        public static final int search_close_btn = 0x7f0a077b;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_edit_frame = 0x7f0a077a;
+        public static final int search_edit_frame = 0x7f0a077c;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_go_btn = 0x7f0a077b;
+        public static final int search_go_btn = 0x7f0a077d;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_mag_icon = 0x7f0a077c;
+        public static final int search_mag_icon = 0x7f0a077e;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_plate = 0x7f0a077d;
+        public static final int search_plate = 0x7f0a077f;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_src_text = 0x7f0a077e;
+        public static final int search_src_text = 0x7f0a0780;
 
         /* JADX INFO: Added by JADX */
-        public static final int search_voice_btn = 0x7f0a077f;
+        public static final int search_voice_btn = 0x7f0a0781;
 
         /* JADX INFO: Added by JADX */
-        public static final int seekbar = 0x7f0a0781;
+        public static final int seekbar = 0x7f0a0783;
 
         /* JADX INFO: Added by JADX */
-        public static final int seekbar_value = 0x7f0a0782;
+        public static final int seekbar_value = 0x7f0a0784;
 
         /* JADX INFO: Added by JADX */
-        public static final int select_dialog_listview = 0x7f0a0785;
+        public static final int select_dialog_listview = 0x7f0a0787;
 
         /* JADX INFO: Added by JADX */
-        public static final int selected = 0x7f0a0787;
+        public static final int selected = 0x7f0a078a;
 
         /* JADX INFO: Added by JADX */
-        public static final int selection_type = 0x7f0a0788;
+        public static final int selection_type = 0x7f0a078b;
 
         /* JADX INFO: Added by JADX */
-        public static final int sharedValueSet = 0x7f0a07d1;
+        public static final int sharedValueSet = 0x7f0a07d4;
 
         /* JADX INFO: Added by JADX */
-        public static final int sharedValueUnset = 0x7f0a07d2;
+        public static final int sharedValueUnset = 0x7f0a07d5;
 
         /* JADX INFO: Added by JADX */
-        public static final int shortcut = 0x7f0a07d3;
+        public static final int shortcut = 0x7f0a07d6;
 
         /* JADX INFO: Added by JADX */
-        public static final int showCustom = 0x7f0a07d4;
+        public static final int showCustom = 0x7f0a07d7;
 
         /* JADX INFO: Added by JADX */
-        public static final int showHome = 0x7f0a07d5;
+        public static final int showHome = 0x7f0a07d8;
 
         /* JADX INFO: Added by JADX */
-        public static final int showTitle = 0x7f0a07d6;
+        public static final int showTitle = 0x7f0a07d9;
 
         /* JADX INFO: Added by JADX */
-        public static final int sin = 0x7f0a07d8;
+        public static final int sin = 0x7f0a07db;
 
         /* JADX INFO: Added by JADX */
-        public static final int skipCollapsed = 0x7f0a07d9;
+        public static final int skipCollapsed = 0x7f0a07dc;
 
         /* JADX INFO: Added by JADX */
-        public static final int skipped = 0x7f0a07da;
+        public static final int skipped = 0x7f0a07dd;
 
         /* JADX INFO: Added by JADX */
-        public static final int slide = 0x7f0a07dc;
+        public static final int slide = 0x7f0a07df;
 
         /* JADX INFO: Added by JADX */
-        public static final int snackbar_action = 0x7f0a07dd;
+        public static final int snackbar_action = 0x7f0a07e0;
 
         /* JADX INFO: Added by JADX */
-        public static final int snackbar_text = 0x7f0a07de;
+        public static final int snackbar_text = 0x7f0a07e1;
 
         /* JADX INFO: Added by JADX */
-        public static final int snap = 0x7f0a07df;
+        public static final int snap = 0x7f0a07e2;
 
         /* JADX INFO: Added by JADX */
-        public static final int snapMargins = 0x7f0a07e0;
+        public static final int snapMargins = 0x7f0a07e3;
 
         /* JADX INFO: Added by JADX */
-        public static final int south = 0x7f0a07e6;
+        public static final int south = 0x7f0a07e9;
 
         /* JADX INFO: Added by JADX */
-        public static final int spacer = 0x7f0a07e7;
+        public static final int spacer = 0x7f0a07ea;
 
         /* JADX INFO: Added by JADX */
-        public static final int special_effects_controller_view_tag = 0x7f0a07e8;
+        public static final int special_effects_controller_view_tag = 0x7f0a07eb;
 
         /* JADX INFO: Added by JADX */
-        public static final int spinner = 0x7f0a07eb;
+        public static final int spinner = 0x7f0a07ee;
 
         /* JADX INFO: Added by JADX */
-        public static final int spline = 0x7f0a0843;
+        public static final int spline = 0x7f0a0846;
 
         /* JADX INFO: Added by JADX */
-        public static final int split_action_bar = 0x7f0a0844;
+        public static final int split_action_bar = 0x7f0a0847;
 
         /* JADX INFO: Added by JADX */
-        public static final int spread = 0x7f0a0846;
+        public static final int spread = 0x7f0a0849;
 
         /* JADX INFO: Added by JADX */
-        public static final int spread_inside = 0x7f0a0847;
+        public static final int spread_inside = 0x7f0a084a;
 
         /* JADX INFO: Added by JADX */
-        public static final int spring = 0x7f0a0848;
+        public static final int spring = 0x7f0a084b;
 
         /* JADX INFO: Added by JADX */
-        public static final int square = 0x7f0a0849;
+        public static final int square = 0x7f0a084c;
 
         /* JADX INFO: Added by JADX */
-        public static final int src_atop = 0x7f0a084a;
+        public static final int src_atop = 0x7f0a084d;
 
         /* JADX INFO: Added by JADX */
-        public static final int src_in = 0x7f0a084b;
+        public static final int src_in = 0x7f0a084e;
 
         /* JADX INFO: Added by JADX */
-        public static final int src_over = 0x7f0a084c;
+        public static final int src_over = 0x7f0a084f;
 
         /* JADX INFO: Added by JADX */
-        public static final int standard = 0x7f0a084e;
+        public static final int standard = 0x7f0a0851;
 
         /* JADX INFO: Added by JADX */
-        public static final int startHorizontal = 0x7f0a0850;
+        public static final int startHorizontal = 0x7f0a0853;
 
         /* JADX INFO: Added by JADX */
-        public static final int startToEnd = 0x7f0a0851;
+        public static final int startToEnd = 0x7f0a0854;
 
         /* JADX INFO: Added by JADX */
-        public static final int startVertical = 0x7f0a0852;
+        public static final int startVertical = 0x7f0a0855;
 
         /* JADX INFO: Added by JADX */
-        public static final int staticLayout = 0x7f0a0856;
+        public static final int staticLayout = 0x7f0a0859;
 
         /* JADX INFO: Added by JADX */
-        public static final int staticPostLayout = 0x7f0a0857;
+        public static final int staticPostLayout = 0x7f0a085a;
 
         /* JADX INFO: Added by JADX */
-        public static final int status_bar_latest_event_content = 0x7f0a085a;
+        public static final int status_bar_latest_event_content = 0x7f0a085d;
 
         /* JADX INFO: Added by JADX */
-        public static final int stop = 0x7f0a0861;
+        public static final int stop = 0x7f0a0864;
 
         /* JADX INFO: Added by JADX */
-        public static final int stretch = 0x7f0a0867;
+        public static final int stretch = 0x7f0a086a;
 
         /* JADX INFO: Added by JADX */
-        public static final int submenuarrow = 0x7f0a0882;
+        public static final int submenuarrow = 0x7f0a0885;
 
         /* JADX INFO: Added by JADX */
-        public static final int submit_area = 0x7f0a0884;
+        public static final int submit_area = 0x7f0a0887;
 
         /* JADX INFO: Added by JADX */
-        public static final int sunday = 0x7f0a088a;
+        public static final int sunday = 0x7f0a088d;
 
         /* JADX INFO: Added by JADX */
-        public static final int sundayLabel = 0x7f0a088b;
+        public static final int sundayLabel = 0x7f0a088e;
 
         /* JADX INFO: Added by JADX */
-        public static final int supportScrollUp = 0x7f0a088e;
+        public static final int supportScrollUp = 0x7f0a0891;
 
         /* JADX INFO: Added by JADX */
-        public static final int switchWidget = 0x7f0a089c;
+        public static final int switchWidget = 0x7f0a089f;
 
         /* JADX INFO: Added by JADX */
-        public static final int tabMode = 0x7f0a089e;
+        public static final int tabMode = 0x7f0a08a1;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_actions = 0x7f0a08a4;
+        public static final int tag_accessibility_actions = 0x7f0a08a7;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_clickable_spans = 0x7f0a08a5;
+        public static final int tag_accessibility_clickable_spans = 0x7f0a08a8;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_heading = 0x7f0a08a6;
+        public static final int tag_accessibility_heading = 0x7f0a08a9;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_accessibility_pane_title = 0x7f0a08a7;
+        public static final int tag_accessibility_pane_title = 0x7f0a08aa;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_on_apply_window_listener = 0x7f0a08a8;
+        public static final int tag_on_apply_window_listener = 0x7f0a08ab;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_on_receive_content_listener = 0x7f0a08a9;
+        public static final int tag_on_receive_content_listener = 0x7f0a08ac;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_on_receive_content_mime_types = 0x7f0a08aa;
+        public static final int tag_on_receive_content_mime_types = 0x7f0a08ad;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_screen_reader_focusable = 0x7f0a08ab;
+        public static final int tag_screen_reader_focusable = 0x7f0a08ae;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_state_description = 0x7f0a08ac;
+        public static final int tag_state_description = 0x7f0a08af;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_transition_group = 0x7f0a08ad;
+        public static final int tag_transition_group = 0x7f0a08b0;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_unhandled_key_event_manager = 0x7f0a08ae;
+        public static final int tag_unhandled_key_event_manager = 0x7f0a08b1;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_unhandled_key_listeners = 0x7f0a08af;
+        public static final int tag_unhandled_key_listeners = 0x7f0a08b2;
 
         /* JADX INFO: Added by JADX */
-        public static final int tag_window_insets_animation_callback = 0x7f0a08b0;
+        public static final int tag_window_insets_animation_callback = 0x7f0a08b3;
 
         /* JADX INFO: Added by JADX */
-        public static final int textEnd = 0x7f0a08bc;
+        public static final int textEnd = 0x7f0a08bf;
 
         /* JADX INFO: Added by JADX */
-        public static final int textSpacerNoButtons = 0x7f0a08bd;
+        public static final int textSpacerNoButtons = 0x7f0a08c0;
 
         /* JADX INFO: Added by JADX */
-        public static final int textSpacerNoTitle = 0x7f0a08be;
+        public static final int textSpacerNoTitle = 0x7f0a08c1;
 
         /* JADX INFO: Added by JADX */
-        public static final int textStart = 0x7f0a08bf;
+        public static final int textStart = 0x7f0a08c2;
 
         /* JADX INFO: Added by JADX */
-        public static final int textTop = 0x7f0a08c0;
+        public static final int textTop = 0x7f0a08c3;
 
         /* JADX INFO: Added by JADX */
-        public static final int textWatcher = 0x7f0a08c1;
+        public static final int textWatcher = 0x7f0a08c4;
 
         /* JADX INFO: Added by JADX */
-        public static final int text_input_end_icon = 0x7f0a08c2;
+        public static final int text_input_end_icon = 0x7f0a08c5;
 
         /* JADX INFO: Added by JADX */
-        public static final int text_input_error_icon = 0x7f0a08c3;
+        public static final int text_input_error_icon = 0x7f0a08c6;
 
         /* JADX INFO: Added by JADX */
-        public static final int text_input_start_icon = 0x7f0a08c4;
+        public static final int text_input_start_icon = 0x7f0a08c7;
 
         /* JADX INFO: Added by JADX */
-        public static final int text_switcher = 0x7f0a08c5;
+        public static final int text_switcher = 0x7f0a08c8;
 
         /* JADX INFO: Added by JADX */
-        public static final int textinput_counter = 0x7f0a08c7;
+        public static final int textinput_counter = 0x7f0a08ca;
 
         /* JADX INFO: Added by JADX */
-        public static final int textinput_error = 0x7f0a08c8;
+        public static final int textinput_error = 0x7f0a08cb;
 
         /* JADX INFO: Added by JADX */
-        public static final int textinput_helper_text = 0x7f0a08c9;
+        public static final int textinput_helper_text = 0x7f0a08cc;
 
         /* JADX INFO: Added by JADX */
-        public static final int textinput_placeholder = 0x7f0a08ca;
+        public static final int textinput_placeholder = 0x7f0a08cd;
 
         /* JADX INFO: Added by JADX */
-        public static final int textinput_prefix_text = 0x7f0a08cb;
+        public static final int textinput_prefix_text = 0x7f0a08ce;
 
         /* JADX INFO: Added by JADX */
-        public static final int textinput_suffix_text = 0x7f0a08cc;
+        public static final int textinput_suffix_text = 0x7f0a08cf;
 
         /* JADX INFO: Added by JADX */
-        public static final int thursday = 0x7f0a08d8;
+        public static final int thursday = 0x7f0a08db;
 
         /* JADX INFO: Added by JADX */
-        public static final int thursdayLabel = 0x7f0a08d9;
+        public static final int thursdayLabel = 0x7f0a08dc;
 
         /* JADX INFO: Added by JADX */
-        public static final int time = 0x7f0a08da;
+        public static final int time = 0x7f0a08dd;
 
         /* JADX INFO: Added by JADX */
-        public static final int title = 0x7f0a08e8;
+        public static final int title = 0x7f0a08eb;
 
         /* JADX INFO: Added by JADX */
-        public static final int titleDividerNoCustom = 0x7f0a08e9;
+        public static final int titleDividerNoCustom = 0x7f0a08ec;
 
         /* JADX INFO: Added by JADX */
-        public static final int title_template = 0x7f0a08eb;
+        public static final int title_template = 0x7f0a08ee;
 
         /* JADX INFO: Added by JADX */
-        public static final int toast_icon = 0x7f0a08ef;
+        public static final int toast_icon = 0x7f0a08f2;
 
         /* JADX INFO: Added by JADX */
-        public static final int toast_text = 0x7f0a08f0;
+        public static final int toast_text = 0x7f0a08f3;
 
         /* JADX INFO: Added by JADX */
-        public static final int toast_type = 0x7f0a08f1;
+        public static final int toast_type = 0x7f0a08f4;
 
         /* JADX INFO: Added by JADX */
-        public static final int todayButton = 0x7f0a08f2;
+        public static final int todayButton = 0x7f0a08f5;
 
         /* JADX INFO: Added by JADX */
-        public static final int toggle = 0x7f0a08f3;
+        public static final int toggle = 0x7f0a08f6;
 
         /* JADX INFO: Added by JADX */
-        public static final int top = 0x7f0a08f5;
+        public static final int top = 0x7f0a08f9;
 
         /* JADX INFO: Added by JADX */
-        public static final int topPanel = 0x7f0a08f6;
+        public static final int topPanel = 0x7f0a08fa;
 
         /* JADX INFO: Added by JADX */
-        public static final int touch_outside = 0x7f0a08fe;
+        public static final int touch_outside = 0x7f0a0902;
 
         /* JADX INFO: Added by JADX */
-        public static final int transitionToEnd = 0x7f0a08ff;
+        public static final int transitionToEnd = 0x7f0a0903;
 
         /* JADX INFO: Added by JADX */
-        public static final int transitionToStart = 0x7f0a0900;
+        public static final int transitionToStart = 0x7f0a0904;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_clip = 0x7f0a0901;
+        public static final int transition_clip = 0x7f0a0905;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_current_scene = 0x7f0a0902;
+        public static final int transition_current_scene = 0x7f0a0906;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_image_transform = 0x7f0a0903;
+        public static final int transition_image_transform = 0x7f0a0907;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_layout_save = 0x7f0a0904;
+        public static final int transition_layout_save = 0x7f0a0908;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_pause_alpha = 0x7f0a0905;
+        public static final int transition_pause_alpha = 0x7f0a0909;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_position = 0x7f0a0906;
+        public static final int transition_position = 0x7f0a090a;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_scene_layoutid_cache = 0x7f0a0907;
+        public static final int transition_scene_layoutid_cache = 0x7f0a090b;
 
         /* JADX INFO: Added by JADX */
-        public static final int transition_transform = 0x7f0a0908;
+        public static final int transition_transform = 0x7f0a090c;
 
         /* JADX INFO: Added by JADX */
-        public static final int triangle = 0x7f0a0918;
+        public static final int triangle = 0x7f0a091c;
 
         /* JADX INFO: Added by JADX */
-        public static final int tuesday = 0x7f0a0919;
+        public static final int tuesday = 0x7f0a091d;
 
         /* JADX INFO: Added by JADX */
-        public static final int tuesdayLabel = 0x7f0a091a;
+        public static final int tuesdayLabel = 0x7f0a091e;
 
         /* JADX INFO: Added by JADX */
-        public static final int unchecked = 0x7f0a0972;
+        public static final int unchecked = 0x7f0a0977;
 
         /* JADX INFO: Added by JADX */
-        public static final int uniform = 0x7f0a0973;
+        public static final int uniform = 0x7f0a0978;
 
         /* JADX INFO: Added by JADX */
-        public static final int unlabeled = 0x7f0a0981;
+        public static final int unlabeled = 0x7f0a0986;
 
         /* JADX INFO: Added by JADX */
-        public static final int up = 0x7f0a0982;
+        public static final int up = 0x7f0a0987;
 
         /* JADX INFO: Added by JADX */
-        public static final int useLogo = 0x7f0a098c;
+        public static final int useLogo = 0x7f0a0991;
 
         /* JADX INFO: Added by JADX */
-        public static final int vertical_only = 0x7f0a0993;
+        public static final int vertical_only = 0x7f0a0998;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_offset_helper = 0x7f0a09a4;
+        public static final int view_offset_helper = 0x7f0a09a9;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_transition = 0x7f0a09ad;
+        public static final int view_transition = 0x7f0a09b2;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_tree_lifecycle_owner = 0x7f0a09b0;
+        public static final int view_tree_lifecycle_owner = 0x7f0a09b5;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_tree_on_back_pressed_dispatcher_owner = 0x7f0a09b1;
+        public static final int view_tree_on_back_pressed_dispatcher_owner = 0x7f0a09b6;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_tree_saved_state_registry_owner = 0x7f0a09b2;
+        public static final int view_tree_saved_state_registry_owner = 0x7f0a09b7;
 
         /* JADX INFO: Added by JADX */
-        public static final int view_tree_view_model_store_owner = 0x7f0a09b3;
+        public static final int view_tree_view_model_store_owner = 0x7f0a09b8;
 
         /* JADX INFO: Added by JADX */
-        public static final int visible = 0x7f0a09b7;
+        public static final int visible = 0x7f0a09bc;
 
         /* JADX INFO: Added by JADX */
-        public static final int visible_removing_fragment_view_tag = 0x7f0a09b8;
+        public static final int visible_removing_fragment_view_tag = 0x7f0a09bd;
 
         /* JADX INFO: Added by JADX */
-        public static final int wednesday = 0x7f0a09bc;
+        public static final int wednesday = 0x7f0a09c1;
 
         /* JADX INFO: Added by JADX */
-        public static final int wednesdayLabel = 0x7f0a09bd;
+        public static final int wednesdayLabel = 0x7f0a09c2;
 
         /* JADX INFO: Added by JADX */
-        public static final int west = 0x7f0a09be;
+        public static final int west = 0x7f0a09c3;
 
         /* JADX INFO: Added by JADX */
-        public static final int wide = 0x7f0a09bf;
+        public static final int wide = 0x7f0a09c4;
 
         /* JADX INFO: Added by JADX */
-        public static final int withText = 0x7f0a09c0;
+        public static final int withText = 0x7f0a09c5;
 
         /* JADX INFO: Added by JADX */
-        public static final int with_icon = 0x7f0a09c2;
+        public static final int with_icon = 0x7f0a09c7;
 
         /* JADX INFO: Added by JADX */
-        public static final int withinBounds = 0x7f0a09c4;
+        public static final int withinBounds = 0x7f0a09c9;
 
         /* JADX INFO: Added by JADX */
-        public static final int wrap = 0x7f0a09c7;
+        public static final int wrap = 0x7f0a09cc;
 
         /* JADX INFO: Added by JADX */
-        public static final int wrap_content = 0x7f0a09c8;
+        public static final int wrap_content = 0x7f0a09cd;
 
         /* JADX INFO: Added by JADX */
-        public static final int wrap_content_constrained = 0x7f0a09c9;
+        public static final int wrap_content_constrained = 0x7f0a09ce;
 
         /* JADX INFO: Added by JADX */
-        public static final int x_left = 0x7f0a09cb;
+        public static final int x_left = 0x7f0a09d0;
 
         /* JADX INFO: Added by JADX */
-        public static final int x_right = 0x7f0a09cc;
+        public static final int x_right = 0x7f0a09d1;
 
         private id() {
         }
@@ -10071,376 +10079,377 @@ public final class R {
         public static int dialog_suggest_book = 0x7f0d00a3;
         public static int dialog_transport_fee_pay = 0x7f0d00a4;
         public static int dialog_update_hours = 0x7f0d00a5;
-        public static int dialog_view_proof = 0x7f0d00a6;
-        public static int dialog_view_proof_duty_leave = 0x7f0d00a7;
-        public static int dialog_view_subject_registration = 0x7f0d00a8;
-        public static int dialog_viewregistration_dialog = 0x7f0d00a9;
-        public static int dialog_vision = 0x7f0d00aa;
-        public static int due_fragment = 0x7f0d00ab;
-        public static int due_pay_fragment = 0x7f0d00ac;
-        public static int duty_leave_fragment = 0x7f0d00ad;
-        public static int equipment_fragment = 0x7f0d00ae;
-        public static int evaluation_fragment = 0x7f0d00af;
-        public static int exam_fragment = 0x7f0d00b0;
-        public static int experement_fragment = 0x7f0d00b2;
-        public static int fee_fragment = 0x7f0d00b4;
-        public static int fee_recepit_dialog = 0x7f0d00b5;
-        public static int fragment_acadamic_fee_list = 0x7f0d00b6;
-        public static int fragment_acadamic_fee_next = 0x7f0d00b7;
-        public static int fragment_academic_fee = 0x7f0d00b8;
-        public static int fragment_achievements = 0x7f0d00b9;
-        public static int fragment_asiet_sem_reg = 0x7f0d00ba;
-        public static int fragment_asiet_trans_reg_history = 0x7f0d00bb;
-        public static int fragment_attendance_by_day = 0x7f0d00bc;
-        public static int fragment_attendance_calendar_view = 0x7f0d00bd;
-        public static int fragment_attendance_day_wise = 0x7f0d00be;
-        public static int fragment_booking = 0x7f0d00bf;
-        public static int fragment_booking_history = 0x7f0d00c0;
-        public static int fragment_books = 0x7f0d00c1;
-        public static int fragment_books_records = 0x7f0d00c2;
-        public static int fragment_calendar = 0x7f0d00c3;
-        public static int fragment_calendar_view = 0x7f0d00c4;
-        public static int fragment_cgpa = 0x7f0d00c5;
-        public static int fragment_course_attended = 0x7f0d00c6;
-        public static int fragment_course_survey = 0x7f0d00c7;
-        public static int fragment_course_survey_questions = 0x7f0d00c8;
-        public static int fragment_course_survey_subjects = 0x7f0d00c9;
-        public static int fragment_covid_certificate_two_dialog = 0x7f0d00ca;
-        public static int fragment_dash_table_view = 0x7f0d00cb;
-        public static int fragment_dashboard = 0x7f0d00cc;
-        public static int fragment_day_wise_time_table = 0x7f0d00cd;
-        public static int fragment_direct_apply = 0x7f0d00ce;
-        public static int fragment_dues_main = 0x7f0d00cf;
-        public static int fragment_exam_main = 0x7f0d00d0;
-        public static int fragment_exam_receipt = 0x7f0d00d1;
-        public static int fragment_exam_registration = 0x7f0d00d2;
-        public static int fragment_exam_registration_main = 0x7f0d00d3;
-        public static int fragment_exam_subject = 0x7f0d00d4;
-        public static int fragment_exam_update = 0x7f0d00d5;
-        public static int fragment_exam_view = 0x7f0d00d6;
-        public static int fragment_fee_arts = 0x7f0d00d7;
-        public static int fragment_fee_engineer = 0x7f0d00d8;
-        public static int fragment_fee_list = 0x7f0d00d9;
-        public static int fragment_fee_main = 0x7f0d00da;
-        public static int fragment_fee_medical = 0x7f0d00db;
-        public static int fragment_fee_partial = 0x7f0d00dc;
-        public static int fragment_fields = 0x7f0d00dd;
-        public static int fragment_funded_research = 0x7f0d00de;
-        public static int fragment_gateway_details = 0x7f0d00df;
-        public static int fragment_graduate_exit_survey_list = 0x7f0d00e0;
-        public static int fragment_graduate_exit_survey_questions = 0x7f0d00e1;
-        public static int fragment_hostel_att_view = 0x7f0d00e2;
-        public static int fragment_hostel_attendance = 0x7f0d00e3;
-        public static int fragment_hostel_attendance_parent_fragment = 0x7f0d00e4;
-        public static int fragment_hostel_fee_confirm = 0x7f0d00e5;
-        public static int fragment_hostel_fee_confirm_fragment = 0x7f0d00e6;
-        public static int fragment_hostel_fee_palai = 0x7f0d00e7;
-        public static int fragment_hostel_fee_tkm = 0x7f0d00e8;
-        public static int fragment_hostel_mits = 0x7f0d00e9;
-        public static int fragment_hostel_new = 0x7f0d00ea;
-        public static int fragment_hostel_next = 0x7f0d00eb;
-        public static int fragment_hostel_non_mits = 0x7f0d00ec;
-        public static int fragment_hostel_partial = 0x7f0d00ed;
-        public static int fragment_hostel_receipt = 0x7f0d00ee;
-        public static int fragment_instructions_page = 0x7f0d00ef;
-        public static int fragment_internship = 0x7f0d00f0;
-        public static int fragment_internship_apply = 0x7f0d00f1;
-        public static int fragment_kmea = 0x7f0d00f2;
-        public static int fragment_lab = 0x7f0d00f3;
-        public static int fragment_leave = 0x7f0d00f4;
-        public static int fragment_leave_management = 0x7f0d00f5;
-        public static int fragment_library = 0x7f0d00f6;
-        public static int fragment_membership = 0x7f0d00f7;
-        public static int fragment_mess = 0x7f0d00f8;
-        public static int fragment_message = 0x7f0d00f9;
-        public static int fragment_mooc_course = 0x7f0d00fa;
-        public static int fragment_order_history = 0x7f0d00fb;
-        public static int fragment_palai_sem_reg = 0x7f0d00fc;
-        public static int fragment_pay_web = 0x7f0d00fd;
-        public static int fragment_payment_webview = 0x7f0d00fe;
-        public static int fragment_po_questions_new = 0x7f0d00ff;
-        public static int fragment_po_survey = 0x7f0d0100;
-        public static int fragment_po_survey_questions = 0x7f0d0101;
-        public static int fragment_position_held = 0x7f0d0102;
-        public static int fragment_profile = 0x7f0d0103;
-        public static int fragment_program_outcome = 0x7f0d0104;
-        public static int fragment_project_work = 0x7f0d0105;
-        public static int fragment_publication = 0x7f0d0106;
-        public static int fragment_qualified_examination = 0x7f0d0107;
-        public static int fragment_quiz = 0x7f0d0108;
-        public static int fragment_quiz_questions = 0x7f0d0109;
-        public static int fragment_quiz_result = 0x7f0d010a;
-        public static int fragment_registration = 0x7f0d010b;
-        public static int fragment_revaluation = 0x7f0d010c;
-        public static int fragment_revaluation_fee = 0x7f0d010d;
-        public static int fragment_revaluation_receipt = 0x7f0d010e;
-        public static int fragment_revaluation_update = 0x7f0d010f;
-        public static int fragment_revaluation_view = 0x7f0d0110;
-        public static int fragment_scholarship = 0x7f0d0111;
-        public static int fragment_search_dialog = 0x7f0d0112;
-        public static int fragment_sent_items = 0x7f0d0113;
-        public static int fragment_sport = 0x7f0d0114;
-        public static int fragment_stationary_main = 0x7f0d0115;
-        public static int fragment_store = 0x7f0d0116;
-        public static int fragment_subject_registration = 0x7f0d0117;
-        public static int fragment_survey = 0x7f0d0118;
-        public static int fragment_teacher_survey_list = 0x7f0d0119;
-        public static int fragment_teacher_survey_questions = 0x7f0d011a;
-        public static int fragment_transport = 0x7f0d011b;
-        public static int fragment_transport_buspass = 0x7f0d011c;
-        public static int fragment_transport_fee = 0x7f0d011d;
-        public static int fragment_transport_history = 0x7f0d011e;
-        public static int fragment_transport_receipt = 0x7f0d011f;
-        public static int fragment_transport_reg_history = 0x7f0d0120;
-        public static int fragment_webview = 0x7f0d0121;
-        public static int full_day_dialog = 0x7f0d0122;
-        public static int grievance_doc_dialog = 0x7f0d0123;
-        public static int grievance_fragment = 0x7f0d0124;
-        public static int home_work_files_dialog = 0x7f0d0125;
-        public static int home_work_fragment = 0x7f0d0126;
-        public static int hostel_fee_fragment = 0x7f0d0127;
-        public static int hostel_fragment = 0x7f0d0128;
-        public static int hostel_fragment_tkm = 0x7f0d0129;
-        public static int hostel_main_fragment = 0x7f0d012a;
-        public static int hostel_row_month = 0x7f0d012b;
-        public static int hour_dialog = 0x7f0d012c;
-        public static int info_layout = 0x7f0d0130;
-        public static int internal_result_fragment = 0x7f0d0131;
-        public static int item_dialog_date_indicator = 0x7f0d0132;
-        public static int item_empty_subject_plaan = 0x7f0d0133;
-        public static int item_empty_view = 0x7f0d0134;
-        public static int lab_due_fragment = 0x7f0d0135;
-        public static int lab_list_fragment = 0x7f0d0136;
-        public static int lab_practical_fragment = 0x7f0d0137;
-        public static int layout_certificate_type_list = 0x7f0d0138;
-        public static int layout_college_list = 0x7f0d0139;
-        public static int layout_fill_list = 0x7f0d013a;
-        public static int layout_fill_list_new = 0x7f0d013b;
-        public static int layout_semester_list = 0x7f0d013c;
-        public static int live_tv_fragment = 0x7f0d013d;
-        public static int logout_change_password_fragment = 0x7f0d013e;
-        public static int manage_activity_fragment = 0x7f0d0144;
-        public static int material_fragment = 0x7f0d014c;
-        public static int medical_fragment = 0x7f0d0154;
-        public static int mits_hotel_view = 0x7f0d0155;
-        public static int module_test_fragment = 0x7f0d0156;
-        public static int notice_fragment = 0x7f0d0177;
-        public static int online_class_fragment = 0x7f0d0187;
-        public static int placement_fragment = 0x7f0d0188;
-        public static int program_outcome_main_fragment = 0x7f0d0199;
-        public static int proof_file_dialog = 0x7f0d019a;
-        public static int question_bank_fragment = 0x7f0d019b;
-        public static int question_dialog = 0x7f0d019c;
-        public static int receipt_fragment = 0x7f0d019d;
-        public static int remark_fragment = 0x7f0d019e;
-        public static int remind_dialog = 0x7f0d019f;
-        public static int remind_dialog2 = 0x7f0d01a0;
-        public static int reply_dialog = 0x7f0d01a1;
-        public static int result_fragment = 0x7f0d01a2;
-        public static int result_module_test_fragment = 0x7f0d01a3;
-        public static int result_tutorial_fragment = 0x7f0d01a4;
-        public static int review_dialog = 0x7f0d01a5;
-        public static int row_acadamic_pay = 0x7f0d01a6;
-        public static int row_achevement_sem = 0x7f0d01a7;
-        public static int row_achievements = 0x7f0d01a8;
-        public static int row_actions = 0x7f0d01a9;
-        public static int row_actions2 = 0x7f0d01aa;
-        public static int row_activity_manage = 0x7f0d01ab;
-        public static int row_activity_point = 0x7f0d01ac;
-        public static int row_apply_preference_sub_reg = 0x7f0d01ad;
-        public static int row_assignment = 0x7f0d01ae;
-        public static int row_book = 0x7f0d01af;
-        public static int row_booking_receipt = 0x7f0d01b0;
-        public static int row_books_records = 0x7f0d01b1;
-        public static int row_by_subject = 0x7f0d01b2;
-        public static int row_calendar_days = 0x7f0d01b3;
-        public static int row_cell_members = 0x7f0d01b4;
-        public static int row_cell_members2 = 0x7f0d01b5;
-        public static int row_centralized_info = 0x7f0d01b6;
-        public static int row_certificate_request = 0x7f0d01b7;
-        public static int row_chat_subjects = 0x7f0d01b8;
-        public static int row_circular = 0x7f0d01b9;
-        public static int row_colleges = 0x7f0d01ba;
-        public static int row_comments = 0x7f0d01bb;
-        public static int row_counselling = 0x7f0d01bc;
-        public static int row_course_outcomes = 0x7f0d01bd;
-        public static int row_course_survey = 0x7f0d01be;
-        public static int row_course_survey_questions = 0x7f0d01bf;
-        public static int row_courses_attended = 0x7f0d01c0;
-        public static int row_dash = 0x7f0d01c1;
-        public static int row_dash_timetable = 0x7f0d01c2;
-        public static int row_dates = 0x7f0d01c3;
-        public static int row_day_wise_time_table = 0x7f0d01c4;
-        public static int row_direct_apply = 0x7f0d01c5;
-        public static int row_do_survey = 0x7f0d01c6;
-        public static int row_due = 0x7f0d01c7;
-        public static int row_due_pay = 0x7f0d01c8;
-        public static int row_duty = 0x7f0d01c9;
-        public static int row_duty_leave_dates = 0x7f0d01ca;
-        public static int row_equip_list = 0x7f0d01cb;
-        public static int row_exam = 0x7f0d01cc;
-        public static int row_exam_receipt = 0x7f0d01cd;
-        public static int row_exam_register = 0x7f0d01ce;
-        public static int row_exam_schedule = 0x7f0d01cf;
-        public static int row_exam_subject = 0x7f0d01d0;
-        public static int row_exam_subject2 = 0x7f0d01d1;
-        public static int row_exam_subject3 = 0x7f0d01d2;
-        public static int row_exam_update = 0x7f0d01d3;
-        public static int row_exam_view = 0x7f0d01d4;
-        public static int row_fee = 0x7f0d01d5;
-        public static int row_fee_arts = 0x7f0d01d6;
-        public static int row_fee_detail = 0x7f0d01d7;
-        public static int row_fee_engineer = 0x7f0d01d8;
-        public static int row_fee_list = 0x7f0d01d9;
-        public static int row_fee_partial = 0x7f0d01da;
-        public static int row_funded = 0x7f0d01db;
-        public static int row_funded_sem = 0x7f0d01dc;
-        public static int row_gr_docs = 0x7f0d01dd;
-        public static int row_graduate_exit_survey_questions = 0x7f0d01de;
-        public static int row_grievance = 0x7f0d01df;
-        public static int row_home_work = 0x7f0d01e0;
-        public static int row_hostel_fee = 0x7f0d01e1;
-        public static int row_hostel_fee_main_list = 0x7f0d01e2;
-        public static int row_hostel_fees = 0x7f0d01e3;
-        public static int row_hostel_history = 0x7f0d01e4;
-        public static int row_hostel_mits = 0x7f0d01e5;
-        public static int row_hostel_mits_admission = 0x7f0d01e6;
-        public static int row_hostel_new_admission = 0x7f0d01e7;
-        public static int row_hostel_new_details = 0x7f0d01e8;
-        public static int row_hostel_non_mits = 0x7f0d01e9;
-        public static int row_hostel_non_mits_admisssion = 0x7f0d01ea;
-        public static int row_hostel_partial_monthly = 0x7f0d01eb;
-        public static int row_hostel_receipt = 0x7f0d01ec;
-        public static int row_hostelfee_detail = 0x7f0d01ed;
-        public static int row_hour = 0x7f0d01ee;
-        public static int row_inbox = 0x7f0d01ef;
-        public static int row_internship = 0x7f0d01f0;
-        public static int row_lab_due = 0x7f0d01f1;
-        public static int row_lab_evaluations = 0x7f0d01f2;
-        public static int row_lab_list = 0x7f0d01f3;
-        public static int row_lab_practicals = 0x7f0d01f4;
-        public static int row_lab_safety = 0x7f0d01f5;
-        public static int row_leave_taken = 0x7f0d01f6;
-        public static int row_library_books = 0x7f0d01f7;
-        public static int row_live_tv = 0x7f0d01f8;
-        public static int row_material = 0x7f0d01f9;
-        public static int row_mcq = 0x7f0d01fa;
-        public static int row_medical = 0x7f0d01fb;
-        public static int row_membership = 0x7f0d01fc;
-        public static int row_mess = 0x7f0d01fd;
-        public static int row_mooc_course = 0x7f0d01fe;
-        public static int row_mooc_sem = 0x7f0d01ff;
-        public static int row_notice = 0x7f0d0200;
-        public static int row_notice_main = 0x7f0d0201;
-        public static int row_online_class = 0x7f0d0202;
-        public static int row_order_history = 0x7f0d0203;
-        public static int row_palai_hostel = 0x7f0d0204;
-        public static int row_palai_hostel_new = 0x7f0d0205;
-        public static int row_placement = 0x7f0d0206;
-        public static int row_po_survey_questions = 0x7f0d0207;
-        public static int row_position = 0x7f0d0208;
-        public static int row_position_sem = 0x7f0d0209;
-        public static int row_prebooking = 0x7f0d020a;
-        public static int row_program_outcome = 0x7f0d020b;
-        public static int row_project_sem = 0x7f0d020c;
-        public static int row_project_work = 0x7f0d020d;
-        public static int row_publicaatiion_sem = 0x7f0d020e;
-        public static int row_publication = 0x7f0d020f;
-        public static int row_push = 0x7f0d0210;
-        public static int row_q_exam = 0x7f0d0211;
-        public static int row_question = 0x7f0d0212;
-        public static int row_question_numbers = 0x7f0d0213;
-        public static int row_quiz = 0x7f0d0214;
-        public static int row_quiz_multiple = 0x7f0d0215;
-        public static int row_receipt = 0x7f0d0216;
-        public static int row_registration = 0x7f0d0217;
-        public static int row_remark = 0x7f0d0218;
-        public static int row_replys = 0x7f0d0219;
-        public static int row_result_assi = 0x7f0d021a;
-        public static int row_result_descriptive = 0x7f0d021b;
-        public static int row_result_file_type = 0x7f0d021c;
-        public static int row_result_internal = 0x7f0d021d;
-        public static int row_result_module_test = 0x7f0d021e;
-        public static int row_revaluation = 0x7f0d021f;
-        public static int row_revaluation_receipt = 0x7f0d0220;
-        public static int row_revaluation_update = 0x7f0d0221;
-        public static int row_revaluation_view = 0x7f0d0222;
-        public static int row_revaluationfee = 0x7f0d0223;
-        public static int row_scholarship_sem = 0x7f0d0224;
-        public static int row_scholarships = 0x7f0d0225;
-        public static int row_sem_reg_list = 0x7f0d0226;
-        public static int row_sem_reg_palai = 0x7f0d0227;
-        public static int row_session = 0x7f0d0228;
-        public static int row_session_sem_list = 0x7f0d0229;
-        public static int row_special = 0x7f0d022a;
-        public static int row_sport = 0x7f0d022b;
-        public static int row_sport_sem = 0x7f0d022c;
-        public static int row_store = 0x7f0d022d;
-        public static int row_sub_reg_header = 0x7f0d022e;
-        public static int row_sub_reg_list = 0x7f0d022f;
-        public static int row_sub_status = 0x7f0d0230;
-        public static int row_subject = 0x7f0d0231;
-        public static int row_subject_coverage = 0x7f0d0232;
-        public static int row_subject_plan = 0x7f0d0233;
-        public static int row_survey = 0x7f0d0234;
-        public static int row_syllabus = 0x7f0d0235;
-        public static int row_teacher = 0x7f0d0236;
-        public static int row_tech_survey = 0x7f0d0237;
-        public static int row_timetable_change = 0x7f0d0238;
-        public static int row_timetable_view = 0x7f0d0239;
-        public static int row_tkm_university = 0x7f0d023a;
-        public static int row_transport = 0x7f0d023b;
-        public static int row_transport_history = 0x7f0d023c;
-        public static int row_transport_receipt = 0x7f0d023d;
-        public static int row_transport_reg_history = 0x7f0d023e;
-        public static int row_tutorial = 0x7f0d023f;
-        public static int row_tutorial_result = 0x7f0d0240;
-        public static int row_univ_exam_subjects = 0x7f0d0241;
-        public static int row_univ_sem_list = 0x7f0d0242;
-        public static int row_univ_subjects = 0x7f0d0243;
-        public static int row_video = 0x7f0d0244;
-        public static int row_view_hostel_att_parent_view = 0x7f0d0245;
-        public static int row_view_hostel_attendance = 0x7f0d0246;
-        public static int row_view_sem_sub_history = 0x7f0d0247;
-        public static int row_view_sub_reg = 0x7f0d0248;
-        public static int safety_fragment = 0x7f0d0249;
-        public static int sem_list_dialog = 0x7f0d024d;
-        public static int sem_list_dialog_session = 0x7f0d024e;
-        public static int sem_pager_fragment = 0x7f0d024f;
-        public static int sem_reg_fragment = 0x7f0d0250;
-        public static int sem_reg_view_fragment = 0x7f0d0251;
-        public static int sem_register_list_fragment = 0x7f0d0252;
-        public static int series_exam_fragment = 0x7f0d0253;
-        public static int sessional_fragment = 0x7f0d0254;
-        public static int show_hostel_fee = 0x7f0d0255;
-        public static int show_hostel_recipt = 0x7f0d0256;
-        public static int special_class_fragment = 0x7f0d0257;
-        public static int store_dialog = 0x7f0d0258;
-        public static int sub_attendance_fragment = 0x7f0d0259;
-        public static int subject_coverage_fragment = 0x7f0d025a;
-        public static int subject_fragment = 0x7f0d025b;
-        public static int submit_exam_dialog = 0x7f0d025c;
-        public static int submit_home_work_dialog = 0x7f0d025d;
-        public static int syllabus_fragment = 0x7f0d025f;
-        public static int tableview_cell_layout = 0x7f0d0260;
-        public static int tableview_column_header_layout = 0x7f0d0261;
-        public static int tableview_corner_layout = 0x7f0d0262;
-        public static int tableview_row_header_layout = 0x7f0d0263;
-        public static int teacher_fragment = 0x7f0d0264;
-        public static int time_table_fragment = 0x7f0d0265;
-        public static int timtable_view_fragment = 0x7f0d0266;
-        public static int tutorial_fragment = 0x7f0d0267;
-        public static int univ_initial_page_fragment = 0x7f0d0268;
-        public static int university_exams_fragment = 0x7f0d0269;
-        public static int university_fragment = 0x7f0d026a;
-        public static int university_result_fragment = 0x7f0d026b;
-        public static int upload_assignment_dialog = 0x7f0d026c;
-        public static int upload_tutorial_dialog = 0x7f0d026d;
-        public static int video_class_fragment = 0x7f0d026e;
-        public static int view_counselling_fragment = 0x7f0d026f;
-        public static int view_grievance_fragment = 0x7f0d0270;
-        public static int view_mvjce_sem_reg_dialog = 0x7f0d0271;
-        public static int view_progress_bar = 0x7f0d0272;
+        public static int dialog_verify_abc_id = 0x7f0d00a6;
+        public static int dialog_view_proof = 0x7f0d00a7;
+        public static int dialog_view_proof_duty_leave = 0x7f0d00a8;
+        public static int dialog_view_subject_registration = 0x7f0d00a9;
+        public static int dialog_viewregistration_dialog = 0x7f0d00aa;
+        public static int dialog_vision = 0x7f0d00ab;
+        public static int due_fragment = 0x7f0d00ac;
+        public static int due_pay_fragment = 0x7f0d00ad;
+        public static int duty_leave_fragment = 0x7f0d00ae;
+        public static int equipment_fragment = 0x7f0d00af;
+        public static int evaluation_fragment = 0x7f0d00b0;
+        public static int exam_fragment = 0x7f0d00b1;
+        public static int experement_fragment = 0x7f0d00b3;
+        public static int fee_fragment = 0x7f0d00b5;
+        public static int fee_recepit_dialog = 0x7f0d00b6;
+        public static int fragment_acadamic_fee_list = 0x7f0d00b7;
+        public static int fragment_acadamic_fee_next = 0x7f0d00b8;
+        public static int fragment_academic_fee = 0x7f0d00b9;
+        public static int fragment_achievements = 0x7f0d00ba;
+        public static int fragment_asiet_sem_reg = 0x7f0d00bb;
+        public static int fragment_asiet_trans_reg_history = 0x7f0d00bc;
+        public static int fragment_attendance_by_day = 0x7f0d00bd;
+        public static int fragment_attendance_calendar_view = 0x7f0d00be;
+        public static int fragment_attendance_day_wise = 0x7f0d00bf;
+        public static int fragment_booking = 0x7f0d00c0;
+        public static int fragment_booking_history = 0x7f0d00c1;
+        public static int fragment_books = 0x7f0d00c2;
+        public static int fragment_books_records = 0x7f0d00c3;
+        public static int fragment_calendar = 0x7f0d00c4;
+        public static int fragment_calendar_view = 0x7f0d00c5;
+        public static int fragment_cgpa = 0x7f0d00c6;
+        public static int fragment_course_attended = 0x7f0d00c7;
+        public static int fragment_course_survey = 0x7f0d00c8;
+        public static int fragment_course_survey_questions = 0x7f0d00c9;
+        public static int fragment_course_survey_subjects = 0x7f0d00ca;
+        public static int fragment_covid_certificate_two_dialog = 0x7f0d00cb;
+        public static int fragment_dash_table_view = 0x7f0d00cc;
+        public static int fragment_dashboard = 0x7f0d00cd;
+        public static int fragment_day_wise_time_table = 0x7f0d00ce;
+        public static int fragment_direct_apply = 0x7f0d00cf;
+        public static int fragment_dues_main = 0x7f0d00d0;
+        public static int fragment_exam_main = 0x7f0d00d1;
+        public static int fragment_exam_receipt = 0x7f0d00d2;
+        public static int fragment_exam_registration = 0x7f0d00d3;
+        public static int fragment_exam_registration_main = 0x7f0d00d4;
+        public static int fragment_exam_subject = 0x7f0d00d5;
+        public static int fragment_exam_update = 0x7f0d00d6;
+        public static int fragment_exam_view = 0x7f0d00d7;
+        public static int fragment_fee_arts = 0x7f0d00d8;
+        public static int fragment_fee_engineer = 0x7f0d00d9;
+        public static int fragment_fee_list = 0x7f0d00da;
+        public static int fragment_fee_main = 0x7f0d00db;
+        public static int fragment_fee_medical = 0x7f0d00dc;
+        public static int fragment_fee_partial = 0x7f0d00dd;
+        public static int fragment_fields = 0x7f0d00de;
+        public static int fragment_funded_research = 0x7f0d00df;
+        public static int fragment_gateway_details = 0x7f0d00e0;
+        public static int fragment_graduate_exit_survey_list = 0x7f0d00e1;
+        public static int fragment_graduate_exit_survey_questions = 0x7f0d00e2;
+        public static int fragment_hostel_att_view = 0x7f0d00e3;
+        public static int fragment_hostel_attendance = 0x7f0d00e4;
+        public static int fragment_hostel_attendance_parent_fragment = 0x7f0d00e5;
+        public static int fragment_hostel_fee_confirm = 0x7f0d00e6;
+        public static int fragment_hostel_fee_confirm_fragment = 0x7f0d00e7;
+        public static int fragment_hostel_fee_palai = 0x7f0d00e8;
+        public static int fragment_hostel_fee_tkm = 0x7f0d00e9;
+        public static int fragment_hostel_mits = 0x7f0d00ea;
+        public static int fragment_hostel_new = 0x7f0d00eb;
+        public static int fragment_hostel_next = 0x7f0d00ec;
+        public static int fragment_hostel_non_mits = 0x7f0d00ed;
+        public static int fragment_hostel_partial = 0x7f0d00ee;
+        public static int fragment_hostel_receipt = 0x7f0d00ef;
+        public static int fragment_instructions_page = 0x7f0d00f0;
+        public static int fragment_internship = 0x7f0d00f1;
+        public static int fragment_internship_apply = 0x7f0d00f2;
+        public static int fragment_kmea = 0x7f0d00f3;
+        public static int fragment_lab = 0x7f0d00f4;
+        public static int fragment_leave = 0x7f0d00f5;
+        public static int fragment_leave_management = 0x7f0d00f6;
+        public static int fragment_library = 0x7f0d00f7;
+        public static int fragment_membership = 0x7f0d00f8;
+        public static int fragment_mess = 0x7f0d00f9;
+        public static int fragment_message = 0x7f0d00fa;
+        public static int fragment_mooc_course = 0x7f0d00fb;
+        public static int fragment_order_history = 0x7f0d00fc;
+        public static int fragment_palai_sem_reg = 0x7f0d00fd;
+        public static int fragment_pay_web = 0x7f0d00fe;
+        public static int fragment_payment_webview = 0x7f0d00ff;
+        public static int fragment_po_questions_new = 0x7f0d0100;
+        public static int fragment_po_survey = 0x7f0d0101;
+        public static int fragment_po_survey_questions = 0x7f0d0102;
+        public static int fragment_position_held = 0x7f0d0103;
+        public static int fragment_profile = 0x7f0d0104;
+        public static int fragment_program_outcome = 0x7f0d0105;
+        public static int fragment_project_work = 0x7f0d0106;
+        public static int fragment_publication = 0x7f0d0107;
+        public static int fragment_qualified_examination = 0x7f0d0108;
+        public static int fragment_quiz = 0x7f0d0109;
+        public static int fragment_quiz_questions = 0x7f0d010a;
+        public static int fragment_quiz_result = 0x7f0d010b;
+        public static int fragment_registration = 0x7f0d010c;
+        public static int fragment_revaluation = 0x7f0d010d;
+        public static int fragment_revaluation_fee = 0x7f0d010e;
+        public static int fragment_revaluation_receipt = 0x7f0d010f;
+        public static int fragment_revaluation_update = 0x7f0d0110;
+        public static int fragment_revaluation_view = 0x7f0d0111;
+        public static int fragment_scholarship = 0x7f0d0112;
+        public static int fragment_search_dialog = 0x7f0d0113;
+        public static int fragment_sent_items = 0x7f0d0114;
+        public static int fragment_sport = 0x7f0d0115;
+        public static int fragment_stationary_main = 0x7f0d0116;
+        public static int fragment_store = 0x7f0d0117;
+        public static int fragment_subject_registration = 0x7f0d0118;
+        public static int fragment_survey = 0x7f0d0119;
+        public static int fragment_teacher_survey_list = 0x7f0d011a;
+        public static int fragment_teacher_survey_questions = 0x7f0d011b;
+        public static int fragment_transport = 0x7f0d011c;
+        public static int fragment_transport_buspass = 0x7f0d011d;
+        public static int fragment_transport_fee = 0x7f0d011e;
+        public static int fragment_transport_history = 0x7f0d011f;
+        public static int fragment_transport_receipt = 0x7f0d0120;
+        public static int fragment_transport_reg_history = 0x7f0d0121;
+        public static int fragment_webview = 0x7f0d0122;
+        public static int full_day_dialog = 0x7f0d0123;
+        public static int grievance_doc_dialog = 0x7f0d0124;
+        public static int grievance_fragment = 0x7f0d0125;
+        public static int home_work_files_dialog = 0x7f0d0126;
+        public static int home_work_fragment = 0x7f0d0127;
+        public static int hostel_fee_fragment = 0x7f0d0128;
+        public static int hostel_fragment = 0x7f0d0129;
+        public static int hostel_fragment_tkm = 0x7f0d012a;
+        public static int hostel_main_fragment = 0x7f0d012b;
+        public static int hostel_row_month = 0x7f0d012c;
+        public static int hour_dialog = 0x7f0d012d;
+        public static int info_layout = 0x7f0d0131;
+        public static int internal_result_fragment = 0x7f0d0132;
+        public static int item_dialog_date_indicator = 0x7f0d0133;
+        public static int item_empty_subject_plaan = 0x7f0d0134;
+        public static int item_empty_view = 0x7f0d0135;
+        public static int lab_due_fragment = 0x7f0d0136;
+        public static int lab_list_fragment = 0x7f0d0137;
+        public static int lab_practical_fragment = 0x7f0d0138;
+        public static int layout_certificate_type_list = 0x7f0d0139;
+        public static int layout_college_list = 0x7f0d013a;
+        public static int layout_fill_list = 0x7f0d013b;
+        public static int layout_fill_list_new = 0x7f0d013c;
+        public static int layout_semester_list = 0x7f0d013d;
+        public static int live_tv_fragment = 0x7f0d013e;
+        public static int logout_change_password_fragment = 0x7f0d013f;
+        public static int manage_activity_fragment = 0x7f0d0145;
+        public static int material_fragment = 0x7f0d014d;
+        public static int medical_fragment = 0x7f0d0155;
+        public static int mits_hotel_view = 0x7f0d0156;
+        public static int module_test_fragment = 0x7f0d0157;
+        public static int notice_fragment = 0x7f0d0178;
+        public static int online_class_fragment = 0x7f0d0188;
+        public static int placement_fragment = 0x7f0d0189;
+        public static int program_outcome_main_fragment = 0x7f0d019a;
+        public static int proof_file_dialog = 0x7f0d019b;
+        public static int question_bank_fragment = 0x7f0d019c;
+        public static int question_dialog = 0x7f0d019d;
+        public static int receipt_fragment = 0x7f0d019e;
+        public static int remark_fragment = 0x7f0d019f;
+        public static int remind_dialog = 0x7f0d01a0;
+        public static int remind_dialog2 = 0x7f0d01a1;
+        public static int reply_dialog = 0x7f0d01a2;
+        public static int result_fragment = 0x7f0d01a3;
+        public static int result_module_test_fragment = 0x7f0d01a4;
+        public static int result_tutorial_fragment = 0x7f0d01a5;
+        public static int review_dialog = 0x7f0d01a6;
+        public static int row_acadamic_pay = 0x7f0d01a7;
+        public static int row_achevement_sem = 0x7f0d01a8;
+        public static int row_achievements = 0x7f0d01a9;
+        public static int row_actions = 0x7f0d01aa;
+        public static int row_actions2 = 0x7f0d01ab;
+        public static int row_activity_manage = 0x7f0d01ac;
+        public static int row_activity_point = 0x7f0d01ad;
+        public static int row_apply_preference_sub_reg = 0x7f0d01ae;
+        public static int row_assignment = 0x7f0d01af;
+        public static int row_book = 0x7f0d01b0;
+        public static int row_booking_receipt = 0x7f0d01b1;
+        public static int row_books_records = 0x7f0d01b2;
+        public static int row_by_subject = 0x7f0d01b3;
+        public static int row_calendar_days = 0x7f0d01b4;
+        public static int row_cell_members = 0x7f0d01b5;
+        public static int row_cell_members2 = 0x7f0d01b6;
+        public static int row_centralized_info = 0x7f0d01b7;
+        public static int row_certificate_request = 0x7f0d01b8;
+        public static int row_chat_subjects = 0x7f0d01b9;
+        public static int row_circular = 0x7f0d01ba;
+        public static int row_colleges = 0x7f0d01bb;
+        public static int row_comments = 0x7f0d01bc;
+        public static int row_counselling = 0x7f0d01bd;
+        public static int row_course_outcomes = 0x7f0d01be;
+        public static int row_course_survey = 0x7f0d01bf;
+        public static int row_course_survey_questions = 0x7f0d01c0;
+        public static int row_courses_attended = 0x7f0d01c1;
+        public static int row_dash = 0x7f0d01c2;
+        public static int row_dash_timetable = 0x7f0d01c3;
+        public static int row_dates = 0x7f0d01c4;
+        public static int row_day_wise_time_table = 0x7f0d01c5;
+        public static int row_direct_apply = 0x7f0d01c6;
+        public static int row_do_survey = 0x7f0d01c7;
+        public static int row_due = 0x7f0d01c8;
+        public static int row_due_pay = 0x7f0d01c9;
+        public static int row_duty = 0x7f0d01ca;
+        public static int row_duty_leave_dates = 0x7f0d01cb;
+        public static int row_equip_list = 0x7f0d01cc;
+        public static int row_exam = 0x7f0d01cd;
+        public static int row_exam_receipt = 0x7f0d01ce;
+        public static int row_exam_register = 0x7f0d01cf;
+        public static int row_exam_schedule = 0x7f0d01d0;
+        public static int row_exam_subject = 0x7f0d01d1;
+        public static int row_exam_subject2 = 0x7f0d01d2;
+        public static int row_exam_subject3 = 0x7f0d01d3;
+        public static int row_exam_update = 0x7f0d01d4;
+        public static int row_exam_view = 0x7f0d01d5;
+        public static int row_fee = 0x7f0d01d6;
+        public static int row_fee_arts = 0x7f0d01d7;
+        public static int row_fee_detail = 0x7f0d01d8;
+        public static int row_fee_engineer = 0x7f0d01d9;
+        public static int row_fee_list = 0x7f0d01da;
+        public static int row_fee_partial = 0x7f0d01db;
+        public static int row_funded = 0x7f0d01dc;
+        public static int row_funded_sem = 0x7f0d01dd;
+        public static int row_gr_docs = 0x7f0d01de;
+        public static int row_graduate_exit_survey_questions = 0x7f0d01df;
+        public static int row_grievance = 0x7f0d01e0;
+        public static int row_home_work = 0x7f0d01e1;
+        public static int row_hostel_fee = 0x7f0d01e2;
+        public static int row_hostel_fee_main_list = 0x7f0d01e3;
+        public static int row_hostel_fees = 0x7f0d01e4;
+        public static int row_hostel_history = 0x7f0d01e5;
+        public static int row_hostel_mits = 0x7f0d01e6;
+        public static int row_hostel_mits_admission = 0x7f0d01e7;
+        public static int row_hostel_new_admission = 0x7f0d01e8;
+        public static int row_hostel_new_details = 0x7f0d01e9;
+        public static int row_hostel_non_mits = 0x7f0d01ea;
+        public static int row_hostel_non_mits_admisssion = 0x7f0d01eb;
+        public static int row_hostel_partial_monthly = 0x7f0d01ec;
+        public static int row_hostel_receipt = 0x7f0d01ed;
+        public static int row_hostelfee_detail = 0x7f0d01ee;
+        public static int row_hour = 0x7f0d01ef;
+        public static int row_inbox = 0x7f0d01f0;
+        public static int row_internship = 0x7f0d01f1;
+        public static int row_lab_due = 0x7f0d01f2;
+        public static int row_lab_evaluations = 0x7f0d01f3;
+        public static int row_lab_list = 0x7f0d01f4;
+        public static int row_lab_practicals = 0x7f0d01f5;
+        public static int row_lab_safety = 0x7f0d01f6;
+        public static int row_leave_taken = 0x7f0d01f7;
+        public static int row_library_books = 0x7f0d01f8;
+        public static int row_live_tv = 0x7f0d01f9;
+        public static int row_material = 0x7f0d01fa;
+        public static int row_mcq = 0x7f0d01fb;
+        public static int row_medical = 0x7f0d01fc;
+        public static int row_membership = 0x7f0d01fd;
+        public static int row_mess = 0x7f0d01fe;
+        public static int row_mooc_course = 0x7f0d01ff;
+        public static int row_mooc_sem = 0x7f0d0200;
+        public static int row_notice = 0x7f0d0201;
+        public static int row_notice_main = 0x7f0d0202;
+        public static int row_online_class = 0x7f0d0203;
+        public static int row_order_history = 0x7f0d0204;
+        public static int row_palai_hostel = 0x7f0d0205;
+        public static int row_palai_hostel_new = 0x7f0d0206;
+        public static int row_placement = 0x7f0d0207;
+        public static int row_po_survey_questions = 0x7f0d0208;
+        public static int row_position = 0x7f0d0209;
+        public static int row_position_sem = 0x7f0d020a;
+        public static int row_prebooking = 0x7f0d020b;
+        public static int row_program_outcome = 0x7f0d020c;
+        public static int row_project_sem = 0x7f0d020d;
+        public static int row_project_work = 0x7f0d020e;
+        public static int row_publicaatiion_sem = 0x7f0d020f;
+        public static int row_publication = 0x7f0d0210;
+        public static int row_push = 0x7f0d0211;
+        public static int row_q_exam = 0x7f0d0212;
+        public static int row_question = 0x7f0d0213;
+        public static int row_question_numbers = 0x7f0d0214;
+        public static int row_quiz = 0x7f0d0215;
+        public static int row_quiz_multiple = 0x7f0d0216;
+        public static int row_receipt = 0x7f0d0217;
+        public static int row_registration = 0x7f0d0218;
+        public static int row_remark = 0x7f0d0219;
+        public static int row_replys = 0x7f0d021a;
+        public static int row_result_assi = 0x7f0d021b;
+        public static int row_result_descriptive = 0x7f0d021c;
+        public static int row_result_file_type = 0x7f0d021d;
+        public static int row_result_internal = 0x7f0d021e;
+        public static int row_result_module_test = 0x7f0d021f;
+        public static int row_revaluation = 0x7f0d0220;
+        public static int row_revaluation_receipt = 0x7f0d0221;
+        public static int row_revaluation_update = 0x7f0d0222;
+        public static int row_revaluation_view = 0x7f0d0223;
+        public static int row_revaluationfee = 0x7f0d0224;
+        public static int row_scholarship_sem = 0x7f0d0225;
+        public static int row_scholarships = 0x7f0d0226;
+        public static int row_sem_reg_list = 0x7f0d0227;
+        public static int row_sem_reg_palai = 0x7f0d0228;
+        public static int row_session = 0x7f0d0229;
+        public static int row_session_sem_list = 0x7f0d022a;
+        public static int row_special = 0x7f0d022b;
+        public static int row_sport = 0x7f0d022c;
+        public static int row_sport_sem = 0x7f0d022d;
+        public static int row_store = 0x7f0d022e;
+        public static int row_sub_reg_header = 0x7f0d022f;
+        public static int row_sub_reg_list = 0x7f0d0230;
+        public static int row_sub_status = 0x7f0d0231;
+        public static int row_subject = 0x7f0d0232;
+        public static int row_subject_coverage = 0x7f0d0233;
+        public static int row_subject_plan = 0x7f0d0234;
+        public static int row_survey = 0x7f0d0235;
+        public static int row_syllabus = 0x7f0d0236;
+        public static int row_teacher = 0x7f0d0237;
+        public static int row_tech_survey = 0x7f0d0238;
+        public static int row_timetable_change = 0x7f0d0239;
+        public static int row_timetable_view = 0x7f0d023a;
+        public static int row_tkm_university = 0x7f0d023b;
+        public static int row_transport = 0x7f0d023c;
+        public static int row_transport_history = 0x7f0d023d;
+        public static int row_transport_receipt = 0x7f0d023e;
+        public static int row_transport_reg_history = 0x7f0d023f;
+        public static int row_tutorial = 0x7f0d0240;
+        public static int row_tutorial_result = 0x7f0d0241;
+        public static int row_univ_exam_subjects = 0x7f0d0242;
+        public static int row_univ_sem_list = 0x7f0d0243;
+        public static int row_univ_subjects = 0x7f0d0244;
+        public static int row_video = 0x7f0d0245;
+        public static int row_view_hostel_att_parent_view = 0x7f0d0246;
+        public static int row_view_hostel_attendance = 0x7f0d0247;
+        public static int row_view_sem_sub_history = 0x7f0d0248;
+        public static int row_view_sub_reg = 0x7f0d0249;
+        public static int safety_fragment = 0x7f0d024a;
+        public static int sem_list_dialog = 0x7f0d024e;
+        public static int sem_list_dialog_session = 0x7f0d024f;
+        public static int sem_pager_fragment = 0x7f0d0250;
+        public static int sem_reg_fragment = 0x7f0d0251;
+        public static int sem_reg_view_fragment = 0x7f0d0252;
+        public static int sem_register_list_fragment = 0x7f0d0253;
+        public static int series_exam_fragment = 0x7f0d0254;
+        public static int sessional_fragment = 0x7f0d0255;
+        public static int show_hostel_fee = 0x7f0d0256;
+        public static int show_hostel_recipt = 0x7f0d0257;
+        public static int special_class_fragment = 0x7f0d0258;
+        public static int store_dialog = 0x7f0d0259;
+        public static int sub_attendance_fragment = 0x7f0d025a;
+        public static int subject_coverage_fragment = 0x7f0d025b;
+        public static int subject_fragment = 0x7f0d025c;
+        public static int submit_exam_dialog = 0x7f0d025d;
+        public static int submit_home_work_dialog = 0x7f0d025e;
+        public static int syllabus_fragment = 0x7f0d0260;
+        public static int tableview_cell_layout = 0x7f0d0261;
+        public static int tableview_column_header_layout = 0x7f0d0262;
+        public static int tableview_corner_layout = 0x7f0d0263;
+        public static int tableview_row_header_layout = 0x7f0d0264;
+        public static int teacher_fragment = 0x7f0d0265;
+        public static int time_table_fragment = 0x7f0d0266;
+        public static int timtable_view_fragment = 0x7f0d0267;
+        public static int tutorial_fragment = 0x7f0d0268;
+        public static int univ_initial_page_fragment = 0x7f0d0269;
+        public static int university_exams_fragment = 0x7f0d026a;
+        public static int university_fragment = 0x7f0d026b;
+        public static int university_result_fragment = 0x7f0d026c;
+        public static int upload_assignment_dialog = 0x7f0d026d;
+        public static int upload_tutorial_dialog = 0x7f0d026e;
+        public static int video_class_fragment = 0x7f0d026f;
+        public static int view_counselling_fragment = 0x7f0d0270;
+        public static int view_grievance_fragment = 0x7f0d0271;
+        public static int view_mvjce_sem_reg_dialog = 0x7f0d0272;
+        public static int view_progress_bar = 0x7f0d0273;
 
         /* JADX INFO: Added by JADX */
         public static final int abc_action_bar_title_item = 0x7f0d0000;
@@ -10605,277 +10614,277 @@ public final class R {
         public static final int design_text_input_start_icon = 0x7f0d006b;
 
         /* JADX INFO: Added by JADX */
-        public static final int expand_button = 0x7f0d00b1;
+        public static final int expand_button = 0x7f0d00b2;
 
         /* JADX INFO: Added by JADX */
-        public static final int fancytoast_layout = 0x7f0d00b3;
+        public static final int fancytoast_layout = 0x7f0d00b4;
 
         /* JADX INFO: Added by JADX */
-        public static final int image_frame = 0x7f0d012d;
+        public static final int image_frame = 0x7f0d012e;
 
         /* JADX INFO: Added by JADX */
-        public static final int ime_base_split_test_activity = 0x7f0d012e;
+        public static final int ime_base_split_test_activity = 0x7f0d012f;
 
         /* JADX INFO: Added by JADX */
-        public static final int ime_secondary_split_test_activity = 0x7f0d012f;
+        public static final int ime_secondary_split_test_activity = 0x7f0d0130;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_alert_dialog = 0x7f0d013f;
+        public static final int m3_alert_dialog = 0x7f0d0140;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_alert_dialog_actions = 0x7f0d0140;
+        public static final int m3_alert_dialog_actions = 0x7f0d0141;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_alert_dialog_title = 0x7f0d0141;
+        public static final int m3_alert_dialog_title = 0x7f0d0142;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_auto_complete_simple_item = 0x7f0d0142;
+        public static final int m3_auto_complete_simple_item = 0x7f0d0143;
 
         /* JADX INFO: Added by JADX */
-        public static final int m3_side_sheet_dialog = 0x7f0d0143;
+        public static final int m3_side_sheet_dialog = 0x7f0d0144;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_chip_input_combo = 0x7f0d0145;
+        public static final int material_chip_input_combo = 0x7f0d0146;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_display = 0x7f0d0146;
+        public static final int material_clock_display = 0x7f0d0147;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_display_divider = 0x7f0d0147;
+        public static final int material_clock_display_divider = 0x7f0d0148;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_period_toggle = 0x7f0d0148;
+        public static final int material_clock_period_toggle = 0x7f0d0149;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clock_period_toggle_land = 0x7f0d0149;
+        public static final int material_clock_period_toggle_land = 0x7f0d014a;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clockface_textview = 0x7f0d014a;
+        public static final int material_clockface_textview = 0x7f0d014b;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_clockface_view = 0x7f0d014b;
+        public static final int material_clockface_view = 0x7f0d014c;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_radial_view_group = 0x7f0d014d;
+        public static final int material_radial_view_group = 0x7f0d014e;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_textinput_timepicker = 0x7f0d014e;
+        public static final int material_textinput_timepicker = 0x7f0d014f;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_time_chip = 0x7f0d014f;
+        public static final int material_time_chip = 0x7f0d0150;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_time_input = 0x7f0d0150;
+        public static final int material_time_input = 0x7f0d0151;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker = 0x7f0d0151;
+        public static final int material_timepicker = 0x7f0d0152;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker_dialog = 0x7f0d0152;
+        public static final int material_timepicker_dialog = 0x7f0d0153;
 
         /* JADX INFO: Added by JADX */
-        public static final int material_timepicker_textinput_display = 0x7f0d0153;
+        public static final int material_timepicker_textinput_display = 0x7f0d0154;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_alert_dialog = 0x7f0d0157;
+        public static final int mtrl_alert_dialog = 0x7f0d0158;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_alert_dialog_actions = 0x7f0d0158;
+        public static final int mtrl_alert_dialog_actions = 0x7f0d0159;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_alert_dialog_title = 0x7f0d0159;
+        public static final int mtrl_alert_dialog_title = 0x7f0d015a;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_alert_select_dialog_item = 0x7f0d015a;
+        public static final int mtrl_alert_select_dialog_item = 0x7f0d015b;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_alert_select_dialog_multichoice = 0x7f0d015b;
+        public static final int mtrl_alert_select_dialog_multichoice = 0x7f0d015c;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_alert_select_dialog_singlechoice = 0x7f0d015c;
+        public static final int mtrl_alert_select_dialog_singlechoice = 0x7f0d015d;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_auto_complete_simple_item = 0x7f0d015d;
+        public static final int mtrl_auto_complete_simple_item = 0x7f0d015e;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_day = 0x7f0d015e;
+        public static final int mtrl_calendar_day = 0x7f0d015f;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_day_of_week = 0x7f0d015f;
+        public static final int mtrl_calendar_day_of_week = 0x7f0d0160;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_days_of_week = 0x7f0d0160;
+        public static final int mtrl_calendar_days_of_week = 0x7f0d0161;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_horizontal = 0x7f0d0161;
+        public static final int mtrl_calendar_horizontal = 0x7f0d0162;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_month = 0x7f0d0162;
+        public static final int mtrl_calendar_month = 0x7f0d0163;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_month_labeled = 0x7f0d0163;
+        public static final int mtrl_calendar_month_labeled = 0x7f0d0164;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_month_navigation = 0x7f0d0164;
+        public static final int mtrl_calendar_month_navigation = 0x7f0d0165;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_months = 0x7f0d0165;
+        public static final int mtrl_calendar_months = 0x7f0d0166;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_vertical = 0x7f0d0166;
+        public static final int mtrl_calendar_vertical = 0x7f0d0167;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_calendar_year = 0x7f0d0167;
+        public static final int mtrl_calendar_year = 0x7f0d0168;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_layout_snackbar = 0x7f0d0168;
+        public static final int mtrl_layout_snackbar = 0x7f0d0169;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_layout_snackbar_include = 0x7f0d0169;
+        public static final int mtrl_layout_snackbar_include = 0x7f0d016a;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_navigation_rail_item = 0x7f0d016a;
+        public static final int mtrl_navigation_rail_item = 0x7f0d016b;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_actions = 0x7f0d016b;
+        public static final int mtrl_picker_actions = 0x7f0d016c;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_dialog = 0x7f0d016c;
+        public static final int mtrl_picker_dialog = 0x7f0d016d;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_fullscreen = 0x7f0d016d;
+        public static final int mtrl_picker_fullscreen = 0x7f0d016e;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_dialog = 0x7f0d016e;
+        public static final int mtrl_picker_header_dialog = 0x7f0d016f;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_fullscreen = 0x7f0d016f;
+        public static final int mtrl_picker_header_fullscreen = 0x7f0d0170;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_selection_text = 0x7f0d0170;
+        public static final int mtrl_picker_header_selection_text = 0x7f0d0171;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_title_text = 0x7f0d0171;
+        public static final int mtrl_picker_header_title_text = 0x7f0d0172;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_header_toggle = 0x7f0d0172;
+        public static final int mtrl_picker_header_toggle = 0x7f0d0173;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_text_input_date = 0x7f0d0173;
+        public static final int mtrl_picker_text_input_date = 0x7f0d0174;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_picker_text_input_date_range = 0x7f0d0174;
+        public static final int mtrl_picker_text_input_date_range = 0x7f0d0175;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_search_bar = 0x7f0d0175;
+        public static final int mtrl_search_bar = 0x7f0d0176;
 
         /* JADX INFO: Added by JADX */
-        public static final int mtrl_search_view = 0x7f0d0176;
+        public static final int mtrl_search_view = 0x7f0d0177;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_action = 0x7f0d0178;
+        public static final int notification_action = 0x7f0d0179;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_action_tombstone = 0x7f0d0179;
+        public static final int notification_action_tombstone = 0x7f0d017a;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_media_action = 0x7f0d017a;
+        public static final int notification_media_action = 0x7f0d017b;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_media_cancel_action = 0x7f0d017b;
+        public static final int notification_media_cancel_action = 0x7f0d017c;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_big_media = 0x7f0d017c;
+        public static final int notification_template_big_media = 0x7f0d017d;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_big_media_custom = 0x7f0d017d;
+        public static final int notification_template_big_media_custom = 0x7f0d017e;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_big_media_narrow = 0x7f0d017e;
+        public static final int notification_template_big_media_narrow = 0x7f0d017f;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_big_media_narrow_custom = 0x7f0d017f;
+        public static final int notification_template_big_media_narrow_custom = 0x7f0d0180;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_custom_big = 0x7f0d0180;
+        public static final int notification_template_custom_big = 0x7f0d0181;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_icon_group = 0x7f0d0181;
+        public static final int notification_template_icon_group = 0x7f0d0182;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_lines_media = 0x7f0d0182;
+        public static final int notification_template_lines_media = 0x7f0d0183;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_media = 0x7f0d0183;
+        public static final int notification_template_media = 0x7f0d0184;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_media_custom = 0x7f0d0184;
+        public static final int notification_template_media_custom = 0x7f0d0185;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_part_chronometer = 0x7f0d0185;
+        public static final int notification_template_part_chronometer = 0x7f0d0186;
 
         /* JADX INFO: Added by JADX */
-        public static final int notification_template_part_time = 0x7f0d0186;
+        public static final int notification_template_part_time = 0x7f0d0187;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference = 0x7f0d0189;
+        public static final int preference = 0x7f0d018a;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_category = 0x7f0d018a;
+        public static final int preference_category = 0x7f0d018b;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_category_material = 0x7f0d018b;
+        public static final int preference_category_material = 0x7f0d018c;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_dialog_edittext = 0x7f0d018c;
+        public static final int preference_dialog_edittext = 0x7f0d018d;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_dropdown = 0x7f0d018d;
+        public static final int preference_dropdown = 0x7f0d018e;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_dropdown_material = 0x7f0d018e;
+        public static final int preference_dropdown_material = 0x7f0d018f;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_information = 0x7f0d018f;
+        public static final int preference_information = 0x7f0d0190;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_information_material = 0x7f0d0190;
+        public static final int preference_information_material = 0x7f0d0191;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_list_fragment = 0x7f0d0191;
+        public static final int preference_list_fragment = 0x7f0d0192;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_material = 0x7f0d0192;
+        public static final int preference_material = 0x7f0d0193;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_recyclerview = 0x7f0d0193;
+        public static final int preference_recyclerview = 0x7f0d0194;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_widget_checkbox = 0x7f0d0194;
+        public static final int preference_widget_checkbox = 0x7f0d0195;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_widget_seekbar = 0x7f0d0195;
+        public static final int preference_widget_seekbar = 0x7f0d0196;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_widget_seekbar_material = 0x7f0d0196;
+        public static final int preference_widget_seekbar_material = 0x7f0d0197;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_widget_switch = 0x7f0d0197;
+        public static final int preference_widget_switch = 0x7f0d0198;
 
         /* JADX INFO: Added by JADX */
-        public static final int preference_widget_switch_compat = 0x7f0d0198;
+        public static final int preference_widget_switch_compat = 0x7f0d0199;
 
         /* JADX INFO: Added by JADX */
-        public static final int select_dialog_item_material = 0x7f0d024a;
+        public static final int select_dialog_item_material = 0x7f0d024b;
 
         /* JADX INFO: Added by JADX */
-        public static final int select_dialog_multichoice_material = 0x7f0d024b;
+        public static final int select_dialog_multichoice_material = 0x7f0d024c;
 
         /* JADX INFO: Added by JADX */
-        public static final int select_dialog_singlechoice_material = 0x7f0d024c;
+        public static final int select_dialog_singlechoice_material = 0x7f0d024d;
 
         /* JADX INFO: Added by JADX */
-        public static final int support_simple_spinner_dropdown_item = 0x7f0d025e;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0d025f;
 
         private layout() {
         }

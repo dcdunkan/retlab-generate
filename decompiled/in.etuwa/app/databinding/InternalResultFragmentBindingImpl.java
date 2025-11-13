@@ -71,7 +71,7 @@ public class InternalResultFragmentBindingImpl extends InternalResultFragmentBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (119 != variableId) {
+        if (120 != variableId) {
             return false;
         }
         setInternalResultViewModel((InternalResultViewModel) variable);

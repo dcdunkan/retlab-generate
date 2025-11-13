@@ -111,7 +111,7 @@ public class DialogChristSemRegBindingImpl extends DialogChristSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (53 != variableId) {
+        if (54 != variableId) {
             return false;
         }
         setChristSemRegViewModel((ChristSemRegViewModel) variable);

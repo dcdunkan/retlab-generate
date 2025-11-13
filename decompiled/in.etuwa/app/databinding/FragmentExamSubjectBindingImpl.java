@@ -65,7 +65,7 @@ public class FragmentExamSubjectBindingImpl extends FragmentExamSubjectBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (83 != variableId) {
+        if (84 != variableId) {
             return false;
         }
         setExamSubjectViewModel((ExamSubjectViewModel) variable);

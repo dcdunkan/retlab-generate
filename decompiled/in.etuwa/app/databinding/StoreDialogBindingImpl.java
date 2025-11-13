@@ -75,7 +75,7 @@ public class StoreDialogBindingImpl extends StoreDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (207 != variableId) {
+        if (208 != variableId) {
             return false;
         }
         setStoreDialogViewModel((StoreDialogViewModel) variable);

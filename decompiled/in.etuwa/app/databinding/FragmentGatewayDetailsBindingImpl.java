@@ -62,7 +62,7 @@ public class FragmentGatewayDetailsBindingImpl extends FragmentGatewayDetailsBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (98 != variableId) {
+        if (99 != variableId) {
             return false;
         }
         setGatewayViewModel((GatewayViewModel) variable);

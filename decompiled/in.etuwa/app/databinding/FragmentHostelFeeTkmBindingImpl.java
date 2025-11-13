@@ -75,7 +75,7 @@ public class FragmentHostelFeeTkmBindingImpl extends FragmentHostelFeeTkmBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (109 != variableId) {
+        if (110 != variableId) {
             return false;
         }
         setHostelFeeTkmViewModel((HostelFeeTkmViewModel) variable);

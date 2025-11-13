@@ -76,7 +76,7 @@ public class UniversityResultFragmentBindingImpl extends UniversityResultFragmen
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (233 != variableId) {
+        if (234 != variableId) {
             return false;
         }
         setUniversityResultViewModel((UniversityResultViewModel) variable);

@@ -65,7 +65,7 @@ public class FragmentAttendanceCalendarViewBindingImpl extends FragmentAttendanc
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (34 != variableId) {
+        if (35 != variableId) {
             return false;
         }
         setAttendanceCalendarViewViewModel((AttendanceCalendarViewViewModel) variable);

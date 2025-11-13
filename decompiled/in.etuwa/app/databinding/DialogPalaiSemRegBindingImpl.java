@@ -187,7 +187,7 @@ public class DialogPalaiSemRegBindingImpl extends DialogPalaiSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (154 != variableId) {
+        if (155 != variableId) {
             return false;
         }
         setPalaiNewSemRegViewModel((PalaiNewSemRegViewModel) variable);

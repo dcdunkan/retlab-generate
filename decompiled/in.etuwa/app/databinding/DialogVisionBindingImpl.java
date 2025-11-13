@@ -59,7 +59,7 @@ public class DialogVisionBindingImpl extends DialogVisionBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (248 != variableId) {
+        if (249 != variableId) {
             return false;
         }
         setVisionDialogViewModel((VisionDialogViewModel) variable);

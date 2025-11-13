@@ -63,7 +63,7 @@ public class DialogSubjectPlanBindingImpl extends DialogSubjectPlanBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (210 != variableId) {
+        if (211 != variableId) {
             return false;
         }
         setSubjectPlanViewModel((SubjectPlanViewModel) variable);

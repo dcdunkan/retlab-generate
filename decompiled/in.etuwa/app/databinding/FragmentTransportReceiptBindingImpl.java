@@ -63,7 +63,7 @@ public class FragmentTransportReceiptBindingImpl extends FragmentTransportReceip
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (179 != variableId) {
+        if (180 != variableId) {
             return false;
         }
         setReceiptViewModel((TransportReceiptViewModel) variable);

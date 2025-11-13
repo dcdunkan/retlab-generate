@@ -58,7 +58,7 @@ public class DialogMaterialDownloadBindingImpl extends DialogMaterialDownloadBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (134 != variableId) {
+        if (135 != variableId) {
             return false;
         }
         setMaterialDownloadViewModel((MaterialDownloadViewModel) variable);

@@ -59,7 +59,7 @@ public class DialogMissionBindingImpl extends DialogMissionBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (142 != variableId) {
+        if (143 != variableId) {
             return false;
         }
         setMissionDialogViewModel((MissionDialogViewModel) variable);

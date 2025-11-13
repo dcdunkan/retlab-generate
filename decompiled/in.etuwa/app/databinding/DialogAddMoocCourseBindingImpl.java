@@ -86,7 +86,7 @@ public class DialogAddMoocCourseBindingImpl extends DialogAddMoocCourseBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (15 != variableId) {
+        if (16 != variableId) {
             return false;
         }
         setAddMoocCourseViewModel((AddMoocCourseViewModel) variable);

@@ -63,7 +63,7 @@ public class DialogHostelPartialEditBindingImpl extends DialogHostelPartialEditB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (115 != variableId) {
+        if (116 != variableId) {
             return false;
         }
         setHostelPartialEditViewModel((HostelPartialEditViewModel) variable);

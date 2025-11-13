@@ -66,7 +66,7 @@ public class FragmentPalaiSemRegBindingImpl extends FragmentPalaiSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (155 != variableId) {
+        if (156 != variableId) {
             return false;
         }
         setPalaiSemesterRegViewModel((PalaiSemesterRegViewModel) variable);

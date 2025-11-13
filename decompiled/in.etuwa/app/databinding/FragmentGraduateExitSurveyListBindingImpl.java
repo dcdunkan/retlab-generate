@@ -63,7 +63,7 @@ public class FragmentGraduateExitSurveyListBindingImpl extends FragmentGraduateE
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (99 != variableId) {
+        if (100 != variableId) {
             return false;
         }
         setGraduateExitSurveyViewModel((GraduateExitSurveyViewModel) variable);

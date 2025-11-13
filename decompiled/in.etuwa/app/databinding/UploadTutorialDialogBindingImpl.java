@@ -67,7 +67,7 @@ public class UploadTutorialDialogBindingImpl extends UploadTutorialDialogBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (239 != variableId) {
+        if (240 != variableId) {
             return false;
         }
         setUploadTutorialDialogViewModel((UploadTutorialDialogViewModel) variable);

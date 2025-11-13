@@ -63,7 +63,7 @@ public class CircularFragmentBindingImpl extends CircularFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (54 != variableId) {
+        if (55 != variableId) {
             return false;
         }
         setCircularViewModel((CircularViewModel) variable);

@@ -63,7 +63,7 @@ public class EquipmentFragmentBindingImpl extends EquipmentFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (76 != variableId) {
+        if (77 != variableId) {
             return false;
         }
         setEquipmentViewModel((EquipmentViewModel) variable);

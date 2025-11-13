@@ -116,7 +116,7 @@ public class DialogApplySubjectRegistrationBindingImpl extends DialogApplySubjec
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (27 != variableId) {
+        if (28 != variableId) {
             return false;
         }
         setApplySubjectRegistrationViewModel((ApplySubjectRegistrationViewModel) variable);

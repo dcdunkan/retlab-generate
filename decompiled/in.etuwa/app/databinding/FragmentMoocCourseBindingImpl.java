@@ -65,7 +65,7 @@ public class FragmentMoocCourseBindingImpl extends FragmentMoocCourseBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (144 != variableId) {
+        if (145 != variableId) {
             return false;
         }
         setMoocCourseViewModel((MoocCourseViewModel) variable);

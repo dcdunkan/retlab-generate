@@ -63,7 +63,7 @@ public class TutorialFragmentBindingImpl extends TutorialFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (230 != variableId) {
+        if (231 != variableId) {
             return false;
         }
         setTutorialViewModel((TutorialViewModel) variable);

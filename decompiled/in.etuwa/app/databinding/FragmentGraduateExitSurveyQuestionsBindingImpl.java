@@ -60,7 +60,7 @@ public class FragmentGraduateExitSurveyQuestionsBindingImpl extends FragmentGrad
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (100 != variableId) {
+        if (101 != variableId) {
             return false;
         }
         setGraduateSurveyQuestionsViewModel((GraduateSurveyQuestionsViewModel) variable);

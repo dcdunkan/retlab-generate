@@ -69,7 +69,7 @@ public class DialogBooksDetailsBindingImpl extends DialogBooksDetailsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (41 != variableId) {
+        if (42 != variableId) {
             return false;
         }
         setBooksDetailsViewModel((BookDetailsViewModel) variable);

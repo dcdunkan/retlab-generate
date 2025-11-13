@@ -60,7 +60,7 @@ public class FragmentDuesMainBindingImpl extends FragmentDuesMainBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (71 != variableId) {
+        if (72 != variableId) {
             return false;
         }
         setDueMainViewModel((DueMainViewModel) variable);

@@ -73,7 +73,7 @@ public class FragmentTransportBindingImpl extends FragmentTransportBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (224 != variableId) {
+        if (225 != variableId) {
             return false;
         }
         setTransportFeeViewModel((TransportFeeViewModel) variable);

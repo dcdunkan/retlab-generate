@@ -6,6 +6,7 @@ import android.content.ComponentCallbacks;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -37,12 +38,16 @@ import at.grabner.circleprogress.CircleProgressView;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
+import in.etuwa.app.data.model.Semester;
+import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.dash.DashResponse;
 import in.etuwa.app.data.model.dash.LibraryResponse;
 import in.etuwa.app.data.model.dash.MaintenanceResponse;
@@ -71,6 +76,7 @@ import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 import kotlin.Lazy;
@@ -93,13 +99,14 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
 /* compiled from: DashboardFragment.kt */
-@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0011\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0015\u0018\u0000 \u0084\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b:\u0002\u0084\u0001B\u0005¢\u0006\u0002\u0010\tJ\b\u0010P\u001a\u00020QH\u0016J\b\u0010R\u001a\u00020QH\u0016J\u0010\u0010S\u001a\u00020Q2\u0006\u0010T\u001a\u00020-H\u0002J\b\u0010U\u001a\u00020QH\u0002J\b\u0010V\u001a\u00020QH\u0002J\b\u0010W\u001a\u00020QH\u0014J\b\u0010X\u001a\u00020QH\u0014J\b\u0010Y\u001a\u00020QH\u0002J\b\u0010Z\u001a\u00020QH\u0002J\b\u0010[\u001a\u00020QH\u0002J\b\u0010\\\u001a\u00020QH\u0003J\b\u0010]\u001a\u00020QH\u0002J\b\u0010^\u001a\u00020QH\u0002J\b\u0010_\u001a\u00020QH\u0002J\b\u0010`\u001a\u00020QH\u0002J\b\u0010a\u001a\u00020QH\u0002J\b\u0010b\u001a\u00020QH\u0002J\b\u0010c\u001a\u00020QH\u0016J\b\u0010d\u001a\u00020QH\u0016J\u0010\u0010e\u001a\u00020Q2\u0006\u0010f\u001a\u00020gH\u0016J\u0012\u0010h\u001a\u00020Q2\b\u0010i\u001a\u0004\u0018\u00010jH\u0016J&\u0010k\u001a\u0004\u0018\u00010l2\u0006\u0010m\u001a\u00020n2\b\u0010o\u001a\u0004\u0018\u00010p2\b\u0010i\u001a\u0004\u0018\u00010jH\u0016J\u0010\u0010q\u001a\u00020Q2\u0006\u0010r\u001a\u00020-H\u0016J\b\u0010s\u001a\u00020QH\u0016J\b\u0010t\u001a\u00020QH\u0016J\b\u0010u\u001a\u00020QH\u0016J\b\u0010v\u001a\u00020QH\u0016J\b\u0010w\u001a\u00020QH\u0016J\b\u0010x\u001a\u00020QH\u0016J\u001a\u0010y\u001a\u00020Q2\u0006\u0010z\u001a\u00020l2\b\u0010i\u001a\u0004\u0018\u00010jH\u0016J\b\u0010{\u001a\u00020QH\u0014J\b\u0010|\u001a\u00020QH\u0014J\u0010\u0010}\u001a\u00020Q2\u0006\u0010~\u001a\u000205H\u0002J\u0011\u0010\u007f\u001a\u00020Q2\u0007\u0010\u0080\u0001\u001a\u000205H\u0002J\t\u0010\u0081\u0001\u001a\u00020QH\u0014J\t\u0010\u0082\u0001\u001a\u00020QH\u0002J\t\u0010\u0083\u0001\u001a\u00020QH\u0002R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\f\u001a\u00020\r8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u000e\u0010\u000fR\u0016\u0010\u0012\u001a\u0004\u0018\u00010\u000b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014R\u001b\u0010\u0015\u001a\u00020\u00168BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0019\u0010\u0011\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u001a\u001a\u00020\u001bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001a\u0010 \u001a\u00020\u001bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u001d\"\u0004\b\"\u0010\u001fR\u001a\u0010#\u001a\u00020\u001bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010\u001d\"\u0004\b%\u0010\u001fR\u001a\u0010&\u001a\u00020\u001bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010\u001d\"\u0004\b(\u0010\u001fR\u001a\u0010)\u001a\u00020\u001bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010\u001d\"\u0004\b+\u0010\u001fR\u001a\u0010,\u001a\u00020-X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b.\u0010/\"\u0004\b0\u00101R\u0010\u00102\u001a\u0004\u0018\u000103X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00104\u001a\u000205X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b6\u00107\"\u0004\b8\u00109R\u001a\u0010:\u001a\u000205X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b;\u00107\"\u0004\b<\u00109R\u001a\u0010=\u001a\u000205X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b>\u00107\"\u0004\b?\u00109R\u001a\u0010@\u001a\u000205X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bA\u00107\"\u0004\bB\u00109R\u001b\u0010C\u001a\u00020D8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bG\u0010\u0011\u001a\u0004\bE\u0010FR\u001a\u0010H\u001a\u000205X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bI\u00107\"\u0004\bJ\u00109R\u001b\u0010K\u001a\u00020L8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bO\u0010\u0011\u001a\u0004\bM\u0010N¨\u0006\u0085\u0001"}, d2 = {"Lin/etuwa/app/ui/dashboard/DashboardFragment;", "Lin/etuwa/app/ui/base/BaseFragment;", "Lin/etuwa/app/ui/dashboard/DashboardAdapter$CallBack;", "Lin/etuwa/app/ui/timetable/TimetableListener;", "Lin/etuwa/app/ui/dashboard/changepic/ChangeProPicDialog$ProfileCallBack;", "Lin/etuwa/app/ui/store/StoreDialog$StoreListener;", "Lin/etuwa/app/ui/dashboard/visiondialog/VisionDialog$StoreListener;", "Lin/etuwa/app/ui/dashboard/missiondialog/MissionDialog$StoreListener;", "Lin/etuwa/app/ui/dashboard/maintenance/MaintenanceDialog$StoreListener;", "()V", "_binding", "Lin/etuwa/app/databinding/FragmentDashboardBinding;", "adapter", "Lin/etuwa/app/ui/dashboard/DashboardAdapter;", "getAdapter", "()Lin/etuwa/app/ui/dashboard/DashboardAdapter;", "adapter$delegate", "Lkotlin/Lazy;", "binding", "getBinding", "()Lin/etuwa/app/databinding/FragmentDashboardBinding;", "dashboardViewModel", "Lin/etuwa/app/ui/dashboard/DashboardViewModel;", "getDashboardViewModel", "()Lin/etuwa/app/ui/dashboard/DashboardViewModel;", "dashboardViewModel$delegate", "flag1", "", "getFlag1", "()Z", "setFlag1", "(Z)V", "flag2", "getFlag2", "setFlag2", "flag3", "getFlag3", "setFlag3", "flag4", "getFlag4", "setFlag4", "flag5", "getFlag5", "setFlag5", "i", "", "getI", "()I", "setI", "(I)V", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/helper/MainCallBackListener;", "liveTvLink", "", "getLiveTvLink", "()Ljava/lang/String;", "setLiveTvLink", "(Ljava/lang/String;)V", "liveTvType", "getLiveTvType", "setLiveTvType", "noticeTV", "getNoticeTV", "setNoticeTV", "noticeTv2", "getNoticeTv2", "setNoticeTv2", "preference", "Lin/etuwa/app/data/preference/SharedPrefManager;", "getPreference", "()Lin/etuwa/app/data/preference/SharedPrefManager;", "preference$delegate", "statusPending", "getStatusPending", "setStatusPending", "tableAdapter", "Lin/etuwa/app/ui/dashboard/dashtable/DashTimeTableAdapter;", "getTableAdapter", "()Lin/etuwa/app/ui/dashboard/dashtable/DashTimeTableAdapter;", "tableAdapter$delegate", "dismiss", "", "dismissView", "forceupdate", "versionCode", "gotToPlaystore", "gotToPlaystore2", "hideBaseView", "hideProgress", "listenCourseSurveyStatus", "listenMaintenanceResponse", "listenPoSurveyStatus", "listenResponse", "listenResponse2", "listenSurveyMandatoryStatus", "listenSurveyStatus", "listenSurveyStatusResponse", "listenTableResponse", "listenUrlResponse", "loadPage", "loadStoreView", "onAttach", "context", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "onDashItemClicked", CommonCssConstants.POSITION, "onDestroy", "onDetach", "onDismissProfile", "onPause", "onResume", "onStop", "onViewCreated", SvgConstants.Tags.VIEW, "setUp", "showBaseView", "showInfoDialog", "infoMsg", "showPendingDialog", "message", "showProgress", "showUpdateDialog", "showUpdateDialog2", "Companion", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¢\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0011\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\u0018\u0000 \u008f\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\b:\u0002\u008f\u0001B\u0005¢\u0006\u0002\u0010\tJ\b\u0010S\u001a\u00020TH\u0016J\b\u0010U\u001a\u00020TH\u0016J\u0010\u0010V\u001a\u00020T2\u0006\u0010W\u001a\u000203H\u0002J\u0018\u0010X\u001a\n\u0012\u0004\u0012\u00020Z\u0018\u00010Y2\u0006\u0010[\u001a\u00020\\H\u0002J\b\u0010]\u001a\u00020TH\u0002J\b\u0010^\u001a\u00020TH\u0002J\b\u0010_\u001a\u00020TH\u0014J\b\u0010`\u001a\u00020TH\u0014J\u0010\u0010a\u001a\u00020!2\u0006\u0010[\u001a\u00020\\H\u0002J\b\u0010b\u001a\u00020TH\u0002J\b\u0010c\u001a\u00020TH\u0002J\b\u0010d\u001a\u00020TH\u0002J\b\u0010e\u001a\u00020TH\u0002J\b\u0010f\u001a\u00020TH\u0003J\b\u0010g\u001a\u00020TH\u0002J\b\u0010h\u001a\u00020TH\u0002J\b\u0010i\u001a\u00020TH\u0002J\b\u0010j\u001a\u00020TH\u0002J\b\u0010k\u001a\u00020TH\u0002J\b\u0010l\u001a\u00020TH\u0002J\b\u0010m\u001a\u00020TH\u0002J\b\u0010n\u001a\u00020TH\u0016J\b\u0010o\u001a\u00020TH\u0016J\u0010\u0010p\u001a\u00020T2\u0006\u0010[\u001a\u00020\\H\u0016J\u0012\u0010q\u001a\u00020T2\b\u0010r\u001a\u0004\u0018\u00010sH\u0016J&\u0010t\u001a\u0004\u0018\u00010u2\u0006\u0010v\u001a\u00020w2\b\u0010x\u001a\u0004\u0018\u00010y2\b\u0010r\u001a\u0004\u0018\u00010sH\u0016J\u0010\u0010z\u001a\u00020T2\u0006\u0010{\u001a\u000203H\u0016J\b\u0010|\u001a\u00020TH\u0016J\b\u0010}\u001a\u00020TH\u0016J\b\u0010~\u001a\u00020TH\u0016J\b\u0010\u007f\u001a\u00020TH\u0016J\t\u0010\u0080\u0001\u001a\u00020TH\u0016J\t\u0010\u0081\u0001\u001a\u00020TH\u0016J\u001c\u0010\u0082\u0001\u001a\u00020T2\u0007\u0010\u0083\u0001\u001a\u00020u2\b\u0010r\u001a\u0004\u0018\u00010sH\u0016J \u0010\u0084\u0001\u001a\u00020T2\u0006\u0010[\u001a\u00020\\2\r\u0010\u0085\u0001\u001a\b\u0012\u0004\u0012\u00020Z0YH\u0002J\t\u0010\u0086\u0001\u001a\u00020TH\u0014J\t\u0010\u0087\u0001\u001a\u00020TH\u0014J\u0012\u0010\u0088\u0001\u001a\u00020T2\u0007\u0010\u0089\u0001\u001a\u00020\rH\u0002J\u0012\u0010\u008a\u0001\u001a\u00020T2\u0007\u0010\u008b\u0001\u001a\u00020\rH\u0002J\t\u0010\u008c\u0001\u001a\u00020TH\u0014J\t\u0010\u008d\u0001\u001a\u00020TH\u0002J\t\u0010\u008e\u0001\u001a\u00020TH\u0002R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u000f\"\u0004\b\u0010\u0010\u0011R\u001b\u0010\u0012\u001a\u00020\u00138BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0016\u0010\u0017\u001a\u0004\b\u0014\u0010\u0015R\u0016\u0010\u0018\u001a\u0004\u0018\u00010\u000b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u001aR\u001b\u0010\u001b\u001a\u00020\u001c8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u001f\u0010\u0017\u001a\u0004\b\u001d\u0010\u001eR\u001a\u0010 \u001a\u00020!X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\u001a\u0010&\u001a\u00020!X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010#\"\u0004\b(\u0010%R\u001a\u0010)\u001a\u00020!X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010#\"\u0004\b+\u0010%R\u001a\u0010,\u001a\u00020!X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010#\"\u0004\b.\u0010%R\u001a\u0010/\u001a\u00020!X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u0010#\"\u0004\b1\u0010%R\u001a\u00102\u001a\u000203X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b4\u00105\"\u0004\b6\u00107R\u0010\u00108\u001a\u0004\u0018\u000109X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010:\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b;\u0010\u000f\"\u0004\b<\u0010\u0011R\u001a\u0010=\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b>\u0010\u000f\"\u0004\b?\u0010\u0011R\u001a\u0010@\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bA\u0010\u000f\"\u0004\bB\u0010\u0011R\u001a\u0010C\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bD\u0010\u000f\"\u0004\bE\u0010\u0011R\u001b\u0010F\u001a\u00020G8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bJ\u0010\u0017\u001a\u0004\bH\u0010IR\u001a\u0010K\u001a\u00020\rX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\bL\u0010\u000f\"\u0004\bM\u0010\u0011R\u001b\u0010N\u001a\u00020O8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bR\u0010\u0017\u001a\u0004\bP\u0010Q¨\u0006\u0090\u0001"}, d2 = {"Lin/etuwa/app/ui/dashboard/DashboardFragment;", "Lin/etuwa/app/ui/base/BaseFragment;", "Lin/etuwa/app/ui/dashboard/DashboardAdapter$CallBack;", "Lin/etuwa/app/ui/timetable/TimetableListener;", "Lin/etuwa/app/ui/dashboard/changepic/ChangeProPicDialog$ProfileCallBack;", "Lin/etuwa/app/ui/store/StoreDialog$StoreListener;", "Lin/etuwa/app/ui/dashboard/visiondialog/VisionDialog$StoreListener;", "Lin/etuwa/app/ui/dashboard/missiondialog/MissionDialog$StoreListener;", "Lin/etuwa/app/ui/dashboard/maintenance/MaintenanceDialog$StoreListener;", "()V", "_binding", "Lin/etuwa/app/databinding/FragmentDashboardBinding;", "abcId", "", "getAbcId", "()Ljava/lang/String;", "setAbcId", "(Ljava/lang/String;)V", "adapter", "Lin/etuwa/app/ui/dashboard/DashboardAdapter;", "getAdapter", "()Lin/etuwa/app/ui/dashboard/DashboardAdapter;", "adapter$delegate", "Lkotlin/Lazy;", "binding", "getBinding", "()Lin/etuwa/app/databinding/FragmentDashboardBinding;", "dashboardViewModel", "Lin/etuwa/app/ui/dashboard/DashboardViewModel;", "getDashboardViewModel", "()Lin/etuwa/app/ui/dashboard/DashboardViewModel;", "dashboardViewModel$delegate", "flag1", "", "getFlag1", "()Z", "setFlag1", "(Z)V", "flag2", "getFlag2", "setFlag2", "flag3", "getFlag3", "setFlag3", "flag4", "getFlag4", "setFlag4", "flag5", "getFlag5", "setFlag5", "i", "", "getI", "()I", "setI", "(I)V", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/helper/MainCallBackListener;", "liveTvLink", "getLiveTvLink", "setLiveTvLink", "liveTvType", "getLiveTvType", "setLiveTvType", "noticeTV", "getNoticeTV", "setNoticeTV", "noticeTv2", "getNoticeTv2", "setNoticeTv2", "preference", "Lin/etuwa/app/data/preference/SharedPrefManager;", "getPreference", "()Lin/etuwa/app/data/preference/SharedPrefManager;", "preference$delegate", "statusPending", "getStatusPending", "setStatusPending", "tableAdapter", "Lin/etuwa/app/ui/dashboard/dashtable/DashTimeTableAdapter;", "getTableAdapter", "()Lin/etuwa/app/ui/dashboard/dashtable/DashTimeTableAdapter;", "tableAdapter$delegate", "dismiss", "", "dismissView", "forceupdate", "versionCode", "getSavedSemesterList", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/Semester;", "context", "Landroid/content/Context;", "gotToPlaystore", "gotToPlaystore2", "hideBaseView", "hideProgress", "isSemesterCached", "listenAbcResponse", "listenCourseSurveyStatus", "listenMaintenanceResponse", "listenPoSurveyStatus", "listenResponse", "listenResponse2", "listenSemResponse", "listenSurveyMandatoryStatus", "listenSurveyStatus", "listenSurveyStatusResponse", "listenTableResponse", "listenUrlResponse", "loadPage", "loadStoreView", "onAttach", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "onDashItemClicked", CommonCssConstants.POSITION, "onDestroy", "onDetach", "onDismissProfile", "onPause", "onResume", "onStop", "onViewCreated", SvgConstants.Tags.VIEW, "saveSemesterList", "semesterList", "setUp", "showBaseView", "showInfoDialog", "infoMsg", "showPendingDialog", "message", "showProgress", "showUpdateDialog", "showUpdateDialog2", "Companion", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DashboardFragment extends BaseFragment implements DashboardAdapter.CallBack, TimetableListener, ChangeProPicDialog.ProfileCallBack, StoreDialog.StoreListener, VisionDialog.StoreListener, MissionDialog.StoreListener, MaintenanceDialog.StoreListener {
 
     /* renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentDashboardBinding _binding;
+    private String abcId;
 
     /* renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
@@ -281,6 +288,7 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
         });
         this.noticeTV = "";
         this.noticeTv2 = "";
+        this.abcId = "";
         this.liveTvLink = "";
         this.liveTvType = "";
         this.statusPending = "";
@@ -335,6 +343,15 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
     public final void setNoticeTv2(String str) {
         Intrinsics.checkNotNullParameter(str, "<set-?>");
         this.noticeTv2 = str;
+    }
+
+    public final String getAbcId() {
+        return this.abcId;
+    }
+
+    public final void setAbcId(String str) {
+        Intrinsics.checkNotNullParameter(str, "<set-?>");
+        this.abcId = str;
     }
 
     public final String getLiveTvLink() {
@@ -439,35 +456,10 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
         ActionBar supportActionBar;
         super.onResume();
         AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
-        if (appCompatActivity != null && (supportActionBar = appCompatActivity.getSupportActionBar()) != null) {
-            supportActionBar.hide();
-        }
-        FragmentDashboardBinding fragmentDashboardBinding = get_binding();
-        CardView cardView = fragmentDashboardBinding != null ? fragmentDashboardBinding.cvDash : null;
-        if (cardView != null) {
-            cardView.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding2 = get_binding();
-        CardView cardView2 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.attendanceCv : null;
-        if (cardView2 != null) {
-            cardView2.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding3 = get_binding();
-        CardView cardView3 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.noticeCv : null;
-        if (cardView3 != null) {
-            cardView3.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding4 = get_binding();
-        CardView cardView4 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.cvVisionMission : null;
-        if (cardView4 != null) {
-            cardView4.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding5 = get_binding();
-        CardView cardView5 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvTimetable : null;
-        if (cardView5 == null) {
+        if (appCompatActivity == null || (supportActionBar = appCompatActivity.getSupportActionBar()) == null) {
             return;
         }
-        cardView5.setVisibility(8);
+        supportActionBar.hide();
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -475,35 +467,10 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
         ActionBar supportActionBar;
         super.onStop();
         AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
-        if (appCompatActivity != null && (supportActionBar = appCompatActivity.getSupportActionBar()) != null) {
-            supportActionBar.show();
-        }
-        FragmentDashboardBinding fragmentDashboardBinding = get_binding();
-        CardView cardView = fragmentDashboardBinding != null ? fragmentDashboardBinding.cvDash : null;
-        if (cardView != null) {
-            cardView.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding2 = get_binding();
-        CardView cardView2 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.attendanceCv : null;
-        if (cardView2 != null) {
-            cardView2.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding3 = get_binding();
-        CardView cardView3 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.noticeCv : null;
-        if (cardView3 != null) {
-            cardView3.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding4 = get_binding();
-        CardView cardView4 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.cvVisionMission : null;
-        if (cardView4 != null) {
-            cardView4.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding5 = get_binding();
-        CardView cardView5 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvTimetable : null;
-        if (cardView5 == null) {
+        if (appCompatActivity == null || (supportActionBar = appCompatActivity.getSupportActionBar()) == null) {
             return;
         }
-        cardView5.setVisibility(8);
+        supportActionBar.show();
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -511,35 +478,10 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
         ActionBar supportActionBar;
         super.onPause();
         AppCompatActivity appCompatActivity = (AppCompatActivity) getActivity();
-        if (appCompatActivity != null && (supportActionBar = appCompatActivity.getSupportActionBar()) != null) {
-            supportActionBar.show();
-        }
-        FragmentDashboardBinding fragmentDashboardBinding = get_binding();
-        CardView cardView = fragmentDashboardBinding != null ? fragmentDashboardBinding.cvDash : null;
-        if (cardView != null) {
-            cardView.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding2 = get_binding();
-        CardView cardView2 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.attendanceCv : null;
-        if (cardView2 != null) {
-            cardView2.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding3 = get_binding();
-        CardView cardView3 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.noticeCv : null;
-        if (cardView3 != null) {
-            cardView3.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding4 = get_binding();
-        CardView cardView4 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.cvVisionMission : null;
-        if (cardView4 != null) {
-            cardView4.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding5 = get_binding();
-        CardView cardView5 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvTimetable : null;
-        if (cardView5 == null) {
+        if (appCompatActivity == null || (supportActionBar = appCompatActivity.getSupportActionBar()) == null) {
             return;
         }
-        cardView5.setVisibility(8);
+        supportActionBar.show();
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -600,6 +542,8 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
             builder.setCancelable(false);
             builder.show();
         }
+        listenAbcResponse();
+        getDashboardViewModel().getAbcData();
         FragmentDashboardBinding fragmentDashboardBinding = get_binding();
         if (fragmentDashboardBinding != null && (imageView = fragmentDashboardBinding.infoTimeTableHome) != null) {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.dashboard.DashboardFragment$$ExternalSyntheticLambda13
@@ -612,6 +556,7 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
         getDashboardViewModel().getMaintenance();
         listenResponse2();
         listenTableResponse();
+        listenSemResponse();
         getDashboardViewModel().getTableData();
         FragmentDashboardBinding fragmentDashboardBinding2 = get_binding();
         TextView textView8 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.dashUserName : null;
@@ -655,6 +600,15 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
             tabLayout.setupWithViewPager(fragmentDashboardBinding8 != null ? fragmentDashboardBinding8.dashTimeTablePager : null);
         }
         getTableAdapter().setCallBack(this);
+        Context requireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
+        if (!isSemesterCached(requireContext)) {
+            getDashboardViewModel().getSemesterData();
+        } else {
+            Context requireContext2 = requireContext();
+            Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
+            System.out.println(getSavedSemesterList(requireContext2));
+        }
         if (getPreference().getNewLogin()) {
             this.i = 0;
             if (Intrinsics.areEqual(getPreference().getBaseUrl(), "https://nssce.etlab.in/androidapp/mobile/")) {
@@ -692,7 +646,7 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                 if (textView12 != null) {
                     textView12.setText("       " + getPreference().getNoticeOne() + "                 " + getPreference().getNoticeTwo() + "                    " + getPreference().getNoticeThree() + "        ");
                 }
-                if (357 < Integer.parseInt(getPreference().getVersionCode())) {
+                if (359 < Integer.parseInt(getPreference().getVersionCode())) {
                     showUpdateDialog2();
                 }
             } catch (NumberFormatException unused) {
@@ -989,9 +943,9 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
 
     private final void forceupdate(int versionCode) {
         System.out.println(versionCode);
-        System.out.println(357);
-        System.out.println(357);
-        if (357 < versionCode) {
+        System.out.println(359);
+        System.out.println(359);
+        if (359 < versionCode) {
             showUpdateDialog2();
         }
     }
@@ -1150,38 +1104,18 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                 TextView dashUserRollNo;
                 MainCallBackListener mainCallBackListener2;
                 FragmentDashboardBinding fragmentDashboardBinding12;
-                FragmentDashboardBinding fragmentDashboardBinding13;
-                FragmentDashboardBinding fragmentDashboardBinding14;
-                FragmentDashboardBinding fragmentDashboardBinding15;
-                FragmentDashboardBinding fragmentDashboardBinding16;
-                FragmentDashboardBinding fragmentDashboardBinding17;
                 TextView dashUserRollNo2;
                 MainCallBackListener mainCallBackListener3;
-                FragmentDashboardBinding fragmentDashboardBinding18;
-                FragmentDashboardBinding fragmentDashboardBinding19;
-                FragmentDashboardBinding fragmentDashboardBinding20;
-                FragmentDashboardBinding fragmentDashboardBinding21;
-                FragmentDashboardBinding fragmentDashboardBinding22;
-                FragmentDashboardBinding fragmentDashboardBinding23;
+                FragmentDashboardBinding fragmentDashboardBinding13;
                 TextView dashUserRollNo3;
                 SharedPrefManager preference;
                 MainCallBackListener mainCallBackListener4;
-                FragmentDashboardBinding fragmentDashboardBinding24;
-                FragmentDashboardBinding fragmentDashboardBinding25;
-                FragmentDashboardBinding fragmentDashboardBinding26;
-                FragmentDashboardBinding fragmentDashboardBinding27;
-                FragmentDashboardBinding fragmentDashboardBinding28;
-                FragmentDashboardBinding fragmentDashboardBinding29;
+                FragmentDashboardBinding fragmentDashboardBinding14;
                 TextView dashUserRollNo4;
-                FragmentDashboardBinding fragmentDashboardBinding30;
-                FragmentDashboardBinding fragmentDashboardBinding31;
-                FragmentDashboardBinding fragmentDashboardBinding32;
-                FragmentDashboardBinding fragmentDashboardBinding33;
-                FragmentDashboardBinding fragmentDashboardBinding34;
-                FragmentDashboardBinding fragmentDashboardBinding35;
+                FragmentDashboardBinding fragmentDashboardBinding15;
                 MainCallBackListener mainCallBackListener5;
                 RecyclerView rvDash;
-                FragmentDashboardBinding fragmentDashboardBinding36;
+                FragmentDashboardBinding fragmentDashboardBinding16;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1199,8 +1133,8 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                     }
                     DashboardFragment.this.hideProgress();
                     DashboardFragment.this.showBaseView();
-                    fragmentDashboardBinding36 = DashboardFragment.this.get_binding();
-                    if (fragmentDashboardBinding36 == null || (recyclerView = fragmentDashboardBinding36.rvDash) == null) {
+                    fragmentDashboardBinding16 = DashboardFragment.this.get_binding();
+                    if (fragmentDashboardBinding16 == null || (recyclerView = fragmentDashboardBinding16.rvDash) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -1214,33 +1148,8 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                     DashboardFragment dashboardFragment = DashboardFragment.this;
                     dashboardFragment.showBaseView();
                     if (!data.getSemreg_default()) {
-                        fragmentDashboardBinding30 = dashboardFragment.get_binding();
-                        CardView cardView2 = fragmentDashboardBinding30 != null ? fragmentDashboardBinding30.cvDash : null;
-                        if (cardView2 != null) {
-                            cardView2.setVisibility(8);
-                        }
-                        fragmentDashboardBinding31 = dashboardFragment.get_binding();
-                        CardView cardView3 = fragmentDashboardBinding31 != null ? fragmentDashboardBinding31.attendanceCv : null;
-                        if (cardView3 != null) {
-                            cardView3.setVisibility(8);
-                        }
-                        fragmentDashboardBinding32 = dashboardFragment.get_binding();
-                        CardView cardView4 = fragmentDashboardBinding32 != null ? fragmentDashboardBinding32.noticeCv : null;
-                        if (cardView4 != null) {
-                            cardView4.setVisibility(8);
-                        }
-                        fragmentDashboardBinding33 = dashboardFragment.get_binding();
-                        CardView cardView5 = fragmentDashboardBinding33 != null ? fragmentDashboardBinding33.cvVisionMission : null;
-                        if (cardView5 != null) {
-                            cardView5.setVisibility(8);
-                        }
-                        fragmentDashboardBinding34 = dashboardFragment.get_binding();
-                        cardView = fragmentDashboardBinding34 != null ? fragmentDashboardBinding34.cvTimetable : null;
-                        if (cardView != null) {
-                            cardView.setVisibility(8);
-                        }
-                        fragmentDashboardBinding35 = dashboardFragment.get_binding();
-                        if (fragmentDashboardBinding35 != null && (rvDash = fragmentDashboardBinding35.rvDash) != null) {
+                        fragmentDashboardBinding15 = dashboardFragment.get_binding();
+                        if (fragmentDashboardBinding15 != null && (rvDash = fragmentDashboardBinding15.rvDash) != null) {
                             Intrinsics.checkNotNullExpressionValue(rvDash, "rvDash");
                             ToastExtKt.showErrorToast(rvDash, "Complete your Semester Registration for accessing Etlab!!!");
                         }
@@ -1258,33 +1167,8 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                             if (mainCallBackListener4 != null) {
                                 mainCallBackListener4.forceOpenProfile();
                             }
-                            fragmentDashboardBinding24 = dashboardFragment.get_binding();
-                            CardView cardView6 = fragmentDashboardBinding24 != null ? fragmentDashboardBinding24.cvDash : null;
-                            if (cardView6 != null) {
-                                cardView6.setVisibility(8);
-                            }
-                            fragmentDashboardBinding25 = dashboardFragment.get_binding();
-                            CardView cardView7 = fragmentDashboardBinding25 != null ? fragmentDashboardBinding25.attendanceCv : null;
-                            if (cardView7 != null) {
-                                cardView7.setVisibility(8);
-                            }
-                            fragmentDashboardBinding26 = dashboardFragment.get_binding();
-                            CardView cardView8 = fragmentDashboardBinding26 != null ? fragmentDashboardBinding26.noticeCv : null;
-                            if (cardView8 != null) {
-                                cardView8.setVisibility(8);
-                            }
-                            fragmentDashboardBinding27 = dashboardFragment.get_binding();
-                            CardView cardView9 = fragmentDashboardBinding27 != null ? fragmentDashboardBinding27.cvVisionMission : null;
-                            if (cardView9 != null) {
-                                cardView9.setVisibility(8);
-                            }
-                            fragmentDashboardBinding28 = dashboardFragment.get_binding();
-                            cardView = fragmentDashboardBinding28 != null ? fragmentDashboardBinding28.cvTimetable : null;
-                            if (cardView != null) {
-                                cardView.setVisibility(8);
-                            }
-                            fragmentDashboardBinding29 = dashboardFragment.get_binding();
-                            if (fragmentDashboardBinding29 == null || (dashUserRollNo4 = fragmentDashboardBinding29.dashUserRollNo) == null) {
+                            fragmentDashboardBinding14 = dashboardFragment.get_binding();
+                            if (fragmentDashboardBinding14 == null || (dashUserRollNo4 = fragmentDashboardBinding14.dashUserRollNo) == null) {
                                 return;
                             }
                             Intrinsics.checkNotNullExpressionValue(dashUserRollNo4, "dashUserRollNo");
@@ -1297,33 +1181,8 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                         if (mainCallBackListener3 != null) {
                             mainCallBackListener3.openForceToDoSurvey();
                         }
-                        fragmentDashboardBinding18 = dashboardFragment.get_binding();
-                        CardView cardView10 = fragmentDashboardBinding18 != null ? fragmentDashboardBinding18.cvDash : null;
-                        if (cardView10 != null) {
-                            cardView10.setVisibility(8);
-                        }
-                        fragmentDashboardBinding19 = dashboardFragment.get_binding();
-                        CardView cardView11 = fragmentDashboardBinding19 != null ? fragmentDashboardBinding19.attendanceCv : null;
-                        if (cardView11 != null) {
-                            cardView11.setVisibility(8);
-                        }
-                        fragmentDashboardBinding20 = dashboardFragment.get_binding();
-                        CardView cardView12 = fragmentDashboardBinding20 != null ? fragmentDashboardBinding20.noticeCv : null;
-                        if (cardView12 != null) {
-                            cardView12.setVisibility(8);
-                        }
-                        fragmentDashboardBinding21 = dashboardFragment.get_binding();
-                        CardView cardView13 = fragmentDashboardBinding21 != null ? fragmentDashboardBinding21.cvVisionMission : null;
-                        if (cardView13 != null) {
-                            cardView13.setVisibility(8);
-                        }
-                        fragmentDashboardBinding22 = dashboardFragment.get_binding();
-                        cardView = fragmentDashboardBinding22 != null ? fragmentDashboardBinding22.cvTimetable : null;
-                        if (cardView != null) {
-                            cardView.setVisibility(8);
-                        }
-                        fragmentDashboardBinding23 = dashboardFragment.get_binding();
-                        if (fragmentDashboardBinding23 == null || (dashUserRollNo3 = fragmentDashboardBinding23.dashUserRollNo) == null) {
+                        fragmentDashboardBinding13 = dashboardFragment.get_binding();
+                        if (fragmentDashboardBinding13 == null || (dashUserRollNo3 = fragmentDashboardBinding13.dashUserRollNo) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(dashUserRollNo3, "dashUserRollNo");
@@ -1336,32 +1195,7 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                             mainCallBackListener2.openPoSurvey();
                         }
                         fragmentDashboardBinding12 = dashboardFragment.get_binding();
-                        CardView cardView14 = fragmentDashboardBinding12 != null ? fragmentDashboardBinding12.cvDash : null;
-                        if (cardView14 != null) {
-                            cardView14.setVisibility(8);
-                        }
-                        fragmentDashboardBinding13 = dashboardFragment.get_binding();
-                        CardView cardView15 = fragmentDashboardBinding13 != null ? fragmentDashboardBinding13.attendanceCv : null;
-                        if (cardView15 != null) {
-                            cardView15.setVisibility(8);
-                        }
-                        fragmentDashboardBinding14 = dashboardFragment.get_binding();
-                        CardView cardView16 = fragmentDashboardBinding14 != null ? fragmentDashboardBinding14.noticeCv : null;
-                        if (cardView16 != null) {
-                            cardView16.setVisibility(8);
-                        }
-                        fragmentDashboardBinding15 = dashboardFragment.get_binding();
-                        CardView cardView17 = fragmentDashboardBinding15 != null ? fragmentDashboardBinding15.cvVisionMission : null;
-                        if (cardView17 != null) {
-                            cardView17.setVisibility(8);
-                        }
-                        fragmentDashboardBinding16 = dashboardFragment.get_binding();
-                        cardView = fragmentDashboardBinding16 != null ? fragmentDashboardBinding16.cvTimetable : null;
-                        if (cardView != null) {
-                            cardView.setVisibility(8);
-                        }
-                        fragmentDashboardBinding17 = dashboardFragment.get_binding();
-                        if (fragmentDashboardBinding17 == null || (dashUserRollNo2 = fragmentDashboardBinding17.dashUserRollNo) == null) {
+                        if (fragmentDashboardBinding12 == null || (dashUserRollNo2 = fragmentDashboardBinding12.dashUserRollNo) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(dashUserRollNo2, "dashUserRollNo");
@@ -1374,24 +1208,24 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                             mainCallBackListener.openCourseSurvey();
                         }
                         fragmentDashboardBinding6 = dashboardFragment.get_binding();
-                        CardView cardView18 = fragmentDashboardBinding6 != null ? fragmentDashboardBinding6.cvDash : null;
-                        if (cardView18 != null) {
-                            cardView18.setVisibility(8);
+                        CardView cardView2 = fragmentDashboardBinding6 != null ? fragmentDashboardBinding6.cvDash : null;
+                        if (cardView2 != null) {
+                            cardView2.setVisibility(8);
                         }
                         fragmentDashboardBinding7 = dashboardFragment.get_binding();
-                        CardView cardView19 = fragmentDashboardBinding7 != null ? fragmentDashboardBinding7.attendanceCv : null;
-                        if (cardView19 != null) {
-                            cardView19.setVisibility(8);
+                        CardView cardView3 = fragmentDashboardBinding7 != null ? fragmentDashboardBinding7.attendanceCv : null;
+                        if (cardView3 != null) {
+                            cardView3.setVisibility(8);
                         }
                         fragmentDashboardBinding8 = dashboardFragment.get_binding();
-                        CardView cardView20 = fragmentDashboardBinding8 != null ? fragmentDashboardBinding8.noticeCv : null;
-                        if (cardView20 != null) {
-                            cardView20.setVisibility(8);
+                        CardView cardView4 = fragmentDashboardBinding8 != null ? fragmentDashboardBinding8.noticeCv : null;
+                        if (cardView4 != null) {
+                            cardView4.setVisibility(8);
                         }
                         fragmentDashboardBinding9 = dashboardFragment.get_binding();
-                        CardView cardView21 = fragmentDashboardBinding9 != null ? fragmentDashboardBinding9.cvVisionMission : null;
-                        if (cardView21 != null) {
-                            cardView21.setVisibility(8);
+                        CardView cardView5 = fragmentDashboardBinding9 != null ? fragmentDashboardBinding9.cvVisionMission : null;
+                        if (cardView5 != null) {
+                            cardView5.setVisibility(8);
                         }
                         fragmentDashboardBinding10 = dashboardFragment.get_binding();
                         cardView = fragmentDashboardBinding10 != null ? fragmentDashboardBinding10.cvTimetable : null;
@@ -1407,24 +1241,24 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                         return;
                     }
                     fragmentDashboardBinding = dashboardFragment.get_binding();
-                    CardView cardView22 = fragmentDashboardBinding != null ? fragmentDashboardBinding.cvDash : null;
-                    if (cardView22 != null) {
-                        cardView22.setVisibility(0);
+                    CardView cardView6 = fragmentDashboardBinding != null ? fragmentDashboardBinding.cvDash : null;
+                    if (cardView6 != null) {
+                        cardView6.setVisibility(0);
                     }
                     fragmentDashboardBinding2 = dashboardFragment.get_binding();
-                    CardView cardView23 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.attendanceCv : null;
-                    if (cardView23 != null) {
-                        cardView23.setVisibility(0);
+                    CardView cardView7 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.attendanceCv : null;
+                    if (cardView7 != null) {
+                        cardView7.setVisibility(0);
                     }
                     fragmentDashboardBinding3 = dashboardFragment.get_binding();
-                    CardView cardView24 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.noticeCv : null;
-                    if (cardView24 != null) {
-                        cardView24.setVisibility(0);
+                    CardView cardView8 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.noticeCv : null;
+                    if (cardView8 != null) {
+                        cardView8.setVisibility(0);
                     }
                     fragmentDashboardBinding4 = dashboardFragment.get_binding();
-                    CardView cardView25 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.cvVisionMission : null;
-                    if (cardView25 != null) {
-                        cardView25.setVisibility(0);
+                    CardView cardView9 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.cvVisionMission : null;
+                    if (cardView9 != null) {
+                        cardView9.setVisibility(0);
                     }
                     fragmentDashboardBinding5 = dashboardFragment.get_binding();
                     cardView = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvTimetable : null;
@@ -1759,13 +1593,7 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                 FragmentDashboardBinding fragmentDashboardBinding4;
                 FragmentDashboardBinding fragmentDashboardBinding5;
                 FragmentDashboardBinding fragmentDashboardBinding6;
-                CardView cardView;
                 FragmentDashboardBinding fragmentDashboardBinding7;
-                FragmentDashboardBinding fragmentDashboardBinding8;
-                FragmentDashboardBinding fragmentDashboardBinding9;
-                FragmentDashboardBinding fragmentDashboardBinding10;
-                FragmentDashboardBinding fragmentDashboardBinding11;
-                FragmentDashboardBinding fragmentDashboardBinding12;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1783,8 +1611,8 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                     }
                     DashboardFragment.this.hideProgress();
                     DashboardFragment.this.showBaseView();
-                    fragmentDashboardBinding12 = DashboardFragment.this.get_binding();
-                    if (fragmentDashboardBinding12 == null || (recyclerView = fragmentDashboardBinding12.rvDash) == null) {
+                    fragmentDashboardBinding7 = DashboardFragment.this.get_binding();
+                    if (fragmentDashboardBinding7 == null || (recyclerView = fragmentDashboardBinding7.rvDash) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -1799,57 +1627,32 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                     dashboardFragment.showBaseView();
                     try {
                         if (data.getCoursesurvey_status()) {
-                            fragmentDashboardBinding7 = dashboardFragment.get_binding();
-                            CardView cardView2 = fragmentDashboardBinding7 != null ? fragmentDashboardBinding7.cvDash : null;
-                            if (cardView2 != null) {
-                                cardView2.setVisibility(8);
-                            }
-                            fragmentDashboardBinding8 = dashboardFragment.get_binding();
-                            CardView cardView3 = fragmentDashboardBinding8 != null ? fragmentDashboardBinding8.attendanceCv : null;
-                            if (cardView3 != null) {
-                                cardView3.setVisibility(8);
-                            }
-                            fragmentDashboardBinding9 = dashboardFragment.get_binding();
-                            CardView cardView4 = fragmentDashboardBinding9 != null ? fragmentDashboardBinding9.noticeCv : null;
-                            if (cardView4 != null) {
-                                cardView4.setVisibility(8);
-                            }
-                            fragmentDashboardBinding10 = dashboardFragment.get_binding();
-                            CardView cardView5 = fragmentDashboardBinding10 != null ? fragmentDashboardBinding10.cvVisionMission : null;
-                            if (cardView5 != null) {
-                                cardView5.setVisibility(8);
-                            }
-                            fragmentDashboardBinding11 = dashboardFragment.get_binding();
-                            cardView = fragmentDashboardBinding11 != null ? fragmentDashboardBinding11.cvTimetable : null;
-                            if (cardView != null) {
-                                cardView.setVisibility(8);
-                            }
                             dashboardFragment.showPendingDialog("Please complete the pending Course Survey to access dashboard");
                         } else {
                             fragmentDashboardBinding2 = dashboardFragment.get_binding();
-                            CardView cardView6 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.cvDash : null;
-                            if (cardView6 != null) {
-                                cardView6.setVisibility(0);
-                            }
-                            fragmentDashboardBinding3 = dashboardFragment.get_binding();
-                            CardView cardView7 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.attendanceCv : null;
-                            if (cardView7 != null) {
-                                cardView7.setVisibility(0);
-                            }
-                            fragmentDashboardBinding4 = dashboardFragment.get_binding();
-                            CardView cardView8 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.noticeCv : null;
-                            if (cardView8 != null) {
-                                cardView8.setVisibility(0);
-                            }
-                            fragmentDashboardBinding5 = dashboardFragment.get_binding();
-                            CardView cardView9 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvVisionMission : null;
-                            if (cardView9 != null) {
-                                cardView9.setVisibility(0);
-                            }
-                            fragmentDashboardBinding6 = dashboardFragment.get_binding();
-                            cardView = fragmentDashboardBinding6 != null ? fragmentDashboardBinding6.cvTimetable : null;
+                            CardView cardView = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.cvDash : null;
                             if (cardView != null) {
                                 cardView.setVisibility(0);
+                            }
+                            fragmentDashboardBinding3 = dashboardFragment.get_binding();
+                            CardView cardView2 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.attendanceCv : null;
+                            if (cardView2 != null) {
+                                cardView2.setVisibility(0);
+                            }
+                            fragmentDashboardBinding4 = dashboardFragment.get_binding();
+                            CardView cardView3 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.noticeCv : null;
+                            if (cardView3 != null) {
+                                cardView3.setVisibility(0);
+                            }
+                            fragmentDashboardBinding5 = dashboardFragment.get_binding();
+                            CardView cardView4 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvVisionMission : null;
+                            if (cardView4 != null) {
+                                cardView4.setVisibility(0);
+                            }
+                            fragmentDashboardBinding6 = dashboardFragment.get_binding();
+                            CardView cardView5 = fragmentDashboardBinding6 != null ? fragmentDashboardBinding6.cvTimetable : null;
+                            if (cardView5 != null) {
+                                cardView5.setVisibility(0);
                             }
                         }
                         Unit unit = Unit.INSTANCE;
@@ -1919,13 +1722,7 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                 FragmentDashboardBinding fragmentDashboardBinding4;
                 FragmentDashboardBinding fragmentDashboardBinding5;
                 FragmentDashboardBinding fragmentDashboardBinding6;
-                CardView cardView;
                 FragmentDashboardBinding fragmentDashboardBinding7;
-                FragmentDashboardBinding fragmentDashboardBinding8;
-                FragmentDashboardBinding fragmentDashboardBinding9;
-                FragmentDashboardBinding fragmentDashboardBinding10;
-                FragmentDashboardBinding fragmentDashboardBinding11;
-                FragmentDashboardBinding fragmentDashboardBinding12;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1943,8 +1740,8 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                     }
                     DashboardFragment.this.hideProgress();
                     DashboardFragment.this.showBaseView();
-                    fragmentDashboardBinding12 = DashboardFragment.this.get_binding();
-                    if (fragmentDashboardBinding12 == null || (recyclerView = fragmentDashboardBinding12.rvDash) == null) {
+                    fragmentDashboardBinding7 = DashboardFragment.this.get_binding();
+                    if (fragmentDashboardBinding7 == null || (recyclerView = fragmentDashboardBinding7.rvDash) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -1959,31 +1756,6 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                     dashboardFragment.showBaseView();
                     try {
                         if (data.getPosurvey_status()) {
-                            fragmentDashboardBinding7 = dashboardFragment.get_binding();
-                            CardView cardView2 = fragmentDashboardBinding7 != null ? fragmentDashboardBinding7.cvDash : null;
-                            if (cardView2 != null) {
-                                cardView2.setVisibility(8);
-                            }
-                            fragmentDashboardBinding8 = dashboardFragment.get_binding();
-                            CardView cardView3 = fragmentDashboardBinding8 != null ? fragmentDashboardBinding8.attendanceCv : null;
-                            if (cardView3 != null) {
-                                cardView3.setVisibility(8);
-                            }
-                            fragmentDashboardBinding9 = dashboardFragment.get_binding();
-                            CardView cardView4 = fragmentDashboardBinding9 != null ? fragmentDashboardBinding9.noticeCv : null;
-                            if (cardView4 != null) {
-                                cardView4.setVisibility(8);
-                            }
-                            fragmentDashboardBinding10 = dashboardFragment.get_binding();
-                            CardView cardView5 = fragmentDashboardBinding10 != null ? fragmentDashboardBinding10.cvVisionMission : null;
-                            if (cardView5 != null) {
-                                cardView5.setVisibility(8);
-                            }
-                            fragmentDashboardBinding11 = dashboardFragment.get_binding();
-                            cardView = fragmentDashboardBinding11 != null ? fragmentDashboardBinding11.cvTimetable : null;
-                            if (cardView != null) {
-                                cardView.setVisibility(8);
-                            }
                             dashboardFragment.showPendingDialog("Please complete the pending PO Survey to access dashboard");
                         } else {
                             preference = dashboardFragment.getPreference();
@@ -1991,29 +1763,29 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                                 preference2 = dashboardFragment.getPreference();
                                 if (!StringsKt.contains$default((CharSequence) preference2.getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
                                     fragmentDashboardBinding2 = dashboardFragment.get_binding();
-                                    CardView cardView6 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.cvDash : null;
-                                    if (cardView6 != null) {
-                                        cardView6.setVisibility(0);
-                                    }
-                                    fragmentDashboardBinding3 = dashboardFragment.get_binding();
-                                    CardView cardView7 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.attendanceCv : null;
-                                    if (cardView7 != null) {
-                                        cardView7.setVisibility(0);
-                                    }
-                                    fragmentDashboardBinding4 = dashboardFragment.get_binding();
-                                    CardView cardView8 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.noticeCv : null;
-                                    if (cardView8 != null) {
-                                        cardView8.setVisibility(0);
-                                    }
-                                    fragmentDashboardBinding5 = dashboardFragment.get_binding();
-                                    CardView cardView9 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvVisionMission : null;
-                                    if (cardView9 != null) {
-                                        cardView9.setVisibility(0);
-                                    }
-                                    fragmentDashboardBinding6 = dashboardFragment.get_binding();
-                                    cardView = fragmentDashboardBinding6 != null ? fragmentDashboardBinding6.cvTimetable : null;
+                                    CardView cardView = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.cvDash : null;
                                     if (cardView != null) {
                                         cardView.setVisibility(0);
+                                    }
+                                    fragmentDashboardBinding3 = dashboardFragment.get_binding();
+                                    CardView cardView2 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.attendanceCv : null;
+                                    if (cardView2 != null) {
+                                        cardView2.setVisibility(0);
+                                    }
+                                    fragmentDashboardBinding4 = dashboardFragment.get_binding();
+                                    CardView cardView3 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.noticeCv : null;
+                                    if (cardView3 != null) {
+                                        cardView3.setVisibility(0);
+                                    }
+                                    fragmentDashboardBinding5 = dashboardFragment.get_binding();
+                                    CardView cardView4 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvVisionMission : null;
+                                    if (cardView4 != null) {
+                                        cardView4.setVisibility(0);
+                                    }
+                                    fragmentDashboardBinding6 = dashboardFragment.get_binding();
+                                    CardView cardView5 = fragmentDashboardBinding6 != null ? fragmentDashboardBinding6.cvTimetable : null;
+                                    if (cardView5 != null) {
+                                        cardView5.setVisibility(0);
                                     }
                                 }
                             }
@@ -2075,147 +1847,117 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:100:0x0162, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:35:0x0091, code lost:
             
-                if (r8 == null) goto L111;
+                if (kotlin.text.StringsKt.contains$default((java.lang.CharSequence) r1.getBaseUrl(), (java.lang.CharSequence) "mvjce", false, 2, (java.lang.Object) null) == false) goto L29;
              */
-            /* JADX WARN: Code restructure failed: missing block: B:101:0x0164, code lost:
-            
-                r8 = r8.attendanceCv;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:102:0x0168, code lost:
-            
-                if (r8 != null) goto L114;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:103:0x016b, code lost:
-            
-                r8.setVisibility(8);
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:104:0x016e, code lost:
-            
-                r8 = r0.get_binding();
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:105:0x0172, code lost:
-            
-                if (r8 == null) goto L118;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:106:0x0174, code lost:
-            
-                r8 = r8.noticeCv;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:107:0x0178, code lost:
-            
-                if (r8 != null) goto L121;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:108:0x017b, code lost:
-            
-                r8.setVisibility(8);
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:109:0x017e, code lost:
-            
-                r8 = r0.get_binding();
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:110:0x0182, code lost:
-            
-                if (r8 == null) goto L125;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:111:0x0184, code lost:
-            
-                r8 = r8.cvVisionMission;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:112:0x0188, code lost:
-            
-                if (r8 != null) goto L128;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:113:0x018b, code lost:
-            
-                r8.setVisibility(8);
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:114:0x018e, code lost:
-            
-                r8 = r0.get_binding();
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:115:0x0192, code lost:
-            
-                if (r8 == null) goto L132;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:116:0x0194, code lost:
-            
-                r4 = r8.cvTimetable;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:117:0x0196, code lost:
-            
-                if (r4 != null) goto L134;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:118:0x0199, code lost:
-            
-                r4.setVisibility(8);
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:119:0x019c, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:36:0x00ad, code lost:
             
                 r0.showPendingDialog("Please complete the Profile to access dashboard");
              */
-            /* JADX WARN: Code restructure failed: missing block: B:120:?, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:37:?, code lost:
             
                 return;
              */
-            /* JADX WARN: Code restructure failed: missing block: B:121:0x0187, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:41:0x00ab, code lost:
             
-                r8 = null;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:122:0x0177, code lost:
-            
-                r8 = null;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:123:0x0167, code lost:
-            
-                r8 = null;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:124:0x0157, code lost:
-            
-                r8 = null;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:128:0x014c, code lost:
-            
-                if (kotlin.text.StringsKt.contains$default((java.lang.CharSequence) r8.getBaseUrl(), (java.lang.CharSequence) "demo", false, 2, (java.lang.Object) null) != false) goto L101;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:93:0x0132, code lost:
-            
-                if (kotlin.text.StringsKt.contains$default((java.lang.CharSequence) r1.getBaseUrl(), (java.lang.CharSequence) "mvjce", false, 2, (java.lang.Object) null) == false) goto L97;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:94:0x014e, code lost:
-            
-                r8 = r0.get_binding();
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:95:0x0152, code lost:
-            
-                if (r8 == null) goto L104;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:96:0x0154, code lost:
-            
-                r8 = r8.cvDash;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:97:0x0158, code lost:
-            
-                if (r8 != null) goto L107;
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:98:0x015b, code lost:
-            
-                r8.setVisibility(8);
-             */
-            /* JADX WARN: Code restructure failed: missing block: B:99:0x015e, code lost:
-            
-                r8 = r0.get_binding();
+                if (kotlin.text.StringsKt.contains$default((java.lang.CharSequence) r7.getBaseUrl(), (java.lang.CharSequence) "demo", false, 2, (java.lang.Object) null) != false) goto L33;
              */
             /* renamed from: invoke, reason: avoid collision after fix types in other method */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.main.SurveyPending> r8) {
+            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.main.SurveyPending> r7) {
                 /*
-                    Method dump skipped, instructions count: 426
-                    To view this dump change 'Code comments level' option to 'DEBUG'
+                    r6 = this;
+                    in.etuwa.app.utils.Status r0 = r7.getStatus()
+                    int[] r1 = in.etuwa.app.ui.dashboard.DashboardFragment$listenSurveyStatus$1.WhenMappings.$EnumSwitchMapping$0
+                    int r0 = r0.ordinal()
+                    r0 = r1[r0]
+                    r1 = 1
+                    r2 = 2
+                    if (r0 == r1) goto L50
+                    if (r0 == r2) goto L4a
+                    r1 = 3
+                    if (r0 == r1) goto L3e
+                    r1 = 4
+                    if (r0 == r1) goto L1a
+                    goto Lba
+                L1a:
+                    in.etuwa.app.ui.dashboard.DashboardFragment r0 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    r0.hideProgress()
+                    in.etuwa.app.ui.dashboard.DashboardFragment r0 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    r0.showBaseView()
+                    in.etuwa.app.ui.dashboard.DashboardFragment r0 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    in.etuwa.app.databinding.FragmentDashboardBinding r0 = in.etuwa.app.ui.dashboard.DashboardFragment.access$getBinding(r0)
+                    if (r0 == 0) goto Lba
+                    androidx.recyclerview.widget.RecyclerView r0 = r0.rvDash
+                    if (r0 == 0) goto Lba
+                    android.view.View r0 = (android.view.View) r0
+                    java.lang.String r7 = r7.getMessage()
+                    kotlin.jvm.internal.Intrinsics.checkNotNull(r7)
+                    in.etuwa.app.utils.ToastExtKt.showErrorToast(r0, r7)
+                    goto Lba
+                L3e:
+                    in.etuwa.app.ui.dashboard.DashboardFragment r7 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    r7.hideProgress()
+                    in.etuwa.app.ui.dashboard.DashboardFragment r7 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    r7.showBaseView()
+                    goto Lba
+                L4a:
+                    in.etuwa.app.ui.dashboard.DashboardFragment r7 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    r7.showProgress()
+                    goto Lba
+                L50:
+                    in.etuwa.app.ui.dashboard.DashboardFragment r0 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    r0.hideProgress()
+                    java.lang.Object r7 = r7.getData()
+                    in.etuwa.app.data.model.main.SurveyPending r7 = (in.etuwa.app.data.model.main.SurveyPending) r7
+                    if (r7 == 0) goto Lba
+                    in.etuwa.app.ui.dashboard.DashboardFragment r0 = in.etuwa.app.ui.dashboard.DashboardFragment.this
+                    boolean r1 = r7.getSurvey_status()
+                    if (r1 == 0) goto L6b
+                    java.lang.String r7 = "Please complete the pending Survey to access dashboard"
+                    in.etuwa.app.ui.dashboard.DashboardFragment.access$showPendingDialog(r0, r7)
+                    goto Lba
+                L6b:
+                    boolean r1 = r7.getSemreg_default()
+                    if (r1 != 0) goto L77
+                    java.lang.String r7 = "Complete your Semester Registration for accessing Etlab!!!"
+                    in.etuwa.app.ui.dashboard.DashboardFragment.access$showPendingDialog(r0, r7)
+                    goto Lba
+                L77:
+                    boolean r1 = r7.getProfile_status()
+                    r3 = 0
+                    r4 = 0
+                    if (r1 == 0) goto L93
+                    in.etuwa.app.data.preference.SharedPrefManager r1 = in.etuwa.app.ui.dashboard.DashboardFragment.access$getPreference(r0)
+                    java.lang.String r1 = r1.getBaseUrl()
+                    java.lang.CharSequence r1 = (java.lang.CharSequence) r1
+                    java.lang.String r5 = "mvjce"
+                    java.lang.CharSequence r5 = (java.lang.CharSequence) r5
+                    boolean r1 = kotlin.text.StringsKt.contains$default(r1, r5, r4, r2, r3)
+                    if (r1 != 0) goto Lad
+                L93:
+                    boolean r7 = r7.getProfile_status()
+                    if (r7 == 0) goto Lb3
+                    in.etuwa.app.data.preference.SharedPrefManager r7 = in.etuwa.app.ui.dashboard.DashboardFragment.access$getPreference(r0)
+                    java.lang.String r7 = r7.getBaseUrl()
+                    java.lang.CharSequence r7 = (java.lang.CharSequence) r7
+                    java.lang.String r1 = "demo"
+                    java.lang.CharSequence r1 = (java.lang.CharSequence) r1
+                    boolean r7 = kotlin.text.StringsKt.contains$default(r7, r1, r4, r2, r3)
+                    if (r7 == 0) goto Lb3
+                Lad:
+                    java.lang.String r7 = "Please complete the Profile to access dashboard"
+                    in.etuwa.app.ui.dashboard.DashboardFragment.access$showPendingDialog(r0, r7)
+                    goto Lba
+                Lb3:
+                    in.etuwa.app.ui.dashboard.DashboardViewModel r7 = in.etuwa.app.ui.dashboard.DashboardFragment.access$getDashboardViewModel(r0)
+                    r7.getPoSurveyStatus()
+                Lba:
+                    return
                 */
                 throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.dashboard.DashboardFragment$listenSurveyStatus$1.invoke2(in.etuwa.app.utils.Resource):void");
             }
@@ -2414,7 +2156,7 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                 }
             } catch (Exception unused2) {
             }
-            if (357 < dashResponse.getCurrentVersion()) {
+            if (359 < dashResponse.getCurrentVersion()) {
                 this$0.showUpdateDialog();
                 return;
             }
@@ -2428,6 +2170,75 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
             } catch (NullPointerException unused3) {
             }
         }
+    }
+
+    private final void listenAbcResponse() {
+        getDashboardViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new DashboardFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardFragment$listenAbcResponse$1
+
+            /* compiled from: DashboardFragment.kt */
+            @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+            public /* synthetic */ class WhenMappings {
+                public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+                static {
+                    int[] iArr = new int[Status.values().length];
+                    try {
+                        iArr[Status.SUCCESS.ordinal()] = 1;
+                    } catch (NoSuchFieldError unused) {
+                    }
+                    try {
+                        iArr[Status.LOADING.ordinal()] = 2;
+                    } catch (NoSuchFieldError unused2) {
+                    }
+                    try {
+                        iArr[Status.ERROR.ordinal()] = 3;
+                    } catch (NoSuchFieldError unused3) {
+                    }
+                    try {
+                        iArr[Status.EXCEPTION.ordinal()] = 4;
+                    } catch (NoSuchFieldError unused4) {
+                    }
+                    $EnumSwitchMapping$0 = iArr;
+                }
+            }
+
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Resource<? extends AbcResponse> resource) {
+                invoke2((Resource<AbcResponse>) resource);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<AbcResponse> resource) {
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i == 1) {
+                    DashboardFragment.this.hideProgress();
+                    if (resource.getData() != null) {
+                        DashboardFragment.this.showBaseView();
+                        return;
+                    }
+                    return;
+                }
+                if (i == 2) {
+                    DashboardFragment.this.showProgress();
+                    return;
+                }
+                if (i == 3) {
+                    DashboardFragment.this.hideProgress();
+                    DashboardFragment.this.showBaseView();
+                } else {
+                    if (i != 4) {
+                        return;
+                    }
+                    DashboardFragment.this.hideProgress();
+                    DashboardFragment.this.showBaseView();
+                }
+            }
+        }));
     }
 
     private final void showInfoDialog(String infoMsg) {
@@ -2678,32 +2489,6 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
         this.listener = null;
         getAdapter().setCallBack(null);
         getTableAdapter().setCallBack(null);
-        FragmentDashboardBinding fragmentDashboardBinding = get_binding();
-        CardView cardView = fragmentDashboardBinding != null ? fragmentDashboardBinding.cvDash : null;
-        if (cardView != null) {
-            cardView.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding2 = get_binding();
-        CardView cardView2 = fragmentDashboardBinding2 != null ? fragmentDashboardBinding2.attendanceCv : null;
-        if (cardView2 != null) {
-            cardView2.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding3 = get_binding();
-        CardView cardView3 = fragmentDashboardBinding3 != null ? fragmentDashboardBinding3.noticeCv : null;
-        if (cardView3 != null) {
-            cardView3.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding4 = get_binding();
-        CardView cardView4 = fragmentDashboardBinding4 != null ? fragmentDashboardBinding4.cvVisionMission : null;
-        if (cardView4 != null) {
-            cardView4.setVisibility(8);
-        }
-        FragmentDashboardBinding fragmentDashboardBinding5 = get_binding();
-        CardView cardView5 = fragmentDashboardBinding5 != null ? fragmentDashboardBinding5.cvTimetable : null;
-        if (cardView5 == null) {
-            return;
-        }
-        cardView5.setVisibility(8);
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -2816,6 +2601,80 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
                     return
                 */
                 throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.dashboard.DashboardFragment$listenUrlResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            }
+        }));
+    }
+
+    private final void listenSemResponse() {
+        getDashboardViewModel().getSemesterResponse().observe(getViewLifecycleOwner(), new DashboardFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ArrayList<Semester>>, Unit>() { // from class: in.etuwa.app.ui.dashboard.DashboardFragment$listenSemResponse$1
+
+            /* compiled from: DashboardFragment.kt */
+            @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+            public /* synthetic */ class WhenMappings {
+                public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+                static {
+                    int[] iArr = new int[Status.values().length];
+                    try {
+                        iArr[Status.SUCCESS.ordinal()] = 1;
+                    } catch (NoSuchFieldError unused) {
+                    }
+                    try {
+                        iArr[Status.LOADING.ordinal()] = 2;
+                    } catch (NoSuchFieldError unused2) {
+                    }
+                    try {
+                        iArr[Status.ERROR.ordinal()] = 3;
+                    } catch (NoSuchFieldError unused3) {
+                    }
+                    try {
+                        iArr[Status.EXCEPTION.ordinal()] = 4;
+                    } catch (NoSuchFieldError unused4) {
+                    }
+                    $EnumSwitchMapping$0 = iArr;
+                }
+            }
+
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Resource<? extends ArrayList<Semester>> resource) {
+                invoke2(resource);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<? extends ArrayList<Semester>> resource) {
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i == 1) {
+                    DashboardFragment.this.hideProgress();
+                    ArrayList<Semester> data = resource.getData();
+                    if (data != null) {
+                        DashboardFragment dashboardFragment = DashboardFragment.this;
+                        dashboardFragment.showBaseView();
+                        Context requireContext = dashboardFragment.requireContext();
+                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
+                        dashboardFragment.saveSemesterList(requireContext, data);
+                        return;
+                    }
+                    return;
+                }
+                if (i == 2) {
+                    DashboardFragment.this.showProgress();
+                    return;
+                }
+                if (i == 3) {
+                    DashboardFragment.this.hideProgress();
+                    DashboardFragment.this.showBaseView();
+                } else {
+                    if (i != 4) {
+                        return;
+                    }
+                    DashboardFragment.this.hideProgress();
+                    DashboardFragment.this.showBaseView();
+                }
             }
         }));
     }
@@ -2956,5 +2815,21 @@ public final class DashboardFragment extends BaseFragment implements DashboardAd
             return;
         }
         mainCallBackListener.openForceSemReg();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void saveSemesterList(Context context, ArrayList<Semester> semesterList) {
+        SharedPreferences.Editor edit = context.getSharedPreferences("app_prefs", 0).edit();
+        edit.putString("semester_list", new Gson().toJson(semesterList));
+        edit.apply();
+    }
+
+    private final boolean isSemesterCached(Context context) {
+        return context.getSharedPreferences("app_prefs", 0).contains("semester_list");
+    }
+
+    private final ArrayList<Semester> getSavedSemesterList(Context context) {
+        return (ArrayList) new Gson().fromJson(context.getSharedPreferences("app_prefs", 0).getString("semester_list", null), new TypeToken<ArrayList<Semester>>() { // from class: in.etuwa.app.ui.dashboard.DashboardFragment$getSavedSemesterList$type$1
+        }.getType());
     }
 }

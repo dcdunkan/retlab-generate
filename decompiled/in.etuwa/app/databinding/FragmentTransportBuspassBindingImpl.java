@@ -76,7 +76,7 @@ public class FragmentTransportBuspassBindingImpl extends FragmentTransportBuspas
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (43 != variableId) {
+        if (44 != variableId) {
             return false;
         }
         setBusPassViewModel((BusPassViewModel) variable);

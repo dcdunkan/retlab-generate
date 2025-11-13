@@ -65,7 +65,7 @@ public class FragmentMembershipBindingImpl extends FragmentMembershipBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (138 != variableId) {
+        if (139 != variableId) {
             return false;
         }
         setMembershipViewModel((MembershipViewModel) variable);

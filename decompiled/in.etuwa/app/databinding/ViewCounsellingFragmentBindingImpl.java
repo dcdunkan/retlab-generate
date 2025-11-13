@@ -76,7 +76,7 @@ public class ViewCounsellingFragmentBindingImpl extends ViewCounsellingFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (241 != variableId) {
+        if (242 != variableId) {
             return false;
         }
         setViewCounsellingViewModel((ViewCounsellingViewModel) variable);

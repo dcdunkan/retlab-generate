@@ -77,7 +77,7 @@ public class AssignmentFragmentBindingImpl extends AssignmentFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (32 != variableId) {
+        if (33 != variableId) {
             return false;
         }
         setAssignmentViewModel((AssignmentViewModel) variable);

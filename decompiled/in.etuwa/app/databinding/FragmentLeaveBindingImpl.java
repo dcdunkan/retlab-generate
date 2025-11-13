@@ -62,7 +62,7 @@ public class FragmentLeaveBindingImpl extends FragmentLeaveBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (127 != variableId) {
+        if (128 != variableId) {
             return false;
         }
         setLeaveViewModel((LeaveViewModel) variable);

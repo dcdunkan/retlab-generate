@@ -69,7 +69,7 @@ public class FragmentProfileBindingImpl extends FragmentProfileBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (164 != variableId) {
+        if (165 != variableId) {
             return false;
         }
         setProfileViewModel((ProfileViewModel) variable);

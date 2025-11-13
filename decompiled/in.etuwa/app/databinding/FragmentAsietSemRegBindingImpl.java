@@ -108,7 +108,7 @@ public class FragmentAsietSemRegBindingImpl extends FragmentAsietSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (28 != variableId) {
+        if (29 != variableId) {
             return false;
         }
         setAsietSemRegViewModel((AsietSemRegViewModel) variable);

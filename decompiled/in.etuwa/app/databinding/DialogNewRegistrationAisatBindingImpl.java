@@ -82,7 +82,7 @@ public class DialogNewRegistrationAisatBindingImpl extends DialogNewRegistration
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (178 != variableId) {
+        if (179 != variableId) {
             return false;
         }
         setReRegistrationViewModel((ReRegistrationViewModel) variable);

@@ -63,7 +63,7 @@ public class FragmentSentItemsBindingImpl extends FragmentSentItemsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (201 != variableId) {
+        if (202 != variableId) {
             return false;
         }
         setSentItemViewModel((SentItemViewModel) variable);

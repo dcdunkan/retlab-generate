@@ -58,7 +58,7 @@ public class HomeWorkFilesDialogBindingImpl extends HomeWorkFilesDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (103 != variableId) {
+        if (104 != variableId) {
             return false;
         }
         setHomeWorkFilesDialogViewModel((HomeWorkFilesDialogViewModel) variable);

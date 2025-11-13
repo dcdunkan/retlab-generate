@@ -63,7 +63,7 @@ public class RemarkFragmentBindingImpl extends RemarkFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (181 != variableId) {
+        if (182 != variableId) {
             return false;
         }
         setRemarkViewModel((RemarkViewModel) variable);

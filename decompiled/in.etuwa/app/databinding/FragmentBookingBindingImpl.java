@@ -63,7 +63,7 @@ public class FragmentBookingBindingImpl extends FragmentBookingBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (40 != variableId) {
+        if (41 != variableId) {
             return false;
         }
         setBookingViewModel((BookingViewModel) variable);

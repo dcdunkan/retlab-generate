@@ -65,7 +65,7 @@ public class DialogSubRegStatusBindingImpl extends DialogSubRegStatusBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (211 != variableId) {
+        if (212 != variableId) {
             return false;
         }
         setSubjectRegStatusViewModel((SubjectRegStatusViewModel) variable);

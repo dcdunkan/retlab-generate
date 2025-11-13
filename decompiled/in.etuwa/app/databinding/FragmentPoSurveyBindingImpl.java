@@ -63,7 +63,7 @@ public class FragmentPoSurveyBindingImpl extends FragmentPoSurveyBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (152 != variableId) {
+        if (153 != variableId) {
             return false;
         }
         setPOSurveyViewModel((POSurveyViewModel) variable);

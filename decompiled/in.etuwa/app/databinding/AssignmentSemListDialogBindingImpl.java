@@ -66,7 +66,7 @@ public class AssignmentSemListDialogBindingImpl extends AssignmentSemListDialogB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (31 != variableId) {
+        if (32 != variableId) {
             return false;
         }
         setAssignmentSemListDialogViewModel((AssignmentSemListDialogViewModel) variable);

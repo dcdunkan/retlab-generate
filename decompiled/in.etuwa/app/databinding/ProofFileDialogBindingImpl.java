@@ -67,7 +67,7 @@ public class ProofFileDialogBindingImpl extends ProofFileDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (169 != variableId) {
+        if (170 != variableId) {
             return false;
         }
         setProofFileDialogViewModel((ProofFileDialogViewModel) variable);

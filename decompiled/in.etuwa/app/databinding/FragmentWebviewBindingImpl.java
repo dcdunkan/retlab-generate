@@ -63,7 +63,7 @@ public class FragmentWebviewBindingImpl extends FragmentWebviewBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (249 != variableId) {
+        if (250 != variableId) {
             return false;
         }
         setWebViewViewModel((WebViewViewModel) variable);

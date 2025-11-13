@@ -58,7 +58,7 @@ public class QuestionDialogBindingImpl extends QuestionDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (175 != variableId) {
+        if (176 != variableId) {
             return false;
         }
         setQuestionDialogViewModel((QuestionDialogViewModel) variable);

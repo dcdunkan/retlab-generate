@@ -55,7 +55,7 @@ public class FragmentBooksRecordsBindingImpl extends FragmentBooksRecordsBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (38 != variableId) {
+        if (39 != variableId) {
             return false;
         }
         setBookRecordViewModel((BookRecordViewModel) variable);

@@ -58,7 +58,7 @@ public class CellMember2DialogBindingImpl extends CellMember2DialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (45 != variableId) {
+        if (46 != variableId) {
             return false;
         }
         setCellMember2DialogViewModel((CellMember2DialogViewModel) variable);

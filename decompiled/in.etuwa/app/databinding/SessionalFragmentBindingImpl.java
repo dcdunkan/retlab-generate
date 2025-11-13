@@ -71,7 +71,7 @@ public class SessionalFragmentBindingImpl extends SessionalFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (203 != variableId) {
+        if (204 != variableId) {
             return false;
         }
         setSessionalViewModel((SessionalViewModel) variable);

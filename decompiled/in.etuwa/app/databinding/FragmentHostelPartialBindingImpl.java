@@ -79,7 +79,7 @@ public class FragmentHostelPartialBindingImpl extends FragmentHostelPartialBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (116 != variableId) {
+        if (117 != variableId) {
             return false;
         }
         setHostelPartialViewModel((HostelPartialViewModel) variable);

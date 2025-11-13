@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.Observer;
@@ -19,6 +20,7 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.itextpdf.svg.SvgConstants;
+import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.examregister.ExamCourseResponse;
 import in.etuwa.app.data.model.examregister.ExamViewResponse;
 import in.etuwa.app.data.model.examregister.RegistrationSlipResponse;
@@ -26,6 +28,7 @@ import in.etuwa.app.databinding.FragmentExamViewBinding;
 import in.etuwa.app.helper.MainCallBackListener;
 import in.etuwa.app.ui.base.BaseFragment;
 import in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewAdapter;
+import in.etuwa.app.ui.examregistration.examsubjects.view.verify.AbcIdVerifyDialog;
 import in.etuwa.app.utils.RecycleExtKt;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
@@ -34,8 +37,10 @@ import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
+import kotlin.Unit;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
@@ -46,13 +51,14 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
 /* compiled from: ExamViewFragment.kt */
-@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 92\u00020\u00012\u00020\u0002:\u00019B\u0005¢\u0006\u0002\u0010\u0003J\b\u0010\u001f\u001a\u00020 H\u0014J\b\u0010!\u001a\u00020 H\u0014J\b\u0010\"\u001a\u00020 H\u0002J\b\u0010#\u001a\u00020 H\u0002J\b\u0010$\u001a\u00020 H\u0002J\u0010\u0010%\u001a\u00020 2\u0006\u0010&\u001a\u00020'H\u0016J\u0012\u0010(\u001a\u00020 2\b\u0010)\u001a\u0004\u0018\u00010*H\u0016J&\u0010+\u001a\u0004\u0018\u00010,2\u0006\u0010-\u001a\u00020.2\b\u0010/\u001a\u0004\u0018\u0001002\b\u0010)\u001a\u0004\u0018\u00010*H\u0016J\b\u00101\u001a\u00020 H\u0016J\b\u00102\u001a\u00020 H\u0016J\u001a\u00103\u001a\u00020 2\u0006\u00104\u001a\u00020,2\b\u0010)\u001a\u0004\u0018\u00010*H\u0016J\b\u00105\u001a\u00020 H\u0003J\b\u00106\u001a\u00020 H\u0014J\b\u00107\u001a\u00020 H\u0014J\b\u00108\u001a\u00020 H\u0014R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\u0006\u001a\u00020\u00078BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\n\u0010\u000b\u001a\u0004\b\b\u0010\tR\u0016\u0010\f\u001a\u0004\u0018\u00010\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000eR\u001c\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u001b\u0010\u0015\u001a\u00020\u00168BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0019\u0010\u000b\u001a\u0004\b\u0017\u0010\u0018R\u001c\u0010\u001a\u001a\u0004\u0018\u00010\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0012\"\u0004\b\u001c\u0010\u0014R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006:"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewFragment;", "Lin/etuwa/app/ui/base/BaseFragment;", "Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewAdapter$CallBack;", "()V", "_binding", "Lin/etuwa/app/databinding/FragmentExamViewBinding;", "adapter", "Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewAdapter;", "getAdapter", "()Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewAdapter;", "adapter$delegate", "Lkotlin/Lazy;", "binding", "getBinding", "()Lin/etuwa/app/databinding/FragmentExamViewBinding;", "category", "", "getCategory", "()Ljava/lang/String;", "setCategory", "(Ljava/lang/String;)V", "examViewViewModel", "Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewViewModel;", "getExamViewViewModel", "()Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewViewModel;", "examViewViewModel$delegate", "id", "getId", "setId", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/helper/MainCallBackListener;", "hideBaseView", "", "hideProgress", "listenResponse", "listenSlipResponse", "listenViewResponse", "onAttach", "context", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "onDestroy", "onResume", "onViewCreated", SvgConstants.Tags.VIEW, "reloadFragment", "setUp", "showBaseView", "showProgress", "Companion", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 A2\u00020\u00012\u00020\u00022\u00020\u0003:\u0001AB\u0005¢\u0006\u0002\u0010\u0004J\u0010\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020 H\u0016J\b\u0010'\u001a\u00020%H\u0014J\b\u0010(\u001a\u00020%H\u0014J\b\u0010)\u001a\u00020%H\u0002J\b\u0010*\u001a\u00020%H\u0002J\b\u0010+\u001a\u00020%H\u0002J\b\u0010,\u001a\u00020%H\u0002J\u0010\u0010-\u001a\u00020%2\u0006\u0010.\u001a\u00020/H\u0016J\u0012\u00100\u001a\u00020%2\b\u00101\u001a\u0004\u0018\u000102H\u0016J&\u00103\u001a\u0004\u0018\u0001042\u0006\u00105\u001a\u0002062\b\u00107\u001a\u0004\u0018\u0001082\b\u00101\u001a\u0004\u0018\u000102H\u0016J\b\u00109\u001a\u00020%H\u0016J\b\u0010:\u001a\u00020%H\u0016J\u001a\u0010;\u001a\u00020%2\u0006\u0010<\u001a\u0002042\b\u00101\u001a\u0004\u0018\u000102H\u0016J\b\u0010=\u001a\u00020%H\u0003J\b\u0010>\u001a\u00020%H\u0014J\b\u0010?\u001a\u00020%H\u0014J\b\u0010@\u001a\u00020%H\u0014R\u0010\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u0016\u0010\u000f\u001a\u0004\u0018\u00010\u00068BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u0011R\u001c\u0010\u0012\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016R\u001b\u0010\u0017\u001a\u00020\u00188BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u001b\u0010\u000e\u001a\u0004\b\u0019\u0010\u001aR\u001c\u0010\u001c\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u0014\"\u0004\b\u001e\u0010\u0016R\u0012\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0004\n\u0002\u0010!R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewFragment;", "Lin/etuwa/app/ui/base/BaseFragment;", "Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewAdapter$CallBack;", "Lin/etuwa/app/ui/examregistration/examsubjects/view/verify/AbcIdVerifyDialog$ProfileListener;", "()V", "_binding", "Lin/etuwa/app/databinding/FragmentExamViewBinding;", "abcId", "", "adapter", "Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewAdapter;", "getAdapter", "()Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewAdapter;", "adapter$delegate", "Lkotlin/Lazy;", "binding", "getBinding", "()Lin/etuwa/app/databinding/FragmentExamViewBinding;", "category", "getCategory", "()Ljava/lang/String;", "setCategory", "(Ljava/lang/String;)V", "examViewViewModel", "Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewViewModel;", "getExamViewViewModel", "()Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewViewModel;", "examViewViewModel$delegate", "id", "getId", "setId", "isEnabled", "", "Ljava/lang/Boolean;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/helper/MainCallBackListener;", "getVerifyResult", "", "flag", "hideBaseView", "hideProgress", "listenAbcResponse", "listenResponse", "listenSlipResponse", "listenViewResponse", "onAttach", "context", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "onDestroy", "onResume", "onViewCreated", SvgConstants.Tags.VIEW, "reloadFragment", "setUp", "showBaseView", "showProgress", "Companion", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes4.dex */
-public final class ExamViewFragment extends BaseFragment implements ExamViewAdapter.CallBack {
+public final class ExamViewFragment extends BaseFragment implements ExamViewAdapter.CallBack, AbcIdVerifyDialog.ProfileListener {
 
     /* renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentExamViewBinding _binding;
+    private String abcId;
 
     /* renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
@@ -61,6 +67,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
     /* renamed from: examViewViewModel$delegate, reason: from kotlin metadata */
     private final Lazy examViewViewModel;
     private String id;
+    private Boolean isEnabled;
     private MainCallBackListener listener;
 
     /* compiled from: ExamViewFragment.kt */
@@ -279,7 +286,9 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         }
         getAdapter().setCallBack(this);
         listenResponse();
+        listenAbcResponse();
         listenViewResponse();
+        getExamViewViewModel().getAbcData();
         ExamViewViewModel examViewViewModel = getExamViewViewModel();
         String str = this.id;
         Intrinsics.checkNotNull(str);
@@ -333,7 +342,24 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$3(ExamViewFragment this$0, View view) {
+        RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
+        if (Intrinsics.areEqual(this$0.abcId, "") && Intrinsics.areEqual((Object) this$0.isEnabled, (Object) true)) {
+            FragmentExamViewBinding fragmentExamViewBinding = this$0.get_binding();
+            if (fragmentExamViewBinding == null || (recyclerView = fragmentExamViewBinding.rvRegHistory) == null) {
+                return;
+            }
+            ToastExtKt.showErrorToast(recyclerView, "Abc id missing");
+            return;
+        }
+        if (!Intrinsics.areEqual(this$0.abcId, "") && Intrinsics.areEqual((Object) this$0.isEnabled, (Object) true)) {
+            FragmentManager childFragmentManager = this$0.getChildFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
+            AbcIdVerifyDialog newInstance = AbcIdVerifyDialog.INSTANCE.newInstance();
+            newInstance.setCallBack(this$0);
+            newInstance.show(childFragmentManager, (String) null);
+            return;
+        }
         MainCallBackListener mainCallBackListener = this$0.listener;
         if (mainCallBackListener != null) {
             String str = this$0.id;
@@ -352,6 +378,82 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         String str = this$0.id;
         Intrinsics.checkNotNull(str);
         examViewViewModel.getExamSlip(str);
+    }
+
+    private final void listenAbcResponse() {
+        getExamViewViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new ExamViewFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$listenAbcResponse$1
+
+            /* compiled from: ExamViewFragment.kt */
+            @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+            public /* synthetic */ class WhenMappings {
+                public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+                static {
+                    int[] iArr = new int[Status.values().length];
+                    try {
+                        iArr[Status.SUCCESS.ordinal()] = 1;
+                    } catch (NoSuchFieldError unused) {
+                    }
+                    try {
+                        iArr[Status.LOADING.ordinal()] = 2;
+                    } catch (NoSuchFieldError unused2) {
+                    }
+                    try {
+                        iArr[Status.ERROR.ordinal()] = 3;
+                    } catch (NoSuchFieldError unused3) {
+                    }
+                    try {
+                        iArr[Status.EXCEPTION.ordinal()] = 4;
+                    } catch (NoSuchFieldError unused4) {
+                    }
+                    $EnumSwitchMapping$0 = iArr;
+                }
+            }
+
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Resource<? extends AbcResponse> resource) {
+                invoke2((Resource<AbcResponse>) resource);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<AbcResponse> resource) {
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i == 1) {
+                    ExamViewFragment.this.hideProgress();
+                    AbcResponse data = resource.getData();
+                    if (data != null) {
+                        ExamViewFragment examViewFragment = ExamViewFragment.this;
+                        examViewFragment.showBaseView();
+                        String abc_id = data.getAbc_id();
+                        if (abc_id == null) {
+                            abc_id = "";
+                        }
+                        examViewFragment.abcId = abc_id;
+                        return;
+                    }
+                    return;
+                }
+                if (i == 2) {
+                    ExamViewFragment.this.showProgress();
+                    return;
+                }
+                if (i == 3) {
+                    ExamViewFragment.this.hideProgress();
+                    ExamViewFragment.this.showBaseView();
+                } else {
+                    if (i != 4) {
+                        return;
+                    }
+                    ExamViewFragment.this.hideProgress();
+                    ExamViewFragment.this.showBaseView();
+                }
+            }
+        }));
     }
 
     private final void listenResponse() {
@@ -399,6 +501,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             this$0.showBaseView();
             if (examCourseResponse.getLogin()) {
                 this$0.category = examCourseResponse.getCategory();
+                this$0.isEnabled = Boolean.valueOf(examCourseResponse.getAbc_id_verification());
                 if (examCourseResponse.is_registered()) {
                     ExamViewViewModel examViewViewModel = this$0.getExamViewViewModel();
                     String str = this$0.id;
@@ -510,7 +613,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
                 return;
             }
             Intrinsics.checkNotNullExpressionValue(rvRegHistory, "rvRegHistory");
-            ToastExtKt.showErrorToast(rvRegHistory, "netwok error");
+            ToastExtKt.showErrorToast(rvRegHistory, examCourseResponse.getError());
         }
     }
 
@@ -697,5 +800,27 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             return;
         }
         throw new RuntimeException(context + " must implement OnFragmentInteractionListener");
+    }
+
+    @Override // in.etuwa.app.ui.examregistration.examsubjects.view.verify.AbcIdVerifyDialog.ProfileListener
+    public void getVerifyResult(boolean flag) {
+        RecyclerView recyclerView;
+        if (flag) {
+            MainCallBackListener mainCallBackListener = this.listener;
+            if (mainCallBackListener != null) {
+                String str = this.id;
+                Intrinsics.checkNotNull(str);
+                String str2 = this.category;
+                Intrinsics.checkNotNull(str2);
+                mainCallBackListener.showExamRegisterFragment(str, str2);
+                return;
+            }
+            return;
+        }
+        FragmentExamViewBinding fragmentExamViewBinding = get_binding();
+        if (fragmentExamViewBinding == null || (recyclerView = fragmentExamViewBinding.rvRegHistory) == null) {
+            return;
+        }
+        ToastExtKt.showErrorToast(recyclerView, "Something went wrong");
     }
 }

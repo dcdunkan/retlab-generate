@@ -82,7 +82,7 @@ public class DialogAddScholarshipBindingImpl extends DialogAddScholarshipBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (21 != variableId) {
+        if (22 != variableId) {
             return false;
         }
         setAddScholarshipViewModel((AddScholarshipViewModel) variable);

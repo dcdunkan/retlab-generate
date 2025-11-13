@@ -63,7 +63,7 @@ public class FragmentHostelReceiptBindingImpl extends FragmentHostelReceiptBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (223 != variableId) {
+        if (224 != variableId) {
             return false;
         }
         setTkmReceiptViewModel((TkmReceiptViewModel) variable);

@@ -65,7 +65,7 @@ public class MedicalFragmentBindingImpl extends MedicalFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (137 != variableId) {
+        if (138 != variableId) {
             return false;
         }
         setMedicalViewModel((MedicalViewModel) variable);

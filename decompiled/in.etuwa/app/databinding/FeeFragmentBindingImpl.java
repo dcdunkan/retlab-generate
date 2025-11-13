@@ -68,7 +68,7 @@ public class FeeFragmentBindingImpl extends FeeFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (94 != variableId) {
+        if (95 != variableId) {
             return false;
         }
         setFeeViewModel((FeeViewModel) variable);

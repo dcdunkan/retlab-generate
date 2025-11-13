@@ -63,7 +63,7 @@ public class LabListFragmentBindingImpl extends LabListFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (123 != variableId) {
+        if (124 != variableId) {
             return false;
         }
         setLabListViewModel((LabListViewModel) variable);

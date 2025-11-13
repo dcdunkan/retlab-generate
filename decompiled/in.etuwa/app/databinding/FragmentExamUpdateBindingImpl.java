@@ -69,7 +69,7 @@ public class FragmentExamUpdateBindingImpl extends FragmentExamUpdateBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (237 != variableId) {
+        if (238 != variableId) {
             return false;
         }
         setUpdateRegisterViewModel((UpdateRegisterViewModel) variable);

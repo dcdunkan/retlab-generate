@@ -60,7 +60,7 @@ public class ActivityPushBindingImpl extends ActivityPushBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (171 != variableId) {
+        if (172 != variableId) {
             return false;
         }
         setPushViewModel((PushViewModel) variable);

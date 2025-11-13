@@ -70,7 +70,7 @@ public class FragmentKmeaBindingImpl extends FragmentKmeaBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (121 != variableId) {
+        if (122 != variableId) {
             return false;
         }
         setKmeaHostelViewModel((KmeaHostelViewModel) variable);

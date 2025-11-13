@@ -95,7 +95,7 @@ public class ViewMvjceSemRegDialogBindingImpl extends ViewMvjceSemRegDialogBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (243 != variableId) {
+        if (244 != variableId) {
             return false;
         }
         setViewMvjceSemRegViewModel((ViewMvjceSemRegViewModel) variable);

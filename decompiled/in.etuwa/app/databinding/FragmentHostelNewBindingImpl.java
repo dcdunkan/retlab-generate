@@ -76,7 +76,7 @@ public class FragmentHostelNewBindingImpl extends FragmentHostelNewBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (113 != variableId) {
+        if (114 != variableId) {
             return false;
         }
         setHostelNewViewModel((HostelNewViewModel) variable);

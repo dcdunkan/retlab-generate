@@ -58,7 +58,7 @@ public class GrievanceDocDialogBindingImpl extends GrievanceDocDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (101 != variableId) {
+        if (102 != variableId) {
             return false;
         }
         setGrievanceDocDialogViewModel((GrievanceDocDialogViewModel) variable);

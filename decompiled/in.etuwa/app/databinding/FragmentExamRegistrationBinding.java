@@ -27,13 +27,15 @@ public abstract class FragmentExamRegistrationBinding extends ViewDataBinding {
     public final LinearLayout registerLyt;
     public final RecyclerView rvExamSubject;
     public final CheckBox selectAllCheckBox;
+    public final LinearLayout selectLyt;
     public final TextView selectTv;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView tvAdditionalFees;
     public final TextView tvHostelTotal;
 
     public abstract void setExamRegisterViewModel(ExamRegisterViewModel examRegisterViewModel);
 
-    protected FragmentExamRegistrationBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView payLaterBtn, LinearLayout payLaterLyt, LinearLayout payLyt, TextView payNowBtn, TextView registerBtn, LinearLayout registerLyt, RecyclerView rvExamSubject, CheckBox selectAllCheckBox, TextView selectTv, SwipeRefreshLayout swipeLayout, TextView tvHostelTotal) {
+    protected FragmentExamRegistrationBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView payLaterBtn, LinearLayout payLaterLyt, LinearLayout payLyt, TextView payNowBtn, TextView registerBtn, LinearLayout registerLyt, RecyclerView rvExamSubject, CheckBox selectAllCheckBox, LinearLayout selectLyt, TextView selectTv, SwipeRefreshLayout swipeLayout, TextView tvAdditionalFees, TextView tvHostelTotal) {
         super(_bindingComponent, _root, _localFieldCount);
         this.payLaterBtn = payLaterBtn;
         this.payLaterLyt = payLaterLyt;
@@ -43,8 +45,10 @@ public abstract class FragmentExamRegistrationBinding extends ViewDataBinding {
         this.registerLyt = registerLyt;
         this.rvExamSubject = rvExamSubject;
         this.selectAllCheckBox = selectAllCheckBox;
+        this.selectLyt = selectLyt;
         this.selectTv = selectTv;
         this.swipeLayout = swipeLayout;
+        this.tvAdditionalFees = tvAdditionalFees;
         this.tvHostelTotal = tvHostelTotal;
     }
 

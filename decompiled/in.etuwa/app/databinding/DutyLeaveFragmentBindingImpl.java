@@ -65,7 +65,7 @@ public class DutyLeaveFragmentBindingImpl extends DutyLeaveFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (74 != variableId) {
+        if (75 != variableId) {
             return false;
         }
         setDutyLeaveViewModel((DutyLeaveViewModel) variable);

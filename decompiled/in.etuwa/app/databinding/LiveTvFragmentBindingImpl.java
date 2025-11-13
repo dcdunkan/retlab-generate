@@ -63,7 +63,7 @@ public class LiveTvFragmentBindingImpl extends LiveTvFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (128 != variableId) {
+        if (129 != variableId) {
             return false;
         }
         setLiveTvViewModel((LiveTvViewModel) variable);

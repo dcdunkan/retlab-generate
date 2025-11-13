@@ -65,7 +65,7 @@ public class FragmentRevaluationFeeBindingImpl extends FragmentRevaluationFeeBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (187 != variableId) {
+        if (188 != variableId) {
             return false;
         }
         setRevaluationFeeViewModel((RevaluationFeeViewModel) variable);

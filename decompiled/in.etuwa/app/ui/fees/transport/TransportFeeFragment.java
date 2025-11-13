@@ -43,7 +43,6 @@ import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
-import kotlin.NotImplementedError;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -112,8 +111,17 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         return INSTANCE.newInstance();
     }
 
+    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
+    public void dismiss() {
+    }
+
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void hideProgress() {
+    }
+
+    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
+    public void openPaymentPage(String url) {
+        Intrinsics.checkNotNullParameter(url, "url");
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment
@@ -702,16 +710,5 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
             return;
         }
         textView.setVisibility(0);
-    }
-
-    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
-    public void dismiss() {
-        throw new NotImplementedError("An operation is not implemented: Not yet implemented");
-    }
-
-    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
-    public void openPaymentPage(String url) {
-        Intrinsics.checkNotNullParameter(url, "url");
-        throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 }

@@ -69,7 +69,7 @@ public class SeriesExamFragmentBindingImpl extends SeriesExamFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (202 != variableId) {
+        if (203 != variableId) {
             return false;
         }
         setSeriesExamViewModel((SeriesExamViewModel) variable);

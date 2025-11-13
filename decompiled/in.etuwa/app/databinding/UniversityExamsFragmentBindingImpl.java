@@ -58,7 +58,7 @@ public class UniversityExamsFragmentBindingImpl extends UniversityExamsFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (232 != variableId) {
+        if (233 != variableId) {
             return false;
         }
         setUniversityExamsViewModel((UniversityExamsViewModel) variable);

@@ -62,7 +62,7 @@ public class DialogContactDetailsBindingImpl extends DialogContactDetailsBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (59 != variableId) {
+        if (60 != variableId) {
             return false;
         }
         setContactDetailsViewModel((ContactDetailsViewModel) variable);

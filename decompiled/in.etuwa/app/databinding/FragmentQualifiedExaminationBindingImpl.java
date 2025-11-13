@@ -65,7 +65,7 @@ public class FragmentQualifiedExaminationBindingImpl extends FragmentQualifiedEx
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (173 != variableId) {
+        if (174 != variableId) {
             return false;
         }
         setQualifiedExaminationViewModel((QualifiedExaminationViewModel) variable);

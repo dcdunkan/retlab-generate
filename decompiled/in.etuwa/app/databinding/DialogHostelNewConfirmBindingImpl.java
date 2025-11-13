@@ -62,7 +62,7 @@ public class DialogHostelNewConfirmBindingImpl extends DialogHostelNewConfirmBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (112 != variableId) {
+        if (113 != variableId) {
             return false;
         }
         setHostelNewConfirmViewModel((HostelNewConfirmViewModel) variable);

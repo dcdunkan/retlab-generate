@@ -99,7 +99,7 @@ public class AddRequestDialogBindingImpl extends AddRequestDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (20 != variableId) {
+        if (21 != variableId) {
             return false;
         }
         setAddRequestDialogViewModel((AddRequestDialogViewModel) variable);

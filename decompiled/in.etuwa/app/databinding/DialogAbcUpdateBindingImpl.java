@@ -62,7 +62,7 @@ public class DialogAbcUpdateBindingImpl extends DialogAbcUpdateBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (235 != variableId) {
+        if (236 != variableId) {
             return false;
         }
         setUpdateAbcViewModel((UpdateAbcViewModel) variable);

@@ -65,7 +65,7 @@ public class UnivInitialPageFragmentBindingImpl extends UnivInitialPageFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (231 != variableId) {
+        if (232 != variableId) {
             return false;
         }
         setUnivInitialPageViewModel((UnivInitialPageViewModel) variable);

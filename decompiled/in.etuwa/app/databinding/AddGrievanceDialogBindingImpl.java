@@ -82,7 +82,7 @@ public class AddGrievanceDialogBindingImpl extends AddGrievanceDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (12 != variableId) {
+        if (13 != variableId) {
             return false;
         }
         setAddGrievanceDialogViewModel((AddGrievanceDialogViewModel) variable);

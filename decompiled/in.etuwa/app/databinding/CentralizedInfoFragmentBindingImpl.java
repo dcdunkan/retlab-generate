@@ -63,7 +63,7 @@ public class CentralizedInfoFragmentBindingImpl extends CentralizedInfoFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (47 != variableId) {
+        if (48 != variableId) {
             return false;
         }
         setCentralizedInfoViewModel((CentralizedInfoViewModel) variable);

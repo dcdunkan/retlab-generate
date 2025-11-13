@@ -65,7 +65,7 @@ public class FragmentFundedResearchBindingImpl extends FragmentFundedResearchBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (96 != variableId) {
+        if (97 != variableId) {
             return false;
         }
         setFundedResearchViewModel((FundedResearchViewModel) variable);

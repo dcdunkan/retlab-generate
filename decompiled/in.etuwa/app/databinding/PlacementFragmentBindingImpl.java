@@ -63,7 +63,7 @@ public class PlacementFragmentBindingImpl extends PlacementFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (160 != variableId) {
+        if (161 != variableId) {
             return false;
         }
         setPlacementViewModel((PlacementViewModel) variable);

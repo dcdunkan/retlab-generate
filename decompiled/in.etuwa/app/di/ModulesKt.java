@@ -138,6 +138,7 @@ import in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegist
 import in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel;
 import in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewAdapter;
 import in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewViewModel;
+import in.etuwa.app.ui.examregistration.examsubjects.view.verify.AbcIdVerifyViewModel;
 import in.etuwa.app.ui.examregistration.revaluation.RevaluationAdapter;
 import in.etuwa.app.ui.examregistration.revaluation.RevaluationViewModel;
 import in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeAdapter;
@@ -2571,7 +2572,18 @@ public final class ModulesKt {
                 FactoryInstanceFactory factoryInstanceFactory139 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ExamReceiptViewModel.class), null, anonymousClass139, Kind.Factory, CollectionsKt.emptyList()));
                 module.indexPrimaryType(factoryInstanceFactory139);
                 new Pair(module, factoryInstanceFactory139);
-                AnonymousClass140 anonymousClass140 = new Function2<Scope, ParametersHolder, AddUpdateBankViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.140
+                AnonymousClass140 anonymousClass140 = new Function2<Scope, ParametersHolder, AbcIdVerifyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.140
+                    @Override // kotlin.jvm.functions.Function2
+                    public final AbcIdVerifyViewModel invoke(Scope viewModel, ParametersHolder it) {
+                        Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
+                        Intrinsics.checkNotNullParameter(it, "it");
+                        return new AbcIdVerifyViewModel((ExamRegistrationRepository) viewModel.get(Reflection.getOrCreateKotlinClass(ExamRegistrationRepository.class), null, null));
+                    }
+                };
+                FactoryInstanceFactory factoryInstanceFactory140 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AbcIdVerifyViewModel.class), null, anonymousClass140, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory140);
+                new Pair(module, factoryInstanceFactory140);
+                AnonymousClass141 anonymousClass141 = new Function2<Scope, ParametersHolder, AddUpdateBankViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.141
                     @Override // kotlin.jvm.functions.Function2
                     public final AddUpdateBankViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2579,10 +2591,10 @@ public final class ModulesKt {
                         return new AddUpdateBankViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory140 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AddUpdateBankViewModel.class), null, anonymousClass140, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory140);
-                new Pair(module, factoryInstanceFactory140);
-                AnonymousClass141 anonymousClass141 = new Function2<Scope, ParametersHolder, UniversityResultViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.141
+                FactoryInstanceFactory factoryInstanceFactory141 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AddUpdateBankViewModel.class), null, anonymousClass141, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory141);
+                new Pair(module, factoryInstanceFactory141);
+                AnonymousClass142 anonymousClass142 = new Function2<Scope, ParametersHolder, UniversityResultViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.142
                     @Override // kotlin.jvm.functions.Function2
                     public final UniversityResultViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2590,10 +2602,10 @@ public final class ModulesKt {
                         return new UniversityResultViewModel((ExamRegistrationRepository) viewModel.get(Reflection.getOrCreateKotlinClass(ExamRegistrationRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory141 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UniversityResultViewModel.class), null, anonymousClass141, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory141);
-                new Pair(module, factoryInstanceFactory141);
-                AnonymousClass142 anonymousClass142 = new Function2<Scope, ParametersHolder, RevaluationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.142
+                FactoryInstanceFactory factoryInstanceFactory142 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UniversityResultViewModel.class), null, anonymousClass142, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory142);
+                new Pair(module, factoryInstanceFactory142);
+                AnonymousClass143 anonymousClass143 = new Function2<Scope, ParametersHolder, RevaluationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.143
                     @Override // kotlin.jvm.functions.Function2
                     public final RevaluationViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2601,10 +2613,10 @@ public final class ModulesKt {
                         return new RevaluationViewModel((ExamRegistrationRepository) viewModel.get(Reflection.getOrCreateKotlinClass(ExamRegistrationRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory142 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationViewModel.class), null, anonymousClass142, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory142);
-                new Pair(module, factoryInstanceFactory142);
-                AnonymousClass143 anonymousClass143 = new Function2<Scope, ParametersHolder, RevaluationViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.143
+                FactoryInstanceFactory factoryInstanceFactory143 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationViewModel.class), null, anonymousClass143, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory143);
+                new Pair(module, factoryInstanceFactory143);
+                AnonymousClass144 anonymousClass144 = new Function2<Scope, ParametersHolder, RevaluationViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.144
                     @Override // kotlin.jvm.functions.Function2
                     public final RevaluationViewViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2612,10 +2624,10 @@ public final class ModulesKt {
                         return new RevaluationViewViewModel((ExamRegistrationRepository) viewModel.get(Reflection.getOrCreateKotlinClass(ExamRegistrationRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory143 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationViewViewModel.class), null, anonymousClass143, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory143);
-                new Pair(module, factoryInstanceFactory143);
-                AnonymousClass144 anonymousClass144 = new Function2<Scope, ParametersHolder, RevaluationFeeViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.144
+                FactoryInstanceFactory factoryInstanceFactory144 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationViewViewModel.class), null, anonymousClass144, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory144);
+                new Pair(module, factoryInstanceFactory144);
+                AnonymousClass145 anonymousClass145 = new Function2<Scope, ParametersHolder, RevaluationFeeViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.145
                     @Override // kotlin.jvm.functions.Function2
                     public final RevaluationFeeViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2623,10 +2635,10 @@ public final class ModulesKt {
                         return new RevaluationFeeViewModel((ExamRegistrationRepository) viewModel.get(Reflection.getOrCreateKotlinClass(ExamRegistrationRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory144 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationFeeViewModel.class), null, anonymousClass144, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory144);
-                new Pair(module, factoryInstanceFactory144);
-                AnonymousClass145 anonymousClass145 = new Function2<Scope, ParametersHolder, RevaluationReceiptViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.145
+                FactoryInstanceFactory factoryInstanceFactory145 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationFeeViewModel.class), null, anonymousClass145, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory145);
+                new Pair(module, factoryInstanceFactory145);
+                AnonymousClass146 anonymousClass146 = new Function2<Scope, ParametersHolder, RevaluationReceiptViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.146
                     @Override // kotlin.jvm.functions.Function2
                     public final RevaluationReceiptViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2634,10 +2646,10 @@ public final class ModulesKt {
                         return new RevaluationReceiptViewModel((ExamRegistrationRepository) viewModel.get(Reflection.getOrCreateKotlinClass(ExamRegistrationRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory145 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationReceiptViewModel.class), null, anonymousClass145, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory145);
-                new Pair(module, factoryInstanceFactory145);
-                AnonymousClass146 anonymousClass146 = new Function2<Scope, ParametersHolder, RevaluationUpdateViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.146
+                FactoryInstanceFactory factoryInstanceFactory146 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationReceiptViewModel.class), null, anonymousClass146, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory146);
+                new Pair(module, factoryInstanceFactory146);
+                AnonymousClass147 anonymousClass147 = new Function2<Scope, ParametersHolder, RevaluationUpdateViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.147
                     @Override // kotlin.jvm.functions.Function2
                     public final RevaluationUpdateViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2645,10 +2657,10 @@ public final class ModulesKt {
                         return new RevaluationUpdateViewModel((ExamRegistrationRepository) viewModel.get(Reflection.getOrCreateKotlinClass(ExamRegistrationRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory146 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationUpdateViewModel.class), null, anonymousClass146, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory146);
-                new Pair(module, factoryInstanceFactory146);
-                AnonymousClass147 anonymousClass147 = new Function2<Scope, ParametersHolder, MessViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.147
+                FactoryInstanceFactory factoryInstanceFactory147 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(RevaluationUpdateViewModel.class), null, anonymousClass147, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory147);
+                new Pair(module, factoryInstanceFactory147);
+                AnonymousClass148 anonymousClass148 = new Function2<Scope, ParametersHolder, MessViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.148
                     @Override // kotlin.jvm.functions.Function2
                     public final MessViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2656,10 +2668,10 @@ public final class ModulesKt {
                         return new MessViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory147 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MessViewModel.class), null, anonymousClass147, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory147);
-                new Pair(module, factoryInstanceFactory147);
-                AnonymousClass148 anonymousClass148 = new Function2<Scope, ParametersHolder, OrderHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.148
+                FactoryInstanceFactory factoryInstanceFactory148 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MessViewModel.class), null, anonymousClass148, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory148);
+                new Pair(module, factoryInstanceFactory148);
+                AnonymousClass149 anonymousClass149 = new Function2<Scope, ParametersHolder, OrderHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.149
                     @Override // kotlin.jvm.functions.Function2
                     public final OrderHistoryViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2667,10 +2679,10 @@ public final class ModulesKt {
                         return new OrderHistoryViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory148 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(OrderHistoryViewModel.class), null, anonymousClass148, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory148);
-                new Pair(module, factoryInstanceFactory148);
-                AnonymousClass149 anonymousClass149 = new Function2<Scope, ParametersHolder, MessBookingViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.149
+                FactoryInstanceFactory factoryInstanceFactory149 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(OrderHistoryViewModel.class), null, anonymousClass149, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory149);
+                new Pair(module, factoryInstanceFactory149);
+                AnonymousClass150 anonymousClass150 = new Function2<Scope, ParametersHolder, MessBookingViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.150
                     @Override // kotlin.jvm.functions.Function2
                     public final MessBookingViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2678,10 +2690,10 @@ public final class ModulesKt {
                         return new MessBookingViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory149 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MessBookingViewModel.class), null, anonymousClass149, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory149);
-                new Pair(module, factoryInstanceFactory149);
-                AnonymousClass150 anonymousClass150 = new Function2<Scope, ParametersHolder, HostelPartialViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.150
+                FactoryInstanceFactory factoryInstanceFactory150 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MessBookingViewModel.class), null, anonymousClass150, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory150);
+                new Pair(module, factoryInstanceFactory150);
+                AnonymousClass151 anonymousClass151 = new Function2<Scope, ParametersHolder, HostelPartialViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.151
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelPartialViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2689,10 +2701,10 @@ public final class ModulesKt {
                         return new HostelPartialViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory150 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelPartialViewModel.class), null, anonymousClass150, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory150);
-                new Pair(module, factoryInstanceFactory150);
-                AnonymousClass151 anonymousClass151 = new Function2<Scope, ParametersHolder, HostelViewLeaveViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.151
+                FactoryInstanceFactory factoryInstanceFactory151 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelPartialViewModel.class), null, anonymousClass151, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory151);
+                new Pair(module, factoryInstanceFactory151);
+                AnonymousClass152 anonymousClass152 = new Function2<Scope, ParametersHolder, HostelViewLeaveViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.152
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelViewLeaveViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2700,10 +2712,10 @@ public final class ModulesKt {
                         return new HostelViewLeaveViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory151 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelViewLeaveViewModel.class), null, anonymousClass151, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory151);
-                new Pair(module, factoryInstanceFactory151);
-                AnonymousClass152 anonymousClass152 = new Function2<Scope, ParametersHolder, HostelAttendanceViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.152
+                FactoryInstanceFactory factoryInstanceFactory152 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelViewLeaveViewModel.class), null, anonymousClass152, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory152);
+                new Pair(module, factoryInstanceFactory152);
+                AnonymousClass153 anonymousClass153 = new Function2<Scope, ParametersHolder, HostelAttendanceViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.153
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelAttendanceViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2711,10 +2723,10 @@ public final class ModulesKt {
                         return new HostelAttendanceViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory152 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelAttendanceViewModel.class), null, anonymousClass152, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory152);
-                new Pair(module, factoryInstanceFactory152);
-                AnonymousClass153 anonymousClass153 = new Function2<Scope, ParametersHolder, HostelAttendanceParentViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.153
+                FactoryInstanceFactory factoryInstanceFactory153 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelAttendanceViewModel.class), null, anonymousClass153, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory153);
+                new Pair(module, factoryInstanceFactory153);
+                AnonymousClass154 anonymousClass154 = new Function2<Scope, ParametersHolder, HostelAttendanceParentViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.154
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelAttendanceParentViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2722,10 +2734,10 @@ public final class ModulesKt {
                         return new HostelAttendanceParentViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory153 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelAttendanceParentViewModel.class), null, anonymousClass153, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory153);
-                new Pair(module, factoryInstanceFactory153);
-                AnonymousClass154 anonymousClass154 = new Function2<Scope, ParametersHolder, SecurityQrViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.154
+                FactoryInstanceFactory factoryInstanceFactory154 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelAttendanceParentViewModel.class), null, anonymousClass154, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory154);
+                new Pair(module, factoryInstanceFactory154);
+                AnonymousClass155 anonymousClass155 = new Function2<Scope, ParametersHolder, SecurityQrViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.155
                     @Override // kotlin.jvm.functions.Function2
                     public final SecurityQrViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2733,10 +2745,10 @@ public final class ModulesKt {
                         return new SecurityQrViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory154 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SecurityQrViewModel.class), null, anonymousClass154, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory154);
-                new Pair(module, factoryInstanceFactory154);
-                AnonymousClass155 anonymousClass155 = new Function2<Scope, ParametersHolder, TransportFeeViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.155
+                FactoryInstanceFactory factoryInstanceFactory155 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SecurityQrViewModel.class), null, anonymousClass155, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory155);
+                new Pair(module, factoryInstanceFactory155);
+                AnonymousClass156 anonymousClass156 = new Function2<Scope, ParametersHolder, TransportFeeViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.156
                     @Override // kotlin.jvm.functions.Function2
                     public final TransportFeeViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2744,10 +2756,10 @@ public final class ModulesKt {
                         return new TransportFeeViewModel((FeeEngineerRepository) viewModel.get(Reflection.getOrCreateKotlinClass(FeeEngineerRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory155 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportFeeViewModel.class), null, anonymousClass155, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory155);
-                new Pair(module, factoryInstanceFactory155);
-                AnonymousClass156 anonymousClass156 = new Function2<Scope, ParametersHolder, TransportReceiptViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.156
+                FactoryInstanceFactory factoryInstanceFactory156 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportFeeViewModel.class), null, anonymousClass156, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory156);
+                new Pair(module, factoryInstanceFactory156);
+                AnonymousClass157 anonymousClass157 = new Function2<Scope, ParametersHolder, TransportReceiptViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.157
                     @Override // kotlin.jvm.functions.Function2
                     public final TransportReceiptViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2755,10 +2767,10 @@ public final class ModulesKt {
                         return new TransportReceiptViewModel((FeeRepository) viewModel.get(Reflection.getOrCreateKotlinClass(FeeRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory156 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportReceiptViewModel.class), null, anonymousClass156, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory156);
-                new Pair(module, factoryInstanceFactory156);
-                AnonymousClass157 anonymousClass157 = new Function2<Scope, ParametersHolder, UpdateAbcViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.157
+                FactoryInstanceFactory factoryInstanceFactory157 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportReceiptViewModel.class), null, anonymousClass157, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory157);
+                new Pair(module, factoryInstanceFactory157);
+                AnonymousClass158 anonymousClass158 = new Function2<Scope, ParametersHolder, UpdateAbcViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.158
                     @Override // kotlin.jvm.functions.Function2
                     public final UpdateAbcViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2766,10 +2778,10 @@ public final class ModulesKt {
                         return new UpdateAbcViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory157 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UpdateAbcViewModel.class), null, anonymousClass157, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory157);
-                new Pair(module, factoryInstanceFactory157);
-                AnonymousClass158 anonymousClass158 = new Function2<Scope, ParametersHolder, BookViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.158
+                FactoryInstanceFactory factoryInstanceFactory158 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UpdateAbcViewModel.class), null, anonymousClass158, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory158);
+                new Pair(module, factoryInstanceFactory158);
+                AnonymousClass159 anonymousClass159 = new Function2<Scope, ParametersHolder, BookViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.159
                     @Override // kotlin.jvm.functions.Function2
                     public final BookViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2777,10 +2789,10 @@ public final class ModulesKt {
                         return new BookViewModel((LibraryRepository) viewModel.get(Reflection.getOrCreateKotlinClass(LibraryRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory158 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookViewModel.class), null, anonymousClass158, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory158);
-                new Pair(module, factoryInstanceFactory158);
-                AnonymousClass159 anonymousClass159 = new Function2<Scope, ParametersHolder, BookDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.159
+                FactoryInstanceFactory factoryInstanceFactory159 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookViewModel.class), null, anonymousClass159, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory159);
+                new Pair(module, factoryInstanceFactory159);
+                AnonymousClass160 anonymousClass160 = new Function2<Scope, ParametersHolder, BookDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.160
                     @Override // kotlin.jvm.functions.Function2
                     public final BookDetailsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2788,10 +2800,10 @@ public final class ModulesKt {
                         return new BookDetailsViewModel((LibraryRepository) viewModel.get(Reflection.getOrCreateKotlinClass(LibraryRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory159 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookDetailsViewModel.class), null, anonymousClass159, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory159);
-                new Pair(module, factoryInstanceFactory159);
-                AnonymousClass160 anonymousClass160 = new Function2<Scope, ParametersHolder, BookRecordViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.160
+                FactoryInstanceFactory factoryInstanceFactory160 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookDetailsViewModel.class), null, anonymousClass160, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory160);
+                new Pair(module, factoryInstanceFactory160);
+                AnonymousClass161 anonymousClass161 = new Function2<Scope, ParametersHolder, BookRecordViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.161
                     @Override // kotlin.jvm.functions.Function2
                     public final BookRecordViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2799,10 +2811,10 @@ public final class ModulesKt {
                         return new BookRecordViewModel((LibraryRepository) viewModel.get(Reflection.getOrCreateKotlinClass(LibraryRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory160 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookRecordViewModel.class), null, anonymousClass160, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory160);
-                new Pair(module, factoryInstanceFactory160);
-                AnonymousClass161 anonymousClass161 = new Function2<Scope, ParametersHolder, SuggestBookViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.161
+                FactoryInstanceFactory factoryInstanceFactory161 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookRecordViewModel.class), null, anonymousClass161, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory161);
+                new Pair(module, factoryInstanceFactory161);
+                AnonymousClass162 anonymousClass162 = new Function2<Scope, ParametersHolder, SuggestBookViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.162
                     @Override // kotlin.jvm.functions.Function2
                     public final SuggestBookViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2810,10 +2822,10 @@ public final class ModulesKt {
                         return new SuggestBookViewModel((LibraryRepository) viewModel.get(Reflection.getOrCreateKotlinClass(LibraryRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory161 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SuggestBookViewModel.class), null, anonymousClass161, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory161);
-                new Pair(module, factoryInstanceFactory161);
-                AnonymousClass162 anonymousClass162 = new Function2<Scope, ParametersHolder, GatewayViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.162
+                FactoryInstanceFactory factoryInstanceFactory162 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SuggestBookViewModel.class), null, anonymousClass162, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory162);
+                new Pair(module, factoryInstanceFactory162);
+                AnonymousClass163 anonymousClass163 = new Function2<Scope, ParametersHolder, GatewayViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.163
                     @Override // kotlin.jvm.functions.Function2
                     public final GatewayViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2821,10 +2833,10 @@ public final class ModulesKt {
                         return new GatewayViewModel((FeeRepository) viewModel.get(Reflection.getOrCreateKotlinClass(FeeRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory162 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GatewayViewModel.class), null, anonymousClass162, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory162);
-                new Pair(module, factoryInstanceFactory162);
-                AnonymousClass163 anonymousClass163 = new Function2<Scope, ParametersHolder, TransportRegHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.163
+                FactoryInstanceFactory factoryInstanceFactory163 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GatewayViewModel.class), null, anonymousClass163, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory163);
+                new Pair(module, factoryInstanceFactory163);
+                AnonymousClass164 anonymousClass164 = new Function2<Scope, ParametersHolder, TransportRegHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.164
                     @Override // kotlin.jvm.functions.Function2
                     public final TransportRegHistoryViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2832,10 +2844,10 @@ public final class ModulesKt {
                         return new TransportRegHistoryViewModel((TransportRepository) viewModel.get(Reflection.getOrCreateKotlinClass(TransportRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory163 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportRegHistoryViewModel.class), null, anonymousClass163, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory163);
-                new Pair(module, factoryInstanceFactory163);
-                AnonymousClass164 anonymousClass164 = new Function2<Scope, ParametersHolder, TransportRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.164
+                FactoryInstanceFactory factoryInstanceFactory164 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportRegHistoryViewModel.class), null, anonymousClass164, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory164);
+                new Pair(module, factoryInstanceFactory164);
+                AnonymousClass165 anonymousClass165 = new Function2<Scope, ParametersHolder, TransportRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.165
                     @Override // kotlin.jvm.functions.Function2
                     public final TransportRegistrationViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2843,10 +2855,10 @@ public final class ModulesKt {
                         return new TransportRegistrationViewModel((TransportRepository) viewModel.get(Reflection.getOrCreateKotlinClass(TransportRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory164 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportRegistrationViewModel.class), null, anonymousClass164, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory164);
-                new Pair(module, factoryInstanceFactory164);
-                AnonymousClass165 anonymousClass165 = new Function2<Scope, ParametersHolder, in.etuwa.app.ui.transport.payment.TransportFeeViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.165
+                FactoryInstanceFactory factoryInstanceFactory165 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportRegistrationViewModel.class), null, anonymousClass165, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory165);
+                new Pair(module, factoryInstanceFactory165);
+                AnonymousClass166 anonymousClass166 = new Function2<Scope, ParametersHolder, in.etuwa.app.ui.transport.payment.TransportFeeViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.166
                     @Override // kotlin.jvm.functions.Function2
                     public final in.etuwa.app.ui.transport.payment.TransportFeeViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2854,10 +2866,10 @@ public final class ModulesKt {
                         return new in.etuwa.app.ui.transport.payment.TransportFeeViewModel((TransportRepository) viewModel.get(Reflection.getOrCreateKotlinClass(TransportRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory165 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(in.etuwa.app.ui.transport.payment.TransportFeeViewModel.class), null, anonymousClass165, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory165);
-                new Pair(module, factoryInstanceFactory165);
-                AnonymousClass166 anonymousClass166 = new Function2<Scope, ParametersHolder, BusPassViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.166
+                FactoryInstanceFactory factoryInstanceFactory166 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(in.etuwa.app.ui.transport.payment.TransportFeeViewModel.class), null, anonymousClass166, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory166);
+                new Pair(module, factoryInstanceFactory166);
+                AnonymousClass167 anonymousClass167 = new Function2<Scope, ParametersHolder, BusPassViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.167
                     @Override // kotlin.jvm.functions.Function2
                     public final BusPassViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2865,10 +2877,10 @@ public final class ModulesKt {
                         return new BusPassViewModel((TransportRepository) viewModel.get(Reflection.getOrCreateKotlinClass(TransportRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory166 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BusPassViewModel.class), null, anonymousClass166, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory166);
-                new Pair(module, factoryInstanceFactory166);
-                AnonymousClass167 anonymousClass167 = new Function2<Scope, ParametersHolder, TransportHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.167
+                FactoryInstanceFactory factoryInstanceFactory167 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BusPassViewModel.class), null, anonymousClass167, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory167);
+                new Pair(module, factoryInstanceFactory167);
+                AnonymousClass168 anonymousClass168 = new Function2<Scope, ParametersHolder, TransportHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.168
                     @Override // kotlin.jvm.functions.Function2
                     public final TransportHistoryViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2876,10 +2888,10 @@ public final class ModulesKt {
                         return new TransportHistoryViewModel((TransportRepository) viewModel.get(Reflection.getOrCreateKotlinClass(TransportRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory167 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportHistoryViewModel.class), null, anonymousClass167, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory167);
-                new Pair(module, factoryInstanceFactory167);
-                AnonymousClass168 anonymousClass168 = new Function2<Scope, ParametersHolder, QrFullScreenViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.168
+                FactoryInstanceFactory factoryInstanceFactory168 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TransportHistoryViewModel.class), null, anonymousClass168, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory168);
+                new Pair(module, factoryInstanceFactory168);
+                AnonymousClass169 anonymousClass169 = new Function2<Scope, ParametersHolder, QrFullScreenViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.169
                     @Override // kotlin.jvm.functions.Function2
                     public final QrFullScreenViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2887,10 +2899,10 @@ public final class ModulesKt {
                         return new QrFullScreenViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory168 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(QrFullScreenViewModel.class), null, anonymousClass168, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory168);
-                new Pair(module, factoryInstanceFactory168);
-                AnonymousClass169 anonymousClass169 = new Function2<Scope, ParametersHolder, UpdateProfileViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.169
+                FactoryInstanceFactory factoryInstanceFactory169 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(QrFullScreenViewModel.class), null, anonymousClass169, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory169);
+                new Pair(module, factoryInstanceFactory169);
+                AnonymousClass170 anonymousClass170 = new Function2<Scope, ParametersHolder, UpdateProfileViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.170
                     @Override // kotlin.jvm.functions.Function2
                     public final UpdateProfileViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2898,10 +2910,10 @@ public final class ModulesKt {
                         return new UpdateProfileViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory169 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UpdateProfileViewModel.class), null, anonymousClass169, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory169);
-                new Pair(module, factoryInstanceFactory169);
-                AnonymousClass170 anonymousClass170 = new Function2<Scope, ParametersHolder, FeeMedicalViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.170
+                FactoryInstanceFactory factoryInstanceFactory170 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UpdateProfileViewModel.class), null, anonymousClass170, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory170);
+                new Pair(module, factoryInstanceFactory170);
+                AnonymousClass171 anonymousClass171 = new Function2<Scope, ParametersHolder, FeeMedicalViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.171
                     @Override // kotlin.jvm.functions.Function2
                     public final FeeMedicalViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2909,10 +2921,10 @@ public final class ModulesKt {
                         return new FeeMedicalViewModel((FeeRepository) viewModel.get(Reflection.getOrCreateKotlinClass(FeeRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory170 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FeeMedicalViewModel.class), null, anonymousClass170, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory170);
-                new Pair(module, factoryInstanceFactory170);
-                AnonymousClass171 anonymousClass171 = new Function2<Scope, ParametersHolder, FeeListViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.171
+                FactoryInstanceFactory factoryInstanceFactory171 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FeeMedicalViewModel.class), null, anonymousClass171, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory171);
+                new Pair(module, factoryInstanceFactory171);
+                AnonymousClass172 anonymousClass172 = new Function2<Scope, ParametersHolder, FeeListViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.172
                     @Override // kotlin.jvm.functions.Function2
                     public final FeeListViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2920,10 +2932,10 @@ public final class ModulesKt {
                         return new FeeListViewModel((FeeEngineerRepository) viewModel.get(Reflection.getOrCreateKotlinClass(FeeEngineerRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory171 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FeeListViewModel.class), null, anonymousClass171, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory171);
-                new Pair(module, factoryInstanceFactory171);
-                AnonymousClass172 anonymousClass172 = new Function2<Scope, ParametersHolder, DirectApplyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.172
+                FactoryInstanceFactory factoryInstanceFactory172 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FeeListViewModel.class), null, anonymousClass172, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory172);
+                new Pair(module, factoryInstanceFactory172);
+                AnonymousClass173 anonymousClass173 = new Function2<Scope, ParametersHolder, DirectApplyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.173
                     @Override // kotlin.jvm.functions.Function2
                     public final DirectApplyViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2931,10 +2943,10 @@ public final class ModulesKt {
                         return new DirectApplyViewModel((LeaveRepository) viewModel.get(Reflection.getOrCreateKotlinClass(LeaveRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory172 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(DirectApplyViewModel.class), null, anonymousClass172, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory172);
-                new Pair(module, factoryInstanceFactory172);
-                AnonymousClass173 anonymousClass173 = new Function2<Scope, ParametersHolder, ViewProofViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.173
+                FactoryInstanceFactory factoryInstanceFactory173 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(DirectApplyViewModel.class), null, anonymousClass173, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory173);
+                new Pair(module, factoryInstanceFactory173);
+                AnonymousClass174 anonymousClass174 = new Function2<Scope, ParametersHolder, ViewProofViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.174
                     @Override // kotlin.jvm.functions.Function2
                     public final ViewProofViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2942,10 +2954,10 @@ public final class ModulesKt {
                         return new ViewProofViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory173 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ViewProofViewModel.class), null, anonymousClass173, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory173);
-                new Pair(module, factoryInstanceFactory173);
-                AnonymousClass174 anonymousClass174 = new Function2<Scope, ParametersHolder, ApplyDirectDutyLeaveViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.174
+                FactoryInstanceFactory factoryInstanceFactory174 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ViewProofViewModel.class), null, anonymousClass174, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory174);
+                new Pair(module, factoryInstanceFactory174);
+                AnonymousClass175 anonymousClass175 = new Function2<Scope, ParametersHolder, ApplyDirectDutyLeaveViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.175
                     @Override // kotlin.jvm.functions.Function2
                     public final ApplyDirectDutyLeaveViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2953,10 +2965,10 @@ public final class ModulesKt {
                         return new ApplyDirectDutyLeaveViewModel((LeaveRepository) viewModel.get(Reflection.getOrCreateKotlinClass(LeaveRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory174 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ApplyDirectDutyLeaveViewModel.class), null, anonymousClass174, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory174);
-                new Pair(module, factoryInstanceFactory174);
-                AnonymousClass175 anonymousClass175 = new Function2<Scope, ParametersHolder, UpdateHoursDirectViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.175
+                FactoryInstanceFactory factoryInstanceFactory175 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ApplyDirectDutyLeaveViewModel.class), null, anonymousClass175, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory175);
+                new Pair(module, factoryInstanceFactory175);
+                AnonymousClass176 anonymousClass176 = new Function2<Scope, ParametersHolder, UpdateHoursDirectViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.176
                     @Override // kotlin.jvm.functions.Function2
                     public final UpdateHoursDirectViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2964,10 +2976,10 @@ public final class ModulesKt {
                         return new UpdateHoursDirectViewModel((LeaveRepository) viewModel.get(Reflection.getOrCreateKotlinClass(LeaveRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory175 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UpdateHoursDirectViewModel.class), null, anonymousClass175, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory175);
-                new Pair(module, factoryInstanceFactory175);
-                AnonymousClass176 anonymousClass176 = new Function2<Scope, ParametersHolder, HostelPartialEditViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.176
+                FactoryInstanceFactory factoryInstanceFactory176 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(UpdateHoursDirectViewModel.class), null, anonymousClass176, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory176);
+                new Pair(module, factoryInstanceFactory176);
+                AnonymousClass177 anonymousClass177 = new Function2<Scope, ParametersHolder, HostelPartialEditViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.177
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelPartialEditViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2975,10 +2987,10 @@ public final class ModulesKt {
                         return new HostelPartialEditViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory176 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelPartialEditViewModel.class), null, anonymousClass176, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory176);
-                new Pair(module, factoryInstanceFactory176);
-                AnonymousClass177 anonymousClass177 = new Function2<Scope, ParametersHolder, MvjceSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.177
+                FactoryInstanceFactory factoryInstanceFactory177 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelPartialEditViewModel.class), null, anonymousClass177, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory177);
+                new Pair(module, factoryInstanceFactory177);
+                AnonymousClass178 anonymousClass178 = new Function2<Scope, ParametersHolder, MvjceSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.178
                     @Override // kotlin.jvm.functions.Function2
                     public final MvjceSemRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2986,10 +2998,10 @@ public final class ModulesKt {
                         return new MvjceSemRegViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory177 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MvjceSemRegViewModel.class), null, anonymousClass177, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory177);
-                new Pair(module, factoryInstanceFactory177);
-                AnonymousClass178 anonymousClass178 = new Function2<Scope, ParametersHolder, MaterialDownloadViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.178
+                FactoryInstanceFactory factoryInstanceFactory178 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MvjceSemRegViewModel.class), null, anonymousClass178, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory178);
+                new Pair(module, factoryInstanceFactory178);
+                AnonymousClass179 anonymousClass179 = new Function2<Scope, ParametersHolder, MaterialDownloadViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.179
                     @Override // kotlin.jvm.functions.Function2
                     public final MaterialDownloadViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -2997,10 +3009,10 @@ public final class ModulesKt {
                         return new MaterialDownloadViewModel((MaterialRepository) viewModel.get(Reflection.getOrCreateKotlinClass(MaterialRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory178 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MaterialDownloadViewModel.class), null, anonymousClass178, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory178);
-                new Pair(module, factoryInstanceFactory178);
-                AnonymousClass179 anonymousClass179 = new Function2<Scope, ParametersHolder, DayWiseTimeTableViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.179
+                FactoryInstanceFactory factoryInstanceFactory179 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MaterialDownloadViewModel.class), null, anonymousClass179, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory179);
+                new Pair(module, factoryInstanceFactory179);
+                AnonymousClass180 anonymousClass180 = new Function2<Scope, ParametersHolder, DayWiseTimeTableViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.180
                     @Override // kotlin.jvm.functions.Function2
                     public final DayWiseTimeTableViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3008,10 +3020,10 @@ public final class ModulesKt {
                         return new DayWiseTimeTableViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory179 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(DayWiseTimeTableViewModel.class), null, anonymousClass179, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory179);
-                new Pair(module, factoryInstanceFactory179);
-                AnonymousClass180 anonymousClass180 = new Function2<Scope, ParametersHolder, MaintenanceViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.180
+                FactoryInstanceFactory factoryInstanceFactory180 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(DayWiseTimeTableViewModel.class), null, anonymousClass180, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory180);
+                new Pair(module, factoryInstanceFactory180);
+                AnonymousClass181 anonymousClass181 = new Function2<Scope, ParametersHolder, MaintenanceViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.181
                     @Override // kotlin.jvm.functions.Function2
                     public final MaintenanceViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3019,10 +3031,10 @@ public final class ModulesKt {
                         return new MaintenanceViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory180 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MaintenanceViewModel.class), null, anonymousClass180, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory180);
-                new Pair(module, factoryInstanceFactory180);
-                AnonymousClass181 anonymousClass181 = new Function2<Scope, ParametersHolder, SubjectPlanViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.181
+                FactoryInstanceFactory factoryInstanceFactory181 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MaintenanceViewModel.class), null, anonymousClass181, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory181);
+                new Pair(module, factoryInstanceFactory181);
+                AnonymousClass182 anonymousClass182 = new Function2<Scope, ParametersHolder, SubjectPlanViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.182
                     @Override // kotlin.jvm.functions.Function2
                     public final SubjectPlanViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3030,10 +3042,10 @@ public final class ModulesKt {
                         return new SubjectPlanViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory181 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SubjectPlanViewModel.class), null, anonymousClass181, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory181);
-                new Pair(module, factoryInstanceFactory181);
-                AnonymousClass182 anonymousClass182 = new Function2<Scope, ParametersHolder, MeaSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.182
+                FactoryInstanceFactory factoryInstanceFactory182 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SubjectPlanViewModel.class), null, anonymousClass182, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory182);
+                new Pair(module, factoryInstanceFactory182);
+                AnonymousClass183 anonymousClass183 = new Function2<Scope, ParametersHolder, MeaSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.183
                     @Override // kotlin.jvm.functions.Function2
                     public final MeaSemRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3041,10 +3053,10 @@ public final class ModulesKt {
                         return new MeaSemRegViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory182 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MeaSemRegViewModel.class), null, anonymousClass182, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory182);
-                new Pair(module, factoryInstanceFactory182);
-                AnonymousClass183 anonymousClass183 = new Function2<Scope, ParametersHolder, AsietSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.183
+                FactoryInstanceFactory factoryInstanceFactory183 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MeaSemRegViewModel.class), null, anonymousClass183, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory183);
+                new Pair(module, factoryInstanceFactory183);
+                AnonymousClass184 anonymousClass184 = new Function2<Scope, ParametersHolder, AsietSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.184
                     @Override // kotlin.jvm.functions.Function2
                     public final AsietSemRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3052,10 +3064,10 @@ public final class ModulesKt {
                         return new AsietSemRegViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory183 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AsietSemRegViewModel.class), null, anonymousClass183, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory183);
-                new Pair(module, factoryInstanceFactory183);
-                AnonymousClass184 anonymousClass184 = new Function2<Scope, ParametersHolder, MitsHostelViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.184
+                FactoryInstanceFactory factoryInstanceFactory184 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AsietSemRegViewModel.class), null, anonymousClass184, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory184);
+                new Pair(module, factoryInstanceFactory184);
+                AnonymousClass185 anonymousClass185 = new Function2<Scope, ParametersHolder, MitsHostelViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.185
                     @Override // kotlin.jvm.functions.Function2
                     public final MitsHostelViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3063,10 +3075,10 @@ public final class ModulesKt {
                         return new MitsHostelViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory184 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MitsHostelViewModel.class), null, anonymousClass184, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory184);
-                new Pair(module, factoryInstanceFactory184);
-                AnonymousClass185 anonymousClass185 = new Function2<Scope, ParametersHolder, LogoutChangePasswordViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.185
+                FactoryInstanceFactory factoryInstanceFactory185 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(MitsHostelViewModel.class), null, anonymousClass185, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory185);
+                new Pair(module, factoryInstanceFactory185);
+                AnonymousClass186 anonymousClass186 = new Function2<Scope, ParametersHolder, LogoutChangePasswordViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.186
                     @Override // kotlin.jvm.functions.Function2
                     public final LogoutChangePasswordViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3074,10 +3086,10 @@ public final class ModulesKt {
                         return new LogoutChangePasswordViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory185 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(LogoutChangePasswordViewModel.class), null, anonymousClass185, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory185);
-                new Pair(module, factoryInstanceFactory185);
-                AnonymousClass186 anonymousClass186 = new Function2<Scope, ParametersHolder, LeaveViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.186
+                FactoryInstanceFactory factoryInstanceFactory186 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(LogoutChangePasswordViewModel.class), null, anonymousClass186, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory186);
+                new Pair(module, factoryInstanceFactory186);
+                AnonymousClass187 anonymousClass187 = new Function2<Scope, ParametersHolder, LeaveViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.187
                     @Override // kotlin.jvm.functions.Function2
                     public final LeaveViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3085,10 +3097,10 @@ public final class ModulesKt {
                         return new LeaveViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory186 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(LeaveViewModel.class), null, anonymousClass186, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory186);
-                new Pair(module, factoryInstanceFactory186);
-                AnonymousClass187 anonymousClass187 = new Function2<Scope, ParametersHolder, FeeMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.187
+                FactoryInstanceFactory factoryInstanceFactory187 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(LeaveViewModel.class), null, anonymousClass187, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory187);
+                new Pair(module, factoryInstanceFactory187);
+                AnonymousClass188 anonymousClass188 = new Function2<Scope, ParametersHolder, FeeMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.188
                     @Override // kotlin.jvm.functions.Function2
                     public final FeeMainViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3096,10 +3108,10 @@ public final class ModulesKt {
                         return new FeeMainViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory187 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FeeMainViewModel.class), null, anonymousClass187, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory187);
-                new Pair(module, factoryInstanceFactory187);
-                AnonymousClass188 anonymousClass188 = new Function2<Scope, ParametersHolder, AsietTransRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.188
+                FactoryInstanceFactory factoryInstanceFactory188 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FeeMainViewModel.class), null, anonymousClass188, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory188);
+                new Pair(module, factoryInstanceFactory188);
+                AnonymousClass189 anonymousClass189 = new Function2<Scope, ParametersHolder, AsietTransRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.189
                     @Override // kotlin.jvm.functions.Function2
                     public final AsietTransRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3107,10 +3119,10 @@ public final class ModulesKt {
                         return new AsietTransRegViewModel((TransportRepository) viewModel.get(Reflection.getOrCreateKotlinClass(TransportRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory188 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AsietTransRegViewModel.class), null, anonymousClass188, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory188);
-                new Pair(module, factoryInstanceFactory188);
-                AnonymousClass189 anonymousClass189 = new Function2<Scope, ParametersHolder, in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.189
+                FactoryInstanceFactory factoryInstanceFactory189 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AsietTransRegViewModel.class), null, anonymousClass189, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory189);
+                new Pair(module, factoryInstanceFactory189);
+                AnonymousClass190 anonymousClass190 = new Function2<Scope, ParametersHolder, in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.190
                     @Override // kotlin.jvm.functions.Function2
                     public final in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3118,10 +3130,10 @@ public final class ModulesKt {
                         return new in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegViewModel((TransportRepository) viewModel.get(Reflection.getOrCreateKotlinClass(TransportRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory189 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegViewModel.class), null, anonymousClass189, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory189);
-                new Pair(module, factoryInstanceFactory189);
-                AnonymousClass190 anonymousClass190 = new Function2<Scope, ParametersHolder, NewQuizViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.190
+                FactoryInstanceFactory factoryInstanceFactory190 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegViewModel.class), null, anonymousClass190, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory190);
+                new Pair(module, factoryInstanceFactory190);
+                AnonymousClass191 anonymousClass191 = new Function2<Scope, ParametersHolder, NewQuizViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.191
                     @Override // kotlin.jvm.functions.Function2
                     public final NewQuizViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3129,10 +3141,10 @@ public final class ModulesKt {
                         return new NewQuizViewModel((QuizRepository) viewModel.get(Reflection.getOrCreateKotlinClass(QuizRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory190 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(NewQuizViewModel.class), null, anonymousClass190, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory190);
-                new Pair(module, factoryInstanceFactory190);
-                AnonymousClass191 anonymousClass191 = new Function2<Scope, ParametersHolder, QuizQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.191
+                FactoryInstanceFactory factoryInstanceFactory191 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(NewQuizViewModel.class), null, anonymousClass191, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory191);
+                new Pair(module, factoryInstanceFactory191);
+                AnonymousClass192 anonymousClass192 = new Function2<Scope, ParametersHolder, QuizQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.192
                     @Override // kotlin.jvm.functions.Function2
                     public final QuizQuestionsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3140,10 +3152,10 @@ public final class ModulesKt {
                         return new QuizQuestionsViewModel((QuizRepository) viewModel.get(Reflection.getOrCreateKotlinClass(QuizRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory191 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(QuizQuestionsViewModel.class), null, anonymousClass191, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory191);
-                new Pair(module, factoryInstanceFactory191);
-                AnonymousClass192 anonymousClass192 = new Function2<Scope, ParametersHolder, QuizResultViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.192
+                FactoryInstanceFactory factoryInstanceFactory192 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(QuizQuestionsViewModel.class), null, anonymousClass192, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory192);
+                new Pair(module, factoryInstanceFactory192);
+                AnonymousClass193 anonymousClass193 = new Function2<Scope, ParametersHolder, QuizResultViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.193
                     @Override // kotlin.jvm.functions.Function2
                     public final QuizResultViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3151,10 +3163,10 @@ public final class ModulesKt {
                         return new QuizResultViewModel((QuizRepository) viewModel.get(Reflection.getOrCreateKotlinClass(QuizRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory192 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(QuizResultViewModel.class), null, anonymousClass192, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory192);
-                new Pair(module, factoryInstanceFactory192);
-                AnonymousClass193 anonymousClass193 = new Function2<Scope, ParametersHolder, SurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.193
+                FactoryInstanceFactory factoryInstanceFactory193 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(QuizResultViewModel.class), null, anonymousClass193, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory193);
+                new Pair(module, factoryInstanceFactory193);
+                AnonymousClass194 anonymousClass194 = new Function2<Scope, ParametersHolder, SurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.194
                     @Override // kotlin.jvm.functions.Function2
                     public final SurveyViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3162,10 +3174,10 @@ public final class ModulesKt {
                         return new SurveyViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory193 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SurveyViewModel.class), null, anonymousClass193, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory193);
-                new Pair(module, factoryInstanceFactory193);
-                AnonymousClass194 anonymousClass194 = new Function2<Scope, ParametersHolder, TeacherSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.194
+                FactoryInstanceFactory factoryInstanceFactory194 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SurveyViewModel.class), null, anonymousClass194, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory194);
+                new Pair(module, factoryInstanceFactory194);
+                AnonymousClass195 anonymousClass195 = new Function2<Scope, ParametersHolder, TeacherSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.195
                     @Override // kotlin.jvm.functions.Function2
                     public final TeacherSurveyViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3173,10 +3185,10 @@ public final class ModulesKt {
                         return new TeacherSurveyViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory194 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TeacherSurveyViewModel.class), null, anonymousClass194, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory194);
-                new Pair(module, factoryInstanceFactory194);
-                AnonymousClass195 anonymousClass195 = new Function2<Scope, ParametersHolder, TeacherSurveyQuestionViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.195
+                FactoryInstanceFactory factoryInstanceFactory195 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TeacherSurveyViewModel.class), null, anonymousClass195, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory195);
+                new Pair(module, factoryInstanceFactory195);
+                AnonymousClass196 anonymousClass196 = new Function2<Scope, ParametersHolder, TeacherSurveyQuestionViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.196
                     @Override // kotlin.jvm.functions.Function2
                     public final TeacherSurveyQuestionViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3184,10 +3196,10 @@ public final class ModulesKt {
                         return new TeacherSurveyQuestionViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory195 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TeacherSurveyQuestionViewModel.class), null, anonymousClass195, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory195);
-                new Pair(module, factoryInstanceFactory195);
-                AnonymousClass196 anonymousClass196 = new Function2<Scope, ParametersHolder, HostelMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.196
+                FactoryInstanceFactory factoryInstanceFactory196 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(TeacherSurveyQuestionViewModel.class), null, anonymousClass196, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory196);
+                new Pair(module, factoryInstanceFactory196);
+                AnonymousClass197 anonymousClass197 = new Function2<Scope, ParametersHolder, HostelMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.197
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelMainViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3195,10 +3207,10 @@ public final class ModulesKt {
                         return new HostelMainViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory196 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelMainViewModel.class), null, anonymousClass196, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory196);
-                new Pair(module, factoryInstanceFactory196);
-                AnonymousClass197 anonymousClass197 = new Function2<Scope, ParametersHolder, LabViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.197
+                FactoryInstanceFactory factoryInstanceFactory197 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelMainViewModel.class), null, anonymousClass197, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory197);
+                new Pair(module, factoryInstanceFactory197);
+                AnonymousClass198 anonymousClass198 = new Function2<Scope, ParametersHolder, LabViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.198
                     @Override // kotlin.jvm.functions.Function2
                     public final LabViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3206,10 +3218,10 @@ public final class ModulesKt {
                         return new LabViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory197 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(LabViewModel.class), null, anonymousClass197, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory197);
-                new Pair(module, factoryInstanceFactory197);
-                AnonymousClass198 anonymousClass198 = new Function2<Scope, ParametersHolder, ProgramOutcomeMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.198
+                FactoryInstanceFactory factoryInstanceFactory198 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(LabViewModel.class), null, anonymousClass198, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory198);
+                new Pair(module, factoryInstanceFactory198);
+                AnonymousClass199 anonymousClass199 = new Function2<Scope, ParametersHolder, ProgramOutcomeMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.199
                     @Override // kotlin.jvm.functions.Function2
                     public final ProgramOutcomeMainViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3217,10 +3229,10 @@ public final class ModulesKt {
                         return new ProgramOutcomeMainViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory198 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ProgramOutcomeMainViewModel.class), null, anonymousClass198, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory198);
-                new Pair(module, factoryInstanceFactory198);
-                AnonymousClass199 anonymousClass199 = new Function2<Scope, ParametersHolder, CourseEvaluationSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.199
+                FactoryInstanceFactory factoryInstanceFactory199 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ProgramOutcomeMainViewModel.class), null, anonymousClass199, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory199);
+                new Pair(module, factoryInstanceFactory199);
+                AnonymousClass200 anonymousClass200 = new Function2<Scope, ParametersHolder, CourseEvaluationSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.200
                     @Override // kotlin.jvm.functions.Function2
                     public final CourseEvaluationSurveyViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3228,10 +3240,10 @@ public final class ModulesKt {
                         return new CourseEvaluationSurveyViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory199 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(CourseEvaluationSurveyViewModel.class), null, anonymousClass199, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory199);
-                new Pair(module, factoryInstanceFactory199);
-                AnonymousClass200 anonymousClass200 = new Function2<Scope, ParametersHolder, CourseSurveySubjectsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.200
+                FactoryInstanceFactory factoryInstanceFactory200 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(CourseEvaluationSurveyViewModel.class), null, anonymousClass200, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory200);
+                new Pair(module, factoryInstanceFactory200);
+                AnonymousClass201 anonymousClass201 = new Function2<Scope, ParametersHolder, CourseSurveySubjectsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.201
                     @Override // kotlin.jvm.functions.Function2
                     public final CourseSurveySubjectsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3239,10 +3251,10 @@ public final class ModulesKt {
                         return new CourseSurveySubjectsViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory200 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(CourseSurveySubjectsViewModel.class), null, anonymousClass200, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory200);
-                new Pair(module, factoryInstanceFactory200);
-                AnonymousClass201 anonymousClass201 = new Function2<Scope, ParametersHolder, CourseSurveyQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.201
+                FactoryInstanceFactory factoryInstanceFactory201 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(CourseSurveySubjectsViewModel.class), null, anonymousClass201, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory201);
+                new Pair(module, factoryInstanceFactory201);
+                AnonymousClass202 anonymousClass202 = new Function2<Scope, ParametersHolder, CourseSurveyQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.202
                     @Override // kotlin.jvm.functions.Function2
                     public final CourseSurveyQuestionsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3250,10 +3262,10 @@ public final class ModulesKt {
                         return new CourseSurveyQuestionsViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory201 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(CourseSurveyQuestionsViewModel.class), null, anonymousClass201, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory201);
-                new Pair(module, factoryInstanceFactory201);
-                AnonymousClass202 anonymousClass202 = new Function2<Scope, ParametersHolder, POSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.202
+                FactoryInstanceFactory factoryInstanceFactory202 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(CourseSurveyQuestionsViewModel.class), null, anonymousClass202, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory202);
+                new Pair(module, factoryInstanceFactory202);
+                AnonymousClass203 anonymousClass203 = new Function2<Scope, ParametersHolder, POSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.203
                     @Override // kotlin.jvm.functions.Function2
                     public final POSurveyViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3261,10 +3273,10 @@ public final class ModulesKt {
                         return new POSurveyViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory202 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(POSurveyViewModel.class), null, anonymousClass202, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory202);
-                new Pair(module, factoryInstanceFactory202);
-                AnonymousClass203 anonymousClass203 = new Function2<Scope, ParametersHolder, POSurveyQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.203
+                FactoryInstanceFactory factoryInstanceFactory203 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(POSurveyViewModel.class), null, anonymousClass203, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory203);
+                new Pair(module, factoryInstanceFactory203);
+                AnonymousClass204 anonymousClass204 = new Function2<Scope, ParametersHolder, POSurveyQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.204
                     @Override // kotlin.jvm.functions.Function2
                     public final POSurveyQuestionsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3272,10 +3284,10 @@ public final class ModulesKt {
                         return new POSurveyQuestionsViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory203 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(POSurveyQuestionsViewModel.class), null, anonymousClass203, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory203);
-                new Pair(module, factoryInstanceFactory203);
-                AnonymousClass204 anonymousClass204 = new Function2<Scope, ParametersHolder, GraduateExitSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.204
+                FactoryInstanceFactory factoryInstanceFactory204 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(POSurveyQuestionsViewModel.class), null, anonymousClass204, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory204);
+                new Pair(module, factoryInstanceFactory204);
+                AnonymousClass205 anonymousClass205 = new Function2<Scope, ParametersHolder, GraduateExitSurveyViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.205
                     @Override // kotlin.jvm.functions.Function2
                     public final GraduateExitSurveyViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3283,10 +3295,10 @@ public final class ModulesKt {
                         return new GraduateExitSurveyViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory204 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GraduateExitSurveyViewModel.class), null, anonymousClass204, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory204);
-                new Pair(module, factoryInstanceFactory204);
-                AnonymousClass205 anonymousClass205 = new Function2<Scope, ParametersHolder, GraduateSurveyQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.205
+                FactoryInstanceFactory factoryInstanceFactory205 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GraduateExitSurveyViewModel.class), null, anonymousClass205, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory205);
+                new Pair(module, factoryInstanceFactory205);
+                AnonymousClass206 anonymousClass206 = new Function2<Scope, ParametersHolder, GraduateSurveyQuestionsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.206
                     @Override // kotlin.jvm.functions.Function2
                     public final GraduateSurveyQuestionsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3294,10 +3306,10 @@ public final class ModulesKt {
                         return new GraduateSurveyQuestionsViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory205 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GraduateSurveyQuestionsViewModel.class), null, anonymousClass205, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory205);
-                new Pair(module, factoryInstanceFactory205);
-                AnonymousClass206 anonymousClass206 = new Function2<Scope, ParametersHolder, AttendanceCalendarViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.206
+                FactoryInstanceFactory factoryInstanceFactory206 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GraduateSurveyQuestionsViewModel.class), null, anonymousClass206, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory206);
+                new Pair(module, factoryInstanceFactory206);
+                AnonymousClass207 anonymousClass207 = new Function2<Scope, ParametersHolder, AttendanceCalendarViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.207
                     @Override // kotlin.jvm.functions.Function2
                     public final AttendanceCalendarViewViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3305,10 +3317,10 @@ public final class ModulesKt {
                         return new AttendanceCalendarViewViewModel((AttendanceRepository) viewModel.get(Reflection.getOrCreateKotlinClass(AttendanceRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory206 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AttendanceCalendarViewViewModel.class), null, anonymousClass206, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory206);
-                new Pair(module, factoryInstanceFactory206);
-                AnonymousClass207 anonymousClass207 = new Function2<Scope, ParametersHolder, StationaryMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.207
+                FactoryInstanceFactory factoryInstanceFactory207 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(AttendanceCalendarViewViewModel.class), null, anonymousClass207, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory207);
+                new Pair(module, factoryInstanceFactory207);
+                AnonymousClass208 anonymousClass208 = new Function2<Scope, ParametersHolder, StationaryMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.208
                     @Override // kotlin.jvm.functions.Function2
                     public final StationaryMainViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3316,10 +3328,10 @@ public final class ModulesKt {
                         return new StationaryMainViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory207 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(StationaryMainViewModel.class), null, anonymousClass207, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory207);
-                new Pair(module, factoryInstanceFactory207);
-                AnonymousClass208 anonymousClass208 = new Function2<Scope, ParametersHolder, BookingViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.208
+                FactoryInstanceFactory factoryInstanceFactory208 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(StationaryMainViewModel.class), null, anonymousClass208, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory208);
+                new Pair(module, factoryInstanceFactory208);
+                AnonymousClass209 anonymousClass209 = new Function2<Scope, ParametersHolder, BookingViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.209
                     @Override // kotlin.jvm.functions.Function2
                     public final BookingViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3327,10 +3339,10 @@ public final class ModulesKt {
                         return new BookingViewModel((StationaryRepository) viewModel.get(Reflection.getOrCreateKotlinClass(StationaryRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory208 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookingViewModel.class), null, anonymousClass208, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory208);
-                new Pair(module, factoryInstanceFactory208);
-                AnonymousClass209 anonymousClass209 = new Function2<Scope, ParametersHolder, BookingHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.209
+                FactoryInstanceFactory factoryInstanceFactory209 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookingViewModel.class), null, anonymousClass209, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory209);
+                new Pair(module, factoryInstanceFactory209);
+                AnonymousClass210 anonymousClass210 = new Function2<Scope, ParametersHolder, BookingHistoryViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.210
                     @Override // kotlin.jvm.functions.Function2
                     public final BookingHistoryViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3338,10 +3350,10 @@ public final class ModulesKt {
                         return new BookingHistoryViewModel((StationaryRepository) viewModel.get(Reflection.getOrCreateKotlinClass(StationaryRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory209 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookingHistoryViewModel.class), null, anonymousClass209, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory209);
-                new Pair(module, factoryInstanceFactory209);
-                AnonymousClass210 anonymousClass210 = new Function2<Scope, ParametersHolder, OrderPageViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.210
+                FactoryInstanceFactory factoryInstanceFactory210 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BookingHistoryViewModel.class), null, anonymousClass210, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory210);
+                new Pair(module, factoryInstanceFactory210);
+                AnonymousClass211 anonymousClass211 = new Function2<Scope, ParametersHolder, OrderPageViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.211
                     @Override // kotlin.jvm.functions.Function2
                     public final OrderPageViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3349,10 +3361,10 @@ public final class ModulesKt {
                         return new OrderPageViewModel((StationaryRepository) viewModel.get(Reflection.getOrCreateKotlinClass(StationaryRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory210 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(OrderPageViewModel.class), null, anonymousClass210, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory210);
-                new Pair(module, factoryInstanceFactory210);
-                AnonymousClass211 anonymousClass211 = new Function2<Scope, ParametersHolder, HostelNewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.211
+                FactoryInstanceFactory factoryInstanceFactory211 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(OrderPageViewModel.class), null, anonymousClass211, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory211);
+                new Pair(module, factoryInstanceFactory211);
+                AnonymousClass212 anonymousClass212 = new Function2<Scope, ParametersHolder, HostelNewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.212
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelNewViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3360,10 +3372,10 @@ public final class ModulesKt {
                         return new HostelNewViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory211 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelNewViewModel.class), null, anonymousClass211, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory211);
-                new Pair(module, factoryInstanceFactory211);
-                AnonymousClass212 anonymousClass212 = new Function2<Scope, ParametersHolder, HostelNewDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.212
+                FactoryInstanceFactory factoryInstanceFactory212 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelNewViewModel.class), null, anonymousClass212, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory212);
+                new Pair(module, factoryInstanceFactory212);
+                AnonymousClass213 anonymousClass213 = new Function2<Scope, ParametersHolder, HostelNewDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.213
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelNewDetailsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3371,10 +3383,10 @@ public final class ModulesKt {
                         return new HostelNewDetailsViewModel((HostelRepository) viewModel.get(Reflection.getOrCreateKotlinClass(HostelRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory212 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelNewDetailsViewModel.class), null, anonymousClass212, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory212);
-                new Pair(module, factoryInstanceFactory212);
-                AnonymousClass213 anonymousClass213 = new Function2<Scope, ParametersHolder, HostelNewConfirmViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.213
+                FactoryInstanceFactory factoryInstanceFactory213 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelNewDetailsViewModel.class), null, anonymousClass213, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory213);
+                new Pair(module, factoryInstanceFactory213);
+                AnonymousClass214 anonymousClass214 = new Function2<Scope, ParametersHolder, HostelNewConfirmViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.214
                     @Override // kotlin.jvm.functions.Function2
                     public final HostelNewConfirmViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3382,10 +3394,10 @@ public final class ModulesKt {
                         return new HostelNewConfirmViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory213 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelNewConfirmViewModel.class), null, anonymousClass213, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory213);
-                new Pair(module, factoryInstanceFactory213);
-                AnonymousClass214 anonymousClass214 = new Function2<Scope, ParametersHolder, ExamMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.214
+                FactoryInstanceFactory factoryInstanceFactory214 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(HostelNewConfirmViewModel.class), null, anonymousClass214, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory214);
+                new Pair(module, factoryInstanceFactory214);
+                AnonymousClass215 anonymousClass215 = new Function2<Scope, ParametersHolder, ExamMainViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.215
                     @Override // kotlin.jvm.functions.Function2
                     public final ExamMainViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3393,10 +3405,10 @@ public final class ModulesKt {
                         return new ExamMainViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory214 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ExamMainViewModel.class), null, anonymousClass214, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory214);
-                new Pair(module, factoryInstanceFactory214);
-                AnonymousClass215 anonymousClass215 = new Function2<Scope, ParametersHolder, ExamRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.215
+                FactoryInstanceFactory factoryInstanceFactory215 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ExamMainViewModel.class), null, anonymousClass215, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory215);
+                new Pair(module, factoryInstanceFactory215);
+                AnonymousClass216 anonymousClass216 = new Function2<Scope, ParametersHolder, ExamRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.216
                     @Override // kotlin.jvm.functions.Function2
                     public final ExamRegistrationViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3404,10 +3416,10 @@ public final class ModulesKt {
                         return new ExamRegistrationViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory215 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ExamRegistrationViewModel.class), null, anonymousClass215, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory215);
-                new Pair(module, factoryInstanceFactory215);
-                AnonymousClass216 anonymousClass216 = new Function2<Scope, ParametersHolder, SubjectRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.216
+                FactoryInstanceFactory factoryInstanceFactory216 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ExamRegistrationViewModel.class), null, anonymousClass216, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory216);
+                new Pair(module, factoryInstanceFactory216);
+                AnonymousClass217 anonymousClass217 = new Function2<Scope, ParametersHolder, SubjectRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.217
                     @Override // kotlin.jvm.functions.Function2
                     public final SubjectRegistrationViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3415,10 +3427,10 @@ public final class ModulesKt {
                         return new SubjectRegistrationViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory216 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SubjectRegistrationViewModel.class), null, anonymousClass216, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory216);
-                new Pair(module, factoryInstanceFactory216);
-                AnonymousClass217 anonymousClass217 = new Function2<Scope, ParametersHolder, ViewSubjectRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.217
+                FactoryInstanceFactory factoryInstanceFactory217 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SubjectRegistrationViewModel.class), null, anonymousClass217, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory217);
+                new Pair(module, factoryInstanceFactory217);
+                AnonymousClass218 anonymousClass218 = new Function2<Scope, ParametersHolder, ViewSubjectRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.218
                     @Override // kotlin.jvm.functions.Function2
                     public final ViewSubjectRegistrationViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3426,10 +3438,10 @@ public final class ModulesKt {
                         return new ViewSubjectRegistrationViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory217 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ViewSubjectRegistrationViewModel.class), null, anonymousClass217, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory217);
-                new Pair(module, factoryInstanceFactory217);
-                AnonymousClass218 anonymousClass218 = new Function2<Scope, ParametersHolder, ApplySubjectRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.218
+                FactoryInstanceFactory factoryInstanceFactory218 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ViewSubjectRegistrationViewModel.class), null, anonymousClass218, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory218);
+                new Pair(module, factoryInstanceFactory218);
+                AnonymousClass219 anonymousClass219 = new Function2<Scope, ParametersHolder, ApplySubjectRegistrationViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.219
                     @Override // kotlin.jvm.functions.Function2
                     public final ApplySubjectRegistrationViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3437,10 +3449,10 @@ public final class ModulesKt {
                         return new ApplySubjectRegistrationViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory218 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ApplySubjectRegistrationViewModel.class), null, anonymousClass218, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory218);
-                new Pair(module, factoryInstanceFactory218);
-                AnonymousClass219 anonymousClass219 = new Function2<Scope, ParametersHolder, PersonalDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.219
+                FactoryInstanceFactory factoryInstanceFactory219 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ApplySubjectRegistrationViewModel.class), null, anonymousClass219, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory219);
+                new Pair(module, factoryInstanceFactory219);
+                AnonymousClass220 anonymousClass220 = new Function2<Scope, ParametersHolder, PersonalDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.220
                     @Override // kotlin.jvm.functions.Function2
                     public final PersonalDetailsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3448,10 +3460,10 @@ public final class ModulesKt {
                         return new PersonalDetailsViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory219 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(PersonalDetailsViewModel.class), null, anonymousClass219, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory219);
-                new Pair(module, factoryInstanceFactory219);
-                AnonymousClass220 anonymousClass220 = new Function2<Scope, ParametersHolder, ParentDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.220
+                FactoryInstanceFactory factoryInstanceFactory220 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(PersonalDetailsViewModel.class), null, anonymousClass220, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory220);
+                new Pair(module, factoryInstanceFactory220);
+                AnonymousClass221 anonymousClass221 = new Function2<Scope, ParametersHolder, ParentDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.221
                     @Override // kotlin.jvm.functions.Function2
                     public final ParentDetailsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3459,10 +3471,10 @@ public final class ModulesKt {
                         return new ParentDetailsViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory220 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ParentDetailsViewModel.class), null, anonymousClass220, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory220);
-                new Pair(module, factoryInstanceFactory220);
-                AnonymousClass221 anonymousClass221 = new Function2<Scope, ParametersHolder, ContactDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.221
+                FactoryInstanceFactory factoryInstanceFactory221 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ParentDetailsViewModel.class), null, anonymousClass221, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory221);
+                new Pair(module, factoryInstanceFactory221);
+                AnonymousClass222 anonymousClass222 = new Function2<Scope, ParametersHolder, ContactDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.222
                     @Override // kotlin.jvm.functions.Function2
                     public final ContactDetailsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3470,10 +3482,10 @@ public final class ModulesKt {
                         return new ContactDetailsViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory221 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ContactDetailsViewModel.class), null, anonymousClass221, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory221);
-                new Pair(module, factoryInstanceFactory221);
-                AnonymousClass222 anonymousClass222 = new Function2<Scope, ParametersHolder, ChristSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.222
+                FactoryInstanceFactory factoryInstanceFactory222 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ContactDetailsViewModel.class), null, anonymousClass222, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory222);
+                new Pair(module, factoryInstanceFactory222);
+                AnonymousClass223 anonymousClass223 = new Function2<Scope, ParametersHolder, ChristSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.223
                     @Override // kotlin.jvm.functions.Function2
                     public final ChristSemRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3481,10 +3493,10 @@ public final class ModulesKt {
                         return new ChristSemRegViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory222 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ChristSemRegViewModel.class), null, anonymousClass222, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory222);
-                new Pair(module, factoryInstanceFactory222);
-                AnonymousClass223 anonymousClass223 = new Function2<Scope, ParametersHolder, ViewMvjceSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.223
+                FactoryInstanceFactory factoryInstanceFactory223 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ChristSemRegViewModel.class), null, anonymousClass223, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory223);
+                new Pair(module, factoryInstanceFactory223);
+                AnonymousClass224 anonymousClass224 = new Function2<Scope, ParametersHolder, ViewMvjceSemRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.224
                     @Override // kotlin.jvm.functions.Function2
                     public final ViewMvjceSemRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3492,10 +3504,10 @@ public final class ModulesKt {
                         return new ViewMvjceSemRegViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory223 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ViewMvjceSemRegViewModel.class), null, anonymousClass223, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory223);
-                new Pair(module, factoryInstanceFactory223);
-                AnonymousClass224 anonymousClass224 = new Function2<Scope, ParametersHolder, PaymentWebViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.224
+                FactoryInstanceFactory factoryInstanceFactory224 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ViewMvjceSemRegViewModel.class), null, anonymousClass224, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory224);
+                new Pair(module, factoryInstanceFactory224);
+                AnonymousClass225 anonymousClass225 = new Function2<Scope, ParametersHolder, PaymentWebViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.225
                     @Override // kotlin.jvm.functions.Function2
                     public final PaymentWebViewViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3503,10 +3515,10 @@ public final class ModulesKt {
                         return new PaymentWebViewViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory224 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(PaymentWebViewViewModel.class), null, anonymousClass224, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory224);
-                new Pair(module, factoryInstanceFactory224);
-                AnonymousClass225 anonymousClass225 = new Function2<Scope, ParametersHolder, BankDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.225
+                FactoryInstanceFactory factoryInstanceFactory225 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(PaymentWebViewViewModel.class), null, anonymousClass225, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory225);
+                new Pair(module, factoryInstanceFactory225);
+                AnonymousClass226 anonymousClass226 = new Function2<Scope, ParametersHolder, BankDetailsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.226
                     @Override // kotlin.jvm.functions.Function2
                     public final BankDetailsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3514,10 +3526,10 @@ public final class ModulesKt {
                         return new BankDetailsViewModel((DashRepository) viewModel.get(Reflection.getOrCreateKotlinClass(DashRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory225 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BankDetailsViewModel.class), null, anonymousClass225, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory225);
-                new Pair(module, factoryInstanceFactory225);
-                AnonymousClass226 anonymousClass226 = new Function2<Scope, ParametersHolder, GatewayTwoViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.226
+                FactoryInstanceFactory factoryInstanceFactory226 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(BankDetailsViewModel.class), null, anonymousClass226, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory226);
+                new Pair(module, factoryInstanceFactory226);
+                AnonymousClass227 anonymousClass227 = new Function2<Scope, ParametersHolder, GatewayTwoViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.227
                     @Override // kotlin.jvm.functions.Function2
                     public final GatewayTwoViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3525,10 +3537,10 @@ public final class ModulesKt {
                         return new GatewayTwoViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory226 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GatewayTwoViewModel.class), null, anonymousClass226, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory226);
-                new Pair(module, factoryInstanceFactory226);
-                AnonymousClass227 anonymousClass227 = new Function2<Scope, ParametersHolder, WebViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.227
+                FactoryInstanceFactory factoryInstanceFactory227 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(GatewayTwoViewModel.class), null, anonymousClass227, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory227);
+                new Pair(module, factoryInstanceFactory227);
+                AnonymousClass228 anonymousClass228 = new Function2<Scope, ParametersHolder, WebViewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.228
                     @Override // kotlin.jvm.functions.Function2
                     public final WebViewViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3536,10 +3548,10 @@ public final class ModulesKt {
                         return new WebViewViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory227 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(WebViewViewModel.class), null, anonymousClass227, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory227);
-                new Pair(module, factoryInstanceFactory227);
-                AnonymousClass228 anonymousClass228 = new Function2<Scope, ParametersHolder, FieldsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.228
+                FactoryInstanceFactory factoryInstanceFactory228 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(WebViewViewModel.class), null, anonymousClass228, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory228);
+                new Pair(module, factoryInstanceFactory228);
+                AnonymousClass229 anonymousClass229 = new Function2<Scope, ParametersHolder, FieldsViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.229
                     @Override // kotlin.jvm.functions.Function2
                     public final FieldsViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3547,10 +3559,10 @@ public final class ModulesKt {
                         return new FieldsViewModel();
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory228 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FieldsViewModel.class), null, anonymousClass228, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory228);
-                new Pair(module, factoryInstanceFactory228);
-                AnonymousClass229 anonymousClass229 = new Function2<Scope, ParametersHolder, PoSurveyQuestionsNewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.229
+                FactoryInstanceFactory factoryInstanceFactory229 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(FieldsViewModel.class), null, anonymousClass229, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory229);
+                new Pair(module, factoryInstanceFactory229);
+                AnonymousClass230 anonymousClass230 = new Function2<Scope, ParametersHolder, PoSurveyQuestionsNewViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.230
                     @Override // kotlin.jvm.functions.Function2
                     public final PoSurveyQuestionsNewViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3558,10 +3570,10 @@ public final class ModulesKt {
                         return new PoSurveyQuestionsNewViewModel((SurveyRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SurveyRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory229 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(PoSurveyQuestionsNewViewModel.class), null, anonymousClass229, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory229);
-                new Pair(module, factoryInstanceFactory229);
-                AnonymousClass230 anonymousClass230 = new Function2<Scope, ParametersHolder, ApplyPreferenceSubRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.230
+                FactoryInstanceFactory factoryInstanceFactory230 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(PoSurveyQuestionsNewViewModel.class), null, anonymousClass230, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory230);
+                new Pair(module, factoryInstanceFactory230);
+                AnonymousClass231 anonymousClass231 = new Function2<Scope, ParametersHolder, ApplyPreferenceSubRegViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.231
                     @Override // kotlin.jvm.functions.Function2
                     public final ApplyPreferenceSubRegViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3569,10 +3581,10 @@ public final class ModulesKt {
                         return new ApplyPreferenceSubRegViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory230 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ApplyPreferenceSubRegViewModel.class), null, anonymousClass230, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory230);
-                new Pair(module, factoryInstanceFactory230);
-                AnonymousClass231 anonymousClass231 = new Function2<Scope, ParametersHolder, SubjectRegStatusViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.231
+                FactoryInstanceFactory factoryInstanceFactory231 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(ApplyPreferenceSubRegViewModel.class), null, anonymousClass231, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory231);
+                new Pair(module, factoryInstanceFactory231);
+                AnonymousClass232 anonymousClass232 = new Function2<Scope, ParametersHolder, SubjectRegStatusViewModel>() { // from class: in.etuwa.app.di.ModulesKt$ViewModelModule$1.232
                     @Override // kotlin.jvm.functions.Function2
                     public final SubjectRegStatusViewModel invoke(Scope viewModel, ParametersHolder it) {
                         Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -3580,9 +3592,9 @@ public final class ModulesKt {
                         return new SubjectRegStatusViewModel((SemRegRepository) viewModel.get(Reflection.getOrCreateKotlinClass(SemRegRepository.class), null, null));
                     }
                 };
-                FactoryInstanceFactory factoryInstanceFactory231 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SubjectRegStatusViewModel.class), null, anonymousClass231, Kind.Factory, CollectionsKt.emptyList()));
-                module.indexPrimaryType(factoryInstanceFactory231);
-                new Pair(module, factoryInstanceFactory231);
+                FactoryInstanceFactory factoryInstanceFactory232 = new FactoryInstanceFactory(new BeanDefinition(ScopeRegistry.Companion.getRootScopeQualifier(), Reflection.getOrCreateKotlinClass(SubjectRegStatusViewModel.class), null, anonymousClass232, Kind.Factory, CollectionsKt.emptyList()));
+                module.indexPrimaryType(factoryInstanceFactory232);
+                new Pair(module, factoryInstanceFactory232);
             }
         }, 1, null);
         ViewModelModule = module$default4;

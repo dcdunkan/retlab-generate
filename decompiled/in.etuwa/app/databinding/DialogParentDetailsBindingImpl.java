@@ -64,7 +64,7 @@ public class DialogParentDetailsBindingImpl extends DialogParentDetailsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (156 != variableId) {
+        if (157 != variableId) {
             return false;
         }
         setParentDetailsViewModel((ParentDetailsViewModel) variable);

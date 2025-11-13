@@ -62,7 +62,7 @@ public class ResultFragmentBindingImpl extends ResultFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (186 != variableId) {
+        if (187 != variableId) {
             return false;
         }
         setResultViewModel((ResultViewModel) variable);

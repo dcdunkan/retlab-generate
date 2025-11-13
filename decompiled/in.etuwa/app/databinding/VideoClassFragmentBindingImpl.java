@@ -69,7 +69,7 @@ public class VideoClassFragmentBindingImpl extends VideoClassFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (240 != variableId) {
+        if (241 != variableId) {
             return false;
         }
         setVideoClassViewModel((VideoClassViewModel) variable);

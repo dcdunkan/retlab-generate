@@ -82,7 +82,7 @@ public class DialogAddProjectWorkBindingImpl extends DialogAddProjectWorkBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (17 != variableId) {
+        if (18 != variableId) {
             return false;
         }
         setAddProjectWorkViewModel((AddProjectWorkViewModel) variable);

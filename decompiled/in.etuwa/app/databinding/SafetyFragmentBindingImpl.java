@@ -63,7 +63,7 @@ public class SafetyFragmentBindingImpl extends SafetyFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (193 != variableId) {
+        if (194 != variableId) {
             return false;
         }
         setSafetyViewModel((SafetyViewModel) variable);

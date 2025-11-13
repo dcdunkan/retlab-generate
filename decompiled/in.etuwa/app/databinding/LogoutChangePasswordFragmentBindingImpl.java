@@ -59,7 +59,7 @@ public class LogoutChangePasswordFragmentBindingImpl extends LogoutChangePasswor
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (130 != variableId) {
+        if (131 != variableId) {
             return false;
         }
         setLogoutChangePasswordViewModel((LogoutChangePasswordViewModel) variable);

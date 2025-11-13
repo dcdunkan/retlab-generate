@@ -68,7 +68,7 @@ public class RemindDialog2BindingImpl extends RemindDialog2Binding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (183 != variableId) {
+        if (184 != variableId) {
             return false;
         }
         setReminderDialogViewModel((ReminderDialogViewModel) variable);

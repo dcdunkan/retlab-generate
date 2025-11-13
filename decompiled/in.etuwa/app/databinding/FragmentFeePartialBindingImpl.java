@@ -68,7 +68,7 @@ public class FragmentFeePartialBindingImpl extends FragmentFeePartialBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (91 != variableId) {
+        if (92 != variableId) {
             return false;
         }
         setFeeListViewModel((FeeListViewModel) variable);

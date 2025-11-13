@@ -67,7 +67,7 @@ public class DialogSuggestBookBindingImpl extends DialogSuggestBookBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (216 != variableId) {
+        if (217 != variableId) {
             return false;
         }
         setSuggestBookViewModel((SuggestBookViewModel) variable);

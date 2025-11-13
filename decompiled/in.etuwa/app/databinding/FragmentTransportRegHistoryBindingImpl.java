@@ -65,7 +65,7 @@ public class FragmentTransportRegHistoryBindingImpl extends FragmentTransportReg
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (226 != variableId) {
+        if (227 != variableId) {
             return false;
         }
         setTransportRegHistoryViewModel((TransportRegHistoryViewModel) variable);

@@ -69,7 +69,7 @@ public class SubjectFragmentBindingImpl extends SubjectFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (213 != variableId) {
+        if (214 != variableId) {
             return false;
         }
         setSubjectViewModel((SubjectViewModel) variable);

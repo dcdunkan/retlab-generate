@@ -58,7 +58,7 @@ public class FragmentDashTableViewBindingImpl extends FragmentDashTableViewBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (67 != variableId) {
+        if (68 != variableId) {
             return false;
         }
         setDashTableViewViewModel((DashTableViewViewModel) variable);

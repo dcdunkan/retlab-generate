@@ -75,7 +75,7 @@ public class AddCompanyDialogBindingImpl extends AddCompanyDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (8 != variableId) {
+        if (9 != variableId) {
             return false;
         }
         setAddCompanyDialogViewModel((AddCompanyViewModel) variable);

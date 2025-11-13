@@ -60,7 +60,7 @@ public class FragmentMessageBindingImpl extends FragmentMessageBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (141 != variableId) {
+        if (142 != variableId) {
             return false;
         }
         setMessageViewModel((MessageViewModel) variable);

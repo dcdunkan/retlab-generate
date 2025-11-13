@@ -20,6 +20,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
+import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.examregister.ExamCourseResponse;
 import in.etuwa.app.data.model.examregister.ExamRegister;
 import in.etuwa.app.data.model.examregister.ExamRegisterResponse;
@@ -44,6 +45,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
@@ -54,13 +56,14 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
 /* compiled from: ExamSubjectFragment.kt */
-@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 J2\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\u0001JB\u0005¢\u0006\u0002\u0010\u0006J\b\u0010-\u001a\u00020.H\u0014J\b\u0010/\u001a\u00020.H\u0014J\u0010\u00100\u001a\u00020.2\u0006\u0010#\u001a\u00020\"H\u0002J\u0010\u00101\u001a\u00020.2\u0006\u0010#\u001a\u00020\"H\u0002J\b\u00102\u001a\u00020.H\u0002J\b\u00103\u001a\u00020.H\u0002J\u0010\u00104\u001a\u00020.2\u0006\u00105\u001a\u000206H\u0016J\u0012\u00107\u001a\u00020.2\b\u00108\u001a\u0004\u0018\u000109H\u0016J&\u0010:\u001a\u0004\u0018\u00010;2\u0006\u0010<\u001a\u00020=2\b\u0010>\u001a\u0004\u0018\u00010?2\b\u00108\u001a\u0004\u0018\u000109H\u0016J\b\u0010@\u001a\u00020.H\u0016J\u001a\u0010A\u001a\u00020.2\u0006\u0010B\u001a\u00020;2\b\u00108\u001a\u0004\u0018\u000109H\u0016J\b\u0010C\u001a\u00020.H\u0014J\b\u0010D\u001a\u00020.H\u0014J\b\u0010E\u001a\u00020.H\u0014J\u0010\u0010F\u001a\u00020.2\u0006\u0010#\u001a\u00020\"H\u0016J\u0010\u0010G\u001a\u00020.2\u0006\u0010#\u001a\u00020\"H\u0016J\u0010\u0010H\u001a\u00020.2\u0006\u0010#\u001a\u00020\"H\u0016J\u0010\u0010I\u001a\u00020.2\u0006\u0010#\u001a\u00020\"H\u0016R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\t\u001a\u00020\n8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\r\u0010\u000e\u001a\u0004\b\u000b\u0010\fR\u001b\u0010\u000f\u001a\u00020\u00108BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0013\u0010\u000e\u001a\u0004\b\u0011\u0010\u0012R\u001b\u0010\u0014\u001a\u00020\u00158BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0018\u0010\u000e\u001a\u0004\b\u0016\u0010\u0017R\u0016\u0010\u0019\u001a\u0004\u0018\u00010\b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u001b\u0010\u001c\u001a\u00020\u001d8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b \u0010\u000e\u001a\u0004\b\u001e\u0010\u001fR\u0010\u0010!\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010%X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010&\u001a\u00020'8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b*\u0010\u000e\u001a\u0004\b(\u0010)R\u000e\u0010+\u001a\u00020,X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006K"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectFragment;", "Lin/etuwa/app/ui/base/BaseFragment;", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter$CallBack;", "Lin/etuwa/app/ui/examregistration/examsubjects/detaildialog/ExamSubjectDetailDialog$ExamDetailListner;", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter2$CallBack;", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter3$CallBack;", "()V", "_binding", "Lin/etuwa/app/databinding/FragmentExamSubjectBinding;", "adapter", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter;", "getAdapter", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter;", "adapter$delegate", "Lkotlin/Lazy;", "adapter2", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter2;", "getAdapter2", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter2;", "adapter2$delegate", "adapter3", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter3;", "getAdapter3", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter3;", "adapter3$delegate", "binding", "getBinding", "()Lin/etuwa/app/databinding/FragmentExamSubjectBinding;", "examSubjectViewModel", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectViewModel;", "getExamSubjectViewModel", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectViewModel;", "examSubjectViewModel$delegate", "flag", "", "id", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/helper/MainCallBackListener;", "preference", "Lin/etuwa/app/data/preference/SharedPrefManager;", "getPreference", "()Lin/etuwa/app/data/preference/SharedPrefManager;", "preference$delegate", "regFlag", "", "hideBaseView", "", "hideProgress", "listenDueResponse", "listenErrorResponse", "listenResponse", "listenStatusResponse", "onAttach", "context", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "onDestroy", "onViewCreated", SvgConstants.Tags.VIEW, "setUp", "showBaseView", "showProgress", "viewBtnClicked", "viewRegisterBtnClicked", "viewResultBtnClicked", "viewRevaatuation", "Companion", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 L2\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\u0001LB\u0005¢\u0006\u0002\u0010\u0006J\b\u0010.\u001a\u00020/H\u0014J\b\u00100\u001a\u00020/H\u0014J\b\u00101\u001a\u00020/H\u0002J\u0010\u00102\u001a\u00020/2\u0006\u0010$\u001a\u00020\nH\u0002J\u0010\u00103\u001a\u00020/2\u0006\u0010$\u001a\u00020\nH\u0002J\b\u00104\u001a\u00020/H\u0002J\b\u00105\u001a\u00020/H\u0002J\u0010\u00106\u001a\u00020/2\u0006\u00107\u001a\u000208H\u0016J\u0012\u00109\u001a\u00020/2\b\u0010:\u001a\u0004\u0018\u00010;H\u0016J&\u0010<\u001a\u0004\u0018\u00010=2\u0006\u0010>\u001a\u00020?2\b\u0010@\u001a\u0004\u0018\u00010A2\b\u0010:\u001a\u0004\u0018\u00010;H\u0016J\b\u0010B\u001a\u00020/H\u0016J\u001a\u0010C\u001a\u00020/2\u0006\u0010D\u001a\u00020=2\b\u0010:\u001a\u0004\u0018\u00010;H\u0016J\b\u0010E\u001a\u00020/H\u0014J\b\u0010F\u001a\u00020/H\u0014J\b\u0010G\u001a\u00020/H\u0014J\u0010\u0010H\u001a\u00020/2\u0006\u0010$\u001a\u00020\nH\u0016J\u0010\u0010I\u001a\u00020/2\u0006\u0010$\u001a\u00020\nH\u0016J\u0010\u0010J\u001a\u00020/2\u0006\u0010$\u001a\u00020\nH\u0016J\u0010\u0010K\u001a\u00020/2\u0006\u0010$\u001a\u00020\nH\u0016R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\u000b\u001a\u00020\f8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000f\u0010\u0010\u001a\u0004\b\r\u0010\u000eR\u001b\u0010\u0011\u001a\u00020\u00128BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0015\u0010\u0010\u001a\u0004\b\u0013\u0010\u0014R\u001b\u0010\u0016\u001a\u00020\u00178BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u001a\u0010\u0010\u001a\u0004\b\u0018\u0010\u0019R\u0016\u0010\u001b\u001a\u0004\u0018\u00010\b8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001dR\u001b\u0010\u001e\u001a\u00020\u001f8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\"\u0010\u0010\u001a\u0004\b \u0010!R\u0010\u0010#\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010&X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010'\u001a\u00020(8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b+\u0010\u0010\u001a\u0004\b)\u0010*R\u000e\u0010,\u001a\u00020-X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectFragment;", "Lin/etuwa/app/ui/base/BaseFragment;", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter$CallBack;", "Lin/etuwa/app/ui/examregistration/examsubjects/detaildialog/ExamSubjectDetailDialog$ExamDetailListner;", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter2$CallBack;", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter3$CallBack;", "()V", "_binding", "Lin/etuwa/app/databinding/FragmentExamSubjectBinding;", "abcId", "", "adapter", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter;", "getAdapter", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter;", "adapter$delegate", "Lkotlin/Lazy;", "adapter2", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter2;", "getAdapter2", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter2;", "adapter2$delegate", "adapter3", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter3;", "getAdapter3", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectAdapter3;", "adapter3$delegate", "binding", "getBinding", "()Lin/etuwa/app/databinding/FragmentExamSubjectBinding;", "examSubjectViewModel", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectViewModel;", "getExamSubjectViewModel", "()Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectViewModel;", "examSubjectViewModel$delegate", "flag", "id", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/helper/MainCallBackListener;", "preference", "Lin/etuwa/app/data/preference/SharedPrefManager;", "getPreference", "()Lin/etuwa/app/data/preference/SharedPrefManager;", "preference$delegate", "regFlag", "", "hideBaseView", "", "hideProgress", "listenAbcResponse", "listenDueResponse", "listenErrorResponse", "listenResponse", "listenStatusResponse", "onAttach", "context", "Landroid/content/Context;", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "onDestroy", "onViewCreated", SvgConstants.Tags.VIEW, "setUp", "showBaseView", "showProgress", "viewBtnClicked", "viewRegisterBtnClicked", "viewResultBtnClicked", "viewRevaatuation", "Companion", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ExamSubjectFragment extends BaseFragment implements ExamSubjectAdapter.CallBack, ExamSubjectDetailDialog.ExamDetailListner, ExamSubjectAdapter2.CallBack, ExamSubjectAdapter3.CallBack {
 
     /* renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentExamSubjectBinding _binding;
+    private String abcId;
 
     /* renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
@@ -331,6 +334,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         }
         getAdapter().setCallBack(this);
         listenResponse();
+        listenAbcResponse();
         getExamSubjectViewModel().getExamData();
         FragmentExamSubjectBinding fragmentExamSubjectBinding2 = get_binding();
         LinearLayout linearLayout = fragmentExamSubjectBinding2 != null ? fragmentExamSubjectBinding2.regLyt : null;
@@ -413,6 +417,82 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
             return;
         }
         swipeRefreshLayout.setRefreshing(false);
+    }
+
+    private final void listenAbcResponse() {
+        getExamSubjectViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new ExamSubjectFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$listenAbcResponse$1
+
+            /* compiled from: ExamSubjectFragment.kt */
+            @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+            public /* synthetic */ class WhenMappings {
+                public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+                static {
+                    int[] iArr = new int[Status.values().length];
+                    try {
+                        iArr[Status.SUCCESS.ordinal()] = 1;
+                    } catch (NoSuchFieldError unused) {
+                    }
+                    try {
+                        iArr[Status.LOADING.ordinal()] = 2;
+                    } catch (NoSuchFieldError unused2) {
+                    }
+                    try {
+                        iArr[Status.ERROR.ordinal()] = 3;
+                    } catch (NoSuchFieldError unused3) {
+                    }
+                    try {
+                        iArr[Status.EXCEPTION.ordinal()] = 4;
+                    } catch (NoSuchFieldError unused4) {
+                    }
+                    $EnumSwitchMapping$0 = iArr;
+                }
+            }
+
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Resource<? extends AbcResponse> resource) {
+                invoke2((Resource<AbcResponse>) resource);
+                return Unit.INSTANCE;
+            }
+
+            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<AbcResponse> resource) {
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i == 1) {
+                    ExamSubjectFragment.this.hideProgress();
+                    AbcResponse data = resource.getData();
+                    if (data != null) {
+                        ExamSubjectFragment examSubjectFragment = ExamSubjectFragment.this;
+                        examSubjectFragment.showBaseView();
+                        String abc_id = data.getAbc_id();
+                        if (abc_id == null) {
+                            abc_id = "";
+                        }
+                        examSubjectFragment.abcId = abc_id;
+                        return;
+                    }
+                    return;
+                }
+                if (i == 2) {
+                    ExamSubjectFragment.this.showProgress();
+                    return;
+                }
+                if (i == 3) {
+                    ExamSubjectFragment.this.hideProgress();
+                    ExamSubjectFragment.this.showBaseView();
+                } else {
+                    if (i != 4) {
+                        return;
+                    }
+                    ExamSubjectFragment.this.hideProgress();
+                    ExamSubjectFragment.this.showBaseView();
+                }
+            }
+        }));
     }
 
     private final void listenResponse() {
@@ -746,6 +826,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
     @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter2.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter3.CallBack
     public void viewRegisterBtnClicked(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.areEqual(this.abcId, "");
         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sbce", false, 2, (Object) null)) {
             getExamSubjectViewModel().getExamDetails(id);
             listenDueResponse(id);

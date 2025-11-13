@@ -60,7 +60,7 @@ public class FragmentOrderHistoryBindingImpl extends FragmentOrderHistoryBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (150 != variableId) {
+        if (151 != variableId) {
             return false;
         }
         setOrderHistoryViewModel((OrderHistoryViewModel) variable);

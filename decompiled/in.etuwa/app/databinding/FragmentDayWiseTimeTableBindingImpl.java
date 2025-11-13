@@ -65,7 +65,7 @@ public class FragmentDayWiseTimeTableBindingImpl extends FragmentDayWiseTimeTabl
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (69 != variableId) {
+        if (70 != variableId) {
             return false;
         }
         setDayWiseTimeTableViewModel((DayWiseTimeTableViewModel) variable);

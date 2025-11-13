@@ -66,7 +66,7 @@ public class DialogStationaryPayBindingImpl extends DialogStationaryPayBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (151 != variableId) {
+        if (152 != variableId) {
             return false;
         }
         setOrderPageViewModel((OrderPageViewModel) variable);

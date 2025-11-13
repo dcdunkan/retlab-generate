@@ -65,7 +65,7 @@ public class FragmentScholarshipBindingImpl extends FragmentScholarshipBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (194 != variableId) {
+        if (195 != variableId) {
             return false;
         }
         setScholarshipViewModel((ScholarshipViewModel) variable);

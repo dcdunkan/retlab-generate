@@ -86,7 +86,7 @@ public class DialogApplyAddDirectLeaveBindingImpl extends DialogApplyAddDirectLe
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (24 != variableId) {
+        if (25 != variableId) {
             return false;
         }
         setApplyDirectDutyLeaveViewModel((ApplyDirectDutyLeaveViewModel) variable);

@@ -58,7 +58,7 @@ public class ActionsDialogBindingImpl extends ActionsDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (5 != variableId) {
+        if (6 != variableId) {
             return false;
         }
         setActionsDialogViewModel((ActionsDialogViewModel) variable);

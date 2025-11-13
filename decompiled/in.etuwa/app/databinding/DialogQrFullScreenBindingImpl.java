@@ -60,7 +60,7 @@ public class DialogQrFullScreenBindingImpl extends DialogQrFullScreenBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (172 != variableId) {
+        if (173 != variableId) {
             return false;
         }
         setQrFullScreenViewModel((QrFullScreenViewModel) variable);

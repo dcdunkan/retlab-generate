@@ -88,7 +88,7 @@ public class DialogAddSportBindingImpl extends DialogAddSportBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (22 != variableId) {
+        if (23 != variableId) {
             return false;
         }
         setAddSportViewModel((AddSportViewModel) variable);

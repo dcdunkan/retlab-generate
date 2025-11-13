@@ -138,7 +138,7 @@ public class DialogMaceSemRegBindingImpl extends DialogMaceSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (131 != variableId) {
+        if (132 != variableId) {
             return false;
         }
         setMaceNewSemRegViewModel((MaceNewSemRegViewModel) variable);

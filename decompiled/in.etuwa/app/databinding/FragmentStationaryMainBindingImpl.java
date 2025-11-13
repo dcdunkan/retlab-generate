@@ -62,7 +62,7 @@ public class FragmentStationaryMainBindingImpl extends FragmentStationaryMainBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (206 != variableId) {
+        if (207 != variableId) {
             return false;
         }
         setStationaryMainViewModel((StationaryMainViewModel) variable);

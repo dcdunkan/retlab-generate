@@ -23,10 +23,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
 /* compiled from: ExamRegisterAdapter.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u000234B\u0005¢\u0006\u0002\u0010\u0003J&\u0010!\u001a\u00020\"2\u0016\u0010#\u001a\u0012\u0012\u0004\u0012\u00020\u000e0\rj\b\u0012\u0004\u0012\u00020\u000e`\u000f2\u0006\u0010\u0004\u001a\u00020\u0005J\b\u0010$\u001a\u00020\u001cH\u0016J\u0010\u0010%\u001a\u00020\u001c2\u0006\u0010&\u001a\u00020\u001cH\u0016J\u0016\u0010'\u001a\u0012\u0012\u0004\u0012\u00020\u000e0\rj\b\u0012\u0004\u0012\u00020\u000e`\u000fJ\u0018\u0010(\u001a\u00020\"2\u0006\u0010)\u001a\u00020\u00022\u0006\u0010&\u001a\u00020\u001cH\u0016J\u0018\u0010*\u001a\u00020\u00022\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u001cH\u0016J\u0010\u0010.\u001a\u00020\"2\u0006\u0010/\u001a\u000200H\u0007J\u0010\u00101\u001a\u00020\"2\b\u0010\n\u001a\u0004\u0018\u000102R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\f\u001a\u0012\u0012\u0004\u0012\u00020\u000e0\rj\b\u0012\u0004\u0012\u00020\u000e`\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00050\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R \u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00050\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u0015\"\u0004\b\u001a\u0010\u0017R\u001a\u0010\u001b\u001a\u00020\u001cX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u001e\"\u0004\b\u001f\u0010 ¨\u00065"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "()V", "baseUrl", "", "getBaseUrl", "()Ljava/lang/String;", "setBaseUrl", "(Ljava/lang/String;)V", "context", "Landroid/content/Context;", "list", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/examregister/ExamCourse;", "Lkotlin/collections/ArrayList;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterAdapter$CallBack;", "selected", "", "getSelected", "()Ljava/util/List;", "setSelected", "(Ljava/util/List;)V", "selectedTotal", "getSelectedTotal", "setSelectedTotal", FeeConfirmDialogKt.ARG_TOTAL, "", "getTotal", "()I", "setTotal", "(I)V", "addItems", "", "_list", "getItemCount", "getItemViewType", CommonCssConstants.POSITION, "getItems", "onBindViewHolder", "holder", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "selectAll", "check", "", "setCallBack", "Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterFragment;", "CallBack", "ViewHolder", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u00029:B\u0005¢\u0006\u0002\u0010\u0003J.\u0010(\u001a\u00020)2\u0016\u0010*\u001a\u0012\u0012\u0004\u0012\u00020\u00150\u0014j\b\u0012\u0004\u0012\u00020\u0015`\u00162\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bJ\b\u0010+\u001a\u00020#H\u0016J\u0010\u0010,\u001a\u00020#2\u0006\u0010-\u001a\u00020#H\u0016J\u0016\u0010.\u001a\u0012\u0012\u0004\u0012\u00020\u00150\u0014j\b\u0012\u0004\u0012\u00020\u0015`\u0016J\u0018\u0010/\u001a\u00020)2\u0006\u00100\u001a\u00020\u00022\u0006\u0010-\u001a\u00020#H\u0016J\u0018\u00101\u001a\u00020\u00022\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u00020#H\u0016J\u0010\u00105\u001a\u00020)2\u0006\u00106\u001a\u00020\u000bH\u0007J\u0010\u00107\u001a\u00020)2\b\u0010\u0011\u001a\u0004\u0018\u000108R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001e\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u0010\n\u0002\u0010\u0010\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\u0013\u001a\u0012\u0012\u0004\u0012\u00020\u00150\u0014j\b\u0012\u0004\u0012\u00020\u0015`\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u001aX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0004\b\u001d\u0010\u001eR \u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00050\u001aX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b \u0010\u001c\"\u0004\b!\u0010\u001eR\u001a\u0010\"\u001a\u00020#X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010%\"\u0004\b&\u0010'¨\u0006;"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "()V", "baseUrl", "", "getBaseUrl", "()Ljava/lang/String;", "setBaseUrl", "(Ljava/lang/String;)V", "checkBoxStatus", "", "getCheckBoxStatus", "()Ljava/lang/Boolean;", "setCheckBoxStatus", "(Ljava/lang/Boolean;)V", "Ljava/lang/Boolean;", "context", "Landroid/content/Context;", "list", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/examregister/ExamCourse;", "Lkotlin/collections/ArrayList;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterAdapter$CallBack;", "selected", "", "getSelected", "()Ljava/util/List;", "setSelected", "(Ljava/util/List;)V", "selectedTotal", "getSelectedTotal", "setSelectedTotal", FeeConfirmDialogKt.ARG_TOTAL, "", "getTotal", "()I", "setTotal", "(I)V", "addItems", "", "_list", "getItemCount", "getItemViewType", CommonCssConstants.POSITION, "getItems", "onBindViewHolder", "holder", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "selectAll", "check", "setCallBack", "Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterFragment;", "CallBack", "ViewHolder", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private String baseUrl;
+    private Boolean checkBoxStatus;
     private Context context;
     private CallBack listener;
     private int total;
@@ -74,6 +75,14 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
 
     public final void setBaseUrl(String str) {
         this.baseUrl = str;
+    }
+
+    public final Boolean getCheckBoxStatus() {
+        return this.checkBoxStatus;
+    }
+
+    public final void setCheckBoxStatus(Boolean bool) {
+        this.checkBoxStatus = bool;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -135,107 +144,116 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
             this.checkBox = (CheckBox) itemView.findViewById(R.id.exam_check_box);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x00d4 A[Catch: Exception -> 0x00de, TRY_LEAVE, TryCatch #0 {Exception -> 0x00de, blocks: (B:3:0x0003, B:5:0x005f, B:7:0x0074, B:9:0x0089, B:12:0x009f, B:13:0x00bc, B:15:0x00d4, B:20:0x00ab), top: B:2:0x0003 }] */
-        /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x00cc A[Catch: Exception -> 0x00f3, TryCatch #0 {Exception -> 0x00f3, blocks: (B:3:0x0003, B:5:0x005f, B:7:0x0074, B:9:0x0089, B:12:0x009f, B:13:0x00bc, B:15:0x00cc, B:16:0x00d1, B:18:0x00e9, B:23:0x00ab), top: B:2:0x0003 }] */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x00e9 A[Catch: Exception -> 0x00f3, TRY_LEAVE, TryCatch #0 {Exception -> 0x00f3, blocks: (B:3:0x0003, B:5:0x005f, B:7:0x0074, B:9:0x0089, B:12:0x009f, B:13:0x00bc, B:15:0x00cc, B:16:0x00d1, B:18:0x00e9, B:23:0x00ab), top: B:2:0x0003 }] */
+        /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
         @Override // in.etuwa.app.ui.base.BaseViewHolder
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public void onBind(final int r7) {
+        public void onBind(final int r8) {
             /*
-                r6 = this;
-                super.onBind(r7)
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r0 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.util.ArrayList r0 = in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter.access$getList$p(r0)     // Catch: java.lang.Exception -> Lde
-                java.lang.Object r0 = r0.get(r7)     // Catch: java.lang.Exception -> Lde
+                r7 = this;
+                super.onBind(r8)
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r0 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.util.ArrayList r0 = in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter.access$getList$p(r0)     // Catch: java.lang.Exception -> Lf3
+                java.lang.Object r0 = r0.get(r8)     // Catch: java.lang.Exception -> Lf3
                 java.lang.String r1 = "list[position]"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)     // Catch: java.lang.Exception -> Lde
-                in.etuwa.app.data.model.examregister.ExamCourse r0 = (in.etuwa.app.data.model.examregister.ExamCourse) r0     // Catch: java.lang.Exception -> Lde
-                android.widget.TextView r1 = r6.subjectHead     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = r0.getCourse()     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                r1.setText(r2)     // Catch: java.lang.Exception -> Lde
-                android.widget.TextView r1 = r6.type     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = r0.getType()     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                r1.setText(r2)     // Catch: java.lang.Exception -> Lde
-                android.widget.TextView r1 = r6.concession     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = r0.is_eligible()     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                r1.setText(r2)     // Catch: java.lang.Exception -> Lde
-                android.widget.LinearLayout r1 = r6.statusLyt     // Catch: java.lang.Exception -> Lde
+                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)     // Catch: java.lang.Exception -> Lf3
+                in.etuwa.app.data.model.examregister.ExamCourse r0 = (in.etuwa.app.data.model.examregister.ExamCourse) r0     // Catch: java.lang.Exception -> Lf3
+                android.widget.TextView r1 = r7.subjectHead     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r2 = r0.getCourse()     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lf3
+                r1.setText(r2)     // Catch: java.lang.Exception -> Lf3
+                android.widget.TextView r1 = r7.type     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r2 = r0.getType()     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lf3
+                r1.setText(r2)     // Catch: java.lang.Exception -> Lf3
+                android.widget.TextView r1 = r7.concession     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r2 = r0.is_eligible()     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lf3
+                r1.setText(r2)     // Catch: java.lang.Exception -> Lf3
+                android.widget.LinearLayout r1 = r7.statusLyt     // Catch: java.lang.Exception -> Lf3
                 r2 = 8
-                r1.setVisibility(r2)     // Catch: java.lang.Exception -> Lde
-                android.widget.TextView r1 = r6.amount     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = r0.getAmount()     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                r1.setText(r2)     // Catch: java.lang.Exception -> Lde
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lde
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = "sbce"
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                r3 = 0
-                r4 = 2
-                r5 = 0
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r2, r5, r4, r3)     // Catch: java.lang.Exception -> Lde
+                r1.setVisibility(r2)     // Catch: java.lang.Exception -> Lf3
+                android.widget.TextView r1 = r7.amount     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r3 = r0.getAmount()     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
+                r1.setText(r3)     // Catch: java.lang.Exception -> Lf3
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
+                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r3 = "sbce"
+                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
+                r4 = 0
+                r5 = 2
+                r6 = 0
+                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
                 if (r1 != 0) goto Lab
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lde
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = "mvjce"
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r2, r5, r4, r3)     // Catch: java.lang.Exception -> Lde
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
+                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r3 = "mvjce"
+                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
+                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
                 if (r1 != 0) goto Lab
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lde
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = "vjec"
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r2, r5, r4, r3)     // Catch: java.lang.Exception -> Lde
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
+                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r3 = "vjec"
+                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
+                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
                 if (r1 != 0) goto Lab
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lde
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lde
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = "uat"
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lde
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r2, r5, r4, r3)     // Catch: java.lang.Exception -> Lde
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
+                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
+                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r3 = "uat"
+                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
+                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
                 if (r1 == 0) goto L9f
                 goto Lab
             L9f:
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.util.List r1 = r1.getSelected()     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = "false"
-                r1.add(r7, r2)     // Catch: java.lang.Exception -> Lde
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.util.List r1 = r1.getSelected()     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r3 = "false"
+                r1.add(r8, r3)     // Catch: java.lang.Exception -> Lf3
                 goto Lbc
             Lab:
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.util.List r1 = r1.getSelected()     // Catch: java.lang.Exception -> Lde
-                java.lang.String r2 = "true"
-                r1.add(r7, r2)     // Catch: java.lang.Exception -> Lde
-                android.widget.CheckBox r1 = r6.checkBox     // Catch: java.lang.Exception -> Lde
-                r2 = 1
-                r1.setChecked(r2)     // Catch: java.lang.Exception -> Lde
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.util.List r1 = r1.getSelected()     // Catch: java.lang.Exception -> Lf3
+                java.lang.String r3 = "true"
+                r1.add(r8, r3)     // Catch: java.lang.Exception -> Lf3
+                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
+                r3 = 1
+                r1.setChecked(r3)     // Catch: java.lang.Exception -> Lf3
             Lbc:
-                android.widget.CheckBox r1 = r6.checkBox     // Catch: java.lang.Exception -> Lde
-                boolean r2 = r0.is_selected()     // Catch: java.lang.Exception -> Lde
-                r1.setChecked(r2)     // Catch: java.lang.Exception -> Lde
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                java.util.List r1 = r1.getSelectedTotal()     // Catch: java.lang.Exception -> Lde
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.lang.Boolean r1 = r1.getCheckBoxStatus()     // Catch: java.lang.Exception -> Lf3
+                java.lang.Boolean r3 = java.lang.Boolean.valueOf(r6)     // Catch: java.lang.Exception -> Lf3
+                boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r3)     // Catch: java.lang.Exception -> Lf3
+                if (r1 == 0) goto Ld1
+                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
+                r1.setVisibility(r2)     // Catch: java.lang.Exception -> Lf3
+            Ld1:
+                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
+                boolean r2 = r0.is_selected()     // Catch: java.lang.Exception -> Lf3
+                r1.setChecked(r2)     // Catch: java.lang.Exception -> Lf3
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                java.util.List r1 = r1.getSelectedTotal()     // Catch: java.lang.Exception -> Lf3
                 java.lang.String r2 = "0"
-                r1.add(r7, r2)     // Catch: java.lang.Exception -> Lde
-                android.widget.CheckBox r1 = r6.checkBox     // Catch: java.lang.Exception -> Lde
-                if (r1 == 0) goto Lde
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r2 = r6.this$0     // Catch: java.lang.Exception -> Lde
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter$ViewHolder$$ExternalSyntheticLambda0 r3 = new in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter$ViewHolder$$ExternalSyntheticLambda0     // Catch: java.lang.Exception -> Lde
-                r3.<init>()     // Catch: java.lang.Exception -> Lde
-                r1.setOnClickListener(r3)     // Catch: java.lang.Exception -> Lde
-            Lde:
+                r1.add(r8, r2)     // Catch: java.lang.Exception -> Lf3
+                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
+                if (r1 == 0) goto Lf3
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r2 = r7.this$0     // Catch: java.lang.Exception -> Lf3
+                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter$ViewHolder$$ExternalSyntheticLambda0 r3 = new in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter$ViewHolder$$ExternalSyntheticLambda0     // Catch: java.lang.Exception -> Lf3
+                r3.<init>()     // Catch: java.lang.Exception -> Lf3
+                r1.setOnClickListener(r3)     // Catch: java.lang.Exception -> Lf3
+            Lf3:
                 return
             */
             throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter.ViewHolder.onBind(int):void");
@@ -305,11 +323,12 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
         holder.onBind(position);
     }
 
-    public final void addItems(ArrayList<ExamCourse> _list, String baseUrl) {
+    public final void addItems(ArrayList<ExamCourse> _list, String baseUrl, boolean checkBoxStatus) {
         Intrinsics.checkNotNullParameter(_list, "_list");
         Intrinsics.checkNotNullParameter(baseUrl, "baseUrl");
         this.selectedTotal.clear();
         this.selected.clear();
+        this.checkBoxStatus = Boolean.valueOf(checkBoxStatus);
         this.baseUrl = baseUrl;
         this.list.clear();
         this.list.addAll(_list);

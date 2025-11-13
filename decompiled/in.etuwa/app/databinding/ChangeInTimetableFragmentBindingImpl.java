@@ -61,7 +61,7 @@ public class ChangeInTimetableFragmentBindingImpl extends ChangeInTimetableFragm
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (49 != variableId) {
+        if (50 != variableId) {
             return false;
         }
         setChangeInTimetableViewModel((ChangeInTimetableViewModel) variable);

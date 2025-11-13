@@ -70,7 +70,7 @@ public class FragmentHostelAttViewBindingImpl extends FragmentHostelAttViewBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (117 != variableId) {
+        if (118 != variableId) {
             return false;
         }
         setHostelViewLeaveViewModel((HostelViewLeaveViewModel) variable);

@@ -67,7 +67,7 @@ public class DialogAddUpdateBankBindingImpl extends DialogAddUpdateBankBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (23 != variableId) {
+        if (24 != variableId) {
             return false;
         }
         setAddUpdateBankViewModel((AddUpdateBankViewModel) variable);

@@ -67,7 +67,7 @@ public class UploadAssignmentDialogBindingImpl extends UploadAssignmentDialogBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (238 != variableId) {
+        if (239 != variableId) {
             return false;
         }
         setUploadAssignmentDialogViewModel((UploadAssignmentDialogViewModel) variable);

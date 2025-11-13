@@ -63,7 +63,7 @@ public class ManageActivityFragmentBindingImpl extends ManageActivityFragmentBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (133 != variableId) {
+        if (134 != variableId) {
             return false;
         }
         setManageActivityViewModel((ManageActivityViewModel) variable);

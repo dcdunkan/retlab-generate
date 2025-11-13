@@ -65,7 +65,7 @@ public class FragmentPositionHeldBindingImpl extends FragmentPositionHeldBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (163 != variableId) {
+        if (164 != variableId) {
             return false;
         }
         setPositionHeldViewModel((PositionHeldViewModel) variable);

@@ -63,7 +63,7 @@ public class LabDueFragmentBindingImpl extends LabDueFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (122 != variableId) {
+        if (123 != variableId) {
             return false;
         }
         setLabDueViewModel((LabDueViewModel) variable);

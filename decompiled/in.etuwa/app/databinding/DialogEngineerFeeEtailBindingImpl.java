@@ -62,7 +62,7 @@ public class DialogEngineerFeeEtailBindingImpl extends DialogEngineerFeeEtailBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (89 != variableId) {
+        if (90 != variableId) {
             return false;
         }
         setFeeDetailViewModelViewModel((FeeDetailViewModel) variable);

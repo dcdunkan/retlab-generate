@@ -62,7 +62,7 @@ public class FragmentExamReceiptBindingImpl extends FragmentExamReceiptBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (79 != variableId) {
+        if (80 != variableId) {
             return false;
         }
         setExamReceiptViewModel((ExamReceiptViewModel) variable);

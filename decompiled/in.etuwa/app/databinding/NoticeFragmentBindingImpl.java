@@ -64,7 +64,7 @@ public class NoticeFragmentBindingImpl extends NoticeFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (148 != variableId) {
+        if (149 != variableId) {
             return false;
         }
         setNoticeViewModel((NoticeViewModel) variable);

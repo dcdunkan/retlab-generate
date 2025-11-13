@@ -84,7 +84,7 @@ public class DialogAddFundedResearchBindingImpl extends DialogAddFundedResearchB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (11 != variableId) {
+        if (12 != variableId) {
             return false;
         }
         setAddFundedResearchViewModel((AddFundedResearchViewModel) variable);

@@ -67,7 +67,7 @@ public class SubmitHomeWorkDialogBindingImpl extends SubmitHomeWorkDialogBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (215 != variableId) {
+        if (216 != variableId) {
             return false;
         }
         setSubmitHomeWorkDialogViewModel((SubmitHomeWorkDialogViewModel) variable);

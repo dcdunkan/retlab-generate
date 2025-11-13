@@ -62,7 +62,7 @@ public class FragmentHostelFeeConfirmFragmentBindingImpl extends FragmentHostelF
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (108 != variableId) {
+        if (109 != variableId) {
             return false;
         }
         setHostelFeeConfirmViewModel((HostelFeeConfirmViewModel) variable);

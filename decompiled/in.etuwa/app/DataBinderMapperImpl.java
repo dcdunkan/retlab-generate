@@ -95,6 +95,7 @@ import in.etuwa.app.databinding.DialogSubjectPlanBindingImpl;
 import in.etuwa.app.databinding.DialogSuggestBookBindingImpl;
 import in.etuwa.app.databinding.DialogTransportFeePayBindingImpl;
 import in.etuwa.app.databinding.DialogUpdateHoursBindingImpl;
+import in.etuwa.app.databinding.DialogVerifyAbcIdBindingImpl;
 import in.etuwa.app.databinding.DialogViewProofBindingImpl;
 import in.etuwa.app.databinding.DialogViewProofDutyLeaveBindingImpl;
 import in.etuwa.app.databinding.DialogViewSubjectRegistrationBindingImpl;
@@ -361,179 +362,180 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     private static final int LAYOUT_DIALOGSUGGESTBOOK = 87;
     private static final int LAYOUT_DIALOGTRANSPORTFEEPAY = 88;
     private static final int LAYOUT_DIALOGUPDATEHOURS = 89;
-    private static final int LAYOUT_DIALOGVIEWPROOF = 90;
-    private static final int LAYOUT_DIALOGVIEWPROOFDUTYLEAVE = 91;
-    private static final int LAYOUT_DIALOGVIEWREGISTRATIONDIALOG = 93;
-    private static final int LAYOUT_DIALOGVIEWSUBJECTREGISTRATION = 92;
-    private static final int LAYOUT_DIALOGVISION = 94;
-    private static final int LAYOUT_DUEFRAGMENT = 95;
-    private static final int LAYOUT_DUEPAYFRAGMENT = 96;
-    private static final int LAYOUT_DUTYLEAVEFRAGMENT = 97;
-    private static final int LAYOUT_EQUIPMENTFRAGMENT = 98;
-    private static final int LAYOUT_EVALUATIONFRAGMENT = 99;
-    private static final int LAYOUT_EXAMFRAGMENT = 100;
-    private static final int LAYOUT_EXPEREMENTFRAGMENT = 101;
-    private static final int LAYOUT_FEEFRAGMENT = 102;
-    private static final int LAYOUT_FRAGMENTACHIEVEMENTS = 103;
-    private static final int LAYOUT_FRAGMENTASIETSEMREG = 104;
-    private static final int LAYOUT_FRAGMENTASIETTRANSREGHISTORY = 105;
-    private static final int LAYOUT_FRAGMENTATTENDANCEBYDAY = 106;
-    private static final int LAYOUT_FRAGMENTATTENDANCECALENDARVIEW = 107;
-    private static final int LAYOUT_FRAGMENTATTENDANCEDAYWISE = 108;
-    private static final int LAYOUT_FRAGMENTBOOKING = 109;
-    private static final int LAYOUT_FRAGMENTBOOKINGHISTORY = 110;
-    private static final int LAYOUT_FRAGMENTBOOKS = 111;
-    private static final int LAYOUT_FRAGMENTBOOKSRECORDS = 112;
-    private static final int LAYOUT_FRAGMENTCALENDAR = 113;
-    private static final int LAYOUT_FRAGMENTCOURSEATTENDED = 114;
-    private static final int LAYOUT_FRAGMENTCOURSESURVEY = 115;
-    private static final int LAYOUT_FRAGMENTCOURSESURVEYQUESTIONS = 116;
-    private static final int LAYOUT_FRAGMENTCOURSESURVEYSUBJECTS = 117;
-    private static final int LAYOUT_FRAGMENTDASHBOARD = 119;
-    private static final int LAYOUT_FRAGMENTDASHTABLEVIEW = 118;
-    private static final int LAYOUT_FRAGMENTDAYWISETIMETABLE = 120;
-    private static final int LAYOUT_FRAGMENTDIRECTAPPLY = 121;
-    private static final int LAYOUT_FRAGMENTDUESMAIN = 122;
-    private static final int LAYOUT_FRAGMENTEXAMMAIN = 123;
-    private static final int LAYOUT_FRAGMENTEXAMRECEIPT = 124;
-    private static final int LAYOUT_FRAGMENTEXAMREGISTRATION = 125;
-    private static final int LAYOUT_FRAGMENTEXAMREGISTRATIONMAIN = 126;
-    private static final int LAYOUT_FRAGMENTEXAMSUBJECT = 127;
-    private static final int LAYOUT_FRAGMENTEXAMUPDATE = 128;
-    private static final int LAYOUT_FRAGMENTEXAMVIEW = 129;
-    private static final int LAYOUT_FRAGMENTFEEARTS = 130;
-    private static final int LAYOUT_FRAGMENTFEEENGINEER = 131;
-    private static final int LAYOUT_FRAGMENTFEELIST = 132;
-    private static final int LAYOUT_FRAGMENTFEEMAIN = 133;
-    private static final int LAYOUT_FRAGMENTFEEMEDICAL = 134;
-    private static final int LAYOUT_FRAGMENTFEEPARTIAL = 135;
-    private static final int LAYOUT_FRAGMENTFIELDS = 136;
-    private static final int LAYOUT_FRAGMENTFUNDEDRESEARCH = 137;
-    private static final int LAYOUT_FRAGMENTGATEWAYDETAILS = 138;
-    private static final int LAYOUT_FRAGMENTGRADUATEEXITSURVEYLIST = 139;
-    private static final int LAYOUT_FRAGMENTGRADUATEEXITSURVEYQUESTIONS = 140;
-    private static final int LAYOUT_FRAGMENTHOSTELATTENDANCE = 142;
-    private static final int LAYOUT_FRAGMENTHOSTELATTENDANCEPARENTFRAGMENT = 143;
-    private static final int LAYOUT_FRAGMENTHOSTELATTVIEW = 141;
-    private static final int LAYOUT_FRAGMENTHOSTELFEECONFIRMFRAGMENT = 144;
-    private static final int LAYOUT_FRAGMENTHOSTELFEEPALAI = 145;
-    private static final int LAYOUT_FRAGMENTHOSTELFEETKM = 146;
-    private static final int LAYOUT_FRAGMENTHOSTELMITS = 147;
-    private static final int LAYOUT_FRAGMENTHOSTELNEW = 148;
-    private static final int LAYOUT_FRAGMENTHOSTELNONMITS = 149;
-    private static final int LAYOUT_FRAGMENTHOSTELPARTIAL = 150;
-    private static final int LAYOUT_FRAGMENTHOSTELRECEIPT = 151;
-    private static final int LAYOUT_FRAGMENTINSTRUCTIONSPAGE = 152;
-    private static final int LAYOUT_FRAGMENTINTERNSHIP = 153;
-    private static final int LAYOUT_FRAGMENTKMEA = 154;
-    private static final int LAYOUT_FRAGMENTLAB = 155;
-    private static final int LAYOUT_FRAGMENTLEAVE = 156;
-    private static final int LAYOUT_FRAGMENTLEAVEMANAGEMENT = 157;
-    private static final int LAYOUT_FRAGMENTMEMBERSHIP = 158;
-    private static final int LAYOUT_FRAGMENTMESS = 159;
-    private static final int LAYOUT_FRAGMENTMESSAGE = 160;
-    private static final int LAYOUT_FRAGMENTMOOCCOURSE = 161;
-    private static final int LAYOUT_FRAGMENTORDERHISTORY = 162;
-    private static final int LAYOUT_FRAGMENTPALAISEMREG = 163;
-    private static final int LAYOUT_FRAGMENTPAYMENTWEBVIEW = 165;
-    private static final int LAYOUT_FRAGMENTPAYWEB = 164;
-    private static final int LAYOUT_FRAGMENTPOQUESTIONSNEW = 166;
-    private static final int LAYOUT_FRAGMENTPOSITIONHELD = 169;
-    private static final int LAYOUT_FRAGMENTPOSURVEY = 167;
-    private static final int LAYOUT_FRAGMENTPOSURVEYQUESTIONS = 168;
-    private static final int LAYOUT_FRAGMENTPROFILE = 170;
-    private static final int LAYOUT_FRAGMENTPROGRAMOUTCOME = 171;
-    private static final int LAYOUT_FRAGMENTPROJECTWORK = 172;
-    private static final int LAYOUT_FRAGMENTPUBLICATION = 173;
-    private static final int LAYOUT_FRAGMENTQUALIFIEDEXAMINATION = 174;
-    private static final int LAYOUT_FRAGMENTQUIZ = 175;
-    private static final int LAYOUT_FRAGMENTQUIZQUESTIONS = 176;
-    private static final int LAYOUT_FRAGMENTQUIZRESULT = 177;
-    private static final int LAYOUT_FRAGMENTREGISTRATION = 178;
-    private static final int LAYOUT_FRAGMENTREVALUATION = 179;
-    private static final int LAYOUT_FRAGMENTREVALUATIONFEE = 180;
-    private static final int LAYOUT_FRAGMENTREVALUATIONRECEIPT = 181;
-    private static final int LAYOUT_FRAGMENTREVALUATIONUPDATE = 182;
-    private static final int LAYOUT_FRAGMENTREVALUATIONVIEW = 183;
-    private static final int LAYOUT_FRAGMENTSCHOLARSHIP = 184;
-    private static final int LAYOUT_FRAGMENTSENTITEMS = 185;
-    private static final int LAYOUT_FRAGMENTSPORT = 186;
-    private static final int LAYOUT_FRAGMENTSTATIONARYMAIN = 187;
-    private static final int LAYOUT_FRAGMENTSTORE = 188;
-    private static final int LAYOUT_FRAGMENTSUBJECTREGISTRATION = 189;
-    private static final int LAYOUT_FRAGMENTSURVEY = 190;
-    private static final int LAYOUT_FRAGMENTTEACHERSURVEYLIST = 191;
-    private static final int LAYOUT_FRAGMENTTEACHERSURVEYQUESTIONS = 192;
-    private static final int LAYOUT_FRAGMENTTRANSPORT = 193;
-    private static final int LAYOUT_FRAGMENTTRANSPORTBUSPASS = 194;
-    private static final int LAYOUT_FRAGMENTTRANSPORTFEE = 195;
-    private static final int LAYOUT_FRAGMENTTRANSPORTHISTORY = 196;
-    private static final int LAYOUT_FRAGMENTTRANSPORTRECEIPT = 197;
-    private static final int LAYOUT_FRAGMENTTRANSPORTREGHISTORY = 198;
-    private static final int LAYOUT_FRAGMENTWEBVIEW = 199;
-    private static final int LAYOUT_GRIEVANCEDOCDIALOG = 200;
-    private static final int LAYOUT_GRIEVANCEFRAGMENT = 201;
-    private static final int LAYOUT_HOMEWORKFILESDIALOG = 202;
-    private static final int LAYOUT_HOMEWORKFRAGMENT = 203;
-    private static final int LAYOUT_HOSTELFRAGMENTTKM = 204;
-    private static final int LAYOUT_INTERNALRESULTFRAGMENT = 205;
-    private static final int LAYOUT_LABDUEFRAGMENT = 206;
-    private static final int LAYOUT_LABLISTFRAGMENT = 207;
-    private static final int LAYOUT_LABPRACTICALFRAGMENT = 208;
-    private static final int LAYOUT_LIVETVFRAGMENT = 209;
-    private static final int LAYOUT_LOGOUTCHANGEPASSWORDFRAGMENT = 210;
-    private static final int LAYOUT_MANAGEACTIVITYFRAGMENT = 211;
-    private static final int LAYOUT_MATERIALFRAGMENT = 212;
-    private static final int LAYOUT_MEDICALFRAGMENT = 213;
-    private static final int LAYOUT_MODULETESTFRAGMENT = 214;
-    private static final int LAYOUT_NOTICEFRAGMENT = 215;
-    private static final int LAYOUT_ONLINECLASSFRAGMENT = 216;
-    private static final int LAYOUT_PLACEMENTFRAGMENT = 217;
-    private static final int LAYOUT_PROGRAMOUTCOMEMAINFRAGMENT = 218;
-    private static final int LAYOUT_PROOFFILEDIALOG = 219;
-    private static final int LAYOUT_QUESTIONBANKFRAGMENT = 220;
-    private static final int LAYOUT_QUESTIONDIALOG = 221;
-    private static final int LAYOUT_RECEIPTFRAGMENT = 222;
-    private static final int LAYOUT_REMARKFRAGMENT = 223;
-    private static final int LAYOUT_REMINDDIALOG = 224;
-    private static final int LAYOUT_REMINDDIALOG2 = 225;
-    private static final int LAYOUT_REPLYDIALOG = 226;
-    private static final int LAYOUT_RESULTFRAGMENT = 227;
-    private static final int LAYOUT_RESULTMODULETESTFRAGMENT = 228;
-    private static final int LAYOUT_RESULTTUTORIALFRAGMENT = 229;
-    private static final int LAYOUT_REVIEWDIALOG = 230;
-    private static final int LAYOUT_SAFETYFRAGMENT = 231;
-    private static final int LAYOUT_SEMLISTDIALOG = 232;
-    private static final int LAYOUT_SEMLISTDIALOGSESSION = 233;
-    private static final int LAYOUT_SEMREGFRAGMENT = 234;
-    private static final int LAYOUT_SEMREGISTERLISTFRAGMENT = 236;
-    private static final int LAYOUT_SEMREGVIEWFRAGMENT = 235;
-    private static final int LAYOUT_SERIESEXAMFRAGMENT = 237;
-    private static final int LAYOUT_SESSIONALFRAGMENT = 238;
-    private static final int LAYOUT_SPECIALCLASSFRAGMENT = 239;
-    private static final int LAYOUT_STOREDIALOG = 240;
-    private static final int LAYOUT_SUBJECTCOVERAGEFRAGMENT = 241;
-    private static final int LAYOUT_SUBJECTFRAGMENT = 242;
-    private static final int LAYOUT_SUBMITEXAMDIALOG = 243;
-    private static final int LAYOUT_SUBMITHOMEWORKDIALOG = 244;
-    private static final int LAYOUT_SYLLABUSFRAGMENT = 245;
-    private static final int LAYOUT_TEACHERFRAGMENT = 246;
-    private static final int LAYOUT_TIMETABLEFRAGMENT = 247;
-    private static final int LAYOUT_TIMTABLEVIEWFRAGMENT = 248;
-    private static final int LAYOUT_TUTORIALFRAGMENT = 249;
-    private static final int LAYOUT_UNIVERSITYEXAMSFRAGMENT = 251;
-    private static final int LAYOUT_UNIVERSITYFRAGMENT = 252;
-    private static final int LAYOUT_UNIVERSITYRESULTFRAGMENT = 253;
-    private static final int LAYOUT_UNIVINITIALPAGEFRAGMENT = 250;
-    private static final int LAYOUT_UPLOADASSIGNMENTDIALOG = 254;
-    private static final int LAYOUT_UPLOADTUTORIALDIALOG = 255;
-    private static final int LAYOUT_VIDEOCLASSFRAGMENT = 256;
-    private static final int LAYOUT_VIEWCOUNSELLINGFRAGMENT = 257;
-    private static final int LAYOUT_VIEWGRIEVANCEFRAGMENT = 258;
-    private static final int LAYOUT_VIEWMVJCESEMREGDIALOG = 259;
+    private static final int LAYOUT_DIALOGVERIFYABCID = 90;
+    private static final int LAYOUT_DIALOGVIEWPROOF = 91;
+    private static final int LAYOUT_DIALOGVIEWPROOFDUTYLEAVE = 92;
+    private static final int LAYOUT_DIALOGVIEWREGISTRATIONDIALOG = 94;
+    private static final int LAYOUT_DIALOGVIEWSUBJECTREGISTRATION = 93;
+    private static final int LAYOUT_DIALOGVISION = 95;
+    private static final int LAYOUT_DUEFRAGMENT = 96;
+    private static final int LAYOUT_DUEPAYFRAGMENT = 97;
+    private static final int LAYOUT_DUTYLEAVEFRAGMENT = 98;
+    private static final int LAYOUT_EQUIPMENTFRAGMENT = 99;
+    private static final int LAYOUT_EVALUATIONFRAGMENT = 100;
+    private static final int LAYOUT_EXAMFRAGMENT = 101;
+    private static final int LAYOUT_EXPEREMENTFRAGMENT = 102;
+    private static final int LAYOUT_FEEFRAGMENT = 103;
+    private static final int LAYOUT_FRAGMENTACHIEVEMENTS = 104;
+    private static final int LAYOUT_FRAGMENTASIETSEMREG = 105;
+    private static final int LAYOUT_FRAGMENTASIETTRANSREGHISTORY = 106;
+    private static final int LAYOUT_FRAGMENTATTENDANCEBYDAY = 107;
+    private static final int LAYOUT_FRAGMENTATTENDANCECALENDARVIEW = 108;
+    private static final int LAYOUT_FRAGMENTATTENDANCEDAYWISE = 109;
+    private static final int LAYOUT_FRAGMENTBOOKING = 110;
+    private static final int LAYOUT_FRAGMENTBOOKINGHISTORY = 111;
+    private static final int LAYOUT_FRAGMENTBOOKS = 112;
+    private static final int LAYOUT_FRAGMENTBOOKSRECORDS = 113;
+    private static final int LAYOUT_FRAGMENTCALENDAR = 114;
+    private static final int LAYOUT_FRAGMENTCOURSEATTENDED = 115;
+    private static final int LAYOUT_FRAGMENTCOURSESURVEY = 116;
+    private static final int LAYOUT_FRAGMENTCOURSESURVEYQUESTIONS = 117;
+    private static final int LAYOUT_FRAGMENTCOURSESURVEYSUBJECTS = 118;
+    private static final int LAYOUT_FRAGMENTDASHBOARD = 120;
+    private static final int LAYOUT_FRAGMENTDASHTABLEVIEW = 119;
+    private static final int LAYOUT_FRAGMENTDAYWISETIMETABLE = 121;
+    private static final int LAYOUT_FRAGMENTDIRECTAPPLY = 122;
+    private static final int LAYOUT_FRAGMENTDUESMAIN = 123;
+    private static final int LAYOUT_FRAGMENTEXAMMAIN = 124;
+    private static final int LAYOUT_FRAGMENTEXAMRECEIPT = 125;
+    private static final int LAYOUT_FRAGMENTEXAMREGISTRATION = 126;
+    private static final int LAYOUT_FRAGMENTEXAMREGISTRATIONMAIN = 127;
+    private static final int LAYOUT_FRAGMENTEXAMSUBJECT = 128;
+    private static final int LAYOUT_FRAGMENTEXAMUPDATE = 129;
+    private static final int LAYOUT_FRAGMENTEXAMVIEW = 130;
+    private static final int LAYOUT_FRAGMENTFEEARTS = 131;
+    private static final int LAYOUT_FRAGMENTFEEENGINEER = 132;
+    private static final int LAYOUT_FRAGMENTFEELIST = 133;
+    private static final int LAYOUT_FRAGMENTFEEMAIN = 134;
+    private static final int LAYOUT_FRAGMENTFEEMEDICAL = 135;
+    private static final int LAYOUT_FRAGMENTFEEPARTIAL = 136;
+    private static final int LAYOUT_FRAGMENTFIELDS = 137;
+    private static final int LAYOUT_FRAGMENTFUNDEDRESEARCH = 138;
+    private static final int LAYOUT_FRAGMENTGATEWAYDETAILS = 139;
+    private static final int LAYOUT_FRAGMENTGRADUATEEXITSURVEYLIST = 140;
+    private static final int LAYOUT_FRAGMENTGRADUATEEXITSURVEYQUESTIONS = 141;
+    private static final int LAYOUT_FRAGMENTHOSTELATTENDANCE = 143;
+    private static final int LAYOUT_FRAGMENTHOSTELATTENDANCEPARENTFRAGMENT = 144;
+    private static final int LAYOUT_FRAGMENTHOSTELATTVIEW = 142;
+    private static final int LAYOUT_FRAGMENTHOSTELFEECONFIRMFRAGMENT = 145;
+    private static final int LAYOUT_FRAGMENTHOSTELFEEPALAI = 146;
+    private static final int LAYOUT_FRAGMENTHOSTELFEETKM = 147;
+    private static final int LAYOUT_FRAGMENTHOSTELMITS = 148;
+    private static final int LAYOUT_FRAGMENTHOSTELNEW = 149;
+    private static final int LAYOUT_FRAGMENTHOSTELNONMITS = 150;
+    private static final int LAYOUT_FRAGMENTHOSTELPARTIAL = 151;
+    private static final int LAYOUT_FRAGMENTHOSTELRECEIPT = 152;
+    private static final int LAYOUT_FRAGMENTINSTRUCTIONSPAGE = 153;
+    private static final int LAYOUT_FRAGMENTINTERNSHIP = 154;
+    private static final int LAYOUT_FRAGMENTKMEA = 155;
+    private static final int LAYOUT_FRAGMENTLAB = 156;
+    private static final int LAYOUT_FRAGMENTLEAVE = 157;
+    private static final int LAYOUT_FRAGMENTLEAVEMANAGEMENT = 158;
+    private static final int LAYOUT_FRAGMENTMEMBERSHIP = 159;
+    private static final int LAYOUT_FRAGMENTMESS = 160;
+    private static final int LAYOUT_FRAGMENTMESSAGE = 161;
+    private static final int LAYOUT_FRAGMENTMOOCCOURSE = 162;
+    private static final int LAYOUT_FRAGMENTORDERHISTORY = 163;
+    private static final int LAYOUT_FRAGMENTPALAISEMREG = 164;
+    private static final int LAYOUT_FRAGMENTPAYMENTWEBVIEW = 166;
+    private static final int LAYOUT_FRAGMENTPAYWEB = 165;
+    private static final int LAYOUT_FRAGMENTPOQUESTIONSNEW = 167;
+    private static final int LAYOUT_FRAGMENTPOSITIONHELD = 170;
+    private static final int LAYOUT_FRAGMENTPOSURVEY = 168;
+    private static final int LAYOUT_FRAGMENTPOSURVEYQUESTIONS = 169;
+    private static final int LAYOUT_FRAGMENTPROFILE = 171;
+    private static final int LAYOUT_FRAGMENTPROGRAMOUTCOME = 172;
+    private static final int LAYOUT_FRAGMENTPROJECTWORK = 173;
+    private static final int LAYOUT_FRAGMENTPUBLICATION = 174;
+    private static final int LAYOUT_FRAGMENTQUALIFIEDEXAMINATION = 175;
+    private static final int LAYOUT_FRAGMENTQUIZ = 176;
+    private static final int LAYOUT_FRAGMENTQUIZQUESTIONS = 177;
+    private static final int LAYOUT_FRAGMENTQUIZRESULT = 178;
+    private static final int LAYOUT_FRAGMENTREGISTRATION = 179;
+    private static final int LAYOUT_FRAGMENTREVALUATION = 180;
+    private static final int LAYOUT_FRAGMENTREVALUATIONFEE = 181;
+    private static final int LAYOUT_FRAGMENTREVALUATIONRECEIPT = 182;
+    private static final int LAYOUT_FRAGMENTREVALUATIONUPDATE = 183;
+    private static final int LAYOUT_FRAGMENTREVALUATIONVIEW = 184;
+    private static final int LAYOUT_FRAGMENTSCHOLARSHIP = 185;
+    private static final int LAYOUT_FRAGMENTSENTITEMS = 186;
+    private static final int LAYOUT_FRAGMENTSPORT = 187;
+    private static final int LAYOUT_FRAGMENTSTATIONARYMAIN = 188;
+    private static final int LAYOUT_FRAGMENTSTORE = 189;
+    private static final int LAYOUT_FRAGMENTSUBJECTREGISTRATION = 190;
+    private static final int LAYOUT_FRAGMENTSURVEY = 191;
+    private static final int LAYOUT_FRAGMENTTEACHERSURVEYLIST = 192;
+    private static final int LAYOUT_FRAGMENTTEACHERSURVEYQUESTIONS = 193;
+    private static final int LAYOUT_FRAGMENTTRANSPORT = 194;
+    private static final int LAYOUT_FRAGMENTTRANSPORTBUSPASS = 195;
+    private static final int LAYOUT_FRAGMENTTRANSPORTFEE = 196;
+    private static final int LAYOUT_FRAGMENTTRANSPORTHISTORY = 197;
+    private static final int LAYOUT_FRAGMENTTRANSPORTRECEIPT = 198;
+    private static final int LAYOUT_FRAGMENTTRANSPORTREGHISTORY = 199;
+    private static final int LAYOUT_FRAGMENTWEBVIEW = 200;
+    private static final int LAYOUT_GRIEVANCEDOCDIALOG = 201;
+    private static final int LAYOUT_GRIEVANCEFRAGMENT = 202;
+    private static final int LAYOUT_HOMEWORKFILESDIALOG = 203;
+    private static final int LAYOUT_HOMEWORKFRAGMENT = 204;
+    private static final int LAYOUT_HOSTELFRAGMENTTKM = 205;
+    private static final int LAYOUT_INTERNALRESULTFRAGMENT = 206;
+    private static final int LAYOUT_LABDUEFRAGMENT = 207;
+    private static final int LAYOUT_LABLISTFRAGMENT = 208;
+    private static final int LAYOUT_LABPRACTICALFRAGMENT = 209;
+    private static final int LAYOUT_LIVETVFRAGMENT = 210;
+    private static final int LAYOUT_LOGOUTCHANGEPASSWORDFRAGMENT = 211;
+    private static final int LAYOUT_MANAGEACTIVITYFRAGMENT = 212;
+    private static final int LAYOUT_MATERIALFRAGMENT = 213;
+    private static final int LAYOUT_MEDICALFRAGMENT = 214;
+    private static final int LAYOUT_MODULETESTFRAGMENT = 215;
+    private static final int LAYOUT_NOTICEFRAGMENT = 216;
+    private static final int LAYOUT_ONLINECLASSFRAGMENT = 217;
+    private static final int LAYOUT_PLACEMENTFRAGMENT = 218;
+    private static final int LAYOUT_PROGRAMOUTCOMEMAINFRAGMENT = 219;
+    private static final int LAYOUT_PROOFFILEDIALOG = 220;
+    private static final int LAYOUT_QUESTIONBANKFRAGMENT = 221;
+    private static final int LAYOUT_QUESTIONDIALOG = 222;
+    private static final int LAYOUT_RECEIPTFRAGMENT = 223;
+    private static final int LAYOUT_REMARKFRAGMENT = 224;
+    private static final int LAYOUT_REMINDDIALOG = 225;
+    private static final int LAYOUT_REMINDDIALOG2 = 226;
+    private static final int LAYOUT_REPLYDIALOG = 227;
+    private static final int LAYOUT_RESULTFRAGMENT = 228;
+    private static final int LAYOUT_RESULTMODULETESTFRAGMENT = 229;
+    private static final int LAYOUT_RESULTTUTORIALFRAGMENT = 230;
+    private static final int LAYOUT_REVIEWDIALOG = 231;
+    private static final int LAYOUT_SAFETYFRAGMENT = 232;
+    private static final int LAYOUT_SEMLISTDIALOG = 233;
+    private static final int LAYOUT_SEMLISTDIALOGSESSION = 234;
+    private static final int LAYOUT_SEMREGFRAGMENT = 235;
+    private static final int LAYOUT_SEMREGISTERLISTFRAGMENT = 237;
+    private static final int LAYOUT_SEMREGVIEWFRAGMENT = 236;
+    private static final int LAYOUT_SERIESEXAMFRAGMENT = 238;
+    private static final int LAYOUT_SESSIONALFRAGMENT = 239;
+    private static final int LAYOUT_SPECIALCLASSFRAGMENT = 240;
+    private static final int LAYOUT_STOREDIALOG = 241;
+    private static final int LAYOUT_SUBJECTCOVERAGEFRAGMENT = 242;
+    private static final int LAYOUT_SUBJECTFRAGMENT = 243;
+    private static final int LAYOUT_SUBMITEXAMDIALOG = 244;
+    private static final int LAYOUT_SUBMITHOMEWORKDIALOG = 245;
+    private static final int LAYOUT_SYLLABUSFRAGMENT = 246;
+    private static final int LAYOUT_TEACHERFRAGMENT = 247;
+    private static final int LAYOUT_TIMETABLEFRAGMENT = 248;
+    private static final int LAYOUT_TIMTABLEVIEWFRAGMENT = 249;
+    private static final int LAYOUT_TUTORIALFRAGMENT = 250;
+    private static final int LAYOUT_UNIVERSITYEXAMSFRAGMENT = 252;
+    private static final int LAYOUT_UNIVERSITYFRAGMENT = 253;
+    private static final int LAYOUT_UNIVERSITYRESULTFRAGMENT = 254;
+    private static final int LAYOUT_UNIVINITIALPAGEFRAGMENT = 251;
+    private static final int LAYOUT_UPLOADASSIGNMENTDIALOG = 255;
+    private static final int LAYOUT_UPLOADTUTORIALDIALOG = 256;
+    private static final int LAYOUT_VIDEOCLASSFRAGMENT = 257;
+    private static final int LAYOUT_VIEWCOUNSELLINGFRAGMENT = 258;
+    private static final int LAYOUT_VIEWGRIEVANCEFRAGMENT = 259;
+    private static final int LAYOUT_VIEWMVJCESEMREGDIALOG = 260;
 
     static {
-        SparseIntArray sparseIntArray = new SparseIntArray(259);
+        SparseIntArray sparseIntArray = new SparseIntArray(260);
         INTERNAL_LAYOUT_ID_LOOKUP = sparseIntArray;
         sparseIntArray.put(R.layout.actions2_dialog, 1);
         sparseIntArray.put(R.layout.actions_dialog, 2);
@@ -624,176 +626,177 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         sparseIntArray.put(R.layout.dialog_suggest_book, 87);
         sparseIntArray.put(R.layout.dialog_transport_fee_pay, 88);
         sparseIntArray.put(R.layout.dialog_update_hours, 89);
-        sparseIntArray.put(R.layout.dialog_view_proof, 90);
-        sparseIntArray.put(R.layout.dialog_view_proof_duty_leave, 91);
-        sparseIntArray.put(R.layout.dialog_view_subject_registration, 92);
-        sparseIntArray.put(R.layout.dialog_viewregistration_dialog, 93);
-        sparseIntArray.put(R.layout.dialog_vision, 94);
-        sparseIntArray.put(R.layout.due_fragment, 95);
-        sparseIntArray.put(R.layout.due_pay_fragment, 96);
-        sparseIntArray.put(R.layout.duty_leave_fragment, 97);
-        sparseIntArray.put(R.layout.equipment_fragment, 98);
-        sparseIntArray.put(R.layout.evaluation_fragment, 99);
-        sparseIntArray.put(R.layout.exam_fragment, 100);
-        sparseIntArray.put(R.layout.experement_fragment, 101);
-        sparseIntArray.put(R.layout.fee_fragment, 102);
-        sparseIntArray.put(R.layout.fragment_achievements, 103);
-        sparseIntArray.put(R.layout.fragment_asiet_sem_reg, 104);
-        sparseIntArray.put(R.layout.fragment_asiet_trans_reg_history, 105);
-        sparseIntArray.put(R.layout.fragment_attendance_by_day, 106);
-        sparseIntArray.put(R.layout.fragment_attendance_calendar_view, 107);
-        sparseIntArray.put(R.layout.fragment_attendance_day_wise, 108);
-        sparseIntArray.put(R.layout.fragment_booking, 109);
-        sparseIntArray.put(R.layout.fragment_booking_history, 110);
-        sparseIntArray.put(R.layout.fragment_books, 111);
-        sparseIntArray.put(R.layout.fragment_books_records, 112);
-        sparseIntArray.put(R.layout.fragment_calendar, 113);
-        sparseIntArray.put(R.layout.fragment_course_attended, 114);
-        sparseIntArray.put(R.layout.fragment_course_survey, 115);
-        sparseIntArray.put(R.layout.fragment_course_survey_questions, 116);
-        sparseIntArray.put(R.layout.fragment_course_survey_subjects, 117);
-        sparseIntArray.put(R.layout.fragment_dash_table_view, 118);
-        sparseIntArray.put(R.layout.fragment_dashboard, 119);
-        sparseIntArray.put(R.layout.fragment_day_wise_time_table, 120);
-        sparseIntArray.put(R.layout.fragment_direct_apply, 121);
-        sparseIntArray.put(R.layout.fragment_dues_main, 122);
-        sparseIntArray.put(R.layout.fragment_exam_main, 123);
-        sparseIntArray.put(R.layout.fragment_exam_receipt, 124);
-        sparseIntArray.put(R.layout.fragment_exam_registration, 125);
-        sparseIntArray.put(R.layout.fragment_exam_registration_main, 126);
-        sparseIntArray.put(R.layout.fragment_exam_subject, 127);
-        sparseIntArray.put(R.layout.fragment_exam_update, 128);
-        sparseIntArray.put(R.layout.fragment_exam_view, 129);
-        sparseIntArray.put(R.layout.fragment_fee_arts, 130);
-        sparseIntArray.put(R.layout.fragment_fee_engineer, 131);
-        sparseIntArray.put(R.layout.fragment_fee_list, 132);
-        sparseIntArray.put(R.layout.fragment_fee_main, 133);
-        sparseIntArray.put(R.layout.fragment_fee_medical, 134);
-        sparseIntArray.put(R.layout.fragment_fee_partial, 135);
-        sparseIntArray.put(R.layout.fragment_fields, 136);
-        sparseIntArray.put(R.layout.fragment_funded_research, 137);
-        sparseIntArray.put(R.layout.fragment_gateway_details, 138);
-        sparseIntArray.put(R.layout.fragment_graduate_exit_survey_list, 139);
-        sparseIntArray.put(R.layout.fragment_graduate_exit_survey_questions, 140);
-        sparseIntArray.put(R.layout.fragment_hostel_att_view, 141);
-        sparseIntArray.put(R.layout.fragment_hostel_attendance, 142);
-        sparseIntArray.put(R.layout.fragment_hostel_attendance_parent_fragment, 143);
-        sparseIntArray.put(R.layout.fragment_hostel_fee_confirm_fragment, 144);
-        sparseIntArray.put(R.layout.fragment_hostel_fee_palai, 145);
-        sparseIntArray.put(R.layout.fragment_hostel_fee_tkm, 146);
-        sparseIntArray.put(R.layout.fragment_hostel_mits, 147);
-        sparseIntArray.put(R.layout.fragment_hostel_new, 148);
-        sparseIntArray.put(R.layout.fragment_hostel_non_mits, 149);
-        sparseIntArray.put(R.layout.fragment_hostel_partial, 150);
-        sparseIntArray.put(R.layout.fragment_hostel_receipt, 151);
-        sparseIntArray.put(R.layout.fragment_instructions_page, 152);
-        sparseIntArray.put(R.layout.fragment_internship, 153);
-        sparseIntArray.put(R.layout.fragment_kmea, 154);
-        sparseIntArray.put(R.layout.fragment_lab, 155);
-        sparseIntArray.put(R.layout.fragment_leave, 156);
-        sparseIntArray.put(R.layout.fragment_leave_management, 157);
-        sparseIntArray.put(R.layout.fragment_membership, 158);
-        sparseIntArray.put(R.layout.fragment_mess, 159);
-        sparseIntArray.put(R.layout.fragment_message, 160);
-        sparseIntArray.put(R.layout.fragment_mooc_course, 161);
-        sparseIntArray.put(R.layout.fragment_order_history, 162);
-        sparseIntArray.put(R.layout.fragment_palai_sem_reg, 163);
-        sparseIntArray.put(R.layout.fragment_pay_web, 164);
-        sparseIntArray.put(R.layout.fragment_payment_webview, 165);
-        sparseIntArray.put(R.layout.fragment_po_questions_new, 166);
-        sparseIntArray.put(R.layout.fragment_po_survey, 167);
-        sparseIntArray.put(R.layout.fragment_po_survey_questions, 168);
-        sparseIntArray.put(R.layout.fragment_position_held, 169);
-        sparseIntArray.put(R.layout.fragment_profile, 170);
-        sparseIntArray.put(R.layout.fragment_program_outcome, 171);
-        sparseIntArray.put(R.layout.fragment_project_work, 172);
-        sparseIntArray.put(R.layout.fragment_publication, 173);
-        sparseIntArray.put(R.layout.fragment_qualified_examination, 174);
-        sparseIntArray.put(R.layout.fragment_quiz, 175);
-        sparseIntArray.put(R.layout.fragment_quiz_questions, 176);
-        sparseIntArray.put(R.layout.fragment_quiz_result, 177);
-        sparseIntArray.put(R.layout.fragment_registration, 178);
-        sparseIntArray.put(R.layout.fragment_revaluation, 179);
-        sparseIntArray.put(R.layout.fragment_revaluation_fee, 180);
-        sparseIntArray.put(R.layout.fragment_revaluation_receipt, 181);
-        sparseIntArray.put(R.layout.fragment_revaluation_update, 182);
-        sparseIntArray.put(R.layout.fragment_revaluation_view, 183);
-        sparseIntArray.put(R.layout.fragment_scholarship, 184);
-        sparseIntArray.put(R.layout.fragment_sent_items, 185);
-        sparseIntArray.put(R.layout.fragment_sport, 186);
-        sparseIntArray.put(R.layout.fragment_stationary_main, 187);
-        sparseIntArray.put(R.layout.fragment_store, 188);
-        sparseIntArray.put(R.layout.fragment_subject_registration, 189);
-        sparseIntArray.put(R.layout.fragment_survey, 190);
-        sparseIntArray.put(R.layout.fragment_teacher_survey_list, 191);
-        sparseIntArray.put(R.layout.fragment_teacher_survey_questions, 192);
-        sparseIntArray.put(R.layout.fragment_transport, 193);
-        sparseIntArray.put(R.layout.fragment_transport_buspass, 194);
-        sparseIntArray.put(R.layout.fragment_transport_fee, 195);
-        sparseIntArray.put(R.layout.fragment_transport_history, 196);
-        sparseIntArray.put(R.layout.fragment_transport_receipt, 197);
-        sparseIntArray.put(R.layout.fragment_transport_reg_history, 198);
-        sparseIntArray.put(R.layout.fragment_webview, 199);
-        sparseIntArray.put(R.layout.grievance_doc_dialog, 200);
-        sparseIntArray.put(R.layout.grievance_fragment, 201);
-        sparseIntArray.put(R.layout.home_work_files_dialog, 202);
-        sparseIntArray.put(R.layout.home_work_fragment, 203);
-        sparseIntArray.put(R.layout.hostel_fragment_tkm, 204);
-        sparseIntArray.put(R.layout.internal_result_fragment, 205);
-        sparseIntArray.put(R.layout.lab_due_fragment, 206);
-        sparseIntArray.put(R.layout.lab_list_fragment, 207);
-        sparseIntArray.put(R.layout.lab_practical_fragment, 208);
-        sparseIntArray.put(R.layout.live_tv_fragment, 209);
-        sparseIntArray.put(R.layout.logout_change_password_fragment, 210);
-        sparseIntArray.put(R.layout.manage_activity_fragment, 211);
-        sparseIntArray.put(R.layout.material_fragment, 212);
-        sparseIntArray.put(R.layout.medical_fragment, 213);
-        sparseIntArray.put(R.layout.module_test_fragment, 214);
-        sparseIntArray.put(R.layout.notice_fragment, 215);
-        sparseIntArray.put(R.layout.online_class_fragment, 216);
-        sparseIntArray.put(R.layout.placement_fragment, 217);
-        sparseIntArray.put(R.layout.program_outcome_main_fragment, 218);
-        sparseIntArray.put(R.layout.proof_file_dialog, 219);
-        sparseIntArray.put(R.layout.question_bank_fragment, 220);
-        sparseIntArray.put(R.layout.question_dialog, 221);
-        sparseIntArray.put(R.layout.receipt_fragment, 222);
-        sparseIntArray.put(R.layout.remark_fragment, 223);
-        sparseIntArray.put(R.layout.remind_dialog, 224);
-        sparseIntArray.put(R.layout.remind_dialog2, 225);
-        sparseIntArray.put(R.layout.reply_dialog, 226);
-        sparseIntArray.put(R.layout.result_fragment, 227);
-        sparseIntArray.put(R.layout.result_module_test_fragment, 228);
-        sparseIntArray.put(R.layout.result_tutorial_fragment, 229);
-        sparseIntArray.put(R.layout.review_dialog, 230);
-        sparseIntArray.put(R.layout.safety_fragment, 231);
-        sparseIntArray.put(R.layout.sem_list_dialog, 232);
-        sparseIntArray.put(R.layout.sem_list_dialog_session, 233);
-        sparseIntArray.put(R.layout.sem_reg_fragment, 234);
-        sparseIntArray.put(R.layout.sem_reg_view_fragment, 235);
-        sparseIntArray.put(R.layout.sem_register_list_fragment, 236);
-        sparseIntArray.put(R.layout.series_exam_fragment, 237);
-        sparseIntArray.put(R.layout.sessional_fragment, 238);
-        sparseIntArray.put(R.layout.special_class_fragment, 239);
-        sparseIntArray.put(R.layout.store_dialog, 240);
-        sparseIntArray.put(R.layout.subject_coverage_fragment, 241);
-        sparseIntArray.put(R.layout.subject_fragment, 242);
-        sparseIntArray.put(R.layout.submit_exam_dialog, 243);
-        sparseIntArray.put(R.layout.submit_home_work_dialog, 244);
-        sparseIntArray.put(R.layout.syllabus_fragment, 245);
-        sparseIntArray.put(R.layout.teacher_fragment, 246);
-        sparseIntArray.put(R.layout.time_table_fragment, 247);
-        sparseIntArray.put(R.layout.timtable_view_fragment, 248);
-        sparseIntArray.put(R.layout.tutorial_fragment, 249);
-        sparseIntArray.put(R.layout.univ_initial_page_fragment, 250);
+        sparseIntArray.put(R.layout.dialog_verify_abc_id, 90);
+        sparseIntArray.put(R.layout.dialog_view_proof, 91);
+        sparseIntArray.put(R.layout.dialog_view_proof_duty_leave, 92);
+        sparseIntArray.put(R.layout.dialog_view_subject_registration, 93);
+        sparseIntArray.put(R.layout.dialog_viewregistration_dialog, 94);
+        sparseIntArray.put(R.layout.dialog_vision, 95);
+        sparseIntArray.put(R.layout.due_fragment, 96);
+        sparseIntArray.put(R.layout.due_pay_fragment, 97);
+        sparseIntArray.put(R.layout.duty_leave_fragment, 98);
+        sparseIntArray.put(R.layout.equipment_fragment, 99);
+        sparseIntArray.put(R.layout.evaluation_fragment, 100);
+        sparseIntArray.put(R.layout.exam_fragment, 101);
+        sparseIntArray.put(R.layout.experement_fragment, 102);
+        sparseIntArray.put(R.layout.fee_fragment, 103);
+        sparseIntArray.put(R.layout.fragment_achievements, 104);
+        sparseIntArray.put(R.layout.fragment_asiet_sem_reg, 105);
+        sparseIntArray.put(R.layout.fragment_asiet_trans_reg_history, 106);
+        sparseIntArray.put(R.layout.fragment_attendance_by_day, 107);
+        sparseIntArray.put(R.layout.fragment_attendance_calendar_view, 108);
+        sparseIntArray.put(R.layout.fragment_attendance_day_wise, 109);
+        sparseIntArray.put(R.layout.fragment_booking, 110);
+        sparseIntArray.put(R.layout.fragment_booking_history, 111);
+        sparseIntArray.put(R.layout.fragment_books, 112);
+        sparseIntArray.put(R.layout.fragment_books_records, 113);
+        sparseIntArray.put(R.layout.fragment_calendar, 114);
+        sparseIntArray.put(R.layout.fragment_course_attended, 115);
+        sparseIntArray.put(R.layout.fragment_course_survey, 116);
+        sparseIntArray.put(R.layout.fragment_course_survey_questions, 117);
+        sparseIntArray.put(R.layout.fragment_course_survey_subjects, 118);
+        sparseIntArray.put(R.layout.fragment_dash_table_view, 119);
+        sparseIntArray.put(R.layout.fragment_dashboard, 120);
+        sparseIntArray.put(R.layout.fragment_day_wise_time_table, 121);
+        sparseIntArray.put(R.layout.fragment_direct_apply, 122);
+        sparseIntArray.put(R.layout.fragment_dues_main, 123);
+        sparseIntArray.put(R.layout.fragment_exam_main, 124);
+        sparseIntArray.put(R.layout.fragment_exam_receipt, 125);
+        sparseIntArray.put(R.layout.fragment_exam_registration, 126);
+        sparseIntArray.put(R.layout.fragment_exam_registration_main, 127);
+        sparseIntArray.put(R.layout.fragment_exam_subject, 128);
+        sparseIntArray.put(R.layout.fragment_exam_update, 129);
+        sparseIntArray.put(R.layout.fragment_exam_view, 130);
+        sparseIntArray.put(R.layout.fragment_fee_arts, 131);
+        sparseIntArray.put(R.layout.fragment_fee_engineer, 132);
+        sparseIntArray.put(R.layout.fragment_fee_list, 133);
+        sparseIntArray.put(R.layout.fragment_fee_main, 134);
+        sparseIntArray.put(R.layout.fragment_fee_medical, 135);
+        sparseIntArray.put(R.layout.fragment_fee_partial, 136);
+        sparseIntArray.put(R.layout.fragment_fields, 137);
+        sparseIntArray.put(R.layout.fragment_funded_research, 138);
+        sparseIntArray.put(R.layout.fragment_gateway_details, 139);
+        sparseIntArray.put(R.layout.fragment_graduate_exit_survey_list, 140);
+        sparseIntArray.put(R.layout.fragment_graduate_exit_survey_questions, 141);
+        sparseIntArray.put(R.layout.fragment_hostel_att_view, 142);
+        sparseIntArray.put(R.layout.fragment_hostel_attendance, 143);
+        sparseIntArray.put(R.layout.fragment_hostel_attendance_parent_fragment, 144);
+        sparseIntArray.put(R.layout.fragment_hostel_fee_confirm_fragment, 145);
+        sparseIntArray.put(R.layout.fragment_hostel_fee_palai, 146);
+        sparseIntArray.put(R.layout.fragment_hostel_fee_tkm, 147);
+        sparseIntArray.put(R.layout.fragment_hostel_mits, 148);
+        sparseIntArray.put(R.layout.fragment_hostel_new, 149);
+        sparseIntArray.put(R.layout.fragment_hostel_non_mits, 150);
+        sparseIntArray.put(R.layout.fragment_hostel_partial, 151);
+        sparseIntArray.put(R.layout.fragment_hostel_receipt, 152);
+        sparseIntArray.put(R.layout.fragment_instructions_page, 153);
+        sparseIntArray.put(R.layout.fragment_internship, 154);
+        sparseIntArray.put(R.layout.fragment_kmea, 155);
+        sparseIntArray.put(R.layout.fragment_lab, 156);
+        sparseIntArray.put(R.layout.fragment_leave, 157);
+        sparseIntArray.put(R.layout.fragment_leave_management, 158);
+        sparseIntArray.put(R.layout.fragment_membership, 159);
+        sparseIntArray.put(R.layout.fragment_mess, 160);
+        sparseIntArray.put(R.layout.fragment_message, 161);
+        sparseIntArray.put(R.layout.fragment_mooc_course, 162);
+        sparseIntArray.put(R.layout.fragment_order_history, 163);
+        sparseIntArray.put(R.layout.fragment_palai_sem_reg, 164);
+        sparseIntArray.put(R.layout.fragment_pay_web, 165);
+        sparseIntArray.put(R.layout.fragment_payment_webview, 166);
+        sparseIntArray.put(R.layout.fragment_po_questions_new, 167);
+        sparseIntArray.put(R.layout.fragment_po_survey, 168);
+        sparseIntArray.put(R.layout.fragment_po_survey_questions, 169);
+        sparseIntArray.put(R.layout.fragment_position_held, 170);
+        sparseIntArray.put(R.layout.fragment_profile, 171);
+        sparseIntArray.put(R.layout.fragment_program_outcome, 172);
+        sparseIntArray.put(R.layout.fragment_project_work, 173);
+        sparseIntArray.put(R.layout.fragment_publication, 174);
+        sparseIntArray.put(R.layout.fragment_qualified_examination, 175);
+        sparseIntArray.put(R.layout.fragment_quiz, 176);
+        sparseIntArray.put(R.layout.fragment_quiz_questions, 177);
+        sparseIntArray.put(R.layout.fragment_quiz_result, 178);
+        sparseIntArray.put(R.layout.fragment_registration, 179);
+        sparseIntArray.put(R.layout.fragment_revaluation, 180);
+        sparseIntArray.put(R.layout.fragment_revaluation_fee, 181);
+        sparseIntArray.put(R.layout.fragment_revaluation_receipt, 182);
+        sparseIntArray.put(R.layout.fragment_revaluation_update, 183);
+        sparseIntArray.put(R.layout.fragment_revaluation_view, 184);
+        sparseIntArray.put(R.layout.fragment_scholarship, 185);
+        sparseIntArray.put(R.layout.fragment_sent_items, 186);
+        sparseIntArray.put(R.layout.fragment_sport, 187);
+        sparseIntArray.put(R.layout.fragment_stationary_main, 188);
+        sparseIntArray.put(R.layout.fragment_store, 189);
+        sparseIntArray.put(R.layout.fragment_subject_registration, 190);
+        sparseIntArray.put(R.layout.fragment_survey, 191);
+        sparseIntArray.put(R.layout.fragment_teacher_survey_list, 192);
+        sparseIntArray.put(R.layout.fragment_teacher_survey_questions, 193);
+        sparseIntArray.put(R.layout.fragment_transport, 194);
+        sparseIntArray.put(R.layout.fragment_transport_buspass, 195);
+        sparseIntArray.put(R.layout.fragment_transport_fee, 196);
+        sparseIntArray.put(R.layout.fragment_transport_history, 197);
+        sparseIntArray.put(R.layout.fragment_transport_receipt, 198);
+        sparseIntArray.put(R.layout.fragment_transport_reg_history, 199);
+        sparseIntArray.put(R.layout.fragment_webview, 200);
+        sparseIntArray.put(R.layout.grievance_doc_dialog, 201);
+        sparseIntArray.put(R.layout.grievance_fragment, 202);
+        sparseIntArray.put(R.layout.home_work_files_dialog, 203);
+        sparseIntArray.put(R.layout.home_work_fragment, 204);
+        sparseIntArray.put(R.layout.hostel_fragment_tkm, 205);
+        sparseIntArray.put(R.layout.internal_result_fragment, 206);
+        sparseIntArray.put(R.layout.lab_due_fragment, 207);
+        sparseIntArray.put(R.layout.lab_list_fragment, 208);
+        sparseIntArray.put(R.layout.lab_practical_fragment, 209);
+        sparseIntArray.put(R.layout.live_tv_fragment, 210);
+        sparseIntArray.put(R.layout.logout_change_password_fragment, 211);
+        sparseIntArray.put(R.layout.manage_activity_fragment, 212);
+        sparseIntArray.put(R.layout.material_fragment, 213);
+        sparseIntArray.put(R.layout.medical_fragment, 214);
+        sparseIntArray.put(R.layout.module_test_fragment, 215);
+        sparseIntArray.put(R.layout.notice_fragment, 216);
+        sparseIntArray.put(R.layout.online_class_fragment, 217);
+        sparseIntArray.put(R.layout.placement_fragment, 218);
+        sparseIntArray.put(R.layout.program_outcome_main_fragment, 219);
+        sparseIntArray.put(R.layout.proof_file_dialog, 220);
+        sparseIntArray.put(R.layout.question_bank_fragment, 221);
+        sparseIntArray.put(R.layout.question_dialog, 222);
+        sparseIntArray.put(R.layout.receipt_fragment, 223);
+        sparseIntArray.put(R.layout.remark_fragment, 224);
+        sparseIntArray.put(R.layout.remind_dialog, 225);
+        sparseIntArray.put(R.layout.remind_dialog2, 226);
+        sparseIntArray.put(R.layout.reply_dialog, 227);
+        sparseIntArray.put(R.layout.result_fragment, 228);
+        sparseIntArray.put(R.layout.result_module_test_fragment, 229);
+        sparseIntArray.put(R.layout.result_tutorial_fragment, 230);
+        sparseIntArray.put(R.layout.review_dialog, 231);
+        sparseIntArray.put(R.layout.safety_fragment, 232);
+        sparseIntArray.put(R.layout.sem_list_dialog, 233);
+        sparseIntArray.put(R.layout.sem_list_dialog_session, 234);
+        sparseIntArray.put(R.layout.sem_reg_fragment, 235);
+        sparseIntArray.put(R.layout.sem_reg_view_fragment, 236);
+        sparseIntArray.put(R.layout.sem_register_list_fragment, 237);
+        sparseIntArray.put(R.layout.series_exam_fragment, 238);
+        sparseIntArray.put(R.layout.sessional_fragment, 239);
+        sparseIntArray.put(R.layout.special_class_fragment, 240);
+        sparseIntArray.put(R.layout.store_dialog, 241);
+        sparseIntArray.put(R.layout.subject_coverage_fragment, 242);
+        sparseIntArray.put(R.layout.subject_fragment, 243);
+        sparseIntArray.put(R.layout.submit_exam_dialog, 244);
+        sparseIntArray.put(R.layout.submit_home_work_dialog, 245);
+        sparseIntArray.put(R.layout.syllabus_fragment, 246);
+        sparseIntArray.put(R.layout.teacher_fragment, 247);
+        sparseIntArray.put(R.layout.time_table_fragment, 248);
+        sparseIntArray.put(R.layout.timtable_view_fragment, 249);
+        sparseIntArray.put(R.layout.tutorial_fragment, 250);
+        sparseIntArray.put(R.layout.univ_initial_page_fragment, LAYOUT_UNIVINITIALPAGEFRAGMENT);
         sparseIntArray.put(R.layout.university_exams_fragment, LAYOUT_UNIVERSITYEXAMSFRAGMENT);
         sparseIntArray.put(R.layout.university_fragment, LAYOUT_UNIVERSITYFRAGMENT);
-        sparseIntArray.put(R.layout.university_result_fragment, LAYOUT_UNIVERSITYRESULTFRAGMENT);
-        sparseIntArray.put(R.layout.upload_assignment_dialog, 254);
-        sparseIntArray.put(R.layout.upload_tutorial_dialog, 255);
-        sparseIntArray.put(R.layout.video_class_fragment, 256);
-        sparseIntArray.put(R.layout.view_counselling_fragment, 257);
-        sparseIntArray.put(R.layout.view_grievance_fragment, 258);
-        sparseIntArray.put(R.layout.view_mvjce_sem_reg_dialog, 259);
+        sparseIntArray.put(R.layout.university_result_fragment, 254);
+        sparseIntArray.put(R.layout.upload_assignment_dialog, 255);
+        sparseIntArray.put(R.layout.upload_tutorial_dialog, 256);
+        sparseIntArray.put(R.layout.video_class_fragment, 257);
+        sparseIntArray.put(R.layout.view_counselling_fragment, 258);
+        sparseIntArray.put(R.layout.view_grievance_fragment, 259);
+        sparseIntArray.put(R.layout.view_mvjce_sem_reg_dialog, 260);
     }
 
     private final ViewDataBinding internalGetViewDataBinding0(DataBindingComponent component, View view, int internalId, Object tag) {
@@ -1251,60 +1254,60 @@ public class DataBinderMapperImpl extends DataBinderMapper {
                 }
                 throw new IllegalArgumentException("The tag for dialog_update_hours is invalid. Received: " + tag);
             case 90:
+                if ("layout/dialog_verify_abc_id_0".equals(tag)) {
+                    return new DialogVerifyAbcIdBindingImpl(component, view);
+                }
+                throw new IllegalArgumentException("The tag for dialog_verify_abc_id is invalid. Received: " + tag);
+            case 91:
                 if ("layout/dialog_view_proof_0".equals(tag)) {
                     return new DialogViewProofBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for dialog_view_proof is invalid. Received: " + tag);
-            case 91:
+            case 92:
                 if ("layout/dialog_view_proof_duty_leave_0".equals(tag)) {
                     return new DialogViewProofDutyLeaveBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for dialog_view_proof_duty_leave is invalid. Received: " + tag);
-            case 92:
+            case 93:
                 if ("layout/dialog_view_subject_registration_0".equals(tag)) {
                     return new DialogViewSubjectRegistrationBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for dialog_view_subject_registration is invalid. Received: " + tag);
-            case 93:
+            case 94:
                 if ("layout/dialog_viewregistration_dialog_0".equals(tag)) {
                     return new DialogViewregistrationDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for dialog_viewregistration_dialog is invalid. Received: " + tag);
-            case 94:
+            case 95:
                 if ("layout/dialog_vision_0".equals(tag)) {
                     return new DialogVisionBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for dialog_vision is invalid. Received: " + tag);
-            case 95:
+            case 96:
                 if ("layout/due_fragment_0".equals(tag)) {
                     return new DueFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for due_fragment is invalid. Received: " + tag);
-            case 96:
+            case 97:
                 if ("layout/due_pay_fragment_0".equals(tag)) {
                     return new DuePayFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for due_pay_fragment is invalid. Received: " + tag);
-            case 97:
+            case 98:
                 if ("layout/duty_leave_fragment_0".equals(tag)) {
                     return new DutyLeaveFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for duty_leave_fragment is invalid. Received: " + tag);
-            case 98:
+            case 99:
                 if ("layout/equipment_fragment_0".equals(tag)) {
                     return new EquipmentFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for equipment_fragment is invalid. Received: " + tag);
-            case 99:
+            case 100:
                 if ("layout/evaluation_fragment_0".equals(tag)) {
                     return new EvaluationFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for evaluation_fragment is invalid. Received: " + tag);
-            case 100:
-                if ("layout/exam_fragment_0".equals(tag)) {
-                    return new ExamFragmentBindingImpl(component, view);
-                }
-                throw new IllegalArgumentException("The tag for exam_fragment is invalid. Received: " + tag);
             default:
                 return null;
         }
@@ -1313,255 +1316,255 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     private final ViewDataBinding internalGetViewDataBinding2(DataBindingComponent component, View view, int internalId, Object tag) {
         switch (internalId) {
             case 101:
+                if ("layout/exam_fragment_0".equals(tag)) {
+                    return new ExamFragmentBindingImpl(component, view);
+                }
+                throw new IllegalArgumentException("The tag for exam_fragment is invalid. Received: " + tag);
+            case 102:
                 if ("layout/experement_fragment_0".equals(tag)) {
                     return new ExperementFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for experement_fragment is invalid. Received: " + tag);
-            case 102:
+            case 103:
                 if ("layout/fee_fragment_0".equals(tag)) {
                     return new FeeFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fee_fragment is invalid. Received: " + tag);
-            case 103:
+            case 104:
                 if ("layout/fragment_achievements_0".equals(tag)) {
                     return new FragmentAchievementsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_achievements is invalid. Received: " + tag);
-            case 104:
+            case 105:
                 if ("layout/fragment_asiet_sem_reg_0".equals(tag)) {
                     return new FragmentAsietSemRegBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_asiet_sem_reg is invalid. Received: " + tag);
-            case 105:
+            case 106:
                 if ("layout/fragment_asiet_trans_reg_history_0".equals(tag)) {
                     return new FragmentAsietTransRegHistoryBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_asiet_trans_reg_history is invalid. Received: " + tag);
-            case 106:
+            case 107:
                 if ("layout/fragment_attendance_by_day_0".equals(tag)) {
                     return new FragmentAttendanceByDayBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_attendance_by_day is invalid. Received: " + tag);
-            case 107:
+            case 108:
                 if ("layout/fragment_attendance_calendar_view_0".equals(tag)) {
                     return new FragmentAttendanceCalendarViewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_attendance_calendar_view is invalid. Received: " + tag);
-            case 108:
+            case 109:
                 if ("layout/fragment_attendance_day_wise_0".equals(tag)) {
                     return new FragmentAttendanceDayWiseBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_attendance_day_wise is invalid. Received: " + tag);
-            case 109:
+            case 110:
                 if ("layout/fragment_booking_0".equals(tag)) {
                     return new FragmentBookingBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_booking is invalid. Received: " + tag);
-            case 110:
+            case 111:
                 if ("layout/fragment_booking_history_0".equals(tag)) {
                     return new FragmentBookingHistoryBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_booking_history is invalid. Received: " + tag);
-            case 111:
+            case 112:
                 if ("layout/fragment_books_0".equals(tag)) {
                     return new FragmentBooksBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_books is invalid. Received: " + tag);
-            case 112:
+            case 113:
                 if ("layout/fragment_books_records_0".equals(tag)) {
                     return new FragmentBooksRecordsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_books_records is invalid. Received: " + tag);
-            case 113:
+            case 114:
                 if ("layout/fragment_calendar_0".equals(tag)) {
                     return new FragmentCalendarBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_calendar is invalid. Received: " + tag);
-            case 114:
+            case 115:
                 if ("layout/fragment_course_attended_0".equals(tag)) {
                     return new FragmentCourseAttendedBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_course_attended is invalid. Received: " + tag);
-            case 115:
+            case 116:
                 if ("layout/fragment_course_survey_0".equals(tag)) {
                     return new FragmentCourseSurveyBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_course_survey is invalid. Received: " + tag);
-            case 116:
+            case 117:
                 if ("layout/fragment_course_survey_questions_0".equals(tag)) {
                     return new FragmentCourseSurveyQuestionsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_course_survey_questions is invalid. Received: " + tag);
-            case 117:
+            case 118:
                 if ("layout/fragment_course_survey_subjects_0".equals(tag)) {
                     return new FragmentCourseSurveySubjectsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_course_survey_subjects is invalid. Received: " + tag);
-            case 118:
+            case 119:
                 if ("layout/fragment_dash_table_view_0".equals(tag)) {
                     return new FragmentDashTableViewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_dash_table_view is invalid. Received: " + tag);
-            case 119:
+            case 120:
                 if ("layout/fragment_dashboard_0".equals(tag)) {
                     return new FragmentDashboardBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_dashboard is invalid. Received: " + tag);
-            case 120:
+            case 121:
                 if ("layout/fragment_day_wise_time_table_0".equals(tag)) {
                     return new FragmentDayWiseTimeTableBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_day_wise_time_table is invalid. Received: " + tag);
-            case 121:
+            case 122:
                 if ("layout/fragment_direct_apply_0".equals(tag)) {
                     return new FragmentDirectApplyBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_direct_apply is invalid. Received: " + tag);
-            case 122:
+            case 123:
                 if ("layout/fragment_dues_main_0".equals(tag)) {
                     return new FragmentDuesMainBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_dues_main is invalid. Received: " + tag);
-            case 123:
+            case 124:
                 if ("layout/fragment_exam_main_0".equals(tag)) {
                     return new FragmentExamMainBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_exam_main is invalid. Received: " + tag);
-            case 124:
+            case 125:
                 if ("layout/fragment_exam_receipt_0".equals(tag)) {
                     return new FragmentExamReceiptBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_exam_receipt is invalid. Received: " + tag);
-            case 125:
+            case 126:
                 if ("layout/fragment_exam_registration_0".equals(tag)) {
                     return new FragmentExamRegistrationBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_exam_registration is invalid. Received: " + tag);
-            case 126:
+            case 127:
                 if ("layout/fragment_exam_registration_main_0".equals(tag)) {
                     return new FragmentExamRegistrationMainBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_exam_registration_main is invalid. Received: " + tag);
-            case 127:
+            case 128:
                 if ("layout/fragment_exam_subject_0".equals(tag)) {
                     return new FragmentExamSubjectBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_exam_subject is invalid. Received: " + tag);
-            case 128:
+            case 129:
                 if ("layout/fragment_exam_update_0".equals(tag)) {
                     return new FragmentExamUpdateBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_exam_update is invalid. Received: " + tag);
-            case 129:
+            case 130:
                 if ("layout/fragment_exam_view_0".equals(tag)) {
                     return new FragmentExamViewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_exam_view is invalid. Received: " + tag);
-            case 130:
+            case 131:
                 if ("layout/fragment_fee_arts_0".equals(tag)) {
                     return new FragmentFeeArtsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_fee_arts is invalid. Received: " + tag);
-            case 131:
+            case 132:
                 if ("layout/fragment_fee_engineer_0".equals(tag)) {
                     return new FragmentFeeEngineerBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_fee_engineer is invalid. Received: " + tag);
-            case 132:
+            case 133:
                 if ("layout/fragment_fee_list_0".equals(tag)) {
                     return new FragmentFeeListBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_fee_list is invalid. Received: " + tag);
-            case 133:
+            case 134:
                 if ("layout/fragment_fee_main_0".equals(tag)) {
                     return new FragmentFeeMainBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_fee_main is invalid. Received: " + tag);
-            case 134:
+            case 135:
                 if ("layout/fragment_fee_medical_0".equals(tag)) {
                     return new FragmentFeeMedicalBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_fee_medical is invalid. Received: " + tag);
-            case 135:
+            case 136:
                 if ("layout/fragment_fee_partial_0".equals(tag)) {
                     return new FragmentFeePartialBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_fee_partial is invalid. Received: " + tag);
-            case 136:
+            case 137:
                 if ("layout/fragment_fields_0".equals(tag)) {
                     return new FragmentFieldsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_fields is invalid. Received: " + tag);
-            case 137:
+            case 138:
                 if ("layout/fragment_funded_research_0".equals(tag)) {
                     return new FragmentFundedResearchBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_funded_research is invalid. Received: " + tag);
-            case 138:
+            case 139:
                 if ("layout/fragment_gateway_details_0".equals(tag)) {
                     return new FragmentGatewayDetailsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_gateway_details is invalid. Received: " + tag);
-            case 139:
+            case 140:
                 if ("layout/fragment_graduate_exit_survey_list_0".equals(tag)) {
                     return new FragmentGraduateExitSurveyListBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_graduate_exit_survey_list is invalid. Received: " + tag);
-            case 140:
+            case 141:
                 if ("layout/fragment_graduate_exit_survey_questions_0".equals(tag)) {
                     return new FragmentGraduateExitSurveyQuestionsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_graduate_exit_survey_questions is invalid. Received: " + tag);
-            case 141:
+            case 142:
                 if ("layout/fragment_hostel_att_view_0".equals(tag)) {
                     return new FragmentHostelAttViewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_att_view is invalid. Received: " + tag);
-            case 142:
+            case 143:
                 if ("layout/fragment_hostel_attendance_0".equals(tag)) {
                     return new FragmentHostelAttendanceBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_attendance is invalid. Received: " + tag);
-            case 143:
+            case 144:
                 if ("layout/fragment_hostel_attendance_parent_fragment_0".equals(tag)) {
                     return new FragmentHostelAttendanceParentFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_attendance_parent_fragment is invalid. Received: " + tag);
-            case 144:
+            case 145:
                 if ("layout/fragment_hostel_fee_confirm_fragment_0".equals(tag)) {
                     return new FragmentHostelFeeConfirmFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_fee_confirm_fragment is invalid. Received: " + tag);
-            case 145:
+            case 146:
                 if ("layout/fragment_hostel_fee_palai_0".equals(tag)) {
                     return new FragmentHostelFeePalaiBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_fee_palai is invalid. Received: " + tag);
-            case 146:
+            case 147:
                 if ("layout/fragment_hostel_fee_tkm_0".equals(tag)) {
                     return new FragmentHostelFeeTkmBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_fee_tkm is invalid. Received: " + tag);
-            case 147:
+            case 148:
                 if ("layout/fragment_hostel_mits_0".equals(tag)) {
                     return new FragmentHostelMitsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_mits is invalid. Received: " + tag);
-            case 148:
+            case 149:
                 if ("layout/fragment_hostel_new_0".equals(tag)) {
                     return new FragmentHostelNewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_new is invalid. Received: " + tag);
-            case 149:
+            case 150:
                 if ("layout/fragment_hostel_non_mits_0".equals(tag)) {
                     return new FragmentHostelNonMitsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_non_mits is invalid. Received: " + tag);
-            case 150:
-                if ("layout/fragment_hostel_partial_0".equals(tag)) {
-                    return new FragmentHostelPartialBindingImpl(component, view);
-                }
-                throw new IllegalArgumentException("The tag for fragment_hostel_partial is invalid. Received: " + tag);
             default:
                 return null;
         }
@@ -1570,255 +1573,255 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     private final ViewDataBinding internalGetViewDataBinding3(DataBindingComponent component, View view, int internalId, Object tag) {
         switch (internalId) {
             case 151:
+                if ("layout/fragment_hostel_partial_0".equals(tag)) {
+                    return new FragmentHostelPartialBindingImpl(component, view);
+                }
+                throw new IllegalArgumentException("The tag for fragment_hostel_partial is invalid. Received: " + tag);
+            case 152:
                 if ("layout/fragment_hostel_receipt_0".equals(tag)) {
                     return new FragmentHostelReceiptBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_hostel_receipt is invalid. Received: " + tag);
-            case 152:
+            case 153:
                 if ("layout/fragment_instructions_page_0".equals(tag)) {
                     return new FragmentInstructionsPageBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_instructions_page is invalid. Received: " + tag);
-            case 153:
+            case 154:
                 if ("layout/fragment_internship_0".equals(tag)) {
                     return new FragmentInternshipBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_internship is invalid. Received: " + tag);
-            case 154:
+            case 155:
                 if ("layout/fragment_kmea_0".equals(tag)) {
                     return new FragmentKmeaBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_kmea is invalid. Received: " + tag);
-            case 155:
+            case 156:
                 if ("layout/fragment_lab_0".equals(tag)) {
                     return new FragmentLabBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_lab is invalid. Received: " + tag);
-            case 156:
+            case 157:
                 if ("layout/fragment_leave_0".equals(tag)) {
                     return new FragmentLeaveBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_leave is invalid. Received: " + tag);
-            case 157:
+            case 158:
                 if ("layout/fragment_leave_management_0".equals(tag)) {
                     return new FragmentLeaveManagementBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_leave_management is invalid. Received: " + tag);
-            case 158:
+            case 159:
                 if ("layout/fragment_membership_0".equals(tag)) {
                     return new FragmentMembershipBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_membership is invalid. Received: " + tag);
-            case 159:
+            case 160:
                 if ("layout/fragment_mess_0".equals(tag)) {
                     return new FragmentMessBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_mess is invalid. Received: " + tag);
-            case 160:
+            case 161:
                 if ("layout/fragment_message_0".equals(tag)) {
                     return new FragmentMessageBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_message is invalid. Received: " + tag);
-            case 161:
+            case 162:
                 if ("layout/fragment_mooc_course_0".equals(tag)) {
                     return new FragmentMoocCourseBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_mooc_course is invalid. Received: " + tag);
-            case 162:
+            case 163:
                 if ("layout/fragment_order_history_0".equals(tag)) {
                     return new FragmentOrderHistoryBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_order_history is invalid. Received: " + tag);
-            case 163:
+            case 164:
                 if ("layout/fragment_palai_sem_reg_0".equals(tag)) {
                     return new FragmentPalaiSemRegBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_palai_sem_reg is invalid. Received: " + tag);
-            case 164:
+            case 165:
                 if ("layout/fragment_pay_web_0".equals(tag)) {
                     return new FragmentPayWebBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_pay_web is invalid. Received: " + tag);
-            case 165:
+            case 166:
                 if ("layout/fragment_payment_webview_0".equals(tag)) {
                     return new FragmentPaymentWebviewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_payment_webview is invalid. Received: " + tag);
-            case 166:
+            case 167:
                 if ("layout/fragment_po_questions_new_0".equals(tag)) {
                     return new FragmentPoQuestionsNewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_po_questions_new is invalid. Received: " + tag);
-            case 167:
+            case 168:
                 if ("layout/fragment_po_survey_0".equals(tag)) {
                     return new FragmentPoSurveyBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_po_survey is invalid. Received: " + tag);
-            case 168:
+            case 169:
                 if ("layout/fragment_po_survey_questions_0".equals(tag)) {
                     return new FragmentPoSurveyQuestionsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_po_survey_questions is invalid. Received: " + tag);
-            case 169:
+            case 170:
                 if ("layout/fragment_position_held_0".equals(tag)) {
                     return new FragmentPositionHeldBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_position_held is invalid. Received: " + tag);
-            case 170:
+            case 171:
                 if ("layout/fragment_profile_0".equals(tag)) {
                     return new FragmentProfileBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_profile is invalid. Received: " + tag);
-            case 171:
+            case 172:
                 if ("layout/fragment_program_outcome_0".equals(tag)) {
                     return new FragmentProgramOutcomeBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_program_outcome is invalid. Received: " + tag);
-            case 172:
+            case 173:
                 if ("layout/fragment_project_work_0".equals(tag)) {
                     return new FragmentProjectWorkBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_project_work is invalid. Received: " + tag);
-            case 173:
+            case 174:
                 if ("layout/fragment_publication_0".equals(tag)) {
                     return new FragmentPublicationBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_publication is invalid. Received: " + tag);
-            case 174:
+            case 175:
                 if ("layout/fragment_qualified_examination_0".equals(tag)) {
                     return new FragmentQualifiedExaminationBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_qualified_examination is invalid. Received: " + tag);
-            case 175:
+            case 176:
                 if ("layout/fragment_quiz_0".equals(tag)) {
                     return new FragmentQuizBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_quiz is invalid. Received: " + tag);
-            case 176:
+            case 177:
                 if ("layout/fragment_quiz_questions_0".equals(tag)) {
                     return new FragmentQuizQuestionsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_quiz_questions is invalid. Received: " + tag);
-            case 177:
+            case 178:
                 if ("layout/fragment_quiz_result_0".equals(tag)) {
                     return new FragmentQuizResultBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_quiz_result is invalid. Received: " + tag);
-            case 178:
+            case 179:
                 if ("layout/fragment_registration_0".equals(tag)) {
                     return new FragmentRegistrationBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_registration is invalid. Received: " + tag);
-            case 179:
+            case 180:
                 if ("layout/fragment_revaluation_0".equals(tag)) {
                     return new FragmentRevaluationBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_revaluation is invalid. Received: " + tag);
-            case 180:
+            case 181:
                 if ("layout/fragment_revaluation_fee_0".equals(tag)) {
                     return new FragmentRevaluationFeeBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_revaluation_fee is invalid. Received: " + tag);
-            case 181:
+            case 182:
                 if ("layout/fragment_revaluation_receipt_0".equals(tag)) {
                     return new FragmentRevaluationReceiptBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_revaluation_receipt is invalid. Received: " + tag);
-            case 182:
+            case 183:
                 if ("layout/fragment_revaluation_update_0".equals(tag)) {
                     return new FragmentRevaluationUpdateBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_revaluation_update is invalid. Received: " + tag);
-            case 183:
+            case 184:
                 if ("layout/fragment_revaluation_view_0".equals(tag)) {
                     return new FragmentRevaluationViewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_revaluation_view is invalid. Received: " + tag);
-            case 184:
+            case 185:
                 if ("layout/fragment_scholarship_0".equals(tag)) {
                     return new FragmentScholarshipBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_scholarship is invalid. Received: " + tag);
-            case 185:
+            case 186:
                 if ("layout/fragment_sent_items_0".equals(tag)) {
                     return new FragmentSentItemsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_sent_items is invalid. Received: " + tag);
-            case 186:
+            case 187:
                 if ("layout/fragment_sport_0".equals(tag)) {
                     return new FragmentSportBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_sport is invalid. Received: " + tag);
-            case 187:
+            case 188:
                 if ("layout/fragment_stationary_main_0".equals(tag)) {
                     return new FragmentStationaryMainBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_stationary_main is invalid. Received: " + tag);
-            case 188:
+            case 189:
                 if ("layout/fragment_store_0".equals(tag)) {
                     return new FragmentStoreBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_store is invalid. Received: " + tag);
-            case 189:
+            case 190:
                 if ("layout/fragment_subject_registration_0".equals(tag)) {
                     return new FragmentSubjectRegistrationBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_subject_registration is invalid. Received: " + tag);
-            case 190:
+            case 191:
                 if ("layout/fragment_survey_0".equals(tag)) {
                     return new FragmentSurveyBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_survey is invalid. Received: " + tag);
-            case 191:
+            case 192:
                 if ("layout/fragment_teacher_survey_list_0".equals(tag)) {
                     return new FragmentTeacherSurveyListBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_teacher_survey_list is invalid. Received: " + tag);
-            case 192:
+            case 193:
                 if ("layout/fragment_teacher_survey_questions_0".equals(tag)) {
                     return new FragmentTeacherSurveyQuestionsBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_teacher_survey_questions is invalid. Received: " + tag);
-            case 193:
+            case 194:
                 if ("layout/fragment_transport_0".equals(tag)) {
                     return new FragmentTransportBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_transport is invalid. Received: " + tag);
-            case 194:
+            case 195:
                 if ("layout/fragment_transport_buspass_0".equals(tag)) {
                     return new FragmentTransportBuspassBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_transport_buspass is invalid. Received: " + tag);
-            case 195:
+            case 196:
                 if ("layout/fragment_transport_fee_0".equals(tag)) {
                     return new FragmentTransportFeeBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_transport_fee is invalid. Received: " + tag);
-            case 196:
+            case 197:
                 if ("layout/fragment_transport_history_0".equals(tag)) {
                     return new FragmentTransportHistoryBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_transport_history is invalid. Received: " + tag);
-            case 197:
+            case 198:
                 if ("layout/fragment_transport_receipt_0".equals(tag)) {
                     return new FragmentTransportReceiptBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_transport_receipt is invalid. Received: " + tag);
-            case 198:
+            case 199:
                 if ("layout/fragment_transport_reg_history_0".equals(tag)) {
                     return new FragmentTransportRegHistoryBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_transport_reg_history is invalid. Received: " + tag);
-            case 199:
+            case 200:
                 if ("layout/fragment_webview_0".equals(tag)) {
                     return new FragmentWebviewBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for fragment_webview is invalid. Received: " + tag);
-            case 200:
-                if ("layout/grievance_doc_dialog_0".equals(tag)) {
-                    return new GrievanceDocDialogBindingImpl(component, view);
-                }
-                throw new IllegalArgumentException("The tag for grievance_doc_dialog is invalid. Received: " + tag);
             default:
                 return null;
         }
@@ -1827,255 +1830,255 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     private final ViewDataBinding internalGetViewDataBinding4(DataBindingComponent component, View view, int internalId, Object tag) {
         switch (internalId) {
             case 201:
+                if ("layout/grievance_doc_dialog_0".equals(tag)) {
+                    return new GrievanceDocDialogBindingImpl(component, view);
+                }
+                throw new IllegalArgumentException("The tag for grievance_doc_dialog is invalid. Received: " + tag);
+            case 202:
                 if ("layout/grievance_fragment_0".equals(tag)) {
                     return new GrievanceFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for grievance_fragment is invalid. Received: " + tag);
-            case 202:
+            case 203:
                 if ("layout/home_work_files_dialog_0".equals(tag)) {
                     return new HomeWorkFilesDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for home_work_files_dialog is invalid. Received: " + tag);
-            case 203:
+            case 204:
                 if ("layout/home_work_fragment_0".equals(tag)) {
                     return new HomeWorkFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for home_work_fragment is invalid. Received: " + tag);
-            case 204:
+            case 205:
                 if ("layout/hostel_fragment_tkm_0".equals(tag)) {
                     return new HostelFragmentTkmBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for hostel_fragment_tkm is invalid. Received: " + tag);
-            case 205:
+            case 206:
                 if ("layout/internal_result_fragment_0".equals(tag)) {
                     return new InternalResultFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for internal_result_fragment is invalid. Received: " + tag);
-            case 206:
+            case 207:
                 if ("layout/lab_due_fragment_0".equals(tag)) {
                     return new LabDueFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for lab_due_fragment is invalid. Received: " + tag);
-            case 207:
+            case 208:
                 if ("layout/lab_list_fragment_0".equals(tag)) {
                     return new LabListFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for lab_list_fragment is invalid. Received: " + tag);
-            case 208:
+            case 209:
                 if ("layout/lab_practical_fragment_0".equals(tag)) {
                     return new LabPracticalFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for lab_practical_fragment is invalid. Received: " + tag);
-            case 209:
+            case 210:
                 if ("layout/live_tv_fragment_0".equals(tag)) {
                     return new LiveTvFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for live_tv_fragment is invalid. Received: " + tag);
-            case 210:
+            case 211:
                 if ("layout/logout_change_password_fragment_0".equals(tag)) {
                     return new LogoutChangePasswordFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for logout_change_password_fragment is invalid. Received: " + tag);
-            case 211:
+            case 212:
                 if ("layout/manage_activity_fragment_0".equals(tag)) {
                     return new ManageActivityFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for manage_activity_fragment is invalid. Received: " + tag);
-            case 212:
+            case 213:
                 if ("layout/material_fragment_0".equals(tag)) {
                     return new MaterialFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for material_fragment is invalid. Received: " + tag);
-            case 213:
+            case 214:
                 if ("layout/medical_fragment_0".equals(tag)) {
                     return new MedicalFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for medical_fragment is invalid. Received: " + tag);
-            case 214:
+            case 215:
                 if ("layout/module_test_fragment_0".equals(tag)) {
                     return new ModuleTestFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for module_test_fragment is invalid. Received: " + tag);
-            case 215:
+            case 216:
                 if ("layout/notice_fragment_0".equals(tag)) {
                     return new NoticeFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for notice_fragment is invalid. Received: " + tag);
-            case 216:
+            case 217:
                 if ("layout/online_class_fragment_0".equals(tag)) {
                     return new OnlineClassFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for online_class_fragment is invalid. Received: " + tag);
-            case 217:
+            case 218:
                 if ("layout/placement_fragment_0".equals(tag)) {
                     return new PlacementFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for placement_fragment is invalid. Received: " + tag);
-            case 218:
+            case 219:
                 if ("layout/program_outcome_main_fragment_0".equals(tag)) {
                     return new ProgramOutcomeMainFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for program_outcome_main_fragment is invalid. Received: " + tag);
-            case 219:
+            case 220:
                 if ("layout/proof_file_dialog_0".equals(tag)) {
                     return new ProofFileDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for proof_file_dialog is invalid. Received: " + tag);
-            case 220:
+            case 221:
                 if ("layout/question_bank_fragment_0".equals(tag)) {
                     return new QuestionBankFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for question_bank_fragment is invalid. Received: " + tag);
-            case 221:
+            case 222:
                 if ("layout/question_dialog_0".equals(tag)) {
                     return new QuestionDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for question_dialog is invalid. Received: " + tag);
-            case 222:
+            case 223:
                 if ("layout/receipt_fragment_0".equals(tag)) {
                     return new ReceiptFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for receipt_fragment is invalid. Received: " + tag);
-            case 223:
+            case 224:
                 if ("layout/remark_fragment_0".equals(tag)) {
                     return new RemarkFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for remark_fragment is invalid. Received: " + tag);
-            case 224:
+            case 225:
                 if ("layout/remind_dialog_0".equals(tag)) {
                     return new RemindDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for remind_dialog is invalid. Received: " + tag);
-            case 225:
+            case 226:
                 if ("layout/remind_dialog2_0".equals(tag)) {
                     return new RemindDialog2BindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for remind_dialog2 is invalid. Received: " + tag);
-            case 226:
+            case 227:
                 if ("layout/reply_dialog_0".equals(tag)) {
                     return new ReplyDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for reply_dialog is invalid. Received: " + tag);
-            case 227:
+            case 228:
                 if ("layout/result_fragment_0".equals(tag)) {
                     return new ResultFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for result_fragment is invalid. Received: " + tag);
-            case 228:
+            case 229:
                 if ("layout/result_module_test_fragment_0".equals(tag)) {
                     return new ResultModuleTestFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for result_module_test_fragment is invalid. Received: " + tag);
-            case 229:
+            case 230:
                 if ("layout/result_tutorial_fragment_0".equals(tag)) {
                     return new ResultTutorialFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for result_tutorial_fragment is invalid. Received: " + tag);
-            case 230:
+            case 231:
                 if ("layout/review_dialog_0".equals(tag)) {
                     return new ReviewDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for review_dialog is invalid. Received: " + tag);
-            case 231:
+            case 232:
                 if ("layout/safety_fragment_0".equals(tag)) {
                     return new SafetyFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for safety_fragment is invalid. Received: " + tag);
-            case 232:
+            case 233:
                 if ("layout/sem_list_dialog_0".equals(tag)) {
                     return new SemListDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for sem_list_dialog is invalid. Received: " + tag);
-            case 233:
+            case 234:
                 if ("layout/sem_list_dialog_session_0".equals(tag)) {
                     return new SemListDialogSessionBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for sem_list_dialog_session is invalid. Received: " + tag);
-            case 234:
+            case 235:
                 if ("layout/sem_reg_fragment_0".equals(tag)) {
                     return new SemRegFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for sem_reg_fragment is invalid. Received: " + tag);
-            case 235:
+            case 236:
                 if ("layout/sem_reg_view_fragment_0".equals(tag)) {
                     return new SemRegViewFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for sem_reg_view_fragment is invalid. Received: " + tag);
-            case 236:
+            case 237:
                 if ("layout/sem_register_list_fragment_0".equals(tag)) {
                     return new SemRegisterListFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for sem_register_list_fragment is invalid. Received: " + tag);
-            case 237:
+            case 238:
                 if ("layout/series_exam_fragment_0".equals(tag)) {
                     return new SeriesExamFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for series_exam_fragment is invalid. Received: " + tag);
-            case 238:
+            case 239:
                 if ("layout/sessional_fragment_0".equals(tag)) {
                     return new SessionalFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for sessional_fragment is invalid. Received: " + tag);
-            case 239:
+            case 240:
                 if ("layout/special_class_fragment_0".equals(tag)) {
                     return new SpecialClassFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for special_class_fragment is invalid. Received: " + tag);
-            case 240:
+            case 241:
                 if ("layout/store_dialog_0".equals(tag)) {
                     return new StoreDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for store_dialog is invalid. Received: " + tag);
-            case 241:
+            case 242:
                 if ("layout/subject_coverage_fragment_0".equals(tag)) {
                     return new SubjectCoverageFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for subject_coverage_fragment is invalid. Received: " + tag);
-            case 242:
+            case 243:
                 if ("layout/subject_fragment_0".equals(tag)) {
                     return new SubjectFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for subject_fragment is invalid. Received: " + tag);
-            case 243:
+            case 244:
                 if ("layout/submit_exam_dialog_0".equals(tag)) {
                     return new SubmitExamDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for submit_exam_dialog is invalid. Received: " + tag);
-            case 244:
+            case 245:
                 if ("layout/submit_home_work_dialog_0".equals(tag)) {
                     return new SubmitHomeWorkDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for submit_home_work_dialog is invalid. Received: " + tag);
-            case 245:
+            case 246:
                 if ("layout/syllabus_fragment_0".equals(tag)) {
                     return new SyllabusFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for syllabus_fragment is invalid. Received: " + tag);
-            case 246:
+            case 247:
                 if ("layout/teacher_fragment_0".equals(tag)) {
                     return new TeacherFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for teacher_fragment is invalid. Received: " + tag);
-            case 247:
+            case 248:
                 if ("layout/time_table_fragment_0".equals(tag)) {
                     return new TimeTableFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for time_table_fragment is invalid. Received: " + tag);
-            case 248:
+            case 249:
                 if ("layout/timtable_view_fragment_0".equals(tag)) {
                     return new TimtableViewFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for timtable_view_fragment is invalid. Received: " + tag);
-            case 249:
+            case 250:
                 if ("layout/tutorial_fragment_0".equals(tag)) {
                     return new TutorialFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for tutorial_fragment is invalid. Received: " + tag);
-            case 250:
-                if ("layout/univ_initial_page_fragment_0".equals(tag)) {
-                    return new UnivInitialPageFragmentBindingImpl(component, view);
-                }
-                throw new IllegalArgumentException("The tag for univ_initial_page_fragment is invalid. Received: " + tag);
             default:
                 return null;
         }
@@ -2083,47 +2086,52 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
     private final ViewDataBinding internalGetViewDataBinding5(DataBindingComponent component, View view, int internalId, Object tag) {
         switch (internalId) {
-            case LAYOUT_UNIVERSITYEXAMSFRAGMENT /* 251 */:
+            case LAYOUT_UNIVINITIALPAGEFRAGMENT /* 251 */:
+                if ("layout/univ_initial_page_fragment_0".equals(tag)) {
+                    return new UnivInitialPageFragmentBindingImpl(component, view);
+                }
+                throw new IllegalArgumentException("The tag for univ_initial_page_fragment is invalid. Received: " + tag);
+            case LAYOUT_UNIVERSITYEXAMSFRAGMENT /* 252 */:
                 if ("layout/university_exams_fragment_0".equals(tag)) {
                     return new UniversityExamsFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for university_exams_fragment is invalid. Received: " + tag);
-            case LAYOUT_UNIVERSITYFRAGMENT /* 252 */:
+            case LAYOUT_UNIVERSITYFRAGMENT /* 253 */:
                 if ("layout/university_fragment_0".equals(tag)) {
                     return new UniversityFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for university_fragment is invalid. Received: " + tag);
-            case LAYOUT_UNIVERSITYRESULTFRAGMENT /* 253 */:
+            case 254:
                 if ("layout/university_result_fragment_0".equals(tag)) {
                     return new UniversityResultFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for university_result_fragment is invalid. Received: " + tag);
-            case 254:
+            case 255:
                 if ("layout/upload_assignment_dialog_0".equals(tag)) {
                     return new UploadAssignmentDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for upload_assignment_dialog is invalid. Received: " + tag);
-            case 255:
+            case 256:
                 if ("layout/upload_tutorial_dialog_0".equals(tag)) {
                     return new UploadTutorialDialogBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for upload_tutorial_dialog is invalid. Received: " + tag);
-            case 256:
+            case 257:
                 if ("layout/video_class_fragment_0".equals(tag)) {
                     return new VideoClassFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for video_class_fragment is invalid. Received: " + tag);
-            case 257:
+            case 258:
                 if ("layout/view_counselling_fragment_0".equals(tag)) {
                     return new ViewCounsellingFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for view_counselling_fragment is invalid. Received: " + tag);
-            case 258:
+            case 259:
                 if ("layout/view_grievance_fragment_0".equals(tag)) {
                     return new ViewGrievanceFragmentBindingImpl(component, view);
                 }
                 throw new IllegalArgumentException("The tag for view_grievance_fragment is invalid. Received: " + tag);
-            case 259:
+            case 260:
                 if ("layout/view_mvjce_sem_reg_dialog_0".equals(tag)) {
                     return new ViewMvjceSemRegDialogBindingImpl(component, view);
                 }
@@ -2201,258 +2209,259 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
 
         static {
-            SparseArray<String> sparseArray = new SparseArray<>(250);
+            SparseArray<String> sparseArray = new SparseArray<>(DataBinderMapperImpl.LAYOUT_UNIVINITIALPAGEFRAGMENT);
             sKeys = sparseArray;
             sparseArray.put(1, "HostelNewDetailsViewModel");
             sparseArray.put(2, "MaintenanceViewModel");
             sparseArray.put(3, "TeacherSurveyQuestionViewModel");
             sparseArray.put(0, "_all");
-            sparseArray.put(4, "achievementsViewModel");
-            sparseArray.put(5, "actionsDialogViewModel");
-            sparseArray.put(6, "activityPointViewModel");
-            sparseArray.put(7, "addAchievementsViewModel");
-            sparseArray.put(8, "addCompanyDialogViewModel");
-            sparseArray.put(9, "addCounsellingDialogViewModel");
-            sparseArray.put(10, "addCourseAttendedViewModel");
-            sparseArray.put(11, "addFundedResearchViewModel");
-            sparseArray.put(12, "addGrievanceDialogViewModel");
-            sparseArray.put(13, "addMedicalLeaveViewModel");
-            sparseArray.put(14, "addMembershipViewModel");
-            sparseArray.put(15, "addMoocCourseViewModel");
-            sparseArray.put(16, "addPositionHeldViewModel");
-            sparseArray.put(17, "addProjectWorkViewModel");
-            sparseArray.put(18, "addPublicationViewModel");
-            sparseArray.put(19, "addQualifiedExaminationViewModel");
-            sparseArray.put(20, "addRequestDialogViewModel");
-            sparseArray.put(21, "addScholarshipViewModel");
-            sparseArray.put(22, "addSportViewModel");
-            sparseArray.put(23, "addUpdateBankViewModel");
-            sparseArray.put(24, "applyDirectDutyLeaveViewModel");
-            sparseArray.put(25, "applyInternshipViewModel");
-            sparseArray.put(26, "applyPreferenceSubRegViewModel");
-            sparseArray.put(27, "applySubjectRegistrationViewModel");
-            sparseArray.put(28, "asietSemRegViewModel");
-            sparseArray.put(29, "asietTransRegViewModel");
-            sparseArray.put(30, "assignmentResultViewModel");
-            sparseArray.put(31, "assignmentSemListDialogViewModel");
-            sparseArray.put(32, "assignmentViewModel");
-            sparseArray.put(33, "attendanceByDayViewModel");
-            sparseArray.put(34, "attendanceCalendarViewViewModel");
-            sparseArray.put(35, "attendanceDayDialogViewModel");
-            sparseArray.put(36, "attendanceViewModel");
-            sparseArray.put(37, "bankDetailsViewModel");
-            sparseArray.put(38, "bookRecordViewModel");
-            sparseArray.put(39, "bookingHistoryViewModel");
-            sparseArray.put(40, "bookingViewModel");
-            sparseArray.put(41, "booksDetailsViewModel");
-            sparseArray.put(42, "booksViewModel");
-            sparseArray.put(43, "busPassViewModel");
-            sparseArray.put(44, "calendarViewModel");
-            sparseArray.put(45, "cellMember2DialogViewModel");
-            sparseArray.put(46, "cellMemberDialogViewModel");
-            sparseArray.put(47, "centralizedInfoViewModel");
-            sparseArray.put(48, "certificateRequestViewModel");
-            sparseArray.put(49, "changeInTimetableViewModel");
-            sparseArray.put(50, "changePasswordDialogViewModel");
-            sparseArray.put(51, "changeProPicDialogViewModel");
-            sparseArray.put(52, "chatViewModel");
-            sparseArray.put(53, "christSemRegViewModel");
-            sparseArray.put(54, "circularViewModel");
-            sparseArray.put(55, "coViewModel");
-            sparseArray.put(56, "commentDialogViewModel");
-            sparseArray.put(57, "commentReplyDialogViewModel");
-            sparseArray.put(58, "completionCertificateDialogViewModel");
-            sparseArray.put(59, "contactDetailsViewModel");
-            sparseArray.put(60, "counsellingViewModel");
-            sparseArray.put(61, "courseSurveyQuestionsViewModel");
-            sparseArray.put(62, "courseSurveySubjectsViewModel");
-            sparseArray.put(63, "coursesAttendedViewModel");
-            sparseArray.put(64, "covidCertificateDialogViewModel");
-            sparseArray.put(65, "covidCertificateListMainViewModel");
-            sparseArray.put(66, "covidCertificateTwoDialogViewModel");
-            sparseArray.put(67, "dashTableViewViewModel");
-            sparseArray.put(68, "dashboardViewModel");
-            sparseArray.put(69, "dayWiseTimeTableViewModel");
-            sparseArray.put(70, "directApplyViewModel");
-            sparseArray.put(71, "dueMainViewModel");
-            sparseArray.put(72, "duePayViewModel");
-            sparseArray.put(73, "dueViewModel");
-            sparseArray.put(74, "dutyLeaveViewModel");
-            sparseArray.put(75, "editRegistrationViewModel");
-            sparseArray.put(76, "equipmentViewModel");
-            sparseArray.put(77, "evaluationViewModel");
-            sparseArray.put(78, "examMainViewModel");
-            sparseArray.put(79, "examReceiptViewModel");
-            sparseArray.put(80, "examRegisterViewModel");
-            sparseArray.put(81, "examRegistrationViewModel");
-            sparseArray.put(82, "examSubjectDetailViewModel");
-            sparseArray.put(83, "examSubjectViewModel");
-            sparseArray.put(84, "examViewModel");
-            sparseArray.put(85, "examViewViewModel");
-            sparseArray.put(86, "experimentViewModel");
-            sparseArray.put(87, "feeArtsViewModel");
-            sparseArray.put(88, "feeConfirmViewModel");
-            sparseArray.put(89, "feeDetailViewModelViewModel");
-            sparseArray.put(90, "feeEngineeringViewModel");
-            sparseArray.put(91, "feeListViewModel");
-            sparseArray.put(92, "feeMainViewModel");
-            sparseArray.put(93, "feeMedicalViewModel");
-            sparseArray.put(94, "feeViewModel");
-            sparseArray.put(95, "fieldsViewModel");
-            sparseArray.put(96, "fundedResearchViewModel");
-            sparseArray.put(97, "gatewayTwoViewModel");
-            sparseArray.put(98, "gatewayViewModel");
-            sparseArray.put(99, "graduateExitSurveyViewModel");
-            sparseArray.put(100, "graduateSurveyQuestionsViewModel");
-            sparseArray.put(101, "grievanceDocDialogViewModel");
-            sparseArray.put(102, "grievanceViewModel");
-            sparseArray.put(103, "homeWorkFilesDialogViewModel");
-            sparseArray.put(104, "homeWorkViewModel");
-            sparseArray.put(105, "hostelApplyLeaveViewModel");
-            sparseArray.put(106, "hostelAttendanceParentViewModel");
-            sparseArray.put(107, "hostelAttendanceViewModel");
-            sparseArray.put(108, "hostelFeeConfirmViewModel");
-            sparseArray.put(109, "hostelFeeTkmViewModel");
-            sparseArray.put(110, "hostelMainViewModel");
-            sparseArray.put(111, "hostelMitsViewModel");
-            sparseArray.put(112, "hostelNewConfirmViewModel");
-            sparseArray.put(113, "hostelNewViewModel");
-            sparseArray.put(114, "hostelNonMitsViewModel");
-            sparseArray.put(115, "hostelPartialEditViewModel");
-            sparseArray.put(116, "hostelPartialViewModel");
-            sparseArray.put(117, "hostelViewLeaveViewModel");
-            sparseArray.put(118, "instructionsPageViewModel");
-            sparseArray.put(119, "internalResultViewModel");
-            sparseArray.put(120, "internshipViewModel");
-            sparseArray.put(121, "kmeaHostelViewModel");
-            sparseArray.put(122, "labDueViewModel");
-            sparseArray.put(123, "labListViewModel");
-            sparseArray.put(124, "labPracticalViewModel");
-            sparseArray.put(125, "labViewModel");
-            sparseArray.put(126, "leaveManagementViewModel");
-            sparseArray.put(127, "leaveViewModel");
-            sparseArray.put(128, "liveTvViewModel");
-            sparseArray.put(129, "loginViewModel");
-            sparseArray.put(130, "logoutChangePasswordViewModel");
-            sparseArray.put(131, "maceNewSemRegViewModel");
-            sparseArray.put(132, "mainViewModel");
-            sparseArray.put(133, "manageActivityViewModel");
-            sparseArray.put(134, "materialDownloadViewModel");
-            sparseArray.put(135, "materialViewModel");
-            sparseArray.put(136, "meaSemRegViewModel");
-            sparseArray.put(137, "medicalViewModel");
-            sparseArray.put(138, "membershipViewModel");
-            sparseArray.put(139, "messBookingViewModel");
-            sparseArray.put(140, "messViewModel");
-            sparseArray.put(141, "messageViewModel");
-            sparseArray.put(142, "missionDialogViewModel");
-            sparseArray.put(143, "moduleTestViewModel");
-            sparseArray.put(144, "moocCourseViewModel");
-            sparseArray.put(145, "mvjceSemRegViewModel");
-            sparseArray.put(146, "newQuizViewModel");
-            sparseArray.put(147, "newRegistrationViewModel");
-            sparseArray.put(148, "noticeViewModel");
-            sparseArray.put(149, "onlineClassViewModel");
-            sparseArray.put(150, "orderHistoryViewModel");
-            sparseArray.put(151, "orderPageViewModel");
-            sparseArray.put(152, "pOSurveyViewModel");
-            sparseArray.put(153, "palaiHostelViewModel");
-            sparseArray.put(154, "palaiNewSemRegViewModel");
-            sparseArray.put(155, "palaiSemesterRegViewModel");
-            sparseArray.put(156, "parentDetailsViewModel");
-            sparseArray.put(157, "payWebViewModel");
-            sparseArray.put(158, "paymentWebViewViewModel");
-            sparseArray.put(159, "personalDetailsViewModel");
-            sparseArray.put(160, "placementViewModel");
-            sparseArray.put(161, "poSurveyQuestionsNewViewModel");
-            sparseArray.put(162, "poSurveyQuestionsViewModel");
-            sparseArray.put(163, "positionHeldViewModel");
-            sparseArray.put(164, "profileViewModel");
-            sparseArray.put(165, "programOutcomeMainViewModel");
-            sparseArray.put(166, "programOutcomeViewModel");
-            sparseArray.put(167, "projectWorkViewModel");
-            sparseArray.put(168, "proofDutyLeaveViewModel");
-            sparseArray.put(169, "proofFileDialogViewModel");
-            sparseArray.put(170, "publicationViewModel");
-            sparseArray.put(171, "pushViewModel");
-            sparseArray.put(172, "qrFullScreenViewModel");
-            sparseArray.put(173, "qualifiedExaminationViewModel");
-            sparseArray.put(174, "questionBankViewModel");
-            sparseArray.put(175, "questionDialogViewModel");
-            sparseArray.put(176, "quizQuestionsViewModel");
-            sparseArray.put(177, "quizResultViewModel");
-            sparseArray.put(178, "reRegistrationViewModel");
-            sparseArray.put(179, "receiptViewModel");
-            sparseArray.put(180, "registrationViewModel");
-            sparseArray.put(181, "remarkViewModel");
-            sparseArray.put(182, "remindDialogViewModel");
-            sparseArray.put(183, "reminderDialogViewModel");
-            sparseArray.put(184, "replyViewModel");
-            sparseArray.put(185, "resultModuleTestViewModel");
-            sparseArray.put(186, "resultViewModel");
-            sparseArray.put(187, "revaluationFeeViewModel");
-            sparseArray.put(188, "revaluationReceiptViewModel");
-            sparseArray.put(189, "revaluationUpdateViewModel");
-            sparseArray.put(190, "revaluationViewModel");
-            sparseArray.put(191, "revaluationViewViewModel");
-            sparseArray.put(192, "reviewDialogViewModel");
-            sparseArray.put(193, "safetyViewModel");
-            sparseArray.put(194, "scholarshipViewModel");
-            sparseArray.put(195, "securityQrViewModel");
-            sparseArray.put(196, "semListDialogViewModel");
-            sparseArray.put(197, "semListDialogViewModelTwo");
-            sparseArray.put(198, "semRegViewModel");
-            sparseArray.put(199, "semRegViewViewModel");
-            sparseArray.put(200, "semRegisterListViewModel");
-            sparseArray.put(201, "sentItemViewModel");
-            sparseArray.put(202, "seriesExamViewModel");
-            sparseArray.put(203, "sessionalViewModel");
-            sparseArray.put(204, "specialClassViewModel");
-            sparseArray.put(205, "sportViewModel");
-            sparseArray.put(206, "stationaryMainViewModel");
-            sparseArray.put(207, "storeDialogViewModel");
-            sparseArray.put(208, "storeViewModel");
-            sparseArray.put(209, "subjectCoverageViewModel");
-            sparseArray.put(210, "subjectPlanViewModel");
-            sparseArray.put(211, "subjectRegStatusViewModel");
-            sparseArray.put(212, "subjectRegistrationViewModel");
-            sparseArray.put(213, "subjectViewModel");
-            sparseArray.put(214, "submitExamDialogViewModel");
-            sparseArray.put(215, "submitHomeWorkDialogViewModel");
-            sparseArray.put(216, "suggestBookViewModel");
-            sparseArray.put(217, "surveyViewModel");
-            sparseArray.put(218, "syllabusViewModel");
-            sparseArray.put(219, "teacherSurveyViewModel");
-            sparseArray.put(220, "teacherViewModel");
-            sparseArray.put(221, "timeTableViewModel");
-            sparseArray.put(222, "timetableViewViewModel");
-            sparseArray.put(223, "tkmReceiptViewModel");
-            sparseArray.put(224, "transportFeeViewModel");
-            sparseArray.put(225, "transportHistoryViewModel");
-            sparseArray.put(226, "transportRegHistoryViewModel");
-            sparseArray.put(227, "transportRegistrationViewModel");
-            sparseArray.put(228, "trasportFeePayViewModel");
-            sparseArray.put(229, "tutorialResultViewModel");
-            sparseArray.put(230, "tutorialViewModel");
-            sparseArray.put(231, "univInitialPageViewModel");
-            sparseArray.put(232, "universityExamsViewModel");
-            sparseArray.put(233, "universityResultViewModel");
-            sparseArray.put(234, "universityViewModel");
-            sparseArray.put(235, "updateAbcViewModel");
-            sparseArray.put(236, "updateHoursDirectViewModel");
-            sparseArray.put(237, "updateRegisterViewModel");
-            sparseArray.put(238, "uploadAssignmentDialogViewModel");
-            sparseArray.put(239, "uploadTutorialDialogViewModel");
-            sparseArray.put(240, "videoClassViewModel");
-            sparseArray.put(241, "viewCounsellingViewModel");
-            sparseArray.put(242, "viewGrievanceViewModel");
-            sparseArray.put(243, "viewMvjceSemRegViewModel");
-            sparseArray.put(244, "viewProofDutyLeaveViewModel");
-            sparseArray.put(245, "viewProofViewModel");
-            sparseArray.put(246, "viewRegistrationViewModel");
-            sparseArray.put(247, "viewSubjectRegistrationViewModel");
-            sparseArray.put(248, "visionDialogViewModel");
-            sparseArray.put(249, "webViewViewModel");
+            sparseArray.put(4, "abcIdVerifyViewModel");
+            sparseArray.put(5, "achievementsViewModel");
+            sparseArray.put(6, "actionsDialogViewModel");
+            sparseArray.put(7, "activityPointViewModel");
+            sparseArray.put(8, "addAchievementsViewModel");
+            sparseArray.put(9, "addCompanyDialogViewModel");
+            sparseArray.put(10, "addCounsellingDialogViewModel");
+            sparseArray.put(11, "addCourseAttendedViewModel");
+            sparseArray.put(12, "addFundedResearchViewModel");
+            sparseArray.put(13, "addGrievanceDialogViewModel");
+            sparseArray.put(14, "addMedicalLeaveViewModel");
+            sparseArray.put(15, "addMembershipViewModel");
+            sparseArray.put(16, "addMoocCourseViewModel");
+            sparseArray.put(17, "addPositionHeldViewModel");
+            sparseArray.put(18, "addProjectWorkViewModel");
+            sparseArray.put(19, "addPublicationViewModel");
+            sparseArray.put(20, "addQualifiedExaminationViewModel");
+            sparseArray.put(21, "addRequestDialogViewModel");
+            sparseArray.put(22, "addScholarshipViewModel");
+            sparseArray.put(23, "addSportViewModel");
+            sparseArray.put(24, "addUpdateBankViewModel");
+            sparseArray.put(25, "applyDirectDutyLeaveViewModel");
+            sparseArray.put(26, "applyInternshipViewModel");
+            sparseArray.put(27, "applyPreferenceSubRegViewModel");
+            sparseArray.put(28, "applySubjectRegistrationViewModel");
+            sparseArray.put(29, "asietSemRegViewModel");
+            sparseArray.put(30, "asietTransRegViewModel");
+            sparseArray.put(31, "assignmentResultViewModel");
+            sparseArray.put(32, "assignmentSemListDialogViewModel");
+            sparseArray.put(33, "assignmentViewModel");
+            sparseArray.put(34, "attendanceByDayViewModel");
+            sparseArray.put(35, "attendanceCalendarViewViewModel");
+            sparseArray.put(36, "attendanceDayDialogViewModel");
+            sparseArray.put(37, "attendanceViewModel");
+            sparseArray.put(38, "bankDetailsViewModel");
+            sparseArray.put(39, "bookRecordViewModel");
+            sparseArray.put(40, "bookingHistoryViewModel");
+            sparseArray.put(41, "bookingViewModel");
+            sparseArray.put(42, "booksDetailsViewModel");
+            sparseArray.put(43, "booksViewModel");
+            sparseArray.put(44, "busPassViewModel");
+            sparseArray.put(45, "calendarViewModel");
+            sparseArray.put(46, "cellMember2DialogViewModel");
+            sparseArray.put(47, "cellMemberDialogViewModel");
+            sparseArray.put(48, "centralizedInfoViewModel");
+            sparseArray.put(49, "certificateRequestViewModel");
+            sparseArray.put(50, "changeInTimetableViewModel");
+            sparseArray.put(51, "changePasswordDialogViewModel");
+            sparseArray.put(52, "changeProPicDialogViewModel");
+            sparseArray.put(53, "chatViewModel");
+            sparseArray.put(54, "christSemRegViewModel");
+            sparseArray.put(55, "circularViewModel");
+            sparseArray.put(56, "coViewModel");
+            sparseArray.put(57, "commentDialogViewModel");
+            sparseArray.put(58, "commentReplyDialogViewModel");
+            sparseArray.put(59, "completionCertificateDialogViewModel");
+            sparseArray.put(60, "contactDetailsViewModel");
+            sparseArray.put(61, "counsellingViewModel");
+            sparseArray.put(62, "courseSurveyQuestionsViewModel");
+            sparseArray.put(63, "courseSurveySubjectsViewModel");
+            sparseArray.put(64, "coursesAttendedViewModel");
+            sparseArray.put(65, "covidCertificateDialogViewModel");
+            sparseArray.put(66, "covidCertificateListMainViewModel");
+            sparseArray.put(67, "covidCertificateTwoDialogViewModel");
+            sparseArray.put(68, "dashTableViewViewModel");
+            sparseArray.put(69, "dashboardViewModel");
+            sparseArray.put(70, "dayWiseTimeTableViewModel");
+            sparseArray.put(71, "directApplyViewModel");
+            sparseArray.put(72, "dueMainViewModel");
+            sparseArray.put(73, "duePayViewModel");
+            sparseArray.put(74, "dueViewModel");
+            sparseArray.put(75, "dutyLeaveViewModel");
+            sparseArray.put(76, "editRegistrationViewModel");
+            sparseArray.put(77, "equipmentViewModel");
+            sparseArray.put(78, "evaluationViewModel");
+            sparseArray.put(79, "examMainViewModel");
+            sparseArray.put(80, "examReceiptViewModel");
+            sparseArray.put(81, "examRegisterViewModel");
+            sparseArray.put(82, "examRegistrationViewModel");
+            sparseArray.put(83, "examSubjectDetailViewModel");
+            sparseArray.put(84, "examSubjectViewModel");
+            sparseArray.put(85, "examViewModel");
+            sparseArray.put(86, "examViewViewModel");
+            sparseArray.put(87, "experimentViewModel");
+            sparseArray.put(88, "feeArtsViewModel");
+            sparseArray.put(89, "feeConfirmViewModel");
+            sparseArray.put(90, "feeDetailViewModelViewModel");
+            sparseArray.put(91, "feeEngineeringViewModel");
+            sparseArray.put(92, "feeListViewModel");
+            sparseArray.put(93, "feeMainViewModel");
+            sparseArray.put(94, "feeMedicalViewModel");
+            sparseArray.put(95, "feeViewModel");
+            sparseArray.put(96, "fieldsViewModel");
+            sparseArray.put(97, "fundedResearchViewModel");
+            sparseArray.put(98, "gatewayTwoViewModel");
+            sparseArray.put(99, "gatewayViewModel");
+            sparseArray.put(100, "graduateExitSurveyViewModel");
+            sparseArray.put(101, "graduateSurveyQuestionsViewModel");
+            sparseArray.put(102, "grievanceDocDialogViewModel");
+            sparseArray.put(103, "grievanceViewModel");
+            sparseArray.put(104, "homeWorkFilesDialogViewModel");
+            sparseArray.put(105, "homeWorkViewModel");
+            sparseArray.put(106, "hostelApplyLeaveViewModel");
+            sparseArray.put(107, "hostelAttendanceParentViewModel");
+            sparseArray.put(108, "hostelAttendanceViewModel");
+            sparseArray.put(109, "hostelFeeConfirmViewModel");
+            sparseArray.put(110, "hostelFeeTkmViewModel");
+            sparseArray.put(111, "hostelMainViewModel");
+            sparseArray.put(112, "hostelMitsViewModel");
+            sparseArray.put(113, "hostelNewConfirmViewModel");
+            sparseArray.put(114, "hostelNewViewModel");
+            sparseArray.put(115, "hostelNonMitsViewModel");
+            sparseArray.put(116, "hostelPartialEditViewModel");
+            sparseArray.put(117, "hostelPartialViewModel");
+            sparseArray.put(118, "hostelViewLeaveViewModel");
+            sparseArray.put(119, "instructionsPageViewModel");
+            sparseArray.put(120, "internalResultViewModel");
+            sparseArray.put(121, "internshipViewModel");
+            sparseArray.put(122, "kmeaHostelViewModel");
+            sparseArray.put(123, "labDueViewModel");
+            sparseArray.put(124, "labListViewModel");
+            sparseArray.put(125, "labPracticalViewModel");
+            sparseArray.put(126, "labViewModel");
+            sparseArray.put(127, "leaveManagementViewModel");
+            sparseArray.put(128, "leaveViewModel");
+            sparseArray.put(129, "liveTvViewModel");
+            sparseArray.put(130, "loginViewModel");
+            sparseArray.put(131, "logoutChangePasswordViewModel");
+            sparseArray.put(132, "maceNewSemRegViewModel");
+            sparseArray.put(133, "mainViewModel");
+            sparseArray.put(134, "manageActivityViewModel");
+            sparseArray.put(135, "materialDownloadViewModel");
+            sparseArray.put(136, "materialViewModel");
+            sparseArray.put(137, "meaSemRegViewModel");
+            sparseArray.put(138, "medicalViewModel");
+            sparseArray.put(139, "membershipViewModel");
+            sparseArray.put(140, "messBookingViewModel");
+            sparseArray.put(141, "messViewModel");
+            sparseArray.put(142, "messageViewModel");
+            sparseArray.put(143, "missionDialogViewModel");
+            sparseArray.put(144, "moduleTestViewModel");
+            sparseArray.put(145, "moocCourseViewModel");
+            sparseArray.put(146, "mvjceSemRegViewModel");
+            sparseArray.put(147, "newQuizViewModel");
+            sparseArray.put(148, "newRegistrationViewModel");
+            sparseArray.put(149, "noticeViewModel");
+            sparseArray.put(150, "onlineClassViewModel");
+            sparseArray.put(151, "orderHistoryViewModel");
+            sparseArray.put(152, "orderPageViewModel");
+            sparseArray.put(153, "pOSurveyViewModel");
+            sparseArray.put(154, "palaiHostelViewModel");
+            sparseArray.put(155, "palaiNewSemRegViewModel");
+            sparseArray.put(156, "palaiSemesterRegViewModel");
+            sparseArray.put(157, "parentDetailsViewModel");
+            sparseArray.put(158, "payWebViewModel");
+            sparseArray.put(159, "paymentWebViewViewModel");
+            sparseArray.put(160, "personalDetailsViewModel");
+            sparseArray.put(161, "placementViewModel");
+            sparseArray.put(162, "poSurveyQuestionsNewViewModel");
+            sparseArray.put(163, "poSurveyQuestionsViewModel");
+            sparseArray.put(164, "positionHeldViewModel");
+            sparseArray.put(165, "profileViewModel");
+            sparseArray.put(166, "programOutcomeMainViewModel");
+            sparseArray.put(167, "programOutcomeViewModel");
+            sparseArray.put(168, "projectWorkViewModel");
+            sparseArray.put(169, "proofDutyLeaveViewModel");
+            sparseArray.put(170, "proofFileDialogViewModel");
+            sparseArray.put(171, "publicationViewModel");
+            sparseArray.put(172, "pushViewModel");
+            sparseArray.put(173, "qrFullScreenViewModel");
+            sparseArray.put(174, "qualifiedExaminationViewModel");
+            sparseArray.put(175, "questionBankViewModel");
+            sparseArray.put(176, "questionDialogViewModel");
+            sparseArray.put(177, "quizQuestionsViewModel");
+            sparseArray.put(178, "quizResultViewModel");
+            sparseArray.put(179, "reRegistrationViewModel");
+            sparseArray.put(180, "receiptViewModel");
+            sparseArray.put(181, "registrationViewModel");
+            sparseArray.put(182, "remarkViewModel");
+            sparseArray.put(183, "remindDialogViewModel");
+            sparseArray.put(184, "reminderDialogViewModel");
+            sparseArray.put(185, "replyViewModel");
+            sparseArray.put(186, "resultModuleTestViewModel");
+            sparseArray.put(187, "resultViewModel");
+            sparseArray.put(188, "revaluationFeeViewModel");
+            sparseArray.put(189, "revaluationReceiptViewModel");
+            sparseArray.put(190, "revaluationUpdateViewModel");
+            sparseArray.put(191, "revaluationViewModel");
+            sparseArray.put(192, "revaluationViewViewModel");
+            sparseArray.put(193, "reviewDialogViewModel");
+            sparseArray.put(194, "safetyViewModel");
+            sparseArray.put(195, "scholarshipViewModel");
+            sparseArray.put(196, "securityQrViewModel");
+            sparseArray.put(197, "semListDialogViewModel");
+            sparseArray.put(198, "semListDialogViewModelTwo");
+            sparseArray.put(199, "semRegViewModel");
+            sparseArray.put(200, "semRegViewViewModel");
+            sparseArray.put(201, "semRegisterListViewModel");
+            sparseArray.put(202, "sentItemViewModel");
+            sparseArray.put(203, "seriesExamViewModel");
+            sparseArray.put(204, "sessionalViewModel");
+            sparseArray.put(205, "specialClassViewModel");
+            sparseArray.put(206, "sportViewModel");
+            sparseArray.put(207, "stationaryMainViewModel");
+            sparseArray.put(208, "storeDialogViewModel");
+            sparseArray.put(209, "storeViewModel");
+            sparseArray.put(210, "subjectCoverageViewModel");
+            sparseArray.put(211, "subjectPlanViewModel");
+            sparseArray.put(212, "subjectRegStatusViewModel");
+            sparseArray.put(213, "subjectRegistrationViewModel");
+            sparseArray.put(214, "subjectViewModel");
+            sparseArray.put(215, "submitExamDialogViewModel");
+            sparseArray.put(216, "submitHomeWorkDialogViewModel");
+            sparseArray.put(217, "suggestBookViewModel");
+            sparseArray.put(218, "surveyViewModel");
+            sparseArray.put(219, "syllabusViewModel");
+            sparseArray.put(220, "teacherSurveyViewModel");
+            sparseArray.put(221, "teacherViewModel");
+            sparseArray.put(222, "timeTableViewModel");
+            sparseArray.put(223, "timetableViewViewModel");
+            sparseArray.put(224, "tkmReceiptViewModel");
+            sparseArray.put(225, "transportFeeViewModel");
+            sparseArray.put(226, "transportHistoryViewModel");
+            sparseArray.put(227, "transportRegHistoryViewModel");
+            sparseArray.put(228, "transportRegistrationViewModel");
+            sparseArray.put(229, "trasportFeePayViewModel");
+            sparseArray.put(230, "tutorialResultViewModel");
+            sparseArray.put(231, "tutorialViewModel");
+            sparseArray.put(232, "univInitialPageViewModel");
+            sparseArray.put(233, "universityExamsViewModel");
+            sparseArray.put(234, "universityResultViewModel");
+            sparseArray.put(235, "universityViewModel");
+            sparseArray.put(236, "updateAbcViewModel");
+            sparseArray.put(237, "updateHoursDirectViewModel");
+            sparseArray.put(238, "updateRegisterViewModel");
+            sparseArray.put(239, "uploadAssignmentDialogViewModel");
+            sparseArray.put(240, "uploadTutorialDialogViewModel");
+            sparseArray.put(241, "videoClassViewModel");
+            sparseArray.put(242, "viewCounsellingViewModel");
+            sparseArray.put(243, "viewGrievanceViewModel");
+            sparseArray.put(244, "viewMvjceSemRegViewModel");
+            sparseArray.put(245, "viewProofDutyLeaveViewModel");
+            sparseArray.put(246, "viewProofViewModel");
+            sparseArray.put(247, "viewRegistrationViewModel");
+            sparseArray.put(248, "viewSubjectRegistrationViewModel");
+            sparseArray.put(249, "visionDialogViewModel");
+            sparseArray.put(250, "webViewViewModel");
         }
     }
 
@@ -2463,7 +2472,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         }
 
         static {
-            HashMap<String, Integer> hashMap = new HashMap<>(259);
+            HashMap<String, Integer> hashMap = new HashMap<>(260);
             sKeys = hashMap;
             hashMap.put("layout/actions2_dialog_0", Integer.valueOf(R.layout.actions2_dialog));
             hashMap.put("layout/actions_dialog_0", Integer.valueOf(R.layout.actions_dialog));
@@ -2554,6 +2563,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             hashMap.put("layout/dialog_suggest_book_0", Integer.valueOf(R.layout.dialog_suggest_book));
             hashMap.put("layout/dialog_transport_fee_pay_0", Integer.valueOf(R.layout.dialog_transport_fee_pay));
             hashMap.put("layout/dialog_update_hours_0", Integer.valueOf(R.layout.dialog_update_hours));
+            hashMap.put("layout/dialog_verify_abc_id_0", Integer.valueOf(R.layout.dialog_verify_abc_id));
             hashMap.put("layout/dialog_view_proof_0", Integer.valueOf(R.layout.dialog_view_proof));
             hashMap.put("layout/dialog_view_proof_duty_leave_0", Integer.valueOf(R.layout.dialog_view_proof_duty_leave));
             hashMap.put("layout/dialog_view_subject_registration_0", Integer.valueOf(R.layout.dialog_view_subject_registration));

@@ -67,7 +67,7 @@ public class DialogApplyHostelAttendanceBindingImpl extends DialogApplyHostelAtt
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (105 != variableId) {
+        if (106 != variableId) {
             return false;
         }
         setHostelApplyLeaveViewModel((HostelApplyLeaveViewModel) variable);

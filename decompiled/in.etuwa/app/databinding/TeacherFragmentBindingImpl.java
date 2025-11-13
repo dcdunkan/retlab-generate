@@ -72,7 +72,7 @@ public class TeacherFragmentBindingImpl extends TeacherFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (220 != variableId) {
+        if (221 != variableId) {
             return false;
         }
         setTeacherViewModel((TeacherViewModel) variable);

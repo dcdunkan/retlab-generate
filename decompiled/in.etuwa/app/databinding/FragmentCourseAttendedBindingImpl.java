@@ -65,7 +65,7 @@ public class FragmentCourseAttendedBindingImpl extends FragmentCourseAttendedBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (63 != variableId) {
+        if (64 != variableId) {
             return false;
         }
         setCoursesAttendedViewModel((CoursesAttendedViewModel) variable);

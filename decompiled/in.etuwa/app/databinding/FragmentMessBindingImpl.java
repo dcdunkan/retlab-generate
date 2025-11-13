@@ -63,7 +63,7 @@ public class FragmentMessBindingImpl extends FragmentMessBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (140 != variableId) {
+        if (141 != variableId) {
             return false;
         }
         setMessViewModel((MessViewModel) variable);

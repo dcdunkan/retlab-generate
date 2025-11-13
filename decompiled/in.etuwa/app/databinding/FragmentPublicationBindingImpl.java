@@ -65,7 +65,7 @@ public class FragmentPublicationBindingImpl extends FragmentPublicationBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (170 != variableId) {
+        if (171 != variableId) {
             return false;
         }
         setPublicationViewModel((PublicationViewModel) variable);

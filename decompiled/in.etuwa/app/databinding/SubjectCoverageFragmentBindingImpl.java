@@ -66,7 +66,7 @@ public class SubjectCoverageFragmentBindingImpl extends SubjectCoverageFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (209 != variableId) {
+        if (210 != variableId) {
             return false;
         }
         setSubjectCoverageViewModel((SubjectCoverageViewModel) variable);

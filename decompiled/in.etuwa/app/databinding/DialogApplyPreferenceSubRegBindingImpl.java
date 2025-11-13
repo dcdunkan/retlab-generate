@@ -95,7 +95,7 @@ public class DialogApplyPreferenceSubRegBindingImpl extends DialogApplyPreferenc
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (26 != variableId) {
+        if (27 != variableId) {
             return false;
         }
         setApplyPreferenceSubRegViewModel((ApplyPreferenceSubRegViewModel) variable);

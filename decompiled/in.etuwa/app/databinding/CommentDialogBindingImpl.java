@@ -73,7 +73,7 @@ public class CommentDialogBindingImpl extends CommentDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (56 != variableId) {
+        if (57 != variableId) {
             return false;
         }
         setCommentDialogViewModel((CommentDialogViewModel) variable);
