@@ -2239,16 +2239,20 @@ export namespace examregister {
         type: string;
     }
     export interface ExamCourseResponse {
+        abc_id_verification?: boolean;
         academicyear: string;
         admission_no: string;
         batch_id: string;
         can_update?: boolean;
         category: string;
+        check_box_status?: boolean;
         course: Array<ExamCourse>;
         degree: string;
         end_date: string;
         error: string;
         exam_year: string;
+        fee_status?: boolean;
+        fixedHeadGroup: Array<FixedHeadGroup>;
         is_registered?: boolean;
         login?: boolean;
         month: string;
@@ -2332,6 +2336,14 @@ export namespace examregister {
         error: string;
         exam: Array<ExamView>;
         login?: boolean;
+    }
+    export interface FixedHeadGroup {
+        amount: string;
+        fixedHeadGrpId: string;
+        head: string;
+        is_eligible: string;
+        no?: number;
+        type: string;
     }
     export interface RegistrationSlipResponse {
         file_url: string;

@@ -39,8 +39,6 @@ for (
 const parser = new Parser();
 parser.setLanguage(JavaGrammar as Parser.Language);
 
-const finalLogs: unknown[] = [];
-
 const structure: Namespace["children"] = [];
 
 for (const modelFile of modelFiles) {
@@ -294,11 +292,6 @@ writeNodes(structure);
 await fs.writeFile("./generated/models.d.ts", writer.toString());
 
 process.on("exit", (code) => {
-    console.log(`\x1b[34mCOLLECTED LOGS\x1b[0m`);
-    for (const log of finalLogs) {
-        if (Array.isArray(log)) console.log(...log);
-        else console.log(log);
-    }
     console.log(`\x1b[34mprocess complete: ${code === 0 ? "success" : "failed"}\x1b[0m`);
 });
 

@@ -1546,6 +1546,27 @@
       "requests": [
         {
           "v": "16",
+          "name": "Get Semesters",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/app/semesterlist",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
           "name": "Get Dash",
           "method": "GET",
           "endpoint": "<<BASE_URL>>/app/profile",
@@ -1996,7 +2017,7 @@
           "v": "16",
           "name": "Get Exam Course",
           "method": "POST",
-          "endpoint": "<<BASE_URL>>/UniversityExam/examcourse",
+          "endpoint": "<<BASE_URL>>/UniversityExam/examcoursenew",
           "auth": {
             "authType": "inherit",
             "authActive": true
@@ -2466,6 +2487,55 @@
           "name": "Get Exam Revaluation Update",
           "method": "POST",
           "endpoint": "<<BASE_URL>>/UniversityExam/updaterevaluation",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Abc View",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/app/viewAbcID",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Verify Abc Id",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/UniversityExam/verifyabcid",
           "auth": {
             "authType": "inherit",
             "authActive": true

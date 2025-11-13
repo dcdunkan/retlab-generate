@@ -13,10 +13,6 @@ import {
 } from "./helpers.js";
 import { structure } from "./models.js";
 
-process.on("exit", (code) => {
-    console.log(`\x1b[34mprocess complete: ${code === 0 ? "success" : "failed"}\x1b[0m`);
-});
-
 const parser = new Parser();
 parser.setLanguage(JavaGrammar as Parser.Language);
 
@@ -800,7 +796,11 @@ for (const repository of repositories) {
                 } else if (markerAnnotation.name === "FormUrlEncoded") {
                     contentType = "application/x-www-form-urlencoded";
 
-                    // console.log(method.name, method.serviceMethod.fields.map((f) => f.annotation?.type));
+                    const fieldMaps = method.serviceMethod.fields.filter((f) => f.annotation?.type === "field_map");
+                    // if (fieldMaps.length > 0 && fieldMaps.length !== method.serviceMethod.fields.length) {
+                    //     console.dir(method, { depth: 22 });
+                    //     throw new Error("kek");
+                    // }
                 } else if (markerAnnotation.name === "Multipart") {
                     contentType = "multipart/form-data";
 
