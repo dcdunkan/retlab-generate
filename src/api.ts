@@ -22,10 +22,15 @@ const API_ENDPOINTS_FILE = path.join(DATA_DIR, "network", "ApiEndPoints.java");
 const apiEndpointsContent = await fs.readFile(API_ENDPOINTS_FILE, "utf-8");
 const apiEndpointsTree = parser.parse(apiEndpointsContent);
 
-const classBody = apiEndpointsTree.rootNode.descendantsOfType("class_declaration")[0]
+const classBody = apiEndpointsTree.rootNode
+    .descendantsOfType("class_declaration")[0]
     ?.childForFieldName("body")!;
 
-const API_ENDPOINTS_CLASS_FIELD_MODIFIERS = new Set(["public", "static", "final"]);
+const API_ENDPOINTS_CLASS_FIELD_MODIFIERS = new Set([
+    "public",
+    "static",
+    "final",
+]);
 
 const apiEndpoints: Record<string, string> = {};
 
@@ -36,8 +41,14 @@ for (const fieldDecl of classBody.descendantsOfType("field_declaration")) {
         if (fieldModifiers == null) {
             throw new Error("expected modifiers");
         }
-        const modifierTypes = fieldModifiers.children.map((modifier) => modifier.type);
-        if (new Set(modifierTypes).symmetricDifference(API_ENDPOINTS_CLASS_FIELD_MODIFIERS).size !== 0) {
+        const modifierTypes = fieldModifiers.children.map(
+            (modifier) => modifier.type,
+        );
+        if (
+            new Set(modifierTypes).symmetricDifference(
+                API_ENDPOINTS_CLASS_FIELD_MODIFIERS,
+            ).size !== 0
+        ) {
             throw new Error("expected to match all modifiers");
         }
         const fieldDeclarator = fieldDecl.childForFieldName("declarator")!;
@@ -48,14 +59,18 @@ for (const fieldDecl of classBody.descendantsOfType("field_declaration")) {
                 const fragment = value.child(1)!;
                 const endpointName = name.text.trim();
                 if (endpointName in apiEndpoints) {
-                    throw new Error("endpoint with the same name already exists?");
+                    throw new Error(
+                        "endpoint with the same name already exists?",
+                    );
                 }
                 apiEndpoints[endpointName] = fragment.text.trim();
             } else {
                 throw new Error("unhandled string case");
             }
         } else {
-            throw new Error("Unhandled typeof value, maybe constant reference? or a concat?");
+            throw new Error(
+                "Unhandled typeof value, maybe constant reference? or a concat?",
+            );
         }
     } else if (fieldType === "ApiEndPoints") {
         // do nothing
@@ -67,16 +82,27 @@ for (const fieldDecl of classBody.descendantsOfType("field_declaration")) {
 const apiEndpointsFileWriter = new CodeBlockWriter();
 apiEndpointsFileWriter.write("export enum ApiEndPoints").block(() => {
     for (const name in apiEndpoints) {
-        apiEndpointsFileWriter.write(name).write(" = ").write(`"${apiEndpoints[name]}",`).newLine();
+        apiEndpointsFileWriter
+            .write(name)
+            .write(" = ")
+            .write(`"${apiEndpoints[name]}",`)
+            .newLine();
     }
 });
-await fs.writeFile("./generated/api-endpoints.ts", apiEndpointsFileWriter.toString());
+await fs.writeFile(
+    "./generated/api-endpoints.ts",
+    apiEndpointsFileWriter.toString(),
+);
 
 const API_SERVICE_FILE = path.join(DATA_DIR, "network", "ApiService.java");
 const apiServiceContent = await fs.readFile(API_SERVICE_FILE, "utf-8");
 const apiServiceTree = parser.parse(apiServiceContent);
 const apiServiceFileImports = getImports(apiServiceTree);
-const API_SERVICE_FILE_SAME_SCOPE_IDENTIFIERS = ["ApiClient", "ApiHelper", "ApiEndpoints"];
+const API_SERVICE_FILE_SAME_SCOPE_IDENTIFIERS = [
+    "ApiClient",
+    "ApiHelper",
+    "ApiEndpoints",
+];
 
 const interfaceBody = apiServiceTree.rootNode
     .descendantsOfType("interface_declaration")[0]
@@ -84,13 +110,22 @@ const interfaceBody = apiServiceTree.rootNode
 
 const apiServiceMethods: Record<string, ApiMethodCall[]> = {};
 
-for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) {
+for (
+    const methodDecl of interfaceBody.descendantsOfType(
+        "method_declaration",
+    )
+) {
     const modifiersNode = methodDecl.child(0)!;
     if (modifiersNode.type !== "modifiers") {
         throw new Error("expected method to have modifier");
     }
-    const modifiers = parseModifiers(modifiersNode, { currentPath: API_SERVICE_FILE, ignoreList: [] });
-    if (modifiers.filter((mod) => mod.type === "marker_annotation").length > 1) {
+    const modifiers = parseModifiers(modifiersNode, {
+        currentPath: API_SERVICE_FILE,
+        ignoreList: [],
+    });
+    if (
+        modifiers.filter((mod) => mod.type === "marker_annotation").length > 1
+    ) {
         console.log(nodePosition(methodDecl, API_SERVICE_FILE));
         throw new Error("too many marker annotations");
     }
@@ -103,7 +138,9 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
     const nameNode = methodDecl.childForFieldName("name");
     const parametersNode = methodDecl.childForFieldName("parameters");
     if (typeNode == null || nameNode == null || parametersNode == null) {
-        throw new Error("expected each method to have a type, name, and parameters");
+        throw new Error(
+            "expected each method to have a type, name, and parameters",
+        );
     }
 
     const methodName = nameNode.text.trim();
@@ -118,7 +155,8 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
 
     for (const parameterNode of parametersNode.children) {
         if (
-            parameterNode.type === "(" || parameterNode.type === ")"
+            parameterNode.type === "("
+            || parameterNode.type === ")"
             || parameterNode.type === ","
         ) {
             // ignore
@@ -126,12 +164,17 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
             if (parameterNode.firstChild?.type === "modifiers") {
                 const parameterTypeNode = parameterNode.childForFieldName("type")!;
                 const parameterIdentiferNode = parameterNode.childForFieldName("name")!;
-                const parameterModifiers = parseModifiers(parameterNode.firstChild, {
-                    currentPath: API_SERVICE_FILE,
-                    ignoreList: [],
-                });
+                const parameterModifiers = parseModifiers(
+                    parameterNode.firstChild,
+                    {
+                        currentPath: API_SERVICE_FILE,
+                        ignoreList: [],
+                    },
+                );
                 if (parameterModifiers.length !== 1) {
-                    throw new Error("expected only one annotation modifier for parameter");
+                    throw new Error(
+                        "expected only one annotation modifier for parameter",
+                    );
                 }
                 const parameterAnnotationModifier = parseParameterAnnotationModiifer(parameterModifiers[0]!);
 
@@ -147,7 +190,9 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
                 });
             } else {
                 console.log(nodePosition(parameterNode, API_SERVICE_FILE));
-                throw new Error("expected api method parameter to have a modifier");
+                throw new Error(
+                    "expected api method parameter to have a modifier",
+                );
             }
         } else {
             console.log(nodePosition(parameterNode, API_SERVICE_FILE));
@@ -158,7 +203,8 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
     // some custom validation i wrote to ensure this stuff is actually structured as i figured out:
     if (modifiers.length === 1) {
         if (
-            modifiers[0]?.type === "annotation" && ["POST", "GET"].includes(modifiers[0].name)
+            modifiers[0]?.type === "annotation"
+            && ["POST", "GET"].includes(modifiers[0].name)
             && modifiers[0].arguments.length === 1
         ) {
             if (methodFields.length === 0) {
@@ -169,8 +215,13 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
                     throw new Error("cool");
                 }
             } else if (methodFields.length === 2) {
-                const types = new Set(methodFields.map((x) => x.annotation?.type!));
-                if (types.symmetricDifference(new Set(["body", "path"])).size !== 0) {
+                const types = new Set(
+                    methodFields.map((x) => x.annotation?.type!),
+                );
+                if (
+                    types.symmetricDifference(new Set(["body", "path"]))
+                        .size !== 0
+                ) {
                     throw new Error("what");
                 }
             } else {
@@ -192,7 +243,13 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
     };
     for (const call of apiServiceMethods[methodName]) {
         if (!typeEquivalency(call.type, apiMethodCall.type)) {
-            console.warn("warn:", "mismatch in return types", methodName, call.type, apiMethodCall.type);
+            console.warn(
+                "warn:",
+                "mismatch in return types",
+                methodName,
+                call.type,
+                apiMethodCall.type,
+            );
             // throw new Error("the return type should be same for all signatures"); // should they?
         }
         // const annotations = apiMethodCall.annotations
@@ -210,11 +267,30 @@ for (const methodDecl of interfaceBody.descendantsOfType("method_declaration")) 
     apiServiceMethods[methodName].push(apiMethodCall);
 }
 
+// const apiSpecWriter = new CodeBlockWriter();
+// main_method_loop:
+// for (const methodName in apiServiceMethods) {
+// 	const methods = apiServiceMethods[methodName]!;
+// 	for (let i = 0; i < methods.length - 1; i++) {
+// 		if (!typeEquivalency(methods[i]?.type!, methods[i + 1]?.type!)) {
+// 			console.warn("warn: missed in previous check");
+// 			continue main_method_loop;
+// 		}
+// 	}
+
+// }
+
+// await fs.writeFile("./generated/api-spec.d.ts", apiSpecWriter.toString(), "utf-8");
+
 const API_HELPER_FILE = path.join(DATA_DIR, "network", "ApiHelper.java");
 const apiHelperFileContent = await fs.readFile(API_HELPER_FILE, "utf-8");
 const apiHelperFileTree = parser.parse(apiHelperFileContent);
 const apiHelperFileImports = getImports(apiHelperFileTree);
-const API_HELPER_FILE_SAME_SCOPE_IDENTIFIERS = ["ApiClient", "ApiService", "ApiEndpoints"];
+const API_HELPER_FILE_SAME_SCOPE_IDENTIFIERS = [
+    "ApiClient",
+    "ApiService",
+    "ApiEndpoints",
+];
 
 const apiHelperClassBody = apiHelperFileTree.rootNode
     .descendantsOfType("class_declaration")[0]
@@ -222,23 +298,37 @@ const apiHelperClassBody = apiHelperFileTree.rootNode
 
 const EXPECTED_METHOD_MODIFIERS = new Set(["public", "final"]);
 
-const apiHelperMethods: Record<string, (ApiMethodCall & { serviceMethod: ApiMethodCall })[]> = {};
+const apiHelperMethods: Record<
+    string,
+    (ApiMethodCall & { serviceMethod: ApiMethodCall })[]
+> = {};
 
-for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaration")) {
+for (
+    const methodDecl of apiHelperClassBody.descendantsOfType(
+        "method_declaration",
+    )
+) {
     const modifiersNode = methodDecl.child(0)!;
     if (modifiersNode.type !== "modifiers") {
         throw new Error("expected method to have modifier");
     }
-    const modifiers = parseModifiers(modifiersNode, { currentPath: API_HELPER_FILE, ignoreList: [] });
+    const modifiers = parseModifiers(modifiersNode, {
+        currentPath: API_HELPER_FILE,
+        ignoreList: [],
+    });
     if (modifiers.length !== 2) {
         console.log(nodePosition(methodDecl, API_HELPER_FILE));
         throw new Error("mismatch in number of modifiers");
     }
     const methodRawModifiers = new Set(
-        modifiers.filter((modifier) => modifier.type === "raw")
+        modifiers
+            .filter((modifier) => modifier.type === "raw")
             .map((modifier) => modifier.value),
     );
-    if (methodRawModifiers.symmetricDifference(EXPECTED_METHOD_MODIFIERS).size !== 0) {
+    if (
+        methodRawModifiers.symmetricDifference(EXPECTED_METHOD_MODIFIERS)
+            .size !== 0
+    ) {
         throw new Error("mismatch in modifiers");
     }
 
@@ -246,8 +336,15 @@ for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaratio
     const nameNode = methodDecl.childForFieldName("name");
     const parametersNode = methodDecl.childForFieldName("parameters");
     const bodyNode = methodDecl.childForFieldName("body");
-    if (typeNode == null || nameNode == null || parametersNode == null || bodyNode == null) {
-        throw new Error("expected each method to have a type, name, parameters and body");
+    if (
+        typeNode == null
+        || nameNode == null
+        || parametersNode == null
+        || bodyNode == null
+    ) {
+        throw new Error(
+            "expected each method to have a type, name, parameters and body",
+        );
     }
 
     const methodName = nameNode.text.trim();
@@ -261,7 +358,8 @@ for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaratio
     const methodFields: ApiMethodField[] = [];
     for (const parameterNode of parametersNode.children) {
         if (
-            parameterNode.type === "(" || parameterNode.type === ")"
+            parameterNode.type === "("
+            || parameterNode.type === ")"
             || parameterNode.type === ","
         ) {
             // ignore
@@ -284,9 +382,14 @@ for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaratio
                     required: false,
                 });
             } else {
-                console.log(parameterNode.firstChild?.type, parameterNode.toString());
+                console.log(
+                    parameterNode.firstChild?.type,
+                    parameterNode.toString(),
+                );
                 console.log(nodePosition(parameterNode, API_HELPER_FILE));
-                throw new Error("expected api method parameter to have no modifiers");
+                throw new Error(
+                    "expected api method parameter to have no modifiers",
+                );
             }
         } else {
             console.log(nodePosition(parameterNode, API_HELPER_FILE));
@@ -318,8 +421,9 @@ for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaratio
     if (!(apiServiceMethodName in apiServiceMethods)) {
         throw new Error("should be impossible");
     }
-    const args = returnMethod.childForFieldName("arguments")!.children
-        .filter((arg) => !["(", ",", ")"].includes(arg.type));
+    const args = returnMethod
+        .childForFieldName("arguments")!
+        .children.filter((arg) => !["(", ",", ")"].includes(arg.type));
     if (args.some((arg) => arg.type !== "identifier")) {
         throw new Error("non identiifiers?");
     }
@@ -328,8 +432,7 @@ for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaratio
 
     let matchingApiServiceMethodDef: ApiMethodCall | null = null;
     for (const methodDef of apiServiceMethodDefs) {
-        if (methodDef.fields.length !== args.length)
-            continue;
+        if (methodDef.fields.length !== args.length) continue;
 
         for (let i = 0; i < methodDef.fields.length; i++) {
             const methodDefField = methodDef.fields[i];
@@ -372,13 +475,19 @@ for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaratio
                     const identifier = methodArguments.child(1)!;
                     if (identifier.type !== "identifier") throw new Error("k");
 
-                    const fieldIndex = methodFields.findIndex((field) => identifier.text === field.name);
+                    const fieldIndex = methodFields.findIndex(
+                        (field) => identifier.text === field.name,
+                    );
                     if (fieldIndex == -1) {
-                        throw new Error("the field must be present in the method fields");
+                        throw new Error(
+                            "the field must be present in the method fields",
+                        );
                     }
                     const methodDefField = matchingApiServiceMethodDef.fields[fieldIndex];
                     if (methodDefField == null) {
-                        throw new Error("there should be a field in the matching method");
+                        throw new Error(
+                            "there should be a field in the matching method",
+                        );
                     }
                     methodDefField.required = true;
                 } else {
@@ -394,15 +503,28 @@ for (const methodDecl of apiHelperClassBody.descendantsOfType("method_declaratio
         }
     }
 
-    if (typeEquivalency(matchingApiServiceMethodDef.type, methodReturnType) == false) {
-        console.log(methodName, matchingApiServiceMethodDef.type, methodReturnType);
+    if (
+        typeEquivalency(matchingApiServiceMethodDef.type, methodReturnType)
+            == false
+    ) {
+        console.log(
+            methodName,
+            matchingApiServiceMethodDef.type,
+            methodReturnType,
+        );
         throw new Error("the return types should match");
     }
 
     apiHelperMethods[methodName] ??= [];
     for (const call of apiHelperMethods[methodName]) {
         if (!typeEquivalency(call.type, methodReturnType)) {
-            console.warn("warn:", "mismatch in return types", methodName, call.type, methodReturnType);
+            console.warn(
+                "warn:",
+                "mismatch in return types",
+                methodName,
+                call.type,
+                methodReturnType,
+            );
             // throw new Error("the return type should be same for all signatures");
         }
     }
@@ -425,7 +547,11 @@ interface Repository {
 
 const repositories: Repository[] = [];
 
-for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true })) {
+for (
+    const entry of await fs.readdir(REPOSITORIES_DIR, {
+        withFileTypes: true,
+    })
+) {
     if (!entry.isFile() || extname(entry.name) !== ".java") {
         throw new Error("unexpected");
     }
@@ -450,7 +576,11 @@ for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true }))
         .descendantsOfType("class_declaration")[0]
         ?.childForFieldName("body")!;
 
-    for (const methodDecl of classBody.children.filter((child) => child.type === "method_declaration")) {
+    for (
+        const methodDecl of classBody.children.filter(
+            (child) => child.type === "method_declaration",
+        )
+    ) {
         const modifiersNode = methodDecl.child(0)!;
         if (modifiersNode.type !== "modifiers") {
             throw new Error("expected method to have modifier");
@@ -463,10 +593,14 @@ for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true }))
             continue;
         }
         const methodRawModifiers = new Set(
-            modifiers.filter((modifier) => modifier.type === "raw")
+            modifiers
+                .filter((modifier) => modifier.type === "raw")
                 .map((modifier) => modifier.value),
         );
-        if (methodRawModifiers.symmetricDifference(EXPECTED_METHOD_MODIFIERS).size !== 0) {
+        if (
+            methodRawModifiers.symmetricDifference(EXPECTED_METHOD_MODIFIERS)
+                .size !== 0
+        ) {
             // console.log(nodePosition(modifiersNode, currentFilePath));
             // throw new Error("mismatch in modifiers");
             continue;
@@ -476,8 +610,15 @@ for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true }))
         const nameNode = methodDecl.childForFieldName("name");
         const parametersNode = methodDecl.childForFieldName("parameters");
         const bodyNode = methodDecl.childForFieldName("body");
-        if (typeNode == null || nameNode == null || parametersNode == null || bodyNode == null) {
-            throw new Error("expected each method to have a type, name, parameters and body");
+        if (
+            typeNode == null
+            || nameNode == null
+            || parametersNode == null
+            || bodyNode == null
+        ) {
+            throw new Error(
+                "expected each method to have a type, name, parameters and body",
+            );
         }
 
         const methodName = nameNode.text.trim();
@@ -493,7 +634,8 @@ for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true }))
         const methodFields: ApiMethodField[] = [];
         for (const parameterNode of parametersNode.children) {
             if (
-                parameterNode.type === "(" || parameterNode.type === ")"
+                parameterNode.type === "("
+                || parameterNode.type === ")"
                 || parameterNode.type === ","
             ) {
                 // ignore
@@ -516,9 +658,14 @@ for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true }))
                         required: false,
                     });
                 } else {
-                    console.log(parameterNode.firstChild?.type, parameterNode.toString());
+                    console.log(
+                        parameterNode.firstChild?.type,
+                        parameterNode.toString(),
+                    );
                     console.log(nodePosition(parameterNode, currentFilePath));
-                    throw new Error("expected api method parameter to have no modifiers");
+                    throw new Error(
+                        "expected api method parameter to have no modifiers",
+                    );
                 }
             } else {
                 console.log(nodePosition(parameterNode, currentFilePath));
@@ -542,29 +689,34 @@ for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true }))
         if (returnMethod.type !== "method_invocation") {
             continue;
         }
-        if (returnMethod.childForFieldName("object")?.text !== "this.apiHelper") {
+        if (
+            returnMethod.childForFieldName("object")?.text !== "this.apiHelper"
+        ) {
             throw new Error("kek");
         }
         const apiHelperMethodName = returnMethod.childForFieldName("name")?.text!;
         if (!(apiHelperMethodName in apiHelperMethods)) {
             throw new Error("should be impossible");
         }
-        const args = returnMethod.childForFieldName("arguments")!.children
-            .filter((arg) => !["(", ",", ")"].includes(arg.type));
+        const args = returnMethod
+            .childForFieldName("arguments")!
+            .children.filter((arg) => !["(", ",", ")"].includes(arg.type));
         if (args.some((arg) => arg.type !== "identifier")) {
             throw new Error("non identiifiers?");
         }
 
         let matchingApiHelperMethodDef:
-            | ApiMethodCall & {
+            | (ApiMethodCall & {
                 serviceMethod: ApiMethodCall;
-            }
+            })
             | null = null;
 
-        matching_method_search_loop:
-        for (const methodDef of apiHelperMethods[apiHelperMethodName]!) {
-            if (methodDef.fields.length !== args.length)
-                continue;
+        matching_method_search_loop: for (
+            const methodDef of apiHelperMethods[
+                apiHelperMethodName
+            ]!
+        ) {
+            if (methodDef.fields.length !== args.length) continue;
 
             for (let i = 0; i < methodDef.fields.length; i++) {
                 const methodDefField = methodDef.fields[i];
@@ -607,15 +759,22 @@ for (const entry of await fs.readdir(REPOSITORIES_DIR, { withFileTypes: true }))
                         && methodName.text === "checkNotNullParameter"
                     ) {
                         const identifier = methodArguments.child(1)!;
-                        if (identifier.type !== "identifier") throw new Error("k");
+                        if (identifier.type !== "identifier")
+                            throw new Error("k");
 
-                        const fieldIndex = methodFields.findIndex((field) => identifier.text === field.name);
+                        const fieldIndex = methodFields.findIndex(
+                            (field) => identifier.text === field.name,
+                        );
                         if (fieldIndex == -1) {
-                            throw new Error("the field must be present in the method fields");
+                            throw new Error(
+                                "the field must be present in the method fields",
+                            );
                         }
                         const methodDefField = matchingApiHelperMethodDef.fields[fieldIndex];
                         if (methodDefField == null) {
-                            throw new Error("there should be a field in the matching method");
+                            throw new Error(
+                                "there should be a field in the matching method",
+                            );
                         }
                         methodDefField.required = true;
                     } else {
@@ -647,14 +806,16 @@ interface HoppscotchRequestHeader {
     description: string;
 }
 
-type HoppscotchAuth = {
-    authType: "inherit";
-    authActive: boolean;
-} | {
-    authType: "bearer";
-    authActive: boolean;
-    token: string;
-};
+type HoppscotchAuth =
+    | {
+        authType: "inherit";
+        authActive: boolean;
+    }
+    | {
+        authType: "bearer";
+        authActive: boolean;
+        token: string;
+    };
 
 interface HoppscotchRequestVariable {
     key: string;
@@ -753,16 +914,26 @@ for (const repository of repositories) {
     };
 
     for (const methodName in repository.methods) {
-        for (const [index, method] of repository.methods[methodName]!.entries()) {
-            const annotation = method.serviceMethod.annotations.find((a) => a.type === "annotation");
-            if (annotation == null || annotation.arguments.length !== 1) throw new Error("kek");
+        for (
+            const [index, method] of repository.methods[
+                methodName
+            ]!.entries()
+        ) {
+            const annotation = method.serviceMethod.annotations.find(
+                (a) => a.type === "annotation",
+            );
+            if (annotation == null || annotation.arguments.length !== 1)
+                throw new Error("kek");
             if (!VALID_METHODS.includes(annotation.name)) {
                 throw new Error("invalid method");
             }
 
-            let endpoint = annotationArgumentToString(annotation.arguments[0]!, {
-                fieldNamespaces: { "ApiEndPoints": apiEndpoints },
-            });
+            let endpoint = annotationArgumentToString(
+                annotation.arguments[0]!,
+                {
+                    fieldNamespaces: { ApiEndPoints: apiEndpoints },
+                },
+            );
 
             let body: HoppscotchRequestV16["body"] = {
                 contentType: null,
@@ -778,9 +949,13 @@ for (const repository of repositories) {
                     | "multipart/form-data"
                     | null;
 
-                const markerAnnotation = method.serviceMethod.annotations.find((a) => a.type === "marker_annotation");
+                const markerAnnotation = method.serviceMethod.annotations.find(
+                    (a) => a.type === "marker_annotation",
+                );
                 if (markerAnnotation == null) {
-                    const bodyFields = method.serviceMethod.fields.filter((f) => f.annotation?.type === "body");
+                    const bodyFields = method.serviceMethod.fields.filter(
+                        (f) => f.annotation?.type === "body",
+                    );
                     if (bodyFields.length === 0) {
                         contentType = null;
                     } else if (bodyFields.length === 1) {
@@ -796,7 +971,9 @@ for (const repository of repositories) {
                 } else if (markerAnnotation.name === "FormUrlEncoded") {
                     contentType = "application/x-www-form-urlencoded";
 
-                    const fieldMaps = method.serviceMethod.fields.filter((f) => f.annotation?.type === "field_map");
+                    const fieldMaps = method.serviceMethod.fields.filter(
+                        (f) => f.annotation?.type === "field_map",
+                    );
                     // if (fieldMaps.length > 0 && fieldMaps.length !== method.serviceMethod.fields.length) {
                     //     console.dir(method, { depth: 22 });
                     //     throw new Error("kek");
@@ -823,9 +1000,14 @@ for (const repository of repositories) {
                     if (field.annotation && field.annotation.type === "path") {
                         const paramString = "{" + field.annotation.param + "}";
                         if (!endpoint.includes(paramString)) {
-                            throw new Error("expected param to be present in endpoint");
+                            throw new Error(
+                                "expected param to be present in endpoint",
+                            );
                         }
-                        endpoint = endpoint.replaceAll(paramString, `<<${field.annotation.param}>>`);
+                        endpoint = endpoint.replaceAll(
+                            paramString,
+                            `<<${field.annotation.param}>>`,
+                        );
                         requestVariables.push({
                             key: field.annotation.param,
                             value: "",
@@ -837,7 +1019,8 @@ for (const repository of repositories) {
 
             const hoppscotchRequest: HoppscotchRequestV16 = {
                 v: "16",
-                name: methodNameToName(methodName) + (index > 0 ? ` ${index + 1}` : ""),
+                name: methodNameToName(methodName)
+                    + (index > 0 ? ` ${index + 1}` : ""),
                 method: annotation.name,
                 endpoint: `<<BASE_URL>>/${endpoint}`,
                 auth: {
@@ -884,35 +1067,37 @@ function resolvedTypeToJSONString(type: ResolvedType): string {
             throw new Error("cannot find the class in namespace");
         }
 
-        const {
-            required,
-            optional,
-        } = Object.groupBy(
+        const { required, optional } = Object.groupBy(
             Object.values(classModel.fields),
-            (f) => f.required ? "required" : "optional",
+            (f) => (f.required ? "required" : "optional"),
         );
 
         let out: string[] = [];
 
         const c = (fields: Field[]) =>
             JSON.stringify(
-                fields.reduce((p, c) => {
-                    const defaultValue = c.type === "string"
-                        ? ""
-                        : c.type === "boolean"
-                        ? false
-                        : null;
+                fields.reduce(
+                    (p, c) => {
+                        const defaultValue = c.type === "string"
+                            ? ""
+                            : c.type === "boolean"
+                            ? false
+                            : null;
 
-                    if (defaultValue == null) {
-                        throw new Error("unhandled type");
-                    }
+                        if (defaultValue == null) {
+                            throw new Error("unhandled type");
+                        }
 
-                    p[c.serialisedName || c.name] = defaultValue;
-                    return p;
-                }, {} as Record<string, "" | false>),
+                        p[c.serialisedName || c.name] = defaultValue;
+                        return p;
+                    },
+                    {} as Record<string, "" | false>,
+                ),
                 null,
                 "\t",
-            ).split("\n").slice(1, -1);
+            )
+                .split("\n")
+                .slice(1, -1);
 
         if (required != null) {
             out.push("\t// required");
@@ -930,9 +1115,12 @@ function resolvedTypeToJSONString(type: ResolvedType): string {
     throw new Error("kek");
 }
 
-function annotationArgumentToString(arg: AnnotationArgument, options: {
-    fieldNamespaces: Record<string, Record<string, string>>;
-}): string {
+function annotationArgumentToString(
+    arg: AnnotationArgument,
+    options: {
+        fieldNamespaces: Record<string, Record<string, string>>;
+    },
+): string {
     if (arg.type === "field_access") {
         if (arg.object in options.fieldNamespaces) {
             return options.fieldNamespaces[arg.object]![arg.field]!;
@@ -941,7 +1129,10 @@ function annotationArgumentToString(arg: AnnotationArgument, options: {
     } else if (arg.type === "string_literal") {
         return arg.value;
     } else {
-        throw new Error("should not be converted to string, or unhandled conversion case: " + arg.type);
+        throw new Error(
+            "should not be converted to string, or unhandled conversion case: "
+                + arg.type,
+        );
     }
 }
 
@@ -949,9 +1140,13 @@ function methodNameToName(methodName: string): string {
     if (methodName.endsWith("ApiCall"))
         methodName = methodName.slice(0, -"ApiCall".length);
 
-    methodName = methodName[0]!.toUpperCase() + methodName.slice(1).replaceAll(/([A-Z])/g, " $1");
+    methodName = methodName[0]!.toUpperCase()
+        + methodName.slice(1).replaceAll(/([A-Z])/g, " $1");
 
-    return methodName.split(" ").map((part) => ["Url", "Po"].includes(part) ? part.toUpperCase() : part).join(" ");
+    return methodName
+        .split(" ")
+        .map((part) => ["Url", "Po"].includes(part) ? part.toUpperCase() : part)
+        .join(" ");
 }
 
 // const grouped = Object.values(apiServiceMethods).flat()

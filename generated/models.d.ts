@@ -1,39 +1,39 @@
-export interface DownloadModel {
+export type DownloadModel = {
     id?: number;
     position?: number;
-}
-export interface PushModel {
+};
+export type PushModel = {
     id?: number;
     msg: string;
     time: string;
     title: string;
-}
-export interface SemRegError {
+};
+export type SemRegError = {
     semester_id: Array<string>;
-}
-export interface SemRegSuccessResponse {
+};
+export type SemRegSuccessResponse = {
     error: string;
     login?: boolean;
     message: string;
     success?: boolean;
-}
-export interface Semester {
+};
+export type Semester = {
     id: string;
     name: string;
-}
-export interface SuccessResponse {
+};
+export type SuccessResponse = {
     error: string;
     login?: boolean;
     message: string;
     success?: boolean;
-}
+};
 export namespace video {
-    export interface VideoResponse {
+    export type VideoResponse = {
         error: string;
         login?: boolean;
         videos: Array<Videos>;
-    }
-    export interface Videos {
+    };
+    export type Videos = {
         date: string;
         description: string;
         id: string;
@@ -42,17 +42,17 @@ export namespace video {
         title: string;
         type?: number;
         url: string;
-    }
+    };
 }
 export namespace updateprofile {
-    export interface UpdateProfile {
+    export type UpdateProfile = {
         login?: boolean;
         success?: boolean;
         url: string;
-    }
+    };
 }
 export namespace university {
-    export interface UniversityResult {
+    export type UniversityResult = {
         branch: string;
         code: string;
         credit: string;
@@ -63,8 +63,8 @@ export namespace university {
         program: string;
         reg_no: string;
         semester: string;
-    }
-    export interface UniversityResultResponse {
+    };
+    export type UniversityResultResponse = {
         branch: string;
         earned_credit: string;
         error: string;
@@ -73,10 +73,10 @@ export namespace university {
         result: Array<UniversityResult>;
         semester: string;
         sgpa: string;
-    }
+    };
 }
 export namespace tutorial {
-    export interface Tutorial {
+    export type Tutorial = {
         can_download?: boolean;
         can_submit?: boolean;
         details: string;
@@ -91,15 +91,15 @@ export namespace tutorial {
         type: string;
         uploaded_file: string;
         url: string;
-    }
-    export interface TutorialResponse {
+    };
+    export type TutorialResponse = {
         login?: boolean;
         message: string;
         tutorials: Array<Tutorial>;
-    }
+    };
 }
 export namespace transportpalai {
-    export interface BusPass {
+    export type BusPass = {
         admission_no: string;
         batch: string;
         boarding: string;
@@ -117,57 +117,57 @@ export namespace transportpalai {
         semester: string;
         url: string;
         validity: string;
-    }
+    };
     export namespace registration {
-        export interface Boardings {
+        export type Boardings = {
             id?: number;
             name: string;
-        }
-        export interface History {
+        };
+        export type History = {
             id: string;
             name: string;
             reg_date: string;
             start_date: string;
             status: string;
             year: string;
-        }
-        export interface RegisterSucessResponse {
+        };
+        export type RegisterSucessResponse = {
             error: string;
             login?: boolean;
             message: string;
             success?: boolean;
-        }
-        export interface RegisterViewResponse {
+        };
+        export type RegisterViewResponse = {
             admission_no: string;
             batch: string;
             boardings: Array<Boardings>;
             full_name: string;
             history: Array<History>;
             login?: boolean;
-        }
+        };
     }
 }
 export namespace transport {
-    export interface TransportFeeResponse {
+    export type TransportFeeResponse = {
         boarding_point: string;
         error: string;
         installments: Array<TransportInstallments>;
         login?: boolean;
         student_id: string;
         years: Array<transportpalai.registration.Boardings>;
-    }
-    export interface TransportHistory {
+    };
+    export type TransportHistory = {
         adjustment: string;
         amount: string;
         balance?: number;
         paid: string;
         particular: string;
-    }
-    export interface TransportHistoryResponse {
+    };
+    export type TransportHistoryResponse = {
         history: Array<TransportHistory>;
         login?: boolean;
-    }
-    export interface TransportInstallments {
+    };
+    export type TransportInstallments = {
         adjustment: string;
         amount: string;
         balance?: number;
@@ -177,58 +177,58 @@ export namespace transport {
         paid: string;
         particular: string;
         totalAmount?: number;
-    }
-    export interface TransportPayUrl {
+    };
+    export type TransportPayUrl = {
         fine: string;
         total: string;
         url: string;
-    }
-    export interface TransportYear {
+    };
+    export type TransportYear = {
         id?: number;
         name: string;
-    }
+    };
 }
 export namespace timetable {
-    export interface TimeTable {
+    export type TimeTable = {
         subject?: string;
         timeperiod?: string;
         type?: string;
-    }
-    export interface TimeTablePeriod {
+    };
+    export type TimeTablePeriod = {
         day: string;
         sub: Array<TimeTable>;
-    }
-    export interface TimetableResponse {
+    };
+    export type TimetableResponse = {
         error: string;
         login?: boolean;
         timetable: Array<TimeTablePeriod>;
-    }
+    };
     export namespace special {
-        export interface SpecialResponse {
+        export type SpecialResponse = {
             date: string;
             period: string;
             subject: string;
             teacher: string;
-        }
+        };
     }
     export namespace change {
-        export interface ChangeTimeTableResponse {
+        export type ChangeTimeTableResponse = {
             date: string;
             inplace: string;
             period: string;
             teacher: string;
-        }
+        };
     }
 }
 export namespace survey {
-    export interface GenSurveyQuestionRequest {
+    export type GenSurveyQuestionRequest = {
         survey_id?: string;
-    }
-    export interface SubmitResponse {
+    };
+    export type SubmitResponse = {
         response: string;
         status: string;
-    }
-    export interface Survey {
+    };
+    export type Survey = {
         btn_status: string;
         complete?: boolean;
         last_date: string;
@@ -236,13 +236,13 @@ export namespace survey {
         session: string;
         survey_id: string;
         type: string;
-    }
-    export interface SurveyAnswer {
+    };
+    export type SurveyAnswer = {
         answer: string;
         qid: string;
         type: string;
-    }
-    export interface SurveyQuestion {
+    };
+    export type SurveyQuestion = {
         check?: Array<string>;
         id?: Array<string>;
         option?: Array<string>;
@@ -250,13 +250,13 @@ export namespace survey {
         question?: string;
         required?: string;
         type?: string;
-    }
-    export interface SurveyRequest {
+    };
+    export type SurveyRequest = {
         subject_id?: string;
         survey_id?: string;
         teacher_id?: string;
-    }
-    export interface TeacherList {
+    };
+    export type TeacherList = {
         btn_msg: string;
         image: string;
         semester: string;
@@ -265,9 +265,9 @@ export namespace survey {
         subject_id: string;
         teacher: string;
         teacher_id: string;
-    }
+    };
     export namespace posurvey {
-        export interface POSurvey {
+        export type POSurvey = {
             btn: string;
             end_date: string;
             id: string;
@@ -275,30 +275,30 @@ export namespace survey {
             start_date: string;
             status: string;
             survey: string;
-        }
-        export interface POSurveyResponse {
+        };
+        export type POSurveyResponse = {
             posurvey: Array<POSurvey>;
-        }
-        export interface PoOptions {
+        };
+        export type PoOptions = {
             option_id: string;
             option_name: string;
-        }
-        export interface PoQuestions {
+        };
+        export type PoQuestions = {
             answer: string;
             options: Array<PoOptions>;
             q_id: string;
             q_name: string;
             required?: boolean;
-        }
-        export interface PoQuestionsResponse {
+        };
+        export type PoQuestionsResponse = {
             period: string;
             questions: Array<PoQuestions>;
             survey: string;
             type: string;
-        }
+        };
     }
     export namespace graduateexit {
-        export interface DoGraduateSurveyQuestions {
+        export type DoGraduateSurveyQuestions = {
             answer_id: string;
             option_id: string;
             options: Array<GEOptions>;
@@ -307,15 +307,15 @@ export namespace survey {
             required?: boolean;
             section: string;
             type: string;
-        }
-        export interface DoGraduateSurveyResponse {
+        };
+        export type DoGraduateSurveyResponse = {
             gequestions: Array<DoGraduateSurveyQuestions>;
-        }
-        export interface GEOptions {
+        };
+        export type GEOptions = {
             option: string;
             option_id: string;
-        }
-        export interface GraduateExitSurveyList {
+        };
+        export type GraduateExitSurveyList = {
             btn: string;
             end_date: string;
             session: string;
@@ -325,13 +325,13 @@ export namespace survey {
             status: string;
             survey: string;
             survey_id: string;
-        }
-        export interface GraduateExitSurveyListResponse {
+        };
+        export type GraduateExitSurveyListResponse = {
             gesurvey: Array<GraduateExitSurveyList>;
-        }
+        };
     }
     export namespace courseevaluation {
-        export interface CourseSurvey {
+        export type CourseSurvey = {
             btn: string;
             end_date: string;
             session: string;
@@ -340,106 +340,106 @@ export namespace survey {
             start_date: string;
             status: string;
             survey: string;
-        }
-        export interface CourseSurveyOptions {
+        };
+        export type CourseSurveyOptions = {
             option: string;
             option_id: string;
-        }
-        export interface CourseSurveyQuestions {
+        };
+        export type CourseSurveyQuestions = {
             answer_id: string;
             options: Array<CourseSurveyOptions>;
             q_id: string;
             question: string;
             required?: boolean;
             slno?: number;
-        }
-        export interface CourseSurveyQuestionsResponse {
+        };
+        export type CourseSurveyQuestionsResponse = {
             login?: boolean;
             questions: Array<CourseSurveyQuestions>;
-        }
-        export interface CourseSurveyResponse {
+        };
+        export type CourseSurveyResponse = {
             login?: boolean;
             survey: Array<CourseSurvey>;
-        }
-        export interface DoCourseSurvey {
+        };
+        export type DoCourseSurvey = {
             btn: string;
             id: string;
             name: string;
             slno?: number;
             status: string;
-        }
-        export interface DoCourseSurveyResponse {
+        };
+        export type DoCourseSurveyResponse = {
             description: string;
             login?: boolean;
             period: string;
             session: string;
             subjects: Array<DoCourseSurvey>;
             type: string;
-        }
+        };
     }
 }
 export namespace subjectregistration {
-    export interface Category {
+    export type Category = {
         name: string;
         subjects: Array<Subject>;
-    }
-    export interface PathWay {
+    };
+    export type PathWay = {
         id?: number;
         name: string;
-    }
-    export interface SemList {
+    };
+    export type SemList = {
         sem_pos?: number;
         subjects: Array<SubjectMainList>;
-    }
-    export interface SemSubList {
+    };
+    export type SemSubList = {
         ans: string;
         id?: number;
         name: string;
-    }
-    export interface SemSubjects {
+    };
+    export type SemSubjects = {
         group: string;
         mark: string;
         subject_name: string;
-    }
-    export interface SemesterList {
+    };
+    export type SemesterList = {
         mdc_subjects: Array<SemSubjects>;
         minor_subjects: Array<SemSubjects>;
         seme_pos: string;
         sgpa: string;
-    }
-    export interface StatusList {
+    };
+    export type StatusList = {
         name: string;
         status: string;
-    }
-    export interface Subject {
+    };
+    export type Subject = {
         id: string;
         name: string;
         preference: string;
         status: string;
-    }
-    export interface SubjectMainList {
+    };
+    export type SubjectMainList = {
         ans: string;
         mark: string;
         name: string;
         sem_id?: number;
         subjects: Array<SemSubList>;
-    }
-    export interface SubjectRegistration {
+    };
+    export type SubjectRegistration = {
         added_at: string;
         category: string;
         id: string;
         semester: string;
         status: Array<StatusList>;
-    }
-    export interface SubjectRegistrationResponse {
+    };
+    export type SubjectRegistrationResponse = {
         data: Array<SubjectRegistration>;
         error: string;
-    }
-    export interface SubjectSpinner {
+    };
+    export type SubjectSpinner = {
         id?: number;
         name: string;
-    }
-    export interface SubjectSpinnerResponse {
+    };
+    export type SubjectSpinnerResponse = {
         additionalelective_1: Array<SubjectSpinner>;
         additionalelective_2: Array<SubjectSpinner>;
         additionalelective_3: Array<SubjectSpinner>;
@@ -460,24 +460,24 @@ export namespace subjectregistration {
         minor_1: Array<SubjectSpinner>;
         minor_2: Array<SubjectSpinner>;
         minor_3: Array<SubjectSpinner>;
-    }
-    export interface Subjects {
+    };
+    export type Subjects = {
         ans: string;
         id?: number;
         name: string;
-    }
-    export interface SubjectsList {
+    };
+    export type SubjectsList = {
         id?: number;
         name: string;
         subjects: Array<Subjects>;
-    }
-    export interface SubjectsListResponse {
+    };
+    export type SubjectsListResponse = {
         category: Array<PathWay>;
         pathway: Array<PathWay>;
         sem_list: Array<SemList>;
         subject_list: Array<SubjectsList>;
-    }
-    export interface ViewSubjectRegistrationResponse {
+    };
+    export type ViewSubjectRegistrationResponse = {
         admission_no: string;
         can_update?: boolean;
         category: string;
@@ -487,89 +487,89 @@ export namespace subjectregistration {
         previousdata: Array<SemesterList>;
         sem_id: string;
         semester: string;
-    }
+    };
 }
 export namespace subject {
-    export interface Subjects {
+    export type Subjects = {
         atten_per: string;
         atten_text: string;
         isSubGe?: boolean;
         sub_id: string;
         sub_name: string;
         teacher_name: string;
-    }
+    };
     export namespace syllabus {
-        export interface Syllabus {
+        export type Syllabus = {
             module: string;
             topics: Array<Topic>;
-        }
-        export interface SyllabusResponse {
+        };
+        export type SyllabusResponse = {
             syllabus: Array<Syllabus>;
-        }
-        export interface Topic {
+        };
+        export type Topic = {
             topic: string;
-        }
+        };
     }
     export namespace coverage {
-        export interface SubCovTopic {
+        export type SubCovTopic = {
             is_covered?: boolean;
             topic_name: string;
-        }
-        export interface SubCoverage {
+        };
+        export type SubCoverage = {
             module: string;
             ratio?: number;
             topic: Array<SubCovTopic>;
-        }
-        export interface SubCoverageResponse {
+        };
+        export type SubCoverageResponse = {
             coverage: Array<SubCoverage>;
             login?: boolean;
-        }
+        };
     }
     export namespace co {
-        export interface CoModel {
+        export type CoModel = {
             co_id: string;
             topic: string;
-        }
-        export interface CoSyllabusRequest {
+        };
+        export type CoSyllabusRequest = {
             sub_id: string;
-        }
+        };
     }
 }
 export namespace store {
-    export interface SemesterListRequest {
+    export type SemesterListRequest = {
         dept_id: string;
-    }
-    export interface Store {
+    };
+    export type Store = {
         name: string;
         price: string;
-    }
-    export interface StoreRequest {
+    };
+    export type StoreRequest = {
         subject_id: string;
-    }
-    export interface StoreResponse {
+    };
+    export type StoreResponse = {
         data: Array<Store>;
         login?: boolean;
         success?: boolean;
-    }
+    };
     export namespace departmentlist {
-        export interface DepartmentList {
+        export type DepartmentList = {
             id: string;
             name: string;
-        }
-        export interface DepartmentListResponse {
+        };
+        export type DepartmentListResponse = {
             data: Array<DepartmentList>;
             login?: boolean;
             success?: boolean;
-        }
+        };
     }
 }
 export namespace stationary {
-    export interface AdvancePaymentResponse {
+    export type AdvancePaymentResponse = {
         login?: boolean;
         success?: boolean;
         url: string;
-    }
-    export interface StationaryItem {
+    };
+    export type StationaryItem = {
         category_id: string;
         category_name: string;
         id: string;
@@ -578,11 +578,11 @@ export namespace stationary {
         price: string;
         subcategory_id: string;
         subcategory_name: string;
-    }
-    export interface StationaryItemResponse {
+    };
+    export type StationaryItemResponse = {
         data: Array<StationaryItem>;
-    }
-    export interface StationaryReceipt {
+    };
+    export type StationaryReceipt = {
         create_time: string;
         created_user: string;
         id: string;
@@ -593,18 +593,18 @@ export namespace stationary {
         status: string;
         total_amount: string;
         view_url: string;
-    }
-    export interface StationaryReceiptResponse {
+    };
+    export type StationaryReceiptResponse = {
         data: Array<StationaryReceipt>;
         login?: boolean;
-    }
+    };
 }
 export namespace semregistration {
-    export interface AcademicYear {
+    export type AcademicYear = {
         id?: number;
         name: string;
-    }
-    export interface AcademicYearResponse {
+    };
+    export type AcademicYearResponse = {
         additional_electives: Array<AcademicYear>;
         electives: Array<AcademicYear>;
         globalelectives: Array<AcademicYear>;
@@ -614,8 +614,8 @@ export namespace semregistration {
         program_electives: Array<AcademicYear>;
         semester: string;
         semester_id: string;
-    }
-    export interface SemRegViewResponse {
+    };
+    export type SemRegViewResponse = {
         academic_due: string;
         academic_due_details: string;
         accounts_due: string;
@@ -664,22 +664,22 @@ export namespace semregistration {
         status: string;
         unireg_no: string;
         update_btn?: boolean;
-    }
+    };
     export namespace view {
-        export interface SemRegSlip {
+        export type SemRegSlip = {
             login?: boolean;
             regslip_file: string;
             success?: boolean;
-        }
+        };
     }
     export namespace list {
-        export interface RegisterList {
+        export type RegisterList = {
             date: string;
             id: string;
             semester_applied_from: string;
             status: string;
-        }
-        export interface SemRegisterListResponse {
+        };
+        export type SemRegisterListResponse = {
             due_status?: boolean;
             sem_registration_error: string;
             fee_exemption?: boolean;
@@ -690,99 +690,99 @@ export namespace semregistration {
             register_list: Array<RegisterList>;
             sem_registration_status?: boolean;
             sem_registration_status_message: string;
-        }
+        };
     }
 }
 export namespace result {
-    export interface ResultAssignment {
+    export type ResultAssignment = {
         max_mark: string;
         name: string;
         obtained_mark: string;
         subject: string;
-    }
-    export interface ResultInternal {
+    };
+    export type ResultInternal = {
         max_mark: string;
         obtained_mark: string;
         subject: string;
-    }
-    export interface ResultSeasonal {
+    };
+    export type ResultSeasonal = {
         max_mark: string;
         obtained_mark: string;
         subject: string;
-    }
-    export interface SeasonRequest {
+    };
+    export type SeasonRequest = {
         sem_id: string;
         session: string;
-    }
+    };
     export namespace univ {
-        export interface UnivDetails {
+        export type UnivDetails = {
             cgpa?: string;
             credit?: string;
             pass_status?: string;
             sgpa?: string;
             total_internal?: string;
-        }
-        export interface UnivExamSubjects {
+        };
+        export type UnivExamSubjects = {
             attendance?: string;
             credits?: string;
             internal_mark?: string;
             status?: string;
             subject?: string;
             univ_mark?: string;
-        }
-        export interface UnivExams {
+        };
+        export type UnivExams = {
             exam_name: string;
             subjects: Array<UnivExamSubjects>;
-        }
-        export interface UnivResponse {
+        };
+        export type UnivResponse = {
             details: UnivDetails;
             error: string;
             login?: boolean;
             subjects: Array<UnivSubjects>;
             univ_exams: Array<UnivExams>;
-        }
-        export interface UnivSubjects {
+        };
+        export type UnivSubjects = {
             status?: string;
             subject?: string;
-        }
+        };
     }
     export namespace tutorial {
-        export interface TutorialResult {
+        export type TutorialResult = {
             mark: string;
             subject: string;
             title: string;
-        }
-        export interface TutorialResultResponse {
+        };
+        export type TutorialResultResponse = {
             error: string;
             login?: boolean;
             tutorials: Array<TutorialResult>;
-        }
+        };
     }
     export namespace moduletest {
-        export interface ResultModuleTest {
+        export type ResultModuleTest = {
             mark: string;
             subject: string;
-        }
-        export interface ResultModuleTestResponse {
+        };
+        export type ResultModuleTestResponse = {
             login?: boolean;
             module_test: Array<ResultModuleTest>;
-        }
+        };
     }
 }
 export namespace resetpassword {
-    export interface ResetPassword {
+    export type ResetPassword = {
         url: string;
-    }
-    export interface ResetPasswordResponse {
+    };
+    export type ResetPasswordResponse = {
         resets: Array<ResetPassword>;
-    }
+    };
 }
 export namespace quiz {
-    export interface OptionsNew {
+    export type OptionsNew = {
         id: string;
         option: string;
-    }
-    export interface QuestionsNew {
+    };
+    export type QuestionsNew = {
         answer_id?: string;
         duration_in_seconds?: string;
         id?: string;
@@ -794,29 +794,29 @@ export namespace quiz {
         question_type?: string;
         session_id?: string;
         user_answer?: string;
-    }
-    export interface QuestionsNewResponse {
+    };
+    export type QuestionsNewResponse = {
         questions: Array<QuestionsNew>;
-    }
+    };
     export namespace submit {
-        export interface QuizFinishRequest {
+        export type QuizFinishRequest = {
             final_submit: string;
             option?: string;
             qno?: string;
-        }
-        export interface QuizSubmitResponse {
+        };
+        export type QuizSubmitResponse = {
             is_ongoing?: boolean;
             is_started?: boolean;
             is_finished?: boolean;
             success?: boolean;
-        }
-        export interface SubmitRequest {
+        };
+        export type SubmitRequest = {
             option?: string;
             qno?: string;
-        }
+        };
     }
     export namespace result {
-        export interface QuizResultResponse {
+        export type QuizResultResponse = {
             descriptive_questions: Array<quiz.result.descriptive.DescriptiveQuestions>;
             file_upload_questions: Array<quiz.result.filetype.FileTypeQuestions>;
             has_result_published?: boolean;
@@ -825,13 +825,13 @@ export namespace quiz {
             marks_scored: string;
             multiple_choice_questions: Array<quiz.result.mcq.McqQuestions>;
             question_set_name: string;
-        }
+        };
         export namespace mcq {
-            export interface McqOptions {
+            export type McqOptions = {
                 id?: string;
                 option_content?: string;
-            }
-            export interface McqQuestions {
+            };
+            export type McqQuestions = {
                 correct_option_id?: string;
                 is_answer_correct?: boolean;
                 is_attended?: boolean;
@@ -840,40 +840,40 @@ export namespace quiz {
                 question_no?: string;
                 question_options: Array<McqOptions>;
                 user_opted_option_id?: string;
-            }
+            };
         }
         export namespace filetype {
-            export interface FileTypeQuestions {
+            export type FileTypeQuestions = {
                 file: Array<QuizResultFile>;
                 is_attended?: boolean;
                 mark_obtained?: string;
                 question_content?: string;
                 question_no?: string;
-            }
-            export interface QuizResultFile {
+            };
+            export type QuizResultFile = {
                 name?: string;
                 path?: string;
-            }
+            };
         }
         export namespace descriptive {
-            export interface DescriptiveQuestions {
+            export type DescriptiveQuestions = {
                 is_attended?: boolean;
                 mark_obtained?: string;
                 question_content?: string;
                 question_no?: string;
                 student_answer?: string;
-            }
+            };
         }
     }
     export namespace questions {
-        export interface Options {
+        export type Options = {
             id?: string;
             option?: string;
-        }
-        export interface QuestionResponse {
+        };
+        export type QuestionResponse = {
             questions: Array<Questions>;
-        }
-        export interface Questions {
+        };
+        export type Questions = {
             answer_id?: string;
             duration_in_seconds?: string;
             id?: string;
@@ -885,10 +885,10 @@ export namespace quiz {
             question_type?: string;
             session_id?: string;
             user_answer?: string;
-        }
+        };
     }
     export namespace list {
-        export interface Quiz {
+        export type Quiz = {
             description: string;
             end_time: string;
             id: string;
@@ -902,38 +902,38 @@ export namespace quiz {
             statusText: string;
             type: string;
             typeText: string;
-        }
-        export interface QuizResponse {
+        };
+        export type QuizResponse = {
             quizes: Array<Quiz>;
-        }
+        };
     }
     export namespace file {
-        export interface QuizDeleteFile {
+        export type QuizDeleteFile = {
             file_id: string;
-        }
-        export interface QuizFileUploadResponse {
+        };
+        export type QuizFileUploadResponse = {
             delete_url: string;
             id: string;
             name: string;
             url: string;
-        }
+        };
     }
 }
 export namespace programoutcome {
-    export interface ProgramOutcome {
+    export type ProgramOutcome = {
         content: string;
         heading: string;
-    }
-    export interface ProgramOutcomeResponse {
+    };
+    export type ProgramOutcomeResponse = {
         login?: boolean;
         pgm_educational: Array<ProgramOutcome>;
         pgm_outcomes: Array<ProgramOutcome>;
         pgm_specific: Array<ProgramOutcome>;
-    }
+    };
 }
 export namespace profileasiet {
     export namespace sport {
-        export interface Sport {
+        export type Sport = {
             awards: string;
             date: string;
             event: string;
@@ -944,39 +944,39 @@ export namespace profileasiet {
             organized_by: string;
             type: string;
             year: string;
-        }
-        export interface SportResponse {
+        };
+        export type SportResponse = {
             login?: boolean;
             participation: Array<Sport>;
-        }
+        };
     }
     export namespace scholarships {
-        export interface Scholarships {
+        export type Scholarships = {
             id: string;
             name: string;
             type: string;
             year: string;
-        }
-        export interface ScholarshipsResponse {
+        };
+        export type ScholarshipsResponse = {
             login?: boolean;
             scholarship: Array<Scholarships>;
-        }
+        };
     }
     export namespace qualifiedexamination {
-        export interface QualifiedExamination {
+        export type QualifiedExamination = {
             file: string;
             id: string;
             name: string;
             score: string;
             year: string;
-        }
-        export interface QualifiedExaminationResponse {
+        };
+        export type QualifiedExaminationResponse = {
             examination: Array<QualifiedExamination>;
             login?: boolean;
-        }
+        };
     }
     export namespace publication {
-        export interface Publication {
+        export type Publication = {
             conference: string;
             file: string;
             id: string;
@@ -984,12 +984,12 @@ export namespace profileasiet {
             journal: string;
             title: string;
             year: string;
-        }
-        export interface PublicationDropDown {
+        };
+        export type PublicationDropDown = {
             id?: number;
             name: string;
-        }
-        export interface PublicationDropDownResponse {
+        };
+        export type PublicationDropDownResponse = {
             category: Array<PublicationDropDown>;
             index: Array<PublicationDropDown>;
             level: Array<PublicationDropDown>;
@@ -1001,40 +1001,40 @@ export namespace profileasiet {
             sem_id: string;
             sem_name: string;
             years: Array<PublicationDropDown>;
-        }
-        export interface PublicationResponse {
+        };
+        export type PublicationResponse = {
             login?: boolean;
             publications: Array<Publication>;
-        }
+        };
     }
     export namespace projectwork {
-        export interface ProjectWork {
+        export type ProjectWork = {
             details: string;
             file: string;
             id: string;
             type: string;
             year: string;
-        }
-        export interface ProjectWorkResponse {
+        };
+        export type ProjectWorkResponse = {
             login?: boolean;
             project: Array<ProjectWork>;
-        }
+        };
     }
     export namespace positionheld {
-        export interface PositionHeld {
+        export type PositionHeld = {
             end: string;
             id: string;
             name: string;
             start: string;
             year: string;
-        }
-        export interface PositionHeldResponse {
+        };
+        export type PositionHeldResponse = {
             login?: boolean;
             positions: Array<PositionHeld>;
-        }
+        };
     }
     export namespace mooccourse {
-        export interface MoocCourse {
+        export type MoocCourse = {
             achievements: string;
             duration: string;
             file: string;
@@ -1043,14 +1043,14 @@ export namespace profileasiet {
             name: string;
             platform: string;
             to_date: string;
-        }
-        export interface MoocCourseResponse {
+        };
+        export type MoocCourseResponse = {
             login?: boolean;
             mooc: Array<MoocCourse>;
-        }
+        };
     }
     export namespace membership {
-        export interface Membership {
+        export type Membership = {
             description: string;
             file: string;
             id: string;
@@ -1058,14 +1058,14 @@ export namespace profileasiet {
             member_since: string;
             name: string;
             type: string;
-        }
-        export interface MembershipResponse {
+        };
+        export type MembershipResponse = {
             login?: boolean;
             professionalsociety: Array<Membership>;
-        }
+        };
     }
     export namespace fundedresearch {
-        export interface FundedResearch {
+        export type FundedResearch = {
             agency: string;
             amount: string;
             duration: string;
@@ -1073,14 +1073,14 @@ export namespace profileasiet {
             id: string;
             title: string;
             year: string;
-        }
-        export interface FundedResearchResponse {
+        };
+        export type FundedResearchResponse = {
             funded: Array<FundedResearch>;
             login?: boolean;
-        }
+        };
     }
     export namespace coursesattended {
-        export interface CoursesAttended {
+        export type CoursesAttended = {
             achievements: string;
             duration: string;
             file: string;
@@ -1090,27 +1090,27 @@ export namespace profileasiet {
             organized_by: string;
             to_date: string;
             year: string;
-        }
-        export interface CoursesAttendedResponse {
+        };
+        export type CoursesAttendedResponse = {
             courses: Array<CoursesAttended>;
             login?: boolean;
-        }
+        };
     }
     export namespace achievements {
-        export interface Achievements {
+        export type Achievements = {
             file: string;
             id: string;
             name: string;
             year: string;
-        }
-        export interface AchievementsResponse {
+        };
+        export type AchievementsResponse = {
             achievement: Array<Achievements>;
             login?: boolean;
-        }
+        };
     }
 }
 export namespace placement {
-    export interface Placement {
+    export type Placement = {
         btn?: boolean;
         date: string;
         description: string;
@@ -1118,53 +1118,53 @@ export namespace placement {
         last_date: string;
         name: string;
         status: string;
-    }
-    export interface PlacementRequest {
+    };
+    export type PlacementRequest = {
         placement_id: string;
-    }
+    };
 }
 export namespace onlineclass {
-    export interface OnlineClass {
+    export type OnlineClass = {
         sub_name: string;
         suburl: string;
-    }
-    export interface OnlineClassResponse {
+    };
+    export type OnlineClassResponse = {
         batch: string;
         batchvideourl: string;
         error: string;
         login?: boolean;
         subjects: Array<OnlineClass>;
         semester: string;
-    }
+    };
 }
 export namespace noticeboard {
-    export interface Notice {
+    export type Notice = {
         content: string;
         "create by": string;
         "created time": string;
         document: string;
         heading: string;
-    }
-    export interface NoticeJecc {
+    };
+    export type NoticeJecc = {
         content: string;
         "create by": string;
         "created time": string;
         document: string;
         heading: string;
-    }
-    export interface NoticeJeccResponse {
+    };
+    export type NoticeJeccResponse = {
         error: string;
         login?: boolean;
         notice: Array<NoticeJecc>;
-    }
-    export interface NoticeResponse {
+    };
+    export type NoticeResponse = {
         error: string;
         login?: boolean;
         notice: Array<Notice>;
-    }
+    };
 }
 export namespace message {
-    export interface Inbox {
+    export type Inbox = {
         content: string;
         date: string;
         from: string;
@@ -1172,85 +1172,85 @@ export namespace message {
         is_read: string;
         sender_id: string;
         subject: string;
-    }
-    export interface MsgHandleRequest {
+    };
+    export type MsgHandleRequest = {
         id: string;
-    }
-    export interface Outbox {
+    };
+    export type Outbox = {
         content: string;
         date: string;
         id: string;
         subject: string;
         to: string;
-    }
-    export interface ReplyRequest {
+    };
+    export type ReplyRequest = {
         message: string;
         reply_for_id?: string;
         to_id?: string;
-    }
+    };
 }
 export namespace mess {
-    export interface Mess {
+    export type Mess = {
         day: string;
         items: Array<MessMenu>;
-    }
-    export interface MessData {
+    };
+    export type MessData = {
         booking_date: string;
         day: string;
         day_id: string;
-    }
-    export interface MessItem {
+    };
+    export type MessItem = {
         id: string;
         max_qty: string;
         name: string;
-    }
-    export interface MessMenu {
+    };
+    export type MessMenu = {
         max_qty: string;
         menu: string;
         type?: number;
         type_name: string;
-    }
-    export interface MessMenuResponse {
+    };
+    export type MessMenuResponse = {
         item: Array<MessItem>;
         login?: boolean;
-    }
-    export interface MessResponse {
+    };
+    export type MessResponse = {
         data: Array<Mess>;
         login?: boolean;
-    }
-    export interface MessType {
+    };
+    export type MessType = {
         id: string;
         name: string;
-    }
-    export interface MessTypeResponse {
+    };
+    export type MessTypeResponse = {
         data: Array<MessData>;
         login?: boolean;
         type: Array<MessType>;
-    }
-    export interface OrderHistory {
+    };
+    export type OrderHistory = {
         booking_date: string;
         id: string;
         menu: string;
         quantity: string;
         status: string;
         type: string;
-    }
-    export interface OrderHistoryResponse {
+    };
+    export type OrderHistoryResponse = {
         data: Array<OrderHistory>;
         login?: boolean;
-    }
+    };
 }
 export namespace materials {
-    export interface DownloadMaterial {
+    export type DownloadMaterial = {
         url: string;
-    }
-    export interface DownloadMaterialResponse {
+    };
+    export type DownloadMaterialResponse = {
         files: Array<DownloadMaterial>;
-    }
-    export interface MaterialRequest {
+    };
+    export type MaterialRequest = {
         sem_id: string;
-    }
-    export interface Materials {
+    };
+    export type Materials = {
         date: string;
         link: string;
         module: string;
@@ -1258,8 +1258,8 @@ export namespace materials {
         subject: string;
         title: string;
         url: string;
-    }
-    export interface MaterialsNew {
+    };
+    export type MaterialsNew = {
         date: string;
         download: string;
         link: string;
@@ -1268,53 +1268,53 @@ export namespace materials {
         subject: string;
         title: string;
         url: Array<string>;
-    }
+    };
 }
 export namespace main {
-    export interface ApplyHostelResponse {
+    export type ApplyHostelResponse = {
         error: string;
         hostel?: number;
         hostel_status: string;
         login?: boolean;
         success?: boolean;
-    }
-    export interface CourseSurveyPending {
+    };
+    export type CourseSurveyPending = {
         coursesurvey_status?: boolean;
-    }
-    export interface FeeStatusResponse {
+    };
+    export type FeeStatusResponse = {
         error: string;
         login?: boolean;
         status?: boolean;
-    }
-    export interface POSurveyPending {
+    };
+    export type POSurveyPending = {
         posurvey_status?: boolean;
-    }
-    export interface PushRequest {
+    };
+    export type PushRequest = {
         platform: string;
         token: string;
-    }
-    export interface PushResponse {
+    };
+    export type PushResponse = {
         error: string;
         login?: boolean;
         success?: boolean;
-    }
-    export interface SurveyMandatory {
+    };
+    export type SurveyMandatory = {
         login?: boolean;
         survey_mandatory?: boolean;
-    }
-    export interface SurveyPending {
+    };
+    export type SurveyPending = {
         profile_status?: boolean;
         semreg_default?: boolean;
         survey_status?: boolean;
-    }
+    };
 }
 export namespace login {
-    export interface LoginRequest {
+    export type LoginRequest = {
         hostel?: string;
         password: string;
         username: string;
-    }
-    export interface LoginResponse {
+    };
+    export type LoginResponse = {
         academic_year: string;
         access_token: string;
         batch_id: string;
@@ -1335,26 +1335,26 @@ export namespace login {
         univ: string;
         user_type: string;
         uname: string;
-    }
-    export interface LogoutRequest {
+    };
+    export type LogoutRequest = {
         push_token: string;
-    }
+    };
 }
 export namespace live {
-    export interface Live {
+    export type Live = {
         date: string;
         details: string;
         link: string;
         title: string;
         type: string;
-    }
-    export interface LiveResponse {
+    };
+    export type LiveResponse = {
         live: Array<Live>;
         login?: boolean;
-    }
+    };
 }
 export namespace library {
-    export interface BookRecord {
+    export type BookRecord = {
         due_date: string;
         fine: string;
         is_paid: string;
@@ -1365,12 +1365,12 @@ export namespace library {
         slno: string;
         status: string;
         title: string;
-    }
-    export interface BookRecordResponse {
+    };
+    export type BookRecordResponse = {
         book_record: Array<BookRecord>;
         login?: boolean;
-    }
-    export interface Books {
+    };
+    export type Books = {
         author: string;
         bookid: string;
         category: string;
@@ -1382,44 +1382,44 @@ export namespace library {
         slno: string;
         status: string;
         title: string;
-    }
-    export interface BooksResponse {
+    };
+    export type BooksResponse = {
         books: Array<Books>;
         login?: boolean;
-    }
+    };
 }
 export namespace leavemanagement {
-    export interface LeaveManagement {
+    export type LeaveManagement = {
         allocated_leave: string;
         balance?: number;
         id?: number;
         leave_type: string;
         staff_id: string;
         taken?: number;
-    }
-    export interface LeaveManagementResponse {
+    };
+    export type LeaveManagementResponse = {
         leave_data: Array<LeaveManagement>;
         login?: boolean;
         success?: boolean;
-    }
+    };
 }
 export namespace leave {
     export namespace medical {
-        export interface MedicalLeave {
+        export type MedicalLeave = {
             datefrom: string;
             dateto: string;
             reason: string;
             remark: string;
             status: string;
-        }
-        export interface MedicalRequest {
+        };
+        export type MedicalRequest = {
             from_date: string;
             to_date: string;
             reason: string;
-        }
+        };
     }
     export namespace duty {
-        export interface DutyLeave {
+        export type DutyLeave = {
             btn_status?: boolean;
             description: string;
             id: string;
@@ -1429,17 +1429,17 @@ export namespace leave {
             proof_url: string;
             status: string;
             type: string;
-        }
-        export interface DutyLeaveDate {
+        };
+        export type DutyLeaveDate = {
             date: string;
             hours: Array<DutyLeaveHour>;
             selected?: boolean;
-        }
-        export interface DutyLeaveDateResponse {
+        };
+        export type DutyLeaveDateResponse = {
             data: Array<DutyLeaveDate>;
             login?: boolean;
-        }
-        export interface DutyLeaveDirectApply {
+        };
+        export type DutyLeaveDirectApply = {
             from_date: string;
             head: string;
             id: string;
@@ -1447,69 +1447,69 @@ export namespace leave {
             status: string;
             to_date: string;
             url: string;
-        }
-        export interface DutyLeaveDirectApplyResponse {
+        };
+        export type DutyLeaveDirectApplyResponse = {
             data: Array<DutyLeaveDirectApply>;
             login?: boolean;
-        }
-        export interface DutyLeaveHead {
+        };
+        export type DutyLeaveHead = {
             id?: number;
             name: string;
-        }
-        export interface DutyLeaveHeadResponse {
+        };
+        export type DutyLeaveHeadResponse = {
             data: Array<DutyLeaveHead>;
             login?: boolean;
-        }
-        export interface DutyLeaveHour {
+        };
+        export type DutyLeaveHour = {
             hour?: number;
             status: string;
-        }
-        export interface DutyLeaveViewRequest {
+        };
+        export type DutyLeaveViewRequest = {
             filter: string;
-        }
+        };
     }
 }
 export namespace lab {
-    export interface Evaluation {
+    export type Evaluation = {
         output: string;
         record: string;
         topic: string;
         viva: string;
-    }
-    export interface LabDue {
+    };
+    export type LabDue = {
         amount: string;
         due_date: string;
         equipment: string;
         lab: string;
         paid_date: string;
         paid_status: string;
-    }
-    export interface LabEquipRequest {
+    };
+    export type LabEquipRequest = {
         lid?: string;
-    }
-    export interface LabEquipment {
+    };
+    export type LabEquipment = {
         asset_type: string;
         facility_name: string;
         status: string;
         type: string;
-    }
-    export interface LabList {
+    };
+    export type LabList = {
         id: string;
         laboratary_name: string;
-    }
-    export interface Practical {
+    };
+    export type Practical = {
         atten_text: string;
         sub_id: string;
         sub_pid: string;
         subject: string;
-    }
-    export interface PracticalRequest {
+    };
+    export type PracticalRequest = {
         sub_id?: string;
         sub_pid?: string;
-    }
+    };
 }
 export namespace internship {
-    export interface Internship {
+    export type Internship = {
         completion_certificate: string;
         from_date: string;
         id: string;
@@ -1519,35 +1519,35 @@ export namespace internship {
         to_date: string;
         url: string;
         verified_certificate: string;
-    }
-    export interface InternshipResponse {
+    };
+    export type InternshipResponse = {
         data: Array<Internship>;
         login?: boolean;
-    }
+    };
     export namespace companylist {
-        export interface CompanyList {
+        export type CompanyList = {
             id: string;
             name: string;
-        }
-        export interface CompanyListResponse {
+        };
+        export type CompanyListResponse = {
             companies: Array<CompanyList>;
             login?: boolean;
-        }
+        };
     }
 }
 export namespace institutions {
-    export interface Colleges {
+    export type Colleges = {
         base_url: string;
         clgId: string;
         clgName: string;
         regUrl: string;
-    }
-    export interface Institution {
+    };
+    export type Institution = {
         colleges: Array<Colleges>;
-    }
+    };
 }
 export namespace hostelnew {
-    export interface HostelNewAdmission {
+    export type HostelNewAdmission = {
         amount?: number;
         balance?: number;
         fine?: number;
@@ -1559,27 +1559,27 @@ export namespace hostelnew {
         payment: Array<hostel.HostelFee>;
         y: string;
         year: string;
-    }
-    export interface HostelNewAdmissionResponse {
+    };
+    export type HostelNewAdmissionResponse = {
         date: string;
         fine: string;
         hostel: Array<HostelNewAdmission>;
         login?: boolean;
-    }
-    export interface HostelNewHistory {
+    };
+    export type HostelNewHistory = {
         adjustment?: number;
         amount?: number;
         balance?: number;
         installment: string;
         paid?: number;
         wallet?: number;
-    }
-    export interface HostelNewHistoryResponse {
+    };
+    export type HostelNewHistoryResponse = {
         admission_history: Array<HostelNewHistory>;
         login?: boolean;
         monthly_history: Array<HostelNewHistory>;
-    }
-    export interface HostelNewMonthly {
+    };
+    export type HostelNewMonthly = {
         amount?: number;
         balance?: number;
         fine?: number;
@@ -1591,26 +1591,26 @@ export namespace hostelnew {
         payment: Array<hostel.HostelFee>;
         y: string;
         year: string;
-    }
-    export interface HostelNewMonthlyResponse {
+    };
+    export type HostelNewMonthlyResponse = {
         date: string;
         fine: string;
         hostel: Array<HostelNewMonthly>;
         login?: boolean;
-    }
-    export interface HostelNewPay {
+    };
+    export type HostelNewPay = {
         fine?: number;
         subtotal?: number;
         total_amount?: number;
         url: string;
-    }
-    export interface HostelStatusNew {
+    };
+    export type HostelStatusNew = {
         allpayment?: boolean;
         login?: boolean;
-    }
+    };
 }
 export namespace hostel {
-    export interface HostelFee {
+    export type HostelFee = {
         adjustment?: number;
         amount: string;
         balance?: number;
@@ -1628,26 +1628,26 @@ export namespace hostel {
         status?: number;
         tenant_id: string;
         user_id: string;
-    }
-    export interface HostelFeePalaiResponse {
+    };
+    export type HostelFeePalaiResponse = {
         fine?: number;
         subtotal?: number;
         total?: number;
         url: string;
-    }
-    export interface HostelFeeRequest {
+    };
+    export type HostelFeeRequest = {
         transaction_method: string;
         month: string;
         year: string;
-    }
-    export interface HostelFeeResponse {
+    };
+    export type HostelFeeResponse = {
         url: string;
-    }
-    export interface HostelFeeTypes {
+    };
+    export type HostelFeeTypes = {
         id?: number;
         name: string;
-    }
-    export interface HostelMonth {
+    };
+    export type HostelMonth = {
         amount?: number;
         balance?: number;
         diff: string;
@@ -1660,13 +1660,13 @@ export namespace hostel {
         payment: Array<HostelFee>;
         y: string;
         year: string;
-    }
-    export interface HostelMonthResponse {
+    };
+    export type HostelMonthResponse = {
         date: string;
         hostel: Array<HostelMonth>;
         login?: boolean;
-    }
-    export interface HostelPalaiAdmission {
+    };
+    export type HostelPalaiAdmission = {
         amount?: number;
         balance?: number;
         diff: string;
@@ -1680,16 +1680,16 @@ export namespace hostel {
         scholarship: string;
         y: string;
         year: string;
-    }
-    export interface HostelPalaiAdmissionResponse {
+    };
+    export type HostelPalaiAdmissionResponse = {
         date: string;
         fine: string;
         hostel: Array<HostelPalaiAdmission>;
         login?: boolean;
         method: string;
         types: Array<HostelFeeTypes>;
-    }
-    export interface HostelPalaiMonth {
+    };
+    export type HostelPalaiMonth = {
         amount?: number;
         balance?: number;
         diff: string;
@@ -1701,17 +1701,17 @@ export namespace hostel {
         payment: Array<HostelFee>;
         y: string;
         year: string;
-    }
-    export interface HostelPalaiResponse {
+    };
+    export type HostelPalaiResponse = {
         date: string;
         hostel: Array<HostelPalaiMonth>;
         login?: boolean;
-    }
-    export interface HostelPalaiTypesResponse {
+    };
+    export type HostelPalaiTypesResponse = {
         login?: boolean;
         types: Array<HostelFeeTypes>;
-    }
-    export interface HostelResponse {
+    };
+    export type HostelResponse = {
         hostel: string;
         installment: string;
         join_date: string;
@@ -1719,37 +1719,37 @@ export namespace hostel {
         name: string;
         room_no: string;
         year: string;
-    }
+    };
     export namespace receipt {
-        export interface HostelReceipt {
+        export type HostelReceipt = {
             amount: string;
             feeReceiptNo: string;
             hostel: string;
             installment: string;
             receipt_date: string;
             receipt_url: string;
-        }
-        export interface HostelReceiptResponse {
+        };
+        export type HostelReceiptResponse = {
             receipts: Array<HostelReceipt>;
-        }
+        };
     }
     export namespace partial {
         export namespace admission {
-            export interface HostelPartialAdmission {
+            export type HostelPartialAdmission = {
                 date: string;
                 fine: string;
                 login?: boolean;
                 payment: Array<HostelPartialPayment>;
-            }
-            export interface HostelPartialAdmissionResponse {
+            };
+            export type HostelPartialAdmissionResponse = {
                 date: string;
                 fine: string;
                 hostel: Array<HostelPartialAdmission>;
                 login?: boolean;
                 method: string;
                 types: Array<hostel.HostelFeeTypes>;
-            }
-            export interface HostelPartialPayment {
+            };
+            export type HostelPartialPayment = {
                 amount: string;
                 balance?: number;
                 feehead_id: string;
@@ -1767,42 +1767,42 @@ export namespace hostel {
                 tenant_id: string;
                 user_id: string;
                 y: string;
-            }
+            };
         }
     }
     export namespace mits {
-        export interface MitsFeePay {
+        export type MitsFeePay = {
             login?: boolean;
             url: string;
-        }
+        };
     }
     export namespace gcekhostel {
         export namespace reregistration {
-            export interface PresentHostel {
+            export type PresentHostel = {
                 id?: number;
                 name: string;
-            }
-            export interface PresentHostelResponse {
+            };
+            export type PresentHostelResponse = {
                 hostel: Array<PresentHostel>;
                 login?: boolean;
-            }
+            };
         }
         export namespace registration {
-            export interface Registration {
+            export type Registration = {
                 added_at: string;
                 id: string;
                 print: string;
                 reg_type: string;
                 semester: string;
                 status: string;
-            }
-            export interface RegistrationResponse {
+            };
+            export type RegistrationResponse = {
                 is_hostler?: boolean;
                 login?: boolean;
                 re_admission?: boolean;
                 reg: Array<Registration>;
-            }
-            export interface ViewRegistrationResponse {
+            };
+            export type ViewRegistrationResponse = {
                 admission_no: string;
                 admsn_type: string;
                 annual_income: string;
@@ -1823,29 +1823,29 @@ export namespace hostel {
                 semester: string;
                 status: string;
                 type: string;
-            }
+            };
         }
         export namespace newregistration {
-            export interface CategoryType {
+            export type CategoryType = {
                 id?: number;
                 name: string;
-            }
-            export interface CategoryTypeResponse {
+            };
+            export type CategoryTypeResponse = {
                 category: Array<CategoryType>;
                 login?: boolean;
-            }
+            };
         }
     }
     export namespace attendance {
-        export interface HostelAttCalResponse {
+        export type HostelAttCalResponse = {
             absent: Array<boolean>;
             leaves: Array<boolean>;
             login?: boolean;
             monthdate: Array<string>;
             present: Array<boolean>;
             rejects: Array<boolean>;
-        }
-        export interface HostelAttParentView {
+        };
+        export type HostelAttParentView = {
             btn_app: string;
             btn_rej: string;
             btn_rev: string;
@@ -1854,12 +1854,12 @@ export namespace hostel {
             reason: string;
             status: string;
             type: string;
-        }
-        export interface HostelAttParentViewResponse {
+        };
+        export type HostelAttParentViewResponse = {
             data: Array<HostelAttParentView>;
             login?: boolean;
-        }
-        export interface HostelAttView {
+        };
+        export type HostelAttView = {
             btn_already_exit?: boolean;
             btn_del?: boolean;
             btn_download?: boolean;
@@ -1870,12 +1870,12 @@ export namespace hostel {
             status: string;
             type: string;
             url: string;
-        }
-        export interface HostelAttViewResponse {
+        };
+        export type HostelAttViewResponse = {
             data: Array<HostelAttView>;
             login?: boolean;
-        }
-        export interface HostelScanViewResponse {
+        };
+        export type HostelScanViewResponse = {
             address: string;
             date: string;
             from_date: string;
@@ -1890,31 +1890,31 @@ export namespace hostel {
             status: string;
             type: string;
             url: string;
-        }
-        export interface LeaveType {
+        };
+        export type LeaveType = {
             id?: number;
             type: string;
-        }
-        export interface LeaveTypeResponse {
+        };
+        export type LeaveTypeResponse = {
             data: Array<LeaveType>;
             login?: boolean;
-        }
+        };
     }
     export namespace asiet {
-        export interface AsietBoarding {
+        export type AsietBoarding = {
             amount: string;
             id: string;
             name: string;
-        }
-        export interface History {
+        };
+        export type History = {
             id: string;
             name: string;
             reg_date: string;
             start_date: string;
             status: string;
             year: string;
-        }
-        export interface HostelAsietRegisterViewResponse {
+        };
+        export type HostelAsietRegisterViewResponse = {
             admission_no: string;
             batch: string;
             boardings: Array<AsietBoarding>;
@@ -1924,11 +1924,11 @@ export namespace hostel {
             login?: boolean;
             note: string;
             route_url: string;
-        }
+        };
     }
 }
 export namespace homework {
-    export interface HomeWork {
+    export type HomeWork = {
         can_submit?: boolean;
         details: string;
         files: Array<exam.ExamFiles>;
@@ -1944,14 +1944,14 @@ export namespace homework {
         title: string;
         type: string;
         uploaded_file: string;
-    }
-    export interface HomeWorkResponse {
+    };
+    export type HomeWorkResponse = {
         homeworks: Array<HomeWork>;
         login?: boolean;
-    }
+    };
 }
 export namespace grievance {
-    export interface Grievance {
+    export type Grievance = {
         date: string;
         grievance_no: string;
         grievance_type: string;
@@ -1959,22 +1959,22 @@ export namespace grievance {
         reminder: string;
         status: string;
         subject: string;
-    }
-    export interface GrievanceResponse {
+    };
+    export type GrievanceResponse = {
         grievance: Array<Grievance>;
         login?: boolean;
-    }
+    };
     export namespace view {
-        export interface Actions {
+        export type Actions = {
             action_taken?: string;
             date?: string;
             level?: string;
-        }
-        export interface GrievanceDoc {
+        };
+        export type GrievanceDoc = {
             doc?: string;
             path?: string;
-        }
-        export interface ViewGrievance {
+        };
+        export type ViewGrievance = {
             action_taken: string;
             date: string;
             description: string;
@@ -1988,27 +1988,27 @@ export namespace grievance {
             reply_doc: Array<GrievanceDoc>;
             status: string;
             subject: string;
-        }
-        export interface ViewGrievanceResponse {
+        };
+        export type ViewGrievanceResponse = {
             actions: Array<Actions>;
             cellmembers: Array<string>;
             grievance: ViewGrievance;
             login?: boolean;
-        }
+        };
     }
     export namespace type {
-        export interface GrievanceType {
+        export type GrievanceType = {
             id: string;
             name: string;
-        }
-        export interface GrievanceTypeResponse {
+        };
+        export type GrievanceTypeResponse = {
             g_types: Array<GrievanceType>;
             login?: boolean;
-        }
+        };
     }
 }
 export namespace feepartial {
-    export interface InstallmentDetails {
+    export type InstallmentDetails = {
         balance: string;
         date: string;
         discount: string;
@@ -2020,34 +2020,34 @@ export namespace feepartial {
         paid: string;
         payable: string;
         scholarship: string;
-    }
-    export interface InstallmentDetailsResponse {
+    };
+    export type InstallmentDetailsResponse = {
         installments: Array<InstallmentDetails>;
         login?: boolean;
         success?: boolean;
-    }
-    export interface InstallmentList {
+    };
+    export type InstallmentList = {
         id: string;
         name: string;
-    }
-    export interface InstallmentListResponse {
+    };
+    export type InstallmentListResponse = {
         installments: Array<InstallmentList>;
         login?: boolean;
         success?: boolean;
-    }
+    };
 }
 export namespace feemedical {
-    export interface FeesMed {
+    export type FeesMed = {
         installment_id: string;
         installment_name: string;
         installments: Array<InstallmentsMed>;
-    }
-    export interface FeesMedResponse {
+    };
+    export type FeesMedResponse = {
         fees: Array<FeesMed>;
         login?: boolean;
         success?: boolean;
-    }
-    export interface InstallmentsMed {
+    };
+    export type InstallmentsMed = {
         balance: string;
         date: string;
         discount: string;
@@ -2059,16 +2059,16 @@ export namespace feemedical {
         paid: string;
         payable: string;
         scholarship: string;
-    }
+    };
 }
 export namespace feeengineer {
     export namespace payment {
-        export interface FeeEngineer {
+        export type FeeEngineer = {
             installment_id: string;
             installment_name: string;
             installments: Array<FeeEngineerInstallment>;
-        }
-        export interface FeeEngineerInstallment {
+        };
+        export type FeeEngineerInstallment = {
             balance: string;
             discount: string;
             feehead: string;
@@ -2077,25 +2077,25 @@ export namespace feeengineer {
             paid: string;
             payable: string;
             scholarship: string;
-        }
-        export interface FeeEngineerResponse {
+        };
+        export type FeeEngineerResponse = {
             fees: Array<FeeEngineer>;
             login?: boolean;
             message: string;
             success?: boolean;
-        }
-        export interface FeeEngineerUrlResponse {
+        };
+        export type FeeEngineerUrlResponse = {
             error: string;
             fine: string;
             subtotal: string;
             total: string;
             url: string;
-        }
+        };
     }
 }
 export namespace feearts {
     export namespace payment {
-        export interface FeeArts {
+        export type FeeArts = {
             amount: string;
             balance?: number;
             fee_head_id: string;
@@ -2106,8 +2106,8 @@ export namespace feearts {
             paid?: number;
             payable?: number;
             scholarship?: number;
-        }
-        export interface FeeArtsResponse {
+        };
+        export type FeeArtsResponse = {
             bal: string;
             date: string;
             fee_groups: Array<FeeArts>;
@@ -2116,23 +2116,23 @@ export namespace feearts {
             student_id: string;
             success?: boolean;
             total: string;
-        }
-        export interface FeeArtsSemester {
+        };
+        export type FeeArtsSemester = {
             id?: number;
             name: string;
-        }
-        export interface FeeArtsSemesterResponse {
+        };
+        export type FeeArtsSemesterResponse = {
             installments: Array<FeeArtsSemester>;
             login?: boolean;
             success?: boolean;
-        }
-        export interface FeeArtsUrlResponse {
+        };
+        export type FeeArtsUrlResponse = {
             url: string;
-        }
+        };
     }
 }
 export namespace fee {
-    export interface FeeGroups {
+    export type FeeGroups = {
         amount: string;
         balance: string;
         feegroup_id: string;
@@ -2142,8 +2142,8 @@ export namespace fee {
         name: string;
         paid: string;
         scholarship: string;
-    }
-    export interface FeeResponse {
+    };
+    export type FeeResponse = {
         balance: string;
         date: string;
         fee_groups: Array<FeeGroups>;
@@ -2154,29 +2154,29 @@ export namespace fee {
         success?: boolean;
         total: string;
         url?: string;
-    }
-    export interface FeeSreeChitraUrl {
+    };
+    export type FeeSreeChitraUrl = {
         login?: boolean;
         success?: boolean;
         url?: string;
-    }
-    export interface FeeUrlOnlyResponse {
+    };
+    export type FeeUrlOnlyResponse = {
         url?: string;
-    }
-    export interface FeeUrlResponse {
+    };
+    export type FeeUrlResponse = {
         error?: string;
         url?: string;
-    }
-    export interface GatewayDetailsResponse {
+    };
+    export type GatewayDetailsResponse = {
         address: string;
         ipg: string;
         login?: boolean;
         merchant: string;
         phone: string;
         refund: string;
-    }
+    };
     export namespace receipts {
-        export interface Receipt {
+        export type Receipt = {
             amount: string;
             date: string;
             installment: string;
@@ -2185,37 +2185,37 @@ export namespace fee {
             refund_reason: string;
             refund_status?: boolean;
             status: string;
-        }
-        export interface ReceiptResponse {
+        };
+        export type ReceiptResponse = {
             login?: boolean;
             message: string;
             receipts: Array<Receipt>;
             success?: boolean;
-        }
+        };
     }
     export namespace installment {
-        export interface InstallmentResponse {
+        export type InstallmentResponse = {
             installments: Array<Installments>;
             login?: boolean;
             message: string;
             success?: boolean;
-        }
-        export interface Installments {
+        };
+        export type Installments = {
             id: string;
             name: string;
-        }
+        };
     }
     export namespace feeheadgroups {
-        export interface FeeHeadGroup {
+        export type FeeHeadGroup = {
             feeheadgroup_id: string;
-        }
-        export interface FeeHeadGroupResponse {
+        };
+        export type FeeHeadGroupResponse = {
             fees: Array<FeeHeadGroup>;
-        }
+        };
     }
 }
 export namespace examschedules {
-    export interface ExamSchedule {
+    export type ExamSchedule = {
         date: string;
         details: string;
         exm_name: string;
@@ -2223,13 +2223,13 @@ export namespace examschedules {
         subject: string;
         time: string;
         url: string;
-    }
-    export interface ExamScheduleResponse {
+    };
+    export type ExamScheduleResponse = {
         schedules: Array<ExamSchedule>;
-    }
+    };
 }
 export namespace examregister {
-    export interface ExamCourse {
+    export type ExamCourse = {
         amount: string;
         course: string;
         feehead_id: string;
@@ -2237,8 +2237,8 @@ export namespace examregister {
         is_selected?: boolean;
         no?: number;
         type: string;
-    }
-    export interface ExamCourseResponse {
+    };
+    export type ExamCourseResponse = {
         abc_id_verification?: boolean;
         academicyear: string;
         admission_no: string;
@@ -2260,8 +2260,8 @@ export namespace examregister {
         registration_slip?: boolean;
         semester: string;
         start_date: string;
-    }
-    export interface ExamMessage {
+    };
+    export type ExamMessage = {
         amount: string;
         course: string;
         fineAmount: string;
@@ -2269,49 +2269,49 @@ export namespace examregister {
         is_eligible: string;
         totalAmount: string;
         type: string;
-    }
-    export interface ExamMessageResponse {
+    };
+    export type ExamMessageResponse = {
         error: string;
         exam: Array<ExamMessage>;
         is_registered?: boolean;
         login?: boolean;
         message: string;
         success?: boolean;
-    }
-    export interface ExamPay {
+    };
+    export type ExamPay = {
         amount: string;
         fineAmount: string;
         fixed_amount: string;
         totalAmount: string;
-    }
-    export interface ExamPayResponse {
+    };
+    export type ExamPayResponse = {
         error: string;
         exam: Array<ExamPay>;
         is_registered?: boolean;
         login?: boolean;
         url: string;
-    }
-    export interface ExamReceipt {
+    };
+    export type ExamReceipt = {
         feeReceiptNo: string;
         print_url: string;
         receipt_date: string;
         sub_total: string;
-    }
-    export interface ExamReceiptResponse {
+    };
+    export type ExamReceiptResponse = {
         login?: boolean;
         receipts: Array<ExamReceipt>;
-    }
-    export interface ExamRegister {
+    };
+    export type ExamRegister = {
         id: string;
         name: string;
-    }
-    export interface ExamRegisterResponse {
+    };
+    export type ExamRegisterResponse = {
         exam: Array<ExamRegister>;
         login?: boolean;
         notregexam: Array<ExamRegister>;
         regexam: Array<ExamRegister>;
-    }
-    export interface ExamUpdate {
+    };
+    export type ExamUpdate = {
         amount: string;
         course: string;
         feehead_id: string;
@@ -2319,43 +2319,43 @@ export namespace examregister {
         is_selected?: boolean;
         msg: string;
         type: string;
-    }
-    export interface ExamUpdateResponse {
+    };
+    export type ExamUpdateResponse = {
         admission_no: string;
         batch_id: string;
         exam: Array<ExamUpdate>;
         login?: boolean;
-    }
-    export interface ExamView {
+    };
+    export type ExamView = {
         amount: string;
         course: string;
         is_eligible: string;
         type: string;
-    }
-    export interface ExamViewResponse {
+    };
+    export type ExamViewResponse = {
         error: string;
         exam: Array<ExamView>;
         login?: boolean;
-    }
-    export interface FixedHeadGroup {
+    };
+    export type FixedHeadGroup = {
         amount: string;
         fixedHeadGrpId: string;
         head: string;
         is_eligible: string;
         no?: number;
         type: string;
-    }
-    export interface RegistrationSlipResponse {
+    };
+    export type RegistrationSlipResponse = {
         file_url: string;
         login?: boolean;
-    }
-    export interface Revaluation {
+    };
+    export type Revaluation = {
         course: string;
         grade: string;
         status: string;
         type: string;
-    }
-    export interface RevaluationApply {
+    };
+    export type RevaluationApply = {
         answer_script: string;
         course: string;
         date: string;
@@ -2363,51 +2363,51 @@ export namespace examregister {
         revaluation: string;
         total: string;
         type: string;
-    }
-    export interface RevaluationApplyResponse {
+    };
+    export type RevaluationApplyResponse = {
         revaluation: Array<RevaluationApply>;
-    }
-    export interface RevaluationReceipt {
+    };
+    export type RevaluationReceipt = {
         answer_script: string;
         course: string;
         revaluation: string;
-    }
-    export interface RevaluationReceiptResponse {
+    };
+    export type RevaluationReceiptResponse = {
         receipt: Array<RevaluationReceipt>;
         sub_total: string;
         total: string;
-    }
-    export interface RevaluationResponse {
+    };
+    export type RevaluationResponse = {
         revaluation: Array<Revaluation>;
-    }
-    export interface RevaluationStatusResponse {
+    };
+    export type RevaluationStatusResponse = {
         status?: boolean;
-    }
-    export interface RevaluationUpdate {
+    };
+    export type RevaluationUpdate = {
         answer_script: string;
         course: string;
         grade: string;
         revaluation: string;
         status: string;
         type: string;
-    }
-    export interface RevaluationUpdateResponse {
+    };
+    export type RevaluationUpdateResponse = {
         revaluation: Array<RevaluationUpdate>;
-    }
-    export interface RevaluationView {
+    };
+    export type RevaluationView = {
         answer_script: string;
         course: string;
         revaluation: string;
         revaluation_id: string;
         total: string;
         type: string;
-    }
-    export interface RevaluationViewResponse {
+    };
+    export type RevaluationViewResponse = {
         revaluation: Array<RevaluationView>;
-    }
+    };
 }
 export namespace exam {
-    export interface Exam {
+    export type Exam = {
         can_download?: boolean;
         can_submit?: boolean;
         files: Array<ExamFiles>;
@@ -2420,24 +2420,24 @@ export namespace exam {
         subject: string;
         title: string;
         uploaded_file: string;
-    }
-    export interface ExamFiles {
+    };
+    export type ExamFiles = {
         doc?: string;
         path?: string;
-    }
-    export interface ModuleTestResponse {
+    };
+    export type ModuleTestResponse = {
         error: string;
         login?: boolean;
         module_test: Array<Exam>;
-    }
-    export interface SeriesExamResponse {
+    };
+    export type SeriesExamResponse = {
         error: string;
         login?: boolean;
         series_exams: Array<Exam>;
-    }
+    };
 }
 export namespace due {
-    export interface Due {
+    export type Due = {
         admission_no: string;
         batch: string;
         due_amount: string;
@@ -2445,13 +2445,13 @@ export namespace due {
         has_due: string;
         is_paid: string;
         student_name: string;
-    }
-    export interface DueResponse {
+    };
+    export type DueResponse = {
         due: Array<Due>;
         login?: boolean;
-    }
+    };
     export namespace duepaynew {
-        export interface DuePayNew {
+        export type DuePayNew = {
             admission_no: string;
             amount: string;
             balance: string;
@@ -2466,13 +2466,13 @@ export namespace due {
             status: string;
             student_id: string;
             year_id: string;
-        }
-        export interface DuePayNewResponse {
+        };
+        export type DuePayNewResponse = {
             collect: Array<DuePayNew>;
-        }
+        };
     }
     export namespace duepay {
-        export interface DuePay {
+        export type DuePay = {
             admission_no: string;
             amount: string;
             balance: string;
@@ -2485,31 +2485,31 @@ export namespace due {
             status: string;
             student_id: string;
             year_id: string;
-        }
-        export interface DuePayResponse {
+        };
+        export type DuePayResponse = {
             dues: Array<DuePay>;
             login?: boolean;
-        }
-        export interface DuePayUrl {
+        };
+        export type DuePayUrl = {
             url: string;
-        }
-        export interface NoDueCertificateResponse {
+        };
+        export type NoDueCertificateResponse = {
             login?: boolean;
             url: string;
-        }
+        };
     }
 }
 export namespace dash {
-    export interface AbcResponse {
+    export type AbcResponse = {
         abc_id: string;
         instructions: string;
         login?: boolean;
         video: string;
-    }
-    export interface DashRequest {
+    };
+    export type DashRequest = {
         hostel?: string;
-    }
-    export interface DashResponse {
+    };
+    export type DashResponse = {
         attendance_forthemonth: string;
         attendance_forthesem: string;
         bank_accno: string;
@@ -2569,27 +2569,27 @@ export namespace dash {
         version_code_sctce?: number;
         version_code_sjcetpalai?: number;
         version_code_tkmce?: number;
-    }
-    export interface LibraryResponse {
+    };
+    export type LibraryResponse = {
         login?: boolean;
         url: string;
-    }
-    export interface MaintenanceResponse {
+    };
+    export type MaintenanceResponse = {
         message: string;
         success?: boolean;
-    }
-    export interface NoticesDash {
+    };
+    export type NoticesDash = {
         content: string;
-    }
-    export interface PendingSurvey {
+    };
+    export type PendingSurvey = {
         coursesurvey_status?: boolean;
         error: string;
         posurvey_status?: boolean;
         profile_status?: boolean;
         semreg_default?: boolean;
         survey_status?: boolean;
-    }
-    export interface ProfileResponse {
+    };
+    export type ProfileResponse = {
         address1: string;
         address2: string;
         address3: string;
@@ -2621,45 +2621,45 @@ export namespace dash {
         register_no: string;
         religion: string;
         state: string;
-    }
+    };
     export namespace daywisetimetaable {
-        export interface DayWise {
+        export type DayWise = {
             day: string;
             sub: Array<DayWiseTopicName>;
-        }
-        export interface DayWiseResponse {
+        };
+        export type DayWiseResponse = {
             login?: boolean;
             timetable: Array<DayWise>;
-        }
-        export interface DayWiseTopicName {
+        };
+        export type DayWiseTopicName = {
             hour?: number;
             staff: string;
             subject: string;
             topic_name: Array<string>;
             type: string;
-        }
+        };
     }
 }
 export namespace counselling {
-    export interface Counselling {
+    export type Counselling = {
         counselling_no: string;
         counselling_type: string;
         date: string;
         id: string;
         reminder: string;
         status: string;
-    }
-    export interface CounsellingResponse {
+    };
+    export type CounsellingResponse = {
         login?: boolean;
         requests: Array<Counselling>;
-    }
+    };
     export namespace view {
-        export interface Actions2 {
+        export type Actions2 = {
             action_taken?: string;
             date?: string;
             level?: string;
-        }
-        export interface ViewCounselling {
+        };
+        export type ViewCounselling = {
             applicant: string;
             concern: string;
             counselling_history: string;
@@ -2671,155 +2671,155 @@ export namespace counselling {
             impact_physically_emotionally: string;
             impact_relationship: string;
             impact_studies: string;
-        }
-        export interface ViewCounsellingResponse {
+        };
+        export type ViewCounsellingResponse = {
             actions: Array<Actions2>;
             cell_members: Array<string>;
             login?: boolean;
             requests: ViewCounselling;
-        }
+        };
     }
     export namespace type {
-        export interface CounsellingTypes {
+        export type CounsellingTypes = {
             id: string;
             name: string;
-        }
-        export interface CounsellingTypesResponse {
+        };
+        export type CounsellingTypesResponse = {
             c_types: Array<CounsellingTypes>;
             login?: boolean;
-        }
+        };
     }
     export namespace status {
-        export interface CounsellingStatus {
+        export type CounsellingStatus = {
             id: string;
             name: string;
-        }
-        export interface CounsellingStatusResponse {
+        };
+        export type CounsellingStatusResponse = {
             data: Array<CounsellingStatus>;
             login?: boolean;
-        }
+        };
     }
 }
 export namespace common {
-    export interface Circular {
+    export type Circular = {
         date: string;
         description: string;
         heading: string;
         link: string;
         url: string;
-    }
-    export interface Remarks {
+    };
+    export type Remarks = {
         remark: string;
         teacher: string;
-    }
-    export interface Teacher {
+    };
+    export type Teacher = {
         image_url: string;
         t_email: string;
         t_phone: string;
         t_subject: string;
         t_name: string;
-    }
-    export interface TeacherResponse {
+    };
+    export type TeacherResponse = {
         hod: Array<Teacher>;
         staffadvisor: Array<Teacher>;
         sub_teacher: Array<Teacher>;
-    }
+    };
 }
 export namespace chat {
     export namespace subjects {
-        export interface Chat {
+        export type Chat = {
             batch_id: string;
             sem: string;
             subject: string;
             subject_id: string;
-        }
-        export interface ChatResponse {
+        };
+        export type ChatResponse = {
             error: string;
             login?: boolean;
             subjects: Array<Chat>;
-        }
+        };
     }
     export namespace reply {
-        export interface Reply {
+        export type Reply = {
             img: string;
             name: string;
             reply: string;
             time: string;
-        }
-        export interface ReplyResponse {
+        };
+        export type ReplyResponse = {
             error: string;
             login?: boolean;
             reply: Array<Reply>;
-        }
+        };
     }
     export namespace comment {
-        export interface Comment {
+        export type Comment = {
             comment: string;
             comment_id: string;
             cmnt_user: string;
             img: string;
             reply: Array<chat.reply.Reply>;
             time: string;
-        }
-        export interface CommentResponse {
+        };
+        export type CommentResponse = {
             comments: Array<Comment>;
             error: string;
             login?: boolean;
-        }
+        };
     }
 }
 export namespace certificaterequest {
-    export interface CertificateRequest {
+    export type CertificateRequest = {
         certificate_type: string;
         date_of_application: string;
         status: string;
-    }
-    export interface CertificateRequestResponse {
+    };
+    export type CertificateRequestResponse = {
         history: Array<CertificateRequest>;
         error: string;
         login?: boolean;
-    }
-    export interface CertificateType {
+    };
+    export type CertificateType = {
         id: string;
         type: string;
-    }
-    export interface CertificateType2 {
+    };
+    export type CertificateType2 = {
         name: string;
-    }
-    export interface CertificateTypeResponse {
+    };
+    export type CertificateTypeResponse = {
         certificate_type: Array<CertificateType>;
         class_selected: Array<CertificateType2>;
         error: string;
         login?: boolean;
         request_for: Array<CertificateType2>;
         request_opted: Array<CertificateType2>;
-    }
+    };
 }
 export namespace centralizedinfo {
-    export interface CentralizedInfo {
+    export type CentralizedInfo = {
         date: string;
         link: string;
         title: string;
         type: string;
-    }
-    export interface CentralizedInfoResponse {
+    };
+    export type CentralizedInfoResponse = {
         info: Array<CentralizedInfo>;
         login?: boolean;
-    }
+    };
 }
 export namespace calendar {
-    export interface Calendar {
+    export type Calendar = {
         date: string;
         subject: string;
-    }
-    export interface CalendarResponse {
+    };
+    export type CalendarResponse = {
         data: Array<Calendar>;
         error: string;
         login?: boolean;
-    }
+    };
 }
 export namespace attendance {
-    export interface Attendance {
+    export type Attendance = {
         class_attended: string;
         credit_percent: string;
         credit_total: string;
@@ -2830,52 +2830,52 @@ export namespace attendance {
         total_classes: string;
         total_dutyleave: string;
         total_subject: string;
-    }
-    export interface AttendanceDay {
+    };
+    export type AttendanceDay = {
         attendance: string;
         coverage: Array<string>;
         hour: string;
         subject: string;
-    }
-    export interface AttendanceDayRequest {
+    };
+    export type AttendanceDayRequest = {
         date: string;
         semester: string;
-    }
-    export interface AttendanceDayResponse {
+    };
+    export type AttendanceDayResponse = {
         attends: Array<AttendanceDay>;
-    }
-    export interface AttendanceNew {
+    };
+    export type AttendanceNew = {
         date: string;
         holiday?: boolean;
         periods: Array<AttendancePeriod>;
         totalperiod?: number;
-    }
-    export interface AttendanceNewResponse {
+    };
+    export type AttendanceNewResponse = {
         attends: Array<AttendanceNew>;
-    }
-    export interface AttendancePeriod {
+    };
+    export type AttendancePeriod = {
         attendance: string;
         hour?: number;
         subject: string;
-    }
-    export interface AttendanceRequest {
+    };
+    export type AttendanceRequest = {
         sem_id: string;
-    }
-    export interface AttendanceRequestNew {
+    };
+    export type AttendanceRequestNew = {
         month: string;
         semester: string;
         year: string;
-    }
-    export interface AttendanceResponse {
+    };
+    export type AttendanceResponse = {
         error: string;
         login?: boolean;
         subjects: Array<Attendance>;
         total_credit: string;
         total_percent: string;
-    }
+    };
 }
 export namespace assignment {
-    export interface Assignment {
+    export type Assignment = {
         can_download?: boolean;
         can_submit?: boolean;
         details: string;
@@ -2889,43 +2889,43 @@ export namespace assignment {
         upload?: boolean;
         uploaded_file: string;
         url: string;
-    }
-    export interface AssignmentRequest {
+    };
+    export type AssignmentRequest = {
         filter: string;
         sem_id: string;
         sort: string;
-    }
-    export interface AssignmentResponse {
+    };
+    export type AssignmentResponse = {
         assignments: Array<Assignment>;
         error: string;
         login?: boolean;
-    }
+    };
 }
 export namespace activitypoint {
-    export interface ActivityPointResponse {
+    export type ActivityPointResponse = {
         activity_points?: Array<ActivityPoints>;
         error?: string;
         login?: boolean;
         total_activity_point?: string;
-    }
-    export interface ActivityPoints {
+    };
+    export type ActivityPoints = {
         activity_name: string;
         point: string;
         semester: string;
-    }
+    };
     export namespace manage {
-        export interface ActivityBatch {
+        export type ActivityBatch = {
             activity_batch_id: string;
             activity_name: string;
             description: string;
             max_point: string;
             semester: string;
             status: string;
-        }
-        export interface ActivityBatchResponse {
+        };
+        export type ActivityBatchResponse = {
             activity_batch?: Array<ActivityBatch>;
             error?: string;
             login?: boolean;
-        }
+        };
     }
 }

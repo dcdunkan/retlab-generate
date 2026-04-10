@@ -8,7 +8,6 @@ import kotlin.jvm.internal.FunctionAdapter;
 import kotlin.jvm.internal.Intrinsics;
 
 /* compiled from: ExamViewFragment.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
 /* loaded from: classes4.dex */
 final class ExamViewFragmentKt$sam$androidx_lifecycle_Observer$0 implements Observer, FunctionAdapter {
     private final /* synthetic */ Function1 function;
