@@ -17,11 +17,11 @@ import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AcademicFeeFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AcademicFeeFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AcademicFeeFragment extends Fragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private String id;
     private ArrayList<AcadamicFeeFirstBean> list = new ArrayList<>();
@@ -46,7 +46,7 @@ public final class AcademicFeeFragment extends Fragment {
         this.list = arrayList;
     }
 
-    /* compiled from: AcademicFeeFragment.kt */
+    /* JADX INFO: compiled from: AcademicFeeFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/academicfee/AcademicFeeFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/academicfee/AcademicFeeFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -101,9 +101,9 @@ public final class AcademicFeeFragment extends Fragment {
     private final void goNextPage(String id) {
         FragmentManager fragmentManager = getFragmentManager();
         Intrinsics.checkNotNull(fragmentManager);
-        FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
-        Intrinsics.checkNotNullExpressionValue(beginTransaction, "manager!!.beginTransaction()");
-        beginTransaction.addToBackStack(null);
-        beginTransaction.replace(R.id.main_container, AcadamicFeeListFragment.INSTANCE.newInstance(id)).commit();
+        FragmentTransaction fragmentTransactionBeginTransaction = fragmentManager.beginTransaction();
+        Intrinsics.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "manager!!.beginTransaction()");
+        fragmentTransactionBeginTransaction.addToBackStack(null);
+        fragmentTransactionBeginTransaction.replace(R.id.main_container, AcadamicFeeListFragment.INSTANCE.newInstance(id)).commit();
     }
 }

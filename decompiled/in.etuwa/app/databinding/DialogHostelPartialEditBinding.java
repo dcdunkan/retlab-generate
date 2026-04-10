@@ -12,7 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.feepartial.hostel.edit.HostelPartialEditViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogHostelPartialEditBinding extends ViewDataBinding {
     public final TextView confirmBtn;
 

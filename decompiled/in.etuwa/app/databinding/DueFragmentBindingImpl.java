@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.due.DueViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DueFragmentBindingImpl extends DueFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class DueFragmentBindingImpl extends DueFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (74 != variableId) {
+        if (73 != variableId) {
             return false;
         }
         setDueViewModel((DueViewModel) variable);

@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.viewpager.widget.ViewPager;
@@ -11,7 +12,7 @@ import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.university.UniversityViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class UniversityFragmentBindingImpl extends UniversityFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -27,17 +28,18 @@ public class UniversityFragmentBindingImpl extends UniversityFragmentBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.univ_tabs, 2);
-        sparseIntArray.put(R.id.univ_Pager, 3);
-        sparseIntArray.put(R.id.fab_univ, 4);
+        sparseIntArray.put(R.id.internal_sem_text, 2);
+        sparseIntArray.put(R.id.univ_tabs, 3);
+        sparseIntArray.put(R.id.univ_Pager, 4);
+        sparseIntArray.put(R.id.fab_univ, 5);
     }
 
     public UniversityFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
 
     private UniversityFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (FloatingActionButton) bindings[4], (ViewPager) bindings[3], (TabLayout) bindings[2]);
+        super(bindingComponent, root, 0, (FloatingActionButton) bindings[5], (TextView) bindings[2], (ViewPager) bindings[4], (TabLayout) bindings[3]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -65,7 +67,7 @@ public class UniversityFragmentBindingImpl extends UniversityFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (235 != variableId) {
+        if (237 != variableId) {
             return false;
         }
         setUniversityViewModel((UniversityViewModel) variable);

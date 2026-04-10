@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.subjectregistration;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewSubjectRegistrationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewSubjectRegistrationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SemSubjects {
     private final String group;
     private final String mark;
@@ -23,17 +23,17 @@ public final /* data */ class SemSubjects {
         return semSubjects.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubject_name() {
         return this.subject_name;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getGroup() {
         return this.group;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMark() {
         return this.mark;
     }

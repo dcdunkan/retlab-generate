@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogViewregistrationDialogBindingImpl extends DialogViewregistrationDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -71,7 +71,7 @@ public class DialogViewregistrationDialogBindingImpl extends DialogViewregistrat
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (247 != variableId) {
+        if (249 != variableId) {
             return false;
         }
         setViewRegistrationViewModel((ViewRegistrationViewModel) variable);

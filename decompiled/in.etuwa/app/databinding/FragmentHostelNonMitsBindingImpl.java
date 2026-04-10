@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.hostelnonmits.HostelNonMitsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelNonMitsBindingImpl extends FragmentHostelNonMitsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -79,7 +79,7 @@ public class FragmentHostelNonMitsBindingImpl extends FragmentHostelNonMitsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (115 != variableId) {
+        if (116 != variableId) {
             return false;
         }
         setHostelNonMitsViewModel((HostelNonMitsViewModel) variable);

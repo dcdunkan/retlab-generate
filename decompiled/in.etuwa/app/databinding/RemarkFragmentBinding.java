@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -11,20 +12,22 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.remark.RemarkViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class RemarkFragmentBinding extends ViewDataBinding {
 
     @Bindable
     protected RemarkViewModel mRemarkViewModel;
     public final RecyclerView rvRemark;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setRemarkViewModel(RemarkViewModel remarkViewModel);
 
-    protected RemarkFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvRemark, SwipeRefreshLayout swipeLayout) {
+    protected RemarkFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvRemark, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.rvRemark = rvRemark;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public RemarkViewModel getRemarkViewModel() {

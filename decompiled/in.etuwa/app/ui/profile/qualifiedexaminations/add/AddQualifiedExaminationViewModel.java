@@ -27,8 +27,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: AddQualifiedExaminationViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddQualifiedExaminationViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddQualifiedExaminationViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<SuccessResponse>> addResponse;
     private final MutableLiveData<Resource<SuccessResponse>> addResponse2;
@@ -91,13 +91,13 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Intrinsics.checkNotNullParameter(score, "score");
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, name);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, score);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, name);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, score);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$addQualifiedExaminationData$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.addQualifiedExaminationData.1
             {
                 super(1);
             }
@@ -108,20 +108,20 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddQualifiedExaminationViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda6
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$0(Function1.this, obj);
+                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.addQualifiedExaminationUrlApiCall(create, create2, create3, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$addQualifiedExaminationData$2
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.addQualifiedExaminationUrlApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.addQualifiedExaminationData.2
             {
                 super(1);
             }
@@ -132,7 +132,7 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddQualifiedExaminationViewModel.this.getAddResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -140,10 +140,10 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$1(Function1.this, obj);
+                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$addQualifiedExaminationData$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.addQualifiedExaminationData.3
             {
                 super(1);
             }
@@ -154,7 +154,7 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddQualifiedExaminationViewModel.this.getAddResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -163,10 +163,10 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda8
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$2(Function1.this, obj);
+                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$2(function13, obj);
             }
         }));
     }
@@ -195,14 +195,14 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Intrinsics.checkNotNullParameter(score, "score");
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, name);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, score);
-        RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, name);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, score);
+        RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$updateQualifiedExaminationData$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.updateQualifiedExaminationData.1
             {
                 super(1);
             }
@@ -213,20 +213,20 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddQualifiedExaminationViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda2
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$3(Function1.this, obj);
+                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$3(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.updateQualifiedExaminationUrlApiCall(create, create2, create3, create4, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$updateQualifiedExaminationData$2
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.updateQualifiedExaminationUrlApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, requestBodyCreate4, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.updateQualifiedExaminationData.2
             {
                 super(1);
             }
@@ -237,7 +237,7 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddQualifiedExaminationViewModel.this.getAddResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -245,10 +245,10 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$4(Function1.this, obj);
+                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$4(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$updateQualifiedExaminationData$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.updateQualifiedExaminationData.3
             {
                 super(1);
             }
@@ -259,7 +259,7 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddQualifiedExaminationViewModel.this.getAddResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -268,10 +268,10 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$5(Function1.this, obj);
+                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$5(function13, obj);
             }
         }));
     }
@@ -297,8 +297,8 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
     public final void getDropDownData() {
         this.publicationResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<PublicationDropDownResponse> observeOn = this.profileRepository.getProfileDropListUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<PublicationDropDownResponse, Unit> function1 = new Function1<PublicationDropDownResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$getDropDownData$1
+        Single<PublicationDropDownResponse> singleObserveOn = this.profileRepository.getProfileDropListUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<PublicationDropDownResponse, Unit> function1 = new Function1<PublicationDropDownResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.getDropDownData.1
             {
                 super(1);
             }
@@ -309,20 +309,18 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(PublicationDropDownResponse publicationDropDownResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddQualifiedExaminationViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(publicationDropDownResponse));
+                AddQualifiedExaminationViewModel.this.publicationResponse.postValue(Resource.INSTANCE.success(publicationDropDownResponse));
             }
         };
         Consumer<? super PublicationDropDownResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda11
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.getDropDownData$lambda$6(Function1.this, obj);
+                AddQualifiedExaminationViewModel.getDropDownData$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$getDropDownData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.getDropDownData.2
             {
                 super(1);
             }
@@ -333,17 +331,15 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddQualifiedExaminationViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddQualifiedExaminationViewModel.this.publicationResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda12
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda12
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.getDropDownData$lambda$7(Function1.this, obj);
+                AddQualifiedExaminationViewModel.getDropDownData$lambda$7(function12, obj);
             }
         }));
     }
@@ -370,8 +366,8 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         this.addResponse2.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.addQualifiedExaminationUrlApiCall(name, score, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$addQualifiedExaminationData$4
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.addQualifiedExaminationUrlApiCall(name, score, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.addQualifiedExaminationData.4
             {
                 super(1);
             }
@@ -382,7 +378,7 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddQualifiedExaminationViewModel.this.getAddResponse2().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -390,10 +386,10 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda13
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$8(Function1.this, obj);
+                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$8(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$addQualifiedExaminationData$5
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.addQualifiedExaminationData.5
             {
                 super(1);
             }
@@ -404,15 +400,15 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddQualifiedExaminationViewModel.this.getAddResponse2().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$9(Function1.this, obj);
+                AddQualifiedExaminationViewModel.addQualifiedExaminationData$lambda$9(function12, obj);
             }
         }));
     }
@@ -436,8 +432,8 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         this.updateResponse2.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.updateQualifiedExaminationUrlApiCall(id, name, score, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$updateQualifiedExaminationData$4
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.updateQualifiedExaminationUrlApiCall(id, name, score, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.updateQualifiedExaminationData.4
             {
                 super(1);
             }
@@ -448,7 +444,7 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddQualifiedExaminationViewModel.this.getUpdateResponse2().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -456,10 +452,10 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$10(Function1.this, obj);
+                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$10(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$updateQualifiedExaminationData$5
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.updateQualifiedExaminationData.5
             {
                 super(1);
             }
@@ -470,15 +466,15 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddQualifiedExaminationViewModel.this.getUpdateResponse2().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$11(Function1.this, obj);
+                AddQualifiedExaminationViewModel.updateQualifiedExaminationData$lambda$11(function12, obj);
             }
         }));
     }
@@ -499,8 +495,8 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteQualifiedExaminationUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$deleteQualifiedExaminationData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteQualifiedExaminationUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.deleteQualifiedExaminationData.1
             {
                 super(1);
             }
@@ -511,7 +507,7 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddQualifiedExaminationViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -519,10 +515,10 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.deleteQualifiedExaminationData$lambda$12(Function1.this, obj);
+                AddQualifiedExaminationViewModel.deleteQualifiedExaminationData$lambda$12(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$deleteQualifiedExaminationData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel.deleteQualifiedExaminationData.2
             {
                 super(1);
             }
@@ -533,15 +529,15 @@ public final class AddQualifiedExaminationViewModel extends ViewModel implements
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddQualifiedExaminationViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda10
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddQualifiedExaminationViewModel.deleteQualifiedExaminationData$lambda$13(Function1.this, obj);
+                AddQualifiedExaminationViewModel.deleteQualifiedExaminationData$lambda$13(function12, obj);
             }
         }));
     }

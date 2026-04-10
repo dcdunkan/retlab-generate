@@ -54,35 +54,35 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: FeeFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FeeFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FeeFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FeeFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String batchId;
 
-    /* renamed from: feeViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: feeViewModel$delegate, reason: from kotlin metadata */
     private final Lazy feeViewModel;
     private String headGroup;
     private String installmentId;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String receiptDate;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String studentId;
     private String totalAmount;
     private int type;
 
-    /* compiled from: FeeFragment.kt */
+    /* JADX INFO: compiled from: FeeFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -132,7 +132,7 @@ public final class FeeFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return feeFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(feeFragment);
@@ -146,7 +146,7 @@ public final class FeeFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -159,7 +159,7 @@ public final class FeeFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(FeeViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(FeeViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final FeeFragment feeFragment2 = this;
@@ -186,7 +186,7 @@ public final class FeeFragment extends BaseFragment {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(FeeFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -237,7 +237,7 @@ public final class FeeFragment extends BaseFragment {
         return (FeeAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FeeFragmentBinding get_binding() {
         return this._binding;
     }
@@ -251,7 +251,7 @@ public final class FeeFragment extends BaseFragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: FeeFragment.kt */
+    /* JADX INFO: compiled from: FeeFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/fees/payment/FeeFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/fees/payment/FeeFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -270,7 +270,6 @@ public final class FeeFragment extends BaseFragment {
     @Override // androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        getFeeViewModel().getInstallments();
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -299,10 +298,7 @@ public final class FeeFragment extends BaseFragment {
         setUp();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0137, code lost:
-    
-        if (kotlin.text.StringsKt.contains$default((java.lang.CharSequence) r0, (java.lang.CharSequence) "gcek", false, 2, (java.lang.Object) null) != false) goto L47;
-     */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0140  */
     @Override // in.etuwa.app.ui.base.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -310,7 +306,7 @@ public final class FeeFragment extends BaseFragment {
     */
     protected void setUp() {
         /*
-            Method dump skipped, instructions count: 346
+            Method dump skipped, instruction units count: 353
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
         throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.fees.payment.FeeFragment.setUp():void");
@@ -337,31 +333,31 @@ public final class FeeFragment extends BaseFragment {
         this$0.listenResponseBatchId();
         this$0.listenHeadResponse();
         ArrayList<FeeGroups> items = this$0.getAdapter().getItems();
-        HashMap<String, String> hashMap = new HashMap<>();
+        HashMap<String, String> map = new HashMap<>();
         String lowerCase = this$0.getPreference().getBaseUrl().toLowerCase();
         Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
         String str10 = "][amount]";
         if (StringsKt.contains$default((CharSequence) lowerCase, (CharSequence) "sctce", false, 2, (Object) null)) {
-            HashMap<String, String> hashMap2 = hashMap;
-            hashMap2.put("payment", "1");
-            hashMap2.put("batch_id", this$0.batchId);
-            hashMap2.put("verify", "1");
+            HashMap<String, String> map2 = map;
+            map2.put("payment", "1");
+            map2.put("batch_id", this$0.batchId);
+            map2.put("verify", "1");
             System.out.println((Object) ("====================" + this$0.type));
-            HashMap<String, String> hashMap3 = new HashMap<>();
+            HashMap<String, String> map3 = new HashMap<>();
             new HashMap();
             for (FeeGroups feeGroups : items) {
                 if (Intrinsics.areEqual(feeGroups.getPaid(), "0")) {
-                    HashMap<String, String> hashMap4 = hashMap3;
-                    hashMap4.put("FeeCollection[" + feeGroups.getFeeHeadGroupId() + "][amount]", feeGroups.getBalance());
-                    hashMap4.put("FeeCollection[" + feeGroups.getFeeHeadGroupId() + "][feeheadgroup_id]", feeGroups.getFeeHeadGroupId());
+                    HashMap<String, String> map4 = map3;
+                    map4.put("FeeCollection[" + feeGroups.getFeeHeadGroupId() + "][amount]", feeGroups.getBalance());
+                    map4.put("FeeCollection[" + feeGroups.getFeeHeadGroupId() + "][feeheadgroup_id]", feeGroups.getFeeHeadGroupId());
                 }
                 System.out.println((Object) ("the real feeheadGroup is " + this$0.batchId));
             }
-            this$0.getFeeViewModel().payFees(hashMap3, hashMap);
+            this$0.getFeeViewModel().payFees(map3, map);
             this$0.getFeeViewModel().getPayResponse().observe(this$0.getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda6
                 @Override // androidx.lifecycle.Observer
                 public final void onChanged(Object obj) {
-                    FeeFragment.setUp$lambda$15$lambda$4(FeeFragment.this, (Resource) obj);
+                    FeeFragment.setUp$lambda$15$lambda$4(this.f$0, (Resource) obj);
                 }
             });
             return;
@@ -386,42 +382,42 @@ public final class FeeFragment extends BaseFragment {
                 Intrinsics.checkNotNullExpressionValue(lowerCase4, "toLowerCase(...)");
                 if (StringsKt.contains$default((CharSequence) lowerCase4, (CharSequence) "sjcp", false, 2, (Object) null)) {
                     this$0.listenResponse();
-                    HashMap<String, String> hashMap5 = hashMap;
-                    hashMap5.put("FeeReceipt[amount]", this$0.totalAmount);
-                    hashMap5.put("FeeReceipt[receipt_date]", this$0.receiptDate);
+                    HashMap<String, String> map5 = map;
+                    map5.put("FeeReceipt[amount]", this$0.totalAmount);
+                    map5.put("FeeReceipt[receipt_date]", this$0.receiptDate);
                     System.out.println((Object) ("====================" + this$0.type));
-                    HashMap<String, String> hashMap6 = new HashMap<>();
-                    HashMap<String, String> hashMap7 = new HashMap<>();
-                    hashMap7.put("Transaction[method]", "5");
+                    HashMap<String, String> map6 = new HashMap<>();
+                    HashMap<String, String> map7 = new HashMap<>();
+                    map7.put("Transaction[method]", "5");
                     for (FeeGroups feeGroups2 : items) {
                         if (Intrinsics.areEqual(feeGroups2.getPaid(), "0")) {
-                            HashMap<String, String> hashMap8 = hashMap6;
+                            HashMap<String, String> map8 = map6;
                             String feeHeadId = feeGroups2.getFeeHeadId();
                             StringBuilder sb = new StringBuilder("FeeCollection[");
                             sb.append(feeHeadId);
                             str7 = str14;
                             sb.append(str7);
-                            hashMap8.put(sb.toString(), feeGroups2.getBalance());
+                            map8.put(sb.toString(), feeGroups2.getBalance());
                             String feeHeadId2 = feeGroups2.getFeeHeadId();
                             StringBuilder sb2 = new StringBuilder("FeeCollection[");
                             sb2.append(feeHeadId2);
                             str6 = str13;
                             sb2.append(str6);
-                            hashMap8.put(sb2.toString(), feeGroups2.getFeeGroupId());
+                            map8.put(sb2.toString(), feeGroups2.getFeeGroupId());
                             String feeHeadId3 = feeGroups2.getFeeHeadId();
                             StringBuilder sb3 = new StringBuilder("FeeCollection[");
                             sb3.append(feeHeadId3);
                             str8 = str15;
                             sb3.append(str8);
-                            hashMap8.put(sb3.toString(), feeGroups2.getFeeHeadId());
+                            map8.put(sb3.toString(), feeGroups2.getFeeHeadId());
                             String feeHeadId4 = feeGroups2.getFeeHeadId();
                             StringBuilder sb4 = new StringBuilder("FeeCollection[");
                             sb4.append(feeHeadId4);
                             str9 = str12;
                             sb4.append(str9);
-                            hashMap8.put(sb4.toString(), feeGroups2.getFeeTypeId());
-                            hashMap8.put("FeeCollection[" + feeGroups2.getFeeHeadId() + "][student_id]", this$0.studentId);
-                            hashMap8.put("FeeCollection[" + feeGroups2.getFeeHeadId() + "][installment_id]", this$0.installmentId);
+                            map8.put(sb4.toString(), feeGroups2.getFeeTypeId());
+                            map8.put("FeeCollection[" + feeGroups2.getFeeHeadId() + "][student_id]", this$0.studentId);
+                            map8.put("FeeCollection[" + feeGroups2.getFeeHeadId() + "][installment_id]", this$0.installmentId);
                         } else {
                             str6 = str13;
                             str7 = str14;
@@ -434,43 +430,43 @@ public final class FeeFragment extends BaseFragment {
                         str14 = str7;
                         str13 = str6;
                     }
-                    this$0.getFeeViewModel().paySreeChitraFees(hashMap6, hashMap, hashMap7, "1", this$0.installmentId);
+                    this$0.getFeeViewModel().paySreeChitraFees(map6, map, map7, "1", this$0.installmentId);
                     this$0.getFeeViewModel().getPayFeeSreeChitraResponse().observe(this$0.getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda8
                         @Override // androidx.lifecycle.Observer
                         public final void onChanged(Object obj) {
-                            FeeFragment.setUp$lambda$15$lambda$10(FeeFragment.this, (Resource) obj);
+                            FeeFragment.setUp$lambda$15$lambda$10(this.f$0, (Resource) obj);
                         }
                     });
                     return;
                 }
-                HashMap<String, String> hashMap9 = hashMap;
-                hashMap9.put("payment", "1");
-                hashMap9.put("batch_id", this$0.batchId);
-                hashMap9.put("verify", "1");
+                HashMap<String, String> map9 = map;
+                map9.put("payment", "1");
+                map9.put("batch_id", this$0.batchId);
+                map9.put("verify", "1");
                 System.out.println((Object) ("====================" + this$0.type));
-                HashMap<String, String> hashMap10 = new HashMap<>();
+                HashMap<String, String> map10 = new HashMap<>();
                 new HashMap();
                 for (FeeGroups feeGroups3 : items) {
                     if (Intrinsics.areEqual(feeGroups3.getPaid(), "0")) {
-                        HashMap<String, String> hashMap11 = hashMap10;
-                        hashMap11.put("FeeCollection[" + feeGroups3.getFeeHeadGroupId() + str14, feeGroups3.getBalance());
+                        HashMap<String, String> map11 = map10;
+                        map11.put("FeeCollection[" + feeGroups3.getFeeHeadGroupId() + str14, feeGroups3.getBalance());
                         String feeHeadGroupId = feeGroups3.getFeeHeadGroupId();
                         StringBuilder sb5 = new StringBuilder("FeeCollection[");
                         sb5.append(feeHeadGroupId);
                         str5 = str11;
                         sb5.append(str5);
-                        hashMap11.put(sb5.toString(), feeGroups3.getFeeHeadGroupId());
+                        map11.put(sb5.toString(), feeGroups3.getFeeHeadGroupId());
                     } else {
                         str5 = str11;
                     }
                     System.out.println((Object) ("the real feeheadGroup is " + this$0.batchId));
                     str11 = str5;
                 }
-                this$0.getFeeViewModel().payFees(hashMap10, hashMap);
+                this$0.getFeeViewModel().payFees(map10, map);
                 this$0.getFeeViewModel().getPayResponse().observe(this$0.getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda9
                     @Override // androidx.lifecycle.Observer
                     public final void onChanged(Object obj) {
-                        FeeFragment.setUp$lambda$15$lambda$14(FeeFragment.this, (Resource) obj);
+                        FeeFragment.setUp$lambda$15$lambda$14(this.f$0, (Resource) obj);
                     }
                 });
                 return;
@@ -481,30 +477,30 @@ public final class FeeFragment extends BaseFragment {
             str2 = str15;
             str = str12;
         }
-        HashMap<String, String> hashMap12 = hashMap;
-        hashMap12.put("FeeReceipt[amount]", this$0.totalAmount);
-        hashMap12.put("FeeReceipt[receipt_date]", this$0.receiptDate);
+        HashMap<String, String> map12 = map;
+        map12.put("FeeReceipt[amount]", this$0.totalAmount);
+        map12.put("FeeReceipt[receipt_date]", this$0.receiptDate);
         System.out.println((Object) ("====================" + this$0.type));
-        HashMap<String, String> hashMap13 = new HashMap<>();
-        HashMap<String, String> hashMap14 = new HashMap<>();
-        hashMap14.put("Transaction[method]", "5");
+        HashMap<String, String> map13 = new HashMap<>();
+        HashMap<String, String> map14 = new HashMap<>();
+        map14.put("Transaction[method]", "5");
         for (FeeGroups feeGroups4 : items) {
             if (Intrinsics.areEqual(feeGroups4.getPaid(), "0")) {
-                HashMap<String, String> hashMap15 = hashMap13;
-                hashMap15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str10, feeGroups4.getBalance());
-                hashMap15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str4, feeGroups4.getFeeGroupId());
-                hashMap15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str2, feeGroups4.getFeeHeadId());
-                hashMap15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str, feeGroups4.getFeeTypeId());
-                hashMap15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + "][student_id]", this$0.studentId);
-                hashMap15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str2, this$0.installmentId);
+                HashMap<String, String> map15 = map13;
+                map15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str10, feeGroups4.getBalance());
+                map15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str4, feeGroups4.getFeeGroupId());
+                map15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str2, feeGroups4.getFeeHeadId());
+                map15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str, feeGroups4.getFeeTypeId());
+                map15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + "][student_id]", this$0.studentId);
+                map15.put("FeeCollection[" + feeGroups4.getFeeHeadId() + str2, this$0.installmentId);
             }
             System.out.println((Object) (str3 + this$0.batchId));
         }
-        this$0.getFeeViewModel().paySreeChitraFees(hashMap13, hashMap, hashMap14, "1", this$0.installmentId);
+        this$0.getFeeViewModel().paySreeChitraFees(map13, map, map14, "1", this$0.installmentId);
         this$0.getFeeViewModel().getPayFeeSreeChitraResponse().observe(this$0.getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda7
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeFragment.setUp$lambda$15$lambda$7(FeeFragment.this, (Resource) obj);
+                FeeFragment.setUp$lambda$15$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -706,7 +702,7 @@ public final class FeeFragment extends BaseFragment {
         getFeeViewModel().getInstalmentResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeFragment.listenInstallmentResponse$lambda$17(FeeFragment.this, (Resource) obj);
+                FeeFragment.listenInstallmentResponse$lambda$17(this.f$0, (Resource) obj);
             }
         });
     }
@@ -720,16 +716,16 @@ public final class FeeFragment extends BaseFragment {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 FeeFragmentBinding feeFragmentBinding = this$0.get_binding();
                 if (feeFragmentBinding != null && (swipeRefreshLayout2 = feeFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -771,9 +767,9 @@ public final class FeeFragment extends BaseFragment {
                     }
                 }
                 FeeFragmentBinding feeFragmentBinding4 = this$0.get_binding();
-                Boolean valueOf = (feeFragmentBinding4 == null || (swipeRefreshLayout = feeFragmentBinding4.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-                Intrinsics.checkNotNull(valueOf);
-                if (valueOf.booleanValue()) {
+                Boolean boolValueOf2 = (feeFragmentBinding4 == null || (swipeRefreshLayout = feeFragmentBinding4.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+                Intrinsics.checkNotNull(boolValueOf2);
+                if (boolValueOf2.booleanValue()) {
                     FeeFragmentBinding feeFragmentBinding5 = this$0.get_binding();
                     SwipeRefreshLayout swipeRefreshLayout3 = feeFragmentBinding5 != null ? feeFragmentBinding5.swipeLayout : null;
                     if (swipeRefreshLayout3 != null) {
@@ -797,7 +793,7 @@ public final class FeeFragment extends BaseFragment {
         getFeeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeFragment.listenResponse$lambda$19(FeeFragment.this, (Resource) obj);
+                FeeFragment.listenResponse$lambda$19(this.f$0, (Resource) obj);
             }
         });
     }
@@ -889,7 +885,7 @@ public final class FeeFragment extends BaseFragment {
         getFeeViewModel().getHeadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeFragment.listenHeadResponse$lambda$21(FeeFragment.this, (Resource) obj);
+                FeeFragment.listenHeadResponse$lambda$21(this.f$0, (Resource) obj);
             }
         });
     }
@@ -937,7 +933,7 @@ public final class FeeFragment extends BaseFragment {
         getFeeViewModel().getResponseBatchId().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.payment.FeeFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeFragment.listenResponseBatchId$lambda$23(FeeFragment.this, (Resource) obj);
+                FeeFragment.listenResponseBatchId$lambda$23(this.f$0, (Resource) obj);
             }
         });
     }

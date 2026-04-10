@@ -4,8 +4,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 
-/* compiled from: FeeSreeChitraUrl.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeSreeChitraUrl.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FeeSreeChitraUrl {
 
     @SerializedName(FirebaseAnalytics.Event.LOGIN)

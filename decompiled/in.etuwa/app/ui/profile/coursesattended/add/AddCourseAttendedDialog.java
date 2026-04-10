@@ -72,16 +72,16 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddCourseAttendedDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddCourseAttendedDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddCourseAttendedDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddCourseAttendedBinding _binding;
     private String achievements;
 
-    /* renamed from: addCourseAttendedViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addCourseAttendedViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addCourseAttendedViewModel;
     private String days;
     private String days2;
@@ -97,18 +97,18 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     private File pickFile;
     private String secondDate;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String toDate;
     private String yearId;
 
-    /* compiled from: AddCourseAttendedDialog.kt */
+    /* JADX INFO: compiled from: AddCourseAttendedDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/coursesattended/add/AddCourseAttendedDialog$AddCourseListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddCourseListener {
         void onDismiss();
     }
 
-    /* compiled from: AddCourseAttendedDialog.kt */
+    /* JADX INFO: compiled from: AddCourseAttendedDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -158,7 +158,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addCourseAttendedDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addCourseAttendedDialog);
@@ -172,7 +172,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -185,7 +185,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddCourseAttendedViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddCourseAttendedViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.firstDate = "2022-10-22";
@@ -202,7 +202,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddCourseAttendedDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -227,7 +227,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddCourseAttendedBinding get_binding() {
         return this._binding;
     }
@@ -255,7 +255,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: AddCourseAttendedDialog.kt */
+    /* JADX INFO: compiled from: AddCourseAttendedDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J@\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u00062\u0006\u0010\f\u001a\u00020\u0006H\u0007¨\u0006\r"}, d2 = {"Lin/etuwa/app/ui/profile/coursesattended/add/AddCourseAttendedDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/coursesattended/add/AddCourseAttendedDialog;", "id", "", "name", "organised", TypedValues.TransitionType.S_DURATION, "achievements", "fromDate", "toDate", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -410,54 +410,52 @@ public final class AddCourseAttendedDialog extends BaseDialog {
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding12 = get_binding();
         if (dialogAddCourseAttendedBinding12 != null && (textView5 = dialogAddCourseAttendedBinding12.etFromDate) != null) {
-            textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda5
+            textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddCourseAttendedDialog.setUp$lambda$2(AddCourseAttendedDialog.this, i, i2, i3, view);
+                    AddCourseAttendedDialog.setUp$lambda$2(this.f$0, i, i2, i3, view);
                 }
             });
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding13 = get_binding();
         if (dialogAddCourseAttendedBinding13 != null && (textView4 = dialogAddCourseAttendedBinding13.etEndDate) != null) {
-            textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda6
+            textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddCourseAttendedDialog.setUp$lambda$4(AddCourseAttendedDialog.this, i, i2, i3, view);
+                    AddCourseAttendedDialog.setUp$lambda$4(this.f$0, i, i2, i3, view);
                 }
             });
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding14 = get_binding();
         Spinner spinner2 = dialogAddCourseAttendedBinding14 != null ? dialogAddCourseAttendedBinding14.spinnerYear : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$setUp$3
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter;
                     AddCourseAttendedDialog addCourseAttendedDialog = AddCourseAttendedDialog.this;
-                    spinnerAdapter = addCourseAttendedDialog.getSpinnerAdapter();
-                    addCourseAttendedDialog.yearId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    addCourseAttendedDialog.yearId = String.valueOf(addCourseAttendedDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding15 = get_binding();
         if (dialogAddCourseAttendedBinding15 != null && (textView3 = dialogAddCourseAttendedBinding15.completionSelect) != null) {
-            textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda7
+            textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddCourseAttendedDialog.setUp$lambda$6(AddCourseAttendedDialog.this, view);
+                    AddCourseAttendedDialog.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding16 = get_binding();
         if (dialogAddCourseAttendedBinding16 != null && (textView2 = dialogAddCourseAttendedBinding16.addBtn) != null) {
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda8
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddCourseAttendedDialog.setUp$lambda$7(AddCourseAttendedDialog.this, view);
+                    AddCourseAttendedDialog.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -465,10 +463,10 @@ public final class AddCourseAttendedDialog extends BaseDialog {
         if (dialogAddCourseAttendedBinding17 == null || (textView = dialogAddCourseAttendedBinding17.updateBtn) == null) {
             return;
         }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda9
+        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddCourseAttendedDialog.setUp$lambda$8(AddCourseAttendedDialog.this, view);
+                AddCourseAttendedDialog.setUp$lambda$8(this.f$0, view);
             }
         });
     }
@@ -476,10 +474,10 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$2(final AddCourseAttendedDialog this$0, int i, int i2, int i3, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda12
+        new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda10
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddCourseAttendedDialog.setUp$lambda$2$lambda$1(AddCourseAttendedDialog.this, datePicker, i4, i5, i6);
+                AddCourseAttendedDialog.setUp$lambda$2$lambda$1(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -507,15 +505,15 @@ public final class AddCourseAttendedDialog extends BaseDialog {
             textView3.setText(i + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.months + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.days);
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding2 = this$0.get_binding();
-        CharSequence charSequence = null;
+        CharSequence text = null;
         if (Intrinsics.areEqual(String.valueOf((dialogAddCourseAttendedBinding2 == null || (textView2 = dialogAddCourseAttendedBinding2.etEndDate) == null) ? null : textView2.getText()), "")) {
             return;
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding3 = this$0.get_binding();
         if (dialogAddCourseAttendedBinding3 != null && (textView = dialogAddCourseAttendedBinding3.etEndDate) != null) {
-            charSequence = textView.getText();
+            text = textView.getText();
         }
-        if (Intrinsics.areEqual(String.valueOf(charSequence), "To Date")) {
+        if (Intrinsics.areEqual(String.valueOf(text), "To Date")) {
             return;
         }
         this$0.noofdays();
@@ -524,10 +522,10 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$4(final AddCourseAttendedDialog this$0, int i, int i2, int i3, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda10
+        new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda8
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddCourseAttendedDialog.setUp$lambda$4$lambda$3(AddCourseAttendedDialog.this, datePicker, i4, i5, i6);
+                AddCourseAttendedDialog.setUp$lambda$4$lambda$3(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -555,15 +553,15 @@ public final class AddCourseAttendedDialog extends BaseDialog {
         }
         this$0.secondDate = i + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.months2 + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.days2;
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding2 = this$0.get_binding();
-        CharSequence charSequence = null;
+        CharSequence text = null;
         if (Intrinsics.areEqual(String.valueOf((dialogAddCourseAttendedBinding2 == null || (textView2 = dialogAddCourseAttendedBinding2.etFromDate) == null) ? null : textView2.getText()), "")) {
             return;
         }
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding3 = this$0.get_binding();
         if (dialogAddCourseAttendedBinding3 != null && (textView = dialogAddCourseAttendedBinding3.etFromDate) != null) {
-            charSequence = textView.getText();
+            text = textView.getText();
         }
-        if (Intrinsics.areEqual(String.valueOf(charSequence), "From Date")) {
+        if (Intrinsics.areEqual(String.valueOf(text), "From Date")) {
             return;
         }
         this$0.noofdays();
@@ -622,7 +620,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddCourseAttendedBinding2 == null || (textInputEditText10 = dialogAddCourseAttendedBinding2.etName) == null) ? null : textInputEditText10.getText()), "")) {
@@ -643,19 +641,19 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                                 if (!Intrinsics.areEqual(String.valueOf((dialogAddCourseAttendedBinding7 == null || (textView16 = dialogAddCourseAttendedBinding7.etEndDate) == null) ? null : textView16.getText()), "To Date")) {
                                     AddCourseAttendedViewModel addCourseAttendedViewModel = this$0.getAddCourseAttendedViewModel();
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding8 = this$0.get_binding();
-                                    String valueOf = String.valueOf((dialogAddCourseAttendedBinding8 == null || (textInputEditText9 = dialogAddCourseAttendedBinding8.etName) == null) ? null : textInputEditText9.getText());
+                                    String strValueOf = String.valueOf((dialogAddCourseAttendedBinding8 == null || (textInputEditText9 = dialogAddCourseAttendedBinding8.etName) == null) ? null : textInputEditText9.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding9 = this$0.get_binding();
-                                    String valueOf2 = String.valueOf((dialogAddCourseAttendedBinding9 == null || (textInputEditText8 = dialogAddCourseAttendedBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
+                                    String strValueOf2 = String.valueOf((dialogAddCourseAttendedBinding9 == null || (textInputEditText8 = dialogAddCourseAttendedBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding10 = this$0.get_binding();
-                                    String valueOf3 = String.valueOf((dialogAddCourseAttendedBinding10 == null || (textInputEditText7 = dialogAddCourseAttendedBinding10.etDuration) == null) ? null : textInputEditText7.getText());
+                                    String strValueOf3 = String.valueOf((dialogAddCourseAttendedBinding10 == null || (textInputEditText7 = dialogAddCourseAttendedBinding10.etDuration) == null) ? null : textInputEditText7.getText());
                                     String str = this$0.yearId;
                                     Intrinsics.checkNotNull(str);
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding11 = this$0.get_binding();
-                                    String valueOf4 = String.valueOf((dialogAddCourseAttendedBinding11 == null || (textInputEditText6 = dialogAddCourseAttendedBinding11.etAchievements) == null) ? null : textInputEditText6.getText());
+                                    String strValueOf4 = String.valueOf((dialogAddCourseAttendedBinding11 == null || (textInputEditText6 = dialogAddCourseAttendedBinding11.etAchievements) == null) ? null : textInputEditText6.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding12 = this$0.get_binding();
-                                    String valueOf5 = String.valueOf((dialogAddCourseAttendedBinding12 == null || (textView15 = dialogAddCourseAttendedBinding12.etFromDate) == null) ? null : textView15.getText());
+                                    String strValueOf5 = String.valueOf((dialogAddCourseAttendedBinding12 == null || (textView15 = dialogAddCourseAttendedBinding12.etFromDate) == null) ? null : textView15.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding13 = this$0.get_binding();
-                                    String valueOf6 = String.valueOf((dialogAddCourseAttendedBinding13 == null || (textView14 = dialogAddCourseAttendedBinding13.etEndDate) == null) ? null : textView14.getText());
+                                    String strValueOf6 = String.valueOf((dialogAddCourseAttendedBinding13 == null || (textView14 = dialogAddCourseAttendedBinding13.etEndDate) == null) ? null : textView14.getText());
                                     File file3 = this$0.pickFile;
                                     if (file3 == null) {
                                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -663,7 +661,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                                     } else {
                                         file = file3;
                                     }
-                                    addCourseAttendedViewModel.addCourseData(valueOf, valueOf2, valueOf3, str, valueOf4, valueOf5, valueOf6, file);
+                                    addCourseAttendedViewModel.addCourseData(strValueOf, strValueOf2, strValueOf3, str, strValueOf4, strValueOf5, strValueOf6, file);
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding14 = this$0.get_binding();
                                     LinearLayout linearLayout = dialogAddCourseAttendedBinding14 != null ? dialogAddCourseAttendedBinding14.completionCard : null;
                                     if (linearLayout != null) {
@@ -719,19 +717,19 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                         if (!Intrinsics.areEqual(String.valueOf((dialogAddCourseAttendedBinding24 == null || (textView6 = dialogAddCourseAttendedBinding24.etEndDate) == null) ? null : textView6.getText()), "To Date")) {
                             AddCourseAttendedViewModel addCourseAttendedViewModel2 = this$0.getAddCourseAttendedViewModel();
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding25 = this$0.get_binding();
-                            String valueOf7 = String.valueOf((dialogAddCourseAttendedBinding25 == null || (textInputEditText4 = dialogAddCourseAttendedBinding25.etName) == null) ? null : textInputEditText4.getText());
+                            String strValueOf7 = String.valueOf((dialogAddCourseAttendedBinding25 == null || (textInputEditText4 = dialogAddCourseAttendedBinding25.etName) == null) ? null : textInputEditText4.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding26 = this$0.get_binding();
-                            String valueOf8 = String.valueOf((dialogAddCourseAttendedBinding26 == null || (textInputEditText3 = dialogAddCourseAttendedBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
+                            String strValueOf8 = String.valueOf((dialogAddCourseAttendedBinding26 == null || (textInputEditText3 = dialogAddCourseAttendedBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding27 = this$0.get_binding();
-                            String valueOf9 = String.valueOf((dialogAddCourseAttendedBinding27 == null || (textInputEditText2 = dialogAddCourseAttendedBinding27.etDuration) == null) ? null : textInputEditText2.getText());
+                            String strValueOf9 = String.valueOf((dialogAddCourseAttendedBinding27 == null || (textInputEditText2 = dialogAddCourseAttendedBinding27.etDuration) == null) ? null : textInputEditText2.getText());
                             String str2 = this$0.yearId;
                             Intrinsics.checkNotNull(str2);
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding28 = this$0.get_binding();
-                            String valueOf10 = String.valueOf((dialogAddCourseAttendedBinding28 == null || (textInputEditText = dialogAddCourseAttendedBinding28.etAchievements) == null) ? null : textInputEditText.getText());
+                            String strValueOf10 = String.valueOf((dialogAddCourseAttendedBinding28 == null || (textInputEditText = dialogAddCourseAttendedBinding28.etAchievements) == null) ? null : textInputEditText.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding29 = this$0.get_binding();
-                            String valueOf11 = String.valueOf((dialogAddCourseAttendedBinding29 == null || (textView5 = dialogAddCourseAttendedBinding29.etFromDate) == null) ? null : textView5.getText());
+                            String strValueOf11 = String.valueOf((dialogAddCourseAttendedBinding29 == null || (textView5 = dialogAddCourseAttendedBinding29.etFromDate) == null) ? null : textView5.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding30 = this$0.get_binding();
-                            addCourseAttendedViewModel2.addCourseData(valueOf7, valueOf8, valueOf9, str2, valueOf10, valueOf11, String.valueOf((dialogAddCourseAttendedBinding30 == null || (textView4 = dialogAddCourseAttendedBinding30.etEndDate) == null) ? null : textView4.getText()));
+                            addCourseAttendedViewModel2.addCourseData(strValueOf7, strValueOf8, strValueOf9, str2, strValueOf10, strValueOf11, String.valueOf((dialogAddCourseAttendedBinding30 == null || (textView4 = dialogAddCourseAttendedBinding30.etEndDate) == null) ? null : textView4.getText()));
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding31 = this$0.get_binding();
                             LinearLayout linearLayout2 = dialogAddCourseAttendedBinding31 != null ? dialogAddCourseAttendedBinding31.completionCard : null;
                             if (linearLayout2 == null) {
@@ -799,15 +797,15 @@ public final class AddCourseAttendedDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding = this$0.get_binding();
-            CharSequence charSequence = null;
-            charSequence = null;
+            CharSequence text = null;
+            text = null;
             if (String.valueOf((dialogAddCourseAttendedBinding == null || (textView20 = dialogAddCourseAttendedBinding.completionFileName) == null) ? null : textView20.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddCourseAttendedBinding2 == null || (textInputEditText10 = dialogAddCourseAttendedBinding2.etName) == null) ? null : textInputEditText10.getText()), "")) {
@@ -830,19 +828,19 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                                     String str = this$0.id;
                                     Intrinsics.checkNotNull(str);
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding8 = this$0.get_binding();
-                                    String valueOf = String.valueOf((dialogAddCourseAttendedBinding8 == null || (textInputEditText9 = dialogAddCourseAttendedBinding8.etName) == null) ? null : textInputEditText9.getText());
+                                    String strValueOf = String.valueOf((dialogAddCourseAttendedBinding8 == null || (textInputEditText9 = dialogAddCourseAttendedBinding8.etName) == null) ? null : textInputEditText9.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding9 = this$0.get_binding();
-                                    String valueOf2 = String.valueOf((dialogAddCourseAttendedBinding9 == null || (textInputEditText8 = dialogAddCourseAttendedBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
+                                    String strValueOf2 = String.valueOf((dialogAddCourseAttendedBinding9 == null || (textInputEditText8 = dialogAddCourseAttendedBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding10 = this$0.get_binding();
-                                    String valueOf3 = String.valueOf((dialogAddCourseAttendedBinding10 == null || (textInputEditText7 = dialogAddCourseAttendedBinding10.etDuration) == null) ? null : textInputEditText7.getText());
+                                    String strValueOf3 = String.valueOf((dialogAddCourseAttendedBinding10 == null || (textInputEditText7 = dialogAddCourseAttendedBinding10.etDuration) == null) ? null : textInputEditText7.getText());
                                     String str2 = this$0.yearId;
                                     Intrinsics.checkNotNull(str2);
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding11 = this$0.get_binding();
-                                    String valueOf4 = String.valueOf((dialogAddCourseAttendedBinding11 == null || (textInputEditText6 = dialogAddCourseAttendedBinding11.etAchievements) == null) ? null : textInputEditText6.getText());
+                                    String strValueOf4 = String.valueOf((dialogAddCourseAttendedBinding11 == null || (textInputEditText6 = dialogAddCourseAttendedBinding11.etAchievements) == null) ? null : textInputEditText6.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding12 = this$0.get_binding();
-                                    String valueOf5 = String.valueOf((dialogAddCourseAttendedBinding12 == null || (textView14 = dialogAddCourseAttendedBinding12.etFromDate) == null) ? null : textView14.getText());
+                                    String strValueOf5 = String.valueOf((dialogAddCourseAttendedBinding12 == null || (textView14 = dialogAddCourseAttendedBinding12.etFromDate) == null) ? null : textView14.getText());
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding13 = this$0.get_binding();
-                                    String valueOf6 = String.valueOf((dialogAddCourseAttendedBinding13 == null || (textView13 = dialogAddCourseAttendedBinding13.etEndDate) == null) ? null : textView13.getText());
+                                    String strValueOf6 = String.valueOf((dialogAddCourseAttendedBinding13 == null || (textView13 = dialogAddCourseAttendedBinding13.etEndDate) == null) ? null : textView13.getText());
                                     File file3 = this$0.pickFile;
                                     if (file3 == null) {
                                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -850,7 +848,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                                     } else {
                                         file = file3;
                                     }
-                                    addCourseAttendedViewModel.updateCourseData(str, valueOf, valueOf2, valueOf3, str2, valueOf4, valueOf5, valueOf6, file);
+                                    addCourseAttendedViewModel.updateCourseData(str, strValueOf, strValueOf2, strValueOf3, str2, strValueOf4, strValueOf5, strValueOf6, file);
                                     DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding14 = this$0.get_binding();
                                     LinearLayout linearLayout = dialogAddCourseAttendedBinding14 != null ? dialogAddCourseAttendedBinding14.completionCard : null;
                                     if (linearLayout != null) {
@@ -908,22 +906,22 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                             String str3 = this$0.id;
                             Intrinsics.checkNotNull(str3);
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding25 = this$0.get_binding();
-                            String valueOf7 = String.valueOf((dialogAddCourseAttendedBinding25 == null || (textInputEditText4 = dialogAddCourseAttendedBinding25.etName) == null) ? null : textInputEditText4.getText());
+                            String strValueOf7 = String.valueOf((dialogAddCourseAttendedBinding25 == null || (textInputEditText4 = dialogAddCourseAttendedBinding25.etName) == null) ? null : textInputEditText4.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding26 = this$0.get_binding();
-                            String valueOf8 = String.valueOf((dialogAddCourseAttendedBinding26 == null || (textInputEditText3 = dialogAddCourseAttendedBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
+                            String strValueOf8 = String.valueOf((dialogAddCourseAttendedBinding26 == null || (textInputEditText3 = dialogAddCourseAttendedBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding27 = this$0.get_binding();
-                            String valueOf9 = String.valueOf((dialogAddCourseAttendedBinding27 == null || (textInputEditText2 = dialogAddCourseAttendedBinding27.etDuration) == null) ? null : textInputEditText2.getText());
+                            String strValueOf9 = String.valueOf((dialogAddCourseAttendedBinding27 == null || (textInputEditText2 = dialogAddCourseAttendedBinding27.etDuration) == null) ? null : textInputEditText2.getText());
                             String str4 = this$0.yearId;
                             Intrinsics.checkNotNull(str4);
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding28 = this$0.get_binding();
-                            String valueOf10 = String.valueOf((dialogAddCourseAttendedBinding28 == null || (textInputEditText = dialogAddCourseAttendedBinding28.etAchievements) == null) ? null : textInputEditText.getText());
+                            String strValueOf10 = String.valueOf((dialogAddCourseAttendedBinding28 == null || (textInputEditText = dialogAddCourseAttendedBinding28.etAchievements) == null) ? null : textInputEditText.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding29 = this$0.get_binding();
-                            String valueOf11 = String.valueOf((dialogAddCourseAttendedBinding29 == null || (textView4 = dialogAddCourseAttendedBinding29.etFromDate) == null) ? null : textView4.getText());
+                            String strValueOf11 = String.valueOf((dialogAddCourseAttendedBinding29 == null || (textView4 = dialogAddCourseAttendedBinding29.etFromDate) == null) ? null : textView4.getText());
                             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding30 = this$0.get_binding();
                             if (dialogAddCourseAttendedBinding30 != null && (textView3 = dialogAddCourseAttendedBinding30.etEndDate) != null) {
-                                charSequence = textView3.getText();
+                                text = textView3.getText();
                             }
-                            addCourseAttendedViewModel2.updateCourseData(str3, valueOf7, valueOf8, valueOf9, str4, valueOf10, valueOf11, String.valueOf(charSequence));
+                            addCourseAttendedViewModel2.updateCourseData(str3, strValueOf7, strValueOf8, strValueOf9, str4, strValueOf10, strValueOf11, String.valueOf(text));
                             return;
                         }
                     }
@@ -945,28 +943,21 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     }
 
     public final void noofdays() {
-        DateTimeFormatter ofPattern;
-        LocalDate parse;
-        LocalDate parse2;
-        ChronoUnit chronoUnit;
-        long between;
         TextInputEditText textInputEditText;
-        ofPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        parse = LocalDate.parse(this.firstDate, ofPattern);
-        parse2 = LocalDate.parse(this.secondDate, ofPattern);
-        chronoUnit = ChronoUnit.DAYS;
-        between = chronoUnit.between(ValidChecker$$ExternalSyntheticApiModelOutline0.m((Object) parse), ValidChecker$$ExternalSyntheticApiModelOutline0.m((Object) parse2));
+        DateTimeFormatter dateTimeFormatterOfPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        long jBetween = ChronoUnit.DAYS.between(ValidChecker$$ExternalSyntheticApiModelOutline0.m603m((Object) LocalDate.parse(this.firstDate, dateTimeFormatterOfPattern)), ValidChecker$$ExternalSyntheticApiModelOutline0.m603m((Object) LocalDate.parse(this.secondDate, dateTimeFormatterOfPattern)));
         DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding = get_binding();
         if (dialogAddCourseAttendedBinding == null || (textInputEditText = dialogAddCourseAttendedBinding.etDuration) == null) {
             return;
         }
-        textInputEditText.setText(String.valueOf(between + 1));
+        textInputEditText.setText(String.valueOf(jBetween + 1));
     }
 
     private final void listenSpinnerResponse() {
-        getAddCourseAttendedViewModel().getResponse().observe(getViewLifecycleOwner(), new AddCourseAttendedDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$listenSpinnerResponse$1
+        getAddCourseAttendedViewModel().getResponse().observe(getViewLifecycleOwner(), new AddCourseAttendedDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddCourseAttendedDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCourseAttendedDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1003,10 +994,8 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter;
-                DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -1014,8 +1003,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                     PublicationDropDownResponse data = resource.getData();
                     if (data != null) {
                         try {
-                            spinnerAdapter = AddCourseAttendedDialog.this.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getYears());
+                            AddCourseAttendedDialog.this.getSpinnerAdapter().addItems(data.getYears());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -1035,7 +1023,7 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                     return;
                 }
                 AddCourseAttendedDialog.this.hideProgress();
-                dialogAddCourseAttendedBinding = AddCourseAttendedDialog.this.get_binding();
+                DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding = AddCourseAttendedDialog.this.get_binding();
                 if (dialogAddCourseAttendedBinding == null || (spinner = dialogAddCourseAttendedBinding.spinnerYear) == null) {
                     return;
                 }
@@ -1047,10 +1035,10 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     }
 
     private final void listenAddResponse() {
-        getAddCourseAttendedViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda11
+        getAddCourseAttendedViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda9
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddCourseAttendedDialog.listenAddResponse$lambda$10(AddCourseAttendedDialog.this, (Resource) obj);
+                AddCourseAttendedDialog.listenAddResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1115,10 +1103,10 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     }
 
     private final void listenAddResponse2() {
-        getAddCourseAttendedViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda4
+        getAddCourseAttendedViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddCourseAttendedDialog.listenAddResponse2$lambda$12(AddCourseAttendedDialog.this, (Resource) obj);
+                AddCourseAttendedDialog.listenAddResponse2$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1183,10 +1171,10 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     }
 
     private final void listenUpdateResponse() {
-        getAddCourseAttendedViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda14
+        getAddCourseAttendedViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda12
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddCourseAttendedDialog.listenUpdateResponse$lambda$14(AddCourseAttendedDialog.this, (Resource) obj);
+                AddCourseAttendedDialog.listenUpdateResponse$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1251,10 +1239,10 @@ public final class AddCourseAttendedDialog extends BaseDialog {
     }
 
     private final void listenProgressResponse() {
-        getAddCourseAttendedViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda13
+        getAddCourseAttendedViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedDialog$$ExternalSyntheticLambda11
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddCourseAttendedDialog.listenProgressResponse$lambda$16(AddCourseAttendedDialog.this, (Resource) obj);
+                AddCourseAttendedDialog.listenProgressResponse$lambda$16(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1285,18 +1273,18 @@ public final class AddCourseAttendedDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddCourseAttendedBinding2 != null ? dialogAddCourseAttendedBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddCourseAttendedBinding dialogAddCourseAttendedBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddCourseAttendedBinding3 != null ? dialogAddCourseAttendedBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1304,13 +1292,13 @@ public final class AddCourseAttendedDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -1336,24 +1324,24 @@ public final class AddCourseAttendedDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

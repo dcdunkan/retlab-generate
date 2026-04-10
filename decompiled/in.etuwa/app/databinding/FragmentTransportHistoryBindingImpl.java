@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.history.TransportHistoryViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentTransportHistoryBindingImpl extends FragmentTransportHistoryBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -61,7 +61,7 @@ public class FragmentTransportHistoryBindingImpl extends FragmentTransportHistor
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (226 != variableId) {
+        if (227 != variableId) {
             return false;
         }
         setTransportHistoryViewModel((TransportHistoryViewModel) variable);

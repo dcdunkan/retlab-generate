@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogParentDetailsBindingImpl extends DialogParentDetailsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -64,7 +64,7 @@ public class DialogParentDetailsBindingImpl extends DialogParentDetailsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (157 != variableId) {
+        if (159 != variableId) {
             return false;
         }
         setParentDetailsViewModel((ParentDetailsViewModel) variable);

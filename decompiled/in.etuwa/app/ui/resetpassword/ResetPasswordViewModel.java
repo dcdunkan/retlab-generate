@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel;
 import in.etuwa.app.data.model.resetpassword.ResetPassword;
 import in.etuwa.app.data.preference.SharedPrefManager;
 import in.etuwa.app.data.repository.ResetPasswordRepository;
+import in.etuwa.app.utils.AppConstant;
+import in.etuwa.app.utils.Resource;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -26,17 +28,16 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
-import retrofit2.Response;
 
-/* compiled from: ResetPasswordViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ResetPasswordViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ResetPasswordViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private final ResetPasswordRepository resetPasswordRepository;
-    private MutableLiveData<ResetPassword> resetResponse;
+    private MutableLiveData<Resource<ResetPassword>> resetResponse;
 
     public ResetPasswordViewModel(ResetPasswordRepository resetPasswordRepository) {
         Intrinsics.checkNotNullParameter(resetPasswordRepository, "resetPasswordRepository");
@@ -44,10 +45,10 @@ public final class ResetPasswordViewModel extends ViewModel implements KoinCompo
         this.compositeDisposable = new CompositeDisposable();
         this.resetResponse = new MutableLiveData<>();
         final ResetPasswordViewModel resetPasswordViewModel = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -57,7 +58,7 @@ public final class ResetPasswordViewModel extends ViewModel implements KoinCompo
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = resetPasswordViewModel;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -80,35 +81,32 @@ public final class ResetPasswordViewModel extends ViewModel implements KoinCompo
     }
 
     public final void getReset() {
-        this.resetResponse.postValue(new ResetPassword(""));
+        this.resetResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<Response<ResetPassword>> observeOn = this.resetPasswordRepository.getResetPasswordApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<Response<ResetPassword>, Unit> function1 = new Function1<Response<ResetPassword>, Unit>() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$getReset$1
+        Single<ResetPassword> singleObserveOn = this.resetPasswordRepository.getResetPasswordApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ResetPassword, Unit> function1 = new Function1<ResetPassword, Unit>() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel.getReset.1
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Response<ResetPassword> response) {
-                invoke2(response);
+            public /* bridge */ /* synthetic */ Unit invoke(ResetPassword resetPassword) {
+                invoke2(resetPassword);
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            public final void invoke2(Response<ResetPassword> response) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ResetPasswordViewModel.this.resetResponse;
-                ResetPasswordViewModel.this.getReset();
-                mutableLiveData.postValue(new ResetPassword(Unit.INSTANCE.toString()));
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(ResetPassword resetPassword) {
+                ResetPasswordViewModel.this.resetResponse.postValue(Resource.INSTANCE.success(resetPassword));
             }
         };
-        Consumer<? super Response<ResetPassword>> consumer = new Consumer() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$$ExternalSyntheticLambda0
+        Consumer<? super ResetPassword> consumer = new Consumer() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ResetPasswordViewModel.getReset$lambda$0(Function1.this, obj);
+                ResetPasswordViewModel.getReset$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$getReset$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel.getReset.2
             {
                 super(1);
             }
@@ -119,18 +117,15 @@ public final class ResetPasswordViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ResetPasswordViewModel.this.resetResponse;
-                ResetPasswordViewModel.this.getReset();
-                mutableLiveData.postValue(new ResetPassword(Unit.INSTANCE.toString()));
+                ResetPasswordViewModel.this.resetResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.resetpassword.ResetPasswordViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ResetPasswordViewModel.getReset$lambda$1(Function1.this, obj);
+                ResetPasswordViewModel.getReset$lambda$1(function12, obj);
             }
         }));
     }
@@ -147,7 +142,7 @@ public final class ResetPasswordViewModel extends ViewModel implements KoinCompo
         tmp0.invoke(obj);
     }
 
-    public final MutableLiveData<ResetPassword> getResponse() {
+    public final MutableLiveData<Resource<ResetPassword>> getResponse() {
         return this.resetResponse;
     }
 

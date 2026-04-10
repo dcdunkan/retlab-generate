@@ -67,26 +67,26 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddGrievanceDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AddGrievanceDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddGrievanceDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private AddGrievanceDialogBinding _binding;
 
-    /* renamed from: addGrievanceDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addGrievanceDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addGrievanceDialogViewModel;
     private String id;
     private boolean isReOpen;
     private AddGrievanceListener listener;
     private final ArrayList<File> pickFiles;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String type;
 
-    /* compiled from: AddGrievanceDialog.kt */
+    /* JADX INFO: compiled from: AddGrievanceDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/grievance/add/AddGrievanceDialog$AddGrievanceListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddGrievanceListener {
         void dismiss();
@@ -115,7 +115,7 @@ public final class AddGrievanceDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addGrievanceDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addGrievanceDialog);
@@ -129,7 +129,7 @@ public final class AddGrievanceDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -142,7 +142,7 @@ public final class AddGrievanceDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddGrievanceDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddGrievanceDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.type = "";
@@ -154,7 +154,7 @@ public final class AddGrievanceDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddGrievanceDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -180,7 +180,7 @@ public final class AddGrievanceDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final AddGrievanceDialogBinding get_binding() {
         return this._binding;
     }
@@ -190,7 +190,7 @@ public final class AddGrievanceDialog extends BaseDialog {
         return (GrievanceTypeSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: AddGrievanceDialog.kt */
+    /* JADX INFO: compiled from: AddGrievanceDialog.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001a\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/grievance/add/AddGrievanceDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/grievance/add/AddGrievanceDialog;", "id", "", "isReOpen", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -283,17 +283,15 @@ public final class AddGrievanceDialog extends BaseDialog {
         AddGrievanceDialogBinding addGrievanceDialogBinding5 = get_binding();
         Spinner spinner2 = addGrievanceDialogBinding5 != null ? addGrievanceDialogBinding5.spinnerGrievance : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    GrievanceTypeSpinnerAdapter spinnerAdapter;
                     AddGrievanceDialog addGrievanceDialog = AddGrievanceDialog.this;
-                    spinnerAdapter = addGrievanceDialog.getSpinnerAdapter();
-                    addGrievanceDialog.type = spinnerAdapter.getType(position).getId();
+                    addGrievanceDialog.type = addGrievanceDialog.getSpinnerAdapter().getType(position).getId();
                 }
             });
         }
@@ -302,7 +300,7 @@ public final class AddGrievanceDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddGrievanceDialog.setUp$lambda$2(AddGrievanceDialog.this, view);
+                    AddGrievanceDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -313,7 +311,7 @@ public final class AddGrievanceDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddGrievanceDialog.setUp$lambda$3(AddGrievanceDialog.this, view);
+                AddGrievanceDialog.setUp$lambda$3(this.f$0, view);
             }
         });
     }
@@ -334,25 +332,25 @@ public final class AddGrievanceDialog extends BaseDialog {
         TextInputEditText textInputEditText2;
         TextInputEditText textInputEditText3;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap<String, RequestBody> hashMap = new HashMap<>();
+        HashMap<String, RequestBody> map = new HashMap<>();
         RequestBody.Companion companion = RequestBody.INSTANCE;
         MediaType mediaType = MultipartBody.FORM;
         String str = this$0.id;
         if (str == null) {
             str = "";
         }
-        RequestBody create = companion.create(mediaType, str);
-        HashMap<String, RequestBody> hashMap2 = hashMap;
-        hashMap2.put("Grievance[grievance_type]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.type));
+        RequestBody requestBodyCreate = companion.create(mediaType, str);
+        HashMap<String, RequestBody> map2 = map;
+        map2.put("Grievance[grievance_type]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.type));
         RequestBody.Companion companion2 = RequestBody.INSTANCE;
         MediaType mediaType2 = MultipartBody.FORM;
         AddGrievanceDialogBinding addGrievanceDialogBinding = this$0.get_binding();
-        Editable editable = null;
-        hashMap2.put("Grievance[subject]", companion2.create(mediaType2, String.valueOf((addGrievanceDialogBinding == null || (textInputEditText3 = addGrievanceDialogBinding.etGrSubject) == null) ? null : textInputEditText3.getText())));
+        Editable text = null;
+        map2.put("Grievance[subject]", companion2.create(mediaType2, String.valueOf((addGrievanceDialogBinding == null || (textInputEditText3 = addGrievanceDialogBinding.etGrSubject) == null) ? null : textInputEditText3.getText())));
         RequestBody.Companion companion3 = RequestBody.INSTANCE;
         MediaType mediaType3 = MultipartBody.FORM;
         AddGrievanceDialogBinding addGrievanceDialogBinding2 = this$0.get_binding();
-        hashMap2.put("Grievance[description]", companion3.create(mediaType3, String.valueOf((addGrievanceDialogBinding2 == null || (textInputEditText2 = addGrievanceDialogBinding2.grComplaint) == null) ? null : textInputEditText2.getText())));
+        map2.put("Grievance[description]", companion3.create(mediaType3, String.valueOf((addGrievanceDialogBinding2 == null || (textInputEditText2 = addGrievanceDialogBinding2.grComplaint) == null) ? null : textInputEditText2.getText())));
         if (this$0.pickFiles.size() != 0) {
             AddGrievanceDialogBinding addGrievanceDialogBinding3 = this$0.get_binding();
             CardView cardView = addGrievanceDialogBinding3 != null ? addGrievanceDialogBinding3.progressView : null;
@@ -362,7 +360,7 @@ public final class AddGrievanceDialog extends BaseDialog {
         }
         String str2 = this$0.id;
         if (str2 == null || str2.length() == 0) {
-            this$0.getAddGrievanceDialogViewModel().addGrievance(hashMap, this$0.pickFiles);
+            this$0.getAddGrievanceDialogViewModel().addGrievance(map, this$0.pickFiles);
             return;
         }
         if (this$0.isReOpen) {
@@ -370,17 +368,18 @@ public final class AddGrievanceDialog extends BaseDialog {
             MediaType mediaType4 = MultipartBody.FORM;
             AddGrievanceDialogBinding addGrievanceDialogBinding4 = this$0.get_binding();
             if (addGrievanceDialogBinding4 != null && (textInputEditText = addGrievanceDialogBinding4.grComment) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            hashMap2.put("Grievance[comments]", companion4.create(mediaType4, String.valueOf(editable)));
+            map2.put("Grievance[comments]", companion4.create(mediaType4, String.valueOf(text)));
         }
-        this$0.getAddGrievanceDialogViewModel().updateGrievance(create, hashMap, this$0.pickFiles);
+        this$0.getAddGrievanceDialogViewModel().updateGrievance(requestBodyCreate, map, this$0.pickFiles);
     }
 
     private final void listenSpinner() {
-        getAddGrievanceDialogViewModel().getTypeResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends GrievanceTypeResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenSpinner$1
+        getAddGrievanceDialogViewModel().getTypeResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends GrievanceTypeResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog.listenSpinner.1
 
-            /* compiled from: AddGrievanceDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: AddGrievanceDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -417,18 +416,15 @@ public final class AddGrievanceDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<GrievanceTypeResponse> resource) {
-                GrievanceTypeSpinnerAdapter spinnerAdapter;
-                AddGrievanceDialogBinding addGrievanceDialogBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     AddGrievanceDialog.this.hideProgress();
                     GrievanceTypeResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter = AddGrievanceDialog.this.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getGTypes());
+                        AddGrievanceDialog.this.getSpinnerAdapter().addItems(data.getGTypes());
                         return;
                     }
                     return;
@@ -445,7 +441,7 @@ public final class AddGrievanceDialog extends BaseDialog {
                     return;
                 }
                 AddGrievanceDialog.this.hideProgress();
-                addGrievanceDialogBinding = AddGrievanceDialog.this.get_binding();
+                AddGrievanceDialogBinding addGrievanceDialogBinding = AddGrievanceDialog.this.get_binding();
                 if (addGrievanceDialogBinding == null || (spinner = addGrievanceDialogBinding.spinnerGrievance) == null) {
                     return;
                 }
@@ -457,9 +453,10 @@ public final class AddGrievanceDialog extends BaseDialog {
     }
 
     private final void listenViewGrievance() {
-        getAddGrievanceDialogViewModel().getViewResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewGrievanceResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenViewGrievance$1
+        getAddGrievanceDialogViewModel().getViewResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewGrievanceResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog.listenViewGrievance.1
 
-            /* compiled from: AddGrievanceDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenViewGrievance$1$WhenMappings */
+            /* JADX INFO: compiled from: AddGrievanceDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -496,13 +493,10 @@ public final class AddGrievanceDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ViewGrievanceResponse> resource) {
-                AddGrievanceDialogBinding addGrievanceDialogBinding;
-                AddGrievanceDialogBinding addGrievanceDialogBinding2;
                 TextInputEditText textInputEditText;
                 TextInputEditText textInputEditText2;
-                AddGrievanceDialogBinding addGrievanceDialogBinding3;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -510,11 +504,11 @@ public final class AddGrievanceDialog extends BaseDialog {
                     ViewGrievanceResponse data = resource.getData();
                     if (data != null) {
                         AddGrievanceDialog addGrievanceDialog = AddGrievanceDialog.this;
-                        addGrievanceDialogBinding = addGrievanceDialog.get_binding();
+                        AddGrievanceDialogBinding addGrievanceDialogBinding = addGrievanceDialog.get_binding();
                         if (addGrievanceDialogBinding != null && (textInputEditText2 = addGrievanceDialogBinding.etGrSubject) != null) {
                             textInputEditText2.setText(data.getGrievance().getSubject());
                         }
-                        addGrievanceDialogBinding2 = addGrievanceDialog.get_binding();
+                        AddGrievanceDialogBinding addGrievanceDialogBinding2 = addGrievanceDialog.get_binding();
                         if (addGrievanceDialogBinding2 == null || (textInputEditText = addGrievanceDialogBinding2.grComplaint) == null) {
                             return;
                         }
@@ -535,7 +529,7 @@ public final class AddGrievanceDialog extends BaseDialog {
                     return;
                 }
                 AddGrievanceDialog.this.hideProgress();
-                addGrievanceDialogBinding3 = AddGrievanceDialog.this.get_binding();
+                AddGrievanceDialogBinding addGrievanceDialogBinding3 = AddGrievanceDialog.this.get_binding();
                 if (addGrievanceDialogBinding3 == null || (spinner = addGrievanceDialogBinding3.spinnerGrievance) == null) {
                     return;
                 }
@@ -547,9 +541,10 @@ public final class AddGrievanceDialog extends BaseDialog {
     }
 
     private final void listenProgressResponse() {
-        getAddGrievanceDialogViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends Float>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenProgressResponse$1
+        getAddGrievanceDialogViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends Float>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog.listenProgressResponse.1
 
-            /* compiled from: AddGrievanceDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenProgressResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddGrievanceDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -586,12 +581,8 @@ public final class AddGrievanceDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<Float> resource) {
-                AddGrievanceDialogBinding addGrievanceDialogBinding;
-                AddGrievanceDialogBinding addGrievanceDialogBinding2;
-                AddGrievanceDialogBinding addGrievanceDialogBinding3;
-                AddGrievanceDialogBinding addGrievanceDialogBinding4;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -603,8 +594,8 @@ public final class AddGrievanceDialog extends BaseDialog {
                         return;
                     }
                     AddGrievanceDialog.this.hideProgress();
-                    addGrievanceDialogBinding4 = AddGrievanceDialog.this.get_binding();
-                    if (addGrievanceDialogBinding4 == null || (textView = addGrievanceDialogBinding4.grUploadPath) == null) {
+                    AddGrievanceDialogBinding addGrievanceDialogBinding = AddGrievanceDialog.this.get_binding();
+                    if (addGrievanceDialogBinding == null || (textView = addGrievanceDialogBinding.grUploadPath) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -616,21 +607,21 @@ public final class AddGrievanceDialog extends BaseDialog {
                 Float data = resource.getData();
                 if (data != null) {
                     AddGrievanceDialog addGrievanceDialog = AddGrievanceDialog.this;
-                    float floatValue = data.floatValue();
-                    addGrievanceDialogBinding = addGrievanceDialog.get_binding();
-                    ProgressBar progressBar = addGrievanceDialogBinding != null ? addGrievanceDialogBinding.uploadProgressbar : null;
+                    float fFloatValue = data.floatValue();
+                    AddGrievanceDialogBinding addGrievanceDialogBinding2 = addGrievanceDialog.get_binding();
+                    ProgressBar progressBar = addGrievanceDialogBinding2 != null ? addGrievanceDialogBinding2.uploadProgressbar : null;
                     if (progressBar != null) {
-                        progressBar.setProgress((int) floatValue);
+                        progressBar.setProgress((int) fFloatValue);
                     }
-                    addGrievanceDialogBinding2 = addGrievanceDialog.get_binding();
-                    TextView textView2 = addGrievanceDialogBinding2 != null ? addGrievanceDialogBinding2.progressText : null;
+                    AddGrievanceDialogBinding addGrievanceDialogBinding3 = addGrievanceDialog.get_binding();
+                    TextView textView2 = addGrievanceDialogBinding3 != null ? addGrievanceDialogBinding3.progressText : null;
                     if (textView2 != null) {
-                        textView2.setText(((int) floatValue) + " %");
+                        textView2.setText(((int) fFloatValue) + " %");
                     }
-                    if (((int) floatValue) == 100) {
+                    if (((int) fFloatValue) == 100) {
                         addGrievanceDialog.showProgress();
-                        addGrievanceDialogBinding3 = addGrievanceDialog.get_binding();
-                        CardView cardView = addGrievanceDialogBinding3 != null ? addGrievanceDialogBinding3.progressView : null;
+                        AddGrievanceDialogBinding addGrievanceDialogBinding4 = addGrievanceDialog.get_binding();
+                        CardView cardView = addGrievanceDialogBinding4 != null ? addGrievanceDialogBinding4.progressView : null;
                         if (cardView == null) {
                             return;
                         }
@@ -642,9 +633,10 @@ public final class AddGrievanceDialog extends BaseDialog {
     }
 
     private final void listenAddResponse() {
-        getAddGrievanceDialogViewModel().getAddGrievanceResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenAddResponse$1
+        getAddGrievanceDialogViewModel().getAddGrievanceResponse().observe(getViewLifecycleOwner(), new AddGrievanceDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialog.listenAddResponse.1
 
-            /* compiled from: AddGrievanceDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.add.AddGrievanceDialog$listenAddResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddGrievanceDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -681,18 +673,11 @@ public final class AddGrievanceDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                AddGrievanceDialogBinding addGrievanceDialogBinding;
                 CardView cardView;
-                AddGrievanceDialogBinding addGrievanceDialogBinding2;
                 TextInputEditText grComplaint;
-                AddGrievanceDialogBinding addGrievanceDialogBinding3;
-                AddGrievanceDialogBinding addGrievanceDialogBinding4;
                 TextInputEditText grComplaint2;
-                AddGrievanceDialogBinding addGrievanceDialogBinding5;
-                AddGrievanceDialogBinding addGrievanceDialogBinding6;
-                AddGrievanceDialogBinding addGrievanceDialogBinding7;
                 TextInputEditText textInputEditText;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -702,8 +687,8 @@ public final class AddGrievanceDialog extends BaseDialog {
                     }
                     if (i == 3) {
                         AddGrievanceDialog.this.hideProgress();
-                        addGrievanceDialogBinding5 = AddGrievanceDialog.this.get_binding();
-                        cardView = addGrievanceDialogBinding5 != null ? addGrievanceDialogBinding5.progressView : null;
+                        AddGrievanceDialogBinding addGrievanceDialogBinding = AddGrievanceDialog.this.get_binding();
+                        cardView = addGrievanceDialogBinding != null ? addGrievanceDialogBinding.progressView : null;
                         if (cardView == null) {
                             return;
                         }
@@ -714,13 +699,13 @@ public final class AddGrievanceDialog extends BaseDialog {
                         return;
                     }
                     AddGrievanceDialog.this.hideProgress();
-                    addGrievanceDialogBinding6 = AddGrievanceDialog.this.get_binding();
-                    cardView = addGrievanceDialogBinding6 != null ? addGrievanceDialogBinding6.progressView : null;
+                    AddGrievanceDialogBinding addGrievanceDialogBinding2 = AddGrievanceDialog.this.get_binding();
+                    cardView = addGrievanceDialogBinding2 != null ? addGrievanceDialogBinding2.progressView : null;
                     if (cardView != null) {
                         cardView.setVisibility(8);
                     }
-                    addGrievanceDialogBinding7 = AddGrievanceDialog.this.get_binding();
-                    if (addGrievanceDialogBinding7 == null || (textInputEditText = addGrievanceDialogBinding7.grComplaint) == null) {
+                    AddGrievanceDialogBinding addGrievanceDialogBinding3 = AddGrievanceDialog.this.get_binding();
+                    if (addGrievanceDialogBinding3 == null || (textInputEditText = addGrievanceDialogBinding3.grComplaint) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -733,26 +718,26 @@ public final class AddGrievanceDialog extends BaseDialog {
                 if (data != null) {
                     AddGrievanceDialog addGrievanceDialog = AddGrievanceDialog.this;
                     if (data.getSuccess()) {
-                        addGrievanceDialogBinding3 = addGrievanceDialog.get_binding();
-                        cardView = addGrievanceDialogBinding3 != null ? addGrievanceDialogBinding3.progressView : null;
+                        AddGrievanceDialogBinding addGrievanceDialogBinding4 = addGrievanceDialog.get_binding();
+                        cardView = addGrievanceDialogBinding4 != null ? addGrievanceDialogBinding4.progressView : null;
                         if (cardView != null) {
                             cardView.setVisibility(8);
                         }
-                        addGrievanceDialogBinding4 = addGrievanceDialog.get_binding();
-                        if (addGrievanceDialogBinding4 != null && (grComplaint2 = addGrievanceDialogBinding4.grComplaint) != null) {
+                        AddGrievanceDialogBinding addGrievanceDialogBinding5 = addGrievanceDialog.get_binding();
+                        if (addGrievanceDialogBinding5 != null && (grComplaint2 = addGrievanceDialogBinding5.grComplaint) != null) {
                             Intrinsics.checkNotNullExpressionValue(grComplaint2, "grComplaint");
                             ToastExtKt.showSuccessToast(grComplaint2, data.getMessage());
                         }
                         addGrievanceDialog.dismiss();
                         return;
                     }
-                    addGrievanceDialogBinding = addGrievanceDialog.get_binding();
-                    cardView = addGrievanceDialogBinding != null ? addGrievanceDialogBinding.progressView : null;
+                    AddGrievanceDialogBinding addGrievanceDialogBinding6 = addGrievanceDialog.get_binding();
+                    cardView = addGrievanceDialogBinding6 != null ? addGrievanceDialogBinding6.progressView : null;
                     if (cardView != null) {
                         cardView.setVisibility(8);
                     }
-                    addGrievanceDialogBinding2 = addGrievanceDialog.get_binding();
-                    if (addGrievanceDialogBinding2 == null || (grComplaint = addGrievanceDialogBinding2.grComplaint) == null) {
+                    AddGrievanceDialogBinding addGrievanceDialogBinding7 = addGrievanceDialog.get_binding();
+                    if (addGrievanceDialogBinding7 == null || (grComplaint = addGrievanceDialogBinding7.grComplaint) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(grComplaint, "grComplaint");
@@ -766,12 +751,12 @@ public final class AddGrievanceDialog extends BaseDialog {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Context context;
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
         ContentResolver contentResolver3;
-        ParcelFileDescriptor openFileDescriptor2;
-        String str2;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor2;
+        String fileName2;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -793,18 +778,18 @@ public final class AddGrievanceDialog extends BaseDialog {
                     Intrinsics.checkNotNull(clipData2);
                     Uri uri = clipData2.getItemAt(i).getUri();
                     Context context2 = getContext();
-                    if (context2 != null && (contentResolver3 = context2.getContentResolver()) != null && (openFileDescriptor2 = contentResolver3.openFileDescriptor(uri, "r", null)) != null) {
+                    if (context2 != null && (contentResolver3 = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor2 = contentResolver3.openFileDescriptor(uri, "r", null)) != null) {
                         Context context3 = getContext();
                         File cacheDir = context3 != null ? context3.getCacheDir() : null;
                         Context context4 = getContext();
                         if (context4 == null || (contentResolver4 = context4.getContentResolver()) == null) {
-                            str2 = null;
+                            fileName2 = null;
                         } else {
                             Intrinsics.checkNotNullExpressionValue(uri, "uri");
-                            str2 = ResolvUtilKt.getFileName(contentResolver4, uri);
+                            fileName2 = ResolvUtilKt.getFileName(contentResolver4, uri);
                         }
-                        File file = new File(cacheDir, str2);
-                        ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor2.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                        File file = new File(cacheDir, fileName2);
+                        ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor2.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                         this.pickFiles.add(file);
                         Intrinsics.checkNotNullExpressionValue(uri, "uri");
                         setSelectedFiles(uri);
@@ -814,19 +799,19 @@ public final class AddGrievanceDialog extends BaseDialog {
                 return;
             }
             Uri data2 = data.getData();
-            if (data2 != null && (context = getContext()) != null && (contentResolver = context.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+            if (data2 != null && (context = getContext()) != null && (contentResolver = context.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                 Context context5 = getContext();
                 File cacheDir2 = context5 != null ? context5.getCacheDir() : null;
                 Context context6 = getContext();
                 if (context6 == null || (contentResolver2 = context6.getContentResolver()) == null) {
-                    str = null;
+                    fileName = null;
                 } else {
                     Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                    str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                    fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                 }
-                File file2 = new File(cacheDir2, str);
-                ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file2), 0, 2, null);
+                File file2 = new File(cacheDir2, fileName);
+                ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file2), 0, 2, null);
                 this.pickFiles.add(file2);
                 setSelectedFiles(data2);
             }
@@ -842,7 +827,7 @@ public final class AddGrievanceDialog extends BaseDialog {
         TextView textView2;
         TextView textView3;
         AddGrievanceDialogBinding addGrievanceDialogBinding = get_binding();
-        String str = null;
+        String fileName = null;
         if (!Intrinsics.areEqual((addGrievanceDialogBinding == null || (textView3 = addGrievanceDialogBinding.grUploadPath) == null) ? null : textView3.getText(), "")) {
             AddGrievanceDialogBinding addGrievanceDialogBinding2 = get_binding();
             if (!Intrinsics.areEqual((addGrievanceDialogBinding2 == null || (textView2 = addGrievanceDialogBinding2.grUploadPath) == null) ? null : textView2.getText(), "No File Selected")) {
@@ -855,9 +840,9 @@ public final class AddGrievanceDialog extends BaseDialog {
                 CharSequence text = (addGrievanceDialogBinding4 == null || (textView = addGrievanceDialogBinding4.grUploadPath) == null) ? null : textView.getText();
                 Context context = getContext();
                 if (context != null && (contentResolver2 = context.getContentResolver()) != null) {
-                    str = ResolvUtilKt.getFileName(contentResolver2, path);
+                    fileName = ResolvUtilKt.getFileName(contentResolver2, path);
                 }
-                textView4.setText(((Object) text) + IOUtils.LINE_SEPARATOR_UNIX + str);
+                textView4.setText(((Object) text) + IOUtils.LINE_SEPARATOR_UNIX + fileName);
                 return;
             }
         }
@@ -868,9 +853,9 @@ public final class AddGrievanceDialog extends BaseDialog {
         }
         Context context2 = getContext();
         if (context2 != null && (contentResolver = context2.getContentResolver()) != null) {
-            str = ResolvUtilKt.getFileName(contentResolver, path);
+            fileName = ResolvUtilKt.getFileName(contentResolver, path);
         }
-        textView5.setText(String.valueOf(str));
+        textView5.setText(String.valueOf(fileName));
     }
 
     public final void setCallBack(GrievanceFragment context) {

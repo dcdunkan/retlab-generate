@@ -14,6 +14,7 @@ export const JAVA_WRAPPER_CLASSES_TYPES_TABLE: Record<string, string> = {
     "Boolean": "boolean",
     "Character": "string",
     "String": "string",
+    "Object": "object",
 };
 
 export const UNWRAPPABLE_CLASSES = ["Awaited"];
@@ -50,5 +51,11 @@ export const SCOPE_DECLARATIONS: ScopeDeclarations = {
         "MultipartBody": {
             "Part": {},
         },
+    },
+};
+
+export const TYPE_IDENTIFIERS_IMPORTS: Record<string, Record<string, string[]>> = {
+    "in.etuwa.etlabstaff.data.model.timetable": {
+        "TimeTable": ["etlabstaff", "timetable"], // these are filled in by additional content when writing the file
     },
 };

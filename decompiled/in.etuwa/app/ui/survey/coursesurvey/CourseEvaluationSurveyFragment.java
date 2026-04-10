@@ -43,27 +43,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CourseEvaluationSurveyFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CourseEvaluationSurveyFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CourseEvaluationSurveyFragment extends BaseFragment implements CourseEvaluationSurveyAdapter.SurveyCallBack, CourseSurveyQuestionsAdapter.SurveyCallBack, POSurveyAdapter.SurveyCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentCourseSurveyBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private boolean flag;
     private int i;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: surveyViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: surveyViewModel$delegate, reason: from kotlin metadata */
     private final Lazy surveyViewModel;
 
-    /* compiled from: CourseEvaluationSurveyFragment.kt */
+    /* JADX INFO: compiled from: CourseEvaluationSurveyFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -113,7 +113,7 @@ public final class CourseEvaluationSurveyFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return courseEvaluationSurveyFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(courseEvaluationSurveyFragment);
@@ -127,7 +127,7 @@ public final class CourseEvaluationSurveyFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -140,7 +140,7 @@ public final class CourseEvaluationSurveyFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CourseEvaluationSurveyViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CourseEvaluationSurveyViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final CourseEvaluationSurveyFragment courseEvaluationSurveyFragment2 = this;
@@ -186,7 +186,7 @@ public final class CourseEvaluationSurveyFragment extends BaseFragment implement
         return (CourseEvaluationSurveyAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentCourseSurveyBinding get_binding() {
         return this._binding;
     }
@@ -211,7 +211,7 @@ public final class CourseEvaluationSurveyFragment extends BaseFragment implement
         this.i = i;
     }
 
-    /* compiled from: CourseEvaluationSurveyFragment.kt */
+    /* JADX INFO: compiled from: CourseEvaluationSurveyFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0017\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/survey/coursesurvey/CourseEvaluationSurveyFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/survey/coursesurvey/CourseEvaluationSurveyFragment;", "id", "", "(Ljava/lang/Integer;)Lin/etuwa/app/ui/survey/coursesurvey/CourseEvaluationSurveyFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -291,7 +291,7 @@ public final class CourseEvaluationSurveyFragment extends BaseFragment implement
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.survey.coursesurvey.CourseEvaluationSurveyFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                CourseEvaluationSurveyFragment.setUp$lambda$1(CourseEvaluationSurveyFragment.this);
+                CourseEvaluationSurveyFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -312,7 +312,7 @@ public final class CourseEvaluationSurveyFragment extends BaseFragment implement
         getSurveyViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.survey.coursesurvey.CourseEvaluationSurveyFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CourseEvaluationSurveyFragment.listenResponse$lambda$3(CourseEvaluationSurveyFragment.this, (Resource) obj);
+                CourseEvaluationSurveyFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }

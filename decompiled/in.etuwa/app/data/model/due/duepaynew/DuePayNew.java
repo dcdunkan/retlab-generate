@@ -6,8 +6,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DuePayNew.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DuePayNew.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DuePayNew {
     private final String admission_no;
     private final String amount;
@@ -24,72 +24,72 @@ public final /* data */ class DuePayNew {
     private final String student_id;
     private final String year_id;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getAdmission_no() {
         return this.admission_no;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final String getBalance() {
         return this.balance;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final boolean getFullpaid() {
         return this.fullpaid;
     }
 
-    /* renamed from: component13, reason: from getter */
+    /* JADX INFO: renamed from: component13, reason: from getter */
     public final String getYear_id() {
         return this.year_id;
     }
 
-    /* renamed from: component14, reason: from getter */
+    /* JADX INFO: renamed from: component14, reason: from getter */
     public final String getError() {
         return this.error;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getStudent_id() {
         return this.student_id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDue_id() {
         return this.due_id;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getHead_id() {
         return this.head_id;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getSem_id() {
         return this.sem_id;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDepartment_id() {
         return this.department_id;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
@@ -123,14 +123,17 @@ public final /* data */ class DuePayNew {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v21, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v26 */
+    /* JADX WARN: Type inference failed for: r1v27 */
     public int hashCode() {
-        int hashCode = ((((((((((((((((((((this.admission_no.hashCode() * 31) + this.student_id.hashCode()) * 31) + this.due_id.hashCode()) * 31) + this.head_id.hashCode()) * 31) + this.sem_id.hashCode()) * 31) + this.department_id.hashCode()) * 31) + this.status.hashCode()) * 31) + this.date.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.paid.hashCode()) * 31) + this.balance.hashCode()) * 31;
+        int iHashCode = ((((((((((((((((((((this.admission_no.hashCode() * 31) + this.student_id.hashCode()) * 31) + this.due_id.hashCode()) * 31) + this.head_id.hashCode()) * 31) + this.sem_id.hashCode()) * 31) + this.department_id.hashCode()) * 31) + this.status.hashCode()) * 31) + this.date.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.paid.hashCode()) * 31) + this.balance.hashCode()) * 31;
         boolean z = this.fullpaid;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((hashCode + i) * 31) + this.year_id.hashCode()) * 31) + this.error.hashCode();
+        return ((((iHashCode + r1) * 31) + this.year_id.hashCode()) * 31) + this.error.hashCode();
     }
 
     public String toString() {

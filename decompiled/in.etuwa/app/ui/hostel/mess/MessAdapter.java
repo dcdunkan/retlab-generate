@@ -16,13 +16,13 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: MessAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MessAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MessAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private CallBack listener;
     private final ArrayList<Mess> mess = new ArrayList<>();
 
-    /* compiled from: MessAdapter.kt */
+    /* JADX INFO: compiled from: MessAdapter.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\bf\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Lin/etuwa/app/ui/hostel/mess/MessAdapter$CallBack;", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
     }
@@ -31,18 +31,18 @@ public final class MessAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_mess, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   ….row_mess, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_mess, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   ….row_mess, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -58,7 +58,7 @@ public final class MessAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         return !this.mess.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: MessAdapter.kt */
+    /* JADX INFO: compiled from: MessAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/hostel/mess/MessAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/hostel/mess/MessAdapter;Landroid/view/View;)V", "breakfast", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "dinner", "lunch", "messType", "snacks", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView breakfast;

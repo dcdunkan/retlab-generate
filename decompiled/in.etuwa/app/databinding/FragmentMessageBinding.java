@@ -3,7 +3,9 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -12,22 +14,32 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.message.inbox.MessageViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentMessageBinding extends ViewDataBinding {
-    public final CoordinatorLayout inboxLayout;
+    public final HorizontalScrollView hrView;
+    public final TextView inboxBtn;
+    public final LinearLayout inboxLayout;
 
     @Bindable
     protected MessageViewModel mMessageViewModel;
     public final RecyclerView rvInbox;
+    public final RecyclerView rvSentItems;
+    public final TextView sentBtn;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setMessageViewModel(MessageViewModel messageViewModel);
 
-    protected FragmentMessageBinding(Object _bindingComponent, View _root, int _localFieldCount, CoordinatorLayout inboxLayout, RecyclerView rvInbox, SwipeRefreshLayout swipeLayout) {
+    protected FragmentMessageBinding(Object _bindingComponent, View _root, int _localFieldCount, HorizontalScrollView hrView, TextView inboxBtn, LinearLayout inboxLayout, RecyclerView rvInbox, RecyclerView rvSentItems, TextView sentBtn, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
+        this.hrView = hrView;
+        this.inboxBtn = inboxBtn;
         this.inboxLayout = inboxLayout;
         this.rvInbox = rvInbox;
+        this.rvSentItems = rvSentItems;
+        this.sentBtn = sentBtn;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public MessageViewModel getMessageViewModel() {

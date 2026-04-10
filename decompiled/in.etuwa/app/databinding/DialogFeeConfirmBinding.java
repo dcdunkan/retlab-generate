@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.feenewengineer.payment.feeconfirmdialog.FeeConfirmViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogFeeConfirmBinding extends ViewDataBinding {
     public final TextView fine;
 

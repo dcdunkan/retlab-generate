@@ -4,8 +4,8 @@ import in.etuwa.app.ui.feenewengineer.payment.feeconfirmdialog.FeeConfirmDialogK
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamReceipt.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamReceipt.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamReceipt {
     private final String feeReceiptNo;
     private final String print_url;
@@ -28,22 +28,22 @@ public final /* data */ class ExamReceipt {
         return examReceipt.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFeeReceiptNo() {
         return this.feeReceiptNo;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSub_total() {
         return this.sub_total;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getReceipt_date() {
         return this.receipt_date;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getPrint_url() {
         return this.print_url;
     }

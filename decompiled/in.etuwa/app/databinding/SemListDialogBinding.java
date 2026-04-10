@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.university.semlistdialog.SemListDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class SemListDialogBinding extends ViewDataBinding {
 
     @Bindable

@@ -13,7 +13,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddTransRegBindingImpl extends DialogAddTransRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -73,7 +73,7 @@ public class DialogAddTransRegBindingImpl extends DialogAddTransRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (228 != variableId) {
+        if (230 != variableId) {
             return false;
         }
         setTransportRegistrationViewModel((TransportRegistrationViewModel) variable);

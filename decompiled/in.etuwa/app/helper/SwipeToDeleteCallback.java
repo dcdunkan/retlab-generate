@@ -18,8 +18,8 @@ import in.etuwa.app.R;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SwipeToDeleteCallback.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SwipeToDeleteCallback.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback {
     private final ColorDrawable background;
     private final int backgroundColor;
@@ -51,16 +51,6 @@ public abstract class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallba
         Paint paint = new Paint();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         this.clearPaint = paint;
-    }
-
-    @Override // androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback, androidx.recyclerview.widget.ItemTouchHelper.Callback
-    public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
-        Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
-        if (viewHolder.getAdapterPosition() == 10) {
-            return 0;
-        }
-        return super.getMovementFlags(recyclerView, viewHolder);
     }
 
     @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
@@ -97,5 +87,15 @@ public abstract class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallba
         if (c != null) {
             c.drawRect(left, top, right, bottom, this.clearPaint);
         }
+    }
+
+    @Override // androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback, androidx.recyclerview.widget.ItemTouchHelper.Callback
+    public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+        Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
+        Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
+        if (viewHolder instanceof EmptyViewHolder) {
+            return 0;
+        }
+        return super.getMovementFlags(recyclerView, viewHolder);
     }
 }

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class LayoutFillListBinding implements ViewBinding {
     public final TextView fillName;
     private final LinearLayout rootView;
@@ -29,11 +29,11 @@ public final class LayoutFillListBinding implements ViewBinding {
     }
 
     public static LayoutFillListBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.layout_fill_list, parent, false);
+        View viewInflate = inflater.inflate(R.layout.layout_fill_list, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static LayoutFillListBinding bind(View rootView) {

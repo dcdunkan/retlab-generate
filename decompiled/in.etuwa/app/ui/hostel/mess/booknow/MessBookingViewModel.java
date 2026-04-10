@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MessBookingViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MessBookingViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MessBookingViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> bookingResponse;
     private final CompositeDisposable compositeDisposable;
@@ -42,8 +42,8 @@ public final class MessBookingViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(qty, "qty");
         this.bookingResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.messBookingApiCall(type, menuId, qty).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$getMessBookingResponse$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.messBookingApiCall(type, menuId, qty).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel.getMessBookingResponse.1
             {
                 super(1);
             }
@@ -54,20 +54,18 @@ public final class MessBookingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessBookingViewModel.this.bookingResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                MessBookingViewModel.this.bookingResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessBookingViewModel.getMessBookingResponse$lambda$0(Function1.this, obj);
+                MessBookingViewModel.getMessBookingResponse$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$getMessBookingResponse$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel.getMessBookingResponse.2
             {
                 super(1);
             }
@@ -78,17 +76,15 @@ public final class MessBookingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessBookingViewModel.this.bookingResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                MessBookingViewModel.this.bookingResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessBookingViewModel.getMessBookingResponse$lambda$1(Function1.this, obj);
+                MessBookingViewModel.getMessBookingResponse$lambda$1(function12, obj);
             }
         }));
     }
@@ -113,8 +109,8 @@ public final class MessBookingViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.messMenuResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<MessMenuResponse> observeOn = this.hostelRepository.getMessTypeApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<MessMenuResponse, Unit> function1 = new Function1<MessMenuResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$getMessMenuType$1
+        Single<MessMenuResponse> singleObserveOn = this.hostelRepository.getMessTypeApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<MessMenuResponse, Unit> function1 = new Function1<MessMenuResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel.getMessMenuType.1
             {
                 super(1);
             }
@@ -125,20 +121,18 @@ public final class MessBookingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MessMenuResponse messMenuResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessBookingViewModel.this.messMenuResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(messMenuResponse));
+                MessBookingViewModel.this.messMenuResponse.postValue(Resource.INSTANCE.success(messMenuResponse));
             }
         };
         Consumer<? super MessMenuResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessBookingViewModel.getMessMenuType$lambda$2(Function1.this, obj);
+                MessBookingViewModel.getMessMenuType$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$getMessMenuType$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel.getMessMenuType.2
             {
                 super(1);
             }
@@ -149,17 +143,15 @@ public final class MessBookingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessBookingViewModel.this.messMenuResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                MessBookingViewModel.this.messMenuResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessBookingViewModel.getMessMenuType$lambda$3(Function1.this, obj);
+                MessBookingViewModel.getMessMenuType$lambda$3(function12, obj);
             }
         }));
     }
@@ -183,8 +175,8 @@ public final class MessBookingViewModel extends ViewModel {
     public final void getMessType() {
         this.messTypeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<MessTypeResponse> observeOn = this.hostelRepository.getMessTypeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<MessTypeResponse, Unit> function1 = new Function1<MessTypeResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$getMessType$1
+        Single<MessTypeResponse> singleObserveOn = this.hostelRepository.getMessTypeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<MessTypeResponse, Unit> function1 = new Function1<MessTypeResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel.getMessType.1
             {
                 super(1);
             }
@@ -195,20 +187,18 @@ public final class MessBookingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MessTypeResponse messTypeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessBookingViewModel.this.messTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(messTypeResponse));
+                MessBookingViewModel.this.messTypeResponse.postValue(Resource.INSTANCE.success(messTypeResponse));
             }
         };
         Consumer<? super MessTypeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessBookingViewModel.getMessType$lambda$4(Function1.this, obj);
+                MessBookingViewModel.getMessType$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$getMessType$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel.getMessType.2
             {
                 super(1);
             }
@@ -219,17 +209,15 @@ public final class MessBookingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessBookingViewModel.this.messTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                MessBookingViewModel.this.messTypeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessBookingViewModel.getMessType$lambda$5(Function1.this, obj);
+                MessBookingViewModel.getMessType$lambda$5(function12, obj);
             }
         }));
     }

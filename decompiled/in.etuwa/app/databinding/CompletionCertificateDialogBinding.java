@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.internship.completioncertificate.CompletionCertificateDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class CompletionCertificateDialogBinding extends ViewDataBinding {
     public final LinearLayout completionCard;
     public final TextView completionFileName;

@@ -20,6 +20,7 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.messaging.Constants;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.data.model.feemedical.FeesMed;
@@ -57,18 +58,18 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: FeeListFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FeeListFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FeeListFragment extends BaseFragment implements FeeListAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentFeePartialBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: feeListViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: feeListViewModel$delegate, reason: from kotlin metadata */
     private final Lazy feeListViewModel;
     private boolean flag;
     private String installmentId;
@@ -76,16 +77,16 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
     private ArrayList<InstallmentDetails> list2;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
     private List<String> selectedTotal;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private double total;
 
-    /* compiled from: FeeListFragment.kt */
+    /* JADX INFO: compiled from: FeeListFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -135,7 +136,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return feeListFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(feeListFragment);
@@ -149,7 +150,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -162,7 +163,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(FeeListViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(FeeListViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final FeeListFragment feeListFragment2 = this;
@@ -207,7 +208,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(FeeListFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -240,7 +241,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentFeePartialBinding get_binding() {
         return this._binding;
     }
@@ -280,7 +281,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
         this.total = d;
     }
 
-    /* compiled from: FeeListFragment.kt */
+    /* JADX INFO: compiled from: FeeListFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/feepartial/kmea/FeeListFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/feepartial/kmea/FeeListFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -347,27 +348,21 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
         FragmentFeePartialBinding fragmentFeePartialBinding3 = get_binding();
         Spinner spinner2 = fragmentFeePartialBinding3 != null ? fragmentFeePartialBinding3.spinnerInstallment : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListFragment$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListFragment.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    FeePartialSpinnerAdapter spinnerAdapter;
-                    FeeListViewModel feeListViewModel;
-                    FeePartialSpinnerAdapter spinnerAdapter2;
                     FeeListFragment feeListFragment = FeeListFragment.this;
-                    spinnerAdapter = feeListFragment.getSpinnerAdapter();
-                    feeListFragment.installmentId = spinnerAdapter.getType(position).getId();
-                    feeListViewModel = FeeListFragment.this.getFeeListViewModel();
-                    spinnerAdapter2 = FeeListFragment.this.getSpinnerAdapter();
-                    feeListViewModel.getFees(spinnerAdapter2.getType(position).getId());
+                    feeListFragment.installmentId = feeListFragment.getSpinnerAdapter().getType(position).getId();
+                    FeeListFragment.this.getFeeListViewModel().getFees(FeeListFragment.this.getSpinnerAdapter().getType(position).getId());
                 }
             });
         }
         listenResponse();
-        final HashMap hashMap = new HashMap();
+        final HashMap map = new HashMap();
         FragmentFeePartialBinding fragmentFeePartialBinding4 = get_binding();
         if (fragmentFeePartialBinding4 == null || (textView = fragmentFeePartialBinding4.payNowBtn) == null) {
             return;
@@ -375,7 +370,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FeeListFragment.setUp$lambda$0(FeeListFragment.this, hashMap, view);
+                FeeListFragment.setUp$lambda$0(this.f$0, map, view);
             }
         });
     }
@@ -386,16 +381,16 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
         Intrinsics.checkNotNullParameter(FeeCollection, "$FeeCollection");
         this$0.list2.clear();
         this$0.list2.addAll(this$0.getAdapter().getItems());
-        HashMap hashMap = FeeCollection;
-        hashMap.put("payment", "1");
-        hashMap.put("batch_id", this$0.getPreference().getBatchId());
+        HashMap map = FeeCollection;
+        map.put("payment", "1");
+        map.put("batch_id", this$0.getPreference().getBatchId());
         int size = this$0.list2.size() - 1;
         if (size >= 0) {
             int i = 0;
             while (true) {
                 if (!Intrinsics.areEqual(this$0.list2.get(i).getBalance(), "0.00")) {
-                    hashMap.put("FeeCollection[" + this$0.list2.get(i).getFeeheadgroup_id() + "][amount]", this$0.list2.get(i).getEditable_bal());
-                    hashMap.put("FeeCollection[" + this$0.list2.get(i).getFeeheadgroup_id() + "][feeheadgroup_id]", this$0.list2.get(i).getFeeheadgroup_id());
+                    map.put("FeeCollection[" + this$0.list2.get(i).getFeeheadgroup_id() + "][amount]", this$0.list2.get(i).getEditable_bal());
+                    map.put("FeeCollection[" + this$0.list2.get(i).getFeeheadgroup_id() + "][feeheadgroup_id]", this$0.list2.get(i).getFeeheadgroup_id());
                 }
                 if (i == size) {
                     break;
@@ -404,7 +399,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
                 }
             }
         }
-        this$0.getFeeListViewModel().getFeeUrl(hashMap);
+        this$0.getFeeListViewModel().getFeeUrl(map);
         this$0.listenUrlResponse();
     }
 
@@ -412,7 +407,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
         getFeeListViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeListFragment.listenResponse$lambda$2(FeeListFragment.this, (Resource) obj);
+                FeeListFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -457,10 +452,10 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
                 if (installmentDetailsResponse.getLogin()) {
                     FeeListAdapter adapter = this$0.getAdapter();
                     ArrayList<InstallmentDetails> installments = installmentDetailsResponse.getInstallments();
-                    Context requireContext = this$0.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                    adapter.addItems(installments, requireContext);
-                    this$0.total = 0.0d;
+                    Context contextRequireContext = this$0.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                    adapter.addItems(installments, contextRequireContext);
+                    this$0.total = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
                     int size = installmentDetailsResponse.getInstallments().size() - 1;
                     if (size >= 0) {
                         int i2 = 0;
@@ -504,15 +499,13 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
         getFeeListViewModel().getInstallmentResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeListFragment.listenSpinnerResponse$lambda$4(FeeListFragment.this, (Resource) obj);
+                FeeListFragment.listenSpinnerResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v6, types: [kotlin.Unit] */
-    /* JADX WARN: Type inference failed for: r3v8, types: [kotlin.Unit] */
     public static final void listenSpinnerResponse$lambda$4(FeeListFragment this$0, Resource resource) {
         RecyclerView rvFee;
         RecyclerView recyclerView;
@@ -576,9 +569,10 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
     }
 
     private final void listenUrlResponse() {
-        getFeeListViewModel().getFeeUrlResponse().observe(getViewLifecycleOwner(), new FeeListFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListFragment$listenUrlResponse$1
+        getFeeListViewModel().getFeeUrlResponse().observe(getViewLifecycleOwner(), new FeeListFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListFragment.listenUrlResponse.1
 
-            /* compiled from: FeeListFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feepartial.kmea.FeeListFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: FeeListFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -615,11 +609,9 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                FragmentFeePartialBinding fragmentFeePartialBinding;
                 RecyclerView rvFee;
-                MainCallBackListener mainCallBackListener;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -645,14 +637,14 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
                     FeeListFragment feeListFragment = FeeListFragment.this;
                     feeListFragment.showBaseView();
                     if (data.getSuccess()) {
-                        mainCallBackListener = feeListFragment.listener;
+                        MainCallBackListener mainCallBackListener = feeListFragment.listener;
                         if (mainCallBackListener != null) {
                             mainCallBackListener.openPaymentPage(data.getMessage());
                             return;
                         }
                         return;
                     }
-                    fragmentFeePartialBinding = feeListFragment.get_binding();
+                    FragmentFeePartialBinding fragmentFeePartialBinding = feeListFragment.get_binding();
                     if (fragmentFeePartialBinding == null || (rvFee = fragmentFeePartialBinding.rvFee) == null) {
                         return;
                     }
@@ -705,7 +697,7 @@ public final class FeeListFragment extends BaseFragment implements FeeListAdapte
     public void calculateTotal() {
         this.list2.clear();
         this.list2.addAll(getAdapter().getItems());
-        this.total = 0.0d;
+        this.total = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
         int size = this.list2.size() - 1;
         if (size >= 0) {
             int i = 0;

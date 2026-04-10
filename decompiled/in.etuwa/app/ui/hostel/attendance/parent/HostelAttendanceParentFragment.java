@@ -3,6 +3,7 @@ package in.etuwa.app.ui.hostel.attendance.parent;
 import android.app.DatePickerDialog;
 import android.content.ComponentCallbacks;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,24 +20,32 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.cli.HelpFormatter;
+import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.SuccessResponse;
+import in.etuwa.app.data.model.hostel.attendance.HostelAttParentView;
 import in.etuwa.app.data.model.hostel.attendance.HostelAttParentViewResponse;
 import in.etuwa.app.databinding.FragmentHostelAttendanceParentFragmentBinding;
 import in.etuwa.app.ui.base.BaseFragment;
 import in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentAdapter;
+import in.etuwa.app.ui.hostel.attendance.parent.approveview.LeaveDateState;
+import in.etuwa.app.ui.hostel.attendance.parent.approveview.ParentApproveDialog;
 import in.etuwa.app.utils.RecycleExtKt;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
+import kotlin.Unit;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
@@ -45,23 +54,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: HostelAttendanceParentFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelAttendanceParentFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelAttendanceParentFragment extends BaseFragment implements HostelAttendanceParentAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentHostelAttendanceParentFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String currentDate;
 
-    /* renamed from: hostelAttendanceParentViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: hostelAttendanceParentViewModel$delegate, reason: from kotlin metadata */
     private final Lazy hostelAttendanceParentViewModel;
+    private final ArrayList<HostelAttParentView> list;
     private int temp;
 
-    /* compiled from: HostelAttendanceParentFragment.kt */
+    /* JADX INFO: compiled from: HostelAttendanceParentFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -97,6 +107,16 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
     protected void hideProgress() {
     }
 
+    @Override // in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentAdapter.CallBack
+    public void rejectBtnClicked(String id) {
+        Intrinsics.checkNotNullParameter(id, "id");
+    }
+
+    @Override // in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentAdapter.CallBack
+    public void revokeBtnClicked(String id) {
+        Intrinsics.checkNotNullParameter(id, "id");
+    }
+
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void showProgress() {
     }
@@ -111,7 +131,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return hostelAttendanceParentFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(hostelAttendanceParentFragment);
@@ -125,7 +145,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -138,7 +158,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HostelAttendanceParentViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HostelAttendanceParentViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final HostelAttendanceParentFragment hostelAttendanceParentFragment2 = this;
@@ -160,6 +180,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         });
         this.currentDate = "";
         this.temp = 1;
+        this.list = new ArrayList<>();
     }
 
     private final HostelAttendanceParentViewModel getHostelAttendanceParentViewModel() {
@@ -170,7 +191,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         return (HostelAttendanceParentAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentHostelAttendanceParentFragmentBinding get_binding() {
         return this._binding;
     }
@@ -192,7 +213,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         this.temp = i;
     }
 
-    /* compiled from: HostelAttendanceParentFragment.kt */
+    /* JADX INFO: compiled from: HostelAttendanceParentFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/attendance/parent/HostelAttendanceParentFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/attendance/parent/HostelAttendanceParentFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -290,7 +311,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    HostelAttendanceParentFragment.setUp$lambda$1(HostelAttendanceParentFragment.this, view);
+                    HostelAttendanceParentFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -299,7 +320,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    HostelAttendanceParentFragment.setUp$lambda$2(HostelAttendanceParentFragment.this, view);
+                    HostelAttendanceParentFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -308,7 +329,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    HostelAttendanceParentFragment.setUp$lambda$3(HostelAttendanceParentFragment.this, view);
+                    HostelAttendanceParentFragment.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -319,7 +340,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HostelAttendanceParentFragment.setUp$lambda$5(HostelAttendanceParentFragment.this, i, i2, i3, view);
+                HostelAttendanceParentFragment.setUp$lambda$5(this.f$0, i, i2, i3, view);
             }
         });
     }
@@ -402,7 +423,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda9
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                HostelAttendanceParentFragment.setUp$lambda$5$lambda$4(HostelAttendanceParentFragment.this, datePicker, i4, i5, i6);
+                HostelAttendanceParentFragment.setUp$lambda$5$lambda$4(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -428,7 +449,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         getHostelAttendanceParentViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelAttendanceParentFragment.listenResponse$lambda$7(HostelAttendanceParentFragment.this, (Resource) obj);
+                HostelAttendanceParentFragment.listenResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -470,6 +491,8 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             this$0.showBaseView();
             if (hostelAttParentViewResponse.getLogin()) {
                 this$0.getAdapter().addItems(hostelAttParentViewResponse.getData());
+                this$0.list.clear();
+                this$0.list.addAll(hostelAttParentViewResponse.getData());
                 if (hostelAttParentViewResponse.getData().size() == 0) {
                     FragmentHostelAttendanceParentFragmentBinding fragmentHostelAttendanceParentFragmentBinding2 = this$0.get_binding();
                     CardView cardView = fragmentHostelAttendanceParentFragmentBinding2 != null ? fragmentHostelAttendanceParentFragmentBinding2.swipeLayout : null;
@@ -510,7 +533,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         getHostelAttendanceParentViewModel().getApproveViewResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelAttendanceParentFragment.listenApprovalResponse$lambda$9(HostelAttendanceParentFragment.this, (Resource) obj);
+                HostelAttendanceParentFragment.listenApprovalResponse$lambda$9(this.f$0, (Resource) obj);
             }
         });
     }
@@ -552,6 +575,8 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             this$0.showBaseView();
             if (hostelAttParentViewResponse.getLogin()) {
                 this$0.getAdapter().addItems(hostelAttParentViewResponse.getData());
+                this$0.list.clear();
+                this$0.list.addAll(hostelAttParentViewResponse.getData());
                 if (hostelAttParentViewResponse.getData().size() == 0) {
                     FragmentHostelAttendanceParentFragmentBinding fragmentHostelAttendanceParentFragmentBinding2 = this$0.get_binding();
                     CardView cardView = fragmentHostelAttendanceParentFragmentBinding2 != null ? fragmentHostelAttendanceParentFragmentBinding2.swipeLayout : null;
@@ -592,7 +617,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         getHostelAttendanceParentViewModel().getRejectViewResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda8
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelAttendanceParentFragment.listenRejectsResponse$lambda$11(HostelAttendanceParentFragment.this, (Resource) obj);
+                HostelAttendanceParentFragment.listenRejectsResponse$lambda$11(this.f$0, (Resource) obj);
             }
         });
     }
@@ -634,6 +659,8 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
             this$0.showBaseView();
             if (hostelAttParentViewResponse.getLogin()) {
                 this$0.getAdapter().addItems(hostelAttParentViewResponse.getData());
+                this$0.list.clear();
+                this$0.list.addAll(hostelAttParentViewResponse.getData());
                 if (hostelAttParentViewResponse.getData().size() == 0) {
                     FragmentHostelAttendanceParentFragmentBinding fragmentHostelAttendanceParentFragmentBinding2 = this$0.get_binding();
                     CardView cardView = fragmentHostelAttendanceParentFragmentBinding2 != null ? fragmentHostelAttendanceParentFragmentBinding2.swipeLayout : null;
@@ -674,7 +701,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         getHostelAttendanceParentViewModel().getApproveResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelAttendanceParentFragment.listenApproveResponse$lambda$13(HostelAttendanceParentFragment.this, (Resource) obj);
+                HostelAttendanceParentFragment.listenApproveResponse$lambda$13(this.f$0, (Resource) obj);
             }
         });
     }
@@ -748,7 +775,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         getHostelAttendanceParentViewModel().getRejectResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda10
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelAttendanceParentFragment.listenRejectResponse$lambda$15(HostelAttendanceParentFragment.this, (Resource) obj);
+                HostelAttendanceParentFragment.listenRejectResponse$lambda$15(this.f$0, (Resource) obj);
             }
         });
     }
@@ -822,7 +849,7 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
         getHostelAttendanceParentViewModel().getRevokeResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelAttendanceParentFragment.listenRevokeResponse$lambda$17(HostelAttendanceParentFragment.this, (Resource) obj);
+                HostelAttendanceParentFragment.listenRevokeResponse$lambda$17(this.f$0, (Resource) obj);
             }
         });
     }
@@ -919,20 +946,36 @@ public final class HostelAttendanceParentFragment extends BaseFragment implement
     }
 
     @Override // in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentAdapter.CallBack
-    public void approveBtnClicked(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        getHostelAttendanceParentViewModel().getAApproveResponse(id);
-    }
+    public void approveBtnClicked(int position) {
+        ParentApproveDialog.Companion companion = ParentApproveDialog.INSTANCE;
+        HostelAttParentView hostelAttParentView = this.list.get(position);
+        Intrinsics.checkNotNullExpressionValue(hostelAttParentView, "list[position]");
+        ParentApproveDialog parentApproveDialogNewInstance = companion.newInstance(hostelAttParentView);
+        parentApproveDialogNewInstance.setOnApproveListener(new Function1<List<? extends LeaveDateState>, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment.approveBtnClicked.1
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(List<? extends LeaveDateState> list) {
+                invoke2((List<LeaveDateState>) list);
+                return Unit.INSTANCE;
+            }
 
-    @Override // in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentAdapter.CallBack
-    public void rejectBtnClicked(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        getHostelAttendanceParentViewModel().getRejectParent(id);
-    }
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(List<LeaveDateState> selectedDates) {
+                Intrinsics.checkNotNullParameter(selectedDates, "selectedDates");
+                Log.d("Approve", "Approved dates: " + selectedDates);
+            }
+        });
+        parentApproveDialogNewInstance.setOnRejectListener(new Function0<Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentFragment.approveBtnClicked.2
+            @Override // kotlin.jvm.functions.Function0
+            public /* bridge */ /* synthetic */ Unit invoke() {
+                invoke2();
+                return Unit.INSTANCE;
+            }
 
-    @Override // in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentAdapter.CallBack
-    public void revokeBtnClicked(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        getHostelAttendanceParentViewModel().getRevokeParent(id);
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2() {
+                Log.d("Reject", "Leave request rejected");
+            }
+        });
+        parentApproveDialogNewInstance.show(getParentFragmentManager(), ParentApproveDialog.TAG);
     }
 }

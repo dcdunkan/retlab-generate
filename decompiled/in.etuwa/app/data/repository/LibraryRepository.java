@@ -11,8 +11,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: LibraryRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LibraryRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class LibraryRepository implements KoinComponent {
     private final ApiHelper apiHelper;
 

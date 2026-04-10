@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowExamReceiptBinding implements ViewBinding {
     public final LinearLayout dueLayout;
     public final TextView receiptAmt;
@@ -38,11 +38,11 @@ public final class RowExamReceiptBinding implements ViewBinding {
     }
 
     public static RowExamReceiptBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_exam_receipt, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_exam_receipt, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowExamReceiptBinding bind(View rootView) {

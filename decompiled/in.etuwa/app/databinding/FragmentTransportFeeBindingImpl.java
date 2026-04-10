@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.payment.TransportFeeViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentTransportFeeBindingImpl extends FragmentTransportFeeBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -61,7 +61,7 @@ public class FragmentTransportFeeBindingImpl extends FragmentTransportFeeBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (225 != variableId) {
+        if (226 != variableId) {
             return false;
         }
         setTransportFeeViewModel((TransportFeeViewModel) variable);

@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddFundedResearchBindingImpl extends DialogAddFundedResearchBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -84,7 +84,7 @@ public class DialogAddFundedResearchBindingImpl extends DialogAddFundedResearchB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (12 != variableId) {
+        if (11 != variableId) {
             return false;
         }
         setAddFundedResearchViewModel((AddFundedResearchViewModel) variable);

@@ -4,32 +4,38 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.session.SessionalViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class SessionalFragmentBinding extends ViewDataBinding {
     public final FloatingActionButton fabSession;
 
     @Bindable
     protected SessionalViewModel mSessionalViewModel;
     public final RecyclerView rvResultSession;
+    public final TextView semesterText;
+    public final MaterialCardView sessionSpinnerLayout;
     public final Spinner spinnerSemester;
     public final Spinner spinnerSession;
     public final SwipeRefreshLayout swipeLayout;
 
     public abstract void setSessionalViewModel(SessionalViewModel sessionalViewModel);
 
-    protected SessionalFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabSession, RecyclerView rvResultSession, Spinner spinnerSemester, Spinner spinnerSession, SwipeRefreshLayout swipeLayout) {
+    protected SessionalFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabSession, RecyclerView rvResultSession, TextView semesterText, MaterialCardView sessionSpinnerLayout, Spinner spinnerSemester, Spinner spinnerSession, SwipeRefreshLayout swipeLayout) {
         super(_bindingComponent, _root, _localFieldCount);
         this.fabSession = fabSession;
         this.rvResultSession = rvResultSession;
+        this.semesterText = semesterText;
+        this.sessionSpinnerLayout = sessionSpinnerLayout;
         this.spinnerSemester = spinnerSemester;
         this.spinnerSession = spinnerSession;
         this.swipeLayout = swipeLayout;

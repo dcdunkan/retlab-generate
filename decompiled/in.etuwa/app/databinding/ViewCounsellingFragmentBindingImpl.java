@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.counselling.view.ViewCounsellingViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ViewCounsellingFragmentBindingImpl extends ViewCounsellingFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -76,7 +76,7 @@ public class ViewCounsellingFragmentBindingImpl extends ViewCounsellingFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (242 != variableId) {
+        if (244 != variableId) {
             return false;
         }
         setViewCounsellingViewModel((ViewCounsellingViewModel) variable);

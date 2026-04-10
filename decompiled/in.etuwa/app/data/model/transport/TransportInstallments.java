@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TransportInstallments.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: TransportInstallments.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class TransportInstallments {
     private final String adjustment;
     private final String amount;
@@ -17,47 +17,47 @@ public final /* data */ class TransportInstallments {
     private final String particular;
     private final int totalAmount;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getParticular() {
         return this.particular;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAdjustment() {
         return this.adjustment;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final int getBalance() {
         return this.balance;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final boolean getFullpaid() {
         return this.fullpaid;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final int getTotalAmount() {
         return this.totalAmount;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getInstallment_id() {
         return this.installment_id;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getHead_id() {
         return this.head_id;
     }
@@ -84,14 +84,17 @@ public final /* data */ class TransportInstallments {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v14 */
+    /* JADX WARN: Type inference failed for: r1v15 */
+    /* JADX WARN: Type inference failed for: r1v8, types: [int] */
     public int hashCode() {
-        int hashCode = ((((((((this.particular.hashCode() * 31) + this.amount.hashCode()) * 31) + this.paid.hashCode()) * 31) + this.adjustment.hashCode()) * 31) + this.balance) * 31;
+        int iHashCode = ((((((((this.particular.hashCode() * 31) + this.amount.hashCode()) * 31) + this.paid.hashCode()) * 31) + this.adjustment.hashCode()) * 31) + this.balance) * 31;
         boolean z = this.fullpaid;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((((hashCode + i) * 31) + this.totalAmount) * 31) + this.installment_id.hashCode()) * 31) + this.head_id.hashCode();
+        return ((((((iHashCode + r1) * 31) + this.totalAmount) * 31) + this.installment_id.hashCode()) * 31) + this.head_id.hashCode();
     }
 
     public String toString() {

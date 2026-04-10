@@ -4,17 +4,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowSessionSemListBinding implements ViewBinding {
     private final LinearLayout rootView;
-    public final TextView sessionSem;
+    public final MaterialButton sessionSem;
 
-    private RowSessionSemListBinding(LinearLayout rootView, TextView sessionSem) {
+    private RowSessionSemListBinding(LinearLayout rootView, MaterialButton sessionSem) {
         this.rootView = rootView;
         this.sessionSem = sessionSem;
     }
@@ -29,18 +29,18 @@ public final class RowSessionSemListBinding implements ViewBinding {
     }
 
     public static RowSessionSemListBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_session_sem_list, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_session_sem_list, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowSessionSemListBinding bind(View rootView) {
         int i = R.id.session_sem;
-        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-        if (textView != null) {
-            return new RowSessionSemListBinding((LinearLayout) rootView, textView);
+        MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+        if (materialButton != null) {
+            return new RowSessionSemListBinding((LinearLayout) rootView, materialButton);
         }
         throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));
     }

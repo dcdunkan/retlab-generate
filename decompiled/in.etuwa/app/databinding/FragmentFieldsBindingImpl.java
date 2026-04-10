@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.webview.fields.FieldsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentFieldsBindingImpl extends FragmentFieldsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -81,7 +81,7 @@ public class FragmentFieldsBindingImpl extends FragmentFieldsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (96 != variableId) {
+        if (97 != variableId) {
             return false;
         }
         setFieldsViewModel((FieldsViewModel) variable);

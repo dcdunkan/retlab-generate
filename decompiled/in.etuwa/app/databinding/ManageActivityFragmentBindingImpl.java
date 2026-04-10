@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.activitypoint.manage.ManageActivityViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ManageActivityFragmentBindingImpl extends ManageActivityFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class ManageActivityFragmentBindingImpl extends ManageActivityFragmentBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (134 != variableId) {
+        if (135 != variableId) {
             return false;
         }
         setManageActivityViewModel((ManageActivityViewModel) variable);

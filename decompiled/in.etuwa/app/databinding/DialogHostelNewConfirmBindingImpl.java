@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostelnew.confirm.HostelNewConfirmViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogHostelNewConfirmBindingImpl extends DialogHostelNewConfirmBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -62,7 +62,7 @@ public class DialogHostelNewConfirmBindingImpl extends DialogHostelNewConfirmBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (113 != variableId) {
+        if (114 != variableId) {
             return false;
         }
         setHostelNewConfirmViewModel((HostelNewConfirmViewModel) variable);

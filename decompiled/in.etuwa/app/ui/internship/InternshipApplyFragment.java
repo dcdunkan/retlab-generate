@@ -5,12 +5,12 @@ import in.etuwa.app.ui.base.BaseFragment;
 import kotlin.Metadata;
 import kotlin.NotImplementedError;
 
-/* compiled from: InternshipApplyFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: InternshipApplyFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class InternshipApplyFragment extends BaseFragment {
     private FragmentInternshipBinding _binding;
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentInternshipBinding get_binding() {
         return this._binding;
     }

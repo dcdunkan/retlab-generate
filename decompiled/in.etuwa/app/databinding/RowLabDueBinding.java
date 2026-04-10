@@ -4,12 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowLabDueBinding implements ViewBinding {
     public final TextView labDueAmount;
     public final TextView labDueDate;
@@ -17,9 +17,9 @@ public final class RowLabDueBinding implements ViewBinding {
     public final TextView labDueLabName;
     public final TextView labDuePaidDate;
     public final TextView labDueStatus;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
 
-    private RowLabDueBinding(CardView rootView, TextView labDueAmount, TextView labDueDate, TextView labDueEquipmentName, TextView labDueLabName, TextView labDuePaidDate, TextView labDueStatus) {
+    private RowLabDueBinding(MaterialCardView rootView, TextView labDueAmount, TextView labDueDate, TextView labDueEquipmentName, TextView labDueLabName, TextView labDuePaidDate, TextView labDueStatus) {
         this.rootView = rootView;
         this.labDueAmount = labDueAmount;
         this.labDueDate = labDueDate;
@@ -30,7 +30,7 @@ public final class RowLabDueBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -39,11 +39,11 @@ public final class RowLabDueBinding implements ViewBinding {
     }
 
     public static RowLabDueBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_lab_due, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_lab_due, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowLabDueBinding bind(View rootView) {
@@ -65,7 +65,7 @@ public final class RowLabDueBinding implements ViewBinding {
                             i = R.id.lab_due_status;
                             TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
                             if (textView6 != null) {
-                                return new RowLabDueBinding((CardView) rootView, textView, textView2, textView3, textView4, textView5, textView6);
+                                return new RowLabDueBinding((MaterialCardView) rootView, textView, textView2, textView3, textView4, textView5, textView6);
                             }
                         }
                     }

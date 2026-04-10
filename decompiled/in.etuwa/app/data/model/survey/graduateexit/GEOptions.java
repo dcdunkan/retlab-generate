@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.survey.graduateexit;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: GEOptions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: GEOptions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class GEOptions {
     private final String option;
     private final String option_id;
@@ -19,12 +19,12 @@ public final /* data */ class GEOptions {
         return gEOptions.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getOption_id() {
         return this.option_id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getOption() {
         return this.option;
     }

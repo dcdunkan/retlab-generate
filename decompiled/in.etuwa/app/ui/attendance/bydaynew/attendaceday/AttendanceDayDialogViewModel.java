@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendanceDayDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AttendanceDayDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AttendanceDayDialogViewModel extends ViewModel {
     private final AttendanceRepository attendanceRepository;
     private MutableLiveData<Resource<AttendanceDayResponse>> attendanceResponse;
@@ -36,8 +36,8 @@ public final class AttendanceDayDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(date, "date");
         this.attendanceResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<AttendanceDayResponse> observeOn = this.attendanceRepository.getAttendanceByDayApiCall(new AttendanceDayRequest(sem, date)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<AttendanceDayResponse, Unit> function1 = new Function1<AttendanceDayResponse, Unit>() { // from class: in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel$getAttendanceByDay$1
+        Single<AttendanceDayResponse> singleObserveOn = this.attendanceRepository.getAttendanceByDayApiCall(new AttendanceDayRequest(sem, date)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<AttendanceDayResponse, Unit> function1 = new Function1<AttendanceDayResponse, Unit>() { // from class: in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel.getAttendanceByDay.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class AttendanceDayDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(AttendanceDayResponse attendanceDayResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AttendanceDayDialogViewModel.this.attendanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(attendanceDayResponse));
+                AttendanceDayDialogViewModel.this.attendanceResponse.postValue(Resource.INSTANCE.success(attendanceDayResponse));
             }
         };
         Consumer<? super AttendanceDayResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AttendanceDayDialogViewModel.getAttendanceByDay$lambda$0(Function1.this, obj);
+                AttendanceDayDialogViewModel.getAttendanceByDay$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel$getAttendanceByDay$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel.getAttendanceByDay.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class AttendanceDayDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AttendanceDayDialogViewModel.this.attendanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AttendanceDayDialogViewModel.this.attendanceResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AttendanceDayDialogViewModel.getAttendanceByDay$lambda$1(Function1.this, obj);
+                AttendanceDayDialogViewModel.getAttendanceByDay$lambda$1(function12, obj);
             }
         }));
     }

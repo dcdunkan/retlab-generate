@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RegisterList.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: RegisterList.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class RegisterList {
 
     @SerializedName("date")
@@ -37,22 +37,22 @@ public final /* data */ class RegisterList {
         return registerList.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSemesterAppliedFrom() {
         return this.semesterAppliedFrom;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getDate() {
         return this.date;
     }

@@ -1,12 +1,12 @@
 package in.etuwa.app.ui.result.university.initialpage;
 
 import android.content.ComponentCallbacks;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.ViewModelProvider;
@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.itextpdf.svg.SvgConstants;
+import in.etuwa.app.R;
 import in.etuwa.app.data.model.result.univ.UnivDetails;
 import in.etuwa.app.data.model.result.univ.UnivSubjects;
 import in.etuwa.app.databinding.UnivInitialPageFragmentBinding;
@@ -34,20 +35,20 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: UnivInitialPageFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UnivInitialPageFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UnivInitialPageFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private UnivInitialPageFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private UnivDetails details;
-    private ArrayList<UnivSubjects> subject;
+    private ArrayList<UnivSubjects> subjects;
 
-    /* renamed from: univInitialPageViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: univInitialPageViewModel$delegate, reason: from kotlin metadata */
     private final Lazy univInitialPageViewModel;
 
     @JvmStatic
@@ -81,7 +82,7 @@ public final class UnivInitialPageFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return univInitialPageFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(univInitialPageFragment);
@@ -95,7 +96,7 @@ public final class UnivInitialPageFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -108,7 +109,7 @@ public final class UnivInitialPageFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(UnivInitialPageViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(UnivInitialPageViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final UnivInitialPageFragment univInitialPageFragment2 = this;
@@ -138,12 +139,12 @@ public final class UnivInitialPageFragment extends BaseFragment {
         return (UnivInitialPageAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final UnivInitialPageFragmentBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: UnivInitialPageFragment.kt */
+    /* JADX INFO: compiled from: UnivInitialPageFragment.kt */
     @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J*\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0016\u0010\u0007\u001a\u0012\u0012\u0004\u0012\u00020\t0\bj\b\u0012\u0004\u0012\u00020\t`\nH\u0007¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/result/university/initialpage/UnivInitialPageFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/result/university/initialpage/UnivInitialPageFragment;", ErrorBundle.DETAIL_ENTRY, "Lin/etuwa/app/data/model/result/univ/UnivDetails;", "subjects", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/result/univ/UnivSubjects;", "Lkotlin/collections/ArrayList;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -171,7 +172,7 @@ public final class UnivInitialPageFragment extends BaseFragment {
         Bundle arguments = getArguments();
         if (arguments != null) {
             this.details = (UnivDetails) arguments.getParcelable(ErrorBundle.DETAIL_ENTRY);
-            this.subject = arguments.getParcelableArrayList("subjects");
+            this.subjects = arguments.getParcelableArrayList("subjects");
         }
     }
 
@@ -204,88 +205,65 @@ public final class UnivInitialPageFragment extends BaseFragment {
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
         TextView textView;
-        TextView textView2;
-        TextView textView3;
         UnivInitialPageFragmentBinding univInitialPageFragmentBinding = get_binding();
         RecyclerView recyclerView = univInitialPageFragmentBinding != null ? univInitialPageFragmentBinding.rvUnivSubjects : null;
         if (recyclerView != null) {
             recyclerView.setAdapter(getAdapter());
         }
         UnivInitialPageAdapter adapter = getAdapter();
-        ArrayList<UnivSubjects> arrayList = this.subject;
+        ArrayList<UnivSubjects> arrayList = this.subjects;
         if (arrayList == null) {
             arrayList = new ArrayList<>();
         }
         adapter.addItems(arrayList);
         UnivInitialPageFragmentBinding univInitialPageFragmentBinding2 = get_binding();
-        TextView textView4 = univInitialPageFragmentBinding2 != null ? univInitialPageFragmentBinding2.credits : null;
-        if (textView4 != null) {
+        TextView textView2 = univInitialPageFragmentBinding2 != null ? univInitialPageFragmentBinding2.credits : null;
+        if (textView2 != null) {
             UnivDetails univDetails = this.details;
-            textView4.setText(univDetails != null ? univDetails.getCredit() : null);
+            textView2.setText(univDetails != null ? univDetails.getCredit() : null);
         }
         UnivInitialPageFragmentBinding univInitialPageFragmentBinding3 = get_binding();
-        TextView textView5 = univInitialPageFragmentBinding3 != null ? univInitialPageFragmentBinding3.internalMark : null;
-        if (textView5 != null) {
+        TextView textView3 = univInitialPageFragmentBinding3 != null ? univInitialPageFragmentBinding3.internalMark : null;
+        if (textView3 != null) {
             UnivDetails univDetails2 = this.details;
-            textView5.setText(univDetails2 != null ? univDetails2.getTotalInternal() : null);
+            textView3.setText(univDetails2 != null ? univDetails2.getTotalInternal() : null);
         }
         UnivInitialPageFragmentBinding univInitialPageFragmentBinding4 = get_binding();
-        TextView textView6 = univInitialPageFragmentBinding4 != null ? univInitialPageFragmentBinding4.sgpa : null;
-        if (textView6 != null) {
+        TextView textView4 = univInitialPageFragmentBinding4 != null ? univInitialPageFragmentBinding4.sgpa : null;
+        if (textView4 != null) {
             UnivDetails univDetails3 = this.details;
-            textView6.setText(univDetails3 != null ? univDetails3.getSgpa() : null);
+            textView4.setText(univDetails3 != null ? univDetails3.getSgpa() : null);
         }
         UnivInitialPageFragmentBinding univInitialPageFragmentBinding5 = get_binding();
-        TextView textView7 = univInitialPageFragmentBinding5 != null ? univInitialPageFragmentBinding5.cgpa : null;
-        if (textView7 != null) {
+        TextView textView5 = univInitialPageFragmentBinding5 != null ? univInitialPageFragmentBinding5.cgpa : null;
+        if (textView5 != null) {
             UnivDetails univDetails4 = this.details;
-            textView7.setText(univDetails4 != null ? univDetails4.getCgpa() : null);
+            textView5.setText(univDetails4 != null ? univDetails4.getCgpa() : null);
+        }
+        UnivInitialPageFragmentBinding univInitialPageFragmentBinding6 = get_binding();
+        if (univInitialPageFragmentBinding6 == null || (textView = univInitialPageFragmentBinding6.resultStatus) == null) {
+            return;
         }
         UnivDetails univDetails5 = this.details;
         String passStatus = univDetails5 != null ? univDetails5.getPassStatus() : null;
         if (Intrinsics.areEqual(passStatus, "PASSED")) {
-            UnivInitialPageFragmentBinding univInitialPageFragmentBinding6 = get_binding();
-            if (univInitialPageFragmentBinding6 != null && (textView3 = univInitialPageFragmentBinding6.resultStatus) != null) {
-                textView3.setBackgroundColor(Color.parseColor("#266d19"));
-            }
-            UnivInitialPageFragmentBinding univInitialPageFragmentBinding7 = get_binding();
-            TextView textView8 = univInitialPageFragmentBinding7 != null ? univInitialPageFragmentBinding7.resultStatus : null;
-            if (textView8 == null) {
-                return;
-            }
-            UnivDetails univDetails6 = this.details;
-            textView8.setText(univDetails6 != null ? univDetails6.getPassStatus() : null);
-            return;
+            textView.setText("PASSED");
+            textView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.status_pass_bg));
+            textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_pass_text));
+        } else if (Intrinsics.areEqual(passStatus, "FAILED")) {
+            textView.setText("FAILED");
+            textView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.status_fail_bg));
+            textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_fail_text));
+        } else {
+            textView.setText("N/A");
+            textView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.status_na_bg));
+            textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.status_na_text));
         }
-        if (Intrinsics.areEqual(passStatus, "FAILED")) {
-            UnivInitialPageFragmentBinding univInitialPageFragmentBinding8 = get_binding();
-            if (univInitialPageFragmentBinding8 != null && (textView2 = univInitialPageFragmentBinding8.resultStatus) != null) {
-                textView2.setBackgroundColor(Color.parseColor("#E10000"));
-            }
-            UnivInitialPageFragmentBinding univInitialPageFragmentBinding9 = get_binding();
-            TextView textView9 = univInitialPageFragmentBinding9 != null ? univInitialPageFragmentBinding9.resultStatus : null;
-            if (textView9 == null) {
-                return;
-            }
-            UnivDetails univDetails7 = this.details;
-            textView9.setText(univDetails7 != null ? univDetails7.getPassStatus() : null);
-            return;
-        }
-        UnivInitialPageFragmentBinding univInitialPageFragmentBinding10 = get_binding();
-        if (univInitialPageFragmentBinding10 != null && (textView = univInitialPageFragmentBinding10.resultStatus) != null) {
-            textView.setBackgroundColor(Color.parseColor("#808080"));
-        }
-        UnivInitialPageFragmentBinding univInitialPageFragmentBinding11 = get_binding();
-        TextView textView10 = univInitialPageFragmentBinding11 != null ? univInitialPageFragmentBinding11.resultStatus : null;
-        if (textView10 == null) {
-            return;
-        }
-        textView10.setText("N/A");
     }
 
     @Override // androidx.fragment.app.Fragment
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
         this._binding = null;
     }
 }

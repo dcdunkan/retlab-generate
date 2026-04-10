@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.quality_publication.add.AddPublicationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddUpdatePublicationBindingImpl extends DialogAddUpdatePublicationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -84,7 +84,7 @@ public class DialogAddUpdatePublicationBindingImpl extends DialogAddUpdatePublic
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (19 != variableId) {
+        if (18 != variableId) {
             return false;
         }
         setAddPublicationViewModel((AddPublicationViewModel) variable);

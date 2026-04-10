@@ -5,21 +5,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowExamSubject2Binding implements ViewBinding {
     public final LinearLayout comletionLayout;
     public final LinearLayout dueLayout;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView subjectHead;
-    public final TextView viewBtn;
-    public final TextView viewRegisterBtn;
+    public final MaterialButton viewBtn;
+    public final MaterialButton viewRegisterBtn;
 
-    private RowExamSubject2Binding(CardView rootView, LinearLayout comletionLayout, LinearLayout dueLayout, TextView subjectHead, TextView viewBtn, TextView viewRegisterBtn) {
+    private RowExamSubject2Binding(MaterialCardView rootView, LinearLayout comletionLayout, LinearLayout dueLayout, TextView subjectHead, MaterialButton viewBtn, MaterialButton viewRegisterBtn) {
         this.rootView = rootView;
         this.comletionLayout = comletionLayout;
         this.dueLayout = dueLayout;
@@ -29,7 +30,7 @@ public final class RowExamSubject2Binding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -38,11 +39,11 @@ public final class RowExamSubject2Binding implements ViewBinding {
     }
 
     public static RowExamSubject2Binding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_exam_subject2, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_exam_subject2, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowExamSubject2Binding bind(View rootView) {
@@ -56,12 +57,12 @@ public final class RowExamSubject2Binding implements ViewBinding {
                 TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
                 if (textView != null) {
                     i = R.id.view_btn;
-                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView2 != null) {
+                    MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                    if (materialButton != null) {
                         i = R.id.view_register_btn;
-                        TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView3 != null) {
-                            return new RowExamSubject2Binding((CardView) rootView, linearLayout, linearLayout2, textView, textView2, textView3);
+                        MaterialButton materialButton2 = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                        if (materialButton2 != null) {
+                            return new RowExamSubject2Binding((MaterialCardView) rootView, linearLayout, linearLayout2, textView, materialButton, materialButton2);
                         }
                     }
                 }

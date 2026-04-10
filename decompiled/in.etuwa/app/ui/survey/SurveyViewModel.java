@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SurveyViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SurveyViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SurveyViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final SurveyRepository surveyRepository;
@@ -34,8 +34,8 @@ public final class SurveyViewModel extends ViewModel {
     public final void getSurveyList() {
         this.surveyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Survey>> observeOn = this.surveyRepository.getSurveyApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Survey>, Unit> function1 = new Function1<ArrayList<Survey>, Unit>() { // from class: in.etuwa.app.ui.survey.SurveyViewModel$getSurveyList$1
+        Single<ArrayList<Survey>> singleObserveOn = this.surveyRepository.getSurveyApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Survey>, Unit> function1 = new Function1<ArrayList<Survey>, Unit>() { // from class: in.etuwa.app.ui.survey.SurveyViewModel.getSurveyList.1
             {
                 super(1);
             }
@@ -46,20 +46,18 @@ public final class SurveyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Survey> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SurveyViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                SurveyViewModel.this.surveyResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Survey>> consumer = new Consumer() { // from class: in.etuwa.app.ui.survey.SurveyViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SurveyViewModel.getSurveyList$lambda$0(Function1.this, obj);
+                SurveyViewModel.getSurveyList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.SurveyViewModel$getSurveyList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.SurveyViewModel.getSurveyList.2
             {
                 super(1);
             }
@@ -70,17 +68,15 @@ public final class SurveyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SurveyViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SurveyViewModel.this.surveyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.SurveyViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.SurveyViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SurveyViewModel.getSurveyList$lambda$1(Function1.this, obj);
+                SurveyViewModel.getSurveyList$lambda$1(function12, obj);
             }
         }));
     }

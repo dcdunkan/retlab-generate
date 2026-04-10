@@ -3,8 +3,8 @@ package in.etuwa.app.data.model;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import kotlin.Metadata;
 
-/* compiled from: DownloadModel.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DownloadModel.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DownloadModel {
     private final long id;
     private final int position;
@@ -19,12 +19,12 @@ public final /* data */ class DownloadModel {
         return downloadModel.copy(j, i);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final long getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final int getPosition() {
         return this.position;
     }

@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.feepartial.hostel.edit.HostelPartialEditViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogHostelPartialEditBindingImpl extends DialogHostelPartialEditBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class DialogHostelPartialEditBindingImpl extends DialogHostelPartialEditB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (116 != variableId) {
+        if (117 != variableId) {
             return false;
         }
         setHostelPartialEditViewModel((HostelPartialEditViewModel) variable);

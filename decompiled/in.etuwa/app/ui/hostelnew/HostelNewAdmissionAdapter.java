@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
@@ -24,8 +25,8 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelNewAdmissionAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelNewAdmissionAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelNewAdmissionAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private int c;
     private CallBack listener;
@@ -41,7 +42,7 @@ public final class HostelNewAdmissionAdapter extends RecyclerView.Adapter<BaseVi
     private List<String> selectedTotal = new ArrayList();
     private List<String> deatilPosition = new ArrayList();
 
-    /* compiled from: HostelNewAdmissionAdapter.kt */
+    /* JADX INFO: compiled from: HostelNewAdmissionAdapter.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\u0010\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u0006H&¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/hostelnew/HostelNewAdmissionAdapter$CallBack;", "", "feeClickedAdmission", "", "viewAdmissionBtnClicked", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void feeClickedAdmission();
@@ -124,18 +125,18 @@ public final class HostelNewAdmissionAdapter extends RecyclerView.Adapter<BaseVi
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_hostel_new_admission, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …admission, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_hostel_new_admission, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …admission, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -151,7 +152,7 @@ public final class HostelNewAdmissionAdapter extends RecyclerView.Adapter<BaseVi
         return !this.hostelnew.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: HostelNewAdmissionAdapter.kt */
+    /* JADX INFO: compiled from: HostelNewAdmissionAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u000f\u001a\u00020\u0010H\u0014J\u0010\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lin/etuwa/app/ui/hostelnew/HostelNewAdmissionAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/hostelnew/HostelNewAdmissionAdapter;Landroid/view/View;)V", ExamSubjectDetailDialogKt.ARG_AMOUNT, "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "balance", "checkBox", "Landroid/widget/CheckBox;", "detailBtn", "lateFee", "month", "paid", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView amount;
@@ -192,7 +193,7 @@ public final class HostelNewAdmissionAdapter extends RecyclerView.Adapter<BaseVi
                 this.amount.setText(String.valueOf(hostelNewAdmission.getAmount()));
                 this.paid.setText(String.valueOf(hostelNewAdmission.getPaid()));
                 this.lateFee.setText(String.valueOf(hostelNewAdmission.getPayment().get(0).getFine()));
-                this.balance.setText(String.valueOf(hostelNewAdmission.getPayment().get(0).getFine() + hostelNewAdmission.getBalance()));
+                this.balance.setText(String.valueOf(((double) hostelNewAdmission.getPayment().get(0).getFine()) + hostelNewAdmission.getBalance()));
                 this.this$0.getSelected().add(position, "false");
                 this.this$0.getSelectedTotal().add(position, "0");
                 this.this$0.setTotal(0);
@@ -201,10 +202,10 @@ public final class HostelNewAdmissionAdapter extends RecyclerView.Adapter<BaseVi
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostelnew.HostelNewAdmissionAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        HostelNewAdmissionAdapter.ViewHolder.onBind$lambda$0(HostelNewAdmissionAdapter.this, position, view);
+                        HostelNewAdmissionAdapter.ViewHolder.onBind$lambda$0(hostelNewAdmissionAdapter, position, view);
                     }
                 });
-                if (hostelNewAdmission.getBalance() > 0) {
+                if (hostelNewAdmission.getBalance() > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                     this.detailBtn.setVisibility(0);
                     this.checkBox.setVisibility(0);
                 } else {
@@ -231,7 +232,7 @@ public final class HostelNewAdmissionAdapter extends RecyclerView.Adapter<BaseVi
                 checkBox.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostelnew.HostelNewAdmissionAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        HostelNewAdmissionAdapter.ViewHolder.onBind$lambda$1(HostelNewAdmissionAdapter.ViewHolder.this, hostelNewAdmission, hostelNewAdmissionAdapter2, view);
+                        HostelNewAdmissionAdapter.ViewHolder.onBind$lambda$1(this.f$0, hostelNewAdmission, hostelNewAdmissionAdapter2, view);
                     }
                 });
             } catch (Exception unused) {

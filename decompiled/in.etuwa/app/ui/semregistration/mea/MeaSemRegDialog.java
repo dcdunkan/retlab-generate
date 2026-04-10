@@ -69,11 +69,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MeaSemRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MeaSemRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MeaSemRegDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogMeaSemRegBinding _binding;
     private String back;
@@ -83,26 +83,26 @@ public final class MeaSemRegDialog extends BaseDialog {
     private String id;
     private MvjceSemRegDialog.AddSemRegListener listener;
 
-    /* renamed from: meaSemRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: meaSemRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy meaSemRegViewModel;
     private File pickFile;
     private boolean pickedFile;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String reg;
     private String semester_id;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: MeaSemRegDialog.kt */
+    /* JADX INFO: compiled from: MeaSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/semregistration/mea/MeaSemRegDialog$AddCounsellingListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddCounsellingListener {
         void dismiss();
     }
 
-    /* compiled from: MeaSemRegDialog.kt */
+    /* JADX INFO: compiled from: MeaSemRegDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -152,7 +152,7 @@ public final class MeaSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return meaSemRegDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(meaSemRegDialog);
@@ -166,7 +166,7 @@ public final class MeaSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -179,7 +179,7 @@ public final class MeaSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MeaSemRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MeaSemRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MeaSemRegDialog meaSemRegDialog2 = this;
@@ -212,7 +212,7 @@ public final class MeaSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MeaSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -237,7 +237,7 @@ public final class MeaSemRegDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogMeaSemRegBinding get_binding() {
         return this._binding;
     }
@@ -251,7 +251,7 @@ public final class MeaSemRegDialog extends BaseDialog {
         return (CurrentSemSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: MeaSemRegDialog.kt */
+    /* JADX INFO: compiled from: MeaSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/semregistration/mea/MeaSemRegDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/mea/MeaSemRegDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -331,7 +331,7 @@ public final class MeaSemRegDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MeaSemRegDialog.setUp$lambda$1(MeaSemRegDialog.this, view);
+                    MeaSemRegDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -340,7 +340,7 @@ public final class MeaSemRegDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MeaSemRegDialog.setUp$lambda$2(MeaSemRegDialog.this, view);
+                    MeaSemRegDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -349,7 +349,7 @@ public final class MeaSemRegDialog extends BaseDialog {
             radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$$ExternalSyntheticLambda2
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup3, int i) {
-                    MeaSemRegDialog.setUp$lambda$3(MeaSemRegDialog.this, radioGroup3, i);
+                    MeaSemRegDialog.setUp$lambda$3(this.f$0, radioGroup3, i);
                 }
             });
         }
@@ -358,7 +358,7 @@ public final class MeaSemRegDialog extends BaseDialog {
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$$ExternalSyntheticLambda3
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup3, int i) {
-                    MeaSemRegDialog.setUp$lambda$4(MeaSemRegDialog.this, radioGroup3, i);
+                    MeaSemRegDialog.setUp$lambda$4(this.f$0, radioGroup3, i);
                 }
             });
         }
@@ -369,7 +369,7 @@ public final class MeaSemRegDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MeaSemRegDialog.setUp$lambda$5(MeaSemRegDialog.this, view);
+                MeaSemRegDialog.setUp$lambda$5(this.f$0, view);
             }
         });
     }
@@ -503,7 +503,7 @@ public final class MeaSemRegDialog extends BaseDialog {
     public static final void setUp$lambda$5(MeaSemRegDialog this$0, View view) {
         File file;
         File file2;
-        HashMap<String, RequestBody> hashMap;
+        HashMap<String, RequestBody> map;
         TextInputEditText textInputEditText;
         TextInputEditText textInputEditText2;
         TextInputEditText textInputEditText3;
@@ -537,10 +537,10 @@ public final class MeaSemRegDialog extends BaseDialog {
         TextInputEditText textInputEditText23;
         TextInputEditText textInputEditText24;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap2 = new HashMap();
-        HashMap<String, RequestBody> hashMap3 = new HashMap<>();
-        hashMap2.clear();
-        hashMap3.clear();
+        HashMap map2 = new HashMap();
+        HashMap<String, RequestBody> map3 = new HashMap<>();
+        map2.clear();
+        map3.clear();
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             DialogMeaSemRegBinding dialogMeaSemRegBinding = this$0.get_binding();
             if (Intrinsics.areEqual(String.valueOf((dialogMeaSemRegBinding == null || (textInputEditText24 = dialogMeaSemRegBinding.etMonthYear) == null) ? null : textInputEditText24.getText()), "")) {
@@ -624,37 +624,37 @@ public final class MeaSemRegDialog extends BaseDialog {
                 String str2 = this$0.id;
                 Intrinsics.checkNotNull(str2);
                 str = "SemesterRegistration[payment_reference_no]";
-                hashMap2.put("id", str2);
+                map2.put("id", str2);
             }
-            HashMap hashMap4 = hashMap2;
-            hashMap4.put("SemesterRegistration[semester_id]", this$0.semester_id);
-            hashMap4.put("SemesterRegistration[exam_appear]", this$0.reg);
-            hashMap4.put("SemesterRegistration[backpaper]", this$0.back);
+            HashMap map4 = map2;
+            map4.put("SemesterRegistration[semester_id]", this$0.semester_id);
+            map4.put("SemesterRegistration[exam_appear]", this$0.reg);
+            map4.put("SemesterRegistration[backpaper]", this$0.back);
             if (Intrinsics.areEqual(this$0.reg, "Yes")) {
                 DialogMeaSemRegBinding dialogMeaSemRegBinding14 = this$0.get_binding();
-                hashMap4.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogMeaSemRegBinding14 == null || (textInputEditText16 = dialogMeaSemRegBinding14.etMonthYear) == null) ? null : textInputEditText16.getText()));
+                map4.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogMeaSemRegBinding14 == null || (textInputEditText16 = dialogMeaSemRegBinding14.etMonthYear) == null) ? null : textInputEditText16.getText()));
             }
             if (Intrinsics.areEqual(this$0.back, "Yes")) {
                 DialogMeaSemRegBinding dialogMeaSemRegBinding15 = this$0.get_binding();
-                hashMap4.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogMeaSemRegBinding15 == null || (textInputEditText15 = dialogMeaSemRegBinding15.etBackPaperCount) == null) ? null : textInputEditText15.getText()));
+                map4.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogMeaSemRegBinding15 == null || (textInputEditText15 = dialogMeaSemRegBinding15.etBackPaperCount) == null) ? null : textInputEditText15.getText()));
             }
-            hashMap4.put("SemesterRegistration[fee_paid]", this$0.feePaid);
+            map4.put("SemesterRegistration[fee_paid]", this$0.feePaid);
             if (Intrinsics.areEqual(this$0.feePaid, "Yes")) {
                 DialogMeaSemRegBinding dialogMeaSemRegBinding16 = this$0.get_binding();
-                hashMap4.put("SemesterRegistration[bank_name]", String.valueOf((dialogMeaSemRegBinding16 == null || (textInputEditText14 = dialogMeaSemRegBinding16.etBankName) == null) ? null : textInputEditText14.getText()));
+                map4.put("SemesterRegistration[bank_name]", String.valueOf((dialogMeaSemRegBinding16 == null || (textInputEditText14 = dialogMeaSemRegBinding16.etBankName) == null) ? null : textInputEditText14.getText()));
                 DialogMeaSemRegBinding dialogMeaSemRegBinding17 = this$0.get_binding();
-                hashMap4.put("SemesterRegistration[amount_paid]", String.valueOf((dialogMeaSemRegBinding17 == null || (textInputEditText13 = dialogMeaSemRegBinding17.etAmountPaid) == null) ? null : textInputEditText13.getText()));
+                map4.put("SemesterRegistration[amount_paid]", String.valueOf((dialogMeaSemRegBinding17 == null || (textInputEditText13 = dialogMeaSemRegBinding17.etAmountPaid) == null) ? null : textInputEditText13.getText()));
                 DialogMeaSemRegBinding dialogMeaSemRegBinding18 = this$0.get_binding();
-                hashMap4.put("SemesterRegistration[payment_date]", String.valueOf((dialogMeaSemRegBinding18 == null || (textInputEditText12 = dialogMeaSemRegBinding18.etDatePayment) == null) ? null : textInputEditText12.getText()));
+                map4.put("SemesterRegistration[payment_date]", String.valueOf((dialogMeaSemRegBinding18 == null || (textInputEditText12 = dialogMeaSemRegBinding18.etDatePayment) == null) ? null : textInputEditText12.getText()));
                 DialogMeaSemRegBinding dialogMeaSemRegBinding19 = this$0.get_binding();
-                hashMap4.put("SemesterRegistration[payment_mode]", String.valueOf((dialogMeaSemRegBinding19 == null || (textInputEditText11 = dialogMeaSemRegBinding19.etModePayment) == null) ? null : textInputEditText11.getText()));
+                map4.put("SemesterRegistration[payment_mode]", String.valueOf((dialogMeaSemRegBinding19 == null || (textInputEditText11 = dialogMeaSemRegBinding19.etModePayment) == null) ? null : textInputEditText11.getText()));
                 DialogMeaSemRegBinding dialogMeaSemRegBinding20 = this$0.get_binding();
-                hashMap4.put(str, String.valueOf((dialogMeaSemRegBinding20 == null || (textInputEditText10 = dialogMeaSemRegBinding20.etRefNo) == null) ? null : textInputEditText10.getText()));
+                map4.put(str, String.valueOf((dialogMeaSemRegBinding20 == null || (textInputEditText10 = dialogMeaSemRegBinding20.etRefNo) == null) ? null : textInputEditText10.getText()));
             }
-            hashMap4.put("SemesterRegistration[fee_concession]", this$0.feeConcession);
+            map4.put("SemesterRegistration[fee_concession]", this$0.feeConcession);
             if (Intrinsics.areEqual(this$0.feeConcession, "Yes")) {
                 DialogMeaSemRegBinding dialogMeaSemRegBinding21 = this$0.get_binding();
-                hashMap4.put("SemesterRegistration[fee_concession_category]", String.valueOf((dialogMeaSemRegBinding21 == null || (textInputEditText9 = dialogMeaSemRegBinding21.etConcessionDetails) == null) ? null : textInputEditText9.getText()));
+                map4.put("SemesterRegistration[fee_concession_category]", String.valueOf((dialogMeaSemRegBinding21 == null || (textInputEditText9 = dialogMeaSemRegBinding21.etConcessionDetails) == null) ? null : textInputEditText9.getText()));
             }
             if (Intrinsics.areEqual(this$0.feePaid, "No") && Intrinsics.areEqual(this$0.feeConcession, "No")) {
                 DialogMeaSemRegBinding dialogMeaSemRegBinding22 = this$0.get_binding();
@@ -668,76 +668,76 @@ public final class MeaSemRegDialog extends BaseDialog {
                 MeaSemRegViewModel meaSemRegViewModel = this$0.getMeaSemRegViewModel();
                 String str3 = this$0.id;
                 Intrinsics.checkNotNull(str3);
-                meaSemRegViewModel.registerWithoutReceipt(str3, hashMap4);
+                meaSemRegViewModel.registerWithoutReceipt(str3, map4);
                 return;
             }
-            System.out.println(hashMap2);
-            this$0.getMeaSemRegViewModel().registerWithoutReceipt(hashMap4);
+            System.out.println(map2);
+            this$0.getMeaSemRegViewModel().registerWithoutReceipt(map4);
             return;
         }
-        HashMap<String, RequestBody> hashMap5 = hashMap3;
-        hashMap5.put("SemesterRegistration[semester_id]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.semester_id));
-        hashMap5.put("SemesterRegistration[exam_appear]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.reg));
-        hashMap5.put("SemesterRegistration[backpaper]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.back));
+        HashMap<String, RequestBody> map5 = map3;
+        map5.put("SemesterRegistration[semester_id]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.semester_id));
+        map5.put("SemesterRegistration[exam_appear]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.reg));
+        map5.put("SemesterRegistration[backpaper]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.back));
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             RequestBody.Companion companion = RequestBody.INSTANCE;
             MediaType mediaType = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding23 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[exam_month_year]", companion.create(mediaType, String.valueOf((dialogMeaSemRegBinding23 == null || (textInputEditText8 = dialogMeaSemRegBinding23.etMonthYear) == null) ? null : textInputEditText8.getText())));
+            map5.put("SemesterRegistration[exam_month_year]", companion.create(mediaType, String.valueOf((dialogMeaSemRegBinding23 == null || (textInputEditText8 = dialogMeaSemRegBinding23.etMonthYear) == null) ? null : textInputEditText8.getText())));
         }
         if (Intrinsics.areEqual(this$0.back, "Yes")) {
             RequestBody.Companion companion2 = RequestBody.INSTANCE;
             MediaType mediaType2 = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding24 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[backlogs_count]", companion2.create(mediaType2, String.valueOf((dialogMeaSemRegBinding24 == null || (textInputEditText7 = dialogMeaSemRegBinding24.etBackPaperCount) == null) ? null : textInputEditText7.getText())));
+            map5.put("SemesterRegistration[backlogs_count]", companion2.create(mediaType2, String.valueOf((dialogMeaSemRegBinding24 == null || (textInputEditText7 = dialogMeaSemRegBinding24.etBackPaperCount) == null) ? null : textInputEditText7.getText())));
         }
-        hashMap5.put("SemesterRegistration[fee_paid]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.feePaid));
+        map5.put("SemesterRegistration[fee_paid]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.feePaid));
         if (Intrinsics.areEqual(this$0.feePaid, "Yes")) {
             RequestBody.Companion companion3 = RequestBody.INSTANCE;
             MediaType mediaType3 = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding25 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[bank_name]", companion3.create(mediaType3, String.valueOf((dialogMeaSemRegBinding25 == null || (textInputEditText6 = dialogMeaSemRegBinding25.etBankName) == null) ? null : textInputEditText6.getText())));
+            map5.put("SemesterRegistration[bank_name]", companion3.create(mediaType3, String.valueOf((dialogMeaSemRegBinding25 == null || (textInputEditText6 = dialogMeaSemRegBinding25.etBankName) == null) ? null : textInputEditText6.getText())));
             RequestBody.Companion companion4 = RequestBody.INSTANCE;
             MediaType mediaType4 = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding26 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[amount_paid]", companion4.create(mediaType4, String.valueOf((dialogMeaSemRegBinding26 == null || (textInputEditText5 = dialogMeaSemRegBinding26.etAmountPaid) == null) ? null : textInputEditText5.getText())));
+            map5.put("SemesterRegistration[amount_paid]", companion4.create(mediaType4, String.valueOf((dialogMeaSemRegBinding26 == null || (textInputEditText5 = dialogMeaSemRegBinding26.etAmountPaid) == null) ? null : textInputEditText5.getText())));
             RequestBody.Companion companion5 = RequestBody.INSTANCE;
             MediaType mediaType5 = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding27 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[payment_date]", companion5.create(mediaType5, String.valueOf((dialogMeaSemRegBinding27 == null || (textInputEditText4 = dialogMeaSemRegBinding27.etDatePayment) == null) ? null : textInputEditText4.getText())));
+            map5.put("SemesterRegistration[payment_date]", companion5.create(mediaType5, String.valueOf((dialogMeaSemRegBinding27 == null || (textInputEditText4 = dialogMeaSemRegBinding27.etDatePayment) == null) ? null : textInputEditText4.getText())));
             RequestBody.Companion companion6 = RequestBody.INSTANCE;
             MediaType mediaType6 = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding28 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[payment_mode]", companion6.create(mediaType6, String.valueOf((dialogMeaSemRegBinding28 == null || (textInputEditText3 = dialogMeaSemRegBinding28.etModePayment) == null) ? null : textInputEditText3.getText())));
+            map5.put("SemesterRegistration[payment_mode]", companion6.create(mediaType6, String.valueOf((dialogMeaSemRegBinding28 == null || (textInputEditText3 = dialogMeaSemRegBinding28.etModePayment) == null) ? null : textInputEditText3.getText())));
             RequestBody.Companion companion7 = RequestBody.INSTANCE;
             MediaType mediaType7 = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding29 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[payment_reference_no]", companion7.create(mediaType7, String.valueOf((dialogMeaSemRegBinding29 == null || (textInputEditText2 = dialogMeaSemRegBinding29.etRefNo) == null) ? null : textInputEditText2.getText())));
+            map5.put("SemesterRegistration[payment_reference_no]", companion7.create(mediaType7, String.valueOf((dialogMeaSemRegBinding29 == null || (textInputEditText2 = dialogMeaSemRegBinding29.etRefNo) == null) ? null : textInputEditText2.getText())));
         }
-        hashMap5.put("SemesterRegistration[fee_concession]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.feeConcession));
+        map5.put("SemesterRegistration[fee_concession]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.feeConcession));
         if (Intrinsics.areEqual(this$0.feeConcession, "Yes")) {
             RequestBody.Companion companion8 = RequestBody.INSTANCE;
             MediaType mediaType8 = MultipartBody.FORM;
             DialogMeaSemRegBinding dialogMeaSemRegBinding30 = this$0.get_binding();
-            hashMap5.put("SemesterRegistration[fee_concession_category]", companion8.create(mediaType8, String.valueOf((dialogMeaSemRegBinding30 == null || (textInputEditText = dialogMeaSemRegBinding30.etConcessionDetails) == null) ? null : textInputEditText.getText())));
+            map5.put("SemesterRegistration[fee_concession_category]", companion8.create(mediaType8, String.valueOf((dialogMeaSemRegBinding30 == null || (textInputEditText = dialogMeaSemRegBinding30.etConcessionDetails) == null) ? null : textInputEditText.getText())));
         }
         if (Intrinsics.areEqual(this$0.feePaid, "Yes") && !Intrinsics.areEqual(this$0.id, "")) {
             RequestBody.Companion companion9 = RequestBody.INSTANCE;
             MediaType mediaType9 = MultipartBody.FORM;
             String str4 = this$0.id;
             Intrinsics.checkNotNull(str4);
-            RequestBody create = companion9.create(mediaType9, str4);
+            RequestBody requestBodyCreate = companion9.create(mediaType9, str4);
             MeaSemRegViewModel meaSemRegViewModel2 = this$0.getMeaSemRegViewModel();
             File file3 = this$0.pickFile;
             if (file3 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("pickFile");
-                hashMap = hashMap3;
+                map = map3;
                 file2 = null;
             } else {
                 file2 = file3;
-                hashMap = hashMap3;
+                map = map3;
             }
-            meaSemRegViewModel2.registerWithReceipt(create, hashMap, file2);
+            meaSemRegViewModel2.registerWithReceipt(requestBodyCreate, map, file2);
             return;
         }
         MeaSemRegViewModel meaSemRegViewModel3 = this$0.getMeaSemRegViewModel();
@@ -748,14 +748,14 @@ public final class MeaSemRegDialog extends BaseDialog {
         } else {
             file = file4;
         }
-        meaSemRegViewModel3.registerWithReceipt(hashMap3, file);
+        meaSemRegViewModel3.registerWithReceipt(map3, file);
     }
 
     private final void listenViewResponse() {
         getMeaSemRegViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MeaSemRegDialog.listenViewResponse$lambda$7(MeaSemRegDialog.this, (Resource) obj);
+                MeaSemRegDialog.listenViewResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1035,9 +1035,10 @@ public final class MeaSemRegDialog extends BaseDialog {
     }
 
     private final void listenSpinners() {
-        getMeaSemRegViewModel().getDropResponse().observe(getViewLifecycleOwner(), new MeaSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AcademicYearResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$listenSpinners$1
+        getMeaSemRegViewModel().getDropResponse().observe(getViewLifecycleOwner(), new MeaSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AcademicYearResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog.listenSpinners.1
 
-            /* compiled from: MeaSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$listenSpinners$1$WhenMappings */
+            /* JADX INFO: compiled from: MeaSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1074,9 +1075,8 @@ public final class MeaSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<AcademicYearResponse> resource) {
-                CurrentSemSpinnerAdapter spinnerAdapter;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     MeaSemRegDialog.this.hideProgress();
@@ -1084,8 +1084,7 @@ public final class MeaSemRegDialog extends BaseDialog {
                     if (data != null) {
                         MeaSemRegDialog meaSemRegDialog = MeaSemRegDialog.this;
                         meaSemRegDialog.semester_id = data.getSemester_id();
-                        spinnerAdapter = meaSemRegDialog.getSpinnerAdapter();
-                        spinnerAdapter.addItems(CollectionsKt.arrayListOf(data.getSemester()));
+                        meaSemRegDialog.getSpinnerAdapter().addItems(CollectionsKt.arrayListOf(data.getSemester()));
                         return;
                     }
                     return;
@@ -1105,9 +1104,10 @@ public final class MeaSemRegDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getMeaSemRegViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new MeaSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$listenResponse$1
+        getMeaSemRegViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new MeaSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog.listenResponse.1
 
-            /* compiled from: MeaSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: MeaSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1144,12 +1144,9 @@ public final class MeaSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SemRegSuccessResponse> resource) {
-                DialogMeaSemRegBinding dialogMeaSemRegBinding;
                 TextView registerBtn;
-                DialogMeaSemRegBinding dialogMeaSemRegBinding2;
-                MvjceSemRegDialog.AddSemRegListener addSemRegListener;
                 TextView registerBtn2;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1172,20 +1169,20 @@ public final class MeaSemRegDialog extends BaseDialog {
                 if (data != null) {
                     MeaSemRegDialog meaSemRegDialog = MeaSemRegDialog.this;
                     if (data.getSuccess()) {
-                        dialogMeaSemRegBinding2 = meaSemRegDialog.get_binding();
-                        if (dialogMeaSemRegBinding2 != null && (registerBtn2 = dialogMeaSemRegBinding2.registerBtn) != null) {
+                        DialogMeaSemRegBinding dialogMeaSemRegBinding = meaSemRegDialog.get_binding();
+                        if (dialogMeaSemRegBinding != null && (registerBtn2 = dialogMeaSemRegBinding.registerBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(registerBtn2, "registerBtn");
                             ToastExtKt.showSuccessToast(registerBtn2, data.getMessage());
                         }
-                        addSemRegListener = meaSemRegDialog.listener;
+                        MvjceSemRegDialog.AddSemRegListener addSemRegListener = meaSemRegDialog.listener;
                         if (addSemRegListener != null) {
                             addSemRegListener.dismiss();
                         }
                         meaSemRegDialog.dismiss();
                         return;
                     }
-                    dialogMeaSemRegBinding = meaSemRegDialog.get_binding();
-                    if (dialogMeaSemRegBinding == null || (registerBtn = dialogMeaSemRegBinding.registerBtn) == null) {
+                    DialogMeaSemRegBinding dialogMeaSemRegBinding2 = meaSemRegDialog.get_binding();
+                    if (dialogMeaSemRegBinding2 == null || (registerBtn = dialogMeaSemRegBinding2.registerBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
@@ -1196,9 +1193,10 @@ public final class MeaSemRegDialog extends BaseDialog {
     }
 
     private final void listenResponse2() {
-        getMeaSemRegViewModel().getRegResponse().observe(getViewLifecycleOwner(), new MeaSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$listenResponse2$1
+        getMeaSemRegViewModel().getRegResponse().observe(getViewLifecycleOwner(), new MeaSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog.listenResponse2.1
 
-            /* compiled from: MeaSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mea.MeaSemRegDialog$listenResponse2$1$WhenMappings */
+            /* JADX INFO: compiled from: MeaSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1235,12 +1233,9 @@ public final class MeaSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SemRegSuccessResponse> resource) {
-                DialogMeaSemRegBinding dialogMeaSemRegBinding;
                 TextView registerBtn;
-                DialogMeaSemRegBinding dialogMeaSemRegBinding2;
-                MvjceSemRegDialog.AddSemRegListener addSemRegListener;
                 TextView registerBtn2;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1263,20 +1258,20 @@ public final class MeaSemRegDialog extends BaseDialog {
                 if (data != null) {
                     MeaSemRegDialog meaSemRegDialog = MeaSemRegDialog.this;
                     if (data.getSuccess()) {
-                        dialogMeaSemRegBinding2 = meaSemRegDialog.get_binding();
-                        if (dialogMeaSemRegBinding2 != null && (registerBtn2 = dialogMeaSemRegBinding2.registerBtn) != null) {
+                        DialogMeaSemRegBinding dialogMeaSemRegBinding = meaSemRegDialog.get_binding();
+                        if (dialogMeaSemRegBinding != null && (registerBtn2 = dialogMeaSemRegBinding.registerBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(registerBtn2, "registerBtn");
                             ToastExtKt.showSuccessToast(registerBtn2, data.getMessage());
                         }
-                        addSemRegListener = meaSemRegDialog.listener;
+                        MvjceSemRegDialog.AddSemRegListener addSemRegListener = meaSemRegDialog.listener;
                         if (addSemRegListener != null) {
                             addSemRegListener.dismiss();
                         }
                         meaSemRegDialog.dismiss();
                         return;
                     }
-                    dialogMeaSemRegBinding = meaSemRegDialog.get_binding();
-                    if (dialogMeaSemRegBinding == null || (registerBtn = dialogMeaSemRegBinding.registerBtn) == null) {
+                    DialogMeaSemRegBinding dialogMeaSemRegBinding2 = meaSemRegDialog.get_binding();
+                    if (dialogMeaSemRegBinding2 == null || (registerBtn = dialogMeaSemRegBinding2.registerBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
@@ -1289,10 +1284,10 @@ public final class MeaSemRegDialog extends BaseDialog {
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
-        String str2;
+        String fileName2;
         ContentResolver contentResolver3;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -1306,12 +1301,12 @@ public final class MeaSemRegDialog extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver3 = context.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver3, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 DialogMeaSemRegBinding dialogMeaSemRegBinding2 = get_binding();
                 TextView textView2 = dialogMeaSemRegBinding2 != null ? dialogMeaSemRegBinding2.completionFileName : null;
@@ -1320,19 +1315,19 @@ public final class MeaSemRegDialog extends BaseDialog {
                 }
                 this.pickedFile = true;
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
                     File cacheDir = context3 != null ? context3.getCacheDir() : null;
                     Context context4 = getContext();
                     if (context4 == null || (contentResolver2 = context4.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                 }
             }

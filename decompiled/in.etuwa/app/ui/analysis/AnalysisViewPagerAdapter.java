@@ -10,8 +10,8 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AnalysisViewPagerAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AnalysisViewPagerAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AnalysisViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> fragmentList;
     private final String[] titleList;

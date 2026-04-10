@@ -55,11 +55,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ApplySubjectRegistrationDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogApplySubjectRegistrationBinding _binding;
     private String additionalElective1;
@@ -69,7 +69,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
     private String aec2;
     private String aec3;
 
-    /* renamed from: applySubjectRegistrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: applySubjectRegistrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy applySubjectRegistrationViewModel;
     private String dsc1;
     private String dsc2;
@@ -110,80 +110,80 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
     private String minor2;
     private String minor3;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semId;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdditionalElective1Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdditionalElective1Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdditionalElective1Adapter;
 
-    /* renamed from: spinnerAdditionalElective2Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdditionalElective2Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdditionalElective2Adapter;
 
-    /* renamed from: spinnerAdditionalElective3Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdditionalElective3Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdditionalElective3Adapter;
 
-    /* renamed from: spinnerAec1Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAec1Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAec1Adapter;
 
-    /* renamed from: spinnerAec2Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAec2Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAec2Adapter;
 
-    /* renamed from: spinnerAec3Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAec3Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAec3Adapter;
 
-    /* renamed from: spinnerDsc1Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerDsc1Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerDsc1Adapter;
 
-    /* renamed from: spinnerDsc2Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerDsc2Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerDsc2Adapter;
 
-    /* renamed from: spinnerDsc3Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerDsc3Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerDsc3Adapter;
 
-    /* renamed from: spinnerElective1Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerElective1Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerElective1Adapter;
 
-    /* renamed from: spinnerElective2Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerElective2Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerElective2Adapter;
 
-    /* renamed from: spinnerElective3Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerElective3Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerElective3Adapter;
 
-    /* renamed from: spinnerGlobalElectiveAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerGlobalElectiveAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerGlobalElectiveAdapter;
 
-    /* renamed from: spinnerHonourAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerHonourAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerHonourAdapter;
 
-    /* renamed from: spinnerMdc1Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerMdc1Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerMdc1Adapter;
 
-    /* renamed from: spinnerMdc2Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerMdc2Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerMdc2Adapter;
 
-    /* renamed from: spinnerMdc3Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerMdc3Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerMdc3Adapter;
 
-    /* renamed from: spinnerMinor1Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerMinor1Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerMinor1Adapter;
 
-    /* renamed from: spinnerMinor2Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerMinor2Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerMinor2Adapter;
 
-    /* renamed from: spinnerMinor3Adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerMinor3Adapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerMinor3Adapter;
 
-    /* compiled from: ApplySubjectRegistrationDialog.kt */
+    /* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/apply/ApplySubjectRegistrationDialog$RegisterListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface RegisterListener {
         void dismiss();
     }
 
-    /* compiled from: ApplySubjectRegistrationDialog.kt */
+    /* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -233,7 +233,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return applySubjectRegistrationDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(applySubjectRegistrationDialog);
@@ -247,7 +247,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -260,7 +260,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ApplySubjectRegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ApplySubjectRegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = this;
@@ -287,7 +287,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -312,7 +312,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -337,7 +337,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode4 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -362,7 +362,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode5 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -387,7 +387,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode6 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -412,7 +412,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode7 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -437,7 +437,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode8 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -462,7 +462,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode9 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -487,7 +487,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode10 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -512,7 +512,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode11 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -537,7 +537,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode12 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -562,7 +562,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode13 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -587,7 +587,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode14 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -612,7 +612,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode15 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -637,7 +637,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode16 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -662,7 +662,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode17 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -687,7 +687,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode18 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -712,7 +712,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode19 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -737,7 +737,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode20 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -762,7 +762,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode21 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -787,7 +787,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplySubjectRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode22 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -834,7 +834,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogApplySubjectRegistrationBinding get_binding() {
         return this._binding;
     }
@@ -948,7 +948,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
         return (ApplySubjectRegistrationSpinnerAdapter) this.spinnerAec3Adapter.getValue();
     }
 
-    /* compiled from: ApplySubjectRegistrationDialog.kt */
+    /* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/apply/ApplySubjectRegistrationDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/subjectregistration/apply/ApplySubjectRegistrationDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1159,1171 +1159,700 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding28 = get_binding();
         Spinner spinner22 = dialogApplySubjectRegistrationBinding28 != null ? dialogApplySubjectRegistrationBinding28.spinnerSemesterLastAttended : null;
         if (spinner22 != null) {
-            spinner22.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$1
+            spinner22.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    String str2;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding29;
-                    SemesterSpinnerAdapter spinnerAdapter3;
                     Spinner spinner23;
-                    SemesterSpinnerAdapter spinnerAdapter4;
-                    ApplySubjectRegistrationViewModel applySubjectRegistrationViewModel2;
-                    String str3;
-                    z = ApplySubjectRegistrationDialog.this.flag;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flag) {
                         ApplySubjectRegistrationDialog.this.flag = true;
-                        spinnerAdapter = ApplySubjectRegistrationDialog.this.getSpinnerAdapter();
-                        int count = spinnerAdapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerAdapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            str2 = ApplySubjectRegistrationDialog.this.semId;
-                            spinnerAdapter2 = ApplySubjectRegistrationDialog.this.getSpinnerAdapter();
-                            if (Intrinsics.areEqual(str2, spinnerAdapter2.getSemester(i).getId())) {
-                                dialogApplySubjectRegistrationBinding29 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (Intrinsics.areEqual(ApplySubjectRegistrationDialog.this.semId, ApplySubjectRegistrationDialog.this.getSpinnerAdapter().getSemester(i).getId())) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding29 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding29 != null && (spinner23 = dialogApplySubjectRegistrationBinding29.spinnerSemesterLastAttended) != null) {
                                     spinner23.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerAdapter3 = applySubjectRegistrationDialog.getSpinnerAdapter();
-                                applySubjectRegistrationDialog.semId = spinnerAdapter3.getSemester(position).getId();
+                                applySubjectRegistrationDialog.semId = applySubjectRegistrationDialog.getSpinnerAdapter().getSemester(position).getId();
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    spinnerAdapter4 = applySubjectRegistrationDialog2.getSpinnerAdapter();
-                    applySubjectRegistrationDialog2.semId = spinnerAdapter4.getSemester(position).getId();
-                    applySubjectRegistrationViewModel2 = ApplySubjectRegistrationDialog.this.getApplySubjectRegistrationViewModel();
-                    str3 = ApplySubjectRegistrationDialog.this.semId;
-                    applySubjectRegistrationViewModel2.getSpinnerData(str3);
+                    applySubjectRegistrationDialog2.semId = applySubjectRegistrationDialog2.getSpinnerAdapter().getSemester(position).getId();
+                    ApplySubjectRegistrationDialog.this.getApplySubjectRegistrationViewModel().getSpinnerData(ApplySubjectRegistrationDialog.this.semId);
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding29 = get_binding();
         Spinner spinner23 = dialogApplySubjectRegistrationBinding29 != null ? dialogApplySubjectRegistrationBinding29.spinnerMinor : null;
         if (spinner23 != null) {
-            spinner23.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$2
+            spinner23.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor1Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor1Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding30;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor1Adapter3;
                     Spinner spinner24;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor1Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagMinor;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagMinor) {
                         ApplySubjectRegistrationDialog.this.flagMinor = true;
-                        str2 = ApplySubjectRegistrationDialog.this.minor;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.minor;
-                        System.out.println((Object) str3);
-                        spinnerMinor1Adapter = ApplySubjectRegistrationDialog.this.getSpinnerMinor1Adapter();
-                        int count = spinnerMinor1Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.minor);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.minor);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerMinor1Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerMinor1Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerMinor1Adapter();
-                            String name = spinnerMinor1Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.minor;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding30 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerMinor1Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.minor, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding30 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding30 != null && (spinner24 = dialogApplySubjectRegistrationBinding30.spinnerMinor) != null) {
                                     spinner24.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerMinor1Adapter3 = applySubjectRegistrationDialog.getSpinnerMinor1Adapter();
-                                applySubjectRegistrationDialog.minor = String.valueOf(spinnerMinor1Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.minor = String.valueOf(applySubjectRegistrationDialog.getSpinnerMinor1Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerMinor1Adapter4 = applySubjectRegistrationDialog2.getSpinnerMinor1Adapter();
-                        valueOf = String.valueOf(spinnerMinor1Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.minor = valueOf;
+                    applySubjectRegistrationDialog2.minor = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerMinor1Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding30 = get_binding();
         Spinner spinner24 = dialogApplySubjectRegistrationBinding30 != null ? dialogApplySubjectRegistrationBinding30.spinnerMinor2 : null;
         if (spinner24 != null) {
-            spinner24.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$3
+            spinner24.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor2Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor2Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding31;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor2Adapter3;
                     Spinner spinner25;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor2Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagMinor2;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagMinor2) {
                         ApplySubjectRegistrationDialog.this.flagMinor2 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.minor2;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.minor2;
-                        System.out.println((Object) str3);
-                        spinnerMinor2Adapter = ApplySubjectRegistrationDialog.this.getSpinnerMinor2Adapter();
-                        int count = spinnerMinor2Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.minor2);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.minor2);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerMinor2Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerMinor2Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerMinor2Adapter();
-                            String name = spinnerMinor2Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.minor2;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding31 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerMinor2Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.minor2, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding31 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding31 != null && (spinner25 = dialogApplySubjectRegistrationBinding31.spinnerMinor2) != null) {
                                     spinner25.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerMinor2Adapter3 = applySubjectRegistrationDialog.getSpinnerMinor2Adapter();
-                                applySubjectRegistrationDialog.minor2 = String.valueOf(spinnerMinor2Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.minor2 = String.valueOf(applySubjectRegistrationDialog.getSpinnerMinor2Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerMinor2Adapter4 = applySubjectRegistrationDialog2.getSpinnerMinor2Adapter();
-                        valueOf = String.valueOf(spinnerMinor2Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.minor2 = valueOf;
+                    applySubjectRegistrationDialog2.minor2 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerMinor2Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding31 = get_binding();
         Spinner spinner25 = dialogApplySubjectRegistrationBinding31 != null ? dialogApplySubjectRegistrationBinding31.spinnerMinor3 : null;
         if (spinner25 != null) {
-            spinner25.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$4
+            spinner25.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.4
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor3Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor3Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding32;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor3Adapter3;
                     Spinner spinner26;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMinor3Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagMinor3;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagMinor3) {
                         ApplySubjectRegistrationDialog.this.flagMinor3 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.minor3;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.minor3;
-                        System.out.println((Object) str3);
-                        spinnerMinor3Adapter = ApplySubjectRegistrationDialog.this.getSpinnerMinor3Adapter();
-                        int count = spinnerMinor3Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.minor3);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.minor3);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerMinor3Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerMinor3Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerMinor3Adapter();
-                            String name = spinnerMinor3Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.minor3;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding32 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerMinor3Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.minor3, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding32 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding32 != null && (spinner26 = dialogApplySubjectRegistrationBinding32.spinnerMinor3) != null) {
                                     spinner26.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerMinor3Adapter3 = applySubjectRegistrationDialog.getSpinnerMinor3Adapter();
-                                applySubjectRegistrationDialog.minor3 = String.valueOf(spinnerMinor3Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.minor3 = String.valueOf(applySubjectRegistrationDialog.getSpinnerMinor3Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerMinor3Adapter4 = applySubjectRegistrationDialog2.getSpinnerMinor3Adapter();
-                        valueOf = String.valueOf(spinnerMinor3Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.minor3 = valueOf;
+                    applySubjectRegistrationDialog2.minor3 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerMinor3Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding32 = get_binding();
         Spinner spinner26 = dialogApplySubjectRegistrationBinding32 != null ? dialogApplySubjectRegistrationBinding32.spinnerHonour : null;
         if (spinner26 != null) {
-            spinner26.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$5
+            spinner26.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.5
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerHonourAdapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerHonourAdapter2;
-                    String str2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding33;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerHonourAdapter3;
                     Spinner spinner27;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerHonourAdapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagHonour;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagHonour) {
                         ApplySubjectRegistrationDialog.this.flagHonour = true;
-                        spinnerHonourAdapter = ApplySubjectRegistrationDialog.this.getSpinnerHonourAdapter();
-                        int count = spinnerHonourAdapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerHonourAdapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerHonourAdapter2 = ApplySubjectRegistrationDialog.this.getSpinnerHonourAdapter();
-                            String name = spinnerHonourAdapter2.getSemester(i).getName();
-                            str2 = ApplySubjectRegistrationDialog.this.honour;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str2, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding33 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerHonourAdapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.honour, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding33 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding33 != null && (spinner27 = dialogApplySubjectRegistrationBinding33.spinnerHonour) != null) {
                                     spinner27.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerHonourAdapter3 = applySubjectRegistrationDialog.getSpinnerHonourAdapter();
-                                applySubjectRegistrationDialog.honour = String.valueOf(spinnerHonourAdapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.honour = String.valueOf(applySubjectRegistrationDialog.getSpinnerHonourAdapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerHonourAdapter4 = applySubjectRegistrationDialog2.getSpinnerHonourAdapter();
-                        valueOf = String.valueOf(spinnerHonourAdapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.honour = valueOf;
+                    applySubjectRegistrationDialog2.honour = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerHonourAdapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding33 = get_binding();
         Spinner spinner27 = dialogApplySubjectRegistrationBinding33 != null ? dialogApplySubjectRegistrationBinding33.spinnerElective1 : null;
         if (spinner27 != null) {
-            spinner27.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$6
+            spinner27.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.6
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective1Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective1Adapter2;
-                    String str2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding34;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective1Adapter3;
                     Spinner spinner28;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective1Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagElective1;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagElective1) {
                         ApplySubjectRegistrationDialog.this.flagElective1 = true;
-                        spinnerElective1Adapter = ApplySubjectRegistrationDialog.this.getSpinnerElective1Adapter();
-                        int count = spinnerElective1Adapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerElective1Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerElective1Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerElective1Adapter();
-                            String name = spinnerElective1Adapter2.getSemester(i).getName();
-                            str2 = ApplySubjectRegistrationDialog.this.elective1;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str2, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding34 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerElective1Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.elective1, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding34 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding34 != null && (spinner28 = dialogApplySubjectRegistrationBinding34.spinnerElective1) != null) {
                                     spinner28.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerElective1Adapter3 = applySubjectRegistrationDialog.getSpinnerElective1Adapter();
-                                applySubjectRegistrationDialog.elective1 = String.valueOf(spinnerElective1Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.elective1 = String.valueOf(applySubjectRegistrationDialog.getSpinnerElective1Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerElective1Adapter4 = applySubjectRegistrationDialog2.getSpinnerElective1Adapter();
-                        valueOf = String.valueOf(spinnerElective1Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.elective1 = valueOf;
+                    applySubjectRegistrationDialog2.elective1 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerElective1Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding34 = get_binding();
         Spinner spinner28 = dialogApplySubjectRegistrationBinding34 != null ? dialogApplySubjectRegistrationBinding34.spinnerElective2 : null;
         if (spinner28 != null) {
-            spinner28.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$7
+            spinner28.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.7
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective2Adapter;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective2Adapter2;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective2Adapter3;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding35;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective2Adapter4;
                     Spinner spinner29;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective2Adapter5;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagElective2;
-                    if (!z) {
-                        str2 = ApplySubjectRegistrationDialog.this.elective2;
-                        System.out.println((Object) str2);
-                        spinnerElective2Adapter = ApplySubjectRegistrationDialog.this.getSpinnerElective2Adapter();
-                        System.out.println((Object) spinnerElective2Adapter.getSemester(1).getName());
-                        str3 = ApplySubjectRegistrationDialog.this.elective2;
-                        System.out.println((Object) str3);
+                    if (!ApplySubjectRegistrationDialog.this.flagElective2) {
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.elective2);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.getSpinnerElective2Adapter().getSemester(1).getName());
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.elective2);
                         ApplySubjectRegistrationDialog.this.flagElective2 = true;
-                        spinnerElective2Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerElective2Adapter();
-                        int count = spinnerElective2Adapter2.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerElective2Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerElective2Adapter3 = ApplySubjectRegistrationDialog.this.getSpinnerElective2Adapter();
-                            String name = spinnerElective2Adapter3.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.elective2;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding35 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerElective2Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.elective2, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding35 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding35 != null && (spinner29 = dialogApplySubjectRegistrationBinding35.spinnerElective2) != null) {
                                     spinner29.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerElective2Adapter4 = applySubjectRegistrationDialog.getSpinnerElective2Adapter();
-                                applySubjectRegistrationDialog.elective2 = String.valueOf(spinnerElective2Adapter4.getSemester(position).getId());
+                                applySubjectRegistrationDialog.elective2 = String.valueOf(applySubjectRegistrationDialog.getSpinnerElective2Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerElective2Adapter5 = applySubjectRegistrationDialog2.getSpinnerElective2Adapter();
-                        valueOf = String.valueOf(spinnerElective2Adapter5.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.elective2 = valueOf;
+                    applySubjectRegistrationDialog2.elective2 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerElective2Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding35 = get_binding();
         Spinner spinner29 = dialogApplySubjectRegistrationBinding35 != null ? dialogApplySubjectRegistrationBinding35.spinnerElective3 : null;
         if (spinner29 != null) {
-            spinner29.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$8
+            spinner29.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.8
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective3Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective3Adapter2;
-                    String str2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding36;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective3Adapter3;
                     Spinner spinner30;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerElective3Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagElective3;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagElective3) {
                         ApplySubjectRegistrationDialog.this.flagElective3 = true;
-                        spinnerElective3Adapter = ApplySubjectRegistrationDialog.this.getSpinnerElective3Adapter();
-                        int count = spinnerElective3Adapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerElective3Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerElective3Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerElective3Adapter();
-                            String name = spinnerElective3Adapter2.getSemester(i).getName();
-                            str2 = ApplySubjectRegistrationDialog.this.elective3;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str2, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding36 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerElective3Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.elective3, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding36 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding36 != null && (spinner30 = dialogApplySubjectRegistrationBinding36.spinnerElective3) != null) {
                                     spinner30.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerElective3Adapter3 = applySubjectRegistrationDialog.getSpinnerElective3Adapter();
-                                applySubjectRegistrationDialog.elective3 = String.valueOf(spinnerElective3Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.elective3 = String.valueOf(applySubjectRegistrationDialog.getSpinnerElective3Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerElective3Adapter4 = applySubjectRegistrationDialog2.getSpinnerElective3Adapter();
-                        valueOf = String.valueOf(spinnerElective3Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.elective3 = valueOf;
+                    applySubjectRegistrationDialog2.elective3 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerElective3Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding36 = get_binding();
         Spinner spinner30 = dialogApplySubjectRegistrationBinding36 != null ? dialogApplySubjectRegistrationBinding36.spinnerGlobalElective : null;
         if (spinner30 != null) {
-            spinner30.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$9
+            spinner30.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.9
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerGlobalElectiveAdapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerGlobalElectiveAdapter2;
-                    String str2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding37;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerGlobalElectiveAdapter3;
                     Spinner spinner31;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerGlobalElectiveAdapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagGlobalElective;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagGlobalElective) {
                         ApplySubjectRegistrationDialog.this.flagGlobalElective = true;
-                        spinnerGlobalElectiveAdapter = ApplySubjectRegistrationDialog.this.getSpinnerGlobalElectiveAdapter();
-                        int count = spinnerGlobalElectiveAdapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerGlobalElectiveAdapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerGlobalElectiveAdapter2 = ApplySubjectRegistrationDialog.this.getSpinnerGlobalElectiveAdapter();
-                            String name = spinnerGlobalElectiveAdapter2.getSemester(i).getName();
-                            str2 = ApplySubjectRegistrationDialog.this.globalElective;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str2, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding37 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerGlobalElectiveAdapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.globalElective, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding37 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding37 != null && (spinner31 = dialogApplySubjectRegistrationBinding37.spinnerGlobalElective) != null) {
                                     spinner31.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerGlobalElectiveAdapter3 = applySubjectRegistrationDialog.getSpinnerGlobalElectiveAdapter();
-                                applySubjectRegistrationDialog.globalElective = String.valueOf(spinnerGlobalElectiveAdapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.globalElective = String.valueOf(applySubjectRegistrationDialog.getSpinnerGlobalElectiveAdapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerGlobalElectiveAdapter4 = applySubjectRegistrationDialog2.getSpinnerGlobalElectiveAdapter();
-                        valueOf = String.valueOf(spinnerGlobalElectiveAdapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.globalElective = valueOf;
+                    applySubjectRegistrationDialog2.globalElective = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerGlobalElectiveAdapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding37 = get_binding();
         Spinner spinner31 = dialogApplySubjectRegistrationBinding37 != null ? dialogApplySubjectRegistrationBinding37.spinnerAdditionalElective1 : null;
         if (spinner31 != null) {
-            spinner31.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$10
+            spinner31.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.10
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective1Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective1Adapter2;
-                    String str2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding38;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective1Adapter3;
                     Spinner spinner32;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective1Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagAdditionalElective1;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagAdditionalElective1) {
                         ApplySubjectRegistrationDialog.this.flagAdditionalElective1 = true;
-                        spinnerAdditionalElective1Adapter = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective1Adapter();
-                        int count = spinnerAdditionalElective1Adapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective1Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerAdditionalElective1Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective1Adapter();
-                            String name = spinnerAdditionalElective1Adapter2.getSemester(i).getName();
-                            str2 = ApplySubjectRegistrationDialog.this.additionalElective1;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str2, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding38 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective1Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.additionalElective1, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding38 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding38 != null && (spinner32 = dialogApplySubjectRegistrationBinding38.spinnerAdditionalElective1) != null) {
                                     spinner32.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerAdditionalElective1Adapter3 = applySubjectRegistrationDialog.getSpinnerAdditionalElective1Adapter();
-                                applySubjectRegistrationDialog.additionalElective1 = String.valueOf(spinnerAdditionalElective1Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.additionalElective1 = String.valueOf(applySubjectRegistrationDialog.getSpinnerAdditionalElective1Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerAdditionalElective1Adapter4 = applySubjectRegistrationDialog2.getSpinnerAdditionalElective1Adapter();
-                        valueOf = String.valueOf(spinnerAdditionalElective1Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.additionalElective1 = valueOf;
+                    applySubjectRegistrationDialog2.additionalElective1 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerAdditionalElective1Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding38 = get_binding();
         Spinner spinner32 = dialogApplySubjectRegistrationBinding38 != null ? dialogApplySubjectRegistrationBinding38.spinnerAdditionalElective2 : null;
         if (spinner32 != null) {
-            spinner32.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$11
+            spinner32.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.11
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective2Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective2Adapter2;
-                    String str2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding39;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective2Adapter3;
                     Spinner spinner33;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective2Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagAdditionalElective2;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagAdditionalElective2) {
                         ApplySubjectRegistrationDialog.this.flagAdditionalElective2 = true;
-                        spinnerAdditionalElective2Adapter = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective2Adapter();
-                        int count = spinnerAdditionalElective2Adapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective2Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerAdditionalElective2Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective2Adapter();
-                            String name = spinnerAdditionalElective2Adapter2.getSemester(i).getName();
-                            str2 = ApplySubjectRegistrationDialog.this.additionalElective2;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str2, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding39 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective2Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.additionalElective2, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding39 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding39 != null && (spinner33 = dialogApplySubjectRegistrationBinding39.spinnerAdditionalElective2) != null) {
                                     spinner33.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerAdditionalElective2Adapter3 = applySubjectRegistrationDialog.getSpinnerAdditionalElective2Adapter();
-                                applySubjectRegistrationDialog.additionalElective2 = String.valueOf(spinnerAdditionalElective2Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.additionalElective2 = String.valueOf(applySubjectRegistrationDialog.getSpinnerAdditionalElective2Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerAdditionalElective2Adapter4 = applySubjectRegistrationDialog2.getSpinnerAdditionalElective2Adapter();
-                        valueOf = String.valueOf(spinnerAdditionalElective2Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.additionalElective2 = valueOf;
+                    applySubjectRegistrationDialog2.additionalElective2 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerAdditionalElective2Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding39 = get_binding();
         Spinner spinner33 = dialogApplySubjectRegistrationBinding39 != null ? dialogApplySubjectRegistrationBinding39.spinnerAdditionalElective3 : null;
         if (spinner33 != null) {
-            spinner33.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$12
+            spinner33.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.12
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective3Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective3Adapter2;
-                    String str2;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding40;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective3Adapter3;
                     Spinner spinner34;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective3Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagAdditionalElective3;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagAdditionalElective3) {
                         ApplySubjectRegistrationDialog.this.flagAdditionalElective3 = true;
-                        spinnerAdditionalElective3Adapter = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective3Adapter();
-                        int count = spinnerAdditionalElective3Adapter.getCount();
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective3Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerAdditionalElective3Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective3Adapter();
-                            String name = spinnerAdditionalElective3Adapter2.getSemester(i).getName();
-                            str2 = ApplySubjectRegistrationDialog.this.additionalElective3;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str2, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding40 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerAdditionalElective3Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.additionalElective3, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding40 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding40 != null && (spinner34 = dialogApplySubjectRegistrationBinding40.spinnerAdditionalElective3) != null) {
                                     spinner34.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerAdditionalElective3Adapter3 = applySubjectRegistrationDialog.getSpinnerAdditionalElective3Adapter();
-                                applySubjectRegistrationDialog.additionalElective3 = String.valueOf(spinnerAdditionalElective3Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.additionalElective3 = String.valueOf(applySubjectRegistrationDialog.getSpinnerAdditionalElective3Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerAdditionalElective3Adapter4 = applySubjectRegistrationDialog2.getSpinnerAdditionalElective3Adapter();
-                        valueOf = String.valueOf(spinnerAdditionalElective3Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.additionalElective3 = valueOf;
+                    applySubjectRegistrationDialog2.additionalElective3 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerAdditionalElective3Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding40 = get_binding();
         Spinner spinner34 = dialogApplySubjectRegistrationBinding40 != null ? dialogApplySubjectRegistrationBinding40.spinnerMdc1 : null;
         if (spinner34 != null) {
-            spinner34.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$13
+            spinner34.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.13
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc1Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc1Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding41;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc1Adapter3;
                     Spinner spinner35;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc1Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagMdc1;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagMdc1) {
                         ApplySubjectRegistrationDialog.this.flagMdc1 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.mdc1;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.mdc1;
-                        System.out.println((Object) str3);
-                        spinnerMdc1Adapter = ApplySubjectRegistrationDialog.this.getSpinnerMdc1Adapter();
-                        int count = spinnerMdc1Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.mdc1);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.mdc1);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerMdc1Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerMdc1Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerMdc1Adapter();
-                            String name = spinnerMdc1Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.mdc1;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding41 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerMdc1Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.mdc1, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding41 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding41 != null && (spinner35 = dialogApplySubjectRegistrationBinding41.spinnerMdc1) != null) {
                                     spinner35.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerMdc1Adapter3 = applySubjectRegistrationDialog.getSpinnerMdc1Adapter();
-                                applySubjectRegistrationDialog.mdc1 = String.valueOf(spinnerMdc1Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.mdc1 = String.valueOf(applySubjectRegistrationDialog.getSpinnerMdc1Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerMdc1Adapter4 = applySubjectRegistrationDialog2.getSpinnerMdc1Adapter();
-                        valueOf = String.valueOf(spinnerMdc1Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.mdc1 = valueOf;
+                    applySubjectRegistrationDialog2.mdc1 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerMdc1Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding41 = get_binding();
         Spinner spinner35 = dialogApplySubjectRegistrationBinding41 != null ? dialogApplySubjectRegistrationBinding41.spinnerMdc2 : null;
         if (spinner35 != null) {
-            spinner35.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$14
+            spinner35.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.14
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc2Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc2Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding42;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc2Adapter3;
                     Spinner spinner36;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc2Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagMdc2;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagMdc2) {
                         ApplySubjectRegistrationDialog.this.flagMdc2 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.mdc2;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.mdc2;
-                        System.out.println((Object) str3);
-                        spinnerMdc2Adapter = ApplySubjectRegistrationDialog.this.getSpinnerMdc2Adapter();
-                        int count = spinnerMdc2Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.mdc2);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.mdc2);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerMdc2Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerMdc2Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerMdc2Adapter();
-                            String name = spinnerMdc2Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.mdc2;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding42 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerMdc2Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.mdc2, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding42 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding42 != null && (spinner36 = dialogApplySubjectRegistrationBinding42.spinnerMdc2) != null) {
                                     spinner36.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerMdc2Adapter3 = applySubjectRegistrationDialog.getSpinnerMdc2Adapter();
-                                applySubjectRegistrationDialog.mdc2 = String.valueOf(spinnerMdc2Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.mdc2 = String.valueOf(applySubjectRegistrationDialog.getSpinnerMdc2Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerMdc2Adapter4 = applySubjectRegistrationDialog2.getSpinnerMdc2Adapter();
-                        valueOf = String.valueOf(spinnerMdc2Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.mdc2 = valueOf;
+                    applySubjectRegistrationDialog2.mdc2 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerMdc2Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding42 = get_binding();
         Spinner spinner36 = dialogApplySubjectRegistrationBinding42 != null ? dialogApplySubjectRegistrationBinding42.spinnerMdc3 : null;
         if (spinner36 != null) {
-            spinner36.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$15
+            spinner36.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.15
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc3Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc3Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding43;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc3Adapter3;
                     Spinner spinner37;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerMdc3Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagMdc3;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagMdc3) {
                         ApplySubjectRegistrationDialog.this.flagMdc3 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.mdc3;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.mdc3;
-                        System.out.println((Object) str3);
-                        spinnerMdc3Adapter = ApplySubjectRegistrationDialog.this.getSpinnerMdc3Adapter();
-                        int count = spinnerMdc3Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.mdc3);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.mdc3);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerMdc3Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerMdc3Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerMdc3Adapter();
-                            String name = spinnerMdc3Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.mdc3;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding43 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerMdc3Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.mdc3, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding43 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding43 != null && (spinner37 = dialogApplySubjectRegistrationBinding43.spinnerMdc3) != null) {
                                     spinner37.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerMdc3Adapter3 = applySubjectRegistrationDialog.getSpinnerMdc3Adapter();
-                                applySubjectRegistrationDialog.mdc3 = String.valueOf(spinnerMdc3Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.mdc3 = String.valueOf(applySubjectRegistrationDialog.getSpinnerMdc3Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerMdc3Adapter4 = applySubjectRegistrationDialog2.getSpinnerMdc3Adapter();
-                        valueOf = String.valueOf(spinnerMdc3Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.mdc3 = valueOf;
+                    applySubjectRegistrationDialog2.mdc3 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerMdc3Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding43 = get_binding();
         Spinner spinner37 = dialogApplySubjectRegistrationBinding43 != null ? dialogApplySubjectRegistrationBinding43.spinnerDsc1 : null;
         if (spinner37 != null) {
-            spinner37.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$16
+            spinner37.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.16
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc1Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc1Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding44;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc1Adapter3;
                     Spinner spinner38;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc1Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagDsc1;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagDsc1) {
                         ApplySubjectRegistrationDialog.this.flagDsc1 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.dsc1;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.dsc1;
-                        System.out.println((Object) str3);
-                        spinnerDsc1Adapter = ApplySubjectRegistrationDialog.this.getSpinnerDsc1Adapter();
-                        int count = spinnerDsc1Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.dsc1);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.dsc1);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerDsc1Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerDsc1Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerDsc1Adapter();
-                            String name = spinnerDsc1Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.dsc1;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding44 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerDsc1Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.dsc1, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding44 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding44 != null && (spinner38 = dialogApplySubjectRegistrationBinding44.spinnerDsc1) != null) {
                                     spinner38.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerDsc1Adapter3 = applySubjectRegistrationDialog.getSpinnerDsc1Adapter();
-                                applySubjectRegistrationDialog.dsc1 = String.valueOf(spinnerDsc1Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.dsc1 = String.valueOf(applySubjectRegistrationDialog.getSpinnerDsc1Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerDsc1Adapter4 = applySubjectRegistrationDialog2.getSpinnerDsc1Adapter();
-                        valueOf = String.valueOf(spinnerDsc1Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.dsc1 = valueOf;
+                    applySubjectRegistrationDialog2.dsc1 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerDsc1Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding44 = get_binding();
         Spinner spinner38 = dialogApplySubjectRegistrationBinding44 != null ? dialogApplySubjectRegistrationBinding44.spinnerDsc2 : null;
         if (spinner38 != null) {
-            spinner38.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$17
+            spinner38.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.17
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc2Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc2Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding45;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc2Adapter3;
                     Spinner spinner39;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc2Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagDsc2;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagDsc2) {
                         ApplySubjectRegistrationDialog.this.flagDsc2 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.dsc2;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.dsc2;
-                        System.out.println((Object) str3);
-                        spinnerDsc2Adapter = ApplySubjectRegistrationDialog.this.getSpinnerDsc2Adapter();
-                        int count = spinnerDsc2Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.dsc2);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.dsc2);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerDsc2Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerDsc2Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerDsc2Adapter();
-                            String name = spinnerDsc2Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.dsc2;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding45 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerDsc2Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.dsc2, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding45 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding45 != null && (spinner39 = dialogApplySubjectRegistrationBinding45.spinnerDsc2) != null) {
                                     spinner39.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerDsc2Adapter3 = applySubjectRegistrationDialog.getSpinnerDsc2Adapter();
-                                applySubjectRegistrationDialog.dsc2 = String.valueOf(spinnerDsc2Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.dsc2 = String.valueOf(applySubjectRegistrationDialog.getSpinnerDsc2Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerDsc2Adapter4 = applySubjectRegistrationDialog2.getSpinnerDsc2Adapter();
-                        valueOf = String.valueOf(spinnerDsc2Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.dsc2 = valueOf;
+                    applySubjectRegistrationDialog2.dsc2 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerDsc2Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding45 = get_binding();
         Spinner spinner39 = dialogApplySubjectRegistrationBinding45 != null ? dialogApplySubjectRegistrationBinding45.spinnerDsc3 : null;
         if (spinner39 != null) {
-            spinner39.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$18
+            spinner39.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.18
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc3Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc3Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding46;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc3Adapter3;
                     Spinner spinner40;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerDsc3Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagDsc3;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagDsc3) {
                         ApplySubjectRegistrationDialog.this.flagDsc3 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.dsc3;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.dsc3;
-                        System.out.println((Object) str3);
-                        spinnerDsc3Adapter = ApplySubjectRegistrationDialog.this.getSpinnerDsc3Adapter();
-                        int count = spinnerDsc3Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.dsc3);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.dsc3);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerDsc3Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerDsc3Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerDsc3Adapter();
-                            String name = spinnerDsc3Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.dsc3;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding46 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerDsc3Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.dsc3, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding46 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding46 != null && (spinner40 = dialogApplySubjectRegistrationBinding46.spinnerDsc3) != null) {
                                     spinner40.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerDsc3Adapter3 = applySubjectRegistrationDialog.getSpinnerDsc3Adapter();
-                                applySubjectRegistrationDialog.dsc3 = String.valueOf(spinnerDsc3Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.dsc3 = String.valueOf(applySubjectRegistrationDialog.getSpinnerDsc3Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerDsc3Adapter4 = applySubjectRegistrationDialog2.getSpinnerDsc3Adapter();
-                        valueOf = String.valueOf(spinnerDsc3Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.dsc3 = valueOf;
+                    applySubjectRegistrationDialog2.dsc3 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerDsc3Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding46 = get_binding();
         Spinner spinner40 = dialogApplySubjectRegistrationBinding46 != null ? dialogApplySubjectRegistrationBinding46.spinnerAec1 : null;
         if (spinner40 != null) {
-            spinner40.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$19
+            spinner40.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.19
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec1Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec1Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding47;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec1Adapter3;
                     Spinner spinner41;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec1Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagAec1;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagAec1) {
                         ApplySubjectRegistrationDialog.this.flagAec1 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.aec1;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.aec1;
-                        System.out.println((Object) str3);
-                        spinnerAec1Adapter = ApplySubjectRegistrationDialog.this.getSpinnerAec1Adapter();
-                        int count = spinnerAec1Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.aec1);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.aec1);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerAec1Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerAec1Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerAec1Adapter();
-                            String name = spinnerAec1Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.aec1;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding47 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerAec1Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.aec1, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding47 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding47 != null && (spinner41 = dialogApplySubjectRegistrationBinding47.spinnerAec1) != null) {
                                     spinner41.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerAec1Adapter3 = applySubjectRegistrationDialog.getSpinnerAec1Adapter();
-                                applySubjectRegistrationDialog.aec1 = String.valueOf(spinnerAec1Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.aec1 = String.valueOf(applySubjectRegistrationDialog.getSpinnerAec1Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerAec1Adapter4 = applySubjectRegistrationDialog2.getSpinnerAec1Adapter();
-                        valueOf = String.valueOf(spinnerAec1Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.aec1 = valueOf;
+                    applySubjectRegistrationDialog2.aec1 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerAec1Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding47 = get_binding();
         Spinner spinner41 = dialogApplySubjectRegistrationBinding47 != null ? dialogApplySubjectRegistrationBinding47.spinnerAec2 : null;
         if (spinner41 != null) {
-            spinner41.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$20
+            spinner41.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.20
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec2Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec2Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding48;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec2Adapter3;
                     Spinner spinner42;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec2Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagAec2;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagAec2) {
                         ApplySubjectRegistrationDialog.this.flagAec2 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.aec2;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.aec2;
-                        System.out.println((Object) str3);
-                        spinnerAec2Adapter = ApplySubjectRegistrationDialog.this.getSpinnerAec2Adapter();
-                        int count = spinnerAec2Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.aec2);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.aec2);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerAec2Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerAec2Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerAec2Adapter();
-                            String name = spinnerAec2Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.aec2;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding48 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerAec2Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.aec2, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding48 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding48 != null && (spinner42 = dialogApplySubjectRegistrationBinding48.spinnerAec2) != null) {
                                     spinner42.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerAec2Adapter3 = applySubjectRegistrationDialog.getSpinnerAec2Adapter();
-                                applySubjectRegistrationDialog.aec2 = String.valueOf(spinnerAec2Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.aec2 = String.valueOf(applySubjectRegistrationDialog.getSpinnerAec2Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerAec2Adapter4 = applySubjectRegistrationDialog2.getSpinnerAec2Adapter();
-                        valueOf = String.valueOf(spinnerAec2Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.aec2 = valueOf;
+                    applySubjectRegistrationDialog2.aec2 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerAec2Adapter().getSemester(position).getId());
                 }
             });
         }
         DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding48 = get_binding();
         Spinner spinner42 = dialogApplySubjectRegistrationBinding48 != null ? dialogApplySubjectRegistrationBinding48.spinnerAec3 : null;
         if (spinner42 != null) {
-            spinner42.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$setUp$21
+            spinner42.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.setUp.21
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    String str2;
-                    String str3;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec3Adapter;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec3Adapter2;
-                    String str4;
-                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding49;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec3Adapter3;
                     Spinner spinner43;
-                    ApplySubjectRegistrationSpinnerAdapter spinnerAec3Adapter4;
-                    String valueOf;
-                    z = ApplySubjectRegistrationDialog.this.flagAec3;
-                    if (!z) {
+                    if (!ApplySubjectRegistrationDialog.this.flagAec3) {
                         ApplySubjectRegistrationDialog.this.flagAec3 = true;
-                        str2 = ApplySubjectRegistrationDialog.this.aec3;
-                        System.out.println((Object) str2);
-                        str3 = ApplySubjectRegistrationDialog.this.aec3;
-                        System.out.println((Object) str3);
-                        spinnerAec3Adapter = ApplySubjectRegistrationDialog.this.getSpinnerAec3Adapter();
-                        int count = spinnerAec3Adapter.getCount();
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.aec3);
+                        System.out.println((Object) ApplySubjectRegistrationDialog.this.aec3);
+                        int count = ApplySubjectRegistrationDialog.this.getSpinnerAec3Adapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            spinnerAec3Adapter2 = ApplySubjectRegistrationDialog.this.getSpinnerAec3Adapter();
-                            String name = spinnerAec3Adapter2.getSemester(i).getName();
-                            str4 = ApplySubjectRegistrationDialog.this.aec3;
-                            if (StringsKt.contains$default((CharSequence) name, (CharSequence) str4, false, 2, (Object) null)) {
-                                dialogApplySubjectRegistrationBinding49 = ApplySubjectRegistrationDialog.this.get_binding();
+                            if (StringsKt.contains$default((CharSequence) ApplySubjectRegistrationDialog.this.getSpinnerAec3Adapter().getSemester(i).getName(), (CharSequence) ApplySubjectRegistrationDialog.this.aec3, false, 2, (Object) null)) {
+                                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding49 = ApplySubjectRegistrationDialog.this.get_binding();
                                 if (dialogApplySubjectRegistrationBinding49 != null && (spinner43 = dialogApplySubjectRegistrationBinding49.spinnerAec3) != null) {
                                     spinner43.setSelection(i);
                                 }
                                 ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
-                                spinnerAec3Adapter3 = applySubjectRegistrationDialog.getSpinnerAec3Adapter();
-                                applySubjectRegistrationDialog.aec3 = String.valueOf(spinnerAec3Adapter3.getSemester(position).getId());
+                                applySubjectRegistrationDialog.aec3 = String.valueOf(applySubjectRegistrationDialog.getSpinnerAec3Adapter().getSemester(position).getId());
                                 return;
                             }
                         }
                         return;
                     }
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog2 = ApplySubjectRegistrationDialog.this;
-                    if (position == 0) {
-                        valueOf = "00000";
-                    } else {
-                        spinnerAec3Adapter4 = applySubjectRegistrationDialog2.getSpinnerAec3Adapter();
-                        valueOf = String.valueOf(spinnerAec3Adapter4.getSemester(position).getId());
-                    }
-                    applySubjectRegistrationDialog2.aec3 = valueOf;
+                    applySubjectRegistrationDialog2.aec3 = position == 0 ? "00000" : String.valueOf(applySubjectRegistrationDialog2.getSpinnerAec3Adapter().getSemester(position).getId());
                 }
             });
         }
@@ -2334,7 +1863,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ApplySubjectRegistrationDialog.setUp$lambda$1(ApplySubjectRegistrationDialog.this, view);
+                ApplySubjectRegistrationDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -2345,81 +1874,81 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         System.out.println((Object) this$0.minor);
         System.out.println((Object) this$0.minor);
-        HashMap hashMap = new HashMap();
-        hashMap.clear();
+        HashMap map = new HashMap();
+        map.clear();
         if (!Intrinsics.areEqual(this$0.id, "")) {
             String str = this$0.id;
             Intrinsics.checkNotNull(str);
-            hashMap.put("id", str);
+            map.put("id", str);
         } else {
-            hashMap.put("sem_id", this$0.semId);
+            map.put("sem_id", this$0.semId);
         }
-        HashMap hashMap2 = hashMap;
-        hashMap2.put("register", "1");
+        HashMap map2 = map;
+        map2.put("register", "1");
         if (!Intrinsics.areEqual(this$0.minor, "00000")) {
-            hashMap2.put("subject[minor][1]", this$0.minor);
+            map2.put("subject[minor][1]", this$0.minor);
         }
         if (!Intrinsics.areEqual(this$0.minor2, "00000")) {
-            hashMap2.put("subject[minor][2]", this$0.minor2);
+            map2.put("subject[minor][2]", this$0.minor2);
         }
         if (!Intrinsics.areEqual(this$0.minor3, "00000")) {
-            hashMap2.put("subject[minor][3]", this$0.minor3);
+            map2.put("subject[minor][3]", this$0.minor3);
         }
         if (!Intrinsics.areEqual(this$0.mdc1, "00000")) {
-            hashMap2.put("subject[mdc][1]", this$0.mdc1);
+            map2.put("subject[mdc][1]", this$0.mdc1);
         }
         if (!Intrinsics.areEqual(this$0.mdc2, "00000")) {
-            hashMap2.put("subject[mdc][2]", this$0.mdc2);
+            map2.put("subject[mdc][2]", this$0.mdc2);
         }
         if (!Intrinsics.areEqual(this$0.mdc3, "00000")) {
-            hashMap2.put("subject[mdc][3]", this$0.mdc3);
+            map2.put("subject[mdc][3]", this$0.mdc3);
         }
         if (!Intrinsics.areEqual(this$0.aec1, "00000")) {
-            hashMap2.put("subject[aec][1]", this$0.aec1);
+            map2.put("subject[aec][1]", this$0.aec1);
         }
         if (!Intrinsics.areEqual(this$0.aec2, "00000")) {
-            hashMap2.put("subject[aec][2]", this$0.aec2);
+            map2.put("subject[aec][2]", this$0.aec2);
         }
         if (!Intrinsics.areEqual(this$0.aec3, "00000")) {
-            hashMap2.put("subject[aec][3]", this$0.aec3);
+            map2.put("subject[aec][3]", this$0.aec3);
         }
         if (!Intrinsics.areEqual(this$0.dsc1, "00000")) {
-            hashMap2.put("subject[dsc][1]", this$0.dsc1);
+            map2.put("subject[dsc][1]", this$0.dsc1);
         }
         if (!Intrinsics.areEqual(this$0.dsc2, "00000")) {
-            hashMap2.put("subject[dsc][2]", this$0.dsc2);
+            map2.put("subject[dsc][2]", this$0.dsc2);
         }
         if (!Intrinsics.areEqual(this$0.dsc3, "00000")) {
-            hashMap2.put("subject[dsc][3]", this$0.dsc3);
+            map2.put("subject[dsc][3]", this$0.dsc3);
         }
         if (!Intrinsics.areEqual(this$0.honour, "00000")) {
-            hashMap2.put("subject[honour][1]", this$0.honour);
+            map2.put("subject[honour][1]", this$0.honour);
         }
         if (!Intrinsics.areEqual(this$0.elective1, "00000")) {
-            hashMap2.put("subject[elective][1]", this$0.elective1);
+            map2.put("subject[elective][1]", this$0.elective1);
         }
         if (!Intrinsics.areEqual(this$0.elective2, "00000")) {
-            hashMap2.put("subject[elective][2]", this$0.elective2);
+            map2.put("subject[elective][2]", this$0.elective2);
         }
         if (!Intrinsics.areEqual(this$0.elective3, "00000")) {
-            hashMap2.put("subject[elective][3]", this$0.elective3);
+            map2.put("subject[elective][3]", this$0.elective3);
         }
         if (!Intrinsics.areEqual(this$0.globalElective, "00000")) {
-            hashMap2.put("subject[globalelective][1]", this$0.globalElective);
+            map2.put("subject[globalelective][1]", this$0.globalElective);
         }
         if (!Intrinsics.areEqual(this$0.additionalElective1, "00000")) {
-            hashMap2.put("subject[additionalelective][1]", this$0.additionalElective1);
+            map2.put("subject[additionalelective][1]", this$0.additionalElective1);
         }
         if (!Intrinsics.areEqual(this$0.additionalElective2, "00000")) {
-            hashMap2.put("subject[additionalelective][2]", this$0.additionalElective2);
+            map2.put("subject[additionalelective][2]", this$0.additionalElective2);
         }
         if (!Intrinsics.areEqual(this$0.additionalElective3, "00000")) {
-            hashMap2.put("subject[additionalelective][3]", this$0.additionalElective3);
+            map2.put("subject[additionalelective][3]", this$0.additionalElective3);
         }
-        System.out.println(hashMap);
-        System.out.println(hashMap);
+        System.out.println(map);
+        System.out.println(map);
         if (!Intrinsics.areEqual(this$0.id, "")) {
-            this$0.getApplySubjectRegistrationViewModel().getUpdateData(hashMap2);
+            this$0.getApplySubjectRegistrationViewModel().getUpdateData(map2);
             return;
         }
         System.out.println((Object) ("minor 1: " + this$0.minor));
@@ -2444,13 +1973,14 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
         System.out.println((Object) ("elective2 1: " + this$0.elective2));
         System.out.println((Object) ("globalElective 1: " + this$0.globalElective));
         System.out.println((Object) ("additionalElective2 1: " + this$0.additionalElective2));
-        this$0.getApplySubjectRegistrationViewModel().getRegisterData(hashMap2);
+        this$0.getApplySubjectRegistrationViewModel().getRegisterData(map2);
     }
 
     private final void listenResponse() {
-        getApplySubjectRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewSubjectRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenResponse$1
+        getApplySubjectRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewSubjectRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.listenResponse.1
 
-            /* compiled from: ApplySubjectRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -2487,35 +2017,9 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ViewSubjectRegistrationResponse> resource) {
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding4;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding5;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding6;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding7;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding8;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding9;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding10;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding11;
                 LinearLayout linearLayout;
-                String str;
-                String str2;
-                ApplySubjectRegistrationViewModel applySubjectRegistrationViewModel;
-                String str3;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding12;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding13;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding14;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding15;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding16;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding17;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding18;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding19;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding20;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding21;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding22;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -2531,8 +2035,8 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                         return;
                     }
                     ApplySubjectRegistrationDialog.this.hideProgress();
-                    dialogApplySubjectRegistrationBinding22 = ApplySubjectRegistrationDialog.this.get_binding();
-                    if (dialogApplySubjectRegistrationBinding22 == null || (textView = dialogApplySubjectRegistrationBinding22.registerBtn) == null) {
+                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding = ApplySubjectRegistrationDialog.this.get_binding();
+                    if (dialogApplySubjectRegistrationBinding == null || (textView = dialogApplySubjectRegistrationBinding.registerBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -2545,158 +2049,154 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 if (data != null) {
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
                     applySubjectRegistrationDialog.semId = data.getSem_id();
-                    dialogApplySubjectRegistrationBinding = applySubjectRegistrationDialog.get_binding();
-                    TextView textView2 = dialogApplySubjectRegistrationBinding != null ? dialogApplySubjectRegistrationBinding.semesterTv : null;
+                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
+                    TextView textView2 = dialogApplySubjectRegistrationBinding2 != null ? dialogApplySubjectRegistrationBinding2.semesterTv : null;
                     if (textView2 != null) {
                         textView2.setText(data.getSemester());
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding21 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout2 = dialogApplySubjectRegistrationBinding21 != null ? dialogApplySubjectRegistrationBinding21.minorLyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout2 = dialogApplySubjectRegistrationBinding3 != null ? dialogApplySubjectRegistrationBinding3.minorLyt : null;
                         if (linearLayout2 != null) {
                             linearLayout2.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.minor = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout3 = dialogApplySubjectRegistrationBinding2 != null ? dialogApplySubjectRegistrationBinding2.minorLyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding4 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout3 = dialogApplySubjectRegistrationBinding4 != null ? dialogApplySubjectRegistrationBinding4.minorLyt : null;
                         if (linearLayout3 != null) {
                             linearLayout3.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding20 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout4 = dialogApplySubjectRegistrationBinding20 != null ? dialogApplySubjectRegistrationBinding20.minor2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding5 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout4 = dialogApplySubjectRegistrationBinding5 != null ? dialogApplySubjectRegistrationBinding5.minor2Lyt : null;
                         if (linearLayout4 != null) {
                             linearLayout4.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.minor2 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding3 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout5 = dialogApplySubjectRegistrationBinding3 != null ? dialogApplySubjectRegistrationBinding3.minor2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding6 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout5 = dialogApplySubjectRegistrationBinding6 != null ? dialogApplySubjectRegistrationBinding6.minor2Lyt : null;
                         if (linearLayout5 != null) {
                             linearLayout5.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding19 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout6 = dialogApplySubjectRegistrationBinding19 != null ? dialogApplySubjectRegistrationBinding19.minor3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding7 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout6 = dialogApplySubjectRegistrationBinding7 != null ? dialogApplySubjectRegistrationBinding7.minor3Lyt : null;
                         if (linearLayout6 != null) {
                             linearLayout6.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.minor3 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding4 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout7 = dialogApplySubjectRegistrationBinding4 != null ? dialogApplySubjectRegistrationBinding4.minor3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding8 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout7 = dialogApplySubjectRegistrationBinding8 != null ? dialogApplySubjectRegistrationBinding8.minor3Lyt : null;
                         if (linearLayout7 != null) {
                             linearLayout7.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding18 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout8 = dialogApplySubjectRegistrationBinding18 != null ? dialogApplySubjectRegistrationBinding18.elective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding9 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout8 = dialogApplySubjectRegistrationBinding9 != null ? dialogApplySubjectRegistrationBinding9.elective1Lyt : null;
                         if (linearLayout8 != null) {
                             linearLayout8.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.elective1 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding5 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout9 = dialogApplySubjectRegistrationBinding5 != null ? dialogApplySubjectRegistrationBinding5.elective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding10 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout9 = dialogApplySubjectRegistrationBinding10 != null ? dialogApplySubjectRegistrationBinding10.elective1Lyt : null;
                         if (linearLayout9 != null) {
                             linearLayout9.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding17 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout10 = dialogApplySubjectRegistrationBinding17 != null ? dialogApplySubjectRegistrationBinding17.elective2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding11 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout10 = dialogApplySubjectRegistrationBinding11 != null ? dialogApplySubjectRegistrationBinding11.elective2Lyt : null;
                         if (linearLayout10 != null) {
                             linearLayout10.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.elective2 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding6 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout11 = dialogApplySubjectRegistrationBinding6 != null ? dialogApplySubjectRegistrationBinding6.elective2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding12 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout11 = dialogApplySubjectRegistrationBinding12 != null ? dialogApplySubjectRegistrationBinding12.elective2Lyt : null;
                         if (linearLayout11 != null) {
                             linearLayout11.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding16 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout12 = dialogApplySubjectRegistrationBinding16 != null ? dialogApplySubjectRegistrationBinding16.elective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding13 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout12 = dialogApplySubjectRegistrationBinding13 != null ? dialogApplySubjectRegistrationBinding13.elective1Lyt : null;
                         if (linearLayout12 != null) {
                             linearLayout12.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.elective1 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding7 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout13 = dialogApplySubjectRegistrationBinding7 != null ? dialogApplySubjectRegistrationBinding7.elective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding14 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout13 = dialogApplySubjectRegistrationBinding14 != null ? dialogApplySubjectRegistrationBinding14.elective1Lyt : null;
                         if (linearLayout13 != null) {
                             linearLayout13.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding15 = applySubjectRegistrationDialog.get_binding();
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding15 = applySubjectRegistrationDialog.get_binding();
                         LinearLayout linearLayout14 = dialogApplySubjectRegistrationBinding15 != null ? dialogApplySubjectRegistrationBinding15.elective2Lyt : null;
                         if (linearLayout14 != null) {
                             linearLayout14.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.elective2 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding8 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout15 = dialogApplySubjectRegistrationBinding8 != null ? dialogApplySubjectRegistrationBinding8.elective2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding16 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout15 = dialogApplySubjectRegistrationBinding16 != null ? dialogApplySubjectRegistrationBinding16.elective2Lyt : null;
                         if (linearLayout15 != null) {
                             linearLayout15.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding14 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout16 = dialogApplySubjectRegistrationBinding14 != null ? dialogApplySubjectRegistrationBinding14.additionalElective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding17 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout16 = dialogApplySubjectRegistrationBinding17 != null ? dialogApplySubjectRegistrationBinding17.additionalElective1Lyt : null;
                         if (linearLayout16 != null) {
                             linearLayout16.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.additionalElective1 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding9 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout17 = dialogApplySubjectRegistrationBinding9 != null ? dialogApplySubjectRegistrationBinding9.additionalElective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding18 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout17 = dialogApplySubjectRegistrationBinding18 != null ? dialogApplySubjectRegistrationBinding18.additionalElective1Lyt : null;
                         if (linearLayout17 != null) {
                             linearLayout17.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding13 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout18 = dialogApplySubjectRegistrationBinding13 != null ? dialogApplySubjectRegistrationBinding13.additionalElective2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding19 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout18 = dialogApplySubjectRegistrationBinding19 != null ? dialogApplySubjectRegistrationBinding19.additionalElective2Lyt : null;
                         if (linearLayout18 != null) {
                             linearLayout18.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.additionalElective2 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding10 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout19 = dialogApplySubjectRegistrationBinding10 != null ? dialogApplySubjectRegistrationBinding10.additionalElective2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding20 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout19 = dialogApplySubjectRegistrationBinding20 != null ? dialogApplySubjectRegistrationBinding20.additionalElective2Lyt : null;
                         if (linearLayout19 != null) {
                             linearLayout19.setVisibility(8);
                         }
                     }
                     if (!Intrinsics.areEqual("", "")) {
-                        dialogApplySubjectRegistrationBinding12 = applySubjectRegistrationDialog.get_binding();
-                        linearLayout = dialogApplySubjectRegistrationBinding12 != null ? dialogApplySubjectRegistrationBinding12.additionalElective3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding21 = applySubjectRegistrationDialog.get_binding();
+                        linearLayout = dialogApplySubjectRegistrationBinding21 != null ? dialogApplySubjectRegistrationBinding21.additionalElective3Lyt : null;
                         if (linearLayout != null) {
                             linearLayout.setVisibility(0);
                         }
                         applySubjectRegistrationDialog.additionalElective3 = "";
                     } else {
-                        dialogApplySubjectRegistrationBinding11 = applySubjectRegistrationDialog.get_binding();
-                        linearLayout = dialogApplySubjectRegistrationBinding11 != null ? dialogApplySubjectRegistrationBinding11.additionalElective3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding22 = applySubjectRegistrationDialog.get_binding();
+                        linearLayout = dialogApplySubjectRegistrationBinding22 != null ? dialogApplySubjectRegistrationBinding22.additionalElective3Lyt : null;
                         if (linearLayout != null) {
                             linearLayout.setVisibility(8);
                         }
                     }
-                    str = applySubjectRegistrationDialog.elective1;
-                    System.out.println((Object) str);
-                    str2 = applySubjectRegistrationDialog.elective1;
-                    System.out.println((Object) str2);
-                    applySubjectRegistrationViewModel = applySubjectRegistrationDialog.getApplySubjectRegistrationViewModel();
-                    str3 = applySubjectRegistrationDialog.semId;
-                    applySubjectRegistrationViewModel.getSpinnerData(str3);
+                    System.out.println((Object) applySubjectRegistrationDialog.elective1);
+                    System.out.println((Object) applySubjectRegistrationDialog.elective1);
+                    applySubjectRegistrationDialog.getApplySubjectRegistrationViewModel().getSpinnerData(applySubjectRegistrationDialog.semId);
                 }
             }
         }));
@@ -2706,7 +2206,7 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
         getApplySubjectRegistrationViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ApplySubjectRegistrationDialog.listenSemResponse$lambda$3(ApplySubjectRegistrationDialog.this, (Resource) obj);
+                ApplySubjectRegistrationDialog.listenSemResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -2753,9 +2253,10 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
     }
 
     private final void listenSpinnerResponse() {
-        getApplySubjectRegistrationViewModel().getSpinnerResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubjectSpinnerResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenSpinnerResponse$1
+        getApplySubjectRegistrationViewModel().getSpinnerResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubjectSpinnerResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.listenSpinnerResponse.1
 
-            /* compiled from: ApplySubjectRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -2792,87 +2293,8 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SubjectSpinnerResponse> resource) {
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding4;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding5;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding6;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding7;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding8;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding9;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding10;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding11;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding12;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding13;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding14;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding15;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding16;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding17;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding18;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding19;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding20;
-                ApplySubjectRegistrationSpinnerAdapter spinnerHonourAdapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerGlobalElectiveAdapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerDsc3Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerDsc2Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerDsc1Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerAec3Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerAec2Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerAec1Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerMdc3Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerMdc2Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerMdc1Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective3Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective2Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerAdditionalElective1Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerElective3Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerElective2Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerElective1Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerMinor3Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerMinor2Adapter;
-                ApplySubjectRegistrationSpinnerAdapter spinnerMinor1Adapter;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding21;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding22;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding23;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding24;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding25;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding26;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding27;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding28;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding29;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding30;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding31;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding32;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding33;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding34;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding35;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding36;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding37;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding38;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding39;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding40;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding41;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding42;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding43;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding44;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding45;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding46;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding47;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding48;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding49;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding50;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding51;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding52;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding53;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding54;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding55;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding56;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding57;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding58;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding59;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -2888,8 +2310,8 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                         return;
                     }
                     ApplySubjectRegistrationDialog.this.hideProgress();
-                    dialogApplySubjectRegistrationBinding59 = ApplySubjectRegistrationDialog.this.get_binding();
-                    if (dialogApplySubjectRegistrationBinding59 == null || (textView = dialogApplySubjectRegistrationBinding59.registerBtn) == null) {
+                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding = ApplySubjectRegistrationDialog.this.get_binding();
+                    if (dialogApplySubjectRegistrationBinding == null || (textView = dialogApplySubjectRegistrationBinding.registerBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -2902,501 +2324,481 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 if (data != null) {
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
                     if (data.getHonour().size() == 0) {
-                        dialogApplySubjectRegistrationBinding58 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout = dialogApplySubjectRegistrationBinding58 != null ? dialogApplySubjectRegistrationBinding58.honourLyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout = dialogApplySubjectRegistrationBinding2 != null ? dialogApplySubjectRegistrationBinding2.honourLyt : null;
                         if (linearLayout != null) {
                             linearLayout.setVisibility(8);
                         }
                     } else {
-                        dialogApplySubjectRegistrationBinding = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout2 = dialogApplySubjectRegistrationBinding != null ? dialogApplySubjectRegistrationBinding.honourLyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout2 = dialogApplySubjectRegistrationBinding3 != null ? dialogApplySubjectRegistrationBinding3.honourLyt : null;
                         if (linearLayout2 != null) {
                             linearLayout2.setVisibility(0);
                         }
                     }
                     try {
                         if (data.getMinor_1().size() == 0) {
-                            dialogApplySubjectRegistrationBinding57 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout3 = dialogApplySubjectRegistrationBinding57 != null ? dialogApplySubjectRegistrationBinding57.minorLyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding4 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout3 = dialogApplySubjectRegistrationBinding4 != null ? dialogApplySubjectRegistrationBinding4.minorLyt : null;
                             if (linearLayout3 != null) {
                                 linearLayout3.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding56 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout4 = dialogApplySubjectRegistrationBinding56 != null ? dialogApplySubjectRegistrationBinding56.minorLyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding5 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout4 = dialogApplySubjectRegistrationBinding5 != null ? dialogApplySubjectRegistrationBinding5.minorLyt : null;
                             if (linearLayout4 != null) {
                                 linearLayout4.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused) {
-                        dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout5 = dialogApplySubjectRegistrationBinding2 != null ? dialogApplySubjectRegistrationBinding2.minorLyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding6 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout5 = dialogApplySubjectRegistrationBinding6 != null ? dialogApplySubjectRegistrationBinding6.minorLyt : null;
                         if (linearLayout5 != null) {
                             linearLayout5.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getMinor_2().size() == 0) {
-                            dialogApplySubjectRegistrationBinding55 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout6 = dialogApplySubjectRegistrationBinding55 != null ? dialogApplySubjectRegistrationBinding55.minor2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding7 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout6 = dialogApplySubjectRegistrationBinding7 != null ? dialogApplySubjectRegistrationBinding7.minor2Lyt : null;
                             if (linearLayout6 != null) {
                                 linearLayout6.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding54 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout7 = dialogApplySubjectRegistrationBinding54 != null ? dialogApplySubjectRegistrationBinding54.minor2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding8 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout7 = dialogApplySubjectRegistrationBinding8 != null ? dialogApplySubjectRegistrationBinding8.minor2Lyt : null;
                             if (linearLayout7 != null) {
                                 linearLayout7.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused2) {
-                        dialogApplySubjectRegistrationBinding3 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout8 = dialogApplySubjectRegistrationBinding3 != null ? dialogApplySubjectRegistrationBinding3.minor2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding9 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout8 = dialogApplySubjectRegistrationBinding9 != null ? dialogApplySubjectRegistrationBinding9.minor2Lyt : null;
                         if (linearLayout8 != null) {
                             linearLayout8.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getMinor_3().size() == 0) {
-                            dialogApplySubjectRegistrationBinding53 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout9 = dialogApplySubjectRegistrationBinding53 != null ? dialogApplySubjectRegistrationBinding53.minor3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding10 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout9 = dialogApplySubjectRegistrationBinding10 != null ? dialogApplySubjectRegistrationBinding10.minor3Lyt : null;
                             if (linearLayout9 != null) {
                                 linearLayout9.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding52 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout10 = dialogApplySubjectRegistrationBinding52 != null ? dialogApplySubjectRegistrationBinding52.minor3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding11 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout10 = dialogApplySubjectRegistrationBinding11 != null ? dialogApplySubjectRegistrationBinding11.minor3Lyt : null;
                             if (linearLayout10 != null) {
                                 linearLayout10.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused3) {
-                        dialogApplySubjectRegistrationBinding4 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout11 = dialogApplySubjectRegistrationBinding4 != null ? dialogApplySubjectRegistrationBinding4.minor3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding12 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout11 = dialogApplySubjectRegistrationBinding12 != null ? dialogApplySubjectRegistrationBinding12.minor3Lyt : null;
                         if (linearLayout11 != null) {
                             linearLayout11.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getElective_1().size() == 0) {
-                            dialogApplySubjectRegistrationBinding51 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout12 = dialogApplySubjectRegistrationBinding51 != null ? dialogApplySubjectRegistrationBinding51.elective1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding13 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout12 = dialogApplySubjectRegistrationBinding13 != null ? dialogApplySubjectRegistrationBinding13.elective1Lyt : null;
                             if (linearLayout12 != null) {
                                 linearLayout12.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding50 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout13 = dialogApplySubjectRegistrationBinding50 != null ? dialogApplySubjectRegistrationBinding50.elective1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding14 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout13 = dialogApplySubjectRegistrationBinding14 != null ? dialogApplySubjectRegistrationBinding14.elective1Lyt : null;
                             if (linearLayout13 != null) {
                                 linearLayout13.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused4) {
-                        dialogApplySubjectRegistrationBinding5 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout14 = dialogApplySubjectRegistrationBinding5 != null ? dialogApplySubjectRegistrationBinding5.elective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding15 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout14 = dialogApplySubjectRegistrationBinding15 != null ? dialogApplySubjectRegistrationBinding15.elective1Lyt : null;
                         if (linearLayout14 != null) {
                             linearLayout14.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getElective_2().size() == 0) {
-                            dialogApplySubjectRegistrationBinding49 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout15 = dialogApplySubjectRegistrationBinding49 != null ? dialogApplySubjectRegistrationBinding49.elective2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding16 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout15 = dialogApplySubjectRegistrationBinding16 != null ? dialogApplySubjectRegistrationBinding16.elective2Lyt : null;
                             if (linearLayout15 != null) {
                                 linearLayout15.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding48 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout16 = dialogApplySubjectRegistrationBinding48 != null ? dialogApplySubjectRegistrationBinding48.elective2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding17 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout16 = dialogApplySubjectRegistrationBinding17 != null ? dialogApplySubjectRegistrationBinding17.elective2Lyt : null;
                             if (linearLayout16 != null) {
                                 linearLayout16.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused5) {
-                        dialogApplySubjectRegistrationBinding6 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout17 = dialogApplySubjectRegistrationBinding6 != null ? dialogApplySubjectRegistrationBinding6.elective2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding18 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout17 = dialogApplySubjectRegistrationBinding18 != null ? dialogApplySubjectRegistrationBinding18.elective2Lyt : null;
                         if (linearLayout17 != null) {
                             linearLayout17.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getElective_3().size() == 0) {
-                            dialogApplySubjectRegistrationBinding47 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout18 = dialogApplySubjectRegistrationBinding47 != null ? dialogApplySubjectRegistrationBinding47.elective3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding19 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout18 = dialogApplySubjectRegistrationBinding19 != null ? dialogApplySubjectRegistrationBinding19.elective3Lyt : null;
                             if (linearLayout18 != null) {
                                 linearLayout18.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding46 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout19 = dialogApplySubjectRegistrationBinding46 != null ? dialogApplySubjectRegistrationBinding46.elective3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding20 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout19 = dialogApplySubjectRegistrationBinding20 != null ? dialogApplySubjectRegistrationBinding20.elective3Lyt : null;
                             if (linearLayout19 != null) {
                                 linearLayout19.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused6) {
-                        dialogApplySubjectRegistrationBinding7 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout20 = dialogApplySubjectRegistrationBinding7 != null ? dialogApplySubjectRegistrationBinding7.elective3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding21 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout20 = dialogApplySubjectRegistrationBinding21 != null ? dialogApplySubjectRegistrationBinding21.elective3Lyt : null;
                         if (linearLayout20 != null) {
                             linearLayout20.setVisibility(8);
                         }
                     }
                     if (data.getGlobalelective().size() == 0) {
-                        dialogApplySubjectRegistrationBinding45 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout21 = dialogApplySubjectRegistrationBinding45 != null ? dialogApplySubjectRegistrationBinding45.globalElectiveLyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding22 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout21 = dialogApplySubjectRegistrationBinding22 != null ? dialogApplySubjectRegistrationBinding22.globalElectiveLyt : null;
                         if (linearLayout21 != null) {
                             linearLayout21.setVisibility(8);
                         }
                     } else {
-                        dialogApplySubjectRegistrationBinding8 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout22 = dialogApplySubjectRegistrationBinding8 != null ? dialogApplySubjectRegistrationBinding8.globalElectiveLyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding23 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout22 = dialogApplySubjectRegistrationBinding23 != null ? dialogApplySubjectRegistrationBinding23.globalElectiveLyt : null;
                         if (linearLayout22 != null) {
                             linearLayout22.setVisibility(0);
                         }
                     }
                     try {
                         if (data.getAdditionalelective_1().size() == 0) {
-                            dialogApplySubjectRegistrationBinding44 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout23 = dialogApplySubjectRegistrationBinding44 != null ? dialogApplySubjectRegistrationBinding44.additionalElective1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding24 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout23 = dialogApplySubjectRegistrationBinding24 != null ? dialogApplySubjectRegistrationBinding24.additionalElective1Lyt : null;
                             if (linearLayout23 != null) {
                                 linearLayout23.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding43 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout24 = dialogApplySubjectRegistrationBinding43 != null ? dialogApplySubjectRegistrationBinding43.additionalElective1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding25 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout24 = dialogApplySubjectRegistrationBinding25 != null ? dialogApplySubjectRegistrationBinding25.additionalElective1Lyt : null;
                             if (linearLayout24 != null) {
                                 linearLayout24.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused7) {
-                        dialogApplySubjectRegistrationBinding9 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout25 = dialogApplySubjectRegistrationBinding9 != null ? dialogApplySubjectRegistrationBinding9.additionalElective1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding26 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout25 = dialogApplySubjectRegistrationBinding26 != null ? dialogApplySubjectRegistrationBinding26.additionalElective1Lyt : null;
                         if (linearLayout25 != null) {
                             linearLayout25.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getAdditionalelective_2().size() == 0) {
-                            dialogApplySubjectRegistrationBinding42 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout26 = dialogApplySubjectRegistrationBinding42 != null ? dialogApplySubjectRegistrationBinding42.additionalElective2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding27 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout26 = dialogApplySubjectRegistrationBinding27 != null ? dialogApplySubjectRegistrationBinding27.additionalElective2Lyt : null;
                             if (linearLayout26 != null) {
                                 linearLayout26.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding41 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout27 = dialogApplySubjectRegistrationBinding41 != null ? dialogApplySubjectRegistrationBinding41.additionalElective2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding28 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout27 = dialogApplySubjectRegistrationBinding28 != null ? dialogApplySubjectRegistrationBinding28.additionalElective2Lyt : null;
                             if (linearLayout27 != null) {
                                 linearLayout27.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused8) {
-                        dialogApplySubjectRegistrationBinding10 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout28 = dialogApplySubjectRegistrationBinding10 != null ? dialogApplySubjectRegistrationBinding10.additionalElective2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding29 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout28 = dialogApplySubjectRegistrationBinding29 != null ? dialogApplySubjectRegistrationBinding29.additionalElective2Lyt : null;
                         if (linearLayout28 != null) {
                             linearLayout28.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getAdditionalelective_3().size() == 0) {
-                            dialogApplySubjectRegistrationBinding40 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout29 = dialogApplySubjectRegistrationBinding40 != null ? dialogApplySubjectRegistrationBinding40.additionalElective3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding30 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout29 = dialogApplySubjectRegistrationBinding30 != null ? dialogApplySubjectRegistrationBinding30.additionalElective3Lyt : null;
                             if (linearLayout29 != null) {
                                 linearLayout29.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding39 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout30 = dialogApplySubjectRegistrationBinding39 != null ? dialogApplySubjectRegistrationBinding39.additionalElective3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding31 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout30 = dialogApplySubjectRegistrationBinding31 != null ? dialogApplySubjectRegistrationBinding31.additionalElective3Lyt : null;
                             if (linearLayout30 != null) {
                                 linearLayout30.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused9) {
-                        dialogApplySubjectRegistrationBinding11 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout31 = dialogApplySubjectRegistrationBinding11 != null ? dialogApplySubjectRegistrationBinding11.additionalElective3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding32 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout31 = dialogApplySubjectRegistrationBinding32 != null ? dialogApplySubjectRegistrationBinding32.additionalElective3Lyt : null;
                         if (linearLayout31 != null) {
                             linearLayout31.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getMdc_1().size() == 0) {
-                            dialogApplySubjectRegistrationBinding38 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout32 = dialogApplySubjectRegistrationBinding38 != null ? dialogApplySubjectRegistrationBinding38.mdc1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding33 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout32 = dialogApplySubjectRegistrationBinding33 != null ? dialogApplySubjectRegistrationBinding33.mdc1Lyt : null;
                             if (linearLayout32 != null) {
                                 linearLayout32.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding37 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout33 = dialogApplySubjectRegistrationBinding37 != null ? dialogApplySubjectRegistrationBinding37.mdc1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding34 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout33 = dialogApplySubjectRegistrationBinding34 != null ? dialogApplySubjectRegistrationBinding34.mdc1Lyt : null;
                             if (linearLayout33 != null) {
                                 linearLayout33.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused10) {
-                        dialogApplySubjectRegistrationBinding12 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout34 = dialogApplySubjectRegistrationBinding12 != null ? dialogApplySubjectRegistrationBinding12.mdc1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding35 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout34 = dialogApplySubjectRegistrationBinding35 != null ? dialogApplySubjectRegistrationBinding35.mdc1Lyt : null;
                         if (linearLayout34 != null) {
                             linearLayout34.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getMdc_2().size() == 0) {
-                            dialogApplySubjectRegistrationBinding36 = applySubjectRegistrationDialog.get_binding();
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding36 = applySubjectRegistrationDialog.get_binding();
                             LinearLayout linearLayout35 = dialogApplySubjectRegistrationBinding36 != null ? dialogApplySubjectRegistrationBinding36.mdc2Lyt : null;
                             if (linearLayout35 != null) {
                                 linearLayout35.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding35 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout36 = dialogApplySubjectRegistrationBinding35 != null ? dialogApplySubjectRegistrationBinding35.mdc2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding37 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout36 = dialogApplySubjectRegistrationBinding37 != null ? dialogApplySubjectRegistrationBinding37.mdc2Lyt : null;
                             if (linearLayout36 != null) {
                                 linearLayout36.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused11) {
-                        dialogApplySubjectRegistrationBinding13 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout37 = dialogApplySubjectRegistrationBinding13 != null ? dialogApplySubjectRegistrationBinding13.mdc2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding38 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout37 = dialogApplySubjectRegistrationBinding38 != null ? dialogApplySubjectRegistrationBinding38.mdc2Lyt : null;
                         if (linearLayout37 != null) {
                             linearLayout37.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getMdc_3().size() == 0) {
-                            dialogApplySubjectRegistrationBinding34 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout38 = dialogApplySubjectRegistrationBinding34 != null ? dialogApplySubjectRegistrationBinding34.mdc3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding39 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout38 = dialogApplySubjectRegistrationBinding39 != null ? dialogApplySubjectRegistrationBinding39.mdc3Lyt : null;
                             if (linearLayout38 != null) {
                                 linearLayout38.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding33 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout39 = dialogApplySubjectRegistrationBinding33 != null ? dialogApplySubjectRegistrationBinding33.mdc3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding40 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout39 = dialogApplySubjectRegistrationBinding40 != null ? dialogApplySubjectRegistrationBinding40.mdc3Lyt : null;
                             if (linearLayout39 != null) {
                                 linearLayout39.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused12) {
-                        dialogApplySubjectRegistrationBinding14 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout40 = dialogApplySubjectRegistrationBinding14 != null ? dialogApplySubjectRegistrationBinding14.mdc3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding41 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout40 = dialogApplySubjectRegistrationBinding41 != null ? dialogApplySubjectRegistrationBinding41.mdc3Lyt : null;
                         if (linearLayout40 != null) {
                             linearLayout40.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getAec_1().size() == 0) {
-                            dialogApplySubjectRegistrationBinding32 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout41 = dialogApplySubjectRegistrationBinding32 != null ? dialogApplySubjectRegistrationBinding32.aec1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding42 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout41 = dialogApplySubjectRegistrationBinding42 != null ? dialogApplySubjectRegistrationBinding42.aec1Lyt : null;
                             if (linearLayout41 != null) {
                                 linearLayout41.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding31 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout42 = dialogApplySubjectRegistrationBinding31 != null ? dialogApplySubjectRegistrationBinding31.aec1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding43 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout42 = dialogApplySubjectRegistrationBinding43 != null ? dialogApplySubjectRegistrationBinding43.aec1Lyt : null;
                             if (linearLayout42 != null) {
                                 linearLayout42.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused13) {
-                        dialogApplySubjectRegistrationBinding15 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout43 = dialogApplySubjectRegistrationBinding15 != null ? dialogApplySubjectRegistrationBinding15.aec1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding44 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout43 = dialogApplySubjectRegistrationBinding44 != null ? dialogApplySubjectRegistrationBinding44.aec1Lyt : null;
                         if (linearLayout43 != null) {
                             linearLayout43.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getAec_2().size() == 0) {
-                            dialogApplySubjectRegistrationBinding30 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout44 = dialogApplySubjectRegistrationBinding30 != null ? dialogApplySubjectRegistrationBinding30.aec2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding45 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout44 = dialogApplySubjectRegistrationBinding45 != null ? dialogApplySubjectRegistrationBinding45.aec2Lyt : null;
                             if (linearLayout44 != null) {
                                 linearLayout44.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding29 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout45 = dialogApplySubjectRegistrationBinding29 != null ? dialogApplySubjectRegistrationBinding29.aec2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding46 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout45 = dialogApplySubjectRegistrationBinding46 != null ? dialogApplySubjectRegistrationBinding46.aec2Lyt : null;
                             if (linearLayout45 != null) {
                                 linearLayout45.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused14) {
-                        dialogApplySubjectRegistrationBinding16 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout46 = dialogApplySubjectRegistrationBinding16 != null ? dialogApplySubjectRegistrationBinding16.aec2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding47 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout46 = dialogApplySubjectRegistrationBinding47 != null ? dialogApplySubjectRegistrationBinding47.aec2Lyt : null;
                         if (linearLayout46 != null) {
                             linearLayout46.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getAec_3().size() == 0) {
-                            dialogApplySubjectRegistrationBinding28 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout47 = dialogApplySubjectRegistrationBinding28 != null ? dialogApplySubjectRegistrationBinding28.aec3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding48 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout47 = dialogApplySubjectRegistrationBinding48 != null ? dialogApplySubjectRegistrationBinding48.aec3Lyt : null;
                             if (linearLayout47 != null) {
                                 linearLayout47.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding27 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout48 = dialogApplySubjectRegistrationBinding27 != null ? dialogApplySubjectRegistrationBinding27.aec3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding49 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout48 = dialogApplySubjectRegistrationBinding49 != null ? dialogApplySubjectRegistrationBinding49.aec3Lyt : null;
                             if (linearLayout48 != null) {
                                 linearLayout48.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused15) {
-                        dialogApplySubjectRegistrationBinding17 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout49 = dialogApplySubjectRegistrationBinding17 != null ? dialogApplySubjectRegistrationBinding17.aec3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding50 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout49 = dialogApplySubjectRegistrationBinding50 != null ? dialogApplySubjectRegistrationBinding50.aec3Lyt : null;
                         if (linearLayout49 != null) {
                             linearLayout49.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getDsc_1().size() == 0) {
-                            dialogApplySubjectRegistrationBinding26 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout50 = dialogApplySubjectRegistrationBinding26 != null ? dialogApplySubjectRegistrationBinding26.dsc1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding51 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout50 = dialogApplySubjectRegistrationBinding51 != null ? dialogApplySubjectRegistrationBinding51.dsc1Lyt : null;
                             if (linearLayout50 != null) {
                                 linearLayout50.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding25 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout51 = dialogApplySubjectRegistrationBinding25 != null ? dialogApplySubjectRegistrationBinding25.dsc1Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding52 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout51 = dialogApplySubjectRegistrationBinding52 != null ? dialogApplySubjectRegistrationBinding52.dsc1Lyt : null;
                             if (linearLayout51 != null) {
                                 linearLayout51.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused16) {
-                        dialogApplySubjectRegistrationBinding18 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout52 = dialogApplySubjectRegistrationBinding18 != null ? dialogApplySubjectRegistrationBinding18.dsc1Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding53 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout52 = dialogApplySubjectRegistrationBinding53 != null ? dialogApplySubjectRegistrationBinding53.dsc1Lyt : null;
                         if (linearLayout52 != null) {
                             linearLayout52.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getDsc_2().size() == 0) {
-                            dialogApplySubjectRegistrationBinding24 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout53 = dialogApplySubjectRegistrationBinding24 != null ? dialogApplySubjectRegistrationBinding24.dsc2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding54 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout53 = dialogApplySubjectRegistrationBinding54 != null ? dialogApplySubjectRegistrationBinding54.dsc2Lyt : null;
                             if (linearLayout53 != null) {
                                 linearLayout53.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding23 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout54 = dialogApplySubjectRegistrationBinding23 != null ? dialogApplySubjectRegistrationBinding23.dsc2Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding55 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout54 = dialogApplySubjectRegistrationBinding55 != null ? dialogApplySubjectRegistrationBinding55.dsc2Lyt : null;
                             if (linearLayout54 != null) {
                                 linearLayout54.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused17) {
-                        dialogApplySubjectRegistrationBinding19 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout55 = dialogApplySubjectRegistrationBinding19 != null ? dialogApplySubjectRegistrationBinding19.dsc2Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding56 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout55 = dialogApplySubjectRegistrationBinding56 != null ? dialogApplySubjectRegistrationBinding56.dsc2Lyt : null;
                         if (linearLayout55 != null) {
                             linearLayout55.setVisibility(8);
                         }
                     }
                     try {
                         if (data.getDsc_3().size() == 0) {
-                            dialogApplySubjectRegistrationBinding22 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout56 = dialogApplySubjectRegistrationBinding22 != null ? dialogApplySubjectRegistrationBinding22.dsc3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding57 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout56 = dialogApplySubjectRegistrationBinding57 != null ? dialogApplySubjectRegistrationBinding57.dsc3Lyt : null;
                             if (linearLayout56 != null) {
                                 linearLayout56.setVisibility(8);
                             }
                         } else {
-                            dialogApplySubjectRegistrationBinding21 = applySubjectRegistrationDialog.get_binding();
-                            LinearLayout linearLayout57 = dialogApplySubjectRegistrationBinding21 != null ? dialogApplySubjectRegistrationBinding21.dsc3Lyt : null;
+                            DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding58 = applySubjectRegistrationDialog.get_binding();
+                            LinearLayout linearLayout57 = dialogApplySubjectRegistrationBinding58 != null ? dialogApplySubjectRegistrationBinding58.dsc3Lyt : null;
                             if (linearLayout57 != null) {
                                 linearLayout57.setVisibility(0);
                             }
                         }
                     } catch (NullPointerException unused18) {
-                        dialogApplySubjectRegistrationBinding20 = applySubjectRegistrationDialog.get_binding();
-                        LinearLayout linearLayout58 = dialogApplySubjectRegistrationBinding20 != null ? dialogApplySubjectRegistrationBinding20.dsc3Lyt : null;
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding59 = applySubjectRegistrationDialog.get_binding();
+                        LinearLayout linearLayout58 = dialogApplySubjectRegistrationBinding59 != null ? dialogApplySubjectRegistrationBinding59.dsc3Lyt : null;
                         if (linearLayout58 != null) {
                             linearLayout58.setVisibility(8);
                         }
                     }
                     try {
-                        spinnerMinor1Adapter = applySubjectRegistrationDialog.getSpinnerMinor1Adapter();
-                        spinnerMinor1Adapter.addItems(data.getMinor_1());
+                        applySubjectRegistrationDialog.getSpinnerMinor1Adapter().addItems(data.getMinor_1());
                     } catch (NullPointerException unused19) {
                     }
                     try {
-                        spinnerMinor2Adapter = applySubjectRegistrationDialog.getSpinnerMinor2Adapter();
-                        spinnerMinor2Adapter.addItems(data.getMinor_2());
+                        applySubjectRegistrationDialog.getSpinnerMinor2Adapter().addItems(data.getMinor_2());
                     } catch (NullPointerException unused20) {
                     }
                     try {
-                        spinnerMinor3Adapter = applySubjectRegistrationDialog.getSpinnerMinor3Adapter();
-                        spinnerMinor3Adapter.addItems(data.getMinor_3());
+                        applySubjectRegistrationDialog.getSpinnerMinor3Adapter().addItems(data.getMinor_3());
                     } catch (NullPointerException unused21) {
                     }
-                    spinnerHonourAdapter = applySubjectRegistrationDialog.getSpinnerHonourAdapter();
-                    spinnerHonourAdapter.addItems(data.getHonour());
+                    applySubjectRegistrationDialog.getSpinnerHonourAdapter().addItems(data.getHonour());
                     try {
-                        spinnerElective1Adapter = applySubjectRegistrationDialog.getSpinnerElective1Adapter();
-                        spinnerElective1Adapter.addItems(data.getElective_1());
+                        applySubjectRegistrationDialog.getSpinnerElective1Adapter().addItems(data.getElective_1());
                     } catch (NullPointerException unused22) {
                     }
                     try {
-                        spinnerElective2Adapter = applySubjectRegistrationDialog.getSpinnerElective2Adapter();
-                        spinnerElective2Adapter.addItems(data.getElective_2());
+                        applySubjectRegistrationDialog.getSpinnerElective2Adapter().addItems(data.getElective_2());
                     } catch (NullPointerException unused23) {
                     }
                     try {
-                        spinnerElective3Adapter = applySubjectRegistrationDialog.getSpinnerElective3Adapter();
-                        spinnerElective3Adapter.addItems(data.getElective_3());
+                        applySubjectRegistrationDialog.getSpinnerElective3Adapter().addItems(data.getElective_3());
                     } catch (NullPointerException unused24) {
                     }
-                    spinnerGlobalElectiveAdapter = applySubjectRegistrationDialog.getSpinnerGlobalElectiveAdapter();
-                    spinnerGlobalElectiveAdapter.addItems(data.getGlobalelective());
+                    applySubjectRegistrationDialog.getSpinnerGlobalElectiveAdapter().addItems(data.getGlobalelective());
                     try {
-                        spinnerAdditionalElective1Adapter = applySubjectRegistrationDialog.getSpinnerAdditionalElective1Adapter();
-                        spinnerAdditionalElective1Adapter.addItems(data.getAdditionalelective_1());
+                        applySubjectRegistrationDialog.getSpinnerAdditionalElective1Adapter().addItems(data.getAdditionalelective_1());
                     } catch (NullPointerException unused25) {
                     }
                     try {
-                        spinnerAdditionalElective2Adapter = applySubjectRegistrationDialog.getSpinnerAdditionalElective2Adapter();
-                        spinnerAdditionalElective2Adapter.addItems(data.getAdditionalelective_2());
+                        applySubjectRegistrationDialog.getSpinnerAdditionalElective2Adapter().addItems(data.getAdditionalelective_2());
                     } catch (NullPointerException unused26) {
                     }
                     try {
-                        spinnerAdditionalElective3Adapter = applySubjectRegistrationDialog.getSpinnerAdditionalElective3Adapter();
-                        spinnerAdditionalElective3Adapter.addItems(data.getAdditionalelective_3());
+                        applySubjectRegistrationDialog.getSpinnerAdditionalElective3Adapter().addItems(data.getAdditionalelective_3());
                     } catch (NullPointerException unused27) {
                     }
                     try {
-                        spinnerMdc1Adapter = applySubjectRegistrationDialog.getSpinnerMdc1Adapter();
-                        spinnerMdc1Adapter.addItems(data.getMdc_1());
+                        applySubjectRegistrationDialog.getSpinnerMdc1Adapter().addItems(data.getMdc_1());
                     } catch (NullPointerException unused28) {
                     }
                     try {
-                        spinnerMdc2Adapter = applySubjectRegistrationDialog.getSpinnerMdc2Adapter();
-                        spinnerMdc2Adapter.addItems(data.getMdc_2());
+                        applySubjectRegistrationDialog.getSpinnerMdc2Adapter().addItems(data.getMdc_2());
                     } catch (NullPointerException unused29) {
                     }
                     try {
-                        spinnerMdc3Adapter = applySubjectRegistrationDialog.getSpinnerMdc3Adapter();
-                        spinnerMdc3Adapter.addItems(data.getMdc_3());
+                        applySubjectRegistrationDialog.getSpinnerMdc3Adapter().addItems(data.getMdc_3());
                     } catch (NullPointerException unused30) {
                     }
                     try {
-                        spinnerAec1Adapter = applySubjectRegistrationDialog.getSpinnerAec1Adapter();
-                        spinnerAec1Adapter.addItems(data.getAec_1());
+                        applySubjectRegistrationDialog.getSpinnerAec1Adapter().addItems(data.getAec_1());
                     } catch (NullPointerException unused31) {
                     }
                     try {
-                        spinnerAec2Adapter = applySubjectRegistrationDialog.getSpinnerAec2Adapter();
-                        spinnerAec2Adapter.addItems(data.getAec_2());
+                        applySubjectRegistrationDialog.getSpinnerAec2Adapter().addItems(data.getAec_2());
                     } catch (NullPointerException unused32) {
                     }
                     try {
-                        spinnerAec3Adapter = applySubjectRegistrationDialog.getSpinnerAec3Adapter();
-                        spinnerAec3Adapter.addItems(data.getAec_3());
+                        applySubjectRegistrationDialog.getSpinnerAec3Adapter().addItems(data.getAec_3());
                     } catch (NullPointerException unused33) {
                     }
                     try {
-                        spinnerDsc1Adapter = applySubjectRegistrationDialog.getSpinnerDsc1Adapter();
-                        spinnerDsc1Adapter.addItems(data.getDsc_1());
+                        applySubjectRegistrationDialog.getSpinnerDsc1Adapter().addItems(data.getDsc_1());
                     } catch (NullPointerException unused34) {
                     }
                     try {
-                        spinnerDsc2Adapter = applySubjectRegistrationDialog.getSpinnerDsc2Adapter();
-                        spinnerDsc2Adapter.addItems(data.getDsc_2());
+                        applySubjectRegistrationDialog.getSpinnerDsc2Adapter().addItems(data.getDsc_2());
                     } catch (NullPointerException unused35) {
                     }
                     try {
-                        spinnerDsc3Adapter = applySubjectRegistrationDialog.getSpinnerDsc3Adapter();
-                        spinnerDsc3Adapter.addItems(data.getDsc_3());
+                        applySubjectRegistrationDialog.getSpinnerDsc3Adapter().addItems(data.getDsc_3());
                     } catch (NullPointerException unused36) {
                     }
                 }
@@ -3405,9 +2807,10 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
     }
 
     private final void listenRegisterResponse() {
-        getApplySubjectRegistrationViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenRegisterResponse$1
+        getApplySubjectRegistrationViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.listenRegisterResponse.1
 
-            /* compiled from: ApplySubjectRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenRegisterResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -3444,13 +2847,10 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding;
                 TextView registerBtn;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2;
                 TextView registerBtn2;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -3466,8 +2866,8 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                         return;
                     }
                     ApplySubjectRegistrationDialog.this.hideProgress();
-                    dialogApplySubjectRegistrationBinding3 = ApplySubjectRegistrationDialog.this.get_binding();
-                    if (dialogApplySubjectRegistrationBinding3 == null || (textView = dialogApplySubjectRegistrationBinding3.registerBtn) == null) {
+                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding = ApplySubjectRegistrationDialog.this.get_binding();
+                    if (dialogApplySubjectRegistrationBinding == null || (textView = dialogApplySubjectRegistrationBinding.registerBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -3480,16 +2880,16 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 if (data != null) {
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
                     if (!data.getLogin() || !data.getSuccess()) {
-                        dialogApplySubjectRegistrationBinding = applySubjectRegistrationDialog.get_binding();
-                        if (dialogApplySubjectRegistrationBinding == null || (registerBtn = dialogApplySubjectRegistrationBinding.registerBtn) == null) {
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
+                        if (dialogApplySubjectRegistrationBinding2 == null || (registerBtn = dialogApplySubjectRegistrationBinding2.registerBtn) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
                         ToastExtKt.showErrorToast(registerBtn, data.getError());
                         return;
                     }
-                    dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
-                    if (dialogApplySubjectRegistrationBinding2 != null && (registerBtn2 = dialogApplySubjectRegistrationBinding2.registerBtn) != null) {
+                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3 = applySubjectRegistrationDialog.get_binding();
+                    if (dialogApplySubjectRegistrationBinding3 != null && (registerBtn2 = dialogApplySubjectRegistrationBinding3.registerBtn) != null) {
                         Intrinsics.checkNotNullExpressionValue(registerBtn2, "registerBtn");
                         ToastExtKt.showSuccessToast(registerBtn2, data.getMessage());
                     }
@@ -3500,9 +2900,10 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
     }
 
     private final void listenUpdateResponse() {
-        getApplySubjectRegistrationViewModel().getUpdateResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenUpdateResponse$1
+        getApplySubjectRegistrationViewModel().getUpdateResponse().observe(getViewLifecycleOwner(), new ApplySubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog.listenUpdateResponse.1
 
-            /* compiled from: ApplySubjectRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationDialog$listenUpdateResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplySubjectRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -3539,13 +2940,10 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding;
                 TextView registerBtn;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2;
                 TextView registerBtn2;
-                DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -3561,8 +2959,8 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                         return;
                     }
                     ApplySubjectRegistrationDialog.this.hideProgress();
-                    dialogApplySubjectRegistrationBinding3 = ApplySubjectRegistrationDialog.this.get_binding();
-                    if (dialogApplySubjectRegistrationBinding3 == null || (textView = dialogApplySubjectRegistrationBinding3.registerBtn) == null) {
+                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding = ApplySubjectRegistrationDialog.this.get_binding();
+                    if (dialogApplySubjectRegistrationBinding == null || (textView = dialogApplySubjectRegistrationBinding.registerBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -3575,16 +2973,16 @@ public final class ApplySubjectRegistrationDialog extends BaseDialog {
                 if (data != null) {
                     ApplySubjectRegistrationDialog applySubjectRegistrationDialog = ApplySubjectRegistrationDialog.this;
                     if (!data.getLogin() || !data.getSuccess()) {
-                        dialogApplySubjectRegistrationBinding = applySubjectRegistrationDialog.get_binding();
-                        if (dialogApplySubjectRegistrationBinding == null || (registerBtn = dialogApplySubjectRegistrationBinding.registerBtn) == null) {
+                        DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
+                        if (dialogApplySubjectRegistrationBinding2 == null || (registerBtn = dialogApplySubjectRegistrationBinding2.registerBtn) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
                         ToastExtKt.showErrorToast(registerBtn, data.getError());
                         return;
                     }
-                    dialogApplySubjectRegistrationBinding2 = applySubjectRegistrationDialog.get_binding();
-                    if (dialogApplySubjectRegistrationBinding2 != null && (registerBtn2 = dialogApplySubjectRegistrationBinding2.registerBtn) != null) {
+                    DialogApplySubjectRegistrationBinding dialogApplySubjectRegistrationBinding3 = applySubjectRegistrationDialog.get_binding();
+                    if (dialogApplySubjectRegistrationBinding3 != null && (registerBtn2 = dialogApplySubjectRegistrationBinding3.registerBtn) != null) {
                         Intrinsics.checkNotNullExpressionValue(registerBtn2, "registerBtn");
                         ToastExtKt.showSuccessToast(registerBtn2, data.getMessage());
                     }

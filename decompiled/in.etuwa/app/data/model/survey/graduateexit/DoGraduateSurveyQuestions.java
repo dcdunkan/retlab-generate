@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DoGraduateSurveyQuestions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DoGraduateSurveyQuestions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class DoGraduateSurveyQuestions {
     private String answer_id;
     private String option_id;

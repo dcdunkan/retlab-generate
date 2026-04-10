@@ -5,8 +5,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: History.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: History.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class History {
     private final String id;
     private final String name;
@@ -41,32 +41,32 @@ public final /* data */ class History {
         return history.copy(str, str7, str8, str9, str10, str6);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getYear() {
         return this.year;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStart_date() {
         return this.start_date;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getReg_date() {
         return this.reg_date;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

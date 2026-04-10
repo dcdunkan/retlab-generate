@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelNewDetailsViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelNewDetailsViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelNewDetailsViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<HostelNewAdmissionResponse>> hostelAdmissionResponse;
@@ -36,8 +36,8 @@ public final class HostelNewDetailsViewModel extends ViewModel {
     public final void getHostelAdmissionFee() {
         this.hostelAdmissionResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelNewAdmissionResponse> observeOn = this.hostelRepository.getHostelNewAdmissionApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelNewAdmissionResponse, Unit> function1 = new Function1<HostelNewAdmissionResponse, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$getHostelAdmissionFee$1
+        Single<HostelNewAdmissionResponse> singleObserveOn = this.hostelRepository.getHostelNewAdmissionApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelNewAdmissionResponse, Unit> function1 = new Function1<HostelNewAdmissionResponse, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel.getHostelAdmissionFee.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class HostelNewDetailsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelNewAdmissionResponse hostelNewAdmissionResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelNewDetailsViewModel.this.hostelAdmissionResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelNewAdmissionResponse));
+                HostelNewDetailsViewModel.this.hostelAdmissionResponse.postValue(Resource.INSTANCE.success(hostelNewAdmissionResponse));
             }
         };
         Consumer<? super HostelNewAdmissionResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelNewDetailsViewModel.getHostelAdmissionFee$lambda$0(Function1.this, obj);
+                HostelNewDetailsViewModel.getHostelAdmissionFee$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$getHostelAdmissionFee$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel.getHostelAdmissionFee.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class HostelNewDetailsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelNewDetailsViewModel.this.hostelAdmissionResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelNewDetailsViewModel.this.hostelAdmissionResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelNewDetailsViewModel.getHostelAdmissionFee$lambda$1(Function1.this, obj);
+                HostelNewDetailsViewModel.getHostelAdmissionFee$lambda$1(function12, obj);
             }
         }));
     }
@@ -106,8 +102,8 @@ public final class HostelNewDetailsViewModel extends ViewModel {
     public final void getHostelMonthlyFee() {
         this.hostelMonthlyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelNewMonthlyResponse> observeOn = this.hostelRepository.getHostelNewMonthlyApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelNewMonthlyResponse, Unit> function1 = new Function1<HostelNewMonthlyResponse, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$getHostelMonthlyFee$1
+        Single<HostelNewMonthlyResponse> singleObserveOn = this.hostelRepository.getHostelNewMonthlyApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelNewMonthlyResponse, Unit> function1 = new Function1<HostelNewMonthlyResponse, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel.getHostelMonthlyFee.1
             {
                 super(1);
             }
@@ -118,20 +114,18 @@ public final class HostelNewDetailsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelNewMonthlyResponse hostelNewMonthlyResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelNewDetailsViewModel.this.hostelMonthlyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelNewMonthlyResponse));
+                HostelNewDetailsViewModel.this.hostelMonthlyResponse.postValue(Resource.INSTANCE.success(hostelNewMonthlyResponse));
             }
         };
         Consumer<? super HostelNewMonthlyResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelNewDetailsViewModel.getHostelMonthlyFee$lambda$2(Function1.this, obj);
+                HostelNewDetailsViewModel.getHostelMonthlyFee$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$getHostelMonthlyFee$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel.getHostelMonthlyFee.2
             {
                 super(1);
             }
@@ -142,17 +136,15 @@ public final class HostelNewDetailsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelNewDetailsViewModel.this.hostelMonthlyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelNewDetailsViewModel.this.hostelMonthlyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostelnew.details.HostelNewDetailsViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelNewDetailsViewModel.getHostelMonthlyFee$lambda$3(Function1.this, obj);
+                HostelNewDetailsViewModel.getHostelMonthlyFee$lambda$3(function12, obj);
             }
         }));
     }

@@ -16,26 +16,35 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ChatViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ChatViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ChatViewModel extends ViewModel {
     private final ChatRepository chatRepository;
     private MutableLiveData<Resource<ChatResponse>> chatResponse;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
 
     public ChatViewModel(ChatRepository chatRepository) {
         Intrinsics.checkNotNullParameter(chatRepository, "chatRepository");
         this.chatRepository = chatRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.chatResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getChat();
     }
 
     public final void getChat() {
         this.chatResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ChatResponse> observeOn = this.chatRepository.getChatSubjectsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ChatResponse, Unit> function1 = new Function1<ChatResponse, Unit>() { // from class: in.etuwa.app.ui.chat.ChatViewModel$getChat$1
+        Single<ChatResponse> singleObserveOn = this.chatRepository.getChatSubjectsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ChatResponse, Unit> function1 = new Function1<ChatResponse, Unit>() { // from class: in.etuwa.app.ui.chat.ChatViewModel.getChat.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class ChatViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ChatResponse chatResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ChatViewModel.this.chatResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(chatResponse));
+                ChatViewModel.this.chatResponse.postValue(Resource.INSTANCE.success(chatResponse));
             }
         };
         Consumer<? super ChatResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.chat.ChatViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ChatViewModel.getChat$lambda$0(Function1.this, obj);
+                ChatViewModel.getChat$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.ChatViewModel$getChat$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.ChatViewModel.getChat.2
             {
                 super(1);
             }
@@ -70,18 +77,16 @@ public final class ChatViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ChatViewModel.this.chatResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ChatViewModel.this.chatResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
                 System.out.println((Object) ("========================= " + th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.ChatViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.ChatViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ChatViewModel.getChat$lambda$1(Function1.this, obj);
+                ChatViewModel.getChat$lambda$1(function12, obj);
             }
         }));
     }

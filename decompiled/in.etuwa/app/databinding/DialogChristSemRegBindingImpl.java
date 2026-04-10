@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.christ.ChristSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogChristSemRegBindingImpl extends DialogChristSemRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -111,7 +111,7 @@ public class DialogChristSemRegBindingImpl extends DialogChristSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (54 != variableId) {
+        if (53 != variableId) {
             return false;
         }
         setChristSemRegViewModel((ChristSemRegViewModel) variable);

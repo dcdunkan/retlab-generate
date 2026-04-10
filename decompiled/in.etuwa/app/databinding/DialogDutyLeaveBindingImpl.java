@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogDutyLeaveBindingImpl extends DialogDutyLeaveBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -98,7 +98,7 @@ public class DialogDutyLeaveBindingImpl extends DialogDutyLeaveBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (169 != variableId) {
+        if (171 != variableId) {
             return false;
         }
         setProofDutyLeaveViewModel((ProofDutyLeaveViewModel) variable);

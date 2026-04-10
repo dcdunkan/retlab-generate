@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewCounsellingResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewCounsellingResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ViewCounsellingResponse {
     private final ArrayList<Actions2> actions;
 

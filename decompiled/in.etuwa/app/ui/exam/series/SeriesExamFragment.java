@@ -76,33 +76,33 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SeriesExamFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: SeriesExamFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class SeriesExamFragment extends BaseFragment implements ExamListener, SemListDialogTwo.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private final int REQUEST_CODE;
     private SeriesExamFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String current;
     private ArrayList<DownloadModel> downList;
     private boolean flag;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semId;
 
-    /* renamed from: seriesExamViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: seriesExamViewModel$delegate, reason: from kotlin metadata */
     private final Lazy seriesExamViewModel;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: SeriesExamFragment.kt */
+    /* JADX INFO: compiled from: SeriesExamFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -152,7 +152,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return seriesExamFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(seriesExamFragment);
@@ -166,7 +166,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -179,7 +179,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SeriesExamViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SeriesExamViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SeriesExamFragment seriesExamFragment2 = this;
@@ -207,7 +207,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(SeriesExamFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -247,16 +247,12 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                SeriesAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = SeriesExamFragment.this.downList;
-                    SeriesExamFragment seriesExamFragment3 = SeriesExamFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    SeriesExamFragment seriesExamFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -265,11 +261,8 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = seriesExamFragment3.getAdapter();
-                            arrayList2 = seriesExamFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = seriesExamFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            seriesExamFragment3.getAdapter().notifyDataChanged(((DownloadModel) seriesExamFragment3.downList.get(i)).getPosition());
+                            seriesExamFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -290,7 +283,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final SeriesExamFragmentBinding get_binding() {
         return this._binding;
     }
@@ -314,7 +307,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         this.semId = str;
     }
 
-    /* compiled from: SeriesExamFragment.kt */
+    /* JADX INFO: compiled from: SeriesExamFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/exam/series/SeriesExamFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/exam/series/SeriesExamFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -390,7 +383,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SeriesExamFragment.setUp$lambda$0(SeriesExamFragment.this, view);
+                    SeriesExamFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -398,48 +391,30 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         SeriesExamFragmentBinding seriesExamFragmentBinding5 = get_binding();
         Spinner spinner2 = seriesExamFragmentBinding5 != null ? seriesExamFragmentBinding5.spinnerSem : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$setUp$2
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter3;
-                    SeriesExamFragmentBinding seriesExamFragmentBinding6;
-                    SeriesExamViewModel seriesExamViewModel;
-                    SharedPrefManager preference2;
                     Spinner spinner3;
-                    SeriesExamViewModel seriesExamViewModel2;
-                    spinnerAdapter = SeriesExamFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    z = SeriesExamFragment.this.flag;
-                    if (z) {
-                        seriesExamViewModel2 = SeriesExamFragment.this.getSeriesExamViewModel();
-                        seriesExamViewModel2.getExams(semester.getId());
+                    Semester semester = SeriesExamFragment.this.getSpinnerAdapter().getSemester(position);
+                    if (SeriesExamFragment.this.flag) {
+                        SeriesExamFragment.this.getSeriesExamViewModel().getExams(semester.getId());
                         SeriesExamFragment.this.current = semester.getId();
                         return;
                     }
                     SeriesExamFragment.this.flag = true;
-                    spinnerAdapter2 = SeriesExamFragment.this.getSpinnerAdapter();
-                    int count = spinnerAdapter2.getCount();
+                    int count = SeriesExamFragment.this.getSpinnerAdapter().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = SeriesExamFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter3 = SeriesExamFragment.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter3.getSemester(i).getId())) {
-                            seriesExamFragmentBinding6 = SeriesExamFragment.this.get_binding();
+                        if (Intrinsics.areEqual(SeriesExamFragment.this.getPreference().getUserSemId(), SeriesExamFragment.this.getSpinnerAdapter().getSemester(i).getId())) {
+                            SeriesExamFragmentBinding seriesExamFragmentBinding6 = SeriesExamFragment.this.get_binding();
                             if (seriesExamFragmentBinding6 != null && (spinner3 = seriesExamFragmentBinding6.spinnerSem) != null) {
                                 spinner3.setSelection(i);
                             }
                             if (position == 0) {
-                                seriesExamViewModel = SeriesExamFragment.this.getSeriesExamViewModel();
-                                preference2 = SeriesExamFragment.this.getPreference();
-                                seriesExamViewModel.getExams(preference2.getUserSemId());
+                                SeriesExamFragment.this.getSeriesExamViewModel().getExams(SeriesExamFragment.this.getPreference().getUserSemId());
                                 return;
                             }
                             return;
@@ -455,7 +430,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$$ExternalSyntheticLambda6
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                SeriesExamFragment.setUp$lambda$1(SeriesExamFragment.this);
+                SeriesExamFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -465,9 +440,9 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialogTwo newInstance = SemListDialogTwo.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        SemListDialogTwo semListDialogTwoNewInstance = SemListDialogTwo.INSTANCE.newInstance();
+        semListDialogTwoNewInstance.setCallBack(this$0);
+        semListDialogTwoNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -496,7 +471,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         getSeriesExamViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SeriesExamFragment.listenSemResponse$lambda$3(SeriesExamFragment.this, (Resource) obj);
+                SeriesExamFragment.listenSemResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -509,16 +484,16 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 SeriesExamFragmentBinding seriesExamFragmentBinding = this$0.get_binding();
                 if (seriesExamFragmentBinding != null && (swipeRefreshLayout2 = seriesExamFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -549,9 +524,9 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         if (arrayList != null) {
             this$0.getSpinnerAdapter().addItems(arrayList);
             SeriesExamFragmentBinding seriesExamFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (seriesExamFragmentBinding3 == null || (swipeRefreshLayout = seriesExamFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
+            Boolean boolValueOf2 = (seriesExamFragmentBinding3 == null || (swipeRefreshLayout = seriesExamFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+            Intrinsics.checkNotNull(boolValueOf2);
+            if (boolValueOf2.booleanValue()) {
                 SeriesExamFragmentBinding seriesExamFragmentBinding4 = this$0.get_binding();
                 SwipeRefreshLayout swipeRefreshLayout3 = seriesExamFragmentBinding4 != null ? seriesExamFragmentBinding4.swipeLayout : null;
                 if (swipeRefreshLayout3 != null) {
@@ -576,7 +551,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         getSeriesExamViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SeriesExamFragment.listenResponse$lambda$5(SeriesExamFragment.this, (Resource) obj);
+                SeriesExamFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -629,37 +604,37 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         ToastExtKt.showErrorToast(recyclerView, message);
     }
 
-    @Override // in.etuwa.app.ui.exam.ExamListener
+    @Override // in.etuwa.app.ui.exam.ExamListener, in.etuwa.app.ui.evaluation.EvaluationTutorialAdapter.TutorialListener, in.etuwa.app.ui.evaluation.EvaluationHomeworkAdapter.HomeWorkListener
     public void onPickDoc(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
             FragmentManager childFragmentManager = getChildFragmentManager();
             Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            SubmitExamDialog newInstance = SubmitExamDialog.INSTANCE.newInstance(id, 0);
-            newInstance.setUploadCallBack(this);
-            newInstance.show(childFragmentManager, (String) null);
+            SubmitExamDialog submitExamDialogNewInstance = SubmitExamDialog.INSTANCE.newInstance(id, 0);
+            submitExamDialogNewInstance.setUploadCallBack(this);
+            submitExamDialogNewInstance.show(childFragmentManager, (String) null);
             return;
         }
         requestPermission();
     }
 
-    @Override // in.etuwa.app.ui.exam.ExamListener
+    @Override // in.etuwa.app.ui.exam.ExamListener, in.etuwa.app.ui.evaluation.EvaluationHomeworkAdapter.HomeWorkListener
     public void downloadFile(String url, int position) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
         if (checkPermissions()) {
             System.out.println((Object) "");
         } else {
             System.out.println((Object) "");
         }
         if (Build.VERSION.SDK_INT >= 34 || checkPermissions()) {
-            if (checkFileExistence(replace)) {
-                Context requireContext = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                new DownloadManagerHelper(requireContext).openFile(replace, AppConstant.UPLOAD_SERIES_EXAM_PATH);
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext).openFile(strReplace, AppConstant.UPLOAD_SERIES_EXAM_PATH);
                 return;
             }
             try {
@@ -669,14 +644,14 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext2).startDownloading(AppConstant.UPLOAD_SERIES_EXAM_PATH, url);
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext2).startDownloading(AppConstant.UPLOAD_SERIES_EXAM_PATH, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 2);
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception e) {
                 Log.e("DownloadError", "Error during download: " + e.getMessage());
@@ -687,10 +662,10 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
     }
 
     private final boolean checkPermissions() {
-        int checkSelfPermission = ContextCompat.checkSelfPermission(requireContext(), "android.permission.READ_EXTERNAL_STORAGE");
-        int checkSelfPermission2 = ContextCompat.checkSelfPermission(requireContext(), "android.permission.WRITE_EXTERNAL_STORAGE");
-        Log.d("Permissions", "Read Permission: " + checkSelfPermission + ", Write Permission: " + checkSelfPermission2);
-        return checkSelfPermission == 0 && checkSelfPermission2 == 0;
+        int iCheckSelfPermission = ContextCompat.checkSelfPermission(requireContext(), "android.permission.READ_EXTERNAL_STORAGE");
+        int iCheckSelfPermission2 = ContextCompat.checkSelfPermission(requireContext(), "android.permission.WRITE_EXTERNAL_STORAGE");
+        Log.d("Permissions", "Read Permission: " + iCheckSelfPermission + ", Write Permission: " + iCheckSelfPermission2);
+        return iCheckSelfPermission == 0 && iCheckSelfPermission2 == 0;
     }
 
     private final void requestPermission() {
@@ -698,7 +673,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
             new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    SeriesExamFragment.requestPermission$lambda$6(SeriesExamFragment.this, dialogInterface, i);
+                    SeriesExamFragment.requestPermission$lambda$6(this.f$0, dialogInterface, i);
                 }
             }).create().show();
         } else {
@@ -725,12 +700,12 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         }
     }
 
-    @Override // in.etuwa.app.ui.exam.ExamListener
+    @Override // in.etuwa.app.ui.exam.ExamListener, in.etuwa.app.ui.evaluation.EvaluationHomeworkAdapter.HomeWorkListener
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.UPLOAD_SERIES_EXAM_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.UPLOAD_SERIES_EXAM_PATH);
     }
 
     @Override // in.etuwa.app.ui.exam.ExamListener
@@ -741,7 +716,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         builder.setPositiveButton("delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                SeriesExamFragment.deleteExam$lambda$7(SeriesExamFragment.this, id, dialogInterface, i);
+                SeriesExamFragment.deleteExam$lambda$7(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", (DialogInterface.OnClickListener) null);
@@ -760,7 +735,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         getSeriesExamViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.exam.series.SeriesExamFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SeriesExamFragment.listenDeleteResponse$lambda$9(SeriesExamFragment.this, (Resource) obj);
+                SeriesExamFragment.listenDeleteResponse$lambda$9(this.f$0, (Resource) obj);
             }
         });
     }
@@ -818,7 +793,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         }
     }
 
-    @Override // in.etuwa.app.ui.exam.ExamListener
+    @Override // in.etuwa.app.ui.exam.ExamListener, in.etuwa.app.ui.evaluation.EvaluationHomeworkAdapter.HomeWorkListener
     public void openDownloadDialog(ArrayList<ExamFiles> list) {
         Intrinsics.checkNotNullParameter(list, "list");
         try {
@@ -829,7 +804,7 @@ public final class SeriesExamFragment extends BaseFragment implements ExamListen
         }
     }
 
-    @Override // in.etuwa.app.ui.exam.ExamListener
+    @Override // in.etuwa.app.ui.exam.ExamListener, in.etuwa.app.ui.assignment.upload.UploadAssignmentDialog.UploadAssignmentCallBack
     public void onDismiss() {
         getSeriesExamViewModel().getExams(this.current);
     }

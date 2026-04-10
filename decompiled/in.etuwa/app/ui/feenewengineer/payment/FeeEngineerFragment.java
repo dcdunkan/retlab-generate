@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.feeengineer.payment.FeeEngineer;
@@ -54,29 +55,29 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: FeeEngineerFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FeeEngineerFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FeeEngineerFragment extends BaseFragment implements FeeEngineerAdapter.CallBack, FeeDetailDialog.FeeDetailListner, FeeConfirmDialog.FeeDetailListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentFeeEngineerBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: feeEngineerViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: feeEngineerViewModel$delegate, reason: from kotlin metadata */
     private final Lazy feeEngineerViewModel;
     private ArrayList<FeeEngineer> list;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
     private List<String> selectedTotal;
     private double total;
 
-    /* compiled from: FeeEngineerFragment.kt */
+    /* JADX INFO: compiled from: FeeEngineerFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -126,7 +127,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return feeEngineerFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(feeEngineerFragment);
@@ -140,7 +141,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -153,7 +154,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(FeeEngineerViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(FeeEngineerViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final FeeEngineerFragment feeEngineerFragment2 = this;
@@ -203,7 +204,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentFeeEngineerBinding get_binding() {
         return this._binding;
     }
@@ -230,7 +231,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
         this.selectedTotal = list;
     }
 
-    /* compiled from: FeeEngineerFragment.kt */
+    /* JADX INFO: compiled from: FeeEngineerFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/feenewengineer/payment/FeeEngineerFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/feenewengineer/payment/FeeEngineerFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -297,7 +298,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
         getAdapter().setCallBack(this);
         getFeeEngineerViewModel().getFees();
         listenResponse();
-        final HashMap hashMap = new HashMap();
+        final HashMap map = new HashMap();
         FragmentFeeEngineerBinding fragmentFeeEngineerBinding2 = get_binding();
         if (fragmentFeeEngineerBinding2 == null || (textView = fragmentFeeEngineerBinding2.payFeeEngnrBtn) == null) {
             return;
@@ -305,7 +306,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FeeEngineerFragment.setUp$lambda$0(hashMap, this, view);
+                FeeEngineerFragment.setUp$lambda$0(map, this, view);
             }
         });
     }
@@ -314,9 +315,9 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
     public static final void setUp$lambda$0(HashMap FeeCollection, FeeEngineerFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(FeeCollection, "$FeeCollection");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = FeeCollection;
-        hashMap.put("payment", "1");
-        hashMap.put("batch_id", this$0.getPreference().getBatchId());
+        HashMap map = FeeCollection;
+        map.put("payment", "1");
+        map.put("batch_id", this$0.getPreference().getBatchId());
         int size = this$0.selected.size() - 1;
         if (size >= 0) {
             int i = 0;
@@ -326,10 +327,10 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
                     if (size2 >= 0) {
                         int i2 = 0;
                         while (true) {
-                            if (Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance()) > 0.0d || Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance()) > 0.0d || Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance()) > 0.0d) {
+                            if (Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance()) > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance()) > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance()) > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                                 Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance());
-                                hashMap.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][amount]", this$0.list.get(i).getInstallments().get(i2).getBalance());
-                                hashMap.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][feeheadgroup_id]", this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id());
+                                map.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][amount]", this$0.list.get(i).getInstallments().get(i2).getBalance());
+                                map.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][feeheadgroup_id]", this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id());
                             }
                             if (i2 == size2) {
                                 break;
@@ -338,8 +339,8 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
                             }
                         }
                     }
-                    hashMap.put("payment", "1");
-                    hashMap.put("batch_id", this$0.getPreference().getBatchId());
+                    map.put("payment", "1");
+                    map.put("batch_id", this$0.getPreference().getBatchId());
                 }
                 if (i == size) {
                     break;
@@ -348,7 +349,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
                 }
             }
         }
-        this$0.getFeeEngineerViewModel().getFeeUrl(hashMap);
+        this$0.getFeeEngineerViewModel().getFeeUrl(map);
         this$0.listenUrlResponse();
     }
 
@@ -356,15 +357,13 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
         getFeeEngineerViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeEngineerFragment.listenResponse$lambda$2(FeeEngineerFragment.this, (Resource) obj);
+                FeeEngineerFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v6, types: [kotlin.Unit] */
-    /* JADX WARN: Type inference failed for: r5v8, types: [kotlin.Unit] */
     public static final void listenResponse$lambda$2(FeeEngineerFragment this$0, Resource resource) {
         RecyclerView rvFeeEngnr;
         RecyclerView recyclerView;
@@ -402,9 +401,9 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
                 if (feeEngineerResponse.getLogin() && feeEngineerResponse.getSuccess()) {
                     FeeEngineerAdapter adapter = this$0.getAdapter();
                     ArrayList<FeeEngineer> fees = feeEngineerResponse.getFees();
-                    Context requireContext = this$0.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                    adapter.addItems(fees, requireContext);
+                    Context contextRequireContext = this$0.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                    adapter.addItems(fees, contextRequireContext);
                     this$0.list = feeEngineerResponse.getFees();
                     this$0 = Unit.INSTANCE;
                 } else {
@@ -436,7 +435,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
         getFeeEngineerViewModel().getKmeaResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeEngineerFragment.listenKmeaResponse$lambda$4(FeeEngineerFragment.this, (Resource) obj);
+                FeeEngineerFragment.listenKmeaResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
@@ -478,9 +477,9 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
             if (feeEngineerResponse.getLogin() && feeEngineerResponse.getSuccess()) {
                 FeeEngineerAdapter adapter = this$0.getAdapter();
                 ArrayList<FeeEngineer> fees = feeEngineerResponse.getFees();
-                Context requireContext = this$0.requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                adapter.addItems(fees, requireContext);
+                Context contextRequireContext = this$0.requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                adapter.addItems(fees, contextRequireContext);
                 this$0.list = feeEngineerResponse.getFees();
                 return;
             }
@@ -494,9 +493,10 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
     }
 
     private final void listenUrlResponse() {
-        getFeeEngineerViewModel().getFeeUrlResponse().observe(getViewLifecycleOwner(), new FeeEngineerFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends FeeEngineerUrlResponse>, Unit>() { // from class: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerFragment$listenUrlResponse$1
+        getFeeEngineerViewModel().getFeeUrlResponse().observe(getViewLifecycleOwner(), new FeeEngineerFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends FeeEngineerUrlResponse>, Unit>() { // from class: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerFragment.listenUrlResponse.1
 
-            /* compiled from: FeeEngineerFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: FeeEngineerFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -533,7 +533,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<FeeEngineerUrlResponse> resource) {
                 FragmentFeeEngineerBinding fragmentFeeEngineerBinding;
                 TextView payFeeEngnrBtn;
@@ -562,20 +562,26 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
                     FeeEngineerFragment feeEngineerFragment = FeeEngineerFragment.this;
                     feeEngineerFragment.showBaseView();
                     System.out.println((Object) data.getUrl());
-                    if (Intrinsics.areEqual(data.getUrl(), "") || !Intrinsics.areEqual(data.getError(), "")) {
-                        fragmentFeeEngineerBinding = feeEngineerFragment.get_binding();
-                        if (fragmentFeeEngineerBinding == null || (payFeeEngnrBtn = fragmentFeeEngineerBinding.payFeeEngnrBtn) == null) {
+                    if (!Intrinsics.areEqual(data.getUrl(), "") && Intrinsics.areEqual(data.getError(), "")) {
+                        FragmentManager childFragmentManager = feeEngineerFragment.getChildFragmentManager();
+                        Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
+                        String url = data.getUrl();
+                        FeeConfirmDialog feeConfirmDialogNewInstance = url != null ? FeeConfirmDialog.INSTANCE.newInstance(data.getTotal(), data.getFine(), data.getSubtotal(), url) : null;
+                        if (feeConfirmDialogNewInstance != null) {
+                            feeConfirmDialogNewInstance.setCallBack(feeEngineerFragment);
+                        }
+                        if (feeConfirmDialogNewInstance != null) {
+                            feeConfirmDialogNewInstance.show(childFragmentManager, (String) null);
                             return;
                         }
-                        Intrinsics.checkNotNullExpressionValue(payFeeEngnrBtn, "payFeeEngnrBtn");
-                        ToastExtKt.showErrorToast(payFeeEngnrBtn, data.getError());
                         return;
                     }
-                    FragmentManager childFragmentManager = feeEngineerFragment.getChildFragmentManager();
-                    Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-                    FeeConfirmDialog newInstance = FeeConfirmDialog.INSTANCE.newInstance(data.getTotal(), data.getFine(), data.getSubtotal(), data.getUrl());
-                    newInstance.setCallBack(feeEngineerFragment);
-                    newInstance.show(childFragmentManager, (String) null);
+                    String error = data.getError();
+                    if (error == null || (fragmentFeeEngineerBinding = feeEngineerFragment.get_binding()) == null || (payFeeEngnrBtn = fragmentFeeEngineerBinding.payFeeEngnrBtn) == null) {
+                        return;
+                    }
+                    Intrinsics.checkNotNullExpressionValue(payFeeEngnrBtn, "payFeeEngnrBtn");
+                    ToastExtKt.showErrorToast(payFeeEngnrBtn, error);
                 }
             }
         }));
@@ -630,7 +636,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
             int i = 0;
             while (true) {
                 d += Double.parseDouble(total.get(i));
-                if (d <= 0.0d) {
+                if (d <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                     FragmentFeeEngineerBinding fragmentFeeEngineerBinding = get_binding();
                     TextView textView = fragmentFeeEngineerBinding != null ? fragmentFeeEngineerBinding.payFeeEngnrBtn : null;
                     if (textView != null) {
@@ -665,7 +671,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
                         int i3 = 0;
                         while (true) {
                             d2 += Double.parseDouble(this.list.get(i2).getInstallments().get(i3).getBalance());
-                            if (d2 <= 0.0d) {
+                            if (d2 <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                                 FragmentFeeEngineerBinding fragmentFeeEngineerBinding4 = get_binding();
                                 TextView textView4 = fragmentFeeEngineerBinding4 != null ? fragmentFeeEngineerBinding4.payFeeEngnrBtn : null;
                                 if (textView4 != null) {
@@ -697,7 +703,7 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
         this.selected = sel;
         this.selectedTotal = total;
         this.total = d2;
-        if (d <= 0.0d) {
+        if (d <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             FragmentFeeEngineerBinding fragmentFeeEngineerBinding6 = get_binding();
             TextView textView6 = fragmentFeeEngineerBinding6 != null ? fragmentFeeEngineerBinding6.payFeeEngnrBtn : null;
             if (textView6 == null) {
@@ -718,9 +724,9 @@ public final class FeeEngineerFragment extends BaseFragment implements FeeEngine
     public void selectedIds(int position) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        FeeDetailDialog newInstance = FeeDetailDialog.INSTANCE.newInstance(position);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        FeeDetailDialog feeDetailDialogNewInstance = FeeDetailDialog.INSTANCE.newInstance(position);
+        feeDetailDialogNewInstance.setCallBack(this);
+        feeDetailDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.feenewengineer.payment.dialog.FeeDetailDialog.FeeDetailListner

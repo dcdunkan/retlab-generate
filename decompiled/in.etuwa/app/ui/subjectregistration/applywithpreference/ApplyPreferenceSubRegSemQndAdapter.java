@@ -1,27 +1,30 @@
 package in.etuwa.app.ui.subjectregistration.applywithpreference;
 
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.helper.EmptyViewHolder;
 import in.etuwa.app.ui.base.BaseViewHolder;
+import in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ApplyPreferenceSubRegSemQndAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyPreferenceSubRegSemQndAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyPreferenceSubRegSemQndAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private CallBack listener;
     private Integer positions;
     private final ArrayList<String> subjects = new ArrayList<>();
 
-    /* compiled from: ApplyPreferenceSubRegSemQndAdapter.kt */
+    /* JADX INFO: compiled from: ApplyPreferenceSubRegSemQndAdapter.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegSemQndAdapter$CallBack;", "", "btnClicked2", "", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void btnClicked2(int position);
@@ -31,18 +34,18 @@ public final class ApplyPreferenceSubRegSemQndAdapter extends RecyclerView.Adapt
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_sub_reg_header, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …eg_header, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_sub_reg_header, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …eg_header, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -58,7 +61,7 @@ public final class ApplyPreferenceSubRegSemQndAdapter extends RecyclerView.Adapt
         return !this.subjects.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: ApplyPreferenceSubRegSemQndAdapter.kt */
+    /* JADX INFO: compiled from: ApplyPreferenceSubRegSemQndAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\b\u001a\u00020\tH\u0014J\u0010\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\fH\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegSemQndAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegSemQndAdapter;Landroid/view/View;)V", "subject", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView subject;
@@ -76,64 +79,35 @@ public final class ApplyPreferenceSubRegSemQndAdapter extends RecyclerView.Adapt
             this.subject = (TextView) itemView.findViewById(R.id.question_tv);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:9:0x005f A[Catch: Exception -> 0x0069, TRY_LEAVE, TryCatch #0 {Exception -> 0x0069, blocks: (B:3:0x0003, B:6:0x004f, B:7:0x005b, B:9:0x005f, B:14:0x003c, B:16:0x0042), top: B:2:0x0003 }] */
         @Override // in.etuwa.app.ui.base.BaseViewHolder
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct code enable 'Show inconsistent code' option in preferences
-        */
-        public void onBind(final int r4) {
-            /*
-                r3 = this;
-                super.onBind(r4)
-                in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter r0 = r3.this$0     // Catch: java.lang.Exception -> L69
-                java.util.ArrayList r0 = in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter.access$getSubjects$p(r0)     // Catch: java.lang.Exception -> L69
-                java.lang.Object r0 = r0.get(r4)     // Catch: java.lang.Exception -> L69
-                java.lang.String r1 = "subjects[position]"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)     // Catch: java.lang.Exception -> L69
-                java.lang.String r0 = (java.lang.String) r0     // Catch: java.lang.Exception -> L69
-                android.widget.TextView r1 = r3.subject     // Catch: java.lang.Exception -> L69
-                java.lang.CharSequence r0 = (java.lang.CharSequence) r0     // Catch: java.lang.Exception -> L69
-                r1.setText(r0)     // Catch: java.lang.Exception -> L69
-                android.view.View r0 = r3.itemView     // Catch: java.lang.Exception -> L69
-                android.content.Context r0 = r0.getContext()     // Catch: java.lang.Exception -> L69
-                int r1 = in.etuwa.app.R.font.poppins_semibold     // Catch: java.lang.Exception -> L69
-                android.graphics.Typeface r0 = androidx.core.content.res.ResourcesCompat.getFont(r0, r1)     // Catch: java.lang.Exception -> L69
-                android.view.View r1 = r3.itemView     // Catch: java.lang.Exception -> L69
-                android.content.Context r1 = r1.getContext()     // Catch: java.lang.Exception -> L69
-                int r2 = in.etuwa.app.R.font.poppins_regular     // Catch: java.lang.Exception -> L69
-                android.graphics.Typeface r1 = androidx.core.content.res.ResourcesCompat.getFont(r1, r2)     // Catch: java.lang.Exception -> L69
-                in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter r2 = r3.this$0     // Catch: java.lang.Exception -> L69
-                java.lang.Integer r2 = in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter.access$getPositions$p(r2)     // Catch: java.lang.Exception -> L69
-                if (r2 != 0) goto L3c
-                goto L4f
-            L3c:
-                int r2 = r2.intValue()     // Catch: java.lang.Exception -> L69
-                if (r2 != r4) goto L4f
-                android.widget.TextView r1 = r3.subject     // Catch: java.lang.Exception -> L69
-                int r2 = in.etuwa.app.R.drawable.shape_sharp_corner_fill_blue     // Catch: java.lang.Exception -> L69
-                r1.setBackgroundResource(r2)     // Catch: java.lang.Exception -> L69
-                android.widget.TextView r1 = r3.subject     // Catch: java.lang.Exception -> L69
-                r1.setTypeface(r0)     // Catch: java.lang.Exception -> L69
-                goto L5b
-            L4f:
-                android.widget.TextView r0 = r3.subject     // Catch: java.lang.Exception -> L69
-                int r2 = in.etuwa.app.R.drawable.shape_sharp_unselected     // Catch: java.lang.Exception -> L69
-                r0.setBackgroundResource(r2)     // Catch: java.lang.Exception -> L69
-                android.widget.TextView r0 = r3.subject     // Catch: java.lang.Exception -> L69
-                r0.setTypeface(r1)     // Catch: java.lang.Exception -> L69
-            L5b:
-                android.widget.TextView r0 = r3.subject     // Catch: java.lang.Exception -> L69
-                if (r0 == 0) goto L69
-                in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter r1 = r3.this$0     // Catch: java.lang.Exception -> L69
-                in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter$ViewHolder$$ExternalSyntheticLambda0 r2 = new in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter$ViewHolder$$ExternalSyntheticLambda0     // Catch: java.lang.Exception -> L69
-                r2.<init>()     // Catch: java.lang.Exception -> L69
-                r0.setOnClickListener(r2)     // Catch: java.lang.Exception -> L69
-            L69:
-                return
-            */
-            throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter.ViewHolder.onBind(int):void");
+        public void onBind(final int position) {
+            super.onBind(position);
+            try {
+                Object obj = this.this$0.subjects.get(position);
+                Intrinsics.checkNotNullExpressionValue(obj, "subjects[position]");
+                this.subject.setText((String) obj);
+                Typeface font = ResourcesCompat.getFont(this.itemView.getContext(), R.font.poppins_semibold);
+                Typeface font2 = ResourcesCompat.getFont(this.itemView.getContext(), R.font.poppins_regular);
+                Integer num = this.this$0.positions;
+                if (num != null && num.intValue() == position) {
+                    this.subject.setBackgroundResource(R.drawable.shape_sharp_corner_fill_blue);
+                    this.subject.setTypeface(font);
+                } else {
+                    this.subject.setBackgroundResource(R.drawable.shape_sharp_unselected);
+                    this.subject.setTypeface(font2);
+                }
+                TextView textView = this.subject;
+                if (textView != null) {
+                    final ApplyPreferenceSubRegSemQndAdapter applyPreferenceSubRegSemQndAdapter = this.this$0;
+                    textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegSemQndAdapter$ViewHolder$$ExternalSyntheticLambda0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            ApplyPreferenceSubRegSemQndAdapter.ViewHolder.onBind$lambda$0(applyPreferenceSubRegSemQndAdapter, position, view);
+                        }
+                    });
+                }
+            } catch (Exception unused) {
+            }
         }
 
         /* JADX INFO: Access modifiers changed from: private */

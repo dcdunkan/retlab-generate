@@ -4,8 +4,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PrograssExt.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PrograssExt.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PrograssExtKt {
     public static final void show(ConstraintLayout constraintLayout) {
         Intrinsics.checkNotNullParameter(constraintLayout, "<this>");

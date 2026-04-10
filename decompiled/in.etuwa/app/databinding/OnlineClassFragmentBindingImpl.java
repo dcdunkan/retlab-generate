@@ -3,8 +3,8 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,7 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.onlineclass.OnlineClassViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class OnlineClassFragmentBindingImpl extends OnlineClassFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -28,18 +28,19 @@ public class OnlineClassFragmentBindingImpl extends OnlineClassFragmentBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.card_batch, 2);
-        sparseIntArray.put(R.id.batch_class, 3);
-        sparseIntArray.put(R.id.swipe_layout, 4);
-        sparseIntArray.put(R.id.rv_online_class, 5);
+        sparseIntArray.put(R.id.toolbar, 2);
+        sparseIntArray.put(R.id.batch_container, 3);
+        sparseIntArray.put(R.id.batch_class, 4);
+        sparseIntArray.put(R.id.swipe_layout, 5);
+        sparseIntArray.put(R.id.rv_online_class, 6);
     }
 
     public OnlineClassFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
 
     private OnlineClassFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextView) bindings[3], (CardView) bindings[2], (RecyclerView) bindings[5], (SwipeRefreshLayout) bindings[4]);
+        super(bindingComponent, root, 0, (TextView) bindings[4], (LinearLayout) bindings[3], (RecyclerView) bindings[6], (SwipeRefreshLayout) bindings[5], (TextView) bindings[2]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -67,7 +68,7 @@ public class OnlineClassFragmentBindingImpl extends OnlineClassFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (150 != variableId) {
+        if (151 != variableId) {
             return false;
         }
         setOnlineClassViewModel((OnlineClassViewModel) variable);

@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.result.moduletest;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ResultModuleTest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ResultModuleTest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ResultModuleTest {
     private final String mark;
     private final String subject;
@@ -19,12 +19,12 @@ public final /* data */ class ResultModuleTest {
         return resultModuleTest.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getMark() {
         return this.mark;
     }

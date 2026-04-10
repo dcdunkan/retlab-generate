@@ -2,8 +2,8 @@ package in.etuwa.app.utils;
 
 import kotlin.Metadata;
 
-/* compiled from: AppConstant.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AppConstant.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AppConstant {
     public static final String ASSIGNMENT_PATH = "/etlab/assignments/";
     public static final String BUSS_PASS_PATH = "/etlab/buspass/";

@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.exam.module.ModuleTestViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ModuleTestFragmentBindingImpl extends ModuleTestFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -66,7 +66,7 @@ public class ModuleTestFragmentBindingImpl extends ModuleTestFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (144 != variableId) {
+        if (145 != variableId) {
             return false;
         }
         setModuleTestViewModel((ModuleTestViewModel) variable);

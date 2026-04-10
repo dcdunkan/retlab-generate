@@ -39,23 +39,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: DueMainFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: DueMainFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class DueMainFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentDuesMainBinding _binding;
 
-    /* renamed from: dueMainViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: dueMainViewModel$delegate, reason: from kotlin metadata */
     private final Lazy dueMainViewModel;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String url;
 
-    /* compiled from: DueMainFragment.kt */
+    /* JADX INFO: compiled from: DueMainFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -105,7 +105,7 @@ public final class DueMainFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return dueMainFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(dueMainFragment);
@@ -119,7 +119,7 @@ public final class DueMainFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -132,7 +132,7 @@ public final class DueMainFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(DueMainViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(DueMainViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final DueMainFragment dueMainFragment2 = this;
@@ -159,7 +159,7 @@ public final class DueMainFragment extends BaseFragment {
         return (DueMainViewModel) this.dueMainViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentDuesMainBinding get_binding() {
         return this._binding;
     }
@@ -168,7 +168,7 @@ public final class DueMainFragment extends BaseFragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: DueMainFragment.kt */
+    /* JADX INFO: compiled from: DueMainFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/due/DueMainFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/due/DueMainFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -231,7 +231,7 @@ public final class DueMainFragment extends BaseFragment {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.due.DueMainFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DueMainFragment.setUp$lambda$0(DueMainFragment.this, view);
+                    DueMainFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -240,7 +240,7 @@ public final class DueMainFragment extends BaseFragment {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.due.DueMainFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DueMainFragment.setUp$lambda$1(DueMainFragment.this, view);
+                    DueMainFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -251,7 +251,7 @@ public final class DueMainFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.due.DueMainFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DueMainFragment.setUp$lambda$2(DueMainFragment.this, view);
+                DueMainFragment.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -285,7 +285,7 @@ public final class DueMainFragment extends BaseFragment {
         getDueMainViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.due.DueMainFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                DueMainFragment.listenResponse$lambda$4(DueMainFragment.this, (Resource) obj);
+                DueMainFragment.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }

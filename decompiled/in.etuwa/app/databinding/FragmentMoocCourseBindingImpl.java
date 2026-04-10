@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentMoocCourseBindingImpl extends FragmentMoocCourseBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentMoocCourseBindingImpl extends FragmentMoocCourseBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (145 != variableId) {
+        if (146 != variableId) {
             return false;
         }
         setMoocCourseViewModel((MoocCourseViewModel) variable);

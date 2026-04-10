@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectRegistration.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubjectRegistration.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubjectRegistration {
     private final String added_at;
     private final String category;
@@ -15,6 +15,7 @@ public final /* data */ class SubjectRegistration {
     private final String semester;
     private final ArrayList<StatusList> status;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ SubjectRegistration copy$default(SubjectRegistration subjectRegistration, String str, String str2, ArrayList arrayList, String str3, String str4, int i, Object obj) {
         if ((i & 1) != 0) {
             str = subjectRegistration.id;
@@ -37,12 +38,12 @@ public final /* data */ class SubjectRegistration {
         return subjectRegistration.copy(str, str5, arrayList2, str6, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
@@ -51,12 +52,12 @@ public final /* data */ class SubjectRegistration {
         return this.status;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getCategory() {
         return this.category;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAdded_at() {
         return this.added_at;
     }

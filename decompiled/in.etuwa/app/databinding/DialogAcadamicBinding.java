@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class DialogAcadamicBinding implements ViewBinding {
     public final TextView acadaDialoPayAmount;
     public final TextView acadaDialoPayBal;
@@ -37,11 +37,11 @@ public final class DialogAcadamicBinding implements ViewBinding {
     }
 
     public static DialogAcadamicBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.dialog_acadamic, parent, false);
+        View viewInflate = inflater.inflate(R.layout.dialog_acadamic, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static DialogAcadamicBinding bind(View rootView) {

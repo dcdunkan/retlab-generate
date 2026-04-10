@@ -2,8 +2,8 @@ package in.etuwa.app.ui.grievance.remind;
 
 import kotlin.Metadata;
 
-/* compiled from: RemindDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: RemindDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RemindDialogKt {
     public static final String ARG_ID = "id";
 }

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.graduateexit.questions.GraduateSurveyQuestionsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentGraduateExitSurveyQuestionsBinding extends ViewDataBinding {
 
     @Bindable

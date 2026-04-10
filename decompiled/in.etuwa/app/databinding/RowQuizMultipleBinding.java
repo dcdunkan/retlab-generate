@@ -3,15 +3,15 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowQuizMultipleBinding implements ViewBinding {
-    public final LinearLayout cardDash;
+    public final MaterialCardView cardDash;
     public final TextView option1;
     public final TextView option2;
     public final TextView option3;
@@ -19,9 +19,9 @@ public final class RowQuizMultipleBinding implements ViewBinding {
     public final TextView option5;
     public final TextView question;
     public final TextView questionNo;
-    private final LinearLayout rootView;
+    private final MaterialCardView rootView;
 
-    private RowQuizMultipleBinding(LinearLayout rootView, LinearLayout cardDash, TextView option1, TextView option2, TextView option3, TextView option4, TextView option5, TextView question, TextView questionNo) {
+    private RowQuizMultipleBinding(MaterialCardView rootView, MaterialCardView cardDash, TextView option1, TextView option2, TextView option3, TextView option4, TextView option5, TextView question, TextView questionNo) {
         this.rootView = rootView;
         this.cardDash = cardDash;
         this.option1 = option1;
@@ -34,7 +34,7 @@ public final class RowQuizMultipleBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -43,15 +43,15 @@ public final class RowQuizMultipleBinding implements ViewBinding {
     }
 
     public static RowQuizMultipleBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_quiz_multiple, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_quiz_multiple, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowQuizMultipleBinding bind(View rootView) {
-        LinearLayout linearLayout = (LinearLayout) rootView;
+        MaterialCardView materialCardView = (MaterialCardView) rootView;
         int i = R.id.option1;
         TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
         if (textView != null) {
@@ -73,7 +73,7 @@ public final class RowQuizMultipleBinding implements ViewBinding {
                                 i = R.id.question_no;
                                 TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                 if (textView7 != null) {
-                                    return new RowQuizMultipleBinding(linearLayout, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7);
+                                    return new RowQuizMultipleBinding(materialCardView, materialCardView, textView, textView2, textView3, textView4, textView5, textView6, textView7);
                                 }
                             }
                         }

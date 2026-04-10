@@ -30,7 +30,6 @@ import in.etuwa.app.R;
 import in.etuwa.app.data.model.Semester;
 import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.data.model.subjectregistration.SemList;
-import in.etuwa.app.data.model.subjectregistration.SubjectMainList;
 import in.etuwa.app.data.model.subjectregistration.Subjects;
 import in.etuwa.app.data.model.subjectregistration.SubjectsList;
 import in.etuwa.app.data.model.subjectregistration.SubjectsListResponse;
@@ -46,6 +45,7 @@ import in.etuwa.app.utils.CustomEditText;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -73,25 +73,25 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ApplyPreferenceSubRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyPreferenceSubRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyPreferenceSubRegDialog extends BaseDialog implements ApplyPreferenceSubRegAdapter.CallBack, ApplyPreferenceSubRegQuestionAdapter.CallBack, ApplyPreferenceSubRegSemQndAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogApplyPreferenceSubRegBinding _binding;
 
-    /* renamed from: applyPreferenceSubRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: applyPreferenceSubRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy applyPreferenceSubRegViewModel;
 
-    /* renamed from: categoryAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: categoryAdapter$delegate, reason: from kotlin metadata */
     private final Lazy categoryAdapter;
     private String categoryId;
     private boolean flag;
     private String id;
     private AddPublicationListener listener;
 
-    /* renamed from: pathwayAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: pathwayAdapter$delegate, reason: from kotlin metadata */
     private final Lazy pathwayAdapter;
     private String pathwayId;
     private int position;
@@ -101,22 +101,22 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
     private boolean pref4Flag;
     private boolean pref5Flag;
 
-    /* renamed from: prefFiveAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: prefFiveAdapter$delegate, reason: from kotlin metadata */
     private final Lazy prefFiveAdapter;
 
-    /* renamed from: prefFourAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: prefFourAdapter$delegate, reason: from kotlin metadata */
     private final Lazy prefFourAdapter;
 
-    /* renamed from: prefOneAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: prefOneAdapter$delegate, reason: from kotlin metadata */
     private final Lazy prefOneAdapter;
 
-    /* renamed from: prefThreeAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: prefThreeAdapter$delegate, reason: from kotlin metadata */
     private final Lazy prefThreeAdapter;
 
-    /* renamed from: prefTwoAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: prefTwoAdapter$delegate, reason: from kotlin metadata */
     private final Lazy prefTwoAdapter;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private int preferenceVisible;
     private String semId;
@@ -125,32 +125,32 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
     private final List<String> semesterIdArray;
     private ArrayList<SemList> semesterList;
 
-    /* renamed from: semesterQuestionsAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: semesterQuestionsAdapter$delegate, reason: from kotlin metadata */
     private final Lazy semesterQuestionsAdapter;
 
-    /* renamed from: semesterSubjectsAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: semesterSubjectsAdapter$delegate, reason: from kotlin metadata */
     private final Lazy semesterSubjectsAdapter;
     private ArrayList<String> semesters;
     private ArrayList<String> semestersIds;
     private final List<String> sgpaArray;
     private ArrayList<String> sgpaMarks;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private ArrayList<String> subjects;
     private final List<String> subjectsArray;
     private ArrayList<SubjectsList> subjectsList;
 
-    /* renamed from: subjectsQuestionsAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: subjectsQuestionsAdapter$delegate, reason: from kotlin metadata */
     private final Lazy subjectsQuestionsAdapter;
 
-    /* compiled from: ApplyPreferenceSubRegDialog.kt */
+    /* JADX INFO: compiled from: ApplyPreferenceSubRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegDialog$AddPublicationListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddPublicationListener {
         void onDismiss();
     }
 
-    /* compiled from: ApplyPreferenceSubRegDialog.kt */
+    /* JADX INFO: compiled from: ApplyPreferenceSubRegDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -200,7 +200,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return applyPreferenceSubRegDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(applyPreferenceSubRegDialog);
@@ -214,7 +214,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -227,7 +227,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ApplyPreferenceSubRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ApplyPreferenceSubRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ApplyPreferenceSubRegDialog applyPreferenceSubRegDialog2 = this;
@@ -266,7 +266,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -291,7 +291,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -316,7 +316,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode4 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -341,7 +341,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode5 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -366,7 +366,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode6 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -391,7 +391,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode7 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -416,7 +416,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode8 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -441,7 +441,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyPreferenceSubRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode9 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -514,7 +514,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogApplyPreferenceSubRegBinding get_binding() {
         return this._binding;
     }
@@ -595,7 +595,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         return (ApplyPreferenceSubRegAdapter) this.semesterSubjectsAdapter.getValue();
     }
 
-    /* compiled from: ApplyPreferenceSubRegDialog.kt */
+    /* JADX INFO: compiled from: ApplyPreferenceSubRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -735,33 +735,23 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding13 = get_binding();
         Spinner spinner9 = dialogApplyPreferenceSubRegBinding13 != null ? dialogApplyPreferenceSubRegBinding13.spinnerSemesterLastAttended : null;
         if (spinner9 != null) {
-            spinner9.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$1
+            spinner9.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding14;
-                    SemesterSpinnerAdapter spinnerAdapter3;
                     Spinner spinner10;
-                    spinnerAdapter = ApplyPreferenceSubRegDialog.this.getSpinnerAdapter();
-                    int count = spinnerAdapter.getCount();
+                    int count = ApplyPreferenceSubRegDialog.this.getSpinnerAdapter().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = ApplyPreferenceSubRegDialog.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter2 = ApplyPreferenceSubRegDialog.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter2.getSemester(i).getId())) {
-                            dialogApplyPreferenceSubRegBinding14 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (Intrinsics.areEqual(ApplyPreferenceSubRegDialog.this.getPreference().getUserSemId(), ApplyPreferenceSubRegDialog.this.getSpinnerAdapter().getSemester(i).getId())) {
+                            DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding14 = ApplyPreferenceSubRegDialog.this.get_binding();
                             if (dialogApplyPreferenceSubRegBinding14 != null && (spinner10 = dialogApplyPreferenceSubRegBinding14.spinnerSemesterLastAttended) != null) {
                                 spinner10.setSelection(i);
                             }
                             ApplyPreferenceSubRegDialog applyPreferenceSubRegDialog = ApplyPreferenceSubRegDialog.this;
-                            spinnerAdapter3 = applyPreferenceSubRegDialog.getSpinnerAdapter();
-                            applyPreferenceSubRegDialog.semId = spinnerAdapter3.getSemester(position).getId();
+                            applyPreferenceSubRegDialog.semId = applyPreferenceSubRegDialog.getSpinnerAdapter().getSemester(position).getId();
                             return;
                         }
                     }
@@ -771,40 +761,36 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding14 = get_binding();
         Spinner spinner10 = dialogApplyPreferenceSubRegBinding14 != null ? dialogApplyPreferenceSubRegBinding14.spinnerPathway : null;
         if (spinner10 != null) {
-            spinner10.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$2
+            spinner10.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    PathwaySpinnerAdapter pathwayAdapter;
                     ApplyPreferenceSubRegDialog applyPreferenceSubRegDialog = ApplyPreferenceSubRegDialog.this;
-                    pathwayAdapter = applyPreferenceSubRegDialog.getPathwayAdapter();
-                    applyPreferenceSubRegDialog.pathwayId = String.valueOf(pathwayAdapter.getSubjects(position).getId());
+                    applyPreferenceSubRegDialog.pathwayId = String.valueOf(applyPreferenceSubRegDialog.getPathwayAdapter().getSubjects(position).getId());
                 }
             });
         }
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding15 = get_binding();
         Spinner spinner11 = dialogApplyPreferenceSubRegBinding15 != null ? dialogApplyPreferenceSubRegBinding15.spinnerCategory : null;
         if (spinner11 != null) {
-            spinner11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$3
+            spinner11.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    PathwaySpinnerAdapter categoryAdapter;
                     ApplyPreferenceSubRegDialog applyPreferenceSubRegDialog = ApplyPreferenceSubRegDialog.this;
-                    categoryAdapter = applyPreferenceSubRegDialog.getCategoryAdapter();
-                    applyPreferenceSubRegDialog.categoryId = String.valueOf(categoryAdapter.getSubjects(position).getId());
+                    applyPreferenceSubRegDialog.categoryId = String.valueOf(applyPreferenceSubRegDialog.getCategoryAdapter().getSubjects(position).getId());
                 }
             });
         }
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding16 = get_binding();
         if (dialogApplyPreferenceSubRegBinding16 != null && (customEditText = dialogApplyPreferenceSubRegBinding16.sgpaMark) != null) {
-            customEditText.addTextChangedListener(new TextWatcher() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$4
+            customEditText.addTextChangedListener(new TextWatcher() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.4
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable s) {
                 }
@@ -815,37 +801,27 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
 
                 @Override // android.text.TextWatcher
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    String str;
-                    ArrayList arrayList;
-                    int i;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding17;
-                    ArrayList arrayList2;
-                    int i2;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding18;
+                    String string;
                     RecyclerView recyclerView4;
                     CustomEditText customEditText2;
-                    if (s == null || (str = s.toString()) == null) {
-                        str = "";
+                    if (s == null || (string = s.toString()) == null) {
+                        string = "";
                     }
                     try {
-                        if (Double.parseDouble(str) > 10.0d) {
-                            dialogApplyPreferenceSubRegBinding17 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (Double.parseDouble(string) > 10.0d) {
+                            DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding17 = ApplyPreferenceSubRegDialog.this.get_binding();
                             if (dialogApplyPreferenceSubRegBinding17 != null && (customEditText2 = dialogApplyPreferenceSubRegBinding17.sgpaMark) != null) {
                                 customEditText2.setText("");
                             }
-                            arrayList2 = ApplyPreferenceSubRegDialog.this.sgpaMarks;
-                            i2 = ApplyPreferenceSubRegDialog.this.semPosition;
-                            arrayList2.set(i2, "");
-                            dialogApplyPreferenceSubRegBinding18 = ApplyPreferenceSubRegDialog.this.get_binding();
+                            ApplyPreferenceSubRegDialog.this.sgpaMarks.set(ApplyPreferenceSubRegDialog.this.semPosition, "");
+                            DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding18 = ApplyPreferenceSubRegDialog.this.get_binding();
                             if (dialogApplyPreferenceSubRegBinding18 == null || (recyclerView4 = dialogApplyPreferenceSubRegBinding18.rvSemList) == null) {
                                 return;
                             }
                             ToastExtKt.showErrorToast(recyclerView4, "Sgpa cant exceed 10");
                             return;
                         }
-                        arrayList = ApplyPreferenceSubRegDialog.this.sgpaMarks;
-                        i = ApplyPreferenceSubRegDialog.this.semPosition;
-                        arrayList.set(i, str);
+                        ApplyPreferenceSubRegDialog.this.sgpaMarks.set(ApplyPreferenceSubRegDialog.this.semPosition, string);
                     } catch (NumberFormatException unused) {
                     }
                 }
@@ -854,510 +830,250 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding17 = get_binding();
         Spinner spinner12 = dialogApplyPreferenceSubRegBinding17 != null ? dialogApplyPreferenceSubRegBinding17.spinnerPreferenceOne : null;
         if (spinner12 != null) {
-            spinner12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$5
+            spinner12.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.5
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int positions, long id) {
-                    ArrayList arrayList;
-                    int i;
-                    ArrayList arrayList2;
-                    int i2;
-                    ArrayList arrayList3;
-                    int i3;
-                    ArrayList arrayList4;
-                    int i4;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding18;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding19;
                     Spinner spinner13;
                     Spinner spinner14;
-                    ArrayList arrayList5;
-                    int i5;
-                    ArrayList arrayList6;
-                    int i6;
-                    ArrayList arrayList7;
-                    int i7;
-                    ArrayList arrayList8;
-                    int i8;
-                    ArrayList arrayList9;
-                    int i9;
-                    ArrayList arrayList10;
-                    int i10;
-                    ArrayList arrayList11;
-                    int i11;
-                    int i12 = 0;
+                    int i = 0;
                     if (positions <= 0) {
                         if (positions == 0) {
-                            arrayList = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i = ApplyPreferenceSubRegDialog.this.position;
-                            int size = ((SubjectsList) arrayList.get(i)).getSubjects().size();
-                            while (i12 < size) {
-                                arrayList2 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i2 = ApplyPreferenceSubRegDialog.this.position;
-                                if (Intrinsics.areEqual(((SubjectsList) arrayList2.get(i2)).getSubjects().get(i12).getAns(), "preference1")) {
-                                    arrayList3 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i3 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList3.get(i3)).getSubjects().get(i12).setAns("");
+                            int size = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                            while (i < size) {
+                                if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference1")) {
+                                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
                                 }
-                                i12++;
+                                i++;
                             }
                             return;
                         }
                         return;
                     }
-                    arrayList4 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                    i4 = ApplyPreferenceSubRegDialog.this.position;
-                    int i13 = positions - 1;
-                    if (!Intrinsics.areEqual(((SubjectsList) arrayList4.get(i4)).getSubjects().get(i13).getAns(), "preference2")) {
-                        arrayList5 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                        i5 = ApplyPreferenceSubRegDialog.this.position;
-                        if (!Intrinsics.areEqual(((SubjectsList) arrayList5.get(i5)).getSubjects().get(i13).getAns(), "preference3")) {
-                            arrayList6 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i6 = ApplyPreferenceSubRegDialog.this.position;
-                            if (!Intrinsics.areEqual(((SubjectsList) arrayList6.get(i6)).getSubjects().get(i13).getAns(), "preference4")) {
-                                arrayList7 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i7 = ApplyPreferenceSubRegDialog.this.position;
-                                if (!Intrinsics.areEqual(((SubjectsList) arrayList7.get(i7)).getSubjects().get(i13).getAns(), "preference5")) {
-                                    arrayList8 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i8 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList8.get(i8)).getSubjects().get(i13).setAns("preference1");
-                                    arrayList9 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i9 = ApplyPreferenceSubRegDialog.this.position;
-                                    int size2 = ((SubjectsList) arrayList9.get(i9)).getSubjects().size();
-                                    while (i12 < size2) {
-                                        arrayList10 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                        i10 = ApplyPreferenceSubRegDialog.this.position;
-                                        if (Intrinsics.areEqual(((SubjectsList) arrayList10.get(i10)).getSubjects().get(i12).getAns(), "preference1") && i12 != i13) {
-                                            arrayList11 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                            i11 = ApplyPreferenceSubRegDialog.this.position;
-                                            ((SubjectsList) arrayList11.get(i11)).getSubjects().get(i12).setAns("");
-                                        }
-                                        i12++;
-                                    }
-                                    return;
-                                }
-                            }
+                    int i2 = positions - 1;
+                    if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference2") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference3") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference4") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference5")) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding18 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding18 != null && (spinner14 = dialogApplyPreferenceSubRegBinding18.spinnerPreferenceOne) != null) {
+                            spinner14.setSelection(0);
                         }
-                    }
-                    dialogApplyPreferenceSubRegBinding18 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding18 != null && (spinner14 = dialogApplyPreferenceSubRegBinding18.spinnerPreferenceOne) != null) {
-                        spinner14.setSelection(0);
-                    }
-                    dialogApplyPreferenceSubRegBinding19 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding19 == null || (spinner13 = dialogApplyPreferenceSubRegBinding19.spinnerPreferenceOne) == null) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding19 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding19 == null || (spinner13 = dialogApplyPreferenceSubRegBinding19.spinnerPreferenceOne) == null) {
+                            return;
+                        }
+                        ToastExtKt.showErrorToast(spinner13, "You have already chosen this Subject");
                         return;
                     }
-                    ToastExtKt.showErrorToast(spinner13, "You have already chosen this Subject");
+                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).setAns("preference1");
+                    int size2 = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                    while (i < size2) {
+                        if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference1") && i != i2) {
+                            ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
+                        }
+                        i++;
+                    }
                 }
             });
         }
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding18 = get_binding();
         Spinner spinner13 = dialogApplyPreferenceSubRegBinding18 != null ? dialogApplyPreferenceSubRegBinding18.spinnerPreferenceTwo : null;
         if (spinner13 != null) {
-            spinner13.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$6
+            spinner13.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.6
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int positions, long id) {
-                    ArrayList arrayList;
-                    int i;
-                    ArrayList arrayList2;
-                    int i2;
-                    ArrayList arrayList3;
-                    int i3;
-                    ArrayList arrayList4;
-                    int i4;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding19;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding20;
                     Spinner spinner14;
                     Spinner spinner15;
-                    ArrayList arrayList5;
-                    int i5;
-                    ArrayList arrayList6;
-                    int i6;
-                    ArrayList arrayList7;
-                    int i7;
-                    ArrayList arrayList8;
-                    int i8;
-                    ArrayList arrayList9;
-                    int i9;
-                    ArrayList arrayList10;
-                    int i10;
-                    ArrayList arrayList11;
-                    int i11;
-                    int i12 = 0;
+                    int i = 0;
                     if (positions <= 0) {
                         if (positions == 0) {
-                            arrayList = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i = ApplyPreferenceSubRegDialog.this.position;
-                            int size = ((SubjectsList) arrayList.get(i)).getSubjects().size();
-                            while (i12 < size) {
-                                arrayList2 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i2 = ApplyPreferenceSubRegDialog.this.position;
-                                if (Intrinsics.areEqual(((SubjectsList) arrayList2.get(i2)).getSubjects().get(i12).getAns(), "preference2")) {
-                                    arrayList3 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i3 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList3.get(i3)).getSubjects().get(i12).setAns("");
+                            int size = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                            while (i < size) {
+                                if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference2")) {
+                                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
                                 }
-                                i12++;
+                                i++;
                             }
                             return;
                         }
                         return;
                     }
-                    arrayList4 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                    i4 = ApplyPreferenceSubRegDialog.this.position;
-                    int i13 = positions - 1;
-                    if (!Intrinsics.areEqual(((SubjectsList) arrayList4.get(i4)).getSubjects().get(i13).getAns(), "preference1")) {
-                        arrayList5 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                        i5 = ApplyPreferenceSubRegDialog.this.position;
-                        if (!Intrinsics.areEqual(((SubjectsList) arrayList5.get(i5)).getSubjects().get(i13).getAns(), "preference3")) {
-                            arrayList6 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i6 = ApplyPreferenceSubRegDialog.this.position;
-                            if (!Intrinsics.areEqual(((SubjectsList) arrayList6.get(i6)).getSubjects().get(i13).getAns(), "preference4")) {
-                                arrayList7 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i7 = ApplyPreferenceSubRegDialog.this.position;
-                                if (!Intrinsics.areEqual(((SubjectsList) arrayList7.get(i7)).getSubjects().get(i13).getAns(), "preference5")) {
-                                    arrayList8 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i8 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList8.get(i8)).getSubjects().get(i13).setAns("preference2");
-                                    arrayList9 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i9 = ApplyPreferenceSubRegDialog.this.position;
-                                    int size2 = ((SubjectsList) arrayList9.get(i9)).getSubjects().size();
-                                    while (i12 < size2) {
-                                        arrayList10 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                        i10 = ApplyPreferenceSubRegDialog.this.position;
-                                        if (Intrinsics.areEqual(((SubjectsList) arrayList10.get(i10)).getSubjects().get(i12).getAns(), "preference2") && i12 != i13) {
-                                            arrayList11 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                            i11 = ApplyPreferenceSubRegDialog.this.position;
-                                            ((SubjectsList) arrayList11.get(i11)).getSubjects().get(i12).setAns("");
-                                        }
-                                        i12++;
-                                    }
-                                    return;
-                                }
-                            }
+                    int i2 = positions - 1;
+                    if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference1") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference3") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference4") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference5")) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding19 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding19 != null && (spinner15 = dialogApplyPreferenceSubRegBinding19.spinnerPreferenceTwo) != null) {
+                            spinner15.setSelection(0);
                         }
-                    }
-                    dialogApplyPreferenceSubRegBinding19 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding19 != null && (spinner15 = dialogApplyPreferenceSubRegBinding19.spinnerPreferenceTwo) != null) {
-                        spinner15.setSelection(0);
-                    }
-                    dialogApplyPreferenceSubRegBinding20 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding20 == null || (spinner14 = dialogApplyPreferenceSubRegBinding20.spinnerPreferenceOne) == null) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding20 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding20 == null || (spinner14 = dialogApplyPreferenceSubRegBinding20.spinnerPreferenceOne) == null) {
+                            return;
+                        }
+                        ToastExtKt.showErrorToast(spinner14, "You have already chosen this Subject");
                         return;
                     }
-                    ToastExtKt.showErrorToast(spinner14, "You have already chosen this Subject");
+                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).setAns("preference2");
+                    int size2 = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                    while (i < size2) {
+                        if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference2") && i != i2) {
+                            ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
+                        }
+                        i++;
+                    }
                 }
             });
         }
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding19 = get_binding();
         Spinner spinner14 = dialogApplyPreferenceSubRegBinding19 != null ? dialogApplyPreferenceSubRegBinding19.spinnerPreferenceThree : null;
         if (spinner14 != null) {
-            spinner14.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$7
+            spinner14.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.7
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int positions, long id) {
-                    ArrayList arrayList;
-                    int i;
-                    ArrayList arrayList2;
-                    int i2;
-                    ArrayList arrayList3;
-                    int i3;
-                    ArrayList arrayList4;
-                    int i4;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding20;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding21;
                     Spinner spinner15;
                     Spinner spinner16;
-                    ArrayList arrayList5;
-                    int i5;
-                    ArrayList arrayList6;
-                    int i6;
-                    ArrayList arrayList7;
-                    int i7;
-                    ArrayList arrayList8;
-                    int i8;
-                    ArrayList arrayList9;
-                    int i9;
-                    ArrayList arrayList10;
-                    int i10;
-                    ArrayList arrayList11;
-                    int i11;
-                    int i12 = 0;
+                    int i = 0;
                     if (positions <= 0) {
                         if (positions == 0) {
-                            arrayList = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i = ApplyPreferenceSubRegDialog.this.position;
-                            int size = ((SubjectsList) arrayList.get(i)).getSubjects().size();
-                            while (i12 < size) {
-                                arrayList2 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i2 = ApplyPreferenceSubRegDialog.this.position;
-                                if (Intrinsics.areEqual(((SubjectsList) arrayList2.get(i2)).getSubjects().get(i12).getAns(), "preference3")) {
-                                    arrayList3 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i3 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList3.get(i3)).getSubjects().get(i12).setAns("");
+                            int size = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                            while (i < size) {
+                                if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference3")) {
+                                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
                                 }
-                                i12++;
+                                i++;
                             }
                             return;
                         }
                         return;
                     }
-                    arrayList4 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                    i4 = ApplyPreferenceSubRegDialog.this.position;
-                    int i13 = positions - 1;
-                    if (!Intrinsics.areEqual(((SubjectsList) arrayList4.get(i4)).getSubjects().get(i13).getAns(), "preference2")) {
-                        arrayList5 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                        i5 = ApplyPreferenceSubRegDialog.this.position;
-                        if (!Intrinsics.areEqual(((SubjectsList) arrayList5.get(i5)).getSubjects().get(i13).getAns(), "preference1")) {
-                            arrayList6 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i6 = ApplyPreferenceSubRegDialog.this.position;
-                            if (!Intrinsics.areEqual(((SubjectsList) arrayList6.get(i6)).getSubjects().get(i13).getAns(), "preference4")) {
-                                arrayList7 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i7 = ApplyPreferenceSubRegDialog.this.position;
-                                if (!Intrinsics.areEqual(((SubjectsList) arrayList7.get(i7)).getSubjects().get(i13).getAns(), "preference5")) {
-                                    arrayList8 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i8 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList8.get(i8)).getSubjects().get(i13).setAns("preference3");
-                                    arrayList9 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i9 = ApplyPreferenceSubRegDialog.this.position;
-                                    int size2 = ((SubjectsList) arrayList9.get(i9)).getSubjects().size();
-                                    while (i12 < size2) {
-                                        arrayList10 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                        i10 = ApplyPreferenceSubRegDialog.this.position;
-                                        if (Intrinsics.areEqual(((SubjectsList) arrayList10.get(i10)).getSubjects().get(i12).getAns(), "preference3") && i12 != i13) {
-                                            arrayList11 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                            i11 = ApplyPreferenceSubRegDialog.this.position;
-                                            ((SubjectsList) arrayList11.get(i11)).getSubjects().get(i12).setAns("");
-                                        }
-                                        i12++;
-                                    }
-                                    return;
-                                }
-                            }
+                    int i2 = positions - 1;
+                    if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference2") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference1") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference4") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference5")) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding20 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding20 != null && (spinner16 = dialogApplyPreferenceSubRegBinding20.spinnerPreferenceThree) != null) {
+                            spinner16.setSelection(0);
                         }
-                    }
-                    dialogApplyPreferenceSubRegBinding20 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding20 != null && (spinner16 = dialogApplyPreferenceSubRegBinding20.spinnerPreferenceThree) != null) {
-                        spinner16.setSelection(0);
-                    }
-                    dialogApplyPreferenceSubRegBinding21 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding21 == null || (spinner15 = dialogApplyPreferenceSubRegBinding21.spinnerPreferenceOne) == null) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding21 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding21 == null || (spinner15 = dialogApplyPreferenceSubRegBinding21.spinnerPreferenceOne) == null) {
+                            return;
+                        }
+                        ToastExtKt.showErrorToast(spinner15, "You have already chosen this Subject");
                         return;
                     }
-                    ToastExtKt.showErrorToast(spinner15, "You have already chosen this Subject");
+                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).setAns("preference3");
+                    int size2 = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                    while (i < size2) {
+                        if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference3") && i != i2) {
+                            ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
+                        }
+                        i++;
+                    }
                 }
             });
         }
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding20 = get_binding();
         Spinner spinner15 = dialogApplyPreferenceSubRegBinding20 != null ? dialogApplyPreferenceSubRegBinding20.spinnerPreferenceFour : null;
         if (spinner15 != null) {
-            spinner15.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$8
+            spinner15.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.8
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int positions, long id) {
-                    ArrayList arrayList;
-                    int i;
-                    ArrayList arrayList2;
-                    int i2;
-                    ArrayList arrayList3;
-                    int i3;
-                    ArrayList arrayList4;
-                    int i4;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding21;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding22;
                     Spinner spinner16;
                     Spinner spinner17;
-                    ArrayList arrayList5;
-                    int i5;
-                    ArrayList arrayList6;
-                    int i6;
-                    ArrayList arrayList7;
-                    int i7;
-                    ArrayList arrayList8;
-                    int i8;
-                    ArrayList arrayList9;
-                    int i9;
-                    ArrayList arrayList10;
-                    int i10;
-                    ArrayList arrayList11;
-                    int i11;
-                    int i12 = 0;
+                    int i = 0;
                     if (positions <= 0) {
                         if (positions == 0) {
-                            arrayList = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i = ApplyPreferenceSubRegDialog.this.position;
-                            int size = ((SubjectsList) arrayList.get(i)).getSubjects().size();
-                            while (i12 < size) {
-                                arrayList2 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i2 = ApplyPreferenceSubRegDialog.this.position;
-                                if (Intrinsics.areEqual(((SubjectsList) arrayList2.get(i2)).getSubjects().get(i12).getAns(), "preference4")) {
-                                    arrayList3 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i3 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList3.get(i3)).getSubjects().get(i12).setAns("");
+                            int size = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                            while (i < size) {
+                                if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference4")) {
+                                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
                                 }
-                                i12++;
+                                i++;
                             }
                             return;
                         }
                         return;
                     }
-                    arrayList4 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                    i4 = ApplyPreferenceSubRegDialog.this.position;
-                    int i13 = positions - 1;
-                    if (!Intrinsics.areEqual(((SubjectsList) arrayList4.get(i4)).getSubjects().get(i13).getAns(), "preference2")) {
-                        arrayList5 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                        i5 = ApplyPreferenceSubRegDialog.this.position;
-                        if (!Intrinsics.areEqual(((SubjectsList) arrayList5.get(i5)).getSubjects().get(i13).getAns(), "preference3")) {
-                            arrayList6 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i6 = ApplyPreferenceSubRegDialog.this.position;
-                            if (!Intrinsics.areEqual(((SubjectsList) arrayList6.get(i6)).getSubjects().get(i13).getAns(), "preference1")) {
-                                arrayList7 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i7 = ApplyPreferenceSubRegDialog.this.position;
-                                if (!Intrinsics.areEqual(((SubjectsList) arrayList7.get(i7)).getSubjects().get(i13).getAns(), "preference5")) {
-                                    arrayList8 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i8 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList8.get(i8)).getSubjects().get(i13).setAns("preference4");
-                                    arrayList9 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i9 = ApplyPreferenceSubRegDialog.this.position;
-                                    int size2 = ((SubjectsList) arrayList9.get(i9)).getSubjects().size();
-                                    while (i12 < size2) {
-                                        arrayList10 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                        i10 = ApplyPreferenceSubRegDialog.this.position;
-                                        if (Intrinsics.areEqual(((SubjectsList) arrayList10.get(i10)).getSubjects().get(i12).getAns(), "preference4") && i12 != i13) {
-                                            arrayList11 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                            i11 = ApplyPreferenceSubRegDialog.this.position;
-                                            ((SubjectsList) arrayList11.get(i11)).getSubjects().get(i12).setAns("");
-                                        }
-                                        i12++;
-                                    }
-                                    return;
-                                }
-                            }
+                    int i2 = positions - 1;
+                    if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference2") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference3") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference1") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference5")) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding21 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding21 != null && (spinner17 = dialogApplyPreferenceSubRegBinding21.spinnerPreferenceFour) != null) {
+                            spinner17.setSelection(0);
                         }
-                    }
-                    dialogApplyPreferenceSubRegBinding21 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding21 != null && (spinner17 = dialogApplyPreferenceSubRegBinding21.spinnerPreferenceFour) != null) {
-                        spinner17.setSelection(0);
-                    }
-                    dialogApplyPreferenceSubRegBinding22 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding22 == null || (spinner16 = dialogApplyPreferenceSubRegBinding22.spinnerPreferenceOne) == null) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding22 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding22 == null || (spinner16 = dialogApplyPreferenceSubRegBinding22.spinnerPreferenceOne) == null) {
+                            return;
+                        }
+                        ToastExtKt.showErrorToast(spinner16, "You have already chosen this Subject");
                         return;
                     }
-                    ToastExtKt.showErrorToast(spinner16, "You have already chosen this Subject");
+                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).setAns("preference4");
+                    int size2 = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                    while (i < size2) {
+                        if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference4") && i != i2) {
+                            ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
+                        }
+                        i++;
+                    }
                 }
             });
         }
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding21 = get_binding();
         Spinner spinner16 = dialogApplyPreferenceSubRegBinding21 != null ? dialogApplyPreferenceSubRegBinding21.spinnerPreferenceFive : null;
         if (spinner16 != null) {
-            spinner16.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$setUp$9
+            spinner16.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.setUp.9
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int positions, long id) {
-                    ArrayList arrayList;
-                    int i;
-                    ArrayList arrayList2;
-                    int i2;
-                    ArrayList arrayList3;
-                    int i3;
-                    ArrayList arrayList4;
-                    int i4;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding22;
-                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding23;
                     Spinner spinner17;
                     Spinner spinner18;
-                    ArrayList arrayList5;
-                    int i5;
-                    ArrayList arrayList6;
-                    int i6;
-                    ArrayList arrayList7;
-                    int i7;
-                    ArrayList arrayList8;
-                    int i8;
-                    ArrayList arrayList9;
-                    int i9;
-                    ArrayList arrayList10;
-                    int i10;
-                    ArrayList arrayList11;
-                    int i11;
-                    int i12 = 0;
+                    int i = 0;
                     if (positions <= 0) {
                         if (positions == 0) {
-                            arrayList = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i = ApplyPreferenceSubRegDialog.this.position;
-                            int size = ((SubjectsList) arrayList.get(i)).getSubjects().size();
-                            while (i12 < size) {
-                                arrayList2 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i2 = ApplyPreferenceSubRegDialog.this.position;
-                                if (Intrinsics.areEqual(((SubjectsList) arrayList2.get(i2)).getSubjects().get(i12).getAns(), "preference5")) {
-                                    arrayList3 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i3 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList3.get(i3)).getSubjects().get(i12).setAns("");
+                            int size = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                            while (i < size) {
+                                if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference5")) {
+                                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
                                 }
-                                i12++;
+                                i++;
                             }
                             return;
                         }
                         return;
                     }
-                    arrayList4 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                    i4 = ApplyPreferenceSubRegDialog.this.position;
-                    int i13 = positions - 1;
-                    if (!Intrinsics.areEqual(((SubjectsList) arrayList4.get(i4)).getSubjects().get(i13).getAns(), "preference2")) {
-                        arrayList5 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                        i5 = ApplyPreferenceSubRegDialog.this.position;
-                        if (!Intrinsics.areEqual(((SubjectsList) arrayList5.get(i5)).getSubjects().get(i13).getAns(), "preference3")) {
-                            arrayList6 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                            i6 = ApplyPreferenceSubRegDialog.this.position;
-                            if (!Intrinsics.areEqual(((SubjectsList) arrayList6.get(i6)).getSubjects().get(i13).getAns(), "preference4")) {
-                                arrayList7 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                i7 = ApplyPreferenceSubRegDialog.this.position;
-                                if (!Intrinsics.areEqual(((SubjectsList) arrayList7.get(i7)).getSubjects().get(i13).getAns(), "preference1")) {
-                                    arrayList8 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i8 = ApplyPreferenceSubRegDialog.this.position;
-                                    ((SubjectsList) arrayList8.get(i8)).getSubjects().get(i13).setAns("preference5");
-                                    arrayList9 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                    i9 = ApplyPreferenceSubRegDialog.this.position;
-                                    int size2 = ((SubjectsList) arrayList9.get(i9)).getSubjects().size();
-                                    while (i12 < size2) {
-                                        arrayList10 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                        i10 = ApplyPreferenceSubRegDialog.this.position;
-                                        if (Intrinsics.areEqual(((SubjectsList) arrayList10.get(i10)).getSubjects().get(i12).getAns(), "preference5") && i12 != i13) {
-                                            arrayList11 = ApplyPreferenceSubRegDialog.this.subjectsList;
-                                            i11 = ApplyPreferenceSubRegDialog.this.position;
-                                            ((SubjectsList) arrayList11.get(i11)).getSubjects().get(i12).setAns("");
-                                        }
-                                        i12++;
-                                    }
-                                    return;
-                                }
-                            }
+                    int i2 = positions - 1;
+                    if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference2") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference3") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference4") || Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).getAns(), "preference1")) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding22 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding22 != null && (spinner18 = dialogApplyPreferenceSubRegBinding22.spinnerPreferenceFive) != null) {
+                            spinner18.setSelection(0);
                         }
-                    }
-                    dialogApplyPreferenceSubRegBinding22 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding22 != null && (spinner18 = dialogApplyPreferenceSubRegBinding22.spinnerPreferenceFive) != null) {
-                        spinner18.setSelection(0);
-                    }
-                    dialogApplyPreferenceSubRegBinding23 = ApplyPreferenceSubRegDialog.this.get_binding();
-                    if (dialogApplyPreferenceSubRegBinding23 == null || (spinner17 = dialogApplyPreferenceSubRegBinding23.spinnerPreferenceOne) == null) {
+                        DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding23 = ApplyPreferenceSubRegDialog.this.get_binding();
+                        if (dialogApplyPreferenceSubRegBinding23 == null || (spinner17 = dialogApplyPreferenceSubRegBinding23.spinnerPreferenceOne) == null) {
+                            return;
+                        }
+                        ToastExtKt.showErrorToast(spinner17, "You have already chosen this Subject");
                         return;
                     }
-                    ToastExtKt.showErrorToast(spinner17, "You have already chosen this Subject");
+                    ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i2).setAns("preference5");
+                    int size2 = ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().size();
+                    while (i < size2) {
+                        if (Intrinsics.areEqual(((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).getAns(), "preference5") && i != i2) {
+                            ((SubjectsList) ApplyPreferenceSubRegDialog.this.subjectsList.get(ApplyPreferenceSubRegDialog.this.position)).getSubjects().get(i).setAns("");
+                        }
+                        i++;
+                    }
                 }
             });
         }
@@ -1366,7 +1082,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView10.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$1(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -1375,7 +1091,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView9.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$2(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -1384,7 +1100,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView8.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$3(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -1393,7 +1109,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView7.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$4(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -1402,7 +1118,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$5(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -1411,7 +1127,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$6(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
@@ -1420,7 +1136,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$7(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -1429,7 +1145,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$8(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$8(this.f$0, view);
                 }
             });
         }
@@ -1438,7 +1154,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyPreferenceSubRegDialog.setUp$lambda$9(ApplyPreferenceSubRegDialog.this, view);
+                    ApplyPreferenceSubRegDialog.setUp$lambda$9(this.f$0, view);
                 }
             });
         }
@@ -1448,8 +1164,8 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         }
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                ApplyPreferenceSubRegDialog.setUp$lambda$14(ApplyPreferenceSubRegDialog.this, view);
+            public final void onClick(View view) throws IOException {
+                ApplyPreferenceSubRegDialog.setUp$lambda$14(this.f$0, view);
             }
         });
     }
@@ -1563,8 +1279,8 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
                 z = true;
             }
         }
-        boolean areEqual = Intrinsics.areEqual(this$0.sgpaMarks.get(this$0.semPosition), "");
-        if (z && z2 && areEqual) {
+        boolean zAreEqual = Intrinsics.areEqual(this$0.sgpaMarks.get(this$0.semPosition), "");
+        if (z && z2 && zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding14 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding14 != null && (recyclerView8 = dialogApplyPreferenceSubRegBinding14.rvSemList) != null) {
                 ToastExtKt.showErrorToast(recyclerView8, "All Marks, SGPA, and Subjects are mandatory before proceeding.");
@@ -1574,12 +1290,12 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             if (dialogApplyPreferenceSubRegBinding15 != null && (recyclerView6 = dialogApplyPreferenceSubRegBinding15.rvSemList) != null) {
                 ToastExtKt.showErrorToast(recyclerView6, "Marks and Subjects are mandatory before proceeding.");
             }
-        } else if (z && areEqual) {
+        } else if (z && zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding16 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding16 != null && (recyclerView5 = dialogApplyPreferenceSubRegBinding16.rvSemList) != null) {
                 ToastExtKt.showErrorToast(recyclerView5, "Marks and SGPA are mandatory before proceeding.");
             }
-        } else if (z2 && areEqual) {
+        } else if (z2 && zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding17 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding17 != null && (recyclerView4 = dialogApplyPreferenceSubRegBinding17.rvSemList) != null) {
                 ToastExtKt.showErrorToast(recyclerView4, "Subjects and SGPA are mandatory before proceeding.");
@@ -1594,7 +1310,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             if (dialogApplyPreferenceSubRegBinding19 != null && (recyclerView2 = dialogApplyPreferenceSubRegBinding19.rvSemList) != null) {
                 ToastExtKt.showErrorToast(recyclerView2, "Subjects are mandatory before proceeding.");
             }
-        } else if (areEqual) {
+        } else if (zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding20 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding20 != null && (recyclerView = dialogApplyPreferenceSubRegBinding20.rvSemList) != null) {
                 ToastExtKt.showErrorToast(recyclerView, "SGPA is mandatory before proceeding.");
@@ -2188,7 +1904,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$14(ApplyPreferenceSubRegDialog this$0, View view) {
+    public static final void setUp$lambda$14(ApplyPreferenceSubRegDialog this$0, View view) throws IOException {
         RecyclerView recyclerView;
         RecyclerView recyclerView2;
         RecyclerView recyclerView3;
@@ -2304,8 +2020,8 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
                 z = true;
             }
         }
-        boolean areEqual = Intrinsics.areEqual(this$0.sgpaMarks.get(this$0.semPosition), "");
-        if (z && z2 && areEqual) {
+        boolean zAreEqual = Intrinsics.areEqual(this$0.sgpaMarks.get(this$0.semPosition), "");
+        if (z && z2 && zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding19 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding19 == null || (recyclerView7 = dialogApplyPreferenceSubRegBinding19.rvSemList) == null) {
                 return;
@@ -2321,7 +2037,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             ToastExtKt.showErrorToast(recyclerView6, "Marks and Subjects are mandatory before registering.");
             return;
         }
-        if (z && areEqual) {
+        if (z && zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding21 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding21 == null || (recyclerView5 = dialogApplyPreferenceSubRegBinding21.rvSemList) == null) {
                 return;
@@ -2329,7 +2045,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             ToastExtKt.showErrorToast(recyclerView5, "Marks and SGPA are mandatory before registering.");
             return;
         }
-        if (z2 && areEqual) {
+        if (z2 && zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding22 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding22 == null || (recyclerView4 = dialogApplyPreferenceSubRegBinding22.rvSemList) == null) {
                 return;
@@ -2353,7 +2069,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             ToastExtKt.showErrorToast(recyclerView2, "Subjects are mandatory before registering.");
             return;
         }
-        if (areEqual) {
+        if (zAreEqual) {
             DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding25 = this$0.get_binding();
             if (dialogApplyPreferenceSubRegBinding25 == null || (recyclerView = dialogApplyPreferenceSubRegBinding25.rvSemList) == null) {
                 return;
@@ -2361,13 +2077,13 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             ToastExtKt.showErrorToast(recyclerView, "SGPA is mandatory before registering.");
             return;
         }
-        HashMap hashMap = new HashMap();
-        hashMap.clear();
-        HashMap hashMap2 = hashMap;
-        hashMap2.put("sem_id", this$0.getPreference().getUserSemId());
-        hashMap2.put("pathway", this$0.pathwayId);
-        hashMap2.put("category", this$0.categoryId);
-        hashMap2.put("register", "1");
+        HashMap map = new HashMap();
+        map.clear();
+        HashMap map2 = map;
+        map2.put("sem_id", this$0.getPreference().getUserSemId());
+        map2.put("pathway", this$0.pathwayId);
+        map2.put("category", this$0.categoryId);
+        map2.put("register", "1");
         System.out.println(this$0.subjectsArray);
         List<String> list = this$0.subjectsArray;
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
@@ -2375,30 +2091,30 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             StringBuilder sb = new StringBuilder();
             int length = str.length();
             for (int i3 = 0; i3 < length; i3++) {
-                char charAt = str.charAt(i3);
-                if (Character.isDigit(charAt)) {
-                    sb.append(charAt);
+                char cCharAt = str.charAt(i3);
+                if (Character.isDigit(cCharAt)) {
+                    sb.append(cCharAt);
                 }
             }
-            String sb2 = sb.toString();
-            Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
-            arrayList2.add(sb2);
+            String string = sb.toString();
+            Intrinsics.checkNotNullExpressionValue(string, "toString(...)");
+            arrayList2.add(string);
         }
         ArrayList arrayList3 = arrayList2;
         List<String> list2 = this$0.subjectsArray;
         ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
         for (String str2 : list2) {
-            StringBuilder sb3 = new StringBuilder();
+            StringBuilder sb2 = new StringBuilder();
             int length2 = str2.length();
             for (int i4 = 0; i4 < length2; i4++) {
-                char charAt2 = str2.charAt(i4);
-                if (Character.isLetter(charAt2)) {
-                    sb3.append(charAt2);
+                char cCharAt2 = str2.charAt(i4);
+                if (Character.isLetter(cCharAt2)) {
+                    sb2.append(cCharAt2);
                 }
             }
-            String sb4 = sb3.toString();
-            Intrinsics.checkNotNullExpressionValue(sb4, "toString(...)");
-            String lowerCase = sb4.toLowerCase(Locale.ROOT);
+            String string2 = sb2.toString();
+            Intrinsics.checkNotNullExpressionValue(string2, "toString(...)");
+            String lowerCase = string2.toLowerCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
             if (!StringsKt.endsWith$default(lowerCase, SvgConstants.Attributes.PATH_DATA_REL_CURVE_TO_S, false, 2, (Object) null)) {
                 lowerCase = lowerCase + SvgConstants.Attributes.PATH_DATA_REL_CURVE_TO_S;
@@ -2411,43 +2127,43 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
             String str3 = "SubjectRegistrationPrevSemSgpa[" + ((Object) this$0.semestersIds.get(i5)) + "][sgpa]";
             String str4 = this$0.sgpaMarks.get(i5);
             Intrinsics.checkNotNullExpressionValue(str4, "sgpaMarks[i]");
-            hashMap2.put(str3, str4);
+            map2.put(str3, str4);
             int size3 = this$0.semesterList.get(i5).getSubjects().size();
             for (int i6 = 0; i6 < size3; i6++) {
-                String convertKey = this$0.convertKey(this$0.semesterList.get(i5).getSubjects().get(i6).getName());
+                String strConvertKey = this$0.convertKey(this$0.semesterList.get(i5).getSubjects().get(i6).getName());
                 this$0.convertKey2(this$0.semesterList.get(i5).getSubjects().get(i6).getName());
                 String mark = this$0.semesterList.get(i5).getSubjects().get(i6).getMark();
-                hashMap2.put("SubjectRegistrationPrevSubMarks[" + ((Object) this$0.semestersIds.get(i5)) + "][" + convertKey + "][subject_id]", this$0.semesterList.get(i5).getSubjects().get(i6).getAns());
-                hashMap2.put("SubjectRegistrationPrevSubMarks[" + ((Object) this$0.semestersIds.get(i5)) + "][" + convertKey + "][mark]", mark);
+                map2.put("SubjectRegistrationPrevSubMarks[" + ((Object) this$0.semestersIds.get(i5)) + "][" + strConvertKey + "][subject_id]", this$0.semesterList.get(i5).getSubjects().get(i6).getAns());
+                map2.put("SubjectRegistrationPrevSubMarks[" + ((Object) this$0.semestersIds.get(i5)) + "][" + strConvertKey + "][mark]", mark);
             }
         }
-        System.out.println(hashMap);
-        System.out.println(hashMap);
+        System.out.println(map);
+        System.out.println(map);
         int size4 = this$0.subjectsList.size();
         for (int i7 = 0; i7 < size4; i7++) {
             int size5 = this$0.subjectsList.get(i7).getSubjects().size();
             for (int i8 = 0; i8 < size5; i8++) {
                 if (Intrinsics.areEqual(this$0.subjectsList.get(i7).getSubjects().get(i8).getAns(), "preference1")) {
-                    hashMap2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][0]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
+                    map2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][0]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
                 } else if (Intrinsics.areEqual(this$0.subjectsList.get(i7).getSubjects().get(i8).getAns(), "preference2")) {
-                    hashMap2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][1]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
+                    map2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][1]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
                 } else if (Intrinsics.areEqual(this$0.subjectsList.get(i7).getSubjects().get(i8).getAns(), "preference3")) {
-                    hashMap2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][2]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
+                    map2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][2]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
                 } else if (Intrinsics.areEqual(this$0.subjectsList.get(i7).getSubjects().get(i8).getAns(), "preference4")) {
-                    hashMap2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][3]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
+                    map2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][3]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
                 } else if (Intrinsics.areEqual(this$0.subjectsList.get(i7).getSubjects().get(i8).getAns(), "preference5")) {
-                    hashMap2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][4]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
+                    map2.put("subject[" + arrayList5.get(i7) + "][" + arrayList3.get(i7) + "][4]", String.valueOf(this$0.subjectsList.get(i7).getSubjects().get(i8).getId()));
                 }
             }
         }
-        this$0.getApplyPreferenceSubRegViewModel().postRegisterData(hashMap2);
+        this$0.getApplyPreferenceSubRegViewModel().postRegisterData(map2);
     }
 
     private final void listenRegResponse() {
         getApplyPreferenceSubRegViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ApplyPreferenceSubRegDialog.listenRegResponse$lambda$16(ApplyPreferenceSubRegDialog.this, (Resource) obj);
+                ApplyPreferenceSubRegDialog.listenRegResponse$lambda$16(this.f$0, (Resource) obj);
             }
         });
     }
@@ -2501,7 +2217,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         getApplyPreferenceSubRegViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ApplyPreferenceSubRegDialog.listenSemResponse$lambda$18(ApplyPreferenceSubRegDialog.this, (Resource) obj);
+                ApplyPreferenceSubRegDialog.listenSemResponse$lambda$18(this.f$0, (Resource) obj);
             }
         });
     }
@@ -2558,9 +2274,10 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
     }
 
     private final void listenSubjectsResponse() {
-        getApplyPreferenceSubRegViewModel().getSpinnerResponse().observe(getViewLifecycleOwner(), new ApplyPreferenceSubRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubjectsListResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$listenSubjectsResponse$1
+        getApplyPreferenceSubRegViewModel().getSpinnerResponse().observe(getViewLifecycleOwner(), new ApplyPreferenceSubRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubjectsListResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog.listenSubjectsResponse.1
 
-            /* compiled from: ApplyPreferenceSubRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegDialog$listenSubjectsResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplyPreferenceSubRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -2597,58 +2314,24 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SubjectsListResponse> resource) {
-                ArrayList arrayList;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
-                ArrayList arrayList4;
-                ArrayList arrayList5;
-                ApplyPreferenceSubRegSemQndAdapter semesterQuestionsAdapter;
-                ArrayList<String> arrayList6;
-                int i;
-                ApplyPreferenceSubRegQuestionAdapter subjectsQuestionsAdapter;
-                ArrayList<String> arrayList7;
-                int i2;
-                ApplyPreferenceSubRegAdapter semesterSubjectsAdapter;
-                int i3;
-                int i4;
-                PathwaySpinnerAdapter pathwayAdapter;
-                PathwaySpinnerAdapter categoryAdapter;
-                SubjectRegSpinnerAdapter prefOneAdapter;
-                ArrayList arrayList8;
-                int i5;
-                SubjectRegSpinnerAdapter prefTwoAdapter;
-                ArrayList arrayList9;
-                int i6;
-                SubjectRegSpinnerAdapter prefThreeAdapter;
-                ArrayList arrayList10;
-                int i7;
-                SubjectRegSpinnerAdapter prefFourAdapter;
-                ArrayList arrayList11;
-                int i8;
-                SubjectRegSpinnerAdapter prefFiveAdapter;
-                ArrayList arrayList12;
-                int i9;
-                ArrayList arrayList13;
-                ArrayList arrayList14;
-                DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding;
                 Spinner spinner;
-                int i10 = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-                if (i10 != 1) {
-                    if (i10 == 2) {
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
                         ApplyPreferenceSubRegDialog.this.showProgress();
                         return;
                     }
-                    if (i10 == 3) {
+                    if (i == 3) {
                         ApplyPreferenceSubRegDialog.this.hideProgress();
                         return;
                     }
-                    if (i10 != 4) {
+                    if (i != 4) {
                         return;
                     }
                     ApplyPreferenceSubRegDialog.this.hideProgress();
-                    dialogApplyPreferenceSubRegBinding = ApplyPreferenceSubRegDialog.this.get_binding();
+                    DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding = ApplyPreferenceSubRegDialog.this.get_binding();
                     if (dialogApplyPreferenceSubRegBinding == null || (spinner = dialogApplyPreferenceSubRegBinding.spinnerSemesterLastAttended) == null) {
                         return;
                     }
@@ -2664,65 +2347,28 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
                     try {
                         applyPreferenceSubRegDialog.subjectsList = data.getSubject_list();
                         applyPreferenceSubRegDialog.semesterList = data.getSem_list();
-                        arrayList = applyPreferenceSubRegDialog.subjectsList;
-                        int size = arrayList.size();
-                        for (int i11 = 0; i11 < size; i11++) {
-                            List<String> subjectsArray = applyPreferenceSubRegDialog.getSubjectsArray();
-                            arrayList14 = applyPreferenceSubRegDialog.subjectsList;
-                            subjectsArray.add(i11, StringsKt.replace$default(((SubjectsList) arrayList14.get(i11)).getName(), "_", HelpFormatter.DEFAULT_LONG_OPT_SEPARATOR, false, 4, (Object) null));
+                        int size = applyPreferenceSubRegDialog.subjectsList.size();
+                        for (int i2 = 0; i2 < size; i2++) {
+                            applyPreferenceSubRegDialog.getSubjectsArray().add(i2, StringsKt.replace$default(((SubjectsList) applyPreferenceSubRegDialog.subjectsList.get(i2)).getName(), "_", HelpFormatter.DEFAULT_LONG_OPT_SEPARATOR, false, 4, (Object) null));
                         }
-                        arrayList2 = applyPreferenceSubRegDialog.semesterList;
-                        int size2 = arrayList2.size();
-                        for (int i12 = 0; i12 < size2; i12++) {
-                            List<String> semesterArray = applyPreferenceSubRegDialog.getSemesterArray();
-                            arrayList13 = applyPreferenceSubRegDialog.semesterList;
-                            semesterArray.add(i12, String.valueOf(((SemList) arrayList13.get(i12)).getSem_pos()));
-                            applyPreferenceSubRegDialog.getSgpaArray().add(i12, "");
+                        int size2 = applyPreferenceSubRegDialog.semesterList.size();
+                        for (int i3 = 0; i3 < size2; i3++) {
+                            applyPreferenceSubRegDialog.getSemesterArray().add(i3, String.valueOf(((SemList) applyPreferenceSubRegDialog.semesterList.get(i3)).getSem_pos()));
+                            applyPreferenceSubRegDialog.getSgpaArray().add(i3, "");
                         }
-                        arrayList3 = applyPreferenceSubRegDialog.semesters;
-                        arrayList3.addAll(applyPreferenceSubRegDialog.getSemesterArray());
-                        arrayList4 = applyPreferenceSubRegDialog.subjects;
-                        arrayList4.addAll(applyPreferenceSubRegDialog.getSubjectsArray());
-                        arrayList5 = applyPreferenceSubRegDialog.sgpaMarks;
-                        arrayList5.addAll(applyPreferenceSubRegDialog.getSgpaArray());
-                        semesterQuestionsAdapter = applyPreferenceSubRegDialog.getSemesterQuestionsAdapter();
-                        arrayList6 = applyPreferenceSubRegDialog.semesters;
-                        i = applyPreferenceSubRegDialog.semPosition;
-                        semesterQuestionsAdapter.addItems(arrayList6, i);
-                        subjectsQuestionsAdapter = applyPreferenceSubRegDialog.getSubjectsQuestionsAdapter();
-                        arrayList7 = applyPreferenceSubRegDialog.subjects;
-                        i2 = applyPreferenceSubRegDialog.position;
-                        subjectsQuestionsAdapter.addItems(arrayList7, i2);
-                        semesterSubjectsAdapter = applyPreferenceSubRegDialog.getSemesterSubjectsAdapter();
-                        ArrayList<SemList> sem_list = data.getSem_list();
-                        i3 = applyPreferenceSubRegDialog.semPosition;
-                        ArrayList<SubjectMainList> subjects = sem_list.get(i3).getSubjects();
-                        i4 = applyPreferenceSubRegDialog.semPosition;
-                        semesterSubjectsAdapter.addItems(subjects, i4);
-                        pathwayAdapter = applyPreferenceSubRegDialog.getPathwayAdapter();
-                        pathwayAdapter.addItems(data.getPathway());
-                        categoryAdapter = applyPreferenceSubRegDialog.getCategoryAdapter();
-                        categoryAdapter.addItems(data.getCategory());
-                        prefOneAdapter = applyPreferenceSubRegDialog.getPrefOneAdapter();
-                        arrayList8 = applyPreferenceSubRegDialog.subjectsList;
-                        i5 = applyPreferenceSubRegDialog.position;
-                        prefOneAdapter.addItems(((SubjectsList) arrayList8.get(i5)).getSubjects(), "Select Preference 1");
-                        prefTwoAdapter = applyPreferenceSubRegDialog.getPrefTwoAdapter();
-                        arrayList9 = applyPreferenceSubRegDialog.subjectsList;
-                        i6 = applyPreferenceSubRegDialog.position;
-                        prefTwoAdapter.addItems(((SubjectsList) arrayList9.get(i6)).getSubjects(), "Select Preference 2");
-                        prefThreeAdapter = applyPreferenceSubRegDialog.getPrefThreeAdapter();
-                        arrayList10 = applyPreferenceSubRegDialog.subjectsList;
-                        i7 = applyPreferenceSubRegDialog.position;
-                        prefThreeAdapter.addItems(((SubjectsList) arrayList10.get(i7)).getSubjects(), "Select Preference 3");
-                        prefFourAdapter = applyPreferenceSubRegDialog.getPrefFourAdapter();
-                        arrayList11 = applyPreferenceSubRegDialog.subjectsList;
-                        i8 = applyPreferenceSubRegDialog.position;
-                        prefFourAdapter.addItems(((SubjectsList) arrayList11.get(i8)).getSubjects(), "Select Preference 4");
-                        prefFiveAdapter = applyPreferenceSubRegDialog.getPrefFiveAdapter();
-                        arrayList12 = applyPreferenceSubRegDialog.subjectsList;
-                        i9 = applyPreferenceSubRegDialog.position;
-                        prefFiveAdapter.addItems(((SubjectsList) arrayList12.get(i9)).getSubjects(), "Select Preference 5");
+                        applyPreferenceSubRegDialog.semesters.addAll(applyPreferenceSubRegDialog.getSemesterArray());
+                        applyPreferenceSubRegDialog.subjects.addAll(applyPreferenceSubRegDialog.getSubjectsArray());
+                        applyPreferenceSubRegDialog.sgpaMarks.addAll(applyPreferenceSubRegDialog.getSgpaArray());
+                        applyPreferenceSubRegDialog.getSemesterQuestionsAdapter().addItems(applyPreferenceSubRegDialog.semesters, applyPreferenceSubRegDialog.semPosition);
+                        applyPreferenceSubRegDialog.getSubjectsQuestionsAdapter().addItems(applyPreferenceSubRegDialog.subjects, applyPreferenceSubRegDialog.position);
+                        applyPreferenceSubRegDialog.getSemesterSubjectsAdapter().addItems(data.getSem_list().get(applyPreferenceSubRegDialog.semPosition).getSubjects(), applyPreferenceSubRegDialog.semPosition);
+                        applyPreferenceSubRegDialog.getPathwayAdapter().addItems(data.getPathway());
+                        applyPreferenceSubRegDialog.getCategoryAdapter().addItems(data.getCategory());
+                        applyPreferenceSubRegDialog.getPrefOneAdapter().addItems(((SubjectsList) applyPreferenceSubRegDialog.subjectsList.get(applyPreferenceSubRegDialog.position)).getSubjects(), "Select Preference 1");
+                        applyPreferenceSubRegDialog.getPrefTwoAdapter().addItems(((SubjectsList) applyPreferenceSubRegDialog.subjectsList.get(applyPreferenceSubRegDialog.position)).getSubjects(), "Select Preference 2");
+                        applyPreferenceSubRegDialog.getPrefThreeAdapter().addItems(((SubjectsList) applyPreferenceSubRegDialog.subjectsList.get(applyPreferenceSubRegDialog.position)).getSubjects(), "Select Preference 3");
+                        applyPreferenceSubRegDialog.getPrefFourAdapter().addItems(((SubjectsList) applyPreferenceSubRegDialog.subjectsList.get(applyPreferenceSubRegDialog.position)).getSubjects(), "Select Preference 4");
+                        applyPreferenceSubRegDialog.getPrefFiveAdapter().addItems(((SubjectsList) applyPreferenceSubRegDialog.subjectsList.get(applyPreferenceSubRegDialog.position)).getSubjects(), "Select Preference 5");
                         applyPreferenceSubRegDialog.reloadSavedPreference();
                     } catch (NullPointerException unused) {
                     }
@@ -3184,7 +2830,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
     }
 
     private final void removePreference(String prefKey) {
-        Object obj;
+        Object next;
         DialogApplyPreferenceSubRegBinding dialogApplyPreferenceSubRegBinding = get_binding();
         TextView textView = dialogApplyPreferenceSubRegBinding != null ? dialogApplyPreferenceSubRegBinding.addBtn : null;
         if (textView != null) {
@@ -3297,28 +2943,28 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
                 frameLayout20.setVisibility(0);
             }
         }
-        List listOf = CollectionsKt.listOf((Object[]) new String[]{"preference1", "preference2", "preference3", "preference4", "preference5"});
+        List listListOf = CollectionsKt.listOf((Object[]) new String[]{"preference1", "preference2", "preference3", "preference4", "preference5"});
         ArrayList<Subjects> subjects = this.subjectsList.get(this.position).getSubjects();
-        int indexOf = listOf.indexOf(prefKey);
-        if (indexOf == -1) {
+        int iIndexOf = listListOf.indexOf(prefKey);
+        if (iIndexOf == -1) {
             return;
         }
-        List<String> subList = listOf.subList(indexOf, listOf.size());
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subList, 10));
-        for (String str : subList) {
+        List<String> listSubList = listListOf.subList(iIndexOf, listListOf.size());
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(listSubList, 10));
+        for (String str : listSubList) {
             Iterator<T> it = subjects.iterator();
             while (true) {
                 if (it.hasNext()) {
-                    obj = it.next();
-                    if (Intrinsics.areEqual(((Subjects) obj).getAns(), str)) {
+                    next = it.next();
+                    if (Intrinsics.areEqual(((Subjects) next).getAns(), str)) {
                         break;
                     }
                 } else {
-                    obj = null;
+                    next = null;
                     break;
                 }
             }
-            arrayList.add((Subjects) obj);
+            arrayList.add((Subjects) next);
         }
         ArrayList arrayList2 = arrayList;
         Iterator it2 = CollectionsKt.filterNotNull(arrayList2).iterator();
@@ -3329,7 +2975,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         for (int i2 = 1; i2 < size; i2++) {
             Subjects subjects2 = (Subjects) arrayList2.get(i2);
             if (subjects2 != null) {
-                subjects2.setAns((String) listOf.get((indexOf + i2) - 1));
+                subjects2.setAns((String) listListOf.get((iIndexOf + i2) - 1));
             }
         }
         reloadSavedPreference();
@@ -3616,7 +3262,7 @@ public final class ApplyPreferenceSubRegDialog extends BaseDialog implements App
         List<String> groupValues;
         String str;
         Intrinsics.checkNotNullParameter(input, "input");
-        MatchResult find$default = Regex.find$default(new Regex("(minor|mdc)_(\\d+)"), input, 0, 2, null);
-        return (find$default == null || (groupValues = find$default.getGroupValues()) == null || (str = groupValues.get(2)) == null) ? input : str;
+        MatchResult matchResultFind$default = Regex.find$default(new Regex("(minor|mdc)_(\\d+)"), input, 0, 2, null);
+        return (matchResultFind$default == null || (groupValues = matchResultFind$default.getGroupValues()) == null || (str = groupValues.get(2)) == null) ? input : str;
     }
 }

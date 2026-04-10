@@ -20,8 +20,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ApplyPreferenceSubRegViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyPreferenceSubRegViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyPreferenceSubRegViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<SuccessResponse>> registerResponse;
@@ -41,8 +41,8 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.semRegRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.semRegRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel.getSemester.1
             {
                 super(1);
             }
@@ -53,20 +53,18 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyPreferenceSubRegViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                ApplyPreferenceSubRegViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyPreferenceSubRegViewModel.getSemester$lambda$0(Function1.this, obj);
+                ApplyPreferenceSubRegViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel.getSemester.2
             {
                 super(1);
             }
@@ -77,17 +75,15 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyPreferenceSubRegViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ApplyPreferenceSubRegViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyPreferenceSubRegViewModel.getSemester$lambda$1(Function1.this, obj);
+                ApplyPreferenceSubRegViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -112,8 +108,8 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(semId, "semId");
         this.spinnerResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SubjectsListResponse> observeOn = this.semRegRepository.getSubjectsRegListApiCall(semId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SubjectsListResponse, Unit> function1 = new Function1<SubjectsListResponse, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$getSpinnerData$1
+        Single<SubjectsListResponse> singleObserveOn = this.semRegRepository.getSubjectsRegListApiCall(semId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SubjectsListResponse, Unit> function1 = new Function1<SubjectsListResponse, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel.getSpinnerData.1
             {
                 super(1);
             }
@@ -124,20 +120,18 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SubjectsListResponse subjectsListResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyPreferenceSubRegViewModel.this.spinnerResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(subjectsListResponse));
+                ApplyPreferenceSubRegViewModel.this.spinnerResponse.postValue(Resource.INSTANCE.success(subjectsListResponse));
             }
         };
         Consumer<? super SubjectsListResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyPreferenceSubRegViewModel.getSpinnerData$lambda$2(Function1.this, obj);
+                ApplyPreferenceSubRegViewModel.getSpinnerData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$getSpinnerData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel.getSpinnerData.2
             {
                 super(1);
             }
@@ -148,17 +142,15 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyPreferenceSubRegViewModel.this.spinnerResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ApplyPreferenceSubRegViewModel.this.spinnerResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyPreferenceSubRegViewModel.getSpinnerData$lambda$3(Function1.this, obj);
+                ApplyPreferenceSubRegViewModel.getSpinnerData$lambda$3(function12, obj);
             }
         }));
     }
@@ -183,8 +175,8 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(registerCollection, "registerCollection");
         this.registerResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.semRegRepository.registerSubjectRegistrationApiCall(registerCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$postRegisterData$1
+        Single<SuccessResponse> singleObserveOn = this.semRegRepository.registerSubjectRegistrationApiCall(registerCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel.postRegisterData.1
             {
                 super(1);
             }
@@ -195,20 +187,18 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyPreferenceSubRegViewModel.this.registerResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                ApplyPreferenceSubRegViewModel.this.registerResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyPreferenceSubRegViewModel.postRegisterData$lambda$4(Function1.this, obj);
+                ApplyPreferenceSubRegViewModel.postRegisterData$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$postRegisterData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel.postRegisterData.2
             {
                 super(1);
             }
@@ -219,17 +209,15 @@ public final class ApplyPreferenceSubRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyPreferenceSubRegViewModel.this.registerResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ApplyPreferenceSubRegViewModel.this.registerResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyPreferenceSubRegViewModel.postRegisterData$lambda$5(Function1.this, obj);
+                ApplyPreferenceSubRegViewModel.postRegisterData$lambda$5(function12, obj);
             }
         }));
     }

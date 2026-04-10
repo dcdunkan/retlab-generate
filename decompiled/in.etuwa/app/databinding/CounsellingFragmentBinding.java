@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -12,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.counselling.CounsellingViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class CounsellingFragmentBinding extends ViewDataBinding {
     public final FloatingActionButton fabAddCounselling;
 
@@ -20,14 +21,16 @@ public abstract class CounsellingFragmentBinding extends ViewDataBinding {
     protected CounsellingViewModel mCounsellingViewModel;
     public final RecyclerView rvCounselling;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setCounsellingViewModel(CounsellingViewModel counsellingViewModel);
 
-    protected CounsellingFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabAddCounselling, RecyclerView rvCounselling, SwipeRefreshLayout swipeLayout) {
+    protected CounsellingFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabAddCounselling, RecyclerView rvCounselling, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.fabAddCounselling = fabAddCounselling;
         this.rvCounselling = rvCounselling;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public CounsellingViewModel getCounsellingViewModel() {

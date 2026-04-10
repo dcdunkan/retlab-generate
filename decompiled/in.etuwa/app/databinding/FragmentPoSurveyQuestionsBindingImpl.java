@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.posurvey.questions.POSurveyQuestionsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentPoSurveyQuestionsBindingImpl extends FragmentPoSurveyQuestionsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -60,7 +60,7 @@ public class FragmentPoSurveyQuestionsBindingImpl extends FragmentPoSurveyQuesti
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (163 != variableId) {
+        if (165 != variableId) {
             return false;
         }
         setPoSurveyQuestionsViewModel((POSurveyQuestionsViewModel) variable);

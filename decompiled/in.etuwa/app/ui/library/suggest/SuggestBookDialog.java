@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.android.material.button.MaterialButton;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.databinding.DialogSuggestBookBinding;
@@ -36,21 +36,21 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SuggestBookDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SuggestBookDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SuggestBookDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogSuggestBookBinding _binding;
     private String id;
     private SuggestListener listener;
     private MainCallBackListener listener2;
 
-    /* renamed from: suggestBookViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: suggestBookViewModel$delegate, reason: from kotlin metadata */
     private final Lazy suggestBookViewModel;
 
-    /* compiled from: SuggestBookDialog.kt */
+    /* JADX INFO: compiled from: SuggestBookDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/library/suggest/SuggestBookDialog$SuggestListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface SuggestListener {
         void dismiss();
@@ -79,7 +79,7 @@ public final class SuggestBookDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return suggestBookDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(suggestBookDialog);
@@ -93,7 +93,7 @@ public final class SuggestBookDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -106,7 +106,7 @@ public final class SuggestBookDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SuggestBookViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SuggestBookViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -116,12 +116,12 @@ public final class SuggestBookDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogSuggestBookBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: SuggestBookDialog.kt */
+    /* JADX INFO: compiled from: SuggestBookDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/library/suggest/SuggestBookDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/library/suggest/SuggestBookDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -174,9 +174,10 @@ public final class SuggestBookDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getSuggestBookViewModel().getResponse().observe(getViewLifecycleOwner(), new SuggestBookDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.library.suggest.SuggestBookDialog$listenResponse$1
+        getSuggestBookViewModel().getResponse().observe(getViewLifecycleOwner(), new SuggestBookDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.library.suggest.SuggestBookDialog.listenResponse.1
 
-            /* compiled from: SuggestBookDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.library.suggest.SuggestBookDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: SuggestBookDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -213,14 +214,11 @@ public final class SuggestBookDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogSuggestBookBinding dialogSuggestBookBinding;
-                TextView suggestBtn;
-                DialogSuggestBookBinding dialogSuggestBookBinding2;
-                TextView suggestBtn2;
-                DialogSuggestBookBinding dialogSuggestBookBinding3;
-                TextView textView;
+                MaterialButton suggestBtn;
+                MaterialButton suggestBtn2;
+                MaterialButton materialButton;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -235,13 +233,13 @@ public final class SuggestBookDialog extends BaseDialog {
                         return;
                     }
                     SuggestBookDialog.this.hideProgress();
-                    dialogSuggestBookBinding3 = SuggestBookDialog.this.get_binding();
-                    if (dialogSuggestBookBinding3 == null || (textView = dialogSuggestBookBinding3.suggestBtn) == null) {
+                    DialogSuggestBookBinding dialogSuggestBookBinding = SuggestBookDialog.this.get_binding();
+                    if (dialogSuggestBookBinding == null || (materialButton = dialogSuggestBookBinding.suggestBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
                     Intrinsics.checkNotNull(message);
-                    ToastExtKt.showErrorToast(textView, message);
+                    ToastExtKt.showErrorToast(materialButton, message);
                     return;
                 }
                 SuggestBookDialog.this.hideProgress();
@@ -249,7 +247,7 @@ public final class SuggestBookDialog extends BaseDialog {
                 if (data != null) {
                     SuggestBookDialog suggestBookDialog = SuggestBookDialog.this;
                     if (data.getSuccess()) {
-                        dialogSuggestBookBinding2 = suggestBookDialog.get_binding();
+                        DialogSuggestBookBinding dialogSuggestBookBinding2 = suggestBookDialog.get_binding();
                         if (dialogSuggestBookBinding2 != null && (suggestBtn2 = dialogSuggestBookBinding2.suggestBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(suggestBtn2, "suggestBtn");
                             ToastExtKt.showInfoToast(suggestBtn2, data.getMessage());
@@ -257,8 +255,8 @@ public final class SuggestBookDialog extends BaseDialog {
                         suggestBookDialog.dismiss();
                         return;
                     }
-                    dialogSuggestBookBinding = suggestBookDialog.get_binding();
-                    if (dialogSuggestBookBinding == null || (suggestBtn = dialogSuggestBookBinding.suggestBtn) == null) {
+                    DialogSuggestBookBinding dialogSuggestBookBinding3 = suggestBookDialog.get_binding();
+                    if (dialogSuggestBookBinding3 == null || (suggestBtn = dialogSuggestBookBinding3.suggestBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(suggestBtn, "suggestBtn");

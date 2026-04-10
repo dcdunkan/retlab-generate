@@ -2,8 +2,8 @@ package in.etuwa.app.data.model.main;
 
 import kotlin.Metadata;
 
-/* compiled from: POSurveyPending.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: POSurveyPending.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class POSurveyPending {
     private final boolean posurvey_status;
 
@@ -14,7 +14,7 @@ public final /* data */ class POSurveyPending {
         return pOSurveyPending.copy(z);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getPosurvey_status() {
         return this.posurvey_status;
     }

@@ -17,11 +17,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RemarkViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: RemarkViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RemarkViewModel extends ViewModel {
     private final CommonRepository commonRepository;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<ArrayList<Remarks>>> remarkResponse;
 
     public RemarkViewModel(CommonRepository commonRepository) {
@@ -29,14 +30,22 @@ public final class RemarkViewModel extends ViewModel {
         this.commonRepository = commonRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.remarkResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getRemark();
     }
 
     public final void getRemark() {
         this.remarkResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Remarks>> observeOn = this.commonRepository.getRemarksApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Remarks>, Unit> function1 = new Function1<ArrayList<Remarks>, Unit>() { // from class: in.etuwa.app.ui.remark.RemarkViewModel$getRemark$1
+        Single<ArrayList<Remarks>> singleObserveOn = this.commonRepository.getRemarksApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Remarks>, Unit> function1 = new Function1<ArrayList<Remarks>, Unit>() { // from class: in.etuwa.app.ui.remark.RemarkViewModel.getRemark.1
             {
                 super(1);
             }
@@ -47,20 +56,18 @@ public final class RemarkViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Remarks> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = RemarkViewModel.this.remarkResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                RemarkViewModel.this.remarkResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Remarks>> consumer = new Consumer() { // from class: in.etuwa.app.ui.remark.RemarkViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RemarkViewModel.getRemark$lambda$0(Function1.this, obj);
+                RemarkViewModel.getRemark$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.remark.RemarkViewModel$getRemark$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.remark.RemarkViewModel.getRemark.2
             {
                 super(1);
             }
@@ -71,17 +78,15 @@ public final class RemarkViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = RemarkViewModel.this.remarkResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                RemarkViewModel.this.remarkResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.remark.RemarkViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.remark.RemarkViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RemarkViewModel.getRemark$lambda$1(Function1.this, obj);
+                RemarkViewModel.getRemark$lambda$1(function12, obj);
             }
         }));
     }

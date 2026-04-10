@@ -11,7 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.LeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentLeaveBindingImpl extends FragmentLeaveBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -62,7 +62,7 @@ public class FragmentLeaveBindingImpl extends FragmentLeaveBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (128 != variableId) {
+        if (129 != variableId) {
             return false;
         }
         setLeaveViewModel((LeaveViewModel) variable);

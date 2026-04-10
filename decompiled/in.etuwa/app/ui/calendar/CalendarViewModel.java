@@ -16,11 +16,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CalendarViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CalendarViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CalendarViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<CalendarResponse>> eventResponse;
+    private boolean isDataLoaded;
     private final MainRepository mainRepository;
 
     public CalendarViewModel(MainRepository mainRepository) {
@@ -28,14 +29,22 @@ public final class CalendarViewModel extends ViewModel {
         this.mainRepository = mainRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.eventResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getEvents();
     }
 
     private final void getEvents() {
         this.eventResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CalendarResponse> observeOn = this.mainRepository.getCalendarEvents().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CalendarResponse, Unit> function1 = new Function1<CalendarResponse, Unit>() { // from class: in.etuwa.app.ui.calendar.CalendarViewModel$getEvents$1
+        Single<CalendarResponse> singleObserveOn = this.mainRepository.getCalendarEvents().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CalendarResponse, Unit> function1 = new Function1<CalendarResponse, Unit>() { // from class: in.etuwa.app.ui.calendar.CalendarViewModel.getEvents.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class CalendarViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CalendarResponse calendarResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CalendarViewModel.this.eventResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(calendarResponse));
+                CalendarViewModel.this.eventResponse.postValue(Resource.INSTANCE.success(calendarResponse));
             }
         };
         Consumer<? super CalendarResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.calendar.CalendarViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CalendarViewModel.getEvents$lambda$0(Function1.this, obj);
+                CalendarViewModel.getEvents$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.calendar.CalendarViewModel$getEvents$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.calendar.CalendarViewModel.getEvents.2
             {
                 super(1);
             }
@@ -70,17 +77,15 @@ public final class CalendarViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CalendarViewModel.this.eventResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CalendarViewModel.this.eventResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.calendar.CalendarViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.calendar.CalendarViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CalendarViewModel.getEvents$lambda$1(Function1.this, obj);
+                CalendarViewModel.getEvents$lambda$1(function12, obj);
             }
         }));
     }

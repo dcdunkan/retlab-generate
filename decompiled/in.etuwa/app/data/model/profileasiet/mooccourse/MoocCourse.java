@@ -4,8 +4,8 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MoocCourse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MoocCourse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MoocCourse {
     private final String achievements;
     private final String duration;
@@ -16,42 +16,42 @@ public final /* data */ class MoocCourse {
     private final String platform;
     private final String to_date;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPlatform() {
         return this.platform;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getFrom_date() {
         return this.from_date;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getTo_date() {
         return this.to_date;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDuration() {
         return this.duration;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getAchievements() {
         return this.achievements;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getFile() {
         return this.file;
     }

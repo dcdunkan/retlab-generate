@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.profileasiet.positionheld;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PositionHeld.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PositionHeld.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PositionHeld {
     private final String end;
     private final String id;
@@ -34,27 +34,27 @@ public final /* data */ class PositionHeld {
         return positionHeld.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getYear() {
         return this.year;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStart() {
         return this.start;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getEnd() {
         return this.end;
     }

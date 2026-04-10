@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DutyLeaveDate.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DutyLeaveDate.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DutyLeaveDate {
     private final String date;
     private final ArrayList<DutyLeaveHour> hours;
@@ -25,12 +25,12 @@ public final /* data */ class DutyLeaveDate {
         return dutyLeaveDate.copy(str, z, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSelected() {
         return this.selected;
     }
@@ -57,14 +57,17 @@ public final /* data */ class DutyLeaveDate {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v4 */
+    /* JADX WARN: Type inference failed for: r1v5 */
     public int hashCode() {
-        int hashCode = this.date.hashCode() * 31;
+        int iHashCode = this.date.hashCode() * 31;
         boolean z = this.selected;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((hashCode + i) * 31) + this.hours.hashCode();
+        return ((iHashCode + r1) * 31) + this.hours.hashCode();
     }
 
     public String toString() {

@@ -2,15 +2,24 @@ package in.etuwa.app.ui.videoclass;
 
 import android.content.ComponentCallbacks;
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -21,7 +30,7 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.gms.actions.SearchIntents;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
@@ -56,29 +65,30 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: VideoClassFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: VideoClassFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class VideoClassFragment extends BaseFragment implements VideoClassAdapter.PlayerCallBack, SemListDialogTwo.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private VideoClassFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String current;
     private boolean flag;
+    private boolean isSearchOpen;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: videoClassViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: videoClassViewModel$delegate, reason: from kotlin metadata */
     private final Lazy videoClassViewModel;
 
-    /* compiled from: VideoClassFragment.kt */
+    /* JADX INFO: compiled from: VideoClassFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -128,7 +138,7 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return videoClassFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(videoClassFragment);
@@ -142,7 +152,7 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -155,7 +165,7 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(VideoClassViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(VideoClassViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final VideoClassFragment videoClassFragment2 = this;
@@ -182,7 +192,7 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(VideoClassFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -229,7 +239,7 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final VideoClassFragmentBinding get_binding() {
         return this._binding;
     }
@@ -244,7 +254,7 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: VideoClassFragment.kt */
+    /* JADX INFO: compiled from: VideoClassFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/videoclass/VideoClassFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/videoclass/VideoClassFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -289,7 +299,7 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
         SwipeRefreshLayout swipeRefreshLayout;
-        FloatingActionButton floatingActionButton;
+        ImageView imageView;
         FragmentActivity activity = getActivity();
         if (activity != null) {
             activity.setTitle(getString(R.string.videotutorial));
@@ -310,60 +320,43 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
         getVideoClassViewModel().getVideoClass(getPreference().getUserSemId());
         listenSemResponse();
         listenResponse();
+        setupSearch();
         VideoClassFragmentBinding videoClassFragmentBinding3 = get_binding();
-        if (videoClassFragmentBinding3 != null && (floatingActionButton = videoClassFragmentBinding3.fabVideoSemester) != null) {
-            floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda1
+        if (videoClassFragmentBinding3 != null && (imageView = videoClassFragmentBinding3.fabVideoSemester) != null) {
+            imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    VideoClassFragment.setUp$lambda$0(VideoClassFragment.this, view);
+                    VideoClassFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
         VideoClassFragmentBinding videoClassFragmentBinding4 = get_binding();
         Spinner spinner2 = videoClassFragmentBinding4 != null ? videoClassFragmentBinding4.spinnerSem : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$setUp$2
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter3;
-                    VideoClassFragmentBinding videoClassFragmentBinding5;
-                    VideoClassViewModel videoClassViewModel;
-                    SharedPrefManager preference2;
                     Spinner spinner3;
-                    VideoClassViewModel videoClassViewModel2;
-                    spinnerAdapter = VideoClassFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    z = VideoClassFragment.this.flag;
-                    if (z) {
-                        videoClassViewModel2 = VideoClassFragment.this.getVideoClassViewModel();
-                        videoClassViewModel2.getVideoClass(semester.getId());
+                    Semester semester = VideoClassFragment.this.getSpinnerAdapter().getSemester(position);
+                    if (VideoClassFragment.this.flag) {
+                        VideoClassFragment.this.getVideoClassViewModel().getVideoClass(semester.getId());
                         VideoClassFragment.this.current = semester.getId();
                         return;
                     }
                     VideoClassFragment.this.flag = true;
-                    spinnerAdapter2 = VideoClassFragment.this.getSpinnerAdapter();
-                    int count = spinnerAdapter2.getCount();
+                    int count = VideoClassFragment.this.getSpinnerAdapter().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = VideoClassFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter3 = VideoClassFragment.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter3.getSemester(i).getId())) {
-                            videoClassFragmentBinding5 = VideoClassFragment.this.get_binding();
+                        if (Intrinsics.areEqual(VideoClassFragment.this.getPreference().getUserSemId(), VideoClassFragment.this.getSpinnerAdapter().getSemester(i).getId())) {
+                            VideoClassFragmentBinding videoClassFragmentBinding5 = VideoClassFragment.this.get_binding();
                             if (videoClassFragmentBinding5 != null && (spinner3 = videoClassFragmentBinding5.spinnerSem) != null) {
                                 spinner3.setSelection(i);
                             }
                             if (position == 0) {
-                                videoClassViewModel = VideoClassFragment.this.getVideoClassViewModel();
-                                preference2 = VideoClassFragment.this.getPreference();
-                                videoClassViewModel.getVideoClass(preference2.getUserSemId());
+                                VideoClassFragment.this.getVideoClassViewModel().getVideoClass(VideoClassFragment.this.getPreference().getUserSemId());
                                 return;
                             }
                             return;
@@ -376,10 +369,10 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
         if (videoClassFragmentBinding5 == null || (swipeRefreshLayout = videoClassFragmentBinding5.swipeLayout) == null) {
             return;
         }
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda2
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda4
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                VideoClassFragment.setUp$lambda$1(VideoClassFragment.this);
+                VideoClassFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -389,9 +382,9 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialogTwo newInstance = SemListDialogTwo.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        SemListDialogTwo semListDialogTwoNewInstance = SemListDialogTwo.INSTANCE.newInstance();
+        semListDialogTwoNewInstance.setCallBack(this$0);
+        semListDialogTwoNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -415,33 +408,176 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    private final void listenSemResponse() {
-        getVideoClassViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda0
-            @Override // androidx.lifecycle.Observer
-            public final void onChanged(Object obj) {
-                VideoClassFragment.listenSemResponse$lambda$3(VideoClassFragment.this, (Resource) obj);
+    private final void setupSearch() {
+        EditText editText;
+        ImageView imageView;
+        ImageView imageView2;
+        VideoClassFragmentBinding videoClassFragmentBinding = get_binding();
+        if (videoClassFragmentBinding != null && (imageView2 = videoClassFragmentBinding.ivSearch) != null) {
+            imageView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    VideoClassFragment.setupSearch$lambda$2(this.f$0, view);
+                }
+            });
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding2 = get_binding();
+        if (videoClassFragmentBinding2 != null && (imageView = videoClassFragmentBinding2.ivClearSearch) != null) {
+            imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    VideoClassFragment.setupSearch$lambda$3(this.f$0, view);
+                }
+            });
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding3 = get_binding();
+        if (videoClassFragmentBinding3 == null || (editText = videoClassFragmentBinding3.searchInput) == null) {
+            return;
+        }
+        editText.addTextChangedListener(new TextWatcher() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment.setupSearch.3
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable s) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String string;
+                if (s == null || (string = s.toString()) == null) {
+                    string = "";
+                }
+                VideoClassFragmentBinding videoClassFragmentBinding4 = VideoClassFragment.this.get_binding();
+                ImageView imageView3 = videoClassFragmentBinding4 != null ? videoClassFragmentBinding4.ivClearSearch : null;
+                if (imageView3 != null) {
+                    imageView3.setVisibility(string.length() > 0 ? 0 : 8);
+                }
+                VideoClassFragment.this.filterCurrentAdapter(string);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenSemResponse$lambda$3(VideoClassFragment this$0, Resource resource) {
+    public static final void setupSearch$lambda$2(VideoClassFragment this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        if (this$0.isSearchOpen) {
+            this$0.closeSearch();
+        } else {
+            this$0.openSearch();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupSearch$lambda$3(VideoClassFragment this$0, View view) {
+        EditText editText;
+        Editable text;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        VideoClassFragmentBinding videoClassFragmentBinding = this$0.get_binding();
+        if (videoClassFragmentBinding == null || (editText = videoClassFragmentBinding.searchInput) == null || (text = editText.getText()) == null) {
+            return;
+        }
+        text.clear();
+    }
+
+    private final void openSearch() {
+        EditText editText;
+        ImageView imageView;
+        this.isSearchOpen = true;
+        VideoClassFragmentBinding videoClassFragmentBinding = get_binding();
+        CardView cardView = videoClassFragmentBinding != null ? videoClassFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(0);
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding2 = get_binding();
+        if (videoClassFragmentBinding2 != null && (imageView = videoClassFragmentBinding2.ivSearch) != null) {
+            imageView.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding3 = get_binding();
+        ImageView imageView2 = videoClassFragmentBinding3 != null ? videoClassFragmentBinding3.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding4 = get_binding();
+        if (videoClassFragmentBinding4 != null && (editText = videoClassFragmentBinding4.searchInput) != null) {
+            editText.requestFocus();
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        VideoClassFragmentBinding videoClassFragmentBinding5 = get_binding();
+        inputMethodManager.showSoftInput(videoClassFragmentBinding5 != null ? videoClassFragmentBinding5.searchInput : null, 1);
+    }
+
+    private final void closeSearch() {
+        EditText editText;
+        ImageView imageView;
+        EditText editText2;
+        Editable text;
+        this.isSearchOpen = false;
+        VideoClassFragmentBinding videoClassFragmentBinding = get_binding();
+        IBinder windowToken = null;
+        CardView cardView = videoClassFragmentBinding != null ? videoClassFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(8);
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding2 = get_binding();
+        if (videoClassFragmentBinding2 != null && (editText2 = videoClassFragmentBinding2.searchInput) != null && (text = editText2.getText()) != null) {
+            text.clear();
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding3 = get_binding();
+        if (videoClassFragmentBinding3 != null && (imageView = videoClassFragmentBinding3.ivSearch) != null) {
+            imageView.setImageResource(R.drawable.ic_search);
+        }
+        VideoClassFragmentBinding videoClassFragmentBinding4 = get_binding();
+        ImageView imageView2 = videoClassFragmentBinding4 != null ? videoClassFragmentBinding4.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        VideoClassFragmentBinding videoClassFragmentBinding5 = get_binding();
+        if (videoClassFragmentBinding5 != null && (editText = videoClassFragmentBinding5.searchInput) != null) {
+            windowToken = editText.getWindowToken();
+        }
+        inputMethodManager.hideSoftInputFromWindow(windowToken, 0);
+        filterCurrentAdapter("");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void filterCurrentAdapter(String query) {
+        getAdapter().applyCombinedFilter(query);
+    }
+
+    private final void listenSemResponse() {
+        getVideoClassViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda0
+            @Override // androidx.lifecycle.Observer
+            public final void onChanged(Object obj) {
+                VideoClassFragment.listenSemResponse$lambda$5(this.f$0, (Resource) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void listenSemResponse$lambda$5(VideoClassFragment this$0, Resource resource) {
         Spinner spinner;
         SwipeRefreshLayout swipeRefreshLayout;
         SwipeRefreshLayout swipeRefreshLayout2;
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 VideoClassFragmentBinding videoClassFragmentBinding = this$0.get_binding();
                 if (videoClassFragmentBinding != null && (swipeRefreshLayout2 = videoClassFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -472,9 +608,9 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
         if (arrayList != null) {
             this$0.getSpinnerAdapter().addItems(arrayList);
             VideoClassFragmentBinding videoClassFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (videoClassFragmentBinding3 == null || (swipeRefreshLayout = videoClassFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
+            Boolean boolValueOf2 = (videoClassFragmentBinding3 == null || (swipeRefreshLayout = videoClassFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+            Intrinsics.checkNotNull(boolValueOf2);
+            if (boolValueOf2.booleanValue()) {
                 VideoClassFragmentBinding videoClassFragmentBinding4 = this$0.get_binding();
                 SwipeRefreshLayout swipeRefreshLayout3 = videoClassFragmentBinding4 != null ? videoClassFragmentBinding4.swipeLayout : null;
                 if (swipeRefreshLayout3 != null) {
@@ -496,16 +632,16 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
     }
 
     private final void listenResponse() {
-        getVideoClassViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda3
+        getVideoClassViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.videoclass.VideoClassFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                VideoClassFragment.listenResponse$lambda$5(VideoClassFragment.this, (Resource) obj);
+                VideoClassFragment.listenResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$5(VideoClassFragment this$0, Resource resource) {
+    public static final void listenResponse$lambda$7(VideoClassFragment this$0, Resource resource) {
         RecyclerView rvVideos;
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -559,14 +695,14 @@ public final class VideoClassFragment extends BaseFragment implements VideoClass
         try {
             if (video.getType() == 0) {
                 ActivityMediator activityMediator = ActivityMediator.INSTANCE;
-                Context requireContext = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                activityMediator.startYoutubeActivity(requireContext, video.getUrl());
+                Context contextRequireContext = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                activityMediator.startYoutubeActivity(contextRequireContext, video.getUrl());
             } else {
                 ActivityMediator activityMediator2 = ActivityMediator.INSTANCE;
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                activityMediator2.startVideoPlayerActivity(requireContext2, video.getUrl());
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                activityMediator2.startVideoPlayerActivity(contextRequireContext2, video.getUrl());
             }
         } catch (Exception unused) {
         }

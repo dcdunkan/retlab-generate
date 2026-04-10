@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddMoocCourseBindingImpl extends DialogAddMoocCourseBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -86,7 +86,7 @@ public class DialogAddMoocCourseBindingImpl extends DialogAddMoocCourseBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (16 != variableId) {
+        if (15 != variableId) {
             return false;
         }
         setAddMoocCourseViewModel((AddMoocCourseViewModel) variable);

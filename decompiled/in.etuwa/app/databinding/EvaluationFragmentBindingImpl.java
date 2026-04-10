@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.lab.practical.evaluation.EvaluationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class EvaluationFragmentBindingImpl extends EvaluationFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class EvaluationFragmentBindingImpl extends EvaluationFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (78 != variableId) {
+        if (77 != variableId) {
             return false;
         }
         setEvaluationViewModel((EvaluationViewModel) variable);

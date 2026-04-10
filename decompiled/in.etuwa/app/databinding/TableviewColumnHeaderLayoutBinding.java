@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class TableviewColumnHeaderLayoutBinding implements ViewBinding {
     public final LinearLayout columnHeaderContainer;
     public final ImageButton columnHeaderSortImageButton;
@@ -34,11 +34,11 @@ public final class TableviewColumnHeaderLayoutBinding implements ViewBinding {
     }
 
     public static TableviewColumnHeaderLayoutBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.tableview_column_header_layout, parent, false);
+        View viewInflate = inflater.inflate(R.layout.tableview_column_header_layout, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static TableviewColumnHeaderLayoutBinding bind(View rootView) {

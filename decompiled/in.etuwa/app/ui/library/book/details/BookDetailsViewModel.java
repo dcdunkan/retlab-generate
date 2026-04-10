@@ -18,8 +18,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: BookDetailsViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: BookDetailsViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class BookDetailsViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<BooksResponse>> libraryBookResponse;
@@ -40,8 +40,8 @@ public final class BookDetailsViewModel extends ViewModel implements KoinCompone
     public final void getBooksData() {
         this.libraryBookResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<BooksResponse> observeOn = this.libraryRepository.getLibraryBooksApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<BooksResponse, Unit> function1 = new Function1<BooksResponse, Unit>() { // from class: in.etuwa.app.ui.library.book.details.BookDetailsViewModel$getBooksData$1
+        Single<BooksResponse> singleObserveOn = this.libraryRepository.getLibraryBooksApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<BooksResponse, Unit> function1 = new Function1<BooksResponse, Unit>() { // from class: in.etuwa.app.ui.library.book.details.BookDetailsViewModel.getBooksData.1
             {
                 super(1);
             }
@@ -52,20 +52,18 @@ public final class BookDetailsViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(BooksResponse booksResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = BookDetailsViewModel.this.libraryBookResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(booksResponse));
+                BookDetailsViewModel.this.libraryBookResponse.postValue(Resource.INSTANCE.success(booksResponse));
             }
         };
         Consumer<? super BooksResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.library.book.details.BookDetailsViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BookDetailsViewModel.getBooksData$lambda$0(Function1.this, obj);
+                BookDetailsViewModel.getBooksData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.library.book.details.BookDetailsViewModel$getBooksData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.library.book.details.BookDetailsViewModel.getBooksData.2
             {
                 super(1);
             }
@@ -76,17 +74,15 @@ public final class BookDetailsViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = BookDetailsViewModel.this.libraryBookResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                BookDetailsViewModel.this.libraryBookResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.library.book.details.BookDetailsViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.library.book.details.BookDetailsViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BookDetailsViewModel.getBooksData$lambda$1(Function1.this, obj);
+                BookDetailsViewModel.getBooksData$lambda$1(function12, obj);
             }
         }));
     }

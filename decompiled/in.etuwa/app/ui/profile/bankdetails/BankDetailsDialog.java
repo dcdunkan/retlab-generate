@@ -11,7 +11,6 @@ import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
@@ -22,7 +21,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.SuccessResponse;
@@ -55,29 +56,29 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: BankDetailsDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: BankDetailsDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class BankDetailsDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogBankDetailsBinding _binding;
     private String abcId;
     private String addEdit;
 
-    /* renamed from: bankDetailsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: bankDetailsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy bankDetailsViewModel;
     private boolean flag;
     private String instruction;
     private ProfileListener listener;
     private MainCallBackListener listener2;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String url;
     private String video;
 
-    /* compiled from: BankDetailsDialog.kt */
+    /* JADX INFO: compiled from: BankDetailsDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/bankdetails/BankDetailsDialog$ProfileListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ProfileListener {
         void dismiss();
@@ -106,7 +107,7 @@ public final class BankDetailsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return bankDetailsDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(bankDetailsDialog);
@@ -120,7 +121,7 @@ public final class BankDetailsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -133,7 +134,7 @@ public final class BankDetailsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(BankDetailsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(BankDetailsViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.url = "";
@@ -163,7 +164,7 @@ public final class BankDetailsDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogBankDetailsBinding get_binding() {
         return this._binding;
     }
@@ -190,7 +191,7 @@ public final class BankDetailsDialog extends BaseDialog {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: BankDetailsDialog.kt */
+    /* JADX INFO: compiled from: BankDetailsDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/bankdetails/BankDetailsDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/bankdetails/BankDetailsDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -253,7 +254,7 @@ public final class BankDetailsDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BankDetailsDialog.setUp$lambda$2(BankDetailsDialog.this, view);
+                BankDetailsDialog.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -263,8 +264,7 @@ public final class BankDetailsDialog extends BaseDialog {
         TextView textView;
         TextView textView2;
         TextView textView3;
-        TextView textView4;
-        TextView textView5;
+        MaterialButton materialButton;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (!this$0.flag) {
             this$0.flag = true;
@@ -273,283 +273,279 @@ public final class BankDetailsDialog extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-            Drawable drawable = ContextCompat.getDrawable(this$0.requireContext(), R.drawable.baseline_close_24);
+            ContextCompat.getDrawable(this$0.requireContext(), R.drawable.baseline_close_24);
             DialogBankDetailsBinding dialogBankDetailsBinding2 = this$0.get_binding();
-            if (dialogBankDetailsBinding2 != null && (textView5 = dialogBankDetailsBinding2.editBtn) != null) {
-                textView5.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
+            TextView textView4 = dialogBankDetailsBinding2 != null ? dialogBankDetailsBinding2.name : null;
+            if (textView4 != null) {
+                textView4.setVisibility(8);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding3 = this$0.get_binding();
-            TextView textView6 = dialogBankDetailsBinding3 != null ? dialogBankDetailsBinding3.name : null;
+            TextView textView5 = dialogBankDetailsBinding3 != null ? dialogBankDetailsBinding3.accNo : null;
+            if (textView5 != null) {
+                textView5.setVisibility(8);
+            }
+            DialogBankDetailsBinding dialogBankDetailsBinding4 = this$0.get_binding();
+            TextView textView6 = dialogBankDetailsBinding4 != null ? dialogBankDetailsBinding4.ifsc : null;
             if (textView6 != null) {
                 textView6.setVisibility(8);
             }
-            DialogBankDetailsBinding dialogBankDetailsBinding4 = this$0.get_binding();
-            TextView textView7 = dialogBankDetailsBinding4 != null ? dialogBankDetailsBinding4.accNo : null;
+            DialogBankDetailsBinding dialogBankDetailsBinding5 = this$0.get_binding();
+            TextView textView7 = dialogBankDetailsBinding5 != null ? dialogBankDetailsBinding5.branch : null;
             if (textView7 != null) {
                 textView7.setVisibility(8);
             }
-            DialogBankDetailsBinding dialogBankDetailsBinding5 = this$0.get_binding();
-            TextView textView8 = dialogBankDetailsBinding5 != null ? dialogBankDetailsBinding5.ifsc : null;
-            if (textView8 != null) {
-                textView8.setVisibility(8);
-            }
             DialogBankDetailsBinding dialogBankDetailsBinding6 = this$0.get_binding();
-            TextView textView9 = dialogBankDetailsBinding6 != null ? dialogBankDetailsBinding6.branch : null;
-            if (textView9 != null) {
-                textView9.setVisibility(8);
-            }
-            DialogBankDetailsBinding dialogBankDetailsBinding7 = this$0.get_binding();
-            LinearLayout linearLayout2 = dialogBankDetailsBinding7 != null ? dialogBankDetailsBinding7.retypeAccLyt : null;
+            LinearLayout linearLayout2 = dialogBankDetailsBinding6 != null ? dialogBankDetailsBinding6.retypeAccLyt : null;
             if (linearLayout2 != null) {
                 linearLayout2.setVisibility(0);
             }
+            DialogBankDetailsBinding dialogBankDetailsBinding7 = this$0.get_binding();
+            TextInputEditText textInputEditText = dialogBankDetailsBinding7 != null ? dialogBankDetailsBinding7.nameEt : null;
+            if (textInputEditText != null) {
+                textInputEditText.setVisibility(0);
+            }
             DialogBankDetailsBinding dialogBankDetailsBinding8 = this$0.get_binding();
-            EditText editText = dialogBankDetailsBinding8 != null ? dialogBankDetailsBinding8.nameEt : null;
-            if (editText != null) {
-                editText.setVisibility(0);
+            TextInputEditText textInputEditText2 = dialogBankDetailsBinding8 != null ? dialogBankDetailsBinding8.accNoEt : null;
+            if (textInputEditText2 != null) {
+                textInputEditText2.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding9 = this$0.get_binding();
-            EditText editText2 = dialogBankDetailsBinding9 != null ? dialogBankDetailsBinding9.accNoEt : null;
-            if (editText2 != null) {
-                editText2.setVisibility(0);
+            TextInputEditText textInputEditText3 = dialogBankDetailsBinding9 != null ? dialogBankDetailsBinding9.ifscEt : null;
+            if (textInputEditText3 != null) {
+                textInputEditText3.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding10 = this$0.get_binding();
-            EditText editText3 = dialogBankDetailsBinding10 != null ? dialogBankDetailsBinding10.ifscEt : null;
-            if (editText3 != null) {
-                editText3.setVisibility(0);
+            TextInputEditText textInputEditText4 = dialogBankDetailsBinding10 != null ? dialogBankDetailsBinding10.branchEt : null;
+            if (textInputEditText4 != null) {
+                textInputEditText4.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding11 = this$0.get_binding();
-            EditText editText4 = dialogBankDetailsBinding11 != null ? dialogBankDetailsBinding11.branchEt : null;
-            if (editText4 != null) {
-                editText4.setVisibility(0);
+            View view2 = dialogBankDetailsBinding11 != null ? dialogBankDetailsBinding11.view1 : null;
+            if (view2 != null) {
+                view2.setVisibility(8);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding12 = this$0.get_binding();
-            TextView textView10 = dialogBankDetailsBinding12 != null ? dialogBankDetailsBinding12.view1 : null;
-            if (textView10 != null) {
-                textView10.setVisibility(8);
+            View view3 = dialogBankDetailsBinding12 != null ? dialogBankDetailsBinding12.view2 : null;
+            if (view3 != null) {
+                view3.setVisibility(8);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding13 = this$0.get_binding();
-            TextView textView11 = dialogBankDetailsBinding13 != null ? dialogBankDetailsBinding13.view2 : null;
-            if (textView11 != null) {
-                textView11.setVisibility(8);
+            View view4 = dialogBankDetailsBinding13 != null ? dialogBankDetailsBinding13.view4 : null;
+            if (view4 != null) {
+                view4.setVisibility(8);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding14 = this$0.get_binding();
-            TextView textView12 = dialogBankDetailsBinding14 != null ? dialogBankDetailsBinding14.view4 : null;
-            if (textView12 != null) {
-                textView12.setVisibility(8);
+            TextView textView8 = dialogBankDetailsBinding14 != null ? dialogBankDetailsBinding14.bankNameTv : null;
+            if (textView8 != null) {
+                textView8.setText(this$0.setLastDigitRed("Bank Name *"));
             }
             DialogBankDetailsBinding dialogBankDetailsBinding15 = this$0.get_binding();
-            TextView textView13 = dialogBankDetailsBinding15 != null ? dialogBankDetailsBinding15.bankNameTv : null;
-            if (textView13 != null) {
-                textView13.setText(this$0.setLastDigitRed("Bank Name *"));
+            TextView textView9 = dialogBankDetailsBinding15 != null ? dialogBankDetailsBinding15.accNoTv : null;
+            if (textView9 != null) {
+                textView9.setText(this$0.setLastDigitRed("Account Number *"));
             }
             DialogBankDetailsBinding dialogBankDetailsBinding16 = this$0.get_binding();
-            TextView textView14 = dialogBankDetailsBinding16 != null ? dialogBankDetailsBinding16.accNoTv : null;
-            if (textView14 != null) {
-                textView14.setText(this$0.setLastDigitRed("Account Number *"));
+            TextView textView10 = dialogBankDetailsBinding16 != null ? dialogBankDetailsBinding16.branchNameTv : null;
+            if (textView10 != null) {
+                textView10.setText(this$0.setLastDigitRed("Branch *"));
             }
             DialogBankDetailsBinding dialogBankDetailsBinding17 = this$0.get_binding();
-            TextView textView15 = dialogBankDetailsBinding17 != null ? dialogBankDetailsBinding17.branchNameTv : null;
-            if (textView15 != null) {
-                textView15.setText(this$0.setLastDigitRed("Branch *"));
+            TextView textView11 = dialogBankDetailsBinding17 != null ? dialogBankDetailsBinding17.ifscTv : null;
+            if (textView11 != null) {
+                textView11.setText(this$0.setLastDigitRed("IFSC *"));
             }
             DialogBankDetailsBinding dialogBankDetailsBinding18 = this$0.get_binding();
-            TextView textView16 = dialogBankDetailsBinding18 != null ? dialogBankDetailsBinding18.ifscTv : null;
-            if (textView16 != null) {
-                textView16.setText(this$0.setLastDigitRed("IFSC *"));
-            }
-            DialogBankDetailsBinding dialogBankDetailsBinding19 = this$0.get_binding();
-            textView2 = dialogBankDetailsBinding19 != null ? dialogBankDetailsBinding19.retypeAccNoTv : null;
+            textView2 = dialogBankDetailsBinding18 != null ? dialogBankDetailsBinding18.retypeAccNoTv : null;
             if (textView2 != null) {
                 textView2.setText(this$0.setLastDigitRed("Re-Type Account Number *"));
             }
         } else {
             this$0.flag = false;
-            DialogBankDetailsBinding dialogBankDetailsBinding20 = this$0.get_binding();
-            LinearLayout linearLayout3 = dialogBankDetailsBinding20 != null ? dialogBankDetailsBinding20.updateLyt : null;
+            DialogBankDetailsBinding dialogBankDetailsBinding19 = this$0.get_binding();
+            LinearLayout linearLayout3 = dialogBankDetailsBinding19 != null ? dialogBankDetailsBinding19.updateLyt : null;
             if (linearLayout3 != null) {
                 linearLayout3.setVisibility(8);
             }
             if (Intrinsics.areEqual(this$0.addEdit, "Edit")) {
-                Drawable drawable2 = ContextCompat.getDrawable(this$0.requireContext(), R.drawable.ic_edit);
-                DialogBankDetailsBinding dialogBankDetailsBinding21 = this$0.get_binding();
-                if (dialogBankDetailsBinding21 != null && (textView3 = dialogBankDetailsBinding21.editBtn) != null) {
-                    textView3.setCompoundDrawablesWithIntrinsicBounds(drawable2, (Drawable) null, (Drawable) null, (Drawable) null);
+                Drawable drawable = ContextCompat.getDrawable(this$0.requireContext(), R.drawable.ic_edit);
+                DialogBankDetailsBinding dialogBankDetailsBinding20 = this$0.get_binding();
+                if (dialogBankDetailsBinding20 != null && (textView3 = dialogBankDetailsBinding20.editBtn) != null) {
+                    textView3.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
                 }
             } else {
-                Drawable drawable3 = ContextCompat.getDrawable(this$0.requireContext(), R.drawable.baseline_add_white);
-                DialogBankDetailsBinding dialogBankDetailsBinding22 = this$0.get_binding();
-                if (dialogBankDetailsBinding22 != null && (textView = dialogBankDetailsBinding22.editBtn) != null) {
-                    textView.setCompoundDrawablesWithIntrinsicBounds(drawable3, (Drawable) null, (Drawable) null, (Drawable) null);
+                Drawable drawable2 = ContextCompat.getDrawable(this$0.requireContext(), R.drawable.baseline_add_white);
+                DialogBankDetailsBinding dialogBankDetailsBinding21 = this$0.get_binding();
+                if (dialogBankDetailsBinding21 != null && (textView = dialogBankDetailsBinding21.editBtn) != null) {
+                    textView.setCompoundDrawablesWithIntrinsicBounds(drawable2, (Drawable) null, (Drawable) null, (Drawable) null);
                 }
             }
+            DialogBankDetailsBinding dialogBankDetailsBinding22 = this$0.get_binding();
+            TextView textView12 = dialogBankDetailsBinding22 != null ? dialogBankDetailsBinding22.name : null;
+            if (textView12 != null) {
+                textView12.setVisibility(0);
+            }
             DialogBankDetailsBinding dialogBankDetailsBinding23 = this$0.get_binding();
-            TextView textView17 = dialogBankDetailsBinding23 != null ? dialogBankDetailsBinding23.name : null;
-            if (textView17 != null) {
-                textView17.setVisibility(0);
+            TextView textView13 = dialogBankDetailsBinding23 != null ? dialogBankDetailsBinding23.accNo : null;
+            if (textView13 != null) {
+                textView13.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding24 = this$0.get_binding();
-            TextView textView18 = dialogBankDetailsBinding24 != null ? dialogBankDetailsBinding24.accNo : null;
-            if (textView18 != null) {
-                textView18.setVisibility(0);
+            TextView textView14 = dialogBankDetailsBinding24 != null ? dialogBankDetailsBinding24.ifsc : null;
+            if (textView14 != null) {
+                textView14.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding25 = this$0.get_binding();
-            TextView textView19 = dialogBankDetailsBinding25 != null ? dialogBankDetailsBinding25.ifsc : null;
-            if (textView19 != null) {
-                textView19.setVisibility(0);
+            TextView textView15 = dialogBankDetailsBinding25 != null ? dialogBankDetailsBinding25.branch : null;
+            if (textView15 != null) {
+                textView15.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding26 = this$0.get_binding();
-            TextView textView20 = dialogBankDetailsBinding26 != null ? dialogBankDetailsBinding26.branch : null;
-            if (textView20 != null) {
-                textView20.setVisibility(0);
-            }
-            DialogBankDetailsBinding dialogBankDetailsBinding27 = this$0.get_binding();
-            LinearLayout linearLayout4 = dialogBankDetailsBinding27 != null ? dialogBankDetailsBinding27.retypeAccLyt : null;
+            LinearLayout linearLayout4 = dialogBankDetailsBinding26 != null ? dialogBankDetailsBinding26.retypeAccLyt : null;
             if (linearLayout4 != null) {
                 linearLayout4.setVisibility(8);
             }
+            DialogBankDetailsBinding dialogBankDetailsBinding27 = this$0.get_binding();
+            TextInputEditText textInputEditText5 = dialogBankDetailsBinding27 != null ? dialogBankDetailsBinding27.nameEt : null;
+            if (textInputEditText5 != null) {
+                textInputEditText5.setVisibility(8);
+            }
             DialogBankDetailsBinding dialogBankDetailsBinding28 = this$0.get_binding();
-            EditText editText5 = dialogBankDetailsBinding28 != null ? dialogBankDetailsBinding28.nameEt : null;
-            if (editText5 != null) {
-                editText5.setVisibility(8);
+            TextInputEditText textInputEditText6 = dialogBankDetailsBinding28 != null ? dialogBankDetailsBinding28.accNoEt : null;
+            if (textInputEditText6 != null) {
+                textInputEditText6.setVisibility(8);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding29 = this$0.get_binding();
-            EditText editText6 = dialogBankDetailsBinding29 != null ? dialogBankDetailsBinding29.accNoEt : null;
-            if (editText6 != null) {
-                editText6.setVisibility(8);
+            TextInputEditText textInputEditText7 = dialogBankDetailsBinding29 != null ? dialogBankDetailsBinding29.ifscEt : null;
+            if (textInputEditText7 != null) {
+                textInputEditText7.setVisibility(8);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding30 = this$0.get_binding();
-            EditText editText7 = dialogBankDetailsBinding30 != null ? dialogBankDetailsBinding30.ifscEt : null;
-            if (editText7 != null) {
-                editText7.setVisibility(8);
+            TextInputEditText textInputEditText8 = dialogBankDetailsBinding30 != null ? dialogBankDetailsBinding30.branchEt : null;
+            if (textInputEditText8 != null) {
+                textInputEditText8.setVisibility(8);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding31 = this$0.get_binding();
-            EditText editText8 = dialogBankDetailsBinding31 != null ? dialogBankDetailsBinding31.branchEt : null;
-            if (editText8 != null) {
-                editText8.setVisibility(8);
+            View view5 = dialogBankDetailsBinding31 != null ? dialogBankDetailsBinding31.view1 : null;
+            if (view5 != null) {
+                view5.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding32 = this$0.get_binding();
-            TextView textView21 = dialogBankDetailsBinding32 != null ? dialogBankDetailsBinding32.view1 : null;
-            if (textView21 != null) {
-                textView21.setVisibility(0);
+            View view6 = dialogBankDetailsBinding32 != null ? dialogBankDetailsBinding32.view2 : null;
+            if (view6 != null) {
+                view6.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding33 = this$0.get_binding();
-            TextView textView22 = dialogBankDetailsBinding33 != null ? dialogBankDetailsBinding33.view2 : null;
-            if (textView22 != null) {
-                textView22.setVisibility(0);
+            View view7 = dialogBankDetailsBinding33 != null ? dialogBankDetailsBinding33.view4 : null;
+            if (view7 != null) {
+                view7.setVisibility(0);
             }
             DialogBankDetailsBinding dialogBankDetailsBinding34 = this$0.get_binding();
-            TextView textView23 = dialogBankDetailsBinding34 != null ? dialogBankDetailsBinding34.view4 : null;
-            if (textView23 != null) {
-                textView23.setVisibility(0);
+            TextView textView16 = dialogBankDetailsBinding34 != null ? dialogBankDetailsBinding34.bankNameTv : null;
+            if (textView16 != null) {
+                textView16.setText("Bank Name");
             }
             DialogBankDetailsBinding dialogBankDetailsBinding35 = this$0.get_binding();
-            TextView textView24 = dialogBankDetailsBinding35 != null ? dialogBankDetailsBinding35.bankNameTv : null;
-            if (textView24 != null) {
-                textView24.setText("Bank Name");
+            TextView textView17 = dialogBankDetailsBinding35 != null ? dialogBankDetailsBinding35.accNoTv : null;
+            if (textView17 != null) {
+                textView17.setText("Account Number");
             }
             DialogBankDetailsBinding dialogBankDetailsBinding36 = this$0.get_binding();
-            TextView textView25 = dialogBankDetailsBinding36 != null ? dialogBankDetailsBinding36.accNoTv : null;
-            if (textView25 != null) {
-                textView25.setText("Account Number");
+            TextView textView18 = dialogBankDetailsBinding36 != null ? dialogBankDetailsBinding36.branchNameTv : null;
+            if (textView18 != null) {
+                textView18.setText("Branch");
             }
             DialogBankDetailsBinding dialogBankDetailsBinding37 = this$0.get_binding();
-            TextView textView26 = dialogBankDetailsBinding37 != null ? dialogBankDetailsBinding37.branchNameTv : null;
-            if (textView26 != null) {
-                textView26.setText("Branch");
+            TextView textView19 = dialogBankDetailsBinding37 != null ? dialogBankDetailsBinding37.ifscTv : null;
+            if (textView19 != null) {
+                textView19.setText("IFSC");
             }
             DialogBankDetailsBinding dialogBankDetailsBinding38 = this$0.get_binding();
-            TextView textView27 = dialogBankDetailsBinding38 != null ? dialogBankDetailsBinding38.ifscTv : null;
-            if (textView27 != null) {
-                textView27.setText("IFSC");
-            }
-            DialogBankDetailsBinding dialogBankDetailsBinding39 = this$0.get_binding();
-            textView2 = dialogBankDetailsBinding39 != null ? dialogBankDetailsBinding39.retypeAccNoTv : null;
+            textView2 = dialogBankDetailsBinding38 != null ? dialogBankDetailsBinding38.retypeAccNoTv : null;
             if (textView2 != null) {
                 textView2.setText(this$0.setLastDigitRed("Re-Type Account Number *"));
             }
         }
-        DialogBankDetailsBinding dialogBankDetailsBinding40 = this$0.get_binding();
-        if (dialogBankDetailsBinding40 == null || (textView4 = dialogBankDetailsBinding40.updateBtn) == null) {
+        DialogBankDetailsBinding dialogBankDetailsBinding39 = this$0.get_binding();
+        if (dialogBankDetailsBinding39 == null || (materialButton = dialogBankDetailsBinding39.updateBtn) == null) {
             return;
         }
-        textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog$$ExternalSyntheticLambda0
+        materialButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                BankDetailsDialog.setUp$lambda$2$lambda$1(BankDetailsDialog.this, view2);
+            public final void onClick(View view8) {
+                BankDetailsDialog.setUp$lambda$2$lambda$1(this.f$0, view8);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$2$lambda$1(BankDetailsDialog this$0, View view) {
-        EditText editText;
-        EditText editText2;
-        EditText editText3;
-        EditText editText4;
-        EditText editText5;
-        EditText editText6;
-        EditText editText7;
-        EditText editText8;
-        EditText editText9;
-        EditText editText10;
-        EditText editText11;
-        EditText editText12;
-        EditText editText13;
-        EditText editText14;
+        TextInputEditText textInputEditText;
+        TextInputEditText textInputEditText2;
+        TextInputEditText textInputEditText3;
+        TextInputEditText textInputEditText4;
+        TextInputEditText textInputEditText5;
+        TextInputEditText textInputEditText6;
+        TextInputEditText textInputEditText7;
+        TextInputEditText textInputEditText8;
+        TextInputEditText textInputEditText9;
+        TextInputEditText textInputEditText10;
+        TextInputEditText textInputEditText11;
+        TextInputEditText textInputEditText12;
+        TextInputEditText textInputEditText13;
+        TextInputEditText textInputEditText14;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         DialogBankDetailsBinding dialogBankDetailsBinding = this$0.get_binding();
-        Editable editable = null;
-        if (Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding == null || (editText14 = dialogBankDetailsBinding.nameEt) == null) ? null : editText14.getText()), "")) {
+        Editable text = null;
+        if (Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding == null || (textInputEditText14 = dialogBankDetailsBinding.nameEt) == null) ? null : textInputEditText14.getText()), "")) {
             this$0.confirmApproveView("Bank name cannot be blank");
             return;
         }
         DialogBankDetailsBinding dialogBankDetailsBinding2 = this$0.get_binding();
-        if (!Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding2 == null || (editText13 = dialogBankDetailsBinding2.accNoEt) == null) ? null : editText13.getText()), "")) {
+        if (!Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding2 == null || (textInputEditText13 = dialogBankDetailsBinding2.accNoEt) == null) ? null : textInputEditText13.getText()), "")) {
             DialogBankDetailsBinding dialogBankDetailsBinding3 = this$0.get_binding();
-            if (!Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding3 == null || (editText12 = dialogBankDetailsBinding3.retypeAccNoEt) == null) ? null : editText12.getText()), "")) {
+            if (!Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding3 == null || (textInputEditText12 = dialogBankDetailsBinding3.retypeAccNoEt) == null) ? null : textInputEditText12.getText()), "")) {
                 DialogBankDetailsBinding dialogBankDetailsBinding4 = this$0.get_binding();
-                if (Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding4 == null || (editText11 = dialogBankDetailsBinding4.branchEt) == null) ? null : editText11.getText()), "")) {
+                if (Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding4 == null || (textInputEditText11 = dialogBankDetailsBinding4.branchEt) == null) ? null : textInputEditText11.getText()), "")) {
                     this$0.confirmApproveView("Branch name cannot be empty");
                     return;
                 }
                 DialogBankDetailsBinding dialogBankDetailsBinding5 = this$0.get_binding();
-                if (Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding5 == null || (editText10 = dialogBankDetailsBinding5.ifscEt) == null) ? null : editText10.getText()), "")) {
+                if (Intrinsics.areEqual(String.valueOf((dialogBankDetailsBinding5 == null || (textInputEditText10 = dialogBankDetailsBinding5.ifscEt) == null) ? null : textInputEditText10.getText()), "")) {
                     this$0.confirmApproveView("IFSC code name cannot be empty");
                     return;
                 }
                 DialogBankDetailsBinding dialogBankDetailsBinding6 = this$0.get_binding();
-                if (!this$0.isValidIndianBankAccount(String.valueOf((dialogBankDetailsBinding6 == null || (editText9 = dialogBankDetailsBinding6.accNoEt) == null) ? null : editText9.getText()))) {
+                if (!this$0.isValidIndianBankAccount(String.valueOf((dialogBankDetailsBinding6 == null || (textInputEditText9 = dialogBankDetailsBinding6.accNoEt) == null) ? null : textInputEditText9.getText()))) {
                     this$0.confirmApproveView("Please input valid Account Number");
                     return;
                 }
                 DialogBankDetailsBinding dialogBankDetailsBinding7 = this$0.get_binding();
-                String valueOf = String.valueOf((dialogBankDetailsBinding7 == null || (editText8 = dialogBankDetailsBinding7.retypeAccNoEt) == null) ? null : editText8.getText());
+                String strValueOf = String.valueOf((dialogBankDetailsBinding7 == null || (textInputEditText8 = dialogBankDetailsBinding7.retypeAccNoEt) == null) ? null : textInputEditText8.getText());
                 DialogBankDetailsBinding dialogBankDetailsBinding8 = this$0.get_binding();
-                if (!Intrinsics.areEqual(valueOf, String.valueOf((dialogBankDetailsBinding8 == null || (editText7 = dialogBankDetailsBinding8.accNoEt) == null) ? null : editText7.getText()))) {
+                if (!Intrinsics.areEqual(strValueOf, String.valueOf((dialogBankDetailsBinding8 == null || (textInputEditText7 = dialogBankDetailsBinding8.accNoEt) == null) ? null : textInputEditText7.getText()))) {
                     this$0.confirmApproveView("Account number mismatch");
                     return;
                 }
                 DialogBankDetailsBinding dialogBankDetailsBinding9 = this$0.get_binding();
-                if (!this$0.isValidIFSC(String.valueOf((dialogBankDetailsBinding9 == null || (editText6 = dialogBankDetailsBinding9.ifscEt) == null) ? null : editText6.getText()))) {
+                if (!this$0.isValidIFSC(String.valueOf((dialogBankDetailsBinding9 == null || (textInputEditText6 = dialogBankDetailsBinding9.ifscEt) == null) ? null : textInputEditText6.getText()))) {
                     this$0.confirmApproveView("Please input valid IFSC");
                     return;
                 }
-                HashMap hashMap = new HashMap();
+                HashMap map = new HashMap();
                 DialogBankDetailsBinding dialogBankDetailsBinding10 = this$0.get_binding();
-                hashMap.put("StudentDetail[bank_name]", String.valueOf((dialogBankDetailsBinding10 == null || (editText5 = dialogBankDetailsBinding10.nameEt) == null) ? null : editText5.getText()));
+                map.put("StudentDetail[bank_name]", String.valueOf((dialogBankDetailsBinding10 == null || (textInputEditText5 = dialogBankDetailsBinding10.nameEt) == null) ? null : textInputEditText5.getText()));
                 DialogBankDetailsBinding dialogBankDetailsBinding11 = this$0.get_binding();
-                hashMap.put("StudentDetail[bank_accno]", String.valueOf((dialogBankDetailsBinding11 == null || (editText4 = dialogBankDetailsBinding11.accNoEt) == null) ? null : editText4.getText()));
+                map.put("StudentDetail[bank_accno]", String.valueOf((dialogBankDetailsBinding11 == null || (textInputEditText4 = dialogBankDetailsBinding11.accNoEt) == null) ? null : textInputEditText4.getText()));
                 DialogBankDetailsBinding dialogBankDetailsBinding12 = this$0.get_binding();
-                hashMap.put("StudentDetail[bank_accno_repeat]", String.valueOf((dialogBankDetailsBinding12 == null || (editText3 = dialogBankDetailsBinding12.retypeAccNoEt) == null) ? null : editText3.getText()));
+                map.put("StudentDetail[bank_accno_repeat]", String.valueOf((dialogBankDetailsBinding12 == null || (textInputEditText3 = dialogBankDetailsBinding12.retypeAccNoEt) == null) ? null : textInputEditText3.getText()));
                 DialogBankDetailsBinding dialogBankDetailsBinding13 = this$0.get_binding();
-                hashMap.put("StudentDetail[bank_ifsc_code]", String.valueOf((dialogBankDetailsBinding13 == null || (editText2 = dialogBankDetailsBinding13.ifscEt) == null) ? null : editText2.getText()));
+                map.put("StudentDetail[bank_ifsc_code]", String.valueOf((dialogBankDetailsBinding13 == null || (textInputEditText2 = dialogBankDetailsBinding13.ifscEt) == null) ? null : textInputEditText2.getText()));
                 DialogBankDetailsBinding dialogBankDetailsBinding14 = this$0.get_binding();
-                if (dialogBankDetailsBinding14 != null && (editText = dialogBankDetailsBinding14.branchEt) != null) {
-                    editable = editText.getText();
+                if (dialogBankDetailsBinding14 != null && (textInputEditText = dialogBankDetailsBinding14.branchEt) != null) {
+                    text = textInputEditText.getText();
                 }
-                hashMap.put("StudentDetail[bank_branch]", String.valueOf(editable));
-                this$0.getBankDetailsViewModel().getUpdateData(hashMap);
+                map.put("StudentDetail[bank_branch]", String.valueOf(text));
+                this$0.getBankDetailsViewModel().getUpdateData(map);
                 return;
             }
         }
@@ -557,9 +553,10 @@ public final class BankDetailsDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getBankDetailsViewModel().getResponse().observe(getViewLifecycleOwner(), new BankDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog$listenResponse$1
+        getBankDetailsViewModel().getResponse().observe(getViewLifecycleOwner(), new BankDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog.listenResponse.1
 
-            /* compiled from: BankDetailsDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: BankDetailsDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -596,33 +593,16 @@ public final class BankDetailsDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ProfileResponse> resource) {
-                DialogBankDetailsBinding dialogBankDetailsBinding;
-                DialogBankDetailsBinding dialogBankDetailsBinding2;
-                DialogBankDetailsBinding dialogBankDetailsBinding3;
-                DialogBankDetailsBinding dialogBankDetailsBinding4;
-                DialogBankDetailsBinding dialogBankDetailsBinding5;
-                DialogBankDetailsBinding dialogBankDetailsBinding6;
-                DialogBankDetailsBinding dialogBankDetailsBinding7;
-                DialogBankDetailsBinding dialogBankDetailsBinding8;
-                DialogBankDetailsBinding dialogBankDetailsBinding9;
-                DialogBankDetailsBinding dialogBankDetailsBinding10;
-                DialogBankDetailsBinding dialogBankDetailsBinding11;
                 TextView textView;
-                DialogBankDetailsBinding dialogBankDetailsBinding12;
                 TextView textView2;
-                SharedPrefManager preference;
-                DialogBankDetailsBinding dialogBankDetailsBinding13;
-                DialogBankDetailsBinding dialogBankDetailsBinding14;
-                DialogBankDetailsBinding dialogBankDetailsBinding15;
                 TextView textView3;
-                EditText editText;
-                EditText editText2;
-                EditText editText3;
-                EditText editText4;
-                EditText editText5;
-                DialogBankDetailsBinding dialogBankDetailsBinding16;
+                TextInputEditText textInputEditText;
+                TextInputEditText textInputEditText2;
+                TextInputEditText textInputEditText3;
+                TextInputEditText textInputEditText4;
+                TextInputEditText textInputEditText5;
                 TextView textView4;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -638,8 +618,8 @@ public final class BankDetailsDialog extends BaseDialog {
                         return;
                     }
                     BankDetailsDialog.this.hideProgress();
-                    dialogBankDetailsBinding16 = BankDetailsDialog.this.get_binding();
-                    if (dialogBankDetailsBinding16 == null || (textView4 = dialogBankDetailsBinding16.name) == null) {
+                    DialogBankDetailsBinding dialogBankDetailsBinding = BankDetailsDialog.this.get_binding();
+                    if (dialogBankDetailsBinding == null || (textView4 = dialogBankDetailsBinding.name) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -651,98 +631,96 @@ public final class BankDetailsDialog extends BaseDialog {
                 ProfileResponse data = resource.getData();
                 if (data != null) {
                     BankDetailsDialog bankDetailsDialog = BankDetailsDialog.this;
-                    dialogBankDetailsBinding = bankDetailsDialog.get_binding();
-                    TextView textView5 = dialogBankDetailsBinding != null ? dialogBankDetailsBinding.name : null;
+                    DialogBankDetailsBinding dialogBankDetailsBinding2 = bankDetailsDialog.get_binding();
+                    TextView textView5 = dialogBankDetailsBinding2 != null ? dialogBankDetailsBinding2.name : null;
                     if (textView5 != null) {
                         textView5.setText(data.getBank_name());
                     }
-                    dialogBankDetailsBinding2 = bankDetailsDialog.get_binding();
-                    TextView textView6 = dialogBankDetailsBinding2 != null ? dialogBankDetailsBinding2.ifsc : null;
+                    DialogBankDetailsBinding dialogBankDetailsBinding3 = bankDetailsDialog.get_binding();
+                    TextView textView6 = dialogBankDetailsBinding3 != null ? dialogBankDetailsBinding3.ifsc : null;
                     if (textView6 != null) {
                         textView6.setText(data.getBank_ifsc_code());
                     }
-                    dialogBankDetailsBinding3 = bankDetailsDialog.get_binding();
-                    TextView textView7 = dialogBankDetailsBinding3 != null ? dialogBankDetailsBinding3.branch : null;
+                    DialogBankDetailsBinding dialogBankDetailsBinding4 = bankDetailsDialog.get_binding();
+                    TextView textView7 = dialogBankDetailsBinding4 != null ? dialogBankDetailsBinding4.branch : null;
                     if (textView7 != null) {
                         textView7.setText(data.getBank_branch());
                     }
-                    dialogBankDetailsBinding4 = bankDetailsDialog.get_binding();
-                    TextView textView8 = dialogBankDetailsBinding4 != null ? dialogBankDetailsBinding4.accNo : null;
+                    DialogBankDetailsBinding dialogBankDetailsBinding5 = bankDetailsDialog.get_binding();
+                    TextView textView8 = dialogBankDetailsBinding5 != null ? dialogBankDetailsBinding5.accNo : null;
                     if (textView8 != null) {
                         textView8.setText(data.getBank_accno());
                     }
-                    dialogBankDetailsBinding5 = bankDetailsDialog.get_binding();
-                    if (dialogBankDetailsBinding5 != null && (editText5 = dialogBankDetailsBinding5.nameEt) != null) {
-                        editText5.setText(data.getBank_name());
+                    DialogBankDetailsBinding dialogBankDetailsBinding6 = bankDetailsDialog.get_binding();
+                    if (dialogBankDetailsBinding6 != null && (textInputEditText5 = dialogBankDetailsBinding6.nameEt) != null) {
+                        textInputEditText5.setText(data.getBank_name());
                     }
-                    dialogBankDetailsBinding6 = bankDetailsDialog.get_binding();
-                    if (dialogBankDetailsBinding6 != null && (editText4 = dialogBankDetailsBinding6.accNoEt) != null) {
-                        editText4.setText(data.getBank_accno());
+                    DialogBankDetailsBinding dialogBankDetailsBinding7 = bankDetailsDialog.get_binding();
+                    if (dialogBankDetailsBinding7 != null && (textInputEditText4 = dialogBankDetailsBinding7.accNoEt) != null) {
+                        textInputEditText4.setText(data.getBank_accno());
                     }
-                    dialogBankDetailsBinding7 = bankDetailsDialog.get_binding();
-                    if (dialogBankDetailsBinding7 != null && (editText3 = dialogBankDetailsBinding7.ifscEt) != null) {
-                        editText3.setText(data.getBank_ifsc_code());
+                    DialogBankDetailsBinding dialogBankDetailsBinding8 = bankDetailsDialog.get_binding();
+                    if (dialogBankDetailsBinding8 != null && (textInputEditText3 = dialogBankDetailsBinding8.ifscEt) != null) {
+                        textInputEditText3.setText(data.getBank_ifsc_code());
                     }
-                    dialogBankDetailsBinding8 = bankDetailsDialog.get_binding();
-                    if (dialogBankDetailsBinding8 != null && (editText2 = dialogBankDetailsBinding8.branchEt) != null) {
-                        editText2.setText(data.getBank_branch());
+                    DialogBankDetailsBinding dialogBankDetailsBinding9 = bankDetailsDialog.get_binding();
+                    if (dialogBankDetailsBinding9 != null && (textInputEditText2 = dialogBankDetailsBinding9.branchEt) != null) {
+                        textInputEditText2.setText(data.getBank_branch());
                     }
-                    dialogBankDetailsBinding9 = bankDetailsDialog.get_binding();
-                    if (dialogBankDetailsBinding9 != null && (editText = dialogBankDetailsBinding9.retypeAccNoEt) != null) {
-                        editText.setText(data.getBank_accno());
+                    DialogBankDetailsBinding dialogBankDetailsBinding10 = bankDetailsDialog.get_binding();
+                    if (dialogBankDetailsBinding10 != null && (textInputEditText = dialogBankDetailsBinding10.retypeAccNoEt) != null) {
+                        textInputEditText.setText(data.getBank_accno());
                     }
                     if (Intrinsics.areEqual(data.getBank_name(), "") && Intrinsics.areEqual(data.getBank_accno(), "") && Intrinsics.areEqual(data.getBank_branch(), "") && Intrinsics.areEqual(data.getBank_ifsc_code(), "")) {
                         bankDetailsDialog.setAddEdit("Add");
-                        dialogBankDetailsBinding14 = bankDetailsDialog.get_binding();
-                        TextView textView9 = dialogBankDetailsBinding14 != null ? dialogBankDetailsBinding14.updateBtn : null;
-                        if (textView9 != null) {
-                            textView9.setText("Add");
+                        DialogBankDetailsBinding dialogBankDetailsBinding11 = bankDetailsDialog.get_binding();
+                        MaterialButton materialButton = dialogBankDetailsBinding11 != null ? dialogBankDetailsBinding11.updateBtn : null;
+                        if (materialButton != null) {
+                            materialButton.setText("Add");
                         }
                         Drawable drawable = ContextCompat.getDrawable(bankDetailsDialog.requireContext(), R.drawable.baseline_add_white);
-                        dialogBankDetailsBinding15 = bankDetailsDialog.get_binding();
-                        if (dialogBankDetailsBinding15 != null && (textView3 = dialogBankDetailsBinding15.editBtn) != null) {
+                        DialogBankDetailsBinding dialogBankDetailsBinding12 = bankDetailsDialog.get_binding();
+                        if (dialogBankDetailsBinding12 != null && (textView3 = dialogBankDetailsBinding12.editBtn) != null) {
                             textView3.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
                         }
                     } else {
                         bankDetailsDialog.setAddEdit("Edit");
                         Drawable drawable2 = ContextCompat.getDrawable(bankDetailsDialog.requireContext(), R.drawable.ic_edit);
-                        dialogBankDetailsBinding10 = bankDetailsDialog.get_binding();
-                        if (dialogBankDetailsBinding10 != null && (textView = dialogBankDetailsBinding10.editBtn) != null) {
+                        DialogBankDetailsBinding dialogBankDetailsBinding13 = bankDetailsDialog.get_binding();
+                        if (dialogBankDetailsBinding13 != null && (textView = dialogBankDetailsBinding13.editBtn) != null) {
                             textView.setCompoundDrawablesWithIntrinsicBounds(drawable2, (Drawable) null, (Drawable) null, (Drawable) null);
                         }
-                        dialogBankDetailsBinding11 = bankDetailsDialog.get_binding();
-                        TextView textView10 = dialogBankDetailsBinding11 != null ? dialogBankDetailsBinding11.updateBtn : null;
-                        if (textView10 != null) {
-                            textView10.setText("Update");
+                        DialogBankDetailsBinding dialogBankDetailsBinding14 = bankDetailsDialog.get_binding();
+                        MaterialButton materialButton2 = dialogBankDetailsBinding14 != null ? dialogBankDetailsBinding14.updateBtn : null;
+                        if (materialButton2 != null) {
+                            materialButton2.setText("Update");
                         }
                     }
-                    if (!data.getBank_edit()) {
-                        preference = bankDetailsDialog.getPreference();
-                        if (!StringsKt.contains$default((CharSequence) preference.getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
-                            dialogBankDetailsBinding13 = bankDetailsDialog.get_binding();
-                            textView2 = dialogBankDetailsBinding13 != null ? dialogBankDetailsBinding13.editBtn : null;
-                            if (textView2 == null) {
-                                return;
-                            }
-                            textView2.setVisibility(8);
+                    if (data.getBank_edit() || StringsKt.contains$default((CharSequence) bankDetailsDialog.getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
+                        DialogBankDetailsBinding dialogBankDetailsBinding15 = bankDetailsDialog.get_binding();
+                        textView2 = dialogBankDetailsBinding15 != null ? dialogBankDetailsBinding15.editBtn : null;
+                        if (textView2 == null) {
                             return;
                         }
+                        textView2.setVisibility(0);
+                        return;
                     }
-                    dialogBankDetailsBinding12 = bankDetailsDialog.get_binding();
-                    textView2 = dialogBankDetailsBinding12 != null ? dialogBankDetailsBinding12.editBtn : null;
+                    DialogBankDetailsBinding dialogBankDetailsBinding16 = bankDetailsDialog.get_binding();
+                    textView2 = dialogBankDetailsBinding16 != null ? dialogBankDetailsBinding16.editBtn : null;
                     if (textView2 == null) {
                         return;
                     }
-                    textView2.setVisibility(0);
+                    textView2.setVisibility(8);
                 }
             }
         }));
     }
 
     private final void listenUpdateResponse() {
-        getBankDetailsViewModel().getUpdateResponse().observe(getViewLifecycleOwner(), new BankDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog$listenUpdateResponse$1
+        getBankDetailsViewModel().getUpdateResponse().observe(getViewLifecycleOwner(), new BankDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog.listenUpdateResponse.1
 
-            /* compiled from: BankDetailsDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.bankdetails.BankDetailsDialog$listenUpdateResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: BankDetailsDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -779,29 +757,8 @@ public final class BankDetailsDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                BankDetailsViewModel bankDetailsViewModel;
-                DialogBankDetailsBinding dialogBankDetailsBinding;
-                DialogBankDetailsBinding dialogBankDetailsBinding2;
-                DialogBankDetailsBinding dialogBankDetailsBinding3;
-                DialogBankDetailsBinding dialogBankDetailsBinding4;
-                DialogBankDetailsBinding dialogBankDetailsBinding5;
-                DialogBankDetailsBinding dialogBankDetailsBinding6;
-                DialogBankDetailsBinding dialogBankDetailsBinding7;
-                DialogBankDetailsBinding dialogBankDetailsBinding8;
-                DialogBankDetailsBinding dialogBankDetailsBinding9;
-                DialogBankDetailsBinding dialogBankDetailsBinding10;
-                DialogBankDetailsBinding dialogBankDetailsBinding11;
-                DialogBankDetailsBinding dialogBankDetailsBinding12;
-                DialogBankDetailsBinding dialogBankDetailsBinding13;
-                DialogBankDetailsBinding dialogBankDetailsBinding14;
-                DialogBankDetailsBinding dialogBankDetailsBinding15;
-                DialogBankDetailsBinding dialogBankDetailsBinding16;
-                DialogBankDetailsBinding dialogBankDetailsBinding17;
-                DialogBankDetailsBinding dialogBankDetailsBinding18;
-                SpannableString lastDigitRed;
-                DialogBankDetailsBinding dialogBankDetailsBinding19;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -817,8 +774,8 @@ public final class BankDetailsDialog extends BaseDialog {
                         return;
                     }
                     BankDetailsDialog.this.hideProgress();
-                    dialogBankDetailsBinding19 = BankDetailsDialog.this.get_binding();
-                    if (dialogBankDetailsBinding19 == null || (textView = dialogBankDetailsBinding19.name) == null) {
+                    DialogBankDetailsBinding dialogBankDetailsBinding = BankDetailsDialog.this.get_binding();
+                    if (dialogBankDetailsBinding == null || (textView = dialogBankDetailsBinding.name) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -832,100 +789,98 @@ public final class BankDetailsDialog extends BaseDialog {
                     BankDetailsDialog bankDetailsDialog = BankDetailsDialog.this;
                     if (data.getSuccess()) {
                         bankDetailsDialog.successApproveView(data.getMessage());
-                        bankDetailsViewModel = bankDetailsDialog.getBankDetailsViewModel();
-                        bankDetailsViewModel.getDashData();
-                        dialogBankDetailsBinding = bankDetailsDialog.get_binding();
-                        LinearLayout linearLayout = dialogBankDetailsBinding != null ? dialogBankDetailsBinding.updateLyt : null;
+                        bankDetailsDialog.getBankDetailsViewModel().getDashData();
+                        DialogBankDetailsBinding dialogBankDetailsBinding2 = bankDetailsDialog.get_binding();
+                        LinearLayout linearLayout = dialogBankDetailsBinding2 != null ? dialogBankDetailsBinding2.updateLyt : null;
                         if (linearLayout != null) {
                             linearLayout.setVisibility(8);
                         }
-                        dialogBankDetailsBinding2 = bankDetailsDialog.get_binding();
-                        TextView textView2 = dialogBankDetailsBinding2 != null ? dialogBankDetailsBinding2.name : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding3 = bankDetailsDialog.get_binding();
+                        TextView textView2 = dialogBankDetailsBinding3 != null ? dialogBankDetailsBinding3.name : null;
                         if (textView2 != null) {
                             textView2.setVisibility(0);
                         }
-                        dialogBankDetailsBinding3 = bankDetailsDialog.get_binding();
-                        TextView textView3 = dialogBankDetailsBinding3 != null ? dialogBankDetailsBinding3.accNo : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding4 = bankDetailsDialog.get_binding();
+                        TextView textView3 = dialogBankDetailsBinding4 != null ? dialogBankDetailsBinding4.accNo : null;
                         if (textView3 != null) {
                             textView3.setVisibility(0);
                         }
-                        dialogBankDetailsBinding4 = bankDetailsDialog.get_binding();
-                        TextView textView4 = dialogBankDetailsBinding4 != null ? dialogBankDetailsBinding4.ifsc : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding5 = bankDetailsDialog.get_binding();
+                        TextView textView4 = dialogBankDetailsBinding5 != null ? dialogBankDetailsBinding5.ifsc : null;
                         if (textView4 != null) {
                             textView4.setVisibility(0);
                         }
-                        dialogBankDetailsBinding5 = bankDetailsDialog.get_binding();
-                        TextView textView5 = dialogBankDetailsBinding5 != null ? dialogBankDetailsBinding5.branch : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding6 = bankDetailsDialog.get_binding();
+                        TextView textView5 = dialogBankDetailsBinding6 != null ? dialogBankDetailsBinding6.branch : null;
                         if (textView5 != null) {
                             textView5.setVisibility(0);
                         }
-                        dialogBankDetailsBinding6 = bankDetailsDialog.get_binding();
-                        LinearLayout linearLayout2 = dialogBankDetailsBinding6 != null ? dialogBankDetailsBinding6.retypeAccLyt : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding7 = bankDetailsDialog.get_binding();
+                        LinearLayout linearLayout2 = dialogBankDetailsBinding7 != null ? dialogBankDetailsBinding7.retypeAccLyt : null;
                         if (linearLayout2 != null) {
                             linearLayout2.setVisibility(8);
                         }
-                        dialogBankDetailsBinding7 = bankDetailsDialog.get_binding();
-                        EditText editText = dialogBankDetailsBinding7 != null ? dialogBankDetailsBinding7.nameEt : null;
-                        if (editText != null) {
-                            editText.setVisibility(8);
+                        DialogBankDetailsBinding dialogBankDetailsBinding8 = bankDetailsDialog.get_binding();
+                        TextInputEditText textInputEditText = dialogBankDetailsBinding8 != null ? dialogBankDetailsBinding8.nameEt : null;
+                        if (textInputEditText != null) {
+                            textInputEditText.setVisibility(8);
                         }
-                        dialogBankDetailsBinding8 = bankDetailsDialog.get_binding();
-                        EditText editText2 = dialogBankDetailsBinding8 != null ? dialogBankDetailsBinding8.accNoEt : null;
-                        if (editText2 != null) {
-                            editText2.setVisibility(8);
+                        DialogBankDetailsBinding dialogBankDetailsBinding9 = bankDetailsDialog.get_binding();
+                        TextInputEditText textInputEditText2 = dialogBankDetailsBinding9 != null ? dialogBankDetailsBinding9.accNoEt : null;
+                        if (textInputEditText2 != null) {
+                            textInputEditText2.setVisibility(8);
                         }
-                        dialogBankDetailsBinding9 = bankDetailsDialog.get_binding();
-                        EditText editText3 = dialogBankDetailsBinding9 != null ? dialogBankDetailsBinding9.ifscEt : null;
-                        if (editText3 != null) {
-                            editText3.setVisibility(8);
+                        DialogBankDetailsBinding dialogBankDetailsBinding10 = bankDetailsDialog.get_binding();
+                        TextInputEditText textInputEditText3 = dialogBankDetailsBinding10 != null ? dialogBankDetailsBinding10.ifscEt : null;
+                        if (textInputEditText3 != null) {
+                            textInputEditText3.setVisibility(8);
                         }
-                        dialogBankDetailsBinding10 = bankDetailsDialog.get_binding();
-                        EditText editText4 = dialogBankDetailsBinding10 != null ? dialogBankDetailsBinding10.branchEt : null;
-                        if (editText4 != null) {
-                            editText4.setVisibility(8);
+                        DialogBankDetailsBinding dialogBankDetailsBinding11 = bankDetailsDialog.get_binding();
+                        TextInputEditText textInputEditText4 = dialogBankDetailsBinding11 != null ? dialogBankDetailsBinding11.branchEt : null;
+                        if (textInputEditText4 != null) {
+                            textInputEditText4.setVisibility(8);
                         }
-                        dialogBankDetailsBinding11 = bankDetailsDialog.get_binding();
-                        TextView textView6 = dialogBankDetailsBinding11 != null ? dialogBankDetailsBinding11.view1 : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding12 = bankDetailsDialog.get_binding();
+                        View view = dialogBankDetailsBinding12 != null ? dialogBankDetailsBinding12.view1 : null;
+                        if (view != null) {
+                            view.setVisibility(0);
+                        }
+                        DialogBankDetailsBinding dialogBankDetailsBinding13 = bankDetailsDialog.get_binding();
+                        View view2 = dialogBankDetailsBinding13 != null ? dialogBankDetailsBinding13.view2 : null;
+                        if (view2 != null) {
+                            view2.setVisibility(0);
+                        }
+                        DialogBankDetailsBinding dialogBankDetailsBinding14 = bankDetailsDialog.get_binding();
+                        View view3 = dialogBankDetailsBinding14 != null ? dialogBankDetailsBinding14.view4 : null;
+                        if (view3 != null) {
+                            view3.setVisibility(0);
+                        }
+                        DialogBankDetailsBinding dialogBankDetailsBinding15 = bankDetailsDialog.get_binding();
+                        TextView textView6 = dialogBankDetailsBinding15 != null ? dialogBankDetailsBinding15.bankNameTv : null;
                         if (textView6 != null) {
-                            textView6.setVisibility(0);
+                            textView6.setText("Bank Name");
                         }
-                        dialogBankDetailsBinding12 = bankDetailsDialog.get_binding();
-                        TextView textView7 = dialogBankDetailsBinding12 != null ? dialogBankDetailsBinding12.view2 : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding16 = bankDetailsDialog.get_binding();
+                        TextView textView7 = dialogBankDetailsBinding16 != null ? dialogBankDetailsBinding16.accNoTv : null;
                         if (textView7 != null) {
-                            textView7.setVisibility(0);
+                            textView7.setText("Account Number");
                         }
-                        dialogBankDetailsBinding13 = bankDetailsDialog.get_binding();
-                        TextView textView8 = dialogBankDetailsBinding13 != null ? dialogBankDetailsBinding13.view4 : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding17 = bankDetailsDialog.get_binding();
+                        TextView textView8 = dialogBankDetailsBinding17 != null ? dialogBankDetailsBinding17.branchNameTv : null;
                         if (textView8 != null) {
-                            textView8.setVisibility(0);
+                            textView8.setText("Branch");
                         }
-                        dialogBankDetailsBinding14 = bankDetailsDialog.get_binding();
-                        TextView textView9 = dialogBankDetailsBinding14 != null ? dialogBankDetailsBinding14.bankNameTv : null;
+                        DialogBankDetailsBinding dialogBankDetailsBinding18 = bankDetailsDialog.get_binding();
+                        TextView textView9 = dialogBankDetailsBinding18 != null ? dialogBankDetailsBinding18.ifscTv : null;
                         if (textView9 != null) {
-                            textView9.setText("Bank Name");
+                            textView9.setText("IFSC");
                         }
-                        dialogBankDetailsBinding15 = bankDetailsDialog.get_binding();
-                        TextView textView10 = dialogBankDetailsBinding15 != null ? dialogBankDetailsBinding15.accNoTv : null;
-                        if (textView10 != null) {
-                            textView10.setText("Account Number");
-                        }
-                        dialogBankDetailsBinding16 = bankDetailsDialog.get_binding();
-                        TextView textView11 = dialogBankDetailsBinding16 != null ? dialogBankDetailsBinding16.branchNameTv : null;
-                        if (textView11 != null) {
-                            textView11.setText("Branch");
-                        }
-                        dialogBankDetailsBinding17 = bankDetailsDialog.get_binding();
-                        TextView textView12 = dialogBankDetailsBinding17 != null ? dialogBankDetailsBinding17.ifscTv : null;
-                        if (textView12 != null) {
-                            textView12.setText("IFSC");
-                        }
-                        dialogBankDetailsBinding18 = bankDetailsDialog.get_binding();
-                        TextView textView13 = dialogBankDetailsBinding18 != null ? dialogBankDetailsBinding18.retypeAccNoTv : null;
-                        if (textView13 == null) {
+                        DialogBankDetailsBinding dialogBankDetailsBinding19 = bankDetailsDialog.get_binding();
+                        TextView textView10 = dialogBankDetailsBinding19 != null ? dialogBankDetailsBinding19.retypeAccNoTv : null;
+                        if (textView10 == null) {
                             return;
                         }
-                        lastDigitRed = bankDetailsDialog.setLastDigitRed("Re-Type Account Number *");
-                        textView13.setText(lastDigitRed);
+                        textView10.setText(bankDetailsDialog.setLastDigitRed("Re-Type Account Number *"));
                         return;
                     }
                     bankDetailsDialog.confirmApproveView(data.getError());

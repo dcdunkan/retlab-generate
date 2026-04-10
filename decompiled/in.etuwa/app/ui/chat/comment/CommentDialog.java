@@ -44,27 +44,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CommentDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CommentDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CommentDialog extends BaseDialog implements CommentAdapter.CommentInteract, CommentReplyDialog.OnReplyDialogInteractionListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private CommentDialogBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String batchId;
 
-    /* renamed from: commentDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: commentDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy commentDialogViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String sem;
     private String subId;
 
-    /* compiled from: CommentDialog.kt */
+    /* JADX INFO: compiled from: CommentDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -119,7 +119,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return commentDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(commentDialog);
@@ -133,7 +133,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -146,7 +146,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CommentDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CommentDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final CommentDialog commentDialog2 = this;
@@ -192,7 +192,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         return (CommentAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final CommentDialogBinding get_binding() {
         return this._binding;
     }
@@ -201,7 +201,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: CommentDialog.kt */
+    /* JADX INFO: compiled from: CommentDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007J \u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/chat/comment/CommentDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/chat/comment/CommentDialog;", "batchId", "", StoreFragmentKt.SUB_ID, "sem", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -295,7 +295,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
             imageButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.chat.comment.CommentDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CommentDialog.setUp$lambda$1(CommentDialog.this, view);
+                    CommentDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -306,7 +306,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.chat.comment.CommentDialog$$ExternalSyntheticLambda2
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                CommentDialog.setUp$lambda$2(CommentDialog.this);
+                CommentDialog.setUp$lambda$2(this.f$0);
             }
         });
     }
@@ -318,7 +318,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         EditText editText3;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         CommentDialogBinding commentDialogBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(String.valueOf((commentDialogBinding == null || (editText3 = commentDialogBinding.etCommentMsg) == null) ? null : editText3.getText()), "")) {
             return;
         }
@@ -329,9 +329,9 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
             String str3 = this$0.sem;
             CommentDialogBinding commentDialogBinding2 = this$0.get_binding();
             if (commentDialogBinding2 != null && (editText2 = commentDialogBinding2.etCommentMsg) != null) {
-                editable = editText2.getText();
+                text = editText2.getText();
             }
-            commentDialogViewModel.setComment(str, str2, str3, String.valueOf(editable));
+            commentDialogViewModel.setComment(str, str2, str3, String.valueOf(text));
             return;
         }
         CommentDialogViewModel commentDialogViewModel2 = this$0.getCommentDialogViewModel();
@@ -339,9 +339,9 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         String userSemId = this$0.getPreference().getUserSemId();
         CommentDialogBinding commentDialogBinding3 = this$0.get_binding();
         if (commentDialogBinding3 != null && (editText = commentDialogBinding3.etCommentMsg) != null) {
-            editable = editText.getText();
+            text = editText.getText();
         }
-        commentDialogViewModel2.setParentComment(batchId, userSemId, String.valueOf(editable));
+        commentDialogViewModel2.setParentComment(batchId, userSemId, String.valueOf(text));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -364,19 +364,19 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         getCommentDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.chat.comment.CommentDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CommentDialog.listenResponse$lambda$4(CommentDialog.this, (Resource) obj);
+                CommentDialog.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /*  JADX ERROR: JadxRuntimeException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxRuntimeException: Can't find top splitter block for handler:B:53:0x00c4
-        	at jadx.core.utils.BlockUtils.getTopSplitterForHandler(BlockUtils.java:1179)
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't find top splitter block for handler:B:47:0x00c4
+        	at jadx.core.utils.BlockUtils.getTopSplitterForHandler(BlockUtils.java:1182)
         	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.collectHandlerRegions(ExcHandlersRegionMaker.java:53)
         	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.process(ExcHandlersRegionMaker.java:38)
         	at jadx.core.dex.visitors.regions.RegionMakerVisitor.visit(RegionMakerVisitor.java:27)
         */
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void listenResponse$lambda$4(in.etuwa.app.ui.chat.comment.CommentDialog r3, in.etuwa.app.utils.Resource r4) {
         /*
             java.lang.String r0 = "this$0"
@@ -475,7 +475,7 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         getCommentDialogViewModel().getCommentResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.chat.comment.CommentDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CommentDialog.listenCommentResponse$lambda$6(CommentDialog.this, (Resource) obj);
+                CommentDialog.listenCommentResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -553,9 +553,9 @@ public final class CommentDialog extends BaseDialog implements CommentAdapter.Co
         Intrinsics.checkNotNullParameter(comntId, "comntId");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        CommentReplyDialog newInstance = CommentReplyDialog.INSTANCE.newInstance(img, name, txt, comntId, this.subId);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        CommentReplyDialog commentReplyDialogNewInstance = CommentReplyDialog.INSTANCE.newInstance(img, name, txt, comntId, this.subId);
+        commentReplyDialogNewInstance.setCallBack(this);
+        commentReplyDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.chat.reply.CommentReplyDialog.OnReplyDialogInteractionListener

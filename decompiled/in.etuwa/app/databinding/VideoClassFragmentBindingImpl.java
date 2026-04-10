@@ -2,24 +2,27 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import androidx.cardview.widget.CardView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.videoclass.VideoClassViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class VideoClassFragmentBindingImpl extends VideoClassFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
     private long mDirtyFlags;
     private final ViewProgressBarBinding mboundView0;
-    private final FrameLayout mboundView01;
+    private final CoordinatorLayout mboundView01;
 
     @Override // androidx.databinding.ViewDataBinding
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
@@ -29,25 +32,30 @@ public class VideoClassFragmentBindingImpl extends VideoClassFragmentBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.video_layout, 2);
-        sparseIntArray.put(R.id.spinner_sem, 3);
-        sparseIntArray.put(R.id.swipe_layout, 4);
-        sparseIntArray.put(R.id.rv_videos, 5);
-        sparseIntArray.put(R.id.fab_video_semester, 6);
+        sparseIntArray.put(R.id.toolbar, 2);
+        sparseIntArray.put(R.id.ivSearch, 3);
+        sparseIntArray.put(R.id.fab_video_semester, 4);
+        sparseIntArray.put(R.id.search_card, 5);
+        sparseIntArray.put(R.id.search_input, 6);
+        sparseIntArray.put(R.id.ivClearSearch, 7);
+        sparseIntArray.put(R.id.video_filter_card, 8);
+        sparseIntArray.put(R.id.spinner_sem, 9);
+        sparseIntArray.put(R.id.swipe_layout, 10);
+        sparseIntArray.put(R.id.rv_videos, 11);
     }
 
     public VideoClassFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
 
     private VideoClassFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (FloatingActionButton) bindings[6], (RecyclerView) bindings[5], (Spinner) bindings[3], (SwipeRefreshLayout) bindings[4], (LinearLayout) bindings[2]);
+        super(bindingComponent, root, 0, (ImageView) bindings[4], (ImageView) bindings[7], (ImageView) bindings[3], (RecyclerView) bindings[11], (CardView) bindings[5], (EditText) bindings[6], (Spinner) bindings[9], (SwipeRefreshLayout) bindings[10], (TextView) bindings[2], (MaterialCardView) bindings[8]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
-        FrameLayout frameLayout = (FrameLayout) bindings[0];
-        this.mboundView01 = frameLayout;
-        frameLayout.setTag(null);
+        CoordinatorLayout coordinatorLayout = (CoordinatorLayout) bindings[0];
+        this.mboundView01 = coordinatorLayout;
+        coordinatorLayout.setTag(null);
         setRootTag(root);
         invalidateAll();
     }
@@ -69,7 +77,7 @@ public class VideoClassFragmentBindingImpl extends VideoClassFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (241 != variableId) {
+        if (243 != variableId) {
             return false;
         }
         setVideoClassViewModel((VideoClassViewModel) variable);

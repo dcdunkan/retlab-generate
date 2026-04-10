@@ -47,15 +47,15 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: RevaluationFeeFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: RevaluationFeeFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class RevaluationFeeFragment extends BaseFragment implements RevaluationFeeAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentRevaluationFeeBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String amount;
     private String date;
@@ -65,10 +65,10 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
     private MainCallBackListener listener;
     private final HashMap<String, String> revaluationCollection;
 
-    /* renamed from: revaluationFeeViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: revaluationFeeViewModel$delegate, reason: from kotlin metadata */
     private final Lazy revaluationFeeViewModel;
 
-    /* compiled from: RevaluationFeeFragment.kt */
+    /* JADX INFO: compiled from: RevaluationFeeFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -118,7 +118,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return revaluationFeeFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(revaluationFeeFragment);
@@ -132,7 +132,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -145,7 +145,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(RevaluationFeeViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(RevaluationFeeViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final RevaluationFeeFragment revaluationFeeFragment2 = this;
@@ -176,7 +176,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
         return (RevaluationFeeAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentRevaluationFeeBinding get_binding() {
         return this._binding;
     }
@@ -185,7 +185,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
         return this.revaluationCollection;
     }
 
-    /* compiled from: RevaluationFeeFragment.kt */
+    /* JADX INFO: compiled from: RevaluationFeeFragment.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J@\u0010\u0003\u001a\u00020\u00042\u0016\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\b2\u0016\u0010\t\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\b2\u0006\u0010\n\u001a\u00020\u000bH\u0007¨\u0006\f"}, d2 = {"Lin/etuwa/app/ui/examregistration/revaluation/fee/RevaluationFeeFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/examregistration/revaluation/fee/RevaluationFeeFragment;", "id", "Ljava/util/ArrayList;", "", "Lkotlin/collections/ArrayList;", "id2", "flag", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -267,7 +267,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment$$ExternalSyntheticLambda1
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    RevaluationFeeFragment.setUp$lambda$1(RevaluationFeeFragment.this);
+                    RevaluationFeeFragment.setUp$lambda$1(this.f$0);
                 }
             });
         }
@@ -338,7 +338,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RevaluationFeeFragment.setUp$lambda$2(RevaluationFeeFragment.this, view);
+                RevaluationFeeFragment.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -357,18 +357,18 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$2(RevaluationFeeFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap<String, String> hashMap = this$0.revaluationCollection;
+        HashMap<String, String> map = this$0.revaluationCollection;
         String str = this$0.date;
         Intrinsics.checkNotNull(str);
-        hashMap.put("UniversityExamRevaluation[applied_date]", str);
-        HashMap<String, String> hashMap2 = this$0.revaluationCollection;
+        map.put("UniversityExamRevaluation[applied_date]", str);
+        HashMap<String, String> map2 = this$0.revaluationCollection;
         String str2 = this$0.amount;
         Intrinsics.checkNotNull(str2);
-        hashMap2.put("UniversityExamRevaluation[amount]", str2);
-        HashMap<String, String> hashMap3 = this$0.revaluationCollection;
+        map2.put("UniversityExamRevaluation[amount]", str2);
+        HashMap<String, String> map3 = this$0.revaluationCollection;
         String str3 = this$0.amount;
         Intrinsics.checkNotNull(str3);
-        hashMap3.put("UniversityExamRevaluation[sub_total]", str3);
+        map3.put("UniversityExamRevaluation[sub_total]", str3);
         this$0.revaluationCollection.put("Payment", "1");
         System.out.println(this$0.revaluationCollection);
         if (Intrinsics.areEqual((Object) this$0.flag, (Object) true)) {
@@ -382,7 +382,7 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
         getRevaluationFeeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                RevaluationFeeFragment.listenResponse$lambda$4(RevaluationFeeFragment.this, (Resource) obj);
+                RevaluationFeeFragment.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
@@ -455,9 +455,10 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
     }
 
     private final void listenUrlResponse() {
-        getRevaluationFeeViewModel().getPayResponse().observe(getViewLifecycleOwner(), new RevaluationFeeFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DuePayUrl>, Unit>() { // from class: in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment$listenUrlResponse$1
+        getRevaluationFeeViewModel().getPayResponse().observe(getViewLifecycleOwner(), new RevaluationFeeFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DuePayUrl>, Unit>() { // from class: in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.listenUrlResponse.1
 
-            /* compiled from: RevaluationFeeFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: RevaluationFeeFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -494,70 +495,39 @@ public final class RevaluationFeeFragment extends BaseFragment implements Revalu
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
-            
-                r0 = r0.listener;
-             */
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.due.duepay.DuePayUrl> r4) {
-                /*
-                    r3 = this;
-                    in.etuwa.app.utils.Status r0 = r4.getStatus()
-                    int[] r1 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment$listenUrlResponse$1.WhenMappings.$EnumSwitchMapping$0
-                    int r0 = r0.ordinal()
-                    r0 = r1[r0]
-                    r1 = 1
-                    if (r0 == r1) goto L35
-                    r4 = 2
-                    if (r0 == r4) goto L2f
-                    r4 = 3
-                    if (r0 == r4) goto L24
-                    r4 = 4
-                    if (r0 == r4) goto L19
-                    goto L69
-                L19:
-                    in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment r4 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.this
-                    r4.hideProgress()
-                    in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment r4 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.this
-                    r4.showBaseView()
-                    goto L69
-                L24:
-                    in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment r4 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.this
-                    r4.hideProgress()
-                    in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment r4 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.this
-                    r4.showBaseView()
-                    goto L69
-                L2f:
-                    in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment r4 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.this
-                    r4.showProgress()
-                    goto L69
-                L35:
-                    in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment r0 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.this
-                    r0.hideProgress()
-                    java.lang.Object r4 = r4.getData()
-                    in.etuwa.app.data.model.due.duepay.DuePayUrl r4 = (in.etuwa.app.data.model.due.duepay.DuePayUrl) r4
-                    if (r4 == 0) goto L69
-                    in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment r0 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.this
-                    r0.showBaseView()
-                    java.lang.String r1 = r4.getUrl()
-                    java.io.PrintStream r2 = java.lang.System.out
-                    r2.println(r1)
-                    java.lang.String r1 = r4.getUrl()
-                    java.lang.String r2 = ""
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r2)
-                    if (r1 != 0) goto L69
-                    in.etuwa.app.helper.MainCallBackListener r0 = in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment.access$getListener$p(r0)
-                    if (r0 == 0) goto L69
-                    java.lang.String r4 = r4.getUrl()
-                    r0.openPaymentPage(r4)
-                L69:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeFragment$listenUrlResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<DuePayUrl> resource) {
+                MainCallBackListener mainCallBackListener;
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        RevaluationFeeFragment.this.showProgress();
+                        return;
+                    }
+                    if (i == 3) {
+                        RevaluationFeeFragment.this.hideProgress();
+                        RevaluationFeeFragment.this.showBaseView();
+                        return;
+                    } else {
+                        if (i != 4) {
+                            return;
+                        }
+                        RevaluationFeeFragment.this.hideProgress();
+                        RevaluationFeeFragment.this.showBaseView();
+                        return;
+                    }
+                }
+                RevaluationFeeFragment.this.hideProgress();
+                DuePayUrl data = resource.getData();
+                if (data != null) {
+                    RevaluationFeeFragment revaluationFeeFragment = RevaluationFeeFragment.this;
+                    revaluationFeeFragment.showBaseView();
+                    System.out.println((Object) data.getUrl());
+                    if (Intrinsics.areEqual(data.getUrl(), "") || (mainCallBackListener = revaluationFeeFragment.listener) == null) {
+                        return;
+                    }
+                    mainCallBackListener.openPaymentPage(data.getUrl());
+                }
             }
         }));
     }

@@ -4,13 +4,13 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import in.etuwa.app.data.model.timetable.TimeTable;
+import in.etuwa.etlabstaff.data.model.timetable.TimeTable;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DashResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DashResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DashResponse {
 
     @SerializedName("attendance_forthemonth")
@@ -85,6 +85,10 @@ public final /* data */ class DashResponse {
     @Expose
     private final String infoMsg;
 
+    @SerializedName("is_engnr")
+    @Expose
+    private final boolean isEngnr;
+
     @SerializedName("live_tv_link")
     @Expose
     private final String liveTvLink;
@@ -107,6 +111,10 @@ public final /* data */ class DashResponse {
 
     @SerializedName("password_changed")
     private final boolean passwordChanged;
+
+    @SerializedName("roll_no")
+    @Expose
+    private final String rollNo;
 
     @SerializedName("sem_id")
     @Expose
@@ -229,303 +237,314 @@ public final /* data */ class DashResponse {
     @Expose
     private final int versionCodeTkmce;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final int getVersionCodeGcek() {
         return this.versionCodeGcek;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final int getVersionCodeGcei() {
         return this.versionCodeGcei;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final int getVersionCodeGcekkd() {
         return this.versionCodeGcekkd;
     }
 
-    /* renamed from: component13, reason: from getter */
+    /* JADX INFO: renamed from: component13, reason: from getter */
     public final int getVersionCodeGecskp() {
         return this.versionCodeGecskp;
     }
 
-    /* renamed from: component14, reason: from getter */
+    /* JADX INFO: renamed from: component14, reason: from getter */
     public final int getVersionCodeGectcr() {
         return this.versionCodeGectcr;
     }
 
-    /* renamed from: component15, reason: from getter */
+    /* JADX INFO: renamed from: component15, reason: from getter */
     public final int getVersionCodeGecwyd() {
         return this.versionCodeGecwyd;
     }
 
-    /* renamed from: component16, reason: from getter */
+    /* JADX INFO: renamed from: component16, reason: from getter */
     public final int getVersionCodeJecc() {
         return this.versionCodeJecc;
     }
 
-    /* renamed from: component17, reason: from getter */
+    /* JADX INFO: renamed from: component17, reason: from getter */
     public final int getVersionCodeKmea() {
         return this.versionCodeKmea;
     }
 
-    /* renamed from: component18, reason: from getter */
+    /* JADX INFO: renamed from: component18, reason: from getter */
     public final int getVersionCodeKmeacoa() {
         return this.versionCodeKmeacoa;
     }
 
-    /* renamed from: component19, reason: from getter */
+    /* JADX INFO: renamed from: component19, reason: from getter */
     public final int getVersionCodeMace() {
         return this.versionCodeMace;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getCurnt_sem() {
         return this.curnt_sem;
     }
 
-    /* renamed from: component20, reason: from getter */
+    /* JADX INFO: renamed from: component20, reason: from getter */
     public final int getVersionCodeMarian() {
         return this.versionCodeMarian;
     }
 
-    /* renamed from: component21, reason: from getter */
+    /* JADX INFO: renamed from: component21, reason: from getter */
     public final int getVersionCodeMdit() {
         return this.versionCodeMdit;
     }
 
-    /* renamed from: component22, reason: from getter */
+    /* JADX INFO: renamed from: component22, reason: from getter */
     public final int getVersionCodeNssce() {
         return this.versionCodeNssce;
     }
 
-    /* renamed from: component23, reason: from getter */
+    /* JADX INFO: renamed from: component23, reason: from getter */
     public final int getVersionCodeSjcetPalai() {
         return this.versionCodeSjcetPalai;
     }
 
-    /* renamed from: component24, reason: from getter */
+    /* JADX INFO: renamed from: component24, reason: from getter */
     public final int getVersionCodeTkmce() {
         return this.versionCodeTkmce;
     }
 
-    /* renamed from: component25, reason: from getter */
+    /* JADX INFO: renamed from: component25, reason: from getter */
     public final int getVersionCode() {
         return this.versionCode;
     }
 
-    /* renamed from: component26, reason: from getter */
+    /* JADX INFO: renamed from: component26, reason: from getter */
     public final boolean getLogout_status() {
         return this.logout_status;
     }
 
-    /* renamed from: component27, reason: from getter */
+    /* JADX INFO: renamed from: component27, reason: from getter */
     public final boolean getSemReg() {
         return this.semReg;
     }
 
-    /* renamed from: component28, reason: from getter */
+    /* JADX INFO: renamed from: component28, reason: from getter */
     public final String getSemId() {
         return this.semId;
     }
 
-    /* renamed from: component29, reason: from getter */
+    /* JADX INFO: renamed from: component29, reason: from getter */
     public final String getStudentId() {
         return this.studentId;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final int getVersionCodeEngnr() {
         return this.versionCodeEngnr;
     }
 
-    /* renamed from: component30, reason: from getter */
+    /* JADX INFO: renamed from: component30, reason: from getter */
+    public final String getRollNo() {
+        return this.rollNo;
+    }
+
+    /* JADX INFO: renamed from: component31, reason: from getter */
     public final int getHostel() {
         return this.hostel;
     }
 
-    /* renamed from: component31, reason: from getter */
+    /* JADX INFO: renamed from: component32, reason: from getter */
     public final String getHostelStatus() {
         return this.hostelStatus;
     }
 
-    /* renamed from: component32, reason: from getter */
+    /* JADX INFO: renamed from: component33, reason: from getter */
     public final boolean getSurveyStatus() {
         return this.surveyStatus;
     }
 
-    /* renamed from: component33, reason: from getter */
+    /* JADX INFO: renamed from: component34, reason: from getter */
     public final String getSurveyMessage() {
         return this.surveyMessage;
     }
 
-    /* renamed from: component34, reason: from getter */
+    /* JADX INFO: renamed from: component35, reason: from getter */
     public final String getBatchId() {
         return this.batchId;
     }
 
-    /* renamed from: component35, reason: from getter */
+    /* JADX INFO: renamed from: component36, reason: from getter */
     public final String getCourse() {
         return this.course;
     }
 
-    /* renamed from: component36, reason: from getter */
+    /* JADX INFO: renamed from: component37, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component37, reason: from getter */
+    /* JADX INFO: renamed from: component38, reason: from getter */
     public final String getUrlSign() {
         return this.urlSign;
     }
 
-    /* renamed from: component38, reason: from getter */
+    /* JADX INFO: renamed from: component39, reason: from getter */
     public final String getAttendance_forthemonth() {
         return this.attendance_forthemonth;
     }
 
-    /* renamed from: component39, reason: from getter */
-    public final String getAttendance_forthesem() {
-        return this.attendance_forthesem;
-    }
-
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final int getVersionCodeSctce() {
         return this.versionCodeSctce;
     }
 
-    public final ArrayList<ArrayList<TimeTable>> component40() {
+    /* JADX INFO: renamed from: component40, reason: from getter */
+    public final String getAttendance_forthesem() {
+        return this.attendance_forthesem;
+    }
+
+    public final ArrayList<ArrayList<TimeTable>> component41() {
         return this.timetable;
     }
 
-    /* renamed from: component41, reason: from getter */
+    /* JADX INFO: renamed from: component42, reason: from getter */
     public final int getCurrentVersion() {
         return this.currentVersion;
     }
 
-    /* renamed from: component42, reason: from getter */
+    /* JADX INFO: renamed from: component43, reason: from getter */
     public final String getInfoMsg() {
         return this.infoMsg;
     }
 
-    /* renamed from: component43, reason: from getter */
+    /* JADX INFO: renamed from: component44, reason: from getter */
+    public final boolean getIsEngnr() {
+        return this.isEngnr;
+    }
+
+    /* JADX INFO: renamed from: component45, reason: from getter */
     public final boolean getFeeStatus() {
         return this.feeStatus;
     }
 
-    /* renamed from: component44, reason: from getter */
+    /* JADX INFO: renamed from: component46, reason: from getter */
     public final String getLiveTvLink() {
         return this.liveTvLink;
     }
 
-    /* renamed from: component45, reason: from getter */
+    /* JADX INFO: renamed from: component47, reason: from getter */
     public final String getLiveTvType() {
         return this.liveTvType;
     }
 
-    /* renamed from: component46, reason: from getter */
+    /* JADX INFO: renamed from: component48, reason: from getter */
     public final boolean getPasswordChanged() {
         return this.passwordChanged;
     }
 
-    /* renamed from: component47, reason: from getter */
+    /* JADX INFO: renamed from: component49, reason: from getter */
     public final String getError() {
         return this.error;
     }
 
-    /* renamed from: component48, reason: from getter */
-    public final String getDueNew() {
-        return this.dueNew;
-    }
-
-    /* renamed from: component49, reason: from getter */
-    public final String getDeptVision() {
-        return this.deptVision;
-    }
-
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final int getVersionCodeAisat() {
         return this.versionCodeAisat;
     }
 
-    /* renamed from: component50, reason: from getter */
+    /* JADX INFO: renamed from: component50, reason: from getter */
+    public final String getDueNew() {
+        return this.dueNew;
+    }
+
+    /* JADX INFO: renamed from: component51, reason: from getter */
+    public final String getDeptVision() {
+        return this.deptVision;
+    }
+
+    /* JADX INFO: renamed from: component52, reason: from getter */
     public final String getDeptMission() {
         return this.deptMission;
     }
 
-    /* renamed from: component51, reason: from getter */
+    /* JADX INFO: renamed from: component53, reason: from getter */
     public final String getClgVision() {
         return this.clgVision;
     }
 
-    /* renamed from: component52, reason: from getter */
+    /* JADX INFO: renamed from: component54, reason: from getter */
     public final String getClgMission() {
         return this.clgMission;
     }
 
-    /* renamed from: component53, reason: from getter */
+    /* JADX INFO: renamed from: component55, reason: from getter */
     public final boolean getFeeEngnrStatus() {
         return this.feeEngnrStatus;
     }
 
-    /* renamed from: component54, reason: from getter */
+    /* JADX INFO: renamed from: component56, reason: from getter */
     public final String getBank_name() {
         return this.bank_name;
     }
 
-    /* renamed from: component55, reason: from getter */
+    /* JADX INFO: renamed from: component57, reason: from getter */
     public final String getBank_branch() {
         return this.bank_branch;
     }
 
-    /* renamed from: component56, reason: from getter */
+    /* JADX INFO: renamed from: component58, reason: from getter */
     public final String getBank_accno() {
         return this.bank_accno;
     }
 
-    /* renamed from: component57, reason: from getter */
+    /* JADX INFO: renamed from: component59, reason: from getter */
     public final String getBank_ifsc_code() {
         return this.bank_ifsc_code;
     }
 
-    /* renamed from: component58, reason: from getter */
-    public final String getUsertype() {
-        return this.usertype;
-    }
-
-    public final ArrayList<NoticesDash> component59() {
-        return this.notices;
-    }
-
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final int getVersionCodeCep() {
         return this.versionCodeCep;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component60, reason: from getter */
+    public final String getUsertype() {
+        return this.usertype;
+    }
+
+    public final ArrayList<NoticesDash> component61() {
+        return this.notices;
+    }
+
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final int getVersionCodeCetkr() {
         return this.versionCodeCetkr;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final int getVersionCodeCoet() {
         return this.versionCodeCoet;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final int getVersionCodeCev() {
         return this.versionCodeCev;
     }
 
-    public final DashResponse copy(boolean login, String curnt_sem, int versionCodeEngnr, int versionCodeSctce, int versionCodeAisat, int versionCodeCep, int versionCodeCetkr, int versionCodeCoet, int versionCodeCev, int versionCodeGcek, int versionCodeGcei, int versionCodeGcekkd, int versionCodeGecskp, int versionCodeGectcr, int versionCodeGecwyd, int versionCodeJecc, int versionCodeKmea, int versionCodeKmeacoa, int versionCodeMace, int versionCodeMarian, int versionCodeMdit, int versionCodeNssce, int versionCodeSjcetPalai, int versionCodeTkmce, int versionCode, boolean logout_status, boolean semReg, String semId, String studentId, int hostel, String hostelStatus, boolean surveyStatus, String surveyMessage, String batchId, String course, String url, String urlSign, String attendance_forthemonth, String attendance_forthesem, ArrayList<ArrayList<TimeTable>> timetable, int currentVersion, String infoMsg, boolean feeStatus, String liveTvLink, String liveTvType, boolean passwordChanged, String error, String dueNew, String deptVision, String deptMission, String clgVision, String clgMission, boolean feeEngnrStatus, String bank_name, String bank_branch, String bank_accno, String bank_ifsc_code, String usertype, ArrayList<NoticesDash> notices) {
+    public final DashResponse copy(boolean login, String curnt_sem, int versionCodeEngnr, int versionCodeSctce, int versionCodeAisat, int versionCodeCep, int versionCodeCetkr, int versionCodeCoet, int versionCodeCev, int versionCodeGcek, int versionCodeGcei, int versionCodeGcekkd, int versionCodeGecskp, int versionCodeGectcr, int versionCodeGecwyd, int versionCodeJecc, int versionCodeKmea, int versionCodeKmeacoa, int versionCodeMace, int versionCodeMarian, int versionCodeMdit, int versionCodeNssce, int versionCodeSjcetPalai, int versionCodeTkmce, int versionCode, boolean logout_status, boolean semReg, String semId, String studentId, String rollNo, int hostel, String hostelStatus, boolean surveyStatus, String surveyMessage, String batchId, String course, String url, String urlSign, String attendance_forthemonth, String attendance_forthesem, ArrayList<ArrayList<TimeTable>> timetable, int currentVersion, String infoMsg, boolean isEngnr, boolean feeStatus, String liveTvLink, String liveTvType, boolean passwordChanged, String error, String dueNew, String deptVision, String deptMission, String clgVision, String clgMission, boolean feeEngnrStatus, String bank_name, String bank_branch, String bank_accno, String bank_ifsc_code, String usertype, ArrayList<NoticesDash> notices) {
         Intrinsics.checkNotNullParameter(curnt_sem, "curnt_sem");
         Intrinsics.checkNotNullParameter(semId, "semId");
         Intrinsics.checkNotNullParameter(studentId, "studentId");
+        Intrinsics.checkNotNullParameter(rollNo, "rollNo");
         Intrinsics.checkNotNullParameter(hostelStatus, "hostelStatus");
         Intrinsics.checkNotNullParameter(surveyMessage, "surveyMessage");
         Intrinsics.checkNotNullParameter(batchId, "batchId");
@@ -550,7 +569,7 @@ public final /* data */ class DashResponse {
         Intrinsics.checkNotNullParameter(bank_ifsc_code, "bank_ifsc_code");
         Intrinsics.checkNotNullParameter(usertype, "usertype");
         Intrinsics.checkNotNullParameter(notices, "notices");
-        return new DashResponse(login, curnt_sem, versionCodeEngnr, versionCodeSctce, versionCodeAisat, versionCodeCep, versionCodeCetkr, versionCodeCoet, versionCodeCev, versionCodeGcek, versionCodeGcei, versionCodeGcekkd, versionCodeGecskp, versionCodeGectcr, versionCodeGecwyd, versionCodeJecc, versionCodeKmea, versionCodeKmeacoa, versionCodeMace, versionCodeMarian, versionCodeMdit, versionCodeNssce, versionCodeSjcetPalai, versionCodeTkmce, versionCode, logout_status, semReg, semId, studentId, hostel, hostelStatus, surveyStatus, surveyMessage, batchId, course, url, urlSign, attendance_forthemonth, attendance_forthesem, timetable, currentVersion, infoMsg, feeStatus, liveTvLink, liveTvType, passwordChanged, error, dueNew, deptVision, deptMission, clgVision, clgMission, feeEngnrStatus, bank_name, bank_branch, bank_accno, bank_ifsc_code, usertype, notices);
+        return new DashResponse(login, curnt_sem, versionCodeEngnr, versionCodeSctce, versionCodeAisat, versionCodeCep, versionCodeCetkr, versionCodeCoet, versionCodeCev, versionCodeGcek, versionCodeGcei, versionCodeGcekkd, versionCodeGecskp, versionCodeGectcr, versionCodeGecwyd, versionCodeJecc, versionCodeKmea, versionCodeKmeacoa, versionCodeMace, versionCodeMarian, versionCodeMdit, versionCodeNssce, versionCodeSjcetPalai, versionCodeTkmce, versionCode, logout_status, semReg, semId, studentId, rollNo, hostel, hostelStatus, surveyStatus, surveyMessage, batchId, course, url, urlSign, attendance_forthemonth, attendance_forthesem, timetable, currentVersion, infoMsg, isEngnr, feeStatus, liveTvLink, liveTvType, passwordChanged, error, dueNew, deptVision, deptMission, clgVision, clgMission, feeEngnrStatus, bank_name, bank_branch, bank_accno, bank_ifsc_code, usertype, notices);
     }
 
     public boolean equals(Object other) {
@@ -561,67 +580,90 @@ public final /* data */ class DashResponse {
             return false;
         }
         DashResponse dashResponse = (DashResponse) other;
-        return this.login == dashResponse.login && Intrinsics.areEqual(this.curnt_sem, dashResponse.curnt_sem) && this.versionCodeEngnr == dashResponse.versionCodeEngnr && this.versionCodeSctce == dashResponse.versionCodeSctce && this.versionCodeAisat == dashResponse.versionCodeAisat && this.versionCodeCep == dashResponse.versionCodeCep && this.versionCodeCetkr == dashResponse.versionCodeCetkr && this.versionCodeCoet == dashResponse.versionCodeCoet && this.versionCodeCev == dashResponse.versionCodeCev && this.versionCodeGcek == dashResponse.versionCodeGcek && this.versionCodeGcei == dashResponse.versionCodeGcei && this.versionCodeGcekkd == dashResponse.versionCodeGcekkd && this.versionCodeGecskp == dashResponse.versionCodeGecskp && this.versionCodeGectcr == dashResponse.versionCodeGectcr && this.versionCodeGecwyd == dashResponse.versionCodeGecwyd && this.versionCodeJecc == dashResponse.versionCodeJecc && this.versionCodeKmea == dashResponse.versionCodeKmea && this.versionCodeKmeacoa == dashResponse.versionCodeKmeacoa && this.versionCodeMace == dashResponse.versionCodeMace && this.versionCodeMarian == dashResponse.versionCodeMarian && this.versionCodeMdit == dashResponse.versionCodeMdit && this.versionCodeNssce == dashResponse.versionCodeNssce && this.versionCodeSjcetPalai == dashResponse.versionCodeSjcetPalai && this.versionCodeTkmce == dashResponse.versionCodeTkmce && this.versionCode == dashResponse.versionCode && this.logout_status == dashResponse.logout_status && this.semReg == dashResponse.semReg && Intrinsics.areEqual(this.semId, dashResponse.semId) && Intrinsics.areEqual(this.studentId, dashResponse.studentId) && this.hostel == dashResponse.hostel && Intrinsics.areEqual(this.hostelStatus, dashResponse.hostelStatus) && this.surveyStatus == dashResponse.surveyStatus && Intrinsics.areEqual(this.surveyMessage, dashResponse.surveyMessage) && Intrinsics.areEqual(this.batchId, dashResponse.batchId) && Intrinsics.areEqual(this.course, dashResponse.course) && Intrinsics.areEqual(this.url, dashResponse.url) && Intrinsics.areEqual(this.urlSign, dashResponse.urlSign) && Intrinsics.areEqual(this.attendance_forthemonth, dashResponse.attendance_forthemonth) && Intrinsics.areEqual(this.attendance_forthesem, dashResponse.attendance_forthesem) && Intrinsics.areEqual(this.timetable, dashResponse.timetable) && this.currentVersion == dashResponse.currentVersion && Intrinsics.areEqual(this.infoMsg, dashResponse.infoMsg) && this.feeStatus == dashResponse.feeStatus && Intrinsics.areEqual(this.liveTvLink, dashResponse.liveTvLink) && Intrinsics.areEqual(this.liveTvType, dashResponse.liveTvType) && this.passwordChanged == dashResponse.passwordChanged && Intrinsics.areEqual(this.error, dashResponse.error) && Intrinsics.areEqual(this.dueNew, dashResponse.dueNew) && Intrinsics.areEqual(this.deptVision, dashResponse.deptVision) && Intrinsics.areEqual(this.deptMission, dashResponse.deptMission) && Intrinsics.areEqual(this.clgVision, dashResponse.clgVision) && Intrinsics.areEqual(this.clgMission, dashResponse.clgMission) && this.feeEngnrStatus == dashResponse.feeEngnrStatus && Intrinsics.areEqual(this.bank_name, dashResponse.bank_name) && Intrinsics.areEqual(this.bank_branch, dashResponse.bank_branch) && Intrinsics.areEqual(this.bank_accno, dashResponse.bank_accno) && Intrinsics.areEqual(this.bank_ifsc_code, dashResponse.bank_ifsc_code) && Intrinsics.areEqual(this.usertype, dashResponse.usertype) && Intrinsics.areEqual(this.notices, dashResponse.notices);
+        return this.login == dashResponse.login && Intrinsics.areEqual(this.curnt_sem, dashResponse.curnt_sem) && this.versionCodeEngnr == dashResponse.versionCodeEngnr && this.versionCodeSctce == dashResponse.versionCodeSctce && this.versionCodeAisat == dashResponse.versionCodeAisat && this.versionCodeCep == dashResponse.versionCodeCep && this.versionCodeCetkr == dashResponse.versionCodeCetkr && this.versionCodeCoet == dashResponse.versionCodeCoet && this.versionCodeCev == dashResponse.versionCodeCev && this.versionCodeGcek == dashResponse.versionCodeGcek && this.versionCodeGcei == dashResponse.versionCodeGcei && this.versionCodeGcekkd == dashResponse.versionCodeGcekkd && this.versionCodeGecskp == dashResponse.versionCodeGecskp && this.versionCodeGectcr == dashResponse.versionCodeGectcr && this.versionCodeGecwyd == dashResponse.versionCodeGecwyd && this.versionCodeJecc == dashResponse.versionCodeJecc && this.versionCodeKmea == dashResponse.versionCodeKmea && this.versionCodeKmeacoa == dashResponse.versionCodeKmeacoa && this.versionCodeMace == dashResponse.versionCodeMace && this.versionCodeMarian == dashResponse.versionCodeMarian && this.versionCodeMdit == dashResponse.versionCodeMdit && this.versionCodeNssce == dashResponse.versionCodeNssce && this.versionCodeSjcetPalai == dashResponse.versionCodeSjcetPalai && this.versionCodeTkmce == dashResponse.versionCodeTkmce && this.versionCode == dashResponse.versionCode && this.logout_status == dashResponse.logout_status && this.semReg == dashResponse.semReg && Intrinsics.areEqual(this.semId, dashResponse.semId) && Intrinsics.areEqual(this.studentId, dashResponse.studentId) && Intrinsics.areEqual(this.rollNo, dashResponse.rollNo) && this.hostel == dashResponse.hostel && Intrinsics.areEqual(this.hostelStatus, dashResponse.hostelStatus) && this.surveyStatus == dashResponse.surveyStatus && Intrinsics.areEqual(this.surveyMessage, dashResponse.surveyMessage) && Intrinsics.areEqual(this.batchId, dashResponse.batchId) && Intrinsics.areEqual(this.course, dashResponse.course) && Intrinsics.areEqual(this.url, dashResponse.url) && Intrinsics.areEqual(this.urlSign, dashResponse.urlSign) && Intrinsics.areEqual(this.attendance_forthemonth, dashResponse.attendance_forthemonth) && Intrinsics.areEqual(this.attendance_forthesem, dashResponse.attendance_forthesem) && Intrinsics.areEqual(this.timetable, dashResponse.timetable) && this.currentVersion == dashResponse.currentVersion && Intrinsics.areEqual(this.infoMsg, dashResponse.infoMsg) && this.isEngnr == dashResponse.isEngnr && this.feeStatus == dashResponse.feeStatus && Intrinsics.areEqual(this.liveTvLink, dashResponse.liveTvLink) && Intrinsics.areEqual(this.liveTvType, dashResponse.liveTvType) && this.passwordChanged == dashResponse.passwordChanged && Intrinsics.areEqual(this.error, dashResponse.error) && Intrinsics.areEqual(this.dueNew, dashResponse.dueNew) && Intrinsics.areEqual(this.deptVision, dashResponse.deptVision) && Intrinsics.areEqual(this.deptMission, dashResponse.deptMission) && Intrinsics.areEqual(this.clgVision, dashResponse.clgVision) && Intrinsics.areEqual(this.clgMission, dashResponse.clgMission) && this.feeEngnrStatus == dashResponse.feeEngnrStatus && Intrinsics.areEqual(this.bank_name, dashResponse.bank_name) && Intrinsics.areEqual(this.bank_branch, dashResponse.bank_branch) && Intrinsics.areEqual(this.bank_accno, dashResponse.bank_accno) && Intrinsics.areEqual(this.bank_ifsc_code, dashResponse.bank_ifsc_code) && Intrinsics.areEqual(this.usertype, dashResponse.usertype) && Intrinsics.areEqual(this.notices, dashResponse.notices);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v118 */
-    /* JADX WARN: Type inference failed for: r0v119 */
-    /* JADX WARN: Type inference failed for: r2v25, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v27, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v36, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v57, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v63, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r0v122 */
+    /* JADX WARN: Type inference failed for: r0v123 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v14 */
+    /* JADX WARN: Type inference failed for: r2v26, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v28, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v39, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v60, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v62, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v68, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v82 */
+    /* JADX WARN: Type inference failed for: r2v83 */
+    /* JADX WARN: Type inference failed for: r2v84 */
+    /* JADX WARN: Type inference failed for: r2v85 */
+    /* JADX WARN: Type inference failed for: r2v86 */
+    /* JADX WARN: Type inference failed for: r2v87 */
+    /* JADX WARN: Type inference failed for: r2v88 */
+    /* JADX WARN: Type inference failed for: r2v89 */
+    /* JADX WARN: Type inference failed for: r2v90 */
+    /* JADX WARN: Type inference failed for: r2v91 */
+    /* JADX WARN: Type inference failed for: r2v92 */
+    /* JADX WARN: Type inference failed for: r2v93 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
         if (z) {
             r0 = 1;
         }
-        int hashCode = ((((((((((((((((((((((((((((((((((((((((((((((((r0 * 31) + this.curnt_sem.hashCode()) * 31) + this.versionCodeEngnr) * 31) + this.versionCodeSctce) * 31) + this.versionCodeAisat) * 31) + this.versionCodeCep) * 31) + this.versionCodeCetkr) * 31) + this.versionCodeCoet) * 31) + this.versionCodeCev) * 31) + this.versionCodeGcek) * 31) + this.versionCodeGcei) * 31) + this.versionCodeGcekkd) * 31) + this.versionCodeGecskp) * 31) + this.versionCodeGectcr) * 31) + this.versionCodeGecwyd) * 31) + this.versionCodeJecc) * 31) + this.versionCodeKmea) * 31) + this.versionCodeKmeacoa) * 31) + this.versionCodeMace) * 31) + this.versionCodeMarian) * 31) + this.versionCodeMdit) * 31) + this.versionCodeNssce) * 31) + this.versionCodeSjcetPalai) * 31) + this.versionCodeTkmce) * 31) + this.versionCode) * 31;
-        ?? r2 = this.logout_status;
-        int i = r2;
-        if (r2 != 0) {
-            i = 1;
+        int iHashCode = ((((((((((((((((((((((((((((((((((((((((((((((((r0 * 31) + this.curnt_sem.hashCode()) * 31) + this.versionCodeEngnr) * 31) + this.versionCodeSctce) * 31) + this.versionCodeAisat) * 31) + this.versionCodeCep) * 31) + this.versionCodeCetkr) * 31) + this.versionCodeCoet) * 31) + this.versionCodeCev) * 31) + this.versionCodeGcek) * 31) + this.versionCodeGcei) * 31) + this.versionCodeGcekkd) * 31) + this.versionCodeGecskp) * 31) + this.versionCodeGectcr) * 31) + this.versionCodeGecwyd) * 31) + this.versionCodeJecc) * 31) + this.versionCodeKmea) * 31) + this.versionCodeKmeacoa) * 31) + this.versionCodeMace) * 31) + this.versionCodeMarian) * 31) + this.versionCodeMdit) * 31) + this.versionCodeNssce) * 31) + this.versionCodeSjcetPalai) * 31) + this.versionCodeTkmce) * 31) + this.versionCode) * 31;
+        boolean z2 = this.logout_status;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int i2 = (hashCode + i) * 31;
-        ?? r22 = this.semReg;
-        int i3 = r22;
-        if (r22 != 0) {
-            i3 = 1;
+        int i = (iHashCode + r2) * 31;
+        boolean z3 = this.semReg;
+        ?? r22 = z3;
+        if (z3) {
+            r22 = 1;
         }
-        int hashCode2 = (((((((((i2 + i3) * 31) + this.semId.hashCode()) * 31) + this.studentId.hashCode()) * 31) + this.hostel) * 31) + this.hostelStatus.hashCode()) * 31;
-        ?? r23 = this.surveyStatus;
-        int i4 = r23;
-        if (r23 != 0) {
-            i4 = 1;
+        int iHashCode2 = (((((((((((i + r22) * 31) + this.semId.hashCode()) * 31) + this.studentId.hashCode()) * 31) + this.rollNo.hashCode()) * 31) + this.hostel) * 31) + this.hostelStatus.hashCode()) * 31;
+        boolean z4 = this.surveyStatus;
+        ?? r23 = z4;
+        if (z4) {
+            r23 = 1;
         }
-        int hashCode3 = (((((((((((((((((((((hashCode2 + i4) * 31) + this.surveyMessage.hashCode()) * 31) + this.batchId.hashCode()) * 31) + this.course.hashCode()) * 31) + this.url.hashCode()) * 31) + this.urlSign.hashCode()) * 31) + this.attendance_forthemonth.hashCode()) * 31) + this.attendance_forthesem.hashCode()) * 31) + this.timetable.hashCode()) * 31) + this.currentVersion) * 31) + this.infoMsg.hashCode()) * 31;
-        ?? r24 = this.feeStatus;
-        int i5 = r24;
-        if (r24 != 0) {
-            i5 = 1;
+        int iHashCode3 = (((((((((((((((((((((iHashCode2 + r23) * 31) + this.surveyMessage.hashCode()) * 31) + this.batchId.hashCode()) * 31) + this.course.hashCode()) * 31) + this.url.hashCode()) * 31) + this.urlSign.hashCode()) * 31) + this.attendance_forthemonth.hashCode()) * 31) + this.attendance_forthesem.hashCode()) * 31) + this.timetable.hashCode()) * 31) + this.currentVersion) * 31) + this.infoMsg.hashCode()) * 31;
+        boolean z5 = this.isEngnr;
+        ?? r24 = z5;
+        if (z5) {
+            r24 = 1;
         }
-        int hashCode4 = (((((hashCode3 + i5) * 31) + this.liveTvLink.hashCode()) * 31) + this.liveTvType.hashCode()) * 31;
-        ?? r25 = this.passwordChanged;
-        int i6 = r25;
-        if (r25 != 0) {
-            i6 = 1;
+        int i2 = (iHashCode3 + r24) * 31;
+        boolean z6 = this.feeStatus;
+        ?? r25 = z6;
+        if (z6) {
+            r25 = 1;
         }
-        int hashCode5 = (((((((((((((hashCode4 + i6) * 31) + this.error.hashCode()) * 31) + this.dueNew.hashCode()) * 31) + this.deptVision.hashCode()) * 31) + this.deptMission.hashCode()) * 31) + this.clgVision.hashCode()) * 31) + this.clgMission.hashCode()) * 31;
-        boolean z2 = this.feeEngnrStatus;
-        return ((((((((((((hashCode5 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.bank_name.hashCode()) * 31) + this.bank_branch.hashCode()) * 31) + this.bank_accno.hashCode()) * 31) + this.bank_ifsc_code.hashCode()) * 31) + this.usertype.hashCode()) * 31) + this.notices.hashCode();
+        int iHashCode4 = (((((i2 + r25) * 31) + this.liveTvLink.hashCode()) * 31) + this.liveTvType.hashCode()) * 31;
+        boolean z7 = this.passwordChanged;
+        ?? r26 = z7;
+        if (z7) {
+            r26 = 1;
+        }
+        int iHashCode5 = (((((((((((((iHashCode4 + r26) * 31) + this.error.hashCode()) * 31) + this.dueNew.hashCode()) * 31) + this.deptVision.hashCode()) * 31) + this.deptMission.hashCode()) * 31) + this.clgVision.hashCode()) * 31) + this.clgMission.hashCode()) * 31;
+        boolean z8 = this.feeEngnrStatus;
+        return ((((((((((((iHashCode5 + (z8 ? 1 : z8)) * 31) + this.bank_name.hashCode()) * 31) + this.bank_branch.hashCode()) * 31) + this.bank_accno.hashCode()) * 31) + this.bank_ifsc_code.hashCode()) * 31) + this.usertype.hashCode()) * 31) + this.notices.hashCode();
     }
 
     public String toString() {
-        return "DashResponse(login=" + this.login + ", curnt_sem=" + this.curnt_sem + ", versionCodeEngnr=" + this.versionCodeEngnr + ", versionCodeSctce=" + this.versionCodeSctce + ", versionCodeAisat=" + this.versionCodeAisat + ", versionCodeCep=" + this.versionCodeCep + ", versionCodeCetkr=" + this.versionCodeCetkr + ", versionCodeCoet=" + this.versionCodeCoet + ", versionCodeCev=" + this.versionCodeCev + ", versionCodeGcek=" + this.versionCodeGcek + ", versionCodeGcei=" + this.versionCodeGcei + ", versionCodeGcekkd=" + this.versionCodeGcekkd + ", versionCodeGecskp=" + this.versionCodeGecskp + ", versionCodeGectcr=" + this.versionCodeGectcr + ", versionCodeGecwyd=" + this.versionCodeGecwyd + ", versionCodeJecc=" + this.versionCodeJecc + ", versionCodeKmea=" + this.versionCodeKmea + ", versionCodeKmeacoa=" + this.versionCodeKmeacoa + ", versionCodeMace=" + this.versionCodeMace + ", versionCodeMarian=" + this.versionCodeMarian + ", versionCodeMdit=" + this.versionCodeMdit + ", versionCodeNssce=" + this.versionCodeNssce + ", versionCodeSjcetPalai=" + this.versionCodeSjcetPalai + ", versionCodeTkmce=" + this.versionCodeTkmce + ", versionCode=" + this.versionCode + ", logout_status=" + this.logout_status + ", semReg=" + this.semReg + ", semId=" + this.semId + ", studentId=" + this.studentId + ", hostel=" + this.hostel + ", hostelStatus=" + this.hostelStatus + ", surveyStatus=" + this.surveyStatus + ", surveyMessage=" + this.surveyMessage + ", batchId=" + this.batchId + ", course=" + this.course + ", url=" + this.url + ", urlSign=" + this.urlSign + ", attendance_forthemonth=" + this.attendance_forthemonth + ", attendance_forthesem=" + this.attendance_forthesem + ", timetable=" + this.timetable + ", currentVersion=" + this.currentVersion + ", infoMsg=" + this.infoMsg + ", feeStatus=" + this.feeStatus + ", liveTvLink=" + this.liveTvLink + ", liveTvType=" + this.liveTvType + ", passwordChanged=" + this.passwordChanged + ", error=" + this.error + ", dueNew=" + this.dueNew + ", deptVision=" + this.deptVision + ", deptMission=" + this.deptMission + ", clgVision=" + this.clgVision + ", clgMission=" + this.clgMission + ", feeEngnrStatus=" + this.feeEngnrStatus + ", bank_name=" + this.bank_name + ", bank_branch=" + this.bank_branch + ", bank_accno=" + this.bank_accno + ", bank_ifsc_code=" + this.bank_ifsc_code + ", usertype=" + this.usertype + ", notices=" + this.notices + ")";
+        return "DashResponse(login=" + this.login + ", curnt_sem=" + this.curnt_sem + ", versionCodeEngnr=" + this.versionCodeEngnr + ", versionCodeSctce=" + this.versionCodeSctce + ", versionCodeAisat=" + this.versionCodeAisat + ", versionCodeCep=" + this.versionCodeCep + ", versionCodeCetkr=" + this.versionCodeCetkr + ", versionCodeCoet=" + this.versionCodeCoet + ", versionCodeCev=" + this.versionCodeCev + ", versionCodeGcek=" + this.versionCodeGcek + ", versionCodeGcei=" + this.versionCodeGcei + ", versionCodeGcekkd=" + this.versionCodeGcekkd + ", versionCodeGecskp=" + this.versionCodeGecskp + ", versionCodeGectcr=" + this.versionCodeGectcr + ", versionCodeGecwyd=" + this.versionCodeGecwyd + ", versionCodeJecc=" + this.versionCodeJecc + ", versionCodeKmea=" + this.versionCodeKmea + ", versionCodeKmeacoa=" + this.versionCodeKmeacoa + ", versionCodeMace=" + this.versionCodeMace + ", versionCodeMarian=" + this.versionCodeMarian + ", versionCodeMdit=" + this.versionCodeMdit + ", versionCodeNssce=" + this.versionCodeNssce + ", versionCodeSjcetPalai=" + this.versionCodeSjcetPalai + ", versionCodeTkmce=" + this.versionCodeTkmce + ", versionCode=" + this.versionCode + ", logout_status=" + this.logout_status + ", semReg=" + this.semReg + ", semId=" + this.semId + ", studentId=" + this.studentId + ", rollNo=" + this.rollNo + ", hostel=" + this.hostel + ", hostelStatus=" + this.hostelStatus + ", surveyStatus=" + this.surveyStatus + ", surveyMessage=" + this.surveyMessage + ", batchId=" + this.batchId + ", course=" + this.course + ", url=" + this.url + ", urlSign=" + this.urlSign + ", attendance_forthemonth=" + this.attendance_forthemonth + ", attendance_forthesem=" + this.attendance_forthesem + ", timetable=" + this.timetable + ", currentVersion=" + this.currentVersion + ", infoMsg=" + this.infoMsg + ", isEngnr=" + this.isEngnr + ", feeStatus=" + this.feeStatus + ", liveTvLink=" + this.liveTvLink + ", liveTvType=" + this.liveTvType + ", passwordChanged=" + this.passwordChanged + ", error=" + this.error + ", dueNew=" + this.dueNew + ", deptVision=" + this.deptVision + ", deptMission=" + this.deptMission + ", clgVision=" + this.clgVision + ", clgMission=" + this.clgMission + ", feeEngnrStatus=" + this.feeEngnrStatus + ", bank_name=" + this.bank_name + ", bank_branch=" + this.bank_branch + ", bank_accno=" + this.bank_accno + ", bank_ifsc_code=" + this.bank_ifsc_code + ", usertype=" + this.usertype + ", notices=" + this.notices + ")";
     }
 
-    public DashResponse(boolean z, String curnt_sem, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, int i20, int i21, int i22, int i23, boolean z2, boolean z3, String semId, String studentId, int i24, String hostelStatus, boolean z4, String surveyMessage, String batchId, String course, String url, String urlSign, String attendance_forthemonth, String attendance_forthesem, ArrayList<ArrayList<TimeTable>> timetable, int i25, String infoMsg, boolean z5, String liveTvLink, String liveTvType, boolean z6, String error, String dueNew, String deptVision, String deptMission, String clgVision, String clgMission, boolean z7, String bank_name, String bank_branch, String bank_accno, String bank_ifsc_code, String usertype, ArrayList<NoticesDash> notices) {
+    public DashResponse(boolean z, String curnt_sem, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, int i20, int i21, int i22, int i23, boolean z2, boolean z3, String semId, String studentId, String rollNo, int i24, String hostelStatus, boolean z4, String surveyMessage, String batchId, String course, String url, String urlSign, String attendance_forthemonth, String attendance_forthesem, ArrayList<ArrayList<TimeTable>> timetable, int i25, String infoMsg, boolean z5, boolean z6, String liveTvLink, String liveTvType, boolean z7, String error, String dueNew, String deptVision, String deptMission, String clgVision, String clgMission, boolean z8, String bank_name, String bank_branch, String bank_accno, String bank_ifsc_code, String usertype, ArrayList<NoticesDash> notices) {
         Intrinsics.checkNotNullParameter(curnt_sem, "curnt_sem");
         Intrinsics.checkNotNullParameter(semId, "semId");
         Intrinsics.checkNotNullParameter(studentId, "studentId");
+        Intrinsics.checkNotNullParameter(rollNo, "rollNo");
         Intrinsics.checkNotNullParameter(hostelStatus, "hostelStatus");
         Intrinsics.checkNotNullParameter(surveyMessage, "surveyMessage");
         Intrinsics.checkNotNullParameter(batchId, "batchId");
@@ -675,6 +717,7 @@ public final /* data */ class DashResponse {
         this.semReg = z3;
         this.semId = semId;
         this.studentId = studentId;
+        this.rollNo = rollNo;
         this.hostel = i24;
         this.hostelStatus = hostelStatus;
         this.surveyStatus = z4;
@@ -688,17 +731,18 @@ public final /* data */ class DashResponse {
         this.timetable = timetable;
         this.currentVersion = i25;
         this.infoMsg = infoMsg;
-        this.feeStatus = z5;
+        this.isEngnr = z5;
+        this.feeStatus = z6;
         this.liveTvLink = liveTvLink;
         this.liveTvType = liveTvType;
-        this.passwordChanged = z6;
+        this.passwordChanged = z7;
         this.error = error;
         this.dueNew = dueNew;
         this.deptVision = deptVision;
         this.deptMission = deptMission;
         this.clgVision = clgVision;
         this.clgMission = clgMission;
-        this.feeEngnrStatus = z7;
+        this.feeEngnrStatus = z8;
         this.bank_name = bank_name;
         this.bank_branch = bank_branch;
         this.bank_accno = bank_accno;
@@ -823,6 +867,10 @@ public final /* data */ class DashResponse {
         return this.studentId;
     }
 
+    public final String getRollNo() {
+        return this.rollNo;
+    }
+
     public final int getHostel() {
         return this.hostel;
     }
@@ -873,6 +921,10 @@ public final /* data */ class DashResponse {
 
     public final String getInfoMsg() {
         return this.infoMsg;
+    }
+
+    public final boolean isEngnr() {
+        return this.isEngnr;
     }
 
     public final boolean getFeeStatus() {

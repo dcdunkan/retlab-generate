@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.mace.MaceNewSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogMaceSemRegBinding extends ViewDataBinding {
     public final TextView backFour;
     public final RadioGroup backGroup;

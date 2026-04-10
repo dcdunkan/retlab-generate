@@ -12,18 +12,21 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.SuccessResponse;
+import in.etuwa.app.data.model.counselling.status.CounsellingStatus;
 import in.etuwa.app.data.model.counselling.status.CounsellingStatusResponse;
+import in.etuwa.app.data.model.counselling.type.CounsellingTypes;
 import in.etuwa.app.data.model.counselling.type.CounsellingTypesResponse;
 import in.etuwa.app.data.model.counselling.view.ViewCounsellingResponse;
 import in.etuwa.app.databinding.AddCounsellingDialogBinding;
@@ -33,6 +36,7 @@ import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
 import java.util.HashMap;
+import java.util.Iterator;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
@@ -54,33 +58,34 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddCounsellingDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AddCounsellingDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AddCounsellingDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private AddCounsellingDialogBinding _binding;
 
-    /* renamed from: addCounsellingViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addCounsellingViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addCounsellingViewModel;
     private String after;
     private String before;
+    private ViewCounsellingResponse editResponse;
     private String id;
     private boolean isReOpen;
     private AddCounsellingListener listener;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
 
-    /* renamed from: spinnerAdapter3$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter3$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter3;
     private String type;
 
-    /* compiled from: AddCounsellingDialog.kt */
+    /* JADX INFO: compiled from: AddCounsellingDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/counselling/add/AddCounsellingDialog$AddCounsellingListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddCounsellingListener {
         void dismiss();
@@ -109,7 +114,7 @@ public final class AddCounsellingDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addCounsellingDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addCounsellingDialog);
@@ -123,7 +128,7 @@ public final class AddCounsellingDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -136,7 +141,7 @@ public final class AddCounsellingDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddCounsellingViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddCounsellingViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.type = "";
@@ -150,7 +155,7 @@ public final class AddCounsellingDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddCounsellingDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -175,7 +180,7 @@ public final class AddCounsellingDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddCounsellingDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -200,7 +205,7 @@ public final class AddCounsellingDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddCounsellingDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -225,7 +230,7 @@ public final class AddCounsellingDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final AddCounsellingDialogBinding get_binding() {
         return this._binding;
     }
@@ -245,7 +250,7 @@ public final class AddCounsellingDialog extends BaseDialog {
         return (CounsellingStatusSpinnerAdapter) this.spinnerAdapter3.getValue();
     }
 
-    /* compiled from: AddCounsellingDialog.kt */
+    /* JADX INFO: compiled from: AddCounsellingDialog.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001a\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/counselling/add/AddCounsellingDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/counselling/add/AddCounsellingDialog;", "id", "", "isReOpen", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -304,7 +309,7 @@ public final class AddCounsellingDialog extends BaseDialog {
 
     @Override // in.etuwa.app.ui.base.BaseDialog
     protected void setUp() {
-        TextView textView;
+        MaterialButton materialButton;
         AddCounsellingDialogBinding addCounsellingDialogBinding = get_binding();
         Spinner spinner = addCounsellingDialogBinding != null ? addCounsellingDialogBinding.spinnerCouncellingType : null;
         if (spinner != null) {
@@ -330,14 +335,14 @@ public final class AddCounsellingDialog extends BaseDialog {
         if (this.id != null) {
             getAddCounsellingViewModel().viewGrievance(this.id);
             AddCounsellingDialogBinding addCounsellingDialogBinding4 = get_binding();
-            TextView textView2 = addCounsellingDialogBinding4 != null ? addCounsellingDialogBinding4.councTitle : null;
-            if (textView2 != null) {
-                textView2.setText("Edit Counselling");
+            TextView textView = addCounsellingDialogBinding4 != null ? addCounsellingDialogBinding4.councTitle : null;
+            if (textView != null) {
+                textView.setText("Edit Counselling");
             }
             AddCounsellingDialogBinding addCounsellingDialogBinding5 = get_binding();
-            TextView textView3 = addCounsellingDialogBinding5 != null ? addCounsellingDialogBinding5.addCounsellingBtn : null;
-            if (textView3 != null) {
-                textView3.setText("Update Counselling");
+            MaterialButton materialButton2 = addCounsellingDialogBinding5 != null ? addCounsellingDialogBinding5.addCounsellingBtn : null;
+            if (materialButton2 != null) {
+                materialButton2.setText("Update Counselling");
             }
         }
         if (this.isReOpen) {
@@ -348,75 +353,69 @@ public final class AddCounsellingDialog extends BaseDialog {
             }
             getAddCounsellingViewModel().viewGrievance(this.id);
             AddCounsellingDialogBinding addCounsellingDialogBinding7 = get_binding();
-            TextView textView4 = addCounsellingDialogBinding7 != null ? addCounsellingDialogBinding7.councTitle : null;
-            if (textView4 != null) {
-                textView4.setText("Reopen Counselling");
+            TextView textView2 = addCounsellingDialogBinding7 != null ? addCounsellingDialogBinding7.councTitle : null;
+            if (textView2 != null) {
+                textView2.setText("Reopen Counselling");
             }
             AddCounsellingDialogBinding addCounsellingDialogBinding8 = get_binding();
-            TextView textView5 = addCounsellingDialogBinding8 != null ? addCounsellingDialogBinding8.addCounsellingBtn : null;
-            if (textView5 != null) {
-                textView5.setText("Repost Counselling");
+            MaterialButton materialButton3 = addCounsellingDialogBinding8 != null ? addCounsellingDialogBinding8.addCounsellingBtn : null;
+            if (materialButton3 != null) {
+                materialButton3.setText("Repost Counselling");
             }
         }
         AddCounsellingDialogBinding addCounsellingDialogBinding9 = get_binding();
         Spinner spinner4 = addCounsellingDialogBinding9 != null ? addCounsellingDialogBinding9.spinnerCouncellingType : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$setUp$1
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    CounsellingTypeSpinnerAdapter spinnerAdapter;
                     AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
-                    spinnerAdapter = addCounsellingDialog.getSpinnerAdapter();
-                    addCounsellingDialog.type = spinnerAdapter.getType(position).getId();
+                    addCounsellingDialog.type = addCounsellingDialog.getSpinnerAdapter().getType(position).getId();
                 }
             });
         }
         AddCounsellingDialogBinding addCounsellingDialogBinding10 = get_binding();
         Spinner spinner5 = addCounsellingDialogBinding10 != null ? addCounsellingDialogBinding10.spinnerCouncellingBefore : null;
         if (spinner5 != null) {
-            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$setUp$2
+            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    CounsellingStatusSpinnerAdapter spinnerAdapter2;
                     AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
-                    spinnerAdapter2 = addCounsellingDialog.getSpinnerAdapter2();
-                    addCounsellingDialog.before = spinnerAdapter2.getType(position).getId();
+                    addCounsellingDialog.before = addCounsellingDialog.getSpinnerAdapter2().getType(position).getId();
                 }
             });
         }
         AddCounsellingDialogBinding addCounsellingDialogBinding11 = get_binding();
         Spinner spinner6 = addCounsellingDialogBinding11 != null ? addCounsellingDialogBinding11.spinnerCouncellingMeet : null;
         if (spinner6 != null) {
-            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$setUp$3
+            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    CounsellingStatusSpinnerAdapter spinnerAdapter3;
                     AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
-                    spinnerAdapter3 = addCounsellingDialog.getSpinnerAdapter3();
-                    addCounsellingDialog.after = spinnerAdapter3.getType(position).getId();
+                    addCounsellingDialog.after = addCounsellingDialog.getSpinnerAdapter3().getType(position).getId();
                 }
             });
         }
         AddCounsellingDialogBinding addCounsellingDialogBinding12 = get_binding();
-        if (addCounsellingDialogBinding12 == null || (textView = addCounsellingDialogBinding12.addCounsellingBtn) == null) {
+        if (addCounsellingDialogBinding12 == null || (materialButton = addCounsellingDialogBinding12.addCounsellingBtn) == null) {
             return;
         }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$$ExternalSyntheticLambda0
+        materialButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddCounsellingDialog.setUp$lambda$1(AddCounsellingDialog.this, view);
+                AddCounsellingDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -435,42 +434,42 @@ public final class AddCounsellingDialog extends BaseDialog {
         TextInputEditText textInputEditText10;
         TextInputEditText textInputEditText11;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap<String, RequestBody> hashMap = new HashMap<>();
+        HashMap<String, RequestBody> map = new HashMap<>();
         RequestBody.Companion companion = RequestBody.INSTANCE;
         MediaType mediaType = MultipartBody.FORM;
         String str = this$0.id;
         if (str == null) {
             str = "";
         }
-        RequestBody create = companion.create(mediaType, str);
-        HashMap<String, RequestBody> hashMap2 = hashMap;
-        hashMap2.put("CounsellingRequests[counselling_type]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.type));
+        RequestBody requestBodyCreate = companion.create(mediaType, str);
+        HashMap<String, RequestBody> map2 = map;
+        map2.put("CounsellingRequests[counselling_type]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.type));
         RequestBody.Companion companion2 = RequestBody.INSTANCE;
         MediaType mediaType2 = MultipartBody.FORM;
         AddCounsellingDialogBinding addCounsellingDialogBinding = this$0.get_binding();
-        Editable editable = null;
-        hashMap2.put("CounsellingRequests[concern]", companion2.create(mediaType2, String.valueOf((addCounsellingDialogBinding == null || (textInputEditText11 = addCounsellingDialogBinding.etCsConcern) == null) ? null : textInputEditText11.getText())));
+        Editable text = null;
+        map2.put("CounsellingRequests[concern]", companion2.create(mediaType2, String.valueOf((addCounsellingDialogBinding == null || (textInputEditText11 = addCounsellingDialogBinding.etCsConcern) == null) ? null : textInputEditText11.getText())));
         RequestBody.Companion companion3 = RequestBody.INSTANCE;
         MediaType mediaType3 = MultipartBody.FORM;
         AddCounsellingDialogBinding addCounsellingDialogBinding2 = this$0.get_binding();
-        hashMap2.put("CounsellingRequests[impact_home]", companion3.create(mediaType3, String.valueOf((addCounsellingDialogBinding2 == null || (textInputEditText10 = addCounsellingDialogBinding2.etCsConcernHome) == null) ? null : textInputEditText10.getText())));
+        map2.put("CounsellingRequests[impact_home]", companion3.create(mediaType3, String.valueOf((addCounsellingDialogBinding2 == null || (textInputEditText10 = addCounsellingDialogBinding2.etCsConcernHome) == null) ? null : textInputEditText10.getText())));
         RequestBody.Companion companion4 = RequestBody.INSTANCE;
         MediaType mediaType4 = MultipartBody.FORM;
         AddCounsellingDialogBinding addCounsellingDialogBinding3 = this$0.get_binding();
-        hashMap2.put("CounsellingRequests[impact_studies]", companion4.create(mediaType4, String.valueOf((addCounsellingDialogBinding3 == null || (textInputEditText9 = addCounsellingDialogBinding3.csConcernStudies) == null) ? null : textInputEditText9.getText())));
+        map2.put("CounsellingRequests[impact_studies]", companion4.create(mediaType4, String.valueOf((addCounsellingDialogBinding3 == null || (textInputEditText9 = addCounsellingDialogBinding3.csConcernStudies) == null) ? null : textInputEditText9.getText())));
         RequestBody.Companion companion5 = RequestBody.INSTANCE;
         MediaType mediaType5 = MultipartBody.FORM;
         AddCounsellingDialogBinding addCounsellingDialogBinding4 = this$0.get_binding();
-        hashMap2.put("CounsellingRequests[impact_relationship]", companion5.create(mediaType5, String.valueOf((addCounsellingDialogBinding4 == null || (textInputEditText8 = addCounsellingDialogBinding4.csRelationship) == null) ? null : textInputEditText8.getText())));
+        map2.put("CounsellingRequests[impact_relationship]", companion5.create(mediaType5, String.valueOf((addCounsellingDialogBinding4 == null || (textInputEditText8 = addCounsellingDialogBinding4.csRelationship) == null) ? null : textInputEditText8.getText())));
         RequestBody.Companion companion6 = RequestBody.INSTANCE;
         MediaType mediaType6 = MultipartBody.FORM;
         AddCounsellingDialogBinding addCounsellingDialogBinding5 = this$0.get_binding();
-        hashMap2.put("CounsellingRequests[impact_physically_emotionally]", companion6.create(mediaType6, String.valueOf((addCounsellingDialogBinding5 == null || (textInputEditText7 = addCounsellingDialogBinding5.csPhisical) == null) ? null : textInputEditText7.getText())));
-        hashMap2.put("CounsellingRequests[counselling_session_required]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.after));
-        hashMap2.put("CounsellingRequests[counselling_history]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.before));
+        map2.put("CounsellingRequests[impact_physically_emotionally]", companion6.create(mediaType6, String.valueOf((addCounsellingDialogBinding5 == null || (textInputEditText7 = addCounsellingDialogBinding5.csPhisical) == null) ? null : textInputEditText7.getText())));
+        map2.put("CounsellingRequests[counselling_session_required]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.after));
+        map2.put("CounsellingRequests[counselling_history]", RequestBody.INSTANCE.create(MultipartBody.FORM, this$0.before));
         String str2 = this$0.id;
         if (str2 == null || str2.length() == 0) {
-            this$0.getAddCounsellingViewModel().addCouselling(hashMap);
+            this$0.getAddCounsellingViewModel().addCouselling(map);
             return;
         }
         if (this$0.isReOpen) {
@@ -478,31 +477,32 @@ public final class AddCounsellingDialog extends BaseDialog {
             String str3 = this$0.id;
             String str4 = this$0.type;
             AddCounsellingDialogBinding addCounsellingDialogBinding6 = this$0.get_binding();
-            String valueOf = String.valueOf((addCounsellingDialogBinding6 == null || (textInputEditText6 = addCounsellingDialogBinding6.etCsConcern) == null) ? null : textInputEditText6.getText());
+            String strValueOf = String.valueOf((addCounsellingDialogBinding6 == null || (textInputEditText6 = addCounsellingDialogBinding6.etCsConcern) == null) ? null : textInputEditText6.getText());
             AddCounsellingDialogBinding addCounsellingDialogBinding7 = this$0.get_binding();
-            String valueOf2 = String.valueOf((addCounsellingDialogBinding7 == null || (textInputEditText5 = addCounsellingDialogBinding7.etCsConcernHome) == null) ? null : textInputEditText5.getText());
+            String strValueOf2 = String.valueOf((addCounsellingDialogBinding7 == null || (textInputEditText5 = addCounsellingDialogBinding7.etCsConcernHome) == null) ? null : textInputEditText5.getText());
             AddCounsellingDialogBinding addCounsellingDialogBinding8 = this$0.get_binding();
-            String valueOf3 = String.valueOf((addCounsellingDialogBinding8 == null || (textInputEditText4 = addCounsellingDialogBinding8.csConcernStudies) == null) ? null : textInputEditText4.getText());
+            String strValueOf3 = String.valueOf((addCounsellingDialogBinding8 == null || (textInputEditText4 = addCounsellingDialogBinding8.csConcernStudies) == null) ? null : textInputEditText4.getText());
             AddCounsellingDialogBinding addCounsellingDialogBinding9 = this$0.get_binding();
-            String valueOf4 = String.valueOf((addCounsellingDialogBinding9 == null || (textInputEditText3 = addCounsellingDialogBinding9.csRelationship) == null) ? null : textInputEditText3.getText());
+            String strValueOf4 = String.valueOf((addCounsellingDialogBinding9 == null || (textInputEditText3 = addCounsellingDialogBinding9.csRelationship) == null) ? null : textInputEditText3.getText());
             AddCounsellingDialogBinding addCounsellingDialogBinding10 = this$0.get_binding();
-            String valueOf5 = String.valueOf((addCounsellingDialogBinding10 == null || (textInputEditText2 = addCounsellingDialogBinding10.csPhisical) == null) ? null : textInputEditText2.getText());
+            String strValueOf5 = String.valueOf((addCounsellingDialogBinding10 == null || (textInputEditText2 = addCounsellingDialogBinding10.csPhisical) == null) ? null : textInputEditText2.getText());
             String str5 = this$0.before;
             String str6 = this$0.after;
             AddCounsellingDialogBinding addCounsellingDialogBinding11 = this$0.get_binding();
             if (addCounsellingDialogBinding11 != null && (textInputEditText = addCounsellingDialogBinding11.csComment) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            addCounsellingViewModel.reopenCounselling(str3, str4, valueOf, valueOf2, valueOf3, valueOf4, valueOf5, str5, str6, String.valueOf(editable));
+            addCounsellingViewModel.reopenCounselling(str3, str4, strValueOf, strValueOf2, strValueOf3, strValueOf4, strValueOf5, str5, str6, String.valueOf(text));
             return;
         }
-        this$0.getAddCounsellingViewModel().updateCounselling(create, hashMap);
+        this$0.getAddCounsellingViewModel().updateCounselling(requestBodyCreate, map);
     }
 
     private final void listenSpinner() {
-        getAddCounsellingViewModel().getTypeResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingTypesResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenSpinner$1
+        getAddCounsellingViewModel().getTypeResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingTypesResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.listenSpinner.1
 
-            /* compiled from: AddCounsellingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCounsellingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -539,18 +539,17 @@ public final class AddCounsellingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<CounsellingTypesResponse> resource) {
-                CounsellingTypeSpinnerAdapter spinnerAdapter;
-                AddCounsellingDialogBinding addCounsellingDialogBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     AddCounsellingDialog.this.hideProgress();
                     CounsellingTypesResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter = AddCounsellingDialog.this.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getCTypes());
+                        AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
+                        addCounsellingDialog.getSpinnerAdapter().addItems(data.getCTypes());
+                        addCounsellingDialog.applySpinnerSelectionIfReady();
                         return;
                     }
                     return;
@@ -567,7 +566,7 @@ public final class AddCounsellingDialog extends BaseDialog {
                     return;
                 }
                 AddCounsellingDialog.this.hideProgress();
-                addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
+                AddCounsellingDialogBinding addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
                 if (addCounsellingDialogBinding == null || (spinner = addCounsellingDialogBinding.spinnerCouncellingType) == null) {
                     return;
                 }
@@ -579,9 +578,10 @@ public final class AddCounsellingDialog extends BaseDialog {
     }
 
     private final void listenSpinner2() {
-        getAddCounsellingViewModel().getStatusResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingStatusResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenSpinner2$1
+        getAddCounsellingViewModel().getStatusResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingStatusResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.listenSpinner2.1
 
-            /* compiled from: AddCounsellingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenSpinner2$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCounsellingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -618,18 +618,17 @@ public final class AddCounsellingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<CounsellingStatusResponse> resource) {
-                CounsellingStatusSpinnerAdapter spinnerAdapter2;
-                AddCounsellingDialogBinding addCounsellingDialogBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     AddCounsellingDialog.this.hideProgress();
                     CounsellingStatusResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter2 = AddCounsellingDialog.this.getSpinnerAdapter2();
-                        spinnerAdapter2.addItems(data.getData());
+                        AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
+                        addCounsellingDialog.getSpinnerAdapter2().addItems(data.getData());
+                        addCounsellingDialog.applySpinnerSelectionIfReady();
                         return;
                     }
                     return;
@@ -646,7 +645,7 @@ public final class AddCounsellingDialog extends BaseDialog {
                     return;
                 }
                 AddCounsellingDialog.this.hideProgress();
-                addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
+                AddCounsellingDialogBinding addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
                 if (addCounsellingDialogBinding == null || (spinner = addCounsellingDialogBinding.spinnerCouncellingType) == null) {
                     return;
                 }
@@ -658,9 +657,10 @@ public final class AddCounsellingDialog extends BaseDialog {
     }
 
     private final void listenSpinner3() {
-        getAddCounsellingViewModel().getStatusResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingStatusResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenSpinner3$1
+        getAddCounsellingViewModel().getStatusResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingStatusResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.listenSpinner3.1
 
-            /* compiled from: AddCounsellingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenSpinner3$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCounsellingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -697,18 +697,17 @@ public final class AddCounsellingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<CounsellingStatusResponse> resource) {
-                CounsellingStatusSpinnerAdapter spinnerAdapter3;
-                AddCounsellingDialogBinding addCounsellingDialogBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     AddCounsellingDialog.this.hideProgress();
                     CounsellingStatusResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter3 = AddCounsellingDialog.this.getSpinnerAdapter3();
-                        spinnerAdapter3.addItems(data.getData());
+                        AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
+                        addCounsellingDialog.getSpinnerAdapter3().addItems(data.getData());
+                        addCounsellingDialog.applySpinnerSelectionIfReady();
                         return;
                     }
                     return;
@@ -725,7 +724,7 @@ public final class AddCounsellingDialog extends BaseDialog {
                     return;
                 }
                 AddCounsellingDialog.this.hideProgress();
-                addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
+                AddCounsellingDialogBinding addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
                 if (addCounsellingDialogBinding == null || (spinner = addCounsellingDialogBinding.spinnerCouncellingType) == null) {
                     return;
                 }
@@ -737,9 +736,10 @@ public final class AddCounsellingDialog extends BaseDialog {
     }
 
     private final void listenViewCounselling() {
-        getAddCounsellingViewModel().getViewResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewCounsellingResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenViewCounselling$1
+        getAddCounsellingViewModel().getViewResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewCounsellingResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.listenViewCounselling.1
 
-            /* compiled from: AddCounsellingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenViewCounselling$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCounsellingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -776,19 +776,13 @@ public final class AddCounsellingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ViewCounsellingResponse> resource) {
-                AddCounsellingDialogBinding addCounsellingDialogBinding;
-                AddCounsellingDialogBinding addCounsellingDialogBinding2;
-                AddCounsellingDialogBinding addCounsellingDialogBinding3;
-                AddCounsellingDialogBinding addCounsellingDialogBinding4;
-                AddCounsellingDialogBinding addCounsellingDialogBinding5;
                 TextInputEditText textInputEditText;
                 TextInputEditText textInputEditText2;
                 TextInputEditText textInputEditText3;
                 TextInputEditText textInputEditText4;
                 TextInputEditText textInputEditText5;
-                AddCounsellingDialogBinding addCounsellingDialogBinding6;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -804,8 +798,8 @@ public final class AddCounsellingDialog extends BaseDialog {
                         return;
                     }
                     AddCounsellingDialog.this.hideProgress();
-                    addCounsellingDialogBinding6 = AddCounsellingDialog.this.get_binding();
-                    if (addCounsellingDialogBinding6 == null || (spinner = addCounsellingDialogBinding6.spinnerCouncellingType) == null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
+                    if (addCounsellingDialogBinding == null || (spinner = addCounsellingDialogBinding.spinnerCouncellingType) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -817,36 +811,148 @@ public final class AddCounsellingDialog extends BaseDialog {
                 ViewCounsellingResponse data = resource.getData();
                 if (data != null) {
                     AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
-                    addCounsellingDialogBinding = addCounsellingDialog.get_binding();
-                    if (addCounsellingDialogBinding != null && (textInputEditText5 = addCounsellingDialogBinding.etCsConcern) != null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding2 = addCounsellingDialog.get_binding();
+                    if (addCounsellingDialogBinding2 != null && (textInputEditText5 = addCounsellingDialogBinding2.etCsConcern) != null) {
                         textInputEditText5.setText(data.getRequests().getConcern());
                     }
-                    addCounsellingDialogBinding2 = addCounsellingDialog.get_binding();
-                    if (addCounsellingDialogBinding2 != null && (textInputEditText4 = addCounsellingDialogBinding2.etCsConcernHome) != null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding3 = addCounsellingDialog.get_binding();
+                    if (addCounsellingDialogBinding3 != null && (textInputEditText4 = addCounsellingDialogBinding3.etCsConcernHome) != null) {
                         textInputEditText4.setText(data.getRequests().getImpactHome());
                     }
-                    addCounsellingDialogBinding3 = addCounsellingDialog.get_binding();
-                    if (addCounsellingDialogBinding3 != null && (textInputEditText3 = addCounsellingDialogBinding3.csConcernStudies) != null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding4 = addCounsellingDialog.get_binding();
+                    if (addCounsellingDialogBinding4 != null && (textInputEditText3 = addCounsellingDialogBinding4.csConcernStudies) != null) {
                         textInputEditText3.setText(data.getRequests().getImpactStudies());
                     }
-                    addCounsellingDialogBinding4 = addCounsellingDialog.get_binding();
-                    if (addCounsellingDialogBinding4 != null && (textInputEditText2 = addCounsellingDialogBinding4.csRelationship) != null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding5 = addCounsellingDialog.get_binding();
+                    if (addCounsellingDialogBinding5 != null && (textInputEditText2 = addCounsellingDialogBinding5.csRelationship) != null) {
                         textInputEditText2.setText(data.getRequests().getImpactRelationship());
                     }
-                    addCounsellingDialogBinding5 = addCounsellingDialog.get_binding();
-                    if (addCounsellingDialogBinding5 == null || (textInputEditText = addCounsellingDialogBinding5.csPhisical) == null) {
-                        return;
+                    AddCounsellingDialogBinding addCounsellingDialogBinding6 = addCounsellingDialog.get_binding();
+                    if (addCounsellingDialogBinding6 != null && (textInputEditText = addCounsellingDialogBinding6.csPhisical) != null) {
+                        textInputEditText.setText(data.getRequests().getImpactPhysicallyEmotionally());
                     }
-                    textInputEditText.setText(data.getRequests().getImpactPhysicallyEmotionally());
+                    addCounsellingDialog.editResponse = data;
+                    addCounsellingDialog.applySpinnerSelectionIfReady();
                 }
             }
         }));
     }
 
-    private final void listenProgressResponse() {
-        getAddCounsellingViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends Float>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenProgressResponse$1
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void applySpinnerSelectionIfReady() {
+        final int i;
+        Spinner spinner;
+        Spinner spinner2;
+        Spinner spinner3;
+        ViewCounsellingResponse viewCounsellingResponse = this.editResponse;
+        if (viewCounsellingResponse == null || getSpinnerAdapter().getItems().isEmpty() || getSpinnerAdapter2().getItems().isEmpty() || getSpinnerAdapter3().getItems().isEmpty()) {
+            return;
+        }
+        Iterator<CounsellingTypes> it = getSpinnerAdapter().getItems().iterator();
+        int i2 = 0;
+        final int i3 = 0;
+        while (true) {
+            i = -1;
+            if (!it.hasNext()) {
+                i3 = -1;
+                break;
+            } else if (Intrinsics.areEqual(it.next().getName(), viewCounsellingResponse.getRequests().getCounsellingType())) {
+                break;
+            } else {
+                i3++;
+            }
+        }
+        Iterator<CounsellingStatus> it2 = getSpinnerAdapter2().getItems().iterator();
+        final int i4 = 0;
+        while (true) {
+            if (!it2.hasNext()) {
+                i4 = -1;
+                break;
+            } else if (Intrinsics.areEqual(it2.next().getName(), viewCounsellingResponse.getRequests().getCounsellingHistory())) {
+                break;
+            } else {
+                i4++;
+            }
+        }
+        Iterator<CounsellingStatus> it3 = getSpinnerAdapter3().getItems().iterator();
+        while (true) {
+            if (!it3.hasNext()) {
+                break;
+            }
+            if (Intrinsics.areEqual(it3.next().getName(), viewCounsellingResponse.getRequests().getCounsellingSessionRequired())) {
+                i = i2;
+                break;
+            }
+            i2++;
+        }
+        AddCounsellingDialogBinding addCounsellingDialogBinding = get_binding();
+        if (addCounsellingDialogBinding != null && (spinner3 = addCounsellingDialogBinding.spinnerCouncellingType) != null) {
+            spinner3.post(new Runnable() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AddCounsellingDialog.applySpinnerSelectionIfReady$lambda$5(this.f$0, i3);
+                }
+            });
+        }
+        AddCounsellingDialogBinding addCounsellingDialogBinding2 = get_binding();
+        if (addCounsellingDialogBinding2 != null && (spinner2 = addCounsellingDialogBinding2.spinnerCouncellingBefore) != null) {
+            spinner2.post(new Runnable() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AddCounsellingDialog.applySpinnerSelectionIfReady$lambda$6(this.f$0, i4);
+                }
+            });
+        }
+        AddCounsellingDialogBinding addCounsellingDialogBinding3 = get_binding();
+        if (addCounsellingDialogBinding3 == null || (spinner = addCounsellingDialogBinding3.spinnerCouncellingMeet) == null) {
+            return;
+        }
+        spinner.post(new Runnable() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                AddCounsellingDialog.applySpinnerSelectionIfReady$lambda$7(this.f$0, i);
+            }
+        });
+    }
 
-            /* compiled from: AddCounsellingDialog.kt */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void applySpinnerSelectionIfReady$lambda$5(AddCounsellingDialog this$0, int i) {
+        Spinner spinner;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        AddCounsellingDialogBinding addCounsellingDialogBinding = this$0.get_binding();
+        if (addCounsellingDialogBinding != null && (spinner = addCounsellingDialogBinding.spinnerCouncellingType) != null) {
+            spinner.setSelection(i);
+        }
+        this$0.type = this$0.getSpinnerAdapter().getItems().get(i).getId();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void applySpinnerSelectionIfReady$lambda$6(AddCounsellingDialog this$0, int i) {
+        Spinner spinner;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        AddCounsellingDialogBinding addCounsellingDialogBinding = this$0.get_binding();
+        if (addCounsellingDialogBinding != null && (spinner = addCounsellingDialogBinding.spinnerCouncellingBefore) != null) {
+            spinner.setSelection(i, false);
+        }
+        this$0.before = this$0.getSpinnerAdapter2().getItems().get(i).getId();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void applySpinnerSelectionIfReady$lambda$7(AddCounsellingDialog this$0, int i) {
+        Spinner spinner;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        AddCounsellingDialogBinding addCounsellingDialogBinding = this$0.get_binding();
+        if (addCounsellingDialogBinding != null && (spinner = addCounsellingDialogBinding.spinnerCouncellingMeet) != null) {
+            spinner.setSelection(i, false);
+        }
+        this$0.after = this$0.getSpinnerAdapter3().getItems().get(i).getId();
+    }
+
+    private final void listenProgressResponse() {
+        getAddCounsellingViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends Float>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.listenProgressResponse.1
+
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenProgressResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCounsellingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -883,11 +989,8 @@ public final class AddCounsellingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<Float> resource) {
-                AddCounsellingDialogBinding addCounsellingDialogBinding;
-                AddCounsellingDialogBinding addCounsellingDialogBinding2;
-                AddCounsellingDialogBinding addCounsellingDialogBinding3;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 3) {
@@ -905,25 +1008,25 @@ public final class AddCounsellingDialog extends BaseDialog {
                 Float data = resource.getData();
                 if (data != null) {
                     AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
-                    float floatValue = data.floatValue();
-                    addCounsellingDialogBinding = addCounsellingDialog.get_binding();
+                    float fFloatValue = data.floatValue();
+                    AddCounsellingDialogBinding addCounsellingDialogBinding = addCounsellingDialog.get_binding();
                     ProgressBar progressBar = addCounsellingDialogBinding != null ? addCounsellingDialogBinding.uploadProgressbar : null;
                     if (progressBar != null) {
-                        progressBar.setProgress((int) floatValue);
+                        progressBar.setProgress((int) fFloatValue);
                     }
-                    addCounsellingDialogBinding2 = addCounsellingDialog.get_binding();
+                    AddCounsellingDialogBinding addCounsellingDialogBinding2 = addCounsellingDialog.get_binding();
                     TextView textView = addCounsellingDialogBinding2 != null ? addCounsellingDialogBinding2.progressText : null;
                     if (textView != null) {
-                        textView.setText(((int) floatValue) + " %");
+                        textView.setText(((int) fFloatValue) + " %");
                     }
-                    if (((int) floatValue) == 100) {
+                    if (((int) fFloatValue) == 100) {
                         addCounsellingDialog.showProgress();
-                        addCounsellingDialogBinding3 = addCounsellingDialog.get_binding();
-                        CardView cardView = addCounsellingDialogBinding3 != null ? addCounsellingDialogBinding3.progressView : null;
-                        if (cardView == null) {
+                        AddCounsellingDialogBinding addCounsellingDialogBinding3 = addCounsellingDialog.get_binding();
+                        MaterialCardView materialCardView = addCounsellingDialogBinding3 != null ? addCounsellingDialogBinding3.progressView : null;
+                        if (materialCardView == null) {
                             return;
                         }
-                        cardView.setVisibility(8);
+                        materialCardView.setVisibility(8);
                     }
                 }
             }
@@ -931,9 +1034,10 @@ public final class AddCounsellingDialog extends BaseDialog {
     }
 
     private final void listenAddResponse() {
-        getAddCounsellingViewModel().getAddCounsellingResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenAddResponse$1
+        getAddCounsellingViewModel().getAddCounsellingResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.listenAddResponse.1
 
-            /* compiled from: AddCounsellingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenAddResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCounsellingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -970,18 +1074,11 @@ public final class AddCounsellingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                AddCounsellingDialogBinding addCounsellingDialogBinding;
-                CardView cardView;
-                AddCounsellingDialogBinding addCounsellingDialogBinding2;
+                MaterialCardView materialCardView;
                 TextInputEditText etCsConcern;
-                AddCounsellingDialogBinding addCounsellingDialogBinding3;
-                AddCounsellingDialogBinding addCounsellingDialogBinding4;
                 TextInputEditText etCsConcern2;
-                AddCounsellingDialogBinding addCounsellingDialogBinding5;
-                AddCounsellingDialogBinding addCounsellingDialogBinding6;
-                AddCounsellingDialogBinding addCounsellingDialogBinding7;
                 TextInputEditText textInputEditText;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -991,25 +1088,25 @@ public final class AddCounsellingDialog extends BaseDialog {
                     }
                     if (i == 3) {
                         AddCounsellingDialog.this.hideProgress();
-                        addCounsellingDialogBinding5 = AddCounsellingDialog.this.get_binding();
-                        cardView = addCounsellingDialogBinding5 != null ? addCounsellingDialogBinding5.progressView : null;
-                        if (cardView == null) {
+                        AddCounsellingDialogBinding addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
+                        materialCardView = addCounsellingDialogBinding != null ? addCounsellingDialogBinding.progressView : null;
+                        if (materialCardView == null) {
                             return;
                         }
-                        cardView.setVisibility(8);
+                        materialCardView.setVisibility(8);
                         return;
                     }
                     if (i != 4) {
                         return;
                     }
                     AddCounsellingDialog.this.hideProgress();
-                    addCounsellingDialogBinding6 = AddCounsellingDialog.this.get_binding();
-                    cardView = addCounsellingDialogBinding6 != null ? addCounsellingDialogBinding6.progressView : null;
-                    if (cardView != null) {
-                        cardView.setVisibility(8);
+                    AddCounsellingDialogBinding addCounsellingDialogBinding2 = AddCounsellingDialog.this.get_binding();
+                    materialCardView = addCounsellingDialogBinding2 != null ? addCounsellingDialogBinding2.progressView : null;
+                    if (materialCardView != null) {
+                        materialCardView.setVisibility(8);
                     }
-                    addCounsellingDialogBinding7 = AddCounsellingDialog.this.get_binding();
-                    if (addCounsellingDialogBinding7 == null || (textInputEditText = addCounsellingDialogBinding7.csRelationship) == null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding3 = AddCounsellingDialog.this.get_binding();
+                    if (addCounsellingDialogBinding3 == null || (textInputEditText = addCounsellingDialogBinding3.csRelationship) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -1022,26 +1119,26 @@ public final class AddCounsellingDialog extends BaseDialog {
                 if (data != null) {
                     AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
                     if (data.getSuccess()) {
-                        addCounsellingDialogBinding3 = addCounsellingDialog.get_binding();
-                        cardView = addCounsellingDialogBinding3 != null ? addCounsellingDialogBinding3.progressView : null;
-                        if (cardView != null) {
-                            cardView.setVisibility(8);
+                        AddCounsellingDialogBinding addCounsellingDialogBinding4 = addCounsellingDialog.get_binding();
+                        materialCardView = addCounsellingDialogBinding4 != null ? addCounsellingDialogBinding4.progressView : null;
+                        if (materialCardView != null) {
+                            materialCardView.setVisibility(8);
                         }
-                        addCounsellingDialogBinding4 = addCounsellingDialog.get_binding();
-                        if (addCounsellingDialogBinding4 != null && (etCsConcern2 = addCounsellingDialogBinding4.etCsConcern) != null) {
+                        AddCounsellingDialogBinding addCounsellingDialogBinding5 = addCounsellingDialog.get_binding();
+                        if (addCounsellingDialogBinding5 != null && (etCsConcern2 = addCounsellingDialogBinding5.etCsConcern) != null) {
                             Intrinsics.checkNotNullExpressionValue(etCsConcern2, "etCsConcern");
                             ToastExtKt.showSuccessToast(etCsConcern2, data.getMessage());
                         }
                         addCounsellingDialog.dismiss();
                         return;
                     }
-                    addCounsellingDialogBinding = addCounsellingDialog.get_binding();
-                    cardView = addCounsellingDialogBinding != null ? addCounsellingDialogBinding.progressView : null;
-                    if (cardView != null) {
-                        cardView.setVisibility(8);
+                    AddCounsellingDialogBinding addCounsellingDialogBinding6 = addCounsellingDialog.get_binding();
+                    materialCardView = addCounsellingDialogBinding6 != null ? addCounsellingDialogBinding6.progressView : null;
+                    if (materialCardView != null) {
+                        materialCardView.setVisibility(8);
                     }
-                    addCounsellingDialogBinding2 = addCounsellingDialog.get_binding();
-                    if (addCounsellingDialogBinding2 == null || (etCsConcern = addCounsellingDialogBinding2.etCsConcern) == null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding7 = addCounsellingDialog.get_binding();
+                    if (addCounsellingDialogBinding7 == null || (etCsConcern = addCounsellingDialogBinding7.etCsConcern) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(etCsConcern, "etCsConcern");
@@ -1052,9 +1149,10 @@ public final class AddCounsellingDialog extends BaseDialog {
     }
 
     private final void listenReopenResponse() {
-        getAddCounsellingViewModel().getReopenCounsellingResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenReopenResponse$1
+        getAddCounsellingViewModel().getReopenCounsellingResponse().observe(getViewLifecycleOwner(), new AddCounsellingDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.add.AddCounsellingDialog.listenReopenResponse.1
 
-            /* compiled from: AddCounsellingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.add.AddCounsellingDialog$listenReopenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCounsellingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1091,18 +1189,11 @@ public final class AddCounsellingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                AddCounsellingDialogBinding addCounsellingDialogBinding;
-                CardView cardView;
-                AddCounsellingDialogBinding addCounsellingDialogBinding2;
+                MaterialCardView materialCardView;
                 TextInputEditText etCsConcern;
-                AddCounsellingDialogBinding addCounsellingDialogBinding3;
-                AddCounsellingDialogBinding addCounsellingDialogBinding4;
                 TextInputEditText etCsConcern2;
-                AddCounsellingDialogBinding addCounsellingDialogBinding5;
-                AddCounsellingDialogBinding addCounsellingDialogBinding6;
-                AddCounsellingDialogBinding addCounsellingDialogBinding7;
                 TextInputEditText textInputEditText;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1112,25 +1203,25 @@ public final class AddCounsellingDialog extends BaseDialog {
                     }
                     if (i == 3) {
                         AddCounsellingDialog.this.hideProgress();
-                        addCounsellingDialogBinding5 = AddCounsellingDialog.this.get_binding();
-                        cardView = addCounsellingDialogBinding5 != null ? addCounsellingDialogBinding5.progressView : null;
-                        if (cardView == null) {
+                        AddCounsellingDialogBinding addCounsellingDialogBinding = AddCounsellingDialog.this.get_binding();
+                        materialCardView = addCounsellingDialogBinding != null ? addCounsellingDialogBinding.progressView : null;
+                        if (materialCardView == null) {
                             return;
                         }
-                        cardView.setVisibility(8);
+                        materialCardView.setVisibility(8);
                         return;
                     }
                     if (i != 4) {
                         return;
                     }
                     AddCounsellingDialog.this.hideProgress();
-                    addCounsellingDialogBinding6 = AddCounsellingDialog.this.get_binding();
-                    cardView = addCounsellingDialogBinding6 != null ? addCounsellingDialogBinding6.progressView : null;
-                    if (cardView != null) {
-                        cardView.setVisibility(8);
+                    AddCounsellingDialogBinding addCounsellingDialogBinding2 = AddCounsellingDialog.this.get_binding();
+                    materialCardView = addCounsellingDialogBinding2 != null ? addCounsellingDialogBinding2.progressView : null;
+                    if (materialCardView != null) {
+                        materialCardView.setVisibility(8);
                     }
-                    addCounsellingDialogBinding7 = AddCounsellingDialog.this.get_binding();
-                    if (addCounsellingDialogBinding7 == null || (textInputEditText = addCounsellingDialogBinding7.csRelationship) == null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding3 = AddCounsellingDialog.this.get_binding();
+                    if (addCounsellingDialogBinding3 == null || (textInputEditText = addCounsellingDialogBinding3.csRelationship) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -1143,26 +1234,26 @@ public final class AddCounsellingDialog extends BaseDialog {
                 if (data != null) {
                     AddCounsellingDialog addCounsellingDialog = AddCounsellingDialog.this;
                     if (data.getSuccess()) {
-                        addCounsellingDialogBinding3 = addCounsellingDialog.get_binding();
-                        cardView = addCounsellingDialogBinding3 != null ? addCounsellingDialogBinding3.progressView : null;
-                        if (cardView != null) {
-                            cardView.setVisibility(8);
+                        AddCounsellingDialogBinding addCounsellingDialogBinding4 = addCounsellingDialog.get_binding();
+                        materialCardView = addCounsellingDialogBinding4 != null ? addCounsellingDialogBinding4.progressView : null;
+                        if (materialCardView != null) {
+                            materialCardView.setVisibility(8);
                         }
-                        addCounsellingDialogBinding4 = addCounsellingDialog.get_binding();
-                        if (addCounsellingDialogBinding4 != null && (etCsConcern2 = addCounsellingDialogBinding4.etCsConcern) != null) {
+                        AddCounsellingDialogBinding addCounsellingDialogBinding5 = addCounsellingDialog.get_binding();
+                        if (addCounsellingDialogBinding5 != null && (etCsConcern2 = addCounsellingDialogBinding5.etCsConcern) != null) {
                             Intrinsics.checkNotNullExpressionValue(etCsConcern2, "etCsConcern");
                             ToastExtKt.showSuccessToast(etCsConcern2, data.getMessage());
                         }
                         addCounsellingDialog.dismiss();
                         return;
                     }
-                    addCounsellingDialogBinding = addCounsellingDialog.get_binding();
-                    cardView = addCounsellingDialogBinding != null ? addCounsellingDialogBinding.progressView : null;
-                    if (cardView != null) {
-                        cardView.setVisibility(8);
+                    AddCounsellingDialogBinding addCounsellingDialogBinding6 = addCounsellingDialog.get_binding();
+                    materialCardView = addCounsellingDialogBinding6 != null ? addCounsellingDialogBinding6.progressView : null;
+                    if (materialCardView != null) {
+                        materialCardView.setVisibility(8);
                     }
-                    addCounsellingDialogBinding2 = addCounsellingDialog.get_binding();
-                    if (addCounsellingDialogBinding2 == null || (etCsConcern = addCounsellingDialogBinding2.etCsConcern) == null) {
+                    AddCounsellingDialogBinding addCounsellingDialogBinding7 = addCounsellingDialog.get_binding();
+                    if (addCounsellingDialogBinding7 == null || (etCsConcern = addCounsellingDialogBinding7.etCsConcern) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(etCsConcern, "etCsConcern");

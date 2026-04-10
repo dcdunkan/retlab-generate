@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentAsietSemRegBinding extends ViewDataBinding {
     public final TextView addBtn;
     public final LinearLayout attendanceOne;

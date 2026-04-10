@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.lab.equipment.LabListViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class LabListFragmentBindingImpl extends LabListFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class LabListFragmentBindingImpl extends LabListFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (124 != variableId) {
+        if (125 != variableId) {
             return false;
         }
         setLabListViewModel((LabListViewModel) variable);

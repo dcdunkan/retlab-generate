@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.transport.receipt.TransportReceiptViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentTransportReceiptBindingImpl extends FragmentTransportReceiptBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentTransportReceiptBindingImpl extends FragmentTransportReceip
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (180 != variableId) {
+        if (182 != variableId) {
             return false;
         }
         setReceiptViewModel((TransportReceiptViewModel) variable);

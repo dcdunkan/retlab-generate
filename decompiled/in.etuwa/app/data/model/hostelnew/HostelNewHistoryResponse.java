@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelNewHistoryResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelNewHistoryResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelNewHistoryResponse {
     private final ArrayList<HostelNewHistory> admission_history;
     private final boolean login;
@@ -26,7 +26,7 @@ public final /* data */ class HostelNewHistoryResponse {
         return hostelNewHistoryResponse.copy(z, arrayList, arrayList2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

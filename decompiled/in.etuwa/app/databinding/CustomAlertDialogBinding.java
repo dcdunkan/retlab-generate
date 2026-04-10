@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class CustomAlertDialogBinding implements ViewBinding {
     public final Button btnOk;
     private final LinearLayout rootView;
@@ -32,11 +32,11 @@ public final class CustomAlertDialogBinding implements ViewBinding {
     }
 
     public static CustomAlertDialogBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.custom_alert_dialog, parent, false);
+        View viewInflate = inflater.inflate(R.layout.custom_alert_dialog, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static CustomAlertDialogBinding bind(View rootView) {

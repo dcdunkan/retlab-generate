@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogMessBookingBinding extends ViewDataBinding {
     public final TextView bookNowBtn;
     public final TextInputEditText etBookingDate;

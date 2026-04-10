@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.hostelnew;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 
-/* compiled from: HostelStatusNew.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelStatusNew.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelStatusNew {
     private final boolean allpayment;
     private final boolean login;
@@ -19,12 +19,12 @@ public final /* data */ class HostelStatusNew {
         return hostelStatusNew.copy(z, z2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getAllpayment() {
         return this.allpayment;
     }
@@ -48,6 +48,9 @@ public final /* data */ class HostelStatusNew {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r0v5 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v2 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -56,7 +59,7 @@ public final /* data */ class HostelStatusNew {
         }
         int i = r0 * 31;
         boolean z2 = this.allpayment;
-        return i + (z2 ? 1 : z2 ? 1 : 0);
+        return i + (z2 ? 1 : z2);
     }
 
     public String toString() {

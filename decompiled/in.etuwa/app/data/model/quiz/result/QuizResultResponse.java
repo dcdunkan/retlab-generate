@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QuizResultResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuizResultResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QuizResultResponse {
 
     @SerializedName("descriptive_questions")
@@ -35,27 +35,27 @@ public final /* data */ class QuizResultResponse {
     @SerializedName("question_set_name")
     private final String questionSetName;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getHasResultPublished() {
         return this.hasResultPublished;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final boolean getHasStudentAttended() {
         return this.hasStudentAttended;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getMarksScored() {
         return this.marksScored;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getQuestionSetName() {
         return this.questionSetName;
     }
@@ -96,7 +96,12 @@ public final /* data */ class QuizResultResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v16 */
     /* JADX WARN: Type inference failed for: r0v17 */
-    /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v3 */
+    /* JADX WARN: Type inference failed for: r2v4 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -104,14 +109,14 @@ public final /* data */ class QuizResultResponse {
             r0 = 1;
         }
         int i = r0 * 31;
-        ?? r2 = this.hasResultPublished;
-        int i2 = r2;
-        if (r2 != 0) {
-            i2 = 1;
+        boolean z2 = this.hasResultPublished;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int i3 = (i + i2) * 31;
-        boolean z2 = this.hasStudentAttended;
-        return ((((((((((i3 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.marksScored.hashCode()) * 31) + this.questionSetName.hashCode()) * 31) + this.multipleChoiceQuestions.hashCode()) * 31) + this.descriptiveQuestions.hashCode()) * 31) + this.fileUploadQuestions.hashCode();
+        int i2 = (i + r2) * 31;
+        boolean z3 = this.hasStudentAttended;
+        return ((((((((((i2 + (z3 ? 1 : z3)) * 31) + this.marksScored.hashCode()) * 31) + this.questionSetName.hashCode()) * 31) + this.multipleChoiceQuestions.hashCode()) * 31) + this.descriptiveQuestions.hashCode()) * 31) + this.fileUploadQuestions.hashCode();
     }
 
     public String toString() {

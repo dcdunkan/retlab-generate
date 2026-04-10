@@ -7,26 +7,32 @@ import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import com.applandeo.materialcalendarview.CalendarView;
+import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentHostelAttendanceBinding extends ViewDataBinding {
-    public final CalendarView attendanceView;
     public final TextView btnApply;
     public final TextView btnView;
 
     @Bindable
     protected HostelAttendanceViewModel mHostelAttendanceViewModel;
+    public final TextView monthTv;
+    public final TextView nextBtn;
+    public final TextView previousBtn;
+    public final RecyclerView rvCalender;
 
     public abstract void setHostelAttendanceViewModel(HostelAttendanceViewModel hostelAttendanceViewModel);
 
-    protected FragmentHostelAttendanceBinding(Object _bindingComponent, View _root, int _localFieldCount, CalendarView attendanceView, TextView btnApply, TextView btnView) {
+    protected FragmentHostelAttendanceBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView btnApply, TextView btnView, TextView monthTv, TextView nextBtn, TextView previousBtn, RecyclerView rvCalender) {
         super(_bindingComponent, _root, _localFieldCount);
-        this.attendanceView = attendanceView;
         this.btnApply = btnApply;
         this.btnView = btnView;
+        this.monthTv = monthTv;
+        this.nextBtn = nextBtn;
+        this.previousBtn = previousBtn;
+        this.rvCalender = rvCalender;
     }
 
     public HostelAttendanceViewModel getHostelAttendanceViewModel() {

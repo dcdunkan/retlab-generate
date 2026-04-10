@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.counselling.review.ReviewDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ReviewDialogBinding extends ViewDataBinding {
     public final EditText etReview;
 

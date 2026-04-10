@@ -4,8 +4,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RecycleExt.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: RecycleExt.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RecycleExtKt {
     public static final void show(RecyclerView recyclerView) {
         Intrinsics.checkNotNullParameter(recyclerView, "<this>");

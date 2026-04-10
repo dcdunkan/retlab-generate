@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.grievance.view.doc.GrievanceDocDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class GrievanceDocDialogBindingImpl extends GrievanceDocDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -58,7 +58,7 @@ public class GrievanceDocDialogBindingImpl extends GrievanceDocDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (102 != variableId) {
+        if (103 != variableId) {
             return false;
         }
         setGrievanceDocDialogViewModel((GrievanceDocDialogViewModel) variable);

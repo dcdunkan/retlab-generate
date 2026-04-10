@@ -3,6 +3,7 @@ package in.etuwa.app.data.repository;
 import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.data.model.survey.GenSurveyQuestionRequest;
 import in.etuwa.app.data.model.survey.SubmitResponse;
+import in.etuwa.app.data.model.survey.SubmitTeacherResponse;
 import in.etuwa.app.data.model.survey.Survey;
 import in.etuwa.app.data.model.survey.SurveyQuestion;
 import in.etuwa.app.data.model.survey.SurveyRequest;
@@ -21,8 +22,8 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SurveyRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SurveyRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class SurveyRepository {
     private final ApiHelper apiHelper;
 
@@ -108,5 +109,14 @@ public final class SurveyRepository {
     public final Single<SuccessResponse> postGESurveyAnswer(Map<String, String> answerCollection) {
         Intrinsics.checkNotNullParameter(answerCollection, "answerCollection");
         return this.apiHelper.postGESurveyAnswer(answerCollection);
+    }
+
+    public final Single<SubmitTeacherResponse> submitTeacherSurveyApiCall(String questionId, String optionId, String teacherId, String subjectId, String sessionId) {
+        Intrinsics.checkNotNullParameter(questionId, "questionId");
+        Intrinsics.checkNotNullParameter(optionId, "optionId");
+        Intrinsics.checkNotNullParameter(teacherId, "teacherId");
+        Intrinsics.checkNotNullParameter(subjectId, "subjectId");
+        Intrinsics.checkNotNullParameter(sessionId, "sessionId");
+        return this.apiHelper.submitTeacherSurveyApiCall(questionId, optionId, teacherId, subjectId, sessionId);
     }
 }

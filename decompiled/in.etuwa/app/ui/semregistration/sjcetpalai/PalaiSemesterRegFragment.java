@@ -52,30 +52,30 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: PalaiSemesterRegFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PalaiSemesterRegFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PalaiSemesterRegFragment extends BaseFragment implements PalaiSemesterRegAdapter.RegListCallBack, PalaiNewSemRegDialog.AddCounsellingListener, MaceNewSemRegDialog.AddCounsellingListener, MvjceSemRegDialog.AddSemRegListener, MeaSemRegDialog.AddCounsellingListener, ViewMvjceSemRegDialog.SemRegCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentPalaiSemRegBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private boolean dueStatus;
     private boolean feePaid;
     private boolean feeStatus;
     private MainCallBackListener listener;
 
-    /* renamed from: palaiSemesterRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: palaiSemesterRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy palaiSemesterRegViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private boolean registrationActive;
     private String statusMessage;
 
-    /* compiled from: PalaiSemesterRegFragment.kt */
+    /* JADX INFO: compiled from: PalaiSemesterRegFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -133,7 +133,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return palaiSemesterRegFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(palaiSemesterRegFragment);
@@ -147,7 +147,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -160,7 +160,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(PalaiSemesterRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(PalaiSemesterRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final PalaiSemesterRegFragment palaiSemesterRegFragment2 = this;
@@ -208,7 +208,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
         return (PalaiSemesterRegAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentPalaiSemRegBinding get_binding() {
         return this._binding;
     }
@@ -217,7 +217,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: PalaiSemesterRegFragment.kt */
+    /* JADX INFO: compiled from: PalaiSemesterRegFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/semregistration/sjcetpalai/PalaiSemesterRegFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/sjcetpalai/PalaiSemesterRegFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -280,7 +280,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
             textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.PalaiSemesterRegFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiSemesterRegFragment.setUp$lambda$1(PalaiSemesterRegFragment.this, view);
+                    PalaiSemesterRegFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -291,7 +291,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.PalaiSemesterRegFragment$$ExternalSyntheticLambda3
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                PalaiSemesterRegFragment.setUp$lambda$2(PalaiSemesterRegFragment.this);
+                PalaiSemesterRegFragment.setUp$lambda$2(this.f$0);
             }
         });
     }
@@ -304,18 +304,18 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
             if (StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
                 FragmentManager childFragmentManager = this$0.getChildFragmentManager();
                 Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-                MvjceSemRegDialog newInstance = MvjceSemRegDialog.INSTANCE.newInstance("");
-                newInstance.setCallBack(this$0);
-                newInstance.show(childFragmentManager, (String) null);
+                MvjceSemRegDialog mvjceSemRegDialogNewInstance = MvjceSemRegDialog.INSTANCE.newInstance("");
+                mvjceSemRegDialogNewInstance.setCallBack(this$0);
+                mvjceSemRegDialogNewInstance.show(childFragmentManager, (String) null);
                 return;
             }
             if (this$0.dueStatus) {
                 if (StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null)) {
                     FragmentManager childFragmentManager2 = this$0.getChildFragmentManager();
                     Intrinsics.checkNotNullExpressionValue(childFragmentManager2, "childFragmentManager");
-                    MaceNewSemRegDialog newInstance2 = MaceNewSemRegDialog.INSTANCE.newInstance();
-                    newInstance2.setCallBack(this$0);
-                    newInstance2.show(childFragmentManager2, (String) null);
+                    MaceNewSemRegDialog maceNewSemRegDialogNewInstance = MaceNewSemRegDialog.INSTANCE.newInstance();
+                    maceNewSemRegDialogNewInstance.setCallBack(this$0);
+                    maceNewSemRegDialogNewInstance.show(childFragmentManager2, (String) null);
                     return;
                 }
                 if (this$0.feePaid && StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "cep", false, 2, (Object) null)) {
@@ -330,16 +330,16 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
                 if (StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "//meajj", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "//engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
                     FragmentManager childFragmentManager3 = this$0.getChildFragmentManager();
                     Intrinsics.checkNotNullExpressionValue(childFragmentManager3, "childFragmentManager");
-                    MeaSemRegDialog newInstance3 = MeaSemRegDialog.INSTANCE.newInstance("");
-                    newInstance3.setCallBack(this$0);
-                    newInstance3.show(childFragmentManager3, (String) null);
+                    MeaSemRegDialog meaSemRegDialogNewInstance = MeaSemRegDialog.INSTANCE.newInstance("");
+                    meaSemRegDialogNewInstance.setCallBack(this$0);
+                    meaSemRegDialogNewInstance.show(childFragmentManager3, (String) null);
                     return;
                 }
                 FragmentManager childFragmentManager4 = this$0.getChildFragmentManager();
                 Intrinsics.checkNotNullExpressionValue(childFragmentManager4, "childFragmentManager");
-                PalaiNewSemRegDialog newInstance4 = PalaiNewSemRegDialog.INSTANCE.newInstance();
-                newInstance4.setCallBack(this$0);
-                newInstance4.show(childFragmentManager4, (String) null);
+                PalaiNewSemRegDialog palaiNewSemRegDialogNewInstance = PalaiNewSemRegDialog.INSTANCE.newInstance();
+                palaiNewSemRegDialogNewInstance.setCallBack(this$0);
+                palaiNewSemRegDialogNewInstance.show(childFragmentManager4, (String) null);
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(this$0.getContext());
@@ -352,10 +352,10 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
                     PalaiSemesterRegFragment.setUp$lambda$1$lambda$0(dialogInterface, i);
                 }
             });
-            AlertDialog create = builder.create();
-            Intrinsics.checkNotNullExpressionValue(create, "builder.create()");
-            create.setCancelable(false);
-            create.show();
+            AlertDialog alertDialogCreate = builder.create();
+            Intrinsics.checkNotNullExpressionValue(alertDialogCreate, "builder.create()");
+            alertDialogCreate.setCancelable(false);
+            alertDialogCreate.show();
             return;
         }
         FragmentPalaiSemRegBinding fragmentPalaiSemRegBinding = this$0.get_binding();
@@ -381,7 +381,7 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
         getPalaiSemesterRegViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.PalaiSemesterRegFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                PalaiSemesterRegFragment.listenResponse$lambda$4(PalaiSemesterRegFragment.this, (Resource) obj);
+                PalaiSemesterRegFragment.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
@@ -452,9 +452,9 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
             FragmentManager childFragmentManager = getChildFragmentManager();
             Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            ViewMvjceSemRegDialog newInstance = ViewMvjceSemRegDialog.INSTANCE.newInstance(id);
-            newInstance.setSemRegCallBack(this);
-            newInstance.show(childFragmentManager, (String) null);
+            ViewMvjceSemRegDialog viewMvjceSemRegDialogNewInstance = ViewMvjceSemRegDialog.INSTANCE.newInstance(id);
+            viewMvjceSemRegDialogNewInstance.setSemRegCallBack(this);
+            viewMvjceSemRegDialogNewInstance.show(childFragmentManager, (String) null);
             return;
         }
         MainCallBackListener mainCallBackListener = this.listener;
@@ -518,8 +518,8 @@ public final class PalaiSemesterRegFragment extends BaseFragment implements Pala
         Intrinsics.checkNotNullParameter(id, "id");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        MvjceSemRegDialog newInstance = MvjceSemRegDialog.INSTANCE.newInstance(id);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        MvjceSemRegDialog mvjceSemRegDialogNewInstance = MvjceSemRegDialog.INSTANCE.newInstance(id);
+        mvjceSemRegDialogNewInstance.setCallBack(this);
+        mvjceSemRegDialogNewInstance.show(childFragmentManager, (String) null);
     }
 }

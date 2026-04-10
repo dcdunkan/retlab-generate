@@ -50,18 +50,18 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CommentReplyDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CommentReplyDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CommentReplyDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private CommentReplyDialogBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: commentReplyDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: commentReplyDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy commentReplyDialogViewModel;
     private OnReplyDialogInteractionListener listener;
     private String paramComment;
@@ -70,16 +70,16 @@ public final class CommentReplyDialog extends BaseDialog {
     private String paramName;
     private String paramSubId;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: CommentReplyDialog.kt */
+    /* JADX INFO: compiled from: CommentReplyDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/chat/reply/CommentReplyDialog$OnReplyDialogInteractionListener;", "", "onReplyDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface OnReplyDialogInteractionListener {
         void onReplyDismiss();
     }
 
-    /* compiled from: CommentReplyDialog.kt */
+    /* JADX INFO: compiled from: CommentReplyDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -129,7 +129,7 @@ public final class CommentReplyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return commentReplyDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(commentReplyDialog);
@@ -143,7 +143,7 @@ public final class CommentReplyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -156,7 +156,7 @@ public final class CommentReplyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CommentReplyDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CommentReplyDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final CommentReplyDialog commentReplyDialog2 = this;
@@ -202,7 +202,7 @@ public final class CommentReplyDialog extends BaseDialog {
         return (CommentReplyAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final CommentReplyDialogBinding get_binding() {
         return this._binding;
     }
@@ -211,7 +211,7 @@ public final class CommentReplyDialog extends BaseDialog {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: CommentReplyDialog.kt */
+    /* JADX INFO: compiled from: CommentReplyDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J2\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\b\u0010\n\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/chat/reply/CommentReplyDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/chat/reply/CommentReplyDialog;", "img", "", "name", ClientCookie.COMMENT_ATTR, "commentId", StoreFragmentKt.SUB_ID, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -292,11 +292,11 @@ public final class CommentReplyDialog extends BaseDialog {
         if (recyclerView2 != null) {
             recyclerView2.setAdapter(getAdapter());
         }
-        RequestBuilder<Drawable> load = Glide.with(requireContext()).load(this.paramImg);
+        RequestBuilder<Drawable> requestBuilderLoad = Glide.with(requireContext()).load(this.paramImg);
         CommentReplyDialogBinding commentReplyDialogBinding3 = get_binding();
         CircleImageView circleImageView = commentReplyDialogBinding3 != null ? commentReplyDialogBinding3.replyCommentUserImg : null;
         Intrinsics.checkNotNull(circleImageView);
-        load.into(circleImageView);
+        requestBuilderLoad.into(circleImageView);
         CommentReplyDialogBinding commentReplyDialogBinding4 = get_binding();
         TextView textView = commentReplyDialogBinding4 != null ? commentReplyDialogBinding4.replyCommentUserName : null;
         if (textView != null) {
@@ -319,7 +319,7 @@ public final class CommentReplyDialog extends BaseDialog {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialog$$ExternalSyntheticLambda0
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    CommentReplyDialog.setUp$lambda$1(CommentReplyDialog.this);
+                    CommentReplyDialog.setUp$lambda$1(this.f$0);
                 }
             });
         }
@@ -330,7 +330,7 @@ public final class CommentReplyDialog extends BaseDialog {
         imageButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CommentReplyDialog.setUp$lambda$2(CommentReplyDialog.this, view);
+                CommentReplyDialog.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -358,7 +358,7 @@ public final class CommentReplyDialog extends BaseDialog {
         EditText editText3;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         CommentReplyDialogBinding commentReplyDialogBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(String.valueOf((commentReplyDialogBinding == null || (editText3 = commentReplyDialogBinding.etReplyMsg) == null) ? null : editText3.getText()), "")) {
             return;
         }
@@ -370,9 +370,9 @@ public final class CommentReplyDialog extends BaseDialog {
             String str2 = this$0.paramCommentId;
             CommentReplyDialogBinding commentReplyDialogBinding2 = this$0.get_binding();
             if (commentReplyDialogBinding2 != null && (editText2 = commentReplyDialogBinding2.etReplyMsg) != null) {
-                editable = editText2.getText();
+                text = editText2.getText();
             }
-            commentReplyDialogViewModel.setReply(str, batchId, userSemId, str2, String.valueOf(editable));
+            commentReplyDialogViewModel.setReply(str, batchId, userSemId, str2, String.valueOf(text));
             return;
         }
         CommentReplyDialogViewModel commentReplyDialogViewModel2 = this$0.getCommentReplyDialogViewModel();
@@ -381,28 +381,28 @@ public final class CommentReplyDialog extends BaseDialog {
         String str3 = this$0.paramCommentId;
         CommentReplyDialogBinding commentReplyDialogBinding3 = this$0.get_binding();
         if (commentReplyDialogBinding3 != null && (editText = commentReplyDialogBinding3.etReplyMsg) != null) {
-            editable = editText.getText();
+            text = editText.getText();
         }
-        commentReplyDialogViewModel2.setParentReply(batchId2, userSemId2, str3, String.valueOf(editable));
+        commentReplyDialogViewModel2.setParentReply(batchId2, userSemId2, str3, String.valueOf(text));
     }
 
     private final void listenResponse() {
         getCommentReplyDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CommentReplyDialog.listenResponse$lambda$4(CommentReplyDialog.this, (Resource) obj);
+                CommentReplyDialog.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /*  JADX ERROR: JadxRuntimeException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxRuntimeException: Can't find top splitter block for handler:B:53:0x00c4
-        	at jadx.core.utils.BlockUtils.getTopSplitterForHandler(BlockUtils.java:1179)
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't find top splitter block for handler:B:47:0x00c4
+        	at jadx.core.utils.BlockUtils.getTopSplitterForHandler(BlockUtils.java:1182)
         	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.collectHandlerRegions(ExcHandlersRegionMaker.java:53)
         	at jadx.core.dex.visitors.regions.maker.ExcHandlersRegionMaker.process(ExcHandlersRegionMaker.java:38)
         	at jadx.core.dex.visitors.regions.RegionMakerVisitor.visit(RegionMakerVisitor.java:27)
         */
-    /* JADX INFO: Access modifiers changed from: private */
     public static final void listenResponse$lambda$4(in.etuwa.app.ui.chat.reply.CommentReplyDialog r3, in.etuwa.app.utils.Resource r4) {
         /*
             java.lang.String r0 = "this$0"
@@ -501,7 +501,7 @@ public final class CommentReplyDialog extends BaseDialog {
         getCommentReplyDialogViewModel().getCommentResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CommentReplyDialog.listenReplyResponse$lambda$6(CommentReplyDialog.this, (Resource) obj);
+                CommentReplyDialog.listenReplyResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }

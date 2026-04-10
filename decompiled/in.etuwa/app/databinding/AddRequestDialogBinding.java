@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AddRequestDialogBinding extends ViewDataBinding {
     public final LinearLayout assiCard;
     public final TextInputEditText bankAdressText;

@@ -69,15 +69,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddSportDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddSportDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddSportDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddSportBinding _binding;
 
-    /* renamed from: addSportViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addSportViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addSportViewModel;
     private String award;
     private String competitionName;
@@ -91,27 +91,27 @@ public final class AddSportDialog extends BaseDialog {
     private String organised;
     private File pickFile;
 
-    /* renamed from: spinnerAdapterL$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterL$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterL;
 
-    /* renamed from: spinnerAdapterN$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterN$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterN;
 
-    /* renamed from: spinnerAdapterT$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterT$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterT;
 
-    /* renamed from: spinnerAdapterY$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterY$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterY;
     private String type;
     private String yearId;
 
-    /* compiled from: AddSportDialog.kt */
+    /* JADX INFO: compiled from: AddSportDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/sport/add/AddSportDialog$AddSportListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddSportListener {
         void onDismiss();
     }
 
-    /* compiled from: AddSportDialog.kt */
+    /* JADX INFO: compiled from: AddSportDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -161,7 +161,7 @@ public final class AddSportDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addSportDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addSportDialog);
@@ -175,7 +175,7 @@ public final class AddSportDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -188,7 +188,7 @@ public final class AddSportDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddSportViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddSportViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.months = "";
@@ -201,7 +201,7 @@ public final class AddSportDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddSportDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -226,7 +226,7 @@ public final class AddSportDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddSportDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -251,7 +251,7 @@ public final class AddSportDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddSportDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -276,7 +276,7 @@ public final class AddSportDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddSportDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode4 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -301,7 +301,7 @@ public final class AddSportDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddSportBinding get_binding() {
         return this._binding;
     }
@@ -326,7 +326,7 @@ public final class AddSportDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapterY.getValue();
     }
 
-    /* compiled from: AddSportDialog.kt */
+    /* JADX INFO: compiled from: AddSportDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J0\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u0006H\u0007¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/profile/sport/add/AddSportDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/sport/add/AddSportDialog;", "id", "", "name", "organised", "date", "award", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -480,75 +480,67 @@ public final class AddSportDialog extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddSportDialog.setUp$lambda$2(AddSportDialog.this, i, i2, i3, view);
+                    AddSportDialog.setUp$lambda$2(this.f$0, i, i2, i3, view);
                 }
             });
         }
         DialogAddSportBinding dialogAddSportBinding14 = get_binding();
         Spinner spinner5 = dialogAddSportBinding14 != null ? dialogAddSportBinding14.spinnerYear : null;
         if (spinner5 != null) {
-            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$setUp$2
+            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapterY;
                     AddSportDialog addSportDialog = AddSportDialog.this;
-                    spinnerAdapterY = addSportDialog.getSpinnerAdapterY();
-                    addSportDialog.yearId = String.valueOf(spinnerAdapterY.getSemester(position).getId());
+                    addSportDialog.yearId = String.valueOf(addSportDialog.getSpinnerAdapterY().getSemester(position).getId());
                 }
             });
         }
         DialogAddSportBinding dialogAddSportBinding15 = get_binding();
         Spinner spinner6 = dialogAddSportBinding15 != null ? dialogAddSportBinding15.spinnerLevel : null;
         if (spinner6 != null) {
-            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$setUp$3
+            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapterL;
                     AddSportDialog addSportDialog = AddSportDialog.this;
-                    spinnerAdapterL = addSportDialog.getSpinnerAdapterL();
-                    addSportDialog.level = String.valueOf(spinnerAdapterL.getSemester(position).getId());
+                    addSportDialog.level = String.valueOf(addSportDialog.getSpinnerAdapterL().getSemester(position).getId());
                 }
             });
         }
         DialogAddSportBinding dialogAddSportBinding16 = get_binding();
         Spinner spinner7 = dialogAddSportBinding16 != null ? dialogAddSportBinding16.spinnerType : null;
         if (spinner7 != null) {
-            spinner7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$setUp$4
+            spinner7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog.setUp.4
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapterT;
                     AddSportDialog addSportDialog = AddSportDialog.this;
-                    spinnerAdapterT = addSportDialog.getSpinnerAdapterT();
-                    addSportDialog.type = String.valueOf(spinnerAdapterT.getSemester(position).getId());
+                    addSportDialog.type = String.valueOf(addSportDialog.getSpinnerAdapterT().getSemester(position).getId());
                 }
             });
         }
         DialogAddSportBinding dialogAddSportBinding17 = get_binding();
         Spinner spinner8 = dialogAddSportBinding17 != null ? dialogAddSportBinding17.spinnerCompetition : null;
         if (spinner8 != null) {
-            spinner8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$setUp$5
+            spinner8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog.setUp.5
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapterN;
                     AddSportDialog addSportDialog = AddSportDialog.this;
-                    spinnerAdapterN = addSportDialog.getSpinnerAdapterN();
-                    addSportDialog.competitionName = String.valueOf(spinnerAdapterN.getSemester(position).getId());
+                    addSportDialog.competitionName = String.valueOf(addSportDialog.getSpinnerAdapterN().getSemester(position).getId());
                 }
             });
         }
@@ -557,7 +549,7 @@ public final class AddSportDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddSportDialog.setUp$lambda$4(AddSportDialog.this, view);
+                    AddSportDialog.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -566,7 +558,7 @@ public final class AddSportDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddSportDialog.setUp$lambda$5(AddSportDialog.this, view);
+                    AddSportDialog.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -577,7 +569,7 @@ public final class AddSportDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddSportDialog.setUp$lambda$6(AddSportDialog.this, view);
+                AddSportDialog.setUp$lambda$6(this.f$0, view);
             }
         });
     }
@@ -588,7 +580,7 @@ public final class AddSportDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda7
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddSportDialog.setUp$lambda$2$lambda$1(AddSportDialog.this, datePicker, i4, i5, i6);
+                AddSportDialog.setUp$lambda$2$lambda$1(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -662,7 +654,7 @@ public final class AddSportDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddSportBinding dialogAddSportBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddSportBinding2 == null || (textInputEditText10 = dialogAddSportBinding2.etName) == null) ? null : textInputEditText10.getText()), "")) {
@@ -690,19 +682,19 @@ public final class AddSportDialog extends BaseDialog {
                             String str = this$0.competitionName;
                             Intrinsics.checkNotNull(str);
                             DialogAddSportBinding dialogAddSportBinding8 = this$0.get_binding();
-                            String valueOf = String.valueOf((dialogAddSportBinding8 == null || (textInputEditText8 = dialogAddSportBinding8.etName) == null) ? null : textInputEditText8.getText());
+                            String strValueOf = String.valueOf((dialogAddSportBinding8 == null || (textInputEditText8 = dialogAddSportBinding8.etName) == null) ? null : textInputEditText8.getText());
                             DialogAddSportBinding dialogAddSportBinding9 = this$0.get_binding();
-                            String valueOf2 = String.valueOf((dialogAddSportBinding9 == null || (textInputEditText7 = dialogAddSportBinding9.etOrgaanisedBy) == null) ? null : textInputEditText7.getText());
+                            String strValueOf2 = String.valueOf((dialogAddSportBinding9 == null || (textInputEditText7 = dialogAddSportBinding9.etOrgaanisedBy) == null) ? null : textInputEditText7.getText());
                             String str2 = this$0.type;
                             Intrinsics.checkNotNull(str2);
                             String str3 = this$0.level;
                             Intrinsics.checkNotNull(str3);
                             DialogAddSportBinding dialogAddSportBinding10 = this$0.get_binding();
-                            String valueOf3 = String.valueOf((dialogAddSportBinding10 == null || (textView10 = dialogAddSportBinding10.etDate) == null) ? null : textView10.getText());
+                            String strValueOf3 = String.valueOf((dialogAddSportBinding10 == null || (textView10 = dialogAddSportBinding10.etDate) == null) ? null : textView10.getText());
                             String str4 = this$0.yearId;
                             Intrinsics.checkNotNull(str4);
                             DialogAddSportBinding dialogAddSportBinding11 = this$0.get_binding();
-                            String valueOf4 = String.valueOf((dialogAddSportBinding11 == null || (textInputEditText6 = dialogAddSportBinding11.etAward) == null) ? null : textInputEditText6.getText());
+                            String strValueOf4 = String.valueOf((dialogAddSportBinding11 == null || (textInputEditText6 = dialogAddSportBinding11.etAward) == null) ? null : textInputEditText6.getText());
                             File file3 = this$0.pickFile;
                             if (file3 == null) {
                                 Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -710,7 +702,7 @@ public final class AddSportDialog extends BaseDialog {
                             } else {
                                 file = file3;
                             }
-                            addSportViewModel.addSportData(str, valueOf, valueOf2, str2, str3, valueOf3, str4, valueOf4, file);
+                            addSportViewModel.addSportData(str, strValueOf, strValueOf2, str2, str3, strValueOf3, str4, strValueOf4, file);
                             DialogAddSportBinding dialogAddSportBinding12 = this$0.get_binding();
                             LinearLayout linearLayout = dialogAddSportBinding12 != null ? dialogAddSportBinding12.completionCard : null;
                             if (linearLayout != null) {
@@ -765,19 +757,19 @@ public final class AddSportDialog extends BaseDialog {
                     String str5 = this$0.competitionName;
                     Intrinsics.checkNotNull(str5);
                     DialogAddSportBinding dialogAddSportBinding22 = this$0.get_binding();
-                    String valueOf5 = String.valueOf((dialogAddSportBinding22 == null || (textInputEditText3 = dialogAddSportBinding22.etName) == null) ? null : textInputEditText3.getText());
+                    String strValueOf5 = String.valueOf((dialogAddSportBinding22 == null || (textInputEditText3 = dialogAddSportBinding22.etName) == null) ? null : textInputEditText3.getText());
                     DialogAddSportBinding dialogAddSportBinding23 = this$0.get_binding();
-                    String valueOf6 = String.valueOf((dialogAddSportBinding23 == null || (textInputEditText2 = dialogAddSportBinding23.etOrgaanisedBy) == null) ? null : textInputEditText2.getText());
+                    String strValueOf6 = String.valueOf((dialogAddSportBinding23 == null || (textInputEditText2 = dialogAddSportBinding23.etOrgaanisedBy) == null) ? null : textInputEditText2.getText());
                     String str6 = this$0.type;
                     Intrinsics.checkNotNull(str6);
                     String str7 = this$0.level;
                     Intrinsics.checkNotNull(str7);
                     DialogAddSportBinding dialogAddSportBinding24 = this$0.get_binding();
-                    String valueOf7 = String.valueOf((dialogAddSportBinding24 == null || (textView3 = dialogAddSportBinding24.etDate) == null) ? null : textView3.getText());
+                    String strValueOf7 = String.valueOf((dialogAddSportBinding24 == null || (textView3 = dialogAddSportBinding24.etDate) == null) ? null : textView3.getText());
                     String str8 = this$0.yearId;
                     Intrinsics.checkNotNull(str8);
                     DialogAddSportBinding dialogAddSportBinding25 = this$0.get_binding();
-                    addSportViewModel2.addSportData(str5, valueOf5, valueOf6, str6, str7, valueOf7, str8, String.valueOf((dialogAddSportBinding25 == null || (textInputEditText = dialogAddSportBinding25.etAward) == null) ? null : textInputEditText.getText()));
+                    addSportViewModel2.addSportData(str5, strValueOf5, strValueOf6, str6, str7, strValueOf7, str8, String.valueOf((dialogAddSportBinding25 == null || (textInputEditText = dialogAddSportBinding25.etAward) == null) ? null : textInputEditText.getText()));
                     DialogAddSportBinding dialogAddSportBinding26 = this$0.get_binding();
                     LinearLayout linearLayout2 = dialogAddSportBinding26 != null ? dialogAddSportBinding26.completionCard : null;
                     if (linearLayout2 == null) {
@@ -831,15 +823,15 @@ public final class AddSportDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddSportBinding dialogAddSportBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddSportBinding == null || (textView14 = dialogAddSportBinding.completionFileName) == null) ? null : textView14.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddSportBinding dialogAddSportBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddSportBinding2 == null || (textInputEditText10 = dialogAddSportBinding2.etName) == null) ? null : textInputEditText10.getText()), "")) {
@@ -869,19 +861,19 @@ public final class AddSportDialog extends BaseDialog {
                             String str2 = this$0.competitionName;
                             Intrinsics.checkNotNull(str2);
                             DialogAddSportBinding dialogAddSportBinding8 = this$0.get_binding();
-                            String valueOf = String.valueOf((dialogAddSportBinding8 == null || (textInputEditText8 = dialogAddSportBinding8.etName) == null) ? null : textInputEditText8.getText());
+                            String strValueOf = String.valueOf((dialogAddSportBinding8 == null || (textInputEditText8 = dialogAddSportBinding8.etName) == null) ? null : textInputEditText8.getText());
                             DialogAddSportBinding dialogAddSportBinding9 = this$0.get_binding();
-                            String valueOf2 = String.valueOf((dialogAddSportBinding9 == null || (textInputEditText7 = dialogAddSportBinding9.etOrgaanisedBy) == null) ? null : textInputEditText7.getText());
+                            String strValueOf2 = String.valueOf((dialogAddSportBinding9 == null || (textInputEditText7 = dialogAddSportBinding9.etOrgaanisedBy) == null) ? null : textInputEditText7.getText());
                             String str3 = this$0.type;
                             Intrinsics.checkNotNull(str3);
                             String str4 = this$0.level;
                             Intrinsics.checkNotNull(str4);
                             DialogAddSportBinding dialogAddSportBinding10 = this$0.get_binding();
-                            String valueOf3 = String.valueOf((dialogAddSportBinding10 == null || (textView9 = dialogAddSportBinding10.etDate) == null) ? null : textView9.getText());
+                            String strValueOf3 = String.valueOf((dialogAddSportBinding10 == null || (textView9 = dialogAddSportBinding10.etDate) == null) ? null : textView9.getText());
                             String str5 = this$0.yearId;
                             Intrinsics.checkNotNull(str5);
                             DialogAddSportBinding dialogAddSportBinding11 = this$0.get_binding();
-                            String valueOf4 = String.valueOf((dialogAddSportBinding11 == null || (textInputEditText6 = dialogAddSportBinding11.etAward) == null) ? null : textInputEditText6.getText());
+                            String strValueOf4 = String.valueOf((dialogAddSportBinding11 == null || (textInputEditText6 = dialogAddSportBinding11.etAward) == null) ? null : textInputEditText6.getText());
                             File file3 = this$0.pickFile;
                             if (file3 == null) {
                                 Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -889,7 +881,7 @@ public final class AddSportDialog extends BaseDialog {
                             } else {
                                 file = file3;
                             }
-                            addSportViewModel.updateSportData(str, str2, valueOf, valueOf2, str3, str4, valueOf3, str5, valueOf4, file);
+                            addSportViewModel.updateSportData(str, str2, strValueOf, strValueOf2, str3, str4, strValueOf3, str5, strValueOf4, file);
                             DialogAddSportBinding dialogAddSportBinding12 = this$0.get_binding();
                             LinearLayout linearLayout = dialogAddSportBinding12 != null ? dialogAddSportBinding12.completionCard : null;
                             if (linearLayout != null) {
@@ -946,22 +938,22 @@ public final class AddSportDialog extends BaseDialog {
                     String str7 = this$0.competitionName;
                     Intrinsics.checkNotNull(str7);
                     DialogAddSportBinding dialogAddSportBinding22 = this$0.get_binding();
-                    String valueOf5 = String.valueOf((dialogAddSportBinding22 == null || (textInputEditText3 = dialogAddSportBinding22.etName) == null) ? null : textInputEditText3.getText());
+                    String strValueOf5 = String.valueOf((dialogAddSportBinding22 == null || (textInputEditText3 = dialogAddSportBinding22.etName) == null) ? null : textInputEditText3.getText());
                     DialogAddSportBinding dialogAddSportBinding23 = this$0.get_binding();
-                    String valueOf6 = String.valueOf((dialogAddSportBinding23 == null || (textInputEditText2 = dialogAddSportBinding23.etOrgaanisedBy) == null) ? null : textInputEditText2.getText());
+                    String strValueOf6 = String.valueOf((dialogAddSportBinding23 == null || (textInputEditText2 = dialogAddSportBinding23.etOrgaanisedBy) == null) ? null : textInputEditText2.getText());
                     String str8 = this$0.type;
                     Intrinsics.checkNotNull(str8);
                     String str9 = this$0.level;
                     Intrinsics.checkNotNull(str9);
                     DialogAddSportBinding dialogAddSportBinding24 = this$0.get_binding();
-                    String valueOf7 = String.valueOf((dialogAddSportBinding24 == null || (textView2 = dialogAddSportBinding24.etDate) == null) ? null : textView2.getText());
+                    String strValueOf7 = String.valueOf((dialogAddSportBinding24 == null || (textView2 = dialogAddSportBinding24.etDate) == null) ? null : textView2.getText());
                     String str10 = this$0.yearId;
                     Intrinsics.checkNotNull(str10);
                     DialogAddSportBinding dialogAddSportBinding25 = this$0.get_binding();
                     if (dialogAddSportBinding25 != null && (textInputEditText = dialogAddSportBinding25.etAward) != null) {
-                        editable = textInputEditText.getText();
+                        text = textInputEditText.getText();
                     }
-                    addSportViewModel2.updateSportData(str6, str7, valueOf5, valueOf6, str8, str9, valueOf7, str10, String.valueOf(editable));
+                    addSportViewModel2.updateSportData(str6, str7, strValueOf5, strValueOf6, str8, str9, strValueOf7, str10, String.valueOf(text));
                     return;
                 }
             }
@@ -975,9 +967,10 @@ public final class AddSportDialog extends BaseDialog {
     }
 
     private final void listenSpinnerResponse() {
-        getAddSportViewModel().getResponse().observe(getViewLifecycleOwner(), new AddSportDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$listenSpinnerResponse$1
+        getAddSportViewModel().getResponse().observe(getViewLifecycleOwner(), new AddSportDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddSportDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.sport.add.AddSportDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddSportDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1014,13 +1007,8 @@ public final class AddSportDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapterY;
-                IndexSpinnerAdapter spinnerAdapterT;
-                IndexSpinnerAdapter spinnerAdapterL;
-                IndexSpinnerAdapter spinnerAdapterN;
-                DialogAddSportBinding dialogAddSportBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -1029,14 +1017,10 @@ public final class AddSportDialog extends BaseDialog {
                     if (data != null) {
                         AddSportDialog addSportDialog = AddSportDialog.this;
                         try {
-                            spinnerAdapterY = addSportDialog.getSpinnerAdapterY();
-                            spinnerAdapterY.addItems(data.getYears());
-                            spinnerAdapterT = addSportDialog.getSpinnerAdapterT();
-                            spinnerAdapterT.addItems(data.getCategory());
-                            spinnerAdapterL = addSportDialog.getSpinnerAdapterL();
-                            spinnerAdapterL.addItems(data.getLevel());
-                            spinnerAdapterN = addSportDialog.getSpinnerAdapterN();
-                            spinnerAdapterN.addItems(data.getNature());
+                            addSportDialog.getSpinnerAdapterY().addItems(data.getYears());
+                            addSportDialog.getSpinnerAdapterT().addItems(data.getCategory());
+                            addSportDialog.getSpinnerAdapterL().addItems(data.getLevel());
+                            addSportDialog.getSpinnerAdapterN().addItems(data.getNature());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -1056,7 +1040,7 @@ public final class AddSportDialog extends BaseDialog {
                     return;
                 }
                 AddSportDialog.this.hideProgress();
-                dialogAddSportBinding = AddSportDialog.this.get_binding();
+                DialogAddSportBinding dialogAddSportBinding = AddSportDialog.this.get_binding();
                 if (dialogAddSportBinding == null || (spinner = dialogAddSportBinding.spinnerYear) == null) {
                     return;
                 }
@@ -1071,7 +1055,7 @@ public final class AddSportDialog extends BaseDialog {
         getAddSportViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddSportDialog.listenAddResponse$lambda$8(AddSportDialog.this, (Resource) obj);
+                AddSportDialog.listenAddResponse$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1139,7 +1123,7 @@ public final class AddSportDialog extends BaseDialog {
         getAddSportViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddSportDialog.listenAddResponse2$lambda$10(AddSportDialog.this, (Resource) obj);
+                AddSportDialog.listenAddResponse2$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1207,7 +1191,7 @@ public final class AddSportDialog extends BaseDialog {
         getAddSportViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda8
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddSportDialog.listenUpdateResponse$lambda$12(AddSportDialog.this, (Resource) obj);
+                AddSportDialog.listenUpdateResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1275,7 +1259,7 @@ public final class AddSportDialog extends BaseDialog {
         getAddSportViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.sport.add.AddSportDialog$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddSportDialog.listenProgressResponse$lambda$14(AddSportDialog.this, (Resource) obj);
+                AddSportDialog.listenProgressResponse$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1306,18 +1290,18 @@ public final class AddSportDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddSportBinding dialogAddSportBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddSportBinding2 != null ? dialogAddSportBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddSportBinding dialogAddSportBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddSportBinding3 != null ? dialogAddSportBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1325,13 +1309,13 @@ public final class AddSportDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -1357,24 +1341,24 @@ public final class AddSportDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DutyStatusBeanFull.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: DutyStatusBeanFull.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class DutyStatusBeanFull {
     private String day;
     private String status;

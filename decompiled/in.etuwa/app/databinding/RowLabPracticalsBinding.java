@@ -4,20 +4,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowLabPracticalsBinding implements ViewBinding {
     public final TextView labPracticalAttendance;
     public final TextView labPracticalName;
-    private final CardView rootView;
-    public final TextView viewEvaluation;
-    public final TextView viewExperiments;
+    private final MaterialCardView rootView;
+    public final MaterialButton viewEvaluation;
+    public final MaterialButton viewExperiments;
 
-    private RowLabPracticalsBinding(CardView rootView, TextView labPracticalAttendance, TextView labPracticalName, TextView viewEvaluation, TextView viewExperiments) {
+    private RowLabPracticalsBinding(MaterialCardView rootView, TextView labPracticalAttendance, TextView labPracticalName, MaterialButton viewEvaluation, MaterialButton viewExperiments) {
         this.rootView = rootView;
         this.labPracticalAttendance = labPracticalAttendance;
         this.labPracticalName = labPracticalName;
@@ -26,7 +27,7 @@ public final class RowLabPracticalsBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -35,11 +36,11 @@ public final class RowLabPracticalsBinding implements ViewBinding {
     }
 
     public static RowLabPracticalsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_lab_practicals, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_lab_practicals, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowLabPracticalsBinding bind(View rootView) {
@@ -50,12 +51,12 @@ public final class RowLabPracticalsBinding implements ViewBinding {
             TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
             if (textView2 != null) {
                 i = R.id.view_evaluation;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView3 != null) {
+                MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                if (materialButton != null) {
                     i = R.id.view_experiments;
-                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView4 != null) {
-                        return new RowLabPracticalsBinding((CardView) rootView, textView, textView2, textView3, textView4);
+                    MaterialButton materialButton2 = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                    if (materialButton2 != null) {
+                        return new RowLabPracticalsBinding((MaterialCardView) rootView, textView, textView2, materialButton, materialButton2);
                     }
                 }
             }

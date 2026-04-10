@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: OnlineClass.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: OnlineClass.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class OnlineClass {
 
     @SerializedName("sub_name")
@@ -27,12 +27,12 @@ public final /* data */ class OnlineClass {
         return onlineClass.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubName() {
         return this.subName;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubUrl() {
         return this.subUrl;
     }

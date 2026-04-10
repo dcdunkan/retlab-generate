@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelMonthResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelMonthResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelMonthResponse {
     private final String date;
     private final ArrayList<HostelMonth> hostel;
@@ -26,7 +26,7 @@ public final /* data */ class HostelMonthResponse {
         return hostelMonthResponse.copy(z, arrayList, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -35,7 +35,7 @@ public final /* data */ class HostelMonthResponse {
         return this.hostel;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDate() {
         return this.date;
     }

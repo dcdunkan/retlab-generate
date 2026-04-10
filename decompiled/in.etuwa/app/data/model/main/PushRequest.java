@@ -4,8 +4,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PushRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PushRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PushRequest {
     private final String platform;
     private final String token;
@@ -20,12 +20,12 @@ public final /* data */ class PushRequest {
         return pushRequest.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getToken() {
         return this.token;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getPlatform() {
         return this.platform;
     }

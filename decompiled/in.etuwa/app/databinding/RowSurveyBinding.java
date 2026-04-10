@@ -4,33 +4,36 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowSurveyBinding implements ViewBinding {
-    public final CardView cardSurvey;
-    private final CardView rootView;
-    public final TextView surveyDo;
+    public final MaterialCardView cardSurvey;
+    private final MaterialCardView rootView;
+    public final MaterialButton surveyDo;
     public final TextView surveyLastDate;
     public final TextView surveyName;
     public final TextView surveySession;
-    public final TextView surveyStatus;
+    public final TextView surveyStatusBadge;
+    public final View viewAccentBar;
 
-    private RowSurveyBinding(CardView rootView, CardView cardSurvey, TextView surveyDo, TextView surveyLastDate, TextView surveyName, TextView surveySession, TextView surveyStatus) {
+    private RowSurveyBinding(MaterialCardView rootView, MaterialCardView cardSurvey, MaterialButton surveyDo, TextView surveyLastDate, TextView surveyName, TextView surveySession, TextView surveyStatusBadge, View viewAccentBar) {
         this.rootView = rootView;
         this.cardSurvey = cardSurvey;
         this.surveyDo = surveyDo;
         this.surveyLastDate = surveyLastDate;
         this.surveyName = surveyName;
         this.surveySession = surveySession;
-        this.surveyStatus = surveyStatus;
+        this.surveyStatusBadge = surveyStatusBadge;
+        this.viewAccentBar = viewAccentBar;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -39,31 +42,32 @@ public final class RowSurveyBinding implements ViewBinding {
     }
 
     public static RowSurveyBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_survey, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_survey, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowSurveyBinding bind(View rootView) {
-        CardView cardView = (CardView) rootView;
+        View viewFindChildViewById;
+        MaterialCardView materialCardView = (MaterialCardView) rootView;
         int i = R.id.survey_do;
-        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-        if (textView != null) {
+        MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+        if (materialButton != null) {
             i = R.id.survey_last_date;
-            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView2 != null) {
+            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+            if (textView != null) {
                 i = R.id.survey_name;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView3 != null) {
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView2 != null) {
                     i = R.id.survey_session;
-                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView4 != null) {
-                        i = R.id.survey_status;
-                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView5 != null) {
-                            return new RowSurveyBinding(cardView, cardView, textView, textView2, textView3, textView4, textView5);
+                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView3 != null) {
+                        i = R.id.survey_status_badge;
+                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView4 != null && (viewFindChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.view_accent_bar))) != null) {
+                            return new RowSurveyBinding(materialCardView, materialCardView, materialButton, textView, textView2, textView3, textView4, viewFindChildViewById);
                         }
                     }
                 }

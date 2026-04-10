@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: EquipmentViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: EquipmentViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class EquipmentViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<ArrayList<LabEquipment>>> equipResponse;
@@ -35,8 +35,8 @@ public final class EquipmentViewModel extends ViewModel {
     public final void getEquipList(String labId) {
         this.equipResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<LabEquipment>> observeOn = this.labRepository.getEquipmentsApiCall(new LabEquipRequest(labId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<LabEquipment>, Unit> function1 = new Function1<ArrayList<LabEquipment>, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labequipments.EquipmentViewModel$getEquipList$1
+        Single<ArrayList<LabEquipment>> singleObserveOn = this.labRepository.getEquipmentsApiCall(new LabEquipRequest(labId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<LabEquipment>, Unit> function1 = new Function1<ArrayList<LabEquipment>, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labequipments.EquipmentViewModel.getEquipList.1
             {
                 super(1);
             }
@@ -47,20 +47,18 @@ public final class EquipmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<LabEquipment> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = EquipmentViewModel.this.equipResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                EquipmentViewModel.this.equipResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<LabEquipment>> consumer = new Consumer() { // from class: in.etuwa.app.ui.lab.equipment.labequipments.EquipmentViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                EquipmentViewModel.getEquipList$lambda$0(Function1.this, obj);
+                EquipmentViewModel.getEquipList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labequipments.EquipmentViewModel$getEquipList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labequipments.EquipmentViewModel.getEquipList.2
             {
                 super(1);
             }
@@ -71,17 +69,15 @@ public final class EquipmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = EquipmentViewModel.this.equipResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                EquipmentViewModel.this.equipResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.equipment.labequipments.EquipmentViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.equipment.labequipments.EquipmentViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                EquipmentViewModel.getEquipList$lambda$1(Function1.this, obj);
+                EquipmentViewModel.getEquipList$lambda$1(function12, obj);
             }
         }));
     }

@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ReminderDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ReminderDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ReminderDialogViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final CounsellingRepository counsellingRepository;
@@ -35,8 +35,8 @@ public final class ReminderDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(description, "description");
         this.reminderResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.counsellingRepository.remindCounsellingApiCall(id, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.remind.ReminderDialogViewModel$remindCounselling$1
+        Single<SuccessResponse> singleObserveOn = this.counsellingRepository.remindCounsellingApiCall(id, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.remind.ReminderDialogViewModel.remindCounselling.1
             {
                 super(1);
             }
@@ -47,20 +47,18 @@ public final class ReminderDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReminderDialogViewModel.this.reminderResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                ReminderDialogViewModel.this.reminderResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.counselling.remind.ReminderDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReminderDialogViewModel.remindCounselling$lambda$0(Function1.this, obj);
+                ReminderDialogViewModel.remindCounselling$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.remind.ReminderDialogViewModel$remindCounselling$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.remind.ReminderDialogViewModel.remindCounselling.2
             {
                 super(1);
             }
@@ -71,17 +69,15 @@ public final class ReminderDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReminderDialogViewModel.this.reminderResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ReminderDialogViewModel.this.reminderResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.remind.ReminderDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.remind.ReminderDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReminderDialogViewModel.remindCounselling$lambda$1(Function1.this, obj);
+                ReminderDialogViewModel.remindCounselling$lambda$1(function12, obj);
             }
         }));
     }

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowDirectApplyBinding implements ViewBinding {
     public final TextView deleteBtn;
     public final TextView editBtn;
@@ -47,11 +47,11 @@ public final class RowDirectApplyBinding implements ViewBinding {
     }
 
     public static RowDirectApplyBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_direct_apply, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_direct_apply, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowDirectApplyBinding bind(View rootView) {

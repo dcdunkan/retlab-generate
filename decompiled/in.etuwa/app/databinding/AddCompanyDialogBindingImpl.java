@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.internship.apply.addcompany.AddCompanyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AddCompanyDialogBindingImpl extends AddCompanyDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -75,7 +75,7 @@ public class AddCompanyDialogBindingImpl extends AddCompanyDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (9 != variableId) {
+        if (8 != variableId) {
             return false;
         }
         setAddCompanyDialogViewModel((AddCompanyViewModel) variable);

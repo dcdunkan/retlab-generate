@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: OrderPageViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: OrderPageViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class OrderPageViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final StationaryRepository stationaryRepository;
@@ -37,8 +37,8 @@ public final class OrderPageViewModel extends ViewModel {
     public final void getStationaryList() {
         this.stationaryResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<StationaryItemResponse> observeOn = this.stationaryRepository.getStationaryListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<StationaryItemResponse, Unit> function1 = new Function1<StationaryItemResponse, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$getStationaryList$1
+        Single<StationaryItemResponse> singleObserveOn = this.stationaryRepository.getStationaryListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<StationaryItemResponse, Unit> function1 = new Function1<StationaryItemResponse, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel.getStationaryList.1
             {
                 super(1);
             }
@@ -49,20 +49,18 @@ public final class OrderPageViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(StationaryItemResponse stationaryItemResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderPageViewModel.this.stationaryResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(stationaryItemResponse));
+                OrderPageViewModel.this.stationaryResponse.postValue(Resource.INSTANCE.success(stationaryItemResponse));
             }
         };
         Consumer<? super StationaryItemResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderPageViewModel.getStationaryList$lambda$0(Function1.this, obj);
+                OrderPageViewModel.getStationaryList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$getStationaryList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel.getStationaryList.2
             {
                 super(1);
             }
@@ -73,17 +71,15 @@ public final class OrderPageViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderPageViewModel.this.stationaryResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                OrderPageViewModel.this.stationaryResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderPageViewModel.getStationaryList$lambda$1(Function1.this, obj);
+                OrderPageViewModel.getStationaryList$lambda$1(function12, obj);
             }
         }));
     }
@@ -108,8 +104,8 @@ public final class OrderPageViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(productDetails, "productDetails");
         this.urlResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<AdvancePaymentResponse> observeOn = this.stationaryRepository.getStationaryPaymentUrlApiCall(productDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<AdvancePaymentResponse, Unit> function1 = new Function1<AdvancePaymentResponse, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$getAdvancePaymentUrl$1
+        Single<AdvancePaymentResponse> singleObserveOn = this.stationaryRepository.getStationaryPaymentUrlApiCall(productDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<AdvancePaymentResponse, Unit> function1 = new Function1<AdvancePaymentResponse, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel.getAdvancePaymentUrl.1
             {
                 super(1);
             }
@@ -120,20 +116,18 @@ public final class OrderPageViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(AdvancePaymentResponse advancePaymentResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderPageViewModel.this.urlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(advancePaymentResponse));
+                OrderPageViewModel.this.urlResponse.postValue(Resource.INSTANCE.success(advancePaymentResponse));
             }
         };
         Consumer<? super AdvancePaymentResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderPageViewModel.getAdvancePaymentUrl$lambda$2(Function1.this, obj);
+                OrderPageViewModel.getAdvancePaymentUrl$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$getAdvancePaymentUrl$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel.getAdvancePaymentUrl.2
             {
                 super(1);
             }
@@ -144,17 +138,15 @@ public final class OrderPageViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderPageViewModel.this.urlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                OrderPageViewModel.this.urlResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderPageViewModel.getAdvancePaymentUrl$lambda$3(Function1.this, obj);
+                OrderPageViewModel.getAdvancePaymentUrl$lambda$3(function12, obj);
             }
         }));
     }

@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.mess;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MessItem.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MessItem.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MessItem {
     private final String id;
     private final String max_qty;
@@ -23,17 +23,17 @@ public final /* data */ class MessItem {
         return messItem.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMax_qty() {
         return this.max_qty;
     }

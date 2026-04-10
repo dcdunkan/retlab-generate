@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.posurvey.questions.POSurveyQuestionsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentPoSurveyQuestionsBinding extends ViewDataBinding {
 
     @Bindable

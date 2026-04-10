@@ -1,15 +1,19 @@
 package in.etuwa.app.ui.assignment;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import at.blogc.android.views.ExpandableTextView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.cli.HelpFormatter;
 import com.google.firebase.sessions.settings.RemoteSettings;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
@@ -26,13 +30,14 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: AssignmentAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AssignmentAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<Assignment> assignments = new ArrayList<>();
+    private Boolean flag;
     private AssignmentListener listener;
 
-    /* compiled from: AssignmentAdapter.kt */
+    /* JADX INFO: compiled from: AssignmentAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0003H&J\u0010\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u0005H&J \u0010\n\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\u0003H&J\u0010\u0010\u000e\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u0005H&¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/assignment/AssignmentAdapter$AssignmentListener;", "", "checkFileExistence", "", "fileName", "", "flag", "deleteAssignment", "", "id", "downloadFile", "url", CommonCssConstants.POSITION, "", "onPickDoc", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AssignmentListener {
         boolean checkFileExistence(String fileName, boolean flag);
@@ -48,18 +53,18 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_assignment, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …ssignment, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_assignment, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …ssignment, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -75,27 +80,31 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
         return !this.assignments.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: AssignmentAdapter.kt */
-    @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0017\u001a\u00020\u0018H\u0014J\u0010\u0010\u0019\u001a\u00020\u00182\u0006\u0010\u001a\u001a\u00020\u001bH\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0015\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lin/etuwa/app/ui/assignment/AssignmentAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/assignment/AssignmentAdapter;Landroid/view/View;)V", "assDetailsLayout", "Landroid/widget/LinearLayout;", "kotlin.jvm.PlatformType", "assExpandLayout", "deleteBtn", "Landroid/widget/TextView;", "detailTV", ErrorBundle.DETAIL_ENTRY, "Lat/blogc/android/views/ExpandableTextView;", "detailsLayout", "downBtn", "issueDate", "lastDate", "sub", "submittedView", "title", "toggle", "upBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    /* JADX INFO: compiled from: AssignmentAdapter.kt */
+    @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u001c\u001a\u00020\u001dH\u0014J\u0010\u0010\u001e\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020 H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\f0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0007*\u0004\u0018\u00010\f0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0015\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0019\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n \u0007*\u0004\u0018\u00010\f0\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lin/etuwa/app/ui/assignment/AssignmentAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/assignment/AssignmentAdapter;Landroid/view/View;)V", "assDetailsLayout", "Landroid/widget/LinearLayout;", "kotlin.jvm.PlatformType", "assExpandLayout", "deleteBtn", "Landroid/widget/TextView;", "deleteCv", "Lcom/google/android/material/card/MaterialCardView;", "detailTV", ErrorBundle.DETAIL_ENTRY, "Lat/blogc/android/views/ExpandableTextView;", "detailsLayout", "downBtn", "downloadCv", "issueDate", "lastDate", "linkTV", "sub", "submittedView", "title", "toggle", "upBtn", "uploadCv", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final LinearLayout assDetailsLayout;
         private final LinearLayout assExpandLayout;
         private final TextView deleteBtn;
+        private final MaterialCardView deleteCv;
         private final TextView detailTV;
         private final ExpandableTextView details;
         private final LinearLayout detailsLayout;
         private final TextView downBtn;
+        private final MaterialCardView downloadCv;
         private final TextView issueDate;
         private final TextView lastDate;
+        private final TextView linkTV;
         private final TextView sub;
         private final View submittedView;
         final /* synthetic */ AssignmentAdapter this$0;
         private final TextView title;
         private final TextView toggle;
         private final TextView upBtn;
+        private final MaterialCardView uploadCv;
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void onBind$lambda$4(View view) {
+        public static final void onBind$lambda$5(View view) {
         }
 
         @Override // in.etuwa.app.ui.base.BaseViewHolder
@@ -121,6 +130,10 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
             this.assExpandLayout = (LinearLayout) itemView.findViewById(R.id.expand_ass_layout);
             this.submittedView = itemView.findViewById(R.id.submitted_view);
             this.detailTV = (TextView) itemView.findViewById(R.id.details);
+            this.linkTV = (TextView) itemView.findViewById(R.id.linkTv);
+            this.uploadCv = (MaterialCardView) itemView.findViewById(R.id.uploadCv);
+            this.downloadCv = (MaterialCardView) itemView.findViewById(R.id.downloadCv);
+            this.deleteCv = (MaterialCardView) itemView.findViewById(R.id.deleteCv);
         }
 
         @Override // in.etuwa.app.ui.base.BaseViewHolder
@@ -134,6 +147,20 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
                 this.title.setText(assignment.getTitle());
                 this.issueDate.setText(assignment.getIssueDate());
                 this.lastDate.setText(assignment.getLastDate());
+                if (Intrinsics.areEqual((Object) this.this$0.flag, (Object) true) && !Intrinsics.areEqual(assignment.getLink(), "")) {
+                    this.linkTV.setText(assignment.getLink());
+                    this.linkTV.setVisibility(0);
+                    this.linkTV.setTextColor(-16776961);
+                    this.linkTV.getPaint().setUnderlineText(true);
+                } else {
+                    this.linkTV.setVisibility(8);
+                }
+                this.linkTV.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda0
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        AssignmentAdapter.ViewHolder.onBind$lambda$0(assignment, this, view);
+                    }
+                });
                 this.details.setText(assignment.getDetails());
                 if (Intrinsics.areEqual(assignment.getDetails(), "")) {
                     this.detailTV.setVisibility(8);
@@ -146,10 +173,10 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
                 this.toggle.setBackgroundResource(R.drawable.ic_expand);
                 this.details.setExpandInterpolator(new OvershootInterpolator());
                 this.details.setCollapseInterpolator(new OvershootInterpolator());
-                this.toggle.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda0
+                this.toggle.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        AssignmentAdapter.ViewHolder.onBind$lambda$0(AssignmentAdapter.ViewHolder.this, view);
+                        AssignmentAdapter.ViewHolder.onBind$lambda$1(this.f$0, view);
                     }
                 });
                 if (Intrinsics.areEqual(assignment.getStatus(), "SUBMITTED")) {
@@ -159,77 +186,85 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
                 }
                 if (Intrinsics.areEqual(assignment.getStatus(), "SUBMITTED") && assignment.getCanSubmit()) {
                     this.deleteBtn.setVisibility(0);
+                    this.deleteCv.setVisibility(0);
                 } else {
                     this.deleteBtn.setVisibility(8);
+                    this.deleteCv.setVisibility(8);
                 }
                 TextView textView = this.deleteBtn;
                 final AssignmentAdapter assignmentAdapter = this.this$0;
-                textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda1
+                textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        AssignmentAdapter.ViewHolder.onBind$lambda$1(AssignmentAdapter.this, assignment, view);
+                        AssignmentAdapter.ViewHolder.onBind$lambda$2(assignmentAdapter, assignment, view);
                     }
                 });
                 Regex regex = new Regex("[^A-Za-z0-9.]");
-                String replace = regex.replace(StringsKt.substringAfterLast$default(assignment.getUrl(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-                String replace2 = regex.replace(StringsKt.substringAfterLast$default(assignment.getUploadedFile(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String url = assignment.getUrl();
+                Intrinsics.checkNotNull(url);
+                String strReplace = regex.replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String uploadedFile = assignment.getUploadedFile();
+                Intrinsics.checkNotNull(uploadedFile);
+                String strReplace2 = regex.replace(StringsKt.substringAfterLast$default(uploadedFile, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
                 if (assignment.getUrl().length() == 0) {
-                    this.downBtn.setVisibility(4);
+                    this.downBtn.setVisibility(8);
+                    this.downloadCv.setVisibility(8);
                 } else {
                     this.downBtn.setVisibility(0);
+                    this.downloadCv.setVisibility(0);
                     AssignmentListener assignmentListener = this.this$0.listener;
-                    Boolean valueOf = assignmentListener != null ? Boolean.valueOf(assignmentListener.checkFileExistence(replace, true)) : null;
-                    Intrinsics.checkNotNull(valueOf);
-                    if (valueOf.booleanValue()) {
+                    Boolean boolValueOf = assignmentListener != null ? Boolean.valueOf(assignmentListener.checkFileExistence(strReplace, true)) : null;
+                    Intrinsics.checkNotNull(boolValueOf);
+                    if (boolValueOf.booleanValue()) {
                         this.downBtn.setText("Open");
-                        this.downBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
                     } else {
                         this.downBtn.setText("Download");
-                        this.downBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_dark);
                     }
                 }
                 TextView textView2 = this.downBtn;
                 final AssignmentAdapter assignmentAdapter2 = this.this$0;
-                textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda2
+                textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        AssignmentAdapter.ViewHolder.onBind$lambda$2(Assignment.this, assignmentAdapter2, position, this, view);
+                        AssignmentAdapter.ViewHolder.onBind$lambda$3(assignment, assignmentAdapter2, position, this, view);
                     }
                 });
                 if (assignment.getUpload()) {
                     this.upBtn.setVisibility(0);
+                    this.uploadCv.setVisibility(0);
                     if (Intrinsics.areEqual(assignment.getStatus(), "SUBMITTED")) {
                         if (!Intrinsics.areEqual(assignment.getUploadedFile(), "")) {
                             AssignmentListener assignmentListener2 = this.this$0.listener;
-                            Boolean valueOf2 = assignmentListener2 != null ? Boolean.valueOf(assignmentListener2.checkFileExistence(replace2, false)) : null;
-                            Intrinsics.checkNotNull(valueOf2);
-                            if (valueOf2.booleanValue()) {
+                            Boolean boolValueOf2 = assignmentListener2 != null ? Boolean.valueOf(assignmentListener2.checkFileExistence(strReplace2, false)) : null;
+                            Intrinsics.checkNotNull(boolValueOf2);
+                            if (boolValueOf2.booleanValue()) {
                                 this.upBtn.setText("Open Submitted File");
-                                this.upBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
+                                this.upBtn.setBackgroundTintList(ContextCompat.getColorStateList(this.itemView.getContext(), R.color.colorAssignmentOpen));
                             } else {
                                 this.upBtn.setText("View Submitted File");
-                                this.upBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_dark);
+                                this.upBtn.setBackgroundTintList(ContextCompat.getColorStateList(this.itemView.getContext(), R.color.colorAssignmentDownload));
                             }
                         } else {
-                            this.upBtn.setVisibility(4);
+                            this.upBtn.setVisibility(8);
+                            this.uploadCv.setVisibility(8);
                         }
                     } else {
                         this.upBtn.setText("Upload");
-                        this.upBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_dark);
+                        this.upBtn.setBackgroundTintList(ContextCompat.getColorStateList(this.itemView.getContext(), R.color.colorAssignmentUpload));
                     }
                 }
                 TextView textView3 = this.upBtn;
                 final AssignmentAdapter assignmentAdapter3 = this.this$0;
-                textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda3
+                textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        AssignmentAdapter.ViewHolder.onBind$lambda$3(Assignment.this, assignmentAdapter3, this, position, view);
+                        AssignmentAdapter.ViewHolder.onBind$lambda$4(assignment, assignmentAdapter3, this, position, view);
                     }
                 });
-                this.assExpandLayout.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda4
+                this.assExpandLayout.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentAdapter$ViewHolder$$ExternalSyntheticLambda5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        AssignmentAdapter.ViewHolder.onBind$lambda$4(view);
+                        AssignmentAdapter.ViewHolder.onBind$lambda$5(view);
                     }
                 });
             } catch (Exception unused) {
@@ -237,7 +272,14 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void onBind$lambda$0(ViewHolder this$0, View view) {
+        public static final void onBind$lambda$0(Assignment assignment, ViewHolder this$0, View view) {
+            Intrinsics.checkNotNullParameter(assignment, "$assignment");
+            Intrinsics.checkNotNullParameter(this$0, "this$0");
+            this$0.itemView.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(assignment.getLink())));
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final void onBind$lambda$1(ViewHolder this$0, View view) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             this$0.details.toggle();
             if (this$0.details.isExpanded()) {
@@ -250,7 +292,7 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void onBind$lambda$1(AssignmentAdapter this$0, Assignment assignment, View view) {
+        public static final void onBind$lambda$2(AssignmentAdapter this$0, Assignment assignment, View view) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(assignment, "$assignment");
             AssignmentListener assignmentListener = this$0.listener;
@@ -260,7 +302,7 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void onBind$lambda$2(Assignment assignment, AssignmentAdapter this$0, int i, ViewHolder this$1, View view) {
+        public static final void onBind$lambda$3(Assignment assignment, AssignmentAdapter this$0, int i, ViewHolder this$1, View view) {
             Intrinsics.checkNotNullParameter(assignment, "$assignment");
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(this$1, "this$1");
@@ -278,7 +320,7 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void onBind$lambda$3(Assignment assignment, AssignmentAdapter this$0, ViewHolder this$1, int i, View view) {
+        public static final void onBind$lambda$4(Assignment assignment, AssignmentAdapter this$0, ViewHolder this$1, int i, View view) {
             Intrinsics.checkNotNullParameter(assignment, "$assignment");
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(this$1, "this$1");
@@ -311,10 +353,11 @@ public final class AssignmentAdapter extends RecyclerView.Adapter<BaseViewHolder
         holder.onBind(position);
     }
 
-    public final void addItems(ArrayList<Assignment> list) {
+    public final void addItems(ArrayList<Assignment> list, boolean flag) {
         Intrinsics.checkNotNullParameter(list, "list");
         this.assignments.clear();
         this.assignments.addAll(list);
+        this.flag = Boolean.valueOf(flag);
         notifyDataSetChanged();
     }
 

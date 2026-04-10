@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentAttendanceDayWiseBinding extends ViewDataBinding {
     protected FragmentAttendanceDayWiseBinding(Object _bindingComponent, View _root, int _localFieldCount) {
         super(_bindingComponent, _root, _localFieldCount);

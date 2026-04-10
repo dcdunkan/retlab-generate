@@ -7,22 +7,23 @@ import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.message.reply.ReplyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ReplyDialogBinding extends ViewDataBinding {
     public final TextInputEditText etReplyMsg;
 
     @Bindable
     protected ReplyViewModel mReplyViewModel;
-    public final TextView replyBtn;
+    public final MaterialButton replyBtn;
     public final TextView tvFrom;
 
     public abstract void setReplyViewModel(ReplyViewModel replyViewModel);
 
-    protected ReplyDialogBinding(Object _bindingComponent, View _root, int _localFieldCount, TextInputEditText etReplyMsg, TextView replyBtn, TextView tvFrom) {
+    protected ReplyDialogBinding(Object _bindingComponent, View _root, int _localFieldCount, TextInputEditText etReplyMsg, MaterialButton replyBtn, TextView tvFrom) {
         super(_bindingComponent, _root, _localFieldCount);
         this.etReplyMsg = etReplyMsg;
         this.replyBtn = replyBtn;

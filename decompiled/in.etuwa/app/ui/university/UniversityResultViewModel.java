@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UniversityResultViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UniversityResultViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UniversityResultViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final ExamRegistrationRepository examRegistrationRepository;
@@ -34,8 +34,8 @@ public final class UniversityResultViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.examResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<UniversityResultResponse> observeOn = this.examRegistrationRepository.getExamResult(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<UniversityResultResponse, Unit> function1 = new Function1<UniversityResultResponse, Unit>() { // from class: in.etuwa.app.ui.university.UniversityResultViewModel$getUniversityResultResponse$1
+        Single<UniversityResultResponse> singleObserveOn = this.examRegistrationRepository.getExamResult(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<UniversityResultResponse, Unit> function1 = new Function1<UniversityResultResponse, Unit>() { // from class: in.etuwa.app.ui.university.UniversityResultViewModel.getUniversityResultResponse.1
             {
                 super(1);
             }
@@ -46,20 +46,18 @@ public final class UniversityResultViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(UniversityResultResponse universityResultResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UniversityResultViewModel.this.examResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(universityResultResponse));
+                UniversityResultViewModel.this.examResponse.postValue(Resource.INSTANCE.success(universityResultResponse));
             }
         };
         Consumer<? super UniversityResultResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.university.UniversityResultViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UniversityResultViewModel.getUniversityResultResponse$lambda$0(Function1.this, obj);
+                UniversityResultViewModel.getUniversityResultResponse$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.university.UniversityResultViewModel$getUniversityResultResponse$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.university.UniversityResultViewModel.getUniversityResultResponse.2
             {
                 super(1);
             }
@@ -70,17 +68,15 @@ public final class UniversityResultViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UniversityResultViewModel.this.examResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UniversityResultViewModel.this.examResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.university.UniversityResultViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.university.UniversityResultViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UniversityResultViewModel.getUniversityResultResponse$lambda$1(Function1.this, obj);
+                UniversityResultViewModel.getUniversityResultResponse$lambda$1(function12, obj);
             }
         }));
     }

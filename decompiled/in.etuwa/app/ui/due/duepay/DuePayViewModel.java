@@ -18,13 +18,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DuePayViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: DuePayViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class DuePayViewModel extends ViewModel {
     private final CommonRepository commonRepository;
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<DuePayNewResponse>> dueResponse;
     private MutableLiveData<Resource<DuePayUrl>> dueUrlResponse;
+    private boolean isDataLoaded;
 
     public DuePayViewModel(CommonRepository commonRepository) {
         Intrinsics.checkNotNullParameter(commonRepository, "commonRepository");
@@ -32,14 +33,22 @@ public final class DuePayViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.dueResponse = new MutableLiveData<>();
         this.dueUrlResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getDues();
     }
 
     public final void getDues() {
         this.dueResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DuePayNewResponse> observeOn = this.commonRepository.getDuePay().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DuePayNewResponse, Unit> function1 = new Function1<DuePayNewResponse, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$getDues$1
+        Single<DuePayNewResponse> singleObserveOn = this.commonRepository.getDuePay().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DuePayNewResponse, Unit> function1 = new Function1<DuePayNewResponse, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel.getDues.1
             {
                 super(1);
             }
@@ -50,20 +59,18 @@ public final class DuePayViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DuePayNewResponse duePayNewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DuePayViewModel.this.dueResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(duePayNewResponse));
+                DuePayViewModel.this.dueResponse.postValue(Resource.INSTANCE.success(duePayNewResponse));
             }
         };
         Consumer<? super DuePayNewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DuePayViewModel.getDues$lambda$0(Function1.this, obj);
+                DuePayViewModel.getDues$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$getDues$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel.getDues.2
             {
                 super(1);
             }
@@ -74,17 +81,15 @@ public final class DuePayViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DuePayViewModel.this.dueResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                DuePayViewModel.this.dueResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DuePayViewModel.getDues$lambda$1(Function1.this, obj);
+                DuePayViewModel.getDues$lambda$1(function12, obj);
             }
         }));
     }
@@ -116,8 +121,8 @@ public final class DuePayViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(dueFeeReceipt, "dueFeeReceipt");
         this.dueUrlResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DuePayUrl> observeOn = this.commonRepository.getDuePayUrlApiCall(dueFeeCollection, dueFeeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DuePayUrl, Unit> function1 = new Function1<DuePayUrl, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$getDueUrl$1
+        Single<DuePayUrl> singleObserveOn = this.commonRepository.getDuePayUrlApiCall(dueFeeCollection, dueFeeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DuePayUrl, Unit> function1 = new Function1<DuePayUrl, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel.getDueUrl.1
             {
                 super(1);
             }
@@ -128,20 +133,18 @@ public final class DuePayViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DuePayUrl duePayUrl) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DuePayViewModel.this.dueUrlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(duePayUrl));
+                DuePayViewModel.this.dueUrlResponse.postValue(Resource.INSTANCE.success(duePayUrl));
             }
         };
         Consumer<? super DuePayUrl> consumer = new Consumer() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DuePayViewModel.getDueUrl$lambda$2(Function1.this, obj);
+                DuePayViewModel.getDueUrl$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$getDueUrl$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel.getDueUrl.2
             {
                 super(1);
             }
@@ -152,17 +155,15 @@ public final class DuePayViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DuePayViewModel.this.dueUrlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                DuePayViewModel.this.dueUrlResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.due.duepay.DuePayViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DuePayViewModel.getDueUrl$lambda$3(Function1.this, obj);
+                DuePayViewModel.getDueUrl$lambda$3(function12, obj);
             }
         }));
     }

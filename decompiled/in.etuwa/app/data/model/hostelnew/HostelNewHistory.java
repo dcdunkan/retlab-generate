@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelNewHistory.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelNewHistory.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelNewHistory {
     private final int adjustment;
     private final int amount;
@@ -40,32 +40,32 @@ public final /* data */ class HostelNewHistory {
         return hostelNewHistory.copy(str, i7, i8, i9, i10, i5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getInstallment() {
         return this.installment;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final int getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final int getAdjustment() {
         return this.adjustment;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final int getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final int getWallet() {
         return this.wallet;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final int getBalance() {
         return this.balance;
     }

@@ -23,22 +23,22 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: LoginRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LoginRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class LoginRepository implements KoinComponent {
     private final ApiHelper apiHelper;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     public LoginRepository(ApiHelper apiHelper) {
         Intrinsics.checkNotNullParameter(apiHelper, "apiHelper");
         this.apiHelper = apiHelper;
         final LoginRepository loginRepository = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.data.repository.LoginRepository$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.data.repository.LoginRepository$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -48,7 +48,7 @@ public final class LoginRepository implements KoinComponent {
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = loginRepository;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {

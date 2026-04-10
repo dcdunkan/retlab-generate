@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.feeengineer.payment.FeeEngineer;
@@ -21,8 +22,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 
-/* compiled from: FeeEngineerAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FeeEngineerAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private Context context;
     private CallBack listener;
@@ -32,7 +33,7 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
     private List<String> selectedTotal = new ArrayList();
     private List<String> deatilPosition = new ArrayList();
 
-    /* compiled from: FeeEngineerAdapter.kt */
+    /* JADX INFO: compiled from: FeeEngineerAdapter.kt */
     @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J$\u0010\u0006\u001a\u00020\u00032\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\t0\bH&¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/feenewengineer/payment/FeeEngineerAdapter$CallBack;", "", "selectedIds", "", CommonCssConstants.POSITION, "", "updateSelected", "sel", "", "", FeeConfirmDialogKt.ARG_TOTAL, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void selectedIds(int position);
@@ -79,18 +80,18 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_fee_engineer, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …_engineer, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_fee_engineer, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …_engineer, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -106,7 +107,7 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
         return !this.list.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: FeeEngineerAdapter.kt */
+    /* JADX INFO: compiled from: FeeEngineerAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\r\u001a\u00020\u000eH\u0014J\u0010\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lin/etuwa/app/ui/feenewengineer/payment/FeeEngineerAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/feenewengineer/payment/FeeEngineerAdapter;Landroid/view/View;)V", "checkBox", "Landroid/widget/CheckBox;", "kotlin.jvm.PlatformType", "detailBtn", "Landroid/widget/TextView;", "feeAmount", "feeBalance", "feeHead", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final CheckBox checkBox;
@@ -159,11 +160,11 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
                     this.detailBtn.setVisibility(0);
                 }
                 int size = feeEngineer.getInstallments().size() - 1;
-                double d = 0.0d;
+                double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
                 if (size >= 0) {
                     double d2 = 0.0d;
                     while (true) {
-                        if (Double.parseDouble(feeEngineer.getInstallments().get(i).getBalance()) > 0.0d || Double.parseDouble(feeEngineer.getInstallments().get(i).getBalance()) > 0.0d || Double.parseDouble(feeEngineer.getInstallments().get(i).getBalance()) > 0.0d) {
+                        if (Double.parseDouble(feeEngineer.getInstallments().get(i).getBalance()) > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || Double.parseDouble(feeEngineer.getInstallments().get(i).getBalance()) > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || Double.parseDouble(feeEngineer.getInstallments().get(i).getBalance()) > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                             doubleRef.element += Double.parseDouble(feeEngineer.getInstallments().get(i).getBalance());
                         }
                         d2 += Double.parseDouble(feeEngineer.getInstallments().get(i).getFees());
@@ -186,7 +187,7 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
                 checkBox.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FeeEngineerAdapter.ViewHolder.onBind$lambda$0(FeeEngineerAdapter.ViewHolder.this, doubleRef, feeEngineerAdapter, position, view);
+                        FeeEngineerAdapter.ViewHolder.onBind$lambda$0(this.f$0, doubleRef, feeEngineerAdapter, position, view);
                     }
                 });
                 TextView textView = this.detailBtn;
@@ -194,7 +195,7 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.feenewengineer.payment.FeeEngineerAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        FeeEngineerAdapter.ViewHolder.onBind$lambda$1(FeeEngineerAdapter.this, position, view);
+                        FeeEngineerAdapter.ViewHolder.onBind$lambda$1(feeEngineerAdapter2, position, view);
                     }
                 });
                 this.this$0.notifyDataChanged(position);
@@ -207,7 +208,7 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             Intrinsics.checkNotNullParameter(balance, "$balance");
             Intrinsics.checkNotNullParameter(this$1, "this$1");
-            if (this$0.checkBox.isChecked() && balance.element > 0.0d) {
+            if (this$0.checkBox.isChecked() && balance.element > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                 this$1.getSelected().set(i, "true");
                 this$1.getSelectedTotal().set(i, this$0.feeBalance.getText().toString());
                 CallBack callBack = this$1.listener;
@@ -253,7 +254,7 @@ public final class FeeEngineerAdapter extends RecyclerView.Adapter<BaseViewHolde
     public final void addItems(ArrayList<FeeEngineer> _list, Context _context) {
         Intrinsics.checkNotNullParameter(_list, "_list");
         Intrinsics.checkNotNullParameter(_context, "_context");
-        this.total = 0.0d;
+        this.total = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
         this.selectedTotal.clear();
         this.selected.clear();
         this.list.clear();

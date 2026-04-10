@@ -5,8 +5,8 @@ import in.etuwa.app.ui.base.BaseViewHolder;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: EmptyViewHolder.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: EmptyViewHolder.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class EmptyViewHolder extends BaseViewHolder {
     @Override // in.etuwa.app.ui.base.BaseViewHolder
     protected void clear() {

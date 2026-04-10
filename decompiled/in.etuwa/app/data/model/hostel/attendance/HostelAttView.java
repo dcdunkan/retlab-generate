@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelAttView.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelAttView.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelAttView {
     private final boolean btn_already_exit;
     private final boolean btn_del;
@@ -18,52 +18,52 @@ public final /* data */ class HostelAttView {
     private final String type;
     private final String url;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getReason() {
         return this.reason;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final boolean getBtn_exit() {
         return this.btn_exit;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getBtn_already_exit() {
         return this.btn_already_exit;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final boolean getBtn_download() {
         return this.btn_download;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final boolean getBtn_del() {
         return this.btn_del;
     }
@@ -90,28 +90,40 @@ public final /* data */ class HostelAttView {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v11, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v13, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v17 */
+    /* JADX WARN: Type inference failed for: r1v18 */
+    /* JADX WARN: Type inference failed for: r1v19 */
+    /* JADX WARN: Type inference failed for: r1v20 */
+    /* JADX WARN: Type inference failed for: r1v21 */
+    /* JADX WARN: Type inference failed for: r1v22 */
+    /* JADX WARN: Type inference failed for: r1v9, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v0 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v2 */
     public int hashCode() {
-        int hashCode = ((((((((this.id.hashCode() * 31) + this.type.hashCode()) * 31) + this.date.hashCode()) * 31) + this.status.hashCode()) * 31) + this.reason.hashCode()) * 31;
+        int iHashCode = ((((((((this.id.hashCode() * 31) + this.type.hashCode()) * 31) + this.date.hashCode()) * 31) + this.status.hashCode()) * 31) + this.reason.hashCode()) * 31;
         boolean z = this.btn_exit;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        int i2 = (hashCode + i) * 31;
+        int i = (iHashCode + r1) * 31;
         boolean z2 = this.btn_already_exit;
-        int i3 = z2;
-        if (z2 != 0) {
-            i3 = 1;
+        ?? r12 = z2;
+        if (z2) {
+            r12 = 1;
         }
-        int i4 = (i2 + i3) * 31;
+        int i2 = (i + r12) * 31;
         boolean z3 = this.btn_download;
-        int i5 = z3;
-        if (z3 != 0) {
-            i5 = 1;
+        ?? r13 = z3;
+        if (z3) {
+            r13 = 1;
         }
-        int i6 = (i4 + i5) * 31;
+        int i3 = (i2 + r13) * 31;
         boolean z4 = this.btn_del;
-        return ((i6 + (z4 ? 1 : z4 ? 1 : 0)) * 31) + this.url.hashCode();
+        return ((i3 + (z4 ? 1 : z4)) * 31) + this.url.hashCode();
     }
 
     public String toString() {

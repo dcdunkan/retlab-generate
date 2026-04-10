@@ -13,7 +13,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogAddTransRegBinding extends ViewDataBinding {
     public final LinearLayout applyCompanyLayout;
     public final EditText etDate;

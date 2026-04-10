@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogReRegistrationBinding extends ViewDataBinding {
     public final LinearLayout completionCard;
     public final TextView completionFileName;

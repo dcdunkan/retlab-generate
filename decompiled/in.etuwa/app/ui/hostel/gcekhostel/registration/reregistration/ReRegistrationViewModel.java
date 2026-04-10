@@ -29,12 +29,13 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: ReRegistrationViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ReRegistrationViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ReRegistrationViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<CategoryTypeResponse>> categoryTypeResponse;
     private final CompositeDisposable compositeDisposable;
     private final HostelRepository hostelRepository;
+    private volatile boolean isDataLoaded;
     private ArrayList<MultipartBody.Part> multipartFile;
     private MutableLiveData<Resource<SuccessResponse>> newRegistrationResponse;
     private MutableLiveData<Resource<PresentHostelResponse>> presentHostelResponse;
@@ -53,9 +54,7 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
         this.progressResponse = new MutableLiveData<>();
         this.uploadResponse = new MutableLiveData<>();
         this.presentHostelResponse = new MutableLiveData<>();
-        getSemester();
-        getCategoryTypeData();
-        getPresentHostelData();
+        loadDataIfNeeded();
     }
 
     @Override // org.koin.core.component.KoinComponent
@@ -90,11 +89,21 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
         this.uploadResponse = mutableLiveData;
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getSemester();
+        getCategoryTypeData();
+        getPresentHostelData();
+    }
+
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.hostelRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.hostelRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.getSemester.1
             {
                 super(1);
             }
@@ -105,20 +114,18 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReRegistrationViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                ReRegistrationViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReRegistrationViewModel.getSemester$lambda$0(Function1.this, obj);
+                ReRegistrationViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.getSemester.2
             {
                 super(1);
             }
@@ -129,17 +136,15 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReRegistrationViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ReRegistrationViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReRegistrationViewModel.getSemester$lambda$1(Function1.this, obj);
+                ReRegistrationViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -163,8 +168,8 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
     public final void getCategoryTypeData() {
         this.categoryTypeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CategoryTypeResponse> observeOn = this.hostelRepository.getCategoryTypeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CategoryTypeResponse, Unit> function1 = new Function1<CategoryTypeResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$getCategoryTypeData$1
+        Single<CategoryTypeResponse> singleObserveOn = this.hostelRepository.getCategoryTypeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CategoryTypeResponse, Unit> function1 = new Function1<CategoryTypeResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.getCategoryTypeData.1
             {
                 super(1);
             }
@@ -175,20 +180,18 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CategoryTypeResponse categoryTypeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReRegistrationViewModel.this.categoryTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(categoryTypeResponse));
+                ReRegistrationViewModel.this.categoryTypeResponse.postValue(Resource.INSTANCE.success(categoryTypeResponse));
             }
         };
         Consumer<? super CategoryTypeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReRegistrationViewModel.getCategoryTypeData$lambda$2(Function1.this, obj);
+                ReRegistrationViewModel.getCategoryTypeData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$getCategoryTypeData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.getCategoryTypeData.2
             {
                 super(1);
             }
@@ -199,17 +202,15 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReRegistrationViewModel.this.categoryTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ReRegistrationViewModel.this.categoryTypeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReRegistrationViewModel.getCategoryTypeData$lambda$3(Function1.this, obj);
+                ReRegistrationViewModel.getCategoryTypeData$lambda$3(function12, obj);
             }
         }));
     }
@@ -233,8 +234,8 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
     public final void getPresentHostelData() {
         this.presentHostelResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<PresentHostelResponse> observeOn = this.hostelRepository.getPresentHostelApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<PresentHostelResponse, Unit> function1 = new Function1<PresentHostelResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$getPresentHostelData$1
+        Single<PresentHostelResponse> singleObserveOn = this.hostelRepository.getPresentHostelApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<PresentHostelResponse, Unit> function1 = new Function1<PresentHostelResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.getPresentHostelData.1
             {
                 super(1);
             }
@@ -245,20 +246,18 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(PresentHostelResponse presentHostelResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReRegistrationViewModel.this.presentHostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(presentHostelResponse));
+                ReRegistrationViewModel.this.presentHostelResponse.postValue(Resource.INSTANCE.success(presentHostelResponse));
             }
         };
         Consumer<? super PresentHostelResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReRegistrationViewModel.getPresentHostelData$lambda$4(Function1.this, obj);
+                ReRegistrationViewModel.getPresentHostelData$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$getPresentHostelData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.getPresentHostelData.2
             {
                 super(1);
             }
@@ -269,17 +268,15 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReRegistrationViewModel.this.presentHostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ReRegistrationViewModel.this.presentHostelResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda8
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReRegistrationViewModel.getPresentHostelData$lambda$5(Function1.this, obj);
+                ReRegistrationViewModel.getPresentHostelData$lambda$5(function12, obj);
             }
         }));
     }
@@ -317,25 +314,25 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
         Intrinsics.checkNotNullParameter(feeDefaulter, "feeDefaulter");
         Intrinsics.checkNotNullParameter(feeDetails, "feeDetails");
         try {
-            RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, reAdmission);
-            RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, category);
-            RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, localGuardian);
-            RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, localGuardianPhone);
-            RequestBody create5 = RequestBody.INSTANCE.create(MultipartBody.FORM, annualIncome);
-            RequestBody create6 = RequestBody.INSTANCE.create(MultipartBody.FORM, distance);
-            RequestBody create7 = RequestBody.INSTANCE.create(MultipartBody.FORM, semesterId);
-            RequestBody create8 = RequestBody.INSTANCE.create(MultipartBody.FORM, hostelId);
-            RequestBody create9 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearCount);
-            RequestBody create10 = RequestBody.INSTANCE.create(MultipartBody.FORM, hostelDetails);
-            RequestBody create11 = RequestBody.INSTANCE.create(MultipartBody.FORM, isFined);
-            RequestBody create12 = RequestBody.INSTANCE.create(MultipartBody.FORM, fineDetails);
-            RequestBody create13 = RequestBody.INSTANCE.create(MultipartBody.FORM, feeDefaulter);
-            RequestBody create14 = RequestBody.INSTANCE.create(MultipartBody.FORM, feeDetails);
+            RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, reAdmission);
+            RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, category);
+            RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, localGuardian);
+            RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, localGuardianPhone);
+            RequestBody requestBodyCreate5 = RequestBody.INSTANCE.create(MultipartBody.FORM, annualIncome);
+            RequestBody requestBodyCreate6 = RequestBody.INSTANCE.create(MultipartBody.FORM, distance);
+            RequestBody requestBodyCreate7 = RequestBody.INSTANCE.create(MultipartBody.FORM, semesterId);
+            RequestBody requestBodyCreate8 = RequestBody.INSTANCE.create(MultipartBody.FORM, hostelId);
+            RequestBody requestBodyCreate9 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearCount);
+            RequestBody requestBodyCreate10 = RequestBody.INSTANCE.create(MultipartBody.FORM, hostelDetails);
+            RequestBody requestBodyCreate11 = RequestBody.INSTANCE.create(MultipartBody.FORM, isFined);
+            RequestBody requestBodyCreate12 = RequestBody.INSTANCE.create(MultipartBody.FORM, fineDetails);
+            RequestBody requestBodyCreate13 = RequestBody.INSTANCE.create(MultipartBody.FORM, feeDefaulter);
+            RequestBody requestBodyCreate14 = RequestBody.INSTANCE.create(MultipartBody.FORM, feeDetails);
             ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-            MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("hostelFile", filePath.getName(), progressRequestBody);
-            Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+            MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("hostelFile", filePath.getName(), progressRequestBody);
+            Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
             try {
-                final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$newRegistration$1
+                final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.newRegistration.1
                     {
                         super(1);
                     }
@@ -346,20 +343,20 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                         return Unit.INSTANCE;
                     }
 
-                    /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2(Float f) {
                         ReRegistrationViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
                     }
                 };
-                subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda4
+                observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda4
                     @Override // io.reactivex.functions.Consumer
                     public final void accept(Object obj) {
-                        ReRegistrationViewModel.newRegistration$lambda$6(Function1.this, obj);
+                        ReRegistrationViewModel.newRegistration$lambda$6(function1, obj);
                     }
                 });
                 CompositeDisposable compositeDisposable = this.compositeDisposable;
-                Observable<SuccessResponse> observeOn = this.hostelRepository.newHostelReRegistrationApiCall(create, create2, create3, create4, create5, create6, create7, createFormData, create8, create9, create10, create11, create12, create13, create14).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-                final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$newRegistration$2
+                Observable<SuccessResponse> observableObserveOn = this.hostelRepository.newHostelReRegistrationApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, requestBodyCreate4, requestBodyCreate5, requestBodyCreate6, requestBodyCreate7, partCreateFormData, requestBodyCreate8, requestBodyCreate9, requestBodyCreate10, requestBodyCreate11, requestBodyCreate12, requestBodyCreate13, requestBodyCreate14).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+                final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.newRegistration.2
                     {
                         super(1);
                     }
@@ -370,7 +367,7 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                         return Unit.INSTANCE;
                     }
 
-                    /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2(SuccessResponse successResponse) {
                         ReRegistrationViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
                     }
@@ -378,10 +375,10 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                 Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda5
                     @Override // io.reactivex.functions.Consumer
                     public final void accept(Object obj) {
-                        ReRegistrationViewModel.newRegistration$lambda$7(Function1.this, obj);
+                        ReRegistrationViewModel.newRegistration$lambda$7(function12, obj);
                     }
                 };
-                final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$newRegistration$3
+                final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel.newRegistration.3
                     {
                         super(1);
                     }
@@ -392,7 +389,7 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                         return Unit.INSTANCE;
                     }
 
-                    /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2(Throwable th) {
                         if (th instanceof SocketTimeoutException) {
                             ReRegistrationViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -401,10 +398,10 @@ public final class ReRegistrationViewModel extends ViewModel implements KoinComp
                         }
                     }
                 };
-                compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda6
+                compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel$$ExternalSyntheticLambda6
                     @Override // io.reactivex.functions.Consumer
                     public final void accept(Object obj) {
-                        ReRegistrationViewModel.newRegistration$lambda$8(Function1.this, obj);
+                        ReRegistrationViewModel.newRegistration$lambda$8(function13, obj);
                     }
                 }));
             } catch (Exception unused) {

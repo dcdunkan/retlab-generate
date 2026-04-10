@@ -1588,6 +1588,27 @@
         },
         {
           "v": "16",
+          "name": "Get Attendance Details",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/app/profileattendance",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
           "name": "Update Pro Pic",
           "method": "POST",
           "endpoint": "<<BASE_URL>>/app/updateprofilephotos",
@@ -1637,14 +1658,21 @@
         },
         {
           "v": "16",
-          "name": "Get Timetable",
-          "method": "GET",
-          "endpoint": "<<BASE_URL>>/app/timetable",
+          "name": "Get Time Table Monthly",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/timetablenew",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "headers": [],
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
           "requestVariables": [],
           "params": [],
           "preRequestScript": "",
@@ -1977,6 +2005,356 @@
           },
           "responses": {},
           "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Result Univ",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/resultsuniversity",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n\t// required\n\t\"sem_id\": \"\"\n}"
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Result Univ 2",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/app/studentacademicanalysis",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Calendar Event",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/calendarevents",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        }
+      ],
+      "_ref_id": ""
+    },
+    {
+      "v": 10,
+      "name": "Evaluation",
+      "variables": [],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "folders": [],
+      "headers": [],
+      "requests": [
+        {
+          "v": "16",
+          "name": "Get Assignment",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/assignments",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n\t// required\n\t\"filter\": \"\",\n\t\"sem_id\": \"\",\n\t\"sort\": \"\"\n}"
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Delete Assignment",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/deleteassignment",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Series Exam",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/seriesexam",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n\t// required\n\t\"sem_id\": \"\"\n}"
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Module Test",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/moduletest",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Delete Series Exam",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/deleteseriesexam",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Delete Module Test",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/deletemoduletest",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Tutorials",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/tutorials",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Delete Tutorial",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/deletetutorial",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Home Works",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/homework",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Delete Home Work",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/deletesubmittedhomework",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
         }
       ],
       "_ref_id": ""
@@ -2017,7 +2395,7 @@
           "v": "16",
           "name": "Get Exam Course",
           "method": "POST",
-          "endpoint": "<<BASE_URL>>/UniversityExam/examcoursenew",
+          "endpoint": "<<BASE_URL>>/UniversityExam/examcourse",
           "auth": {
             "authType": "inherit",
             "authActive": true
@@ -2530,34 +2908,6 @@
           },
           "responses": {},
           "_ref_id": ""
-        },
-        {
-          "v": "16",
-          "name": "Verify Abc Id",
-          "method": "POST",
-          "endpoint": "<<BASE_URL>>/UniversityExam/verifyabcid",
-          "auth": {
-            "authType": "inherit",
-            "authActive": true
-          },
-          "headers": [
-            {
-              "key": "Content-Type",
-              "value": "application/x-www-form-urlencoded",
-              "description": "",
-              "active": true
-            }
-          ],
-          "requestVariables": [],
-          "params": [],
-          "preRequestScript": "",
-          "testScript": "",
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "responses": {},
-          "_ref_id": ""
         }
       ],
       "_ref_id": ""
@@ -2911,6 +3261,27 @@
         },
         {
           "v": "16",
+          "name": "Get Fee Receipts",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/fee/feereceipt",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
           "name": "Get Engineer Fee Pay URL",
           "method": "POST",
           "endpoint": "<<BASE_URL>>/fee/feeconfirm",
@@ -3108,6 +3479,188 @@
               "active": true
             }
           ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Fee Arts",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/fee/academicfees",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Fee Arts 2",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/fee/academicfees",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Arts Fee Pay URL",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/fee/academicfeeconfirm",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Fee Arts Sem List",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/fee/installments",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Transport Fee Receipts",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/transport/receipts",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Register View",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/transport/registerview",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Transport History URL",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/transport/history",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Transport Bus Pass",
+          "method": "GET",
+          "endpoint": "<<BASE_URL>>/transport/buspass",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [],
           "requestVariables": [],
           "params": [],
           "preRequestScript": "",
@@ -4342,6 +4895,34 @@
           "name": "Get Hostel Apply Leave",
           "method": "POST",
           "endpoint": "<<BASE_URL>>/hostel/applyleave",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Get Hostel Apply Leave New",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/hostel/applyleavenew",
           "auth": {
             "authType": "inherit",
             "authActive": true
@@ -8236,7 +8817,7 @@
           "v": "16",
           "name": "Quiz Result",
           "method": "POST",
-          "endpoint": "<<BASE_URL>>/quiz/result/<<id>>",
+          "endpoint": "<<BASE_URL>>/quiz/resultnew/<<id>>",
           "auth": {
             "authType": "inherit",
             "authActive": true
@@ -8403,7 +8984,7 @@
           "v": "16",
           "name": "Quiz Result New",
           "method": "POST",
-          "endpoint": "<<BASE_URL>>/quiz/result",
+          "endpoint": "<<BASE_URL>>/quiz/resultnew",
           "auth": {
             "authType": "inherit",
             "authActive": true
@@ -10050,6 +10631,34 @@
           },
           "responses": {},
           "_ref_id": ""
+        },
+        {
+          "v": "16",
+          "name": "Submit Teacher Survey",
+          "method": "POST",
+          "endpoint": "<<BASE_URL>>/app/savesurvey",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/x-www-form-urlencoded",
+              "description": "",
+              "active": true
+            }
+          ],
+          "requestVariables": [],
+          "params": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "responses": {},
+          "_ref_id": ""
         }
       ],
       "_ref_id": ""
@@ -10065,27 +10674,6 @@
       "folders": [],
       "headers": [],
       "requests": [
-        {
-          "v": "16",
-          "name": "Get Timetable",
-          "method": "GET",
-          "endpoint": "<<BASE_URL>>/app/timetable",
-          "auth": {
-            "authType": "inherit",
-            "authActive": true
-          },
-          "headers": [],
-          "requestVariables": [],
-          "params": [],
-          "preRequestScript": "",
-          "testScript": "",
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "responses": {},
-          "_ref_id": ""
-        },
         {
           "v": "16",
           "name": "Get Change In Timetable",

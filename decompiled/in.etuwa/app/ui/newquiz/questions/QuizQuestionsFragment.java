@@ -73,11 +73,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: QuizQuestionsFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: QuizQuestionsFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class QuizQuestionsFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentQuizQuestionsBinding _binding;
     private String descriptiveAnswer;
@@ -91,16 +91,16 @@ public final class QuizQuestionsFragment extends BaseFragment {
     private String optionAnswer;
     private File pickFile;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> quizAnswers;
 
-    /* renamed from: quizQuestionsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: quizQuestionsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy quizQuestionsViewModel;
     private ArrayList<QuestionsNew> quizResponse;
     private final HashMap<String, String> submitAnswer;
 
-    /* compiled from: QuizQuestionsFragment.kt */
+    /* JADX INFO: compiled from: QuizQuestionsFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -158,7 +158,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return quizQuestionsFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(quizQuestionsFragment);
@@ -172,7 +172,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -185,7 +185,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(QuizQuestionsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(QuizQuestionsViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final QuizQuestionsFragment quizQuestionsFragment2 = this;
@@ -216,7 +216,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
         return (QuizQuestionsViewModel) this.quizQuestionsViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentQuizQuestionsBinding get_binding() {
         return this._binding;
     }
@@ -229,7 +229,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
         return this.submitAnswer;
     }
 
-    /* compiled from: QuizQuestionsFragment.kt */
+    /* JADX INFO: compiled from: QuizQuestionsFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/newquiz/questions/QuizQuestionsFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/newquiz/questions/QuizQuestionsFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -316,7 +316,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda4
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup2, int i) {
-                    QuizQuestionsFragment.setUp$lambda$1(QuizQuestionsFragment.this, radioGroup2, i);
+                    QuizQuestionsFragment.setUp$lambda$1(this.f$0, radioGroup2, i);
                 }
             });
         }
@@ -325,7 +325,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    QuizQuestionsFragment.setUp$lambda$2(QuizQuestionsFragment.this, view);
+                    QuizQuestionsFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -334,7 +334,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    QuizQuestionsFragment.setUp$lambda$3(QuizQuestionsFragment.this, view);
+                    QuizQuestionsFragment.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -343,7 +343,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    QuizQuestionsFragment.setUp$lambda$4(QuizQuestionsFragment.this, view);
+                    QuizQuestionsFragment.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -354,7 +354,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuizQuestionsFragment.setUp$lambda$6(QuizQuestionsFragment.this, view);
+                QuizQuestionsFragment.setUp$lambda$6(this.f$0, view);
             }
         });
     }
@@ -445,7 +445,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
                     }
                     ArrayList<QuestionsNew> arrayList5 = this$0.quizResponse;
                     Intrinsics.checkNotNull(arrayList5);
-                    String extractImageUrl = this$0.extractImageUrl(arrayList5.get(this$0.i).getQuestion());
+                    String strExtractImageUrl = this$0.extractImageUrl(arrayList5.get(this$0.i).getQuestion());
                     FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding6 = this$0.get_binding();
                     TextView textView2 = fragmentQuizQuestionsBinding6 != null ? fragmentQuizQuestionsBinding6.quizQuestion : null;
                     if (textView2 != null) {
@@ -453,12 +453,12 @@ public final class QuizQuestionsFragment extends BaseFragment {
                         Intrinsics.checkNotNull(arrayList6);
                         textView2.setText("Q ) " + this$0.extractStringFromHtml(arrayList6.get(this$0.i).getQuestion()));
                     }
-                    if (extractImageUrl != null) {
-                        RequestBuilder<Drawable> load = Glide.with(this$0).load(extractImageUrl);
+                    if (strExtractImageUrl != null) {
+                        RequestBuilder<Drawable> requestBuilderLoad = Glide.with(this$0).load(strExtractImageUrl);
                         FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding7 = this$0.get_binding();
                         ImageView imageView2 = fragmentQuizQuestionsBinding7 != null ? fragmentQuizQuestionsBinding7.questionImage : null;
                         Intrinsics.checkNotNull(imageView2);
-                        load.into(imageView2);
+                        requestBuilderLoad.into(imageView2);
                     }
                 } else {
                     FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding8 = this$0.get_binding();
@@ -966,7 +966,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
                 }
                 ArrayList<QuestionsNew> arrayList3 = this$0.quizResponse;
                 Intrinsics.checkNotNull(arrayList3);
-                String extractImageUrl = this$0.extractImageUrl(arrayList3.get(this$0.i).getQuestion());
+                String strExtractImageUrl = this$0.extractImageUrl(arrayList3.get(this$0.i).getQuestion());
                 FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding9 = this$0.get_binding();
                 TextView textView8 = fragmentQuizQuestionsBinding9 != null ? fragmentQuizQuestionsBinding9.quizQuestion : null;
                 if (textView8 != null) {
@@ -974,12 +974,12 @@ public final class QuizQuestionsFragment extends BaseFragment {
                     Intrinsics.checkNotNull(arrayList4);
                     textView8.setText("Q ) " + this$0.extractStringFromHtml(arrayList4.get(this$0.i).getQuestion()));
                 }
-                if (extractImageUrl != null) {
-                    RequestBuilder<Drawable> load = Glide.with(this$0).load(extractImageUrl);
+                if (strExtractImageUrl != null) {
+                    RequestBuilder<Drawable> requestBuilderLoad = Glide.with(this$0).load(strExtractImageUrl);
                     FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding10 = this$0.get_binding();
                     ImageView imageView2 = fragmentQuizQuestionsBinding10 != null ? fragmentQuizQuestionsBinding10.questionImage : null;
                     Intrinsics.checkNotNull(imageView2);
-                    load.into(imageView2);
+                    requestBuilderLoad.into(imageView2);
                 }
             } else {
                 FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding11 = this$0.get_binding();
@@ -1388,16 +1388,16 @@ public final class QuizQuestionsFragment extends BaseFragment {
     private final void submitAnswer(int i) {
         this.submitAnswer.clear();
         System.out.println(i);
-        HashMap<String, String> hashMap = this.submitAnswer;
+        HashMap<String, String> map = this.submitAnswer;
         ArrayList<QuestionsNew> arrayList = this.quizResponse;
         Intrinsics.checkNotNull(arrayList);
         String qno = arrayList.get(i).getQno();
         Intrinsics.checkNotNull(qno);
-        hashMap.put("qno", qno);
-        HashMap<String, String> hashMap2 = this.submitAnswer;
+        map.put("qno", qno);
+        HashMap<String, String> map2 = this.submitAnswer;
         String str = this.id;
         Intrinsics.checkNotNull(str);
-        hashMap2.put("id", str);
+        map2.put("id", str);
         ArrayList<QuestionsNew> arrayList2 = this.quizResponse;
         Intrinsics.checkNotNull(arrayList2);
         if (Intrinsics.areEqual(arrayList2.get(i).getQuestionType(), "1")) {
@@ -1409,10 +1409,10 @@ public final class QuizQuestionsFragment extends BaseFragment {
             if (Intrinsics.areEqual(this.optionAnswer, "")) {
                 return;
             }
-            HashMap<String, String> hashMap3 = this.submitAnswer;
+            HashMap<String, String> map3 = this.submitAnswer;
             ArrayList<QuestionsNew> arrayList4 = this.quizResponse;
             Intrinsics.checkNotNull(arrayList4);
-            hashMap3.put("option", arrayList4.get(i).getOptions().get(Integer.parseInt(this.optionAnswer)).getId());
+            map3.put("option", arrayList4.get(i).getOptions().get(Integer.parseInt(this.optionAnswer)).getId());
             this.optionAnswer = "";
             getQuizQuestionsViewModel().getQuizAnswerSubmit(this.submitAnswer);
             return;
@@ -1475,7 +1475,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
         getQuizQuestionsViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda9
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                QuizQuestionsFragment.listenResponse$lambda$8(QuizQuestionsFragment.this, (Resource) obj);
+                QuizQuestionsFragment.listenResponse$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1540,7 +1540,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
                 }
                 ArrayList<QuestionsNew> arrayList3 = this$0.quizResponse;
                 Intrinsics.checkNotNull(arrayList3);
-                String extractImageUrl = this$0.extractImageUrl(arrayList3.get(this$0.i).getQuestion());
+                String strExtractImageUrl = this$0.extractImageUrl(arrayList3.get(this$0.i).getQuestion());
                 FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding4 = this$0.get_binding();
                 TextView textView3 = fragmentQuizQuestionsBinding4 != null ? fragmentQuizQuestionsBinding4.quizQuestion : null;
                 if (textView3 != null) {
@@ -1548,12 +1548,12 @@ public final class QuizQuestionsFragment extends BaseFragment {
                     Intrinsics.checkNotNull(arrayList4);
                     textView3.setText("Q ) " + this$0.extractStringFromHtml(arrayList4.get(this$0.i).getQuestion()));
                 }
-                if (extractImageUrl != null) {
-                    RequestBuilder<Drawable> load = Glide.with(this$0).load(extractImageUrl);
+                if (strExtractImageUrl != null) {
+                    RequestBuilder<Drawable> requestBuilderLoad = Glide.with(this$0).load(strExtractImageUrl);
                     FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding5 = this$0.get_binding();
                     ImageView imageView2 = fragmentQuizQuestionsBinding5 != null ? fragmentQuizQuestionsBinding5.questionImage : null;
                     Intrinsics.checkNotNull(imageView2);
-                    load.into(imageView2);
+                    requestBuilderLoad.into(imageView2);
                 }
             } else {
                 FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding6 = this$0.get_binding();
@@ -1886,7 +1886,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
         getQuizQuestionsViewModel().getSubmitResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                QuizQuestionsFragment.listenAnswerResponse$lambda$10(QuizQuestionsFragment.this, (Resource) obj);
+                QuizQuestionsFragment.listenAnswerResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1946,7 +1946,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
         getQuizQuestionsViewModel().getUploadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                QuizQuestionsFragment.listenUploadResponse$lambda$12(QuizQuestionsFragment.this, (Resource) obj);
+                QuizQuestionsFragment.listenUploadResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -2005,7 +2005,7 @@ public final class QuizQuestionsFragment extends BaseFragment {
         getQuizQuestionsViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                QuizQuestionsFragment.listenProgressResponse$lambda$14(QuizQuestionsFragment.this, (Resource) obj);
+                QuizQuestionsFragment.listenProgressResponse$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
@@ -2036,18 +2036,18 @@ public final class QuizQuestionsFragment extends BaseFragment {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding2 = this$0.get_binding();
             ProgressBar progressBar = fragmentQuizQuestionsBinding2 != null ? fragmentQuizQuestionsBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             FragmentQuizQuestionsBinding fragmentQuizQuestionsBinding3 = this$0.get_binding();
             TextView textView2 = fragmentQuizQuestionsBinding3 != null ? fragmentQuizQuestionsBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -2055,13 +2055,13 @@ public final class QuizQuestionsFragment extends BaseFragment {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str2;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName2;
         ContentResolver contentResolver2;
         ContentResolver contentResolver3;
-        String str3;
+        String fileName3;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -2075,38 +2075,38 @@ public final class QuizQuestionsFragment extends BaseFragment {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver4 = context.getContentResolver()) == null) {
-                        str3 = null;
+                        fileName3 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver4, "contentResolver");
-                        str3 = ResolvUtilKt.getFileName(contentResolver4, data2);
+                        fileName3 = ResolvUtilKt.getFileName(contentResolver4, data2);
                     }
-                    textView.setText("File : " + str3);
+                    textView.setText("File : " + fileName3);
                 }
                 System.out.println(this.i);
                 List<String> list = this.quizAnswers;
                 int i = this.i;
                 Context context2 = getContext();
                 if (context2 == null || (contentResolver3 = context2.getContentResolver()) == null) {
-                    str = null;
+                    fileName = null;
                 } else {
                     Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                    str = ResolvUtilKt.getFileName(contentResolver3, data2);
+                    fileName = ResolvUtilKt.getFileName(contentResolver3, data2);
                 }
-                list.set(i, "File : " + str);
+                list.set(i, "File : " + fileName);
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context3 != null && (contentResolver = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context4 = getContext();
                     File cacheDir = context4 != null ? context4.getCacheDir() : null;
                     Context context5 = getContext();
                     if (context5 == null || (contentResolver2 = context5.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str2);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName2);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                     this.flagFile = true;
                 }
@@ -2117,11 +2117,10 @@ public final class QuizQuestionsFragment extends BaseFragment {
     }
 
     public final String convertHtmlToString(String html) {
-        Spanned fromHtml;
         Intrinsics.checkNotNullParameter(html, "html");
-        fromHtml = Html.fromHtml(html, 0);
-        Intrinsics.checkNotNullExpressionValue(fromHtml, "fromHtml(html, Html.FROM_HTML_MODE_LEGACY)");
-        return fromHtml.toString();
+        Spanned spannedFromHtml = Html.fromHtml(html, 0);
+        Intrinsics.checkNotNullExpressionValue(spannedFromHtml, "fromHtml(html, Html.FROM_HTML_MODE_LEGACY)");
+        return spannedFromHtml.toString();
     }
 
     public final boolean containsImageUrl(String html) {
@@ -2134,17 +2133,17 @@ public final class QuizQuestionsFragment extends BaseFragment {
         if (!matcher.find()) {
             return null;
         }
-        String group = matcher.group(1);
-        Intrinsics.checkNotNullExpressionValue(group, "matcher.group(1)");
-        return StringsKt.replace$default(group, "\\", "", false, 4, (Object) null);
+        String strGroup = matcher.group(1);
+        Intrinsics.checkNotNullExpressionValue(strGroup, "matcher.group(1)");
+        return StringsKt.replace$default(strGroup, "\\", "", false, 4, (Object) null);
     }
 
     private final String extractStringFromHtml(String html) {
         MatchGroupCollection groups;
         MatchGroup matchGroup;
         String value;
-        MatchResult find$default = Regex.find$default(new Regex("<p>.*?>(.*?)<\\/p>"), html, 0, 2, null);
-        if (find$default == null || (groups = find$default.getGroups()) == null || (matchGroup = groups.get(1)) == null || (value = matchGroup.getValue()) == null) {
+        MatchResult matchResultFind$default = Regex.find$default(new Regex("<p>.*?>(.*?)<\\/p>"), html, 0, 2, null);
+        if (matchResultFind$default == null || (groups = matchResultFind$default.getGroups()) == null || (matchGroup = groups.get(1)) == null || (value = matchGroup.getValue()) == null) {
             return null;
         }
         return StringsKt.trim((CharSequence) value).toString();

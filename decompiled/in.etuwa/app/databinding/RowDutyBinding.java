@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowDutyBinding implements ViewBinding {
     public final CardView cardDuty;
     public final TextView dutyApplyBtn;
@@ -43,11 +43,11 @@ public final class RowDutyBinding implements ViewBinding {
     }
 
     public static RowDutyBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_duty, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_duty, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowDutyBinding bind(View rootView) {

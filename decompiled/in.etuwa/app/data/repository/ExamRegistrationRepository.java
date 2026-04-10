@@ -1,6 +1,5 @@
 package in.etuwa.app.data.repository;
 
-import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.due.duepay.DuePayUrl;
 import in.etuwa.app.data.model.examregister.ExamCourseResponse;
@@ -24,8 +23,8 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamRegistrationRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamRegistrationRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ExamRegistrationRepository {
     private final ApiHelper apiHelper;
 
@@ -129,10 +128,5 @@ public final class ExamRegistrationRepository {
 
     public final Single<AbcResponse> getAbcViewApiCall() {
         return this.apiHelper.getAbcViewApiCall();
-    }
-
-    public final Single<SuccessResponse> verifyAbcIdApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiHelper.verifyAbcIdApiCall(id);
     }
 }

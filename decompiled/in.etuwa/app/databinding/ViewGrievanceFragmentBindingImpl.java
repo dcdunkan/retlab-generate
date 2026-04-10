@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ViewGrievanceFragmentBindingImpl extends ViewGrievanceFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -77,7 +77,7 @@ public class ViewGrievanceFragmentBindingImpl extends ViewGrievanceFragmentBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (243 != variableId) {
+        if (245 != variableId) {
             return false;
         }
         setViewGrievanceViewModel((ViewGrievanceViewModel) variable);

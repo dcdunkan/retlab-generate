@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendanceNew.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AttendanceNew.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AttendanceNew {
     private final String date;
     private final boolean holiday;
@@ -29,17 +29,17 @@ public final /* data */ class AttendanceNew {
         return attendanceNew.copy(str, z, i, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getHoliday() {
         return this.holiday;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final int getTotalperiod() {
         return this.totalperiod;
     }
@@ -66,14 +66,17 @@ public final /* data */ class AttendanceNew {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v5 */
+    /* JADX WARN: Type inference failed for: r1v6 */
     public int hashCode() {
-        int hashCode = this.date.hashCode() * 31;
+        int iHashCode = this.date.hashCode() * 31;
         boolean z = this.holiday;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((hashCode + i) * 31) + this.totalperiod) * 31) + this.periods.hashCode();
+        return ((((iHashCode + r1) * 31) + this.totalperiod) * 31) + this.periods.hashCode();
     }
 
     public String toString() {

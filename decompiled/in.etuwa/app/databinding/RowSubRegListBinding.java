@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowSubRegListBinding implements ViewBinding {
     public final TextView appliedFrom;
     private final CardView rootView;
@@ -37,11 +37,11 @@ public final class RowSubRegListBinding implements ViewBinding {
     }
 
     public static RowSubRegListBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_sub_reg_list, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_sub_reg_list, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowSubRegListBinding bind(View rootView) {

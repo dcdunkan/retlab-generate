@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.projectwork.ProjectWorkViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentProjectWorkBindingImpl extends FragmentProjectWorkBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentProjectWorkBindingImpl extends FragmentProjectWorkBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (168 != variableId) {
+        if (170 != variableId) {
             return false;
         }
         setProjectWorkViewModel((ProjectWorkViewModel) variable);

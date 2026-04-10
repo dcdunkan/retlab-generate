@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelReceiptResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelReceiptResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelReceiptResponse {
     private final ArrayList<HostelReceipt> receipts;
 

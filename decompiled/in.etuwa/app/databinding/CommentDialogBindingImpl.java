@@ -13,7 +13,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.chat.comment.CommentDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CommentDialogBindingImpl extends CommentDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -73,7 +73,7 @@ public class CommentDialogBindingImpl extends CommentDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (57 != variableId) {
+        if (56 != variableId) {
             return false;
         }
         setCommentDialogViewModel((CommentDialogViewModel) variable);

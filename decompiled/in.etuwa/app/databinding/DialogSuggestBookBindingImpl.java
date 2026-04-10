@@ -3,15 +3,15 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.library.suggest.SuggestBookViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogSuggestBookBindingImpl extends DialogSuggestBookBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -41,7 +41,7 @@ public class DialogSuggestBookBindingImpl extends DialogSuggestBookBinding {
     }
 
     private DialogSuggestBookBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextInputEditText) bindings[2], (TextInputEditText) bindings[5], (TextInputEditText) bindings[6], (TextInputEditText) bindings[7], (TextInputEditText) bindings[4], (TextInputEditText) bindings[1], (TextInputLayout) bindings[3], (TextView) bindings[8]);
+        super(bindingComponent, root, 0, (TextInputEditText) bindings[2], (TextInputEditText) bindings[5], (TextInputEditText) bindings[6], (TextInputEditText) bindings[7], (TextInputEditText) bindings[4], (TextInputEditText) bindings[1], (TextInputLayout) bindings[3], (MaterialButton) bindings[8]);
         this.mDirtyFlags = -1L;
         ScrollView scrollView = (ScrollView) bindings[0];
         this.mboundView0 = scrollView;
@@ -67,7 +67,7 @@ public class DialogSuggestBookBindingImpl extends DialogSuggestBookBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (217 != variableId) {
+        if (219 != variableId) {
             return false;
         }
         setSuggestBookViewModel((SuggestBookViewModel) variable);

@@ -32,9 +32,7 @@ import in.etuwa.app.ui.base.BaseFragment;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -55,20 +53,20 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import ru.cleverpumpkin.calendar.adapter.CalendarAdapter;
 
-/* compiled from: AttendanceCalendarViewFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AttendanceCalendarViewFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AttendanceCalendarViewFragment extends BaseFragment implements AttendanceCalendarViewAdapter.DayClickListener, AttendanceDayDialog.AttendanceDayListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentAttendanceCalendarViewBinding _binding;
     private int a;
     private List<String> absent;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: attendanceCalendarViewViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: attendanceCalendarViewViewModel$delegate, reason: from kotlin metadata */
     private final Lazy attendanceCalendarViewViewModel;
     private ArrayList<AttendanceNew> attendances;
     private LocalDate currentDate;
@@ -79,12 +77,12 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
     private MainCallBackListener listener;
     private List<String> notavailable;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> present;
     private String semId;
 
-    /* compiled from: AttendanceCalendarViewFragment.kt */
+    /* JADX INFO: compiled from: AttendanceCalendarViewFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -142,7 +140,7 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return attendanceCalendarViewFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(attendanceCalendarViewFragment);
@@ -156,7 +154,7 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -169,7 +167,7 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AttendanceCalendarViewViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AttendanceCalendarViewViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AttendanceCalendarViewFragment attendanceCalendarViewFragment2 = this;
@@ -217,7 +215,7 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
         return (AttendanceCalendarViewAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentAttendanceCalendarViewBinding get_binding() {
         return this._binding;
     }
@@ -243,7 +241,7 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
         this.flag2 = z;
     }
 
-    /* compiled from: AttendanceCalendarViewFragment.kt */
+    /* JADX INFO: compiled from: AttendanceCalendarViewFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/attendance/calendarview/AttendanceCalendarViewFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/attendance/calendarview/AttendanceCalendarViewFragment;", "flag", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -300,14 +298,6 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
 
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
-        LocalDate now;
-        DateTimeFormatter ofPattern;
-        String format;
-        DateTimeFormatter ofPattern2;
-        String format2;
-        LocalDate now2;
-        DateTimeFormatter ofPattern3;
-        String format3;
         TextView textView;
         TextView textView2;
         FragmentActivity activity = getActivity();
@@ -323,25 +313,23 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
         getAdapter().setCalendarCallBack(this);
         getPreference().setNewLogin(false);
         listenResponse();
-        now = LocalDate.now();
-        Intrinsics.checkNotNullExpressionValue(now, "now()");
-        this.currentDate = now;
-        ofPattern = DateTimeFormatter.ofPattern("MM");
+        LocalDate localDateNow = LocalDate.now();
+        Intrinsics.checkNotNullExpressionValue(localDateNow, "now()");
+        this.currentDate = localDateNow;
+        DateTimeFormatter dateTimeFormatterOfPattern = DateTimeFormatter.ofPattern("MM");
         LocalDate localDate = this.currentDate;
         if (localDate == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate = null;
         }
-        format = localDate.format(ofPattern);
-        this.currentMonth = format;
-        ofPattern2 = DateTimeFormatter.ofPattern(CalendarAdapter.YEAR_FORMAT);
+        this.currentMonth = localDate.format(dateTimeFormatterOfPattern);
+        DateTimeFormatter dateTimeFormatterOfPattern2 = DateTimeFormatter.ofPattern(CalendarAdapter.YEAR_FORMAT);
         LocalDate localDate2 = this.currentDate;
         if (localDate2 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate2 = null;
         }
-        format2 = localDate2.format(ofPattern2);
-        this.currentYear = format2;
+        this.currentYear = localDate2.format(dateTimeFormatterOfPattern2);
         AttendanceCalendarViewViewModel attendanceCalendarViewViewModel = getAttendanceCalendarViewViewModel();
         String str = this.semId;
         String str2 = this.currentYear;
@@ -349,32 +337,32 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
         String str3 = this.currentMonth;
         Intrinsics.checkNotNull(str3);
         attendanceCalendarViewViewModel.getAttendanceByDay(str, str2, str3);
-        now2 = LocalDate.now();
-        Intrinsics.checkNotNullExpressionValue(now2, "now()");
-        System.out.println(generateDaysInMonth(now2));
+        LocalDate localDateNow2 = LocalDate.now();
+        Intrinsics.checkNotNullExpressionValue(localDateNow2, "now()");
+        System.out.println(generateDaysInMonth(localDateNow2));
         FragmentAttendanceCalendarViewBinding fragmentAttendanceCalendarViewBinding2 = get_binding();
         RecyclerView recyclerView2 = fragmentAttendanceCalendarViewBinding2 != null ? fragmentAttendanceCalendarViewBinding2.rvCalender : null;
         if (recyclerView2 != null) {
             recyclerView2.setLayoutManager(new GridLayoutManager(requireContext(), 7));
         }
-        ofPattern3 = DateTimeFormatter.ofPattern("MMMM yyyy");
+        DateTimeFormatter dateTimeFormatterOfPattern3 = DateTimeFormatter.ofPattern("MMMM yyyy");
         LocalDate localDate3 = this.currentDate;
         if (localDate3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate3 = null;
         }
-        format3 = localDate3.format(ofPattern3);
+        String str4 = localDate3.format(dateTimeFormatterOfPattern3);
         FragmentAttendanceCalendarViewBinding fragmentAttendanceCalendarViewBinding3 = get_binding();
         TextView textView3 = fragmentAttendanceCalendarViewBinding3 != null ? fragmentAttendanceCalendarViewBinding3.monthTv : null;
         if (textView3 != null) {
-            textView3.setText(format3);
+            textView3.setText(str4);
         }
         FragmentAttendanceCalendarViewBinding fragmentAttendanceCalendarViewBinding4 = get_binding();
         if (fragmentAttendanceCalendarViewBinding4 != null && (textView2 = fragmentAttendanceCalendarViewBinding4.nextBtn) != null) {
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewFragment$$ExternalSyntheticLambda13
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AttendanceCalendarViewFragment.setUp$lambda$1(AttendanceCalendarViewFragment.this, view);
+                    AttendanceCalendarViewFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -382,119 +370,95 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
         if (fragmentAttendanceCalendarViewBinding5 == null || (textView = fragmentAttendanceCalendarViewBinding5.previousBtn) == null) {
             return;
         }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewFragment$$ExternalSyntheticLambda14
+        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AttendanceCalendarViewFragment.setUp$lambda$2(AttendanceCalendarViewFragment.this, view);
+                AttendanceCalendarViewFragment.setUp$lambda$2(this.f$0, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$1(AttendanceCalendarViewFragment this$0, View view) {
-        LocalDate plusMonths;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         LocalDate localDate = this$0.currentDate;
         if (localDate == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate = null;
         }
-        plusMonths = localDate.plusMonths(1L);
-        Intrinsics.checkNotNullExpressionValue(plusMonths, "currentDate.plusMonths(1)");
-        this$0.currentDate = plusMonths;
+        LocalDate localDatePlusMonths = localDate.plusMonths(1L);
+        Intrinsics.checkNotNullExpressionValue(localDatePlusMonths, "currentDate.plusMonths(1)");
+        this$0.currentDate = localDatePlusMonths;
         this$0.updateMonthYearDisplay();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$2(AttendanceCalendarViewFragment this$0, View view) {
-        LocalDate minusMonths;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         LocalDate localDate = this$0.currentDate;
         if (localDate == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate = null;
         }
-        minusMonths = localDate.minusMonths(1L);
-        Intrinsics.checkNotNullExpressionValue(minusMonths, "currentDate.minusMonths(1)");
-        this$0.currentDate = minusMonths;
+        LocalDate localDateMinusMonths = localDate.minusMonths(1L);
+        Intrinsics.checkNotNullExpressionValue(localDateMinusMonths, "currentDate.minusMonths(1)");
+        this$0.currentDate = localDateMinusMonths;
         this$0.updateMonthYearDisplay();
     }
 
     private final void updateMonthYearDisplay() {
-        DateTimeFormatter ofPattern;
-        DateTimeFormatter ofPattern2;
-        String format;
-        String format2;
-        DateTimeFormatter ofPattern3;
-        String format3;
-        ofPattern = DateTimeFormatter.ofPattern("MM");
-        ofPattern2 = DateTimeFormatter.ofPattern(CalendarAdapter.YEAR_FORMAT);
+        DateTimeFormatter dateTimeFormatterOfPattern = DateTimeFormatter.ofPattern("MM");
+        DateTimeFormatter dateTimeFormatterOfPattern2 = DateTimeFormatter.ofPattern(CalendarAdapter.YEAR_FORMAT);
         LocalDate localDate = this.currentDate;
         if (localDate == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate = null;
         }
-        format = localDate.format(ofPattern);
-        this.currentMonth = format;
+        this.currentMonth = localDate.format(dateTimeFormatterOfPattern);
         LocalDate localDate2 = this.currentDate;
         if (localDate2 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate2 = null;
         }
-        format2 = localDate2.format(ofPattern2);
-        this.currentYear = format2;
+        this.currentYear = localDate2.format(dateTimeFormatterOfPattern2);
         System.out.println((Object) this.currentMonth);
         System.out.println((Object) this.currentYear);
-        ofPattern3 = DateTimeFormatter.ofPattern("MMMM yyyy");
+        DateTimeFormatter dateTimeFormatterOfPattern3 = DateTimeFormatter.ofPattern("MMMM yyyy");
         LocalDate localDate3 = this.currentDate;
         if (localDate3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate3 = null;
         }
-        format3 = localDate3.format(ofPattern3);
+        String str = localDate3.format(dateTimeFormatterOfPattern3);
         FragmentAttendanceCalendarViewBinding fragmentAttendanceCalendarViewBinding = get_binding();
         TextView textView = fragmentAttendanceCalendarViewBinding != null ? fragmentAttendanceCalendarViewBinding.monthTv : null;
         if (textView != null) {
-            textView.setText(format3);
+            textView.setText(str);
         }
         AttendanceCalendarViewViewModel attendanceCalendarViewViewModel = getAttendanceCalendarViewViewModel();
-        String str = this.semId;
-        String str2 = this.currentYear;
-        Intrinsics.checkNotNull(str2);
-        String str3 = this.currentMonth;
+        String str2 = this.semId;
+        String str3 = this.currentYear;
         Intrinsics.checkNotNull(str3);
-        attendanceCalendarViewViewModel.getAttendanceByDay(str, str2, str3);
+        String str4 = this.currentMonth;
+        Intrinsics.checkNotNull(str4);
+        attendanceCalendarViewViewModel.getAttendanceByDay(str2, str3, str4);
     }
 
     private final List<String> generateDaysInMonth(LocalDate date) {
-        int year;
-        Month month;
-        YearMonth of;
-        LocalDate withDayOfMonth;
-        int lengthOfMonth;
-        LocalDate withDayOfMonth2;
-        DayOfWeek dayOfWeek;
-        int value;
-        int dayOfMonth;
         ArrayList arrayList = new ArrayList();
-        year = date.getYear();
-        month = date.getMonth();
-        of = YearMonth.of(year, month);
+        YearMonth yearMonthOf = YearMonth.of(date.getYear(), date.getMonth());
         int i = 1;
-        withDayOfMonth = date.withDayOfMonth(1);
-        lengthOfMonth = of.lengthOfMonth();
-        withDayOfMonth2 = date.withDayOfMonth(lengthOfMonth);
-        dayOfWeek = withDayOfMonth.getDayOfWeek();
-        value = dayOfWeek.getValue();
-        int i2 = value % 7;
+        LocalDate localDateWithDayOfMonth = date.withDayOfMonth(1);
+        LocalDate localDateWithDayOfMonth2 = date.withDayOfMonth(yearMonthOf.lengthOfMonth());
+        int value = localDateWithDayOfMonth.getDayOfWeek().getValue() % 7;
         System.out.println((Object) "firstDayOfMonth");
-        System.out.println(i2);
+        System.out.println(value);
         System.out.println((Object) "firstDayOfMonth");
-        int i3 = i2 != 0 ? i2 : 7;
-        for (int i4 = 1; i4 < i3; i4++) {
+        int i2 = value != 0 ? value : 7;
+        for (int i3 = 1; i3 < i2; i3++) {
             arrayList.add("");
         }
-        dayOfMonth = withDayOfMonth2.getDayOfMonth();
+        int dayOfMonth = localDateWithDayOfMonth2.getDayOfMonth();
         if (1 <= dayOfMonth) {
             while (true) {
                 arrayList.add(String.valueOf(i));
@@ -508,25 +472,16 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
     }
 
     private final void listenResponse() {
-        getAttendanceCalendarViewViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewFragment$$ExternalSyntheticLambda15
+        getAttendanceCalendarViewViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AttendanceCalendarViewFragment.listenResponse$lambda$4(AttendanceCalendarViewFragment.this, (Resource) obj);
+                AttendanceCalendarViewFragment.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void listenResponse$lambda$4(AttendanceCalendarViewFragment this$0, Resource resource) {
-        int year;
-        Month month;
-        YearMonth of;
-        LocalDate withDayOfMonth;
-        int lengthOfMonth;
-        LocalDate withDayOfMonth2;
-        DayOfWeek dayOfWeek;
-        int value;
-        int dayOfMonth;
         int i;
         int i2;
         int i3;
@@ -576,56 +531,52 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
                     Intrinsics.throwUninitializedPropertyAccessException("currentDate");
                     localDate = null;
                 }
-                year = localDate.getYear();
+                int year = localDate.getYear();
                 LocalDate localDate3 = this$0.currentDate;
                 if (localDate3 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("currentDate");
                     localDate3 = null;
                 }
-                month = localDate3.getMonth();
-                of = YearMonth.of(year, month);
+                YearMonth yearMonthOf = YearMonth.of(year, localDate3.getMonth());
                 LocalDate localDate4 = this$0.currentDate;
                 if (localDate4 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("currentDate");
                     localDate4 = null;
                 }
-                withDayOfMonth = localDate4.withDayOfMonth(1);
+                LocalDate localDateWithDayOfMonth = localDate4.withDayOfMonth(1);
                 LocalDate localDate5 = this$0.currentDate;
                 if (localDate5 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("currentDate");
                 } else {
                     localDate2 = localDate5;
                 }
-                lengthOfMonth = of.lengthOfMonth();
-                withDayOfMonth2 = localDate2.withDayOfMonth(lengthOfMonth);
-                dayOfWeek = withDayOfMonth.getDayOfWeek();
-                value = dayOfWeek.getValue();
+                LocalDate localDateWithDayOfMonth2 = localDate2.withDayOfMonth(yearMonthOf.lengthOfMonth());
                 int i6 = 7;
-                int i7 = value % 7;
+                int value = localDateWithDayOfMonth.getDayOfWeek().getValue() % 7;
                 System.out.println((Object) "firstDayOfWeek");
-                System.out.println(i7);
+                System.out.println(value);
                 System.out.println((Object) "firstDayOfWeek");
-                if (i7 != 0) {
-                    i6 = i7;
+                if (value != 0) {
+                    i6 = value;
                 }
-                for (int i8 = 1; i8 < i6; i8++) {
+                for (int i7 = 1; i7 < i6; i7++) {
                     arrayList.add("");
                     arrayList2.add("");
                     arrayList3.add("");
                     arrayList4.add("");
                     arrayList5.add(0);
                     arrayList6.add(false);
-                    this$0.a = i8;
+                    this$0.a = i7;
                 }
-                dayOfMonth = withDayOfMonth2.getDayOfMonth();
+                int dayOfMonth = localDateWithDayOfMonth2.getDayOfMonth();
                 if (1 <= dayOfMonth) {
-                    int i9 = 1;
+                    int i8 = 1;
                     while (true) {
-                        arrayList.add(String.valueOf(i9));
-                        if (i9 == dayOfMonth) {
+                        arrayList.add(String.valueOf(i8));
+                        if (i8 == dayOfMonth) {
                             break;
                         } else {
-                            i9++;
+                            i8++;
                         }
                     }
                 }
@@ -641,32 +592,32 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
                 this$0.attendances = attends;
                 int size = attends.size() - 1;
                 if (size >= 0) {
-                    int i10 = 0;
+                    int i9 = 0;
                     while (true) {
-                        arrayList5.add(Integer.valueOf(this$0.attendances.get(i10).getTotalperiod()));
-                        arrayList6.add(Boolean.valueOf(this$0.attendances.get(i10).getHoliday()));
-                        int totalperiod = this$0.attendances.get(i10).getTotalperiod() - i5;
+                        arrayList5.add(Integer.valueOf(this$0.attendances.get(i9).getTotalperiod()));
+                        arrayList6.add(Boolean.valueOf(this$0.attendances.get(i9).getHoliday()));
+                        int totalperiod = this$0.attendances.get(i9).getTotalperiod() - i5;
                         if (totalperiod >= 0) {
-                            int i11 = 0;
+                            int i10 = 0;
                             i = 0;
                             i2 = 0;
                             i3 = 0;
                             while (true) {
-                                if (Intrinsics.areEqual(this$0.attendances.get(i10).getPeriods().get(i11).getAttendance(), "present")) {
+                                if (Intrinsics.areEqual(this$0.attendances.get(i9).getPeriods().get(i10).getAttendance(), "present")) {
                                     i++;
                                 } else {
-                                    String lowerCase = this$0.attendances.get(i10).getPeriods().get(i11).getAttendance().toLowerCase();
+                                    String lowerCase = this$0.attendances.get(i9).getPeriods().get(i10).getAttendance().toLowerCase();
                                     Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
                                     if (Intrinsics.areEqual(lowerCase, "n/a")) {
                                         i2++;
-                                    } else if (Intrinsics.areEqual(this$0.attendances.get(i10).getPeriods().get(i11).getAttendance(), "absent")) {
+                                    } else if (Intrinsics.areEqual(this$0.attendances.get(i9).getPeriods().get(i10).getAttendance(), "absent")) {
                                         i3++;
                                     }
                                 }
-                                if (i11 == totalperiod) {
+                                if (i10 == totalperiod) {
                                     break;
                                 } else {
-                                    i11++;
+                                    i10++;
                                 }
                             }
                         } else {
@@ -677,10 +628,10 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
                         arrayList2.add(String.valueOf(i3));
                         arrayList3.add(String.valueOf(i));
                         arrayList4.add(String.valueOf(i2));
-                        if (i10 == size) {
+                        if (i9 == size) {
                             break;
                         }
-                        i10++;
+                        i9++;
                         i5 = 1;
                     }
                 }
@@ -726,45 +677,38 @@ public final class AttendanceCalendarViewFragment extends BaseFragment implement
 
     @Override // in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewAdapter.DayClickListener
     public void onDateClicked(String day) {
-        DateTimeFormatter ofPattern;
-        DateTimeFormatter ofPattern2;
-        String format;
-        String format2;
-        DateTimeFormatter ofPattern3;
         Intrinsics.checkNotNullParameter(day, "day");
-        String padStart = StringsKt.padStart(day, 2, '0');
-        ofPattern = DateTimeFormatter.ofPattern("MM");
-        ofPattern2 = DateTimeFormatter.ofPattern(CalendarAdapter.YEAR_FORMAT);
+        String strPadStart = StringsKt.padStart(day, 2, '0');
+        DateTimeFormatter dateTimeFormatterOfPattern = DateTimeFormatter.ofPattern("MM");
+        DateTimeFormatter dateTimeFormatterOfPattern2 = DateTimeFormatter.ofPattern(CalendarAdapter.YEAR_FORMAT);
         LocalDate localDate = this.currentDate;
         if (localDate == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate = null;
         }
-        format = localDate.format(ofPattern);
-        this.currentMonth = format;
+        this.currentMonth = localDate.format(dateTimeFormatterOfPattern);
         LocalDate localDate2 = this.currentDate;
         if (localDate2 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate2 = null;
         }
-        format2 = localDate2.format(ofPattern2);
-        this.currentYear = format2;
+        this.currentYear = localDate2.format(dateTimeFormatterOfPattern2);
         System.out.println((Object) this.currentMonth);
         System.out.println((Object) this.currentYear);
-        ofPattern3 = DateTimeFormatter.ofPattern("MMMM yyyy");
+        DateTimeFormatter dateTimeFormatterOfPattern3 = DateTimeFormatter.ofPattern("MMMM yyyy");
         LocalDate localDate3 = this.currentDate;
         if (localDate3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("currentDate");
             localDate3 = null;
         }
-        localDate3.format(ofPattern3);
-        String str = this.currentYear + HelpFormatter.DEFAULT_OPT_PREFIX + this.currentMonth + HelpFormatter.DEFAULT_OPT_PREFIX + padStart;
+        localDate3.format(dateTimeFormatterOfPattern3);
+        String str = this.currentYear + HelpFormatter.DEFAULT_OPT_PREFIX + this.currentMonth + HelpFormatter.DEFAULT_OPT_PREFIX + strPadStart;
         System.out.println((Object) str);
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AttendanceDayDialog newInstance = AttendanceDayDialog.INSTANCE.newInstance(str, this.semId);
-        newInstance.setCalendarCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AttendanceDayDialog attendanceDayDialogNewInstance = AttendanceDayDialog.INSTANCE.newInstance(str, this.semId);
+        attendanceDayDialogNewInstance.setCalendarCallBack(this);
+        attendanceDayDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialog.AttendanceDayListner

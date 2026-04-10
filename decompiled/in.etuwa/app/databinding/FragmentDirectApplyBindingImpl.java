@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentDirectApplyBindingImpl extends FragmentDirectApplyBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentDirectApplyBindingImpl extends FragmentDirectApplyBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (71 != variableId) {
+        if (70 != variableId) {
             return false;
         }
         setDirectApplyViewModel((DirectApplyViewModel) variable);

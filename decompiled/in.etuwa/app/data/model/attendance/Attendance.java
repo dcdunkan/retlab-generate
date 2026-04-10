@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.attendance;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Attendance.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Attendance.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Attendance {
     private final String class_attended;
     private final String credit_percent;
@@ -17,52 +17,52 @@ public final /* data */ class Attendance {
     private final String total_dutyleave;
     private final String total_subject;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getPercentage() {
         return this.percentage;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getPercentage_dutyleave() {
         return this.percentage_dutyleave;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getTotal_dutyleave() {
         return this.total_dutyleave;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getPercentage_subject() {
         return this.percentage_subject;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getTotal_subject() {
         return this.total_subject;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getCredit_total() {
         return this.credit_total;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getCredit_percent() {
         return this.credit_percent;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getClass_attended() {
         return this.class_attended;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getTotal_classes() {
         return this.total_classes;
     }

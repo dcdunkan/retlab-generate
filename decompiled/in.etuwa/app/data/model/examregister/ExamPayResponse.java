@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamPayResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamPayResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamPayResponse {
     private final String error;
     private final ArrayList<ExamPay> exam;
@@ -15,6 +15,7 @@ public final /* data */ class ExamPayResponse {
     private final boolean login;
     private final String url;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ ExamPayResponse copy$default(ExamPayResponse examPayResponse, boolean z, boolean z2, String str, String str2, ArrayList arrayList, int i, Object obj) {
         if ((i & 1) != 0) {
             z = examPayResponse.login;
@@ -37,22 +38,22 @@ public final /* data */ class ExamPayResponse {
         return examPayResponse.copy(z, z3, str3, str4, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getIs_registered() {
         return this.is_registered;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getError() {
         return this.error;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
@@ -83,6 +84,9 @@ public final /* data */ class ExamPayResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v10 */
     /* JADX WARN: Type inference failed for: r0v11 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v8 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -91,7 +95,7 @@ public final /* data */ class ExamPayResponse {
         }
         int i = r0 * 31;
         boolean z2 = this.is_registered;
-        return ((((((i + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.error.hashCode()) * 31) + this.url.hashCode()) * 31) + this.exam.hashCode();
+        return ((((((i + (z2 ? 1 : z2)) * 31) + this.error.hashCode()) * 31) + this.url.hashCode()) * 31) + this.exam.hashCode();
     }
 
     public String toString() {

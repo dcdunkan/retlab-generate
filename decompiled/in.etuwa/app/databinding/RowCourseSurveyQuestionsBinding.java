@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCourseSurveyQuestionsBinding implements ViewBinding {
     public final LinearLayout multipleAnswerLyt;
     public final RadioButton option1;
@@ -50,11 +50,11 @@ public final class RowCourseSurveyQuestionsBinding implements ViewBinding {
     }
 
     public static RowCourseSurveyQuestionsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_course_survey_questions, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_course_survey_questions, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCourseSurveyQuestionsBinding bind(View rootView) {

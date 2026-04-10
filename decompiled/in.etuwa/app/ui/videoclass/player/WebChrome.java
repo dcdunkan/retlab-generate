@@ -11,8 +11,8 @@ import java.lang.ref.WeakReference;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: VideoPlayerActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: VideoPlayerActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class WebChrome extends WebChromeClient {
     private final WeakReference<VideoPlayerActivity> activityRef;
     private View customView;

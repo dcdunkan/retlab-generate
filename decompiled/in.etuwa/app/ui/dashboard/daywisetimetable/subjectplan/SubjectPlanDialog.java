@@ -44,15 +44,15 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SubjectPlanDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: SubjectPlanDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogSubjectPlanBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String date;
     private Integer hour;
@@ -60,10 +60,10 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
     private MainCallBackListener listener2;
     private int position;
 
-    /* renamed from: subjectPlanViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: subjectPlanViewModel$delegate, reason: from kotlin metadata */
     private final Lazy subjectPlanViewModel;
 
-    /* compiled from: SubjectPlanDialog.kt */
+    /* JADX INFO: compiled from: SubjectPlanDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/dashboard/daywisetimetable/subjectplan/SubjectPlanDialog$StoreListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface StoreListener {
         void dismiss();
@@ -92,7 +92,7 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return subjectPlanDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(subjectPlanDialog);
@@ -106,7 +106,7 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -119,7 +119,7 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SubjectPlanViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SubjectPlanViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.date = "";
@@ -147,7 +147,7 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogSubjectPlanBinding get_binding() {
         return this._binding;
     }
@@ -182,7 +182,7 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
         return (SubjectPlanAdapter) this.adapter.getValue();
     }
 
-    /* compiled from: SubjectPlanDialog.kt */
+    /* JADX INFO: compiled from: SubjectPlanDialog.kt */
     @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J \u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u0006H\u0007¨\u0006\n"}, d2 = {"Lin/etuwa/app/ui/dashboard/daywisetimetable/subjectplan/SubjectPlanDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/dashboard/daywisetimetable/subjectplan/SubjectPlanDialog;", CommonCssConstants.POSITION, "", "date", "", "hour", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -262,9 +262,10 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
     }
 
     private final void listenResponse() {
-        getSubjectPlanViewModel().getTimeTableResponse().observe(getViewLifecycleOwner(), new SubjectPlanDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DayWiseResponse>, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.subjectplan.SubjectPlanDialog$listenResponse$1
+        getSubjectPlanViewModel().getTimeTableResponse().observe(getViewLifecycleOwner(), new SubjectPlanDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DayWiseResponse>, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.subjectplan.SubjectPlanDialog.listenResponse.1
 
-            /* compiled from: SubjectPlanDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.dashboard.daywisetimetable.subjectplan.SubjectPlanDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: SubjectPlanDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -301,10 +302,8 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DayWiseResponse> resource) {
-                SubjectPlanAdapter adapter;
-                DialogSubjectPlanBinding dialogSubjectPlanBinding;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -312,8 +311,7 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
                     DayWiseResponse data = resource.getData();
                     if (data != null) {
                         SubjectPlanDialog subjectPlanDialog = SubjectPlanDialog.this;
-                        adapter = subjectPlanDialog.getAdapter();
-                        adapter.addItems(data.getTimetable().get(0).getSub().get(subjectPlanDialog.getPosition()).getTopic_name());
+                        subjectPlanDialog.getAdapter().addItems(data.getTimetable().get(0).getSub().get(subjectPlanDialog.getPosition()).getTopic_name());
                         return;
                     }
                     return;
@@ -330,7 +328,7 @@ public final class SubjectPlanDialog extends BaseDialog implements SubjectPlanAd
                     return;
                 }
                 SubjectPlanDialog.this.hideProgress();
-                dialogSubjectPlanBinding = SubjectPlanDialog.this.get_binding();
+                DialogSubjectPlanBinding dialogSubjectPlanBinding = SubjectPlanDialog.this.get_binding();
                 if (dialogSubjectPlanBinding == null || (recyclerView = dialogSubjectPlanBinding.rvSubjectPlan) == null) {
                     return;
                 }

@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Chat.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Chat.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Chat {
 
     @SerializedName("batch_id")
@@ -35,22 +35,22 @@ public final /* data */ class Chat {
         return chat.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubjectId() {
         return this.subjectId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSem() {
         return this.sem;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getBatchId() {
         return this.batchId;
     }

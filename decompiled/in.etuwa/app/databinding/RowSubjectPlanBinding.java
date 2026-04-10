@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowSubjectPlanBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final TextView topicTv;
@@ -29,11 +29,11 @@ public final class RowSubjectPlanBinding implements ViewBinding {
     }
 
     public static RowSubjectPlanBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_subject_plan, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_subject_plan, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowSubjectPlanBinding bind(View rootView) {

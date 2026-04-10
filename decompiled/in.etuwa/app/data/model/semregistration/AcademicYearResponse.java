@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AcademicYearResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AcademicYearResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AcademicYearResponse {
     private final ArrayList<AcademicYear> additional_electives;
     private final ArrayList<AcademicYear> electives;
@@ -19,17 +19,17 @@ public final /* data */ class AcademicYearResponse {
     private final String semester;
     private final String semester_id;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSemester_id() {
         return this.semester_id;
     }

@@ -6,8 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LabEquipment.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LabEquipment.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class LabEquipment {
 
     @SerializedName("asset_type")
@@ -36,22 +36,22 @@ public final /* data */ class LabEquipment {
         return labEquipment.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFacilityName() {
         return this.facilityName;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getAssetType() {
         return this.assetType;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

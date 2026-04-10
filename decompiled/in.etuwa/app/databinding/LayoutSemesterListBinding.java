@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class LayoutSemesterListBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final TextView semName;
@@ -29,11 +29,11 @@ public final class LayoutSemesterListBinding implements ViewBinding {
     }
 
     public static LayoutSemesterListBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.layout_semester_list, parent, false);
+        View viewInflate = inflater.inflate(R.layout.layout_semester_list, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static LayoutSemesterListBinding bind(View rootView) {

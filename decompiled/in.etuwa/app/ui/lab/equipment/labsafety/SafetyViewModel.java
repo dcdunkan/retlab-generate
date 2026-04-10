@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SafetyViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SafetyViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SafetyViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final LabRepository labRepository;
@@ -34,8 +34,8 @@ public final class SafetyViewModel extends ViewModel {
     public final void getSafetyList(String labId) {
         this.safetyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<String>> observeOn = this.labRepository.getSafetyApiCall(new LabEquipRequest(labId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<String>, Unit> function1 = new Function1<ArrayList<String>, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labsafety.SafetyViewModel$getSafetyList$1
+        Single<ArrayList<String>> singleObserveOn = this.labRepository.getSafetyApiCall(new LabEquipRequest(labId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<String>, Unit> function1 = new Function1<ArrayList<String>, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labsafety.SafetyViewModel.getSafetyList.1
             {
                 super(1);
             }
@@ -46,20 +46,18 @@ public final class SafetyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<String> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SafetyViewModel.this.safetyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                SafetyViewModel.this.safetyResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<String>> consumer = new Consumer() { // from class: in.etuwa.app.ui.lab.equipment.labsafety.SafetyViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SafetyViewModel.getSafetyList$lambda$0(Function1.this, obj);
+                SafetyViewModel.getSafetyList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labsafety.SafetyViewModel$getSafetyList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.equipment.labsafety.SafetyViewModel.getSafetyList.2
             {
                 super(1);
             }
@@ -70,17 +68,15 @@ public final class SafetyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SafetyViewModel.this.safetyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SafetyViewModel.this.safetyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.equipment.labsafety.SafetyViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.equipment.labsafety.SafetyViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SafetyViewModel.getSafetyList$lambda$1(Function1.this, obj);
+                SafetyViewModel.getSafetyList$lambda$1(function12, obj);
             }
         }));
     }

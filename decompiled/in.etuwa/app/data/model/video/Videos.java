@@ -6,8 +6,8 @@ import com.itextpdf.kernel.xmp.PdfConst;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Videos.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Videos.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Videos {
 
     @SerializedName("date")
@@ -39,42 +39,42 @@ public final /* data */ class Videos {
     @Expose
     private final String url;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSem() {
         return this.sem;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTitle() {
         return this.title;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDescription() {
         return this.description;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final int getType() {
         return this.type;
     }

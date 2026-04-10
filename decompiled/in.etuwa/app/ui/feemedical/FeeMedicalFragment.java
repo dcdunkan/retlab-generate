@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.SuccessResponse;
@@ -52,29 +53,29 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: FeeMedicalFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FeeMedicalFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FeeMedicalFragment extends BaseFragment implements FeeMedicalAdapter.CallBack, FeeDetailDialog.FeeDetailListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentFeeMedicalBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: feeMedicalViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: feeMedicalViewModel$delegate, reason: from kotlin metadata */
     private final Lazy feeMedicalViewModel;
     private ArrayList<FeesMed> list;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
     private List<String> selectedTotal;
     private double total;
 
-    /* compiled from: FeeMedicalFragment.kt */
+    /* JADX INFO: compiled from: FeeMedicalFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -128,7 +129,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return feeMedicalFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(feeMedicalFragment);
@@ -142,7 +143,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -155,7 +156,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(FeeMedicalViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(FeeMedicalViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final FeeMedicalFragment feeMedicalFragment2 = this;
@@ -204,7 +205,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
         return (FeeMedicalAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentFeeMedicalBinding get_binding() {
         return this._binding;
     }
@@ -231,7 +232,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
         this.selectedTotal = list;
     }
 
-    /* compiled from: FeeMedicalFragment.kt */
+    /* JADX INFO: compiled from: FeeMedicalFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/feemedical/FeeMedicalFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/feemedical/FeeMedicalFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -298,7 +299,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
         getAdapter().setCallBack(this);
         getFeeMedicalViewModel().getFees();
         listenResponse();
-        final HashMap hashMap = new HashMap();
+        final HashMap map = new HashMap();
         FragmentFeeMedicalBinding fragmentFeeMedicalBinding2 = get_binding();
         if (fragmentFeeMedicalBinding2 == null || (textView = fragmentFeeMedicalBinding2.payFeeMedicalBtn) == null) {
             return;
@@ -306,7 +307,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.feemedical.FeeMedicalFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FeeMedicalFragment.setUp$lambda$0(hashMap, this, view);
+                FeeMedicalFragment.setUp$lambda$0(map, this, view);
             }
         });
     }
@@ -315,9 +316,9 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
     public static final void setUp$lambda$0(HashMap FeeCollection, FeeMedicalFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(FeeCollection, "$FeeCollection");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = FeeCollection;
-        hashMap.put("payment", "1");
-        hashMap.put("batch_id", this$0.getPreference().getBatchId());
+        HashMap map = FeeCollection;
+        map.put("payment", "1");
+        map.put("batch_id", this$0.getPreference().getBatchId());
         int size = this$0.selected.size() - 1;
         if (size >= 0) {
             int i = 0;
@@ -329,8 +330,8 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
                         while (true) {
                             if (!Intrinsics.areEqual(this$0.list.get(i).getInstallments().get(i2).getBalance(), "0.00")) {
                                 Double.parseDouble(this$0.list.get(i).getInstallments().get(i2).getBalance());
-                                hashMap.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][amount]", this$0.list.get(i).getInstallments().get(i2).getBalance());
-                                hashMap.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][feeheadgroup_id]", this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id());
+                                map.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][amount]", this$0.list.get(i).getInstallments().get(i2).getBalance());
+                                map.put("FeeCollection[" + this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id() + "][feeheadgroup_id]", this$0.list.get(i).getInstallments().get(i2).getFeeheadgroup_id());
                             }
                             if (i2 == size2) {
                                 break;
@@ -339,8 +340,8 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
                             }
                         }
                     }
-                    hashMap.put("payment", "1");
-                    hashMap.put("batch_id", this$0.getPreference().getBatchId());
+                    map.put("payment", "1");
+                    map.put("batch_id", this$0.getPreference().getBatchId());
                 }
                 if (i == size) {
                     break;
@@ -349,7 +350,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
                 }
             }
         }
-        this$0.getFeeMedicalViewModel().getFeeUrl(hashMap);
+        this$0.getFeeMedicalViewModel().getFeeUrl(map);
         this$0.listenUrlResponse();
     }
 
@@ -357,15 +358,13 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
         getFeeMedicalViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.feemedical.FeeMedicalFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FeeMedicalFragment.listenResponse$lambda$2(FeeMedicalFragment.this, (Resource) obj);
+                FeeMedicalFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v6, types: [kotlin.Unit] */
-    /* JADX WARN: Type inference failed for: r5v8, types: [kotlin.Unit] */
     public static final void listenResponse$lambda$2(FeeMedicalFragment this$0, Resource resource) {
         RecyclerView rvFeeMedical;
         RecyclerView recyclerView;
@@ -403,9 +402,9 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
                 if (feesMedResponse.getLogin()) {
                     FeeMedicalAdapter adapter = this$0.getAdapter();
                     ArrayList<FeesMed> fees = feesMedResponse.getFees();
-                    Context requireContext = this$0.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                    adapter.addItems(fees, requireContext);
+                    Context contextRequireContext = this$0.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                    adapter.addItems(fees, contextRequireContext);
                     this$0.list = feesMedResponse.getFees();
                     this$0 = Unit.INSTANCE;
                 } else {
@@ -434,9 +433,10 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
     }
 
     private final void listenUrlResponse() {
-        getFeeMedicalViewModel().getFeeUrlResponse().observe(getViewLifecycleOwner(), new FeeMedicalFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.feemedical.FeeMedicalFragment$listenUrlResponse$1
+        getFeeMedicalViewModel().getFeeUrlResponse().observe(getViewLifecycleOwner(), new FeeMedicalFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.feemedical.FeeMedicalFragment.listenUrlResponse.1
 
-            /* compiled from: FeeMedicalFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feemedical.FeeMedicalFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: FeeMedicalFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -473,9 +473,8 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                MainCallBackListener mainCallBackListener;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -501,7 +500,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
                     FeeMedicalFragment feeMedicalFragment = FeeMedicalFragment.this;
                     feeMedicalFragment.showBaseView();
                     System.out.println((Object) data.getMessage());
-                    mainCallBackListener = feeMedicalFragment.listener;
+                    MainCallBackListener mainCallBackListener = feeMedicalFragment.listener;
                     if (mainCallBackListener != null) {
                         mainCallBackListener.openPaymentPage(data.getMessage());
                     }
@@ -559,7 +558,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
             int i = 0;
             while (true) {
                 d += Double.parseDouble(total.get(i));
-                if (d <= 0.0d) {
+                if (d <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                     FragmentFeeMedicalBinding fragmentFeeMedicalBinding = get_binding();
                     TextView textView = fragmentFeeMedicalBinding != null ? fragmentFeeMedicalBinding.payFeeMedicalBtn : null;
                     if (textView != null) {
@@ -594,7 +593,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
                         int i3 = 0;
                         while (true) {
                             d2 += Double.parseDouble(this.list.get(i2).getInstallments().get(i3).getBalance());
-                            if (d2 <= 0.0d) {
+                            if (d2 <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                                 FragmentFeeMedicalBinding fragmentFeeMedicalBinding4 = get_binding();
                                 TextView textView4 = fragmentFeeMedicalBinding4 != null ? fragmentFeeMedicalBinding4.payFeeMedicalBtn : null;
                                 if (textView4 != null) {
@@ -626,7 +625,7 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
         this.selected = sel;
         this.selectedTotal = total;
         this.total = d2;
-        if (d <= 0.0d) {
+        if (d <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             FragmentFeeMedicalBinding fragmentFeeMedicalBinding6 = get_binding();
             TextView textView6 = fragmentFeeMedicalBinding6 != null ? fragmentFeeMedicalBinding6.payFeeMedicalBtn : null;
             if (textView6 == null) {
@@ -647,8 +646,8 @@ public final class FeeMedicalFragment extends BaseFragment implements FeeMedical
     public void selectedIds(int position) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        FeeDetailDialog newInstance = FeeDetailDialog.INSTANCE.newInstance(position);
-        newInstance.setMedicalCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        FeeDetailDialog feeDetailDialogNewInstance = FeeDetailDialog.INSTANCE.newInstance(position);
+        feeDetailDialogNewInstance.setMedicalCallBack(this);
+        feeDetailDialogNewInstance.show(childFragmentManager, (String) null);
     }
 }

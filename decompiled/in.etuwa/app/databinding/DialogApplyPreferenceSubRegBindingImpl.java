@@ -14,7 +14,7 @@ import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel;
 import in.etuwa.app.utils.CustomEditText;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogApplyPreferenceSubRegBindingImpl extends DialogApplyPreferenceSubRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -95,7 +95,7 @@ public class DialogApplyPreferenceSubRegBindingImpl extends DialogApplyPreferenc
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (27 != variableId) {
+        if (26 != variableId) {
             return false;
         }
         setApplyPreferenceSubRegViewModel((ApplyPreferenceSubRegViewModel) variable);

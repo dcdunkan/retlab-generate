@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SemList.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SemList.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SemList {
     private final int sem_pos;
     private final ArrayList<SubjectMainList> subjects;
@@ -21,7 +21,7 @@ public final /* data */ class SemList {
         return semList.copy(i, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getSem_pos() {
         return this.sem_pos;
     }

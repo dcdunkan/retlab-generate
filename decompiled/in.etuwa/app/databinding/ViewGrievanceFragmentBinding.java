@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ViewGrievanceFragmentBinding extends ViewDataBinding {
     public final TextView actionLevelBtn;
     public final TextView cellMemberBtn;

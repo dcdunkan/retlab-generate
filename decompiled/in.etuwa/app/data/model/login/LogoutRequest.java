@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LogoutRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LogoutRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class LogoutRequest {
 
     @SerializedName("push_token")
@@ -20,7 +20,7 @@ public final /* data */ class LogoutRequest {
         return logoutRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getToken() {
         return this.token;
     }

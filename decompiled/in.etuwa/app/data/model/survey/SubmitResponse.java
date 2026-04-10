@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubmitResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubmitResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubmitResponse {
     private final String response;
     private final String status;
@@ -20,12 +20,12 @@ public final /* data */ class SubmitResponse {
         return submitResponse.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getResponse() {
         return this.response;
     }

@@ -4,8 +4,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: StationaryItem.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: StationaryItem.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class StationaryItem {
     private final String category_id;
     private final String category_name;
@@ -16,42 +16,42 @@ public final /* data */ class StationaryItem {
     private final String subcategory_id;
     private final String subcategory_name;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getCategory_name() {
         return this.category_name;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSubcategory_name() {
         return this.subcategory_name;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getPrice() {
         return this.price;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getPre_url() {
         return this.pre_url;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getCategory_id() {
         return this.category_id;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getSubcategory_id() {
         return this.subcategory_id;
     }

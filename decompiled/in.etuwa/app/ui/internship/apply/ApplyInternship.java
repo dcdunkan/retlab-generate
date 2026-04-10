@@ -20,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.cli.HelpFormatter;
 import com.itextpdf.svg.SvgConstants;
@@ -51,23 +52,23 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ApplyInternship.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyInternship.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyInternship extends BaseDialog implements AddCompanyDialog.AddCompanyListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ApplyInternshipBinding _binding;
 
-    /* renamed from: applyInternshipViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: applyInternshipViewModel$delegate, reason: from kotlin metadata */
     private final Lazy applyInternshipViewModel;
     private ApplyInternshipCallBack listener;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String type;
 
-    /* compiled from: ApplyInternship.kt */
+    /* JADX INFO: compiled from: ApplyInternship.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/internship/apply/ApplyInternship$ApplyInternshipCallBack;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ApplyInternshipCallBack {
         void onDismiss();
@@ -96,7 +97,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return applyInternship;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(applyInternship);
@@ -110,7 +111,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -123,7 +124,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ApplyInternshipViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ApplyInternshipViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.type = "";
@@ -135,7 +136,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyInternship.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -160,7 +161,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final ApplyInternshipBinding get_binding() {
         return this._binding;
     }
@@ -170,7 +171,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
         return (InternshipCompanySpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: ApplyInternship.kt */
+    /* JADX INFO: compiled from: ApplyInternship.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/internship/apply/ApplyInternship$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/internship/apply/ApplyInternship;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -214,13 +215,13 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
 
     @Override // in.etuwa.app.ui.base.BaseDialog
     protected void setUp() {
+        MaterialButton materialButton;
         TextView textView;
+        MaterialButton materialButton2;
+        MaterialButton materialButton3;
+        MaterialButton materialButton4;
+        MaterialButton materialButton5;
         TextView textView2;
-        TextView textView3;
-        TextView textView4;
-        TextView textView5;
-        TextView textView6;
-        TextView textView7;
         ApplyInternshipBinding applyInternshipBinding = get_binding();
         Spinner spinner = applyInternshipBinding != null ? applyInternshipBinding.spinnerCompanyNames : null;
         if (spinner != null) {
@@ -239,82 +240,80 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
         ApplyInternshipBinding applyInternshipBinding2 = get_binding();
         Spinner spinner2 = applyInternshipBinding2 != null ? applyInternshipBinding2.spinnerCompanyNames : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    InternshipCompanySpinnerAdapter spinnerAdapter;
                     ApplyInternship applyInternship = ApplyInternship.this;
-                    spinnerAdapter = applyInternship.getSpinnerAdapter();
-                    applyInternship.type = spinnerAdapter.getType(position).getId();
+                    applyInternship.type = applyInternship.getSpinnerAdapter().getType(position).getId();
                 }
             });
         }
         ApplyInternshipBinding applyInternshipBinding3 = get_binding();
-        if (applyInternshipBinding3 != null && (textView7 = applyInternshipBinding3.internshipFromDate) != null) {
-            textView7.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda0
+        if (applyInternshipBinding3 != null && (textView2 = applyInternshipBinding3.internshipFromDate) != null) {
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyInternship.setUp$lambda$1(ApplyInternship.this, i, i2, i3, view);
+                    ApplyInternship.setUp$lambda$1(this.f$0, i, i2, i3, view);
                 }
             });
         }
         ApplyInternshipBinding applyInternshipBinding4 = get_binding();
-        if (applyInternshipBinding4 != null && (textView6 = applyInternshipBinding4.addCompanyBtn) != null) {
-            textView6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda1
+        if (applyInternshipBinding4 != null && (materialButton5 = applyInternshipBinding4.addCompanyBtn) != null) {
+            materialButton5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyInternship.setUp$lambda$2(ApplyInternship.this, view);
+                    ApplyInternship.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
         ApplyInternshipBinding applyInternshipBinding5 = get_binding();
-        if (applyInternshipBinding5 != null && (textView5 = applyInternshipBinding5.closeCompanyBtn) != null) {
-            textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda2
+        if (applyInternshipBinding5 != null && (materialButton4 = applyInternshipBinding5.closeCompanyBtn) != null) {
+            materialButton4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyInternship.setUp$lambda$3(ApplyInternship.this, view);
+                    ApplyInternship.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
         ApplyInternshipBinding applyInternshipBinding6 = get_binding();
-        if (applyInternshipBinding6 != null && (textView4 = applyInternshipBinding6.addBtn) != null) {
-            textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda3
+        if (applyInternshipBinding6 != null && (materialButton3 = applyInternshipBinding6.addBtn) != null) {
+            materialButton3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyInternship.setUp$lambda$4(ApplyInternship.this, view);
+                    ApplyInternship.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
         ApplyInternshipBinding applyInternshipBinding7 = get_binding();
-        if (applyInternshipBinding7 != null && (textView3 = applyInternshipBinding7.cancelBtn) != null) {
-            textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda4
+        if (applyInternshipBinding7 != null && (materialButton2 = applyInternshipBinding7.cancelBtn) != null) {
+            materialButton2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyInternship.setUp$lambda$5(ApplyInternship.this, view);
+                    ApplyInternship.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
         ApplyInternshipBinding applyInternshipBinding8 = get_binding();
-        if (applyInternshipBinding8 != null && (textView2 = applyInternshipBinding8.internshipToDate) != null) {
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda5
+        if (applyInternshipBinding8 != null && (textView = applyInternshipBinding8.internshipToDate) != null) {
+            textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyInternship.setUp$lambda$7(ApplyInternship.this, i4, i5, i6, view);
+                    ApplyInternship.setUp$lambda$7(this.f$0, i4, i5, i6, view);
                 }
             });
         }
         ApplyInternshipBinding applyInternshipBinding9 = get_binding();
-        if (applyInternshipBinding9 == null || (textView = applyInternshipBinding9.applyInternshipBtn) == null) {
+        if (applyInternshipBinding9 == null || (materialButton = applyInternshipBinding9.applyInternshipBtn) == null) {
             return;
         }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda6
+        materialButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ApplyInternship.setUp$lambda$8(ApplyInternship.this, view);
+                ApplyInternship.setUp$lambda$8(this.f$0, view);
             }
         });
     }
@@ -325,7 +324,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda7
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                ApplyInternship.setUp$lambda$1$lambda$0(ApplyInternship.this, datePicker, i4, i5, i6);
+                ApplyInternship.setUp$lambda$1$lambda$0(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -359,11 +358,11 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
             linearLayout.setVisibility(8);
         }
         ApplyInternshipBinding applyInternshipBinding2 = this$0.get_binding();
-        TextView textView = applyInternshipBinding2 != null ? applyInternshipBinding2.addCompanyBtn : null;
-        if (textView == null) {
+        MaterialButton materialButton = applyInternshipBinding2 != null ? applyInternshipBinding2.addCompanyBtn : null;
+        if (materialButton == null) {
             return;
         }
-        textView.setVisibility(0);
+        materialButton.setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -374,7 +373,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
         TextInputEditText textInputEditText4;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ApplyInternshipBinding applyInternshipBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(String.valueOf((applyInternshipBinding == null || (textInputEditText4 = applyInternshipBinding.etCompanyName) == null) ? null : textInputEditText4.getText()), "")) {
             return;
         }
@@ -384,12 +383,12 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
         }
         ApplyInternshipViewModel applyInternshipViewModel = this$0.getApplyInternshipViewModel();
         ApplyInternshipBinding applyInternshipBinding3 = this$0.get_binding();
-        String valueOf = String.valueOf((applyInternshipBinding3 == null || (textInputEditText2 = applyInternshipBinding3.etCompanyName) == null) ? null : textInputEditText2.getText());
+        String strValueOf = String.valueOf((applyInternshipBinding3 == null || (textInputEditText2 = applyInternshipBinding3.etCompanyName) == null) ? null : textInputEditText2.getText());
         ApplyInternshipBinding applyInternshipBinding4 = this$0.get_binding();
         if (applyInternshipBinding4 != null && (textInputEditText = applyInternshipBinding4.etCompanyAddress) != null) {
-            editable = textInputEditText.getText();
+            text = textInputEditText.getText();
         }
-        applyInternshipViewModel.addCompany(valueOf, String.valueOf(editable));
+        applyInternshipViewModel.addCompany(strValueOf, String.valueOf(text));
         this$0.getSpinnerAdapter().notifyDataSetChanged();
         this$0.listenSpinner();
     }
@@ -416,7 +415,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$$ExternalSyntheticLambda8
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                ApplyInternship.setUp$lambda$7$lambda$6(ApplyInternship.this, datePicker, i4, i5, i6);
+                ApplyInternship.setUp$lambda$7$lambda$6(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -440,19 +439,20 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
         ApplyInternshipViewModel applyInternshipViewModel = this$0.getApplyInternshipViewModel();
         String str = this$0.type;
         ApplyInternshipBinding applyInternshipBinding = this$0.get_binding();
-        CharSequence charSequence = null;
-        String valueOf = String.valueOf((applyInternshipBinding == null || (textView2 = applyInternshipBinding.internshipFromDate) == null) ? null : textView2.getText());
+        CharSequence text = null;
+        String strValueOf = String.valueOf((applyInternshipBinding == null || (textView2 = applyInternshipBinding.internshipFromDate) == null) ? null : textView2.getText());
         ApplyInternshipBinding applyInternshipBinding2 = this$0.get_binding();
         if (applyInternshipBinding2 != null && (textView = applyInternshipBinding2.internshipToDate) != null) {
-            charSequence = textView.getText();
+            text = textView.getText();
         }
-        applyInternshipViewModel.applyInternship(str, valueOf, String.valueOf(charSequence));
+        applyInternshipViewModel.applyInternship(str, strValueOf, String.valueOf(text));
     }
 
     private final void listenResponse() {
-        getApplyInternshipViewModel().getResponse().observe(getViewLifecycleOwner(), new ApplyInternship$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$listenResponse$1
+        getApplyInternshipViewModel().getResponse().observe(getViewLifecycleOwner(), new ApplyInternship$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship.listenResponse.1
 
-            /* compiled from: ApplyInternship.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.internship.apply.ApplyInternship$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplyInternship.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -489,14 +489,11 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                ApplyInternshipBinding applyInternshipBinding;
-                TextView applyInternshipBtn;
-                ApplyInternshipBinding applyInternshipBinding2;
-                TextView applyInternshipBtn2;
-                ApplyInternshipBinding applyInternshipBinding3;
-                TextView textView;
+                MaterialButton applyInternshipBtn;
+                MaterialButton applyInternshipBtn2;
+                MaterialButton materialButton;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -511,13 +508,13 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                         return;
                     }
                     ApplyInternship.this.hideProgress();
-                    applyInternshipBinding3 = ApplyInternship.this.get_binding();
-                    if (applyInternshipBinding3 == null || (textView = applyInternshipBinding3.applyInternshipBtn) == null) {
+                    ApplyInternshipBinding applyInternshipBinding = ApplyInternship.this.get_binding();
+                    if (applyInternshipBinding == null || (materialButton = applyInternshipBinding.applyInternshipBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
                     Intrinsics.checkNotNull(message);
-                    ToastExtKt.showErrorToast(textView, message);
+                    ToastExtKt.showErrorToast(materialButton, message);
                     return;
                 }
                 ApplyInternship.this.hideProgress();
@@ -525,7 +522,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                 if (data != null) {
                     ApplyInternship applyInternship = ApplyInternship.this;
                     if (data.getSuccess()) {
-                        applyInternshipBinding2 = applyInternship.get_binding();
+                        ApplyInternshipBinding applyInternshipBinding2 = applyInternship.get_binding();
                         if (applyInternshipBinding2 != null && (applyInternshipBtn2 = applyInternshipBinding2.applyInternshipBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(applyInternshipBtn2, "applyInternshipBtn");
                             ToastExtKt.showSuccessToast(applyInternshipBtn2, data.getMessage());
@@ -533,8 +530,8 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                         applyInternship.dismiss();
                         return;
                     }
-                    applyInternshipBinding = applyInternship.get_binding();
-                    if (applyInternshipBinding == null || (applyInternshipBtn = applyInternshipBinding.applyInternshipBtn) == null) {
+                    ApplyInternshipBinding applyInternshipBinding3 = applyInternship.get_binding();
+                    if (applyInternshipBinding3 == null || (applyInternshipBtn = applyInternshipBinding3.applyInternshipBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(applyInternshipBtn, "applyInternshipBtn");
@@ -546,9 +543,10 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void listenSpinner() {
-        getApplyInternshipViewModel().getListResponse().observe(getViewLifecycleOwner(), new ApplyInternship$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CompanyListResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$listenSpinner$1
+        getApplyInternshipViewModel().getListResponse().observe(getViewLifecycleOwner(), new ApplyInternship$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CompanyListResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship.listenSpinner.1
 
-            /* compiled from: ApplyInternship.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.internship.apply.ApplyInternship$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplyInternship.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -585,18 +583,15 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<CompanyListResponse> resource) {
-                InternshipCompanySpinnerAdapter spinnerAdapter;
-                ApplyInternshipBinding applyInternshipBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     ApplyInternship.this.hideProgress();
                     CompanyListResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter = ApplyInternship.this.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getCList());
+                        ApplyInternship.this.getSpinnerAdapter().addItems(data.getCList());
                         return;
                     }
                     return;
@@ -613,7 +608,7 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                     return;
                 }
                 ApplyInternship.this.hideProgress();
-                applyInternshipBinding = ApplyInternship.this.get_binding();
+                ApplyInternshipBinding applyInternshipBinding = ApplyInternship.this.get_binding();
                 if (applyInternshipBinding == null || (spinner = applyInternshipBinding.spinnerCompanyNames) == null) {
                     return;
                 }
@@ -625,9 +620,10 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
     }
 
     private final void listenAddResponse() {
-        getApplyInternshipViewModel().getAddResponse().observe(getViewLifecycleOwner(), new ApplyInternship$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship$listenAddResponse$1
+        getApplyInternshipViewModel().getAddResponse().observe(getViewLifecycleOwner(), new ApplyInternship$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternship.listenAddResponse.1
 
-            /* compiled from: ApplyInternship.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.internship.apply.ApplyInternship$listenAddResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplyInternship.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -664,17 +660,11 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                ApplyInternshipBinding applyInternshipBinding;
-                TextView addBtn;
-                ApplyInternshipBinding applyInternshipBinding2;
-                InternshipCompanySpinnerAdapter spinnerAdapter;
-                ApplyInternshipBinding applyInternshipBinding3;
-                ApplyInternshipBinding applyInternshipBinding4;
-                TextView addBtn2;
-                ApplyInternshipBinding applyInternshipBinding5;
-                TextView textView;
+                MaterialButton addBtn;
+                MaterialButton addBtn2;
+                MaterialButton materialButton;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -689,13 +679,13 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                         return;
                     }
                     ApplyInternship.this.hideProgress();
-                    applyInternshipBinding5 = ApplyInternship.this.get_binding();
-                    if (applyInternshipBinding5 == null || (textView = applyInternshipBinding5.addBtn) == null) {
+                    ApplyInternshipBinding applyInternshipBinding = ApplyInternship.this.get_binding();
+                    if (applyInternshipBinding == null || (materialButton = applyInternshipBinding.addBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
                     Intrinsics.checkNotNull(message);
-                    ToastExtKt.showErrorToast(textView, message);
+                    ToastExtKt.showErrorToast(materialButton, message);
                     return;
                 }
                 ApplyInternship.this.hideProgress();
@@ -703,20 +693,19 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                 if (data != null) {
                     ApplyInternship applyInternship = ApplyInternship.this;
                     if (data.getSuccess()) {
-                        applyInternshipBinding2 = applyInternship.get_binding();
+                        ApplyInternshipBinding applyInternshipBinding2 = applyInternship.get_binding();
                         if (applyInternshipBinding2 != null && (addBtn2 = applyInternshipBinding2.addBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(addBtn2, "addBtn");
                             ToastExtKt.showSuccessToast(addBtn2, data.getMessage());
                         }
-                        spinnerAdapter = applyInternship.getSpinnerAdapter();
-                        spinnerAdapter.notifyDataSetChanged();
+                        applyInternship.getSpinnerAdapter().notifyDataSetChanged();
                         applyInternship.listenSpinner();
-                        applyInternshipBinding3 = applyInternship.get_binding();
+                        ApplyInternshipBinding applyInternshipBinding3 = applyInternship.get_binding();
                         LinearLayout linearLayout = applyInternshipBinding3 != null ? applyInternshipBinding3.applyCompanyLayout : null;
                         if (linearLayout != null) {
                             linearLayout.setVisibility(0);
                         }
-                        applyInternshipBinding4 = applyInternship.get_binding();
+                        ApplyInternshipBinding applyInternshipBinding4 = applyInternship.get_binding();
                         LinearLayout linearLayout2 = applyInternshipBinding4 != null ? applyInternshipBinding4.addCompanyLayout : null;
                         if (linearLayout2 == null) {
                             return;
@@ -724,8 +713,8 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
                         linearLayout2.setVisibility(8);
                         return;
                     }
-                    applyInternshipBinding = applyInternship.get_binding();
-                    if (applyInternshipBinding == null || (addBtn = applyInternshipBinding.addBtn) == null) {
+                    ApplyInternshipBinding applyInternshipBinding5 = applyInternship.get_binding();
+                    if (applyInternshipBinding5 == null || (addBtn = applyInternshipBinding5.addBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(addBtn, "addBtn");
@@ -738,9 +727,9 @@ public final class ApplyInternship extends BaseDialog implements AddCompanyDialo
     public final void review() {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddCompanyDialog newInstance = AddCompanyDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddCompanyDialog addCompanyDialogNewInstance = AddCompanyDialog.INSTANCE.newInstance();
+        addCompanyDialogNewInstance.setCallBack(this);
+        addCompanyDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     public final void setApplyInternshipCallBack(InternshipFragment context) {

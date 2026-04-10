@@ -12,10 +12,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.ProfileViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentProfileBinding extends ViewDataBinding {
     public final LinearLayout btnBank;
+    public final LinearLayout btnLyt;
     public final LinearLayout changePwdBtn;
+    public final TextView collegeName;
     public final LinearLayout contactLyt;
     public final TextView emailTv;
     public final LinearLayout logoutLyt;
@@ -26,14 +28,18 @@ public abstract class FragmentProfileBinding extends ViewDataBinding {
     public final LinearLayout parentDetailsLyt;
     public final LinearLayout personalDetailsLyt;
     public final CircleImageView profileImage;
+    public final LinearLayout reviewAppBtn;
     public final LinearLayout shareAppBtn;
+    public final TextView veersionTv;
 
     public abstract void setProfileViewModel(ProfileViewModel profileViewModel);
 
-    protected FragmentProfileBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout btnBank, LinearLayout changePwdBtn, LinearLayout contactLyt, TextView emailTv, LinearLayout logoutLyt, TextView nameTv, LinearLayout parentDetailsLyt, LinearLayout personalDetailsLyt, CircleImageView profileImage, LinearLayout shareAppBtn) {
+    protected FragmentProfileBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout btnBank, LinearLayout btnLyt, LinearLayout changePwdBtn, TextView collegeName, LinearLayout contactLyt, TextView emailTv, LinearLayout logoutLyt, TextView nameTv, LinearLayout parentDetailsLyt, LinearLayout personalDetailsLyt, CircleImageView profileImage, LinearLayout reviewAppBtn, LinearLayout shareAppBtn, TextView veersionTv) {
         super(_bindingComponent, _root, _localFieldCount);
         this.btnBank = btnBank;
+        this.btnLyt = btnLyt;
         this.changePwdBtn = changePwdBtn;
+        this.collegeName = collegeName;
         this.contactLyt = contactLyt;
         this.emailTv = emailTv;
         this.logoutLyt = logoutLyt;
@@ -41,7 +47,9 @@ public abstract class FragmentProfileBinding extends ViewDataBinding {
         this.parentDetailsLyt = parentDetailsLyt;
         this.personalDetailsLyt = personalDetailsLyt;
         this.profileImage = profileImage;
+        this.reviewAppBtn = reviewAppBtn;
         this.shareAppBtn = shareAppBtn;
+        this.veersionTv = veersionTv;
     }
 
     public ProfileViewModel getProfileViewModel() {

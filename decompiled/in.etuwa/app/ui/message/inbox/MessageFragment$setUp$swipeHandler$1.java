@@ -11,8 +11,8 @@ import in.etuwa.app.helper.SwipeToDeleteCallback;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MessageFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MessageFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MessageFragment$setUp$swipeHandler$1 extends SwipeToDeleteCallback {
     final /* synthetic */ MessageFragment this$0;
 
@@ -25,25 +25,27 @@ public final class MessageFragment$setUp$swipeHandler$1 extends SwipeToDeleteCal
 
     @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-        InboxAdapter adapter;
         Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
         final int adapterPosition = viewHolder.getAdapterPosition();
-        adapter = this.this$0.getAdapter();
-        final Inbox removeAt = adapter.removeAt(adapterPosition);
+        final Inbox inboxRemoveAt = this.this$0.getAdapter().removeAt(adapterPosition);
+        if (inboxRemoveAt == null) {
+            this.this$0.getAdapter().notifyItemChanged(adapterPosition);
+            return;
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this.this$0.requireContext());
         builder.setMessage(this.this$0.getString(R.string.delete_msg));
         final MessageFragment messageFragment = this.this$0;
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$setUp$swipeHandler$1$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MessageFragment$setUp$swipeHandler$1.onSwiped$lambda$0(MessageFragment.this, removeAt, dialogInterface, i);
+                MessageFragment$setUp$swipeHandler$1.onSwiped$lambda$0(messageFragment, inboxRemoveAt, dialogInterface, i);
             }
         });
         final MessageFragment messageFragment2 = this.this$0;
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$setUp$swipeHandler$1$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MessageFragment$setUp$swipeHandler$1.onSwiped$lambda$1(MessageFragment.this, removeAt, adapterPosition, dialogInterface, i);
+                MessageFragment$setUp$swipeHandler$1.onSwiped$lambda$1(messageFragment2, inboxRemoveAt, adapterPosition, dialogInterface, i);
             }
         });
         builder.show();
@@ -51,19 +53,15 @@ public final class MessageFragment$setUp$swipeHandler$1 extends SwipeToDeleteCal
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onSwiped$lambda$0(MessageFragment this$0, Inbox item, DialogInterface dialogInterface, int i) {
-        MessageViewModel messageViewModel;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        messageViewModel = this$0.getMessageViewModel();
-        messageViewModel.deleteMsg(item.getId());
+        this$0.getMessageViewModel().deleteMsg(item.getId());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onSwiped$lambda$1(MessageFragment this$0, Inbox item, int i, DialogInterface dialogInterface, int i2) {
-        InboxAdapter adapter;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(item, "$item");
-        adapter = this$0.getAdapter();
-        adapter.restoreItem(item, i);
+        this$0.getAdapter().restoreItem(item, i);
     }
 }

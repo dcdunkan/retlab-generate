@@ -48,24 +48,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MembershipFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MembershipFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MembershipFragment extends BaseFragment implements MembershipAdapter.MembershipListener, AddMembershipDialog.AddMembershipListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentMembershipBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: membershipViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: membershipViewModel$delegate, reason: from kotlin metadata */
     private final Lazy membershipViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: MembershipFragment.kt */
+    /* JADX INFO: compiled from: MembershipFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -125,7 +125,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return membershipFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(membershipFragment);
@@ -139,7 +139,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -152,7 +152,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MembershipViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MembershipViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MembershipFragment membershipFragment2 = this;
@@ -198,7 +198,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
         return (MembershipAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentMembershipBinding get_binding() {
         return this._binding;
     }
@@ -207,7 +207,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: MembershipFragment.kt */
+    /* JADX INFO: compiled from: MembershipFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/membership/MembershipFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/membership/MembershipFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -273,7 +273,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.profile.membership.MembershipFragment$$ExternalSyntheticLambda1
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    MembershipFragment.setUp$lambda$0(MembershipFragment.this);
+                    MembershipFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
@@ -284,7 +284,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.membership.MembershipFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MembershipFragment.setUp$lambda$1(MembershipFragment.this, view);
+                MembershipFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -306,16 +306,16 @@ public final class MembershipFragment extends BaseFragment implements Membership
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddMembershipDialog newInstance = AddMembershipDialog.INSTANCE.newInstance("", "", "", "");
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        AddMembershipDialog addMembershipDialogNewInstance = AddMembershipDialog.INSTANCE.newInstance("", "", "", "");
+        addMembershipDialogNewInstance.setCallBack(this$0);
+        addMembershipDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
         getMembershipViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.membership.MembershipFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MembershipFragment.listenResponse$lambda$3(MembershipFragment.this, (Resource) obj);
+                MembershipFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -362,7 +362,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
         getMembershipViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.membership.MembershipFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MembershipFragment.listenDeleteResponse$lambda$5(MembershipFragment.this, (Resource) obj);
+                MembershipFragment.listenDeleteResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -456,9 +456,9 @@ public final class MembershipFragment extends BaseFragment implements Membership
         Intrinsics.checkNotNullParameter(description, "description");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddMembershipDialog newInstance = AddMembershipDialog.INSTANCE.newInstance(id, title, membershipId, description);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddMembershipDialog addMembershipDialogNewInstance = AddMembershipDialog.INSTANCE.newInstance(id, title, membershipId, description);
+        addMembershipDialogNewInstance.setCallBack(this);
+        addMembershipDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void deleteView(final String id) {
@@ -467,7 +467,7 @@ public final class MembershipFragment extends BaseFragment implements Membership
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.membership.MembershipFragment$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MembershipFragment.deleteView$lambda$6(MembershipFragment.this, id, dialogInterface, i);
+                MembershipFragment.deleteView$lambda$6(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.membership.MembershipFragment$$ExternalSyntheticLambda4

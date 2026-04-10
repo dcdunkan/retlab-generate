@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.lab;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LabEquipRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LabEquipRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class LabEquipRequest {
     private final String lid;
 
@@ -15,7 +15,7 @@ public final /* data */ class LabEquipRequest {
         return labEquipRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getLid() {
         return this.lid;
     }

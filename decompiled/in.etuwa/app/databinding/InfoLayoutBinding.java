@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class InfoLayoutBinding implements ViewBinding {
     public final TextView infoDialog;
     private final ScrollView rootView;
@@ -29,11 +29,11 @@ public final class InfoLayoutBinding implements ViewBinding {
     }
 
     public static InfoLayoutBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.info_layout, parent, false);
+        View viewInflate = inflater.inflate(R.layout.info_layout, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static InfoLayoutBinding bind(View rootView) {

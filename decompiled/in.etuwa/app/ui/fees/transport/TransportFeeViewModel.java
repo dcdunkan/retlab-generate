@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TransportFeeViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: TransportFeeViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class TransportFeeViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final FeeEngineerRepository feeEngineerRepository;
@@ -39,8 +39,8 @@ public final class TransportFeeViewModel extends ViewModel {
     public final void getTransportFeeYears() {
         this.transportFeeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<TransportFeeResponse> observeOn = this.feeEngineerRepository.getTransportFeeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<TransportFeeResponse, Unit> function1 = new Function1<TransportFeeResponse, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$getTransportFeeYears$1
+        Single<TransportFeeResponse> singleObserveOn = this.feeEngineerRepository.getTransportFeeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<TransportFeeResponse, Unit> function1 = new Function1<TransportFeeResponse, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel.getTransportFeeYears.1
             {
                 super(1);
             }
@@ -51,20 +51,18 @@ public final class TransportFeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(TransportFeeResponse transportFeeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportFeeViewModel.this.transportFeeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(transportFeeResponse));
+                TransportFeeViewModel.this.transportFeeResponse.postValue(Resource.INSTANCE.success(transportFeeResponse));
             }
         };
         Consumer<? super TransportFeeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportFeeViewModel.getTransportFeeYears$lambda$0(Function1.this, obj);
+                TransportFeeViewModel.getTransportFeeYears$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$getTransportFeeYears$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel.getTransportFeeYears.2
             {
                 super(1);
             }
@@ -75,17 +73,15 @@ public final class TransportFeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportFeeViewModel.this.transportFeeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TransportFeeViewModel.this.transportFeeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportFeeViewModel.getTransportFeeYears$lambda$1(Function1.this, obj);
+                TransportFeeViewModel.getTransportFeeYears$lambda$1(function12, obj);
             }
         }));
     }
@@ -110,8 +106,8 @@ public final class TransportFeeViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         this.transportFeeResponseNew.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<TransportFeeResponse> observeOn = this.feeEngineerRepository.getTransportFeeApiCall(yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<TransportFeeResponse, Unit> function1 = new Function1<TransportFeeResponse, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$getTransportFees$1
+        Single<TransportFeeResponse> singleObserveOn = this.feeEngineerRepository.getTransportFeeApiCall(yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<TransportFeeResponse, Unit> function1 = new Function1<TransportFeeResponse, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel.getTransportFees.1
             {
                 super(1);
             }
@@ -122,20 +118,18 @@ public final class TransportFeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(TransportFeeResponse transportFeeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportFeeViewModel.this.transportFeeResponseNew;
-                mutableLiveData.postValue(Resource.INSTANCE.success(transportFeeResponse));
+                TransportFeeViewModel.this.transportFeeResponseNew.postValue(Resource.INSTANCE.success(transportFeeResponse));
             }
         };
         Consumer<? super TransportFeeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportFeeViewModel.getTransportFees$lambda$2(Function1.this, obj);
+                TransportFeeViewModel.getTransportFees$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$getTransportFees$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel.getTransportFees.2
             {
                 super(1);
             }
@@ -146,17 +140,15 @@ public final class TransportFeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportFeeViewModel.this.transportFeeResponseNew;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TransportFeeViewModel.this.transportFeeResponseNew.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportFeeViewModel.getTransportFees$lambda$3(Function1.this, obj);
+                TransportFeeViewModel.getTransportFees$lambda$3(function12, obj);
             }
         }));
     }
@@ -181,8 +173,8 @@ public final class TransportFeeViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(transportFeeCollection, "transportFeeCollection");
         this.transportFeeUrlResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<TransportPayUrl> observeOn = this.feeEngineerRepository.getTransportFeeUrlApiCall(transportFeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<TransportPayUrl, Unit> function1 = new Function1<TransportPayUrl, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$getTransportFeesUrl$1
+        Single<TransportPayUrl> singleObserveOn = this.feeEngineerRepository.getTransportFeeUrlApiCall(transportFeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<TransportPayUrl, Unit> function1 = new Function1<TransportPayUrl, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel.getTransportFeesUrl.1
             {
                 super(1);
             }
@@ -193,20 +185,18 @@ public final class TransportFeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(TransportPayUrl transportPayUrl) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportFeeViewModel.this.transportFeeUrlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(transportPayUrl));
+                TransportFeeViewModel.this.transportFeeUrlResponse.postValue(Resource.INSTANCE.success(transportPayUrl));
             }
         };
         Consumer<? super TransportPayUrl> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportFeeViewModel.getTransportFeesUrl$lambda$4(Function1.this, obj);
+                TransportFeeViewModel.getTransportFeesUrl$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$getTransportFeesUrl$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel.getTransportFeesUrl.2
             {
                 super(1);
             }
@@ -217,17 +207,15 @@ public final class TransportFeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportFeeViewModel.this.transportFeeUrlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TransportFeeViewModel.this.transportFeeUrlResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportFeeViewModel.getTransportFeesUrl$lambda$5(Function1.this, obj);
+                TransportFeeViewModel.getTransportFeesUrl$lambda$5(function12, obj);
             }
         }));
     }

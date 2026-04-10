@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.certificaterequest;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CertificateType2.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CertificateType2.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class CertificateType2 {
     private final String name;
 
@@ -15,7 +15,7 @@ public final /* data */ class CertificateType2 {
         return certificateType2.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }

@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.graduateexit.GraduateExitSurveyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentGraduateExitSurveyListBindingImpl extends FragmentGraduateExitSurveyListBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentGraduateExitSurveyListBindingImpl extends FragmentGraduateE
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (100 != variableId) {
+        if (101 != variableId) {
             return false;
         }
         setGraduateExitSurveyViewModel((GraduateExitSurveyViewModel) variable);

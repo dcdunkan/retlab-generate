@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.mvjce.view.ViewMvjceSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ViewMvjceSemRegDialogBindingImpl extends ViewMvjceSemRegDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -95,7 +95,7 @@ public class ViewMvjceSemRegDialogBindingImpl extends ViewMvjceSemRegDialogBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (244 != variableId) {
+        if (246 != variableId) {
             return false;
         }
         setViewMvjceSemRegViewModel((ViewMvjceSemRegViewModel) variable);

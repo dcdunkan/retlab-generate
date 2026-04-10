@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentHostelAttendanceParentFragmentBinding extends ViewDataBinding {
     public final TextView allTv;
     public final TextView approvalTv;

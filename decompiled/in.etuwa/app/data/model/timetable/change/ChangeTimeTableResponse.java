@@ -4,8 +4,8 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ChangeTimeTableResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ChangeTimeTableResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ChangeTimeTableResponse {
     private String date;
     private String inplace;
@@ -28,22 +28,22 @@ public final /* data */ class ChangeTimeTableResponse {
         return changeTimeTableResponse.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTeacher() {
         return this.teacher;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getInplace() {
         return this.inplace;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getPeriod() {
         return this.period;
     }

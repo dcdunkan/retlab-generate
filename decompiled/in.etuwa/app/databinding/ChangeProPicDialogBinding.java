@@ -14,7 +14,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ChangeProPicDialogBinding extends ViewDataBinding {
     public final CircleImageView ivProPic;
     public final ImageView ivSignature;

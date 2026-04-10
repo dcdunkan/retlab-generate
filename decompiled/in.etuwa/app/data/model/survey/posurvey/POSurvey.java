@@ -6,8 +6,8 @@ import in.etuwa.app.ui.leave.duty.fullday.FullDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: POSurvey.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: POSurvey.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class POSurvey {
     private final String btn;
     private final String end_date;
@@ -47,37 +47,37 @@ public final /* data */ class POSurvey {
         return pOSurvey.copy(str, str8, str9, str10, str11, str12, str7);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSurvey() {
         return this.survey;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSession() {
         return this.session;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStart_date() {
         return this.start_date;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getEnd_date() {
         return this.end_date;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getBtn() {
         return this.btn;
     }

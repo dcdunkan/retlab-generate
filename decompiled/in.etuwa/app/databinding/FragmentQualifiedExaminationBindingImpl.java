@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.qualifiedexaminations.QualifiedExaminationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentQualifiedExaminationBindingImpl extends FragmentQualifiedExaminationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentQualifiedExaminationBindingImpl extends FragmentQualifiedEx
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (174 != variableId) {
+        if (176 != variableId) {
             return false;
         }
         setQualifiedExaminationViewModel((QualifiedExaminationViewModel) variable);

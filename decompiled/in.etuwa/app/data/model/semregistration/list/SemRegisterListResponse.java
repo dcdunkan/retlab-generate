@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SemRegisterListResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SemRegisterListResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SemRegisterListResponse {
 
     @SerializedName("due_status")
@@ -38,12 +38,12 @@ public final /* data */ class SemRegisterListResponse {
     @SerializedName("sem_registration_status_message")
     private final String semRegistrationStatusMessage;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final boolean getFeePaid() {
         return this.feePaid;
     }
@@ -52,37 +52,37 @@ public final /* data */ class SemRegisterListResponse {
         return this.registerList;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final boolean getSemRegistrationStatus() {
         return this.semRegistrationStatus;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSemRegistrationStatusMessage() {
         return this.semRegistrationStatusMessage;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getErrorMessage() {
         return this.errorMessage;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getHostelDueMessage() {
         return this.hostelDueMessage;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getHostelDueStatus() {
         return this.hostelDueStatus;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final boolean getFeeExemption() {
         return this.feeExemption;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final boolean getDueStatus() {
         return this.dueStatus;
     }
@@ -110,43 +110,54 @@ public final /* data */ class SemRegisterListResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v20 */
     /* JADX WARN: Type inference failed for: r0v21 */
-    /* JADX WARN: Type inference failed for: r2v10, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v12, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v14, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v2, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v2 */
+    /* JADX WARN: Type inference failed for: r2v11, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v13, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v15, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v17 */
+    /* JADX WARN: Type inference failed for: r2v18 */
+    /* JADX WARN: Type inference failed for: r2v19 */
+    /* JADX WARN: Type inference failed for: r2v20 */
+    /* JADX WARN: Type inference failed for: r2v21 */
+    /* JADX WARN: Type inference failed for: r2v22 */
+    /* JADX WARN: Type inference failed for: r2v23 */
+    /* JADX WARN: Type inference failed for: r2v24 */
+    /* JADX WARN: Type inference failed for: r2v3, types: [int] */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
         if (z) {
             r0 = 1;
         }
-        int hashCode = ((r0 * 31) + this.registerList.hashCode()) * 31;
-        ?? r2 = this.semRegistrationStatus;
-        int i = r2;
-        if (r2 != 0) {
-            i = 1;
+        int iHashCode = ((r0 * 31) + this.registerList.hashCode()) * 31;
+        boolean z2 = this.semRegistrationStatus;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int hashCode2 = (((((((hashCode + i) * 31) + this.semRegistrationStatusMessage.hashCode()) * 31) + this.errorMessage.hashCode()) * 31) + this.hostelDueMessage.hashCode()) * 31;
-        ?? r22 = this.hostelDueStatus;
-        int i2 = r22;
-        if (r22 != 0) {
-            i2 = 1;
+        int iHashCode2 = (((((((iHashCode + r2) * 31) + this.semRegistrationStatusMessage.hashCode()) * 31) + this.errorMessage.hashCode()) * 31) + this.hostelDueMessage.hashCode()) * 31;
+        boolean z3 = this.hostelDueStatus;
+        ?? r22 = z3;
+        if (z3) {
+            r22 = 1;
         }
-        int i3 = (hashCode2 + i2) * 31;
-        ?? r23 = this.feeExemption;
-        int i4 = r23;
-        if (r23 != 0) {
-            i4 = 1;
+        int i = (iHashCode2 + r22) * 31;
+        boolean z4 = this.feeExemption;
+        ?? r23 = z4;
+        if (z4) {
+            r23 = 1;
         }
-        int i5 = (i3 + i4) * 31;
-        ?? r24 = this.dueStatus;
-        int i6 = r24;
-        if (r24 != 0) {
-            i6 = 1;
+        int i2 = (i + r23) * 31;
+        boolean z5 = this.dueStatus;
+        ?? r24 = z5;
+        if (z5) {
+            r24 = 1;
         }
-        int i7 = (i5 + i6) * 31;
-        boolean z2 = this.feePaid;
-        return i7 + (z2 ? 1 : z2 ? 1 : 0);
+        int i3 = (i2 + r24) * 31;
+        boolean z6 = this.feePaid;
+        return i3 + (z6 ? 1 : z6);
     }
 
     public String toString() {

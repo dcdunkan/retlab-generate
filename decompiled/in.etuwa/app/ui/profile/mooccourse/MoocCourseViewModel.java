@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: MoocCourseViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MoocCourseViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MoocCourseViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<SuccessResponse>> deleteResponse;
@@ -47,8 +47,8 @@ public final class MoocCourseViewModel extends ViewModel implements KoinComponen
     public final void getMoocCourseData() {
         this.moocResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<MoocCourseResponse> observeOn = this.profileRepository.getMoocCourseUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<MoocCourseResponse, Unit> function1 = new Function1<MoocCourseResponse, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$getMoocCourseData$1
+        Single<MoocCourseResponse> singleObserveOn = this.profileRepository.getMoocCourseUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<MoocCourseResponse, Unit> function1 = new Function1<MoocCourseResponse, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel.getMoocCourseData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class MoocCourseViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MoocCourseResponse moocCourseResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MoocCourseViewModel.this.moocResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(moocCourseResponse));
+                MoocCourseViewModel.this.moocResponse.postValue(Resource.INSTANCE.success(moocCourseResponse));
             }
         };
         Consumer<? super MoocCourseResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MoocCourseViewModel.getMoocCourseData$lambda$0(Function1.this, obj);
+                MoocCourseViewModel.getMoocCourseData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$getMoocCourseData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel.getMoocCourseData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class MoocCourseViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MoocCourseViewModel.this.moocResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                MoocCourseViewModel.this.moocResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MoocCourseViewModel.getMoocCourseData$lambda$1(Function1.this, obj);
+                MoocCourseViewModel.getMoocCourseData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class MoocCourseViewModel extends ViewModel implements KoinComponen
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteMoocCoursesUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$deleteMoocCourseData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteMoocCoursesUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel.deleteMoocCourseData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class MoocCourseViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 MoocCourseViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class MoocCourseViewModel extends ViewModel implements KoinComponen
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MoocCourseViewModel.deleteMoocCourseData$lambda$2(Function1.this, obj);
+                MoocCourseViewModel.deleteMoocCourseData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$deleteMoocCourseData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel.deleteMoocCourseData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class MoocCourseViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 MoocCourseViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.mooccourse.MoocCourseViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MoocCourseViewModel.deleteMoocCourseData$lambda$3(Function1.this, obj);
+                MoocCourseViewModel.deleteMoocCourseData$lambda$3(function12, obj);
             }
         }));
     }

@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.materials;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DownloadMaterial.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DownloadMaterial.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DownloadMaterial {
     private final String url;
 
@@ -15,7 +15,7 @@ public final /* data */ class DownloadMaterial {
         return downloadMaterial.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getUrl() {
         return this.url;
     }

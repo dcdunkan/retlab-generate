@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowOrderHistoryBinding implements ViewBinding {
     public final LinearLayout linearArtsFee;
     public final TextView messBookingDate;
@@ -48,11 +48,11 @@ public final class RowOrderHistoryBinding implements ViewBinding {
     }
 
     public static RowOrderHistoryBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_order_history, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_order_history, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowOrderHistoryBinding bind(View rootView) {

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBindings;
 import com.github.mikephil.charting.charts.BarChart;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class SubAttendanceFragmentBinding implements ViewBinding {
     public final BarChart barChartSub;
     private final LinearLayout rootView;
@@ -29,11 +29,11 @@ public final class SubAttendanceFragmentBinding implements ViewBinding {
     }
 
     public static SubAttendanceFragmentBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.sub_attendance_fragment, parent, false);
+        View viewInflate = inflater.inflate(R.layout.sub_attendance_fragment, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static SubAttendanceFragmentBinding bind(View rootView) {

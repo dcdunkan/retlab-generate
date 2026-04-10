@@ -11,8 +11,8 @@ import in.etuwa.app.ui.videoclass.player.YoutubeActivity;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ActivityMediator.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ActivityMediator.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ActivityMediator {
     public static final ActivityMediator INSTANCE = new ActivityMediator();
 

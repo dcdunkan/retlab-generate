@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.dash;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DashRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DashRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DashRequest {
     private final String hostel;
 
@@ -15,7 +15,7 @@ public final /* data */ class DashRequest {
         return dashRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getHostel() {
         return this.hostel;
     }

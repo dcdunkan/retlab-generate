@@ -42,11 +42,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: UpdateAbcDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UpdateAbcDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UpdateAbcDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAbcUpdateBinding _binding;
     private ArrayList<DownloadModel> downList;
@@ -55,11 +55,11 @@ public final class UpdateAbcDialog extends BaseDialog {
     private ProfileListener listener;
     private MainCallBackListener listener2;
 
-    /* renamed from: updateAbcViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: updateAbcViewModel$delegate, reason: from kotlin metadata */
     private final Lazy updateAbcViewModel;
     private String video;
 
-    /* compiled from: UpdateAbcDialog.kt */
+    /* JADX INFO: compiled from: UpdateAbcDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/updateabc/UpdateAbcDialog$ProfileListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ProfileListener {
         void dismiss();
@@ -88,7 +88,7 @@ public final class UpdateAbcDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return updateAbcDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(updateAbcDialog);
@@ -102,7 +102,7 @@ public final class UpdateAbcDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -115,7 +115,7 @@ public final class UpdateAbcDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(UpdateAbcViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(UpdateAbcViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.downList = new ArrayList<>();
@@ -126,12 +126,12 @@ public final class UpdateAbcDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAbcUpdateBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: UpdateAbcDialog.kt */
+    /* JADX INFO: compiled from: UpdateAbcDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J \u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/profile/updateabc/UpdateAbcDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/updateabc/UpdateAbcDialog;", "id", "", "instructions", "video", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -211,7 +211,7 @@ public final class UpdateAbcDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    UpdateAbcDialog.setUp$lambda$1(UpdateAbcDialog.this, view);
+                    UpdateAbcDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -220,7 +220,7 @@ public final class UpdateAbcDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    UpdateAbcDialog.setUp$lambda$2(UpdateAbcDialog.this, view);
+                    UpdateAbcDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -231,7 +231,7 @@ public final class UpdateAbcDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UpdateAbcDialog.setUp$lambda$3(UpdateAbcDialog.this, view);
+                UpdateAbcDialog.setUp$lambda$3(this.f$0, view);
             }
         });
     }
@@ -243,7 +243,7 @@ public final class UpdateAbcDialog extends BaseDialog {
         TextInputEditText textInputEditText2;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         DialogAbcUpdateBinding dialogAbcUpdateBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(String.valueOf((dialogAbcUpdateBinding == null || (textInputEditText2 = dialogAbcUpdateBinding.etAbcId) == null) ? null : textInputEditText2.getText()), "")) {
             DialogAbcUpdateBinding dialogAbcUpdateBinding2 = this$0.get_binding();
             if (dialogAbcUpdateBinding2 == null || (textView = dialogAbcUpdateBinding2.updateBtn) == null) {
@@ -255,20 +255,20 @@ public final class UpdateAbcDialog extends BaseDialog {
         UpdateAbcViewModel updateAbcViewModel = this$0.getUpdateAbcViewModel();
         DialogAbcUpdateBinding dialogAbcUpdateBinding3 = this$0.get_binding();
         if (dialogAbcUpdateBinding3 != null && (textInputEditText = dialogAbcUpdateBinding3.etAbcId) != null) {
-            editable = textInputEditText.getText();
+            text = textInputEditText.getText();
         }
-        updateAbcViewModel.getAbcUpdateData(String.valueOf(editable));
+        updateAbcViewModel.getAbcUpdateData(String.valueOf(text));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$2(UpdateAbcDialog this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ActivityMediator activityMediator = ActivityMediator.INSTANCE;
-        Context requireContext = this$0.requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
+        Context contextRequireContext = this$0.requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
         String str = this$0.video;
         Intrinsics.checkNotNull(str);
-        activityMediator.startYoutubeActivity(requireContext, str);
+        activityMediator.startYoutubeActivity(contextRequireContext, str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -281,9 +281,10 @@ public final class UpdateAbcDialog extends BaseDialog {
     }
 
     private final void listenVerifyResponse() {
-        getUpdateAbcViewModel().getAbcUpdateResponse().observe(getViewLifecycleOwner(), new UpdateAbcDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcDialog$listenVerifyResponse$1
+        getUpdateAbcViewModel().getAbcUpdateResponse().observe(getViewLifecycleOwner(), new UpdateAbcDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcDialog.listenVerifyResponse.1
 
-            /* compiled from: UpdateAbcDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.updateabc.UpdateAbcDialog$listenVerifyResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: UpdateAbcDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -320,13 +321,10 @@ public final class UpdateAbcDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogAbcUpdateBinding dialogAbcUpdateBinding;
                 TextView updateBtn;
-                DialogAbcUpdateBinding dialogAbcUpdateBinding2;
                 TextView updateBtn2;
-                DialogAbcUpdateBinding dialogAbcUpdateBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -342,8 +340,8 @@ public final class UpdateAbcDialog extends BaseDialog {
                         return;
                     }
                     UpdateAbcDialog.this.hideProgress();
-                    dialogAbcUpdateBinding3 = UpdateAbcDialog.this.get_binding();
-                    if (dialogAbcUpdateBinding3 == null || (textView = dialogAbcUpdateBinding3.updateBtn) == null) {
+                    DialogAbcUpdateBinding dialogAbcUpdateBinding = UpdateAbcDialog.this.get_binding();
+                    if (dialogAbcUpdateBinding == null || (textView = dialogAbcUpdateBinding.updateBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -356,7 +354,7 @@ public final class UpdateAbcDialog extends BaseDialog {
                 if (data != null) {
                     UpdateAbcDialog updateAbcDialog = UpdateAbcDialog.this;
                     if (data.getSuccess()) {
-                        dialogAbcUpdateBinding2 = updateAbcDialog.get_binding();
+                        DialogAbcUpdateBinding dialogAbcUpdateBinding2 = updateAbcDialog.get_binding();
                         if (dialogAbcUpdateBinding2 != null && (updateBtn2 = dialogAbcUpdateBinding2.updateBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(updateBtn2, "updateBtn");
                             ToastExtKt.showInfoToast(updateBtn2, data.getMessage());
@@ -364,8 +362,8 @@ public final class UpdateAbcDialog extends BaseDialog {
                         updateAbcDialog.dismiss();
                         return;
                     }
-                    dialogAbcUpdateBinding = updateAbcDialog.get_binding();
-                    if (dialogAbcUpdateBinding == null || (updateBtn = dialogAbcUpdateBinding.updateBtn) == null) {
+                    DialogAbcUpdateBinding dialogAbcUpdateBinding3 = updateAbcDialog.get_binding();
+                    if (dialogAbcUpdateBinding3 == null || (updateBtn = dialogAbcUpdateBinding3.updateBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(updateBtn, "updateBtn");

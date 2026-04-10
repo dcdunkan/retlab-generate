@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.lab.practical.LabPracticalViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class LabPracticalFragmentBindingImpl extends LabPracticalFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class LabPracticalFragmentBindingImpl extends LabPracticalFragmentBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (125 != variableId) {
+        if (126 != variableId) {
             return false;
         }
         setLabPracticalViewModel((LabPracticalViewModel) variable);

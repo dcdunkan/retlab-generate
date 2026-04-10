@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -19,6 +20,10 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.protocol.HTTP;
 import com.itextpdf.svg.SvgConstants;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
+import de.hdodenhof.circleimageview.CircleImageView;
+import in.etuwa.app.R;
 import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.dash.ProfileResponse;
 import in.etuwa.app.data.preference.SharedPrefManager;
@@ -51,11 +56,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ProfileFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ProfileFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ProfileFragment extends BaseFragment implements AddUpdateBankDialog.ProfileListener, UpdateAbcDialog.ProfileListener, PersonalDetailsDialog.ProfileListener, ParentDetailsDialog.ProfileListener, ContactDetailsDialog.ProfileListener, ChangePasswordDialog.RemindCounsellingListener, BankDetailsDialog.ProfileListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentProfileBinding _binding;
     private String abcId;
@@ -66,10 +71,10 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
     private String instruction;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: profileViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: profileViewModel$delegate, reason: from kotlin metadata */
     private final Lazy profileViewModel;
     private String video;
 
@@ -104,7 +109,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return profileFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(profileFragment);
@@ -118,7 +123,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -131,7 +136,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ProfileViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ProfileViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ProfileFragment profileFragment2 = this;
@@ -158,7 +163,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentProfileBinding get_binding() {
         return this._binding;
     }
@@ -168,7 +173,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: ProfileFragment.kt */
+    /* JADX INFO: compiled from: ProfileFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/ProfileFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/ProfileFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -236,7 +241,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             linearLayout7.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.ProfileFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileFragment.setUp$lambda$0(ProfileFragment.this, view);
+                    ProfileFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -245,7 +250,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             linearLayout6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.ProfileFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileFragment.setUp$lambda$1(ProfileFragment.this, view);
+                    ProfileFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -254,7 +259,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             linearLayout5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.ProfileFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileFragment.setUp$lambda$2(ProfileFragment.this, view);
+                    ProfileFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -266,7 +271,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             linearLayout4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.ProfileFragment$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileFragment.setUp$lambda$3(ProfileFragment.this, view);
+                    ProfileFragment.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -275,7 +280,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             linearLayout3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.ProfileFragment$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileFragment.setUp$lambda$4(ProfileFragment.this, view);
+                    ProfileFragment.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -284,7 +289,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
             linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.ProfileFragment$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProfileFragment.setUp$lambda$5(ProfileFragment.this, view);
+                    ProfileFragment.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -295,7 +300,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.ProfileFragment$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ProfileFragment.setUp$lambda$6(ProfileFragment.this, view);
+                ProfileFragment.setUp$lambda$6(this.f$0, view);
             }
         });
     }
@@ -305,9 +310,9 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        ChangePasswordDialog newInstance = ChangePasswordDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        ChangePasswordDialog changePasswordDialogNewInstance = ChangePasswordDialog.INSTANCE.newInstance();
+        changePasswordDialogNewInstance.setCallBack(this$0);
+        changePasswordDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -322,9 +327,9 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$2(ProfileFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Context requireContext = this$0.requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        this$0.shareApp(requireContext);
+        Context contextRequireContext = this$0.requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        this$0.shareApp(contextRequireContext);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -332,9 +337,9 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        PersonalDetailsDialog newInstance = PersonalDetailsDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        PersonalDetailsDialog personalDetailsDialogNewInstance = PersonalDetailsDialog.INSTANCE.newInstance();
+        personalDetailsDialogNewInstance.setCallBack(this$0);
+        personalDetailsDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -342,9 +347,9 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        BankDetailsDialog newInstance = BankDetailsDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        BankDetailsDialog bankDetailsDialogNewInstance = BankDetailsDialog.INSTANCE.newInstance();
+        bankDetailsDialogNewInstance.setCallBack(this$0);
+        bankDetailsDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -352,9 +357,9 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        ParentDetailsDialog newInstance = ParentDetailsDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        ParentDetailsDialog parentDetailsDialogNewInstance = ParentDetailsDialog.INSTANCE.newInstance();
+        parentDetailsDialogNewInstance.setCallBack(this$0);
+        parentDetailsDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -362,9 +367,9 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        ContactDetailsDialog newInstance = ContactDetailsDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        ContactDetailsDialog contactDetailsDialogNewInstance = ContactDetailsDialog.INSTANCE.newInstance();
+        contactDetailsDialogNewInstance.setCallBack(this$0);
+        contactDetailsDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     public final void shareApp(Context context) {
@@ -381,9 +386,10 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
     }
 
     private final void listenResponse() {
-        getProfileViewModel().getResponse().observe(getViewLifecycleOwner(), new ProfileFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileFragment$listenResponse$1
+        getProfileViewModel().getResponse().observe(getViewLifecycleOwner(), new ProfileFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileFragment.listenResponse.1
 
-            /* compiled from: ProfileFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.ProfileFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ProfileFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -420,29 +426,66 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:28:0x0096, code lost:
-            
-                if (kotlin.text.StringsKt.contains$default((java.lang.CharSequence) r3.getBaseUrl(), (java.lang.CharSequence) "engnr", false, 2, (java.lang.Object) null) == false) goto L32;
-             */
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.dash.ProfileResponse> r11) {
-                /*
-                    Method dump skipped, instructions count: 312
-                    To view this dump change 'Code comments level' option to 'DEBUG'
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.profile.ProfileFragment$listenResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<ProfileResponse> resource) {
+                TextView textView;
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        ProfileFragment.this.showProgress();
+                        return;
+                    }
+                    if (i == 3) {
+                        ProfileFragment.this.hideProgress();
+                        ProfileFragment.this.showBaseView();
+                        return;
+                    } else {
+                        if (i != 4) {
+                            return;
+                        }
+                        ProfileFragment.this.hideProgress();
+                        ProfileFragment.this.showBaseView();
+                        return;
+                    }
+                }
+                ProfileFragment.this.hideProgress();
+                ProfileResponse data = resource.getData();
+                if (data != null) {
+                    ProfileFragment profileFragment = ProfileFragment.this;
+                    profileFragment.showBaseView();
+                    if (data.getEdit_profile()) {
+                        data.getProfile_edit_live();
+                    }
+                    if (!Intrinsics.areEqual(data.getBankdetail_status(), "verified") && ((!Intrinsics.areEqual(data.getBank_name(), "") || (StringsKt.contains$default((CharSequence) profileFragment.getPreference().getBaseUrl(), (CharSequence) "tkmce", false, 2, (Object) null) && StringsKt.contains$default((CharSequence) profileFragment.getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null))) && !Intrinsics.areEqual(data.getBank_name(), "") && StringsKt.contains$default((CharSequence) profileFragment.getPreference().getBaseUrl(), (CharSequence) "tkmce", false, 2, (Object) null))) {
+                        StringsKt.contains$default((CharSequence) profileFragment.getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null);
+                    }
+                    if (profileFragment.getPreference().getUserImg().length() > 0) {
+                        RequestCreator requestCreatorCenterCrop = Picasso.get().load(profileFragment.getPreference().getUserImg()).placeholder(R.drawable.ic_user_profile).error(R.drawable.ic_user_profile).resize(108, 108).centerCrop();
+                        FragmentProfileBinding fragmentProfileBinding = profileFragment.get_binding();
+                        CircleImageView circleImageView = fragmentProfileBinding != null ? fragmentProfileBinding.profileImage : null;
+                        Intrinsics.checkNotNull(circleImageView);
+                        requestCreatorCenterCrop.into(circleImageView);
+                    }
+                    FragmentProfileBinding fragmentProfileBinding2 = profileFragment.get_binding();
+                    if (fragmentProfileBinding2 != null && (textView = fragmentProfileBinding2.nameTv) != null) {
+                        textView.setText(data.getName());
+                    }
+                    FragmentProfileBinding fragmentProfileBinding3 = profileFragment.get_binding();
+                    TextView textView2 = fragmentProfileBinding3 != null ? fragmentProfileBinding3.emailTv : null;
+                    if (textView2 == null) {
+                        return;
+                    }
+                    textView2.setText(data.getEmail());
+                }
             }
         }));
     }
 
     private final void listenAbcResponse() {
-        getProfileViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new ProfileFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileFragment$listenAbcResponse$1
+        getProfileViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new ProfileFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileFragment.listenAbcResponse.1
 
-            /* compiled from: ProfileFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.ProfileFragment$listenAbcResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ProfileFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -479,7 +522,7 @@ public final class ProfileFragment extends BaseFragment implements AddUpdateBank
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<AbcResponse> resource) {
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {

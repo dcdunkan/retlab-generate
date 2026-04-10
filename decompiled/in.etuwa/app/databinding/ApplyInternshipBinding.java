@@ -9,20 +9,21 @@ import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ApplyInternshipBinding extends ViewDataBinding {
-    public final TextView addBtn;
-    public final TextView addCompanyBtn;
+    public final MaterialButton addBtn;
+    public final MaterialButton addCompanyBtn;
     public final LinearLayout addCompanyLayout;
     public final LinearLayout applyCompanyLayout;
-    public final TextView applyInternshipBtn;
-    public final TextView cancelBtn;
-    public final TextView closeCompanyBtn;
+    public final MaterialButton applyInternshipBtn;
+    public final MaterialButton cancelBtn;
+    public final MaterialButton closeCompanyBtn;
     public final TextInputLayout comntLayout;
     public final TextInputEditText etCompany;
     public final TextInputEditText etCompanyAddress;
@@ -38,7 +39,7 @@ public abstract class ApplyInternshipBinding extends ViewDataBinding {
 
     public abstract void setApplyInternshipViewModel(ApplyInternshipViewModel applyInternshipViewModel);
 
-    protected ApplyInternshipBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView addBtn, TextView addCompanyBtn, LinearLayout addCompanyLayout, LinearLayout applyCompanyLayout, TextView applyInternshipBtn, TextView cancelBtn, TextView closeCompanyBtn, TextInputLayout comntLayout, TextInputEditText etCompany, TextInputEditText etCompanyAddress, TextInputEditText etCompanyName, TextView internshipFromDate, TextView internshipToDate, LinearLayout otherCompanyLayout, Spinner spinnerCompanyNames, LinearLayout verifiedLayout) {
+    protected ApplyInternshipBinding(Object _bindingComponent, View _root, int _localFieldCount, MaterialButton addBtn, MaterialButton addCompanyBtn, LinearLayout addCompanyLayout, LinearLayout applyCompanyLayout, MaterialButton applyInternshipBtn, MaterialButton cancelBtn, MaterialButton closeCompanyBtn, TextInputLayout comntLayout, TextInputEditText etCompany, TextInputEditText etCompanyAddress, TextInputEditText etCompanyName, TextView internshipFromDate, TextView internshipToDate, LinearLayout otherCompanyLayout, Spinner spinnerCompanyNames, LinearLayout verifiedLayout) {
         super(_bindingComponent, _root, _localFieldCount);
         this.addBtn = addBtn;
         this.addCompanyBtn = addCompanyBtn;

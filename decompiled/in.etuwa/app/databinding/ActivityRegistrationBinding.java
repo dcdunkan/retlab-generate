@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityRegistrationBinding implements ViewBinding {
     public final WebView registrationWebview;
     private final ConstraintLayout rootView;
@@ -29,11 +29,11 @@ public final class ActivityRegistrationBinding implements ViewBinding {
     }
 
     public static ActivityRegistrationBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_registration, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_registration, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityRegistrationBinding bind(View rootView) {

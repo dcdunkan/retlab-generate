@@ -33,15 +33,15 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: LoginViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LoginViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LoginViewModel extends ViewModel implements KoinComponent {
     private final MutableLiveData<Resource<ArrayList<Colleges>>> colleges;
     private final CompositeDisposable compositeDisposable;
     private final LoginRepository loginRepository;
     private MutableLiveData<Resource<LoginResponse>> loginResponse;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     public LoginViewModel(LoginRepository loginRepository) {
@@ -51,10 +51,10 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
         this.colleges = new MutableLiveData<>();
         this.loginResponse = new MutableLiveData<>();
         final LoginViewModel loginViewModel = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.login.LoginViewModel$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.login.LoginViewModel$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -64,7 +64,7 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = loginViewModel;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -97,8 +97,8 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
     public final void fetchColleges() {
         this.colleges.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<Institution> observeOn = this.loginRepository.getInstitutionsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<Institution, Unit> function1 = new Function1<Institution, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel$fetchColleges$1
+        Single<Institution> singleObserveOn = this.loginRepository.getInstitutionsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<Institution, Unit> function1 = new Function1<Institution, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel.fetchColleges.1
             {
                 super(1);
             }
@@ -109,20 +109,18 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Institution institution) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LoginViewModel.this.colleges;
-                mutableLiveData.postValue(Resource.INSTANCE.success(institution.getColleges()));
+                LoginViewModel.this.colleges.postValue(Resource.INSTANCE.success(institution.getColleges()));
             }
         };
         Consumer<? super Institution> consumer = new Consumer() { // from class: in.etuwa.app.ui.login.LoginViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LoginViewModel.fetchColleges$lambda$0(Function1.this, obj);
+                LoginViewModel.fetchColleges$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel$fetchColleges$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel.fetchColleges.2
             {
                 super(1);
             }
@@ -133,17 +131,15 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LoginViewModel.this.colleges;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                LoginViewModel.this.colleges.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.login.LoginViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.login.LoginViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LoginViewModel.fetchColleges$lambda$1(Function1.this, obj);
+                LoginViewModel.fetchColleges$lambda$1(function12, obj);
             }
         }));
     }
@@ -165,8 +161,8 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
         Intrinsics.checkNotNullParameter(password, "password");
         this.colleges.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<LoginResponse> observeOn = this.loginRepository.doLoginApiCall(new LoginRequest(userName, password, hostel)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<LoginResponse, Unit> function1 = new Function1<LoginResponse, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel$validateCredentials$1
+        Single<LoginResponse> singleObserveOn = this.loginRepository.doLoginApiCall(new LoginRequest(userName, password, hostel)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<LoginResponse, Unit> function1 = new Function1<LoginResponse, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel.validateCredentials.1
             {
                 super(1);
             }
@@ -177,20 +173,18 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(LoginResponse loginResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LoginViewModel.this.loginResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(loginResponse));
+                LoginViewModel.this.loginResponse.postValue(Resource.INSTANCE.success(loginResponse));
             }
         };
         Consumer<? super LoginResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.login.LoginViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LoginViewModel.validateCredentials$lambda$2(Function1.this, obj);
+                LoginViewModel.validateCredentials$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel$validateCredentials$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.login.LoginViewModel.validateCredentials.2
             {
                 super(1);
             }
@@ -201,17 +195,15 @@ public final class LoginViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LoginViewModel.this.loginResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                LoginViewModel.this.loginResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.login.LoginViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.login.LoginViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LoginViewModel.validateCredentials$lambda$3(Function1.this, obj);
+                LoginViewModel.validateCredentials$lambda$3(function12, obj);
             }
         }));
     }

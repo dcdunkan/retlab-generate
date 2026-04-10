@@ -11,8 +11,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: InternshipRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: InternshipRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class InternshipRepository {
     private final ApiHelper apiHelper;
 

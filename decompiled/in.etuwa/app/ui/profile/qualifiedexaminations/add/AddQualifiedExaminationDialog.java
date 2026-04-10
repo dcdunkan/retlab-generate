@@ -62,15 +62,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddQualifiedExaminationDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddQualifiedExaminationDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddQualifiedExaminationDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddQualifiedExaminationBinding _binding;
 
-    /* renamed from: addQualifiedExaminationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addQualifiedExaminationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addQualifiedExaminationViewModel;
     private String id;
     private AddQualifiedExaminationListener listener;
@@ -78,17 +78,17 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
     private File pickFile;
     private String score;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String yearId;
 
-    /* compiled from: AddQualifiedExaminationDialog.kt */
+    /* JADX INFO: compiled from: AddQualifiedExaminationDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/qualifiedexaminations/add/AddQualifiedExaminationDialog$AddQualifiedExaminationListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddQualifiedExaminationListener {
         void onDismiss();
     }
 
-    /* compiled from: AddQualifiedExaminationDialog.kt */
+    /* JADX INFO: compiled from: AddQualifiedExaminationDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -138,7 +138,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addQualifiedExaminationDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addQualifiedExaminationDialog);
@@ -152,7 +152,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -165,7 +165,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddQualifiedExaminationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddQualifiedExaminationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AddQualifiedExaminationDialog addQualifiedExaminationDialog2 = this;
@@ -176,7 +176,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddQualifiedExaminationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -201,7 +201,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddQualifiedExaminationBinding get_binding() {
         return this._binding;
     }
@@ -211,7 +211,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: AddQualifiedExaminationDialog.kt */
+    /* JADX INFO: compiled from: AddQualifiedExaminationDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J \u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/profile/qualifiedexaminations/add/AddQualifiedExaminationDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/qualifiedexaminations/add/AddQualifiedExaminationDialog;", "id", "", "name", FirebaseAnalytics.Param.SCORE, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -325,17 +325,15 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding8 = get_binding();
         Spinner spinner2 = dialogAddQualifiedExaminationBinding8 != null ? dialogAddQualifiedExaminationBinding8.spinnerYear : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter;
                     AddQualifiedExaminationDialog addQualifiedExaminationDialog = AddQualifiedExaminationDialog.this;
-                    spinnerAdapter = addQualifiedExaminationDialog.getSpinnerAdapter();
-                    addQualifiedExaminationDialog.yearId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    addQualifiedExaminationDialog.yearId = String.valueOf(addQualifiedExaminationDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
@@ -344,7 +342,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddQualifiedExaminationDialog.setUp$lambda$2(AddQualifiedExaminationDialog.this, view);
+                    AddQualifiedExaminationDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -353,7 +351,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddQualifiedExaminationDialog.setUp$lambda$3(AddQualifiedExaminationDialog.this, view);
+                    AddQualifiedExaminationDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -364,7 +362,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddQualifiedExaminationDialog.setUp$lambda$4(AddQualifiedExaminationDialog.this, view);
+                AddQualifiedExaminationDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -405,7 +403,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file = null;
                 }
-                if (file.length() / 1024 <= 100) {
+                if (file.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddQualifiedExaminationBinding2 == null || (textInputEditText8 = dialogAddQualifiedExaminationBinding2.etName) == null) ? null : textInputEditText8.getText()), "")) {
@@ -427,9 +425,9 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                     }
                     AddQualifiedExaminationViewModel addQualifiedExaminationViewModel = this$0.getAddQualifiedExaminationViewModel();
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding6 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddQualifiedExaminationBinding6 == null || (textInputEditText6 = dialogAddQualifiedExaminationBinding6.etName) == null) ? null : textInputEditText6.getText());
+                    String strValueOf = String.valueOf((dialogAddQualifiedExaminationBinding6 == null || (textInputEditText6 = dialogAddQualifiedExaminationBinding6.etName) == null) ? null : textInputEditText6.getText());
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding7 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddQualifiedExaminationBinding7 == null || (textInputEditText5 = dialogAddQualifiedExaminationBinding7.etScore) == null) ? null : textInputEditText5.getText());
+                    String strValueOf2 = String.valueOf((dialogAddQualifiedExaminationBinding7 == null || (textInputEditText5 = dialogAddQualifiedExaminationBinding7.etScore) == null) ? null : textInputEditText5.getText());
                     String str = this$0.yearId;
                     Intrinsics.checkNotNull(str);
                     File file2 = this$0.pickFile;
@@ -437,7 +435,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                         file2 = null;
                     }
-                    addQualifiedExaminationViewModel.addQualifiedExaminationData(valueOf, valueOf2, str, file2);
+                    addQualifiedExaminationViewModel.addQualifiedExaminationData(strValueOf, strValueOf2, str, file2);
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding8 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddQualifiedExaminationBinding8 != null ? dialogAddQualifiedExaminationBinding8.completionCard : null;
                     if (linearLayout != null) {
@@ -478,12 +476,12 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
             }
             AddQualifiedExaminationViewModel addQualifiedExaminationViewModel2 = this$0.getAddQualifiedExaminationViewModel();
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding15 = this$0.get_binding();
-            String valueOf3 = String.valueOf((dialogAddQualifiedExaminationBinding15 == null || (textInputEditText2 = dialogAddQualifiedExaminationBinding15.etName) == null) ? null : textInputEditText2.getText());
+            String strValueOf3 = String.valueOf((dialogAddQualifiedExaminationBinding15 == null || (textInputEditText2 = dialogAddQualifiedExaminationBinding15.etName) == null) ? null : textInputEditText2.getText());
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding16 = this$0.get_binding();
-            String valueOf4 = String.valueOf((dialogAddQualifiedExaminationBinding16 == null || (textInputEditText = dialogAddQualifiedExaminationBinding16.etScore) == null) ? null : textInputEditText.getText());
+            String strValueOf4 = String.valueOf((dialogAddQualifiedExaminationBinding16 == null || (textInputEditText = dialogAddQualifiedExaminationBinding16.etScore) == null) ? null : textInputEditText.getText());
             String str2 = this$0.yearId;
             Intrinsics.checkNotNull(str2);
-            addQualifiedExaminationViewModel2.addQualifiedExaminationData(valueOf3, valueOf4, str2);
+            addQualifiedExaminationViewModel2.addQualifiedExaminationData(strValueOf3, strValueOf4, str2);
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding17 = this$0.get_binding();
             LinearLayout linearLayout2 = dialogAddQualifiedExaminationBinding17 != null ? dialogAddQualifiedExaminationBinding17.completionCard : null;
             if (linearLayout2 == null) {
@@ -519,15 +517,15 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddQualifiedExaminationBinding == null || (textView6 = dialogAddQualifiedExaminationBinding.completionFileName) == null) ? null : textView6.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddQualifiedExaminationBinding2 == null || (textInputEditText8 = dialogAddQualifiedExaminationBinding2.etName) == null) ? null : textInputEditText8.getText()), "")) {
@@ -551,9 +549,9 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                     String str = this$0.id;
                     Intrinsics.checkNotNull(str);
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding6 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddQualifiedExaminationBinding6 == null || (textInputEditText6 = dialogAddQualifiedExaminationBinding6.etName) == null) ? null : textInputEditText6.getText());
+                    String strValueOf = String.valueOf((dialogAddQualifiedExaminationBinding6 == null || (textInputEditText6 = dialogAddQualifiedExaminationBinding6.etName) == null) ? null : textInputEditText6.getText());
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding7 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddQualifiedExaminationBinding7 == null || (textInputEditText5 = dialogAddQualifiedExaminationBinding7.etScore) == null) ? null : textInputEditText5.getText());
+                    String strValueOf2 = String.valueOf((dialogAddQualifiedExaminationBinding7 == null || (textInputEditText5 = dialogAddQualifiedExaminationBinding7.etScore) == null) ? null : textInputEditText5.getText());
                     String str2 = this$0.yearId;
                     Intrinsics.checkNotNull(str2);
                     File file3 = this$0.pickFile;
@@ -563,7 +561,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addQualifiedExaminationViewModel.updateQualifiedExaminationData(str, valueOf, valueOf2, str2, file);
+                    addQualifiedExaminationViewModel.updateQualifiedExaminationData(str, strValueOf, strValueOf2, str2, file);
                     DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding8 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddQualifiedExaminationBinding8 != null ? dialogAddQualifiedExaminationBinding8.completionCard : null;
                     if (linearLayout != null) {
@@ -606,23 +604,24 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
             String str3 = this$0.id;
             Intrinsics.checkNotNull(str3);
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding15 = this$0.get_binding();
-            String valueOf3 = String.valueOf((dialogAddQualifiedExaminationBinding15 == null || (textInputEditText2 = dialogAddQualifiedExaminationBinding15.etName) == null) ? null : textInputEditText2.getText());
+            String strValueOf3 = String.valueOf((dialogAddQualifiedExaminationBinding15 == null || (textInputEditText2 = dialogAddQualifiedExaminationBinding15.etName) == null) ? null : textInputEditText2.getText());
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding16 = this$0.get_binding();
             if (dialogAddQualifiedExaminationBinding16 != null && (textInputEditText = dialogAddQualifiedExaminationBinding16.etScore) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            String valueOf4 = String.valueOf(editable);
+            String strValueOf4 = String.valueOf(text);
             String str4 = this$0.yearId;
             Intrinsics.checkNotNull(str4);
-            addQualifiedExaminationViewModel2.updateQualifiedExaminationData(str3, valueOf3, valueOf4, str4);
+            addQualifiedExaminationViewModel2.updateQualifiedExaminationData(str3, strValueOf3, strValueOf4, str4);
         } catch (Exception unused) {
         }
     }
 
     private final void listenSpinnerResponse() {
-        getAddQualifiedExaminationViewModel().getResponse().observe(getViewLifecycleOwner(), new AddQualifiedExaminationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$listenSpinnerResponse$1
+        getAddQualifiedExaminationViewModel().getResponse().observe(getViewLifecycleOwner(), new AddQualifiedExaminationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddQualifiedExaminationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddQualifiedExaminationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -659,10 +658,8 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter;
-                DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -670,8 +667,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                     PublicationDropDownResponse data = resource.getData();
                     if (data != null) {
                         try {
-                            spinnerAdapter = AddQualifiedExaminationDialog.this.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getYears());
+                            AddQualifiedExaminationDialog.this.getSpinnerAdapter().addItems(data.getYears());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -691,7 +687,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                     return;
                 }
                 AddQualifiedExaminationDialog.this.hideProgress();
-                dialogAddQualifiedExaminationBinding = AddQualifiedExaminationDialog.this.get_binding();
+                DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding = AddQualifiedExaminationDialog.this.get_binding();
                 if (dialogAddQualifiedExaminationBinding == null || (spinner = dialogAddQualifiedExaminationBinding.spinnerYear) == null) {
                     return;
                 }
@@ -706,7 +702,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         getAddQualifiedExaminationViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddQualifiedExaminationDialog.listenAddResponse$lambda$6(AddQualifiedExaminationDialog.this, (Resource) obj);
+                AddQualifiedExaminationDialog.listenAddResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -774,7 +770,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         getAddQualifiedExaminationViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddQualifiedExaminationDialog.listenAddResponse2$lambda$8(AddQualifiedExaminationDialog.this, (Resource) obj);
+                AddQualifiedExaminationDialog.listenAddResponse2$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -842,7 +838,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         getAddQualifiedExaminationViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddQualifiedExaminationDialog.listenUpdateResponse$lambda$10(AddQualifiedExaminationDialog.this, (Resource) obj);
+                AddQualifiedExaminationDialog.listenUpdateResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -910,7 +906,7 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         getAddQualifiedExaminationViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationDialog$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddQualifiedExaminationDialog.listenProgressResponse$lambda$12(AddQualifiedExaminationDialog.this, (Resource) obj);
+                AddQualifiedExaminationDialog.listenProgressResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -941,18 +937,18 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddQualifiedExaminationBinding2 != null ? dialogAddQualifiedExaminationBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddQualifiedExaminationBinding dialogAddQualifiedExaminationBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddQualifiedExaminationBinding3 != null ? dialogAddQualifiedExaminationBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -960,13 +956,13 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -992,24 +988,24 @@ public final class AddQualifiedExaminationDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

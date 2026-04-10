@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.DutyLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DutyLeaveFragmentBindingImpl extends DutyLeaveFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class DutyLeaveFragmentBindingImpl extends DutyLeaveFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (75 != variableId) {
+        if (74 != variableId) {
             return false;
         }
         setDutyLeaveViewModel((DutyLeaveViewModel) variable);

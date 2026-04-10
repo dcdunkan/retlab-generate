@@ -3,14 +3,16 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentProgramOutcomeBindingImpl extends FragmentProgramOutcomeBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -27,17 +29,22 @@ public class FragmentProgramOutcomeBindingImpl extends FragmentProgramOutcomeBin
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.rv_outcome, 3);
-        sparseIntArray.put(R.id.rv_educational, 4);
-        sparseIntArray.put(R.id.rv_specific, 5);
+        sparseIntArray.put(R.id.toolbar, 3);
+        sparseIntArray.put(R.id.hr_view, 4);
+        sparseIntArray.put(R.id.outcome_btn, 5);
+        sparseIntArray.put(R.id.educational_btn, 6);
+        sparseIntArray.put(R.id.objectives_btn, 7);
+        sparseIntArray.put(R.id.rv_outcome, 8);
+        sparseIntArray.put(R.id.rv_educational, 9);
+        sparseIntArray.put(R.id.rv_specific, 10);
     }
 
     public FragmentProgramOutcomeBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
 
     private FragmentProgramOutcomeBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (RecyclerView) bindings[4], (RecyclerView) bindings[3], (RecyclerView) bindings[5]);
+        super(bindingComponent, root, 0, (TextView) bindings[6], (HorizontalScrollView) bindings[4], (TextView) bindings[7], (TextView) bindings[5], (RecyclerView) bindings[9], (RecyclerView) bindings[8], (RecyclerView) bindings[10], (TextView) bindings[3]);
         this.mDirtyFlags = -1L;
         ScrollView scrollView = (ScrollView) bindings[0];
         this.mboundView0 = scrollView;
@@ -68,7 +75,7 @@ public class FragmentProgramOutcomeBindingImpl extends FragmentProgramOutcomeBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (167 != variableId) {
+        if (169 != variableId) {
             return false;
         }
         setProgramOutcomeViewModel((ProgramOutcomeViewModel) variable);

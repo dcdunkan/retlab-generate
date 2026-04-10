@@ -4,8 +4,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QualifiedExamination.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QualifiedExamination.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QualifiedExamination {
     private final String file;
     private final String id;
@@ -35,27 +35,27 @@ public final /* data */ class QualifiedExamination {
         return qualifiedExamination.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getScore() {
         return this.score;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getYear() {
         return this.year;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getFile() {
         return this.file;
     }

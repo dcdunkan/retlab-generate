@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBindings;
 import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCommentsBinding implements ViewBinding {
     public final RelativeLayout commentLayout;
     public final TextView commentText;
@@ -47,11 +47,11 @@ public final class RowCommentsBinding implements ViewBinding {
     }
 
     public static RowCommentsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_comments, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_comments, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCommentsBinding bind(View rootView) {

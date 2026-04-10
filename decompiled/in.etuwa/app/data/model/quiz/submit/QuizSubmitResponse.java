@@ -4,8 +4,8 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 
-/* compiled from: QuizSubmitResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuizSubmitResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QuizSubmitResponse {
 
     @SerializedName("is_ongoing")
@@ -34,22 +34,22 @@ public final /* data */ class QuizSubmitResponse {
         return quizSubmitResponse.copy(z, z2, z3, z4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getIsStarted() {
         return this.isStarted;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getIsOngoing() {
         return this.isOngoing;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final boolean getIs_finished() {
         return this.is_finished;
     }
@@ -73,8 +73,15 @@ public final /* data */ class QuizSubmitResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v8 */
     /* JADX WARN: Type inference failed for: r0v9 */
-    /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v2, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v2 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v5 */
+    /* JADX WARN: Type inference failed for: r2v6 */
+    /* JADX WARN: Type inference failed for: r2v7 */
+    /* JADX WARN: Type inference failed for: r2v8 */
     public int hashCode() {
         boolean z = this.isStarted;
         ?? r0 = z;
@@ -82,20 +89,20 @@ public final /* data */ class QuizSubmitResponse {
             r0 = 1;
         }
         int i = r0 * 31;
-        ?? r2 = this.isOngoing;
-        int i2 = r2;
-        if (r2 != 0) {
-            i2 = 1;
+        boolean z2 = this.isOngoing;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int i3 = (i + i2) * 31;
-        ?? r22 = this.success;
-        int i4 = r22;
-        if (r22 != 0) {
-            i4 = 1;
+        int i2 = (i + r2) * 31;
+        boolean z3 = this.success;
+        ?? r22 = z3;
+        if (z3) {
+            r22 = 1;
         }
-        int i5 = (i3 + i4) * 31;
-        boolean z2 = this.is_finished;
-        return i5 + (z2 ? 1 : z2 ? 1 : 0);
+        int i3 = (i2 + r22) * 31;
+        boolean z4 = this.is_finished;
+        return i3 + (z4 ? 1 : z4);
     }
 
     public String toString() {

@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AcadamicFeeBean.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AcadamicFeeBean.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AcadamicFeeBean {
     private final String amount;
     private final String balance;

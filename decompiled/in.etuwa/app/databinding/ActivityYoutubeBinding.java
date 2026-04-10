@@ -7,7 +7,7 @@ import androidx.viewbinding.ViewBinding;
 import com.google.android.youtube.player.YouTubePlayerView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityYoutubeBinding implements ViewBinding {
     private final YouTubePlayerView rootView;
     public final YouTubePlayerView ytPlayer;
@@ -27,11 +27,11 @@ public final class ActivityYoutubeBinding implements ViewBinding {
     }
 
     public static ActivityYoutubeBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_youtube, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_youtube, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityYoutubeBinding bind(View rootView) {

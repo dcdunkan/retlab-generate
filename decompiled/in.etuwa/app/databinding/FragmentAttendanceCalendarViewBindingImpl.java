@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentAttendanceCalendarViewBindingImpl extends FragmentAttendanceCalendarViewBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentAttendanceCalendarViewBindingImpl extends FragmentAttendanc
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (35 != variableId) {
+        if (34 != variableId) {
             return false;
         }
         setAttendanceCalendarViewViewModel((AttendanceCalendarViewViewModel) variable);

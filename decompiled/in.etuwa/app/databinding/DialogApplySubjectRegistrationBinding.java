@@ -14,7 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogApplySubjectRegistrationBinding extends ViewDataBinding {
     public final LinearLayout additionalElective1Lyt;
     public final LinearLayout additionalElective2Lyt;

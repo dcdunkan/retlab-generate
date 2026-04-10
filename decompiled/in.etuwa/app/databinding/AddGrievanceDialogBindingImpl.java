@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AddGrievanceDialogBindingImpl extends AddGrievanceDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -82,7 +82,7 @@ public class AddGrievanceDialogBindingImpl extends AddGrievanceDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (13 != variableId) {
+        if (12 != variableId) {
             return false;
         }
         setAddGrievanceDialogViewModel((AddGrievanceDialogViewModel) variable);

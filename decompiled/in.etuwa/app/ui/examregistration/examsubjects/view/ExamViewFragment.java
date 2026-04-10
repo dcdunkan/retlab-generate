@@ -10,8 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -20,7 +18,6 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.itextpdf.svg.SvgConstants;
-import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.examregister.ExamCourseResponse;
 import in.etuwa.app.data.model.examregister.ExamViewResponse;
 import in.etuwa.app.data.model.examregister.RegistrationSlipResponse;
@@ -28,7 +25,6 @@ import in.etuwa.app.databinding.FragmentExamViewBinding;
 import in.etuwa.app.helper.MainCallBackListener;
 import in.etuwa.app.ui.base.BaseFragment;
 import in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewAdapter;
-import in.etuwa.app.ui.examregistration.examsubjects.view.verify.AbcIdVerifyDialog;
 import in.etuwa.app.utils.RecycleExtKt;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
@@ -37,10 +33,8 @@ import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
-import kotlin.Unit;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
@@ -50,26 +44,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ExamViewFragment.kt */
-/* loaded from: classes4.dex */
-public final class ExamViewFragment extends BaseFragment implements ExamViewAdapter.CallBack, AbcIdVerifyDialog.ProfileListener {
+/* JADX INFO: compiled from: ExamViewFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
+public final class ExamViewFragment extends BaseFragment implements ExamViewAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentExamViewBinding _binding;
-    private String abcId;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String category;
 
-    /* renamed from: examViewViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: examViewViewModel$delegate, reason: from kotlin metadata */
     private final Lazy examViewViewModel;
     private String id;
-    private Boolean isEnabled;
     private MainCallBackListener listener;
 
-    /* compiled from: ExamViewFragment.kt */
+    /* JADX INFO: compiled from: ExamViewFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -119,7 +111,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return examViewFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(examViewFragment);
@@ -133,7 +125,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -146,7 +138,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ExamViewViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ExamViewViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ExamViewFragment examViewFragment2 = this;
@@ -176,7 +168,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         return (ExamViewAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentExamViewBinding get_binding() {
         return this._binding;
     }
@@ -200,19 +192,9 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
     @Override // androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        reloadFragment();
-        setUp();
     }
 
-    private final void reloadFragment() {
-        FragmentTransaction beginTransaction = getParentFragmentManager().beginTransaction();
-        ExamViewFragment examViewFragment = this;
-        beginTransaction.detach(examViewFragment);
-        beginTransaction.attach(examViewFragment);
-        beginTransaction.commit();
-    }
-
-    /* compiled from: ExamViewFragment.kt */
+    /* JADX INFO: compiled from: ExamViewFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/examregistration/examsubjects/view/ExamViewFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -285,9 +267,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         }
         getAdapter().setCallBack(this);
         listenResponse();
-        listenAbcResponse();
         listenViewResponse();
-        getExamViewViewModel().getAbcData();
         ExamViewViewModel examViewViewModel = getExamViewViewModel();
         String str = this.id;
         Intrinsics.checkNotNull(str);
@@ -301,7 +281,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ExamViewFragment.setUp$lambda$2(ExamViewFragment.this, view);
+                    ExamViewFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -310,7 +290,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ExamViewFragment.setUp$lambda$3(ExamViewFragment.this, view);
+                    ExamViewFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -321,13 +301,13 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ExamViewFragment.setUp$lambda$4(ExamViewFragment.this, view);
+                ExamViewFragment.setUp$lambda$3(this.f$0, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$2(ExamViewFragment this$0, View view) {
+    public static final void setUp$lambda$1(ExamViewFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         MainCallBackListener mainCallBackListener = this$0.listener;
         if (mainCallBackListener != null) {
@@ -340,25 +320,8 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$3(ExamViewFragment this$0, View view) {
-        RecyclerView recyclerView;
+    public static final void setUp$lambda$2(ExamViewFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (Intrinsics.areEqual(this$0.abcId, "") && Intrinsics.areEqual((Object) this$0.isEnabled, (Object) true)) {
-            FragmentExamViewBinding fragmentExamViewBinding = this$0.get_binding();
-            if (fragmentExamViewBinding == null || (recyclerView = fragmentExamViewBinding.rvRegHistory) == null) {
-                return;
-            }
-            ToastExtKt.showErrorToast(recyclerView, "Abc id missing");
-            return;
-        }
-        if (!Intrinsics.areEqual(this$0.abcId, "") && Intrinsics.areEqual((Object) this$0.isEnabled, (Object) true)) {
-            FragmentManager childFragmentManager = this$0.getChildFragmentManager();
-            Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            AbcIdVerifyDialog newInstance = AbcIdVerifyDialog.INSTANCE.newInstance();
-            newInstance.setCallBack(this$0);
-            newInstance.show(childFragmentManager, (String) null);
-            return;
-        }
         MainCallBackListener mainCallBackListener = this$0.listener;
         if (mainCallBackListener != null) {
             String str = this$0.id;
@@ -370,7 +333,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$4(ExamViewFragment this$0, View view) {
+    public static final void setUp$lambda$3(ExamViewFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.listenSlipResponse();
         ExamViewViewModel examViewViewModel = this$0.getExamViewViewModel();
@@ -379,93 +342,17 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         examViewViewModel.getExamSlip(str);
     }
 
-    private final void listenAbcResponse() {
-        getExamViewViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new ExamViewFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$listenAbcResponse$1
-
-            /* compiled from: ExamViewFragment.kt */
-            @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-            public /* synthetic */ class WhenMappings {
-                public static final /* synthetic */ int[] $EnumSwitchMapping$0;
-
-                static {
-                    int[] iArr = new int[Status.values().length];
-                    try {
-                        iArr[Status.SUCCESS.ordinal()] = 1;
-                    } catch (NoSuchFieldError unused) {
-                    }
-                    try {
-                        iArr[Status.LOADING.ordinal()] = 2;
-                    } catch (NoSuchFieldError unused2) {
-                    }
-                    try {
-                        iArr[Status.ERROR.ordinal()] = 3;
-                    } catch (NoSuchFieldError unused3) {
-                    }
-                    try {
-                        iArr[Status.EXCEPTION.ordinal()] = 4;
-                    } catch (NoSuchFieldError unused4) {
-                    }
-                    $EnumSwitchMapping$0 = iArr;
-                }
-            }
-
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Resource<? extends AbcResponse> resource) {
-                invoke2((Resource<AbcResponse>) resource);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            public final void invoke2(Resource<AbcResponse> resource) {
-                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-                if (i == 1) {
-                    ExamViewFragment.this.hideProgress();
-                    AbcResponse data = resource.getData();
-                    if (data != null) {
-                        ExamViewFragment examViewFragment = ExamViewFragment.this;
-                        examViewFragment.showBaseView();
-                        String abc_id = data.getAbc_id();
-                        if (abc_id == null) {
-                            abc_id = "";
-                        }
-                        examViewFragment.abcId = abc_id;
-                        return;
-                    }
-                    return;
-                }
-                if (i == 2) {
-                    ExamViewFragment.this.showProgress();
-                    return;
-                }
-                if (i == 3) {
-                    ExamViewFragment.this.hideProgress();
-                    ExamViewFragment.this.showBaseView();
-                } else {
-                    if (i != 4) {
-                        return;
-                    }
-                    ExamViewFragment.this.hideProgress();
-                    ExamViewFragment.this.showBaseView();
-                }
-            }
-        }));
-    }
-
     private final void listenResponse() {
         getExamViewViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExamViewFragment.listenResponse$lambda$6(ExamViewFragment.this, (Resource) obj);
+                ExamViewFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$6(ExamViewFragment this$0, Resource resource) {
+    public static final void listenResponse$lambda$5(ExamViewFragment this$0, Resource resource) {
         RecyclerView rvRegHistory;
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -500,7 +387,6 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             this$0.showBaseView();
             if (examCourseResponse.getLogin()) {
                 this$0.category = examCourseResponse.getCategory();
-                this$0.isEnabled = Boolean.valueOf(examCourseResponse.getAbc_id_verification());
                 if (examCourseResponse.is_registered()) {
                     ExamViewViewModel examViewViewModel = this$0.getExamViewViewModel();
                     String str = this$0.id;
@@ -612,7 +498,7 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
                 return;
             }
             Intrinsics.checkNotNullExpressionValue(rvRegHistory, "rvRegHistory");
-            ToastExtKt.showErrorToast(rvRegHistory, examCourseResponse.getError());
+            ToastExtKt.showErrorToast(rvRegHistory, "netwok error");
         }
     }
 
@@ -620,13 +506,13 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         getExamViewViewModel().getViewResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExamViewFragment.listenViewResponse$lambda$8(ExamViewFragment.this, (Resource) obj);
+                ExamViewFragment.listenViewResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenViewResponse$lambda$8(ExamViewFragment this$0, Resource resource) {
+    public static final void listenViewResponse$lambda$7(ExamViewFragment this$0, Resource resource) {
         RecyclerView rvRegHistory;
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -705,13 +591,13 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         getExamViewViewModel().getSlipResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.view.ExamViewFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExamViewFragment.listenSlipResponse$lambda$10(ExamViewFragment.this, (Resource) obj);
+                ExamViewFragment.listenSlipResponse$lambda$9(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenSlipResponse$lambda$10(ExamViewFragment this$0, Resource resource) {
+    public static final void listenSlipResponse$lambda$9(ExamViewFragment this$0, Resource resource) {
         RecyclerView rvRegHistory;
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -745,11 +631,11 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
         if (registrationSlipResponse != null) {
             this$0.showBaseView();
             if (registrationSlipResponse.getLogin() && !Intrinsics.areEqual(registrationSlipResponse.getFile_url(), "")) {
-                String replace$default = StringsKt.replace$default(registrationSlipResponse.getFile_url(), "\\", "", false, 4, (Object) null);
-                System.out.println((Object) replace$default);
+                String strReplace$default = StringsKt.replace$default(registrationSlipResponse.getFile_url(), "\\", "", false, 4, (Object) null);
+                System.out.println((Object) strReplace$default);
                 MainCallBackListener mainCallBackListener = this$0.listener;
                 if (mainCallBackListener != null) {
-                    mainCallBackListener.openPaymentPage(replace$default);
+                    mainCallBackListener.openPaymentPage(strReplace$default);
                     return;
                 }
                 return;
@@ -799,27 +685,5 @@ public final class ExamViewFragment extends BaseFragment implements ExamViewAdap
             return;
         }
         throw new RuntimeException(context + " must implement OnFragmentInteractionListener");
-    }
-
-    @Override // in.etuwa.app.ui.examregistration.examsubjects.view.verify.AbcIdVerifyDialog.ProfileListener
-    public void getVerifyResult(boolean flag) {
-        RecyclerView recyclerView;
-        if (flag) {
-            MainCallBackListener mainCallBackListener = this.listener;
-            if (mainCallBackListener != null) {
-                String str = this.id;
-                Intrinsics.checkNotNull(str);
-                String str2 = this.category;
-                Intrinsics.checkNotNull(str2);
-                mainCallBackListener.showExamRegisterFragment(str, str2);
-                return;
-            }
-            return;
-        }
-        FragmentExamViewBinding fragmentExamViewBinding = get_binding();
-        if (fragmentExamViewBinding == null || (recyclerView = fragmentExamViewBinding.rvRegHistory) == null) {
-            return;
-        }
-        ToastExtKt.showErrorToast(recyclerView, "Something went wrong");
     }
 }

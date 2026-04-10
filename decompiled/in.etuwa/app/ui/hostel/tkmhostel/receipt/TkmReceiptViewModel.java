@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TkmReceiptViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TkmReceiptViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TkmReceiptViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<HostelReceiptResponse>> hostelFeeResponse;
@@ -33,8 +33,8 @@ public final class TkmReceiptViewModel extends ViewModel {
     public final void getHostelReceipt() {
         this.hostelFeeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelReceiptResponse> observeOn = this.hostelRepository.getHostelReceiptTkmApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelReceiptResponse, Unit> function1 = new Function1<HostelReceiptResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel$getHostelReceipt$1
+        Single<HostelReceiptResponse> singleObserveOn = this.hostelRepository.getHostelReceiptTkmApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelReceiptResponse, Unit> function1 = new Function1<HostelReceiptResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel.getHostelReceipt.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class TkmReceiptViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelReceiptResponse hostelReceiptResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TkmReceiptViewModel.this.hostelFeeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelReceiptResponse));
+                TkmReceiptViewModel.this.hostelFeeResponse.postValue(Resource.INSTANCE.success(hostelReceiptResponse));
             }
         };
         Consumer<? super HostelReceiptResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TkmReceiptViewModel.getHostelReceipt$lambda$0(Function1.this, obj);
+                TkmReceiptViewModel.getHostelReceipt$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel$getHostelReceipt$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel.getHostelReceipt.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class TkmReceiptViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TkmReceiptViewModel.this.hostelFeeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TkmReceiptViewModel.this.hostelFeeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TkmReceiptViewModel.getHostelReceipt$lambda$1(Function1.this, obj);
+                TkmReceiptViewModel.getHostelReceipt$lambda$1(function12, obj);
             }
         }));
     }

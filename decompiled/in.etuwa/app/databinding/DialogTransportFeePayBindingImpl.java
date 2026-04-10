@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogTransportFeePayBindingImpl extends DialogTransportFeePayBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class DialogTransportFeePayBindingImpl extends DialogTransportFeePayBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (229 != variableId) {
+        if (231 != variableId) {
             return false;
         }
         setTrasportFeePayViewModel((TrasportFeePayViewModel) variable);

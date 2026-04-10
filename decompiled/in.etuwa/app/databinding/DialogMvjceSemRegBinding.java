@@ -19,7 +19,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogMvjceSemRegBinding extends ViewDataBinding {
     public final RadioGroup academicDue;
     public final RadioButton academicNo;

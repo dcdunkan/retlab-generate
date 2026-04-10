@@ -2,8 +2,8 @@ package in.etuwa.app.ui.chat.reply;
 
 import kotlin.Metadata;
 
-/* compiled from: CommentReplyDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CommentReplyDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CommentReplyDialogKt {
     public static final String ARG_COMMENT = "param3";
     public static final String ARG_COMMENT_ID = "param4";

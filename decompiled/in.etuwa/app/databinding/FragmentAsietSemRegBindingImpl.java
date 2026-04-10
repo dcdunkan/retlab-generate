@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentAsietSemRegBindingImpl extends FragmentAsietSemRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -108,7 +108,7 @@ public class FragmentAsietSemRegBindingImpl extends FragmentAsietSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (29 != variableId) {
+        if (28 != variableId) {
             return false;
         }
         setAsietSemRegViewModel((AsietSemRegViewModel) variable);

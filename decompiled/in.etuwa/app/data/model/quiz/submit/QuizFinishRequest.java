@@ -4,8 +4,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QuizFinishRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuizFinishRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QuizFinishRequest {
     private final String final_submit;
     private final String option;
@@ -24,17 +24,17 @@ public final /* data */ class QuizFinishRequest {
         return quizFinishRequest.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQno() {
         return this.qno;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getOption() {
         return this.option;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getFinal_submit() {
         return this.final_submit;
     }
@@ -57,9 +57,9 @@ public final /* data */ class QuizFinishRequest {
 
     public int hashCode() {
         String str = this.qno;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.option;
-        return ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.final_submit.hashCode();
+        return ((iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.final_submit.hashCode();
     }
 
     public String toString() {

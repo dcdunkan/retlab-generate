@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.coursesattended.add.AddCourseAttendedViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddCourseAttendedBindingImpl extends DialogAddCourseAttendedBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -88,7 +88,7 @@ public class DialogAddCourseAttendedBindingImpl extends DialogAddCourseAttendedB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (11 != variableId) {
+        if (10 != variableId) {
             return false;
         }
         setAddCourseAttendedViewModel((AddCourseAttendedViewModel) variable);

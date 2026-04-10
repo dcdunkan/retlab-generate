@@ -19,10 +19,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SentItemViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SentItemViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SentItemViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private final MsgRepository msgRepository;
     private MutableLiveData<Resource<ArrayList<Outbox>>> outboxResponse;
 
@@ -31,14 +32,22 @@ public final class SentItemViewModel extends ViewModel {
         this.msgRepository = msgRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.outboxResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getOutboxMsg();
     }
 
     public final void getOutboxMsg() {
         this.outboxResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Outbox>> observeOn = this.msgRepository.getOutboxApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Outbox>, Unit> function1 = new Function1<ArrayList<Outbox>, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$getOutboxMsg$1
+        Single<ArrayList<Outbox>> singleObserveOn = this.msgRepository.getOutboxApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Outbox>, Unit> function1 = new Function1<ArrayList<Outbox>, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel.getOutboxMsg.1
             {
                 super(1);
             }
@@ -49,20 +58,18 @@ public final class SentItemViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Outbox> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SentItemViewModel.this.outboxResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                SentItemViewModel.this.outboxResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Outbox>> consumer = new Consumer() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SentItemViewModel.getOutboxMsg$lambda$0(Function1.this, obj);
+                SentItemViewModel.getOutboxMsg$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$getOutboxMsg$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel.getOutboxMsg.2
             {
                 super(1);
             }
@@ -73,17 +80,15 @@ public final class SentItemViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SentItemViewModel.this.outboxResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SentItemViewModel.this.outboxResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SentItemViewModel.getOutboxMsg$lambda$1(Function1.this, obj);
+                SentItemViewModel.getOutboxMsg$lambda$1(function12, obj);
             }
         }));
     }
@@ -107,9 +112,9 @@ public final class SentItemViewModel extends ViewModel {
     public final void deleteMsg(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.msgRepository.getDeleteMsgApiCall(new MsgHandleRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final SentItemViewModel$deleteMsg$1 sentItemViewModel$deleteMsg$1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$deleteMsg$1
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+        Single<SuccessResponse> singleObserveOn = this.msgRepository.getDeleteMsgApiCall(new MsgHandleRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final AnonymousClass1 anonymousClass1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel.deleteMsg.1
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
             }
 
@@ -122,11 +127,11 @@ public final class SentItemViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SentItemViewModel.deleteMsg$lambda$2(Function1.this, obj);
+                SentItemViewModel.deleteMsg$lambda$2(anonymousClass1, obj);
             }
         };
-        final SentItemViewModel$deleteMsg$2 sentItemViewModel$deleteMsg$2 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$deleteMsg$2
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+        final AnonymousClass2 anonymousClass2 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel.deleteMsg.2
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
             }
 
@@ -136,10 +141,10 @@ public final class SentItemViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.message.sentItems.SentItemViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SentItemViewModel.deleteMsg$lambda$3(Function1.this, obj);
+                SentItemViewModel.deleteMsg$lambda$3(anonymousClass2, obj);
             }
         }));
     }

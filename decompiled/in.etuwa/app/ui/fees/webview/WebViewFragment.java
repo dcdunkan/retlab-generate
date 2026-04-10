@@ -34,11 +34,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: WebViewFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: WebViewFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class WebViewFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentWebviewBinding _binding;
     private String distance;
@@ -48,13 +48,13 @@ public final class WebViewFragment extends BaseFragment {
     private String place;
     private String port;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String ton;
     private String type;
     private WebView webView;
 
-    /* renamed from: webViewViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: webViewViewModel$delegate, reason: from kotlin metadata */
     private final Lazy webViewViewModel;
     private String zone;
 
@@ -89,7 +89,7 @@ public final class WebViewFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return webViewFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(webViewFragment);
@@ -103,7 +103,7 @@ public final class WebViewFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -116,7 +116,7 @@ public final class WebViewFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(WebViewViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(WebViewViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final WebViewFragment webViewFragment2 = this;
@@ -143,7 +143,7 @@ public final class WebViewFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentWebviewBinding get_binding() {
         return this._binding;
     }
@@ -152,7 +152,7 @@ public final class WebViewFragment extends BaseFragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: WebViewFragment.kt */
+    /* JADX INFO: compiled from: WebViewFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002JP\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u00062\u0006\u0010\f\u001a\u00020\u00062\u0006\u0010\r\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\u0006H\u0007¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/fees/webview/WebViewFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/fees/webview/WebViewFragment;", "name", "", "mobileNumber", "number", ClientCookie.PORT_ATTR, "zone", "type", "ton", "place", "distance", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -248,11 +248,11 @@ public final class WebViewFragment extends BaseFragment {
         webView.setWebChromeClient(new WebChromeClient() { // from class: in.etuwa.app.ui.fees.webview.WebViewFragment$setUp$1$1
             @Override // android.webkit.WebChromeClient
             public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
-                String message = consoleMessage != null ? consoleMessage.message() : null;
-                if (message == null) {
-                    message = "";
+                String strMessage = consoleMessage != null ? consoleMessage.message() : null;
+                if (strMessage == null) {
+                    strMessage = "";
                 }
-                Log.d("WebViewJS", message);
+                Log.d("WebViewJS", strMessage);
                 return true;
             }
         });

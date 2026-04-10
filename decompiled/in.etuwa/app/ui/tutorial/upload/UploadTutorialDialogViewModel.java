@@ -21,8 +21,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: UploadTutorialDialogViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UploadTutorialDialogViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UploadTutorialDialogViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<Float>> progressResponse;
@@ -58,11 +58,11 @@ public final class UploadTutorialDialogViewModel extends ViewModel {
     public final void submitTutorial(String _id, File filePath) {
         Intrinsics.checkNotNullParameter(_id, "_id");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, _id);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, _id);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("upload_file", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$submitTutorial$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("upload_file", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel.submitTutorial.1
             {
                 super(1);
             }
@@ -73,20 +73,20 @@ public final class UploadTutorialDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 UploadTutorialDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$$ExternalSyntheticLambda0
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UploadTutorialDialogViewModel.submitTutorial$lambda$0(Function1.this, obj);
+                UploadTutorialDialogViewModel.submitTutorial$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.tutorialRepository.submitTutorialApiCall(create, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$submitTutorial$2
+        Observable<SuccessResponse> observableObserveOn = this.tutorialRepository.submitTutorialApiCall(requestBodyCreate, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel.submitTutorial.2
             {
                 super(1);
             }
@@ -97,7 +97,7 @@ public final class UploadTutorialDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 UploadTutorialDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -105,10 +105,10 @@ public final class UploadTutorialDialogViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UploadTutorialDialogViewModel.submitTutorial$lambda$1(Function1.this, obj);
+                UploadTutorialDialogViewModel.submitTutorial$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$submitTutorial$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel.submitTutorial.3
             {
                 super(1);
             }
@@ -119,7 +119,7 @@ public final class UploadTutorialDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     UploadTutorialDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -128,10 +128,10 @@ public final class UploadTutorialDialogViewModel extends ViewModel {
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UploadTutorialDialogViewModel.submitTutorial$lambda$2(Function1.this, obj);
+                UploadTutorialDialogViewModel.submitTutorial$lambda$2(function13, obj);
             }
         }));
     }

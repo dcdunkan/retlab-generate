@@ -4,8 +4,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: ExamSchedule.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamSchedule.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamSchedule {
     private String date;
     private String details;
@@ -45,37 +45,37 @@ public final /* data */ class ExamSchedule {
         return examSchedule.copy(str, str8, str9, str10, str11, str12, str7);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getExm_name() {
         return this.exm_name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDetails() {
         return this.details;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getTime() {
         return this.time;
     }

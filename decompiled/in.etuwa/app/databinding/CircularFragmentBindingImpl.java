@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.circular.CircularViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CircularFragmentBindingImpl extends CircularFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -26,16 +27,17 @@ public class CircularFragmentBindingImpl extends CircularFragmentBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.swipe_layout, 2);
-        sparseIntArray.put(R.id.rv_circular, 3);
+        sparseIntArray.put(R.id.toolbar, 2);
+        sparseIntArray.put(R.id.swipe_layout, 3);
+        sparseIntArray.put(R.id.rv_circular, 4);
     }
 
     public CircularFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
 
     private CircularFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (RecyclerView) bindings[3], (SwipeRefreshLayout) bindings[2]);
+        super(bindingComponent, root, 0, (RecyclerView) bindings[4], (SwipeRefreshLayout) bindings[3], (TextView) bindings[2]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -63,7 +65,7 @@ public class CircularFragmentBindingImpl extends CircularFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (55 != variableId) {
+        if (54 != variableId) {
             return false;
         }
         setCircularViewModel((CircularViewModel) variable);

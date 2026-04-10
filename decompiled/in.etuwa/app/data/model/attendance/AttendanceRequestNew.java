@@ -6,8 +6,8 @@ import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendanceRequestNew.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AttendanceRequestNew.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AttendanceRequestNew {
 
     @SerializedName("month")
@@ -35,17 +35,17 @@ public final /* data */ class AttendanceRequestNew {
         return attendanceRequestNew.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getYear() {
         return this.year;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMonth() {
         return this.month;
     }

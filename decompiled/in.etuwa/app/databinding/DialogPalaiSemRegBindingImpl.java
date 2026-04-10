@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogPalaiSemRegBindingImpl extends DialogPalaiSemRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -187,7 +187,7 @@ public class DialogPalaiSemRegBindingImpl extends DialogPalaiSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (155 != variableId) {
+        if (156 != variableId) {
             return false;
         }
         setPalaiNewSemRegViewModel((PalaiNewSemRegViewModel) variable);

@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.itextpdf.svg.SvgConstants;
+import in.etuwa.app.R;
 import in.etuwa.app.data.model.programoutcome.ProgramOutcomeResponse;
 import in.etuwa.app.data.preference.SharedPrefManager;
 import in.etuwa.app.databinding.FragmentProgramOutcomeBinding;
@@ -39,31 +41,31 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ProgramOutcomeFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ProgramOutcomeFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ProgramOutcomeFragment extends BaseFragment implements ProgramOutcomeAdapter.CallBack, ProgramEducationalAdapter.CallBack, ProgramSpecificAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentProgramOutcomeBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: adapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter2$delegate, reason: from kotlin metadata */
     private final Lazy adapter2;
 
-    /* renamed from: adapter3$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter3$delegate, reason: from kotlin metadata */
     private final Lazy adapter3;
     private Integer id;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: programOutcomeViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: programOutcomeViewModel$delegate, reason: from kotlin metadata */
     private final Lazy programOutcomeViewModel;
 
-    /* compiled from: ProgramOutcomeFragment.kt */
+    /* JADX INFO: compiled from: ProgramOutcomeFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -113,7 +115,7 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return programOutcomeFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(programOutcomeFragment);
@@ -127,7 +129,7 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -140,7 +142,7 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ProgramOutcomeViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ProgramOutcomeViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ProgramOutcomeFragment programOutcomeFragment2 = this;
@@ -226,7 +228,7 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
         return (ProgramSpecificAdapter) this.adapter3.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentProgramOutcomeBinding get_binding() {
         return this._binding;
     }
@@ -235,7 +237,7 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: ProgramOutcomeFragment.kt */
+    /* JADX INFO: compiled from: ProgramOutcomeFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/programoutcome/ProgramOutcomeFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/programoutcome/ProgramOutcomeFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -292,64 +294,271 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
 
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
-        RecyclerView recyclerView;
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
+        TextView textView4;
+        TextView textView5;
+        TextView textView6;
+        TextView textView7;
+        TextView textView8;
+        TextView textView9;
         getPreference().setNewLogin(false);
         hideBaseView();
-        Integer num = this.id;
-        if (num != null && num.intValue() == 0) {
-            FragmentActivity activity = getActivity();
-            if (activity != null) {
-                activity.setTitle("Program Outcomes");
-            }
-            FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding = get_binding();
-            recyclerView = fragmentProgramOutcomeBinding != null ? fragmentProgramOutcomeBinding.rvOutcome : null;
-            if (recyclerView != null) {
-                recyclerView.setAdapter(getAdapter());
-            }
-            getAdapter().setCallBack(this);
-            listenResponse();
-        } else {
-            Integer num2 = this.id;
-            if (num2 != null && num2.intValue() == 1) {
-                FragmentActivity activity2 = getActivity();
-                if (activity2 != null) {
-                    activity2.setTitle("Program Educational Objectives");
-                }
-                FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding2 = get_binding();
-                recyclerView = fragmentProgramOutcomeBinding2 != null ? fragmentProgramOutcomeBinding2.rvEducational : null;
-                if (recyclerView != null) {
-                    recyclerView.setAdapter(getAdapter2());
-                }
-                getAdapter2().setCallBack(this);
-                listenResponse2();
-            } else {
-                FragmentActivity activity3 = getActivity();
-                if (activity3 != null) {
-                    activity3.setTitle("Program Specific Objectives");
-                }
-                FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding3 = get_binding();
-                recyclerView = fragmentProgramOutcomeBinding3 != null ? fragmentProgramOutcomeBinding3.rvSpecific : null;
-                if (recyclerView != null) {
-                    recyclerView.setAdapter(getAdapter3());
-                }
-                getAdapter3().setCallBack(this);
-                listenResponse3();
-            }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding = get_binding();
+        if (fragmentProgramOutcomeBinding != null && (textView9 = fragmentProgramOutcomeBinding.outcomeBtn) != null) {
+            textView9.setBackgroundResource(R.drawable.shape_round_selected);
         }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding2 = get_binding();
+        if (fragmentProgramOutcomeBinding2 != null && (textView8 = fragmentProgramOutcomeBinding2.educationalBtn) != null) {
+            textView8.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding3 = get_binding();
+        if (fragmentProgramOutcomeBinding3 != null && (textView7 = fragmentProgramOutcomeBinding3.objectivesBtn) != null) {
+            textView7.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding4 = get_binding();
+        if (fragmentProgramOutcomeBinding4 != null && (textView6 = fragmentProgramOutcomeBinding4.educationalBtn) != null) {
+            textView6.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding5 = get_binding();
+        if (fragmentProgramOutcomeBinding5 != null && (textView5 = fragmentProgramOutcomeBinding5.outcomeBtn) != null) {
+            textView5.setTextColor(-1);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding6 = get_binding();
+        if (fragmentProgramOutcomeBinding6 != null && (textView4 = fragmentProgramOutcomeBinding6.objectivesBtn) != null) {
+            textView4.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding7 = get_binding();
+        RecyclerView recyclerView = fragmentProgramOutcomeBinding7 != null ? fragmentProgramOutcomeBinding7.rvOutcome : null;
+        if (recyclerView != null) {
+            recyclerView.setVisibility(0);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding8 = get_binding();
+        RecyclerView recyclerView2 = fragmentProgramOutcomeBinding8 != null ? fragmentProgramOutcomeBinding8.rvEducational : null;
+        if (recyclerView2 != null) {
+            recyclerView2.setVisibility(8);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding9 = get_binding();
+        RecyclerView recyclerView3 = fragmentProgramOutcomeBinding9 != null ? fragmentProgramOutcomeBinding9.rvSpecific : null;
+        if (recyclerView3 != null) {
+            recyclerView3.setVisibility(8);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding10 = get_binding();
+        if (fragmentProgramOutcomeBinding10 != null && (textView3 = fragmentProgramOutcomeBinding10.outcomeBtn) != null) {
+            textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeFragment$$ExternalSyntheticLambda3
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    ProgramOutcomeFragment.setUp$lambda$1(this.f$0, view);
+                }
+            });
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding11 = get_binding();
+        if (fragmentProgramOutcomeBinding11 != null && (textView2 = fragmentProgramOutcomeBinding11.educationalBtn) != null) {
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeFragment$$ExternalSyntheticLambda4
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    ProgramOutcomeFragment.setUp$lambda$2(this.f$0, view);
+                }
+            });
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding12 = get_binding();
+        if (fragmentProgramOutcomeBinding12 != null && (textView = fragmentProgramOutcomeBinding12.objectivesBtn) != null) {
+            textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeFragment$$ExternalSyntheticLambda5
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    ProgramOutcomeFragment.setUp$lambda$3(this.f$0, view);
+                }
+            });
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding13 = get_binding();
+        RecyclerView recyclerView4 = fragmentProgramOutcomeBinding13 != null ? fragmentProgramOutcomeBinding13.rvOutcome : null;
+        if (recyclerView4 != null) {
+            recyclerView4.setAdapter(getAdapter());
+        }
+        getAdapter().setCallBack(this);
+        listenResponse();
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding14 = get_binding();
+        RecyclerView recyclerView5 = fragmentProgramOutcomeBinding14 != null ? fragmentProgramOutcomeBinding14.rvEducational : null;
+        if (recyclerView5 != null) {
+            recyclerView5.setAdapter(getAdapter2());
+        }
+        getAdapter2().setCallBack(this);
+        listenResponse2();
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding15 = get_binding();
+        RecyclerView recyclerView6 = fragmentProgramOutcomeBinding15 != null ? fragmentProgramOutcomeBinding15.rvSpecific : null;
+        if (recyclerView6 != null) {
+            recyclerView6.setAdapter(getAdapter3());
+        }
+        getAdapter3().setCallBack(this);
+        listenResponse3();
         getProgramOutcomeViewModel().getOutcomes();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setUp$lambda$1(ProgramOutcomeFragment this$0, View view) {
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
+        TextView textView4;
+        TextView textView5;
+        TextView textView6;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding != null && (textView6 = fragmentProgramOutcomeBinding.outcomeBtn) != null) {
+            textView6.setBackgroundResource(R.drawable.shape_round_selected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding2 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding2 != null && (textView5 = fragmentProgramOutcomeBinding2.educationalBtn) != null) {
+            textView5.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding3 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding3 != null && (textView4 = fragmentProgramOutcomeBinding3.objectivesBtn) != null) {
+            textView4.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding4 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding4 != null && (textView3 = fragmentProgramOutcomeBinding4.educationalBtn) != null) {
+            textView3.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding5 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding5 != null && (textView2 = fragmentProgramOutcomeBinding5.outcomeBtn) != null) {
+            textView2.setTextColor(-1);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding6 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding6 != null && (textView = fragmentProgramOutcomeBinding6.objectivesBtn) != null) {
+            textView.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding7 = this$0.get_binding();
+        RecyclerView recyclerView = fragmentProgramOutcomeBinding7 != null ? fragmentProgramOutcomeBinding7.rvOutcome : null;
+        if (recyclerView != null) {
+            recyclerView.setVisibility(0);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding8 = this$0.get_binding();
+        RecyclerView recyclerView2 = fragmentProgramOutcomeBinding8 != null ? fragmentProgramOutcomeBinding8.rvEducational : null;
+        if (recyclerView2 != null) {
+            recyclerView2.setVisibility(8);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding9 = this$0.get_binding();
+        RecyclerView recyclerView3 = fragmentProgramOutcomeBinding9 != null ? fragmentProgramOutcomeBinding9.rvSpecific : null;
+        if (recyclerView3 == null) {
+            return;
+        }
+        recyclerView3.setVisibility(8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setUp$lambda$2(ProgramOutcomeFragment this$0, View view) {
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
+        TextView textView4;
+        TextView textView5;
+        TextView textView6;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding != null && (textView6 = fragmentProgramOutcomeBinding.outcomeBtn) != null) {
+            textView6.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding2 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding2 != null && (textView5 = fragmentProgramOutcomeBinding2.educationalBtn) != null) {
+            textView5.setBackgroundResource(R.drawable.shape_round_selected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding3 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding3 != null && (textView4 = fragmentProgramOutcomeBinding3.objectivesBtn) != null) {
+            textView4.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding4 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding4 != null && (textView3 = fragmentProgramOutcomeBinding4.educationalBtn) != null) {
+            textView3.setTextColor(-1);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding5 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding5 != null && (textView2 = fragmentProgramOutcomeBinding5.outcomeBtn) != null) {
+            textView2.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding6 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding6 != null && (textView = fragmentProgramOutcomeBinding6.objectivesBtn) != null) {
+            textView.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding7 = this$0.get_binding();
+        RecyclerView recyclerView = fragmentProgramOutcomeBinding7 != null ? fragmentProgramOutcomeBinding7.rvOutcome : null;
+        if (recyclerView != null) {
+            recyclerView.setVisibility(8);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding8 = this$0.get_binding();
+        RecyclerView recyclerView2 = fragmentProgramOutcomeBinding8 != null ? fragmentProgramOutcomeBinding8.rvEducational : null;
+        if (recyclerView2 != null) {
+            recyclerView2.setVisibility(0);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding9 = this$0.get_binding();
+        RecyclerView recyclerView3 = fragmentProgramOutcomeBinding9 != null ? fragmentProgramOutcomeBinding9.rvSpecific : null;
+        if (recyclerView3 == null) {
+            return;
+        }
+        recyclerView3.setVisibility(8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setUp$lambda$3(ProgramOutcomeFragment this$0, View view) {
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
+        TextView textView4;
+        TextView textView5;
+        TextView textView6;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding != null && (textView6 = fragmentProgramOutcomeBinding.outcomeBtn) != null) {
+            textView6.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding2 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding2 != null && (textView5 = fragmentProgramOutcomeBinding2.educationalBtn) != null) {
+            textView5.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding3 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding3 != null && (textView4 = fragmentProgramOutcomeBinding3.objectivesBtn) != null) {
+            textView4.setBackgroundResource(R.drawable.shape_round_selected);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding4 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding4 != null && (textView3 = fragmentProgramOutcomeBinding4.outcomeBtn) != null) {
+            textView3.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding5 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding5 != null && (textView2 = fragmentProgramOutcomeBinding5.educationalBtn) != null) {
+            textView2.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding6 = this$0.get_binding();
+        if (fragmentProgramOutcomeBinding6 != null && (textView = fragmentProgramOutcomeBinding6.objectivesBtn) != null) {
+            textView.setTextColor(-1);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding7 = this$0.get_binding();
+        RecyclerView recyclerView = fragmentProgramOutcomeBinding7 != null ? fragmentProgramOutcomeBinding7.rvOutcome : null;
+        if (recyclerView != null) {
+            recyclerView.setVisibility(8);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding8 = this$0.get_binding();
+        RecyclerView recyclerView2 = fragmentProgramOutcomeBinding8 != null ? fragmentProgramOutcomeBinding8.rvEducational : null;
+        if (recyclerView2 != null) {
+            recyclerView2.setVisibility(8);
+        }
+        FragmentProgramOutcomeBinding fragmentProgramOutcomeBinding9 = this$0.get_binding();
+        RecyclerView recyclerView3 = fragmentProgramOutcomeBinding9 != null ? fragmentProgramOutcomeBinding9.rvSpecific : null;
+        if (recyclerView3 == null) {
+            return;
+        }
+        recyclerView3.setVisibility(0);
     }
 
     private final void listenResponse() {
         getProgramOutcomeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ProgramOutcomeFragment.listenResponse$lambda$2(ProgramOutcomeFragment.this, (Resource) obj);
+                ProgramOutcomeFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$2(ProgramOutcomeFragment this$0, Resource resource) {
+    public static final void listenResponse$lambda$5(ProgramOutcomeFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
@@ -390,13 +599,13 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
         getProgramOutcomeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ProgramOutcomeFragment.listenResponse2$lambda$4(ProgramOutcomeFragment.this, (Resource) obj);
+                ProgramOutcomeFragment.listenResponse2$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse2$lambda$4(ProgramOutcomeFragment this$0, Resource resource) {
+    public static final void listenResponse2$lambda$7(ProgramOutcomeFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
@@ -437,13 +646,13 @@ public final class ProgramOutcomeFragment extends BaseFragment implements Progra
         getProgramOutcomeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ProgramOutcomeFragment.listenResponse3$lambda$6(ProgramOutcomeFragment.this, (Resource) obj);
+                ProgramOutcomeFragment.listenResponse3$lambda$9(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse3$lambda$6(ProgramOutcomeFragment this$0, Resource resource) {
+    public static final void listenResponse3$lambda$9(ProgramOutcomeFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];

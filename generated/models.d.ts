@@ -1,38 +1,94 @@
+export type AcademicPercentageResponse = {
+    data?: Array<string>;
+    message: string;
+    status?: boolean;
+}
+export type AnalysisResponse = {
+    data?: object;
+    message: string;
+    status?: boolean;
+}
+export type AnalysisSubAttendanceBean = {
+    percentage_attendance?: number;
+    subject_code: string;
+}
+export type AnalysisSubjectBean = {
+    percentage_mark?: number;
+    subject_code: string;
+}
+export type AttendanceAnalysisData = {
+    absent?: number;
+    present?: number;
+    total?: number;
+}
+export type AttendanceAnalysisResponse = {
+    data?: AttendanceAnalysisData;
+    message: string;
+    status?: boolean;
+}
+export type AttendancePercentageResponse = {
+    data?: Array<string>;
+    message: string;
+    status?: boolean;
+}
+export type AttendanceSubjectData = {
+    percentage?: number;
+    "subject code": string;
+}
+export type AttendanceSubjectResponse = {
+    data?: Array<Array<AttendanceSubjectData>>;
+    message: string;
+    status?: boolean;
+}
 export type DownloadModel = {
     id?: number;
     position?: number;
-};
+}
 export type PushModel = {
     id?: number;
     msg: string;
     time: string;
     title: string;
-};
+}
 export type SemRegError = {
     semester_id: Array<string>;
-};
+}
 export type SemRegSuccessResponse = {
     error: string;
     login?: boolean;
     message: string;
     success?: boolean;
-};
+}
 export type Semester = {
     id: string;
     name: string;
-};
+}
+export type SgpaResponse = {
+    data?: Array<string>;
+    message: string;
+    status?: boolean;
+}
+export type SubjectData = {
+    percentage?: number;
+    "subject code": string;
+}
+export type SubjectGraphResponse = {
+    data?: Array<Array<SubjectData>>;
+    message: string;
+    status?: boolean;
+}
 export type SuccessResponse = {
     error: string;
     login?: boolean;
     message: string;
     success?: boolean;
-};
+}
 export namespace video {
     export type VideoResponse = {
         error: string;
         login?: boolean;
         videos: Array<Videos>;
-    };
+    }
     export type Videos = {
         date: string;
         description: string;
@@ -42,14 +98,14 @@ export namespace video {
         title: string;
         type?: number;
         url: string;
-    };
+    }
 }
 export namespace updateprofile {
     export type UpdateProfile = {
         login?: boolean;
         success?: boolean;
         url: string;
-    };
+    }
 }
 export namespace university {
     export type UniversityResult = {
@@ -63,7 +119,7 @@ export namespace university {
         program: string;
         reg_no: string;
         semester: string;
-    };
+    }
     export type UniversityResultResponse = {
         branch: string;
         earned_credit: string;
@@ -73,7 +129,7 @@ export namespace university {
         result: Array<UniversityResult>;
         semester: string;
         sgpa: string;
-    };
+    }
 }
 export namespace tutorial {
     export type Tutorial = {
@@ -91,12 +147,12 @@ export namespace tutorial {
         type: string;
         uploaded_file: string;
         url: string;
-    };
+    }
     export type TutorialResponse = {
         login?: boolean;
         message: string;
         tutorials: Array<Tutorial>;
-    };
+    }
 }
 export namespace transportpalai {
     export type BusPass = {
@@ -117,12 +173,12 @@ export namespace transportpalai {
         semester: string;
         url: string;
         validity: string;
-    };
+    }
     export namespace registration {
         export type Boardings = {
             id?: number;
             name: string;
-        };
+        }
         export type History = {
             id: string;
             name: string;
@@ -130,13 +186,13 @@ export namespace transportpalai {
             start_date: string;
             status: string;
             year: string;
-        };
+        }
         export type RegisterSucessResponse = {
             error: string;
             login?: boolean;
             message: string;
             success?: boolean;
-        };
+        }
         export type RegisterViewResponse = {
             admission_no: string;
             batch: string;
@@ -144,7 +200,7 @@ export namespace transportpalai {
             full_name: string;
             history: Array<History>;
             login?: boolean;
-        };
+        }
     }
 }
 export namespace transport {
@@ -155,18 +211,18 @@ export namespace transport {
         login?: boolean;
         student_id: string;
         years: Array<transportpalai.registration.Boardings>;
-    };
+    }
     export type TransportHistory = {
         adjustment: string;
         amount: string;
         balance?: number;
         paid: string;
         particular: string;
-    };
+    }
     export type TransportHistoryResponse = {
         history: Array<TransportHistory>;
         login?: boolean;
-    };
+    }
     export type TransportInstallments = {
         adjustment: string;
         amount: string;
@@ -177,39 +233,48 @@ export namespace transport {
         paid: string;
         particular: string;
         totalAmount?: number;
-    };
+    }
     export type TransportPayUrl = {
         fine: string;
         total: string;
         url: string;
-    };
+    }
     export type TransportYear = {
         id?: number;
         name: string;
-    };
+    }
 }
 export namespace timetable {
-    export type TimeTable = {
-        subject?: string;
-        timeperiod?: string;
-        type?: string;
-    };
-    export type TimeTablePeriod = {
-        day: string;
-        sub: Array<TimeTable>;
-    };
-    export type TimetableResponse = {
-        error: string;
-        login?: boolean;
-        timetable: Array<TimeTablePeriod>;
-    };
     export namespace special {
         export type SpecialResponse = {
             date: string;
             period: string;
             subject: string;
             teacher: string;
-        };
+        }
+    }
+    export namespace newtimetable {
+        export type TimeTableNew = {
+            date: string;
+            day: string;
+            sub: Array<TimeTableSub>;
+        }
+        export type TimeTableNewResponse = {
+            login?: boolean;
+            semester_end_date: string;
+            semester_start_date: string;
+            timetable: Array<TimeTableNew>;
+        }
+        export type TimeTableSub = {
+            attendance_status?: string;
+            covered_topics?: string;
+            date?: string;
+            day?: string;
+            hour?: number;
+            subject?: string;
+            timeperiod?: string;
+            type?: string;
+        }
     }
     export namespace change {
         export type ChangeTimeTableResponse = {
@@ -217,17 +282,21 @@ export namespace timetable {
             inplace: string;
             period: string;
             teacher: string;
-        };
+        }
     }
 }
 export namespace survey {
     export type GenSurveyQuestionRequest = {
         survey_id?: string;
-    };
+    }
     export type SubmitResponse = {
         response: string;
         status: string;
-    };
+    }
+    export type SubmitTeacherResponse = {
+        error: string;
+        status?: boolean;
+    }
     export type Survey = {
         btn_status: string;
         complete?: boolean;
@@ -236,12 +305,12 @@ export namespace survey {
         session: string;
         survey_id: string;
         type: string;
-    };
+    }
     export type SurveyAnswer = {
         answer: string;
         qid: string;
         type: string;
-    };
+    }
     export type SurveyQuestion = {
         check?: Array<string>;
         id?: Array<string>;
@@ -250,12 +319,12 @@ export namespace survey {
         question?: string;
         required?: string;
         type?: string;
-    };
+    }
     export type SurveyRequest = {
         subject_id?: string;
         survey_id?: string;
         teacher_id?: string;
-    };
+    }
     export type TeacherList = {
         btn_msg: string;
         image: string;
@@ -265,7 +334,7 @@ export namespace survey {
         subject_id: string;
         teacher: string;
         teacher_id: string;
-    };
+    }
     export namespace posurvey {
         export type POSurvey = {
             btn: string;
@@ -275,27 +344,27 @@ export namespace survey {
             start_date: string;
             status: string;
             survey: string;
-        };
+        }
         export type POSurveyResponse = {
             posurvey: Array<POSurvey>;
-        };
+        }
         export type PoOptions = {
             option_id: string;
             option_name: string;
-        };
+        }
         export type PoQuestions = {
             answer: string;
             options: Array<PoOptions>;
             q_id: string;
             q_name: string;
             required?: boolean;
-        };
+        }
         export type PoQuestionsResponse = {
             period: string;
             questions: Array<PoQuestions>;
             survey: string;
             type: string;
-        };
+        }
     }
     export namespace graduateexit {
         export type DoGraduateSurveyQuestions = {
@@ -307,14 +376,14 @@ export namespace survey {
             required?: boolean;
             section: string;
             type: string;
-        };
+        }
         export type DoGraduateSurveyResponse = {
             gequestions: Array<DoGraduateSurveyQuestions>;
-        };
+        }
         export type GEOptions = {
             option: string;
             option_id: string;
-        };
+        }
         export type GraduateExitSurveyList = {
             btn: string;
             end_date: string;
@@ -325,10 +394,10 @@ export namespace survey {
             status: string;
             survey: string;
             survey_id: string;
-        };
+        }
         export type GraduateExitSurveyListResponse = {
             gesurvey: Array<GraduateExitSurveyList>;
-        };
+        }
     }
     export namespace courseevaluation {
         export type CourseSurvey = {
@@ -340,11 +409,11 @@ export namespace survey {
             start_date: string;
             status: string;
             survey: string;
-        };
+        }
         export type CourseSurveyOptions = {
             option: string;
             option_id: string;
-        };
+        }
         export type CourseSurveyQuestions = {
             answer_id: string;
             options: Array<CourseSurveyOptions>;
@@ -352,22 +421,22 @@ export namespace survey {
             question: string;
             required?: boolean;
             slno?: number;
-        };
+        }
         export type CourseSurveyQuestionsResponse = {
             login?: boolean;
             questions: Array<CourseSurveyQuestions>;
-        };
+        }
         export type CourseSurveyResponse = {
             login?: boolean;
             survey: Array<CourseSurvey>;
-        };
+        }
         export type DoCourseSurvey = {
             btn: string;
             id: string;
             name: string;
             slno?: number;
             status: string;
-        };
+        }
         export type DoCourseSurveyResponse = {
             description: string;
             login?: boolean;
@@ -375,70 +444,70 @@ export namespace survey {
             session: string;
             subjects: Array<DoCourseSurvey>;
             type: string;
-        };
+        }
     }
 }
 export namespace subjectregistration {
     export type Category = {
         name: string;
         subjects: Array<Subject>;
-    };
+    }
     export type PathWay = {
         id?: number;
         name: string;
-    };
+    }
     export type SemList = {
         sem_pos?: number;
         subjects: Array<SubjectMainList>;
-    };
+    }
     export type SemSubList = {
         ans: string;
         id?: number;
         name: string;
-    };
+    }
     export type SemSubjects = {
         group: string;
         mark: string;
         subject_name: string;
-    };
+    }
     export type SemesterList = {
         mdc_subjects: Array<SemSubjects>;
         minor_subjects: Array<SemSubjects>;
         seme_pos: string;
         sgpa: string;
-    };
+    }
     export type StatusList = {
         name: string;
         status: string;
-    };
+    }
     export type Subject = {
         id: string;
         name: string;
         preference: string;
         status: string;
-    };
+    }
     export type SubjectMainList = {
         ans: string;
         mark: string;
         name: string;
         sem_id?: number;
         subjects: Array<SemSubList>;
-    };
+    }
     export type SubjectRegistration = {
         added_at: string;
         category: string;
         id: string;
         semester: string;
         status: Array<StatusList>;
-    };
+    }
     export type SubjectRegistrationResponse = {
         data: Array<SubjectRegistration>;
         error: string;
-    };
+    }
     export type SubjectSpinner = {
         id?: number;
         name: string;
-    };
+    }
     export type SubjectSpinnerResponse = {
         additionalelective_1: Array<SubjectSpinner>;
         additionalelective_2: Array<SubjectSpinner>;
@@ -460,23 +529,23 @@ export namespace subjectregistration {
         minor_1: Array<SubjectSpinner>;
         minor_2: Array<SubjectSpinner>;
         minor_3: Array<SubjectSpinner>;
-    };
+    }
     export type Subjects = {
         ans: string;
         id?: number;
         name: string;
-    };
+    }
     export type SubjectsList = {
         id?: number;
         name: string;
         subjects: Array<Subjects>;
-    };
+    }
     export type SubjectsListResponse = {
         category: Array<PathWay>;
         pathway: Array<PathWay>;
         sem_list: Array<SemList>;
         subject_list: Array<SubjectsList>;
-    };
+    }
     export type ViewSubjectRegistrationResponse = {
         admission_no: string;
         can_update?: boolean;
@@ -487,7 +556,7 @@ export namespace subjectregistration {
         previousdata: Array<SemesterList>;
         sem_id: string;
         semester: string;
-    };
+    }
 }
 export namespace subject {
     export type Subjects = {
@@ -497,70 +566,70 @@ export namespace subject {
         sub_id: string;
         sub_name: string;
         teacher_name: string;
-    };
+    }
     export namespace syllabus {
         export type Syllabus = {
             module: string;
             topics: Array<Topic>;
-        };
+        }
         export type SyllabusResponse = {
             syllabus: Array<Syllabus>;
-        };
+        }
         export type Topic = {
             topic: string;
-        };
+        }
     }
     export namespace coverage {
         export type SubCovTopic = {
             is_covered?: boolean;
             topic_name: string;
-        };
+        }
         export type SubCoverage = {
             module: string;
             ratio?: number;
             topic: Array<SubCovTopic>;
-        };
+        }
         export type SubCoverageResponse = {
             coverage: Array<SubCoverage>;
             login?: boolean;
-        };
+        }
     }
     export namespace co {
         export type CoModel = {
             co_id: string;
             topic: string;
-        };
+        }
         export type CoSyllabusRequest = {
             sub_id: string;
-        };
+        }
     }
 }
 export namespace store {
     export type SemesterListRequest = {
         dept_id: string;
-    };
+    }
     export type Store = {
         name: string;
         price: string;
-    };
+    }
     export type StoreRequest = {
         subject_id: string;
-    };
+    }
     export type StoreResponse = {
         data: Array<Store>;
         login?: boolean;
         success?: boolean;
-    };
+    }
     export namespace departmentlist {
         export type DepartmentList = {
             id: string;
             name: string;
-        };
+        }
         export type DepartmentListResponse = {
             data: Array<DepartmentList>;
             login?: boolean;
             success?: boolean;
-        };
+        }
     }
 }
 export namespace stationary {
@@ -568,7 +637,7 @@ export namespace stationary {
         login?: boolean;
         success?: boolean;
         url: string;
-    };
+    }
     export type StationaryItem = {
         category_id: string;
         category_name: string;
@@ -578,10 +647,10 @@ export namespace stationary {
         price: string;
         subcategory_id: string;
         subcategory_name: string;
-    };
+    }
     export type StationaryItemResponse = {
         data: Array<StationaryItem>;
-    };
+    }
     export type StationaryReceipt = {
         create_time: string;
         created_user: string;
@@ -593,17 +662,17 @@ export namespace stationary {
         status: string;
         total_amount: string;
         view_url: string;
-    };
+    }
     export type StationaryReceiptResponse = {
         data: Array<StationaryReceipt>;
         login?: boolean;
-    };
+    }
 }
 export namespace semregistration {
     export type AcademicYear = {
         id?: number;
         name: string;
-    };
+    }
     export type AcademicYearResponse = {
         additional_electives: Array<AcademicYear>;
         electives: Array<AcademicYear>;
@@ -614,7 +683,7 @@ export namespace semregistration {
         program_electives: Array<AcademicYear>;
         semester: string;
         semester_id: string;
-    };
+    }
     export type SemRegViewResponse = {
         academic_due: string;
         academic_due_details: string;
@@ -664,13 +733,13 @@ export namespace semregistration {
         status: string;
         unireg_no: string;
         update_btn?: boolean;
-    };
+    }
     export namespace view {
         export type SemRegSlip = {
             login?: boolean;
             regslip_file: string;
             success?: boolean;
-        };
+        }
     }
     export namespace list {
         export type RegisterList = {
@@ -678,7 +747,7 @@ export namespace semregistration {
             id: string;
             semester_applied_from: string;
             status: string;
-        };
+        }
         export type SemRegisterListResponse = {
             due_status?: boolean;
             sem_registration_error: string;
@@ -690,7 +759,7 @@ export namespace semregistration {
             register_list: Array<RegisterList>;
             sem_registration_status?: boolean;
             sem_registration_status_message: string;
-        };
+        }
     }
 }
 export namespace result {
@@ -699,21 +768,21 @@ export namespace result {
         name: string;
         obtained_mark: string;
         subject: string;
-    };
+    }
     export type ResultInternal = {
         max_mark: string;
         obtained_mark: string;
         subject: string;
-    };
+    }
     export type ResultSeasonal = {
         max_mark: string;
         obtained_mark: string;
         subject: string;
-    };
+    }
     export type SeasonRequest = {
         sem_id: string;
         session: string;
-    };
+    }
     export namespace univ {
         export type UnivDetails = {
             cgpa?: string;
@@ -721,7 +790,7 @@ export namespace result {
             pass_status?: string;
             sgpa?: string;
             total_internal?: string;
-        };
+        }
         export type UnivExamSubjects = {
             attendance?: string;
             credits?: string;
@@ -729,59 +798,67 @@ export namespace result {
             status?: string;
             subject?: string;
             univ_mark?: string;
-        };
+        }
         export type UnivExams = {
             exam_name: string;
             subjects: Array<UnivExamSubjects>;
-        };
+        }
         export type UnivResponse = {
             details: UnivDetails;
             error: string;
             login?: boolean;
             subjects: Array<UnivSubjects>;
             univ_exams: Array<UnivExams>;
-        };
+        }
         export type UnivSubjects = {
             status?: string;
             subject?: string;
-        };
+        }
+        export type UnivTotalResponse = {
+            cgpa?: number;
+            earned_credit?: number;
+            total_backlogs?: number;
+            total_credit?: number;
+            total_exams?: number;
+            total_passed?: number;
+        }
     }
     export namespace tutorial {
         export type TutorialResult = {
             mark: string;
             subject: string;
             title: string;
-        };
+        }
         export type TutorialResultResponse = {
             error: string;
             login?: boolean;
             tutorials: Array<TutorialResult>;
-        };
+        }
     }
     export namespace moduletest {
         export type ResultModuleTest = {
             mark: string;
             subject: string;
-        };
+        }
         export type ResultModuleTestResponse = {
             login?: boolean;
             module_test: Array<ResultModuleTest>;
-        };
+        }
     }
 }
 export namespace resetpassword {
     export type ResetPassword = {
         url: string;
-    };
+    }
     export type ResetPasswordResponse = {
         resets: Array<ResetPassword>;
-    };
+    }
 }
 export namespace quiz {
     export type OptionsNew = {
         id: string;
         option: string;
-    };
+    }
     export type QuestionsNew = {
         answer_id?: string;
         duration_in_seconds?: string;
@@ -794,26 +871,26 @@ export namespace quiz {
         question_type?: string;
         session_id?: string;
         user_answer?: string;
-    };
+    }
     export type QuestionsNewResponse = {
         questions: Array<QuestionsNew>;
-    };
+    }
     export namespace submit {
         export type QuizFinishRequest = {
             final_submit: string;
             option?: string;
             qno?: string;
-        };
+        }
         export type QuizSubmitResponse = {
             is_ongoing?: boolean;
             is_started?: boolean;
             is_finished?: boolean;
             success?: boolean;
-        };
+        }
         export type SubmitRequest = {
             option?: string;
             qno?: string;
-        };
+        }
     }
     export namespace result {
         export type QuizResultResponse = {
@@ -825,12 +902,12 @@ export namespace quiz {
             marks_scored: string;
             multiple_choice_questions: Array<quiz.result.mcq.McqQuestions>;
             question_set_name: string;
-        };
+        }
         export namespace mcq {
             export type McqOptions = {
                 id?: string;
                 option_content?: string;
-            };
+            }
             export type McqQuestions = {
                 correct_option_id?: string;
                 is_answer_correct?: boolean;
@@ -840,7 +917,7 @@ export namespace quiz {
                 question_no?: string;
                 question_options: Array<McqOptions>;
                 user_opted_option_id?: string;
-            };
+            }
         }
         export namespace filetype {
             export type FileTypeQuestions = {
@@ -849,11 +926,11 @@ export namespace quiz {
                 mark_obtained?: string;
                 question_content?: string;
                 question_no?: string;
-            };
+            }
             export type QuizResultFile = {
                 name?: string;
                 path?: string;
-            };
+            }
         }
         export namespace descriptive {
             export type DescriptiveQuestions = {
@@ -862,17 +939,17 @@ export namespace quiz {
                 question_content?: string;
                 question_no?: string;
                 student_answer?: string;
-            };
+            }
         }
     }
     export namespace questions {
         export type Options = {
             id?: string;
             option?: string;
-        };
+        }
         export type QuestionResponse = {
             questions: Array<Questions>;
-        };
+        }
         export type Questions = {
             answer_id?: string;
             duration_in_seconds?: string;
@@ -885,7 +962,7 @@ export namespace quiz {
             question_type?: string;
             session_id?: string;
             user_answer?: string;
-        };
+        }
     }
     export namespace list {
         export type Quiz = {
@@ -902,34 +979,34 @@ export namespace quiz {
             statusText: string;
             type: string;
             typeText: string;
-        };
+        }
         export type QuizResponse = {
             quizes: Array<Quiz>;
-        };
+        }
     }
     export namespace file {
         export type QuizDeleteFile = {
             file_id: string;
-        };
+        }
         export type QuizFileUploadResponse = {
             delete_url: string;
             id: string;
             name: string;
             url: string;
-        };
+        }
     }
 }
 export namespace programoutcome {
     export type ProgramOutcome = {
         content: string;
         heading: string;
-    };
+    }
     export type ProgramOutcomeResponse = {
         login?: boolean;
         pgm_educational: Array<ProgramOutcome>;
         pgm_outcomes: Array<ProgramOutcome>;
         pgm_specific: Array<ProgramOutcome>;
-    };
+    }
 }
 export namespace profileasiet {
     export namespace sport {
@@ -944,11 +1021,11 @@ export namespace profileasiet {
             organized_by: string;
             type: string;
             year: string;
-        };
+        }
         export type SportResponse = {
             login?: boolean;
             participation: Array<Sport>;
-        };
+        }
     }
     export namespace scholarships {
         export type Scholarships = {
@@ -956,11 +1033,11 @@ export namespace profileasiet {
             name: string;
             type: string;
             year: string;
-        };
+        }
         export type ScholarshipsResponse = {
             login?: boolean;
             scholarship: Array<Scholarships>;
-        };
+        }
     }
     export namespace qualifiedexamination {
         export type QualifiedExamination = {
@@ -969,11 +1046,11 @@ export namespace profileasiet {
             name: string;
             score: string;
             year: string;
-        };
+        }
         export type QualifiedExaminationResponse = {
             examination: Array<QualifiedExamination>;
             login?: boolean;
-        };
+        }
     }
     export namespace publication {
         export type Publication = {
@@ -984,11 +1061,11 @@ export namespace profileasiet {
             journal: string;
             title: string;
             year: string;
-        };
+        }
         export type PublicationDropDown = {
             id?: number;
             name: string;
-        };
+        }
         export type PublicationDropDownResponse = {
             category: Array<PublicationDropDown>;
             index: Array<PublicationDropDown>;
@@ -1001,11 +1078,11 @@ export namespace profileasiet {
             sem_id: string;
             sem_name: string;
             years: Array<PublicationDropDown>;
-        };
+        }
         export type PublicationResponse = {
             login?: boolean;
             publications: Array<Publication>;
-        };
+        }
     }
     export namespace projectwork {
         export type ProjectWork = {
@@ -1014,11 +1091,11 @@ export namespace profileasiet {
             id: string;
             type: string;
             year: string;
-        };
+        }
         export type ProjectWorkResponse = {
             login?: boolean;
             project: Array<ProjectWork>;
-        };
+        }
     }
     export namespace positionheld {
         export type PositionHeld = {
@@ -1027,11 +1104,11 @@ export namespace profileasiet {
             name: string;
             start: string;
             year: string;
-        };
+        }
         export type PositionHeldResponse = {
             login?: boolean;
             positions: Array<PositionHeld>;
-        };
+        }
     }
     export namespace mooccourse {
         export type MoocCourse = {
@@ -1043,11 +1120,11 @@ export namespace profileasiet {
             name: string;
             platform: string;
             to_date: string;
-        };
+        }
         export type MoocCourseResponse = {
             login?: boolean;
             mooc: Array<MoocCourse>;
-        };
+        }
     }
     export namespace membership {
         export type Membership = {
@@ -1058,11 +1135,11 @@ export namespace profileasiet {
             member_since: string;
             name: string;
             type: string;
-        };
+        }
         export type MembershipResponse = {
             login?: boolean;
             professionalsociety: Array<Membership>;
-        };
+        }
     }
     export namespace fundedresearch {
         export type FundedResearch = {
@@ -1073,11 +1150,11 @@ export namespace profileasiet {
             id: string;
             title: string;
             year: string;
-        };
+        }
         export type FundedResearchResponse = {
             funded: Array<FundedResearch>;
             login?: boolean;
-        };
+        }
     }
     export namespace coursesattended {
         export type CoursesAttended = {
@@ -1090,11 +1167,11 @@ export namespace profileasiet {
             organized_by: string;
             to_date: string;
             year: string;
-        };
+        }
         export type CoursesAttendedResponse = {
             courses: Array<CoursesAttended>;
             login?: boolean;
-        };
+        }
     }
     export namespace achievements {
         export type Achievements = {
@@ -1102,11 +1179,11 @@ export namespace profileasiet {
             id: string;
             name: string;
             year: string;
-        };
+        }
         export type AchievementsResponse = {
             achievement: Array<Achievements>;
             login?: boolean;
-        };
+        }
     }
 }
 export namespace placement {
@@ -1118,16 +1195,16 @@ export namespace placement {
         last_date: string;
         name: string;
         status: string;
-    };
+    }
     export type PlacementRequest = {
         placement_id: string;
-    };
+    }
 }
 export namespace onlineclass {
     export type OnlineClass = {
         sub_name: string;
         suburl: string;
-    };
+    }
     export type OnlineClassResponse = {
         batch: string;
         batchvideourl: string;
@@ -1135,7 +1212,7 @@ export namespace onlineclass {
         login?: boolean;
         subjects: Array<OnlineClass>;
         semester: string;
-    };
+    }
 }
 export namespace noticeboard {
     export type Notice = {
@@ -1144,24 +1221,24 @@ export namespace noticeboard {
         "created time": string;
         document: string;
         heading: string;
-    };
+    }
     export type NoticeJecc = {
         content: string;
         "create by": string;
         "created time": string;
         document: string;
         heading: string;
-    };
+    }
     export type NoticeJeccResponse = {
         error: string;
         login?: boolean;
         notice: Array<NoticeJecc>;
-    };
+    }
     export type NoticeResponse = {
         error: string;
         login?: boolean;
         notice: Array<Notice>;
-    };
+    }
 }
 export namespace message {
     export type Inbox = {
@@ -1172,61 +1249,61 @@ export namespace message {
         is_read: string;
         sender_id: string;
         subject: string;
-    };
+    }
     export type MsgHandleRequest = {
         id: string;
-    };
+    }
     export type Outbox = {
         content: string;
         date: string;
         id: string;
         subject: string;
         to: string;
-    };
+    }
     export type ReplyRequest = {
         message: string;
         reply_for_id?: string;
         to_id?: string;
-    };
+    }
 }
 export namespace mess {
     export type Mess = {
         day: string;
         items: Array<MessMenu>;
-    };
+    }
     export type MessData = {
         booking_date: string;
         day: string;
         day_id: string;
-    };
+    }
     export type MessItem = {
         id: string;
         max_qty: string;
         name: string;
-    };
+    }
     export type MessMenu = {
         max_qty: string;
         menu: string;
         type?: number;
         type_name: string;
-    };
+    }
     export type MessMenuResponse = {
         item: Array<MessItem>;
         login?: boolean;
-    };
+    }
     export type MessResponse = {
         data: Array<Mess>;
         login?: boolean;
-    };
+    }
     export type MessType = {
         id: string;
         name: string;
-    };
+    }
     export type MessTypeResponse = {
         data: Array<MessData>;
         login?: boolean;
         type: Array<MessType>;
-    };
+    }
     export type OrderHistory = {
         booking_date: string;
         id: string;
@@ -1234,22 +1311,22 @@ export namespace mess {
         quantity: string;
         status: string;
         type: string;
-    };
+    }
     export type OrderHistoryResponse = {
         data: Array<OrderHistory>;
         login?: boolean;
-    };
+    }
 }
 export namespace materials {
     export type DownloadMaterial = {
         url: string;
-    };
+    }
     export type DownloadMaterialResponse = {
         files: Array<DownloadMaterial>;
-    };
+    }
     export type MaterialRequest = {
         sem_id: string;
-    };
+    }
     export type Materials = {
         date: string;
         link: string;
@@ -1258,7 +1335,7 @@ export namespace materials {
         subject: string;
         title: string;
         url: string;
-    };
+    }
     export type MaterialsNew = {
         date: string;
         download: string;
@@ -1268,7 +1345,7 @@ export namespace materials {
         subject: string;
         title: string;
         url: Array<string>;
-    };
+    }
 }
 export namespace main {
     export type ApplyHostelResponse = {
@@ -1277,43 +1354,43 @@ export namespace main {
         hostel_status: string;
         login?: boolean;
         success?: boolean;
-    };
+    }
     export type CourseSurveyPending = {
         coursesurvey_status?: boolean;
-    };
+    }
     export type FeeStatusResponse = {
         error: string;
         login?: boolean;
         status?: boolean;
-    };
+    }
     export type POSurveyPending = {
         posurvey_status?: boolean;
-    };
+    }
     export type PushRequest = {
         platform: string;
         token: string;
-    };
+    }
     export type PushResponse = {
         error: string;
         login?: boolean;
         success?: boolean;
-    };
+    }
     export type SurveyMandatory = {
         login?: boolean;
         survey_mandatory?: boolean;
-    };
+    }
     export type SurveyPending = {
         profile_status?: boolean;
         semreg_default?: boolean;
         survey_status?: boolean;
-    };
+    }
 }
 export namespace login {
     export type LoginRequest = {
         hostel?: string;
         password: string;
         username: string;
-    };
+    }
     export type LoginResponse = {
         academic_year: string;
         access_token: string;
@@ -1335,10 +1412,10 @@ export namespace login {
         univ: string;
         user_type: string;
         uname: string;
-    };
+    }
     export type LogoutRequest = {
         push_token: string;
-    };
+    }
 }
 export namespace live {
     export type Live = {
@@ -1347,11 +1424,11 @@ export namespace live {
         link: string;
         title: string;
         type: string;
-    };
+    }
     export type LiveResponse = {
         live: Array<Live>;
         login?: boolean;
-    };
+    }
 }
 export namespace library {
     export type BookRecord = {
@@ -1365,11 +1442,11 @@ export namespace library {
         slno: string;
         status: string;
         title: string;
-    };
+    }
     export type BookRecordResponse = {
         book_record: Array<BookRecord>;
         login?: boolean;
-    };
+    }
     export type Books = {
         author: string;
         bookid: string;
@@ -1382,11 +1459,11 @@ export namespace library {
         slno: string;
         status: string;
         title: string;
-    };
+    }
     export type BooksResponse = {
         books: Array<Books>;
         login?: boolean;
-    };
+    }
 }
 export namespace leavemanagement {
     export type LeaveManagement = {
@@ -1396,12 +1473,12 @@ export namespace leavemanagement {
         leave_type: string;
         staff_id: string;
         taken?: number;
-    };
+    }
     export type LeaveManagementResponse = {
         leave_data: Array<LeaveManagement>;
         login?: boolean;
         success?: boolean;
-    };
+    }
 }
 export namespace leave {
     export namespace medical {
@@ -1411,12 +1488,12 @@ export namespace leave {
             reason: string;
             remark: string;
             status: string;
-        };
+        }
         export type MedicalRequest = {
             from_date: string;
             to_date: string;
             reason: string;
-        };
+        }
     }
     export namespace duty {
         export type DutyLeave = {
@@ -1429,16 +1506,16 @@ export namespace leave {
             proof_url: string;
             status: string;
             type: string;
-        };
+        }
         export type DutyLeaveDate = {
             date: string;
             hours: Array<DutyLeaveHour>;
             selected?: boolean;
-        };
+        }
         export type DutyLeaveDateResponse = {
             data: Array<DutyLeaveDate>;
             login?: boolean;
-        };
+        }
         export type DutyLeaveDirectApply = {
             from_date: string;
             head: string;
@@ -1447,26 +1524,26 @@ export namespace leave {
             status: string;
             to_date: string;
             url: string;
-        };
+        }
         export type DutyLeaveDirectApplyResponse = {
             data: Array<DutyLeaveDirectApply>;
             login?: boolean;
-        };
+        }
         export type DutyLeaveHead = {
             id?: number;
             name: string;
-        };
+        }
         export type DutyLeaveHeadResponse = {
             data: Array<DutyLeaveHead>;
             login?: boolean;
-        };
+        }
         export type DutyLeaveHour = {
             hour?: number;
             status: string;
-        };
+        }
         export type DutyLeaveViewRequest = {
             filter: string;
-        };
+        }
     }
 }
 export namespace lab {
@@ -1475,7 +1552,7 @@ export namespace lab {
         record: string;
         topic: string;
         viva: string;
-    };
+    }
     export type LabDue = {
         amount: string;
         due_date: string;
@@ -1483,30 +1560,30 @@ export namespace lab {
         lab: string;
         paid_date: string;
         paid_status: string;
-    };
+    }
     export type LabEquipRequest = {
         lid?: string;
-    };
+    }
     export type LabEquipment = {
         asset_type: string;
         facility_name: string;
         status: string;
         type: string;
-    };
+    }
     export type LabList = {
         id: string;
         laboratary_name: string;
-    };
+    }
     export type Practical = {
         atten_text: string;
         sub_id: string;
         sub_pid: string;
         subject: string;
-    };
+    }
     export type PracticalRequest = {
         sub_id?: string;
         sub_pid?: string;
-    };
+    }
 }
 export namespace internship {
     export type Internship = {
@@ -1519,20 +1596,20 @@ export namespace internship {
         to_date: string;
         url: string;
         verified_certificate: string;
-    };
+    }
     export type InternshipResponse = {
         data: Array<Internship>;
         login?: boolean;
-    };
+    }
     export namespace companylist {
         export type CompanyList = {
             id: string;
             name: string;
-        };
+        }
         export type CompanyListResponse = {
             companies: Array<CompanyList>;
             login?: boolean;
-        };
+        }
     }
 }
 export namespace institutions {
@@ -1541,10 +1618,10 @@ export namespace institutions {
         clgId: string;
         clgName: string;
         regUrl: string;
-    };
+    }
     export type Institution = {
         colleges: Array<Colleges>;
-    };
+    }
 }
 export namespace hostelnew {
     export type HostelNewAdmission = {
@@ -1554,18 +1631,17 @@ export namespace hostelnew {
         installment: string;
         is_selected?: boolean;
         m: string;
-        month: string;
         paid?: number;
         payment: Array<hostel.HostelFee>;
         y: string;
-        year: string;
-    };
+    }
     export type HostelNewAdmissionResponse = {
         date: string;
         fine: string;
         hostel: Array<HostelNewAdmission>;
         login?: boolean;
-    };
+        method: string;
+    }
     export type HostelNewHistory = {
         adjustment?: number;
         amount?: number;
@@ -1573,12 +1649,12 @@ export namespace hostelnew {
         installment: string;
         paid?: number;
         wallet?: number;
-    };
+    }
     export type HostelNewHistoryResponse = {
         admission_history: Array<HostelNewHistory>;
         login?: boolean;
         monthly_history: Array<HostelNewHistory>;
-    };
+    }
     export type HostelNewMonthly = {
         amount?: number;
         balance?: number;
@@ -1591,28 +1667,28 @@ export namespace hostelnew {
         payment: Array<hostel.HostelFee>;
         y: string;
         year: string;
-    };
+    }
     export type HostelNewMonthlyResponse = {
         date: string;
         fine: string;
         hostel: Array<HostelNewMonthly>;
         login?: boolean;
-    };
+    }
     export type HostelNewPay = {
         fine?: number;
-        subtotal?: number;
+        login?: boolean;
         total_amount?: number;
         url: string;
-    };
+    }
     export type HostelStatusNew = {
         allpayment?: boolean;
         login?: boolean;
-    };
+    }
 }
 export namespace hostel {
     export type HostelFee = {
         adjustment?: number;
-        amount: string;
+        amount?: number;
         balance?: number;
         feegroup_id: string;
         feehead_id: string;
@@ -1628,25 +1704,25 @@ export namespace hostel {
         status?: number;
         tenant_id: string;
         user_id: string;
-    };
+    }
     export type HostelFeePalaiResponse = {
         fine?: number;
         subtotal?: number;
         total?: number;
         url: string;
-    };
+    }
     export type HostelFeeRequest = {
         transaction_method: string;
         month: string;
         year: string;
-    };
+    }
     export type HostelFeeResponse = {
         url: string;
-    };
+    }
     export type HostelFeeTypes = {
         id?: number;
         name: string;
-    };
+    }
     export type HostelMonth = {
         amount?: number;
         balance?: number;
@@ -1660,12 +1736,12 @@ export namespace hostel {
         payment: Array<HostelFee>;
         y: string;
         year: string;
-    };
+    }
     export type HostelMonthResponse = {
         date: string;
         hostel: Array<HostelMonth>;
         login?: boolean;
-    };
+    }
     export type HostelPalaiAdmission = {
         amount?: number;
         balance?: number;
@@ -1680,7 +1756,7 @@ export namespace hostel {
         scholarship: string;
         y: string;
         year: string;
-    };
+    }
     export type HostelPalaiAdmissionResponse = {
         date: string;
         fine: string;
@@ -1688,7 +1764,7 @@ export namespace hostel {
         login?: boolean;
         method: string;
         types: Array<HostelFeeTypes>;
-    };
+    }
     export type HostelPalaiMonth = {
         amount?: number;
         balance?: number;
@@ -1701,16 +1777,16 @@ export namespace hostel {
         payment: Array<HostelFee>;
         y: string;
         year: string;
-    };
+    }
     export type HostelPalaiResponse = {
         date: string;
         hostel: Array<HostelPalaiMonth>;
         login?: boolean;
-    };
+    }
     export type HostelPalaiTypesResponse = {
         login?: boolean;
         types: Array<HostelFeeTypes>;
-    };
+    }
     export type HostelResponse = {
         hostel: string;
         installment: string;
@@ -1719,7 +1795,7 @@ export namespace hostel {
         name: string;
         room_no: string;
         year: string;
-    };
+    }
     export namespace receipt {
         export type HostelReceipt = {
             amount: string;
@@ -1728,10 +1804,10 @@ export namespace hostel {
             installment: string;
             receipt_date: string;
             receipt_url: string;
-        };
+        }
         export type HostelReceiptResponse = {
             receipts: Array<HostelReceipt>;
-        };
+        }
     }
     export namespace partial {
         export namespace admission {
@@ -1740,7 +1816,7 @@ export namespace hostel {
                 fine: string;
                 login?: boolean;
                 payment: Array<HostelPartialPayment>;
-            };
+            }
             export type HostelPartialAdmissionResponse = {
                 date: string;
                 fine: string;
@@ -1748,7 +1824,7 @@ export namespace hostel {
                 login?: boolean;
                 method: string;
                 types: Array<hostel.HostelFeeTypes>;
-            };
+            }
             export type HostelPartialPayment = {
                 amount: string;
                 balance?: number;
@@ -1767,25 +1843,25 @@ export namespace hostel {
                 tenant_id: string;
                 user_id: string;
                 y: string;
-            };
+            }
         }
     }
     export namespace mits {
         export type MitsFeePay = {
             login?: boolean;
             url: string;
-        };
+        }
     }
     export namespace gcekhostel {
         export namespace reregistration {
             export type PresentHostel = {
                 id?: number;
                 name: string;
-            };
+            }
             export type PresentHostelResponse = {
                 hostel: Array<PresentHostel>;
                 login?: boolean;
-            };
+            }
         }
         export namespace registration {
             export type Registration = {
@@ -1795,13 +1871,13 @@ export namespace hostel {
                 reg_type: string;
                 semester: string;
                 status: string;
-            };
+            }
             export type RegistrationResponse = {
                 is_hostler?: boolean;
                 login?: boolean;
                 re_admission?: boolean;
                 reg: Array<Registration>;
-            };
+            }
             export type ViewRegistrationResponse = {
                 admission_no: string;
                 admsn_type: string;
@@ -1823,17 +1899,17 @@ export namespace hostel {
                 semester: string;
                 status: string;
                 type: string;
-            };
+            }
         }
         export namespace newregistration {
             export type CategoryType = {
                 id?: number;
                 name: string;
-            };
+            }
             export type CategoryTypeResponse = {
                 category: Array<CategoryType>;
                 login?: boolean;
-            };
+            }
         }
     }
     export namespace attendance {
@@ -1844,21 +1920,22 @@ export namespace hostel {
             monthdate: Array<string>;
             present: Array<boolean>;
             rejects: Array<boolean>;
-        };
+        }
         export type HostelAttParentView = {
             btn_app: string;
             btn_rej: string;
             btn_rev: string;
+            dates: Array<HostelDates>;
             from_date: string;
             id: string;
             reason: string;
             status: string;
             type: string;
-        };
+        }
         export type HostelAttParentViewResponse = {
             data: Array<HostelAttParentView>;
             login?: boolean;
-        };
+        }
         export type HostelAttView = {
             btn_already_exit?: boolean;
             btn_del?: boolean;
@@ -1870,11 +1947,16 @@ export namespace hostel {
             status: string;
             type: string;
             url: string;
-        };
+        }
         export type HostelAttViewResponse = {
             data: Array<HostelAttView>;
             login?: boolean;
-        };
+        }
+        export type HostelDates = {
+            checkedStates?: boolean;
+            date: string;
+            id: string;
+        }
         export type HostelScanViewResponse = {
             address: string;
             date: string;
@@ -1890,22 +1972,22 @@ export namespace hostel {
             status: string;
             type: string;
             url: string;
-        };
+        }
         export type LeaveType = {
             id?: number;
             type: string;
-        };
+        }
         export type LeaveTypeResponse = {
             data: Array<LeaveType>;
             login?: boolean;
-        };
+        }
     }
     export namespace asiet {
         export type AsietBoarding = {
             amount: string;
             id: string;
             name: string;
-        };
+        }
         export type History = {
             id: string;
             name: string;
@@ -1913,7 +1995,7 @@ export namespace hostel {
             start_date: string;
             status: string;
             year: string;
-        };
+        }
         export type HostelAsietRegisterViewResponse = {
             admission_no: string;
             batch: string;
@@ -1924,7 +2006,7 @@ export namespace hostel {
             login?: boolean;
             note: string;
             route_url: string;
-        };
+        }
     }
 }
 export namespace homework {
@@ -1944,11 +2026,11 @@ export namespace homework {
         title: string;
         type: string;
         uploaded_file: string;
-    };
+    }
     export type HomeWorkResponse = {
         homeworks: Array<HomeWork>;
         login?: boolean;
-    };
+    }
 }
 export namespace grievance {
     export type Grievance = {
@@ -1959,21 +2041,21 @@ export namespace grievance {
         reminder: string;
         status: string;
         subject: string;
-    };
+    }
     export type GrievanceResponse = {
         grievance: Array<Grievance>;
         login?: boolean;
-    };
+    }
     export namespace view {
         export type Actions = {
             action_taken?: string;
             date?: string;
             level?: string;
-        };
+        }
         export type GrievanceDoc = {
             doc?: string;
             path?: string;
-        };
+        }
         export type ViewGrievance = {
             action_taken: string;
             date: string;
@@ -1988,23 +2070,23 @@ export namespace grievance {
             reply_doc: Array<GrievanceDoc>;
             status: string;
             subject: string;
-        };
+        }
         export type ViewGrievanceResponse = {
             actions: Array<Actions>;
             cellmembers: Array<string>;
             grievance: ViewGrievance;
             login?: boolean;
-        };
+        }
     }
     export namespace type {
         export type GrievanceType = {
             id: string;
             name: string;
-        };
+        }
         export type GrievanceTypeResponse = {
             g_types: Array<GrievanceType>;
             login?: boolean;
-        };
+        }
     }
 }
 export namespace feepartial {
@@ -2020,33 +2102,33 @@ export namespace feepartial {
         paid: string;
         payable: string;
         scholarship: string;
-    };
+    }
     export type InstallmentDetailsResponse = {
         installments: Array<InstallmentDetails>;
         login?: boolean;
         success?: boolean;
-    };
+    }
     export type InstallmentList = {
         id: string;
         name: string;
-    };
+    }
     export type InstallmentListResponse = {
         installments: Array<InstallmentList>;
         login?: boolean;
         success?: boolean;
-    };
+    }
 }
 export namespace feemedical {
     export type FeesMed = {
         installment_id: string;
         installment_name: string;
         installments: Array<InstallmentsMed>;
-    };
+    }
     export type FeesMedResponse = {
         fees: Array<FeesMed>;
         login?: boolean;
         success?: boolean;
-    };
+    }
     export type InstallmentsMed = {
         balance: string;
         date: string;
@@ -2059,7 +2141,7 @@ export namespace feemedical {
         paid: string;
         payable: string;
         scholarship: string;
-    };
+    }
 }
 export namespace feeengineer {
     export namespace payment {
@@ -2067,7 +2149,7 @@ export namespace feeengineer {
             installment_id: string;
             installment_name: string;
             installments: Array<FeeEngineerInstallment>;
-        };
+        }
         export type FeeEngineerInstallment = {
             balance: string;
             discount: string;
@@ -2077,20 +2159,20 @@ export namespace feeengineer {
             paid: string;
             payable: string;
             scholarship: string;
-        };
+        }
         export type FeeEngineerResponse = {
             fees: Array<FeeEngineer>;
             login?: boolean;
             message: string;
             success?: boolean;
-        };
+        }
         export type FeeEngineerUrlResponse = {
-            error: string;
+            error?: string;
             fine: string;
             subtotal: string;
             total: string;
-            url: string;
-        };
+            url?: string;
+        }
     }
 }
 export namespace feearts {
@@ -2106,7 +2188,7 @@ export namespace feearts {
             paid?: number;
             payable?: number;
             scholarship?: number;
-        };
+        }
         export type FeeArtsResponse = {
             bal: string;
             date: string;
@@ -2116,19 +2198,19 @@ export namespace feearts {
             student_id: string;
             success?: boolean;
             total: string;
-        };
+        }
         export type FeeArtsSemester = {
             id?: number;
             name: string;
-        };
+        }
         export type FeeArtsSemesterResponse = {
             installments: Array<FeeArtsSemester>;
             login?: boolean;
             success?: boolean;
-        };
+        }
         export type FeeArtsUrlResponse = {
             url: string;
-        };
+        }
     }
 }
 export namespace fee {
@@ -2142,7 +2224,7 @@ export namespace fee {
         name: string;
         paid: string;
         scholarship: string;
-    };
+    }
     export type FeeResponse = {
         balance: string;
         date: string;
@@ -2154,19 +2236,19 @@ export namespace fee {
         success?: boolean;
         total: string;
         url?: string;
-    };
+    }
     export type FeeSreeChitraUrl = {
         login?: boolean;
         success?: boolean;
         url?: string;
-    };
+    }
     export type FeeUrlOnlyResponse = {
         url?: string;
-    };
+    }
     export type FeeUrlResponse = {
         error?: string;
         url?: string;
-    };
+    }
     export type GatewayDetailsResponse = {
         address: string;
         ipg: string;
@@ -2174,7 +2256,7 @@ export namespace fee {
         merchant: string;
         phone: string;
         refund: string;
-    };
+    }
     export namespace receipts {
         export type Receipt = {
             amount: string;
@@ -2185,13 +2267,13 @@ export namespace fee {
             refund_reason: string;
             refund_status?: boolean;
             status: string;
-        };
+        }
         export type ReceiptResponse = {
             login?: boolean;
             message: string;
             receipts: Array<Receipt>;
             success?: boolean;
-        };
+        }
     }
     export namespace installment {
         export type InstallmentResponse = {
@@ -2199,19 +2281,19 @@ export namespace fee {
             login?: boolean;
             message: string;
             success?: boolean;
-        };
+        }
         export type Installments = {
             id: string;
             name: string;
-        };
+        }
     }
     export namespace feeheadgroups {
         export type FeeHeadGroup = {
             feeheadgroup_id: string;
-        };
+        }
         export type FeeHeadGroupResponse = {
             fees: Array<FeeHeadGroup>;
-        };
+        }
     }
 }
 export namespace examschedules {
@@ -2223,10 +2305,10 @@ export namespace examschedules {
         subject: string;
         time: string;
         url: string;
-    };
+    }
     export type ExamScheduleResponse = {
         schedules: Array<ExamSchedule>;
-    };
+    }
 }
 export namespace examregister {
     export type ExamCourse = {
@@ -2237,22 +2319,18 @@ export namespace examregister {
         is_selected?: boolean;
         no?: number;
         type: string;
-    };
+    }
     export type ExamCourseResponse = {
-        abc_id_verification?: boolean;
         academicyear: string;
         admission_no: string;
         batch_id: string;
         can_update?: boolean;
         category: string;
-        check_box_status?: boolean;
         course: Array<ExamCourse>;
         degree: string;
         end_date: string;
         error: string;
         exam_year: string;
-        fee_status?: boolean;
-        fixedHeadGroup: Array<FixedHeadGroup>;
         is_registered?: boolean;
         login?: boolean;
         month: string;
@@ -2260,7 +2338,7 @@ export namespace examregister {
         registration_slip?: boolean;
         semester: string;
         start_date: string;
-    };
+    }
     export type ExamMessage = {
         amount: string;
         course: string;
@@ -2269,7 +2347,7 @@ export namespace examregister {
         is_eligible: string;
         totalAmount: string;
         type: string;
-    };
+    }
     export type ExamMessageResponse = {
         error: string;
         exam: Array<ExamMessage>;
@@ -2277,40 +2355,40 @@ export namespace examregister {
         login?: boolean;
         message: string;
         success?: boolean;
-    };
+    }
     export type ExamPay = {
         amount: string;
         fineAmount: string;
         fixed_amount: string;
         totalAmount: string;
-    };
+    }
     export type ExamPayResponse = {
         error: string;
         exam: Array<ExamPay>;
         is_registered?: boolean;
         login?: boolean;
         url: string;
-    };
+    }
     export type ExamReceipt = {
         feeReceiptNo: string;
         print_url: string;
         receipt_date: string;
         sub_total: string;
-    };
+    }
     export type ExamReceiptResponse = {
         login?: boolean;
         receipts: Array<ExamReceipt>;
-    };
+    }
     export type ExamRegister = {
         id: string;
         name: string;
-    };
+    }
     export type ExamRegisterResponse = {
         exam: Array<ExamRegister>;
         login?: boolean;
         notregexam: Array<ExamRegister>;
         regexam: Array<ExamRegister>;
-    };
+    }
     export type ExamUpdate = {
         amount: string;
         course: string;
@@ -2319,42 +2397,34 @@ export namespace examregister {
         is_selected?: boolean;
         msg: string;
         type: string;
-    };
+    }
     export type ExamUpdateResponse = {
         admission_no: string;
         batch_id: string;
         exam: Array<ExamUpdate>;
         login?: boolean;
-    };
+    }
     export type ExamView = {
         amount: string;
         course: string;
         is_eligible: string;
         type: string;
-    };
+    }
     export type ExamViewResponse = {
         error: string;
         exam: Array<ExamView>;
         login?: boolean;
-    };
-    export type FixedHeadGroup = {
-        amount: string;
-        fixedHeadGrpId: string;
-        head: string;
-        is_eligible: string;
-        no?: number;
-        type: string;
-    };
+    }
     export type RegistrationSlipResponse = {
         file_url: string;
         login?: boolean;
-    };
+    }
     export type Revaluation = {
         course: string;
         grade: string;
         status: string;
         type: string;
-    };
+    }
     export type RevaluationApply = {
         answer_script: string;
         course: string;
@@ -2363,26 +2433,26 @@ export namespace examregister {
         revaluation: string;
         total: string;
         type: string;
-    };
+    }
     export type RevaluationApplyResponse = {
         revaluation: Array<RevaluationApply>;
-    };
+    }
     export type RevaluationReceipt = {
         answer_script: string;
         course: string;
         revaluation: string;
-    };
+    }
     export type RevaluationReceiptResponse = {
         receipt: Array<RevaluationReceipt>;
         sub_total: string;
         total: string;
-    };
+    }
     export type RevaluationResponse = {
         revaluation: Array<Revaluation>;
-    };
+    }
     export type RevaluationStatusResponse = {
         status?: boolean;
-    };
+    }
     export type RevaluationUpdate = {
         answer_script: string;
         course: string;
@@ -2390,10 +2460,10 @@ export namespace examregister {
         revaluation: string;
         status: string;
         type: string;
-    };
+    }
     export type RevaluationUpdateResponse = {
         revaluation: Array<RevaluationUpdate>;
-    };
+    }
     export type RevaluationView = {
         answer_script: string;
         course: string;
@@ -2401,10 +2471,10 @@ export namespace examregister {
         revaluation_id: string;
         total: string;
         type: string;
-    };
+    }
     export type RevaluationViewResponse = {
         revaluation: Array<RevaluationView>;
-    };
+    }
 }
 export namespace exam {
     export type Exam = {
@@ -2420,21 +2490,21 @@ export namespace exam {
         subject: string;
         title: string;
         uploaded_file: string;
-    };
+    }
     export type ExamFiles = {
         doc?: string;
         path?: string;
-    };
+    }
     export type ModuleTestResponse = {
         error: string;
         login?: boolean;
         module_test: Array<Exam>;
-    };
+    }
     export type SeriesExamResponse = {
         error: string;
         login?: boolean;
         series_exams: Array<Exam>;
-    };
+    }
 }
 export namespace due {
     export type Due = {
@@ -2445,11 +2515,11 @@ export namespace due {
         has_due: string;
         is_paid: string;
         student_name: string;
-    };
+    }
     export type DueResponse = {
         due: Array<Due>;
         login?: boolean;
-    };
+    }
     export namespace duepaynew {
         export type DuePayNew = {
             admission_no: string;
@@ -2466,10 +2536,10 @@ export namespace due {
             status: string;
             student_id: string;
             year_id: string;
-        };
+        }
         export type DuePayNewResponse = {
             collect: Array<DuePayNew>;
-        };
+        }
     }
     export namespace duepay {
         export type DuePay = {
@@ -2485,18 +2555,18 @@ export namespace due {
             status: string;
             student_id: string;
             year_id: string;
-        };
+        }
         export type DuePayResponse = {
             dues: Array<DuePay>;
             login?: boolean;
-        };
+        }
         export type DuePayUrl = {
             url: string;
-        };
+        }
         export type NoDueCertificateResponse = {
             login?: boolean;
             url: string;
-        };
+        }
     }
 }
 export namespace dash {
@@ -2505,10 +2575,10 @@ export namespace dash {
         instructions: string;
         login?: boolean;
         video: string;
-    };
+    }
     export type DashRequest = {
         hostel?: string;
-    };
+    }
     export type DashResponse = {
         attendance_forthemonth: string;
         attendance_forthesem: string;
@@ -2531,18 +2601,20 @@ export namespace dash {
         hostel?: number;
         hostel_status: string;
         info_msg: string;
+        is_engnr?: boolean;
         live_tv_link: string;
         live_tv_type: string;
         login?: boolean;
         logout_status?: boolean;
         notices: Array<NoticesDash>;
         password_changed?: boolean;
+        roll_no: string;
         sem_id: string;
         semreg_default?: boolean;
         student_id: string;
         survey_message: string;
         survey_status?: boolean;
-        timetable: Array<Array<timetable.TimeTable>>;
+        timetable: Array<Array<etlabstaff.timetable.TimeTable>>;
         url: string;
         url_sign: string;
         usertype: string;
@@ -2569,18 +2641,18 @@ export namespace dash {
         version_code_sctce?: number;
         version_code_sjcetpalai?: number;
         version_code_tkmce?: number;
-    };
+    }
     export type LibraryResponse = {
         login?: boolean;
         url: string;
-    };
+    }
     export type MaintenanceResponse = {
         message: string;
         success?: boolean;
-    };
+    }
     export type NoticesDash = {
         content: string;
-    };
+    }
     export type PendingSurvey = {
         coursesurvey_status?: boolean;
         error: string;
@@ -2588,7 +2660,7 @@ export namespace dash {
         profile_status?: boolean;
         semreg_default?: boolean;
         survey_status?: boolean;
-    };
+    }
     export type ProfileResponse = {
         address1: string;
         address2: string;
@@ -2621,23 +2693,25 @@ export namespace dash {
         register_no: string;
         religion: string;
         state: string;
-    };
+    }
     export namespace daywisetimetaable {
         export type DayWise = {
             day: string;
             sub: Array<DayWiseTopicName>;
-        };
+        }
         export type DayWiseResponse = {
             login?: boolean;
+            semester_end_date: string;
+            semester_start_date: string;
             timetable: Array<DayWise>;
-        };
+        }
         export type DayWiseTopicName = {
             hour?: number;
             staff: string;
             subject: string;
             topic_name: Array<string>;
             type: string;
-        };
+        }
     }
 }
 export namespace counselling {
@@ -2648,21 +2722,22 @@ export namespace counselling {
         id: string;
         reminder: string;
         status: string;
-    };
+    }
     export type CounsellingResponse = {
         login?: boolean;
         requests: Array<Counselling>;
-    };
+    }
     export namespace view {
         export type Actions2 = {
             action_taken?: string;
             date?: string;
             level?: string;
-        };
+        }
         export type ViewCounselling = {
             applicant: string;
             concern: string;
             counselling_history: string;
+            counselling_no: string;
             counselling_session_required: string;
             counselling_type: string;
             date: string;
@@ -2671,33 +2746,33 @@ export namespace counselling {
             impact_physically_emotionally: string;
             impact_relationship: string;
             impact_studies: string;
-        };
+        }
         export type ViewCounsellingResponse = {
             actions: Array<Actions2>;
             cell_members: Array<string>;
             login?: boolean;
             requests: ViewCounselling;
-        };
+        }
     }
     export namespace type {
         export type CounsellingTypes = {
             id: string;
             name: string;
-        };
+        }
         export type CounsellingTypesResponse = {
             c_types: Array<CounsellingTypes>;
             login?: boolean;
-        };
+        }
     }
     export namespace status {
         export type CounsellingStatus = {
             id: string;
             name: string;
-        };
+        }
         export type CounsellingStatusResponse = {
             data: Array<CounsellingStatus>;
             login?: boolean;
-        };
+        }
     }
 }
 export namespace common {
@@ -2707,23 +2782,23 @@ export namespace common {
         heading: string;
         link: string;
         url: string;
-    };
+    }
     export type Remarks = {
         remark: string;
         teacher: string;
-    };
+    }
     export type Teacher = {
         image_url: string;
         t_email: string;
         t_phone: string;
         t_subject: string;
         t_name: string;
-    };
+    }
     export type TeacherResponse = {
         hod: Array<Teacher>;
         staffadvisor: Array<Teacher>;
         sub_teacher: Array<Teacher>;
-    };
+    }
 }
 export namespace chat {
     export namespace subjects {
@@ -2732,12 +2807,12 @@ export namespace chat {
             sem: string;
             subject: string;
             subject_id: string;
-        };
+        }
         export type ChatResponse = {
             error: string;
             login?: boolean;
             subjects: Array<Chat>;
-        };
+        }
     }
     export namespace reply {
         export type Reply = {
@@ -2745,12 +2820,12 @@ export namespace chat {
             name: string;
             reply: string;
             time: string;
-        };
+        }
         export type ReplyResponse = {
             error: string;
             login?: boolean;
             reply: Array<Reply>;
-        };
+        }
     }
     export namespace comment {
         export type Comment = {
@@ -2760,12 +2835,12 @@ export namespace chat {
             img: string;
             reply: Array<chat.reply.Reply>;
             time: string;
-        };
+        }
         export type CommentResponse = {
             comments: Array<Comment>;
             error: string;
             login?: boolean;
-        };
+        }
     }
 }
 export namespace certificaterequest {
@@ -2773,19 +2848,19 @@ export namespace certificaterequest {
         certificate_type: string;
         date_of_application: string;
         status: string;
-    };
+    }
     export type CertificateRequestResponse = {
         history: Array<CertificateRequest>;
         error: string;
         login?: boolean;
-    };
+    }
     export type CertificateType = {
         id: string;
         type: string;
-    };
+    }
     export type CertificateType2 = {
         name: string;
-    };
+    }
     export type CertificateTypeResponse = {
         certificate_type: Array<CertificateType>;
         class_selected: Array<CertificateType2>;
@@ -2793,7 +2868,7 @@ export namespace certificaterequest {
         login?: boolean;
         request_for: Array<CertificateType2>;
         request_opted: Array<CertificateType2>;
-    };
+    }
 }
 export namespace centralizedinfo {
     export type CentralizedInfo = {
@@ -2801,22 +2876,33 @@ export namespace centralizedinfo {
         link: string;
         title: string;
         type: string;
-    };
+    }
     export type CentralizedInfoResponse = {
         info: Array<CentralizedInfo>;
         login?: boolean;
-    };
+    }
 }
 export namespace calendar {
+    export type AttendanceDetails = {
+        attendance_forthemonth: string;
+        attendance_forthesem: string;
+    }
+    export type Birthday = {
+        day: string;
+        dob: string;
+        month: string;
+        name: string;
+    }
     export type Calendar = {
         date: string;
         subject: string;
-    };
+    }
     export type CalendarResponse = {
+        birthday: Array<Birthday>;
         data: Array<Calendar>;
         error: string;
         login?: boolean;
-    };
+    }
 }
 export namespace attendance {
     export type Attendance = {
@@ -2830,49 +2916,49 @@ export namespace attendance {
         total_classes: string;
         total_dutyleave: string;
         total_subject: string;
-    };
+    }
     export type AttendanceDay = {
         attendance: string;
         coverage: Array<string>;
         hour: string;
         subject: string;
-    };
+    }
     export type AttendanceDayRequest = {
         date: string;
         semester: string;
-    };
+    }
     export type AttendanceDayResponse = {
         attends: Array<AttendanceDay>;
-    };
+    }
     export type AttendanceNew = {
         date: string;
         holiday?: boolean;
         periods: Array<AttendancePeriod>;
         totalperiod?: number;
-    };
+    }
     export type AttendanceNewResponse = {
         attends: Array<AttendanceNew>;
-    };
+    }
     export type AttendancePeriod = {
         attendance: string;
         hour?: number;
         subject: string;
-    };
+    }
     export type AttendanceRequest = {
         sem_id: string;
-    };
+    }
     export type AttendanceRequestNew = {
         month: string;
         semester: string;
         year: string;
-    };
+    }
     export type AttendanceResponse = {
         error: string;
         login?: boolean;
         subjects: Array<Attendance>;
         total_credit: string;
         total_percent: string;
-    };
+    }
 }
 export namespace assignment {
     export type Assignment = {
@@ -2880,26 +2966,28 @@ export namespace assignment {
         can_submit?: boolean;
         details: string;
         id: string;
-        issue_date: string;
-        last_date: string;
+        issue_date?: string;
+        last_date?: string;
+        link?: string;
         semester: string;
         status: string;
         subject: string;
         title: string;
         upload?: boolean;
-        uploaded_file: string;
-        url: string;
-    };
+        uploaded_file?: string;
+        url?: string;
+    }
     export type AssignmentRequest = {
         filter: string;
         sem_id: string;
         sort: string;
-    };
+    }
     export type AssignmentResponse = {
         assignments: Array<Assignment>;
         error: string;
         login?: boolean;
-    };
+        submit_by_link?: boolean;
+    }
 }
 export namespace activitypoint {
     export type ActivityPointResponse = {
@@ -2907,12 +2995,12 @@ export namespace activitypoint {
         error?: string;
         login?: boolean;
         total_activity_point?: string;
-    };
+    }
     export type ActivityPoints = {
         activity_name: string;
         point: string;
         semester: string;
-    };
+    }
     export namespace manage {
         export type ActivityBatch = {
             activity_batch_id: string;
@@ -2921,11 +3009,36 @@ export namespace activitypoint {
             max_point: string;
             semester: string;
             status: string;
-        };
+        }
         export type ActivityBatchResponse = {
             activity_batch?: Array<ActivityBatch>;
             error?: string;
             login?: boolean;
-        };
+        }
     }
+}
+
+// fill ins:
+export namespace etlabstaff {
+	export namespace timetable {
+		export type TimeTablePeriod = {
+			attendance_status?: string;
+			batch?: string;
+			batch_id?: string;
+			date?: string;
+			dutyleave_status?: string;
+			link?: string;
+			status?: boolean;
+			sub_id?: string;
+			subject?: string;
+			timeperiod?: string;
+			type: string?;
+		};
+	
+		export type TimeTable = {
+			date: string;
+			day: string;
+			periods: Array<TimeTablePeriod>;
+		};
+	}
 }

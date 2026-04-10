@@ -47,11 +47,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: StoreDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: StoreDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class StoreDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private StoreDialogBinding _binding;
     private String after;
@@ -59,20 +59,20 @@ public final class StoreDialog extends BaseDialog {
     private StoreListener listener;
     private MainCallBackListener listner2;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
 
-    /* renamed from: spinnerAdapter3$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter3$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter3;
 
-    /* renamed from: storeDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: storeDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy storeDialogViewModel;
     private String type;
 
-    /* compiled from: StoreDialog.kt */
+    /* JADX INFO: compiled from: StoreDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/store/StoreDialog$StoreListener;", "", "dismiss", "", "loadStoreView", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface StoreListener {
         void dismiss();
@@ -103,7 +103,7 @@ public final class StoreDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return storeDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(storeDialog);
@@ -117,7 +117,7 @@ public final class StoreDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -130,7 +130,7 @@ public final class StoreDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(StoreDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(StoreDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.type = "";
@@ -144,7 +144,7 @@ public final class StoreDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(StoreDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -169,7 +169,7 @@ public final class StoreDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(StoreDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -194,7 +194,7 @@ public final class StoreDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(StoreDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -220,7 +220,7 @@ public final class StoreDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final StoreDialogBinding get_binding() {
         return this._binding;
     }
@@ -240,7 +240,7 @@ public final class StoreDialog extends BaseDialog {
         return (StoreSubjectAdapter) this.spinnerAdapter3.getValue();
     }
 
-    /* compiled from: StoreDialog.kt */
+    /* JADX INFO: compiled from: StoreDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/store/StoreDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/store/StoreDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -312,22 +312,16 @@ public final class StoreDialog extends BaseDialog {
         StoreDialogBinding storeDialogBinding4 = get_binding();
         Spinner spinner4 = storeDialogBinding4 != null ? storeDialogBinding4.spinnerStoreSemester : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.StoreDialog$setUp$1
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.StoreDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    StoreDepartmentAdapter spinnerAdapter;
-                    StoreDialogViewModel storeDialogViewModel;
-                    String str;
                     StoreDialog storeDialog = StoreDialog.this;
-                    spinnerAdapter = storeDialog.getSpinnerAdapter();
-                    storeDialog.type = spinnerAdapter.getSemester(position).getId();
-                    storeDialogViewModel = StoreDialog.this.getStoreDialogViewModel();
-                    str = StoreDialog.this.type;
-                    storeDialogViewModel.getSemester(str);
+                    storeDialog.type = storeDialog.getSpinnerAdapter().getSemester(position).getId();
+                    StoreDialog.this.getStoreDialogViewModel().getSemester(StoreDialog.this.type);
                     StoreDialog.this.listenSpinner2();
                 }
             });
@@ -335,24 +329,16 @@ public final class StoreDialog extends BaseDialog {
         StoreDialogBinding storeDialogBinding5 = get_binding();
         Spinner spinner5 = storeDialogBinding5 != null ? storeDialogBinding5.spinnerStoreDepartment : null;
         if (spinner5 != null) {
-            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.StoreDialog$setUp$2
+            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.StoreDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    StoreSemesterAdapter spinnerAdapter2;
-                    StoreDialogViewModel storeDialogViewModel;
-                    String str;
-                    String str2;
                     StoreDialog storeDialog = StoreDialog.this;
-                    spinnerAdapter2 = storeDialog.getSpinnerAdapter2();
-                    storeDialog.before = spinnerAdapter2.getSemester(position).getId();
-                    storeDialogViewModel = StoreDialog.this.getStoreDialogViewModel();
-                    str = StoreDialog.this.type;
-                    str2 = StoreDialog.this.before;
-                    storeDialogViewModel.getSubject(str, str2);
+                    storeDialog.before = storeDialog.getSpinnerAdapter2().getSemester(position).getId();
+                    StoreDialog.this.getStoreDialogViewModel().getSubject(StoreDialog.this.type, StoreDialog.this.before);
                     StoreDialog.this.listenSpinner3();
                 }
             });
@@ -360,17 +346,15 @@ public final class StoreDialog extends BaseDialog {
         StoreDialogBinding storeDialogBinding6 = get_binding();
         Spinner spinner6 = storeDialogBinding6 != null ? storeDialogBinding6.spinnerCstoreSubject : null;
         if (spinner6 != null) {
-            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.StoreDialog$setUp$3
+            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.StoreDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    StoreSubjectAdapter spinnerAdapter3;
                     StoreDialog storeDialog = StoreDialog.this;
-                    spinnerAdapter3 = storeDialog.getSpinnerAdapter3();
-                    storeDialog.after = spinnerAdapter3.getSemester(position).getId();
+                    storeDialog.after = storeDialog.getSpinnerAdapter3().getSemester(position).getId();
                 }
             });
         }
@@ -381,7 +365,7 @@ public final class StoreDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.store.StoreDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                StoreDialog.setUp$lambda$1(StoreDialog.this, view);
+                StoreDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -397,9 +381,10 @@ public final class StoreDialog extends BaseDialog {
     }
 
     private final void listenSpinner() {
-        getStoreDialogViewModel().getDepResponse().observe(getViewLifecycleOwner(), new StoreDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialog$listenSpinner$1
+        getStoreDialogViewModel().getDepResponse().observe(getViewLifecycleOwner(), new StoreDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialog.listenSpinner.1
 
-            /* compiled from: StoreDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.store.StoreDialog$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: StoreDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -436,18 +421,15 @@ public final class StoreDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DepartmentListResponse> resource) {
-                StoreDepartmentAdapter spinnerAdapter;
-                StoreDialogBinding storeDialogBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     StoreDialog.this.hideProgress();
                     DepartmentListResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter = StoreDialog.this.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getData());
+                        StoreDialog.this.getSpinnerAdapter().addItems(data.getData());
                         return;
                     }
                     return;
@@ -464,7 +446,7 @@ public final class StoreDialog extends BaseDialog {
                     return;
                 }
                 StoreDialog.this.hideProgress();
-                storeDialogBinding = StoreDialog.this.get_binding();
+                StoreDialogBinding storeDialogBinding = StoreDialog.this.get_binding();
                 if (storeDialogBinding == null || (spinner = storeDialogBinding.spinnerStoreSemester) == null) {
                     return;
                 }
@@ -477,9 +459,10 @@ public final class StoreDialog extends BaseDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void listenSpinner2() {
-        getStoreDialogViewModel().getSemResponse().observe(getViewLifecycleOwner(), new StoreDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialog$listenSpinner2$1
+        getStoreDialogViewModel().getSemResponse().observe(getViewLifecycleOwner(), new StoreDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialog.listenSpinner2.1
 
-            /* compiled from: StoreDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.store.StoreDialog$listenSpinner2$1$WhenMappings */
+            /* JADX INFO: compiled from: StoreDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -516,18 +499,15 @@ public final class StoreDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DepartmentListResponse> resource) {
-                StoreSemesterAdapter spinnerAdapter2;
-                StoreDialogBinding storeDialogBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     StoreDialog.this.hideProgress();
                     DepartmentListResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter2 = StoreDialog.this.getSpinnerAdapter2();
-                        spinnerAdapter2.addItems(data.getData());
+                        StoreDialog.this.getSpinnerAdapter2().addItems(data.getData());
                         return;
                     }
                     return;
@@ -544,7 +524,7 @@ public final class StoreDialog extends BaseDialog {
                     return;
                 }
                 StoreDialog.this.hideProgress();
-                storeDialogBinding = StoreDialog.this.get_binding();
+                StoreDialogBinding storeDialogBinding = StoreDialog.this.get_binding();
                 if (storeDialogBinding == null || (spinner = storeDialogBinding.spinnerCstoreSubject) == null) {
                     return;
                 }
@@ -557,9 +537,10 @@ public final class StoreDialog extends BaseDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void listenSpinner3() {
-        getStoreDialogViewModel().getSubResponse().observe(getViewLifecycleOwner(), new StoreDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialog$listenSpinner3$1
+        getStoreDialogViewModel().getSubResponse().observe(getViewLifecycleOwner(), new StoreDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialog.listenSpinner3.1
 
-            /* compiled from: StoreDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.store.StoreDialog$listenSpinner3$1$WhenMappings */
+            /* JADX INFO: compiled from: StoreDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -596,18 +577,15 @@ public final class StoreDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DepartmentListResponse> resource) {
-                StoreSubjectAdapter spinnerAdapter3;
-                StoreDialogBinding storeDialogBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     StoreDialog.this.hideProgress();
                     DepartmentListResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter3 = StoreDialog.this.getSpinnerAdapter3();
-                        spinnerAdapter3.addItems(data.getData());
+                        StoreDialog.this.getSpinnerAdapter3().addItems(data.getData());
                         return;
                     }
                     return;
@@ -624,7 +602,7 @@ public final class StoreDialog extends BaseDialog {
                     return;
                 }
                 StoreDialog.this.hideProgress();
-                storeDialogBinding = StoreDialog.this.get_binding();
+                StoreDialogBinding storeDialogBinding = StoreDialog.this.get_binding();
                 if (storeDialogBinding == null || (spinner = storeDialogBinding.spinnerStoreDepartment) == null) {
                     return;
                 }

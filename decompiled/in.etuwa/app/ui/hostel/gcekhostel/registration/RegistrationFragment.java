@@ -58,21 +58,21 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: RegistrationFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: RegistrationFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RegistrationFragment extends BaseFragment implements RegistrationAdapter.CallBack, NewRegistrationDialog.NewRegistrationListener, ReRegistrationDialog.ReRegistrationListener, EditRegistrationDialog.EditRegistrationListener, ViewRegistrationDialog.ViewRegistrationListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentRegistrationBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
     private MainCallBackListener listener;
     private boolean reAdmission;
 
-    /* renamed from: registrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: registrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy registrationViewModel;
 
     @JvmStatic
@@ -102,7 +102,7 @@ public final class RegistrationFragment extends BaseFragment implements Registra
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return registrationFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(registrationFragment);
@@ -116,7 +116,7 @@ public final class RegistrationFragment extends BaseFragment implements Registra
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -129,7 +129,7 @@ public final class RegistrationFragment extends BaseFragment implements Registra
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(RegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(RegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final RegistrationFragment registrationFragment2 = this;
@@ -162,12 +162,12 @@ public final class RegistrationFragment extends BaseFragment implements Registra
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentRegistrationBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: RegistrationFragment.kt */
+    /* JADX INFO: compiled from: RegistrationFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/registration/RegistrationFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/gcekhostel/registration/RegistrationFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -231,7 +231,7 @@ public final class RegistrationFragment extends BaseFragment implements Registra
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationFragment$$ExternalSyntheticLambda1
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    RegistrationFragment.setUp$lambda$0(RegistrationFragment.this);
+                    RegistrationFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
@@ -242,7 +242,7 @@ public final class RegistrationFragment extends BaseFragment implements Registra
         button.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RegistrationFragment.setUp$lambda$1(RegistrationFragment.this, view);
+                RegistrationFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -272,9 +272,10 @@ public final class RegistrationFragment extends BaseFragment implements Registra
     }
 
     private final void listenResponse() {
-        getRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new RegistrationFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationFragment$listenResponse$1
+        getRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new RegistrationFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationFragment.listenResponse.1
 
-            /* compiled from: RegistrationFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: RegistrationFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -311,14 +312,10 @@ public final class RegistrationFragment extends BaseFragment implements Registra
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<RegistrationResponse> resource) {
-                FragmentRegistrationBinding fragmentRegistrationBinding;
                 Button button;
-                RegistrationAdapter adapter;
-                FragmentRegistrationBinding fragmentRegistrationBinding2;
                 Button button2;
-                FragmentRegistrationBinding fragmentRegistrationBinding3;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -336,8 +333,8 @@ public final class RegistrationFragment extends BaseFragment implements Registra
                     }
                     RegistrationFragment.this.hideProgress();
                     RegistrationFragment.this.showBaseView();
-                    fragmentRegistrationBinding3 = RegistrationFragment.this.get_binding();
-                    if (fragmentRegistrationBinding3 == null || (recyclerView = fragmentRegistrationBinding3.rvRegistration) == null) {
+                    FragmentRegistrationBinding fragmentRegistrationBinding = RegistrationFragment.this.get_binding();
+                    if (fragmentRegistrationBinding == null || (recyclerView = fragmentRegistrationBinding.rvRegistration) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -353,19 +350,18 @@ public final class RegistrationFragment extends BaseFragment implements Registra
                     try {
                         if (data.getRe_admission()) {
                             registrationFragment.reAdmission = data.getRe_admission();
-                            fragmentRegistrationBinding2 = registrationFragment.get_binding();
+                            FragmentRegistrationBinding fragmentRegistrationBinding2 = registrationFragment.get_binding();
                             if (fragmentRegistrationBinding2 != null && (button2 = fragmentRegistrationBinding2.newRegistrationBtn) != null) {
                                 button2.setText("Re Registration");
                             }
                         } else {
                             registrationFragment.reAdmission = data.getRe_admission();
-                            fragmentRegistrationBinding = registrationFragment.get_binding();
-                            if (fragmentRegistrationBinding != null && (button = fragmentRegistrationBinding.newRegistrationBtn) != null) {
+                            FragmentRegistrationBinding fragmentRegistrationBinding3 = registrationFragment.get_binding();
+                            if (fragmentRegistrationBinding3 != null && (button = fragmentRegistrationBinding3.newRegistrationBtn) != null) {
                                 button.setText("New Registration");
                             }
                         }
-                        adapter = registrationFragment.getAdapter();
-                        adapter.addItems(data.getReg());
+                        registrationFragment.getAdapter().addItems(data.getReg());
                     } catch (NullPointerException unused) {
                     }
                 }
@@ -424,7 +420,7 @@ public final class RegistrationFragment extends BaseFragment implements Registra
                 new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationFragment$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        RegistrationFragment.requestPermission$lambda$2(RegistrationFragment.this, dialogInterface, i);
+                        RegistrationFragment.requestPermission$lambda$2(this.f$0, dialogInterface, i);
                     }
                 }).create().show();
             } else {
@@ -448,9 +444,9 @@ public final class RegistrationFragment extends BaseFragment implements Registra
             try {
                 if (!(!(grantResults.length == 0)) || grantResults[0] != 0) {
                     if (Build.VERSION.SDK_INT >= 23 && !shouldShowRequestPermissionRationale(permissions[0])) {
-                        Context requireContext = requireContext();
-                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                        new ValidChecker(requireContext).showPermissionDialog();
+                        Context contextRequireContext = requireContext();
+                        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                        new ValidChecker(contextRequireContext).showPermissionDialog();
                     } else {
                         Toast.makeText(requireContext(), "Permission Denied, You cannot Upload Profile Image .", 0).show();
                     }

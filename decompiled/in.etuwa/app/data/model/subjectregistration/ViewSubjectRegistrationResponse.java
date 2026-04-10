@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewSubjectRegistrationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewSubjectRegistrationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ViewSubjectRegistrationResponse {
     private final String admission_no;
     private final boolean can_update;
@@ -19,37 +19,37 @@ public final /* data */ class ViewSubjectRegistrationResponse {
     private final String sem_id;
     private final String semester;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getAdmission_no() {
         return this.admission_no;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getFull_name() {
         return this.full_name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSem_id() {
         return this.sem_id;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getPath_way() {
         return this.path_way;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getCategory() {
         return this.category;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getCan_update() {
         return this.can_update;
     }
@@ -86,14 +86,17 @@ public final /* data */ class ViewSubjectRegistrationResponse {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v11, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v16 */
+    /* JADX WARN: Type inference failed for: r1v17 */
     public int hashCode() {
-        int hashCode = ((((((((((this.admission_no.hashCode() * 31) + this.full_name.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.sem_id.hashCode()) * 31) + this.path_way.hashCode()) * 31) + this.category.hashCode()) * 31;
+        int iHashCode = ((((((((((this.admission_no.hashCode() * 31) + this.full_name.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.sem_id.hashCode()) * 31) + this.path_way.hashCode()) * 31) + this.category.hashCode()) * 31;
         boolean z = this.can_update;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((hashCode + i) * 31) + this.data.hashCode()) * 31) + this.previousdata.hashCode();
+        return ((((iHashCode + r1) * 31) + this.data.hashCode()) * 31) + this.previousdata.hashCode();
     }
 
     public String toString() {

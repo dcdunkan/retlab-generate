@@ -13,7 +13,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.chat.comment.CommentDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class CommentDialogBinding extends ViewDataBinding {
     public final ImageButton btnSend;
     public final EditText etCommentMsg;

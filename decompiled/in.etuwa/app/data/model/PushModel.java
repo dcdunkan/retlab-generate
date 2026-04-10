@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PushModel.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PushModel.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class PushModel {
     private final int id;
     private final String msg;

@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.counselling.review.ReviewDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ReviewDialogBindingImpl extends ReviewDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -68,7 +68,7 @@ public class ReviewDialogBindingImpl extends ReviewDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (193 != variableId) {
+        if (195 != variableId) {
             return false;
         }
         setReviewDialogViewModel((ReviewDialogViewModel) variable);

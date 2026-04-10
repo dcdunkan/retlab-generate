@@ -18,8 +18,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: UpdateAbcViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UpdateAbcViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UpdateAbcViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final DashRepository dashRepository;
@@ -41,8 +41,8 @@ public final class UpdateAbcViewModel extends ViewModel implements KoinComponent
         Intrinsics.checkNotNullParameter(id, "id");
         this.updateAbcResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.dashRepository.getAbcUpdateApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel$getAbcUpdateData$1
+        Single<SuccessResponse> singleObserveOn = this.dashRepository.getAbcUpdateApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel.getAbcUpdateData.1
             {
                 super(1);
             }
@@ -53,20 +53,18 @@ public final class UpdateAbcViewModel extends ViewModel implements KoinComponent
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateAbcViewModel.this.updateAbcResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                UpdateAbcViewModel.this.updateAbcResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateAbcViewModel.getAbcUpdateData$lambda$0(Function1.this, obj);
+                UpdateAbcViewModel.getAbcUpdateData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel$getAbcUpdateData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel.getAbcUpdateData.2
             {
                 super(1);
             }
@@ -77,17 +75,15 @@ public final class UpdateAbcViewModel extends ViewModel implements KoinComponent
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateAbcViewModel.this.updateAbcResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateAbcViewModel.this.updateAbcResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateAbcViewModel.getAbcUpdateData$lambda$1(Function1.this, obj);
+                UpdateAbcViewModel.getAbcUpdateData$lambda$1(function12, obj);
             }
         }));
     }

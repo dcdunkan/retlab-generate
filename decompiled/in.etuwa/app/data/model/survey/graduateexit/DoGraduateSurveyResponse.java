@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DoGraduateSurveyResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DoGraduateSurveyResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DoGraduateSurveyResponse {
     private final ArrayList<DoGraduateSurveyQuestions> gequestions;
 

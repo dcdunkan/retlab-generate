@@ -3,45 +3,46 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogBankDetailsBinding extends ViewDataBinding {
     public final TextView accNo;
-    public final EditText accNoEt;
+    public final TextInputEditText accNoEt;
     public final TextView accNoTv;
     public final TextView bankNameTv;
     public final TextView branch;
-    public final EditText branchEt;
+    public final TextInputEditText branchEt;
     public final TextView branchNameTv;
     public final TextView editBtn;
     public final TextView ifsc;
-    public final EditText ifscEt;
+    public final TextInputEditText ifscEt;
     public final TextView ifscTv;
 
     @Bindable
     protected BankDetailsViewModel mBankDetailsViewModel;
     public final TextView name;
-    public final EditText nameEt;
+    public final TextInputEditText nameEt;
     public final LinearLayout retypeAccLyt;
-    public final EditText retypeAccNoEt;
+    public final TextInputEditText retypeAccNoEt;
     public final TextView retypeAccNoTv;
-    public final TextView updateBtn;
+    public final MaterialButton updateBtn;
     public final LinearLayout updateLyt;
-    public final TextView view1;
-    public final TextView view2;
-    public final TextView view4;
+    public final View view1;
+    public final View view2;
+    public final View view4;
 
     public abstract void setBankDetailsViewModel(BankDetailsViewModel bankDetailsViewModel);
 
-    protected DialogBankDetailsBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView accNo, EditText accNoEt, TextView accNoTv, TextView bankNameTv, TextView branch, EditText branchEt, TextView branchNameTv, TextView editBtn, TextView ifsc, EditText ifscEt, TextView ifscTv, TextView name, EditText nameEt, LinearLayout retypeAccLyt, EditText retypeAccNoEt, TextView retypeAccNoTv, TextView updateBtn, LinearLayout updateLyt, TextView view1, TextView view2, TextView view4) {
+    protected DialogBankDetailsBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView accNo, TextInputEditText accNoEt, TextView accNoTv, TextView bankNameTv, TextView branch, TextInputEditText branchEt, TextView branchNameTv, TextView editBtn, TextView ifsc, TextInputEditText ifscEt, TextView ifscTv, TextView name, TextInputEditText nameEt, LinearLayout retypeAccLyt, TextInputEditText retypeAccNoEt, TextView retypeAccNoTv, MaterialButton updateBtn, LinearLayout updateLyt, View view1, View view2, View view4) {
         super(_bindingComponent, _root, _localFieldCount);
         this.accNo = accNo;
         this.accNoEt = accNoEt;

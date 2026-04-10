@@ -49,26 +49,26 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SubjectRegistrationFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SubjectRegistrationFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SubjectRegistrationFragment extends BaseFragment implements SubjectRegistrationAdapter.RegListCallBack, ViewSubjectRegistrationDialog.RegisterListener, ApplySubjectRegistrationDialog.RegisterListener, ApplyPreferenceSubRegDialog.AddPublicationListener, SubjectRegStatusDialog.RegisterListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentSubjectRegistrationBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String error;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: subjectRegistrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: subjectRegistrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy subjectRegistrationViewModel;
 
-    /* compiled from: SubjectRegistrationFragment.kt */
+    /* JADX INFO: compiled from: SubjectRegistrationFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -122,7 +122,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return subjectRegistrationFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(subjectRegistrationFragment);
@@ -136,7 +136,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -149,7 +149,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SubjectRegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SubjectRegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SubjectRegistrationFragment subjectRegistrationFragment2 = this;
@@ -196,7 +196,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
         return (SubjectRegistrationAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentSubjectRegistrationBinding get_binding() {
         return this._binding;
     }
@@ -205,7 +205,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: SubjectRegistrationFragment.kt */
+    /* JADX INFO: compiled from: SubjectRegistrationFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/SubjectRegistrationFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/subjectregistration/SubjectRegistrationFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -268,7 +268,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.SubjectRegistrationFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SubjectRegistrationFragment.setUp$lambda$0(SubjectRegistrationFragment.this, view);
+                    SubjectRegistrationFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -279,7 +279,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.subjectregistration.SubjectRegistrationFragment$$ExternalSyntheticLambda1
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                SubjectRegistrationFragment.setUp$lambda$1(SubjectRegistrationFragment.this);
+                SubjectRegistrationFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -291,9 +291,9 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
         if (Intrinsics.areEqual(this$0.error, "")) {
             FragmentManager childFragmentManager = this$0.getChildFragmentManager();
             Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            ApplyPreferenceSubRegDialog newInstance = ApplyPreferenceSubRegDialog.INSTANCE.newInstance("");
-            newInstance.setCallBack(this$0);
-            newInstance.show(childFragmentManager, (String) null);
+            ApplyPreferenceSubRegDialog applyPreferenceSubRegDialogNewInstance = ApplyPreferenceSubRegDialog.INSTANCE.newInstance("");
+            applyPreferenceSubRegDialogNewInstance.setCallBack(this$0);
+            applyPreferenceSubRegDialogNewInstance.show(childFragmentManager, (String) null);
             return;
         }
         FragmentSubjectRegistrationBinding fragmentSubjectRegistrationBinding = this$0.get_binding();
@@ -319,7 +319,7 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
         getSubjectRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.subjectregistration.SubjectRegistrationFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SubjectRegistrationFragment.listenResponse$lambda$3(SubjectRegistrationFragment.this, (Resource) obj);
+                SubjectRegistrationFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -368,18 +368,18 @@ public final class SubjectRegistrationFragment extends BaseFragment implements S
         Intrinsics.checkNotNullParameter(id, "id");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        ViewSubjectRegistrationDialog newInstance = ViewSubjectRegistrationDialog.INSTANCE.newInstance(id);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        ViewSubjectRegistrationDialog viewSubjectRegistrationDialogNewInstance = ViewSubjectRegistrationDialog.INSTANCE.newInstance(id);
+        viewSubjectRegistrationDialogNewInstance.setCallBack(this);
+        viewSubjectRegistrationDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.subjectregistration.SubjectRegistrationAdapter.RegListCallBack
     public void onStatusClick(int position) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SubjectRegStatusDialog newInstance = SubjectRegStatusDialog.INSTANCE.newInstance(position);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        SubjectRegStatusDialog subjectRegStatusDialogNewInstance = SubjectRegStatusDialog.INSTANCE.newInstance(position);
+        subjectRegStatusDialogNewInstance.setCallBack(this);
+        subjectRegStatusDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment

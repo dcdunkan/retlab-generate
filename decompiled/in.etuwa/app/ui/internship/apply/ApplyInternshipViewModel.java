@@ -17,14 +17,15 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ApplyInternshipViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyInternshipViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyInternshipViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> addResponse;
     private MutableLiveData<Resource<SuccessResponse>> applyResponse;
     private MutableLiveData<Resource<CompanyListResponse>> companyListResponse;
     private final CompositeDisposable compositeDisposable;
     private final InternshipRepository internshipRepository;
+    private boolean isDataLoaded;
 
     public ApplyInternshipViewModel(InternshipRepository internshipRepository) {
         Intrinsics.checkNotNullParameter(internshipRepository, "internshipRepository");
@@ -33,14 +34,14 @@ public final class ApplyInternshipViewModel extends ViewModel {
         this.applyResponse = new MutableLiveData<>();
         this.companyListResponse = new MutableLiveData<>();
         this.addResponse = new MutableLiveData<>();
-        getCompanyList();
+        loadDataIfNeeded();
     }
 
     public final void applyInternship(String name, String fromDate, String toDate) {
         this.applyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.internshipRepository.applyInternshipApiCall(name, fromDate, toDate).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$applyInternship$1
+        Single<SuccessResponse> singleObserveOn = this.internshipRepository.applyInternshipApiCall(name, fromDate, toDate).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel.applyInternship.1
             {
                 super(1);
             }
@@ -51,20 +52,18 @@ public final class ApplyInternshipViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyInternshipViewModel.this.applyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                ApplyInternshipViewModel.this.applyResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyInternshipViewModel.applyInternship$lambda$0(Function1.this, obj);
+                ApplyInternshipViewModel.applyInternship$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$applyInternship$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel.applyInternship.2
             {
                 super(1);
             }
@@ -75,17 +74,15 @@ public final class ApplyInternshipViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyInternshipViewModel.this.applyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ApplyInternshipViewModel.this.applyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyInternshipViewModel.applyInternship$lambda$1(Function1.this, obj);
+                ApplyInternshipViewModel.applyInternship$lambda$1(function12, obj);
             }
         }));
     }
@@ -106,8 +103,8 @@ public final class ApplyInternshipViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(address, "address");
         this.addResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.internshipRepository.addCompanyApiCall(name, address).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$addCompany$1
+        Single<SuccessResponse> singleObserveOn = this.internshipRepository.addCompanyApiCall(name, address).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel.addCompany.1
             {
                 super(1);
             }
@@ -118,20 +115,18 @@ public final class ApplyInternshipViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyInternshipViewModel.this.addResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                ApplyInternshipViewModel.this.addResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyInternshipViewModel.addCompany$lambda$2(Function1.this, obj);
+                ApplyInternshipViewModel.addCompany$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$addCompany$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel.addCompany.2
             {
                 super(1);
             }
@@ -142,17 +137,15 @@ public final class ApplyInternshipViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyInternshipViewModel.this.addResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ApplyInternshipViewModel.this.addResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyInternshipViewModel.addCompany$lambda$3(Function1.this, obj);
+                ApplyInternshipViewModel.addCompany$lambda$3(function12, obj);
             }
         }));
     }
@@ -183,11 +176,19 @@ public final class ApplyInternshipViewModel extends ViewModel {
         this.compositeDisposable.dispose();
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getCompanyList();
+    }
+
     private final void getCompanyList() {
         this.companyListResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CompanyListResponse> observeOn = this.internshipRepository.getCompanyListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CompanyListResponse, Unit> function1 = new Function1<CompanyListResponse, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$getCompanyList$1
+        Single<CompanyListResponse> singleObserveOn = this.internshipRepository.getCompanyListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CompanyListResponse, Unit> function1 = new Function1<CompanyListResponse, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel.getCompanyList.1
             {
                 super(1);
             }
@@ -198,20 +199,18 @@ public final class ApplyInternshipViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CompanyListResponse companyListResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyInternshipViewModel.this.companyListResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(companyListResponse));
+                ApplyInternshipViewModel.this.companyListResponse.postValue(Resource.INSTANCE.success(companyListResponse));
             }
         };
         Consumer<? super CompanyListResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyInternshipViewModel.getCompanyList$lambda$4(Function1.this, obj);
+                ApplyInternshipViewModel.getCompanyList$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$getCompanyList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel.getCompanyList.2
             {
                 super(1);
             }
@@ -222,17 +221,15 @@ public final class ApplyInternshipViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyInternshipViewModel.this.companyListResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ApplyInternshipViewModel.this.companyListResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyInternshipViewModel.getCompanyList$lambda$5(Function1.this, obj);
+                ApplyInternshipViewModel.getCompanyList$lambda$5(function12, obj);
             }
         }));
     }

@@ -16,26 +16,35 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CentralizedInfoViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CentralizedInfoViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CentralizedInfoViewModel extends ViewModel {
     private final CommonRepository commonRepository;
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<CentralizedInfoResponse>> infoResponse;
+    private boolean isDataLoaded;
 
     public CentralizedInfoViewModel(CommonRepository commonRepository) {
         Intrinsics.checkNotNullParameter(commonRepository, "commonRepository");
         this.commonRepository = commonRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.infoResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getCentralizedInfo();
     }
 
     public final void getCentralizedInfo() {
         this.infoResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CentralizedInfoResponse> observeOn = this.commonRepository.getCentralizedInfoApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CentralizedInfoResponse, Unit> function1 = new Function1<CentralizedInfoResponse, Unit>() { // from class: in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel$getCentralizedInfo$1
+        Single<CentralizedInfoResponse> singleObserveOn = this.commonRepository.getCentralizedInfoApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CentralizedInfoResponse, Unit> function1 = new Function1<CentralizedInfoResponse, Unit>() { // from class: in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel.getCentralizedInfo.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class CentralizedInfoViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CentralizedInfoResponse centralizedInfoResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CentralizedInfoViewModel.this.infoResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(centralizedInfoResponse));
+                CentralizedInfoViewModel.this.infoResponse.postValue(Resource.INSTANCE.success(centralizedInfoResponse));
             }
         };
         Consumer<? super CentralizedInfoResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CentralizedInfoViewModel.getCentralizedInfo$lambda$0(Function1.this, obj);
+                CentralizedInfoViewModel.getCentralizedInfo$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel$getCentralizedInfo$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel.getCentralizedInfo.2
             {
                 super(1);
             }
@@ -70,17 +77,15 @@ public final class CentralizedInfoViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CentralizedInfoViewModel.this.infoResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CentralizedInfoViewModel.this.infoResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CentralizedInfoViewModel.getCentralizedInfo$lambda$1(Function1.this, obj);
+                CentralizedInfoViewModel.getCentralizedInfo$lambda$1(function12, obj);
             }
         }));
     }

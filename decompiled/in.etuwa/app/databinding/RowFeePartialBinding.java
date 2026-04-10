@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowFeePartialBinding implements ViewBinding {
     public final LinearLayout discountLyt;
     public final TextView engnrAmountLbl;
@@ -46,11 +46,11 @@ public final class RowFeePartialBinding implements ViewBinding {
     }
 
     public static RowFeePartialBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_fee_partial, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_fee_partial, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowFeePartialBinding bind(View rootView) {

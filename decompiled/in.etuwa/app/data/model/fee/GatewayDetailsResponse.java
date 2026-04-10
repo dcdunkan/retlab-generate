@@ -4,8 +4,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: GatewayDetailsResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: GatewayDetailsResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class GatewayDetailsResponse {
     private final String address;
     private final String ipg;
@@ -40,32 +40,32 @@ public final /* data */ class GatewayDetailsResponse {
         return gatewayDetailsResponse.copy(z, str6, str7, str8, str9, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getMerchant() {
         return this.merchant;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getAddress() {
         return this.address;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getPhone() {
         return this.phone;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getIpg() {
         return this.ipg;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getRefund() {
         return this.refund;
     }

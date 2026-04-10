@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ViewProgressBarBinding implements ViewBinding {
     public final ConstraintLayout progressBar;
     private final ConstraintLayout rootView;
@@ -27,11 +27,11 @@ public final class ViewProgressBarBinding implements ViewBinding {
     }
 
     public static ViewProgressBarBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.view_progress_bar, parent, false);
+        View viewInflate = inflater.inflate(R.layout.view_progress_bar, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ViewProgressBarBinding bind(View rootView) {

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowProjectWorkBinding implements ViewBinding {
     public final LinearLayout comletionLayout;
     public final TextView deleteBtn;
@@ -46,11 +46,11 @@ public final class RowProjectWorkBinding implements ViewBinding {
     }
 
     public static RowProjectWorkBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_project_work, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_project_work, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowProjectWorkBinding bind(View rootView) {

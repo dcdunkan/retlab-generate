@@ -16,26 +16,35 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CertificateRequestViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CertificateRequestViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CertificateRequestViewModel extends ViewModel {
     private final CertificateRequestRepository certificateRequestRepository;
     private MutableLiveData<Resource<CertificateRequestResponse>> certificateRequestResponse;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
 
     public CertificateRequestViewModel(CertificateRequestRepository certificateRequestRepository) {
         Intrinsics.checkNotNullParameter(certificateRequestRepository, "certificateRequestRepository");
         this.certificateRequestRepository = certificateRequestRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.certificateRequestResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getCertificateRequest();
     }
 
     public final void getCertificateRequest() {
         this.certificateRequestResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CertificateRequestResponse> observeOn = this.certificateRequestRepository.getCertificateRequestApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CertificateRequestResponse, Unit> function1 = new Function1<CertificateRequestResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestViewModel$getCertificateRequest$1
+        Single<CertificateRequestResponse> singleObserveOn = this.certificateRequestRepository.getCertificateRequestApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CertificateRequestResponse, Unit> function1 = new Function1<CertificateRequestResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestViewModel.getCertificateRequest.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class CertificateRequestViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CertificateRequestResponse certificateRequestResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CertificateRequestViewModel.this.certificateRequestResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(certificateRequestResponse));
+                CertificateRequestViewModel.this.certificateRequestResponse.postValue(Resource.INSTANCE.success(certificateRequestResponse));
             }
         };
         Consumer<? super CertificateRequestResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CertificateRequestViewModel.getCertificateRequest$lambda$0(Function1.this, obj);
+                CertificateRequestViewModel.getCertificateRequest$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestViewModel$getCertificateRequest$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestViewModel.getCertificateRequest.2
             {
                 super(1);
             }
@@ -70,17 +77,15 @@ public final class CertificateRequestViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CertificateRequestViewModel.this.certificateRequestResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CertificateRequestViewModel.this.certificateRequestResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CertificateRequestViewModel.getCertificateRequest$lambda$1(Function1.this, obj);
+                CertificateRequestViewModel.getCertificateRequest$lambda$1(function12, obj);
             }
         }));
     }

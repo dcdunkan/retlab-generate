@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeUrlResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeUrlResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeUrlResponse {
 
     @SerializedName(Constants.IPC_BUNDLE_KEY_SEND_ERROR)
@@ -25,12 +25,12 @@ public final /* data */ class FeeUrlResponse {
         return feeUrlResponse.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getError() {
         return this.error;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
@@ -52,9 +52,9 @@ public final /* data */ class FeeUrlResponse {
 
     public int hashCode() {
         String str = this.error;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.url;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
+        return iHashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {

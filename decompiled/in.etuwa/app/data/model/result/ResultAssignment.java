@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ResultAssignment.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ResultAssignment.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ResultAssignment {
 
     @SerializedName("max_mark")
@@ -35,22 +35,22 @@ public final /* data */ class ResultAssignment {
         return resultAssignment.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMaxMark() {
         return this.maxMark;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getObtainMark() {
         return this.obtainMark;
     }

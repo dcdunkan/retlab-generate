@@ -4,8 +4,8 @@ import com.itextpdf.svg.SvgConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DutyLeaveViewRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DutyLeaveViewRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DutyLeaveViewRequest {
     private final String filter;
 
@@ -16,7 +16,7 @@ public final /* data */ class DutyLeaveViewRequest {
         return dutyLeaveViewRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFilter() {
         return this.filter;
     }

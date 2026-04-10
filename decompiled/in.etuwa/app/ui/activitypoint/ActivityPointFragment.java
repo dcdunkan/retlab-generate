@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -18,6 +17,7 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.android.material.button.MaterialButton;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.activitypoint.ActivityPointResponse;
@@ -45,25 +45,25 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ActivityPointFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ActivityPointFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ActivityPointFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ActivityPointFragmentBinding _binding;
 
-    /* renamed from: activityPointViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: activityPointViewModel$delegate, reason: from kotlin metadata */
     private final Lazy activityPointViewModel;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: ActivityPointFragment.kt */
+    /* JADX INFO: compiled from: ActivityPointFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -113,7 +113,7 @@ public final class ActivityPointFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return activityPointFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(activityPointFragment);
@@ -127,7 +127,7 @@ public final class ActivityPointFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -140,7 +140,7 @@ public final class ActivityPointFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ActivityPointViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ActivityPointViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ActivityPointFragment activityPointFragment2 = this;
@@ -186,7 +186,7 @@ public final class ActivityPointFragment extends BaseFragment {
         return (ActivityPointAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final ActivityPointFragmentBinding get_binding() {
         return this._binding;
     }
@@ -195,7 +195,7 @@ public final class ActivityPointFragment extends BaseFragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: ActivityPointFragment.kt */
+    /* JADX INFO: compiled from: ActivityPointFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/activitypoint/ActivityPointFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/activitypoint/ActivityPointFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -239,7 +239,7 @@ public final class ActivityPointFragment extends BaseFragment {
 
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
-        Button button;
+        MaterialButton materialButton;
         SwipeRefreshLayout swipeRefreshLayout;
         FragmentActivity activity = getActivity();
         if (activity != null) {
@@ -258,18 +258,18 @@ public final class ActivityPointFragment extends BaseFragment {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.activitypoint.ActivityPointFragment$$ExternalSyntheticLambda1
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    ActivityPointFragment.setUp$lambda$0(ActivityPointFragment.this);
+                    ActivityPointFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
         ActivityPointFragmentBinding activityPointFragmentBinding3 = get_binding();
-        if (activityPointFragmentBinding3 == null || (button = activityPointFragmentBinding3.manageBtn) == null) {
+        if (activityPointFragmentBinding3 == null || (materialButton = activityPointFragmentBinding3.manageBtn) == null) {
             return;
         }
-        button.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.activitypoint.ActivityPointFragment$$ExternalSyntheticLambda2
+        materialButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.activitypoint.ActivityPointFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ActivityPointFragment.setUp$lambda$1(ActivityPointFragment.this, view);
+                ActivityPointFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -299,7 +299,7 @@ public final class ActivityPointFragment extends BaseFragment {
         getActivityPointViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.activitypoint.ActivityPointFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ActivityPointFragment.listenResponse$lambda$3(ActivityPointFragment.this, (Resource) obj);
+                ActivityPointFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }

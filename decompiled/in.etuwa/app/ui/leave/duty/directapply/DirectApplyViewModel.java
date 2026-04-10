@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DirectApplyViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: DirectApplyViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class DirectApplyViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<SuccessResponse>> deleteResponse;
@@ -36,8 +36,8 @@ public final class DirectApplyViewModel extends ViewModel {
     public final void getLeave() {
         this.leaveResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DutyLeaveDirectApplyResponse> observeOn = this.leaveRepository.getDutyLeaveDirectViewApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DutyLeaveDirectApplyResponse, Unit> function1 = new Function1<DutyLeaveDirectApplyResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$getLeave$1
+        Single<DutyLeaveDirectApplyResponse> singleObserveOn = this.leaveRepository.getDutyLeaveDirectViewApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DutyLeaveDirectApplyResponse, Unit> function1 = new Function1<DutyLeaveDirectApplyResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel.getLeave.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class DirectApplyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DutyLeaveDirectApplyResponse dutyLeaveDirectApplyResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DirectApplyViewModel.this.leaveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(dutyLeaveDirectApplyResponse));
+                DirectApplyViewModel.this.leaveResponse.postValue(Resource.INSTANCE.success(dutyLeaveDirectApplyResponse));
             }
         };
         Consumer<? super DutyLeaveDirectApplyResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DirectApplyViewModel.getLeave$lambda$0(Function1.this, obj);
+                DirectApplyViewModel.getLeave$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$getLeave$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel.getLeave.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class DirectApplyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DirectApplyViewModel.this.leaveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                DirectApplyViewModel.this.leaveResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DirectApplyViewModel.getLeave$lambda$1(Function1.this, obj);
+                DirectApplyViewModel.getLeave$lambda$1(function12, obj);
             }
         }));
     }
@@ -107,8 +103,8 @@ public final class DirectApplyViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.leaveRepository.deleteDutyLeaveDirectViewApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$deleteLeave$1
+        Single<SuccessResponse> singleObserveOn = this.leaveRepository.deleteDutyLeaveDirectViewApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel.deleteLeave.1
             {
                 super(1);
             }
@@ -119,20 +115,18 @@ public final class DirectApplyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DirectApplyViewModel.this.deleteResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                DirectApplyViewModel.this.deleteResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DirectApplyViewModel.deleteLeave$lambda$2(Function1.this, obj);
+                DirectApplyViewModel.deleteLeave$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$deleteLeave$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel.deleteLeave.2
             {
                 super(1);
             }
@@ -143,17 +137,15 @@ public final class DirectApplyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DirectApplyViewModel.this.deleteResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                DirectApplyViewModel.this.deleteResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DirectApplyViewModel.deleteLeave$lambda$3(Function1.this, obj);
+                DirectApplyViewModel.deleteLeave$lambda$3(function12, obj);
             }
         }));
     }

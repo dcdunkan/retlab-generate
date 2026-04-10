@@ -2,18 +2,14 @@ package in.etuwa.app.ui.subjectregistration.view;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.text.Html;
-import android.text.Spanned;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
@@ -24,18 +20,17 @@ import in.etuwa.app.helper.EmptyViewHolder;
 import in.etuwa.app.ui.base.BaseViewHolder;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Locale;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewSemSubHistoryAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ViewSemSubHistoryAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewSemSubHistoryAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private Context context;
     private StatusListCallBack listener;
     private final ArrayList<SemesterList> subjectList = new ArrayList<>();
 
-    /* compiled from: ViewSemSubHistoryAdapter.kt */
+    /* JADX INFO: compiled from: ViewSemSubHistoryAdapter.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\bf\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/view/ViewSemSubHistoryAdapter$StatusListCallBack;", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface StatusListCallBack {
     }
@@ -44,18 +39,18 @@ public final class ViewSemSubHistoryAdapter extends RecyclerView.Adapter<BaseVie
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view_sem_sub_history, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …b_history, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_view_sem_sub_history, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …b_history, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -71,7 +66,7 @@ public final class ViewSemSubHistoryAdapter extends RecyclerView.Adapter<BaseVie
         return !this.subjectList.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: ViewSemSubHistoryAdapter.kt */
+    /* JADX INFO: compiled from: ViewSemSubHistoryAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/view/ViewSemSubHistoryAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/subjectregistration/view/ViewSemSubHistoryAdapter;Landroid/view/View;)V", "mdcSubjectsContainer", "Landroid/widget/LinearLayout;", "kotlin.jvm.PlatformType", "minorSubjectsContainer", "semName", "Landroid/widget/TextView;", "sgpa", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final LinearLayout mdcSubjectsContainer;
@@ -98,13 +93,12 @@ public final class ViewSemSubHistoryAdapter extends RecyclerView.Adapter<BaseVie
         @Override // in.etuwa.app.ui.base.BaseViewHolder
         public void onBind(int position) {
             int i;
-            String obj;
-            Spanned fromHtml;
+            String string;
             super.onBind(position);
             try {
-                Object obj2 = this.this$0.subjectList.get(position);
-                Intrinsics.checkNotNullExpressionValue(obj2, "subjectList[position]");
-                SemesterList semesterList = (SemesterList) obj2;
+                Object obj = this.this$0.subjectList.get(position);
+                Intrinsics.checkNotNullExpressionValue(obj, "subjectList[position]");
+                SemesterList semesterList = (SemesterList) obj;
                 this.sgpa.setText(semesterList.getSgpa());
                 this.semName.setText("Semester " + semesterList.getSeme_pos());
                 this.minorSubjectsContainer.removeAllViews();
@@ -121,16 +115,15 @@ public final class ViewSemSubHistoryAdapter extends RecyclerView.Adapter<BaseVie
                         if (subject_name == null) {
                             subject_name = "";
                         }
-                        fromHtml = Html.fromHtml(subject_name, 0);
-                        obj = fromHtml.toString();
+                        string = Html.fromHtml(subject_name, 0).toString();
                     } else {
                         String subject_name2 = next.getSubject_name();
                         if (subject_name2 == null) {
                             subject_name2 = "";
                         }
-                        obj = Html.fromHtml(subject_name2).toString();
+                        string = Html.fromHtml(subject_name2).toString();
                     }
-                    this.minorSubjectsContainer.addView(onBind$createRow(this.this$0, "Subject", obj + " (Group " + next.getGroup() + ")"));
+                    this.minorSubjectsContainer.addView(onBind$createRow(this.this$0, "Subject", string + " (Group " + next.getGroup() + ")"));
                     this.minorSubjectsContainer.addView(onBind$createRow(this.this$0, "Mark", next.getMark()));
                     View view = new View(this.this$0.context);
                     ViewSemSubHistoryAdapter viewSemSubHistoryAdapter = this.this$0;
@@ -140,11 +133,9 @@ public final class ViewSemSubHistoryAdapter extends RecyclerView.Adapter<BaseVie
                     view.setBackgroundColor(Color.parseColor("#2077C9"));
                     this.minorSubjectsContainer.addView(view);
                 }
-                Iterator<SemSubjects> it2 = semesterList.getMdc_subjects().iterator();
-                while (it2.hasNext()) {
-                    SemSubjects next2 = it2.next();
-                    this.mdcSubjectsContainer.addView(onBind$createRow$10(this.this$0, "Subject", next2.getSubject_name() + " (Group " + next2.getGroup() + ")"));
-                    this.mdcSubjectsContainer.addView(onBind$createRow$10(this.this$0, "Mark", next2.getMark()));
+                for (SemSubjects semSubjects : semesterList.getMdc_subjects()) {
+                    this.mdcSubjectsContainer.addView(onBind$createRow$10(this.this$0, "Subject", semSubjects.getSubject_name() + " (Group " + semSubjects.getGroup() + ")"));
+                    this.mdcSubjectsContainer.addView(onBind$createRow$10(this.this$0, "Mark", semSubjects.getMark()));
                     View view2 = new View(this.this$0.context);
                     ViewSemSubHistoryAdapter viewSemSubHistoryAdapter2 = this.this$0;
                     LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-1, viewSemSubHistoryAdapter2.dpToPx(i));
@@ -160,165 +151,33 @@ public final class ViewSemSubHistoryAdapter extends RecyclerView.Adapter<BaseVie
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        private static final LinearLayout onBind$createRow(ViewSemSubHistoryAdapter viewSemSubHistoryAdapter, String str, String str2) {
-            int color;
-            LinearLayout linearLayout = new LinearLayout(viewSemSubHistoryAdapter.context);
-            linearLayout.setOrientation(0);
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
-            layoutParams.setMargins(0, 4, 0, 4);
-            linearLayout.setLayoutParams(layoutParams);
-            Context context = viewSemSubHistoryAdapter.context;
-            Intrinsics.checkNotNull(context);
-            Typeface font = ResourcesCompat.getFont(context, R.font.poppins_regular);
-            TextView textView = new TextView(viewSemSubHistoryAdapter.context);
-            textView.setText(str);
-            textView.setTextSize(14.0f);
-            textView.setTypeface(font);
-            Context context2 = textView.getContext();
-            Intrinsics.checkNotNull(context2);
-            textView.setTextColor(ContextCompat.getColor(context2, R.color.colorBlack));
-            textView.setLayoutParams(new LinearLayout.LayoutParams(0, -2, 1.0f));
-            TextView textView2 = new TextView(viewSemSubHistoryAdapter.context);
-            textView2.setText(str2);
-            textView2.setTextSize(14.0f);
-            textView2.setTypeface(font);
-            textView2.setLayoutParams(new LinearLayout.LayoutParams(0, -2, 1.0f));
-            if (Intrinsics.areEqual(str, "Status")) {
-                String upperCase = str2.toUpperCase(Locale.ROOT);
-                Intrinsics.checkNotNullExpressionValue(upperCase, "toUpperCase(...)");
-                switch (upperCase.hashCode()) {
-                    case -75252643:
-                        if (upperCase.equals("APPLIED")) {
-                            color = Color.parseColor("#2196F3");
-                            break;
-                        }
-                        Context context3 = textView2.getContext();
-                        Intrinsics.checkNotNull(context3);
-                        color = ContextCompat.getColor(context3, R.color.colorBlack);
-                        break;
-                    case 35394935:
-                        if (upperCase.equals("PENDING")) {
-                            color = Color.parseColor("#FFC107");
-                            break;
-                        }
-                        Context context32 = textView2.getContext();
-                        Intrinsics.checkNotNull(context32);
-                        color = ContextCompat.getColor(context32, R.color.colorBlack);
-                        break;
-                    case 174130302:
-                        if (upperCase.equals("REJECTED")) {
-                            color = Color.parseColor("#F44336");
-                            break;
-                        }
-                        Context context322 = textView2.getContext();
-                        Intrinsics.checkNotNull(context322);
-                        color = ContextCompat.getColor(context322, R.color.colorBlack);
-                        break;
-                    case 1967871671:
-                        if (upperCase.equals("APPROVED")) {
-                            color = Color.parseColor("#4CAF50");
-                            break;
-                        }
-                        Context context3222 = textView2.getContext();
-                        Intrinsics.checkNotNull(context3222);
-                        color = ContextCompat.getColor(context3222, R.color.colorBlack);
-                        break;
-                    default:
-                        Context context32222 = textView2.getContext();
-                        Intrinsics.checkNotNull(context32222);
-                        color = ContextCompat.getColor(context32222, R.color.colorBlack);
-                        break;
-                }
-                textView2.setTextColor(color);
-            } else {
-                Context context4 = textView2.getContext();
-                Intrinsics.checkNotNull(context4);
-                textView2.setTextColor(ContextCompat.getColor(context4, R.color.colorBlack));
-            }
-            linearLayout.addView(textView);
-            linearLayout.addView(textView2);
-            return linearLayout;
+        /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x00d7  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct code enable 'Show inconsistent code' option in preferences
+        */
+        private static final android.widget.LinearLayout onBind$createRow(in.etuwa.app.ui.subjectregistration.view.ViewSemSubHistoryAdapter r8, java.lang.String r9, java.lang.String r10) {
+            /*
+                Method dump skipped, instruction units count: 278
+                To view this dump change 'Code comments level' option to 'DEBUG'
+            */
+            throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.subjectregistration.view.ViewSemSubHistoryAdapter.ViewHolder.onBind$createRow(in.etuwa.app.ui.subjectregistration.view.ViewSemSubHistoryAdapter, java.lang.String, java.lang.String):android.widget.LinearLayout");
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        private static final LinearLayout onBind$createRow$10(ViewSemSubHistoryAdapter viewSemSubHistoryAdapter, String str, String str2) {
-            int color;
-            LinearLayout linearLayout = new LinearLayout(viewSemSubHistoryAdapter.context);
-            linearLayout.setOrientation(0);
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
-            layoutParams.setMargins(0, 4, 0, 4);
-            linearLayout.setLayoutParams(layoutParams);
-            Context context = viewSemSubHistoryAdapter.context;
-            Intrinsics.checkNotNull(context);
-            Typeface font = ResourcesCompat.getFont(context, R.font.poppins_regular);
-            TextView textView = new TextView(viewSemSubHistoryAdapter.context);
-            textView.setText(str);
-            textView.setTextSize(14.0f);
-            textView.setTypeface(font);
-            Context context2 = textView.getContext();
-            Intrinsics.checkNotNull(context2);
-            textView.setTextColor(ContextCompat.getColor(context2, R.color.colorBlack));
-            textView.setLayoutParams(new LinearLayout.LayoutParams(0, -2, 1.0f));
-            TextView textView2 = new TextView(viewSemSubHistoryAdapter.context);
-            textView2.setText(str2);
-            textView2.setTextSize(14.0f);
-            textView2.setTypeface(font);
-            textView2.setLayoutParams(new LinearLayout.LayoutParams(0, -2, 1.0f));
-            if (Intrinsics.areEqual(str, "Status")) {
-                String upperCase = str2.toUpperCase(Locale.ROOT);
-                Intrinsics.checkNotNullExpressionValue(upperCase, "toUpperCase(...)");
-                switch (upperCase.hashCode()) {
-                    case -75252643:
-                        if (upperCase.equals("APPLIED")) {
-                            color = Color.parseColor("#2196F3");
-                            break;
-                        }
-                        Context context3 = textView2.getContext();
-                        Intrinsics.checkNotNull(context3);
-                        color = ContextCompat.getColor(context3, R.color.colorBlack);
-                        break;
-                    case 35394935:
-                        if (upperCase.equals("PENDING")) {
-                            color = Color.parseColor("#FFC107");
-                            break;
-                        }
-                        Context context32 = textView2.getContext();
-                        Intrinsics.checkNotNull(context32);
-                        color = ContextCompat.getColor(context32, R.color.colorBlack);
-                        break;
-                    case 174130302:
-                        if (upperCase.equals("REJECTED")) {
-                            color = Color.parseColor("#F44336");
-                            break;
-                        }
-                        Context context322 = textView2.getContext();
-                        Intrinsics.checkNotNull(context322);
-                        color = ContextCompat.getColor(context322, R.color.colorBlack);
-                        break;
-                    case 1967871671:
-                        if (upperCase.equals("APPROVED")) {
-                            color = Color.parseColor("#4CAF50");
-                            break;
-                        }
-                        Context context3222 = textView2.getContext();
-                        Intrinsics.checkNotNull(context3222);
-                        color = ContextCompat.getColor(context3222, R.color.colorBlack);
-                        break;
-                    default:
-                        Context context32222 = textView2.getContext();
-                        Intrinsics.checkNotNull(context32222);
-                        color = ContextCompat.getColor(context32222, R.color.colorBlack);
-                        break;
-                }
-                textView2.setTextColor(color);
-            } else {
-                Context context4 = textView2.getContext();
-                Intrinsics.checkNotNull(context4);
-                textView2.setTextColor(ContextCompat.getColor(context4, R.color.colorBlack));
-            }
-            linearLayout.addView(textView);
-            linearLayout.addView(textView2);
-            return linearLayout;
+        /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x00d7  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+            To view partially-correct code enable 'Show inconsistent code' option in preferences
+        */
+        private static final android.widget.LinearLayout onBind$createRow$10(in.etuwa.app.ui.subjectregistration.view.ViewSemSubHistoryAdapter r8, java.lang.String r9, java.lang.String r10) {
+            /*
+                Method dump skipped, instruction units count: 278
+                To view this dump change 'Code comments level' option to 'DEBUG'
+            */
+            throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.subjectregistration.view.ViewSemSubHistoryAdapter.ViewHolder.onBind$createRow$10(in.etuwa.app.ui.subjectregistration.view.ViewSemSubHistoryAdapter, java.lang.String, java.lang.String):android.widget.LinearLayout");
         }
     }
 

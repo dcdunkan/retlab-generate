@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.hostel.attendance;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LeaveType.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LeaveType.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class LeaveType {
     private final int id;
     private final String type;
@@ -19,12 +19,12 @@ public final /* data */ class LeaveType {
         return leaveType.copy(i, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }

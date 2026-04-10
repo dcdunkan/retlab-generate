@@ -3,16 +3,16 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.library.suggest.SuggestBookViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogSuggestBookBinding extends ViewDataBinding {
     public final TextInputEditText etAuthor;
     public final TextInputEditText etEdition;
@@ -24,11 +24,11 @@ public abstract class DialogSuggestBookBinding extends ViewDataBinding {
     @Bindable
     protected SuggestBookViewModel mSuggestBookViewModel;
     public final TextInputLayout reEnterAccEt;
-    public final TextView suggestBtn;
+    public final MaterialButton suggestBtn;
 
     public abstract void setSuggestBookViewModel(SuggestBookViewModel suggestBookViewModel);
 
-    protected DialogSuggestBookBinding(Object _bindingComponent, View _root, int _localFieldCount, TextInputEditText etAuthor, TextInputEditText etEdition, TextInputEditText etIsbn, TextInputEditText etOtherDetails, TextInputEditText etPublication, TextInputEditText etTitle, TextInputLayout reEnterAccEt, TextView suggestBtn) {
+    protected DialogSuggestBookBinding(Object _bindingComponent, View _root, int _localFieldCount, TextInputEditText etAuthor, TextInputEditText etEdition, TextInputEditText etIsbn, TextInputEditText etOtherDetails, TextInputEditText etPublication, TextInputEditText etTitle, TextInputLayout reEnterAccEt, MaterialButton suggestBtn) {
         super(_bindingComponent, _root, _localFieldCount);
         this.etAuthor = etAuthor;
         this.etEdition = etEdition;

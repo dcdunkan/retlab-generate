@@ -5,15 +5,24 @@ import android.content.ComponentCallbacks;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -24,7 +33,7 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.gms.actions.SearchIntents;
 import com.google.firebase.sessions.settings.RemoteSettings;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
@@ -66,36 +75,37 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MaterialFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MaterialFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MaterialFragment extends BaseFragment implements MaterialAdapter.MaterialDownload, SemListDialog.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private MaterialFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
     private final ArrayList<MaterialsNew> fillList;
+    private boolean isSearchOpen;
 
-    /* renamed from: materialViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: materialViewModel$delegate, reason: from kotlin metadata */
     private final Lazy materialViewModel;
     private final ArrayList<MaterialsNew> modList;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semId;
 
-    /* renamed from: spinnerFillAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerFillAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerFillAdapter;
 
-    /* renamed from: spinnerModuleAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerModuleAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerModuleAdapter;
     private final ArrayList<MaterialsNew> subList;
 
-    /* compiled from: MaterialFragment.kt */
+    /* JADX INFO: compiled from: MaterialFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -145,7 +155,7 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return materialFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(materialFragment);
@@ -159,7 +169,7 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -172,7 +182,7 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MaterialViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MaterialViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MaterialFragment materialFragment2 = this;
@@ -199,7 +209,7 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MaterialFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -224,7 +234,7 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MaterialFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -266,16 +276,12 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                MaterialAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = MaterialFragment.this.downList;
-                    MaterialFragment materialFragment3 = MaterialFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    MaterialFragment materialFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -284,11 +290,8 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = materialFragment3.getAdapter();
-                            arrayList2 = materialFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = materialFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            materialFragment3.getAdapter().notifyDataChanged(((DownloadModel) materialFragment3.downList.get(i)).getPosition());
+                            materialFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -307,8 +310,9 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
         return (MaterialAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
-    private final MaterialFragmentBinding get_binding() {
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
+    public final MaterialFragmentBinding get_binding() {
         return this._binding;
     }
 
@@ -335,7 +339,7 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
         this.semId = str;
     }
 
-    /* compiled from: MaterialFragment.kt */
+    /* JADX INFO: compiled from: MaterialFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/studymaterials/MaterialFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/studymaterials/MaterialFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -379,7 +383,7 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
 
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
-        FloatingActionButton floatingActionButton;
+        ImageView imageView;
         SwipeRefreshLayout swipeRefreshLayout;
         RecyclerView recyclerView;
         RecyclerView.RecycledViewPool recycledViewPool;
@@ -411,55 +415,52 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
         getAdapter().setMaterialDownload(this);
         getMaterialViewModel().getMaterials(getPreference().getUserSemId());
         listenResponse();
+        setupSearch();
         MaterialFragmentBinding materialFragmentBinding5 = get_binding();
         Spinner spinner3 = materialFragmentBinding5 != null ? materialFragmentBinding5.spinnerFill : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$setUp$1
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    MaterialFilterAdapter spinnerFillAdapter;
-                    spinnerFillAdapter = MaterialFragment.this.getSpinnerFillAdapter();
-                    MaterialFragment.this.filter(spinnerFillAdapter.getData(position).getSubject());
+                    MaterialFragment.this.filter(MaterialFragment.this.getSpinnerFillAdapter().getData(position).getSubject());
                 }
             });
         }
         MaterialFragmentBinding materialFragmentBinding6 = get_binding();
         Spinner spinner4 = materialFragmentBinding6 != null ? materialFragmentBinding6.spinnerModule : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$setUp$2
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    MaterialModuleAdapter spinnerModuleAdapter;
-                    spinnerModuleAdapter = MaterialFragment.this.getSpinnerModuleAdapter();
-                    MaterialFragment.this.filterModule(spinnerModuleAdapter.getData(position).getModule());
+                    MaterialFragment.this.filterModule(MaterialFragment.this.getSpinnerModuleAdapter().getData(position).getModule());
                 }
             });
         }
         MaterialFragmentBinding materialFragmentBinding7 = get_binding();
         if (materialFragmentBinding7 != null && (swipeRefreshLayout = materialFragmentBinding7.swipeLayout) != null) {
-            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda0
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda2
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    MaterialFragment.setUp$lambda$0(MaterialFragment.this);
+                    MaterialFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
         MaterialFragmentBinding materialFragmentBinding8 = get_binding();
-        if (materialFragmentBinding8 == null || (floatingActionButton = materialFragmentBinding8.fabUniv) == null) {
+        if (materialFragmentBinding8 == null || (imageView = materialFragmentBinding8.fabUniv) == null) {
             return;
         }
-        floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda1
+        imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MaterialFragment.setUp$lambda$1(MaterialFragment.this, view);
+                MaterialFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -475,29 +476,165 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialog newInstance = SemListDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        SemListDialog semListDialogNewInstance = SemListDialog.INSTANCE.newInstance();
+        semListDialogNewInstance.setCallBack(this$0);
+        semListDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
-    @Override // in.etuwa.app.ui.result.university.semlistdialog.SemListDialog.SemDialogCallBack
-    public void loadSelectedSem(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        getMaterialViewModel().getMaterials(id);
-        this.semId = id;
-    }
+    private final void setupSearch() {
+        EditText editText;
+        ImageView imageView;
+        ImageView imageView2;
+        MaterialFragmentBinding materialFragmentBinding = get_binding();
+        if (materialFragmentBinding != null && (imageView2 = materialFragmentBinding.ivSearch) != null) {
+            imageView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    MaterialFragment.setupSearch$lambda$2(this.f$0, view);
+                }
+            });
+        }
+        MaterialFragmentBinding materialFragmentBinding2 = get_binding();
+        if (materialFragmentBinding2 != null && (imageView = materialFragmentBinding2.ivClearSearch) != null) {
+            imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    MaterialFragment.setupSearch$lambda$3(this.f$0, view);
+                }
+            });
+        }
+        MaterialFragmentBinding materialFragmentBinding3 = get_binding();
+        if (materialFragmentBinding3 == null || (editText = materialFragmentBinding3.searchInput) == null) {
+            return;
+        }
+        editText.addTextChangedListener(new TextWatcher() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment.setupSearch.3
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable s) {
+            }
 
-    private final void listenResponse() {
-        getMaterialViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda2
-            @Override // androidx.lifecycle.Observer
-            public final void onChanged(Object obj) {
-                MaterialFragment.listenResponse$lambda$3(MaterialFragment.this, (Resource) obj);
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String string;
+                if (s == null || (string = s.toString()) == null) {
+                    string = "";
+                }
+                MaterialFragmentBinding materialFragmentBinding4 = MaterialFragment.this.get_binding();
+                ImageView imageView3 = materialFragmentBinding4 != null ? materialFragmentBinding4.ivClearSearch : null;
+                if (imageView3 != null) {
+                    imageView3.setVisibility(string.length() > 0 ? 0 : 8);
+                }
+                MaterialFragment.this.filterCurrentAdapter(string);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$3(MaterialFragment this$0, Resource resource) {
+    public static final void setupSearch$lambda$2(MaterialFragment this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        if (this$0.isSearchOpen) {
+            this$0.closeSearch();
+        } else {
+            this$0.openSearch();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupSearch$lambda$3(MaterialFragment this$0, View view) {
+        EditText editText;
+        Editable text;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        MaterialFragmentBinding materialFragmentBinding = this$0.get_binding();
+        if (materialFragmentBinding == null || (editText = materialFragmentBinding.searchInput) == null || (text = editText.getText()) == null) {
+            return;
+        }
+        text.clear();
+    }
+
+    private final void openSearch() {
+        EditText editText;
+        ImageView imageView;
+        this.isSearchOpen = true;
+        MaterialFragmentBinding materialFragmentBinding = get_binding();
+        CardView cardView = materialFragmentBinding != null ? materialFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(0);
+        }
+        MaterialFragmentBinding materialFragmentBinding2 = get_binding();
+        if (materialFragmentBinding2 != null && (imageView = materialFragmentBinding2.ivSearch) != null) {
+            imageView.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
+        }
+        MaterialFragmentBinding materialFragmentBinding3 = get_binding();
+        ImageView imageView2 = materialFragmentBinding3 != null ? materialFragmentBinding3.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        MaterialFragmentBinding materialFragmentBinding4 = get_binding();
+        if (materialFragmentBinding4 != null && (editText = materialFragmentBinding4.searchInput) != null) {
+            editText.requestFocus();
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        MaterialFragmentBinding materialFragmentBinding5 = get_binding();
+        inputMethodManager.showSoftInput(materialFragmentBinding5 != null ? materialFragmentBinding5.searchInput : null, 1);
+    }
+
+    private final void closeSearch() {
+        EditText editText;
+        ImageView imageView;
+        EditText editText2;
+        Editable text;
+        this.isSearchOpen = false;
+        MaterialFragmentBinding materialFragmentBinding = get_binding();
+        IBinder windowToken = null;
+        CardView cardView = materialFragmentBinding != null ? materialFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(8);
+        }
+        MaterialFragmentBinding materialFragmentBinding2 = get_binding();
+        if (materialFragmentBinding2 != null && (editText2 = materialFragmentBinding2.searchInput) != null && (text = editText2.getText()) != null) {
+            text.clear();
+        }
+        MaterialFragmentBinding materialFragmentBinding3 = get_binding();
+        if (materialFragmentBinding3 != null && (imageView = materialFragmentBinding3.ivSearch) != null) {
+            imageView.setImageResource(R.drawable.ic_search);
+        }
+        MaterialFragmentBinding materialFragmentBinding4 = get_binding();
+        ImageView imageView2 = materialFragmentBinding4 != null ? materialFragmentBinding4.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        MaterialFragmentBinding materialFragmentBinding5 = get_binding();
+        if (materialFragmentBinding5 != null && (editText = materialFragmentBinding5.searchInput) != null) {
+            windowToken = editText.getWindowToken();
+        }
+        inputMethodManager.hideSoftInputFromWindow(windowToken, 0);
+        filterCurrentAdapter("");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void filterCurrentAdapter(String query) {
+        getAdapter().applyCombinedFilter(query);
+    }
+
+    private final void listenResponse() {
+        getMaterialViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.studymaterials.MaterialFragment$$ExternalSyntheticLambda4
+            @Override // androidx.lifecycle.Observer
+            public final void onChanged(Object obj) {
+                MaterialFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void listenResponse$lambda$5(MaterialFragment this$0, Resource resource) {
         SwipeRefreshLayout swipeRefreshLayout;
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
@@ -507,9 +644,9 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
             ArrayList<MaterialsNew> arrayList = (ArrayList) resource.getData();
             if (arrayList != null) {
                 MaterialFragmentBinding materialFragmentBinding = this$0.get_binding();
-                Boolean valueOf = (materialFragmentBinding == null || (swipeRefreshLayout = materialFragmentBinding.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-                Intrinsics.checkNotNull(valueOf);
-                if (valueOf.booleanValue()) {
+                Boolean boolValueOf = (materialFragmentBinding == null || (swipeRefreshLayout = materialFragmentBinding.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     MaterialFragmentBinding materialFragmentBinding2 = this$0.get_binding();
                     SwipeRefreshLayout swipeRefreshLayout2 = materialFragmentBinding2 != null ? materialFragmentBinding2.swipeLayout : null;
                     if (swipeRefreshLayout2 != null) {
@@ -628,14 +765,14 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
         Intrinsics.checkNotNullParameter(url2, "url2");
         Regex regex = new Regex("[^A-Za-z0-9.]");
         if (!flag) {
-            String replace = regex.replace(StringsKt.substringAfterLast$default(url2, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-            Context requireContext = requireContext();
-            Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-            if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-                if (checkFileExistence(replace)) {
-                    Context requireContext2 = requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                    new DownloadManagerHelper(requireContext2).openFile(replace, AppConstant.MATERIALS_PATH);
+            String strReplace = regex.replace(StringsKt.substringAfterLast$default(url2, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+            Context contextRequireContext = requireContext();
+            Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+                if (checkFileExistence(strReplace)) {
+                    Context contextRequireContext2 = requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                    new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, AppConstant.MATERIALS_PATH);
                     return;
                 }
                 try {
@@ -645,22 +782,22 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
                         Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                         ToastExtKt.showInfoToast(recyclerView, string);
                     }
-                    Context requireContext3 = requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                    long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(AppConstant.MATERIALS_PATH, url2);
+                    Context contextRequireContext3 = requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                    long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(AppConstant.MATERIALS_PATH, url2);
                     Context context = getContext();
                     if (context != null) {
                         context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 4);
                     }
-                    this.downList.add(new DownloadModel(startDownloading, position));
+                    this.downList.add(new DownloadModel(jStartDownloading, position));
                     return;
                 } catch (Exception unused) {
                     return;
                 }
             }
-            Context requireContext4 = requireContext();
-            Intrinsics.checkNotNullExpressionValue(requireContext4, "requireContext()");
-            new ValidChecker(requireContext4).showPermissionDialog();
+            Context contextRequireContext4 = requireContext();
+            Intrinsics.checkNotNullExpressionValue(contextRequireContext4, "requireContext()");
+            new ValidChecker(contextRequireContext4).showPermissionDialog();
             return;
         }
         FragmentManager childFragmentManager = getChildFragmentManager();
@@ -671,9 +808,9 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
     @Override // in.etuwa.app.ui.studymaterials.MaterialAdapter.MaterialDownload
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.MATERIALS_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.MATERIALS_PATH);
     }
 
     @Override // in.etuwa.app.ui.studymaterials.MaterialAdapter.MaterialDownload
@@ -717,5 +854,13 @@ public final class MaterialFragment extends BaseFragment implements MaterialAdap
     public void onDestroy() {
         super.onDestroy();
         this._binding = null;
+    }
+
+    @Override // in.etuwa.app.ui.result.university.semlistdialog.SemListDialog.SemDialogCallBack
+    public void loadSelectedSem(String id, String semName) {
+        Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(semName, "semName");
+        getMaterialViewModel().getMaterials(id);
+        this.semId = id;
     }
 }

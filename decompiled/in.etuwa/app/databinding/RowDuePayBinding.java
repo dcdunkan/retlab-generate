@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowDuePayBinding implements ViewBinding {
     public final CheckBox dueCheckBox;
     public final LinearLayout dueLayout;
@@ -41,11 +41,11 @@ public final class RowDuePayBinding implements ViewBinding {
     }
 
     public static RowDuePayBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_due_pay, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_due_pay, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowDuePayBinding bind(View rootView) {

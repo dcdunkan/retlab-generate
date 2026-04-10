@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.attendance.bydaynew.AttendanceByDayViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentAttendanceByDayBindingImpl extends FragmentAttendanceByDayBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentAttendanceByDayBindingImpl extends FragmentAttendanceByDayB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (34 != variableId) {
+        if (33 != variableId) {
             return false;
         }
         setAttendanceByDayViewModel((AttendanceByDayViewModel) variable);

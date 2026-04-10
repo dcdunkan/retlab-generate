@@ -23,8 +23,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: ProofDutyLeaveViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ProofDutyLeaveViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ProofDutyLeaveViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<SuccessResponse>> applyResponse;
     private final CompositeDisposable compositeDisposable;
@@ -67,11 +67,11 @@ public final class ProofDutyLeaveViewModel extends ViewModel implements KoinComp
     public final void applyDutyLeave(String id, File filePath) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("proofFile", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$applyDutyLeave$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("proofFile", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel.applyDutyLeave.1
             {
                 super(1);
             }
@@ -82,20 +82,20 @@ public final class ProofDutyLeaveViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 ProofDutyLeaveViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$$ExternalSyntheticLambda0
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProofDutyLeaveViewModel.applyDutyLeave$lambda$0(Function1.this, obj);
+                ProofDutyLeaveViewModel.applyDutyLeave$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.leaveRepository.applyDutyLeaveApiCall(create, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$applyDutyLeave$2
+        Observable<SuccessResponse> observableObserveOn = this.leaveRepository.applyDutyLeaveApiCall(requestBodyCreate, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel.applyDutyLeave.2
             {
                 super(1);
             }
@@ -106,7 +106,7 @@ public final class ProofDutyLeaveViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 ProofDutyLeaveViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -114,10 +114,10 @@ public final class ProofDutyLeaveViewModel extends ViewModel implements KoinComp
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProofDutyLeaveViewModel.applyDutyLeave$lambda$1(Function1.this, obj);
+                ProofDutyLeaveViewModel.applyDutyLeave$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$applyDutyLeave$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel.applyDutyLeave.3
             {
                 super(1);
             }
@@ -128,7 +128,7 @@ public final class ProofDutyLeaveViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     ProofDutyLeaveViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -137,10 +137,10 @@ public final class ProofDutyLeaveViewModel extends ViewModel implements KoinComp
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeaveViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProofDutyLeaveViewModel.applyDutyLeave$lambda$2(Function1.this, obj);
+                ProofDutyLeaveViewModel.applyDutyLeave$lambda$2(function13, obj);
             }
         }));
     }

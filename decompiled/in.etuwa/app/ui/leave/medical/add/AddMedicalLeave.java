@@ -50,26 +50,26 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddMedicalLeave.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddMedicalLeave.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddMedicalLeave extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private AddMedicalLeaveBinding _binding;
 
-    /* renamed from: addMedicalLeaveViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addMedicalLeaveViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addMedicalLeaveViewModel;
     private AddLeaveCallBack listener;
     private File pickFile;
 
-    /* compiled from: AddMedicalLeave.kt */
+    /* JADX INFO: compiled from: AddMedicalLeave.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/leave/medical/add/AddMedicalLeave$AddLeaveCallBack;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddLeaveCallBack {
         void onDismiss();
     }
 
-    /* compiled from: AddMedicalLeave.kt */
+    /* JADX INFO: compiled from: AddMedicalLeave.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -119,7 +119,7 @@ public final class AddMedicalLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addMedicalLeave;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addMedicalLeave);
@@ -133,7 +133,7 @@ public final class AddMedicalLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -146,7 +146,7 @@ public final class AddMedicalLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddMedicalLeaveViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddMedicalLeaveViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -155,12 +155,12 @@ public final class AddMedicalLeave extends BaseDialog {
         return (AddMedicalLeaveViewModel) this.addMedicalLeaveViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final AddMedicalLeaveBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: AddMedicalLeave.kt */
+    /* JADX INFO: compiled from: AddMedicalLeave.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/leave/medical/add/AddMedicalLeave$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/leave/medical/add/AddMedicalLeave;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -219,7 +219,7 @@ public final class AddMedicalLeave extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMedicalLeave.setUp$lambda$1(AddMedicalLeave.this, i, i2, i3, view);
+                    AddMedicalLeave.setUp$lambda$1(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -228,7 +228,7 @@ public final class AddMedicalLeave extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMedicalLeave.setUp$lambda$3(AddMedicalLeave.this, i, i2, i3, view);
+                    AddMedicalLeave.setUp$lambda$3(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -237,7 +237,7 @@ public final class AddMedicalLeave extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMedicalLeave.setUp$lambda$5(AddMedicalLeave.this, view);
+                    AddMedicalLeave.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -248,7 +248,7 @@ public final class AddMedicalLeave extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddMedicalLeave.setUp$lambda$6(AddMedicalLeave.this, view);
+                AddMedicalLeave.setUp$lambda$6(this.f$0, view);
             }
         });
     }
@@ -259,7 +259,7 @@ public final class AddMedicalLeave extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda5
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddMedicalLeave.setUp$lambda$1$lambda$0(AddMedicalLeave.this, datePicker, i4, i5, i6);
+                AddMedicalLeave.setUp$lambda$1$lambda$0(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -281,7 +281,7 @@ public final class AddMedicalLeave extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda6
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddMedicalLeave.setUp$lambda$3$lambda$2(AddMedicalLeave.this, datePicker, i4, i5, i6);
+                AddMedicalLeave.setUp$lambda$3$lambda$2(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -333,7 +333,7 @@ public final class AddMedicalLeave extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 200) {
+                if (file2.length() / ((long) 1024) <= 200) {
                     this$0.setCancelable(false);
                     AddMedicalLeaveBinding addMedicalLeaveBinding = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((addMedicalLeaveBinding == null || (textInputEditText2 = addMedicalLeaveBinding.etReason) == null) ? null : textInputEditText2.getText()), "")) {
@@ -350,17 +350,17 @@ public final class AddMedicalLeave extends BaseDialog {
                         if (!Intrinsics.areEqual(String.valueOf((addMedicalLeaveBinding4 == null || (textView7 = addMedicalLeaveBinding4.toDate) == null) ? null : textView7.getText()), "")) {
                             AddMedicalLeaveViewModel addMedicalLeaveViewModel = this$0.getAddMedicalLeaveViewModel();
                             AddMedicalLeaveBinding addMedicalLeaveBinding5 = this$0.get_binding();
-                            String valueOf = String.valueOf((addMedicalLeaveBinding5 == null || (textInputEditText = addMedicalLeaveBinding5.etReason) == null) ? null : textInputEditText.getText());
+                            String strValueOf = String.valueOf((addMedicalLeaveBinding5 == null || (textInputEditText = addMedicalLeaveBinding5.etReason) == null) ? null : textInputEditText.getText());
                             AddMedicalLeaveBinding addMedicalLeaveBinding6 = this$0.get_binding();
-                            String valueOf2 = String.valueOf((addMedicalLeaveBinding6 == null || (textView6 = addMedicalLeaveBinding6.fromDate) == null) ? null : textView6.getText());
+                            String strValueOf2 = String.valueOf((addMedicalLeaveBinding6 == null || (textView6 = addMedicalLeaveBinding6.fromDate) == null) ? null : textView6.getText());
                             AddMedicalLeaveBinding addMedicalLeaveBinding7 = this$0.get_binding();
-                            String valueOf3 = String.valueOf((addMedicalLeaveBinding7 == null || (textView5 = addMedicalLeaveBinding7.toDate) == null) ? null : textView5.getText());
+                            String strValueOf3 = String.valueOf((addMedicalLeaveBinding7 == null || (textView5 = addMedicalLeaveBinding7.toDate) == null) ? null : textView5.getText());
                             File file3 = this$0.pickFile;
                             if (file3 == null) {
                                 Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                                 file3 = null;
                             }
-                            addMedicalLeaveViewModel.applyMedicalLeave(valueOf, valueOf2, valueOf3, file3);
+                            addMedicalLeaveViewModel.applyMedicalLeave(strValueOf, strValueOf2, strValueOf3, file3);
                             AddMedicalLeaveBinding addMedicalLeaveBinding8 = this$0.get_binding();
                             LinearLayout linearLayout = addMedicalLeaveBinding8 != null ? addMedicalLeaveBinding8.completionCard : null;
                             if (linearLayout != null) {
@@ -407,7 +407,7 @@ public final class AddMedicalLeave extends BaseDialog {
         getAddMedicalLeaveViewModel().getUploadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMedicalLeave.listenResponse$lambda$8(AddMedicalLeave.this, (Resource) obj);
+                AddMedicalLeave.listenResponse$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -475,7 +475,7 @@ public final class AddMedicalLeave extends BaseDialog {
         getAddMedicalLeaveViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeave$$ExternalSyntheticLambda7
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMedicalLeave.listenProgressResponse$lambda$10(AddMedicalLeave.this, (Resource) obj);
+                AddMedicalLeave.listenProgressResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -506,18 +506,18 @@ public final class AddMedicalLeave extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             AddMedicalLeaveBinding addMedicalLeaveBinding2 = this$0.get_binding();
             ProgressBar progressBar = addMedicalLeaveBinding2 != null ? addMedicalLeaveBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             AddMedicalLeaveBinding addMedicalLeaveBinding3 = this$0.get_binding();
             TextView textView2 = addMedicalLeaveBinding3 != null ? addMedicalLeaveBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -526,10 +526,10 @@ public final class AddMedicalLeave extends BaseDialog {
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
-        String str2;
+        String fileName2;
         ContentResolver contentResolver3;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -543,27 +543,27 @@ public final class AddMedicalLeave extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver3 = context.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver3, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
                     File cacheDir = context3 != null ? context3.getCacheDir() : null;
                     Context context4 = getContext();
                     if (context4 == null || (contentResolver2 = context4.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                 }
             }

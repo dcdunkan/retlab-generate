@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCentralizedInfoBinding implements ViewBinding {
     public final CardView cardInfo;
     public final TextView infoDate;
@@ -35,11 +35,11 @@ public final class RowCentralizedInfoBinding implements ViewBinding {
     }
 
     public static RowCentralizedInfoBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_centralized_info, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_centralized_info, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCentralizedInfoBinding bind(View rootView) {

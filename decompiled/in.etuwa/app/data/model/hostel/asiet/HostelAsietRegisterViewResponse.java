@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelAsietRegisterViewResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelAsietRegisterViewResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelAsietRegisterViewResponse {
     private final String admission_no;
     private final String batch;
@@ -18,22 +18,22 @@ public final /* data */ class HostelAsietRegisterViewResponse {
     private final String note;
     private final String route_url;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getAdmission_no() {
         return this.admission_no;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getFull_name() {
         return this.full_name;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getBatch() {
         return this.batch;
     }
@@ -42,17 +42,17 @@ public final /* data */ class HostelAsietRegisterViewResponse {
         return this.boardings;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getRoute_url() {
         return this.route_url;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getDeclaration() {
         return this.declaration;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getNote() {
         return this.note;
     }

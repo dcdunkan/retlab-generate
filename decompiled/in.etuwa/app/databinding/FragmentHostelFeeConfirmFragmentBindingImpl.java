@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.fee.payconfirm.HostelFeeConfirmViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelFeeConfirmFragmentBindingImpl extends FragmentHostelFeeConfirmFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -62,7 +62,7 @@ public class FragmentHostelFeeConfirmFragmentBindingImpl extends FragmentHostelF
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (109 != variableId) {
+        if (110 != variableId) {
             return false;
         }
         setHostelFeeConfirmViewModel((HostelFeeConfirmViewModel) variable);

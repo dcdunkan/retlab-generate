@@ -3,6 +3,9 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -11,24 +14,36 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.newquiz.viewresult.QuizResultViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentQuizResultBinding extends ViewDataBinding {
+    public final TextView descriptiveBtn;
+    public final HorizontalScrollView hrView;
 
     @Bindable
     protected QuizResultViewModel mQuizResultViewModel;
+    public final LinearLayout mainLyt;
+    public final TextView multipleBtn;
     public final RecyclerView rvDescriptiveQuiz;
     public final RecyclerView rvMultipleQuiz;
     public final RecyclerView rvUploadQuiz;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
+    public final TextView uploadBtn;
 
     public abstract void setQuizResultViewModel(QuizResultViewModel quizResultViewModel);
 
-    protected FragmentQuizResultBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvDescriptiveQuiz, RecyclerView rvMultipleQuiz, RecyclerView rvUploadQuiz, SwipeRefreshLayout swipeLayout) {
+    protected FragmentQuizResultBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView descriptiveBtn, HorizontalScrollView hrView, LinearLayout mainLyt, TextView multipleBtn, RecyclerView rvDescriptiveQuiz, RecyclerView rvMultipleQuiz, RecyclerView rvUploadQuiz, SwipeRefreshLayout swipeLayout, TextView toolbar, TextView uploadBtn) {
         super(_bindingComponent, _root, _localFieldCount);
+        this.descriptiveBtn = descriptiveBtn;
+        this.hrView = hrView;
+        this.mainLyt = mainLyt;
+        this.multipleBtn = multipleBtn;
         this.rvDescriptiveQuiz = rvDescriptiveQuiz;
         this.rvMultipleQuiz = rvMultipleQuiz;
         this.rvUploadQuiz = rvUploadQuiz;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
+        this.uploadBtn = uploadBtn;
     }
 
     public QuizResultViewModel getQuizResultViewModel() {

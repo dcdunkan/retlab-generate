@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AsietTransRegViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AsietTransRegViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AsietTransRegViewModel extends ViewModel {
     private MutableLiveData<Resource<RegisterSucessResponse>> addResponse;
     private final CompositeDisposable compositeDisposable;
@@ -36,8 +36,8 @@ public final class AsietTransRegViewModel extends ViewModel {
     public final void getRegHistory() {
         this.historyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelAsietRegisterViewResponse> observeOn = this.transportRepository.getAsietTransportRegistrationUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelAsietRegisterViewResponse, Unit> function1 = new Function1<HostelAsietRegisterViewResponse, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel$getRegHistory$1
+        Single<HostelAsietRegisterViewResponse> singleObserveOn = this.transportRepository.getAsietTransportRegistrationUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelAsietRegisterViewResponse, Unit> function1 = new Function1<HostelAsietRegisterViewResponse, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel.getRegHistory.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class AsietTransRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelAsietRegisterViewResponse hostelAsietRegisterViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietTransRegViewModel.this.historyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelAsietRegisterViewResponse));
+                AsietTransRegViewModel.this.historyResponse.postValue(Resource.INSTANCE.success(hostelAsietRegisterViewResponse));
             }
         };
         Consumer<? super HostelAsietRegisterViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietTransRegViewModel.getRegHistory$lambda$0(Function1.this, obj);
+                AsietTransRegViewModel.getRegHistory$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel$getRegHistory$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel.getRegHistory.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class AsietTransRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietTransRegViewModel.this.historyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AsietTransRegViewModel.this.historyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietTransRegViewModel.getRegHistory$lambda$1(Function1.this, obj);
+                AsietTransRegViewModel.getRegHistory$lambda$1(function12, obj);
             }
         }));
     }

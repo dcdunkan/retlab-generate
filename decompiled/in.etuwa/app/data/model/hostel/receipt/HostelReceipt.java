@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelReceipt.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelReceipt.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelReceipt {
     private final String amount;
     private final String feeReceiptNo;
@@ -40,32 +40,32 @@ public final /* data */ class HostelReceipt {
         return hostelReceipt.copy(str, str7, str8, str9, str10, str6);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFeeReceiptNo() {
         return this.feeReceiptNo;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getHostel() {
         return this.hostel;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getInstallment() {
         return this.installment;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getReceipt_date() {
         return this.receipt_date;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getReceipt_url() {
         return this.receipt_url;
     }

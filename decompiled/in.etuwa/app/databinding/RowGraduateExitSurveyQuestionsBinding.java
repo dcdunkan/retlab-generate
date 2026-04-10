@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowGraduateExitSurveyQuestionsBinding implements ViewBinding {
     public final TextInputEditText etDescriptive;
     public final TextInputLayout mtDescriptive;
@@ -56,11 +56,11 @@ public final class RowGraduateExitSurveyQuestionsBinding implements ViewBinding 
     }
 
     public static RowGraduateExitSurveyQuestionsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_graduate_exit_survey_questions, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_graduate_exit_survey_questions, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowGraduateExitSurveyQuestionsBinding bind(View rootView) {

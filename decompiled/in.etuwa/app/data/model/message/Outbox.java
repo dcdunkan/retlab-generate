@@ -6,8 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Outbox.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Outbox.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Outbox {
 
     @SerializedName("content")
@@ -52,27 +52,27 @@ public final /* data */ class Outbox {
         return outbox.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTo() {
         return this.to;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getContent() {
         return this.content;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDate() {
         return this.date;
     }

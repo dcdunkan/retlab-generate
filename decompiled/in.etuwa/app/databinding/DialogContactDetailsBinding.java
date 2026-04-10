@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.contactdetails.ContactDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogContactDetailsBinding extends ViewDataBinding {
     public final TextView address;
     public final TextView district;

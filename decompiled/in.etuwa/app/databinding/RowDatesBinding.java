@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowDatesBinding implements ViewBinding {
     public final TextView dateTv;
     private final LinearLayout rootView;
@@ -29,11 +29,11 @@ public final class RowDatesBinding implements ViewBinding {
     }
 
     public static RowDatesBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_dates, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_dates, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowDatesBinding bind(View rootView) {

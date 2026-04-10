@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.store.StoreResponse;
 import in.etuwa.app.data.model.store.departmentlist.DepartmentListResponse;
@@ -48,28 +49,28 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: StoreFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: StoreFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class StoreFragment extends BaseFragment implements StoreAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentStoreBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private List<String> selected;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: storeViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: storeViewModel$delegate, reason: from kotlin metadata */
     private final Lazy storeViewModel;
     private String subId;
     private double total;
     private String type;
 
-    /* compiled from: StoreFragment.kt */
+    /* JADX INFO: compiled from: StoreFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -119,7 +120,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return storeFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(storeFragment);
@@ -133,7 +134,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -146,7 +147,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(StoreViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(StoreViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final StoreFragment storeFragment2 = this;
@@ -173,7 +174,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(StoreFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -204,7 +205,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentStoreBinding get_binding() {
         return this._binding;
     }
@@ -231,7 +232,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
         this.total = d;
     }
 
-    /* compiled from: StoreFragment.kt */
+    /* JADX INFO: compiled from: StoreFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/store/storeview/StoreFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/store/storeview/StoreFragment;", StoreFragmentKt.SUB_ID, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -315,17 +316,15 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
         if (spinner2 == null) {
             return;
         }
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.storeview.StoreFragment$setUp$2
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.store.storeview.StoreFragment.setUp.2
             @Override // android.widget.AdapterView.OnItemSelectedListener
             public void onNothingSelected(AdapterView<?> parent) {
             }
 
             @Override // android.widget.AdapterView.OnItemSelectedListener
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                StoreCategoryAdapter spinnerAdapter;
                 StoreFragment storeFragment = StoreFragment.this;
-                spinnerAdapter = storeFragment.getSpinnerAdapter();
-                storeFragment.type = spinnerAdapter.getSemester(position).getId();
+                storeFragment.type = storeFragment.getSpinnerAdapter().getSemester(position).getId();
             }
         });
     }
@@ -334,7 +333,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
         getStoreViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.store.storeview.StoreFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                StoreFragment.listenResponse$lambda$3(StoreFragment.this, (Resource) obj);
+                StoreFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -388,9 +387,10 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
     }
 
     private final void listenSpinner() {
-        getStoreViewModel().getDepResponse().observe(getViewLifecycleOwner(), new StoreFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.storeview.StoreFragment$listenSpinner$1
+        getStoreViewModel().getDepResponse().observe(getViewLifecycleOwner(), new StoreFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DepartmentListResponse>, Unit>() { // from class: in.etuwa.app.ui.store.storeview.StoreFragment.listenSpinner.1
 
-            /* compiled from: StoreFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.store.storeview.StoreFragment$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: StoreFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -427,18 +427,15 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DepartmentListResponse> resource) {
-                StoreCategoryAdapter spinnerAdapter;
-                FragmentStoreBinding fragmentStoreBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     StoreFragment.this.hideProgress();
                     DepartmentListResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter = StoreFragment.this.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getData());
+                        StoreFragment.this.getSpinnerAdapter().addItems(data.getData());
                         return;
                     }
                     return;
@@ -455,7 +452,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
                     return;
                 }
                 StoreFragment.this.hideProgress();
-                fragmentStoreBinding = StoreFragment.this.get_binding();
+                FragmentStoreBinding fragmentStoreBinding = StoreFragment.this.get_binding();
                 if (fragmentStoreBinding == null || (spinner = fragmentStoreBinding.spinnerCategory) == null) {
                     return;
                 }
@@ -517,7 +514,7 @@ public final class StoreFragment extends BaseFragment implements StoreAdapter.Ca
         if (textView2 != null) {
             textView2.setText(String.valueOf(d));
         }
-        if (d <= 0.0d) {
+        if (d <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             FragmentStoreBinding fragmentStoreBinding2 = get_binding();
             textView = fragmentStoreBinding2 != null ? fragmentStoreBinding2.payStoreBtn : null;
             if (textView == null) {

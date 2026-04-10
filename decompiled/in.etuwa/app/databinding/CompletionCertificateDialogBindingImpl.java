@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.internship.completioncertificate.CompletionCertificateDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CompletionCertificateDialogBindingImpl extends CompletionCertificateDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -67,7 +67,7 @@ public class CompletionCertificateDialogBindingImpl extends CompletionCertificat
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (59 != variableId) {
+        if (58 != variableId) {
             return false;
         }
         setCompletionCertificateDialogViewModel((CompletionCertificateDialogViewModel) variable);

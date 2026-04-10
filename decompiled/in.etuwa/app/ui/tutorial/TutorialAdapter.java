@@ -25,13 +25,13 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: TutorialAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TutorialAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TutorialAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private TutorialListener listener;
     private final ArrayList<Tutorial> tutorials = new ArrayList<>();
 
-    /* compiled from: TutorialAdapter.kt */
+    /* JADX INFO: compiled from: TutorialAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0003H&J\u0010\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u0005H&J \u0010\n\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0006\u001a\u00020\u0003H&J\u0010\u0010\u000e\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\u0005H&¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/tutorial/TutorialAdapter$TutorialListener;", "", "checkFileExistence", "", "fileName", "", "flag", "deleteTutorials", "", "id", "downloadFile", "url", CommonCssConstants.POSITION, "", "onPickDoc", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface TutorialListener {
         boolean checkFileExistence(String fileName, boolean flag);
@@ -47,18 +47,18 @@ public final class TutorialAdapter extends RecyclerView.Adapter<BaseViewHolder> 
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_tutorial, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …_tutorial, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_tutorial, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …_tutorial, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -74,7 +74,7 @@ public final class TutorialAdapter extends RecyclerView.Adapter<BaseViewHolder> 
         return !this.tutorials.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: TutorialAdapter.kt */
+    /* JADX INFO: compiled from: TutorialAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0011\u001a\u00020\u0012H\u0014J\u0010\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u0015H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lin/etuwa/app/ui/tutorial/TutorialAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/tutorial/TutorialAdapter;Landroid/view/View;)V", "deleteBtn", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", ErrorBundle.DETAIL_ENTRY, "downBtn", "issueDate", "lastDate", AttendanceDayDialogKt.ARG_SEM, NotificationCompat.CATEGORY_STATUS, "sub", "title", "upBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView deleteBtn;
@@ -134,20 +134,20 @@ public final class TutorialAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.tutorial.TutorialAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        TutorialAdapter.ViewHolder.onBind$lambda$0(TutorialAdapter.this, tutorial, view);
+                        TutorialAdapter.ViewHolder.onBind$lambda$0(tutorialAdapter, tutorial, view);
                     }
                 });
                 Regex regex = new Regex("[^A-Za-z0-9.]");
-                String replace = regex.replace(StringsKt.substringAfterLast$default(tutorial.getUrl(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-                String replace2 = regex.replace(StringsKt.substringAfterLast$default(tutorial.getUploadedFile(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String strReplace = regex.replace(StringsKt.substringAfterLast$default(tutorial.getUrl(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String strReplace2 = regex.replace(StringsKt.substringAfterLast$default(tutorial.getUploadedFile(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
                 if (tutorial.getUrl().length() == 0) {
                     this.downBtn.setVisibility(4);
                 } else {
                     this.downBtn.setVisibility(0);
                     TutorialListener tutorialListener = this.this$0.listener;
-                    Boolean valueOf = tutorialListener != null ? Boolean.valueOf(tutorialListener.checkFileExistence(replace, true)) : null;
-                    Intrinsics.checkNotNull(valueOf);
-                    if (valueOf.booleanValue()) {
+                    Boolean boolValueOf = tutorialListener != null ? Boolean.valueOf(tutorialListener.checkFileExistence(strReplace, true)) : null;
+                    Intrinsics.checkNotNull(boolValueOf);
+                    if (boolValueOf.booleanValue()) {
                         this.downBtn.setText("Open");
                         this.downBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
                     } else {
@@ -160,7 +160,7 @@ public final class TutorialAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.tutorial.TutorialAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        TutorialAdapter.ViewHolder.onBind$lambda$1(Tutorial.this, tutorialAdapter2, position, this, view);
+                        TutorialAdapter.ViewHolder.onBind$lambda$1(tutorial, tutorialAdapter2, position, this, view);
                     }
                 });
                 if (tutorial.getCanSubmit()) {
@@ -168,9 +168,9 @@ public final class TutorialAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                     if (Intrinsics.areEqual(tutorial.getStatus(), "SUBMITTED")) {
                         if (!Intrinsics.areEqual(tutorial.getUploadedFile(), "")) {
                             TutorialListener tutorialListener2 = this.this$0.listener;
-                            Boolean valueOf2 = tutorialListener2 != null ? Boolean.valueOf(tutorialListener2.checkFileExistence(replace2, false)) : null;
-                            Intrinsics.checkNotNull(valueOf2);
-                            if (valueOf2.booleanValue()) {
+                            Boolean boolValueOf2 = tutorialListener2 != null ? Boolean.valueOf(tutorialListener2.checkFileExistence(strReplace2, false)) : null;
+                            Intrinsics.checkNotNull(boolValueOf2);
+                            if (boolValueOf2.booleanValue()) {
                                 this.upBtn.setText("Open Submitted File");
                                 this.upBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
                             } else {
@@ -192,7 +192,7 @@ public final class TutorialAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.tutorial.TutorialAdapter$ViewHolder$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        TutorialAdapter.ViewHolder.onBind$lambda$2(Tutorial.this, tutorialAdapter3, this, position, view);
+                        TutorialAdapter.ViewHolder.onBind$lambda$2(tutorial, tutorialAdapter3, this, position, view);
                     }
                 });
             } catch (Exception unused) {

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowDashTimetableBinding implements ViewBinding {
     public final TextView dashPeriod;
     public final TextView dashSub;
@@ -31,11 +31,11 @@ public final class RowDashTimetableBinding implements ViewBinding {
     }
 
     public static RowDashTimetableBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_dash_timetable, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_dash_timetable, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowDashTimetableBinding bind(View rootView) {

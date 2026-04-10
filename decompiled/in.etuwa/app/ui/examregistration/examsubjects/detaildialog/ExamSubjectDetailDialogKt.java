@@ -2,8 +2,8 @@ package in.etuwa.app.ui.examregistration.examsubjects.detaildialog;
 
 import kotlin.Metadata;
 
-/* compiled from: ExamSubjectDetailDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ExamSubjectDetailDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ExamSubjectDetailDialogKt {
     public static final String ARG_AMOUNT = "amount";
     public static final String ARG_FINE = "fine";

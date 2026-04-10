@@ -7,7 +7,7 @@ import android.widget.RelativeLayout;
 import androidx.viewbinding.ViewBinding;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class TableviewCornerLayoutBinding implements ViewBinding {
     private final RelativeLayout rootView;
 
@@ -25,11 +25,11 @@ public final class TableviewCornerLayoutBinding implements ViewBinding {
     }
 
     public static TableviewCornerLayoutBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.tableview_corner_layout, parent, false);
+        View viewInflate = inflater.inflate(R.layout.tableview_corner_layout, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static TableviewCornerLayoutBinding bind(View rootView) {

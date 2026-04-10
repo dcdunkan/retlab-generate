@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubAttendancePagerAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: SubAttendancePagerAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class SubAttendancePagerAdapter extends FragmentPagerAdapter {
     private ArrayList<ArrayList<AnalysisSubAttendanceBean>> subject;
     private final String[] titleList;

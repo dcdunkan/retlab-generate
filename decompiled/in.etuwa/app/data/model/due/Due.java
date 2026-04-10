@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Due.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Due.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Due {
 
     @SerializedName("admission_no")
@@ -57,37 +57,37 @@ public final /* data */ class Due {
         return due.copy(str, str8, str9, str10, str11, str12, str7);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getAdmissionNo() {
         return this.admissionNo;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getStudentName() {
         return this.studentName;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getBatch() {
         return this.batch;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getDueHead() {
         return this.dueHead;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getHasDue() {
         return this.hasDue;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDueAmount() {
         return this.dueAmount;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getIsPaid() {
         return this.isPaid;
     }

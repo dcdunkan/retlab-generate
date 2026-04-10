@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: FundedResearchViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: FundedResearchViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class FundedResearchViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<SuccessResponse>> deleteResponse;
@@ -47,8 +47,8 @@ public final class FundedResearchViewModel extends ViewModel implements KoinComp
     public final void getFundedResearchData() {
         this.fundedResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<FundedResearchResponse> observeOn = this.profileRepository.getFundedResearchUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<FundedResearchResponse, Unit> function1 = new Function1<FundedResearchResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$getFundedResearchData$1
+        Single<FundedResearchResponse> singleObserveOn = this.profileRepository.getFundedResearchUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<FundedResearchResponse, Unit> function1 = new Function1<FundedResearchResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel.getFundedResearchData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class FundedResearchViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(FundedResearchResponse fundedResearchResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FundedResearchViewModel.this.fundedResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(fundedResearchResponse));
+                FundedResearchViewModel.this.fundedResponse.postValue(Resource.INSTANCE.success(fundedResearchResponse));
             }
         };
         Consumer<? super FundedResearchResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FundedResearchViewModel.getFundedResearchData$lambda$0(Function1.this, obj);
+                FundedResearchViewModel.getFundedResearchData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$getFundedResearchData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel.getFundedResearchData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class FundedResearchViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FundedResearchViewModel.this.fundedResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                FundedResearchViewModel.this.fundedResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FundedResearchViewModel.getFundedResearchData$lambda$1(Function1.this, obj);
+                FundedResearchViewModel.getFundedResearchData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class FundedResearchViewModel extends ViewModel implements KoinComp
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteResearchUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$deleteFundedResearchData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteResearchUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel.deleteFundedResearchData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class FundedResearchViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 FundedResearchViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class FundedResearchViewModel extends ViewModel implements KoinComp
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FundedResearchViewModel.deleteFundedResearchData$lambda$2(Function1.this, obj);
+                FundedResearchViewModel.deleteFundedResearchData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$deleteFundedResearchData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel.deleteFundedResearchData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class FundedResearchViewModel extends ViewModel implements KoinComp
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 FundedResearchViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FundedResearchViewModel.deleteFundedResearchData$lambda$3(Function1.this, obj);
+                FundedResearchViewModel.deleteFundedResearchData$lambda$3(function12, obj);
             }
         }));
     }

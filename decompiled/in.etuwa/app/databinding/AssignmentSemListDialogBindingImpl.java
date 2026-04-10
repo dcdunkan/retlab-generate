@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.assignment.assignment_sem_list.AssignmentSemListDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AssignmentSemListDialogBindingImpl extends AssignmentSemListDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -66,7 +66,7 @@ public class AssignmentSemListDialogBindingImpl extends AssignmentSemListDialogB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (32 != variableId) {
+        if (31 != variableId) {
             return false;
         }
         setAssignmentSemListDialogViewModel((AssignmentSemListDialogViewModel) variable);

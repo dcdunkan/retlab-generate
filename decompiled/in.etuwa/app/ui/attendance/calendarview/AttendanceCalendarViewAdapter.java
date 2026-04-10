@@ -12,14 +12,15 @@ import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.helper.EmptyViewHolder;
+import in.etuwa.app.ui.attendance.bysubject.AttendanceFragment;
 import in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewAdapter;
 import in.etuwa.app.ui.base.BaseViewHolder;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendanceCalendarViewAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AttendanceCalendarViewAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AttendanceCalendarViewAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private List<String> absent;
     private List<String> daysOfMonth;
@@ -30,7 +31,7 @@ public final class AttendanceCalendarViewAdapter extends RecyclerView.Adapter<Ba
     private List<Integer> periods;
     private List<String> present;
 
-    /* compiled from: AttendanceCalendarViewAdapter.kt */
+    /* JADX INFO: compiled from: AttendanceCalendarViewAdapter.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006"}, d2 = {"Lin/etuwa/app/ui/attendance/calendarview/AttendanceCalendarViewAdapter$DayClickListener;", "", "onDateClicked", "", "day", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface DayClickListener {
         void onDateClicked(String day);
@@ -40,18 +41,18 @@ public final class AttendanceCalendarViewAdapter extends RecyclerView.Adapter<Ba
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_calendar_days, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …ndar_days, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_calendar_days, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …ndar_days, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -68,7 +69,7 @@ public final class AttendanceCalendarViewAdapter extends RecyclerView.Adapter<Ba
         return this.noOfDays > 0 ? 1 : 0;
     }
 
-    /* compiled from: AttendanceCalendarViewAdapter.kt */
+    /* JADX INFO: compiled from: AttendanceCalendarViewAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\r\u001a\u00020\u000eH\u0014J\u0010\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u0012"}, d2 = {"Lin/etuwa/app/ui/attendance/calendarview/AttendanceCalendarViewAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/attendance/calendarview/AttendanceCalendarViewAdapter;Landroid/view/View;)V", "dayMarker", "Landroid/widget/ImageView;", "getDayMarker", "()Landroid/widget/ImageView;", "tvDay", "Landroid/widget/TextView;", "getTvDay", "()Landroid/widget/TextView;", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final ImageView dayMarker;
@@ -84,12 +85,12 @@ public final class AttendanceCalendarViewAdapter extends RecyclerView.Adapter<Ba
             super(itemView);
             Intrinsics.checkNotNullParameter(itemView, "itemView");
             this.this$0 = attendanceCalendarViewAdapter;
-            View findViewById = itemView.findViewById(R.id.tvDay);
-            Intrinsics.checkNotNullExpressionValue(findViewById, "itemView.findViewById(R.id.tvDay)");
-            this.tvDay = (TextView) findViewById;
-            View findViewById2 = itemView.findViewById(R.id.dayMarker);
-            Intrinsics.checkNotNullExpressionValue(findViewById2, "itemView.findViewById(R.id.dayMarker)");
-            this.dayMarker = (ImageView) findViewById2;
+            View viewFindViewById = itemView.findViewById(R.id.tvDay);
+            Intrinsics.checkNotNullExpressionValue(viewFindViewById, "itemView.findViewById(R.id.tvDay)");
+            this.tvDay = (TextView) viewFindViewById;
+            View viewFindViewById2 = itemView.findViewById(R.id.dayMarker);
+            Intrinsics.checkNotNullExpressionValue(viewFindViewById2, "itemView.findViewById(R.id.dayMarker)");
+            this.dayMarker = (ImageView) viewFindViewById2;
         }
 
         public final TextView getTvDay() {
@@ -655,6 +656,10 @@ public final class AttendanceCalendarViewAdapter extends RecyclerView.Adapter<Ba
     }
 
     public final void setCalendarCallBack(AttendanceCalendarViewFragment context) {
+        this.listener = context;
+    }
+
+    public final void setCalendarCallBack2(AttendanceFragment context) {
         this.listener = context;
     }
 }

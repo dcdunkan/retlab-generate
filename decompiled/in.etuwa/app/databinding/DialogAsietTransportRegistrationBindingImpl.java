@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAsietTransportRegistrationBindingImpl extends DialogAsietTransportRegistrationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -82,7 +82,7 @@ public class DialogAsietTransportRegistrationBindingImpl extends DialogAsietTran
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (30 != variableId) {
+        if (29 != variableId) {
             return false;
         }
         setAsietTransRegViewModel((AsietTransRegViewModel) variable);

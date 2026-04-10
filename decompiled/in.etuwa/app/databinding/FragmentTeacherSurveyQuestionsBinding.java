@@ -5,36 +5,39 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.teachersurvey.teachersurveyquestions.TeacherSurveyQuestionViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentTeacherSurveyQuestionsBinding extends ViewDataBinding {
-    public final TextView backBtn;
+    public final MaterialButton backBtn;
     public final LinearLayout descriptiveAnswerLyt;
     public final TextInputEditText etDescriptive;
     public final TextInputEditText etRemarks;
     public final TextInputEditText etStrength;
     public final LinearLayout finalQuestionsLyt;
-    public final TextView finishBtn;
+    public final MaterialButton finishBtn;
 
     @Bindable
     protected TeacherSurveyQuestionViewModel mTeacherSurveyQuestionViewModel;
-    public final LinearLayout mbitsLyt;
+    public final CardView mbitsLyt;
     public final TextInputLayout mtDescriptive;
     public final TextInputLayout mtRemarks;
     public final TextInputLayout mtStrength;
     public final LinearLayout multipleAnswerLyt;
-    public final TextView nextBtn;
+    public final MaterialButton nextBtn;
     public final RadioButton option1;
     public final RadioButton option2;
     public final RadioButton option3;
@@ -45,8 +48,9 @@ public abstract class FragmentTeacherSurveyQuestionsBinding extends ViewDataBind
     public final TextView requiredTv;
     public final RecyclerView rvQuestionNo;
     public final TextView semTv;
-    public final LinearLayout strengthLyt;
+    public final TextView subLabelTv;
     public final TextView subTv;
+    public final ProgressBar surveyProgress;
     public final ImageView teacherImg;
     public final TextView teacherSurveyQuestion;
     public final TextView teacherSurveyQuestionNo;
@@ -54,7 +58,7 @@ public abstract class FragmentTeacherSurveyQuestionsBinding extends ViewDataBind
 
     public abstract void setTeacherSurveyQuestionViewModel(TeacherSurveyQuestionViewModel TeacherSurveyQuestionViewModel);
 
-    protected FragmentTeacherSurveyQuestionsBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView backBtn, LinearLayout descriptiveAnswerLyt, TextInputEditText etDescriptive, TextInputEditText etRemarks, TextInputEditText etStrength, LinearLayout finalQuestionsLyt, TextView finishBtn, LinearLayout mbitsLyt, TextInputLayout mtDescriptive, TextInputLayout mtRemarks, TextInputLayout mtStrength, LinearLayout multipleAnswerLyt, TextView nextBtn, RadioButton option1, RadioButton option2, RadioButton option3, RadioButton option4, RadioButton option5, RadioButton option6, TextView questionTv, TextView requiredTv, RecyclerView rvQuestionNo, TextView semTv, LinearLayout strengthLyt, TextView subTv, ImageView teacherImg, TextView teacherSurveyQuestion, TextView teacherSurveyQuestionNo, RadioGroup teacherSurveyQuestionsMultiple) {
+    protected FragmentTeacherSurveyQuestionsBinding(Object _bindingComponent, View _root, int _localFieldCount, MaterialButton backBtn, LinearLayout descriptiveAnswerLyt, TextInputEditText etDescriptive, TextInputEditText etRemarks, TextInputEditText etStrength, LinearLayout finalQuestionsLyt, MaterialButton finishBtn, CardView mbitsLyt, TextInputLayout mtDescriptive, TextInputLayout mtRemarks, TextInputLayout mtStrength, LinearLayout multipleAnswerLyt, MaterialButton nextBtn, RadioButton option1, RadioButton option2, RadioButton option3, RadioButton option4, RadioButton option5, RadioButton option6, TextView questionTv, TextView requiredTv, RecyclerView rvQuestionNo, TextView semTv, TextView subLabelTv, TextView subTv, ProgressBar surveyProgress, ImageView teacherImg, TextView teacherSurveyQuestion, TextView teacherSurveyQuestionNo, RadioGroup teacherSurveyQuestionsMultiple) {
         super(_bindingComponent, _root, _localFieldCount);
         this.backBtn = backBtn;
         this.descriptiveAnswerLyt = descriptiveAnswerLyt;
@@ -79,8 +83,9 @@ public abstract class FragmentTeacherSurveyQuestionsBinding extends ViewDataBind
         this.requiredTv = requiredTv;
         this.rvQuestionNo = rvQuestionNo;
         this.semTv = semTv;
-        this.strengthLyt = strengthLyt;
+        this.subLabelTv = subLabelTv;
         this.subTv = subTv;
+        this.surveyProgress = surveyProgress;
         this.teacherImg = teacherImg;
         this.teacherSurveyQuestion = teacherSurveyQuestion;
         this.teacherSurveyQuestionNo = teacherSurveyQuestionNo;

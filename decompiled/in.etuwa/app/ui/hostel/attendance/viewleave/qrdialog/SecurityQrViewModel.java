@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SecurityQrViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SecurityQrViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SecurityQrViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<HostelScanViewResponse>> hostelQrResponse;
@@ -34,8 +34,8 @@ public final class SecurityQrViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.hostelQrResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelScanViewResponse> observeOn = this.hostelRepository.getHostelGatePassApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelScanViewResponse, Unit> function1 = new Function1<HostelScanViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel$getHostelGatePassView$1
+        Single<HostelScanViewResponse> singleObserveOn = this.hostelRepository.getHostelGatePassApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelScanViewResponse, Unit> function1 = new Function1<HostelScanViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel.getHostelGatePassView.1
             {
                 super(1);
             }
@@ -46,20 +46,18 @@ public final class SecurityQrViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelScanViewResponse hostelScanViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SecurityQrViewModel.this.hostelQrResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelScanViewResponse));
+                SecurityQrViewModel.this.hostelQrResponse.postValue(Resource.INSTANCE.success(hostelScanViewResponse));
             }
         };
         Consumer<? super HostelScanViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SecurityQrViewModel.getHostelGatePassView$lambda$0(Function1.this, obj);
+                SecurityQrViewModel.getHostelGatePassView$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel$getHostelGatePassView$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel.getHostelGatePassView.2
             {
                 super(1);
             }
@@ -70,17 +68,15 @@ public final class SecurityQrViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SecurityQrViewModel.this.hostelQrResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SecurityQrViewModel.this.hostelQrResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SecurityQrViewModel.getHostelGatePassView$lambda$1(Function1.this, obj);
+                SecurityQrViewModel.getHostelGatePassView$lambda$1(function12, obj);
             }
         }));
     }

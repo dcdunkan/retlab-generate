@@ -8,8 +8,8 @@ import in.etuwa.app.R;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: VerifiedCertificateActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: VerifiedCertificateActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class VerifiedCertificateActivity extends AppCompatActivity {
     private String videoLink = "";
 

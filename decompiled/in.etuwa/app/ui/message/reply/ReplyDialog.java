@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
@@ -37,21 +38,21 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ReplyDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ReplyDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ReplyDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ReplyDialogBinding _binding;
     private String from;
     private String id;
 
-    /* renamed from: replyViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: replyViewModel$delegate, reason: from kotlin metadata */
     private final Lazy replyViewModel;
     private String senderId;
 
-    /* compiled from: ReplyDialog.kt */
+    /* JADX INFO: compiled from: ReplyDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -101,7 +102,7 @@ public final class ReplyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return replyDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(replyDialog);
@@ -115,7 +116,7 @@ public final class ReplyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -128,7 +129,7 @@ public final class ReplyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ReplyViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ReplyViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -137,12 +138,12 @@ public final class ReplyDialog extends BaseDialog {
         return (ReplyViewModel) this.replyViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final ReplyDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ReplyDialog.kt */
+    /* JADX INFO: compiled from: ReplyDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J \u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/message/reply/ReplyDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/message/reply/ReplyDialog;", "id", "", "senderId", "from", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -206,11 +207,11 @@ public final class ReplyDialog extends BaseDialog {
 
     @Override // in.etuwa.app.ui.base.BaseDialog
     protected void setUp() {
-        TextView textView;
+        MaterialButton materialButton;
         listenManagerResponse();
         ReplyDialogBinding replyDialogBinding = get_binding();
-        TextView textView2 = replyDialogBinding != null ? replyDialogBinding.tvFrom : null;
-        if (textView2 != null) {
+        TextView textView = replyDialogBinding != null ? replyDialogBinding.tvFrom : null;
+        if (textView != null) {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
             Resources resources = getResources();
             int i = R.string.reply_to;
@@ -219,18 +220,18 @@ public final class ReplyDialog extends BaseDialog {
             objArr[0] = str != null ? StringsKt.capitalize(str) : null;
             String string = resources.getString(i, objArr);
             Intrinsics.checkNotNullExpressionValue(string, "resources.getString(R.st…y_to, from?.capitalize())");
-            String format = String.format(string, Arrays.copyOf(new Object[0], 0));
-            Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-            textView2.setText(format);
+            String str2 = String.format(string, Arrays.copyOf(new Object[0], 0));
+            Intrinsics.checkNotNullExpressionValue(str2, "format(...)");
+            textView.setText(str2);
         }
         ReplyDialogBinding replyDialogBinding2 = get_binding();
-        if (replyDialogBinding2 == null || (textView = replyDialogBinding2.replyBtn) == null) {
+        if (replyDialogBinding2 == null || (materialButton = replyDialogBinding2.replyBtn) == null) {
             return;
         }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.message.reply.ReplyDialog$$ExternalSyntheticLambda1
+        materialButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.message.reply.ReplyDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ReplyDialog.setUp$lambda$1(ReplyDialog.this, view);
+                ReplyDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -241,8 +242,8 @@ public final class ReplyDialog extends BaseDialog {
         TextInputEditText textInputEditText2;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ReplyDialogBinding replyDialogBinding = this$0.get_binding();
-        Editable editable = null;
-        editable = null;
+        Editable text = null;
+        text = null;
         if (Intrinsics.areEqual(String.valueOf((replyDialogBinding == null || (textInputEditText2 = replyDialogBinding.etReplyMsg) == null) ? null : textInputEditText2.getText()), "")) {
             ReplyDialogBinding replyDialogBinding2 = this$0.get_binding();
             TextInputEditText textInputEditText3 = replyDialogBinding2 != null ? replyDialogBinding2.etReplyMsg : null;
@@ -257,16 +258,16 @@ public final class ReplyDialog extends BaseDialog {
         String str2 = this$0.id;
         ReplyDialogBinding replyDialogBinding3 = this$0.get_binding();
         if (replyDialogBinding3 != null && (textInputEditText = replyDialogBinding3.etReplyMsg) != null) {
-            editable = textInputEditText.getText();
+            text = textInputEditText.getText();
         }
-        replyViewModel.composeMsg(str, str2, String.valueOf(editable));
+        replyViewModel.composeMsg(str, str2, String.valueOf(text));
     }
 
     private final void listenManagerResponse() {
         getReplyViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.message.reply.ReplyDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ReplyDialog.listenManagerResponse$lambda$4(ReplyDialog.this, (Resource) obj);
+                ReplyDialog.listenManagerResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }

@@ -4,21 +4,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowUnivExamSubjectsBinding implements ViewBinding {
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView univExamAttendance;
     public final TextView univExamCredit;
     public final TextView univExamMark;
     public final TextView univExamSubject;
     public final TextView viewUniStatus;
 
-    private RowUnivExamSubjectsBinding(CardView rootView, TextView univExamAttendance, TextView univExamCredit, TextView univExamMark, TextView univExamSubject, TextView viewUniStatus) {
+    private RowUnivExamSubjectsBinding(MaterialCardView rootView, TextView univExamAttendance, TextView univExamCredit, TextView univExamMark, TextView univExamSubject, TextView viewUniStatus) {
         this.rootView = rootView;
         this.univExamAttendance = univExamAttendance;
         this.univExamCredit = univExamCredit;
@@ -28,7 +28,7 @@ public final class RowUnivExamSubjectsBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -37,11 +37,11 @@ public final class RowUnivExamSubjectsBinding implements ViewBinding {
     }
 
     public static RowUnivExamSubjectsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_univ_exam_subjects, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_univ_exam_subjects, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowUnivExamSubjectsBinding bind(View rootView) {
@@ -60,7 +60,7 @@ public final class RowUnivExamSubjectsBinding implements ViewBinding {
                         i = R.id.view_uni_status;
                         TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
                         if (textView5 != null) {
-                            return new RowUnivExamSubjectsBinding((CardView) rootView, textView, textView2, textView3, textView4, textView5);
+                            return new RowUnivExamSubjectsBinding((MaterialCardView) rootView, textView, textView2, textView3, textView4, textView5);
                         }
                     }
                 }

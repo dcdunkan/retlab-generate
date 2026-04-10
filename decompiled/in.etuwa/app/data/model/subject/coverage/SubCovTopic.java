@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubCovTopic.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubCovTopic.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubCovTopic {
 
     @SerializedName("is_covered")
@@ -24,12 +24,12 @@ public final /* data */ class SubCovTopic {
         return subCovTopic.copy(z, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getIsCovered() {
         return this.isCovered;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTopicName() {
         return this.topicName;
     }

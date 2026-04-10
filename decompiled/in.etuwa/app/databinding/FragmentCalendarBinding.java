@@ -10,7 +10,7 @@ import in.etuwa.app.R;
 import in.etuwa.app.ui.calendar.CalendarViewModel;
 import ru.cleverpumpkin.calendar.CalendarView;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentCalendarBinding extends ViewDataBinding {
     public final CalendarView calendarView;
 

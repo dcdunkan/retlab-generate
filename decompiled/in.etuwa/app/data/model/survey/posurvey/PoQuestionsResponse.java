@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PoQuestionsResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PoQuestionsResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PoQuestionsResponse {
     private final String period;
     private final ArrayList<PoQuestions> questions;
@@ -30,17 +30,17 @@ public final /* data */ class PoQuestionsResponse {
         return poQuestionsResponse.copy(str, str2, str3, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSurvey() {
         return this.survey;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPeriod() {
         return this.period;
     }

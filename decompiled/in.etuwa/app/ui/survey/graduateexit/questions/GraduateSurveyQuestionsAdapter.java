@@ -24,13 +24,13 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: GraduateSurveyQuestionsAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: GraduateSurveyQuestionsAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class GraduateSurveyQuestionsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private SurveyCallBack listener;
     private final ArrayList<DoGraduateSurveyQuestions> surveyList = new ArrayList<>();
 
-    /* compiled from: GraduateSurveyQuestionsAdapter.kt */
+    /* JADX INFO: compiled from: GraduateSurveyQuestionsAdapter.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\bf\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Lin/etuwa/app/ui/survey/graduateexit/questions/GraduateSurveyQuestionsAdapter$SurveyCallBack;", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface SurveyCallBack {
     }
@@ -39,18 +39,18 @@ public final class GraduateSurveyQuestionsAdapter extends RecyclerView.Adapter<B
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_graduate_exit_survey_questions, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …questions, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_graduate_exit_survey_questions, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …questions, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -66,7 +66,7 @@ public final class GraduateSurveyQuestionsAdapter extends RecyclerView.Adapter<B
         return !this.surveyList.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: GraduateSurveyQuestionsAdapter.kt */
+    /* JADX INFO: compiled from: GraduateSurveyQuestionsAdapter.kt */
     @Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0018\u001a\u00020\u0019H\u0014J\u0010\u0010\u001a\u001a\u00020\u00192\u0006\u0010\u001b\u001a\u00020\u001cH\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0007*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n \u0007*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0015\u001a\n \u0007*\u0004\u0018\u00010\u00160\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0007*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lin/etuwa/app/ui/survey/graduateexit/questions/GraduateSurveyQuestionsAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/survey/graduateexit/questions/GraduateSurveyQuestionsAdapter;Landroid/view/View;)V", "descriptiveText", "Lcom/google/android/material/textfield/TextInputEditText;", "kotlin.jvm.PlatformType", "descriptiveView", "Lcom/google/android/material/textfield/TextInputLayout;", "mcq", "Landroid/widget/LinearLayout;", "option1", "Landroid/widget/RadioButton;", "option2", "option3", "option4", "option5", "questionNumber", "Landroid/widget/TextView;", "questionTv", "radioBtn", "Landroid/widget/RadioGroup;", "requiredTv", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextInputEditText descriptiveText;
@@ -106,13 +106,7 @@ public final class GraduateSurveyQuestionsAdapter extends RecyclerView.Adapter<B
             this.mcq = (LinearLayout) itemView.findViewById(R.id.multiple_answer_lyt);
         }
 
-        /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-        java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-        	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-        	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-         */
+        /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
         @Override // in.etuwa.app.ui.base.BaseViewHolder
         public void onBind(int position) {
             super.onBind(position);
@@ -127,10 +121,7 @@ public final class GraduateSurveyQuestionsAdapter extends RecyclerView.Adapter<B
                 } else {
                     this.requiredTv.setVisibility(8);
                 }
-                if (Intrinsics.areEqual(doGraduateSurveyQuestions.getType(), "1")) {
-                    this.descriptiveView.setVisibility(8);
-                    this.mcq.setVisibility(0);
-                } else if (Intrinsics.areEqual(doGraduateSurveyQuestions.getType(), ExifInterface.GPS_MEASUREMENT_3D)) {
+                if (Intrinsics.areEqual(doGraduateSurveyQuestions.getType(), "1") || Intrinsics.areEqual(doGraduateSurveyQuestions.getType(), ExifInterface.GPS_MEASUREMENT_3D)) {
                     this.descriptiveView.setVisibility(8);
                     this.mcq.setVisibility(0);
                 } else {
@@ -180,71 +171,61 @@ public final class GraduateSurveyQuestionsAdapter extends RecyclerView.Adapter<B
                 this.radioBtn.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.survey.graduateexit.questions.GraduateSurveyQuestionsAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.widget.RadioGroup.OnCheckedChangeListener
                     public final void onCheckedChanged(RadioGroup radioGroup, int i) {
-                        GraduateSurveyQuestionsAdapter.ViewHolder.onBind$lambda$0(DoGraduateSurveyQuestions.this, radioGroup, i);
+                        GraduateSurveyQuestionsAdapter.ViewHolder.onBind$lambda$0(doGraduateSurveyQuestions, radioGroup, i);
                     }
                 });
                 if (Intrinsics.areEqual(doGraduateSurveyQuestions.getType(), ExifInterface.GPS_MEASUREMENT_2D)) {
                     this.descriptiveText.setText(doGraduateSurveyQuestions.getAnswer_id());
                 } else {
                     String option_id = doGraduateSurveyQuestions.getOption_id();
-                    int hashCode = option_id.hashCode();
-                    if (hashCode != 0) {
-                        switch (hashCode) {
+                    int iHashCode = option_id.hashCode();
+                    if (iHashCode != 0) {
+                        switch (iHashCode) {
                             case 49:
-                                if (!option_id.equals("1")) {
-                                    break;
-                                } else {
+                                if (option_id.equals("1")) {
                                     this.option1.setChecked(true);
                                     this.option2.setChecked(false);
                                     this.option3.setChecked(false);
                                     this.option4.setChecked(false);
                                     this.option5.setChecked(false);
-                                    break;
                                 }
+                                break;
                             case 50:
-                                if (!option_id.equals(ExifInterface.GPS_MEASUREMENT_2D)) {
-                                    break;
-                                } else {
+                                if (option_id.equals(ExifInterface.GPS_MEASUREMENT_2D)) {
                                     this.option1.setChecked(false);
                                     this.option2.setChecked(true);
                                     this.option3.setChecked(false);
                                     this.option4.setChecked(false);
                                     this.option5.setChecked(false);
-                                    break;
                                 }
+                                break;
                             case 51:
-                                if (!option_id.equals(ExifInterface.GPS_MEASUREMENT_3D)) {
-                                    break;
-                                } else {
+                                if (option_id.equals(ExifInterface.GPS_MEASUREMENT_3D)) {
                                     this.option1.setChecked(false);
                                     this.option2.setChecked(false);
                                     this.option3.setChecked(true);
                                     this.option4.setChecked(false);
                                     this.option5.setChecked(false);
-                                    break;
                                 }
+                                break;
                             case 52:
-                                if (!option_id.equals("4")) {
-                                    break;
-                                } else {
+                                if (option_id.equals("4")) {
                                     this.option1.setChecked(false);
                                     this.option2.setChecked(false);
                                     this.option3.setChecked(false);
                                     this.option4.setChecked(true);
                                     this.option5.setChecked(false);
-                                    break;
                                 }
+                                break;
                             case 53:
-                                if (!option_id.equals("5")) {
-                                    break;
-                                } else {
+                                if (option_id.equals("5")) {
                                     this.option1.setChecked(false);
                                     this.option2.setChecked(false);
                                     this.option3.setChecked(false);
                                     this.option4.setChecked(false);
                                     this.option5.setChecked(true);
-                                    break;
                                 }
+                                break;
                         }
                     } else if (option_id.equals("")) {
                         this.radioBtn.clearCheck();
@@ -261,7 +242,7 @@ public final class GraduateSurveyQuestionsAdapter extends RecyclerView.Adapter<B
 
                     @Override // android.text.TextWatcher
                     public void afterTextChanged(Editable s) {
-                        DoGraduateSurveyQuestions.this.setAnswer_id(String.valueOf(s));
+                        doGraduateSurveyQuestions.setAnswer_id(String.valueOf(s));
                     }
                 });
                 this.this$0.notifyDataSetChanged();

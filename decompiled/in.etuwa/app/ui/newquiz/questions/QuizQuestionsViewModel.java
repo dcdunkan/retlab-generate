@@ -25,8 +25,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: QuizQuestionsViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: QuizQuestionsViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class QuizQuestionsViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<Float>> progressResponse;
@@ -67,8 +67,8 @@ public final class QuizQuestionsViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.quizQuestionsResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<QuestionsNewResponse> observeOn = this.quizRepository.getNewQuizQuestionsApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<QuestionsNewResponse, Unit> function1 = new Function1<QuestionsNewResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$getQuizQuestionsList$1
+        Single<QuestionsNewResponse> singleObserveOn = this.quizRepository.getNewQuizQuestionsApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<QuestionsNewResponse, Unit> function1 = new Function1<QuestionsNewResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.getQuizQuestionsList.1
             {
                 super(1);
             }
@@ -79,20 +79,18 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(QuestionsNewResponse questionsNewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuizQuestionsViewModel.this.quizQuestionsResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(questionsNewResponse));
+                QuizQuestionsViewModel.this.quizQuestionsResponse.postValue(Resource.INSTANCE.success(questionsNewResponse));
             }
         };
         Consumer<? super QuestionsNewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.getQuizQuestionsList$lambda$0(Function1.this, obj);
+                QuizQuestionsViewModel.getQuizQuestionsList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$getQuizQuestionsList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.getQuizQuestionsList.2
             {
                 super(1);
             }
@@ -103,17 +101,15 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuizQuestionsViewModel.this.quizQuestionsResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                QuizQuestionsViewModel.this.quizQuestionsResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.getQuizQuestionsList$lambda$1(Function1.this, obj);
+                QuizQuestionsViewModel.getQuizQuestionsList$lambda$1(function12, obj);
             }
         }));
     }
@@ -138,8 +134,8 @@ public final class QuizQuestionsViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(answer, "answer");
         this.submitResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<QuizSubmitResponse> observeOn = this.quizRepository.newQuizAnswerSubmit(answer).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<QuizSubmitResponse, Unit> function1 = new Function1<QuizSubmitResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$getQuizAnswerSubmit$1
+        Single<QuizSubmitResponse> singleObserveOn = this.quizRepository.newQuizAnswerSubmit(answer).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<QuizSubmitResponse, Unit> function1 = new Function1<QuizSubmitResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.getQuizAnswerSubmit.1
             {
                 super(1);
             }
@@ -150,20 +146,18 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(QuizSubmitResponse quizSubmitResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuizQuestionsViewModel.this.submitResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(quizSubmitResponse));
+                QuizQuestionsViewModel.this.submitResponse.postValue(Resource.INSTANCE.success(quizSubmitResponse));
             }
         };
         Consumer<? super QuizSubmitResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.getQuizAnswerSubmit$lambda$2(Function1.this, obj);
+                QuizQuestionsViewModel.getQuizAnswerSubmit$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$getQuizAnswerSubmit$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.getQuizAnswerSubmit.2
             {
                 super(1);
             }
@@ -174,17 +168,15 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuizQuestionsViewModel.this.submitResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                QuizQuestionsViewModel.this.submitResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda9
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.getQuizAnswerSubmit$lambda$3(Function1.this, obj);
+                QuizQuestionsViewModel.getQuizAnswerSubmit$lambda$3(function12, obj);
             }
         }));
     }
@@ -205,12 +197,12 @@ public final class QuizQuestionsViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(qNo, "qNo");
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, qNo);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, qNo);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("file", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$newQuizAnswerUploadSubmit$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("file", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.newQuizAnswerUploadSubmit.1
             {
                 super(1);
             }
@@ -221,20 +213,20 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 QuizQuestionsViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda0
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.newQuizAnswerUploadSubmit$lambda$4(Function1.this, obj);
+                QuizQuestionsViewModel.newQuizAnswerUploadSubmit$lambda$4(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<QuizSubmitResponse> observeOn = this.quizRepository.newQuizAnswerUploadSubmit(create, create2, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<QuizSubmitResponse, Unit> function12 = new Function1<QuizSubmitResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$newQuizAnswerUploadSubmit$2
+        Single<QuizSubmitResponse> singleObserveOn = this.quizRepository.newQuizAnswerUploadSubmit(requestBodyCreate, requestBodyCreate2, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<QuizSubmitResponse, Unit> function12 = new Function1<QuizSubmitResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.newQuizAnswerUploadSubmit.2
             {
                 super(1);
             }
@@ -245,7 +237,7 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(QuizSubmitResponse quizSubmitResponse) {
                 QuizQuestionsViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(quizSubmitResponse));
             }
@@ -253,10 +245,10 @@ public final class QuizQuestionsViewModel extends ViewModel {
         Consumer<? super QuizSubmitResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.newQuizAnswerUploadSubmit$lambda$5(Function1.this, obj);
+                QuizQuestionsViewModel.newQuizAnswerUploadSubmit$lambda$5(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$newQuizAnswerUploadSubmit$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.newQuizAnswerUploadSubmit.3
             {
                 super(1);
             }
@@ -267,7 +259,7 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     QuizQuestionsViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -276,10 +268,10 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.newQuizAnswerUploadSubmit$lambda$6(Function1.this, obj);
+                QuizQuestionsViewModel.newQuizAnswerUploadSubmit$lambda$6(function13, obj);
             }
         }));
     }
@@ -306,13 +298,13 @@ public final class QuizQuestionsViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(qNo, "qNo");
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, qNo);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, "1");
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, qNo);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, "1");
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("file", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$newQuizAnswerUploadFinalSubmit$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("file", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit.1
             {
                 super(1);
             }
@@ -323,20 +315,20 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 QuizQuestionsViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda3
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit$lambda$7(Function1.this, obj);
+                QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit$lambda$7(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<QuizSubmitResponse> observeOn = this.quizRepository.newQuizAnswerUploadFinalSubmit(create, create2, create3, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<QuizSubmitResponse, Unit> function12 = new Function1<QuizSubmitResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$newQuizAnswerUploadFinalSubmit$2
+        Single<QuizSubmitResponse> singleObserveOn = this.quizRepository.newQuizAnswerUploadFinalSubmit(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<QuizSubmitResponse, Unit> function12 = new Function1<QuizSubmitResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit.2
             {
                 super(1);
             }
@@ -347,7 +339,7 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(QuizSubmitResponse quizSubmitResponse) {
                 QuizQuestionsViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(quizSubmitResponse));
             }
@@ -355,10 +347,10 @@ public final class QuizQuestionsViewModel extends ViewModel {
         Consumer<? super QuizSubmitResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit$lambda$8(Function1.this, obj);
+                QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit$lambda$8(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$newQuizAnswerUploadFinalSubmit$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit.3
             {
                 super(1);
             }
@@ -369,7 +361,7 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     QuizQuestionsViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -378,10 +370,10 @@ public final class QuizQuestionsViewModel extends ViewModel {
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit$lambda$9(Function1.this, obj);
+                QuizQuestionsViewModel.newQuizAnswerUploadFinalSubmit$lambda$9(function13, obj);
             }
         }));
     }

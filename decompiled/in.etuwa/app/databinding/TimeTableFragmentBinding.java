@@ -3,7 +3,6 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.viewpager.widget.ViewPager;
@@ -12,21 +11,15 @@ import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
-import in.etuwa.app.ui.timetable.TimeTableViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class TimeTableFragmentBinding extends ViewDataBinding {
     public final AppBarLayout appBarLayout;
     public final FloatingActionButton fabChange;
     public final FloatingActionButton fabSpecial;
-
-    @Bindable
-    protected TimeTableViewModel mTimeTableViewModel;
     public final FloatingActionMenu menu;
     public final TabLayout tabs;
     public final ViewPager timetablePager;
-
-    public abstract void setTimeTableViewModel(TimeTableViewModel timeTableViewModel);
 
     protected TimeTableFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, AppBarLayout appBarLayout, FloatingActionButton fabChange, FloatingActionButton fabSpecial, FloatingActionMenu menu, TabLayout tabs, ViewPager timetablePager) {
         super(_bindingComponent, _root, _localFieldCount);
@@ -36,10 +29,6 @@ public abstract class TimeTableFragmentBinding extends ViewDataBinding {
         this.menu = menu;
         this.tabs = tabs;
         this.timetablePager = timetablePager;
-    }
-
-    public TimeTableViewModel getTimeTableViewModel() {
-        return this.mTimeTableViewModel;
     }
 
     public static TimeTableFragmentBinding inflate(LayoutInflater inflater, ViewGroup root, boolean attachToRoot) {

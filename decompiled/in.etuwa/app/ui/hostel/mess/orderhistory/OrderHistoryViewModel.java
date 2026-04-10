@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: OrderHistoryViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: OrderHistoryViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class OrderHistoryViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> cancelResponse;
     private final CompositeDisposable compositeDisposable;
@@ -36,8 +36,8 @@ public final class OrderHistoryViewModel extends ViewModel {
     public final void getMessData() {
         this.orderHistoryResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<OrderHistoryResponse> observeOn = this.hostelRepository.getMessOrderHistoryApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<OrderHistoryResponse, Unit> function1 = new Function1<OrderHistoryResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$getMessData$1
+        Single<OrderHistoryResponse> singleObserveOn = this.hostelRepository.getMessOrderHistoryApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<OrderHistoryResponse, Unit> function1 = new Function1<OrderHistoryResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel.getMessData.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class OrderHistoryViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(OrderHistoryResponse orderHistoryResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderHistoryViewModel.this.orderHistoryResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(orderHistoryResponse));
+                OrderHistoryViewModel.this.orderHistoryResponse.postValue(Resource.INSTANCE.success(orderHistoryResponse));
             }
         };
         Consumer<? super OrderHistoryResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderHistoryViewModel.getMessData$lambda$0(Function1.this, obj);
+                OrderHistoryViewModel.getMessData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$getMessData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel.getMessData.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class OrderHistoryViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderHistoryViewModel.this.orderHistoryResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                OrderHistoryViewModel.this.orderHistoryResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderHistoryViewModel.getMessData$lambda$1(Function1.this, obj);
+                OrderHistoryViewModel.getMessData$lambda$1(function12, obj);
             }
         }));
     }
@@ -107,8 +103,8 @@ public final class OrderHistoryViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.cancelResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.cancelMessOrderApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$getCancelOrder$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.cancelMessOrderApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel.getCancelOrder.1
             {
                 super(1);
             }
@@ -119,20 +115,18 @@ public final class OrderHistoryViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderHistoryViewModel.this.cancelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                OrderHistoryViewModel.this.cancelResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderHistoryViewModel.getCancelOrder$lambda$2(Function1.this, obj);
+                OrderHistoryViewModel.getCancelOrder$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$getCancelOrder$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel.getCancelOrder.2
             {
                 super(1);
             }
@@ -143,17 +137,15 @@ public final class OrderHistoryViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OrderHistoryViewModel.this.cancelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                OrderHistoryViewModel.this.cancelResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OrderHistoryViewModel.getCancelOrder$lambda$3(Function1.this, obj);
+                OrderHistoryViewModel.getCancelOrder$lambda$3(function12, obj);
             }
         }));
     }

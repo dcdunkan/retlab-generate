@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.centralizedinfo.CentralizedInfoViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CentralizedInfoFragmentBindingImpl extends CentralizedInfoFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class CentralizedInfoFragmentBindingImpl extends CentralizedInfoFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (48 != variableId) {
+        if (47 != variableId) {
             return false;
         }
         setCentralizedInfoViewModel((CentralizedInfoViewModel) variable);

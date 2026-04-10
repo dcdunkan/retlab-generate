@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowViewSemSubHistoryBinding implements ViewBinding {
     public final LinearLayout container;
     public final LinearLayout mdcSubjectsContainer;
@@ -37,11 +37,11 @@ public final class RowViewSemSubHistoryBinding implements ViewBinding {
     }
 
     public static RowViewSemSubHistoryBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_view_sem_sub_history, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_view_sem_sub_history, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowViewSemSubHistoryBinding bind(View rootView) {

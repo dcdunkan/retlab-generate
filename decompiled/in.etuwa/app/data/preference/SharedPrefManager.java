@@ -4,13 +4,17 @@ import android.content.SharedPreferences;
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.messaging.Constants;
+import com.google.gson.Gson;
 import in.etuwa.app.EtlabApp;
+import in.etuwa.app.data.model.dash.DashResponse;
+import in.etuwa.app.data.model.dash.LibraryResponse;
 import in.etuwa.app.utils.AppConstant;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SharedPrefManager.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SharedPrefManager.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class SharedPrefManager implements SharedPrefManagerHelper {
     private final String DUE_NEW;
     private final String FEE_ENGNR_STATUS;
@@ -48,6 +52,7 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     private final String PREF_USER_UNIV;
     private final String PREF_USER_YEAR;
     private final String PREF_VERSION_CODE;
+    private final Gson gson;
     private SharedPreferences prefernce;
 
     public SharedPrefManager(EtlabApp app) {
@@ -91,6 +96,7 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(app);
         Intrinsics.checkNotNullExpressionValue(defaultSharedPreferences, "getDefaultSharedPreferences(app)");
         this.prefernce = defaultSharedPreferences;
+        this.gson = new Gson();
     }
 
     public final String getPREF_TOKEN() {
@@ -252,51 +258,51 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
         Intrinsics.checkNotNullParameter(uName, "uName");
         Intrinsics.checkNotNullParameter(passkey, "passkey");
         Intrinsics.checkNotNullParameter(batchId, "batchId");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_TOKEN, token);
-        edit.putBoolean(this.PREF_LOGIN_STATUS, true);
-        edit.putBoolean(this.PREF_LOGIN, true);
-        edit.putString(this.PREF_USER_TYPE, userType);
-        edit.putInt(this.PREF_USER_HOSTEL, userHostel);
-        edit.putString(this.PREF_USER_HOSTEL_STATUS, userHostelStatus);
-        edit.putString(this.PREF_USER_PRO_NAME, userProName);
-        edit.putString(this.PREF_USER_YEAR, userYear);
-        edit.putString(this.PREF_USER_UNIV, userUniv);
-        edit.putString(this.PREF_USER_IMG, userImg);
-        edit.putString(this.PREF_USER_SEM_ID, semId);
-        edit.putString(this.PREF_USER_SEM, semName);
-        edit.putString(this.PREF_USER_COURSE, course);
-        edit.putString(this.PREF_USER_NAME, uName);
-        edit.putString(this.PREF_USER_PASSWORD, passkey);
-        edit.putInt(this.PREF_START_YEAR, startYear);
-        edit.putInt(this.PREF_END_YEAR, endYear);
-        edit.putString(this.PREF_USER_BATCH_ID, batchId);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_TOKEN, token);
+        editorEdit.putBoolean(this.PREF_LOGIN_STATUS, true);
+        editorEdit.putBoolean(this.PREF_LOGIN, true);
+        editorEdit.putString(this.PREF_USER_TYPE, userType);
+        editorEdit.putInt(this.PREF_USER_HOSTEL, userHostel);
+        editorEdit.putString(this.PREF_USER_HOSTEL_STATUS, userHostelStatus);
+        editorEdit.putString(this.PREF_USER_PRO_NAME, userProName);
+        editorEdit.putString(this.PREF_USER_YEAR, userYear);
+        editorEdit.putString(this.PREF_USER_UNIV, userUniv);
+        editorEdit.putString(this.PREF_USER_IMG, userImg);
+        editorEdit.putString(this.PREF_USER_SEM_ID, semId);
+        editorEdit.putString(this.PREF_USER_SEM, semName);
+        editorEdit.putString(this.PREF_USER_COURSE, course);
+        editorEdit.putString(this.PREF_USER_NAME, uName);
+        editorEdit.putString(this.PREF_USER_PASSWORD, passkey);
+        editorEdit.putInt(this.PREF_START_YEAR, startYear);
+        editorEdit.putInt(this.PREF_END_YEAR, endYear);
+        editorEdit.putString(this.PREF_USER_BATCH_ID, batchId);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setRefreshToken(String token) {
         Intrinsics.checkNotNullParameter(token, "token");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_TOKEN, token);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_TOKEN, token);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setPushToken(String token) {
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_USER_PUSH_TOKEN, token);
-        edit.putBoolean(this.PREF_USER_PUSH_TOKEN_STATUS, true);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_USER_PUSH_TOKEN, token);
+        editorEdit.putBoolean(this.PREF_USER_PUSH_TOKEN_STATUS, true);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setHostelStatus(int user_hostel, String user_hostel_status) {
         Intrinsics.checkNotNullParameter(user_hostel_status, "user_hostel_status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putInt(this.PREF_USER_HOSTEL, user_hostel);
-        edit.putString(this.PREF_USER_HOSTEL_STATUS, user_hostel_status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putInt(this.PREF_USER_HOSTEL, user_hostel);
+        editorEdit.putString(this.PREF_USER_HOSTEL_STATUS, user_hostel_status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -323,9 +329,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setPushTokenServerStatus(boolean status) {
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putBoolean(this.PREF_PUSH_TOKEN_SERVER_STATUS, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putBoolean(this.PREF_PUSH_TOKEN_SERVER_STATUS, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -337,12 +343,12 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     public void setClg(boolean clg, int id, String url, String regUrl) {
         Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(regUrl, "regUrl");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putBoolean(this.PREF_COLLEGE, clg);
-        edit.putInt(this.PREF_COLLEGE_ID, id);
-        edit.putString(this.PREF_BASE_URL, url);
-        edit.putString(this.PREF_REG_URL, regUrl);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putBoolean(this.PREF_COLLEGE, clg);
+        editorEdit.putInt(this.PREF_COLLEGE_ID, id);
+        editorEdit.putString(this.PREF_BASE_URL, url);
+        editorEdit.putString(this.PREF_REG_URL, regUrl);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -429,15 +435,15 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
         Intrinsics.checkNotNullParameter(hostelStatus, "hostelStatus");
         Intrinsics.checkNotNullParameter(course, "course");
         Intrinsics.checkNotNullParameter(img, "img");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_USER_BATCH_ID, batchId);
-        edit.putString(this.PREF_USER_SEM_ID, semId);
-        edit.putString(this.PREF_USER_SEM, semName);
-        edit.putString(this.PREF_USER_HOSTEL_STATUS, hostelStatus);
-        edit.putInt(this.PREF_USER_HOSTEL, hostel);
-        edit.putString(this.PREF_USER_COURSE, course);
-        edit.putString(this.PREF_USER_IMG, img);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_USER_BATCH_ID, batchId);
+        editorEdit.putString(this.PREF_USER_SEM_ID, semId);
+        editorEdit.putString(this.PREF_USER_SEM, semName);
+        editorEdit.putString(this.PREF_USER_HOSTEL_STATUS, hostelStatus);
+        editorEdit.putInt(this.PREF_USER_HOSTEL, hostel);
+        editorEdit.putString(this.PREF_USER_COURSE, course);
+        editorEdit.putString(this.PREF_USER_IMG, img);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -454,6 +460,14 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     public String getUserSemId() {
         String string = this.prefernce.getString(this.PREF_USER_SEM_ID, "");
         return string == null ? "" : string;
+    }
+
+    @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
+    public void setUserSemId(String status) {
+        Intrinsics.checkNotNullParameter(status, "status");
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_USER_SEM_ID, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -480,17 +494,17 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setFeeStatus(boolean status) {
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putBoolean(this.PREF_FEE_STATUS, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putBoolean(this.PREF_FEE_STATUS, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setDueNew(String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.DUE_NEW, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.DUE_NEW, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -500,9 +514,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setFeeEngnrNew(boolean status) {
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putBoolean(this.FEE_ENGNR_STATUS, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putBoolean(this.FEE_ENGNR_STATUS, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -512,9 +526,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setNewLogin(boolean status) {
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putBoolean(this.PREF_NEW_LOGIN, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putBoolean(this.PREF_NEW_LOGIN, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -526,9 +540,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setAttendancePercentage(String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_ATT_PERCENT, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_ATT_PERCENT, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -540,9 +554,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setNoticeOne(String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_NOTICE_ONE, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_NOTICE_ONE, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -554,9 +568,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setNoticeTwo(String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_NOTICE_TWO, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_NOTICE_TWO, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -568,9 +582,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setNoticeThree(String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_NOTICE_THREE, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_NOTICE_THREE, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -580,9 +594,9 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setSurveyStatus(boolean status) {
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putBoolean(this.PREF_SURVEY_STATUS, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putBoolean(this.PREF_SURVEY_STATUS, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -594,17 +608,17 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setVersionCode(String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_VERSION_CODE, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_VERSION_CODE, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void setUserTypeNew(String status) {
         Intrinsics.checkNotNullParameter(status, "status");
-        SharedPreferences.Editor edit = this.prefernce.edit();
-        edit.putString(this.PREF_USER_TYPE_NEW, status);
-        edit.apply();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
+        editorEdit.putString(this.PREF_USER_TYPE_NEW, status);
+        editorEdit.apply();
     }
 
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
@@ -618,14 +632,165 @@ public final class SharedPrefManager implements SharedPrefManagerHelper {
         return this.prefernce.getBoolean(this.PREF_FEE_STATUS, false);
     }
 
+    public final void setDashCache(DashResponse response) {
+        Intrinsics.checkNotNullParameter(response, "response");
+        this.prefernce.edit().putString("dash_cache", new Gson().toJson(response)).apply();
+    }
+
+    public final DashResponse getDashCache() {
+        String string = this.prefernce.getString("dash_cache", null);
+        if (string == null) {
+            return null;
+        }
+        try {
+            return (DashResponse) new Gson().fromJson(string, DashResponse.class);
+        } catch (Exception unused) {
+            return null;
+        }
+    }
+
+    public final void setDashCacheTime(long time) {
+        this.prefernce.edit().putLong("dash_cache_time", time).apply();
+    }
+
+    public final long getDashCacheTime() {
+        return this.prefernce.getLong("dash_cache_time", 0L);
+    }
+
+    public final void setLibraryCache(LibraryResponse data) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        this.prefernce.edit().putString("library_cache", new Gson().toJson(data)).putLong("library_cache_time", System.currentTimeMillis()).apply();
+    }
+
+    public final LibraryResponse getLibraryCache() {
+        return (LibraryResponse) new Gson().fromJson(this.prefernce.getString("library_cache", null), LibraryResponse.class);
+    }
+
+    public final long getLibraryCacheTime() {
+        return this.prefernce.getLong("library_cache_time", 0L);
+    }
+
+    public final Gson getGson() {
+        return this.gson;
+    }
+
+    public final boolean is24HourCacheValid(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        long longData = getLongData(key + "_time");
+        return longData != 0 && System.currentTimeMillis() - longData < 86400000;
+    }
+
+    public final void saveCache(String key, String json) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(json, "json");
+        putStringData(key, json);
+        putLongData(key + "_time", System.currentTimeMillis());
+    }
+
+    public final String getCache(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        return getStringData(key);
+    }
+
+    public final void clearCache(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        removeData(key);
+        removeData(key + "_time");
+    }
+
+    public final <T> void saveObjectCache(String key, T data) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        String json = this.gson.toJson(data);
+        Intrinsics.checkNotNullExpressionValue(json, "gson.toJson(data)");
+        saveCache(key, json);
+    }
+
+    public final /* synthetic */ <T> T getObjectCache(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        String cache = getCache(key);
+        if (cache == null) {
+            return null;
+        }
+        try {
+            Gson gson = getGson();
+            Intrinsics.reifiedOperationMarker(4, "T");
+            return (T) gson.fromJson(cache, (Class) Object.class);
+        } catch (Exception unused) {
+            return null;
+        }
+    }
+
+    public final void putStringData(String key, String value) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(value, "value");
+        this.prefernce.edit().putString(key, value).apply();
+    }
+
+    public final String getStringData(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        return this.prefernce.getString(key, null);
+    }
+
+    public final void putLongData(String key, long value) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        this.prefernce.edit().putLong(key, value).apply();
+    }
+
+    public final long getLongData(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        return this.prefernce.getLong(key, 0L);
+    }
+
+    public final void removeData(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        this.prefernce.edit().remove(key).apply();
+    }
+
+    public final void saveString(String key, String value) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(value, "value");
+        this.prefernce.edit().putString(key, value).apply();
+    }
+
+    public final String getString(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        return this.prefernce.getString(key, null);
+    }
+
+    public final void saveLong(String key, long value) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        this.prefernce.edit().putLong(key, value).apply();
+    }
+
+    public final long getLong(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        return this.prefernce.getLong(key, 0L);
+    }
+
+    public final void setCacheTime(String key, long time) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        this.prefernce.edit().putLong(key + "_time", time).apply();
+    }
+
+    public final long getCacheTime(String key) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        return this.prefernce.getLong(key + "_time", 0L);
+    }
+
+    public final boolean isCacheValid(String key, long durationMillis) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        long cacheTime = getCacheTime(key);
+        return cacheTime != 0 && System.currentTimeMillis() - cacheTime < durationMillis;
+    }
+
     @Override // in.etuwa.app.data.preference.SharedPrefManagerHelper
     public void clearData() {
-        SharedPreferences.Editor edit = this.prefernce.edit();
+        SharedPreferences.Editor editorEdit = this.prefernce.edit();
         String string = this.prefernce.getString(this.PREF_USER_PUSH_TOKEN, "");
         String str = string != null ? string : "";
-        edit.clear();
-        edit.putString(this.PREF_USER_PUSH_TOKEN, str);
-        edit.putBoolean(this.PREF_USER_PUSH_TOKEN_STATUS, true);
-        edit.apply();
+        editorEdit.clear();
+        editorEdit.putString(this.PREF_USER_PUSH_TOKEN, str);
+        editorEdit.putBoolean(this.PREF_USER_PUSH_TOKEN_STATUS, true);
+        editorEdit.apply();
     }
 }

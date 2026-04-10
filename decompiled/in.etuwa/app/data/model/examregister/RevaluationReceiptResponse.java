@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RevaluationReceiptResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: RevaluationReceiptResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class RevaluationReceiptResponse {
     private final ArrayList<RevaluationReceipt> receipt;
     private final String sub_total;
@@ -30,12 +30,12 @@ public final /* data */ class RevaluationReceiptResponse {
         return this.receipt;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTotal() {
         return this.total;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSub_total() {
         return this.sub_total;
     }

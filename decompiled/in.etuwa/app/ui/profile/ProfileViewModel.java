@@ -20,8 +20,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: ProfileViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ProfileViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ProfileViewModel extends ViewModel implements KoinComponent {
     private final MutableLiveData<Resource<AbcResponse>> abcViewResponse;
     private final CompositeDisposable compositeDisposable;
@@ -46,8 +46,8 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
     public final void getDashData() {
         this.dashResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ProfileResponse> observeOn = this.dashRepository.getProfileApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ProfileResponse, Unit> function1 = new Function1<ProfileResponse, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$getDashData$1
+        Single<ProfileResponse> singleObserveOn = this.dashRepository.getProfileApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ProfileResponse, Unit> function1 = new Function1<ProfileResponse, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel.getDashData.1
             {
                 super(1);
             }
@@ -58,20 +58,18 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ProfileResponse profileResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProfileViewModel.this.dashResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(profileResponse));
+                ProfileViewModel.this.dashResponse.postValue(Resource.INSTANCE.success(profileResponse));
             }
         };
         Consumer<? super ProfileResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProfileViewModel.getDashData$lambda$0(Function1.this, obj);
+                ProfileViewModel.getDashData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$getDashData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel.getDashData.2
             {
                 super(1);
             }
@@ -82,17 +80,15 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProfileViewModel.this.dashResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ProfileViewModel.this.dashResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProfileViewModel.getDashData$lambda$1(Function1.this, obj);
+                ProfileViewModel.getDashData$lambda$1(function12, obj);
             }
         }));
     }
@@ -116,8 +112,8 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
     public final void getAbcData() {
         this.abcViewResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<AbcResponse> observeOn = this.dashRepository.getAbcViewApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<AbcResponse, Unit> function1 = new Function1<AbcResponse, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$getAbcData$1
+        Single<AbcResponse> singleObserveOn = this.dashRepository.getAbcViewApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<AbcResponse, Unit> function1 = new Function1<AbcResponse, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel.getAbcData.1
             {
                 super(1);
             }
@@ -128,20 +124,18 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(AbcResponse abcResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProfileViewModel.this.abcViewResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(abcResponse));
+                ProfileViewModel.this.abcViewResponse.postValue(Resource.INSTANCE.success(abcResponse));
             }
         };
         Consumer<? super AbcResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProfileViewModel.getAbcData$lambda$2(Function1.this, obj);
+                ProfileViewModel.getAbcData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$getAbcData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel.getAbcData.2
             {
                 super(1);
             }
@@ -152,17 +146,15 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProfileViewModel.this.abcViewResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ProfileViewModel.this.abcViewResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProfileViewModel.getAbcData$lambda$3(Function1.this, obj);
+                ProfileViewModel.getAbcData$lambda$3(function12, obj);
             }
         }));
     }
@@ -187,8 +179,8 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
         Intrinsics.checkNotNullParameter(id, "id");
         this.updateAbcResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.dashRepository.getAbcUpdateApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$getAbcUpdateData$1
+        Single<SuccessResponse> singleObserveOn = this.dashRepository.getAbcUpdateApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel.getAbcUpdateData.1
             {
                 super(1);
             }
@@ -199,20 +191,18 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProfileViewModel.this.updateAbcResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                ProfileViewModel.this.updateAbcResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProfileViewModel.getAbcUpdateData$lambda$4(Function1.this, obj);
+                ProfileViewModel.getAbcUpdateData$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$getAbcUpdateData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.ProfileViewModel.getAbcUpdateData.2
             {
                 super(1);
             }
@@ -223,17 +213,15 @@ public final class ProfileViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProfileViewModel.this.updateAbcResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ProfileViewModel.this.updateAbcResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.ProfileViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProfileViewModel.getAbcUpdateData$lambda$5(Function1.this, obj);
+                ProfileViewModel.getAbcUpdateData$lambda$5(function12, obj);
             }
         }));
     }

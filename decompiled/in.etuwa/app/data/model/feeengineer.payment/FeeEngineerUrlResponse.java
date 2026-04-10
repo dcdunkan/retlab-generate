@@ -5,8 +5,8 @@ import in.etuwa.app.ui.feenewengineer.payment.feeconfirmdialog.FeeConfirmDialogK
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeEngineerUrlResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeEngineerUrlResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeEngineerUrlResponse {
     private final String error;
     private final String fine;
@@ -36,37 +36,35 @@ public final /* data */ class FeeEngineerUrlResponse {
         return feeEngineerUrlResponse.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getFine() {
         return this.fine;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSubtotal() {
         return this.subtotal;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTotal() {
         return this.total;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getError() {
         return this.error;
     }
 
     public final FeeEngineerUrlResponse copy(String url, String fine, String subtotal, String total, String error) {
-        Intrinsics.checkNotNullParameter(url, "url");
         Intrinsics.checkNotNullParameter(fine, "fine");
         Intrinsics.checkNotNullParameter(subtotal, "subtotal");
         Intrinsics.checkNotNullParameter(total, "total");
-        Intrinsics.checkNotNullParameter(error, "error");
         return new FeeEngineerUrlResponse(url, fine, subtotal, total, error);
     }
 
@@ -82,24 +80,25 @@ public final /* data */ class FeeEngineerUrlResponse {
     }
 
     public int hashCode() {
-        return (((((((this.url.hashCode() * 31) + this.fine.hashCode()) * 31) + this.subtotal.hashCode()) * 31) + this.total.hashCode()) * 31) + this.error.hashCode();
+        String str = this.url;
+        int iHashCode = (((((((str == null ? 0 : str.hashCode()) * 31) + this.fine.hashCode()) * 31) + this.subtotal.hashCode()) * 31) + this.total.hashCode()) * 31;
+        String str2 = this.error;
+        return iHashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {
         return "FeeEngineerUrlResponse(url=" + this.url + ", fine=" + this.fine + ", subtotal=" + this.subtotal + ", total=" + this.total + ", error=" + this.error + ")";
     }
 
-    public FeeEngineerUrlResponse(String url, String fine, String subtotal, String total, String error) {
-        Intrinsics.checkNotNullParameter(url, "url");
+    public FeeEngineerUrlResponse(String str, String fine, String subtotal, String total, String str2) {
         Intrinsics.checkNotNullParameter(fine, "fine");
         Intrinsics.checkNotNullParameter(subtotal, "subtotal");
         Intrinsics.checkNotNullParameter(total, "total");
-        Intrinsics.checkNotNullParameter(error, "error");
-        this.url = url;
+        this.url = str;
         this.fine = fine;
         this.subtotal = subtotal;
         this.total = total;
-        this.error = error;
+        this.error = str2;
     }
 
     public final String getUrl() {

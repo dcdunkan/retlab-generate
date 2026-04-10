@@ -3,8 +3,8 @@ package in.etuwa.app.helper;
 import android.app.Activity;
 import kotlin.Metadata;
 
-/* compiled from: ValidCheckHelper.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ValidCheckHelper.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public interface ValidCheckHelper {
     boolean checkFileExistence(String title, String path);
 

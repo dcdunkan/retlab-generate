@@ -47,24 +47,24 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AsietSemRegFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AsietSemRegFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AsietSemRegFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentAsietSemRegBinding _binding;
 
-    /* renamed from: asietSemRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: asietSemRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy asietSemRegViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: AsietSemRegFragment.kt */
+    /* JADX INFO: compiled from: AsietSemRegFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -122,7 +122,7 @@ public final class AsietSemRegFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return asietSemRegFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(asietSemRegFragment);
@@ -136,7 +136,7 @@ public final class AsietSemRegFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -149,7 +149,7 @@ public final class AsietSemRegFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AsietSemRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AsietSemRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AsietSemRegFragment asietSemRegFragment2 = this;
@@ -176,7 +176,7 @@ public final class AsietSemRegFragment extends BaseFragment {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AsietSemRegFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -200,7 +200,7 @@ public final class AsietSemRegFragment extends BaseFragment {
         return (AsietSemRegViewModel) this.asietSemRegViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentAsietSemRegBinding get_binding() {
         return this._binding;
     }
@@ -213,7 +213,7 @@ public final class AsietSemRegFragment extends BaseFragment {
         return (StoreSemesterAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: AsietSemRegFragment.kt */
+    /* JADX INFO: compiled from: AsietSemRegFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/semregistration/asiet/semreg/AsietSemRegFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/asiet/semreg/AsietSemRegFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -278,7 +278,7 @@ public final class AsietSemRegFragment extends BaseFragment {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AsietSemRegFragment.setUp$lambda$0(AsietSemRegFragment.this, view);
+                    AsietSemRegFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -287,7 +287,7 @@ public final class AsietSemRegFragment extends BaseFragment {
             textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AsietSemRegFragment.setUp$lambda$1(AsietSemRegFragment.this, view);
+                    AsietSemRegFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -298,7 +298,7 @@ public final class AsietSemRegFragment extends BaseFragment {
         button.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegFragment$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AsietSemRegFragment.setUp$lambda$2(AsietSemRegFragment.this, view);
+                AsietSemRegFragment.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -494,55 +494,55 @@ public final class AsietSemRegFragment extends BaseFragment {
         TextInputEditText textInputEditText11;
         TextInputEditText textInputEditText12;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = new HashMap();
-        hashMap.clear();
-        HashMap hashMap2 = hashMap;
-        hashMap2.put("SemesterRegistration[semester_id]", this$0.getPreference().getUserSemId());
+        HashMap map = new HashMap();
+        map.clear();
+        HashMap map2 = map;
+        map2.put("SemesterRegistration[semester_id]", this$0.getPreference().getUserSemId());
         FragmentAsietSemRegBinding fragmentAsietSemRegBinding = this$0.get_binding();
-        Editable editable = null;
-        hashMap2.put("SemesterRegistration[address]", String.valueOf((fragmentAsietSemRegBinding == null || (textInputEditText12 = fragmentAsietSemRegBinding.etAddress) == null) ? null : textInputEditText12.getText()));
+        Editable text = null;
+        map2.put("SemesterRegistration[address]", String.valueOf((fragmentAsietSemRegBinding == null || (textInputEditText12 = fragmentAsietSemRegBinding.etAddress) == null) ? null : textInputEditText12.getText()));
         FragmentAsietSemRegBinding fragmentAsietSemRegBinding2 = this$0.get_binding();
-        hashMap2.put("SemesterRegistration[phone_parent]", String.valueOf((fragmentAsietSemRegBinding2 == null || (textInputEditText11 = fragmentAsietSemRegBinding2.etParentNo) == null) ? null : textInputEditText11.getText()));
+        map2.put("SemesterRegistration[phone_parent]", String.valueOf((fragmentAsietSemRegBinding2 == null || (textInputEditText11 = fragmentAsietSemRegBinding2.etParentNo) == null) ? null : textInputEditText11.getText()));
         FragmentAsietSemRegBinding fragmentAsietSemRegBinding3 = this$0.get_binding();
-        hashMap2.put("SemesterRegistration[parent_email]", String.valueOf((fragmentAsietSemRegBinding3 == null || (textInputEditText10 = fragmentAsietSemRegBinding3.etParentEmail) == null) ? null : textInputEditText10.getText()));
+        map2.put("SemesterRegistration[parent_email]", String.valueOf((fragmentAsietSemRegBinding3 == null || (textInputEditText10 = fragmentAsietSemRegBinding3.etParentEmail) == null) ? null : textInputEditText10.getText()));
         FragmentAsietSemRegBinding fragmentAsietSemRegBinding4 = this$0.get_binding();
         if ((fragmentAsietSemRegBinding4 == null || (linearLayout3 = fragmentAsietSemRegBinding4.attendanceOne) == null || linearLayout3.getVisibility() != 0) ? false : true) {
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding5 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[subject][0]", String.valueOf((fragmentAsietSemRegBinding5 == null || (textInputEditText9 = fragmentAsietSemRegBinding5.etSub1) == null) ? null : textInputEditText9.getText()));
+            map2.put("SemesterRegistration[subject][0]", String.valueOf((fragmentAsietSemRegBinding5 == null || (textInputEditText9 = fragmentAsietSemRegBinding5.etSub1) == null) ? null : textInputEditText9.getText()));
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding6 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[subject][0]", String.valueOf((fragmentAsietSemRegBinding6 == null || (textInputEditText8 = fragmentAsietSemRegBinding6.etSub1) == null) ? null : textInputEditText8.getText()));
+            map2.put("SemesterRegistration[subject][0]", String.valueOf((fragmentAsietSemRegBinding6 == null || (textInputEditText8 = fragmentAsietSemRegBinding6.etSub1) == null) ? null : textInputEditText8.getText()));
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding7 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[subject][0]", String.valueOf((fragmentAsietSemRegBinding7 == null || (textInputEditText7 = fragmentAsietSemRegBinding7.etSub1) == null) ? null : textInputEditText7.getText()));
+            map2.put("SemesterRegistration[subject][0]", String.valueOf((fragmentAsietSemRegBinding7 == null || (textInputEditText7 = fragmentAsietSemRegBinding7.etSub1) == null) ? null : textInputEditText7.getText()));
         }
         FragmentAsietSemRegBinding fragmentAsietSemRegBinding8 = this$0.get_binding();
         if ((fragmentAsietSemRegBinding8 == null || (linearLayout2 = fragmentAsietSemRegBinding8.attendanceTwo) == null || linearLayout2.getVisibility() != 0) ? false : true) {
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding9 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[semester][1]", String.valueOf((fragmentAsietSemRegBinding9 == null || (textInputEditText6 = fragmentAsietSemRegBinding9.etSem2) == null) ? null : textInputEditText6.getText()));
+            map2.put("SemesterRegistration[semester][1]", String.valueOf((fragmentAsietSemRegBinding9 == null || (textInputEditText6 = fragmentAsietSemRegBinding9.etSem2) == null) ? null : textInputEditText6.getText()));
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding10 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[subject][1]", String.valueOf((fragmentAsietSemRegBinding10 == null || (textInputEditText5 = fragmentAsietSemRegBinding10.etSub2) == null) ? null : textInputEditText5.getText()));
+            map2.put("SemesterRegistration[subject][1]", String.valueOf((fragmentAsietSemRegBinding10 == null || (textInputEditText5 = fragmentAsietSemRegBinding10.etSub2) == null) ? null : textInputEditText5.getText()));
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding11 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[reason][1]", String.valueOf((fragmentAsietSemRegBinding11 == null || (textInputEditText4 = fragmentAsietSemRegBinding11.etReason2) == null) ? null : textInputEditText4.getText()));
+            map2.put("SemesterRegistration[reason][1]", String.valueOf((fragmentAsietSemRegBinding11 == null || (textInputEditText4 = fragmentAsietSemRegBinding11.etReason2) == null) ? null : textInputEditText4.getText()));
         }
         FragmentAsietSemRegBinding fragmentAsietSemRegBinding12 = this$0.get_binding();
         if ((fragmentAsietSemRegBinding12 == null || (linearLayout = fragmentAsietSemRegBinding12.attendanceThree) == null || linearLayout.getVisibility() != 0) ? false : true) {
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding13 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[semester][2]", String.valueOf((fragmentAsietSemRegBinding13 == null || (textInputEditText3 = fragmentAsietSemRegBinding13.etSem3) == null) ? null : textInputEditText3.getText()));
+            map2.put("SemesterRegistration[semester][2]", String.valueOf((fragmentAsietSemRegBinding13 == null || (textInputEditText3 = fragmentAsietSemRegBinding13.etSem3) == null) ? null : textInputEditText3.getText()));
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding14 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[subject][2]", String.valueOf((fragmentAsietSemRegBinding14 == null || (textInputEditText2 = fragmentAsietSemRegBinding14.etSub3) == null) ? null : textInputEditText2.getText()));
+            map2.put("SemesterRegistration[subject][2]", String.valueOf((fragmentAsietSemRegBinding14 == null || (textInputEditText2 = fragmentAsietSemRegBinding14.etSub3) == null) ? null : textInputEditText2.getText()));
             FragmentAsietSemRegBinding fragmentAsietSemRegBinding15 = this$0.get_binding();
             if (fragmentAsietSemRegBinding15 != null && (textInputEditText = fragmentAsietSemRegBinding15.etReason3) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            hashMap2.put("SemesterRegistration[reason][2]", String.valueOf(editable));
+            map2.put("SemesterRegistration[reason][2]", String.valueOf(text));
         }
-        this$0.getAsietSemRegViewModel().addSemRegResponse(hashMap2);
+        this$0.getAsietSemRegViewModel().addSemRegResponse(map2);
     }
 
     private final void listenResponse() {
         getAsietSemRegViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AsietSemRegFragment.listenResponse$lambda$4(AsietSemRegFragment.this, (Resource) obj);
+                AsietSemRegFragment.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }

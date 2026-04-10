@@ -23,8 +23,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: AddMedicalLeaveViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddMedicalLeaveViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddMedicalLeaveViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<SuccessResponse>> applyResponse;
     private final CompositeDisposable compositeDisposable;
@@ -69,13 +69,13 @@ public final class AddMedicalLeaveViewModel extends ViewModel implements KoinCom
         Intrinsics.checkNotNullParameter(fromDate, "fromDate");
         Intrinsics.checkNotNullParameter(toDate, "toDate");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, fromDate);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, toDate);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, fromDate);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, toDate);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("MedicalLeave[proofFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$applyMedicalLeave$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("MedicalLeave[proofFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel.applyMedicalLeave.1
             {
                 super(1);
             }
@@ -86,20 +86,20 @@ public final class AddMedicalLeaveViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddMedicalLeaveViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$$ExternalSyntheticLambda0
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMedicalLeaveViewModel.applyMedicalLeave$lambda$0(Function1.this, obj);
+                AddMedicalLeaveViewModel.applyMedicalLeave$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.leaveRepository.applyMedicalLeaveApiCall(create, create2, create3, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$applyMedicalLeave$2
+        Observable<SuccessResponse> observableObserveOn = this.leaveRepository.applyMedicalLeaveApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel.applyMedicalLeave.2
             {
                 super(1);
             }
@@ -110,7 +110,7 @@ public final class AddMedicalLeaveViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddMedicalLeaveViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -118,10 +118,10 @@ public final class AddMedicalLeaveViewModel extends ViewModel implements KoinCom
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMedicalLeaveViewModel.applyMedicalLeave$lambda$1(Function1.this, obj);
+                AddMedicalLeaveViewModel.applyMedicalLeave$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$applyMedicalLeave$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel.applyMedicalLeave.3
             {
                 super(1);
             }
@@ -132,7 +132,7 @@ public final class AddMedicalLeaveViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddMedicalLeaveViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -141,10 +141,10 @@ public final class AddMedicalLeaveViewModel extends ViewModel implements KoinCom
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMedicalLeaveViewModel.applyMedicalLeave$lambda$2(Function1.this, obj);
+                AddMedicalLeaveViewModel.applyMedicalLeave$lambda$2(function13, obj);
             }
         }));
     }

@@ -4,31 +4,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowPlacementBinding implements ViewBinding {
-    public final TextView plApplyBtn;
+    public final MaterialButton plApplyBtn;
     public final TextView plCompanyName;
     public final TextView plDate;
     public final TextView plDescription;
     public final TextView plLastDate;
-    private final CardView rootView;
+    public final TextView registeredTv;
+    private final MaterialCardView rootView;
 
-    private RowPlacementBinding(CardView rootView, TextView plApplyBtn, TextView plCompanyName, TextView plDate, TextView plDescription, TextView plLastDate) {
+    private RowPlacementBinding(MaterialCardView rootView, MaterialButton plApplyBtn, TextView plCompanyName, TextView plDate, TextView plDescription, TextView plLastDate, TextView registeredTv) {
         this.rootView = rootView;
         this.plApplyBtn = plApplyBtn;
         this.plCompanyName = plCompanyName;
         this.plDate = plDate;
         this.plDescription = plDescription;
         this.plLastDate = plLastDate;
+        this.registeredTv = registeredTv;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -37,30 +40,34 @@ public final class RowPlacementBinding implements ViewBinding {
     }
 
     public static RowPlacementBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_placement, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_placement, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowPlacementBinding bind(View rootView) {
         int i = R.id.pl_apply_btn;
-        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-        if (textView != null) {
+        MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+        if (materialButton != null) {
             i = R.id.pl_company_name;
-            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView2 != null) {
+            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+            if (textView != null) {
                 i = R.id.pl_date;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView3 != null) {
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView2 != null) {
                     i = R.id.pl_description;
-                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView4 != null) {
+                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView3 != null) {
                         i = R.id.pl_last_date;
-                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView5 != null) {
-                            return new RowPlacementBinding((CardView) rootView, textView, textView2, textView3, textView4, textView5);
+                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView4 != null) {
+                            i = R.id.registered_tv;
+                            TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                            if (textView5 != null) {
+                                return new RowPlacementBinding((MaterialCardView) rootView, materialButton, textView, textView2, textView3, textView4, textView5);
+                            }
                         }
                     }
                 }

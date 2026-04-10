@@ -13,7 +13,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.view.SemRegViewViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class SemRegViewFragmentBinding extends ViewDataBinding {
     public final LinearLayout dueLayout;
     public final LinearLayout feeLayout;

@@ -19,8 +19,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeListViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FeeListViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FeeListViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final FeeEngineerRepository feeEngineerRepository;
@@ -41,8 +41,8 @@ public final class FeeListViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(installmentId, "installmentId");
         this.feePartialResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<InstallmentDetailsResponse> observeOn = this.feeEngineerRepository.getPartialInstallmentFeeApiCall(installmentId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<InstallmentDetailsResponse, Unit> function1 = new Function1<InstallmentDetailsResponse, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$getFees$1
+        Single<InstallmentDetailsResponse> singleObserveOn = this.feeEngineerRepository.getPartialInstallmentFeeApiCall(installmentId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<InstallmentDetailsResponse, Unit> function1 = new Function1<InstallmentDetailsResponse, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel.getFees.1
             {
                 super(1);
             }
@@ -53,20 +53,18 @@ public final class FeeListViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(InstallmentDetailsResponse installmentDetailsResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeListViewModel.this.feePartialResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(installmentDetailsResponse));
+                FeeListViewModel.this.feePartialResponse.postValue(Resource.INSTANCE.success(installmentDetailsResponse));
             }
         };
         Consumer<? super InstallmentDetailsResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeListViewModel.getFees$lambda$0(Function1.this, obj);
+                FeeListViewModel.getFees$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$getFees$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel.getFees.2
             {
                 super(1);
             }
@@ -77,17 +75,15 @@ public final class FeeListViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeListViewModel.this.feePartialResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                FeeListViewModel.this.feePartialResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeListViewModel.getFees$lambda$1(Function1.this, obj);
+                FeeListViewModel.getFees$lambda$1(function12, obj);
             }
         }));
     }
@@ -111,8 +107,8 @@ public final class FeeListViewModel extends ViewModel {
     public final void getInstallmentList() {
         this.installmentListResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<InstallmentListResponse> observeOn = this.feeEngineerRepository.getPartialInstallmentListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<InstallmentListResponse, Unit> function1 = new Function1<InstallmentListResponse, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$getInstallmentList$1
+        Single<InstallmentListResponse> singleObserveOn = this.feeEngineerRepository.getPartialInstallmentListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<InstallmentListResponse, Unit> function1 = new Function1<InstallmentListResponse, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel.getInstallmentList.1
             {
                 super(1);
             }
@@ -123,20 +119,18 @@ public final class FeeListViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(InstallmentListResponse installmentListResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeListViewModel.this.installmentListResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(installmentListResponse));
+                FeeListViewModel.this.installmentListResponse.postValue(Resource.INSTANCE.success(installmentListResponse));
             }
         };
         Consumer<? super InstallmentListResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeListViewModel.getInstallmentList$lambda$2(Function1.this, obj);
+                FeeListViewModel.getInstallmentList$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$getInstallmentList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel.getInstallmentList.2
             {
                 super(1);
             }
@@ -147,17 +141,15 @@ public final class FeeListViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeListViewModel.this.installmentListResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                FeeListViewModel.this.installmentListResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeListViewModel.getInstallmentList$lambda$3(Function1.this, obj);
+                FeeListViewModel.getInstallmentList$lambda$3(function12, obj);
             }
         }));
     }
@@ -188,8 +180,8 @@ public final class FeeListViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(FeeCollection, "FeeCollection");
         this.feeUrlResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.feeEngineerRepository.getMedicalFeePayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$getFeeUrl$1
+        Single<SuccessResponse> singleObserveOn = this.feeEngineerRepository.getMedicalFeePayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel.getFeeUrl.1
             {
                 super(1);
             }
@@ -200,20 +192,18 @@ public final class FeeListViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeListViewModel.this.feeUrlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                FeeListViewModel.this.feeUrlResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeListViewModel.getFeeUrl$lambda$4(Function1.this, obj);
+                FeeListViewModel.getFeeUrl$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$getFeeUrl$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel.getFeeUrl.2
             {
                 super(1);
             }
@@ -224,17 +214,15 @@ public final class FeeListViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeListViewModel.this.feeUrlResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                FeeListViewModel.this.feeUrlResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.feepartial.kmea.FeeListViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeListViewModel.getFeeUrl$lambda$5(Function1.this, obj);
+                FeeListViewModel.getFeeUrl$lambda$5(function12, obj);
             }
         }));
     }

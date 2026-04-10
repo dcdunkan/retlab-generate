@@ -16,11 +16,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ReceiptViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ReceiptViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ReceiptViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final FeeRepository feeRepository;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<ReceiptResponse>> receiptResponse;
 
     public ReceiptViewModel(FeeRepository feeRepository) {
@@ -28,14 +29,22 @@ public final class ReceiptViewModel extends ViewModel {
         this.feeRepository = feeRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.receiptResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getReceipts();
     }
 
     public final void getReceipts() {
         this.receiptResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ReceiptResponse> observeOn = this.feeRepository.getFeeReceiptsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ReceiptResponse, Unit> function1 = new Function1<ReceiptResponse, Unit>() { // from class: in.etuwa.app.ui.fees.receipt.ReceiptViewModel$getReceipts$1
+        Single<ReceiptResponse> singleObserveOn = this.feeRepository.getFeeReceiptsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ReceiptResponse, Unit> function1 = new Function1<ReceiptResponse, Unit>() { // from class: in.etuwa.app.ui.fees.receipt.ReceiptViewModel.getReceipts.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class ReceiptViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ReceiptResponse receiptResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReceiptViewModel.this.receiptResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(receiptResponse));
+                ReceiptViewModel.this.receiptResponse.postValue(Resource.INSTANCE.success(receiptResponse));
             }
         };
         Consumer<? super ReceiptResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.receipt.ReceiptViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReceiptViewModel.getReceipts$lambda$0(Function1.this, obj);
+                ReceiptViewModel.getReceipts$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.receipt.ReceiptViewModel$getReceipts$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.receipt.ReceiptViewModel.getReceipts.2
             {
                 super(1);
             }
@@ -70,17 +77,15 @@ public final class ReceiptViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReceiptViewModel.this.receiptResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ReceiptViewModel.this.receiptResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.receipt.ReceiptViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.receipt.ReceiptViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReceiptViewModel.getReceipts$lambda$1(Function1.this, obj);
+                ReceiptViewModel.getReceipts$lambda$1(function12, obj);
             }
         }));
     }

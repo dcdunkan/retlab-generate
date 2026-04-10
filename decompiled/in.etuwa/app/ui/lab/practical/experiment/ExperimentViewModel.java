@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExperimentViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ExperimentViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ExperimentViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<ArrayList<String>>> experimentResponse;
@@ -35,8 +35,8 @@ public final class ExperimentViewModel extends ViewModel {
     public final void getExperiment(String subId, String subPid) {
         this.experimentResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<String>> observeOn = this.labRepository.getExperimentApiCall(new PracticalRequest(subId, subPid)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<String>, Unit> function1 = new Function1<ArrayList<String>, Unit>() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentViewModel$getExperiment$1
+        Single<ArrayList<String>> singleObserveOn = this.labRepository.getExperimentApiCall(new PracticalRequest(subId, subPid)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<String>, Unit> function1 = new Function1<ArrayList<String>, Unit>() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentViewModel.getExperiment.1
             {
                 super(1);
             }
@@ -47,20 +47,18 @@ public final class ExperimentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<String> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ExperimentViewModel.this.experimentResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                ExperimentViewModel.this.experimentResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<String>> consumer = new Consumer() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ExperimentViewModel.getExperiment$lambda$0(Function1.this, obj);
+                ExperimentViewModel.getExperiment$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentViewModel$getExperiment$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentViewModel.getExperiment.2
             {
                 super(1);
             }
@@ -71,17 +69,15 @@ public final class ExperimentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ExperimentViewModel.this.experimentResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ExperimentViewModel.this.experimentResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ExperimentViewModel.getExperiment$lambda$1(Function1.this, obj);
+                ExperimentViewModel.getExperiment$lambda$1(function12, obj);
             }
         }));
     }

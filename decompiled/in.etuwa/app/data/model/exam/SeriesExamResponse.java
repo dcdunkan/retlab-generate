@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SeriesExamResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SeriesExamResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SeriesExamResponse {
     private final String error;
     private final boolean login;
@@ -32,7 +32,7 @@ public final /* data */ class SeriesExamResponse {
         return seriesExamResponse.copy(z, arrayList, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -41,7 +41,7 @@ public final /* data */ class SeriesExamResponse {
         return this.seriesExams;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getError() {
         return this.error;
     }

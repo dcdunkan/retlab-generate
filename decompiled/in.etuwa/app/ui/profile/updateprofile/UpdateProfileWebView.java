@@ -3,11 +3,9 @@ package in.etuwa.app.ui.profile.updateprofile;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.activity.ComponentActivity;
 import androidx.lifecycle.ViewModelLazy;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
-import androidx.lifecycle.ViewModelStoreOwner;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.updateprofile.UpdateProfile;
 import in.etuwa.app.ui.base.BaseActivity;
@@ -25,11 +23,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: UpdateProfileWebView.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UpdateProfileWebView.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UpdateProfileWebView extends BaseActivity {
 
-    /* renamed from: updateProfileViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: updateProfileViewModel$delegate, reason: from kotlin metadata */
     private final Lazy updateProfileViewModel;
 
     @Override // in.etuwa.app.ui.base.BaseActivity
@@ -54,7 +52,7 @@ public final class UpdateProfileWebView extends BaseActivity {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ComponentActivity.this.getViewModelStore();
+                ViewModelStore viewModelStore = updateProfileWebView.getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "viewModelStore");
                 return viewModelStore;
             }
@@ -67,7 +65,7 @@ public final class UpdateProfileWebView extends BaseActivity {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory(ViewModelStoreOwner.this, Reflection.getOrCreateKotlinClass(UpdateProfileViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory(updateProfileWebView2, Reflection.getOrCreateKotlinClass(UpdateProfileViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -91,9 +89,10 @@ public final class UpdateProfileWebView extends BaseActivity {
     }
 
     private final void listenResponse() {
-        getUpdateProfileViewModel().getResponse().observe(this, new UpdateProfileWebView$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends UpdateProfile>, Unit>() { // from class: in.etuwa.app.ui.profile.updateprofile.UpdateProfileWebView$listenResponse$1
+        getUpdateProfileViewModel().getResponse().observe(this, new UpdateProfileWebView$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends UpdateProfile>, Unit>() { // from class: in.etuwa.app.ui.profile.updateprofile.UpdateProfileWebView.listenResponse.1
 
-            /* compiled from: UpdateProfileWebView.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.updateprofile.UpdateProfileWebView$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: UpdateProfileWebView.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -130,7 +129,7 @@ public final class UpdateProfileWebView extends BaseActivity {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<UpdateProfile> resource) {
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {

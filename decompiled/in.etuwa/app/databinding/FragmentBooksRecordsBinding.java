@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.etlabstaff.ui.library.bookrecord.BookRecordViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentBooksRecordsBinding extends ViewDataBinding {
     public final LinearLayout inboxCoordinateLayout;
 

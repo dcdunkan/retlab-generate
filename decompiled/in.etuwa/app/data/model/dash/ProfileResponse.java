@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.dash;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ProfileResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ProfileResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ProfileResponse {
     private final String address1;
     private final String address2;
@@ -38,157 +38,157 @@ public final /* data */ class ProfileResponse {
     private final String religion;
     private final String state;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getFather_name() {
         return this.father_name;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final String getMother_name() {
         return this.mother_name;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final String getPhone_father() {
         return this.phone_father;
     }
 
-    /* renamed from: component13, reason: from getter */
+    /* JADX INFO: renamed from: component13, reason: from getter */
     public final String getFather_occupation() {
         return this.father_occupation;
     }
 
-    /* renamed from: component14, reason: from getter */
+    /* JADX INFO: renamed from: component14, reason: from getter */
     public final String getMother_occupation() {
         return this.mother_occupation;
     }
 
-    /* renamed from: component15, reason: from getter */
+    /* JADX INFO: renamed from: component15, reason: from getter */
     public final String getPhone_mother() {
         return this.phone_mother;
     }
 
-    /* renamed from: component16, reason: from getter */
+    /* JADX INFO: renamed from: component16, reason: from getter */
     public final String getEmail() {
         return this.email;
     }
 
-    /* renamed from: component17, reason: from getter */
+    /* JADX INFO: renamed from: component17, reason: from getter */
     public final String getAddress1() {
         return this.address1;
     }
 
-    /* renamed from: component18, reason: from getter */
+    /* JADX INFO: renamed from: component18, reason: from getter */
     public final String getAddress2() {
         return this.address2;
     }
 
-    /* renamed from: component19, reason: from getter */
+    /* JADX INFO: renamed from: component19, reason: from getter */
     public final String getAddress3() {
         return this.address3;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getGender() {
         return this.gender;
     }
 
-    /* renamed from: component20, reason: from getter */
+    /* JADX INFO: renamed from: component20, reason: from getter */
     public final String getDistrict() {
         return this.district;
     }
 
-    /* renamed from: component21, reason: from getter */
+    /* JADX INFO: renamed from: component21, reason: from getter */
     public final String getPin() {
         return this.pin;
     }
 
-    /* renamed from: component22, reason: from getter */
+    /* JADX INFO: renamed from: component22, reason: from getter */
     public final String getState() {
         return this.state;
     }
 
-    /* renamed from: component23, reason: from getter */
+    /* JADX INFO: renamed from: component23, reason: from getter */
     public final String getPhone_home() {
         return this.phone_home;
     }
 
-    /* renamed from: component24, reason: from getter */
+    /* JADX INFO: renamed from: component24, reason: from getter */
     public final String getBank_name() {
         return this.bank_name;
     }
 
-    /* renamed from: component25, reason: from getter */
+    /* JADX INFO: renamed from: component25, reason: from getter */
     public final String getBank_branch() {
         return this.bank_branch;
     }
 
-    /* renamed from: component26, reason: from getter */
+    /* JADX INFO: renamed from: component26, reason: from getter */
     public final String getBank_accno() {
         return this.bank_accno;
     }
 
-    /* renamed from: component27, reason: from getter */
+    /* JADX INFO: renamed from: component27, reason: from getter */
     public final String getBank_ifsc_code() {
         return this.bank_ifsc_code;
     }
 
-    /* renamed from: component28, reason: from getter */
+    /* JADX INFO: renamed from: component28, reason: from getter */
     public final boolean getBank_edit() {
         return this.bank_edit;
     }
 
-    /* renamed from: component29, reason: from getter */
+    /* JADX INFO: renamed from: component29, reason: from getter */
     public final String getBankdetail_status() {
         return this.bankdetail_status;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDob() {
         return this.dob;
     }
 
-    /* renamed from: component30, reason: from getter */
+    /* JADX INFO: renamed from: component30, reason: from getter */
     public final boolean getEdit_profile() {
         return this.edit_profile;
     }
 
-    /* renamed from: component31, reason: from getter */
+    /* JADX INFO: renamed from: component31, reason: from getter */
     public final boolean getProfile_edit_live() {
         return this.profile_edit_live;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getReligion() {
         return this.religion;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAdmission_no() {
         return this.admission_no;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getNationality() {
         return this.nationality;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getBlood_group() {
         return this.blood_group;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getAdharno() {
         return this.adharno;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getRegister_no() {
         return this.register_no;
     }
@@ -237,22 +237,31 @@ public final /* data */ class ProfileResponse {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v53, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v57, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v59 */
+    /* JADX WARN: Type inference failed for: r1v60 */
+    /* JADX WARN: Type inference failed for: r1v61 */
+    /* JADX WARN: Type inference failed for: r1v62 */
+    /* JADX WARN: Type inference failed for: r2v0 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v2 */
     public int hashCode() {
-        int hashCode = ((((((((((((((((((((((((((((((((((((((((((((((((((((this.name.hashCode() * 31) + this.gender.hashCode()) * 31) + this.dob.hashCode()) * 31) + this.religion.hashCode()) * 31) + this.admission_no.hashCode()) * 31) + this.nationality.hashCode()) * 31) + this.blood_group.hashCode()) * 31) + this.adharno.hashCode()) * 31) + this.register_no.hashCode()) * 31) + this.father_name.hashCode()) * 31) + this.mother_name.hashCode()) * 31) + this.phone_father.hashCode()) * 31) + this.father_occupation.hashCode()) * 31) + this.mother_occupation.hashCode()) * 31) + this.phone_mother.hashCode()) * 31) + this.email.hashCode()) * 31) + this.address1.hashCode()) * 31) + this.address2.hashCode()) * 31) + this.address3.hashCode()) * 31) + this.district.hashCode()) * 31) + this.pin.hashCode()) * 31) + this.state.hashCode()) * 31) + this.phone_home.hashCode()) * 31) + this.bank_name.hashCode()) * 31) + this.bank_branch.hashCode()) * 31) + this.bank_accno.hashCode()) * 31) + this.bank_ifsc_code.hashCode()) * 31;
+        int iHashCode = ((((((((((((((((((((((((((((((((((((((((((((((((((((this.name.hashCode() * 31) + this.gender.hashCode()) * 31) + this.dob.hashCode()) * 31) + this.religion.hashCode()) * 31) + this.admission_no.hashCode()) * 31) + this.nationality.hashCode()) * 31) + this.blood_group.hashCode()) * 31) + this.adharno.hashCode()) * 31) + this.register_no.hashCode()) * 31) + this.father_name.hashCode()) * 31) + this.mother_name.hashCode()) * 31) + this.phone_father.hashCode()) * 31) + this.father_occupation.hashCode()) * 31) + this.mother_occupation.hashCode()) * 31) + this.phone_mother.hashCode()) * 31) + this.email.hashCode()) * 31) + this.address1.hashCode()) * 31) + this.address2.hashCode()) * 31) + this.address3.hashCode()) * 31) + this.district.hashCode()) * 31) + this.pin.hashCode()) * 31) + this.state.hashCode()) * 31) + this.phone_home.hashCode()) * 31) + this.bank_name.hashCode()) * 31) + this.bank_branch.hashCode()) * 31) + this.bank_accno.hashCode()) * 31) + this.bank_ifsc_code.hashCode()) * 31;
         boolean z = this.bank_edit;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        int hashCode2 = (((hashCode + i) * 31) + this.bankdetail_status.hashCode()) * 31;
+        int iHashCode2 = (((iHashCode + r1) * 31) + this.bankdetail_status.hashCode()) * 31;
         boolean z2 = this.edit_profile;
-        int i2 = z2;
-        if (z2 != 0) {
-            i2 = 1;
+        ?? r12 = z2;
+        if (z2) {
+            r12 = 1;
         }
-        int i3 = (hashCode2 + i2) * 31;
+        int i = (iHashCode2 + r12) * 31;
         boolean z3 = this.profile_edit_live;
-        return i3 + (z3 ? 1 : z3 ? 1 : 0);
+        return i + (z3 ? 1 : z3);
     }
 
     public String toString() {

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelNewMonthlyResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelNewMonthlyResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class HostelNewMonthlyResponse {
     private final String date;
     private final String fine;

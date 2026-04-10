@@ -10,8 +10,8 @@ import in.etuwa.app.ui.stationary.bookinghistory.BookingHistoryFragment;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: StationaryMainAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: StationaryMainAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class StationaryMainAdapter extends FragmentStatePagerAdapter {
     private final String[] heading;
 

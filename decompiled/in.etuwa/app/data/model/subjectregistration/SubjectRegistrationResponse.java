@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectRegistrationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubjectRegistrationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubjectRegistrationResponse {
     private final ArrayList<SubjectRegistration> data;
     private final String error;
@@ -22,7 +22,7 @@ public final /* data */ class SubjectRegistrationResponse {
         return subjectRegistrationResponse.copy(str, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getError() {
         return this.error;
     }

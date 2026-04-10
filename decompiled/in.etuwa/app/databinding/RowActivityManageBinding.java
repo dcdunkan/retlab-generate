@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowActivityManageBinding implements ViewBinding {
     public final TextView manageActivityBtn;
     public final TextView manageActivityName;
@@ -39,11 +39,11 @@ public final class RowActivityManageBinding implements ViewBinding {
     }
 
     public static RowActivityManageBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_activity_manage, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_activity_manage, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowActivityManageBinding bind(View rootView) {

@@ -1,0 +1,25 @@
+package in.etuwa.app.ui.evaluation;
+
+import in.etuwa.app.ui.exam.series.EvaluationSeriesAdapter;
+import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.FunctionReferenceImpl;
+
+/* JADX INFO: compiled from: EvaluationFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
+/* synthetic */ class EvaluationFragment$onDownloadComplete$1$onReceive$adapterToNotify$2 extends FunctionReferenceImpl implements Function1<Integer, Unit> {
+    EvaluationFragment$onDownloadComplete$1$onReceive$adapterToNotify$2(Object obj) {
+        super(1, obj, EvaluationSeriesAdapter.class, "notifyDataChanged", "notifyDataChanged(I)V", 0);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+        invoke(num.intValue());
+        return Unit.INSTANCE;
+    }
+
+    public final void invoke(int i) {
+        ((EvaluationSeriesAdapter) this.receiver).notifyDataChanged(i);
+    }
+}

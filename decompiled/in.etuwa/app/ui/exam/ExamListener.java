@@ -5,8 +5,8 @@ import in.etuwa.app.data.model.exam.ExamFiles;
 import java.util.ArrayList;
 import kotlin.Metadata;
 
-/* compiled from: ExamListener.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ExamListener.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public interface ExamListener {
     boolean checkFileExistence(String fileName);
 

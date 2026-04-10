@@ -3,7 +3,6 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.databinding.Bindable;
@@ -11,13 +10,14 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.assignment.AssignmentResultViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AssignmentResultFragmentBinding extends ViewDataBinding {
-    public final LinearLayout assignmentResultLayout;
+    public final MaterialCardView assignmentResultLayout;
     public final FloatingActionButton fabAssignmentResultSemester;
 
     @Bindable
@@ -29,7 +29,7 @@ public abstract class AssignmentResultFragmentBinding extends ViewDataBinding {
 
     public abstract void setAssignmentResultViewModel(AssignmentResultViewModel assignmentResultViewModel);
 
-    protected AssignmentResultFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout assignmentResultLayout, FloatingActionButton fabAssignmentResultSemester, RecyclerView rvResultAssignment, TextView semesterText, Spinner spinnerSem, SwipeRefreshLayout swipeLayout) {
+    protected AssignmentResultFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, MaterialCardView assignmentResultLayout, FloatingActionButton fabAssignmentResultSemester, RecyclerView rvResultAssignment, TextView semesterText, Spinner spinnerSem, SwipeRefreshLayout swipeLayout) {
         super(_bindingComponent, _root, _localFieldCount);
         this.assignmentResultLayout = assignmentResultLayout;
         this.fabAssignmentResultSemester = fabAssignmentResultSemester;

@@ -4,8 +4,8 @@ import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UniversityResult.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: UniversityResult.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class UniversityResult {
     private final String branch;
     private final String code;
@@ -18,52 +18,52 @@ public final /* data */ class UniversityResult {
     private final String reg_no;
     private final String semester;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getPass_status() {
         return this.pass_status;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getBranch() {
         return this.branch;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getProgram() {
         return this.program;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getCode() {
         return this.code;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getGrade() {
         return this.grade;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getCredit() {
         return this.credit;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getMonth_year() {
         return this.month_year;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getReg_no() {
         return this.reg_no;
     }

@@ -23,11 +23,11 @@ import kotlin.text.Charsets;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: HostelPaymentActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelPaymentActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelPaymentActivity extends AppCompatActivity {
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     public WebView webView;
 
@@ -74,9 +74,9 @@ public final class HostelPaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hostel_payment);
         setTitle(getString(R.string.payment));
-        View findViewById = findViewById(R.id.hostelWeb);
-        Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById(R.id.hostelWeb)");
-        setWebView((WebView) findViewById);
+        View viewFindViewById = findViewById(R.id.hostelWeb);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById, "findViewById(R.id.hostelWeb)");
+        setWebView((WebView) viewFindViewById);
         String str = null;
         CookieManager.getInstance().removeAllCookies(null);
         CookieManager.getInstance().removeSessionCookies(null);

@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Survey.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Survey.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Survey {
 
     @SerializedName("btn_status")
@@ -55,37 +55,37 @@ public final /* data */ class Survey {
         return survey.copy(str, str7, str8, str9, z2, str10, str6);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSession() {
         return this.session;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getLastDate() {
         return this.lastDate;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final boolean getComplete() {
         return this.complete;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getSurveyId() {
         return this.surveyId;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getBtnStatus() {
         return this.btnStatus;
     }
@@ -112,14 +112,17 @@ public final /* data */ class Survey {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v13 */
+    /* JADX WARN: Type inference failed for: r1v7, types: [int] */
     public int hashCode() {
-        int hashCode = ((((((this.type.hashCode() * 31) + this.name.hashCode()) * 31) + this.session.hashCode()) * 31) + this.lastDate.hashCode()) * 31;
+        int iHashCode = ((((((this.type.hashCode() * 31) + this.name.hashCode()) * 31) + this.session.hashCode()) * 31) + this.lastDate.hashCode()) * 31;
         boolean z = this.complete;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((hashCode + i) * 31) + this.surveyId.hashCode()) * 31) + this.btnStatus.hashCode();
+        return ((((iHashCode + r1) * 31) + this.surveyId.hashCode()) * 31) + this.btnStatus.hashCode();
     }
 
     public String toString() {

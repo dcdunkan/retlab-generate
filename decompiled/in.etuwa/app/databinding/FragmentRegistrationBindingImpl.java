@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentRegistrationBindingImpl extends FragmentRegistrationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentRegistrationBindingImpl extends FragmentRegistrationBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (181 != variableId) {
+        if (183 != variableId) {
             return false;
         }
         setRegistrationViewModel((RegistrationViewModel) variable);

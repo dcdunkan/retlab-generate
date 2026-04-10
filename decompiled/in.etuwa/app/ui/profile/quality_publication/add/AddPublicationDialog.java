@@ -61,15 +61,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddPublicationDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddPublicationDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddPublicationDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddUpdatePublicationBinding _binding;
 
-    /* renamed from: addPublicationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addPublicationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addPublicationViewModel;
     private String fromDate;
     private String id;
@@ -78,21 +78,21 @@ public final class AddPublicationDialog extends BaseDialog {
     private File pickFile;
     private String reason;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
     private String toDate;
     private String yearId;
 
-    /* compiled from: AddPublicationDialog.kt */
+    /* JADX INFO: compiled from: AddPublicationDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/quality_publication/add/AddPublicationDialog$AddPublicationListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddPublicationListener {
         void onDismiss();
     }
 
-    /* compiled from: AddPublicationDialog.kt */
+    /* JADX INFO: compiled from: AddPublicationDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -142,7 +142,7 @@ public final class AddPublicationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addPublicationDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addPublicationDialog);
@@ -156,7 +156,7 @@ public final class AddPublicationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -169,7 +169,7 @@ public final class AddPublicationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddPublicationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddPublicationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AddPublicationDialog addPublicationDialog2 = this;
@@ -180,7 +180,7 @@ public final class AddPublicationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddPublicationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -205,7 +205,7 @@ public final class AddPublicationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddPublicationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -230,7 +230,7 @@ public final class AddPublicationDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddUpdatePublicationBinding get_binding() {
         return this._binding;
     }
@@ -245,7 +245,7 @@ public final class AddPublicationDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter2.getValue();
     }
 
-    /* compiled from: AddPublicationDialog.kt */
+    /* JADX INFO: compiled from: AddPublicationDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J0\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u0006H\u0007¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/profile/quality_publication/add/AddPublicationDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/quality_publication/add/AddPublicationDialog;", "id", "", "reason", "fromDate", "toDate", XfdfConstants.HEAD, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -375,34 +375,30 @@ public final class AddPublicationDialog extends BaseDialog {
         DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding10 = get_binding();
         Spinner spinner3 = dialogAddUpdatePublicationBinding10 != null ? dialogAddUpdatePublicationBinding10.spinnerYear : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$setUp$1
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter2;
                     AddPublicationDialog addPublicationDialog = AddPublicationDialog.this;
-                    spinnerAdapter2 = addPublicationDialog.getSpinnerAdapter2();
-                    addPublicationDialog.yearId = String.valueOf(spinnerAdapter2.getSemester(position).getId());
+                    addPublicationDialog.yearId = String.valueOf(addPublicationDialog.getSpinnerAdapter2().getSemester(position).getId());
                 }
             });
         }
         DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding11 = get_binding();
         Spinner spinner4 = dialogAddUpdatePublicationBinding11 != null ? dialogAddUpdatePublicationBinding11.spinnerIndex : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$setUp$2
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter;
                     AddPublicationDialog addPublicationDialog = AddPublicationDialog.this;
-                    spinnerAdapter = addPublicationDialog.getSpinnerAdapter();
-                    addPublicationDialog.indexId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    addPublicationDialog.indexId = String.valueOf(addPublicationDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
@@ -411,7 +407,7 @@ public final class AddPublicationDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddPublicationDialog.setUp$lambda$2(AddPublicationDialog.this, view);
+                    AddPublicationDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -420,7 +416,7 @@ public final class AddPublicationDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddPublicationDialog.setUp$lambda$3(AddPublicationDialog.this, view);
+                    AddPublicationDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -431,7 +427,7 @@ public final class AddPublicationDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddPublicationDialog.setUp$lambda$4(AddPublicationDialog.this, view);
+                AddPublicationDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -470,7 +466,7 @@ public final class AddPublicationDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddUpdatePublicationBinding2 == null || (textInputEditText8 = dialogAddUpdatePublicationBinding2.etTitle) == null) ? null : textInputEditText8.getText()), "")) {
@@ -483,11 +479,11 @@ public final class AddPublicationDialog extends BaseDialog {
                     }
                     AddPublicationViewModel addPublicationViewModel = this$0.getAddPublicationViewModel();
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddUpdatePublicationBinding4 == null || (textInputEditText7 = dialogAddUpdatePublicationBinding4.etTitle) == null) ? null : textInputEditText7.getText());
+                    String strValueOf = String.valueOf((dialogAddUpdatePublicationBinding4 == null || (textInputEditText7 = dialogAddUpdatePublicationBinding4.etTitle) == null) ? null : textInputEditText7.getText());
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding5 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddUpdatePublicationBinding5 == null || (textInputEditText6 = dialogAddUpdatePublicationBinding5.etJournel) == null) ? null : textInputEditText6.getText());
+                    String strValueOf2 = String.valueOf((dialogAddUpdatePublicationBinding5 == null || (textInputEditText6 = dialogAddUpdatePublicationBinding5.etJournel) == null) ? null : textInputEditText6.getText());
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding6 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogAddUpdatePublicationBinding6 == null || (textInputEditText5 = dialogAddUpdatePublicationBinding6.etConference) == null) ? null : textInputEditText5.getText());
+                    String strValueOf3 = String.valueOf((dialogAddUpdatePublicationBinding6 == null || (textInputEditText5 = dialogAddUpdatePublicationBinding6.etConference) == null) ? null : textInputEditText5.getText());
                     String str = this$0.indexId;
                     Intrinsics.checkNotNull(str);
                     String str2 = this$0.yearId;
@@ -499,7 +495,7 @@ public final class AddPublicationDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addPublicationViewModel.addPublicationData(valueOf, valueOf2, valueOf3, str, str2, file);
+                    addPublicationViewModel.addPublicationData(strValueOf, strValueOf2, strValueOf3, str, str2, file);
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding7 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddUpdatePublicationBinding7 != null ? dialogAddUpdatePublicationBinding7.completionCard : null;
                     if (linearLayout != null) {
@@ -531,16 +527,16 @@ public final class AddPublicationDialog extends BaseDialog {
             }
             AddPublicationViewModel addPublicationViewModel2 = this$0.getAddPublicationViewModel();
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding12 = this$0.get_binding();
-            String valueOf4 = String.valueOf((dialogAddUpdatePublicationBinding12 == null || (textInputEditText3 = dialogAddUpdatePublicationBinding12.etTitle) == null) ? null : textInputEditText3.getText());
+            String strValueOf4 = String.valueOf((dialogAddUpdatePublicationBinding12 == null || (textInputEditText3 = dialogAddUpdatePublicationBinding12.etTitle) == null) ? null : textInputEditText3.getText());
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding13 = this$0.get_binding();
-            String valueOf5 = String.valueOf((dialogAddUpdatePublicationBinding13 == null || (textInputEditText2 = dialogAddUpdatePublicationBinding13.etJournel) == null) ? null : textInputEditText2.getText());
+            String strValueOf5 = String.valueOf((dialogAddUpdatePublicationBinding13 == null || (textInputEditText2 = dialogAddUpdatePublicationBinding13.etJournel) == null) ? null : textInputEditText2.getText());
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding14 = this$0.get_binding();
-            String valueOf6 = String.valueOf((dialogAddUpdatePublicationBinding14 == null || (textInputEditText = dialogAddUpdatePublicationBinding14.etConference) == null) ? null : textInputEditText.getText());
+            String strValueOf6 = String.valueOf((dialogAddUpdatePublicationBinding14 == null || (textInputEditText = dialogAddUpdatePublicationBinding14.etConference) == null) ? null : textInputEditText.getText());
             String str3 = this$0.indexId;
             Intrinsics.checkNotNull(str3);
             String str4 = this$0.yearId;
             Intrinsics.checkNotNull(str4);
-            addPublicationViewModel2.addPublicationData(valueOf4, valueOf5, valueOf6, str3, str4);
+            addPublicationViewModel2.addPublicationData(strValueOf4, strValueOf5, strValueOf6, str3, str4);
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding15 = this$0.get_binding();
             LinearLayout linearLayout2 = dialogAddUpdatePublicationBinding15 != null ? dialogAddUpdatePublicationBinding15.completionCard : null;
             if (linearLayout2 == null) {
@@ -569,15 +565,15 @@ public final class AddPublicationDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddUpdatePublicationBinding == null || (textView4 = dialogAddUpdatePublicationBinding.completionFileName) == null) ? null : textView4.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddUpdatePublicationBinding2 == null || (textInputEditText8 = dialogAddUpdatePublicationBinding2.etTitle) == null) ? null : textInputEditText8.getText()), "")) {
@@ -592,11 +588,11 @@ public final class AddPublicationDialog extends BaseDialog {
                     String str = this$0.id;
                     Intrinsics.checkNotNull(str);
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddUpdatePublicationBinding4 == null || (textInputEditText7 = dialogAddUpdatePublicationBinding4.etTitle) == null) ? null : textInputEditText7.getText());
+                    String strValueOf = String.valueOf((dialogAddUpdatePublicationBinding4 == null || (textInputEditText7 = dialogAddUpdatePublicationBinding4.etTitle) == null) ? null : textInputEditText7.getText());
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding5 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddUpdatePublicationBinding5 == null || (textInputEditText6 = dialogAddUpdatePublicationBinding5.etJournel) == null) ? null : textInputEditText6.getText());
+                    String strValueOf2 = String.valueOf((dialogAddUpdatePublicationBinding5 == null || (textInputEditText6 = dialogAddUpdatePublicationBinding5.etJournel) == null) ? null : textInputEditText6.getText());
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding6 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogAddUpdatePublicationBinding6 == null || (textInputEditText5 = dialogAddUpdatePublicationBinding6.etConference) == null) ? null : textInputEditText5.getText());
+                    String strValueOf3 = String.valueOf((dialogAddUpdatePublicationBinding6 == null || (textInputEditText5 = dialogAddUpdatePublicationBinding6.etConference) == null) ? null : textInputEditText5.getText());
                     String str2 = this$0.indexId;
                     Intrinsics.checkNotNull(str2);
                     String str3 = this$0.yearId;
@@ -608,7 +604,7 @@ public final class AddPublicationDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addPublicationViewModel.addPublicationData(str, valueOf, valueOf2, valueOf3, str2, str3, file);
+                    addPublicationViewModel.addPublicationData(str, strValueOf, strValueOf2, strValueOf3, str2, str3, file);
                     DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding7 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddUpdatePublicationBinding7 != null ? dialogAddUpdatePublicationBinding7.completionCard : null;
                     if (linearLayout != null) {
@@ -642,27 +638,28 @@ public final class AddPublicationDialog extends BaseDialog {
             String str4 = this$0.id;
             Intrinsics.checkNotNull(str4);
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding12 = this$0.get_binding();
-            String valueOf4 = String.valueOf((dialogAddUpdatePublicationBinding12 == null || (textInputEditText3 = dialogAddUpdatePublicationBinding12.etTitle) == null) ? null : textInputEditText3.getText());
+            String strValueOf4 = String.valueOf((dialogAddUpdatePublicationBinding12 == null || (textInputEditText3 = dialogAddUpdatePublicationBinding12.etTitle) == null) ? null : textInputEditText3.getText());
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding13 = this$0.get_binding();
-            String valueOf5 = String.valueOf((dialogAddUpdatePublicationBinding13 == null || (textInputEditText2 = dialogAddUpdatePublicationBinding13.etJournel) == null) ? null : textInputEditText2.getText());
+            String strValueOf5 = String.valueOf((dialogAddUpdatePublicationBinding13 == null || (textInputEditText2 = dialogAddUpdatePublicationBinding13.etJournel) == null) ? null : textInputEditText2.getText());
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding14 = this$0.get_binding();
             if (dialogAddUpdatePublicationBinding14 != null && (textInputEditText = dialogAddUpdatePublicationBinding14.etConference) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            String valueOf6 = String.valueOf(editable);
+            String strValueOf6 = String.valueOf(text);
             String str5 = this$0.indexId;
             Intrinsics.checkNotNull(str5);
             String str6 = this$0.yearId;
             Intrinsics.checkNotNull(str6);
-            addPublicationViewModel2.updatePublicationData(str4, valueOf4, valueOf5, valueOf6, str5, str6);
+            addPublicationViewModel2.updatePublicationData(str4, strValueOf4, strValueOf5, strValueOf6, str5, str6);
         } catch (Exception unused) {
         }
     }
 
     private final void listenSpinnerResponse() {
-        getAddPublicationViewModel().getResponse().observe(getViewLifecycleOwner(), new AddPublicationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$listenSpinnerResponse$1
+        getAddPublicationViewModel().getResponse().observe(getViewLifecycleOwner(), new AddPublicationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddPublicationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddPublicationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -699,11 +696,8 @@ public final class AddPublicationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter;
-                IndexSpinnerAdapter spinnerAdapter2;
-                DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -712,10 +706,8 @@ public final class AddPublicationDialog extends BaseDialog {
                     if (data != null) {
                         AddPublicationDialog addPublicationDialog = AddPublicationDialog.this;
                         try {
-                            spinnerAdapter = addPublicationDialog.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getIndex());
-                            spinnerAdapter2 = addPublicationDialog.getSpinnerAdapter2();
-                            spinnerAdapter2.addItems(data.getYears());
+                            addPublicationDialog.getSpinnerAdapter().addItems(data.getIndex());
+                            addPublicationDialog.getSpinnerAdapter2().addItems(data.getYears());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -735,7 +727,7 @@ public final class AddPublicationDialog extends BaseDialog {
                     return;
                 }
                 AddPublicationDialog.this.hideProgress();
-                dialogAddUpdatePublicationBinding = AddPublicationDialog.this.get_binding();
+                DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding = AddPublicationDialog.this.get_binding();
                 if (dialogAddUpdatePublicationBinding == null || (spinner = dialogAddUpdatePublicationBinding.spinnerYear) == null) {
                     return;
                 }
@@ -750,7 +742,7 @@ public final class AddPublicationDialog extends BaseDialog {
         getAddPublicationViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPublicationDialog.listenAddResponse$lambda$6(AddPublicationDialog.this, (Resource) obj);
+                AddPublicationDialog.listenAddResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -818,7 +810,7 @@ public final class AddPublicationDialog extends BaseDialog {
         getAddPublicationViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPublicationDialog.listenAddResponse2$lambda$8(AddPublicationDialog.this, (Resource) obj);
+                AddPublicationDialog.listenAddResponse2$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -886,7 +878,7 @@ public final class AddPublicationDialog extends BaseDialog {
         getAddPublicationViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPublicationDialog.listenUpdateResponse$lambda$10(AddPublicationDialog.this, (Resource) obj);
+                AddPublicationDialog.listenUpdateResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -954,7 +946,7 @@ public final class AddPublicationDialog extends BaseDialog {
         getAddPublicationViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.quality_publication.add.AddPublicationDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPublicationDialog.listenProgressResponse$lambda$12(AddPublicationDialog.this, (Resource) obj);
+                AddPublicationDialog.listenProgressResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -985,18 +977,18 @@ public final class AddPublicationDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddUpdatePublicationBinding2 != null ? dialogAddUpdatePublicationBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddUpdatePublicationBinding dialogAddUpdatePublicationBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddUpdatePublicationBinding3 != null ? dialogAddUpdatePublicationBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1004,13 +996,13 @@ public final class AddPublicationDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -1036,24 +1028,24 @@ public final class AddPublicationDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

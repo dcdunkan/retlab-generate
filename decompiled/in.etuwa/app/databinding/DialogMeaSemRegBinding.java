@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.mea.MeaSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogMeaSemRegBinding extends ViewDataBinding {
     public final RadioGroup backGroup;
     public final RadioButton backNo;

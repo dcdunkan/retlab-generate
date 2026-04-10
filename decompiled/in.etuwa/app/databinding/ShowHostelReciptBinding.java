@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ShowHostelReciptBinding implements ViewBinding {
     public final TextView hostReAmount;
     public final TextView hostReDate;
@@ -37,11 +37,11 @@ public final class ShowHostelReciptBinding implements ViewBinding {
     }
 
     public static ShowHostelReciptBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.show_hostel_recipt, parent, false);
+        View viewInflate = inflater.inflate(R.layout.show_hostel_recipt, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ShowHostelReciptBinding bind(View rootView) {

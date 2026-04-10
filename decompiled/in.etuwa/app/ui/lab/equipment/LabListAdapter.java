@@ -11,18 +11,19 @@ import in.etuwa.app.R;
 import in.etuwa.app.data.model.lab.LabList;
 import in.etuwa.app.helper.EmptyViewHolder;
 import in.etuwa.app.ui.base.BaseViewHolder;
+import in.etuwa.app.ui.lab.LabFragment;
 import in.etuwa.app.ui.lab.equipment.LabListAdapter;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LabListAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LabListAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LabListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<LabList> labList = new ArrayList<>();
     private CallBack listener;
 
-    /* compiled from: LabListAdapter.kt */
+    /* JADX INFO: compiled from: LabListAdapter.kt */
     @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bf\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H&¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/lab/equipment/LabListAdapter$CallBack;", "", "onLabListClick", "", CommonCssConstants.POSITION, "", "labId", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void onLabListClick(int position, String labId);
@@ -32,18 +33,18 @@ public final class LabListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_lab_list, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …_lab_list, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_lab_list, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …_lab_list, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -59,7 +60,7 @@ public final class LabListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         return !this.labList.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: LabListAdapter.kt */
+    /* JADX INFO: compiled from: LabListAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\n\u001a\u00020\u000bH\u0014J\u0010\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/lab/equipment/LabListAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/lab/equipment/LabListAdapter;Landroid/view/View;)V", "equip", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "labName", "safety", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView equip;
@@ -94,7 +95,7 @@ public final class LabListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.lab.equipment.LabListAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LabListAdapter.ViewHolder.onBind$lambda$0(LabListAdapter.this, labList, view);
+                        LabListAdapter.ViewHolder.onBind$lambda$0(labListAdapter, labList, view);
                     }
                 });
                 TextView textView2 = this.safety;
@@ -102,7 +103,7 @@ public final class LabListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.lab.equipment.LabListAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LabListAdapter.ViewHolder.onBind$lambda$1(LabListAdapter.this, labList, view);
+                        LabListAdapter.ViewHolder.onBind$lambda$1(labListAdapter2, labList, view);
                     }
                 });
             } catch (Exception unused) {
@@ -144,6 +145,10 @@ public final class LabListAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     }
 
     public final void setCallBack(LabListFragment context) {
+        this.listener = context;
+    }
+
+    public final void setCallBack2(LabFragment context) {
         this.listener = context;
     }
 }

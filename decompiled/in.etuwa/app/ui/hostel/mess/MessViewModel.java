@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MessViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MessViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MessViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final HostelRepository hostelRepository;
@@ -33,8 +33,8 @@ public final class MessViewModel extends ViewModel {
     public final void getMessData() {
         this.messResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<MessResponse> observeOn = this.hostelRepository.getHostelMessApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<MessResponse, Unit> function1 = new Function1<MessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.MessViewModel$getMessData$1
+        Single<MessResponse> singleObserveOn = this.hostelRepository.getHostelMessApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<MessResponse, Unit> function1 = new Function1<MessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.MessViewModel.getMessData.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class MessViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MessResponse messResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessViewModel.this.messResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(messResponse));
+                MessViewModel.this.messResponse.postValue(Resource.INSTANCE.success(messResponse));
             }
         };
         Consumer<? super MessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.MessViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessViewModel.getMessData$lambda$0(Function1.this, obj);
+                MessViewModel.getMessData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.MessViewModel$getMessData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.MessViewModel.getMessData.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class MessViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MessViewModel.this.messResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                MessViewModel.this.messResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.MessViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mess.MessViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MessViewModel.getMessData$lambda$1(Function1.this, obj);
+                MessViewModel.getMessData$lambda$1(function12, obj);
             }
         }));
     }

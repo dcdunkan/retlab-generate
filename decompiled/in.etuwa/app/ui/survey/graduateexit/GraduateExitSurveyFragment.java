@@ -41,25 +41,25 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: GraduateExitSurveyFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: GraduateExitSurveyFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class GraduateExitSurveyFragment extends BaseFragment implements GraduateExitSurveyAdapter.SurveyCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentGraduateExitSurveyListBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: graduateExitSurveyViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: graduateExitSurveyViewModel$delegate, reason: from kotlin metadata */
     private final Lazy graduateExitSurveyViewModel;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: GraduateExitSurveyFragment.kt */
+    /* JADX INFO: compiled from: GraduateExitSurveyFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -109,7 +109,7 @@ public final class GraduateExitSurveyFragment extends BaseFragment implements Gr
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return graduateExitSurveyFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(graduateExitSurveyFragment);
@@ -123,7 +123,7 @@ public final class GraduateExitSurveyFragment extends BaseFragment implements Gr
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -136,7 +136,7 @@ public final class GraduateExitSurveyFragment extends BaseFragment implements Gr
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(GraduateExitSurveyViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(GraduateExitSurveyViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final GraduateExitSurveyFragment graduateExitSurveyFragment2 = this;
@@ -182,7 +182,7 @@ public final class GraduateExitSurveyFragment extends BaseFragment implements Gr
         return (GraduateExitSurveyAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentGraduateExitSurveyListBinding get_binding() {
         return this._binding;
     }
@@ -191,7 +191,7 @@ public final class GraduateExitSurveyFragment extends BaseFragment implements Gr
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: GraduateExitSurveyFragment.kt */
+    /* JADX INFO: compiled from: GraduateExitSurveyFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/survey/graduateexit/GraduateExitSurveyFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/survey/graduateexit/GraduateExitSurveyFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -257,7 +257,7 @@ public final class GraduateExitSurveyFragment extends BaseFragment implements Gr
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.survey.graduateexit.GraduateExitSurveyFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                GraduateExitSurveyFragment.setUp$lambda$0(GraduateExitSurveyFragment.this);
+                GraduateExitSurveyFragment.setUp$lambda$0(this.f$0);
             }
         });
     }
@@ -278,7 +278,7 @@ public final class GraduateExitSurveyFragment extends BaseFragment implements Gr
         getGraduateExitSurveyViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.survey.graduateexit.GraduateExitSurveyFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                GraduateExitSurveyFragment.listenResponse$lambda$2(GraduateExitSurveyFragment.this, (Resource) obj);
+                GraduateExitSurveyFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }

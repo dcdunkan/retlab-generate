@@ -46,18 +46,18 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: HostelFeeConfirmFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelFeeConfirmFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelFeeConfirmFragment extends BaseDialog implements HostelFeesAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentHostelFeeConfirmFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: hostelFeeConfirmViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: hostelFeeConfirmViewModel$delegate, reason: from kotlin metadata */
     private final Lazy hostelFeeConfirmViewModel;
     private FeeDetailListner listener;
     private String month;
@@ -66,7 +66,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
     private Integer type;
     private String year;
 
-    /* compiled from: HostelFeeConfirmFragment.kt */
+    /* JADX INFO: compiled from: HostelFeeConfirmFragment.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/hostel/tkmhostel/fee/payconfirm/HostelFeeConfirmFragment$FeeDetailListner;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface FeeDetailListner {
         void dismiss();
@@ -100,7 +100,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return hostelFeeConfirmFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(hostelFeeConfirmFragment);
@@ -114,7 +114,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -127,7 +127,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HostelFeeConfirmViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HostelFeeConfirmViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final HostelFeeConfirmFragment hostelFeeConfirmFragment2 = this;
@@ -162,7 +162,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentHostelFeeConfirmFragmentBinding get_binding() {
         return this._binding;
     }
@@ -205,7 +205,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
         this.type = num;
     }
 
-    /* compiled from: HostelFeeConfirmFragment.kt */
+    /* JADX INFO: compiled from: HostelFeeConfirmFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/hostel/tkmhostel/fee/payconfirm/HostelFeeConfirmFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/tkmhostel/fee/payconfirm/HostelFeeConfirmFragment;", CommonCssConstants.POSITION, "", "type", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -291,9 +291,10 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
     }
 
     private final void listenResponse() {
-        getHostelFeeConfirmViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new HostelFeeConfirmFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.payconfirm.HostelFeeConfirmFragment$listenResponse$1
+        getHostelFeeConfirmViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new HostelFeeConfirmFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.payconfirm.HostelFeeConfirmFragment.listenResponse.1
 
-            /* compiled from: HostelFeeConfirmFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.tkmhostel.fee.payconfirm.HostelFeeConfirmFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelFeeConfirmFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -330,10 +331,8 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelMonthResponse> resource) {
-                HostelFeesAdapter adapter;
-                FragmentHostelFeeConfirmFragmentBinding fragmentHostelFeeConfirmFragmentBinding;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -355,7 +354,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
                 if (data != null) {
                     HostelFeeConfirmFragment hostelFeeConfirmFragment = HostelFeeConfirmFragment.this;
                     try {
-                        adapter = hostelFeeConfirmFragment.getAdapter();
+                        HostelFeesAdapter adapter = hostelFeeConfirmFragment.getAdapter();
                         ArrayList<HostelMonth> hostel = data.getHostel();
                         Integer pos = hostelFeeConfirmFragment.getPos();
                         Intrinsics.checkNotNull(pos);
@@ -365,7 +364,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
                         Integer pos2 = hostelFeeConfirmFragment.getPos();
                         Intrinsics.checkNotNull(pos2);
                         System.out.println(hostel2.get(pos2.intValue()));
-                        fragmentHostelFeeConfirmFragmentBinding = hostelFeeConfirmFragment.get_binding();
+                        FragmentHostelFeeConfirmFragmentBinding fragmentHostelFeeConfirmFragmentBinding = hostelFeeConfirmFragment.get_binding();
                         TextView textView = fragmentHostelFeeConfirmFragmentBinding != null ? fragmentHostelFeeConfirmFragmentBinding.monthLbl : null;
                         if (textView == null) {
                             return;
@@ -382,9 +381,10 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
     }
 
     private final void listenResponse2() {
-        getHostelFeeConfirmViewModel().getMonth2Response().observe(getViewLifecycleOwner(), new HostelFeeConfirmFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiAdmissionResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.payconfirm.HostelFeeConfirmFragment$listenResponse2$1
+        getHostelFeeConfirmViewModel().getMonth2Response().observe(getViewLifecycleOwner(), new HostelFeeConfirmFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiAdmissionResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.payconfirm.HostelFeeConfirmFragment.listenResponse2.1
 
-            /* compiled from: HostelFeeConfirmFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.tkmhostel.fee.payconfirm.HostelFeeConfirmFragment$listenResponse2$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelFeeConfirmFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -421,10 +421,8 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelPalaiAdmissionResponse> resource) {
-                HostelFeesAdapter adapter;
-                FragmentHostelFeeConfirmFragmentBinding fragmentHostelFeeConfirmFragmentBinding;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -446,7 +444,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
                 if (data != null) {
                     HostelFeeConfirmFragment hostelFeeConfirmFragment = HostelFeeConfirmFragment.this;
                     try {
-                        adapter = hostelFeeConfirmFragment.getAdapter();
+                        HostelFeesAdapter adapter = hostelFeeConfirmFragment.getAdapter();
                         ArrayList<HostelPalaiAdmission> hostel = data.getHostel();
                         Integer pos = hostelFeeConfirmFragment.getPos();
                         Intrinsics.checkNotNull(pos);
@@ -456,7 +454,7 @@ public final class HostelFeeConfirmFragment extends BaseDialog implements Hostel
                         Integer pos2 = hostelFeeConfirmFragment.getPos();
                         Intrinsics.checkNotNull(pos2);
                         System.out.println(hostel2.get(pos2.intValue()));
-                        fragmentHostelFeeConfirmFragmentBinding = hostelFeeConfirmFragment.get_binding();
+                        FragmentHostelFeeConfirmFragmentBinding fragmentHostelFeeConfirmFragmentBinding = hostelFeeConfirmFragment.get_binding();
                         TextView textView = fragmentHostelFeeConfirmFragmentBinding != null ? fragmentHostelFeeConfirmFragmentBinding.monthLbl : null;
                         if (textView == null) {
                             return;

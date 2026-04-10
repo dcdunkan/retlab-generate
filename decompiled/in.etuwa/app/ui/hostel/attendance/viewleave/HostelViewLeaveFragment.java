@@ -60,23 +60,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: HostelViewLeaveFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelViewLeaveFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelViewLeaveFragment extends BaseFragment implements HostelViewLeaveAdapter.CallBack, HostelApplyLeaveDialog.ApplyLeaveCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentHostelAttViewBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
 
-    /* renamed from: hostelViewLeaveViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: hostelViewLeaveViewModel$delegate, reason: from kotlin metadata */
     private final Lazy hostelViewLeaveViewModel;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* compiled from: HostelViewLeaveFragment.kt */
+    /* JADX INFO: compiled from: HostelViewLeaveFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -126,7 +126,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return hostelViewLeaveFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(hostelViewLeaveFragment);
@@ -140,7 +140,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -153,7 +153,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HostelViewLeaveViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HostelViewLeaveViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final HostelViewLeaveFragment hostelViewLeaveFragment2 = this;
@@ -177,14 +177,12 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                ArrayList arrayList2;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = HostelViewLeaveFragment.this.downList;
-                    HostelViewLeaveFragment hostelViewLeaveFragment3 = HostelViewLeaveFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    HostelViewLeaveFragment hostelViewLeaveFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -193,8 +191,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            arrayList2 = hostelViewLeaveFragment3.downList;
-                            arrayList2.remove(new DownloadModel(downloadModel.getId(), i));
+                            hostelViewLeaveFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -212,12 +209,12 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
         return (HostelViewLeaveAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentHostelAttViewBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: HostelViewLeaveFragment.kt */
+    /* JADX INFO: compiled from: HostelViewLeaveFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/attendance/viewleave/HostelViewLeaveFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/attendance/viewleave/HostelViewLeaveFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -293,7 +290,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveFragment$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HostelViewLeaveFragment.setUp$lambda$1(HostelViewLeaveFragment.this, view);
+                HostelViewLeaveFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -303,16 +300,16 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        HostelApplyLeaveDialog newInstance = HostelApplyLeaveDialog.INSTANCE.newInstance();
-        newInstance.setApplyLeaveCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        HostelApplyLeaveDialog hostelApplyLeaveDialogNewInstance = HostelApplyLeaveDialog.INSTANCE.newInstance();
+        hostelApplyLeaveDialogNewInstance.setApplyLeaveCallBack(this$0);
+        hostelApplyLeaveDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
         getHostelViewLeaveViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelViewLeaveFragment.listenResponse$lambda$3(HostelViewLeaveFragment.this, (Resource) obj);
+                HostelViewLeaveFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -394,7 +391,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
         getHostelViewLeaveViewModel().getDelResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelViewLeaveFragment.listenDeleteResponse$lambda$5(HostelViewLeaveFragment.this, (Resource) obj);
+                HostelViewLeaveFragment.listenDeleteResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -456,7 +453,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
         getHostelViewLeaveViewModel().getSecurityExitResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelViewLeaveFragment.listenExitResponse$lambda$7(HostelViewLeaveFragment.this, (Resource) obj);
+                HostelViewLeaveFragment.listenExitResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -518,7 +515,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
         getHostelViewLeaveViewModel().getSecurityAlreadyExitResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HostelViewLeaveFragment.listenAlreadyExitResponse$lambda$9(HostelViewLeaveFragment.this, (Resource) obj);
+                HostelViewLeaveFragment.listenAlreadyExitResponse$lambda$9(this.f$0, (Resource) obj);
             }
         });
     }
@@ -625,14 +622,14 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
     public void downloadFile(String url, int position, boolean flag) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace, flag)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, "/etlab/assignments/");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace, flag)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, "/etlab/assignments/");
                 return;
             }
             try {
@@ -642,14 +639,14 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading("/etlab/assignments/", url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading("/etlab/assignments/", url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
@@ -664,7 +661,7 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
                 new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveFragment$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        HostelViewLeaveFragment.requestPermission$lambda$10(HostelViewLeaveFragment.this, dialogInterface, i);
+                        HostelViewLeaveFragment.requestPermission$lambda$10(this.f$0, dialogInterface, i);
                     }
                 }).create().show();
             } else {
@@ -684,13 +681,13 @@ public final class HostelViewLeaveFragment extends BaseFragment implements Hoste
     public boolean checkFileExistence(String fileName, boolean flag) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
         if (flag) {
-            Context requireContext = requireContext();
-            Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-            return new ValidChecker(requireContext).checkFileExistence(fileName, "/etlab/assignments/");
+            Context contextRequireContext = requireContext();
+            Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            return new ValidChecker(contextRequireContext).checkFileExistence(fileName, "/etlab/assignments/");
         }
-        Context requireContext2 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-        return new ValidChecker(requireContext2).checkFileExistence(fileName, "/etlab/assignments/");
+        Context contextRequireContext2 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+        return new ValidChecker(contextRequireContext2).checkFileExistence(fileName, "/etlab/assignments/");
     }
 
     @Override // in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveAdapter.CallBack

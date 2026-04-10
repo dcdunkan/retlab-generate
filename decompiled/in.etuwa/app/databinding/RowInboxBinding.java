@@ -3,23 +3,23 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowInboxBinding implements ViewBinding {
     public final TextView inboxBadge;
     public final TextView inboxContent;
     public final TextView inboxDate;
     public final TextView inboxFrom;
     public final TextView inboxSubject;
-    public final LinearLayout inboxView;
-    private final LinearLayout rootView;
+    public final MaterialCardView inboxView;
+    private final MaterialCardView rootView;
 
-    private RowInboxBinding(LinearLayout rootView, TextView inboxBadge, TextView inboxContent, TextView inboxDate, TextView inboxFrom, TextView inboxSubject, LinearLayout inboxView) {
+    private RowInboxBinding(MaterialCardView rootView, TextView inboxBadge, TextView inboxContent, TextView inboxDate, TextView inboxFrom, TextView inboxSubject, MaterialCardView inboxView) {
         this.rootView = rootView;
         this.inboxBadge = inboxBadge;
         this.inboxContent = inboxContent;
@@ -30,7 +30,7 @@ public final class RowInboxBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -39,11 +39,11 @@ public final class RowInboxBinding implements ViewBinding {
     }
 
     public static RowInboxBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_inbox, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_inbox, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowInboxBinding bind(View rootView) {
@@ -62,8 +62,8 @@ public final class RowInboxBinding implements ViewBinding {
                         i = R.id.inbox_subject;
                         TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
                         if (textView5 != null) {
-                            LinearLayout linearLayout = (LinearLayout) rootView;
-                            return new RowInboxBinding(linearLayout, textView, textView2, textView3, textView4, textView5, linearLayout);
+                            MaterialCardView materialCardView = (MaterialCardView) rootView;
+                            return new RowInboxBinding(materialCardView, textView, textView2, textView3, textView4, textView5, materialCardView);
                         }
                     }
                 }

@@ -6,8 +6,8 @@ import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: OrderHistory.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: OrderHistory.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class OrderHistory {
     private final String booking_date;
     private final String id;
@@ -42,32 +42,32 @@ public final /* data */ class OrderHistory {
         return orderHistory.copy(str, str7, str8, str9, str10, str6);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getMenu() {
         return this.menu;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getQuantity() {
         return this.quantity;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getBooking_date() {
         return this.booking_date;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCoursesAttendedBinding implements ViewBinding {
     public final TextView academicTv;
     public final TextView achievementsTv;
@@ -54,11 +54,11 @@ public final class RowCoursesAttendedBinding implements ViewBinding {
     }
 
     public static RowCoursesAttendedBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_courses_attended, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_courses_attended, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCoursesAttendedBinding bind(View rootView) {

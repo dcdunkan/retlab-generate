@@ -48,24 +48,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AchievementsFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AchievementsFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AchievementsFragment extends BaseFragment implements AchievementsAdapter.AchievementsListener, AddAchievementsDialog.AddPublicationListener, AddCourseAttendedDialog.AddCourseListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentAchievementsBinding _binding;
 
-    /* renamed from: achievementsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: achievementsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy achievementsViewModel;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: AchievementsFragment.kt */
+    /* JADX INFO: compiled from: AchievementsFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -125,7 +125,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return achievementsFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(achievementsFragment);
@@ -139,7 +139,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -152,7 +152,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AchievementsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AchievementsViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AchievementsFragment achievementsFragment2 = this;
@@ -198,7 +198,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
         return (AchievementsAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentAchievementsBinding get_binding() {
         return this._binding;
     }
@@ -207,7 +207,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: AchievementsFragment.kt */
+    /* JADX INFO: compiled from: AchievementsFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/achievements/AchievementsFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/achievements/AchievementsFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -273,7 +273,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsFragment$$ExternalSyntheticLambda3
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    AchievementsFragment.setUp$lambda$0(AchievementsFragment.this);
+                    AchievementsFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
@@ -284,7 +284,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsFragment$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AchievementsFragment.setUp$lambda$1(AchievementsFragment.this, view);
+                AchievementsFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -306,16 +306,16 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddAchievementsDialog newInstance = AddAchievementsDialog.INSTANCE.newInstance("", "");
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        AddAchievementsDialog addAchievementsDialogNewInstance = AddAchievementsDialog.INSTANCE.newInstance("", "");
+        addAchievementsDialogNewInstance.setCallBack(this$0);
+        addAchievementsDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
         getAchievementsViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AchievementsFragment.listenResponse$lambda$3(AchievementsFragment.this, (Resource) obj);
+                AchievementsFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -362,7 +362,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
         getAchievementsViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AchievementsFragment.listenDeleteResponse$lambda$5(AchievementsFragment.this, (Resource) obj);
+                AchievementsFragment.listenDeleteResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -454,9 +454,9 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
         Intrinsics.checkNotNullParameter(title, "title");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddAchievementsDialog newInstance = AddAchievementsDialog.INSTANCE.newInstance(id, title);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddAchievementsDialog addAchievementsDialogNewInstance = AddAchievementsDialog.INSTANCE.newInstance(id, title);
+        addAchievementsDialogNewInstance.setCallBack(this);
+        addAchievementsDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void deleteView(final String id) {
@@ -465,7 +465,7 @@ public final class AchievementsFragment extends BaseFragment implements Achievem
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsFragment$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                AchievementsFragment.deleteView$lambda$6(AchievementsFragment.this, id, dialogInterface, i);
+                AchievementsFragment.deleteView$lambda$6(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsFragment$$ExternalSyntheticLambda1

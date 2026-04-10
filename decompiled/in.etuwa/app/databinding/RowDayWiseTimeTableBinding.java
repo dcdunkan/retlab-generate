@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowDayWiseTimeTableBinding implements ViewBinding {
     public final TextView hourTv;
     private final CardView rootView;
@@ -38,11 +38,11 @@ public final class RowDayWiseTimeTableBinding implements ViewBinding {
     }
 
     public static RowDayWiseTimeTableBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_day_wise_time_table, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_day_wise_time_table, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowDayWiseTimeTableBinding bind(View rootView) {

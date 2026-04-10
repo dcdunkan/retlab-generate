@@ -7,8 +7,8 @@ import in.etuwa.app.ui.base.BaseActivity;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: VideoPlayerActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: VideoPlayerActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class VideoPlayerActivity extends BaseActivity {
     private String videoLink = "";
 

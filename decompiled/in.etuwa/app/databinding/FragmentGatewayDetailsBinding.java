@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.gateway.GatewayViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentGatewayDetailsBinding extends ViewDataBinding {
     public final TextView addrssTv;
     public final TextView contactTv;

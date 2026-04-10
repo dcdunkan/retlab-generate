@@ -6,34 +6,38 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.notice.NoticeViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class NoticeFragmentBinding extends ViewDataBinding {
     public final CardView cardInfo;
-    public final LinearLayout dash2;
+    public final CoordinatorLayout dash2;
     public final TextView infoBtn;
 
     @Bindable
     protected NoticeViewModel mNoticeViewModel;
     public final RecyclerView rvNotice;
-    public final SwipeRefreshLayout swipeLayout;
+    public final RecyclerView rvNoticeMain;
+    public final LinearLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setNoticeViewModel(NoticeViewModel noticeViewModel);
 
-    protected NoticeFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, CardView cardInfo, LinearLayout dash2, TextView infoBtn, RecyclerView rvNotice, SwipeRefreshLayout swipeLayout) {
+    protected NoticeFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, CardView cardInfo, CoordinatorLayout dash2, TextView infoBtn, RecyclerView rvNotice, RecyclerView rvNoticeMain, LinearLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.cardInfo = cardInfo;
         this.dash2 = dash2;
         this.infoBtn = infoBtn;
         this.rvNotice = rvNotice;
+        this.rvNoticeMain = rvNoticeMain;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public NoticeViewModel getNoticeViewModel() {

@@ -14,8 +14,8 @@ import okhttp3.RequestBody;
 import okio.BufferedSink;
 import org.bouncycastle.cms.CMSAttributeTableGenerator;
 
-/* compiled from: ProgressRequestBody.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ProgressRequestBody.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ProgressRequestBody extends RequestBody {
     private final int DEFAULT_BUFFER_SIZE;
     private final String contentType;
@@ -31,9 +31,9 @@ public final class ProgressRequestBody extends RequestBody {
         this.contentType = contentType;
         this.ignoreFirstNumberOfWriteToCalls = i;
         this.DEFAULT_BUFFER_SIZE = 2048;
-        PublishSubject<Float> create = PublishSubject.create();
-        Intrinsics.checkNotNullExpressionValue(create, "create()");
-        this.getProgressSubject = create;
+        PublishSubject<Float> publishSubjectCreate = PublishSubject.create();
+        Intrinsics.checkNotNullExpressionValue(publishSubjectCreate, "create()");
+        this.getProgressSubject = publishSubjectCreate;
     }
 
     public final Observable<Float> getProgressSubject() {
@@ -41,7 +41,7 @@ public final class ProgressRequestBody extends RequestBody {
     }
 
     @Override // okhttp3.RequestBody
-    /* renamed from: contentType */
+    /* JADX INFO: renamed from: contentType */
     public MediaType getContentType() {
         return MediaType.INSTANCE.parse(this.contentType + "/*");
     }
@@ -60,13 +60,13 @@ public final class ProgressRequestBody extends RequestBody {
         FileInputStream fileInputStream = new FileInputStream(this.mFile);
         try {
             FileInputStream fileInputStream2 = fileInputStream;
-            int read = fileInputStream2.read(bArr);
+            int i = fileInputStream2.read(bArr);
             long j = 0;
             float f = 0.0f;
-            while (read != -1) {
-                j += read;
-                sink.write(bArr, 0, read);
-                read = fileInputStream2.read(bArr);
+            while (i != -1) {
+                j += (long) i;
+                sink.write(bArr, 0, i);
+                i = fileInputStream2.read(bArr);
                 if (this.numWriteToCalls > this.ignoreFirstNumberOfWriteToCalls) {
                     float f2 = (j / length) * 100.0f;
                     if (f2 - f <= 1.0f) {

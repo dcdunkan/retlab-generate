@@ -8,11 +8,11 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DescriptiveQuestions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DescriptiveQuestions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DescriptiveQuestions implements Parcelable {
 
-    /* renamed from: CREATOR, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: CREATOR, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
 
     @SerializedName("is_attended")
@@ -52,27 +52,27 @@ public final /* data */ class DescriptiveQuestions implements Parcelable {
         return descriptiveQuestions.copy(str, z2, str5, str6, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQuestionNo() {
         return this.questionNo;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getIsAttended() {
         return this.isAttended;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMarkObtained() {
         return this.markObtained;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getQuestionContent() {
         return this.questionContent;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getStudentAnswer() {
         return this.studentAnswer;
     }
@@ -98,21 +98,24 @@ public final /* data */ class DescriptiveQuestions implements Parcelable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Type inference failed for: r2v12 */
     public int hashCode() {
         String str = this.questionNo;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         boolean z = this.isAttended;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r2 = z;
+        if (z) {
+            r2 = 1;
         }
-        int i2 = (hashCode + i) * 31;
+        int i = (iHashCode + r2) * 31;
         String str2 = this.markObtained;
-        int hashCode2 = (i2 + (str2 == null ? 0 : str2.hashCode())) * 31;
+        int iHashCode2 = (i + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.questionContent;
-        int hashCode3 = (hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        int iHashCode3 = (iHashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
         String str4 = this.studentAnswer;
-        return hashCode3 + (str4 != null ? str4.hashCode() : 0);
+        return iHashCode3 + (str4 != null ? str4.hashCode() : 0);
     }
 
     public String toString() {
@@ -163,9 +166,9 @@ public final /* data */ class DescriptiveQuestions implements Parcelable {
         parcel.writeString(this.studentAnswer);
     }
 
-    /* compiled from: DescriptiveQuestions.kt */
+    /* JADX INFO: renamed from: in.etuwa.app.data.model.quiz.result.descriptive.DescriptiveQuestions$CREATOR, reason: from kotlin metadata */
+    /* JADX INFO: compiled from: DescriptiveQuestions.kt */
     @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0006H\u0016J\u001d\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0016¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"Lin/etuwa/app/data/model/quiz/result/descriptive/DescriptiveQuestions$CREATOR;", "Landroid/os/Parcelable$Creator;", "Lin/etuwa/app/data/model/quiz/result/descriptive/DescriptiveQuestions;", "()V", "createFromParcel", "parcel", "Landroid/os/Parcel;", "newArray", "", "size", "", "(I)[Lin/etuwa/app/data/model/quiz/result/descriptive/DescriptiveQuestions;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
-    /* renamed from: in.etuwa.app.data.model.quiz.result.descriptive.DescriptiveQuestions$CREATOR, reason: from kotlin metadata */
     public static final class Companion implements Parcelable.Creator<DescriptiveQuestions> {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

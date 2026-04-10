@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.qualifiedexaminations.add.AddQualifiedExaminationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddQualifiedExaminationBindingImpl extends DialogAddQualifiedExaminationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -82,7 +82,7 @@ public class DialogAddQualifiedExaminationBindingImpl extends DialogAddQualified
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (20 != variableId) {
+        if (19 != variableId) {
             return false;
         }
         setAddQualifiedExaminationViewModel((AddQualifiedExaminationViewModel) variable);

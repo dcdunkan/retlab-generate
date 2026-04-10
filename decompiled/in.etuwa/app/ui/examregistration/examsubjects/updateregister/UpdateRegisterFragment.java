@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.Observer;
@@ -16,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.examregister.ExamMessageResponse;
 import in.etuwa.app.data.model.examregister.ExamPayResponse;
@@ -45,21 +45,20 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
-import kotlin.text.StringsKt;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: UpdateRegisterFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: UpdateRegisterFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class UpdateRegisterFragment extends BaseFragment implements UpdateRegisterAdapter.CallBack, ExamSubjectDetailDialog.ExamDetailListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentExamUpdateBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String admissionNo;
     private String batchId;
@@ -68,16 +67,16 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
     private String id;
     private ArrayList<ExamUpdate> list;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
     private double tot;
     private double total;
 
-    /* renamed from: updateRegisterViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: updateRegisterViewModel$delegate, reason: from kotlin metadata */
     private final Lazy updateRegisterViewModel;
 
-    /* compiled from: UpdateRegisterFragment.kt */
+    /* JADX INFO: compiled from: UpdateRegisterFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -127,7 +126,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return updateRegisterFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(updateRegisterFragment);
@@ -141,7 +140,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -154,7 +153,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(UpdateRegisterViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(UpdateRegisterViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final UpdateRegisterFragment updateRegisterFragment2 = this;
@@ -202,7 +201,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         return (UpdateRegisterAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentExamUpdateBinding get_binding() {
         return this._binding;
     }
@@ -244,7 +243,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         this.flag = z;
     }
 
-    /* compiled from: UpdateRegisterFragment.kt */
+    /* JADX INFO: compiled from: UpdateRegisterFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/updateregister/UpdateRegisterFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/examregistration/examsubjects/updateregister/UpdateRegisterFragment;", "id", "", "category", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -303,147 +302,18 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         setUp();
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:80:0x016a  */
     @Override // in.etuwa.app.ui.base.BaseFragment
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct code enable 'Show inconsistent code' option in preferences
+    */
     protected void setUp() {
-        LinearLayout linearLayout;
-        TextView textView;
-        TextView textView2;
-        TextView textView3;
-        FragmentActivity activity = getActivity();
-        if (activity != null) {
-            activity.setTitle("Exam Registration");
-        }
-        hideBaseView();
-        FragmentExamUpdateBinding fragmentExamUpdateBinding = get_binding();
-        RecyclerView recyclerView = fragmentExamUpdateBinding != null ? fragmentExamUpdateBinding.rvExamSubject : null;
-        if (recyclerView != null) {
-            recyclerView.setAdapter(getAdapter());
-        }
-        getAdapter().setCallBack(this);
-        listenResponse();
-        if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sbce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "vjec", false, 2, (Object) null)) {
-            FragmentExamUpdateBinding fragmentExamUpdateBinding2 = get_binding();
-            TextView textView4 = fragmentExamUpdateBinding2 != null ? fragmentExamUpdateBinding2.registerBtn : null;
-            if (textView4 != null) {
-                textView4.setVisibility(0);
-            }
-        }
-        if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "vjec", false, 2, (Object) null)) {
-            FragmentExamUpdateBinding fragmentExamUpdateBinding3 = get_binding();
-            LinearLayout linearLayout2 = fragmentExamUpdateBinding3 != null ? fragmentExamUpdateBinding3.registerLyt : null;
-            if (linearLayout2 != null) {
-                linearLayout2.setVisibility(8);
-            }
-            FragmentExamUpdateBinding fragmentExamUpdateBinding4 = get_binding();
-            LinearLayout linearLayout3 = fragmentExamUpdateBinding4 != null ? fragmentExamUpdateBinding4.payLaterLyt : null;
-            if (linearLayout3 != null) {
-                linearLayout3.setVisibility(8);
-            }
-            FragmentExamUpdateBinding fragmentExamUpdateBinding5 = get_binding();
-            linearLayout = fragmentExamUpdateBinding5 != null ? fragmentExamUpdateBinding5.payLyt : null;
-            if (linearLayout != null) {
-                linearLayout.setVisibility(0);
-            }
-        } else {
-            String str = this.category;
-            Intrinsics.checkNotNull(str);
-            String lowerCase = str.toLowerCase();
-            Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
-            if (StringsKt.contains$default((CharSequence) lowerCase, (CharSequence) "pio", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sbce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null)) {
-                FragmentExamUpdateBinding fragmentExamUpdateBinding6 = get_binding();
-                LinearLayout linearLayout4 = fragmentExamUpdateBinding6 != null ? fragmentExamUpdateBinding6.registerLyt : null;
-                if (linearLayout4 != null) {
-                    linearLayout4.setVisibility(0);
-                }
-                FragmentExamUpdateBinding fragmentExamUpdateBinding7 = get_binding();
-                LinearLayout linearLayout5 = fragmentExamUpdateBinding7 != null ? fragmentExamUpdateBinding7.payLaterLyt : null;
-                if (linearLayout5 != null) {
-                    linearLayout5.setVisibility(8);
-                }
-                FragmentExamUpdateBinding fragmentExamUpdateBinding8 = get_binding();
-                linearLayout = fragmentExamUpdateBinding8 != null ? fragmentExamUpdateBinding8.payLyt : null;
-                if (linearLayout != null) {
-                    linearLayout.setVisibility(8);
-                }
-            } else {
-                String str2 = this.category;
-                Intrinsics.checkNotNull(str2);
-                String lowerCase2 = str2.toLowerCase();
-                Intrinsics.checkNotNullExpressionValue(lowerCase2, "toLowerCase(...)");
-                if (!StringsKt.contains$default((CharSequence) lowerCase2, (CharSequence) "sc", false, 2, (Object) null)) {
-                    String str3 = this.category;
-                    Intrinsics.checkNotNull(str3);
-                    String lowerCase3 = str3.toLowerCase();
-                    Intrinsics.checkNotNullExpressionValue(lowerCase3, "toLowerCase(...)");
-                    if (!StringsKt.contains$default((CharSequence) lowerCase3, (CharSequence) "st", false, 2, (Object) null)) {
-                        FragmentExamUpdateBinding fragmentExamUpdateBinding9 = get_binding();
-                        LinearLayout linearLayout6 = fragmentExamUpdateBinding9 != null ? fragmentExamUpdateBinding9.registerLyt : null;
-                        if (linearLayout6 != null) {
-                            linearLayout6.setVisibility(8);
-                        }
-                        FragmentExamUpdateBinding fragmentExamUpdateBinding10 = get_binding();
-                        LinearLayout linearLayout7 = fragmentExamUpdateBinding10 != null ? fragmentExamUpdateBinding10.payLaterLyt : null;
-                        if (linearLayout7 != null) {
-                            linearLayout7.setVisibility(8);
-                        }
-                        FragmentExamUpdateBinding fragmentExamUpdateBinding11 = get_binding();
-                        linearLayout = fragmentExamUpdateBinding11 != null ? fragmentExamUpdateBinding11.payLyt : null;
-                        if (linearLayout != null) {
-                            linearLayout.setVisibility(0);
-                        }
-                    }
-                }
-                FragmentExamUpdateBinding fragmentExamUpdateBinding12 = get_binding();
-                LinearLayout linearLayout8 = fragmentExamUpdateBinding12 != null ? fragmentExamUpdateBinding12.registerLyt : null;
-                if (linearLayout8 != null) {
-                    linearLayout8.setVisibility(8);
-                }
-                FragmentExamUpdateBinding fragmentExamUpdateBinding13 = get_binding();
-                LinearLayout linearLayout9 = fragmentExamUpdateBinding13 != null ? fragmentExamUpdateBinding13.payLaterLyt : null;
-                if (linearLayout9 != null) {
-                    linearLayout9.setVisibility(0);
-                }
-                FragmentExamUpdateBinding fragmentExamUpdateBinding14 = get_binding();
-                linearLayout = fragmentExamUpdateBinding14 != null ? fragmentExamUpdateBinding14.payLyt : null;
-                if (linearLayout != null) {
-                    linearLayout.setVisibility(8);
-                }
-            }
-        }
-        UpdateRegisterViewModel updateRegisterViewModel = getUpdateRegisterViewModel();
-        String str4 = this.id;
-        Intrinsics.checkNotNull(str4);
-        updateRegisterViewModel.getExamDetails(str4);
-        final HashMap hashMap = new HashMap();
-        new HashMap();
-        FragmentExamUpdateBinding fragmentExamUpdateBinding15 = get_binding();
-        if (fragmentExamUpdateBinding15 != null && (textView3 = fragmentExamUpdateBinding15.payNowBtn) != null) {
-            textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    UpdateRegisterFragment.setUp$lambda$1(UpdateRegisterFragment.this, hashMap, view);
-                }
-            });
-        }
-        FragmentExamUpdateBinding fragmentExamUpdateBinding16 = get_binding();
-        if (fragmentExamUpdateBinding16 != null && (textView2 = fragmentExamUpdateBinding16.payLaterBtn) != null) {
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    UpdateRegisterFragment.setUp$lambda$2(UpdateRegisterFragment.this, hashMap, view);
-                }
-            });
-        }
-        FragmentExamUpdateBinding fragmentExamUpdateBinding17 = get_binding();
-        if (fragmentExamUpdateBinding17 == null || (textView = fragmentExamUpdateBinding17.registerBtn) == null) {
-            return;
-        }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment$$ExternalSyntheticLambda2
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                UpdateRegisterFragment.setUp$lambda$3(UpdateRegisterFragment.this, hashMap, view);
-            }
-        });
+        /*
+            Method dump skipped, instruction units count: 532
+            To view this dump change 'Code comments level' option to 'DEBUG'
+        */
+        throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment.setUp():void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -452,26 +322,26 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         Intrinsics.checkNotNullParameter(examFeeReceipt, "$examFeeReceipt");
         new ArrayList();
         ArrayList<ExamUpdate> items = this$0.getAdapter().getItems();
-        HashMap hashMap = examFeeReceipt;
+        HashMap map = examFeeReceipt;
         String str = this$0.id;
         Intrinsics.checkNotNull(str);
-        hashMap.put("id", str);
+        map.put("id", str);
         String str2 = this$0.admissionNo;
         Intrinsics.checkNotNull(str2);
-        hashMap.put("admission_no", str2);
+        map.put("admission_no", str2);
         String str3 = this$0.batchId;
         Intrinsics.checkNotNull(str3);
-        hashMap.put("batch_id", str3);
-        hashMap.put("Payment", "1");
+        map.put("batch_id", str3);
+        map.put("Payment", "1");
         int size = items.size();
         System.out.println(this$0.selected);
         for (int i = 0; i < size; i++) {
             if (items.get(i).is_selected()) {
-                hashMap.put("feehead_id[" + items.get(i).getFeehead_id() + "]", items.get(i).getFeehead_id());
+                map.put("feehead_id[" + items.get(i).getFeehead_id() + "]", items.get(i).getFeehead_id());
             }
         }
         System.out.println(examFeeReceipt);
-        this$0.getUpdateRegisterViewModel().getExamPay(hashMap);
+        this$0.getUpdateRegisterViewModel().getExamPay(map);
         this$0.listenPayResponse();
     }
 
@@ -481,26 +351,26 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         Intrinsics.checkNotNullParameter(examFeeReceipt, "$examFeeReceipt");
         new ArrayList();
         ArrayList<ExamUpdate> items = this$0.getAdapter().getItems();
-        HashMap hashMap = examFeeReceipt;
+        HashMap map = examFeeReceipt;
         String str = this$0.id;
         Intrinsics.checkNotNull(str);
-        hashMap.put("id", str);
+        map.put("id", str);
         String str2 = this$0.admissionNo;
         Intrinsics.checkNotNull(str2);
-        hashMap.put("admission_no", str2);
+        map.put("admission_no", str2);
         String str3 = this$0.batchId;
         Intrinsics.checkNotNull(str3);
-        hashMap.put("batch_id", str3);
-        hashMap.put("PayLater", "1");
+        map.put("batch_id", str3);
+        map.put("PayLater", "1");
         int size = items.size();
         System.out.println(this$0.selected);
         for (int i = 0; i < size; i++) {
             if (items.get(i).is_selected()) {
-                hashMap.put("feehead_id[" + items.get(i).getFeehead_id() + "]", items.get(i).getFeehead_id());
+                map.put("feehead_id[" + items.get(i).getFeehead_id() + "]", items.get(i).getFeehead_id());
             }
         }
         System.out.println(examFeeReceipt);
-        this$0.getUpdateRegisterViewModel().getScStPay(hashMap);
+        this$0.getUpdateRegisterViewModel().getScStPay(map);
         this$0.listenScStPayResponse();
     }
 
@@ -510,26 +380,26 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         Intrinsics.checkNotNullParameter(examFeeReceipt, "$examFeeReceipt");
         new ArrayList();
         ArrayList<ExamUpdate> items = this$0.getAdapter().getItems();
-        HashMap hashMap = examFeeReceipt;
+        HashMap map = examFeeReceipt;
         String str = this$0.id;
         Intrinsics.checkNotNull(str);
-        hashMap.put("id", str);
+        map.put("id", str);
         String str2 = this$0.admissionNo;
         Intrinsics.checkNotNull(str2);
-        hashMap.put("admission_no", str2);
+        map.put("admission_no", str2);
         String str3 = this$0.batchId;
         Intrinsics.checkNotNull(str3);
-        hashMap.put("batch_id", str3);
-        hashMap.put("RegisterExam", "1");
+        map.put("batch_id", str3);
+        map.put("RegisterExam", "1");
         int size = items.size();
         System.out.println(this$0.selected);
         for (int i = 0; i < size; i++) {
             if (items.get(i).is_selected()) {
-                hashMap.put("feehead_id[" + items.get(i).getFeehead_id() + "]", items.get(i).getFeehead_id());
+                map.put("feehead_id[" + items.get(i).getFeehead_id() + "]", items.get(i).getFeehead_id());
             }
         }
         System.out.println(examFeeReceipt);
-        this$0.getUpdateRegisterViewModel().getPioPay(hashMap);
+        this$0.getUpdateRegisterViewModel().getPioPay(map);
         this$0.listenPioPayResponse();
     }
 
@@ -537,7 +407,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         getUpdateRegisterViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                UpdateRegisterFragment.listenResponse$lambda$5(UpdateRegisterFragment.this, (Resource) obj);
+                UpdateRegisterFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -597,7 +467,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
                 }
                 this$0.total = d;
                 this$0.tot = d;
-                if (d > 0.0d) {
+                if (d > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                     FragmentExamUpdateBinding fragmentExamUpdateBinding3 = this$0.get_binding();
                     TextView textView2 = fragmentExamUpdateBinding3 != null ? fragmentExamUpdateBinding3.payNowBtn : null;
                     if (textView2 != null) {
@@ -630,7 +500,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
                     }
                 }
                 if (this$0.flag) {
-                    if (this$0.tot == 0.0d) {
+                    if (this$0.tot == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                         FragmentExamUpdateBinding fragmentExamUpdateBinding5 = this$0.get_binding();
                         LinearLayout linearLayout = fragmentExamUpdateBinding5 != null ? fragmentExamUpdateBinding5.payLyt : null;
                         if (linearLayout != null) {
@@ -666,15 +536,15 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         getUpdateRegisterViewModel().getPayResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                UpdateRegisterFragment.listenPayResponse$lambda$7(UpdateRegisterFragment.this, (Resource) obj);
+                UpdateRegisterFragment.listenPayResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void listenPayResponse$lambda$7(UpdateRegisterFragment this$0, Resource resource) {
-        double parseDouble;
-        double parseDouble2;
+        double d;
+        double d2;
         RecyclerView rvExamSubject;
         RecyclerView rvExamSubject2;
         RecyclerView recyclerView;
@@ -709,32 +579,32 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         if (examPayResponse != null) {
             this$0.showBaseView();
             if (examPayResponse.is_registered()) {
-                parseDouble = 0.0d;
-                parseDouble2 = 0.0d;
+                d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
+                d2 = 0.0d;
             } else {
-                parseDouble = Double.parseDouble(examPayResponse.getExam().get(0).getFineAmount());
-                parseDouble2 = Double.parseDouble(examPayResponse.getExam().get(0).getFixed_amount());
+                d = Double.parseDouble(examPayResponse.getExam().get(0).getFineAmount());
+                d2 = Double.parseDouble(examPayResponse.getExam().get(0).getFixed_amount());
             }
-            double d = this$0.tot;
-            double d2 = d + parseDouble + parseDouble2;
+            double d3 = this$0.tot;
+            double d4 = d3 + d + d2;
             String url = examPayResponse.getUrl();
             if (examPayResponse.getLogin() && !Intrinsics.areEqual(examPayResponse.getError(), "Exam Registration is not enabled")) {
+                System.out.println(d3);
                 System.out.println(d);
-                System.out.println(parseDouble);
-                System.out.println(parseDouble2);
                 System.out.println(d2);
+                System.out.println(d4);
                 System.out.println((Object) url);
                 FragmentManager childFragmentManager = this$0.getChildFragmentManager();
                 Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-                ExamSubjectDetailDialog newInstance = ExamSubjectDetailDialog.INSTANCE.newInstance(String.valueOf(d), String.valueOf(parseDouble2), String.valueOf(parseDouble), String.valueOf(d2), url);
-                newInstance.setCallBackUpdate(this$0);
-                newInstance.show(childFragmentManager, (String) null);
+                ExamSubjectDetailDialog examSubjectDetailDialogNewInstance = ExamSubjectDetailDialog.INSTANCE.newInstance(String.valueOf(d3), String.valueOf(d2), String.valueOf(d), String.valueOf(d4), url);
+                examSubjectDetailDialogNewInstance.setCallBackUpdate(this$0);
+                examSubjectDetailDialogNewInstance.show(childFragmentManager, (String) null);
                 return;
             }
             if (examPayResponse.getLogin() && Intrinsics.areEqual(examPayResponse.getError(), "Exam Registration is not enabled")) {
+                System.out.println(d4);
+                System.out.println(d);
                 System.out.println(d2);
-                System.out.println(parseDouble);
-                System.out.println(parseDouble2);
                 FragmentExamUpdateBinding fragmentExamUpdateBinding2 = this$0.get_binding();
                 if (fragmentExamUpdateBinding2 == null || (rvExamSubject2 = fragmentExamUpdateBinding2.rvExamSubject) == null) {
                     return;
@@ -756,15 +626,15 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         getUpdateRegisterViewModel().getPioPayResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                UpdateRegisterFragment.listenPioPayResponse$lambda$9(UpdateRegisterFragment.this, (Resource) obj);
+                UpdateRegisterFragment.listenPioPayResponse$lambda$9(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void listenPioPayResponse$lambda$9(UpdateRegisterFragment this$0, Resource resource) {
-        double parseDouble;
         double d;
+        double d2;
         RecyclerView rvExamSubject;
         RecyclerView rvExamSubject2;
         RecyclerView rvExamSubject3;
@@ -800,20 +670,20 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         if (examMessageResponse != null) {
             this$0.showBaseView();
             if (examMessageResponse.is_registered()) {
+                d2 = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
                 d = 0.0d;
-                parseDouble = 0.0d;
             } else {
-                double parseDouble2 = Double.parseDouble(examMessageResponse.getExam().get(0).getFineAmount());
-                parseDouble = Double.parseDouble(examMessageResponse.getExam().get(0).getFixed_amount());
-                d = parseDouble2;
+                double d3 = Double.parseDouble(examMessageResponse.getExam().get(0).getFineAmount());
+                d = Double.parseDouble(examMessageResponse.getExam().get(0).getFixed_amount());
+                d2 = d3;
             }
-            double d2 = this$0.tot;
-            double d3 = d2 + d + parseDouble;
+            double d4 = this$0.tot;
+            double d5 = d4 + d2 + d;
             if (examMessageResponse.getLogin() && !Intrinsics.areEqual(examMessageResponse.getError(), "Exam Registration is not enabled") && examMessageResponse.getSuccess()) {
+                System.out.println(d4);
                 System.out.println(d2);
                 System.out.println(d);
-                System.out.println(parseDouble);
-                System.out.println(d3);
+                System.out.println(d5);
                 System.out.println((Object) "");
                 FragmentExamUpdateBinding fragmentExamUpdateBinding2 = this$0.get_binding();
                 if (fragmentExamUpdateBinding2 == null || (rvExamSubject3 = fragmentExamUpdateBinding2.rvExamSubject) == null) {
@@ -824,9 +694,9 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
                 return;
             }
             if (Intrinsics.areEqual(examMessageResponse.getError(), "Exam Registration is not enabled")) {
-                System.out.println(d3);
+                System.out.println(d5);
+                System.out.println(d2);
                 System.out.println(d);
-                System.out.println(parseDouble);
                 FragmentExamUpdateBinding fragmentExamUpdateBinding3 = this$0.get_binding();
                 if (fragmentExamUpdateBinding3 == null || (rvExamSubject2 = fragmentExamUpdateBinding3.rvExamSubject) == null) {
                     return;
@@ -848,15 +718,15 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         getUpdateRegisterViewModel().getScStPayResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterFragment$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                UpdateRegisterFragment.listenScStPayResponse$lambda$11(UpdateRegisterFragment.this, (Resource) obj);
+                UpdateRegisterFragment.listenScStPayResponse$lambda$11(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void listenScStPayResponse$lambda$11(UpdateRegisterFragment this$0, Resource resource) {
-        double parseDouble;
         double d;
+        double d2;
         RecyclerView rvExamSubject;
         RecyclerView rvExamSubject2;
         RecyclerView rvExamSubject3;
@@ -892,20 +762,20 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         if (examMessageResponse != null) {
             this$0.showBaseView();
             if (examMessageResponse.is_registered()) {
+                d2 = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
                 d = 0.0d;
-                parseDouble = 0.0d;
             } else {
-                double parseDouble2 = Double.parseDouble(examMessageResponse.getExam().get(0).getFineAmount());
-                parseDouble = Double.parseDouble(examMessageResponse.getExam().get(0).getFixed_amount());
-                d = parseDouble2;
+                double d3 = Double.parseDouble(examMessageResponse.getExam().get(0).getFineAmount());
+                d = Double.parseDouble(examMessageResponse.getExam().get(0).getFixed_amount());
+                d2 = d3;
             }
-            double d2 = this$0.tot;
-            double d3 = d2 + d + parseDouble;
+            double d4 = this$0.tot;
+            double d5 = d4 + d2 + d;
             if (examMessageResponse.getLogin() && !Intrinsics.areEqual(examMessageResponse.getError(), "Exam Registration is not enabled") && examMessageResponse.getSuccess()) {
+                System.out.println(d4);
                 System.out.println(d2);
                 System.out.println(d);
-                System.out.println(parseDouble);
-                System.out.println(d3);
+                System.out.println(d5);
                 System.out.println((Object) "");
                 FragmentExamUpdateBinding fragmentExamUpdateBinding2 = this$0.get_binding();
                 if (fragmentExamUpdateBinding2 == null || (rvExamSubject3 = fragmentExamUpdateBinding2.rvExamSubject) == null) {
@@ -916,9 +786,9 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
                 return;
             }
             if (Intrinsics.areEqual(examMessageResponse.getError(), "Exam Registration is not enabled")) {
-                System.out.println(d3);
+                System.out.println(d5);
+                System.out.println(d2);
                 System.out.println(d);
-                System.out.println(parseDouble);
                 FragmentExamUpdateBinding fragmentExamUpdateBinding3 = this$0.get_binding();
                 if (fragmentExamUpdateBinding3 == null || (rvExamSubject2 = fragmentExamUpdateBinding3.rvExamSubject) == null) {
                     return;
@@ -969,7 +839,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         Intrinsics.checkNotNullParameter(sel, "sel");
         Intrinsics.checkNotNullParameter(total, "total");
         total.size();
-        this.tot = 0.0d;
+        this.tot = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
         new ArrayList();
         ArrayList<ExamUpdate> items = getAdapter().getItems();
         int size = items.size();
@@ -1003,7 +873,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
         } else {
             z = false;
         }
-        if (this.tot <= 0.0d) {
+        if (this.tot <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             FragmentExamUpdateBinding fragmentExamUpdateBinding2 = get_binding();
             TextView textView2 = fragmentExamUpdateBinding2 != null ? fragmentExamUpdateBinding2.payNowBtn : null;
             if (textView2 != null) {
@@ -1037,7 +907,7 @@ public final class UpdateRegisterFragment extends BaseFragment implements Update
             }
         }
         if (z) {
-            if (this.tot == 0.0d) {
+            if (this.tot == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                 FragmentExamUpdateBinding fragmentExamUpdateBinding8 = get_binding();
                 LinearLayout linearLayout2 = fragmentExamUpdateBinding8 != null ? fragmentExamUpdateBinding8.registerLyt : null;
                 if (linearLayout2 != null) {

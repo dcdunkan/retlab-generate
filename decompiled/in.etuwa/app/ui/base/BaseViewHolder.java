@@ -6,8 +6,8 @@ import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: BaseViewHolder.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: BaseViewHolder.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
     private int currentPosition;
 

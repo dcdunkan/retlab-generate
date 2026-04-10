@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MyDataBase.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MyDataBase.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class MyDataBase extends SQLiteOpenHelper {
     @Override // android.database.sqlite.SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -47,23 +47,23 @@ public final class MyDataBase extends SQLiteOpenHelper {
     public final ArrayList<PushModel> queryMessages() {
         ArrayList<PushModel> arrayList = new ArrayList<>();
         SQLiteDatabase readableDatabase = getReadableDatabase();
-        Cursor query = readableDatabase.query("Student", null, null, null, null, null, "time DESC");
-        Intrinsics.checkNotNullExpressionValue(query, "db.query(TABLE_NAME, nul…$COL_TIME DESC\"\n        )");
-        query.moveToFirst();
+        Cursor cursorQuery = readableDatabase.query("Student", null, null, null, null, null, "time DESC");
+        Intrinsics.checkNotNullExpressionValue(cursorQuery, "db.query(TABLE_NAME, nul…$COL_TIME DESC\"\n        )");
+        cursorQuery.moveToFirst();
         do {
             try {
-                int i = query.getInt(query.getColumnIndex("_id"));
-                String title = query.getString(query.getColumnIndex("title"));
-                String msg = query.getString(query.getColumnIndex(NotificationCompat.CATEGORY_MESSAGE));
-                String time = query.getString(query.getColumnIndex("time"));
+                int i = cursorQuery.getInt(cursorQuery.getColumnIndex("_id"));
+                String title = cursorQuery.getString(cursorQuery.getColumnIndex("title"));
+                String msg = cursorQuery.getString(cursorQuery.getColumnIndex(NotificationCompat.CATEGORY_MESSAGE));
+                String time = cursorQuery.getString(cursorQuery.getColumnIndex("time"));
                 Intrinsics.checkNotNullExpressionValue(title, "title");
                 Intrinsics.checkNotNullExpressionValue(msg, "msg");
                 Intrinsics.checkNotNullExpressionValue(time, "time");
                 arrayList.add(new PushModel(i, title, msg, time));
             } catch (Exception unused) {
             }
-        } while (query.moveToNext());
-        query.close();
+        } while (cursorQuery.moveToNext());
+        cursorQuery.close();
         readableDatabase.close();
         return arrayList;
     }

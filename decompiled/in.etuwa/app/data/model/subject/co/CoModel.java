@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CoModel.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CoModel.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class CoModel {
 
     @SerializedName("co_id")
@@ -24,12 +24,12 @@ public final /* data */ class CoModel {
         return coModel.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getCoId() {
         return this.coId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTopic() {
         return this.topic;
     }

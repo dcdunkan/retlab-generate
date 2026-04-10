@@ -1,11 +1,15 @@
 package in.etuwa.app.ui.teacher;
 
+import android.animation.ValueAnimator;
 import android.content.ComponentCallbacks;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentViewModelLazyKt;
@@ -41,25 +45,25 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: TeacherFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TeacherFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TeacherFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private TeacherFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private boolean flag;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: teacherViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: teacherViewModel$delegate, reason: from kotlin metadata */
     private final Lazy teacherViewModel;
 
-    /* compiled from: TeacherFragment.kt */
+    /* JADX INFO: compiled from: TeacherFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -109,7 +113,7 @@ public final class TeacherFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return teacherFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(teacherFragment);
@@ -123,7 +127,7 @@ public final class TeacherFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -136,7 +140,7 @@ public final class TeacherFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(TeacherViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(TeacherViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final TeacherFragment teacherFragment2 = this;
@@ -182,7 +186,7 @@ public final class TeacherFragment extends BaseFragment {
         return (TeacherAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final TeacherFragmentBinding get_binding() {
         return this._binding;
     }
@@ -199,7 +203,7 @@ public final class TeacherFragment extends BaseFragment {
         this.flag = z;
     }
 
-    /* compiled from: TeacherFragment.kt */
+    /* JADX INFO: compiled from: TeacherFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/teacher/TeacherFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/teacher/TeacherFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -245,10 +249,6 @@ public final class TeacherFragment extends BaseFragment {
     protected void setUp() {
         TextView textView;
         TextView textView2;
-        TextView textView3;
-        TextView textView4;
-        TextView textView5;
-        TextView textView6;
         SwipeRefreshLayout swipeRefreshLayout;
         FragmentActivity activity = getActivity();
         if (activity != null) {
@@ -267,46 +267,27 @@ public final class TeacherFragment extends BaseFragment {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.teacher.TeacherFragment$$ExternalSyntheticLambda0
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    TeacherFragment.setUp$lambda$0(TeacherFragment.this);
+                    TeacherFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
-        if (!this.flag) {
-            TeacherFragmentBinding teacherFragmentBinding3 = get_binding();
-            if (teacherFragmentBinding3 != null && (textView6 = teacherFragmentBinding3.btnSubjectTeacher) != null) {
-                textView6.setBackgroundResource(R.drawable.shape_sharp_corner_fill_blue);
-            }
-            TeacherFragmentBinding teacherFragmentBinding4 = get_binding();
-            if (teacherFragmentBinding4 != null && (textView5 = teacherFragmentBinding4.btnStaffAdvisor) != null) {
-                textView5.setBackgroundResource(R.drawable.shape_sharp_corner_fill_dark);
-            }
-        } else {
-            TeacherFragmentBinding teacherFragmentBinding5 = get_binding();
-            if (teacherFragmentBinding5 != null && (textView2 = teacherFragmentBinding5.btnStaffAdvisor) != null) {
-                textView2.setBackgroundResource(R.drawable.shape_sharp_corner_fill_blue);
-            }
-            TeacherFragmentBinding teacherFragmentBinding6 = get_binding();
-            if (teacherFragmentBinding6 != null && (textView = teacherFragmentBinding6.btnSubjectTeacher) != null) {
-                textView.setBackgroundResource(R.drawable.shape_sharp_corner_fill_dark);
-            }
-        }
-        TeacherFragmentBinding teacherFragmentBinding7 = get_binding();
-        if (teacherFragmentBinding7 != null && (textView4 = teacherFragmentBinding7.btnSubjectTeacher) != null) {
-            textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.teacher.TeacherFragment$$ExternalSyntheticLambda1
+        TeacherFragmentBinding teacherFragmentBinding3 = get_binding();
+        if (teacherFragmentBinding3 != null && (textView2 = teacherFragmentBinding3.btnSubjectTeacher) != null) {
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.teacher.TeacherFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TeacherFragment.setUp$lambda$1(TeacherFragment.this, view);
+                    TeacherFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
-        TeacherFragmentBinding teacherFragmentBinding8 = get_binding();
-        if (teacherFragmentBinding8 == null || (textView3 = teacherFragmentBinding8.btnStaffAdvisor) == null) {
+        TeacherFragmentBinding teacherFragmentBinding4 = get_binding();
+        if (teacherFragmentBinding4 == null || (textView = teacherFragmentBinding4.btnStaffAdvisor) == null) {
             return;
         }
-        textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.teacher.TeacherFragment$$ExternalSyntheticLambda2
+        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.teacher.TeacherFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TeacherFragment.setUp$lambda$2(TeacherFragment.this, view);
+                TeacherFragment.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -327,15 +308,44 @@ public final class TeacherFragment extends BaseFragment {
     public static final void setUp$lambda$1(TeacherFragment this$0, View view) {
         TextView textView;
         TextView textView2;
+        TextView textView3;
+        TextView textView4;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         TeacherFragmentBinding teacherFragmentBinding = this$0.get_binding();
-        if (teacherFragmentBinding != null && (textView2 = teacherFragmentBinding.btnSubjectTeacher) != null) {
-            textView2.setBackgroundResource(R.drawable.shape_sharp_corner_fill_blue);
-        }
+        Intrinsics.checkNotNull(teacherFragmentBinding);
+        TextView textView5 = teacherFragmentBinding.btnSubjectTeacher;
+        Intrinsics.checkNotNullExpressionValue(textView5, "binding!!.btnSubjectTeacher");
         TeacherFragmentBinding teacherFragmentBinding2 = this$0.get_binding();
-        if (teacherFragmentBinding2 != null && (textView = teacherFragmentBinding2.btnStaffAdvisor) != null) {
-            textView.setBackgroundResource(R.drawable.shape_sharp_corner_fill_dark);
+        Intrinsics.checkNotNull(teacherFragmentBinding2);
+        TextView textView6 = teacherFragmentBinding2.btnStaffAdvisor;
+        Intrinsics.checkNotNullExpressionValue(textView6, "binding!!.btnStaffAdvisor");
+        this$0.updateSelection(textView5, textView6);
+        TeacherFragmentBinding teacherFragmentBinding3 = this$0.get_binding();
+        if (teacherFragmentBinding3 != null && (textView4 = teacherFragmentBinding3.btnSubjectTeacher) != null) {
+            textView4.setBackgroundResource(R.drawable.shape_round_selected);
         }
+        TeacherFragmentBinding teacherFragmentBinding4 = this$0.get_binding();
+        if (teacherFragmentBinding4 != null && (textView3 = teacherFragmentBinding4.btnStaffAdvisor) != null) {
+            textView3.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        TeacherFragmentBinding teacherFragmentBinding5 = this$0.get_binding();
+        if (teacherFragmentBinding5 != null && (textView2 = teacherFragmentBinding5.btnSubjectTeacher) != null) {
+            textView2.setTextColor(-1);
+        }
+        TeacherFragmentBinding teacherFragmentBinding6 = this$0.get_binding();
+        if (teacherFragmentBinding6 != null && (textView = teacherFragmentBinding6.btnStaffAdvisor) != null) {
+            textView.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        TeacherFragmentBinding teacherFragmentBinding7 = this$0.get_binding();
+        Intrinsics.checkNotNull(teacherFragmentBinding7);
+        TextView textView7 = teacherFragmentBinding7.btnSubjectTeacher;
+        Intrinsics.checkNotNullExpressionValue(textView7, "binding!!.btnSubjectTeacher");
+        this$0.animateHeight(textView7, 40);
+        TeacherFragmentBinding teacherFragmentBinding8 = this$0.get_binding();
+        Intrinsics.checkNotNull(teacherFragmentBinding8);
+        TextView textView8 = teacherFragmentBinding8.btnStaffAdvisor;
+        Intrinsics.checkNotNullExpressionValue(textView8, "binding!!.btnStaffAdvisor");
+        this$0.animateHeight(textView8, 36);
         this$0.flag = false;
         this$0.listenResponse();
     }
@@ -344,33 +354,101 @@ public final class TeacherFragment extends BaseFragment {
     public static final void setUp$lambda$2(TeacherFragment this$0, View view) {
         TextView textView;
         TextView textView2;
+        TextView textView3;
+        TextView textView4;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         TeacherFragmentBinding teacherFragmentBinding = this$0.get_binding();
-        if (teacherFragmentBinding != null && (textView2 = teacherFragmentBinding.btnStaffAdvisor) != null) {
-            textView2.setBackgroundResource(R.drawable.shape_sharp_corner_fill_blue);
-        }
+        Intrinsics.checkNotNull(teacherFragmentBinding);
+        TextView textView5 = teacherFragmentBinding.btnStaffAdvisor;
+        Intrinsics.checkNotNullExpressionValue(textView5, "binding!!.btnStaffAdvisor");
         TeacherFragmentBinding teacherFragmentBinding2 = this$0.get_binding();
-        if (teacherFragmentBinding2 != null && (textView = teacherFragmentBinding2.btnSubjectTeacher) != null) {
-            textView.setBackgroundResource(R.drawable.shape_sharp_corner_fill_dark);
+        Intrinsics.checkNotNull(teacherFragmentBinding2);
+        TextView textView6 = teacherFragmentBinding2.btnSubjectTeacher;
+        Intrinsics.checkNotNullExpressionValue(textView6, "binding!!.btnSubjectTeacher");
+        this$0.updateSelection(textView5, textView6);
+        TeacherFragmentBinding teacherFragmentBinding3 = this$0.get_binding();
+        if (teacherFragmentBinding3 != null && (textView4 = teacherFragmentBinding3.btnStaffAdvisor) != null) {
+            textView4.setBackgroundResource(R.drawable.shape_round_selected);
         }
+        TeacherFragmentBinding teacherFragmentBinding4 = this$0.get_binding();
+        if (teacherFragmentBinding4 != null && (textView3 = teacherFragmentBinding4.btnSubjectTeacher) != null) {
+            textView3.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        TeacherFragmentBinding teacherFragmentBinding5 = this$0.get_binding();
+        if (teacherFragmentBinding5 != null && (textView2 = teacherFragmentBinding5.btnStaffAdvisor) != null) {
+            textView2.setTextColor(-1);
+        }
+        TeacherFragmentBinding teacherFragmentBinding6 = this$0.get_binding();
+        if (teacherFragmentBinding6 != null && (textView = teacherFragmentBinding6.btnSubjectTeacher) != null) {
+            textView.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        TeacherFragmentBinding teacherFragmentBinding7 = this$0.get_binding();
+        Intrinsics.checkNotNull(teacherFragmentBinding7);
+        TextView textView7 = teacherFragmentBinding7.btnStaffAdvisor;
+        Intrinsics.checkNotNullExpressionValue(textView7, "binding!!.btnStaffAdvisor");
+        this$0.animateHeight(textView7, 40);
+        TeacherFragmentBinding teacherFragmentBinding8 = this$0.get_binding();
+        Intrinsics.checkNotNull(teacherFragmentBinding8);
+        TextView textView8 = teacherFragmentBinding8.btnSubjectTeacher;
+        Intrinsics.checkNotNullExpressionValue(textView8, "binding!!.btnSubjectTeacher");
+        this$0.animateHeight(textView8, 36);
         this$0.flag = true;
         this$0.listenResponse();
+    }
+
+    public final void updateSelection(TextView selected, TextView unselected) {
+        Intrinsics.checkNotNullParameter(selected, "selected");
+        Intrinsics.checkNotNullParameter(unselected, "unselected");
+        Typeface font = ResourcesCompat.getFont(selected.getContext(), R.font.poppins_semibold);
+        Typeface font2 = ResourcesCompat.getFont(selected.getContext(), R.font.poppins_regular);
+        selected.setBackgroundResource(R.drawable.shape_round_selected);
+        selected.setTextColor(-1);
+        selected.setTypeface(font);
+        unselected.setBackgroundResource(R.drawable.shape_round_unselected);
+        unselected.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        unselected.setTypeface(font2);
+    }
+
+    public final void animateHeight(final View view, int targetDp) {
+        Intrinsics.checkNotNullParameter(view, "view");
+        ValueAnimator valueAnimatorOfInt = ValueAnimator.ofInt(view.getHeight(), (int) (targetDp * view.getContext().getResources().getDisplayMetrics().density));
+        valueAnimatorOfInt.setDuration(200L);
+        valueAnimatorOfInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: in.etuwa.app.ui.teacher.TeacherFragment$$ExternalSyntheticLambda4
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                TeacherFragment.animateHeight$lambda$5(view, valueAnimator);
+            }
+        });
+        valueAnimatorOfInt.start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void animateHeight$lambda$5(View view, ValueAnimator it) {
+        Intrinsics.checkNotNullParameter(view, "$view");
+        Intrinsics.checkNotNullParameter(it, "it");
+        Object animatedValue = it.getAnimatedValue();
+        Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
+        int iIntValue = ((Integer) animatedValue).intValue();
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        layoutParams.height = iIntValue;
+        view.setLayoutParams(layoutParams);
     }
 
     private final void listenResponse() {
         getTeacherViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.teacher.TeacherFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                TeacherFragment.listenResponse$lambda$4(TeacherFragment.this, (Resource) obj);
+                TeacherFragment.listenResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$4(TeacherFragment this$0, Resource resource) {
+    public static final void listenResponse$lambda$7(TeacherFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+        boolean z = true;
         if (i != 1) {
             if (i == 2) {
                 this$0.showProgress();
@@ -409,19 +487,44 @@ public final class TeacherFragment extends BaseFragment {
             if (textView2 != null) {
                 textView2.setText(teacherResponse.getHod().get(0).getMail());
             }
-            TeacherFragmentBinding teacherFragmentBinding4 = this$0.get_binding();
-            TextView textView3 = teacherFragmentBinding4 != null ? teacherFragmentBinding4.hodSubject : null;
-            if (textView3 != null) {
-                textView3.setText(teacherResponse.getHod().get(0).getSubject());
+            if (Intrinsics.areEqual(teacherResponse.getHod().get(0).getSubject(), "hod")) {
+                TeacherFragmentBinding teacherFragmentBinding4 = this$0.get_binding();
+                TextView textView3 = teacherFragmentBinding4 != null ? teacherFragmentBinding4.hodSubject : null;
+                if (textView3 != null) {
+                    textView3.setText("HoD");
+                }
+            } else {
+                TeacherFragmentBinding teacherFragmentBinding5 = this$0.get_binding();
+                TextView textView4 = teacherFragmentBinding5 != null ? teacherFragmentBinding5.hodSubject : null;
+                if (textView4 != null) {
+                    textView4.setText(teacherResponse.getHod().get(0).getSubject());
+                }
             }
-            TeacherFragmentBinding teacherFragmentBinding5 = this$0.get_binding();
-            TextView textView4 = teacherFragmentBinding5 != null ? teacherFragmentBinding5.hodPhone : null;
-            if (textView4 != null) {
-                textView4.setText(teacherResponse.getHod().get(0).getPhone());
+            String phone = teacherResponse.getHod().get(0).getPhone();
+            if (phone != null && phone.length() != 0) {
+                z = false;
             }
-            RequestCreator load = Picasso.get().load(teacherResponse.getHod().get(0).getImage());
-            TeacherFragmentBinding teacherFragmentBinding6 = this$0.get_binding();
-            load.into(teacherFragmentBinding6 != null ? teacherFragmentBinding6.hodImage : null);
+            if (z) {
+                TeacherFragmentBinding teacherFragmentBinding6 = this$0.get_binding();
+                TextView textView5 = teacherFragmentBinding6 != null ? teacherFragmentBinding6.hodPhone : null;
+                if (textView5 != null) {
+                    textView5.setVisibility(8);
+                }
+            } else {
+                TeacherFragmentBinding teacherFragmentBinding7 = this$0.get_binding();
+                TextView textView6 = teacherFragmentBinding7 != null ? teacherFragmentBinding7.hodPhone : null;
+                if (textView6 != null) {
+                    textView6.setVisibility(0);
+                }
+                TeacherFragmentBinding teacherFragmentBinding8 = this$0.get_binding();
+                TextView textView7 = teacherFragmentBinding8 != null ? teacherFragmentBinding8.hodPhone : null;
+                if (textView7 != null) {
+                    textView7.setText(teacherResponse.getHod().get(0).getPhone());
+                }
+            }
+            RequestCreator requestCreatorLoad = Picasso.get().load(teacherResponse.getHod().get(0).getImage());
+            TeacherFragmentBinding teacherFragmentBinding9 = this$0.get_binding();
+            requestCreatorLoad.into(teacherFragmentBinding9 != null ? teacherFragmentBinding9.hodImage : null);
             if (!this$0.flag) {
                 this$0.getAdapter().addItems(teacherResponse.getSub_teacher());
             } else {

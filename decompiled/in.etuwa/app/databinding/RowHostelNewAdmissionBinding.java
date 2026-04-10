@@ -4,25 +4,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowHostelNewAdmissionBinding implements ViewBinding {
-    public final TextView hostelFeeDetail;
+    public final MaterialButton hostelFeeDetail;
     public final TextView hostelInstallment;
     public final TextView hostelLateFee;
     public final TextView hostelMainAmount;
     public final TextView hostelMainBalance;
     public final TextView hostelMainPaid;
     public final CheckBox installmentCheck;
-    public final LinearLayout linearHost;
-    private final LinearLayout rootView;
+    public final MaterialCardView linearHost;
+    private final MaterialCardView rootView;
 
-    private RowHostelNewAdmissionBinding(LinearLayout rootView, TextView hostelFeeDetail, TextView hostelInstallment, TextView hostelLateFee, TextView hostelMainAmount, TextView hostelMainBalance, TextView hostelMainPaid, CheckBox installmentCheck, LinearLayout linearHost) {
+    private RowHostelNewAdmissionBinding(MaterialCardView rootView, MaterialButton hostelFeeDetail, TextView hostelInstallment, TextView hostelLateFee, TextView hostelMainAmount, TextView hostelMainBalance, TextView hostelMainPaid, CheckBox installmentCheck, MaterialCardView linearHost) {
         this.rootView = rootView;
         this.hostelFeeDetail = hostelFeeDetail;
         this.hostelInstallment = hostelInstallment;
@@ -35,7 +36,7 @@ public final class RowHostelNewAdmissionBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -44,37 +45,37 @@ public final class RowHostelNewAdmissionBinding implements ViewBinding {
     }
 
     public static RowHostelNewAdmissionBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_hostel_new_admission, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_hostel_new_admission, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowHostelNewAdmissionBinding bind(View rootView) {
         int i = R.id.hostel_fee_detail;
-        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-        if (textView != null) {
+        MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+        if (materialButton != null) {
             i = R.id.hostel_installment;
-            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView2 != null) {
+            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+            if (textView != null) {
                 i = R.id.hostel_late_fee;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView3 != null) {
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView2 != null) {
                     i = R.id.hostel_main_amount;
-                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView4 != null) {
+                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView3 != null) {
                         i = R.id.hostel_main_balance;
-                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView5 != null) {
+                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView4 != null) {
                             i = R.id.hostel_main_paid;
-                            TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView6 != null) {
+                            TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                            if (textView5 != null) {
                                 i = R.id.installment_check;
                                 CheckBox checkBox = (CheckBox) ViewBindings.findChildViewById(rootView, i);
                                 if (checkBox != null) {
-                                    LinearLayout linearLayout = (LinearLayout) rootView;
-                                    return new RowHostelNewAdmissionBinding(linearLayout, textView, textView2, textView3, textView4, textView5, textView6, checkBox, linearLayout);
+                                    MaterialCardView materialCardView = (MaterialCardView) rootView;
+                                    return new RowHostelNewAdmissionBinding(materialCardView, materialButton, textView, textView2, textView3, textView4, textView5, checkBox, materialCardView);
                                 }
                             }
                         }

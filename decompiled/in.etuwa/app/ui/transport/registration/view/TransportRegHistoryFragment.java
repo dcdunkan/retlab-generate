@@ -39,24 +39,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: TransportRegHistoryFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TransportRegHistoryFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TransportRegHistoryFragment extends BaseFragment implements TransportRegistrationDialog.AddRegistrationCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentTransportRegHistoryBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: transportRegHistoryViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: transportRegHistoryViewModel$delegate, reason: from kotlin metadata */
     private final Lazy transportRegHistoryViewModel;
 
-    /* compiled from: TransportRegHistoryFragment.kt */
+    /* JADX INFO: compiled from: TransportRegHistoryFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -106,7 +106,7 @@ public final class TransportRegHistoryFragment extends BaseFragment implements T
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return transportRegHistoryFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(transportRegHistoryFragment);
@@ -120,7 +120,7 @@ public final class TransportRegHistoryFragment extends BaseFragment implements T
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -133,7 +133,7 @@ public final class TransportRegHistoryFragment extends BaseFragment implements T
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(TransportRegHistoryViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(TransportRegHistoryViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final TransportRegHistoryFragment transportRegHistoryFragment2 = this;
@@ -179,7 +179,7 @@ public final class TransportRegHistoryFragment extends BaseFragment implements T
         return (TransportRegHistoryAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentTransportRegHistoryBinding get_binding() {
         return this._binding;
     }
@@ -188,7 +188,7 @@ public final class TransportRegHistoryFragment extends BaseFragment implements T
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: TransportRegHistoryFragment.kt */
+    /* JADX INFO: compiled from: TransportRegHistoryFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/transport/registration/view/TransportRegHistoryFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/transport/registration/view/TransportRegHistoryFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -253,7 +253,7 @@ public final class TransportRegHistoryFragment extends BaseFragment implements T
         floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.registration.view.TransportRegHistoryFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TransportRegHistoryFragment.setUp$lambda$0(TransportRegHistoryFragment.this, view);
+                TransportRegHistoryFragment.setUp$lambda$0(this.f$0, view);
             }
         });
     }
@@ -263,16 +263,16 @@ public final class TransportRegHistoryFragment extends BaseFragment implements T
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        TransportRegistrationDialog newInstance = TransportRegistrationDialog.INSTANCE.newInstance();
-        newInstance.setAddRegistrationCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        TransportRegistrationDialog transportRegistrationDialogNewInstance = TransportRegistrationDialog.INSTANCE.newInstance();
+        transportRegistrationDialogNewInstance.setAddRegistrationCallBack(this$0);
+        transportRegistrationDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
         getTransportRegHistoryViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.transport.registration.view.TransportRegHistoryFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                TransportRegHistoryFragment.listenResponse$lambda$2(TransportRegHistoryFragment.this, (Resource) obj);
+                TransportRegHistoryFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }

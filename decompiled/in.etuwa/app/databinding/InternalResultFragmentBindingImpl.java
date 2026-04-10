@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.internal.InternalResultViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class InternalResultFragmentBindingImpl extends InternalResultFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -71,7 +71,7 @@ public class InternalResultFragmentBindingImpl extends InternalResultFragmentBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (120 != variableId) {
+        if (121 != variableId) {
             return false;
         }
         setInternalResultViewModel((InternalResultViewModel) variable);

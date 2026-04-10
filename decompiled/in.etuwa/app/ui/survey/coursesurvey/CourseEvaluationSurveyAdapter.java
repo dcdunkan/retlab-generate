@@ -17,13 +17,13 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CourseEvaluationSurveyAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CourseEvaluationSurveyAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CourseEvaluationSurveyAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private SurveyCallBack listener;
     private final ArrayList<CourseSurvey> surveyList = new ArrayList<>();
 
-    /* compiled from: CourseEvaluationSurveyAdapter.kt */
+    /* JADX INFO: compiled from: CourseEvaluationSurveyAdapter.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006"}, d2 = {"Lin/etuwa/app/ui/survey/coursesurvey/CourseEvaluationSurveyAdapter$SurveyCallBack;", "", "doTheSurvey", "", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface SurveyCallBack {
         void doTheSurvey(String id);
@@ -33,18 +33,18 @@ public final class CourseEvaluationSurveyAdapter extends RecyclerView.Adapter<Ba
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_course_survey, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …se_survey, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_course_survey, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …se_survey, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -60,7 +60,7 @@ public final class CourseEvaluationSurveyAdapter extends RecyclerView.Adapter<Ba
         return !this.surveyList.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: CourseEvaluationSurveyAdapter.kt */
+    /* JADX INFO: compiled from: CourseEvaluationSurveyAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/survey/coursesurvey/CourseEvaluationSurveyAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/survey/coursesurvey/CourseEvaluationSurveyAdapter;Landroid/view/View;)V", "lastDate", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", NotificationCompat.CATEGORY_STATUS, "surveyDoBtn", "surveyName", "surveySession", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView lastDate;
@@ -104,7 +104,7 @@ public final class CourseEvaluationSurveyAdapter extends RecyclerView.Adapter<Ba
                     textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.survey.coursesurvey.CourseEvaluationSurveyAdapter$ViewHolder$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            CourseEvaluationSurveyAdapter.ViewHolder.onBind$lambda$0(CourseEvaluationSurveyAdapter.ViewHolder.this, courseEvaluationSurveyAdapter, courseSurvey, view);
+                            CourseEvaluationSurveyAdapter.ViewHolder.onBind$lambda$0(this.f$0, courseEvaluationSurveyAdapter, courseSurvey, view);
                         }
                     });
                 }

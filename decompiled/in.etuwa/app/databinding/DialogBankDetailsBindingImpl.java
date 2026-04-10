@@ -2,16 +2,17 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogBankDetailsBindingImpl extends DialogBankDetailsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -54,7 +55,7 @@ public class DialogBankDetailsBindingImpl extends DialogBankDetailsBinding {
     }
 
     private DialogBankDetailsBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextView) bindings[11], (EditText) bindings[12], (TextView) bindings[10], (TextView) bindings[2], (TextView) bindings[7], (EditText) bindings[8], (TextView) bindings[6], (TextView) bindings[1], (TextView) bindings[18], (EditText) bindings[19], (TextView) bindings[17], (TextView) bindings[3], (EditText) bindings[4], (LinearLayout) bindings[13], (EditText) bindings[15], (TextView) bindings[14], (TextView) bindings[21], (LinearLayout) bindings[20], (TextView) bindings[5], (TextView) bindings[9], (TextView) bindings[16]);
+        super(bindingComponent, root, 0, (TextView) bindings[11], (TextInputEditText) bindings[12], (TextView) bindings[10], (TextView) bindings[2], (TextView) bindings[7], (TextInputEditText) bindings[8], (TextView) bindings[6], (TextView) bindings[1], (TextView) bindings[18], (TextInputEditText) bindings[19], (TextView) bindings[17], (TextView) bindings[3], (TextInputEditText) bindings[4], (LinearLayout) bindings[13], (TextInputEditText) bindings[15], (TextView) bindings[14], (MaterialButton) bindings[21], (LinearLayout) bindings[20], (View) bindings[5], (View) bindings[9], (View) bindings[16]);
         this.mDirtyFlags = -1L;
         ScrollView scrollView = (ScrollView) bindings[0];
         this.mboundView0 = scrollView;
@@ -80,7 +81,7 @@ public class DialogBankDetailsBindingImpl extends DialogBankDetailsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (38 != variableId) {
+        if (37 != variableId) {
             return false;
         }
         setBankDetailsViewModel((BankDetailsViewModel) variable);

@@ -3,29 +3,57 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.lab.LabViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentLabBinding extends ViewDataBinding {
-    public final LinearLayout cardDue;
-    public final LinearLayout cardEquipment;
-    public final LinearLayout cardPractical;
+    public final TextView cardDue;
+    public final TextView cardEquipment;
+    public final TextView cardPractical;
+    public final FrameLayout equipmentLyt;
+    public final HorizontalScrollView hrView;
+    public final FrameLayout labDueLyt;
 
     @Bindable
     protected LabViewModel mLabViewModel;
+    public final FrameLayout practicalLyt;
+    public final RecyclerView rvLabDue;
+    public final RecyclerView rvLabList;
+    public final RecyclerView rvPractical;
+    public final MaterialCardView sessionSpinnerLayout;
+    public final Spinner spinnerSem;
+    public final SwipeRefreshLayout swipeLayout;
+    public final SwipeRefreshLayout swipeLayout2;
 
     public abstract void setLabViewModel(LabViewModel labViewModel);
 
-    protected FragmentLabBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout cardDue, LinearLayout cardEquipment, LinearLayout cardPractical) {
+    protected FragmentLabBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView cardDue, TextView cardEquipment, TextView cardPractical, FrameLayout equipmentLyt, HorizontalScrollView hrView, FrameLayout labDueLyt, FrameLayout practicalLyt, RecyclerView rvLabDue, RecyclerView rvLabList, RecyclerView rvPractical, MaterialCardView sessionSpinnerLayout, Spinner spinnerSem, SwipeRefreshLayout swipeLayout, SwipeRefreshLayout swipeLayout2) {
         super(_bindingComponent, _root, _localFieldCount);
         this.cardDue = cardDue;
         this.cardEquipment = cardEquipment;
         this.cardPractical = cardPractical;
+        this.equipmentLyt = equipmentLyt;
+        this.hrView = hrView;
+        this.labDueLyt = labDueLyt;
+        this.practicalLyt = practicalLyt;
+        this.rvLabDue = rvLabDue;
+        this.rvLabList = rvLabList;
+        this.rvPractical = rvPractical;
+        this.sessionSpinnerLayout = sessionSpinnerLayout;
+        this.spinnerSem = spinnerSem;
+        this.swipeLayout = swipeLayout;
+        this.swipeLayout2 = swipeLayout2;
     }
 
     public LabViewModel getLabViewModel() {

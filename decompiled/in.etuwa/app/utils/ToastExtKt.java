@@ -5,8 +5,8 @@ import android.widget.Toast;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ToastExt.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ToastExt.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ToastExtKt {
     public static final void showInfoToast(View view, String messageRes) {
         Intrinsics.checkNotNullParameter(view, "<this>");

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityByDayBinding implements ViewBinding {
     public final LinearLayout attLl;
     public final FloatingActionButton fabDate;
@@ -32,11 +32,11 @@ public final class ActivityByDayBinding implements ViewBinding {
     }
 
     public static ActivityByDayBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_by_day, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_by_day, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityByDayBinding bind(View rootView) {

@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.achievements.AchievementsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentAchievementsBindingImpl extends FragmentAchievementsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentAchievementsBindingImpl extends FragmentAchievementsBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (5 != variableId) {
+        if (4 != variableId) {
             return false;
         }
         setAchievementsViewModel((AchievementsViewModel) variable);

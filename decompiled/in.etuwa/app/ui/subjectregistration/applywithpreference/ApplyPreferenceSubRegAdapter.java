@@ -30,14 +30,14 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: ApplyPreferenceSubRegAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyPreferenceSubRegAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyPreferenceSubRegAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private Integer countss;
     private CallBack listener;
     private final ArrayList<SubjectMainList> subjects = new ArrayList<>();
 
-    /* compiled from: ApplyPreferenceSubRegAdapter.kt */
+    /* JADX INFO: compiled from: ApplyPreferenceSubRegAdapter.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\b\bf\u0018\u00002\u00020\u0001J \u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0007H&J\u0010\u0010\t\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0007H&J\u0018\u0010\n\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H&J\u0018\u0010\u000b\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H&J \u0010\f\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u00072\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u00020\u0007H&¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegAdapter$CallBack;", "", "onExceedMaxMark", "", "mark", "", CommonCssConstants.POSITION, "", "maxMark", "onSelectSubjectClicked", "onSgpaMarkChanged", "onSubMarkChanged", "spinnerSelected", "id", "dropDownPos", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void onExceedMaxMark(String mark, int position, int maxMark);
@@ -55,18 +55,18 @@ public final class ApplyPreferenceSubRegAdapter extends RecyclerView.Adapter<Bas
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_apply_preference_sub_reg, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …e_sub_reg, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_apply_preference_sub_reg, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …e_sub_reg, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -82,7 +82,7 @@ public final class ApplyPreferenceSubRegAdapter extends RecyclerView.Adapter<Bas
         return !this.subjects.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: ApplyPreferenceSubRegAdapter.kt */
+    /* JADX INFO: compiled from: ApplyPreferenceSubRegAdapter.kt */
     @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/subjectregistration/applywithpreference/ApplyPreferenceSubRegAdapter;Landroid/view/View;)V", "spinnerSubjects", "Landroid/widget/Spinner;", "kotlin.jvm.PlatformType", "subMarkEt", "Lin/etuwa/app/utils/CustomEditText;", "subject", "Landroid/widget/TextView;", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final Spinner spinnerSubjects;
@@ -114,30 +114,30 @@ public final class ApplyPreferenceSubRegAdapter extends RecyclerView.Adapter<Bas
             Intrinsics.checkNotNullExpressionValue(obj, "subjects[actualPosition]");
             SubjectMainList subjectMainList = (SubjectMainList) obj;
             ArrayList<SemSubList> subjects = subjectMainList.getSubjects();
-            String replace$default = StringsKt.replace$default(subjectMainList.getName(), "_", HelpFormatter.DEFAULT_LONG_OPT_SEPARATOR, false, 4, (Object) null);
-            if (replace$default.length() > 0) {
-                char charAt = replace$default.charAt(0);
-                if (Character.isLowerCase(charAt)) {
-                    charAt = Character.toTitleCase(charAt);
+            String strReplace$default = StringsKt.replace$default(subjectMainList.getName(), "_", HelpFormatter.DEFAULT_LONG_OPT_SEPARATOR, false, 4, (Object) null);
+            if (strReplace$default.length() > 0) {
+                char cCharAt = strReplace$default.charAt(0);
+                if (Character.isLowerCase(cCharAt)) {
+                    cCharAt = Character.toTitleCase(cCharAt);
                 }
-                String substring = replace$default.substring(1);
-                Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                replace$default = charAt + substring;
+                String strSubstring = strReplace$default.substring(1);
+                Intrinsics.checkNotNullExpressionValue(strSubstring, "substring(...)");
+                strReplace$default = cCharAt + strSubstring;
             }
-            this.subject.setText(replace$default);
+            this.subject.setText(strReplace$default);
             if (StringsKt.contains$default((CharSequence) subjectMainList.getName(), (CharSequence) "minor", false, 2, (Object) null)) {
                 this.subMarkEt.setHint("(out of 100)");
             } else {
                 this.subMarkEt.setHint("(out of 75)");
             }
-            List mutableListOf = CollectionsKt.mutableListOf("Select Subject");
+            List listMutableListOf = CollectionsKt.mutableListOf("Select Subject");
             ArrayList<SemSubList> arrayList = subjects;
             ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList, 10));
             Iterator<T> it = arrayList.iterator();
             while (it.hasNext()) {
                 arrayList2.add(((SemSubList) it.next()).getName());
             }
-            ArrayAdapter arrayAdapter = new ArrayAdapter(this.itemView.getContext(), android.R.layout.simple_spinner_item, CollectionsKt.plus((Collection) mutableListOf, (Iterable) arrayList2));
+            ArrayAdapter arrayAdapter = new ArrayAdapter(this.itemView.getContext(), android.R.layout.simple_spinner_item, CollectionsKt.plus((Collection) listMutableListOf, (Iterable) arrayList2));
             arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             this.spinnerSubjects.setAdapter((SpinnerAdapter) arrayAdapter);
             Iterator<SemSubList> it2 = subjectMainList.getSubjects().iterator();
@@ -165,50 +165,24 @@ public final class ApplyPreferenceSubRegAdapter extends RecyclerView.Adapter<Bas
                     Intrinsics.checkNotNullParameter(parent, "parent");
                 }
 
-                /* JADX WARN: Code restructure failed: missing block: B:5:0x0010, code lost:
-                
-                    r2 = r2.listener;
-                 */
                 @Override // android.widget.AdapterView.OnItemSelectedListener
-                /*
-                    Code decompiled incorrectly, please refer to instructions dump.
-                    To view partially-correct code enable 'Show inconsistent code' option in preferences
-                */
-                public void onItemSelected(android.widget.AdapterView<?> r1, android.view.View r2, int r3, long r4) {
-                    /*
-                        r0 = this;
-                        java.lang.String r2 = "parent"
-                        kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r2)
-                        if (r3 <= 0) goto L38
-                        in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter$ViewHolder r1 = in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter.ViewHolder.this
-                        int r1 = r1.getBindingAdapterPosition()
-                        r2 = -1
-                        if (r1 == r2) goto L49
-                        in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter r2 = r2
-                        in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter$CallBack r2 = in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter.access$getListener$p(r2)
-                        if (r2 == 0) goto L49
-                        in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter r4 = r2
-                        java.util.ArrayList r4 = in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter.access$getSubjects$p(r4)
-                        java.lang.Object r4 = r4.get(r1)
-                        in.etuwa.app.data.model.subjectregistration.SubjectMainList r4 = (in.etuwa.app.data.model.subjectregistration.SubjectMainList) r4
-                        java.util.ArrayList r4 = r4.getSubjects()
-                        int r3 = r3 + (-1)
-                        java.lang.Object r4 = r4.get(r3)
-                        in.etuwa.app.data.model.subjectregistration.SemSubList r4 = (in.etuwa.app.data.model.subjectregistration.SemSubList) r4
-                        int r4 = r4.getId()
-                        r2.spinnerSelected(r4, r1, r3)
-                        goto L49
-                    L38:
-                        in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter$ViewHolder r1 = in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter.ViewHolder.this
-                        int r1 = r1.getBindingAdapterPosition()
-                        in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter r2 = r2
-                        in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter$CallBack r2 = in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter.access$getListener$p(r2)
-                        if (r2 == 0) goto L49
-                        r2.onSelectSubjectClicked(r1)
-                    L49:
-                        return
-                    */
-                    throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegAdapter$ViewHolder$onBind$1.onItemSelected(android.widget.AdapterView, android.view.View, int, long):void");
+                public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                    ApplyPreferenceSubRegAdapter.CallBack callBack;
+                    Intrinsics.checkNotNullParameter(parent, "parent");
+                    if (pos > 0) {
+                        int bindingAdapterPosition2 = this.this$0.getBindingAdapterPosition();
+                        if (bindingAdapterPosition2 == -1 || (callBack = applyPreferenceSubRegAdapter.listener) == null) {
+                            return;
+                        }
+                        int i2 = pos - 1;
+                        callBack.spinnerSelected(((SubjectMainList) applyPreferenceSubRegAdapter.subjects.get(bindingAdapterPosition2)).getSubjects().get(i2).getId(), bindingAdapterPosition2, i2);
+                        return;
+                    }
+                    int bindingAdapterPosition3 = this.this$0.getBindingAdapterPosition();
+                    ApplyPreferenceSubRegAdapter.CallBack callBack2 = applyPreferenceSubRegAdapter.listener;
+                    if (callBack2 != null) {
+                        callBack2.onSelectSubjectClicked(bindingAdapterPosition3);
+                    }
                 }
             });
             CustomEditText customEditText = this.subMarkEt;
@@ -226,62 +200,45 @@ public final class ApplyPreferenceSubRegAdapter extends RecyclerView.Adapter<Bas
 
                 @Override // android.text.TextWatcher
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    String str;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack2;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack3;
-                    TextView textView;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack4;
-                    CustomEditText customEditText3;
-                    TextView textView2;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack5;
-                    CustomEditText customEditText4;
-                    if (s == null || (str = s.toString()) == null) {
-                        str = "";
+                    String string;
+                    if (s == null || (string = s.toString()) == null) {
+                        string = "";
                     }
-                    int bindingAdapterPosition2 = ApplyPreferenceSubRegAdapter.ViewHolder.this.getBindingAdapterPosition();
+                    int bindingAdapterPosition2 = this.this$0.getBindingAdapterPosition();
                     if (bindingAdapterPosition2 != -1) {
                         try {
-                            if (Double.parseDouble(str) > 100.0d) {
-                                textView2 = ApplyPreferenceSubRegAdapter.ViewHolder.this.subject;
-                                if (StringsKt.contains$default((CharSequence) textView2.getText().toString(), (CharSequence) "Minor", false, 2, (Object) null)) {
-                                    callBack5 = applyPreferenceSubRegAdapter2.listener;
-                                    if (callBack5 != null) {
-                                        callBack5.onExceedMaxMark("0", bindingAdapterPosition2, 100);
-                                    }
-                                    customEditText4 = ApplyPreferenceSubRegAdapter.ViewHolder.this.subMarkEt;
-                                    customEditText4.setText("");
-                                    return;
+                            if (Double.parseDouble(string) > 100.0d && StringsKt.contains$default((CharSequence) this.this$0.subject.getText().toString(), (CharSequence) "Minor", false, 2, (Object) null)) {
+                                ApplyPreferenceSubRegAdapter.CallBack callBack = applyPreferenceSubRegAdapter2.listener;
+                                if (callBack != null) {
+                                    callBack.onExceedMaxMark("0", bindingAdapterPosition2, 100);
                                 }
+                                this.this$0.subMarkEt.setText("");
+                                return;
                             }
-                            if (Double.parseDouble(str) > 75.0d) {
-                                textView = ApplyPreferenceSubRegAdapter.ViewHolder.this.subject;
-                                if (StringsKt.contains$default((CharSequence) textView.getText().toString(), (CharSequence) "Mdc", false, 2, (Object) null)) {
-                                    callBack4 = applyPreferenceSubRegAdapter2.listener;
-                                    if (callBack4 != null) {
-                                        callBack4.onExceedMaxMark("0", bindingAdapterPosition2, 75);
-                                    }
-                                    customEditText3 = ApplyPreferenceSubRegAdapter.ViewHolder.this.subMarkEt;
-                                    customEditText3.setText("");
-                                    return;
+                            if (Double.parseDouble(string) > 75.0d && StringsKt.contains$default((CharSequence) this.this$0.subject.getText().toString(), (CharSequence) "Mdc", false, 2, (Object) null)) {
+                                ApplyPreferenceSubRegAdapter.CallBack callBack2 = applyPreferenceSubRegAdapter2.listener;
+                                if (callBack2 != null) {
+                                    callBack2.onExceedMaxMark("0", bindingAdapterPosition2, 75);
                                 }
+                                this.this$0.subMarkEt.setText("");
+                                return;
                             }
-                            if (Intrinsics.areEqual(str, "")) {
-                                callBack3 = applyPreferenceSubRegAdapter2.listener;
+                            if (Intrinsics.areEqual(string, "")) {
+                                ApplyPreferenceSubRegAdapter.CallBack callBack3 = applyPreferenceSubRegAdapter2.listener;
                                 if (callBack3 != null) {
                                     callBack3.onSubMarkChanged("", bindingAdapterPosition2);
                                     return;
                                 }
                                 return;
                             }
-                            callBack2 = applyPreferenceSubRegAdapter2.listener;
-                            if (callBack2 != null) {
-                                callBack2.onSubMarkChanged(str, bindingAdapterPosition2);
+                            ApplyPreferenceSubRegAdapter.CallBack callBack4 = applyPreferenceSubRegAdapter2.listener;
+                            if (callBack4 != null) {
+                                callBack4.onSubMarkChanged(string, bindingAdapterPosition2);
                             }
                         } catch (NumberFormatException unused) {
-                            callBack = applyPreferenceSubRegAdapter2.listener;
-                            if (callBack != null) {
-                                callBack.onSubMarkChanged("", bindingAdapterPosition2);
+                            ApplyPreferenceSubRegAdapter.CallBack callBack5 = applyPreferenceSubRegAdapter2.listener;
+                            if (callBack5 != null) {
+                                callBack5.onSubMarkChanged("", bindingAdapterPosition2);
                             }
                         }
                     }
@@ -289,62 +246,45 @@ public final class ApplyPreferenceSubRegAdapter extends RecyclerView.Adapter<Bas
 
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable s) {
-                    String str;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack2;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack3;
-                    TextView textView;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack4;
-                    CustomEditText customEditText3;
-                    TextView textView2;
-                    ApplyPreferenceSubRegAdapter.CallBack callBack5;
-                    CustomEditText customEditText4;
-                    if (s == null || (str = s.toString()) == null) {
-                        str = "";
+                    String string;
+                    if (s == null || (string = s.toString()) == null) {
+                        string = "";
                     }
-                    int bindingAdapterPosition2 = ApplyPreferenceSubRegAdapter.ViewHolder.this.getBindingAdapterPosition();
+                    int bindingAdapterPosition2 = this.this$0.getBindingAdapterPosition();
                     if (bindingAdapterPosition2 != -1) {
                         try {
-                            if (Double.parseDouble(str) > 100.0d) {
-                                textView2 = ApplyPreferenceSubRegAdapter.ViewHolder.this.subject;
-                                if (StringsKt.contains$default((CharSequence) textView2.getText().toString(), (CharSequence) "Minor", false, 2, (Object) null)) {
-                                    callBack5 = applyPreferenceSubRegAdapter2.listener;
-                                    if (callBack5 != null) {
-                                        callBack5.onExceedMaxMark("0", bindingAdapterPosition2, 100);
-                                    }
-                                    customEditText4 = ApplyPreferenceSubRegAdapter.ViewHolder.this.subMarkEt;
-                                    customEditText4.setText("");
-                                    return;
+                            if (Double.parseDouble(string) > 100.0d && StringsKt.contains$default((CharSequence) this.this$0.subject.getText().toString(), (CharSequence) "Minor", false, 2, (Object) null)) {
+                                ApplyPreferenceSubRegAdapter.CallBack callBack = applyPreferenceSubRegAdapter2.listener;
+                                if (callBack != null) {
+                                    callBack.onExceedMaxMark("0", bindingAdapterPosition2, 100);
                                 }
+                                this.this$0.subMarkEt.setText("");
+                                return;
                             }
-                            if (Double.parseDouble(str) > 75.0d) {
-                                textView = ApplyPreferenceSubRegAdapter.ViewHolder.this.subject;
-                                if (StringsKt.contains$default((CharSequence) textView.getText().toString(), (CharSequence) "Mdc", false, 2, (Object) null)) {
-                                    callBack4 = applyPreferenceSubRegAdapter2.listener;
-                                    if (callBack4 != null) {
-                                        callBack4.onExceedMaxMark("0", bindingAdapterPosition2, 75);
-                                    }
-                                    customEditText3 = ApplyPreferenceSubRegAdapter.ViewHolder.this.subMarkEt;
-                                    customEditText3.setText("");
-                                    return;
+                            if (Double.parseDouble(string) > 75.0d && StringsKt.contains$default((CharSequence) this.this$0.subject.getText().toString(), (CharSequence) "Mdc", false, 2, (Object) null)) {
+                                ApplyPreferenceSubRegAdapter.CallBack callBack2 = applyPreferenceSubRegAdapter2.listener;
+                                if (callBack2 != null) {
+                                    callBack2.onExceedMaxMark("0", bindingAdapterPosition2, 75);
                                 }
+                                this.this$0.subMarkEt.setText("");
+                                return;
                             }
-                            if (Intrinsics.areEqual(str, "")) {
-                                callBack3 = applyPreferenceSubRegAdapter2.listener;
+                            if (Intrinsics.areEqual(string, "")) {
+                                ApplyPreferenceSubRegAdapter.CallBack callBack3 = applyPreferenceSubRegAdapter2.listener;
                                 if (callBack3 != null) {
                                     callBack3.onSubMarkChanged("", bindingAdapterPosition2);
                                     return;
                                 }
                                 return;
                             }
-                            callBack2 = applyPreferenceSubRegAdapter2.listener;
-                            if (callBack2 != null) {
-                                callBack2.onSubMarkChanged(str, bindingAdapterPosition2);
+                            ApplyPreferenceSubRegAdapter.CallBack callBack4 = applyPreferenceSubRegAdapter2.listener;
+                            if (callBack4 != null) {
+                                callBack4.onSubMarkChanged(string, bindingAdapterPosition2);
                             }
                         } catch (NumberFormatException unused) {
-                            callBack = applyPreferenceSubRegAdapter2.listener;
-                            if (callBack != null) {
-                                callBack.onSubMarkChanged("", bindingAdapterPosition2);
+                            ApplyPreferenceSubRegAdapter.CallBack callBack5 = applyPreferenceSubRegAdapter2.listener;
+                            if (callBack5 != null) {
+                                callBack5.onSubMarkChanged("", bindingAdapterPosition2);
                             }
                         }
                     }

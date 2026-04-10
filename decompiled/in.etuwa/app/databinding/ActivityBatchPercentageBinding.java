@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBindings;
 import com.github.mikephil.charting.charts.LineChart;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityBatchPercentageBinding implements ViewBinding {
     public final LinearLayout bachLayout;
     public final LineChart batchBarChart;
@@ -35,11 +35,11 @@ public final class ActivityBatchPercentageBinding implements ViewBinding {
     }
 
     public static ActivityBatchPercentageBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_batch_percentage, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_batch_percentage, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityBatchPercentageBinding bind(View rootView) {

@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Revaluation.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Revaluation.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Revaluation {
     private final String course;
     private final String grade;
@@ -28,22 +28,22 @@ public final /* data */ class Revaluation {
         return revaluation.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getCourse() {
         return this.course;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getGrade() {
         return this.grade;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

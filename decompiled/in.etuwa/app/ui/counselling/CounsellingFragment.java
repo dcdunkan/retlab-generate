@@ -51,22 +51,22 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CounsellingFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CounsellingFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CounsellingFragment extends BaseFragment implements CounsellingAdapter.CallBack, AddCounsellingDialog.AddCounsellingListener, ReminderDialog.RemindCounsellingListener, ReviewDialog.ReviewCounsellingListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private CounsellingFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: counsellingViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: counsellingViewModel$delegate, reason: from kotlin metadata */
     private final Lazy counsellingViewModel;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     @JvmStatic
@@ -92,7 +92,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return counsellingFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(counsellingFragment);
@@ -106,7 +106,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -119,7 +119,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CounsellingViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CounsellingViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final CounsellingFragment counsellingFragment2 = this;
@@ -168,7 +168,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final CounsellingFragmentBinding get_binding() {
         return this._binding;
     }
@@ -177,7 +177,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: CounsellingFragment.kt */
+    /* JADX INFO: compiled from: CounsellingFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/counselling/CounsellingFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/counselling/CounsellingFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -243,7 +243,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CounsellingFragment.setUp$lambda$0(CounsellingFragment.this, view);
+                    CounsellingFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -252,7 +252,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment$$ExternalSyntheticLambda1
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    CounsellingFragment.setUp$lambda$1(CounsellingFragment.this);
+                    CounsellingFragment.setUp$lambda$1(this.f$0);
                 }
             });
         }
@@ -260,67 +260,40 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
         if (counsellingFragmentBinding4 == null || (recyclerView = counsellingFragmentBinding4.rvCounselling) == null) {
             return;
         }
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment$setUp$3
-            /* JADX WARN: Code restructure failed: missing block: B:28:0x0056, code lost:
-            
-                r1 = r0.this$0.get_binding();
-             */
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment.setUp.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public void onScrolled(androidx.recyclerview.widget.RecyclerView r1, int r2, int r3) {
-                /*
-                    r0 = this;
-                    java.lang.String r2 = "recyclerView"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r2)
-                    r1 = 0
-                    if (r3 >= 0) goto L37
-                    in.etuwa.app.ui.counselling.CounsellingFragment r2 = in.etuwa.app.ui.counselling.CounsellingFragment.this
-                    in.etuwa.app.databinding.CounsellingFragmentBinding r2 = in.etuwa.app.ui.counselling.CounsellingFragment.access$getBinding(r2)
-                    if (r2 == 0) goto L1d
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r2 = r2.fabAddCounselling
-                    if (r2 == 0) goto L1d
-                    boolean r2 = r2.isShown()
-                    java.lang.Boolean r2 = java.lang.Boolean.valueOf(r2)
-                    goto L1e
-                L1d:
-                    r2 = r1
-                L1e:
-                    kotlin.jvm.internal.Intrinsics.checkNotNull(r2)
-                    boolean r2 = r2.booleanValue()
-                    if (r2 != 0) goto L37
-                    in.etuwa.app.ui.counselling.CounsellingFragment r1 = in.etuwa.app.ui.counselling.CounsellingFragment.this
-                    in.etuwa.app.databinding.CounsellingFragmentBinding r1 = in.etuwa.app.ui.counselling.CounsellingFragment.access$getBinding(r1)
-                    if (r1 == 0) goto L65
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r1 = r1.fabAddCounselling
-                    if (r1 == 0) goto L65
-                    r1.show()
-                    goto L65
-                L37:
-                    if (r3 <= 0) goto L65
-                    in.etuwa.app.ui.counselling.CounsellingFragment r2 = in.etuwa.app.ui.counselling.CounsellingFragment.this
-                    in.etuwa.app.databinding.CounsellingFragmentBinding r2 = in.etuwa.app.ui.counselling.CounsellingFragment.access$getBinding(r2)
-                    if (r2 == 0) goto L4d
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r2 = r2.fabAddCounselling
-                    if (r2 == 0) goto L4d
-                    boolean r1 = r2.isShown()
-                    java.lang.Boolean r1 = java.lang.Boolean.valueOf(r1)
-                L4d:
-                    kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
-                    boolean r1 = r1.booleanValue()
-                    if (r1 == 0) goto L65
-                    in.etuwa.app.ui.counselling.CounsellingFragment r1 = in.etuwa.app.ui.counselling.CounsellingFragment.this
-                    in.etuwa.app.databinding.CounsellingFragmentBinding r1 = in.etuwa.app.ui.counselling.CounsellingFragment.access$getBinding(r1)
-                    if (r1 == 0) goto L65
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r1 = r1.fabAddCounselling
-                    if (r1 == 0) goto L65
-                    r1.hide()
-                L65:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.counselling.CounsellingFragment$setUp$3.onScrolled(androidx.recyclerview.widget.RecyclerView, int, int):void");
+            public void onScrolled(RecyclerView recyclerView3, int dx, int dy) {
+                CounsellingFragmentBinding counsellingFragmentBinding5;
+                FloatingActionButton floatingActionButton2;
+                FloatingActionButton floatingActionButton3;
+                FloatingActionButton floatingActionButton4;
+                FloatingActionButton floatingActionButton5;
+                Intrinsics.checkNotNullParameter(recyclerView3, "recyclerView");
+                Boolean boolValueOf = null;
+                if (dy < 0) {
+                    CounsellingFragmentBinding counsellingFragmentBinding6 = CounsellingFragment.this.get_binding();
+                    Boolean boolValueOf2 = (counsellingFragmentBinding6 == null || (floatingActionButton5 = counsellingFragmentBinding6.fabAddCounselling) == null) ? null : Boolean.valueOf(floatingActionButton5.isShown());
+                    Intrinsics.checkNotNull(boolValueOf2);
+                    if (!boolValueOf2.booleanValue()) {
+                        CounsellingFragmentBinding counsellingFragmentBinding7 = CounsellingFragment.this.get_binding();
+                        if (counsellingFragmentBinding7 == null || (floatingActionButton4 = counsellingFragmentBinding7.fabAddCounselling) == null) {
+                            return;
+                        }
+                        floatingActionButton4.show();
+                        return;
+                    }
+                }
+                if (dy > 0) {
+                    CounsellingFragmentBinding counsellingFragmentBinding8 = CounsellingFragment.this.get_binding();
+                    if (counsellingFragmentBinding8 != null && (floatingActionButton3 = counsellingFragmentBinding8.fabAddCounselling) != null) {
+                        boolValueOf = Boolean.valueOf(floatingActionButton3.isShown());
+                    }
+                    Intrinsics.checkNotNull(boolValueOf);
+                    if (!boolValueOf.booleanValue() || (counsellingFragmentBinding5 = CounsellingFragment.this.get_binding()) == null || (floatingActionButton2 = counsellingFragmentBinding5.fabAddCounselling) == null) {
+                        return;
+                    }
+                    floatingActionButton2.hide();
+                }
             }
         });
     }
@@ -346,15 +319,16 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
     private final void showAddDialog(String id, boolean isReopen) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddCounsellingDialog newInstance = AddCounsellingDialog.INSTANCE.newInstance(id, isReopen);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddCounsellingDialog addCounsellingDialogNewInstance = AddCounsellingDialog.INSTANCE.newInstance(id, isReopen);
+        addCounsellingDialogNewInstance.setCallBack(this);
+        addCounsellingDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
-        getCounsellingViewModel().getResponse().observe(getViewLifecycleOwner(), new CounsellingFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment$listenResponse$1
+        getCounsellingViewModel().getResponse().observe(getViewLifecycleOwner(), new CounsellingFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment.listenResponse.1
 
-            /* compiled from: CounsellingFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.CounsellingFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: CounsellingFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -391,10 +365,8 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<CounsellingResponse> resource) {
-                CounsellingAdapter adapter;
-                CounsellingFragmentBinding counsellingFragmentBinding;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -403,8 +375,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
                     if (data != null) {
                         CounsellingFragment counsellingFragment = CounsellingFragment.this;
                         counsellingFragment.showBaseView();
-                        adapter = counsellingFragment.getAdapter();
-                        adapter.addItems(data.getRequests());
+                        counsellingFragment.getAdapter().addItems(data.getRequests());
                         return;
                     }
                     return;
@@ -423,7 +394,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
                 }
                 CounsellingFragment.this.hideProgress();
                 CounsellingFragment.this.showBaseView();
-                counsellingFragmentBinding = CounsellingFragment.this.get_binding();
+                CounsellingFragmentBinding counsellingFragmentBinding = CounsellingFragment.this.get_binding();
                 if (counsellingFragmentBinding == null || (recyclerView = counsellingFragmentBinding.rvCounselling) == null) {
                     return;
                 }
@@ -435,9 +406,10 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
     }
 
     private final void listenDeleteResponse() {
-        getCounsellingViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new CounsellingFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment$listenDeleteResponse$1
+        getCounsellingViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new CounsellingFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment.listenDeleteResponse.1
 
-            /* compiled from: CounsellingFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.CounsellingFragment$listenDeleteResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: CounsellingFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -474,12 +446,9 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                CounsellingFragmentBinding counsellingFragmentBinding;
-                CounsellingViewModel counsellingViewModel;
                 FloatingActionButton fabAddCounselling;
-                CounsellingFragmentBinding counsellingFragmentBinding2;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -487,13 +456,12 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
                     SuccessResponse data = resource.getData();
                     if (data != null) {
                         CounsellingFragment counsellingFragment = CounsellingFragment.this;
-                        counsellingFragmentBinding = counsellingFragment.get_binding();
+                        CounsellingFragmentBinding counsellingFragmentBinding = counsellingFragment.get_binding();
                         if (counsellingFragmentBinding != null && (fabAddCounselling = counsellingFragmentBinding.fabAddCounselling) != null) {
                             Intrinsics.checkNotNullExpressionValue(fabAddCounselling, "fabAddCounselling");
                             ToastExtKt.showInfoToast(fabAddCounselling, data.getMessage());
                         }
-                        counsellingViewModel = counsellingFragment.getCounsellingViewModel();
-                        counsellingViewModel.getCounselling();
+                        counsellingFragment.getCounsellingViewModel().getCounselling();
                         return;
                     }
                     return;
@@ -510,7 +478,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
                     return;
                 }
                 CounsellingFragment.this.hideProgress();
-                counsellingFragmentBinding2 = CounsellingFragment.this.get_binding();
+                CounsellingFragmentBinding counsellingFragmentBinding2 = CounsellingFragment.this.get_binding();
                 if (counsellingFragmentBinding2 == null || (recyclerView = counsellingFragmentBinding2.rvCounselling) == null) {
                     return;
                 }
@@ -529,7 +497,7 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
         builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.counselling.CounsellingFragment$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                CounsellingFragment.delete$lambda$2(CounsellingFragment.this, id, dialogInterface, i);
+                CounsellingFragment.delete$lambda$2(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton(getString(R.string.no), (DialogInterface.OnClickListener) null);
@@ -548,9 +516,9 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
         Intrinsics.checkNotNullParameter(id, "id");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        ReminderDialog newInstance = ReminderDialog.INSTANCE.newInstance(id);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        ReminderDialog reminderDialogNewInstance = ReminderDialog.INSTANCE.newInstance(id);
+        reminderDialogNewInstance.setCallBack(this);
+        reminderDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.counselling.CounsellingAdapter.CallBack
@@ -558,9 +526,9 @@ public final class CounsellingFragment extends BaseFragment implements Counselli
         Intrinsics.checkNotNullParameter(id, "id");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        ReviewDialog newInstance = ReviewDialog.INSTANCE.newInstance(id);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        ReviewDialog reviewDialogNewInstance = ReviewDialog.INSTANCE.newInstance(id);
+        reviewDialogNewInstance.setCallBack(this);
+        reviewDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.counselling.CounsellingAdapter.CallBack

@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: PublicationViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PublicationViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PublicationViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<SuccessResponse>> addResponse;
     private final CompositeDisposable compositeDisposable;
@@ -80,8 +80,8 @@ public final class PublicationViewModel extends ViewModel implements KoinCompone
     public final void getPublicationData() {
         this.publicationResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<PublicationResponse> observeOn = this.profileRepository.getPublicationUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<PublicationResponse, Unit> function1 = new Function1<PublicationResponse, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$getPublicationData$1
+        Single<PublicationResponse> singleObserveOn = this.profileRepository.getPublicationUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<PublicationResponse, Unit> function1 = new Function1<PublicationResponse, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel.getPublicationData.1
             {
                 super(1);
             }
@@ -92,20 +92,18 @@ public final class PublicationViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(PublicationResponse publicationResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PublicationViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(publicationResponse));
+                PublicationViewModel.this.publicationResponse.postValue(Resource.INSTANCE.success(publicationResponse));
             }
         };
         Consumer<? super PublicationResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PublicationViewModel.getPublicationData$lambda$0(Function1.this, obj);
+                PublicationViewModel.getPublicationData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$getPublicationData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel.getPublicationData.2
             {
                 super(1);
             }
@@ -116,17 +114,15 @@ public final class PublicationViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PublicationViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PublicationViewModel.this.publicationResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PublicationViewModel.getPublicationData$lambda$1(Function1.this, obj);
+                PublicationViewModel.getPublicationData$lambda$1(function12, obj);
             }
         }));
     }
@@ -151,8 +147,8 @@ public final class PublicationViewModel extends ViewModel implements KoinCompone
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deletePublicationUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$deletePublicationData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deletePublicationUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel.deletePublicationData.1
             {
                 super(1);
             }
@@ -163,7 +159,7 @@ public final class PublicationViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 PublicationViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -171,10 +167,10 @@ public final class PublicationViewModel extends ViewModel implements KoinCompone
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PublicationViewModel.deletePublicationData$lambda$2(Function1.this, obj);
+                PublicationViewModel.deletePublicationData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$deletePublicationData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel.deletePublicationData.2
             {
                 super(1);
             }
@@ -185,15 +181,15 @@ public final class PublicationViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 PublicationViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.quality_publication.PublicationViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PublicationViewModel.deletePublicationData$lambda$3(Function1.this, obj);
+                PublicationViewModel.deletePublicationData$lambda$3(function12, obj);
             }
         }));
     }

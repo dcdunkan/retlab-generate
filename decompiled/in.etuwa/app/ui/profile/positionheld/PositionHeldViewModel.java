@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: PositionHeldViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PositionHeldViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PositionHeldViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<SuccessResponse>> deleteResponse;
@@ -47,8 +47,8 @@ public final class PositionHeldViewModel extends ViewModel implements KoinCompon
     public final void getPositionData() {
         this.posResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<PositionHeldResponse> observeOn = this.profileRepository.getPositionHeldUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<PositionHeldResponse, Unit> function1 = new Function1<PositionHeldResponse, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$getPositionData$1
+        Single<PositionHeldResponse> singleObserveOn = this.profileRepository.getPositionHeldUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<PositionHeldResponse, Unit> function1 = new Function1<PositionHeldResponse, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel.getPositionData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class PositionHeldViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(PositionHeldResponse positionHeldResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PositionHeldViewModel.this.posResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(positionHeldResponse));
+                PositionHeldViewModel.this.posResponse.postValue(Resource.INSTANCE.success(positionHeldResponse));
             }
         };
         Consumer<? super PositionHeldResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PositionHeldViewModel.getPositionData$lambda$0(Function1.this, obj);
+                PositionHeldViewModel.getPositionData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$getPositionData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel.getPositionData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class PositionHeldViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PositionHeldViewModel.this.posResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PositionHeldViewModel.this.posResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PositionHeldViewModel.getPositionData$lambda$1(Function1.this, obj);
+                PositionHeldViewModel.getPositionData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class PositionHeldViewModel extends ViewModel implements KoinCompon
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deletePositionHeldUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$deletePositionHeldData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deletePositionHeldUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel.deletePositionHeldData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class PositionHeldViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 PositionHeldViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class PositionHeldViewModel extends ViewModel implements KoinCompon
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PositionHeldViewModel.deletePositionHeldData$lambda$2(Function1.this, obj);
+                PositionHeldViewModel.deletePositionHeldData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$deletePositionHeldData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel.deletePositionHeldData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class PositionHeldViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 PositionHeldViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PositionHeldViewModel.deletePositionHeldData$lambda$3(Function1.this, obj);
+                PositionHeldViewModel.deletePositionHeldData$lambda$3(function12, obj);
             }
         }));
     }

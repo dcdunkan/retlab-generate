@@ -1,6 +1,8 @@
 package in.etuwa.app.data.network;
 
+import in.etuwa.app.EtlabApp;
 import in.etuwa.app.data.preference.SharedPrefManager;
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -9,6 +11,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
+import okhttp3.Cache;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -26,15 +29,18 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/* compiled from: ApiClientStore.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ApiClientStore.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ApiClientStore implements KoinComponent {
     public static final ApiClientStore INSTANCE;
+    private static final Cache cache;
+    private static volatile ApiService cachedApiService;
     private static final HttpLoggingInterceptor logger;
     private static final OkHttpClient okHttpClient;
 
-    /* renamed from: preferenceManager$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preferenceManager$delegate, reason: from kotlin metadata */
     private static final Lazy preferenceManager;
+    private static final String storeBaseUrl;
 
     private ApiClientStore() {
     }
@@ -48,10 +54,10 @@ public final class ApiClientStore implements KoinComponent {
         ApiClientStore apiClientStore = new ApiClientStore();
         INSTANCE = apiClientStore;
         final ApiClientStore apiClientStore2 = apiClientStore;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        preferenceManager = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.data.network.ApiClientStore$special$$inlined$inject$default$1
+        preferenceManager = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.data.network.ApiClientStore$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -61,7 +67,7 @@ public final class ApiClientStore implements KoinComponent {
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = apiClientStore2;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -72,26 +78,26 @@ public final class ApiClientStore implements KoinComponent {
                 return rootScope.get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), qualifier2, function0);
             }
         });
-        HttpLoggingInterceptor level = new HttpLoggingInterceptor(0 == true ? 1 : 0, 1, 0 == true ? 1 : 0).setLevel(HttpLoggingInterceptor.Level.BODY);
+        HttpLoggingInterceptor level = new HttpLoggingInterceptor(0 == true ? 1 : 0, 1, 0 == true ? 1 : 0).setLevel(HttpLoggingInterceptor.Level.NONE);
         logger = level;
-        okHttpClient = new OkHttpClient.Builder().connectTimeout(20L, TimeUnit.MINUTES).readTimeout(20L, TimeUnit.MINUTES).writeTimeout(20L, TimeUnit.MINUTES).addInterceptor(level).addInterceptor(new Interceptor() { // from class: in.etuwa.app.data.network.ApiClientStore$special$$inlined$-addInterceptor$1
+        Cache cache2 = new Cache(new File(EtlabApp.INSTANCE.get().getCacheDir(), "http_cache_store"), 10485760L);
+        cache = cache2;
+        okHttpClient = new OkHttpClient.Builder().cache(cache2).connectTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).writeTimeout(60L, TimeUnit.SECONDS).addInterceptor(level).addInterceptor(new Interceptor() { // from class: in.etuwa.app.data.network.ApiClientStore$special$$inlined$-addInterceptor$1
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
-                Request.Builder url;
-                SharedPrefManager preferenceManager2;
+                Request.Builder builderUrl;
                 Intrinsics.checkNotNullParameter(chain, "chain");
                 Request request = chain.request();
-                HttpUrl build = request.url().newBuilder().build();
+                HttpUrl httpUrlBuild = request.url().newBuilder().build();
                 if (request.header("No-Authentication") == null) {
-                    Request.Builder method = request.newBuilder().method(request.method(), request.body());
-                    preferenceManager2 = ApiClientStore.INSTANCE.getPreferenceManager();
-                    url = method.addHeader("Authorization", "Bearer " + preferenceManager2.getToken()).url(build);
+                    builderUrl = request.newBuilder().method(request.method(), request.body()).addHeader("Authorization", "Bearer " + ApiClientStore.INSTANCE.getPreferenceManager().getToken()).url(httpUrlBuild);
                 } else {
-                    url = request.newBuilder().method(request.method(), request.body()).url(build);
+                    builderUrl = request.newBuilder().method(request.method(), request.body()).url(httpUrlBuild);
                 }
-                return chain.proceed(url.build());
+                return chain.proceed(builderUrl.build());
             }
         }).build();
+        storeBaseUrl = "https://aisat.store.etlab.in/engine/web/app/";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -100,8 +106,19 @@ public final class ApiClientStore implements KoinComponent {
     }
 
     public final ApiService getInstance() {
-        Object create = new Retrofit.Builder().baseUrl("https://aisat.store.etlab.in/engine/web/app/").addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).client(okHttpClient).build().create(ApiService.class);
-        Intrinsics.checkNotNullExpressionValue(create, "retrofit.create(ApiService::class.java)");
-        return (ApiService) create;
+        ApiService apiService = cachedApiService;
+        if (apiService != null) {
+            return apiService;
+        }
+        synchronized (this) {
+            ApiService apiService2 = cachedApiService;
+            if (apiService2 != null) {
+                return apiService2;
+            }
+            ApiService newService = (ApiService) new Retrofit.Builder().baseUrl(storeBaseUrl).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).client(okHttpClient).build().create(ApiService.class);
+            cachedApiService = newService;
+            Intrinsics.checkNotNullExpressionValue(newService, "newService");
+            return newService;
+        }
     }
 }

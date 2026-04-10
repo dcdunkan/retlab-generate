@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SemListAdapterTwo.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SemListAdapterTwo.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SemListAdapterTwo extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<Semester> list = new ArrayList<>();
     private SemCallBack listener;
 
-    /* compiled from: SemListAdapterTwo.kt */
+    /* JADX INFO: compiled from: SemListAdapterTwo.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H&¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/result/session/semlistdialogsession/SemListAdapterTwo$SemCallBack;", "", "onSemSelected", "", "id", "", "sem", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface SemCallBack {
         void onSemSelected(String id, String sem);
@@ -32,18 +32,18 @@ public final class SemListAdapterTwo extends RecyclerView.Adapter<BaseViewHolder
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_session_sem_list, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …_sem_list, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_session_sem_list, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …_sem_list, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -59,7 +59,7 @@ public final class SemListAdapterTwo extends RecyclerView.Adapter<BaseViewHolder
         return !this.list.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: SemListAdapterTwo.kt */
+    /* JADX INFO: compiled from: SemListAdapterTwo.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\b\u001a\u00020\tH\u0014J\u0010\u0010\n\u001a\u00020\t2\u0006\u0010\u000b\u001a\u00020\fH\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lin/etuwa/app/ui/result/session/semlistdialogsession/SemListAdapterTwo$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/result/session/semlistdialogsession/SemListAdapterTwo;Landroid/view/View;)V", "tvSem", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         final /* synthetic */ SemListAdapterTwo this$0;
@@ -90,7 +90,7 @@ public final class SemListAdapterTwo extends RecyclerView.Adapter<BaseViewHolder
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.result.session.semlistdialogsession.SemListAdapterTwo$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        SemListAdapterTwo.ViewHolder.onBind$lambda$0(SemListAdapterTwo.this, semester, view);
+                        SemListAdapterTwo.ViewHolder.onBind$lambda$0(semListAdapterTwo, semester, view);
                     }
                 });
             } catch (Exception unused) {

@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CollegeSpinnerAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CollegeSpinnerAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CollegeSpinnerAdapter extends BaseAdapter {
     private AppCompatActivity activity;
     private ArrayList<Colleges> items;
@@ -31,7 +31,7 @@ public final class CollegeSpinnerAdapter extends BaseAdapter {
         this.items = new ArrayList<>();
     }
 
-    /* compiled from: CollegeSpinnerAdapter.kt */
+    /* JADX INFO: compiled from: CollegeSpinnerAdapter.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0002\u0010\u0004R\u001c\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/login/CollegeSpinnerAdapter$ViewHolder;", "", CommonCssConstants.ROW, "Landroid/view/View;", "(Landroid/view/View;)V", "teachName", "Landroid/widget/TextView;", "getTeachName", "()Landroid/widget/TextView;", "setTeachName", "(Landroid/widget/TextView;)V", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     private static final class ViewHolder {
         private TextView teachName;

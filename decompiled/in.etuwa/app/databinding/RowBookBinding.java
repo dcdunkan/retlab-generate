@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowBookBinding implements ViewBinding {
     public final TextView bookName;
     public final TextView price;
@@ -31,11 +31,11 @@ public final class RowBookBinding implements ViewBinding {
     }
 
     public static RowBookBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_book, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_book, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowBookBinding bind(View rootView) {

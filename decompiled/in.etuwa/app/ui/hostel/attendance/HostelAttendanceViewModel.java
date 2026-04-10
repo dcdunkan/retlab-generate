@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelAttendanceViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelAttendanceViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelAttendanceViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final HostelRepository hostelRepository;
@@ -35,8 +35,8 @@ public final class HostelAttendanceViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(year, "year");
         this.hostelResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelAttCalResponse> observeOn = this.hostelRepository.getHostelAttCalApiCall(month, year).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelAttCalResponse, Unit> function1 = new Function1<HostelAttCalResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel$getHostelAttCalView$1
+        Single<HostelAttCalResponse> singleObserveOn = this.hostelRepository.getHostelAttCalApiCall(month, year).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelAttCalResponse, Unit> function1 = new Function1<HostelAttCalResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel.getHostelAttCalView.1
             {
                 super(1);
             }
@@ -47,20 +47,18 @@ public final class HostelAttendanceViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelAttCalResponse hostelAttCalResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelAttCalResponse));
+                HostelAttendanceViewModel.this.hostelResponse.postValue(Resource.INSTANCE.success(hostelAttCalResponse));
             }
         };
         Consumer<? super HostelAttCalResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceViewModel.getHostelAttCalView$lambda$0(Function1.this, obj);
+                HostelAttendanceViewModel.getHostelAttCalView$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel$getHostelAttCalView$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel.getHostelAttCalView.2
             {
                 super(1);
             }
@@ -71,17 +69,15 @@ public final class HostelAttendanceViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelAttendanceViewModel.this.hostelResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceViewModel.getHostelAttCalView$lambda$1(Function1.this, obj);
+                HostelAttendanceViewModel.getHostelAttCalView$lambda$1(function12, obj);
             }
         }));
     }

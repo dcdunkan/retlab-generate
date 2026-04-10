@@ -16,8 +16,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: LeaveRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LeaveRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class LeaveRepository {
     private final ApiHelper apiHelper;
 

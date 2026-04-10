@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MessTypeResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MessTypeResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MessTypeResponse {
     private final ArrayList<MessData> data;
     private final boolean login;
@@ -27,7 +27,7 @@ public final /* data */ class MessTypeResponse {
         return messTypeResponse.copy(z, arrayList, arrayList2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

@@ -11,19 +11,20 @@ import in.etuwa.app.R;
 import in.etuwa.app.data.model.lab.Practical;
 import in.etuwa.app.helper.EmptyViewHolder;
 import in.etuwa.app.ui.base.BaseViewHolder;
+import in.etuwa.app.ui.lab.LabFragment;
 import in.etuwa.app.ui.lab.practical.LabPracticalAdapter;
 import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LabPracticalAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LabPracticalAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LabPracticalAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private CallBack listener;
     private final ArrayList<Practical> practicals = new ArrayList<>();
 
-    /* compiled from: LabPracticalAdapter.kt */
+    /* JADX INFO: compiled from: LabPracticalAdapter.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\bf\u0018\u00002\u00020\u0001J\u0012\u0010\u0002\u001a\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005H&J\u001c\u0010\u0006\u001a\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\u0010\u0007\u001a\u0004\u0018\u00010\u0005H&¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/lab/practical/LabPracticalAdapter$CallBack;", "", "onEvaluationClick", "", StoreFragmentKt.SUB_ID, "", "onExperimentClick", "subPid", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void onEvaluationClick(String subId);
@@ -35,18 +36,18 @@ public final class LabPracticalAdapter extends RecyclerView.Adapter<BaseViewHold
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_lab_practicals, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …racticals, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_lab_practicals, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …racticals, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -62,7 +63,7 @@ public final class LabPracticalAdapter extends RecyclerView.Adapter<BaseViewHold
         return !this.practicals.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: LabPracticalAdapter.kt */
+    /* JADX INFO: compiled from: LabPracticalAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u000b\u001a\u00020\fH\u0014J\u0010\u0010\r\u001a\u00020\f2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lin/etuwa/app/ui/lab/practical/LabPracticalAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/lab/practical/LabPracticalAdapter;Landroid/view/View;)V", "attendance", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "evaluation", "experiments", "name", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView attendance;
@@ -100,7 +101,7 @@ public final class LabPracticalAdapter extends RecyclerView.Adapter<BaseViewHold
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LabPracticalAdapter.ViewHolder.onBind$lambda$0(LabPracticalAdapter.this, practical, view);
+                        LabPracticalAdapter.ViewHolder.onBind$lambda$0(labPracticalAdapter, practical, view);
                     }
                 });
                 TextView textView2 = this.evaluation;
@@ -108,7 +109,7 @@ public final class LabPracticalAdapter extends RecyclerView.Adapter<BaseViewHold
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        LabPracticalAdapter.ViewHolder.onBind$lambda$1(LabPracticalAdapter.this, practical, view);
+                        LabPracticalAdapter.ViewHolder.onBind$lambda$1(labPracticalAdapter2, practical, view);
                     }
                 });
             } catch (Exception unused) {
@@ -150,6 +151,10 @@ public final class LabPracticalAdapter extends RecyclerView.Adapter<BaseViewHold
     }
 
     public final void setCallBack(LabPracticalFragment context) {
+        this.listener = context;
+    }
+
+    public final void setCallBack2(LabFragment context) {
         this.listener = context;
     }
 }

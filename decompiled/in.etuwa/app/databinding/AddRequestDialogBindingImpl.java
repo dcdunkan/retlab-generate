@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AddRequestDialogBindingImpl extends AddRequestDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -99,7 +99,7 @@ public class AddRequestDialogBindingImpl extends AddRequestDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (21 != variableId) {
+        if (20 != variableId) {
             return false;
         }
         setAddRequestDialogViewModel((AddRequestDialogViewModel) variable);

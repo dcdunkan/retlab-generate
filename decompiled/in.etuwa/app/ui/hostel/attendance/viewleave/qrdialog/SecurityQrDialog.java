@@ -57,11 +57,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SecurityQrDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SecurityQrDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SecurityQrDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogSecurityQrBinding _binding;
     private ArrayList<DownloadModel> downList;
@@ -69,14 +69,14 @@ public final class SecurityQrDialog extends BaseDialog {
     private String id;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: securityQrViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: securityQrViewModel$delegate, reason: from kotlin metadata */
     private final Lazy securityQrViewModel;
     private String url;
 
-    /* compiled from: SecurityQrDialog.kt */
+    /* JADX INFO: compiled from: SecurityQrDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -126,7 +126,7 @@ public final class SecurityQrDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return securityQrDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(securityQrDialog);
@@ -140,7 +140,7 @@ public final class SecurityQrDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -153,7 +153,7 @@ public final class SecurityQrDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SecurityQrViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SecurityQrViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SecurityQrDialog securityQrDialog2 = this;
@@ -177,14 +177,12 @@ public final class SecurityQrDialog extends BaseDialog {
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrDialog$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                ArrayList arrayList2;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = SecurityQrDialog.this.downList;
-                    SecurityQrDialog securityQrDialog3 = SecurityQrDialog.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    SecurityQrDialog securityQrDialog3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -193,8 +191,7 @@ public final class SecurityQrDialog extends BaseDialog {
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            arrayList2 = securityQrDialog3.downList;
-                            arrayList2.remove(new DownloadModel(downloadModel.getId(), i));
+                            securityQrDialog3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -208,7 +205,7 @@ public final class SecurityQrDialog extends BaseDialog {
         return (SecurityQrViewModel) this.securityQrViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogSecurityQrBinding get_binding() {
         return this._binding;
     }
@@ -217,7 +214,7 @@ public final class SecurityQrDialog extends BaseDialog {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: SecurityQrDialog.kt */
+    /* JADX INFO: compiled from: SecurityQrDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/hostel/attendance/viewleave/qrdialog/SecurityQrDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/attendance/viewleave/qrdialog/SecurityQrDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -289,7 +286,7 @@ public final class SecurityQrDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SecurityQrDialog.setUp$lambda$1(SecurityQrDialog.this, view);
+                SecurityQrDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -308,7 +305,7 @@ public final class SecurityQrDialog extends BaseDialog {
         getSecurityQrViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SecurityQrDialog.listenResponse$lambda$3(SecurityQrDialog.this, (Resource) obj);
+                SecurityQrDialog.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -407,20 +404,20 @@ public final class SecurityQrDialog extends BaseDialog {
                 this$0.url = hostelScanViewResponse.getQrcode();
                 this$0.downloadUrl = hostelScanViewResponse.getUrl();
                 if (!Intrinsics.areEqual(hostelScanViewResponse.getQrcode(), "")) {
-                    RequestCreator error = Picasso.get().load(hostelScanViewResponse.getQrcode()).fit().error(R.drawable.not_available_circle);
+                    RequestCreator requestCreatorError = Picasso.get().load(hostelScanViewResponse.getQrcode()).fit().error(R.drawable.not_available_circle);
                     DialogSecurityQrBinding dialogSecurityQrBinding13 = this$0.get_binding();
                     ImageView imageView4 = dialogSecurityQrBinding13 != null ? dialogSecurityQrBinding13.bpQr : null;
                     Intrinsics.checkNotNull(imageView4);
-                    error.into(imageView4);
+                    requestCreatorError.into(imageView4);
                 }
                 if (Intrinsics.areEqual(hostelScanViewResponse.getImage(), "")) {
                     return;
                 }
-                RequestCreator error2 = Picasso.get().load(hostelScanViewResponse.getImage()).fit().error(R.drawable.not_available_circle);
+                RequestCreator requestCreatorError2 = Picasso.get().load(hostelScanViewResponse.getImage()).fit().error(R.drawable.not_available_circle);
                 DialogSecurityQrBinding dialogSecurityQrBinding14 = this$0.get_binding();
                 ImageView imageView5 = dialogSecurityQrBinding14 != null ? dialogSecurityQrBinding14.bpImage : null;
                 Intrinsics.checkNotNull(imageView5);
-                error2.into(imageView5);
+                requestCreatorError2.into(imageView5);
                 return;
             }
             DialogSecurityQrBinding dialogSecurityQrBinding15 = this$0.get_binding();
@@ -440,14 +437,14 @@ public final class SecurityQrDialog extends BaseDialog {
     public final void downloadFile(String url, int position, boolean flag) {
         TextView textView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace, flag)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, "/etlab/assignments/");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace, flag)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, "/etlab/assignments/");
                 return;
             }
             try {
@@ -457,14 +454,14 @@ public final class SecurityQrDialog extends BaseDialog {
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(textView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading("/etlab/assignments/", url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading("/etlab/assignments/", url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
@@ -479,7 +476,7 @@ public final class SecurityQrDialog extends BaseDialog {
                 new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrDialog$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        SecurityQrDialog.requestPermission$lambda$4(SecurityQrDialog.this, dialogInterface, i);
+                        SecurityQrDialog.requestPermission$lambda$4(this.f$0, dialogInterface, i);
                     }
                 }).create().show();
             } else {
@@ -498,13 +495,13 @@ public final class SecurityQrDialog extends BaseDialog {
     public final boolean checkFileExistence(String fileName, boolean flag) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
         if (flag) {
-            Context requireContext = requireContext();
-            Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-            return new ValidChecker(requireContext).checkFileExistence(fileName, "/etlab/assignments/");
+            Context contextRequireContext = requireContext();
+            Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            return new ValidChecker(contextRequireContext).checkFileExistence(fileName, "/etlab/assignments/");
         }
-        Context requireContext2 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-        return new ValidChecker(requireContext2).checkFileExistence(fileName, "/etlab/assignments/");
+        Context contextRequireContext2 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+        return new ValidChecker(contextRequireContext2).checkFileExistence(fileName, "/etlab/assignments/");
     }
 
     @Override // androidx.fragment.app.Fragment

@@ -15,7 +15,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.moduletest.ResultModuleTestViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ResultModuleTestFragmentBinding extends ViewDataBinding {
     public final FloatingActionButton fabModuleResultSemester;
 

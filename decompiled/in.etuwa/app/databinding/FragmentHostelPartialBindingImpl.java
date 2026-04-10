@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.feepartial.hostel.HostelPartialViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelPartialBindingImpl extends FragmentHostelPartialBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -79,7 +79,7 @@ public class FragmentHostelPartialBindingImpl extends FragmentHostelPartialBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (117 != variableId) {
+        if (118 != variableId) {
             return false;
         }
         setHostelPartialViewModel((HostelPartialViewModel) variable);

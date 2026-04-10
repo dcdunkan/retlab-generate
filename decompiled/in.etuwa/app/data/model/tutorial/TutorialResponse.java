@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TutorialResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: TutorialResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class TutorialResponse {
 
     @SerializedName(FirebaseAnalytics.Event.LOGIN)
@@ -37,7 +37,7 @@ public final /* data */ class TutorialResponse {
         return tutorialResponse.copy(z, arrayList, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -46,7 +46,7 @@ public final /* data */ class TutorialResponse {
         return this.tutorials;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMessage() {
         return this.message;
     }

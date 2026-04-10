@@ -24,6 +24,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
+import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import org.koin.core.Koin;
@@ -34,13 +35,13 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: UploadAssignmentDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: UploadAssignmentDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class UploadAssignmentDialogViewModel extends ViewModel implements KoinComponent {
     private final AssignmentRepository assignmentRepository;
     private final CompositeDisposable compositeDisposable;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private MutableLiveData<Resource<Float>> progressResponse;
     private MutableLiveData<Resource<SuccessResponse>> uploadResponse;
@@ -54,10 +55,10 @@ public final class UploadAssignmentDialogViewModel extends ViewModel implements 
         Intrinsics.checkNotNullParameter(assignmentRepository, "assignmentRepository");
         this.assignmentRepository = assignmentRepository;
         final UploadAssignmentDialogViewModel uploadAssignmentDialogViewModel = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -67,7 +68,7 @@ public final class UploadAssignmentDialogViewModel extends ViewModel implements 
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = uploadAssignmentDialogViewModel;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -105,40 +106,51 @@ public final class UploadAssignmentDialogViewModel extends ViewModel implements 
         this.progressResponse = mutableLiveData;
     }
 
-    public final void uploadAssignment(String assignmentId, File filePath) {
+    public final void uploadAssignment(String assignmentId, String assignmentLink, File filePath) {
+        MultipartBody.Part part;
         Intrinsics.checkNotNullParameter(assignmentId, "assignmentId");
-        Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, assignmentId);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getUserName());
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getPassword());
-        ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("AssignmentData[upload_file]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$uploadAssignment$1
-            {
-                super(1);
-            }
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, assignmentId);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getUserName());
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getPassword());
+        RequestBody.Companion companion = RequestBody.INSTANCE;
+        MediaType mediaType = MultipartBody.FORM;
+        if (assignmentLink == null) {
+            assignmentLink = "";
+        }
+        RequestBody requestBodyCreate4 = companion.create(mediaType, assignmentLink);
+        if (filePath == null || !filePath.exists()) {
+            part = null;
+        } else {
+            ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
+            MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("AssignmentData[upload_file]", filePath.getName(), progressRequestBody);
+            Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+            final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel.uploadAssignment.1
+                {
+                    super(1);
+                }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Float f) {
-                invoke2(f);
-                return Unit.INSTANCE;
-            }
+                @Override // kotlin.jvm.functions.Function1
+                public /* bridge */ /* synthetic */ Unit invoke(Float f) {
+                    invoke2(f);
+                    return Unit.INSTANCE;
+                }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            public final void invoke2(Float f) {
-                UploadAssignmentDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
-            }
-        };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$$ExternalSyntheticLambda0
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Object obj) {
-                UploadAssignmentDialogViewModel.uploadAssignment$lambda$0(Function1.this, obj);
-            }
-        });
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+                public final void invoke2(Float f) {
+                    UploadAssignmentDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
+                }
+            };
+            observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$$ExternalSyntheticLambda0
+                @Override // io.reactivex.functions.Consumer
+                public final void accept(Object obj) {
+                    UploadAssignmentDialogViewModel.uploadAssignment$lambda$0(function1, obj);
+                }
+            });
+            part = partCreateFormData;
+        }
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.assignmentRepository.uploadAssignmentApiCall(create2, create3, create, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$uploadAssignment$2
+        Observable<SuccessResponse> observableObserveOn = this.assignmentRepository.uploadAssignmentApiCall(requestBodyCreate2, requestBodyCreate3, requestBodyCreate, requestBodyCreate4, part).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel.uploadAssignment.2
             {
                 super(1);
             }
@@ -149,7 +161,7 @@ public final class UploadAssignmentDialogViewModel extends ViewModel implements 
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 UploadAssignmentDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -157,10 +169,10 @@ public final class UploadAssignmentDialogViewModel extends ViewModel implements 
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UploadAssignmentDialogViewModel.uploadAssignment$lambda$1(Function1.this, obj);
+                UploadAssignmentDialogViewModel.uploadAssignment$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$uploadAssignment$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel.uploadAssignment.3
             {
                 super(1);
             }
@@ -171,7 +183,7 @@ public final class UploadAssignmentDialogViewModel extends ViewModel implements 
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     UploadAssignmentDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -180,10 +192,10 @@ public final class UploadAssignmentDialogViewModel extends ViewModel implements 
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UploadAssignmentDialogViewModel.uploadAssignment$lambda$2(Function1.this, obj);
+                UploadAssignmentDialogViewModel.uploadAssignment$lambda$2(function13, obj);
             }
         }));
     }

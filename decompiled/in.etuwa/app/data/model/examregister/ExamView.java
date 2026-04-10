@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamView.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamView.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamView {
     private final String amount;
     private final String course;
@@ -28,22 +28,22 @@ public final /* data */ class ExamView {
         return examView.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getCourse() {
         return this.course;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getIs_eligible() {
         return this.is_eligible;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }

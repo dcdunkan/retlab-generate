@@ -3,27 +3,53 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentTeacherSurveyListBinding extends ViewDataBinding {
+    public final AppBarLayout appBarLayout;
+    public final Chip chipAll;
+    public final Chip chipCompleted;
+    public final ChipGroup chipGroupFilter;
+    public final Chip chipPending;
+    public final ImageView ivClearSearch;
+    public final ImageView ivFilter;
+    public final ImageView ivSearch;
 
     @Bindable
     protected TeacherSurveyViewModel mTeacherSurveyViewModel;
     public final RecyclerView rvTeacherSurvey;
+    public final CardView searchCard;
+    public final EditText searchInput;
     public final SwipeRefreshLayout swipeLayout;
 
     public abstract void setTeacherSurveyViewModel(TeacherSurveyViewModel teacherSurveyViewModel);
 
-    protected FragmentTeacherSurveyListBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvTeacherSurvey, SwipeRefreshLayout swipeLayout) {
+    protected FragmentTeacherSurveyListBinding(Object _bindingComponent, View _root, int _localFieldCount, AppBarLayout appBarLayout, Chip chipAll, Chip chipCompleted, ChipGroup chipGroupFilter, Chip chipPending, ImageView ivClearSearch, ImageView ivFilter, ImageView ivSearch, RecyclerView rvTeacherSurvey, CardView searchCard, EditText searchInput, SwipeRefreshLayout swipeLayout) {
         super(_bindingComponent, _root, _localFieldCount);
+        this.appBarLayout = appBarLayout;
+        this.chipAll = chipAll;
+        this.chipCompleted = chipCompleted;
+        this.chipGroupFilter = chipGroupFilter;
+        this.chipPending = chipPending;
+        this.ivClearSearch = ivClearSearch;
+        this.ivFilter = ivFilter;
+        this.ivSearch = ivSearch;
         this.rvTeacherSurvey = rvTeacherSurvey;
+        this.searchCard = searchCard;
+        this.searchInput = searchInput;
         this.swipeLayout = swipeLayout;
     }
 

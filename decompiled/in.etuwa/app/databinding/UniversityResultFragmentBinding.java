@@ -9,13 +9,14 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.button.MaterialButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.university.UniversityResultViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class UniversityResultFragmentBinding extends ViewDataBinding {
     public final TextView branchName;
-    public final TextView downloadBtn;
+    public final MaterialButton downloadBtn;
 
     @Bindable
     protected UniversityResultViewModel mUniversityResultViewModel;
@@ -29,7 +30,7 @@ public abstract class UniversityResultFragmentBinding extends ViewDataBinding {
 
     public abstract void setUniversityResultViewModel(UniversityResultViewModel universityResultViewModel);
 
-    protected UniversityResultFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView branchName, TextView downloadBtn, TextView progName, TextView regNo, RecyclerView rvResultList, TextView semName, LinearLayout swipeLayout, TextView tvEarnedCredit, TextView tvSgpa) {
+    protected UniversityResultFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView branchName, MaterialButton downloadBtn, TextView progName, TextView regNo, RecyclerView rvResultList, TextView semName, LinearLayout swipeLayout, TextView tvEarnedCredit, TextView tvSgpa) {
         super(_bindingComponent, _root, _localFieldCount);
         this.branchName = branchName;
         this.downloadBtn = downloadBtn;

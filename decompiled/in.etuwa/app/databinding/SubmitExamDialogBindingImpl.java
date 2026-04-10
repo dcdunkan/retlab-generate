@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class SubmitExamDialogBindingImpl extends SubmitExamDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -68,7 +68,7 @@ public class SubmitExamDialogBindingImpl extends SubmitExamDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (215 != variableId) {
+        if (217 != variableId) {
             return false;
         }
         setSubmitExamDialogViewModel((SubmitExamDialogViewModel) variable);

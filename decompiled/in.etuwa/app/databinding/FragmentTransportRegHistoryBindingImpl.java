@@ -11,7 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.registration.view.TransportRegHistoryViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentTransportRegHistoryBindingImpl extends FragmentTransportRegHistoryBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentTransportRegHistoryBindingImpl extends FragmentTransportReg
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (227 != variableId) {
+        if (229 != variableId) {
             return false;
         }
         setTransportRegHistoryViewModel((TransportRegHistoryViewModel) variable);

@@ -14,8 +14,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.RequestBody;
 
-/* compiled from: CounsellingRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CounsellingRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class CounsellingRepository {
     private final ApiHelper apiHelper;
 

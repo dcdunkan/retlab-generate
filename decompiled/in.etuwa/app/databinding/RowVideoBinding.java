@@ -5,25 +5,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.youtube.player.YouTubeThumbnailView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowVideoBinding implements ViewBinding {
     public final YouTubeThumbnailView ivYtThumbnail;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView tvDate;
     public final TextView tvDescription;
     public final TextView tvSem;
     public final TextView tvSub;
     public final TextView tvTitle;
-    public final CardView videoCard;
+    public final MaterialCardView videoCard;
     public final WebView wvThumbnail;
 
-    private RowVideoBinding(CardView rootView, YouTubeThumbnailView ivYtThumbnail, TextView tvDate, TextView tvDescription, TextView tvSem, TextView tvSub, TextView tvTitle, CardView videoCard, WebView wvThumbnail) {
+    private RowVideoBinding(MaterialCardView rootView, YouTubeThumbnailView ivYtThumbnail, TextView tvDate, TextView tvDescription, TextView tvSem, TextView tvSub, TextView tvTitle, MaterialCardView videoCard, WebView wvThumbnail) {
         this.rootView = rootView;
         this.ivYtThumbnail = ivYtThumbnail;
         this.tvDate = tvDate;
@@ -36,7 +36,7 @@ public final class RowVideoBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -45,11 +45,11 @@ public final class RowVideoBinding implements ViewBinding {
     }
 
     public static RowVideoBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_video, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_video, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowVideoBinding bind(View rootView) {
@@ -71,11 +71,11 @@ public final class RowVideoBinding implements ViewBinding {
                             i = R.id.tv_title;
                             TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
                             if (textView5 != null) {
-                                CardView cardView = (CardView) rootView;
+                                MaterialCardView materialCardView = (MaterialCardView) rootView;
                                 i = R.id.wv_thumbnail;
                                 WebView webView = (WebView) ViewBindings.findChildViewById(rootView, i);
                                 if (webView != null) {
-                                    return new RowVideoBinding(cardView, youTubeThumbnailView, textView, textView2, textView3, textView4, textView5, cardView, webView);
+                                    return new RowVideoBinding(materialCardView, youTubeThumbnailView, textView, textView2, textView3, textView4, textView5, materialCardView, webView);
                                 }
                             }
                         }

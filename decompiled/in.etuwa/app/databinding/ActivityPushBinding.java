@@ -8,13 +8,13 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.push.PushViewModel;
+import me.ibrahimsn.lib.SmoothBottomBar;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ActivityPushBinding extends ViewDataBinding {
-    public final BottomNavigationView bottomNav;
+    public final SmoothBottomBar bottomNavNew;
 
     @Bindable
     protected PushViewModel mPushViewModel;
@@ -23,9 +23,9 @@ public abstract class ActivityPushBinding extends ViewDataBinding {
 
     public abstract void setPushViewModel(PushViewModel pushViewModel);
 
-    protected ActivityPushBinding(Object _bindingComponent, View _root, int _localFieldCount, BottomNavigationView bottomNav, CoordinatorLayout pushLayout, RecyclerView rvPush) {
+    protected ActivityPushBinding(Object _bindingComponent, View _root, int _localFieldCount, SmoothBottomBar bottomNavNew, CoordinatorLayout pushLayout, RecyclerView rvPush) {
         super(_bindingComponent, _root, _localFieldCount);
-        this.bottomNav = bottomNav;
+        this.bottomNavNew = bottomNavNew;
         this.pushLayout = pushLayout;
         this.rvPush = rvPush;
     }

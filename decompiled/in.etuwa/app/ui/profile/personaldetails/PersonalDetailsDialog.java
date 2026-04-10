@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
@@ -44,11 +43,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: PersonalDetailsDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PersonalDetailsDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbcDialog.ProfileListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogPersonalDetailsBinding _binding;
     private String abcId;
@@ -56,14 +55,14 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
     private ProfileListener listener;
     private MainCallBackListener listener2;
 
-    /* renamed from: personalDetailsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: personalDetailsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy personalDetailsViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String video;
 
-    /* compiled from: PersonalDetailsDialog.kt */
+    /* JADX INFO: compiled from: PersonalDetailsDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/personaldetails/PersonalDetailsDialog$ProfileListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ProfileListener {
         void dismiss();
@@ -92,7 +91,7 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return personalDetailsDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(personalDetailsDialog);
@@ -106,7 +105,7 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -119,7 +118,7 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(PersonalDetailsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(PersonalDetailsViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final PersonalDetailsDialog personalDetailsDialog2 = this;
@@ -146,7 +145,7 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogPersonalDetailsBinding get_binding() {
         return this._binding;
     }
@@ -155,7 +154,7 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: PersonalDetailsDialog.kt */
+    /* JADX INFO: compiled from: PersonalDetailsDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/personaldetails/PersonalDetailsDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/personaldetails/PersonalDetailsDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -219,34 +218,50 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.personaldetails.PersonalDetailsDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PersonalDetailsDialog.setUp$lambda$1(PersonalDetailsDialog.this, view);
+                PersonalDetailsDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$1(PersonalDetailsDialog this$0, View view) {
+        TextView textView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "tkmce", false, 2, (Object) null)) {
-            FragmentManager childFragmentManager = this$0.getChildFragmentManager();
-            Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            UpdateAbcDialog.Companion companion = UpdateAbcDialog.INSTANCE;
+        String baseUrl = this$0.getPreference().getBaseUrl();
+        boolean z = true;
+        if ((baseUrl.length() > 0) && StringsKt.contains$default((CharSequence) baseUrl, (CharSequence) "tkmce", false, 2, (Object) null)) {
             String str = this$0.abcId;
-            Intrinsics.checkNotNull(str);
             String str2 = this$0.instruction;
-            Intrinsics.checkNotNull(str2);
             String str3 = this$0.video;
-            Intrinsics.checkNotNull(str3);
-            UpdateAbcDialog newInstance = companion.newInstance(str, str2, str3);
-            newInstance.setCallBack(this$0);
-            newInstance.show(childFragmentManager, (String) null);
+            String str4 = str;
+            if (!(str4 == null || str4.length() == 0)) {
+                String str5 = str2;
+                if (!(str5 == null || str5.length() == 0)) {
+                    String str6 = str3;
+                    if (str6 != null && str6.length() != 0) {
+                        z = false;
+                    }
+                    if (!z) {
+                        UpdateAbcDialog updateAbcDialogNewInstance = UpdateAbcDialog.INSTANCE.newInstance(str, str2, str3);
+                        updateAbcDialogNewInstance.setCallBack(this$0);
+                        updateAbcDialogNewInstance.show(this$0.getChildFragmentManager(), (String) null);
+                        return;
+                    }
+                }
+            }
+            DialogPersonalDetailsBinding dialogPersonalDetailsBinding = this$0.get_binding();
+            if (dialogPersonalDetailsBinding == null || (textView = dialogPersonalDetailsBinding.abcId) == null) {
+                return;
+            }
+            ToastExtKt.showErrorToast(textView, "Missing required data");
         }
     }
 
     private final void listenResponse() {
-        getPersonalDetailsViewModel().getResponse().observe(getViewLifecycleOwner(), new PersonalDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.personaldetails.PersonalDetailsDialog$listenResponse$1
+        getPersonalDetailsViewModel().getResponse().observe(getViewLifecycleOwner(), new PersonalDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.personaldetails.PersonalDetailsDialog.listenResponse.1
 
-            /* compiled from: PersonalDetailsDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.personaldetails.PersonalDetailsDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: PersonalDetailsDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -283,15 +298,8 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ProfileResponse> resource) {
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding;
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding2;
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding3;
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding4;
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding5;
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding6;
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding7;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -307,8 +315,8 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
                         return;
                     }
                     PersonalDetailsDialog.this.hideProgress();
-                    dialogPersonalDetailsBinding7 = PersonalDetailsDialog.this.get_binding();
-                    if (dialogPersonalDetailsBinding7 == null || (textView = dialogPersonalDetailsBinding7.admissionNo) == null) {
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding = PersonalDetailsDialog.this.get_binding();
+                    if (dialogPersonalDetailsBinding == null || (textView = dialogPersonalDetailsBinding.admissionNo) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -320,33 +328,33 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
                 ProfileResponse data = resource.getData();
                 if (data != null) {
                     PersonalDetailsDialog personalDetailsDialog = PersonalDetailsDialog.this;
-                    dialogPersonalDetailsBinding = personalDetailsDialog.get_binding();
-                    TextView textView2 = dialogPersonalDetailsBinding != null ? dialogPersonalDetailsBinding.admissionNo : null;
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding2 = personalDetailsDialog.get_binding();
+                    TextView textView2 = dialogPersonalDetailsBinding2 != null ? dialogPersonalDetailsBinding2.admissionNo : null;
                     if (textView2 != null) {
                         textView2.setText(data.getAdmission_no());
                     }
-                    dialogPersonalDetailsBinding2 = personalDetailsDialog.get_binding();
-                    TextView textView3 = dialogPersonalDetailsBinding2 != null ? dialogPersonalDetailsBinding2.gender : null;
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding3 = personalDetailsDialog.get_binding();
+                    TextView textView3 = dialogPersonalDetailsBinding3 != null ? dialogPersonalDetailsBinding3.gender : null;
                     if (textView3 != null) {
                         textView3.setText(data.getGender());
                     }
-                    dialogPersonalDetailsBinding3 = personalDetailsDialog.get_binding();
-                    TextView textView4 = dialogPersonalDetailsBinding3 != null ? dialogPersonalDetailsBinding3.dob : null;
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding4 = personalDetailsDialog.get_binding();
+                    TextView textView4 = dialogPersonalDetailsBinding4 != null ? dialogPersonalDetailsBinding4.dob : null;
                     if (textView4 != null) {
                         textView4.setText(data.getDob());
                     }
-                    dialogPersonalDetailsBinding4 = personalDetailsDialog.get_binding();
-                    TextView textView5 = dialogPersonalDetailsBinding4 != null ? dialogPersonalDetailsBinding4.regNo : null;
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding5 = personalDetailsDialog.get_binding();
+                    TextView textView5 = dialogPersonalDetailsBinding5 != null ? dialogPersonalDetailsBinding5.regNo : null;
                     if (textView5 != null) {
                         textView5.setText(data.getRegister_no());
                     }
-                    dialogPersonalDetailsBinding5 = personalDetailsDialog.get_binding();
-                    TextView textView6 = dialogPersonalDetailsBinding5 != null ? dialogPersonalDetailsBinding5.bloodGroup : null;
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding6 = personalDetailsDialog.get_binding();
+                    TextView textView6 = dialogPersonalDetailsBinding6 != null ? dialogPersonalDetailsBinding6.bloodGroup : null;
                     if (textView6 != null) {
                         textView6.setText(data.getBlood_group());
                     }
-                    dialogPersonalDetailsBinding6 = personalDetailsDialog.get_binding();
-                    TextView textView7 = dialogPersonalDetailsBinding6 != null ? dialogPersonalDetailsBinding6.aadharNo : null;
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding7 = personalDetailsDialog.get_binding();
+                    TextView textView7 = dialogPersonalDetailsBinding7 != null ? dialogPersonalDetailsBinding7.aadharNo : null;
                     if (textView7 == null) {
                         return;
                     }
@@ -357,9 +365,10 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
     }
 
     private final void listenAbcResponse() {
-        getPersonalDetailsViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new PersonalDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.personaldetails.PersonalDetailsDialog$listenAbcResponse$1
+        getPersonalDetailsViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new PersonalDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.personaldetails.PersonalDetailsDialog.listenAbcResponse.1
 
-            /* compiled from: PersonalDetailsDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.personaldetails.PersonalDetailsDialog$listenAbcResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: PersonalDetailsDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -396,9 +405,8 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<AbcResponse> resource) {
-                DialogPersonalDetailsBinding dialogPersonalDetailsBinding;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -419,7 +427,7 @@ public final class PersonalDetailsDialog extends BaseDialog implements UpdateAbc
                 AbcResponse data = resource.getData();
                 if (data != null) {
                     PersonalDetailsDialog personalDetailsDialog = PersonalDetailsDialog.this;
-                    dialogPersonalDetailsBinding = personalDetailsDialog.get_binding();
+                    DialogPersonalDetailsBinding dialogPersonalDetailsBinding = personalDetailsDialog.get_binding();
                     TextView textView = dialogPersonalDetailsBinding != null ? dialogPersonalDetailsBinding.abcId : null;
                     if (textView != null) {
                         textView.setText(data.getAbc_id());

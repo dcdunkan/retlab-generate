@@ -7,8 +7,8 @@ import androidx.viewpager.widget.ViewPager;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: WrapContentViewPager.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: WrapContentViewPager.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class WrapContentViewPager extends ViewPager {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WrapContentViewPager(Context context) {
@@ -25,7 +25,7 @@ public final class WrapContentViewPager extends ViewPager {
     }
 
     private final void initPageChangeListener() {
-        addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() { // from class: in.etuwa.app.helper.WrapContentViewPager$initPageChangeListener$1
+        addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() { // from class: in.etuwa.app.helper.WrapContentViewPager.initPageChangeListener.1
             @Override // androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener, androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int position) {
                 WrapContentViewPager.this.requestLayout();

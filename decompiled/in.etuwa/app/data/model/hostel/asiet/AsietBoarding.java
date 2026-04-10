@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AsietBoarding.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AsietBoarding.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AsietBoarding {
     private final String amount;
     private final String id;
@@ -24,17 +24,17 @@ public final /* data */ class AsietBoarding {
         return asietBoarding.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }

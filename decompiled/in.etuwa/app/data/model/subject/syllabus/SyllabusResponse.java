@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SyllabusResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SyllabusResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SyllabusResponse {
     private final ArrayList<Syllabus> syllabus;
 

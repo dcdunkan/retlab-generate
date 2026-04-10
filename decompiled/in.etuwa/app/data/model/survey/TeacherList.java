@@ -8,8 +8,8 @@ import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TeacherList.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: TeacherList.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class TeacherList {
 
     @SerializedName("btn_msg")
@@ -29,42 +29,42 @@ public final /* data */ class TeacherList {
     @Expose
     private final String teacherId;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubjectId() {
         return this.subjectId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTeacherId() {
         return this.teacherId;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTeacher() {
         return this.teacher;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getImage() {
         return this.image;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getBtnMsg() {
         return this.btnMsg;
     }

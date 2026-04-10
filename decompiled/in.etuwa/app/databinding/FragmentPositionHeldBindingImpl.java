@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.positionheld.PositionHeldViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentPositionHeldBindingImpl extends FragmentPositionHeldBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentPositionHeldBindingImpl extends FragmentPositionHeldBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (164 != variableId) {
+        if (166 != variableId) {
             return false;
         }
         setPositionHeldViewModel((PositionHeldViewModel) variable);

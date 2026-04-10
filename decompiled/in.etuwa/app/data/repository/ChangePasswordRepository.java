@@ -6,8 +6,8 @@ import io.reactivex.Single;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ChangePasswordRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ChangePasswordRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ChangePasswordRepository {
     private final ApiHelper apiHelper;
 

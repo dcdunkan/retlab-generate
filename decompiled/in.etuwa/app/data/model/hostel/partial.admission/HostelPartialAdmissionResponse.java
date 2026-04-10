@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelPartialAdmissionResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelPartialAdmissionResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelPartialAdmissionResponse {
     private final String date;
     private final String fine;
@@ -16,6 +16,7 @@ public final /* data */ class HostelPartialAdmissionResponse {
     private final String method;
     private final ArrayList<HostelFeeTypes> types;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ HostelPartialAdmissionResponse copy$default(HostelPartialAdmissionResponse hostelPartialAdmissionResponse, boolean z, ArrayList arrayList, ArrayList arrayList2, String str, String str2, String str3, int i, Object obj) {
         if ((i & 1) != 0) {
             z = hostelPartialAdmissionResponse.login;
@@ -42,7 +43,7 @@ public final /* data */ class HostelPartialAdmissionResponse {
         return hostelPartialAdmissionResponse.copy(z, arrayList3, arrayList4, str4, str5, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -55,17 +56,17 @@ public final /* data */ class HostelPartialAdmissionResponse {
         return this.hostel;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getFine() {
         return this.fine;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getMethod() {
         return this.method;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDate() {
         return this.date;
     }

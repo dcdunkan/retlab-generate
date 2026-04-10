@@ -16,11 +16,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LiveTvViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LiveTvViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LiveTvViewModel extends ViewModel {
     private final CommonRepository commonRepository;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<LiveResponse>> liveResponse;
 
     public LiveTvViewModel(CommonRepository commonRepository) {
@@ -28,14 +29,22 @@ public final class LiveTvViewModel extends ViewModel {
         this.commonRepository = commonRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.liveResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getLiveTv();
     }
 
     public final void getLiveTv() {
         this.liveResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<LiveResponse> observeOn = this.commonRepository.getLiveTvApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<LiveResponse, Unit> function1 = new Function1<LiveResponse, Unit>() { // from class: in.etuwa.app.ui.live.LiveTvViewModel$getLiveTv$1
+        Single<LiveResponse> singleObserveOn = this.commonRepository.getLiveTvApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<LiveResponse, Unit> function1 = new Function1<LiveResponse, Unit>() { // from class: in.etuwa.app.ui.live.LiveTvViewModel.getLiveTv.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class LiveTvViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(LiveResponse liveResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LiveTvViewModel.this.liveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(liveResponse));
+                LiveTvViewModel.this.liveResponse.postValue(Resource.INSTANCE.success(liveResponse));
             }
         };
         Consumer<? super LiveResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.live.LiveTvViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LiveTvViewModel.getLiveTv$lambda$0(Function1.this, obj);
+                LiveTvViewModel.getLiveTv$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.live.LiveTvViewModel$getLiveTv$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.live.LiveTvViewModel.getLiveTv.2
             {
                 super(1);
             }
@@ -70,17 +77,15 @@ public final class LiveTvViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LiveTvViewModel.this.liveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                LiveTvViewModel.this.liveResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.live.LiveTvViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.live.LiveTvViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LiveTvViewModel.getLiveTv$lambda$1(Function1.this, obj);
+                LiveTvViewModel.getLiveTv$lambda$1(function12, obj);
             }
         }));
     }

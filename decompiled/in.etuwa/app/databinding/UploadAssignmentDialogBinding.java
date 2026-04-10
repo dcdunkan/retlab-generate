@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -12,12 +13,14 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class UploadAssignmentDialogBinding extends ViewDataBinding {
     public final LinearLayout assiCard;
+    public final TextView assiDismiss;
     public final TextView assiSelect;
     public final TextView assiUpload;
     public final TextView fileName;
+    public final EditText linkInput;
     public final ProgressBar loader;
 
     @Bindable
@@ -28,12 +31,14 @@ public abstract class UploadAssignmentDialogBinding extends ViewDataBinding {
 
     public abstract void setUploadAssignmentDialogViewModel(UploadAssignmentDialogViewModel uploadAssignmentDialogViewModel);
 
-    protected UploadAssignmentDialogBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout assiCard, TextView assiSelect, TextView assiUpload, TextView fileName, ProgressBar loader, TextView progressText, LinearLayout progressView, ProgressBar uploadProgressbar) {
+    protected UploadAssignmentDialogBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout assiCard, TextView assiDismiss, TextView assiSelect, TextView assiUpload, TextView fileName, EditText linkInput, ProgressBar loader, TextView progressText, LinearLayout progressView, ProgressBar uploadProgressbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.assiCard = assiCard;
+        this.assiDismiss = assiDismiss;
         this.assiSelect = assiSelect;
         this.assiUpload = assiUpload;
         this.fileName = fileName;
+        this.linkInput = linkInput;
         this.loader = loader;
         this.progressText = progressText;
         this.progressView = progressView;

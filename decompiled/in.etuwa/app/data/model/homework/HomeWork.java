@@ -9,8 +9,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: HomeWork.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HomeWork.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HomeWork {
 
     @SerializedName("can_submit")
@@ -42,32 +42,32 @@ public final /* data */ class HomeWork {
     @SerializedName("uploaded_file")
     private final String uploadedFile;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getLateSubmissionStatus() {
         return this.lateSubmissionStatus;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final String getLateSubmissionDate() {
         return this.lateSubmissionDate;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final String getDetails() {
         return this.details;
     }
 
-    /* renamed from: component13, reason: from getter */
+    /* JADX INFO: renamed from: component13, reason: from getter */
     public final boolean getCanSubmit() {
         return this.canSubmit;
     }
 
-    /* renamed from: component14, reason: from getter */
+    /* JADX INFO: renamed from: component14, reason: from getter */
     public final String getUploadedFile() {
         return this.uploadedFile;
     }
@@ -76,42 +76,42 @@ public final /* data */ class HomeWork {
         return this.files;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTitle() {
         return this.title;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getIssuedDate() {
         return this.issuedDate;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getLastDate() {
         return this.lastDate;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getTeacherFeedback() {
         return this.teacherFeedback;
     }
@@ -146,14 +146,17 @@ public final /* data */ class HomeWork {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v23, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v28 */
+    /* JADX WARN: Type inference failed for: r1v29 */
     public int hashCode() {
-        int hashCode = ((((((((((((((((((((((this.id.hashCode() * 31) + this.subject.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.title.hashCode()) * 31) + this.type.hashCode()) * 31) + this.issuedDate.hashCode()) * 31) + this.lastDate.hashCode()) * 31) + this.status.hashCode()) * 31) + this.teacherFeedback.hashCode()) * 31) + this.lateSubmissionStatus.hashCode()) * 31) + this.lateSubmissionDate.hashCode()) * 31) + this.details.hashCode()) * 31;
+        int iHashCode = ((((((((((((((((((((((this.id.hashCode() * 31) + this.subject.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.title.hashCode()) * 31) + this.type.hashCode()) * 31) + this.issuedDate.hashCode()) * 31) + this.lastDate.hashCode()) * 31) + this.status.hashCode()) * 31) + this.teacherFeedback.hashCode()) * 31) + this.lateSubmissionStatus.hashCode()) * 31) + this.lateSubmissionDate.hashCode()) * 31) + this.details.hashCode()) * 31;
         boolean z = this.canSubmit;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((hashCode + i) * 31) + this.uploadedFile.hashCode()) * 31) + this.files.hashCode();
+        return ((((iHashCode + r1) * 31) + this.uploadedFile.hashCode()) * 31) + this.files.hashCode();
     }
 
     public String toString() {

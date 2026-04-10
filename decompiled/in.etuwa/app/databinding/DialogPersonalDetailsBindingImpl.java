@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.personaldetails.PersonalDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogPersonalDetailsBindingImpl extends DialogPersonalDetailsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -64,7 +64,7 @@ public class DialogPersonalDetailsBindingImpl extends DialogPersonalDetailsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (160 != variableId) {
+        if (162 != variableId) {
             return false;
         }
         setPersonalDetailsViewModel((PersonalDetailsViewModel) variable);

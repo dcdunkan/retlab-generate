@@ -3,29 +3,29 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.button.MaterialButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.activitypoint.ActivityPointViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ActivityPointFragmentBinding extends ViewDataBinding {
 
     @Bindable
     protected ActivityPointViewModel mActivityPointViewModel;
-    public final Button manageBtn;
+    public final MaterialButton manageBtn;
     public final RecyclerView rvActivityPoint;
     public final SwipeRefreshLayout swipeLayout;
     public final TextView totalPoint;
 
     public abstract void setActivityPointViewModel(ActivityPointViewModel activityPointViewModel);
 
-    protected ActivityPointFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, Button manageBtn, RecyclerView rvActivityPoint, SwipeRefreshLayout swipeLayout, TextView totalPoint) {
+    protected ActivityPointFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, MaterialButton manageBtn, RecyclerView rvActivityPoint, SwipeRefreshLayout swipeLayout, TextView totalPoint) {
         super(_bindingComponent, _root, _localFieldCount);
         this.manageBtn = manageBtn;
         this.rvActivityPoint = rvActivityPoint;

@@ -54,11 +54,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MaceNewSemRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MaceNewSemRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MaceNewSemRegDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogMaceSemRegBinding _binding;
     private String back;
@@ -74,23 +74,23 @@ public final class MaceNewSemRegDialog extends BaseDialog {
     private String labTwo;
     private AddCounsellingListener listener;
 
-    /* renamed from: maceNewSemRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: maceNewSemRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy maceNewSemRegViewModel;
     private String minor;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String reg;
     private String sem;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerYearList$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerYearList$delegate, reason: from kotlin metadata */
     private final Lazy spinnerYearList;
     private String year;
 
-    /* compiled from: MaceNewSemRegDialog.kt */
+    /* JADX INFO: compiled from: MaceNewSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/semregistration/mace/MaceNewSemRegDialog$AddCounsellingListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddCounsellingListener {
         void dismiss();
@@ -119,7 +119,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return maceNewSemRegDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(maceNewSemRegDialog);
@@ -133,7 +133,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -146,7 +146,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MaceNewSemRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MaceNewSemRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MaceNewSemRegDialog maceNewSemRegDialog2 = this;
@@ -185,7 +185,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MaceNewSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -210,7 +210,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MaceNewSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -235,7 +235,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogMaceSemRegBinding get_binding() {
         return this._binding;
     }
@@ -255,7 +255,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
         return (SemesterRegistrationSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: MaceNewSemRegDialog.kt */
+    /* JADX INFO: compiled from: MaceNewSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/semregistration/mace/MaceNewSemRegDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/mace/MaceNewSemRegDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -336,7 +336,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textView8.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$0(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -345,7 +345,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textView7.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$1(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -354,7 +354,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textView6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$2(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -363,7 +363,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$3(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -372,7 +372,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$4(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -381,7 +381,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$5(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -390,7 +390,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$6(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
@@ -399,7 +399,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda5
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$7(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$7(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -408,7 +408,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda6
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$8(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$8(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -417,7 +417,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda7
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$9(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$9(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -426,7 +426,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda8
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$10(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$10(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -435,7 +435,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda9
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$11(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$11(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -444,7 +444,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda10
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$12(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$12(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -453,7 +453,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda11
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$13(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$13(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -462,7 +462,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda12
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup9, int i) {
-                    MaceNewSemRegDialog.setUp$lambda$14(MaceNewSemRegDialog.this, radioGroup9, i);
+                    MaceNewSemRegDialog.setUp$lambda$14(this.f$0, radioGroup9, i);
                 }
             });
         }
@@ -471,41 +471,37 @@ public final class MaceNewSemRegDialog extends BaseDialog {
             textInputEditText.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MaceNewSemRegDialog.setUp$lambda$15(MaceNewSemRegDialog.this, view);
+                    MaceNewSemRegDialog.setUp$lambda$15(this.f$0, view);
                 }
             });
         }
         DialogMaceSemRegBinding dialogMaceSemRegBinding19 = get_binding();
         Spinner spinner3 = dialogMaceSemRegBinding19 != null ? dialogMaceSemRegBinding19.spinnerSemesterLastAttended : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$setUp$17
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog.setUp.17
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterRegistrationSpinnerAdapter spinnerAdapter;
                     MaceNewSemRegDialog maceNewSemRegDialog = MaceNewSemRegDialog.this;
-                    spinnerAdapter = maceNewSemRegDialog.getSpinnerAdapter();
-                    maceNewSemRegDialog.sem = spinnerAdapter.getSemester(position).getId();
+                    maceNewSemRegDialog.sem = maceNewSemRegDialog.getSpinnerAdapter().getSemester(position).getId();
                 }
             });
         }
         DialogMaceSemRegBinding dialogMaceSemRegBinding20 = get_binding();
         Spinner spinner4 = dialogMaceSemRegBinding20 != null ? dialogMaceSemRegBinding20.spinnerAcademicYear : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$setUp$18
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog.setUp.18
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerYearList;
                     MaceNewSemRegDialog maceNewSemRegDialog = MaceNewSemRegDialog.this;
-                    spinnerYearList = maceNewSemRegDialog.getSpinnerYearList();
-                    maceNewSemRegDialog.year = String.valueOf(spinnerYearList.getType(position).getId());
+                    maceNewSemRegDialog.year = String.valueOf(maceNewSemRegDialog.getSpinnerYearList().getType(position).getId());
                 }
             });
         }
@@ -516,7 +512,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MaceNewSemRegDialog.setUp$lambda$16(MaceNewSemRegDialog.this, view);
+                MaceNewSemRegDialog.setUp$lambda$16(this.f$0, view);
             }
         });
     }
@@ -1205,7 +1201,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
         TextInputEditText textInputEditText18;
         TextInputEditText textInputEditText19;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             DialogMaceSemRegBinding dialogMaceSemRegBinding = this$0.get_binding();
             if (Intrinsics.areEqual(String.valueOf((dialogMaceSemRegBinding == null || (textInputEditText19 = dialogMaceSemRegBinding.etMonthYear) == null) ? null : textInputEditText19.getText()), "")) {
@@ -1228,64 +1224,65 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                 return;
             }
         }
-        HashMap hashMap = new HashMap();
+        HashMap map = new HashMap();
         DialogMaceSemRegBinding dialogMaceSemRegBinding5 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[mobile_no]", String.valueOf((dialogMaceSemRegBinding5 == null || (textInputEditText15 = dialogMaceSemRegBinding5.etPhoneNumber) == null) ? null : textInputEditText15.getText()));
+        map.put("SemesterRegistration[mobile_no]", String.valueOf((dialogMaceSemRegBinding5 == null || (textInputEditText15 = dialogMaceSemRegBinding5.etPhoneNumber) == null) ? null : textInputEditText15.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding6 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[email]", String.valueOf((dialogMaceSemRegBinding6 == null || (textInputEditText14 = dialogMaceSemRegBinding6.etEmailId) == null) ? null : textInputEditText14.getText()));
+        map.put("SemesterRegistration[email]", String.valueOf((dialogMaceSemRegBinding6 == null || (textInputEditText14 = dialogMaceSemRegBinding6.etEmailId) == null) ? null : textInputEditText14.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding7 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[house_name]", String.valueOf((dialogMaceSemRegBinding7 == null || (textInputEditText13 = dialogMaceSemRegBinding7.etNameOfHouse) == null) ? null : textInputEditText13.getText()));
+        map.put("SemesterRegistration[house_name]", String.valueOf((dialogMaceSemRegBinding7 == null || (textInputEditText13 = dialogMaceSemRegBinding7.etNameOfHouse) == null) ? null : textInputEditText13.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding8 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[phone_house]", String.valueOf((dialogMaceSemRegBinding8 == null || (textInputEditText12 = dialogMaceSemRegBinding8.etContactNum) == null) ? null : textInputEditText12.getText()));
+        map.put("SemesterRegistration[phone_house]", String.valueOf((dialogMaceSemRegBinding8 == null || (textInputEditText12 = dialogMaceSemRegBinding8.etContactNum) == null) ? null : textInputEditText12.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding9 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[phone_parent]", String.valueOf((dialogMaceSemRegBinding9 == null || (textInputEditText11 = dialogMaceSemRegBinding9.etParentsMob) == null) ? null : textInputEditText11.getText()));
+        map.put("SemesterRegistration[phone_parent]", String.valueOf((dialogMaceSemRegBinding9 == null || (textInputEditText11 = dialogMaceSemRegBinding9.etParentsMob) == null) ? null : textInputEditText11.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding10 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[address]", String.valueOf((dialogMaceSemRegBinding10 == null || (textInputEditText10 = dialogMaceSemRegBinding10.etAddress) == null) ? null : textInputEditText10.getText()));
-        hashMap.put("SemesterRegistration[semester_id]", this$0.sem);
-        hashMap.put("SemesterRegistration[exam_appear]", this$0.reg);
-        hashMap.put("SemesterRegistration[backpaper]", this$0.back);
+        map.put("SemesterRegistration[address]", String.valueOf((dialogMaceSemRegBinding10 == null || (textInputEditText10 = dialogMaceSemRegBinding10.etAddress) == null) ? null : textInputEditText10.getText()));
+        map.put("SemesterRegistration[semester_id]", this$0.sem);
+        map.put("SemesterRegistration[exam_appear]", this$0.reg);
+        map.put("SemesterRegistration[backpaper]", this$0.back);
         DialogMaceSemRegBinding dialogMaceSemRegBinding11 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[earned_credits]", String.valueOf((dialogMaceSemRegBinding11 == null || (textInputEditText9 = dialogMaceSemRegBinding11.etCreditsEarned) == null) ? null : textInputEditText9.getText()));
+        map.put("SemesterRegistration[earned_credits]", String.valueOf((dialogMaceSemRegBinding11 == null || (textInputEditText9 = dialogMaceSemRegBinding11.etCreditsEarned) == null) ? null : textInputEditText9.getText()));
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             DialogMaceSemRegBinding dialogMaceSemRegBinding12 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogMaceSemRegBinding12 == null || (textInputEditText8 = dialogMaceSemRegBinding12.etMonthYear) == null) ? null : textInputEditText8.getText()));
+            map.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogMaceSemRegBinding12 == null || (textInputEditText8 = dialogMaceSemRegBinding12.etMonthYear) == null) ? null : textInputEditText8.getText()));
         } else {
-            hashMap.put("SemesterRegistration[exam_month_year]", "");
+            map.put("SemesterRegistration[exam_month_year]", "");
         }
         if (Intrinsics.areEqual(this$0.back, "Yes")) {
             DialogMaceSemRegBinding dialogMaceSemRegBinding13 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogMaceSemRegBinding13 == null || (textInputEditText7 = dialogMaceSemRegBinding13.etBackPaperCount) == null) ? null : textInputEditText7.getText()));
+            map.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogMaceSemRegBinding13 == null || (textInputEditText7 = dialogMaceSemRegBinding13.etBackPaperCount) == null) ? null : textInputEditText7.getText()));
         } else {
-            hashMap.put("SemesterRegistration[backlogs_count]", "");
+            map.put("SemesterRegistration[backlogs_count]", "");
         }
-        hashMap.put("SemesterRegistration[honour]", this$0.honor);
-        hashMap.put("SemesterRegistration[minor]", this$0.minor);
-        hashMap.put("SemesterRegistration[dept_library_due]", this$0.deptLibrary);
-        hashMap.put("SemesterRegistration[library_due]", this$0.collegeLibrary);
-        hashMap.put("SemesterRegistration[lab1_due]", this$0.labOne);
-        hashMap.put("SemesterRegistration[lab2_due]", this$0.labTwo);
+        map.put("SemesterRegistration[honour]", this$0.honor);
+        map.put("SemesterRegistration[minor]", this$0.minor);
+        map.put("SemesterRegistration[dept_library_due]", this$0.deptLibrary);
+        map.put("SemesterRegistration[library_due]", this$0.collegeLibrary);
+        map.put("SemesterRegistration[lab1_due]", this$0.labOne);
+        map.put("SemesterRegistration[lab2_due]", this$0.labTwo);
         DialogMaceSemRegBinding dialogMaceSemRegBinding14 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[lab1]", String.valueOf((dialogMaceSemRegBinding14 == null || (textInputEditText6 = dialogMaceSemRegBinding14.etLabOne) == null) ? null : textInputEditText6.getText()));
+        map.put("SemesterRegistration[lab1]", String.valueOf((dialogMaceSemRegBinding14 == null || (textInputEditText6 = dialogMaceSemRegBinding14.etLabOne) == null) ? null : textInputEditText6.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding15 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[lab2]", String.valueOf((dialogMaceSemRegBinding15 == null || (textInputEditText5 = dialogMaceSemRegBinding15.etLabTwo) == null) ? null : textInputEditText5.getText()));
+        map.put("SemesterRegistration[lab2]", String.valueOf((dialogMaceSemRegBinding15 == null || (textInputEditText5 = dialogMaceSemRegBinding15.etLabTwo) == null) ? null : textInputEditText5.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding16 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[dept_library_due_details]", String.valueOf((dialogMaceSemRegBinding16 == null || (textInputEditText4 = dialogMaceSemRegBinding16.etDeptLib) == null) ? null : textInputEditText4.getText()));
+        map.put("SemesterRegistration[dept_library_due_details]", String.valueOf((dialogMaceSemRegBinding16 == null || (textInputEditText4 = dialogMaceSemRegBinding16.etDeptLib) == null) ? null : textInputEditText4.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding17 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[library_due_details]", String.valueOf((dialogMaceSemRegBinding17 == null || (textInputEditText3 = dialogMaceSemRegBinding17.etLibraryDetails) == null) ? null : textInputEditText3.getText()));
+        map.put("SemesterRegistration[library_due_details]", String.valueOf((dialogMaceSemRegBinding17 == null || (textInputEditText3 = dialogMaceSemRegBinding17.etLibraryDetails) == null) ? null : textInputEditText3.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding18 = this$0.get_binding();
-        hashMap.put("SemesterRegistration[lab1_due_details]", String.valueOf((dialogMaceSemRegBinding18 == null || (textInputEditText2 = dialogMaceSemRegBinding18.etLabOneDetails) == null) ? null : textInputEditText2.getText()));
+        map.put("SemesterRegistration[lab1_due_details]", String.valueOf((dialogMaceSemRegBinding18 == null || (textInputEditText2 = dialogMaceSemRegBinding18.etLabOneDetails) == null) ? null : textInputEditText2.getText()));
         DialogMaceSemRegBinding dialogMaceSemRegBinding19 = this$0.get_binding();
         if (dialogMaceSemRegBinding19 != null && (textInputEditText = dialogMaceSemRegBinding19.etLabTwoDetails) != null) {
-            editable = textInputEditText.getText();
+            text = textInputEditText.getText();
         }
-        hashMap.put("SemesterRegistration[lab2_due_details]", String.valueOf(editable));
-        this$0.getMaceNewSemRegViewModel().registerSemester(hashMap);
+        map.put("SemesterRegistration[lab2_due_details]", String.valueOf(text));
+        this$0.getMaceNewSemRegViewModel().registerSemester(map);
     }
 
     private final void listenRegisterResponse() {
-        getMaceNewSemRegViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new MaceNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$listenRegisterResponse$1
+        getMaceNewSemRegViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new MaceNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog.listenRegisterResponse.1
 
-            /* compiled from: MaceNewSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$listenRegisterResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: MaceNewSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1322,13 +1319,10 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogMaceSemRegBinding dialogMaceSemRegBinding;
                 TextView registerBtn;
-                DialogMaceSemRegBinding dialogMaceSemRegBinding2;
                 TextView registerBtn2;
-                DialogMaceSemRegBinding dialogMaceSemRegBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1344,8 +1338,8 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                         return;
                     }
                     MaceNewSemRegDialog.this.hideProgress();
-                    dialogMaceSemRegBinding3 = MaceNewSemRegDialog.this.get_binding();
-                    if (dialogMaceSemRegBinding3 == null || (textView = dialogMaceSemRegBinding3.registerBtn) == null) {
+                    DialogMaceSemRegBinding dialogMaceSemRegBinding = MaceNewSemRegDialog.this.get_binding();
+                    if (dialogMaceSemRegBinding == null || (textView = dialogMaceSemRegBinding.registerBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -1358,7 +1352,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                 if (data != null) {
                     MaceNewSemRegDialog maceNewSemRegDialog = MaceNewSemRegDialog.this;
                     if (data.getSuccess()) {
-                        dialogMaceSemRegBinding2 = maceNewSemRegDialog.get_binding();
+                        DialogMaceSemRegBinding dialogMaceSemRegBinding2 = maceNewSemRegDialog.get_binding();
                         if (dialogMaceSemRegBinding2 != null && (registerBtn2 = dialogMaceSemRegBinding2.registerBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(registerBtn2, "registerBtn");
                             ToastExtKt.showSuccessToast(registerBtn2, data.getMessage());
@@ -1366,8 +1360,8 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                         maceNewSemRegDialog.dismiss();
                         return;
                     }
-                    dialogMaceSemRegBinding = maceNewSemRegDialog.get_binding();
-                    if (dialogMaceSemRegBinding == null || (registerBtn = dialogMaceSemRegBinding.registerBtn) == null) {
+                    DialogMaceSemRegBinding dialogMaceSemRegBinding3 = maceNewSemRegDialog.get_binding();
+                    if (dialogMaceSemRegBinding3 == null || (registerBtn = dialogMaceSemRegBinding3.registerBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
@@ -1378,9 +1372,10 @@ public final class MaceNewSemRegDialog extends BaseDialog {
     }
 
     private final void listenSemResponse() {
-        getMaceNewSemRegViewModel().getSemResponse().observe(getViewLifecycleOwner(), new MaceNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ArrayList<Semester>>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$listenSemResponse$1
+        getMaceNewSemRegViewModel().getSemResponse().observe(getViewLifecycleOwner(), new MaceNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ArrayList<Semester>>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog.listenSemResponse.1
 
-            /* compiled from: MaceNewSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$listenSemResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: MaceNewSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1417,15 +1412,9 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<? extends ArrayList<Semester>> resource) {
-                SemesterRegistrationSpinnerAdapter spinnerAdapter;
-                SemesterRegistrationSpinnerAdapter spinnerAdapter2;
-                SharedPrefManager preference;
-                SemesterRegistrationSpinnerAdapter spinnerAdapter3;
-                DialogMaceSemRegBinding dialogMaceSemRegBinding;
                 Spinner spinner;
-                DialogMaceSemRegBinding dialogMaceSemRegBinding2;
                 Spinner spinner2;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -1441,8 +1430,8 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                         return;
                     }
                     MaceNewSemRegDialog.this.hideProgress();
-                    dialogMaceSemRegBinding2 = MaceNewSemRegDialog.this.get_binding();
-                    if (dialogMaceSemRegBinding2 == null || (spinner2 = dialogMaceSemRegBinding2.spinnerAcademicYear) == null) {
+                    DialogMaceSemRegBinding dialogMaceSemRegBinding = MaceNewSemRegDialog.this.get_binding();
+                    if (dialogMaceSemRegBinding == null || (spinner2 = dialogMaceSemRegBinding.spinnerAcademicYear) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -1454,17 +1443,12 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                 ArrayList<Semester> data = resource.getData();
                 if (data != null) {
                     MaceNewSemRegDialog maceNewSemRegDialog = MaceNewSemRegDialog.this;
-                    spinnerAdapter = maceNewSemRegDialog.getSpinnerAdapter();
-                    spinnerAdapter.addItems(data);
-                    spinnerAdapter2 = maceNewSemRegDialog.getSpinnerAdapter();
-                    int count = spinnerAdapter2.getCount();
+                    maceNewSemRegDialog.getSpinnerAdapter().addItems(data);
+                    int count = maceNewSemRegDialog.getSpinnerAdapter().getCount();
                     for (int i2 = 0; i2 < count; i2++) {
-                        preference = maceNewSemRegDialog.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter3 = maceNewSemRegDialog.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter3.getSemester(i2).getId())) {
-                            dialogMaceSemRegBinding = maceNewSemRegDialog.get_binding();
-                            if (dialogMaceSemRegBinding == null || (spinner = dialogMaceSemRegBinding.spinnerSemesterLastAttended) == null) {
+                        if (Intrinsics.areEqual(maceNewSemRegDialog.getPreference().getUserSemId(), maceNewSemRegDialog.getSpinnerAdapter().getSemester(i2).getId())) {
+                            DialogMaceSemRegBinding dialogMaceSemRegBinding2 = maceNewSemRegDialog.get_binding();
+                            if (dialogMaceSemRegBinding2 == null || (spinner = dialogMaceSemRegBinding2.spinnerSemesterLastAttended) == null) {
                                 return;
                             }
                             spinner.setSelection(i2);
@@ -1477,9 +1461,10 @@ public final class MaceNewSemRegDialog extends BaseDialog {
     }
 
     private final void listenSpinner() {
-        getMaceNewSemRegViewModel().getListResponse().observe(getViewLifecycleOwner(), new MaceNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AcademicYearResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$listenSpinner$1
+        getMaceNewSemRegViewModel().getListResponse().observe(getViewLifecycleOwner(), new MaceNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AcademicYearResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog.listenSpinner.1
 
-            /* compiled from: MaceNewSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mace.MaceNewSemRegDialog$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: MaceNewSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1516,9 +1501,8 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<AcademicYearResponse> resource) {
-                DialogMaceSemRegBinding dialogMaceSemRegBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -1538,7 +1522,7 @@ public final class MaceNewSemRegDialog extends BaseDialog {
                     return;
                 }
                 MaceNewSemRegDialog.this.hideProgress();
-                dialogMaceSemRegBinding = MaceNewSemRegDialog.this.get_binding();
+                DialogMaceSemRegBinding dialogMaceSemRegBinding = MaceNewSemRegDialog.this.get_binding();
                 if (dialogMaceSemRegBinding == null || (spinner = dialogMaceSemRegBinding.spinnerAcademicYear) == null) {
                     return;
                 }

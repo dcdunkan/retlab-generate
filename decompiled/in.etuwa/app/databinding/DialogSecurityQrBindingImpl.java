@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogSecurityQrBindingImpl extends DialogSecurityQrBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -74,7 +74,7 @@ public class DialogSecurityQrBindingImpl extends DialogSecurityQrBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (196 != variableId) {
+        if (198 != variableId) {
             return false;
         }
         setSecurityQrViewModel((SecurityQrViewModel) variable);

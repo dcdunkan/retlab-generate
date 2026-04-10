@@ -6,8 +6,8 @@ import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Practical.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Practical.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Practical {
 
     @SerializedName("atten_text")
@@ -39,22 +39,22 @@ public final /* data */ class Practical {
         return practical.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getAttendance() {
         return this.attendance;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSubId() {
         return this.subId;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSubPid() {
         return this.subPid;
     }

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ProjectWorkResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ProjectWorkResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ProjectWorkResponse {
     private final boolean login;
     private final ArrayList<ProjectWork> project;
@@ -22,7 +22,7 @@ public final /* data */ class ProjectWorkResponse {
         return projectWorkResponse.copy(z, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

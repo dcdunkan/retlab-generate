@@ -2,18 +2,21 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subject.SubjectViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class SubjectFragmentBindingImpl extends SubjectFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -29,19 +32,24 @@ public class SubjectFragmentBindingImpl extends SubjectFragmentBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.subject_layout, 2);
-        sparseIntArray.put(R.id.spinner_sem, 3);
-        sparseIntArray.put(R.id.swipe_layout, 4);
-        sparseIntArray.put(R.id.rv_subject, 5);
-        sparseIntArray.put(R.id.fab_subject_semester, 6);
+        sparseIntArray.put(R.id.toolbar, 2);
+        sparseIntArray.put(R.id.ivSearch, 3);
+        sparseIntArray.put(R.id.fab_subject_semester, 4);
+        sparseIntArray.put(R.id.search_card, 5);
+        sparseIntArray.put(R.id.search_input, 6);
+        sparseIntArray.put(R.id.ivClearSearch, 7);
+        sparseIntArray.put(R.id.subject_layout, 8);
+        sparseIntArray.put(R.id.spinner_sem, 9);
+        sparseIntArray.put(R.id.swipe_layout, 10);
+        sparseIntArray.put(R.id.rv_subject, 11);
     }
 
     public SubjectFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
 
     private SubjectFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (FloatingActionButton) bindings[6], (RecyclerView) bindings[5], (Spinner) bindings[3], (LinearLayout) bindings[2], (SwipeRefreshLayout) bindings[4]);
+        super(bindingComponent, root, 0, (ImageView) bindings[4], (ImageView) bindings[7], (ImageView) bindings[3], (RecyclerView) bindings[11], (CardView) bindings[5], (EditText) bindings[6], (Spinner) bindings[9], (MaterialCardView) bindings[8], (SwipeRefreshLayout) bindings[10], (TextView) bindings[2]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -69,7 +77,7 @@ public class SubjectFragmentBindingImpl extends SubjectFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (214 != variableId) {
+        if (216 != variableId) {
             return false;
         }
         setSubjectViewModel((SubjectViewModel) variable);

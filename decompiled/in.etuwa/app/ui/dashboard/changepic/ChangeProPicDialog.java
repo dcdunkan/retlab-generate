@@ -46,30 +46,30 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ChangeProPicDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ChangeProPicDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ChangeProPicDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ChangeProPicDialogBinding _binding;
     private boolean canProUpload;
     private boolean canSignUpload;
 
-    /* renamed from: changeProPicDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: changeProPicDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy changeProPicDialogViewModel;
     private ProfileCallBack listener;
     private File proFile;
     private File signFile;
     private int uploadCount;
 
-    /* compiled from: ChangeProPicDialog.kt */
+    /* JADX INFO: compiled from: ChangeProPicDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/dashboard/changepic/ChangeProPicDialog$ProfileCallBack;", "", "onDismissProfile", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ProfileCallBack {
         void onDismissProfile();
     }
 
-    /* compiled from: ChangeProPicDialog.kt */
+    /* JADX INFO: compiled from: ChangeProPicDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -111,7 +111,7 @@ public final class ChangeProPicDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return changeProPicDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(changeProPicDialog);
@@ -125,7 +125,7 @@ public final class ChangeProPicDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -138,7 +138,7 @@ public final class ChangeProPicDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ChangeProPicDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ChangeProPicDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.canProUpload = true;
@@ -149,12 +149,12 @@ public final class ChangeProPicDialog extends BaseDialog {
         return (ChangeProPicDialogViewModel) this.changeProPicDialogViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final ChangeProPicDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ChangeProPicDialog.kt */
+    /* JADX INFO: compiled from: ChangeProPicDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/dashboard/changepic/ChangeProPicDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/dashboard/changepic/ChangeProPicDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -214,7 +214,7 @@ public final class ChangeProPicDialog extends BaseDialog {
             circleImageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChangeProPicDialog.setUp$lambda$1(ChangeProPicDialog.this, view);
+                    ChangeProPicDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -223,7 +223,7 @@ public final class ChangeProPicDialog extends BaseDialog {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChangeProPicDialog.setUp$lambda$3(ChangeProPicDialog.this, view);
+                    ChangeProPicDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -234,7 +234,7 @@ public final class ChangeProPicDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialog$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChangeProPicDialog.setUp$lambda$4(ChangeProPicDialog.this, view);
+                ChangeProPicDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -271,7 +271,7 @@ public final class ChangeProPicDialog extends BaseDialog {
             if (file != null) {
                 this$0.uploadCount = 0 + 1;
                 Intrinsics.checkNotNull(file);
-                if (file.length() / 1024 > 100) {
+                if (file.length() / ((long) 1024) > 100) {
                     this$0.canProUpload = false;
                     ChangeProPicDialogBinding changeProPicDialogBinding = this$0.get_binding();
                     if (changeProPicDialogBinding != null && (circleImageView2 = changeProPicDialogBinding.ivProPic) != null) {
@@ -283,7 +283,7 @@ public final class ChangeProPicDialog extends BaseDialog {
             if (file2 != null) {
                 this$0.uploadCount++;
                 Intrinsics.checkNotNull(file2);
-                if (file2.length() / 1024 > 30) {
+                if (file2.length() / ((long) 1024) > 30) {
                     this$0.canSignUpload = false;
                     ChangeProPicDialogBinding changeProPicDialogBinding2 = this$0.get_binding();
                     if (changeProPicDialogBinding2 != null && (circleImageView = changeProPicDialogBinding2.ivProPic) != null) {
@@ -325,7 +325,7 @@ public final class ChangeProPicDialog extends BaseDialog {
         getChangeProPicDialogViewModel().getDashResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialog$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ChangeProPicDialog.listenResponse$lambda$6(ChangeProPicDialog.this, (Resource) obj);
+                ChangeProPicDialog.listenResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -361,16 +361,16 @@ public final class ChangeProPicDialog extends BaseDialog {
         DashResponse dashResponse = (DashResponse) resource.getData();
         if (dashResponse != null) {
             try {
-                RequestBuilder<Drawable> load = Glide.with(this$0.requireActivity()).load(dashResponse.getUrl());
+                RequestBuilder<Drawable> requestBuilderLoad = Glide.with(this$0.requireActivity()).load(dashResponse.getUrl());
                 ChangeProPicDialogBinding changeProPicDialogBinding2 = this$0.get_binding();
                 CircleImageView circleImageView = changeProPicDialogBinding2 != null ? changeProPicDialogBinding2.ivProPic : null;
                 Intrinsics.checkNotNull(circleImageView);
-                load.into(circleImageView);
-                RequestBuilder<Drawable> load2 = Glide.with(this$0.requireActivity()).load(dashResponse.getUrlSign());
+                requestBuilderLoad.into(circleImageView);
+                RequestBuilder<Drawable> requestBuilderLoad2 = Glide.with(this$0.requireActivity()).load(dashResponse.getUrlSign());
                 ChangeProPicDialogBinding changeProPicDialogBinding3 = this$0.get_binding();
                 ImageView imageView2 = changeProPicDialogBinding3 != null ? changeProPicDialogBinding3.ivSignature : null;
                 Intrinsics.checkNotNull(imageView2);
-                Intrinsics.checkNotNullExpressionValue(load2.into(imageView2), "{\n                      …                        }");
+                Intrinsics.checkNotNullExpressionValue(requestBuilderLoad2.into(imageView2), "{\n                      …                        }");
             } catch (Exception unused) {
                 Unit unit = Unit.INSTANCE;
             }
@@ -381,7 +381,7 @@ public final class ChangeProPicDialog extends BaseDialog {
         getChangeProPicDialogViewModel().getUploadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialog$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ChangeProPicDialog.listenUploadResponse$lambda$8(ChangeProPicDialog.this, (Resource) obj);
+                ChangeProPicDialog.listenUploadResponse$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -488,7 +488,7 @@ public final class ChangeProPicDialog extends BaseDialog {
         getChangeProPicDialogViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ChangeProPicDialog.listenProgressResponse$lambda$10(ChangeProPicDialog.this, (Resource) obj);
+                ChangeProPicDialog.listenProgressResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -519,33 +519,35 @@ public final class ChangeProPicDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             ChangeProPicDialogBinding changeProPicDialogBinding2 = this$0.get_binding();
             ProgressBar progressBar = changeProPicDialogBinding2 != null ? changeProPicDialogBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             ChangeProPicDialogBinding changeProPicDialogBinding3 = this$0.get_binding();
             TextView textView = changeProPicDialogBinding3 != null ? changeProPicDialogBinding3.progressText : null;
             if (textView != null) {
-                textView.setText(((int) floatValue) + " %");
+                textView.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01a0 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x006f A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:15:0x0046, B:20:0x0052, B:23:0x0069, B:25:0x006f, B:27:0x0075, B:32:0x007c, B:34:0x0087, B:35:0x008d, B:37:0x0093, B:39:0x0099, B:40:0x00a2, B:42:0x00d4, B:43:0x00d6, B:49:0x005a, B:52:0x0061, B:55:0x00e1, B:57:0x00e7, B:59:0x00eb, B:64:0x00f5, B:66:0x00fb, B:68:0x0101, B:70:0x0109, B:75:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:86:0x013f, B:88:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:94:0x0165, B:96:0x0197, B:97:0x0199, B:103:0x011d, B:106:0x0124, B:109:0x01a1, B:111:0x01a7, B:113:0x01ab), top: B:4:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0087 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:15:0x0046, B:20:0x0052, B:23:0x0069, B:25:0x006f, B:27:0x0075, B:32:0x007c, B:34:0x0087, B:35:0x008d, B:37:0x0093, B:39:0x0099, B:40:0x00a2, B:42:0x00d4, B:43:0x00d6, B:49:0x005a, B:52:0x0061, B:55:0x00e1, B:57:0x00e7, B:59:0x00eb, B:64:0x00f5, B:66:0x00fb, B:68:0x0101, B:70:0x0109, B:75:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:86:0x013f, B:88:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:94:0x0165, B:96:0x0197, B:97:0x0199, B:103:0x011d, B:106:0x0124, B:109:0x01a1, B:111:0x01a7, B:113:0x01ab), top: B:4:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00d4 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:15:0x0046, B:20:0x0052, B:23:0x0069, B:25:0x006f, B:27:0x0075, B:32:0x007c, B:34:0x0087, B:35:0x008d, B:37:0x0093, B:39:0x0099, B:40:0x00a2, B:42:0x00d4, B:43:0x00d6, B:49:0x005a, B:52:0x0061, B:55:0x00e1, B:57:0x00e7, B:59:0x00eb, B:64:0x00f5, B:66:0x00fb, B:68:0x0101, B:70:0x0109, B:75:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:86:0x013f, B:88:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:94:0x0165, B:96:0x0197, B:97:0x0199, B:103:0x011d, B:106:0x0124, B:109:0x01a1, B:111:0x01a7, B:113:0x01ab), top: B:4:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00e0 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0132 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:15:0x0046, B:20:0x0052, B:23:0x0069, B:25:0x006f, B:27:0x0075, B:32:0x007c, B:34:0x0087, B:35:0x008d, B:37:0x0093, B:39:0x0099, B:40:0x00a2, B:42:0x00d4, B:43:0x00d6, B:49:0x005a, B:52:0x0061, B:55:0x00e1, B:57:0x00e7, B:59:0x00eb, B:64:0x00f5, B:66:0x00fb, B:68:0x0101, B:70:0x0109, B:75:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:86:0x013f, B:88:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:94:0x0165, B:96:0x0197, B:97:0x0199, B:103:0x011d, B:106:0x0124, B:109:0x01a1, B:111:0x01a7, B:113:0x01ab), top: B:4:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x014a A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:15:0x0046, B:20:0x0052, B:23:0x0069, B:25:0x006f, B:27:0x0075, B:32:0x007c, B:34:0x0087, B:35:0x008d, B:37:0x0093, B:39:0x0099, B:40:0x00a2, B:42:0x00d4, B:43:0x00d6, B:49:0x005a, B:52:0x0061, B:55:0x00e1, B:57:0x00e7, B:59:0x00eb, B:64:0x00f5, B:66:0x00fb, B:68:0x0101, B:70:0x0109, B:75:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:86:0x013f, B:88:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:94:0x0165, B:96:0x0197, B:97:0x0199, B:103:0x011d, B:106:0x0124, B:109:0x01a1, B:111:0x01a7, B:113:0x01ab), top: B:4:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0197 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:15:0x0046, B:20:0x0052, B:23:0x0069, B:25:0x006f, B:27:0x0075, B:32:0x007c, B:34:0x0087, B:35:0x008d, B:37:0x0093, B:39:0x0099, B:40:0x00a2, B:42:0x00d4, B:43:0x00d6, B:49:0x005a, B:52:0x0061, B:55:0x00e1, B:57:0x00e7, B:59:0x00eb, B:64:0x00f5, B:66:0x00fb, B:68:0x0101, B:70:0x0109, B:75:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:86:0x013f, B:88:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:94:0x0165, B:96:0x0197, B:97:0x0199, B:103:0x011d, B:106:0x0124, B:109:0x01a1, B:111:0x01a7, B:113:0x01ab), top: B:4:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x006f A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:16:0x0046, B:21:0x0052, B:30:0x0069, B:32:0x006f, B:34:0x0075, B:37:0x007c, B:39:0x0087, B:41:0x008d, B:43:0x0093, B:45:0x0099, B:47:0x00a2, B:49:0x00d4, B:50:0x00d6, B:24:0x005a, B:27:0x0061, B:52:0x00e1, B:54:0x00e7, B:56:0x00eb, B:57:0x00f5, B:59:0x00fb, B:61:0x0101, B:64:0x0109, B:69:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:85:0x013f, B:87:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:95:0x0165, B:97:0x0197, B:98:0x0199, B:72:0x011d, B:75:0x0124, B:100:0x01a1, B:102:0x01a7, B:104:0x01ab), top: B:109:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0087 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:16:0x0046, B:21:0x0052, B:30:0x0069, B:32:0x006f, B:34:0x0075, B:37:0x007c, B:39:0x0087, B:41:0x008d, B:43:0x0093, B:45:0x0099, B:47:0x00a2, B:49:0x00d4, B:50:0x00d6, B:24:0x005a, B:27:0x0061, B:52:0x00e1, B:54:0x00e7, B:56:0x00eb, B:57:0x00f5, B:59:0x00fb, B:61:0x0101, B:64:0x0109, B:69:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:85:0x013f, B:87:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:95:0x0165, B:97:0x0197, B:98:0x0199, B:72:0x011d, B:75:0x0124, B:100:0x01a1, B:102:0x01a7, B:104:0x01ab), top: B:109:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00d4 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:16:0x0046, B:21:0x0052, B:30:0x0069, B:32:0x006f, B:34:0x0075, B:37:0x007c, B:39:0x0087, B:41:0x008d, B:43:0x0093, B:45:0x0099, B:47:0x00a2, B:49:0x00d4, B:50:0x00d6, B:24:0x005a, B:27:0x0061, B:52:0x00e1, B:54:0x00e7, B:56:0x00eb, B:57:0x00f5, B:59:0x00fb, B:61:0x0101, B:64:0x0109, B:69:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:85:0x013f, B:87:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:95:0x0165, B:97:0x0197, B:98:0x0199, B:72:0x011d, B:75:0x0124, B:100:0x01a1, B:102:0x01a7, B:104:0x01ab), top: B:109:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00e0 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0132 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:16:0x0046, B:21:0x0052, B:30:0x0069, B:32:0x006f, B:34:0x0075, B:37:0x007c, B:39:0x0087, B:41:0x008d, B:43:0x0093, B:45:0x0099, B:47:0x00a2, B:49:0x00d4, B:50:0x00d6, B:24:0x005a, B:27:0x0061, B:52:0x00e1, B:54:0x00e7, B:56:0x00eb, B:57:0x00f5, B:59:0x00fb, B:61:0x0101, B:64:0x0109, B:69:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:85:0x013f, B:87:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:95:0x0165, B:97:0x0197, B:98:0x0199, B:72:0x011d, B:75:0x0124, B:100:0x01a1, B:102:0x01a7, B:104:0x01ab), top: B:109:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x014a A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:16:0x0046, B:21:0x0052, B:30:0x0069, B:32:0x006f, B:34:0x0075, B:37:0x007c, B:39:0x0087, B:41:0x008d, B:43:0x0093, B:45:0x0099, B:47:0x00a2, B:49:0x00d4, B:50:0x00d6, B:24:0x005a, B:27:0x0061, B:52:0x00e1, B:54:0x00e7, B:56:0x00eb, B:57:0x00f5, B:59:0x00fb, B:61:0x0101, B:64:0x0109, B:69:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:85:0x013f, B:87:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:95:0x0165, B:97:0x0197, B:98:0x0199, B:72:0x011d, B:75:0x0124, B:100:0x01a1, B:102:0x01a7, B:104:0x01ab), top: B:109:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0197 A[Catch: Exception -> 0x01b4, TryCatch #0 {Exception -> 0x01b4, blocks: (B:5:0x000c, B:9:0x0032, B:11:0x0038, B:13:0x003e, B:16:0x0046, B:21:0x0052, B:30:0x0069, B:32:0x006f, B:34:0x0075, B:37:0x007c, B:39:0x0087, B:41:0x008d, B:43:0x0093, B:45:0x0099, B:47:0x00a2, B:49:0x00d4, B:50:0x00d6, B:24:0x005a, B:27:0x0061, B:52:0x00e1, B:54:0x00e7, B:56:0x00eb, B:57:0x00f5, B:59:0x00fb, B:61:0x0101, B:64:0x0109, B:69:0x0115, B:78:0x012c, B:80:0x0132, B:82:0x0138, B:85:0x013f, B:87:0x014a, B:89:0x0150, B:91:0x0156, B:93:0x015c, B:95:0x0165, B:97:0x0197, B:98:0x0199, B:72:0x011d, B:75:0x0124, B:100:0x01a1, B:102:0x01a7, B:104:0x01ab), top: B:109:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x01a0 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
     @Override // androidx.fragment.app.Fragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -553,7 +555,7 @@ public final class ChangeProPicDialog extends BaseDialog {
     */
     public void onActivityResult(int r17, int r18, android.content.Intent r19) {
         /*
-            Method dump skipped, instructions count: 441
+            Method dump skipped, instruction units count: 441
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
         throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialog.onActivityResult(int, int, android.content.Intent):void");

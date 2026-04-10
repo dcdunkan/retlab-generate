@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectSpinnerResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubjectSpinnerResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubjectSpinnerResponse {
     private final ArrayList<SubjectSpinner> additionalelective_1;
     private final ArrayList<SubjectSpinner> additionalelective_2;

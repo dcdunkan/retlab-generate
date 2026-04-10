@@ -7,9 +7,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowFeeDetailBinding implements ViewBinding {
     public final LinearLayout discountLyt;
     public final TextView engnrAmountLbl;
@@ -18,10 +19,10 @@ public final class RowFeeDetailBinding implements ViewBinding {
     public final TextView engnrFeeName;
     public final TextView engnrPaidLbl;
     public final TextView engnrScholorshipLbl;
-    public final LinearLayout linearEngnrFee;
-    private final LinearLayout rootView;
+    public final MaterialCardView linearEngnrFee;
+    private final MaterialCardView rootView;
 
-    private RowFeeDetailBinding(LinearLayout rootView, LinearLayout discountLyt, TextView engnrAmountLbl, TextView engnrBalanceLbl, TextView engnrDiscountLbl, TextView engnrFeeName, TextView engnrPaidLbl, TextView engnrScholorshipLbl, LinearLayout linearEngnrFee) {
+    private RowFeeDetailBinding(MaterialCardView rootView, LinearLayout discountLyt, TextView engnrAmountLbl, TextView engnrBalanceLbl, TextView engnrDiscountLbl, TextView engnrFeeName, TextView engnrPaidLbl, TextView engnrScholorshipLbl, MaterialCardView linearEngnrFee) {
         this.rootView = rootView;
         this.discountLyt = discountLyt;
         this.engnrAmountLbl = engnrAmountLbl;
@@ -34,7 +35,7 @@ public final class RowFeeDetailBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -43,11 +44,11 @@ public final class RowFeeDetailBinding implements ViewBinding {
     }
 
     public static RowFeeDetailBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_fee_detail, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_fee_detail, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowFeeDetailBinding bind(View rootView) {
@@ -72,8 +73,8 @@ public final class RowFeeDetailBinding implements ViewBinding {
                                 i = R.id.engnr_scholorship_lbl;
                                 TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                 if (textView6 != null) {
-                                    LinearLayout linearLayout2 = (LinearLayout) rootView;
-                                    return new RowFeeDetailBinding(linearLayout2, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, linearLayout2);
+                                    MaterialCardView materialCardView = (MaterialCardView) rootView;
+                                    return new RowFeeDetailBinding(materialCardView, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, materialCardView);
                                 }
                             }
                         }

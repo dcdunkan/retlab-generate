@@ -5,10 +5,9 @@ import in.etuwa.app.data.network.ApiHelper;
 import io.reactivex.Single;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
-import retrofit2.Response;
 
-/* compiled from: ResetPasswordRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ResetPasswordRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ResetPasswordRepository {
     private final ApiHelper apiHelper;
 
@@ -17,7 +16,7 @@ public final class ResetPasswordRepository {
         this.apiHelper = apiHelper;
     }
 
-    public final Single<Response<ResetPassword>> getResetPasswordApiCall() {
+    public final Single<ResetPassword> getResetPasswordApiCall() {
         return this.apiHelper.getResetPasswordApiCall();
     }
 

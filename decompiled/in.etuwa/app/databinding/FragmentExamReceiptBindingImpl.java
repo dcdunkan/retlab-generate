@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.examregistration.examreceipt.ExamReceiptViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentExamReceiptBindingImpl extends FragmentExamReceiptBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -62,7 +62,7 @@ public class FragmentExamReceiptBindingImpl extends FragmentExamReceiptBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (80 != variableId) {
+        if (79 != variableId) {
             return false;
         }
         setExamReceiptViewModel((ExamReceiptViewModel) variable);

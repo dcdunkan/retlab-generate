@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CommentResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CommentResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class CommentResponse {
 
     @SerializedName("comments")
@@ -38,7 +38,7 @@ public final /* data */ class CommentResponse {
         return commentResponse.copy(z, arrayList, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -47,7 +47,7 @@ public final /* data */ class CommentResponse {
         return this.comments;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getError() {
         return this.error;
     }

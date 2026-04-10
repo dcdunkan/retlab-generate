@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.examregister;
 import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 
-/* compiled from: RevaluationStatusResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: RevaluationStatusResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class RevaluationStatusResponse {
     private final boolean status;
 
@@ -15,7 +15,7 @@ public final /* data */ class RevaluationStatusResponse {
         return revaluationStatusResponse.copy(z);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getStatus() {
         return this.status;
     }

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowFundedBinding implements ViewBinding {
     public final TextView academicYrTv;
     public final TextView agencyTv;
@@ -50,11 +50,11 @@ public final class RowFundedBinding implements ViewBinding {
     }
 
     public static RowFundedBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_funded, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_funded, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowFundedBinding bind(View rootView) {

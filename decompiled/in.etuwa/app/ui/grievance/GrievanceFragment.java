@@ -50,22 +50,22 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: GrievanceFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: GrievanceFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class GrievanceFragment extends BaseFragment implements GrievanceAdapter.CallBack, AddGrievanceDialog.AddGrievanceListener, RemindDialog.RemindGrievanceListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private GrievanceFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: grievanceViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: grievanceViewModel$delegate, reason: from kotlin metadata */
     private final Lazy grievanceViewModel;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     @JvmStatic
@@ -91,7 +91,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return grievanceFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(grievanceFragment);
@@ -105,7 +105,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -118,7 +118,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(GrievanceViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(GrievanceViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final GrievanceFragment grievanceFragment2 = this;
@@ -167,7 +167,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final GrievanceFragmentBinding get_binding() {
         return this._binding;
     }
@@ -176,7 +176,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: GrievanceFragment.kt */
+    /* JADX INFO: compiled from: GrievanceFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/grievance/GrievanceFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/grievance/GrievanceFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -242,7 +242,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GrievanceFragment.setUp$lambda$0(GrievanceFragment.this, view);
+                    GrievanceFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -251,7 +251,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment$$ExternalSyntheticLambda2
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    GrievanceFragment.setUp$lambda$1(GrievanceFragment.this);
+                    GrievanceFragment.setUp$lambda$1(this.f$0);
                 }
             });
         }
@@ -259,67 +259,40 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
         if (grievanceFragmentBinding4 == null || (recyclerView = grievanceFragmentBinding4.rvGrievance) == null) {
             return;
         }
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment$setUp$3
-            /* JADX WARN: Code restructure failed: missing block: B:28:0x0056, code lost:
-            
-                r1 = r0.this$0.get_binding();
-             */
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment.setUp.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public void onScrolled(androidx.recyclerview.widget.RecyclerView r1, int r2, int r3) {
-                /*
-                    r0 = this;
-                    java.lang.String r2 = "recyclerView"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r1, r2)
-                    r1 = 0
-                    if (r3 >= 0) goto L37
-                    in.etuwa.app.ui.grievance.GrievanceFragment r2 = in.etuwa.app.ui.grievance.GrievanceFragment.this
-                    in.etuwa.app.databinding.GrievanceFragmentBinding r2 = in.etuwa.app.ui.grievance.GrievanceFragment.access$getBinding(r2)
-                    if (r2 == 0) goto L1d
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r2 = r2.fabAddGrievance
-                    if (r2 == 0) goto L1d
-                    boolean r2 = r2.isShown()
-                    java.lang.Boolean r2 = java.lang.Boolean.valueOf(r2)
-                    goto L1e
-                L1d:
-                    r2 = r1
-                L1e:
-                    kotlin.jvm.internal.Intrinsics.checkNotNull(r2)
-                    boolean r2 = r2.booleanValue()
-                    if (r2 != 0) goto L37
-                    in.etuwa.app.ui.grievance.GrievanceFragment r1 = in.etuwa.app.ui.grievance.GrievanceFragment.this
-                    in.etuwa.app.databinding.GrievanceFragmentBinding r1 = in.etuwa.app.ui.grievance.GrievanceFragment.access$getBinding(r1)
-                    if (r1 == 0) goto L65
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r1 = r1.fabAddGrievance
-                    if (r1 == 0) goto L65
-                    r1.show()
-                    goto L65
-                L37:
-                    if (r3 <= 0) goto L65
-                    in.etuwa.app.ui.grievance.GrievanceFragment r2 = in.etuwa.app.ui.grievance.GrievanceFragment.this
-                    in.etuwa.app.databinding.GrievanceFragmentBinding r2 = in.etuwa.app.ui.grievance.GrievanceFragment.access$getBinding(r2)
-                    if (r2 == 0) goto L4d
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r2 = r2.fabAddGrievance
-                    if (r2 == 0) goto L4d
-                    boolean r1 = r2.isShown()
-                    java.lang.Boolean r1 = java.lang.Boolean.valueOf(r1)
-                L4d:
-                    kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
-                    boolean r1 = r1.booleanValue()
-                    if (r1 == 0) goto L65
-                    in.etuwa.app.ui.grievance.GrievanceFragment r1 = in.etuwa.app.ui.grievance.GrievanceFragment.this
-                    in.etuwa.app.databinding.GrievanceFragmentBinding r1 = in.etuwa.app.ui.grievance.GrievanceFragment.access$getBinding(r1)
-                    if (r1 == 0) goto L65
-                    com.google.android.material.floatingactionbutton.FloatingActionButton r1 = r1.fabAddGrievance
-                    if (r1 == 0) goto L65
-                    r1.hide()
-                L65:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.grievance.GrievanceFragment$setUp$3.onScrolled(androidx.recyclerview.widget.RecyclerView, int, int):void");
+            public void onScrolled(RecyclerView recyclerView3, int dx, int dy) {
+                GrievanceFragmentBinding grievanceFragmentBinding5;
+                FloatingActionButton floatingActionButton2;
+                FloatingActionButton floatingActionButton3;
+                FloatingActionButton floatingActionButton4;
+                FloatingActionButton floatingActionButton5;
+                Intrinsics.checkNotNullParameter(recyclerView3, "recyclerView");
+                Boolean boolValueOf = null;
+                if (dy < 0) {
+                    GrievanceFragmentBinding grievanceFragmentBinding6 = GrievanceFragment.this.get_binding();
+                    Boolean boolValueOf2 = (grievanceFragmentBinding6 == null || (floatingActionButton5 = grievanceFragmentBinding6.fabAddGrievance) == null) ? null : Boolean.valueOf(floatingActionButton5.isShown());
+                    Intrinsics.checkNotNull(boolValueOf2);
+                    if (!boolValueOf2.booleanValue()) {
+                        GrievanceFragmentBinding grievanceFragmentBinding7 = GrievanceFragment.this.get_binding();
+                        if (grievanceFragmentBinding7 == null || (floatingActionButton4 = grievanceFragmentBinding7.fabAddGrievance) == null) {
+                            return;
+                        }
+                        floatingActionButton4.show();
+                        return;
+                    }
+                }
+                if (dy > 0) {
+                    GrievanceFragmentBinding grievanceFragmentBinding8 = GrievanceFragment.this.get_binding();
+                    if (grievanceFragmentBinding8 != null && (floatingActionButton3 = grievanceFragmentBinding8.fabAddGrievance) != null) {
+                        boolValueOf = Boolean.valueOf(floatingActionButton3.isShown());
+                    }
+                    Intrinsics.checkNotNull(boolValueOf);
+                    if (!boolValueOf.booleanValue() || (grievanceFragmentBinding5 = GrievanceFragment.this.get_binding()) == null || (floatingActionButton2 = grievanceFragmentBinding5.fabAddGrievance) == null) {
+                        return;
+                    }
+                    floatingActionButton2.hide();
+                }
             }
         });
     }
@@ -345,9 +318,9 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
     private final void showAddDialog(String id, boolean isReopen) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddGrievanceDialog newInstance = AddGrievanceDialog.INSTANCE.newInstance(id, isReopen);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddGrievanceDialog addGrievanceDialogNewInstance = AddGrievanceDialog.INSTANCE.newInstance(id, isReopen);
+        addGrievanceDialogNewInstance.setCallBack(this);
+        addGrievanceDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.grievance.add.AddGrievanceDialog.AddGrievanceListener, in.etuwa.app.ui.grievance.remind.RemindDialog.RemindGrievanceListener
@@ -356,9 +329,10 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
     }
 
     private final void listenResponse() {
-        getGrievanceViewModel().getResponse().observe(getViewLifecycleOwner(), new GrievanceFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends GrievanceResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment$listenResponse$1
+        getGrievanceViewModel().getResponse().observe(getViewLifecycleOwner(), new GrievanceFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends GrievanceResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment.listenResponse.1
 
-            /* compiled from: GrievanceFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.GrievanceFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: GrievanceFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -395,10 +369,8 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<GrievanceResponse> resource) {
-                GrievanceAdapter adapter;
-                GrievanceFragmentBinding grievanceFragmentBinding;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -407,8 +379,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
                     if (data != null) {
                         GrievanceFragment grievanceFragment = GrievanceFragment.this;
                         grievanceFragment.showBaseView();
-                        adapter = grievanceFragment.getAdapter();
-                        adapter.addItems(data.getGrievance());
+                        grievanceFragment.getAdapter().addItems(data.getGrievance());
                         return;
                     }
                     return;
@@ -427,7 +398,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
                 }
                 GrievanceFragment.this.hideProgress();
                 GrievanceFragment.this.showBaseView();
-                grievanceFragmentBinding = GrievanceFragment.this.get_binding();
+                GrievanceFragmentBinding grievanceFragmentBinding = GrievanceFragment.this.get_binding();
                 if (grievanceFragmentBinding == null || (recyclerView = grievanceFragmentBinding.rvGrievance) == null) {
                     return;
                 }
@@ -439,9 +410,10 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
     }
 
     private final void listenDeleteResponse() {
-        getGrievanceViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new GrievanceFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment$listenDeleteResponse$1
+        getGrievanceViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new GrievanceFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment.listenDeleteResponse.1
 
-            /* compiled from: GrievanceFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.GrievanceFragment$listenDeleteResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: GrievanceFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -478,12 +450,9 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                GrievanceFragmentBinding grievanceFragmentBinding;
-                GrievanceViewModel grievanceViewModel;
                 FloatingActionButton fabAddGrievance;
-                GrievanceFragmentBinding grievanceFragmentBinding2;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -491,13 +460,12 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
                     SuccessResponse data = resource.getData();
                     if (data != null) {
                         GrievanceFragment grievanceFragment = GrievanceFragment.this;
-                        grievanceFragmentBinding = grievanceFragment.get_binding();
+                        GrievanceFragmentBinding grievanceFragmentBinding = grievanceFragment.get_binding();
                         if (grievanceFragmentBinding != null && (fabAddGrievance = grievanceFragmentBinding.fabAddGrievance) != null) {
                             Intrinsics.checkNotNullExpressionValue(fabAddGrievance, "fabAddGrievance");
                             ToastExtKt.showInfoToast(fabAddGrievance, data.getMessage());
                         }
-                        grievanceViewModel = grievanceFragment.getGrievanceViewModel();
-                        grievanceViewModel.getGrievance();
+                        grievanceFragment.getGrievanceViewModel().getGrievance();
                         return;
                     }
                     return;
@@ -514,7 +482,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
                     return;
                 }
                 GrievanceFragment.this.hideProgress();
-                grievanceFragmentBinding2 = GrievanceFragment.this.get_binding();
+                GrievanceFragmentBinding grievanceFragmentBinding2 = GrievanceFragment.this.get_binding();
                 if (grievanceFragmentBinding2 == null || (recyclerView = grievanceFragmentBinding2.rvGrievance) == null) {
                     return;
                 }
@@ -533,7 +501,7 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
         builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.grievance.GrievanceFragment$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                GrievanceFragment.delete$lambda$2(GrievanceFragment.this, id, dialogInterface, i);
+                GrievanceFragment.delete$lambda$2(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton(getString(R.string.no), (DialogInterface.OnClickListener) null);
@@ -567,9 +535,9 @@ public final class GrievanceFragment extends BaseFragment implements GrievanceAd
         Intrinsics.checkNotNullParameter(id, "id");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        RemindDialog newInstance = RemindDialog.INSTANCE.newInstance(id);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        RemindDialog remindDialogNewInstance = RemindDialog.INSTANCE.newInstance(id);
+        remindDialogNewInstance.setCallBack(this);
+        remindDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.grievance.GrievanceAdapter.CallBack

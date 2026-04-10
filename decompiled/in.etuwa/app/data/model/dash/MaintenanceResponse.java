@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.dash;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MaintenanceResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MaintenanceResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MaintenanceResponse {
     private final String message;
     private final boolean success;
@@ -19,12 +19,12 @@ public final /* data */ class MaintenanceResponse {
         return maintenanceResponse.copy(z, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getMessage() {
         return this.message;
     }

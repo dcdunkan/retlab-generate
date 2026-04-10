@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: ScholarshipViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ScholarshipViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ScholarshipViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<SuccessResponse>> deleteResponse;
@@ -47,8 +47,8 @@ public final class ScholarshipViewModel extends ViewModel implements KoinCompone
     public final void getScholarshipData() {
         this.scholarshipsResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ScholarshipsResponse> observeOn = this.profileRepository.getScholarshipsUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ScholarshipsResponse, Unit> function1 = new Function1<ScholarshipsResponse, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$getScholarshipData$1
+        Single<ScholarshipsResponse> singleObserveOn = this.profileRepository.getScholarshipsUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ScholarshipsResponse, Unit> function1 = new Function1<ScholarshipsResponse, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel.getScholarshipData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class ScholarshipViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ScholarshipsResponse scholarshipsResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ScholarshipViewModel.this.scholarshipsResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(scholarshipsResponse));
+                ScholarshipViewModel.this.scholarshipsResponse.postValue(Resource.INSTANCE.success(scholarshipsResponse));
             }
         };
         Consumer<? super ScholarshipsResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ScholarshipViewModel.getScholarshipData$lambda$0(Function1.this, obj);
+                ScholarshipViewModel.getScholarshipData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$getScholarshipData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel.getScholarshipData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class ScholarshipViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ScholarshipViewModel.this.scholarshipsResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ScholarshipViewModel.this.scholarshipsResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ScholarshipViewModel.getScholarshipData$lambda$1(Function1.this, obj);
+                ScholarshipViewModel.getScholarshipData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class ScholarshipViewModel extends ViewModel implements KoinCompone
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteScholarshipUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$deleteScholarshipData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteScholarshipUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel.deleteScholarshipData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class ScholarshipViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 ScholarshipViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class ScholarshipViewModel extends ViewModel implements KoinCompone
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ScholarshipViewModel.deleteScholarshipData$lambda$2(Function1.this, obj);
+                ScholarshipViewModel.deleteScholarshipData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$deleteScholarshipData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel.deleteScholarshipData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class ScholarshipViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 ScholarshipViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.scholarships.ScholarshipViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ScholarshipViewModel.deleteScholarshipData$lambda$3(Function1.this, obj);
+                ScholarshipViewModel.deleteScholarshipData$lambda$3(function12, obj);
             }
         }));
     }

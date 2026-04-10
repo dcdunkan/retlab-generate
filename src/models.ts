@@ -330,6 +330,33 @@ function writeNodes(parent: Namespace["children"]) {
 
 writeNodes(structure);
 
+// polyfill:
+writer.newLine().write(`
+// fill ins:
+export namespace etlabstaff {
+	export namespace timetable {
+		export type TimeTablePeriod = {
+			attendance_status?: string;
+			batch?: string;
+			batch_id?: string;
+			date?: string;
+			dutyleave_status?: string;
+			link?: string;
+			status?: boolean;
+			sub_id?: string;
+			subject?: string;
+			timeperiod?: string;
+			type: string?;
+		};
+	
+		export type TimeTable = {
+			date: string;
+			day: string;
+			periods: Array<TimeTablePeriod>;
+		};
+	}
+}`)
+
 await fs.writeFile("./generated/models.d.ts", writer.toString());
 
 process.on("exit", (code) => {

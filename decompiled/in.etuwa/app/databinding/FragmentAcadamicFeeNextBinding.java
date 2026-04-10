@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FragmentAcadamicFeeNextBinding implements ViewBinding {
     public final TextView acadamicNextdate;
     public final TextView acadamicPayNow;
@@ -39,11 +39,11 @@ public final class FragmentAcadamicFeeNextBinding implements ViewBinding {
     }
 
     public static FragmentAcadamicFeeNextBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.fragment_acadamic_fee_next, parent, false);
+        View viewInflate = inflater.inflate(R.layout.fragment_acadamic_fee_next, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static FragmentAcadamicFeeNextBinding bind(View rootView) {

@@ -15,17 +15,19 @@ import in.etuwa.app.helper.EmptyViewHolder;
 import in.etuwa.app.ui.base.BaseViewHolder;
 import in.etuwa.app.ui.push.PushAdapter;
 import java.util.ArrayList;
+import java.util.List;
 import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: PushAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PushAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PushAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<PushModel> list = new ArrayList<>();
     private CallBack listener;
 
-    /* compiled from: PushAdapter.kt */
+    /* JADX INFO: compiled from: PushAdapter.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000f\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&J\b\u0010\u0005\u001a\u00020\u0003H&J\b\u0010\u0006\u001a\u00020\u0003H&J\b\u0010\u0007\u001a\u00020\u0003H&J\b\u0010\b\u001a\u00020\u0003H&J\b\u0010\t\u001a\u00020\u0003H&J\b\u0010\n\u001a\u00020\u0003H&J\b\u0010\u000b\u001a\u00020\u0003H&J\b\u0010\f\u001a\u00020\u0003H&J\b\u0010\r\u001a\u00020\u0003H&J\b\u0010\u000e\u001a\u00020\u0003H&J\b\u0010\u000f\u001a\u00020\u0003H&J\b\u0010\u0010\u001a\u00020\u0003H&J\b\u0010\u0011\u001a\u00020\u0003H&¨\u0006\u0012"}, d2 = {"Lin/etuwa/app/ui/push/PushAdapter$CallBack;", "", "assignments", "", "assignmentsresults", "counselling", "grievance", "homeworks", "internal", "internship", "material", "moduletest", "moduletestresult", "notice", "seriesexam", "seriesexamresults", "tutorial", "tutorialresult", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void assignments();
@@ -63,18 +65,18 @@ public final class PushAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_push, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   ….row_push, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_push, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   ….row_push, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -90,7 +92,7 @@ public final class PushAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         return !this.list.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: PushAdapter.kt */
+    /* JADX INFO: compiled from: PushAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\r\u001a\u00020\u000eH\u0014J\u0010\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lin/etuwa/app/ui/push/PushAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/push/PushAdapter;Landroid/view/View;)V", "cardview", "Landroidx/cardview/widget/CardView;", "kotlin.jvm.PlatformType", "date", "Landroid/widget/TextView;", "pushMsg", "time", "title", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final CardView cardview;
@@ -125,15 +127,19 @@ public final class PushAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 final PushModel pushModel = (PushModel) obj;
                 this.title.setText(pushModel.getTitle());
                 this.pushMsg.setText(pushModel.getMsg());
-                String time = pushModel.getTime();
-                this.date.setText((CharSequence) StringsKt.split$default((CharSequence) time, new String[]{HelpFormatter.DEFAULT_LONG_OPT_SEPARATOR}, false, 0, 6, (Object) null).get(0));
-                this.time.setText((CharSequence) StringsKt.split$default((CharSequence) time, new String[]{HelpFormatter.DEFAULT_LONG_OPT_SEPARATOR}, false, 0, 6, (Object) null).get(1));
+                List listSplit$default = StringsKt.split$default((CharSequence) pushModel.getTime(), new String[]{HelpFormatter.DEFAULT_LONG_OPT_SEPARATOR}, false, 0, 6, (Object) null);
+                TextView textView = this.date;
+                String str = (String) CollectionsKt.getOrNull(listSplit$default, 0);
+                textView.setText(str != null ? str : "");
+                TextView textView2 = this.time;
+                String str2 = (String) CollectionsKt.getOrNull(listSplit$default, 1);
+                textView2.setText(str2 != null ? str2 : "");
                 CardView cardView = this.cardview;
                 final PushAdapter pushAdapter = this.this$0;
                 cardView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.push.PushAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PushAdapter.ViewHolder.onBind$lambda$0(PushModel.this, pushAdapter, view);
+                        PushAdapter.ViewHolder.onBind$lambda$0(pushModel, pushAdapter, view);
                     }
                 });
             } catch (Exception unused) {

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RegistrationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: RegistrationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class RegistrationResponse {
     private final boolean is_hostler;
     private final boolean login;
@@ -30,7 +30,7 @@ public final /* data */ class RegistrationResponse {
         return registrationResponse.copy(z, arrayList, z2, z3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -39,12 +39,12 @@ public final /* data */ class RegistrationResponse {
         return this.reg;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final boolean getRe_admission() {
         return this.re_admission;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final boolean getIs_hostler() {
         return this.is_hostler;
     }
@@ -69,22 +69,27 @@ public final /* data */ class RegistrationResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v8 */
     /* JADX WARN: Type inference failed for: r0v9 */
-    /* JADX WARN: Type inference failed for: r2v2, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v2 */
+    /* JADX WARN: Type inference failed for: r2v3, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v5 */
+    /* JADX WARN: Type inference failed for: r2v6 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
         if (z) {
             r0 = 1;
         }
-        int hashCode = ((r0 * 31) + this.reg.hashCode()) * 31;
-        ?? r2 = this.re_admission;
-        int i = r2;
-        if (r2 != 0) {
-            i = 1;
+        int iHashCode = ((r0 * 31) + this.reg.hashCode()) * 31;
+        boolean z2 = this.re_admission;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int i2 = (hashCode + i) * 31;
-        boolean z2 = this.is_hostler;
-        return i2 + (z2 ? 1 : z2 ? 1 : 0);
+        int i = (iHashCode + r2) * 31;
+        boolean z3 = this.is_hostler;
+        return i + (z3 ? 1 : z3);
     }
 
     public String toString() {

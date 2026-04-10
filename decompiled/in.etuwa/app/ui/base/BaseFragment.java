@@ -5,8 +5,8 @@ import android.view.animation.TranslateAnimation;
 import androidx.fragment.app.Fragment;
 import kotlin.Metadata;
 
-/* compiled from: BaseFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: BaseFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public abstract class BaseFragment extends Fragment {
     protected abstract void hideBaseView();
 

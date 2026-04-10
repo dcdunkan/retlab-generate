@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogViewregistrationDialogBinding extends ViewDataBinding {
     public final TextView addressRe;
     public final TextView admsnNumberRe;

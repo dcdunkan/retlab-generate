@@ -19,12 +19,13 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AsietSemRegViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AsietSemRegViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AsietSemRegViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> asietRegResponse;
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<CounsellingStatusResponse>> counsellingStatusResponse;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<SemRegisterListResponse>> regResponse;
     private final SemRegRepository semRegRepository;
 
@@ -35,14 +36,22 @@ public final class AsietSemRegViewModel extends ViewModel {
         this.regResponse = new MutableLiveData<>();
         this.counsellingStatusResponse = new MutableLiveData<>();
         this.asietRegResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getData();
     }
 
     public final void getData() {
         this.regResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SemRegisterListResponse> observeOn = this.semRegRepository.getSemRegListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SemRegisterListResponse, Unit> function1 = new Function1<SemRegisterListResponse, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$getData$1
+        Single<SemRegisterListResponse> singleObserveOn = this.semRegRepository.getSemRegListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SemRegisterListResponse, Unit> function1 = new Function1<SemRegisterListResponse, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel.getData.1
             {
                 super(1);
             }
@@ -53,20 +62,18 @@ public final class AsietSemRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SemRegisterListResponse semRegisterListResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietSemRegViewModel.this.regResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(semRegisterListResponse));
+                AsietSemRegViewModel.this.regResponse.postValue(Resource.INSTANCE.success(semRegisterListResponse));
             }
         };
         Consumer<? super SemRegisterListResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietSemRegViewModel.getData$lambda$0(Function1.this, obj);
+                AsietSemRegViewModel.getData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$getData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel.getData.2
             {
                 super(1);
             }
@@ -77,17 +84,15 @@ public final class AsietSemRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietSemRegViewModel.this.regResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AsietSemRegViewModel.this.regResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietSemRegViewModel.getData$lambda$1(Function1.this, obj);
+                AsietSemRegViewModel.getData$lambda$1(function12, obj);
             }
         }));
     }
@@ -107,8 +112,8 @@ public final class AsietSemRegViewModel extends ViewModel {
     public final void getSemRegStatus() {
         this.counsellingStatusResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CounsellingStatusResponse> observeOn = this.semRegRepository.getCounsellingStatusApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CounsellingStatusResponse, Unit> function1 = new Function1<CounsellingStatusResponse, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$getSemRegStatus$1
+        Single<CounsellingStatusResponse> singleObserveOn = this.semRegRepository.getCounsellingStatusApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CounsellingStatusResponse, Unit> function1 = new Function1<CounsellingStatusResponse, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel.getSemRegStatus.1
             {
                 super(1);
             }
@@ -119,20 +124,18 @@ public final class AsietSemRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CounsellingStatusResponse counsellingStatusResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietSemRegViewModel.this.counsellingStatusResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(counsellingStatusResponse));
+                AsietSemRegViewModel.this.counsellingStatusResponse.postValue(Resource.INSTANCE.success(counsellingStatusResponse));
             }
         };
         Consumer<? super CounsellingStatusResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietSemRegViewModel.getSemRegStatus$lambda$2(Function1.this, obj);
+                AsietSemRegViewModel.getSemRegStatus$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$getSemRegStatus$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel.getSemRegStatus.2
             {
                 super(1);
             }
@@ -143,17 +146,15 @@ public final class AsietSemRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietSemRegViewModel.this.counsellingStatusResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AsietSemRegViewModel.this.counsellingStatusResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietSemRegViewModel.getSemRegStatus$lambda$3(Function1.this, obj);
+                AsietSemRegViewModel.getSemRegStatus$lambda$3(function12, obj);
             }
         }));
     }
@@ -178,8 +179,8 @@ public final class AsietSemRegViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(semesterRegistration, "semesterRegistration");
         this.asietRegResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.semRegRepository.addAsietSemRegApiCall(semesterRegistration).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$addSemRegResponse$1
+        Single<SuccessResponse> singleObserveOn = this.semRegRepository.addAsietSemRegApiCall(semesterRegistration).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel.addSemRegResponse.1
             {
                 super(1);
             }
@@ -190,20 +191,18 @@ public final class AsietSemRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietSemRegViewModel.this.asietRegResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                AsietSemRegViewModel.this.asietRegResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietSemRegViewModel.addSemRegResponse$lambda$4(Function1.this, obj);
+                AsietSemRegViewModel.addSemRegResponse$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$addSemRegResponse$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel.addSemRegResponse.2
             {
                 super(1);
             }
@@ -214,17 +213,15 @@ public final class AsietSemRegViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AsietSemRegViewModel.this.asietRegResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AsietSemRegViewModel.this.asietRegResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.semregistration.asiet.semreg.AsietSemRegViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AsietSemRegViewModel.addSemRegResponse$lambda$5(Function1.this, obj);
+                AsietSemRegViewModel.addSemRegResponse$lambda$5(function12, obj);
             }
         }));
     }

@@ -6,8 +6,8 @@ import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CoSyllabusRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CoSyllabusRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class CoSyllabusRequest {
 
     @SerializedName("sub_id")
@@ -21,7 +21,7 @@ public final /* data */ class CoSyllabusRequest {
         return coSyllabusRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubId() {
         return this.subId;
     }

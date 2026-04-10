@@ -10,8 +10,8 @@ import in.etuwa.app.ui.leave.medical.MedicalFragment;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LeaveAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LeaveAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LeaveAdapter extends FragmentStatePagerAdapter {
     private final String[] heading;
 

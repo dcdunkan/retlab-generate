@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowViewHostelAttendanceBinding implements ViewBinding {
     public final TextView dateLeave;
     public final ImageView deleteBtn;
@@ -46,11 +46,11 @@ public final class RowViewHostelAttendanceBinding implements ViewBinding {
     }
 
     public static RowViewHostelAttendanceBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_view_hostel_attendance, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_view_hostel_attendance, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowViewHostelAttendanceBinding bind(View rootView) {

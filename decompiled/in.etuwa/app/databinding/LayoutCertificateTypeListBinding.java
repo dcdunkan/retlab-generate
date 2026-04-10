@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class LayoutCertificateTypeListBinding implements ViewBinding {
     public final TextView certificateType;
     private final LinearLayout rootView;
@@ -29,11 +29,11 @@ public final class LayoutCertificateTypeListBinding implements ViewBinding {
     }
 
     public static LayoutCertificateTypeListBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.layout_certificate_type_list, parent, false);
+        View viewInflate = inflater.inflate(R.layout.layout_certificate_type_list, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static LayoutCertificateTypeListBinding bind(View rootView) {

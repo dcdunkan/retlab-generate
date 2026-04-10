@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: StatusList.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: StatusList.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class StatusList {
     private final String name;
     private final String status;
@@ -20,12 +20,12 @@ public final /* data */ class StatusList {
         return statusList.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

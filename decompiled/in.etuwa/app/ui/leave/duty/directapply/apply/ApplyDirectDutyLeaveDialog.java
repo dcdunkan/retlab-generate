@@ -66,15 +66,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ApplyDirectDutyLeaveDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyDirectDutyLeaveDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogApplyAddDirectLeaveBinding _binding;
 
-    /* renamed from: applyDirectDutyLeaveViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: applyDirectDutyLeaveViewModel$delegate, reason: from kotlin metadata */
     private final Lazy applyDirectDutyLeaveViewModel;
     private String fromDate;
     private String head;
@@ -84,17 +84,17 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
     private File pickFile;
     private String reason;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String toDate;
 
-    /* compiled from: ApplyDirectDutyLeaveDialog.kt */
+    /* JADX INFO: compiled from: ApplyDirectDutyLeaveDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/apply/ApplyDirectDutyLeaveDialog$NewDutyLeaveListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface NewDutyLeaveListener {
         void onDismiss();
     }
 
-    /* compiled from: ApplyDirectDutyLeaveDialog.kt */
+    /* JADX INFO: compiled from: ApplyDirectDutyLeaveDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -144,7 +144,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return applyDirectDutyLeaveDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(applyDirectDutyLeaveDialog);
@@ -158,7 +158,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -171,7 +171,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ApplyDirectDutyLeaveViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ApplyDirectDutyLeaveViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.headId = "";
@@ -183,7 +183,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ApplyDirectDutyLeaveDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -208,7 +208,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogApplyAddDirectLeaveBinding get_binding() {
         return this._binding;
     }
@@ -218,7 +218,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         return (DutyHeadSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: ApplyDirectDutyLeaveDialog.kt */
+    /* JADX INFO: compiled from: ApplyDirectDutyLeaveDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J0\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u0006H\u0007¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/apply/ApplyDirectDutyLeaveDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/leave/duty/directapply/apply/ApplyDirectDutyLeaveDialog;", "id", "", "reason", "fromDate", "toDate", XfdfConstants.HEAD, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -351,17 +351,15 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding9 = get_binding();
         Spinner spinner2 = dialogApplyAddDirectLeaveBinding9 != null ? dialogApplyAddDirectLeaveBinding9.spinnerDutyHead : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    DutyHeadSpinnerAdapter spinnerAdapter;
                     ApplyDirectDutyLeaveDialog applyDirectDutyLeaveDialog = ApplyDirectDutyLeaveDialog.this;
-                    spinnerAdapter = applyDirectDutyLeaveDialog.getSpinnerAdapter();
-                    applyDirectDutyLeaveDialog.headId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    applyDirectDutyLeaveDialog.headId = String.valueOf(applyDirectDutyLeaveDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
@@ -370,7 +368,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             editText2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyDirectDutyLeaveDialog.setUp$lambda$2(ApplyDirectDutyLeaveDialog.this, i, i2, i3, view);
+                    ApplyDirectDutyLeaveDialog.setUp$lambda$2(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -379,7 +377,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyDirectDutyLeaveDialog.setUp$lambda$4(ApplyDirectDutyLeaveDialog.this, i, i2, i3, view);
+                    ApplyDirectDutyLeaveDialog.setUp$lambda$4(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -388,7 +386,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             editText.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyDirectDutyLeaveDialog.setUp$lambda$6(ApplyDirectDutyLeaveDialog.this, i, i2, i3, view);
+                    ApplyDirectDutyLeaveDialog.setUp$lambda$6(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -397,7 +395,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyDirectDutyLeaveDialog.setUp$lambda$8(ApplyDirectDutyLeaveDialog.this, i, i2, i3, view);
+                    ApplyDirectDutyLeaveDialog.setUp$lambda$8(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -406,7 +404,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyDirectDutyLeaveDialog.setUp$lambda$10(ApplyDirectDutyLeaveDialog.this, view);
+                    ApplyDirectDutyLeaveDialog.setUp$lambda$10(this.f$0, view);
                 }
             });
         }
@@ -415,7 +413,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ApplyDirectDutyLeaveDialog.setUp$lambda$11(ApplyDirectDutyLeaveDialog.this, view);
+                    ApplyDirectDutyLeaveDialog.setUp$lambda$11(this.f$0, view);
                 }
             });
         }
@@ -426,7 +424,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ApplyDirectDutyLeaveDialog.setUp$lambda$12(ApplyDirectDutyLeaveDialog.this, view);
+                ApplyDirectDutyLeaveDialog.setUp$lambda$12(this.f$0, view);
             }
         });
     }
@@ -437,7 +435,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda3
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                ApplyDirectDutyLeaveDialog.setUp$lambda$2$lambda$1(ApplyDirectDutyLeaveDialog.this, datePicker, i4, i5, i6);
+                ApplyDirectDutyLeaveDialog.setUp$lambda$2$lambda$1(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -446,12 +444,12 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
     public static final void setUp$lambda$2$lambda$1(ApplyDirectDutyLeaveDialog this$0, DatePicker datePicker, int i, int i2, int i3) {
         EditText editText;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        String format = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
+        String str = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
         DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding = this$0.get_binding();
         if (dialogApplyAddDirectLeaveBinding == null || (editText = dialogApplyAddDirectLeaveBinding.etFromDate) == null) {
             return;
         }
-        editText.setText(format);
+        editText.setText(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -460,7 +458,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda2
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                ApplyDirectDutyLeaveDialog.setUp$lambda$4$lambda$3(ApplyDirectDutyLeaveDialog.this, datePicker, i4, i5, i6);
+                ApplyDirectDutyLeaveDialog.setUp$lambda$4$lambda$3(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -469,12 +467,12 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
     public static final void setUp$lambda$4$lambda$3(ApplyDirectDutyLeaveDialog this$0, DatePicker datePicker, int i, int i2, int i3) {
         EditText editText;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        String format = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
+        String str = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
         DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding = this$0.get_binding();
         if (dialogApplyAddDirectLeaveBinding == null || (editText = dialogApplyAddDirectLeaveBinding.etFromDate) == null) {
             return;
         }
-        editText.setText(format);
+        editText.setText(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -483,7 +481,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda4
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                ApplyDirectDutyLeaveDialog.setUp$lambda$6$lambda$5(ApplyDirectDutyLeaveDialog.this, datePicker, i4, i5, i6);
+                ApplyDirectDutyLeaveDialog.setUp$lambda$6$lambda$5(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -492,12 +490,12 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
     public static final void setUp$lambda$6$lambda$5(ApplyDirectDutyLeaveDialog this$0, DatePicker datePicker, int i, int i2, int i3) {
         EditText editText;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        String format = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
+        String str = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
         DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding = this$0.get_binding();
         if (dialogApplyAddDirectLeaveBinding == null || (editText = dialogApplyAddDirectLeaveBinding.etToDate) == null) {
             return;
         }
-        editText.setText(format);
+        editText.setText(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -506,7 +504,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda14
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                ApplyDirectDutyLeaveDialog.setUp$lambda$8$lambda$7(ApplyDirectDutyLeaveDialog.this, datePicker, i4, i5, i6);
+                ApplyDirectDutyLeaveDialog.setUp$lambda$8$lambda$7(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -515,12 +513,12 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
     public static final void setUp$lambda$8$lambda$7(ApplyDirectDutyLeaveDialog this$0, DatePicker datePicker, int i, int i2, int i3) {
         EditText editText;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        String format = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
+        String str = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3));
         DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding = this$0.get_binding();
         if (dialogApplyAddDirectLeaveBinding == null || (editText = dialogApplyAddDirectLeaveBinding.etToDate) == null) {
             return;
         }
-        editText.setText(format);
+        editText.setText(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -557,7 +555,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 200) {
+                if (file2.length() / ((long) 1024) <= 200) {
                     this$0.setCancelable(false);
                     DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogApplyAddDirectLeaveBinding2 == null || (textInputEditText2 = dialogApplyAddDirectLeaveBinding2.etReason) == null) ? null : textInputEditText2.getText()), "")) {
@@ -588,13 +586,13 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                     }
                     ApplyDirectDutyLeaveViewModel applyDirectDutyLeaveViewModel = this$0.getApplyDirectDutyLeaveViewModel();
                     DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding8 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogApplyAddDirectLeaveBinding8 == null || (textInputEditText = dialogApplyAddDirectLeaveBinding8.etReason) == null) ? null : textInputEditText.getText());
+                    String strValueOf = String.valueOf((dialogApplyAddDirectLeaveBinding8 == null || (textInputEditText = dialogApplyAddDirectLeaveBinding8.etReason) == null) ? null : textInputEditText.getText());
                     String str = this$0.headId;
                     Intrinsics.checkNotNull(str);
                     DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding9 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogApplyAddDirectLeaveBinding9 == null || (editText2 = dialogApplyAddDirectLeaveBinding9.etFromDate) == null) ? null : editText2.getText());
+                    String strValueOf2 = String.valueOf((dialogApplyAddDirectLeaveBinding9 == null || (editText2 = dialogApplyAddDirectLeaveBinding9.etFromDate) == null) ? null : editText2.getText());
                     DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding10 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogApplyAddDirectLeaveBinding10 == null || (editText = dialogApplyAddDirectLeaveBinding10.etToDate) == null) ? null : editText.getText());
+                    String strValueOf3 = String.valueOf((dialogApplyAddDirectLeaveBinding10 == null || (editText = dialogApplyAddDirectLeaveBinding10.etToDate) == null) ? null : editText.getText());
                     File file3 = this$0.pickFile;
                     if (file3 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -602,7 +600,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    applyDirectDutyLeaveViewModel.applyDutyLeaveApiCall(valueOf, str, valueOf2, valueOf3, file);
+                    applyDirectDutyLeaveViewModel.applyDutyLeaveApiCall(strValueOf, str, strValueOf2, strValueOf3, file);
                     DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding11 = this$0.get_binding();
                     LinearLayout linearLayout = dialogApplyAddDirectLeaveBinding11 != null ? dialogApplyAddDirectLeaveBinding11.completionCard : null;
                     if (linearLayout != null) {
@@ -654,7 +652,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file3 = null;
                 }
-                if (file3.length() / 1024 <= 200) {
+                if (file3.length() / ((long) 1024) <= 200) {
                     this$0.setCancelable(false);
                     DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogApplyAddDirectLeaveBinding2 == null || (textInputEditText = dialogApplyAddDirectLeaveBinding2.etReason) == null) ? null : textInputEditText.getText()), "")) {
@@ -762,9 +760,10 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
     }
 
     private final void listenSpinnerResponse() {
-        getApplyDirectDutyLeaveViewModel().getResponse().observe(getViewLifecycleOwner(), new ApplyDirectDutyLeaveDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DutyLeaveHeadResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$listenSpinnerResponse$1
+        getApplyDirectDutyLeaveViewModel().getResponse().observe(getViewLifecycleOwner(), new ApplyDirectDutyLeaveDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DutyLeaveHeadResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog.listenSpinnerResponse.1
 
-            /* compiled from: ApplyDirectDutyLeaveDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ApplyDirectDutyLeaveDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -801,10 +800,8 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DutyLeaveHeadResponse> resource) {
-                DutyHeadSpinnerAdapter spinnerAdapter;
-                DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -812,8 +809,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                     DutyLeaveHeadResponse data = resource.getData();
                     if (data != null) {
                         try {
-                            spinnerAdapter = ApplyDirectDutyLeaveDialog.this.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getData());
+                            ApplyDirectDutyLeaveDialog.this.getSpinnerAdapter().addItems(data.getData());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -833,7 +829,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                     return;
                 }
                 ApplyDirectDutyLeaveDialog.this.hideProgress();
-                dialogApplyAddDirectLeaveBinding = ApplyDirectDutyLeaveDialog.this.get_binding();
+                DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding = ApplyDirectDutyLeaveDialog.this.get_binding();
                 if (dialogApplyAddDirectLeaveBinding == null || (spinner = dialogApplyAddDirectLeaveBinding.spinnerDutyHead) == null) {
                     return;
                 }
@@ -848,7 +844,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         getApplyDirectDutyLeaveViewModel().getUpdateResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda13
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ApplyDirectDutyLeaveDialog.listenUpdateResponse$lambda$14(ApplyDirectDutyLeaveDialog.this, (Resource) obj);
+                ApplyDirectDutyLeaveDialog.listenUpdateResponse$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
@@ -916,7 +912,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         getApplyDirectDutyLeaveViewModel().getApplyResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ApplyDirectDutyLeaveDialog.listenApplyResponse$lambda$16(ApplyDirectDutyLeaveDialog.this, (Resource) obj);
+                ApplyDirectDutyLeaveDialog.listenApplyResponse$lambda$16(this.f$0, (Resource) obj);
             }
         });
     }
@@ -984,7 +980,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         getApplyDirectDutyLeaveViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ApplyDirectDutyLeaveDialog.listenProgressResponse$lambda$18(ApplyDirectDutyLeaveDialog.this, (Resource) obj);
+                ApplyDirectDutyLeaveDialog.listenProgressResponse$lambda$18(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1015,18 +1011,18 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogApplyAddDirectLeaveBinding2 != null ? dialogApplyAddDirectLeaveBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding3 = this$0.get_binding();
             TextView textView2 = dialogApplyAddDirectLeaveBinding3 != null ? dialogApplyAddDirectLeaveBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1036,7 +1032,7 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         getApplyDirectDutyLeaveViewModel().getProgressResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveDialog$$ExternalSyntheticLambda12
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ApplyDirectDutyLeaveDialog.listenProgressResponse2$lambda$20(ApplyDirectDutyLeaveDialog.this, (Resource) obj);
+                ApplyDirectDutyLeaveDialog.listenProgressResponse2$lambda$20(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1067,18 +1063,18 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogApplyAddDirectLeaveBinding2 != null ? dialogApplyAddDirectLeaveBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogApplyAddDirectLeaveBinding dialogApplyAddDirectLeaveBinding3 = this$0.get_binding();
             TextView textView2 = dialogApplyAddDirectLeaveBinding3 != null ? dialogApplyAddDirectLeaveBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1086,13 +1082,13 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
             return;
@@ -1105,24 +1101,24 @@ public final class ApplyDirectDutyLeaveDialog extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver = context.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver2 = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver2 = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
-                    if (context3 == null || (contentResolver3 = context3.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context3 == null || (contentResolver3 = context3.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context4 = getContext();
-                        file = new File(context4 != null ? context4.getCacheDir() : null, fileName);
+                        file = new File(context4 != null ? context4.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

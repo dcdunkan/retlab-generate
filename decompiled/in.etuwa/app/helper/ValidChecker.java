@@ -21,8 +21,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: ValidChecker.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ValidChecker.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ValidChecker implements ValidCheckHelper {
     private final Context context;
 
@@ -61,7 +61,7 @@ public final class ValidChecker implements ValidCheckHelper {
         new AlertDialog.Builder(this.context).setTitle("Storage Permission Needed").setMessage("This app needs the Storage permission to work properly, Please enable permission from settings").setPositiveButton("Settings", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.helper.ValidChecker$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                ValidChecker.showPermissionDialog$lambda$0(ValidChecker.this, dialogInterface, i);
+                ValidChecker.showPermissionDialog$lambda$0(this.f$0, dialogInterface, i);
             }
         }).create().show();
     }
@@ -95,15 +95,13 @@ public final class ValidChecker implements ValidCheckHelper {
 
     @Override // in.etuwa.app.helper.ValidCheckHelper
     public void vibrate(Activity activity, long time) {
-        VibrationEffect createOneShot;
         Intrinsics.checkNotNullParameter(activity, "activity");
         Object systemService = activity.getSystemService("vibrator");
         Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.os.Vibrator");
         Vibrator vibrator = (Vibrator) systemService;
         if (vibrator.hasVibrator()) {
             if (Build.VERSION.SDK_INT >= 26) {
-                createOneShot = VibrationEffect.createOneShot(time, -1);
-                vibrator.vibrate(createOneShot);
+                vibrator.vibrate(VibrationEffect.createOneShot(time, -1));
             } else {
                 vibrator.vibrate(200L);
             }
@@ -113,7 +111,7 @@ public final class ValidChecker implements ValidCheckHelper {
     @Override // in.etuwa.app.helper.ValidCheckHelper
     public String dateFormatter(String param) {
         Intrinsics.checkNotNullParameter(param, "param");
-        List split$default = StringsKt.split$default((CharSequence) param, new String[]{HelpFormatter.DEFAULT_OPT_PREFIX}, false, 0, 6, (Object) null);
-        return split$default.get(2) + HelpFormatter.DEFAULT_OPT_PREFIX + split$default.get(1) + HelpFormatter.DEFAULT_OPT_PREFIX + split$default.get(0);
+        List listSplit$default = StringsKt.split$default((CharSequence) param, new String[]{HelpFormatter.DEFAULT_OPT_PREFIX}, false, 0, 6, (Object) null);
+        return listSplit$default.get(2) + HelpFormatter.DEFAULT_OPT_PREFIX + listSplit$default.get(1) + HelpFormatter.DEFAULT_OPT_PREFIX + listSplit$default.get(0);
     }
 }

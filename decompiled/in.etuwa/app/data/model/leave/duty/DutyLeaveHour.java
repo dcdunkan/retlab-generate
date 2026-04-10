@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DutyLeaveHour.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DutyLeaveHour.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DutyLeaveHour {
     private final int hour;
     private final String status;
@@ -20,12 +20,12 @@ public final /* data */ class DutyLeaveHour {
         return dutyLeaveHour.copy(i, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getHour() {
         return this.hour;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

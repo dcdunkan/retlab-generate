@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewSubjectRegistrationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewSubjectRegistrationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Subject {
     private final String id;
     private final String name;
@@ -28,22 +28,22 @@ public final /* data */ class Subject {
         return subject.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPreference() {
         return this.preference;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

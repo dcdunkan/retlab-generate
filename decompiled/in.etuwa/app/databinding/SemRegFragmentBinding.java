@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.edit.SemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class SemRegFragmentBinding extends ViewDataBinding {
     public final RadioGroup academicGroup;
     public final RadioButton academicNo;

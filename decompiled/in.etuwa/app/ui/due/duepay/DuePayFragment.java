@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.due.duepay.DuePayUrl;
@@ -51,28 +52,28 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: DuePayFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: DuePayFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class DuePayFragment extends BaseFragment implements DuePayAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DuePayFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: duePayViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: duePayViewModel$delegate, reason: from kotlin metadata */
     private final Lazy duePayViewModel;
     private ArrayList<DuePayNew> list;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
     private double total;
 
-    /* compiled from: DuePayFragment.kt */
+    /* JADX INFO: compiled from: DuePayFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -122,7 +123,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return duePayFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(duePayFragment);
@@ -136,7 +137,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -149,7 +150,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(DuePayViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(DuePayViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final DuePayFragment duePayFragment2 = this;
@@ -197,7 +198,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
         return (DuePayAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DuePayFragmentBinding get_binding() {
         return this._binding;
     }
@@ -223,7 +224,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: DuePayFragment.kt */
+    /* JADX INFO: compiled from: DuePayFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/due/duepay/DuePayFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/due/duepay/DuePayFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -281,14 +282,14 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
         }
         getAdapter().setCallBack(this);
         listenResponse();
-        final HashMap hashMap = new HashMap();
-        final HashMap hashMap2 = new HashMap();
+        final HashMap map = new HashMap();
+        final HashMap map2 = new HashMap();
         DuePayFragmentBinding duePayFragmentBinding2 = get_binding();
         if (duePayFragmentBinding2 != null && (swipeRefreshLayout = duePayFragmentBinding2.swipeLayout) != null) {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.due.duepay.DuePayFragment$$ExternalSyntheticLambda0
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    DuePayFragment.setUp$lambda$0(DuePayFragment.this);
+                    DuePayFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
@@ -299,7 +300,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.due.duepay.DuePayFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DuePayFragment.setUp$lambda$1(hashMap2, this, hashMap, view);
+                DuePayFragment.setUp$lambda$1(map2, this, map, view);
             }
         });
     }
@@ -321,29 +322,29 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
         Intrinsics.checkNotNullParameter(dueFeeReceipt, "$dueFeeReceipt");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(dueFeeCollection, "$dueFeeCollection");
-        HashMap hashMap = dueFeeReceipt;
-        hashMap.put("DueFeeReceipt[amount]", String.valueOf(this$0.total));
+        HashMap map = dueFeeReceipt;
+        map.put("DueFeeReceipt[amount]", String.valueOf(this$0.total));
         int i = 0;
-        hashMap.put("DueFeeReceipt[receipt_date]", this$0.list.get(0).getDate());
-        hashMap.put("Transaction[method]", "5");
-        hashMap.put("payment", "1");
-        hashMap.put("admission_no", this$0.list.get(0).getAdmission_no());
-        hashMap.put("batch_id", this$0.getPreference().getBatchId());
+        map.put("DueFeeReceipt[receipt_date]", this$0.list.get(0).getDate());
+        map.put("Transaction[method]", "5");
+        map.put("payment", "1");
+        map.put("admission_no", this$0.list.get(0).getAdmission_no());
+        map.put("batch_id", this$0.getPreference().getBatchId());
         int size = this$0.selected.size() - 1;
         if (size >= 0) {
             while (true) {
                 if (Intrinsics.areEqual(this$0.selected.get(i), "true")) {
-                    HashMap hashMap2 = dueFeeCollection;
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][amount]", this$0.list.get(i).getBalance());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][student_id]", this$0.list.get(i).getStudent_id());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][head_id]", this$0.list.get(i).getHead_id());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][due_id]", this$0.list.get(i).getDue_id());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][batch_id]", this$0.getPreference().getBatchId());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][semester_id]", this$0.getPreference().getUserSemId());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][dept_id]", this$0.list.get(i).getDepartment_id());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][collection_date]", this$0.list.get(i).getDate());
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][status]", "1");
-                    hashMap2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][year_id]", this$0.list.get(i).getYear_id());
+                    HashMap map2 = dueFeeCollection;
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][amount]", this$0.list.get(i).getBalance());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][student_id]", this$0.list.get(i).getStudent_id());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][head_id]", this$0.list.get(i).getHead_id());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][due_id]", this$0.list.get(i).getDue_id());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][batch_id]", this$0.getPreference().getBatchId());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][semester_id]", this$0.getPreference().getUserSemId());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][dept_id]", this$0.list.get(i).getDepartment_id());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][collection_date]", this$0.list.get(i).getDate());
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][status]", "1");
+                    map2.put("DueFeeCollection[" + this$0.list.get(i).getStudent_id() + "][" + this$0.list.get(i).getDue_id() + "][" + this$0.list.get(i).getHead_id() + "][year_id]", this$0.list.get(i).getYear_id());
                 }
                 if (i == size) {
                     break;
@@ -352,7 +353,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
                 }
             }
         }
-        this$0.getDuePayViewModel().getDueUrl(dueFeeCollection, hashMap);
+        this$0.getDuePayViewModel().getDueUrl(dueFeeCollection, map);
         this$0.listenUrlResponse();
         System.out.println(this$0.selected);
         System.out.println(this$0.total);
@@ -363,7 +364,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
         getDuePayViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.due.duepay.DuePayFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                DuePayFragment.listenResponse$lambda$3(DuePayFragment.this, (Resource) obj);
+                DuePayFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -382,9 +383,9 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
                     this$0.list = duePayNewResponse.getCollect();
                     DuePayAdapter adapter = this$0.getAdapter();
                     ArrayList<DuePayNew> collect = duePayNewResponse.getCollect();
-                    Context requireContext = this$0.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                    adapter.addItems(collect, requireContext);
+                    Context contextRequireContext = this$0.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                    adapter.addItems(collect, contextRequireContext);
                     return;
                 } catch (NullPointerException unused) {
                     return;
@@ -416,9 +417,10 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
     }
 
     private final void listenUrlResponse() {
-        getDuePayViewModel().getDueUrlResponse().observe(getViewLifecycleOwner(), new DuePayFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DuePayUrl>, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayFragment$listenUrlResponse$1
+        getDuePayViewModel().getDueUrlResponse().observe(getViewLifecycleOwner(), new DuePayFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DuePayUrl>, Unit>() { // from class: in.etuwa.app.ui.due.duepay.DuePayFragment.listenUrlResponse.1
 
-            /* compiled from: DuePayFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.due.duepay.DuePayFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: DuePayFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -455,70 +457,39 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
-            
-                r0 = r0.listener;
-             */
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.due.duepay.DuePayUrl> r4) {
-                /*
-                    r3 = this;
-                    in.etuwa.app.utils.Status r0 = r4.getStatus()
-                    int[] r1 = in.etuwa.app.ui.due.duepay.DuePayFragment$listenUrlResponse$1.WhenMappings.$EnumSwitchMapping$0
-                    int r0 = r0.ordinal()
-                    r0 = r1[r0]
-                    r1 = 1
-                    if (r0 == r1) goto L35
-                    r4 = 2
-                    if (r0 == r4) goto L2f
-                    r4 = 3
-                    if (r0 == r4) goto L24
-                    r4 = 4
-                    if (r0 == r4) goto L19
-                    goto L69
-                L19:
-                    in.etuwa.app.ui.due.duepay.DuePayFragment r4 = in.etuwa.app.ui.due.duepay.DuePayFragment.this
-                    r4.hideProgress()
-                    in.etuwa.app.ui.due.duepay.DuePayFragment r4 = in.etuwa.app.ui.due.duepay.DuePayFragment.this
-                    r4.showBaseView()
-                    goto L69
-                L24:
-                    in.etuwa.app.ui.due.duepay.DuePayFragment r4 = in.etuwa.app.ui.due.duepay.DuePayFragment.this
-                    r4.hideProgress()
-                    in.etuwa.app.ui.due.duepay.DuePayFragment r4 = in.etuwa.app.ui.due.duepay.DuePayFragment.this
-                    r4.showBaseView()
-                    goto L69
-                L2f:
-                    in.etuwa.app.ui.due.duepay.DuePayFragment r4 = in.etuwa.app.ui.due.duepay.DuePayFragment.this
-                    r4.showProgress()
-                    goto L69
-                L35:
-                    in.etuwa.app.ui.due.duepay.DuePayFragment r0 = in.etuwa.app.ui.due.duepay.DuePayFragment.this
-                    r0.hideProgress()
-                    java.lang.Object r4 = r4.getData()
-                    in.etuwa.app.data.model.due.duepay.DuePayUrl r4 = (in.etuwa.app.data.model.due.duepay.DuePayUrl) r4
-                    if (r4 == 0) goto L69
-                    in.etuwa.app.ui.due.duepay.DuePayFragment r0 = in.etuwa.app.ui.due.duepay.DuePayFragment.this
-                    r0.showBaseView()
-                    java.lang.String r1 = r4.getUrl()
-                    java.io.PrintStream r2 = java.lang.System.out
-                    r2.println(r1)
-                    java.lang.String r1 = r4.getUrl()
-                    java.lang.String r2 = ""
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r2)
-                    if (r1 != 0) goto L69
-                    in.etuwa.app.helper.MainCallBackListener r0 = in.etuwa.app.ui.due.duepay.DuePayFragment.access$getListener$p(r0)
-                    if (r0 == 0) goto L69
-                    java.lang.String r4 = r4.getUrl()
-                    r0.openPaymentPage(r4)
-                L69:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.due.duepay.DuePayFragment$listenUrlResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<DuePayUrl> resource) {
+                MainCallBackListener mainCallBackListener;
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        DuePayFragment.this.showProgress();
+                        return;
+                    }
+                    if (i == 3) {
+                        DuePayFragment.this.hideProgress();
+                        DuePayFragment.this.showBaseView();
+                        return;
+                    } else {
+                        if (i != 4) {
+                            return;
+                        }
+                        DuePayFragment.this.hideProgress();
+                        DuePayFragment.this.showBaseView();
+                        return;
+                    }
+                }
+                DuePayFragment.this.hideProgress();
+                DuePayUrl data = resource.getData();
+                if (data != null) {
+                    DuePayFragment duePayFragment = DuePayFragment.this;
+                    duePayFragment.showBaseView();
+                    System.out.println((Object) data.getUrl());
+                    if (Intrinsics.areEqual(data.getUrl(), "") || (mainCallBackListener = duePayFragment.listener) == null) {
+                        return;
+                    }
+                    mainCallBackListener.openPaymentPage(data.getUrl());
+                }
             }
         }));
     }
@@ -586,7 +557,7 @@ public final class DuePayFragment extends BaseFragment implements DuePayAdapter.
         if (textView2 != null) {
             textView2.setText(String.valueOf(d));
         }
-        if (d <= 0.0d) {
+        if (d <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             DuePayFragmentBinding duePayFragmentBinding2 = get_binding();
             textView = duePayFragmentBinding2 != null ? duePayFragmentBinding2.payDueBtn : null;
             if (textView == null) {

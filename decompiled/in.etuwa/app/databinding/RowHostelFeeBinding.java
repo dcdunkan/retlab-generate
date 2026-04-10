@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowHostelFeeBinding implements ViewBinding {
     public final CardView cardHostel;
     public final TextView hostelReDate;
@@ -33,11 +33,11 @@ public final class RowHostelFeeBinding implements ViewBinding {
     }
 
     public static RowHostelFeeBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_hostel_fee, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_hostel_fee, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowHostelFeeBinding bind(View rootView) {

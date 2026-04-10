@@ -6,8 +6,8 @@ import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: StoreRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: StoreRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class StoreRequest {
 
     @SerializedName("subject_id")
@@ -21,7 +21,7 @@ public final /* data */ class StoreRequest {
         return storeRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubId() {
         return this.subId;
     }

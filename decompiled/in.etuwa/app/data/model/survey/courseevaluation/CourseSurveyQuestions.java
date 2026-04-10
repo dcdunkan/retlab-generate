@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CourseSurveyQuestions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CourseSurveyQuestions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class CourseSurveyQuestions {
     private String answer_id;
     private final ArrayList<CourseSurveyOptions> options;
@@ -15,6 +15,7 @@ public final /* data */ class CourseSurveyQuestions {
     private final boolean required;
     private final int slno;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ CourseSurveyQuestions copy$default(CourseSurveyQuestions courseSurveyQuestions, int i, String str, String str2, boolean z, String str3, ArrayList arrayList, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             i = courseSurveyQuestions.slno;
@@ -41,27 +42,27 @@ public final /* data */ class CourseSurveyQuestions {
         return courseSurveyQuestions.copy(i, str4, str5, z2, str6, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getSlno() {
         return this.slno;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getQ_id() {
         return this.q_id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getQuestion() {
         return this.question;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final boolean getRequired() {
         return this.required;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAnswer_id() {
         return this.answer_id;
     }
@@ -90,14 +91,17 @@ public final /* data */ class CourseSurveyQuestions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v10 */
+    /* JADX WARN: Type inference failed for: r1v11 */
+    /* JADX WARN: Type inference failed for: r1v5, types: [int] */
     public int hashCode() {
-        int hashCode = ((((this.slno * 31) + this.q_id.hashCode()) * 31) + this.question.hashCode()) * 31;
+        int iHashCode = ((((this.slno * 31) + this.q_id.hashCode()) * 31) + this.question.hashCode()) * 31;
         boolean z = this.required;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((hashCode + i) * 31) + this.answer_id.hashCode()) * 31) + this.options.hashCode();
+        return ((((iHashCode + r1) * 31) + this.answer_id.hashCode()) * 31) + this.options.hashCode();
     }
 
     public String toString() {

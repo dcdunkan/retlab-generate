@@ -27,13 +27,14 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: AddRequestDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AddRequestDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AddRequestDialogViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> applyResponse;
     private final CertificateRequestRepository certificateRequestRepository;
     private MutableLiveData<Resource<CertificateTypeResponse>> certificateTypeResponse;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<Float>> progressResponse;
     private MutableLiveData<Resource<ArrayList<Semester>>> semResponse;
     private MutableLiveData<Resource<SuccessResponse>> uploadResponse;
@@ -47,7 +48,7 @@ public final class AddRequestDialogViewModel extends ViewModel {
         this.progressResponse = new MutableLiveData<>();
         this.uploadResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
-        getCertificateTypeRequest();
+        loadDataIfNeeded();
     }
 
     public final MutableLiveData<Resource<SuccessResponse>> getApplyResponse() {
@@ -77,11 +78,19 @@ public final class AddRequestDialogViewModel extends ViewModel {
         this.uploadResponse = mutableLiveData;
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getCertificateTypeRequest();
+    }
+
     public final void getCertificateTypeRequest() {
         this.certificateTypeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CertificateTypeResponse> observeOn = this.certificateRequestRepository.getCertificateTypeRequestApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CertificateTypeResponse, Unit> function1 = new Function1<CertificateTypeResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$getCertificateTypeRequest$1
+        Single<CertificateTypeResponse> singleObserveOn = this.certificateRequestRepository.getCertificateTypeRequestApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CertificateTypeResponse, Unit> function1 = new Function1<CertificateTypeResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.getCertificateTypeRequest.1
             {
                 super(1);
             }
@@ -92,20 +101,18 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CertificateTypeResponse certificateTypeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddRequestDialogViewModel.this.certificateTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(certificateTypeResponse));
+                AddRequestDialogViewModel.this.certificateTypeResponse.postValue(Resource.INSTANCE.success(certificateTypeResponse));
             }
         };
         Consumer<? super CertificateTypeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.getCertificateTypeRequest$lambda$0(Function1.this, obj);
+                AddRequestDialogViewModel.getCertificateTypeRequest$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$getCertificateTypeRequest$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.getCertificateTypeRequest.2
             {
                 super(1);
             }
@@ -116,17 +123,15 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddRequestDialogViewModel.this.certificateTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddRequestDialogViewModel.this.certificateTypeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.getCertificateTypeRequest$lambda$1(Function1.this, obj);
+                AddRequestDialogViewModel.getCertificateTypeRequest$lambda$1(function12, obj);
             }
         }));
     }
@@ -146,8 +151,8 @@ public final class AddRequestDialogViewModel extends ViewModel {
     public final void applyRequest(String certificate, String reason) {
         this.applyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.certificateRequestRepository.applyCertificateApiCall(certificate, reason).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$applyRequest$1
+        Single<SuccessResponse> singleObserveOn = this.certificateRequestRepository.applyCertificateApiCall(certificate, reason).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.applyRequest.1
             {
                 super(1);
             }
@@ -158,7 +163,7 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddRequestDialogViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -166,10 +171,10 @@ public final class AddRequestDialogViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.applyRequest$lambda$2(Function1.this, obj);
+                AddRequestDialogViewModel.applyRequest$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$applyRequest$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.applyRequest.2
             {
                 super(1);
             }
@@ -180,15 +185,15 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddRequestDialogViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda9
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.applyRequest$lambda$3(Function1.this, obj);
+                AddRequestDialogViewModel.applyRequest$lambda$3(function12, obj);
             }
         }));
     }
@@ -209,8 +214,8 @@ public final class AddRequestDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(certificateCollection, "certificateCollection");
         this.applyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.certificateRequestRepository.applyCertificateApiCall(certificateCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$applyRequest$3
+        Single<SuccessResponse> singleObserveOn = this.certificateRequestRepository.applyCertificateApiCall(certificateCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.applyRequest.3
             {
                 super(1);
             }
@@ -221,7 +226,7 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddRequestDialogViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -229,10 +234,10 @@ public final class AddRequestDialogViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.applyRequest$lambda$4(Function1.this, obj);
+                AddRequestDialogViewModel.applyRequest$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$applyRequest$4
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.applyRequest.4
             {
                 super(1);
             }
@@ -243,15 +248,15 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddRequestDialogViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.applyRequest$lambda$5(Function1.this, obj);
+                AddRequestDialogViewModel.applyRequest$lambda$5(function12, obj);
             }
         }));
     }
@@ -276,12 +281,12 @@ public final class AddRequestDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(certificate, "certificate");
         Intrinsics.checkNotNullParameter(reason, "reason");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, certificate);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, certificate);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("CertificateApplication[proofFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$applyDutyLeaveApiCall$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("CertificateApplication[proofFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.applyDutyLeaveApiCall.1
             {
                 super(1);
             }
@@ -292,20 +297,20 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddRequestDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda5
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.applyDutyLeaveApiCall$lambda$6(Function1.this, obj);
+                AddRequestDialogViewModel.applyDutyLeaveApiCall$lambda$6(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.certificateRequestRepository.applyCertificateApiCall(create2, create, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$applyDutyLeaveApiCall$2
+        Observable<SuccessResponse> observableObserveOn = this.certificateRequestRepository.applyCertificateApiCall(requestBodyCreate2, requestBodyCreate, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.applyDutyLeaveApiCall.2
             {
                 super(1);
             }
@@ -316,7 +321,7 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddRequestDialogViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -324,10 +329,10 @@ public final class AddRequestDialogViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.applyDutyLeaveApiCall$lambda$7(Function1.this, obj);
+                AddRequestDialogViewModel.applyDutyLeaveApiCall$lambda$7(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$applyDutyLeaveApiCall$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.applyDutyLeaveApiCall.3
             {
                 super(1);
             }
@@ -338,7 +343,7 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddRequestDialogViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -347,10 +352,10 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.applyDutyLeaveApiCall$lambda$8(Function1.this, obj);
+                AddRequestDialogViewModel.applyDutyLeaveApiCall$lambda$8(function13, obj);
             }
         }));
     }
@@ -376,8 +381,8 @@ public final class AddRequestDialogViewModel extends ViewModel {
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.certificateRequestRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.certificateRequestRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.getSemester.1
             {
                 super(1);
             }
@@ -388,20 +393,18 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddRequestDialogViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                AddRequestDialogViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.getSemester$lambda$9(Function1.this, obj);
+                AddRequestDialogViewModel.getSemester$lambda$9(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel.getSemester.2
             {
                 super(1);
             }
@@ -412,17 +415,15 @@ public final class AddRequestDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddRequestDialogViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddRequestDialogViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.certificate_request.add_request_dialog.AddRequestDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddRequestDialogViewModel.getSemester$lambda$10(Function1.this, obj);
+                AddRequestDialogViewModel.getSemester$lambda$10(function12, obj);
             }
         }));
     }

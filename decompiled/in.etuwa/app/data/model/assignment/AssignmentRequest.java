@@ -4,8 +4,8 @@ import com.itextpdf.svg.SvgConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AssignmentRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AssignmentRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AssignmentRequest {
     private final String filter;
     private final String sem_id;
@@ -24,17 +24,17 @@ public final /* data */ class AssignmentRequest {
         return assignmentRequest.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFilter() {
         return this.filter;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSort() {
         return this.sort;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSem_id() {
         return this.sem_id;
     }

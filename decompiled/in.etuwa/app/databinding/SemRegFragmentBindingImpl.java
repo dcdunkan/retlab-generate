@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.edit.SemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class SemRegFragmentBindingImpl extends SemRegFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -126,7 +126,7 @@ public class SemRegFragmentBindingImpl extends SemRegFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (199 != variableId) {
+        if (201 != variableId) {
             return false;
         }
         setSemRegViewModel((SemRegViewModel) variable);

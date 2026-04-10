@@ -3,23 +3,23 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.github.mikephil.charting.charts.BarChart;
+import com.google.android.material.button.MaterialButton;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FragmentCgpaBinding implements ViewBinding {
     public final LinearLayout cgpLayout;
     public final BarChart cgpaBarChart;
     private final FrameLayout rootView;
-    public final Button sgpaBtn;
-    public final Button subjectScoreBtn;
+    public final MaterialButton sgpaBtn;
+    public final MaterialButton subjectScoreBtn;
 
-    private FragmentCgpaBinding(FrameLayout rootView, LinearLayout cgpLayout, BarChart cgpaBarChart, Button sgpaBtn, Button subjectScoreBtn) {
+    private FragmentCgpaBinding(FrameLayout rootView, LinearLayout cgpLayout, BarChart cgpaBarChart, MaterialButton sgpaBtn, MaterialButton subjectScoreBtn) {
         this.rootView = rootView;
         this.cgpLayout = cgpLayout;
         this.cgpaBarChart = cgpaBarChart;
@@ -37,11 +37,11 @@ public final class FragmentCgpaBinding implements ViewBinding {
     }
 
     public static FragmentCgpaBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.fragment_cgpa, parent, false);
+        View viewInflate = inflater.inflate(R.layout.fragment_cgpa, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static FragmentCgpaBinding bind(View rootView) {
@@ -52,12 +52,12 @@ public final class FragmentCgpaBinding implements ViewBinding {
             BarChart barChart = (BarChart) ViewBindings.findChildViewById(rootView, i);
             if (barChart != null) {
                 i = R.id.sgpa_btn;
-                Button button = (Button) ViewBindings.findChildViewById(rootView, i);
-                if (button != null) {
+                MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                if (materialButton != null) {
                     i = R.id.subject_score_btn;
-                    Button button2 = (Button) ViewBindings.findChildViewById(rootView, i);
-                    if (button2 != null) {
-                        return new FragmentCgpaBinding((FrameLayout) rootView, linearLayout, barChart, button, button2);
+                    MaterialButton materialButton2 = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                    if (materialButton2 != null) {
+                        return new FragmentCgpaBinding((FrameLayout) rootView, linearLayout, barChart, materialButton, materialButton2);
                     }
                 }
             }

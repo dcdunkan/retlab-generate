@@ -19,13 +19,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 
-/* compiled from: GrievanceDocAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: GrievanceDocAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class GrievanceDocAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<GrievanceDoc> list = new ArrayList<>();
     private GrievanceDocListener listener;
 
-    /* compiled from: GrievanceDocAdapter.kt */
+    /* JADX INFO: compiled from: GrievanceDocAdapter.kt */
     @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0018\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\nH&¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/grievance/view/doc/GrievanceDocAdapter$GrievanceDocListener;", "", "checkFileExistence", "", "fileName", "", "downloadFile", "", "url", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface GrievanceDocListener {
         boolean checkFileExistence(String fileName);
@@ -37,18 +37,18 @@ public final class GrievanceDocAdapter extends RecyclerView.Adapter<BaseViewHold
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_gr_docs, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …w_gr_docs, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_gr_docs, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …w_gr_docs, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -64,7 +64,7 @@ public final class GrievanceDocAdapter extends RecyclerView.Adapter<BaseViewHold
         return !this.list.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: GrievanceDocAdapter.kt */
+    /* JADX INFO: compiled from: GrievanceDocAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\n\u001a\u00020\u000bH\u0014J\u0010\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/grievance/view/doc/GrievanceDocAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/grievance/view/doc/GrievanceDocAdapter;Landroid/view/View;)V", "doc", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "downBtn", "no", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView doc;
@@ -100,11 +100,11 @@ public final class GrievanceDocAdapter extends RecyclerView.Adapter<BaseViewHold
                 Regex regex = new Regex("[^A-Za-z0-9.]");
                 String path = grievanceDoc.getPath();
                 Intrinsics.checkNotNull(path);
-                String replace = regex.replace(StringsKt.substringAfterLast$default(path, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String strReplace = regex.replace(StringsKt.substringAfterLast$default(path, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
                 GrievanceDocListener grievanceDocListener = this.this$0.listener;
-                Boolean valueOf = grievanceDocListener != null ? Boolean.valueOf(grievanceDocListener.checkFileExistence(replace)) : null;
-                Intrinsics.checkNotNull(valueOf);
-                if (valueOf.booleanValue()) {
+                Boolean boolValueOf = grievanceDocListener != null ? Boolean.valueOf(grievanceDocListener.checkFileExistence(strReplace)) : null;
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     this.downBtn.setText("Open");
                     this.downBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
                 } else {
@@ -116,7 +116,7 @@ public final class GrievanceDocAdapter extends RecyclerView.Adapter<BaseViewHold
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.view.doc.GrievanceDocAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        GrievanceDocAdapter.ViewHolder.onBind$lambda$0(GrievanceDocAdapter.this, grievanceDoc, position, view);
+                        GrievanceDocAdapter.ViewHolder.onBind$lambda$0(grievanceDocAdapter, grievanceDoc, position, view);
                     }
                 });
             } catch (Exception unused) {

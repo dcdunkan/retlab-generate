@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.login;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LoginRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LoginRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class LoginRequest {
     private final String hostel;
     private final String password;
@@ -23,17 +23,17 @@ public final /* data */ class LoginRequest {
         return loginRequest.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getUsername() {
         return this.username;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getPassword() {
         return this.password;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getHostel() {
         return this.hostel;
     }
@@ -56,9 +56,9 @@ public final /* data */ class LoginRequest {
     }
 
     public int hashCode() {
-        int hashCode = ((this.username.hashCode() * 31) + this.password.hashCode()) * 31;
+        int iHashCode = ((this.username.hashCode() * 31) + this.password.hashCode()) * 31;
         String str = this.hostel;
-        return hashCode + (str == null ? 0 : str.hashCode());
+        return iHashCode + (str == null ? 0 : str.hashCode());
     }
 
     public String toString() {

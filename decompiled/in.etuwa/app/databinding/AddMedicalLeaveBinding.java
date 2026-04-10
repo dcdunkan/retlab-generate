@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AddMedicalLeaveBinding extends ViewDataBinding {
     public final TextView applyBtn;
     public final LinearLayout completionCard;

@@ -6,8 +6,8 @@ import android.view.Window;
 import androidx.fragment.app.DialogFragment;
 import kotlin.Metadata;
 
-/* compiled from: BaseDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: BaseDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public abstract class BaseDialog extends DialogFragment {
     protected abstract void hideProgress();
 

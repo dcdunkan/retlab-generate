@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MedicalRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MedicalRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MedicalRequest {
 
     @SerializedName("from_date")
@@ -31,17 +31,17 @@ public final /* data */ class MedicalRequest {
         return medicalRequest.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getReason() {
         return this.reason;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getDFrom() {
         return this.dFrom;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDTo() {
         return this.dTo;
     }

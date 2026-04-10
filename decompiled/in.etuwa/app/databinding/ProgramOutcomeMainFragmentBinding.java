@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.programoutcome.main.ProgramOutcomeMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ProgramOutcomeMainFragmentBinding extends ViewDataBinding {
     public final TextView educationalBtn;
 

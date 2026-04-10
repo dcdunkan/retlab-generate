@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.common;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Remarks.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Remarks.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Remarks {
     private final String remark;
     private final String teacher;
@@ -19,12 +19,12 @@ public final /* data */ class Remarks {
         return remarks.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getTeacher() {
         return this.teacher;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getRemark() {
         return this.remark;
     }

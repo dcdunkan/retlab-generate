@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Comment.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Comment.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Comment {
     private final String comment;
 
@@ -24,6 +24,7 @@ public final /* data */ class Comment {
     private final ArrayList<Reply> reply;
     private final String time;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ Comment copy$default(Comment comment, String str, String str2, String str3, String str4, String str5, ArrayList arrayList, int i, Object obj) {
         if ((i & 1) != 0) {
             str = comment.commentUser;
@@ -50,27 +51,27 @@ public final /* data */ class Comment {
         return comment.copy(str, str6, str7, str8, str9, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getCommentUser() {
         return this.commentUser;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getCommentId() {
         return this.commentId;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getComment() {
         return this.comment;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTime() {
         return this.time;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getImg() {
         return this.img;
     }

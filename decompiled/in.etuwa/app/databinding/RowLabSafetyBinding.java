@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowLabSafetyBinding implements ViewBinding {
     private final CardView rootView;
     public final TextView safetyNumber;
@@ -31,11 +31,11 @@ public final class RowLabSafetyBinding implements ViewBinding {
     }
 
     public static RowLabSafetyBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_lab_safety, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_lab_safety, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowLabSafetyBinding bind(View rootView) {

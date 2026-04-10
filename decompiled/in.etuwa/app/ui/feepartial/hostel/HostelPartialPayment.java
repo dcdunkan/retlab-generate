@@ -65,18 +65,18 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: HostelPartialPayment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: HostelPartialPayment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class HostelPartialPayment extends BaseFragment implements HostelPartialAdmissionAdapter.CallBack, HostelPartialMonthlyAdapter.CallBack, PalaiHostelFeeConfirmDialog.FeeDetailListner, HostelFeeConfirmFragment.FeeDetailListner, HostelPartialEditDialog.FeeDetailListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentHostelPartialBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: adapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter2$delegate, reason: from kotlin metadata */
     private final Lazy adapter2;
     private int amounts;
     private String date;
@@ -87,16 +87,16 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
     private ArrayList<HostelPalaiAdmission> hostelNew;
     private ArrayList<HostelPartialAdmission> hostelNewPartial;
 
-    /* renamed from: hostelPartialViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: hostelPartialViewModel$delegate, reason: from kotlin metadata */
     private final Lazy hostelPartialViewModel;
     private MainCallBackListener listener;
     private String month;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private int total;
     private int totalAmount;
@@ -136,7 +136,7 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return hostelPartialPayment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(hostelPartialPayment);
@@ -150,7 +150,7 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -163,7 +163,7 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HostelPartialViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HostelPartialViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final HostelPartialPayment hostelPartialPayment2 = this;
@@ -174,7 +174,7 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(HostelPartialPayment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -272,7 +272,7 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentHostelPartialBinding get_binding() {
         return this._binding;
     }
@@ -374,7 +374,7 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
         this.type = num;
     }
 
-    /* compiled from: HostelPartialPayment.kt */
+    /* JADX INFO: compiled from: HostelPartialPayment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/feepartial/hostel/HostelPartialPayment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/feepartial/hostel/HostelPartialPayment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -447,8 +447,8 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
         getAdapter2().setCallBack(this);
         listenHostelPalaiResponse();
         getHostelPartialViewModel().getHostelPalaiFeeTypes();
-        final HashMap hashMap = new HashMap();
-        final HashMap hashMap2 = new HashMap();
+        final HashMap map = new HashMap();
+        final HashMap map2 = new HashMap();
         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmea", false, 2, (Object) null)) {
             FragmentHostelPartialBinding fragmentHostelPartialBinding4 = get_binding();
             LinearLayout linearLayout = fragmentHostelPartialBinding4 != null ? fragmentHostelPartialBinding4.monthLayout : null;
@@ -475,89 +475,71 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
         FragmentHostelPartialBinding fragmentHostelPartialBinding8 = get_binding();
         Spinner spinner2 = fragmentHostelPartialBinding8 != null ? fragmentHostelPartialBinding8.spinnerHostelFee : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding9;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding10;
-                    HostelPalaiSpinnerAdapter spinnerAdapter;
-                    HostelPartialViewModel hostelPartialViewModel;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding11;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding12;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding13;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding14;
                     LinearLayout linearLayout3;
-                    HostelPartialViewModel hostelPartialViewModel2;
-                    HostelPartialViewModel hostelPartialViewModel3;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding15;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding16;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding17;
-                    FragmentHostelPartialBinding fragmentHostelPartialBinding18;
-                    fragmentHostelPartialBinding9 = HostelPartialPayment.this.get_binding();
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding9 = HostelPartialPayment.this.get_binding();
                     TextView textView4 = fragmentHostelPartialBinding9 != null ? fragmentHostelPartialBinding9.payNowBtn : null;
                     if (textView4 != null) {
                         textView4.setVisibility(8);
                     }
-                    fragmentHostelPartialBinding10 = HostelPartialPayment.this.get_binding();
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding10 = HostelPartialPayment.this.get_binding();
                     TextView textView5 = fragmentHostelPartialBinding10 != null ? fragmentHostelPartialBinding10.tvHostelTotal : null;
                     if (textView5 != null) {
                         textView5.setText("0");
                     }
                     HostelPartialPayment hostelPartialPayment = HostelPartialPayment.this;
-                    spinnerAdapter = hostelPartialPayment.getSpinnerAdapter();
-                    hostelPartialPayment.setType(Integer.valueOf(spinnerAdapter.getSemester(position).getId()));
+                    hostelPartialPayment.setType(Integer.valueOf(hostelPartialPayment.getSpinnerAdapter().getSemester(position).getId()));
                     Integer type = HostelPartialPayment.this.getType();
                     if (type != null && type.intValue() == 2) {
-                        hostelPartialViewModel2 = HostelPartialPayment.this.getHostelPartialViewModel();
-                        hostelPartialViewModel2.getHostelFee();
-                        hostelPartialViewModel3 = HostelPartialPayment.this.getHostelPartialViewModel();
-                        hostelPartialViewModel3.getHostelMonthFee();
-                        fragmentHostelPartialBinding15 = HostelPartialPayment.this.get_binding();
-                        RecyclerView recyclerView3 = fragmentHostelPartialBinding15 != null ? fragmentHostelPartialBinding15.rvHostelFee : null;
+                        HostelPartialPayment.this.getHostelPartialViewModel().getHostelFee();
+                        HostelPartialPayment.this.getHostelPartialViewModel().getHostelMonthFee();
+                        FragmentHostelPartialBinding fragmentHostelPartialBinding11 = HostelPartialPayment.this.get_binding();
+                        RecyclerView recyclerView3 = fragmentHostelPartialBinding11 != null ? fragmentHostelPartialBinding11.rvHostelFee : null;
                         if (recyclerView3 != null) {
                             recyclerView3.setVisibility(8);
                         }
-                        fragmentHostelPartialBinding16 = HostelPartialPayment.this.get_binding();
-                        RecyclerView recyclerView4 = fragmentHostelPartialBinding16 != null ? fragmentHostelPartialBinding16.rvHostelFeeAdmission : null;
+                        FragmentHostelPartialBinding fragmentHostelPartialBinding12 = HostelPartialPayment.this.get_binding();
+                        RecyclerView recyclerView4 = fragmentHostelPartialBinding12 != null ? fragmentHostelPartialBinding12.rvHostelFeeAdmission : null;
                         if (recyclerView4 != null) {
                             recyclerView4.setVisibility(8);
                         }
-                        fragmentHostelPartialBinding17 = HostelPartialPayment.this.get_binding();
-                        LinearLayout linearLayout4 = fragmentHostelPartialBinding17 != null ? fragmentHostelPartialBinding17.swipeLayout : null;
+                        FragmentHostelPartialBinding fragmentHostelPartialBinding13 = HostelPartialPayment.this.get_binding();
+                        LinearLayout linearLayout4 = fragmentHostelPartialBinding13 != null ? fragmentHostelPartialBinding13.swipeLayout : null;
                         if (linearLayout4 != null) {
                             linearLayout4.setVisibility(0);
                         }
-                        fragmentHostelPartialBinding18 = HostelPartialPayment.this.get_binding();
-                        linearLayout3 = fragmentHostelPartialBinding18 != null ? fragmentHostelPartialBinding18.swipeLayout2 : null;
+                        FragmentHostelPartialBinding fragmentHostelPartialBinding14 = HostelPartialPayment.this.get_binding();
+                        linearLayout3 = fragmentHostelPartialBinding14 != null ? fragmentHostelPartialBinding14.swipeLayout2 : null;
                         if (linearLayout3 == null) {
                             return;
                         }
                         linearLayout3.setVisibility(8);
                         return;
                     }
-                    hostelPartialViewModel = HostelPartialPayment.this.getHostelPartialViewModel();
-                    hostelPartialViewModel.getHostelPalaiFee(String.valueOf(HostelPartialPayment.this.getType()));
-                    fragmentHostelPartialBinding11 = HostelPartialPayment.this.get_binding();
-                    RecyclerView recyclerView5 = fragmentHostelPartialBinding11 != null ? fragmentHostelPartialBinding11.rvHostelFee : null;
+                    HostelPartialPayment.this.getHostelPartialViewModel().getHostelPalaiFee(String.valueOf(HostelPartialPayment.this.getType()));
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding15 = HostelPartialPayment.this.get_binding();
+                    RecyclerView recyclerView5 = fragmentHostelPartialBinding15 != null ? fragmentHostelPartialBinding15.rvHostelFee : null;
                     if (recyclerView5 != null) {
                         recyclerView5.setVisibility(8);
                     }
-                    fragmentHostelPartialBinding12 = HostelPartialPayment.this.get_binding();
-                    RecyclerView recyclerView6 = fragmentHostelPartialBinding12 != null ? fragmentHostelPartialBinding12.rvHostelFeeAdmission : null;
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding16 = HostelPartialPayment.this.get_binding();
+                    RecyclerView recyclerView6 = fragmentHostelPartialBinding16 != null ? fragmentHostelPartialBinding16.rvHostelFeeAdmission : null;
                     if (recyclerView6 != null) {
                         recyclerView6.setVisibility(0);
                     }
-                    fragmentHostelPartialBinding13 = HostelPartialPayment.this.get_binding();
-                    LinearLayout linearLayout5 = fragmentHostelPartialBinding13 != null ? fragmentHostelPartialBinding13.swipeLayout : null;
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding17 = HostelPartialPayment.this.get_binding();
+                    LinearLayout linearLayout5 = fragmentHostelPartialBinding17 != null ? fragmentHostelPartialBinding17.swipeLayout : null;
                     if (linearLayout5 != null) {
                         linearLayout5.setVisibility(8);
                     }
-                    fragmentHostelPartialBinding14 = HostelPartialPayment.this.get_binding();
-                    linearLayout3 = fragmentHostelPartialBinding14 != null ? fragmentHostelPartialBinding14.swipeLayout2 : null;
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding18 = HostelPartialPayment.this.get_binding();
+                    linearLayout3 = fragmentHostelPartialBinding18 != null ? fragmentHostelPartialBinding18.swipeLayout2 : null;
                     if (linearLayout3 == null) {
                         return;
                     }
@@ -573,30 +555,31 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HostelPartialPayment.setUp$lambda$0(hashMap, hashMap2, this, view);
+                HostelPartialPayment.setUp$lambda$0(map, map2, this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0555 A[LOOP:1: B:23:0x00a0->B:40:0x0555, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x09c5 A[EDGE_INSN: B:41:0x09c5->B:15:0x09c5 BREAK  A[LOOP:1: B:23:0x00a0->B:40:0x0555], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0550 A[LOOP:1: B:10:0x009c->B:31:0x0550, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x09b8 A[EDGE_INSN: B:46:0x09b8->B:43:0x09b8 BREAK  A[LOOP:1: B:10:0x009c->B:31:0x0550], SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static final void setUp$lambda$0(java.util.HashMap r33, java.util.HashMap r34, in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r35, android.view.View r36) {
+    public static final void setUp$lambda$0(java.util.HashMap r34, java.util.HashMap r35, in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r36, android.view.View r37) {
         /*
-            Method dump skipped, instructions count: 2518
+            Method dump skipped, instruction units count: 2505
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
         throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.setUp$lambda$0(java.util.HashMap, java.util.HashMap, in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment, android.view.View):void");
     }
 
     private final void listenResponse() {
-        getHostelPartialViewModel().getResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenResponse$1
+        getHostelPartialViewModel().getResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.listenResponse.1
 
-            /* compiled from: HostelPartialPayment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelPartialPayment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -633,11 +616,8 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelResponse> resource) {
-                FragmentHostelPartialBinding fragmentHostelPartialBinding;
-                FragmentHostelPartialBinding fragmentHostelPartialBinding2;
-                FragmentHostelPartialBinding fragmentHostelPartialBinding3;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -662,17 +642,17 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                 if (data != null) {
                     HostelPartialPayment hostelPartialPayment = HostelPartialPayment.this;
                     hostelPartialPayment.showBaseView();
-                    fragmentHostelPartialBinding = hostelPartialPayment.get_binding();
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding = hostelPartialPayment.get_binding();
                     TextView textView = fragmentHostelPartialBinding != null ? fragmentHostelPartialBinding.roomNo : null;
                     if (textView != null) {
                         textView.setText(data.getRoomNo());
                     }
-                    fragmentHostelPartialBinding2 = hostelPartialPayment.get_binding();
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding2 = hostelPartialPayment.get_binding();
                     TextView textView2 = fragmentHostelPartialBinding2 != null ? fragmentHostelPartialBinding2.joinDate : null;
                     if (textView2 != null) {
                         textView2.setText(data.getJoinDate());
                     }
-                    fragmentHostelPartialBinding3 = hostelPartialPayment.get_binding();
+                    FragmentHostelPartialBinding fragmentHostelPartialBinding3 = hostelPartialPayment.get_binding();
                     TextView textView3 = fragmentHostelPartialBinding3 != null ? fragmentHostelPartialBinding3.hostelTv : null;
                     if (textView3 != null) {
                         textView3.setText(data.getHostel());
@@ -688,9 +668,10 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
     }
 
     private final void listenMonthResponse() {
-        getHostelPartialViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenMonthResponse$1
+        getHostelPartialViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.listenMonthResponse.1
 
-            /* compiled from: HostelPartialPayment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenMonthResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelPartialPayment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -727,9 +708,8 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelMonthResponse> resource) {
-                HostelPartialMonthlyAdapter adapter;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -755,7 +735,7 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                     HostelPartialPayment hostelPartialPayment = HostelPartialPayment.this;
                     hostelPartialPayment.showBaseView();
                     try {
-                        adapter = hostelPartialPayment.getAdapter();
+                        HostelPartialMonthlyAdapter adapter = hostelPartialPayment.getAdapter();
                         ArrayList<HostelMonth> hostel = data.getHostel();
                         Integer type = hostelPartialPayment.getType();
                         Intrinsics.checkNotNull(type);
@@ -770,9 +750,10 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
     }
 
     private final void listenTypesesponse() {
-        getHostelPartialViewModel().getHostelPalaiFeeTypesResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiTypesResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenTypesesponse$1
+        getHostelPartialViewModel().getHostelPalaiFeeTypesResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiTypesResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.listenTypesesponse.1
 
-            /* compiled from: HostelPartialPayment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenTypesesponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelPartialPayment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -809,10 +790,8 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelPalaiTypesResponse> resource) {
-                FragmentHostelPartialBinding fragmentHostelPartialBinding;
-                HostelPalaiSpinnerAdapter spinnerAdapter;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -838,10 +817,9 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                     HostelPartialPayment hostelPartialPayment = HostelPartialPayment.this;
                     hostelPartialPayment.showBaseView();
                     try {
-                        spinnerAdapter = hostelPartialPayment.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getTypes());
+                        hostelPartialPayment.getSpinnerAdapter().addItems(data.getTypes());
                     } catch (NullPointerException unused) {
-                        fragmentHostelPartialBinding = hostelPartialPayment.get_binding();
+                        FragmentHostelPartialBinding fragmentHostelPartialBinding = hostelPartialPayment.get_binding();
                         RecyclerView recyclerView = fragmentHostelPartialBinding != null ? fragmentHostelPartialBinding.rvHostelFee : null;
                         if (recyclerView == null) {
                             return;
@@ -854,9 +832,10 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
     }
 
     private final void listenHostelPalaiResponse() {
-        getHostelPartialViewModel().getHostelPalaiFeeResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPartialAdmission>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenHostelPalaiResponse$1
+        getHostelPartialViewModel().getHostelPalaiFeeResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPartialAdmission>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.listenHostelPalaiResponse.1
 
-            /* compiled from: HostelPartialPayment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenHostelPalaiResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelPartialPayment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -893,10 +872,8 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelPartialAdmission> resource) {
-                FragmentHostelPartialBinding fragmentHostelPartialBinding;
-                HostelPartialAdmissionAdapter adapter2;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -922,12 +899,11 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                     HostelPartialPayment hostelPartialPayment = HostelPartialPayment.this;
                     hostelPartialPayment.showBaseView();
                     try {
-                        adapter2 = hostelPartialPayment.getAdapter2();
-                        adapter2.addAdmsnItems(data.getPayment());
+                        hostelPartialPayment.getAdapter2().addAdmsnItems(data.getPayment());
                         hostelPartialPayment.setDate(data.getDate());
                         hostelPartialPayment.setFineAmount(data.getFine());
                     } catch (NullPointerException unused) {
-                        fragmentHostelPartialBinding = hostelPartialPayment.get_binding();
+                        FragmentHostelPartialBinding fragmentHostelPartialBinding = hostelPartialPayment.get_binding();
                         RecyclerView recyclerView = fragmentHostelPartialBinding != null ? fragmentHostelPartialBinding.rvHostelFee : null;
                         if (recyclerView == null) {
                             return;
@@ -987,9 +963,9 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
     public void selectedIds(int total, int type) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        HostelFeeConfirmFragment newInstance = HostelFeeConfirmFragment.INSTANCE.newInstance(total, type);
-        newInstance.setCallBack3(this);
-        newInstance.show(childFragmentManager, (String) null);
+        HostelFeeConfirmFragment hostelFeeConfirmFragmentNewInstance = HostelFeeConfirmFragment.INSTANCE.newInstance(total, type);
+        hostelFeeConfirmFragmentNewInstance.setCallBack3(this);
+        hostelFeeConfirmFragmentNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.feepartial.hostel.HostelPartialAdmissionAdapter.CallBack, in.etuwa.app.ui.feepartial.hostel.HostelPartialMonthlyAdapter.CallBack
@@ -1062,28 +1038,28 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
         ArrayList<in.etuwa.app.data.model.hostel.partial.admission.HostelPartialPayment> items = getAdapter2().getItems();
         int size = items.size();
         int i = 0;
-        int i2 = 0;
+        int payable = 0;
         while (true) {
             if (i >= size) {
                 break;
             }
             if (items.get(i).is_selected()) {
-                i2 += items.get(i).getPayable();
+                payable += items.get(i).getPayable();
             }
             FragmentHostelPartialBinding fragmentHostelPartialBinding = get_binding();
             textView = fragmentHostelPartialBinding != null ? fragmentHostelPartialBinding.tvHostelTotal : null;
             if (textView != null) {
-                textView.setText(String.valueOf(i2));
+                textView.setText(String.valueOf(payable));
             }
             i++;
         }
-        if (i2 > 0) {
+        if (payable > 0) {
             FragmentHostelPartialBinding fragmentHostelPartialBinding2 = get_binding();
             textView = fragmentHostelPartialBinding2 != null ? fragmentHostelPartialBinding2.payNowBtn : null;
             if (textView != null) {
                 textView.setVisibility(0);
             }
-            this.total = i2;
+            this.total = payable;
             return;
         }
         FragmentHostelPartialBinding fragmentHostelPartialBinding3 = get_binding();
@@ -1115,9 +1091,10 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
     }
 
     private final void listenUrlResponse() {
-        getHostelPartialViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeePalaiResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenUrlResponse$1
+        getHostelPartialViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new HostelPartialPayment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeePalaiResponse>, Unit>() { // from class: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.listenUrlResponse.1
 
-            /* compiled from: HostelPartialPayment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelPartialPayment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1154,101 +1131,48 @@ public final class HostelPartialPayment extends BaseFragment implements HostelPa
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:31:0x00b6, code lost:
-            
-                r0 = r0.listener;
-             */
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.hostel.HostelFeePalaiResponse> r10) {
-                /*
-                    r9 = this;
-                    in.etuwa.app.utils.Status r0 = r10.getStatus()
-                    int[] r1 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenUrlResponse$1.WhenMappings.$EnumSwitchMapping$0
-                    int r0 = r0.ordinal()
-                    r0 = r1[r0]
-                    r1 = 2
-                    r2 = 1
-                    if (r0 == r2) goto L39
-                    if (r0 == r1) goto L32
-                    r10 = 3
-                    if (r0 == r10) goto L26
-                    r10 = 4
-                    if (r0 == r10) goto L1a
-                    goto Lc3
-                L1a:
-                    in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r10 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.this
-                    r10.hideProgress()
-                    in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r10 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.this
-                    r10.showBaseView()
-                    goto Lc3
-                L26:
-                    in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r10 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.this
-                    r10.hideProgress()
-                    in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r10 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.this
-                    r10.showBaseView()
-                    goto Lc3
-                L32:
-                    in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r10 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.this
-                    r10.showProgress()
-                    goto Lc3
-                L39:
-                    in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r0 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.this
-                    r0.hideProgress()
-                    java.lang.Object r10 = r10.getData()
-                    in.etuwa.app.data.model.hostel.HostelFeePalaiResponse r10 = (in.etuwa.app.data.model.hostel.HostelFeePalaiResponse) r10
-                    if (r10 == 0) goto Lc3
-                    in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment r0 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.this
-                    r0.showBaseView()
-                    java.lang.String r3 = r10.getUrl()
-                    java.io.PrintStream r4 = java.lang.System.out
-                    r4.println(r3)
-                    java.lang.Integer r3 = r0.getType()
-                    java.lang.String r4 = ""
-                    if (r3 != 0) goto L5d
-                    goto L9f
-                L5d:
-                    int r3 = r3.intValue()
-                    if (r3 != r1) goto L9f
-                    java.lang.String r1 = r10.getUrl()
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r4)
-                    if (r1 != 0) goto L9f
-                    androidx.fragment.app.FragmentManager r1 = r0.getChildFragmentManager()
-                    java.lang.String r3 = "childFragmentManager"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, r3)
-                    in.etuwa.app.ui.hostel.palaihostel.confirmpage.PalaiHostelFeeConfirmDialog$Companion r3 = in.etuwa.app.ui.hostel.palaihostel.confirmpage.PalaiHostelFeeConfirmDialog.INSTANCE
-                    int r5 = r10.getTotal()
-                    java.lang.String r5 = java.lang.String.valueOf(r5)
-                    int r6 = r10.getFine()
-                    java.lang.String r6 = java.lang.String.valueOf(r6)
-                    int r7 = r10.getSubtotal()
-                    java.lang.String r7 = java.lang.String.valueOf(r7)
-                    java.lang.String r8 = r10.getUrl()
-                    in.etuwa.app.ui.hostel.palaihostel.confirmpage.PalaiHostelFeeConfirmDialog r3 = r3.newInstance(r5, r6, r7, r8)
-                    r3.setCallBack2(r0)
-                    r5 = 0
-                    r3.show(r1, r5)
-                L9f:
-                    java.lang.Integer r1 = r0.getType()
-                    if (r1 != 0) goto La6
-                    goto Lc3
-                La6:
-                    int r1 = r1.intValue()
-                    if (r1 != r2) goto Lc3
-                    java.lang.String r1 = r10.getUrl()
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r4)
-                    if (r1 != 0) goto Lc3
-                    in.etuwa.app.helper.MainCallBackListener r0 = in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment.access$getListener$p(r0)
-                    if (r0 == 0) goto Lc3
-                    java.lang.String r10 = r10.getUrl()
-                    r0.openPaymentPage(r10)
-                Lc3:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.feepartial.hostel.HostelPartialPayment$listenUrlResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<HostelFeePalaiResponse> resource) {
+                MainCallBackListener mainCallBackListener;
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        HostelPartialPayment.this.showProgress();
+                        return;
+                    }
+                    if (i == 3) {
+                        HostelPartialPayment.this.hideProgress();
+                        HostelPartialPayment.this.showBaseView();
+                        return;
+                    } else {
+                        if (i != 4) {
+                            return;
+                        }
+                        HostelPartialPayment.this.hideProgress();
+                        HostelPartialPayment.this.showBaseView();
+                        return;
+                    }
+                }
+                HostelPartialPayment.this.hideProgress();
+                HostelFeePalaiResponse data = resource.getData();
+                if (data != null) {
+                    HostelPartialPayment hostelPartialPayment = HostelPartialPayment.this;
+                    hostelPartialPayment.showBaseView();
+                    System.out.println((Object) data.getUrl());
+                    Integer type = hostelPartialPayment.getType();
+                    if (type != null && type.intValue() == 2 && !Intrinsics.areEqual(data.getUrl(), "")) {
+                        FragmentManager childFragmentManager = hostelPartialPayment.getChildFragmentManager();
+                        Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
+                        PalaiHostelFeeConfirmDialog palaiHostelFeeConfirmDialogNewInstance = PalaiHostelFeeConfirmDialog.INSTANCE.newInstance(String.valueOf(data.getTotal()), String.valueOf(data.getFine()), String.valueOf(data.getSubtotal()), data.getUrl());
+                        palaiHostelFeeConfirmDialogNewInstance.setCallBack2(hostelPartialPayment);
+                        palaiHostelFeeConfirmDialogNewInstance.show(childFragmentManager, (String) null);
+                    }
+                    Integer type2 = hostelPartialPayment.getType();
+                    if (type2 == null || type2.intValue() != 1 || Intrinsics.areEqual(data.getUrl(), "") || (mainCallBackListener = hostelPartialPayment.listener) == null) {
+                        return;
+                    }
+                    mainCallBackListener.openPaymentPage(data.getUrl());
+                }
             }
         }));
     }

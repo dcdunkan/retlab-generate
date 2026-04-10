@@ -2,7 +2,7 @@ package in.etuwa.app.ui.hostel.hostelmits;
 
 import kotlin.Metadata;
 
-/* compiled from: HostelMitsAdmissionAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelMitsAdmissionAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelMitsAdmissionAdapter {
 }

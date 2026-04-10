@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowSportBinding implements ViewBinding {
     public final TextView awardTv;
     public final LinearLayout comletionLayout;
@@ -56,11 +56,11 @@ public final class RowSportBinding implements ViewBinding {
     }
 
     public static RowSportBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_sport, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_sport, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowSportBinding bind(View rootView) {

@@ -3,30 +3,33 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import androidx.viewpager.widget.ViewPager;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
+import me.ibrahimsn.lib.SmoothBottomBar;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityAnalysisBinding implements ViewBinding {
     public final TabLayout analysisTabs;
     public final ViewPager analysisViewpager;
-    public final BottomNavigationView bottomNav;
-    private final LinearLayout rootView;
+    public final AppBarLayout appBar;
+    public final SmoothBottomBar bottomNavNew;
+    private final CoordinatorLayout rootView;
 
-    private ActivityAnalysisBinding(LinearLayout rootView, TabLayout analysisTabs, ViewPager analysisViewpager, BottomNavigationView bottomNav) {
+    private ActivityAnalysisBinding(CoordinatorLayout rootView, TabLayout analysisTabs, ViewPager analysisViewpager, AppBarLayout appBar, SmoothBottomBar bottomNavNew) {
         this.rootView = rootView;
         this.analysisTabs = analysisTabs;
         this.analysisViewpager = analysisViewpager;
-        this.bottomNav = bottomNav;
+        this.appBar = appBar;
+        this.bottomNavNew = bottomNavNew;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public CoordinatorLayout getRoot() {
         return this.rootView;
     }
 
@@ -35,11 +38,11 @@ public final class ActivityAnalysisBinding implements ViewBinding {
     }
 
     public static ActivityAnalysisBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_analysis, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_analysis, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityAnalysisBinding bind(View rootView) {
@@ -49,10 +52,14 @@ public final class ActivityAnalysisBinding implements ViewBinding {
             i = R.id.analysis_viewpager;
             ViewPager viewPager = (ViewPager) ViewBindings.findChildViewById(rootView, i);
             if (viewPager != null) {
-                i = R.id.bottom_nav;
-                BottomNavigationView bottomNavigationView = (BottomNavigationView) ViewBindings.findChildViewById(rootView, i);
-                if (bottomNavigationView != null) {
-                    return new ActivityAnalysisBinding((LinearLayout) rootView, tabLayout, viewPager, bottomNavigationView);
+                i = R.id.app_bar;
+                AppBarLayout appBarLayout = (AppBarLayout) ViewBindings.findChildViewById(rootView, i);
+                if (appBarLayout != null) {
+                    i = R.id.bottom_nav_new;
+                    SmoothBottomBar smoothBottomBar = (SmoothBottomBar) ViewBindings.findChildViewById(rootView, i);
+                    if (smoothBottomBar != null) {
+                        return new ActivityAnalysisBinding((CoordinatorLayout) rootView, tabLayout, viewPager, appBarLayout, smoothBottomBar);
+                    }
                 }
             }
         }

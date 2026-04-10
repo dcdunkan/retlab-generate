@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UpdateHoursDirectViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UpdateHoursDirectViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UpdateHoursDirectViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> addHourResponse;
     private final CompositeDisposable compositeDisposable;
@@ -43,8 +43,8 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.datesResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DutyLeaveDateResponse> observeOn = this.leaveRepository.getDutyLeaveDirectDatesApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DutyLeaveDateResponse, Unit> function1 = new Function1<DutyLeaveDateResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$getDates$1
+        Single<DutyLeaveDateResponse> singleObserveOn = this.leaveRepository.getDutyLeaveDirectDatesApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DutyLeaveDateResponse, Unit> function1 = new Function1<DutyLeaveDateResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.getDates.1
             {
                 super(1);
             }
@@ -55,20 +55,18 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DutyLeaveDateResponse dutyLeaveDateResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.datesResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(dutyLeaveDateResponse));
+                UpdateHoursDirectViewModel.this.datesResponse.postValue(Resource.INSTANCE.success(dutyLeaveDateResponse));
             }
         };
         Consumer<? super DutyLeaveDateResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.getDates$lambda$0(Function1.this, obj);
+                UpdateHoursDirectViewModel.getDates$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$getDates$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.getDates.2
             {
                 super(1);
             }
@@ -79,17 +77,15 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.datesResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateHoursDirectViewModel.this.datesResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.getDates$lambda$1(Function1.this, obj);
+                UpdateHoursDirectViewModel.getDates$lambda$1(function12, obj);
             }
         }));
     }
@@ -114,8 +110,8 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.hoursResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DutyLeaveDateResponse> observeOn = this.leaveRepository.getDutyLeaveDirectDatesApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DutyLeaveDateResponse, Unit> function1 = new Function1<DutyLeaveDateResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$getHours$1
+        Single<DutyLeaveDateResponse> singleObserveOn = this.leaveRepository.getDutyLeaveDirectDatesApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DutyLeaveDateResponse, Unit> function1 = new Function1<DutyLeaveDateResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.getHours.1
             {
                 super(1);
             }
@@ -126,20 +122,18 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DutyLeaveDateResponse dutyLeaveDateResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.hoursResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(dutyLeaveDateResponse));
+                UpdateHoursDirectViewModel.this.hoursResponse.postValue(Resource.INSTANCE.success(dutyLeaveDateResponse));
             }
         };
         Consumer<? super DutyLeaveDateResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.getHours$lambda$2(Function1.this, obj);
+                UpdateHoursDirectViewModel.getHours$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$getHours$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.getHours.2
             {
                 super(1);
             }
@@ -150,17 +144,15 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.hoursResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateHoursDirectViewModel.this.hoursResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.getHours$lambda$3(Function1.this, obj);
+                UpdateHoursDirectViewModel.getHours$lambda$3(function12, obj);
             }
         }));
     }
@@ -187,8 +179,8 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(hour, "hour");
         this.addHourResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.leaveRepository.addDutyLeaveDirectDatesApiCall(id, date, hour).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$addHour$1
+        Single<SuccessResponse> singleObserveOn = this.leaveRepository.addDutyLeaveDirectDatesApiCall(id, date, hour).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.addHour.1
             {
                 super(1);
             }
@@ -199,20 +191,18 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.addHourResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                UpdateHoursDirectViewModel.this.addHourResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.addHour$lambda$4(Function1.this, obj);
+                UpdateHoursDirectViewModel.addHour$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$addHour$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.addHour.2
             {
                 super(1);
             }
@@ -223,17 +213,15 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.addHourResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateHoursDirectViewModel.this.addHourResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.addHour$lambda$5(Function1.this, obj);
+                UpdateHoursDirectViewModel.addHour$lambda$5(function12, obj);
             }
         }));
     }
@@ -260,8 +248,8 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(hour, "hour");
         this.removeHourResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.leaveRepository.removeDutyLeaveDirectDatesApiCall(id, date, hour).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$removeHour$1
+        Single<SuccessResponse> singleObserveOn = this.leaveRepository.removeDutyLeaveDirectDatesApiCall(id, date, hour).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.removeHour.1
             {
                 super(1);
             }
@@ -272,20 +260,18 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.removeHourResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                UpdateHoursDirectViewModel.this.removeHourResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.removeHour$lambda$6(Function1.this, obj);
+                UpdateHoursDirectViewModel.removeHour$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$removeHour$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.removeHour.2
             {
                 super(1);
             }
@@ -296,17 +282,15 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.removeHourResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateHoursDirectViewModel.this.removeHourResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda9
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.removeHour$lambda$7(Function1.this, obj);
+                UpdateHoursDirectViewModel.removeHour$lambda$7(function12, obj);
             }
         }));
     }
@@ -332,8 +316,8 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(date, "date");
         this.removeDateHourResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.leaveRepository.removeDateHourDutyLeaveDirectDatesApiCall(id, date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$removeDateHour$1
+        Single<SuccessResponse> singleObserveOn = this.leaveRepository.removeDateHourDutyLeaveDirectDatesApiCall(id, date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.removeDateHour.1
             {
                 super(1);
             }
@@ -344,20 +328,18 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.removeDateHourResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                UpdateHoursDirectViewModel.this.removeDateHourResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.removeDateHour$lambda$8(Function1.this, obj);
+                UpdateHoursDirectViewModel.removeDateHour$lambda$8(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$removeDateHour$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel.removeDateHour.2
             {
                 super(1);
             }
@@ -368,17 +350,15 @@ public final class UpdateHoursDirectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateHoursDirectViewModel.this.removeDateHourResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateHoursDirectViewModel.this.removeDateHourResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateHoursDirectViewModel.removeDateHour$lambda$9(Function1.this, obj);
+                UpdateHoursDirectViewModel.removeDateHour$lambda$9(function12, obj);
             }
         }));
     }

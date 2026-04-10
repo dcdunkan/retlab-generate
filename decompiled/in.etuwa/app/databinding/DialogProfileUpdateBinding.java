@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.editregistration.EditRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogProfileUpdateBinding extends ViewDataBinding {
     public final TextView Title;
     public final TextInputEditText etAadharNo;

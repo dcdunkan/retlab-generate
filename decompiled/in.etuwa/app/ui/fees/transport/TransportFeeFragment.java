@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.android.material.button.MaterialButton;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.transport.TransportFeeResponse;
 import in.etuwa.app.data.model.transport.TransportInstallments;
@@ -43,6 +44,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
+import kotlin.NotImplementedError;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -55,30 +57,30 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: TransportFeeFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: TransportFeeFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class TransportFeeFragment extends BaseFragment implements TransportFeeAdapter.CallBack, TrasportFeePayDialog.FeeDetailListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentTransportBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<TransportInstallments> list;
     private MainCallBackListener listener;
     private List<String> selected;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String studentId;
     private int total;
 
-    /* renamed from: transportFeeViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: transportFeeViewModel$delegate, reason: from kotlin metadata */
     private final Lazy transportFeeViewModel;
     private String yearId;
 
-    /* compiled from: TransportFeeFragment.kt */
+    /* JADX INFO: compiled from: TransportFeeFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -110,17 +112,8 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         return INSTANCE.newInstance();
     }
 
-    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
-    public void dismiss() {
-    }
-
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void hideProgress() {
-    }
-
-    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
-    public void openPaymentPage(String url) {
-        Intrinsics.checkNotNullParameter(url, "url");
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment
@@ -137,7 +130,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return transportFeeFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(transportFeeFragment);
@@ -151,7 +144,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -164,7 +157,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(TransportFeeViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(TransportFeeViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final TransportFeeFragment transportFeeFragment2 = this;
@@ -193,7 +186,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(TransportFeeFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -222,7 +215,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         return (TransportFeeAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentTransportBinding get_binding() {
         return this._binding;
     }
@@ -249,7 +242,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         return (BoardingSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: TransportFeeFragment.kt */
+    /* JADX INFO: compiled from: TransportFeeFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/fees/transport/TransportFeeFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/fees/transport/TransportFeeFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -293,7 +286,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
 
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
-        TextView textView;
+        MaterialButton materialButton;
         SwipeRefreshLayout swipeRefreshLayout;
         FragmentActivity activity = getActivity();
         if (activity != null) {
@@ -312,7 +305,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         }
         listenSpinnerResponse();
         listenUrlResponse();
-        final HashMap hashMap = new HashMap();
+        final HashMap map = new HashMap();
         getAdapter().setCallBack(this);
         getTransportFeeViewModel().getTransportFeeYears();
         FragmentTransportBinding fragmentTransportBinding3 = get_binding();
@@ -320,28 +313,24 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment$$ExternalSyntheticLambda3
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    TransportFeeFragment.setUp$lambda$0(TransportFeeFragment.this);
+                    TransportFeeFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
         FragmentTransportBinding fragmentTransportBinding4 = get_binding();
         Spinner spinner2 = fragmentTransportBinding4 != null ? fragmentTransportBinding4.spinnerYearTransport : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment$setUp$2
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    BoardingSpinnerAdapter spinnerAdapter;
-                    TransportFeeViewModel transportFeeViewModel;
-                    String str;
                     TransportFeeFragment transportFeeFragment = TransportFeeFragment.this;
-                    spinnerAdapter = transportFeeFragment.getSpinnerAdapter();
-                    transportFeeFragment.yearId = String.valueOf(spinnerAdapter.getType(position).getId());
-                    transportFeeViewModel = TransportFeeFragment.this.getTransportFeeViewModel();
-                    str = TransportFeeFragment.this.yearId;
+                    transportFeeFragment.yearId = String.valueOf(transportFeeFragment.getSpinnerAdapter().getType(position).getId());
+                    TransportFeeViewModel transportFeeViewModel = TransportFeeFragment.this.getTransportFeeViewModel();
+                    String str = TransportFeeFragment.this.yearId;
                     Intrinsics.checkNotNull(str);
                     transportFeeViewModel.getTransportFees(str);
                     TransportFeeFragment.this.listenResponse();
@@ -349,13 +338,13 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
             });
         }
         FragmentTransportBinding fragmentTransportBinding5 = get_binding();
-        if (fragmentTransportBinding5 == null || (textView = fragmentTransportBinding5.payTransportBtn) == null) {
+        if (fragmentTransportBinding5 == null || (materialButton = fragmentTransportBinding5.payTransportBtn) == null) {
             return;
         }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment$$ExternalSyntheticLambda4
+        materialButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TransportFeeFragment.setUp$lambda$1(hashMap, this, view);
+                TransportFeeFragment.setUp$lambda$1(map, this, view);
             }
         });
     }
@@ -381,31 +370,31 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         TextView textView2;
         Intrinsics.checkNotNullParameter(transportFeeCollection, "$transportFeeCollection");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = transportFeeCollection;
-        hashMap.put("year_id", String.valueOf(this$0.yearId));
-        hashMap.put("TransportReceipt[method]", "4");
-        hashMap.put("Payment", "1");
+        HashMap map = transportFeeCollection;
+        map.put("year_id", String.valueOf(this$0.yearId));
+        map.put("TransportReceipt[method]", "4");
+        map.put("Payment", "1");
         FragmentTransportBinding fragmentTransportBinding = this$0.get_binding();
-        CharSequence charSequence = null;
-        hashMap.put("TransportReceipt[amount]", String.valueOf((fragmentTransportBinding == null || (textView2 = fragmentTransportBinding.tvTransportTotal) == null) ? null : textView2.getText()));
+        CharSequence text = null;
+        map.put("TransportReceipt[amount]", String.valueOf((fragmentTransportBinding == null || (textView2 = fragmentTransportBinding.tvTransportTotal) == null) ? null : textView2.getText()));
         FragmentTransportBinding fragmentTransportBinding2 = this$0.get_binding();
         if (fragmentTransportBinding2 != null && (textView = fragmentTransportBinding2.tvTransportTotal) != null) {
-            charSequence = textView.getText();
+            text = textView.getText();
         }
-        hashMap.put("TransportReceipt[sub_total]", String.valueOf(charSequence));
-        hashMap.put("TransportReceipt[fine_amount]", "0");
+        map.put("TransportReceipt[sub_total]", String.valueOf(text));
+        map.put("TransportReceipt[fine_amount]", "0");
         int size = this$0.selected.size() - 1;
         if (size >= 0) {
             int i = 0;
             while (true) {
                 if (Intrinsics.areEqual(this$0.selected.get(i), "true")) {
-                    hashMap.put("TransportFeeCollection[" + this$0.list.get(i).getInstallment_id() + "][head_id]", this$0.list.get(i).getHead_id());
+                    map.put("TransportFeeCollection[" + this$0.list.get(i).getInstallment_id() + "][head_id]", this$0.list.get(i).getHead_id());
                     String str = "TransportFeeCollection[" + this$0.list.get(i).getInstallment_id() + "][student_id]";
                     String str2 = this$0.studentId;
                     Intrinsics.checkNotNull(str2);
-                    hashMap.put(str, str2);
-                    hashMap.put("TransportFeeCollection[" + this$0.list.get(i).getInstallment_id() + "][installment_id]", this$0.list.get(i).getInstallment_id());
-                    hashMap.put("TransportFeeCollection[" + this$0.list.get(i).getInstallment_id() + "][fine]", "");
+                    map.put(str, str2);
+                    map.put("TransportFeeCollection[" + this$0.list.get(i).getInstallment_id() + "][installment_id]", this$0.list.get(i).getInstallment_id());
+                    map.put("TransportFeeCollection[" + this$0.list.get(i).getInstallment_id() + "][fine]", "");
                 }
                 if (i == size) {
                     break;
@@ -414,14 +403,14 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
                 }
             }
         }
-        this$0.getTransportFeeViewModel().getTransportFeesUrl(hashMap);
+        this$0.getTransportFeeViewModel().getTransportFeesUrl(map);
     }
 
     private final void listenSpinnerResponse() {
         getTransportFeeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                TransportFeeFragment.listenSpinnerResponse$lambda$3(TransportFeeFragment.this, (Resource) obj);
+                TransportFeeFragment.listenSpinnerResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -485,7 +474,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         getTransportFeeViewModel().getFeesResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                TransportFeeFragment.listenResponse$lambda$5(TransportFeeFragment.this, (Resource) obj);
+                TransportFeeFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -577,7 +566,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         getTransportFeeViewModel().getFeesUrlResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.fees.transport.TransportFeeFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                TransportFeeFragment.listenUrlResponse$lambda$7(TransportFeeFragment.this, (Resource) obj);
+                TransportFeeFragment.listenUrlResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -670,7 +659,7 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
 
     @Override // in.etuwa.app.ui.fees.transport.TransportFeeAdapter.CallBack
     public void updateSelected(List<String> sel, List<String> total) {
-        TextView textView;
+        MaterialButton materialButton;
         Intrinsics.checkNotNullParameter(sel, "sel");
         Intrinsics.checkNotNullParameter(total, "total");
         System.out.println(total);
@@ -690,24 +679,35 @@ public final class TransportFeeFragment extends BaseFragment implements Transpor
         this.selected = sel;
         this.total = i;
         FragmentTransportBinding fragmentTransportBinding = get_binding();
-        TextView textView2 = fragmentTransportBinding != null ? fragmentTransportBinding.tvTransportTotal : null;
-        if (textView2 != null) {
-            textView2.setText(String.valueOf(i));
+        TextView textView = fragmentTransportBinding != null ? fragmentTransportBinding.tvTransportTotal : null;
+        if (textView != null) {
+            textView.setText(String.valueOf(i));
         }
         if (i <= 0) {
             FragmentTransportBinding fragmentTransportBinding2 = get_binding();
-            textView = fragmentTransportBinding2 != null ? fragmentTransportBinding2.payTransportBtn : null;
-            if (textView == null) {
+            materialButton = fragmentTransportBinding2 != null ? fragmentTransportBinding2.payTransportBtn : null;
+            if (materialButton == null) {
                 return;
             }
-            textView.setVisibility(8);
+            materialButton.setVisibility(8);
             return;
         }
         FragmentTransportBinding fragmentTransportBinding3 = get_binding();
-        textView = fragmentTransportBinding3 != null ? fragmentTransportBinding3.payTransportBtn : null;
-        if (textView == null) {
+        materialButton = fragmentTransportBinding3 != null ? fragmentTransportBinding3.payTransportBtn : null;
+        if (materialButton == null) {
             return;
         }
-        textView.setVisibility(0);
+        materialButton.setVisibility(0);
+    }
+
+    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
+    public void dismiss() {
+        throw new NotImplementedError("An operation is not implemented: Not yet implemented");
+    }
+
+    @Override // in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog.FeeDetailListner
+    public void openPaymentPage(String url) {
+        Intrinsics.checkNotNullParameter(url, "url");
+        throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 }

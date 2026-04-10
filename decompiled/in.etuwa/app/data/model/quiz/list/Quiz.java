@@ -6,8 +6,8 @@ import com.itextpdf.kernel.xmp.PdfConst;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Quiz.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Quiz.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Quiz {
     private final String description;
 
@@ -32,67 +32,67 @@ public final /* data */ class Quiz {
     private final String type;
     private final String typeText;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final boolean getIsStarted() {
         return this.isStarted;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final boolean getIsOnGoing() {
         return this.isOnGoing;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final boolean getIsCompleted() {
         return this.isCompleted;
     }
 
-    /* renamed from: component13, reason: from getter */
+    /* JADX INFO: renamed from: component13, reason: from getter */
     public final boolean getIsResultPublished() {
         return this.isResultPublished;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDescription() {
         return this.description;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStartTime() {
         return this.startTime;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getEndTime() {
         return this.endTime;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getMaxMark() {
         return this.maxMark;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getTypeText() {
         return this.typeText;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getStatusText() {
         return this.statusText;
     }
@@ -122,28 +122,40 @@ public final /* data */ class Quiz {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v17, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v19, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v21, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v23 */
+    /* JADX WARN: Type inference failed for: r1v24 */
+    /* JADX WARN: Type inference failed for: r1v25 */
+    /* JADX WARN: Type inference failed for: r1v26 */
+    /* JADX WARN: Type inference failed for: r1v27 */
+    /* JADX WARN: Type inference failed for: r1v28 */
+    /* JADX WARN: Type inference failed for: r2v0 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v2 */
     public int hashCode() {
-        int hashCode = ((((((((((((((((this.id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.startTime.hashCode()) * 31) + this.endTime.hashCode()) * 31) + this.maxMark.hashCode()) * 31) + this.type.hashCode()) * 31) + this.typeText.hashCode()) * 31) + this.statusText.hashCode()) * 31;
+        int iHashCode = ((((((((((((((((this.id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.startTime.hashCode()) * 31) + this.endTime.hashCode()) * 31) + this.maxMark.hashCode()) * 31) + this.type.hashCode()) * 31) + this.typeText.hashCode()) * 31) + this.statusText.hashCode()) * 31;
         boolean z = this.isStarted;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        int i2 = (hashCode + i) * 31;
+        int i = (iHashCode + r1) * 31;
         boolean z2 = this.isOnGoing;
-        int i3 = z2;
-        if (z2 != 0) {
-            i3 = 1;
+        ?? r12 = z2;
+        if (z2) {
+            r12 = 1;
         }
-        int i4 = (i2 + i3) * 31;
+        int i2 = (i + r12) * 31;
         boolean z3 = this.isCompleted;
-        int i5 = z3;
-        if (z3 != 0) {
-            i5 = 1;
+        ?? r13 = z3;
+        if (z3) {
+            r13 = 1;
         }
-        int i6 = (i4 + i5) * 31;
+        int i3 = (i2 + r13) * 31;
         boolean z4 = this.isResultPublished;
-        return i6 + (z4 ? 1 : z4 ? 1 : 0);
+        return i3 + (z4 ? 1 : z4);
     }
 
     public String toString() {

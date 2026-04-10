@@ -4,8 +4,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import org.json.JSONObject;
 
-/* compiled from: ExceptionClass.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ExceptionClass.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ExceptionClassKt {
     public static final void handleMaintenanceResponse(int i, String responseBody) {
         Intrinsics.checkNotNullParameter(responseBody, "responseBody");

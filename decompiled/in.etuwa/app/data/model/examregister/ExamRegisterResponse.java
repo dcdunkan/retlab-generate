@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamRegisterResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamRegisterResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamRegisterResponse {
     private final ArrayList<ExamRegister> exam;
     private final boolean login;
@@ -30,7 +30,7 @@ public final /* data */ class ExamRegisterResponse {
         return examRegisterResponse.copy(z, arrayList, arrayList2, arrayList3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Institution.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Institution.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Institution {
     private final ArrayList<Colleges> colleges;
 

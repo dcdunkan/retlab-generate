@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: NoticeViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: NoticeViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class NoticeViewModel extends ViewModel {
     private final CommonRepository commonRepository;
     private final CompositeDisposable compositeDisposable;
@@ -31,14 +31,13 @@ public final class NoticeViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.noticeResponse = new MutableLiveData<>();
         this.noticeMainResponse = new MutableLiveData<>();
-        getNotice();
     }
 
     public final void getNotice() {
         this.noticeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<NoticeJeccResponse> observeOn = this.commonRepository.getNoticeClassJeccApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<NoticeJeccResponse, Unit> function1 = new Function1<NoticeJeccResponse, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$getNotice$1
+        Single<NoticeJeccResponse> singleObserveOn = this.commonRepository.getNoticeClassJeccApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<NoticeJeccResponse, Unit> function1 = new Function1<NoticeJeccResponse, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel.getNotice.1
             {
                 super(1);
             }
@@ -49,20 +48,18 @@ public final class NoticeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(NoticeJeccResponse noticeJeccResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = NoticeViewModel.this.noticeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(noticeJeccResponse));
+                NoticeViewModel.this.noticeResponse.postValue(Resource.INSTANCE.success(noticeJeccResponse));
             }
         };
         Consumer<? super NoticeJeccResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NoticeViewModel.getNotice$lambda$0(Function1.this, obj);
+                NoticeViewModel.getNotice$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$getNotice$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel.getNotice.2
             {
                 super(1);
             }
@@ -73,17 +70,15 @@ public final class NoticeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = NoticeViewModel.this.noticeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                NoticeViewModel.this.noticeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NoticeViewModel.getNotice$lambda$1(Function1.this, obj);
+                NoticeViewModel.getNotice$lambda$1(function12, obj);
             }
         }));
     }
@@ -107,8 +102,8 @@ public final class NoticeViewModel extends ViewModel {
     public final void getNoticeMain() {
         this.noticeMainResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<NoticeResponse> observeOn = this.commonRepository.getNoticeClassApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<NoticeResponse, Unit> function1 = new Function1<NoticeResponse, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$getNoticeMain$1
+        Single<NoticeResponse> singleObserveOn = this.commonRepository.getNoticeClassApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<NoticeResponse, Unit> function1 = new Function1<NoticeResponse, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel.getNoticeMain.1
             {
                 super(1);
             }
@@ -119,20 +114,18 @@ public final class NoticeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(NoticeResponse noticeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = NoticeViewModel.this.noticeMainResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(noticeResponse));
+                NoticeViewModel.this.noticeMainResponse.postValue(Resource.INSTANCE.success(noticeResponse));
             }
         };
         Consumer<? super NoticeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NoticeViewModel.getNoticeMain$lambda$2(Function1.this, obj);
+                NoticeViewModel.getNoticeMain$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$getNoticeMain$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.notice.NoticeViewModel.getNoticeMain.2
             {
                 super(1);
             }
@@ -143,17 +136,15 @@ public final class NoticeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = NoticeViewModel.this.noticeMainResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                NoticeViewModel.this.noticeMainResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.notice.NoticeViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NoticeViewModel.getNoticeMain$lambda$3(Function1.this, obj);
+                NoticeViewModel.getNoticeMain$lambda$3(function12, obj);
             }
         }));
     }

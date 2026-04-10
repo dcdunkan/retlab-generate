@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.ui.newquiz.instructionspage.InstructionsPageViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentInstructionsPageBindingImpl extends FragmentInstructionsPageBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds = null;
@@ -53,7 +53,7 @@ public class FragmentInstructionsPageBindingImpl extends FragmentInstructionsPag
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (119 != variableId) {
+        if (120 != variableId) {
             return false;
         }
         setInstructionsPageViewModel((InstructionsPageViewModel) variable);

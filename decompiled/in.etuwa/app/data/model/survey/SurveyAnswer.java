@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.survey;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SurveyAnswer.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SurveyAnswer.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SurveyAnswer {
     private final String answer;
     private final String qid;
@@ -23,17 +23,17 @@ public final /* data */ class SurveyAnswer {
         return surveyAnswer.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQid() {
         return this.qid;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getAnswer() {
         return this.answer;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getType() {
         return this.type;
     }

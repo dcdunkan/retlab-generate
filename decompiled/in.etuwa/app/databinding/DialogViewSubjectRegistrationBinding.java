@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.view.ViewSubjectRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogViewSubjectRegistrationBinding extends ViewDataBinding {
     public final TextView categoryTv;
 

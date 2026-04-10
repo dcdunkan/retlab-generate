@@ -57,11 +57,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: PalaiNewSemRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PalaiNewSemRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PalaiNewSemRegDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogPalaiSemRegBinding _binding;
     private String academics;
@@ -91,24 +91,24 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
     private AddCounsellingListener listener;
     private String minor;
 
-    /* renamed from: palaiNewSemRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: palaiNewSemRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy palaiNewSemRegViewModel;
     private boolean prevSemClicked;
     private String reg;
     private String regDetails;
     private String sem;
 
-    /* renamed from: spinnerBackPaper$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerBackPaper$delegate, reason: from kotlin metadata */
     private final Lazy spinnerBackPaper;
 
-    /* renamed from: spinnerRegistered$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerRegistered$delegate, reason: from kotlin metadata */
     private final Lazy spinnerRegistered;
 
-    /* renamed from: spinnerSem$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerSem$delegate, reason: from kotlin metadata */
     private final Lazy spinnerSem;
     private boolean supplyClicked;
 
-    /* compiled from: PalaiNewSemRegDialog.kt */
+    /* JADX INFO: compiled from: PalaiNewSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/semregistration/sjcetpalai/newregistration/PalaiNewSemRegDialog$AddCounsellingListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddCounsellingListener {
         void dismiss();
@@ -137,7 +137,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return palaiNewSemRegDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(palaiNewSemRegDialog);
@@ -151,7 +151,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -164,7 +164,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(PalaiNewSemRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(PalaiNewSemRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.minor = "";
@@ -195,7 +195,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(PalaiNewSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -220,7 +220,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(PalaiNewSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -245,7 +245,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(PalaiNewSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -269,7 +269,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
         return (PalaiNewSemRegViewModel) this.palaiNewSemRegViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogPalaiSemRegBinding get_binding() {
         return this._binding;
     }
@@ -287,7 +287,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
         return (CounsellingStatusSpinnerAdapter) this.spinnerBackPaper.getValue();
     }
 
-    /* compiled from: PalaiNewSemRegDialog.kt */
+    /* JADX INFO: compiled from: PalaiNewSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/semregistration/sjcetpalai/newregistration/PalaiNewSemRegDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/sjcetpalai/newregistration/PalaiNewSemRegDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -394,7 +394,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView31.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda48
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$0(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -403,7 +403,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView30.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$1(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -412,7 +412,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView29.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda20
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$2(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -421,7 +421,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView28.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda32
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$3(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -430,7 +430,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView27.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda38
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$4(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -439,7 +439,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView26.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda39
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$5(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -448,7 +448,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView25.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda40
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$6(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
@@ -457,7 +457,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView24.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda41
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$7(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -466,7 +466,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView23.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda42
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$8(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$8(this.f$0, view);
                 }
             });
         }
@@ -475,7 +475,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView22.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda43
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$9(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$9(this.f$0, view);
                 }
             });
         }
@@ -484,7 +484,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView21.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda49
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$10(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$10(this.f$0, view);
                 }
             });
         }
@@ -493,7 +493,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView20.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda50
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$11(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$11(this.f$0, view);
                 }
             });
         }
@@ -502,7 +502,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView19.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda51
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$12(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$12(this.f$0, view);
                 }
             });
         }
@@ -511,7 +511,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView18.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$13(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$13(this.f$0, view);
                 }
             });
         }
@@ -520,7 +520,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView17.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$14(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$14(this.f$0, view);
                 }
             });
         }
@@ -529,7 +529,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             editText.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$16(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$16(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -538,7 +538,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView16.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$18(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$18(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -547,7 +547,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView15.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$20(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$20(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -556,7 +556,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView14.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$22(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$22(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -565,7 +565,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView13.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$24(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$24(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -574,7 +574,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView12.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$26(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$26(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -583,7 +583,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView11.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$28(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$28(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -592,7 +592,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView10.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$30(PalaiNewSemRegDialog.this, intRef, intRef2, intRef3, view);
+                    PalaiNewSemRegDialog.setUp$lambda$30(this.f$0, intRef, intRef2, intRef3, view);
                 }
             });
         }
@@ -601,7 +601,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda13
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$31(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$31(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -610,7 +610,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda14
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$32(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$32(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -619,7 +619,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda15
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$33(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$33(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -628,7 +628,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda16
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$34(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$34(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -637,7 +637,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda17
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$35(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$35(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -646,7 +646,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda18
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$36(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$36(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -655,7 +655,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda19
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$37(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$37(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -664,7 +664,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda21
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$38(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$38(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -673,7 +673,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda23
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$39(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$39(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -682,7 +682,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda24
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$40(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$40(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -691,7 +691,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda25
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$41(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$41(this.f$0, radioGroup13, i);
                 }
             });
         }
@@ -700,24 +700,22 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda26
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup13, int i) {
-                    PalaiNewSemRegDialog.setUp$lambda$42(PalaiNewSemRegDialog.this, radioGroup13, i);
+                    PalaiNewSemRegDialog.setUp$lambda$42(this.f$0, radioGroup13, i);
                 }
             });
         }
         DialogPalaiSemRegBinding dialogPalaiSemRegBinding37 = get_binding();
         Spinner spinner2 = dialogPalaiSemRegBinding37 != null ? dialogPalaiSemRegBinding37.spinnerSemesterLastAttended : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$setUp$36
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog.setUp.36
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    CounsellingTypeSpinnerAdapter spinnerSem;
                     PalaiNewSemRegDialog palaiNewSemRegDialog = PalaiNewSemRegDialog.this;
-                    spinnerSem = palaiNewSemRegDialog.getSpinnerSem();
-                    palaiNewSemRegDialog.sem = spinnerSem.getType(position).getId();
+                    palaiNewSemRegDialog.sem = palaiNewSemRegDialog.getSpinnerSem().getType(position).getId();
                 }
             });
         }
@@ -726,7 +724,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView9.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda27
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$43(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$43(this.f$0, view);
                 }
             });
         }
@@ -735,7 +733,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView8.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda28
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$44(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$44(this.f$0, view);
                 }
             });
         }
@@ -744,7 +742,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView7.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda29
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$45(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$45(this.f$0, view);
                 }
             });
         }
@@ -753,7 +751,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda30
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$46(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$46(this.f$0, view);
                 }
             });
         }
@@ -762,7 +760,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda31
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$47(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$47(this.f$0, view);
                 }
             });
         }
@@ -771,7 +769,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda34
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$48(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$48(this.f$0, view);
                 }
             });
         }
@@ -780,7 +778,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda35
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$49(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$49(this.f$0, view);
                 }
             });
         }
@@ -789,7 +787,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda36
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PalaiNewSemRegDialog.setUp$lambda$50(PalaiNewSemRegDialog.this, view);
+                    PalaiNewSemRegDialog.setUp$lambda$50(this.f$0, view);
                 }
             });
         }
@@ -800,7 +798,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PalaiNewSemRegDialog.setUp$lambda$51(PalaiNewSemRegDialog.this, view);
+                PalaiNewSemRegDialog.setUp$lambda$51(this.f$0, view);
             }
         });
     }
@@ -2920,7 +2918,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$$ExternalSyntheticLambda47
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i, int i2, int i3) {
-                PalaiNewSemRegDialog.setUp$lambda$16$lambda$15(PalaiNewSemRegDialog.this, month, day, datePicker, i, i2, i3);
+                PalaiNewSemRegDialog.setUp$lambda$16$lambda$15(this.f$0, month, day, datePicker, i, i2, i3);
             }
         }, year.element, month.element, day.element).show();
     }
@@ -3636,7 +3634,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
         TextInputEditText textInputEditText13;
         TextInputEditText textInputEditText14;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding = this$0.get_binding();
             if (Intrinsics.areEqual(String.valueOf((dialogPalaiSemRegBinding == null || (textInputEditText14 = dialogPalaiSemRegBinding.etMonthYear) == null) ? null : textInputEditText14.getText()), "")) {
@@ -3659,132 +3657,133 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
                 return;
             }
         }
-        HashMap hashMap = new HashMap();
-        hashMap.put("SemesterRegistration[semester_id]", this$0.sem);
-        hashMap.put("SemesterRegistration[exam_appear]", this$0.reg);
-        hashMap.put("SemesterRegistration[backpaper]", this$0.back);
+        HashMap map = new HashMap();
+        map.put("SemesterRegistration[semester_id]", this$0.sem);
+        map.put("SemesterRegistration[exam_appear]", this$0.reg);
+        map.put("SemesterRegistration[backpaper]", this$0.back);
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding5 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogPalaiSemRegBinding5 == null || (textInputEditText10 = dialogPalaiSemRegBinding5.etMonthYear) == null) ? null : textInputEditText10.getText()));
+            map.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogPalaiSemRegBinding5 == null || (textInputEditText10 = dialogPalaiSemRegBinding5.etMonthYear) == null) ? null : textInputEditText10.getText()));
         } else {
-            hashMap.put("SemesterRegistration[exam_month_year]", "");
+            map.put("SemesterRegistration[exam_month_year]", "");
         }
         if (Intrinsics.areEqual(this$0.back, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding6 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogPalaiSemRegBinding6 == null || (textInputEditText9 = dialogPalaiSemRegBinding6.etBackPaperCount) == null) ? null : textInputEditText9.getText()));
+            map.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogPalaiSemRegBinding6 == null || (textInputEditText9 = dialogPalaiSemRegBinding6.etBackPaperCount) == null) ? null : textInputEditText9.getText()));
         } else {
-            hashMap.put("SemesterRegistration[backlogs_count]", "");
+            map.put("SemesterRegistration[backlogs_count]", "");
         }
         DialogPalaiSemRegBinding dialogPalaiSemRegBinding7 = this$0.get_binding();
-        hashMap.put("SemregExamdetail[period_discontinue]", String.valueOf((dialogPalaiSemRegBinding7 == null || (textInputEditText8 = dialogPalaiSemRegBinding7.etPeriodDiscontinued) == null) ? null : textInputEditText8.getText()));
-        hashMap.put("SemesterRegistration[honour]", this$0.honor);
-        hashMap.put("SemesterRegistration[minor]", this$0.minor);
-        hashMap.put("SemesterRegistration[elective1]", this$0.minor);
-        hashMap.put("SemesterRegistration[elective2]", this$0.minor);
-        hashMap.put("SemesterRegistration[elective3]", this$0.minor);
-        hashMap.put("SemesterRegistration[global_elective1]", this$0.minor);
-        hashMap.put("SemesterRegistration[global_elective2]", this$0.minor);
-        hashMap.put("SemesterRegistration[global_elective3]", this$0.minor);
-        hashMap.put("SemregExamdetail[sgpa_one]", this$0.minor);
-        hashMap.put("SemregExamdetail[sgpa_two]", this$0.minor);
-        hashMap.put("SemregExamdetail[sgpa_three]", this$0.minor);
-        hashMap.put("SemregExamdetail[sgpa_four]", this$0.minor);
-        hashMap.put("SemregExamdetail[sgpa_five]", this$0.minor);
-        hashMap.put("SemregExamdetail[sgpa_six]", this$0.minor);
-        hashMap.put("SemregExamdetail[sgpa_seven]", this$0.minor);
-        hashMap.put("SemregExamdetail[cgpa_one]", this$0.minor);
-        hashMap.put("SemregExamdetail[cgpa_two]", this$0.minor);
-        hashMap.put("SemregExamdetail[cgpa_three]", this$0.minor);
-        hashMap.put("SemregExamdetail[cgpa_four]", this$0.minor);
-        hashMap.put("SemregExamdetail[cgpa_five]", this$0.minor);
-        hashMap.put("SemregExamdetail[cgpa_six]", this$0.minor);
-        hashMap.put("SemregExamdetail[cgpa_seven]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_one]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_two]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_three]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_four]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_five]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_six]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_seven]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_date_one]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_date_two]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_date_three]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_date_four]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_date_five]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_date_six]", this$0.minor);
-        hashMap.put("SemregExamdetail[exam_date_seven]", this$0.minor);
-        hashMap.put("SemesterRegistration[position_held]", this$0.minor);
-        hashMap.put("SemesterRegistration[stay]", this$0.minor);
-        hashMap.put("SemesterRegistration[membership]", this$0.minor);
-        hashMap.put("SemesterRegistration[stay_detail]", this$0.minor);
-        hashMap.put("SemesterRegistration[prize_won]", this$0.minor);
-        hashMap.put("SemesterRegistration[contact_owner]", this$0.minor);
-        hashMap.put("SemesterRegistration[attendance]", this$0.minor);
-        hashMap.put("SemesterRegistration[condonation]", this$0.minor);
-        hashMap.put("SemesterRegistration[fee_paid]", this$0.minor);
-        hashMap.put("SemesterRegistration[bank_name]", this$0.minor);
-        hashMap.put("SemesterRegistration[amount_paid]", this$0.minor);
-        hashMap.put("SemesterRegistration[payment_date]", this$0.minor);
-        hashMap.put("SemesterRegistration[payment_mode]", this$0.minor);
-        hashMap.put("SemesterRegistration[payment_reference_no]", this$0.minor);
-        hashMap.put("SemesterRegistration[fee_concession]", this$0.feeConcession);
+        map.put("SemregExamdetail[period_discontinue]", String.valueOf((dialogPalaiSemRegBinding7 == null || (textInputEditText8 = dialogPalaiSemRegBinding7.etPeriodDiscontinued) == null) ? null : textInputEditText8.getText()));
+        map.put("SemesterRegistration[honour]", this$0.honor);
+        map.put("SemesterRegistration[minor]", this$0.minor);
+        map.put("SemesterRegistration[elective1]", this$0.minor);
+        map.put("SemesterRegistration[elective2]", this$0.minor);
+        map.put("SemesterRegistration[elective3]", this$0.minor);
+        map.put("SemesterRegistration[global_elective1]", this$0.minor);
+        map.put("SemesterRegistration[global_elective2]", this$0.minor);
+        map.put("SemesterRegistration[global_elective3]", this$0.minor);
+        map.put("SemregExamdetail[sgpa_one]", this$0.minor);
+        map.put("SemregExamdetail[sgpa_two]", this$0.minor);
+        map.put("SemregExamdetail[sgpa_three]", this$0.minor);
+        map.put("SemregExamdetail[sgpa_four]", this$0.minor);
+        map.put("SemregExamdetail[sgpa_five]", this$0.minor);
+        map.put("SemregExamdetail[sgpa_six]", this$0.minor);
+        map.put("SemregExamdetail[sgpa_seven]", this$0.minor);
+        map.put("SemregExamdetail[cgpa_one]", this$0.minor);
+        map.put("SemregExamdetail[cgpa_two]", this$0.minor);
+        map.put("SemregExamdetail[cgpa_three]", this$0.minor);
+        map.put("SemregExamdetail[cgpa_four]", this$0.minor);
+        map.put("SemregExamdetail[cgpa_five]", this$0.minor);
+        map.put("SemregExamdetail[cgpa_six]", this$0.minor);
+        map.put("SemregExamdetail[cgpa_seven]", this$0.minor);
+        map.put("SemregExamdetail[exam_one]", this$0.minor);
+        map.put("SemregExamdetail[exam_two]", this$0.minor);
+        map.put("SemregExamdetail[exam_three]", this$0.minor);
+        map.put("SemregExamdetail[exam_four]", this$0.minor);
+        map.put("SemregExamdetail[exam_five]", this$0.minor);
+        map.put("SemregExamdetail[exam_six]", this$0.minor);
+        map.put("SemregExamdetail[exam_seven]", this$0.minor);
+        map.put("SemregExamdetail[exam_date_one]", this$0.minor);
+        map.put("SemregExamdetail[exam_date_two]", this$0.minor);
+        map.put("SemregExamdetail[exam_date_three]", this$0.minor);
+        map.put("SemregExamdetail[exam_date_four]", this$0.minor);
+        map.put("SemregExamdetail[exam_date_five]", this$0.minor);
+        map.put("SemregExamdetail[exam_date_six]", this$0.minor);
+        map.put("SemregExamdetail[exam_date_seven]", this$0.minor);
+        map.put("SemesterRegistration[position_held]", this$0.minor);
+        map.put("SemesterRegistration[stay]", this$0.minor);
+        map.put("SemesterRegistration[membership]", this$0.minor);
+        map.put("SemesterRegistration[stay_detail]", this$0.minor);
+        map.put("SemesterRegistration[prize_won]", this$0.minor);
+        map.put("SemesterRegistration[contact_owner]", this$0.minor);
+        map.put("SemesterRegistration[attendance]", this$0.minor);
+        map.put("SemesterRegistration[condonation]", this$0.minor);
+        map.put("SemesterRegistration[fee_paid]", this$0.minor);
+        map.put("SemesterRegistration[bank_name]", this$0.minor);
+        map.put("SemesterRegistration[amount_paid]", this$0.minor);
+        map.put("SemesterRegistration[payment_date]", this$0.minor);
+        map.put("SemesterRegistration[payment_mode]", this$0.minor);
+        map.put("SemesterRegistration[payment_reference_no]", this$0.minor);
+        map.put("SemesterRegistration[fee_concession]", this$0.feeConcession);
         if (Intrinsics.areEqual(this$0.feeConcession, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding8 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[fee_concession_category]", String.valueOf((dialogPalaiSemRegBinding8 == null || (textInputEditText7 = dialogPalaiSemRegBinding8.etConcessionDetails) == null) ? null : textInputEditText7.getText()));
+            map.put("SemesterRegistration[fee_concession_category]", String.valueOf((dialogPalaiSemRegBinding8 == null || (textInputEditText7 = dialogPalaiSemRegBinding8.etConcessionDetails) == null) ? null : textInputEditText7.getText()));
         } else {
-            hashMap.put("SemesterRegistration[fee_concession_category]", "");
+            map.put("SemesterRegistration[fee_concession_category]", "");
         }
-        hashMap.put("SemesterRegistration[department_due]", this$0.dept);
+        map.put("SemesterRegistration[department_due]", this$0.dept);
         if (Intrinsics.areEqual(this$0.dept, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding9 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[department_due_details]", String.valueOf((dialogPalaiSemRegBinding9 == null || (textInputEditText6 = dialogPalaiSemRegBinding9.etDeptDetails) == null) ? null : textInputEditText6.getText()));
+            map.put("SemesterRegistration[department_due_details]", String.valueOf((dialogPalaiSemRegBinding9 == null || (textInputEditText6 = dialogPalaiSemRegBinding9.etDeptDetails) == null) ? null : textInputEditText6.getText()));
         } else {
-            hashMap.put("SemesterRegistration[department_due_details]", "");
+            map.put("SemesterRegistration[department_due_details]", "");
         }
-        hashMap.put("SemesterRegistration[library_due]", this$0.library);
+        map.put("SemesterRegistration[library_due]", this$0.library);
         if (Intrinsics.areEqual(this$0.library, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding10 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[librarary_due_details]", String.valueOf((dialogPalaiSemRegBinding10 == null || (textInputEditText5 = dialogPalaiSemRegBinding10.etLibraryDetails) == null) ? null : textInputEditText5.getText()));
+            map.put("SemesterRegistration[librarary_due_details]", String.valueOf((dialogPalaiSemRegBinding10 == null || (textInputEditText5 = dialogPalaiSemRegBinding10.etLibraryDetails) == null) ? null : textInputEditText5.getText()));
         } else {
-            hashMap.put("SemesterRegistration[librarary_due_details]", "");
+            map.put("SemesterRegistration[librarary_due_details]", "");
         }
-        hashMap.put("SemesterRegistration[accounts_due]", this$0.accounts);
+        map.put("SemesterRegistration[accounts_due]", this$0.accounts);
         if (Intrinsics.areEqual(this$0.accounts, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding11 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[accounts_due_details]", String.valueOf((dialogPalaiSemRegBinding11 == null || (textInputEditText4 = dialogPalaiSemRegBinding11.etAccountsDetails) == null) ? null : textInputEditText4.getText()));
+            map.put("SemesterRegistration[accounts_due_details]", String.valueOf((dialogPalaiSemRegBinding11 == null || (textInputEditText4 = dialogPalaiSemRegBinding11.etAccountsDetails) == null) ? null : textInputEditText4.getText()));
         } else {
-            hashMap.put("SemesterRegistration[accounts_due_details]", "");
+            map.put("SemesterRegistration[accounts_due_details]", "");
         }
-        hashMap.put("SemesterRegistration[academic_due]", this$0.academics);
+        map.put("SemesterRegistration[academic_due]", this$0.academics);
         if (Intrinsics.areEqual(this$0.academics, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding12 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[academic_due_details]", String.valueOf((dialogPalaiSemRegBinding12 == null || (textInputEditText3 = dialogPalaiSemRegBinding12.etAcademicDetails) == null) ? null : textInputEditText3.getText()));
+            map.put("SemesterRegistration[academic_due_details]", String.valueOf((dialogPalaiSemRegBinding12 == null || (textInputEditText3 = dialogPalaiSemRegBinding12.etAcademicDetails) == null) ? null : textInputEditText3.getText()));
         } else {
-            hashMap.put("SemesterRegistration[academic_due_details]", "");
+            map.put("SemesterRegistration[academic_due_details]", "");
         }
-        hashMap.put("SemesterRegistration[hostel_due]", this$0.hostel);
+        map.put("SemesterRegistration[hostel_due]", this$0.hostel);
         if (Intrinsics.areEqual(this$0.hostel, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding13 = this$0.get_binding();
-            hashMap.put("SemesterRegistration[hostel_due_details]", String.valueOf((dialogPalaiSemRegBinding13 == null || (textInputEditText2 = dialogPalaiSemRegBinding13.etHostelDetails) == null) ? null : textInputEditText2.getText()));
+            map.put("SemesterRegistration[hostel_due_details]", String.valueOf((dialogPalaiSemRegBinding13 == null || (textInputEditText2 = dialogPalaiSemRegBinding13.etHostelDetails) == null) ? null : textInputEditText2.getText()));
         } else {
-            hashMap.put("SemesterRegistration[hostel_due_details]", "");
+            map.put("SemesterRegistration[hostel_due_details]", "");
         }
-        hashMap.put("SemesterRegistration[bus_due]", this$0.bus);
+        map.put("SemesterRegistration[bus_due]", this$0.bus);
         if (Intrinsics.areEqual(this$0.bus, "Yes")) {
             DialogPalaiSemRegBinding dialogPalaiSemRegBinding14 = this$0.get_binding();
             if (dialogPalaiSemRegBinding14 != null && (textInputEditText = dialogPalaiSemRegBinding14.etBusDetails) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            hashMap.put("SemesterRegistration[bus_due_details]", String.valueOf(editable));
+            map.put("SemesterRegistration[bus_due_details]", String.valueOf(text));
             return;
         }
-        hashMap.put("SemesterRegistration[bus_due_details]", "");
+        map.put("SemesterRegistration[bus_due_details]", "");
     }
 
     private final void listenSpinner2() {
-        getPalaiNewSemRegViewModel().getStatusResponse().observe(getViewLifecycleOwner(), new PalaiNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingStatusResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$listenSpinner2$1
+        getPalaiNewSemRegViewModel().getStatusResponse().observe(getViewLifecycleOwner(), new PalaiNewSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CounsellingStatusResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog.listenSpinner2.1
 
-            /* compiled from: PalaiNewSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.sjcetpalai.newregistration.PalaiNewSemRegDialog$listenSpinner2$1$WhenMappings */
+            /* JADX INFO: compiled from: PalaiNewSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -3821,7 +3820,7 @@ public final class PalaiNewSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<CounsellingStatusResponse> resource) {
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {

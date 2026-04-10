@@ -6,8 +6,8 @@ import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Subjects.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Subjects.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Subjects {
 
     @SerializedName("atten_per")
@@ -57,32 +57,32 @@ public final /* data */ class Subjects {
         return subjects.copy(str, str6, str7, str8, str9, z);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubId() {
         return this.subId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubName() {
         return this.subName;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getTeacher() {
         return this.teacher;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAttendanceText() {
         return this.attendanceText;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAttendancePercentage() {
         return this.attendancePercentage;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final boolean getIsSubGe() {
         return this.isSubGe;
     }
@@ -108,14 +108,17 @@ public final /* data */ class Subjects {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v10 */
+    /* JADX WARN: Type inference failed for: r1v11 */
+    /* JADX WARN: Type inference failed for: r1v9, types: [int] */
     public int hashCode() {
-        int hashCode = ((((((((this.subId.hashCode() * 31) + this.subName.hashCode()) * 31) + this.teacher.hashCode()) * 31) + this.attendanceText.hashCode()) * 31) + this.attendancePercentage.hashCode()) * 31;
+        int iHashCode = ((((((((this.subId.hashCode() * 31) + this.subName.hashCode()) * 31) + this.teacher.hashCode()) * 31) + this.attendanceText.hashCode()) * 31) + this.attendancePercentage.hashCode()) * 31;
         boolean z = this.isSubGe;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return hashCode + i;
+        return iHashCode + r1;
     }
 
     public String toString() {

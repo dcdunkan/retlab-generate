@@ -13,7 +13,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ChangeProPicDialogBindingImpl extends ChangeProPicDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -69,7 +69,7 @@ public class ChangeProPicDialogBindingImpl extends ChangeProPicDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (52 != variableId) {
+        if (51 != variableId) {
             return false;
         }
         setChangeProPicDialogViewModel((ChangeProPicDialogViewModel) variable);

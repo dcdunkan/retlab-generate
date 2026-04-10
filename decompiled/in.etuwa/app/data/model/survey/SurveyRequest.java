@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SurveyRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SurveyRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SurveyRequest {
 
     @SerializedName("subject_id")
@@ -34,17 +34,17 @@ public final /* data */ class SurveyRequest {
         return surveyRequest.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSurveyId() {
         return this.surveyId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTeacherId() {
         return this.teacherId;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSubjectId() {
         return this.subjectId;
     }
@@ -66,11 +66,11 @@ public final /* data */ class SurveyRequest {
 
     public int hashCode() {
         String str = this.surveyId;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.teacherId;
-        int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
+        int iHashCode2 = (iHashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.subjectId;
-        return hashCode2 + (str3 != null ? str3.hashCode() : 0);
+        return iHashCode2 + (str3 != null ? str3.hashCode() : 0);
     }
 
     public String toString() {

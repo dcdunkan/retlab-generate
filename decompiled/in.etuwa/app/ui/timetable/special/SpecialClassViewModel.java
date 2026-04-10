@@ -17,10 +17,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SpecialClassViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SpecialClassViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SpecialClassViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private final TimeTableRepository timeTableRepository;
     private MutableLiveData<Resource<ArrayList<SpecialResponse>>> timetableResponse;
 
@@ -29,14 +30,22 @@ public final class SpecialClassViewModel extends ViewModel {
         this.timeTableRepository = timeTableRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.timetableResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getSpecialClass();
     }
 
     private final void getSpecialClass() {
         this.timetableResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<SpecialResponse>> observeOn = this.timeTableRepository.getSpecialClassApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<SpecialResponse>, Unit> function1 = new Function1<ArrayList<SpecialResponse>, Unit>() { // from class: in.etuwa.app.ui.timetable.special.SpecialClassViewModel$getSpecialClass$1
+        Single<ArrayList<SpecialResponse>> singleObserveOn = this.timeTableRepository.getSpecialClassApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<SpecialResponse>, Unit> function1 = new Function1<ArrayList<SpecialResponse>, Unit>() { // from class: in.etuwa.app.ui.timetable.special.SpecialClassViewModel.getSpecialClass.1
             {
                 super(1);
             }
@@ -47,20 +56,18 @@ public final class SpecialClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<SpecialResponse> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SpecialClassViewModel.this.timetableResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                SpecialClassViewModel.this.timetableResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<SpecialResponse>> consumer = new Consumer() { // from class: in.etuwa.app.ui.timetable.special.SpecialClassViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SpecialClassViewModel.getSpecialClass$lambda$0(Function1.this, obj);
+                SpecialClassViewModel.getSpecialClass$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.timetable.special.SpecialClassViewModel$getSpecialClass$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.timetable.special.SpecialClassViewModel.getSpecialClass.2
             {
                 super(1);
             }
@@ -71,17 +78,15 @@ public final class SpecialClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SpecialClassViewModel.this.timetableResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SpecialClassViewModel.this.timetableResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.timetable.special.SpecialClassViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.timetable.special.SpecialClassViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SpecialClassViewModel.getSpecialClass$lambda$1(Function1.this, obj);
+                SpecialClassViewModel.getSpecialClass$lambda$1(function12, obj);
             }
         }));
     }

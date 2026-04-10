@@ -11,9 +11,8 @@ import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
-import in.etuwa.app.ui.timetable.TimeTableViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class TimeTableFragmentBindingImpl extends TimeTableFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -24,6 +23,11 @@ public class TimeTableFragmentBindingImpl extends TimeTableFragmentBinding {
     @Override // androidx.databinding.ViewDataBinding
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         return false;
+    }
+
+    @Override // androidx.databinding.ViewDataBinding
+    public boolean setVariable(int variableId, Object variable) {
+        return true;
     }
 
     static {
@@ -56,7 +60,7 @@ public class TimeTableFragmentBindingImpl extends TimeTableFragmentBinding {
     @Override // androidx.databinding.ViewDataBinding
     public void invalidateAll() {
         synchronized (this) {
-            this.mDirtyFlags = 2L;
+            this.mDirtyFlags = 1L;
         }
         requestRebind();
     }
@@ -66,20 +70,6 @@ public class TimeTableFragmentBindingImpl extends TimeTableFragmentBinding {
         synchronized (this) {
             return this.mDirtyFlags != 0;
         }
-    }
-
-    @Override // androidx.databinding.ViewDataBinding
-    public boolean setVariable(int variableId, Object variable) {
-        if (222 != variableId) {
-            return false;
-        }
-        setTimeTableViewModel((TimeTableViewModel) variable);
-        return true;
-    }
-
-    @Override // in.etuwa.app.databinding.TimeTableFragmentBinding
-    public void setTimeTableViewModel(TimeTableViewModel TimeTableViewModel) {
-        this.mTimeTableViewModel = TimeTableViewModel;
     }
 
     @Override // androidx.databinding.ViewDataBinding

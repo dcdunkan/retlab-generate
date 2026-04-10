@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AchievementsResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AchievementsResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AchievementsResponse {
     private final ArrayList<Achievements> achievement;
     private final boolean login;
@@ -22,7 +22,7 @@ public final /* data */ class AchievementsResponse {
         return achievementsResponse.copy(z, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

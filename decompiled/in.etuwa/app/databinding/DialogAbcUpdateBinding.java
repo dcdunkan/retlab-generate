@@ -11,7 +11,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.updateabc.UpdateAbcViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogAbcUpdateBinding extends ViewDataBinding {
     public final TextInputEditText etAbcId;
     public final TextView helpBtn;

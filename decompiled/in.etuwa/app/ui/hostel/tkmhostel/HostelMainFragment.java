@@ -32,19 +32,19 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: HostelMainFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelMainFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelMainFragment extends Fragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private HostelFragmentTkmBinding _binding;
 
-    /* renamed from: hostelMainViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: hostelMainViewModel$delegate, reason: from kotlin metadata */
     private final Lazy hostelMainViewModel;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     @JvmStatic
@@ -62,7 +62,7 @@ public final class HostelMainFragment extends Fragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return hostelMainFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(hostelMainFragment);
@@ -76,7 +76,7 @@ public final class HostelMainFragment extends Fragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -89,7 +89,7 @@ public final class HostelMainFragment extends Fragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HostelMainViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HostelMainViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final HostelMainFragment hostelMainFragment2 = this;
@@ -119,12 +119,12 @@ public final class HostelMainFragment extends Fragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final HostelFragmentTkmBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: HostelMainFragment.kt */
+    /* JADX INFO: compiled from: HostelMainFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/tkmhostel/HostelMainFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/tkmhostel/HostelMainFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -221,7 +221,7 @@ public final class HostelMainFragment extends Fragment {
             linearLayout6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.tkmhostel.HostelMainFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view4) {
-                    HostelMainFragment.onViewCreated$lambda$0(HostelMainFragment.this, view4);
+                    HostelMainFragment.onViewCreated$lambda$0(this.f$0, view4);
                 }
             });
         }
@@ -230,7 +230,7 @@ public final class HostelMainFragment extends Fragment {
             linearLayout5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.tkmhostel.HostelMainFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view4) {
-                    HostelMainFragment.onViewCreated$lambda$1(HostelMainFragment.this, view4);
+                    HostelMainFragment.onViewCreated$lambda$1(this.f$0, view4);
                 }
             });
         }
@@ -239,7 +239,7 @@ public final class HostelMainFragment extends Fragment {
             linearLayout4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.tkmhostel.HostelMainFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view4) {
-                    HostelMainFragment.onViewCreated$lambda$2(HostelMainFragment.this, view4);
+                    HostelMainFragment.onViewCreated$lambda$2(this.f$0, view4);
                 }
             });
         }
@@ -248,7 +248,7 @@ public final class HostelMainFragment extends Fragment {
             linearLayout3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.tkmhostel.HostelMainFragment$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view4) {
-                    HostelMainFragment.onViewCreated$lambda$3(HostelMainFragment.this, view4);
+                    HostelMainFragment.onViewCreated$lambda$3(this.f$0, view4);
                 }
             });
         }
@@ -259,7 +259,7 @@ public final class HostelMainFragment extends Fragment {
         linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.tkmhostel.HostelMainFragment$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view4) {
-                HostelMainFragment.onViewCreated$lambda$4(HostelMainFragment.this, view4);
+                HostelMainFragment.onViewCreated$lambda$4(this.f$0, view4);
             }
         });
     }

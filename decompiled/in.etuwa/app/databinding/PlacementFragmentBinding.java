@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -11,20 +12,22 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.placement.PlacementViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class PlacementFragmentBinding extends ViewDataBinding {
 
     @Bindable
     protected PlacementViewModel mPlacementViewModel;
     public final RecyclerView rvPlacement;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setPlacementViewModel(PlacementViewModel placementViewModel);
 
-    protected PlacementFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvPlacement, SwipeRefreshLayout swipeLayout) {
+    protected PlacementFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvPlacement, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.rvPlacement = rvPlacement;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public PlacementViewModel getPlacementViewModel() {

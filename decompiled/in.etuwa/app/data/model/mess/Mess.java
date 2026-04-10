@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Mess.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Mess.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Mess {
     private final String day;
     private final ArrayList<MessMenu> items;
@@ -22,7 +22,7 @@ public final /* data */ class Mess {
         return mess.copy(str, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDay() {
         return this.day;
     }

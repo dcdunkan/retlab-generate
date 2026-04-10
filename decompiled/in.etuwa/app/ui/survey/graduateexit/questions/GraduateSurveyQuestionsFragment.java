@@ -46,29 +46,29 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: GraduateSurveyQuestionsFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: GraduateSurveyQuestionsFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class GraduateSurveyQuestionsFragment extends BaseFragment implements GraduateSurveyQuestionsAdapter.SurveyCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentGraduateExitSurveyQuestionsBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: graduateSurveyQuestionsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: graduateSurveyQuestionsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy graduateSurveyQuestionsViewModel;
     private String id;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String sessionId;
     private final HashMap<String, String> submitAnswer;
     private ArrayList<DoGraduateSurveyQuestions> surveyList;
 
-    /* compiled from: GraduateSurveyQuestionsFragment.kt */
+    /* JADX INFO: compiled from: GraduateSurveyQuestionsFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -118,7 +118,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return graduateSurveyQuestionsFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(graduateSurveyQuestionsFragment);
@@ -132,7 +132,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -145,7 +145,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(GraduateSurveyQuestionsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(GraduateSurveyQuestionsViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final GraduateSurveyQuestionsFragment graduateSurveyQuestionsFragment2 = this;
@@ -193,7 +193,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
         return (GraduateSurveyQuestionsAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentGraduateExitSurveyQuestionsBinding get_binding() {
         return this._binding;
     }
@@ -206,7 +206,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
         return this.submitAnswer;
     }
 
-    /* compiled from: GraduateSurveyQuestionsFragment.kt */
+    /* JADX INFO: compiled from: GraduateSurveyQuestionsFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001a\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/survey/graduateexit/questions/GraduateSurveyQuestionsFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/survey/graduateexit/questions/GraduateSurveyQuestionsFragment;", "id", "", "sessionId", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -292,7 +292,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.survey.graduateexit.questions.GraduateSurveyQuestionsFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GraduateSurveyQuestionsFragment.setUp$lambda$1(GraduateSurveyQuestionsFragment.this, view);
+                GraduateSurveyQuestionsFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -304,10 +304,10 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
         ArrayList<DoGraduateSurveyQuestions> items = this$0.getAdapter().getItems();
         this$0.surveyList = items;
         System.out.println(items);
-        HashMap<String, String> hashMap = this$0.submitAnswer;
+        HashMap<String, String> map = this$0.submitAnswer;
         String str = this$0.sessionId;
         Intrinsics.checkNotNull(str);
-        hashMap.put("id", str);
+        map.put("id", str);
         int size = this$0.surveyList.size();
         for (int i = 0; i < size; i++) {
             this$0.submitAnswer.put("GraduateExitOption[" + this$0.surveyList.get(i).getQ_id() + "]", this$0.surveyList.get(i).getAnswer_id());
@@ -320,7 +320,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
         getGraduateSurveyQuestionsViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.survey.graduateexit.questions.GraduateSurveyQuestionsFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                GraduateSurveyQuestionsFragment.listenResponse$lambda$3(GraduateSurveyQuestionsFragment.this, (Resource) obj);
+                GraduateSurveyQuestionsFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -367,7 +367,7 @@ public final class GraduateSurveyQuestionsFragment extends BaseFragment implemen
         getGraduateSurveyQuestionsViewModel().getSubmitResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.survey.graduateexit.questions.GraduateSurveyQuestionsFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                GraduateSurveyQuestionsFragment.listenSubmitResponse$lambda$5(GraduateSurveyQuestionsFragment.this, (Resource) obj);
+                GraduateSurveyQuestionsFragment.listenSubmitResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }

@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.receipt.TkmReceiptViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelReceiptBindingImpl extends FragmentHostelReceiptBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentHostelReceiptBindingImpl extends FragmentHostelReceiptBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (224 != variableId) {
+        if (225 != variableId) {
             return false;
         }
         setTkmReceiptViewModel((TkmReceiptViewModel) variable);

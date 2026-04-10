@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentKmeaBinding extends ViewDataBinding {
     public final TextView kmeaAmountTv;
     public final TextView kmeaFineTv;

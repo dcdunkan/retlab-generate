@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QuizDeleteFile.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuizDeleteFile.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QuizDeleteFile {
 
     @SerializedName(FontsContractCompat.Columns.FILE_ID)
@@ -19,7 +19,7 @@ public final /* data */ class QuizDeleteFile {
         return quizDeleteFile.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }

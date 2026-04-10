@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class HostelFragmentBinding implements ViewBinding {
     public final FloatingActionButton fabHostelFee;
     public final TextView hostJDate;
@@ -39,11 +39,11 @@ public final class HostelFragmentBinding implements ViewBinding {
     }
 
     public static HostelFragmentBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.hostel_fragment, parent, false);
+        View viewInflate = inflater.inflate(R.layout.hostel_fragment, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static HostelFragmentBinding bind(View rootView) {

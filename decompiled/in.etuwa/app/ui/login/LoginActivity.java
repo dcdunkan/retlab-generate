@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import androidx.activity.ComponentActivity;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
@@ -19,9 +19,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelLazy;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
-import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.actions.SearchIntents;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.institutions.Colleges;
@@ -54,26 +52,27 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: LoginActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LoginActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LoginActivity extends BaseActivity implements CollegeListAdapter.CallBack {
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ActivityLoginBinding binding;
     private ArrayList<Colleges> filteredList;
+    private boolean isPasswordVisible;
 
-    /* renamed from: loginViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: loginViewModel$delegate, reason: from kotlin metadata */
     private final Lazy loginViewModel;
     private ArrayList<Colleges> originalList;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: LoginActivity.kt */
+    /* JADX INFO: compiled from: LoginActivity.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -122,7 +121,7 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ComponentActivity.this.getViewModelStore();
+                ViewModelStore viewModelStore = loginActivity.getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "viewModelStore");
                 return viewModelStore;
             }
@@ -135,7 +134,7 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory(ViewModelStoreOwner.this, Reflection.getOrCreateKotlinClass(LoginViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory(loginActivity2, Reflection.getOrCreateKotlinClass(LoginViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final LoginActivity loginActivity3 = this;
@@ -146,7 +145,7 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(LoginActivity.this);
+                return ParametersHolderKt.parametersOf(this.this$0);
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -216,6 +215,15 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
 
     private final CollegeListAdapter getAdapter() {
         return (CollegeListAdapter) this.adapter.getValue();
+    }
+
+    /* JADX INFO: renamed from: isPasswordVisible, reason: from getter */
+    public final boolean getIsPasswordVisible() {
+        return this.isPasswordVisible;
+    }
+
+    public final void setPasswordVisible(boolean z) {
+        this.isPasswordVisible = z;
     }
 
     @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
@@ -303,87 +311,33 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             activityLoginBinding3 = null;
         }
-        activityLoginBinding3.spinnerClgList.setAdapter((SpinnerAdapter) getSpinnerAdapter());
-        setupClgSpinner();
-        listenLoginResponse();
+        activityLoginBinding3.ivEye.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                LoginActivity.setUp$lambda$0(this.f$0, view);
+            }
+        });
         ActivityLoginBinding activityLoginBinding4 = this.binding;
         if (activityLoginBinding4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             activityLoginBinding4 = null;
         }
-        activityLoginBinding4.spinnerClgList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.login.LoginActivity$setUp$1
+        activityLoginBinding4.spinnerClgList.setAdapter((SpinnerAdapter) getSpinnerAdapter());
+        setupClgSpinner();
+        listenLoginResponse();
+        ActivityLoginBinding activityLoginBinding5 = this.binding;
+        if (activityLoginBinding5 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+            activityLoginBinding5 = null;
+        }
+        activityLoginBinding5.spinnerClgList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.login.LoginActivity.setUp.2
             @Override // android.widget.AdapterView.OnItemSelectedListener
             public void onNothingSelected(AdapterView<?> parent) {
             }
 
             @Override // android.widget.AdapterView.OnItemSelectedListener
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                CollegeSpinnerAdapter spinnerAdapter;
-                LoginViewModel loginViewModel;
-                spinnerAdapter = LoginActivity.this.getSpinnerAdapter();
-                Colleges college = spinnerAdapter.getCollege(position);
-                loginViewModel = LoginActivity.this.getLoginViewModel();
-                loginViewModel.setCollege(college);
-            }
-        });
-        ActivityLoginBinding activityLoginBinding5 = this.binding;
-        if (activityLoginBinding5 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            activityLoginBinding5 = null;
-        }
-        activityLoginBinding5.clgSearchBtn.setOnQueryTextListener(new SearchView.OnQueryTextListener() { // from class: in.etuwa.app.ui.login.LoginActivity$setUp$2
-            @Override // androidx.appcompat.widget.SearchView.OnQueryTextListener
-            public boolean onQueryTextSubmit(String query) {
-                ActivityLoginBinding activityLoginBinding6;
-                ActivityLoginBinding activityLoginBinding7;
-                Intrinsics.checkNotNullParameter(query, "query");
-                ActivityLoginBinding activityLoginBinding8 = null;
-                if (!Intrinsics.areEqual(query, "")) {
-                    activityLoginBinding7 = LoginActivity.this.binding;
-                    if (activityLoginBinding7 == null) {
-                        Intrinsics.throwUninitializedPropertyAccessException("binding");
-                    } else {
-                        activityLoginBinding8 = activityLoginBinding7;
-                    }
-                    activityLoginBinding8.rvCollegeList.setVisibility(0);
-                } else {
-                    activityLoginBinding6 = LoginActivity.this.binding;
-                    if (activityLoginBinding6 == null) {
-                        Intrinsics.throwUninitializedPropertyAccessException("binding");
-                    } else {
-                        activityLoginBinding8 = activityLoginBinding6;
-                    }
-                    activityLoginBinding8.rvCollegeList.setVisibility(8);
-                }
-                LoginActivity.this.search(query);
-                return true;
-            }
-
-            @Override // androidx.appcompat.widget.SearchView.OnQueryTextListener
-            public boolean onQueryTextChange(String newText) {
-                ActivityLoginBinding activityLoginBinding6;
-                ActivityLoginBinding activityLoginBinding7;
-                Intrinsics.checkNotNullParameter(newText, "newText");
-                ActivityLoginBinding activityLoginBinding8 = null;
-                if (!Intrinsics.areEqual(newText, "")) {
-                    activityLoginBinding7 = LoginActivity.this.binding;
-                    if (activityLoginBinding7 == null) {
-                        Intrinsics.throwUninitializedPropertyAccessException("binding");
-                    } else {
-                        activityLoginBinding8 = activityLoginBinding7;
-                    }
-                    activityLoginBinding8.rvCollegeList.setVisibility(0);
-                } else {
-                    activityLoginBinding6 = LoginActivity.this.binding;
-                    if (activityLoginBinding6 == null) {
-                        Intrinsics.throwUninitializedPropertyAccessException("binding");
-                    } else {
-                        activityLoginBinding8 = activityLoginBinding6;
-                    }
-                    activityLoginBinding8.rvCollegeList.setVisibility(8);
-                }
-                LoginActivity.this.search(newText);
-                return true;
+                LoginActivity.this.getLoginViewModel().setCollege(LoginActivity.this.getSpinnerAdapter().getCollege(position));
             }
         });
         ActivityLoginBinding activityLoginBinding6 = this.binding;
@@ -391,10 +345,55 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             activityLoginBinding6 = null;
         }
-        activityLoginBinding6.changeBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LoginActivity.setUp$lambda$0(LoginActivity.this, view);
+        activityLoginBinding6.clgSearchBtn.setOnQueryTextListener(new SearchView.OnQueryTextListener() { // from class: in.etuwa.app.ui.login.LoginActivity.setUp.3
+            @Override // androidx.appcompat.widget.SearchView.OnQueryTextListener
+            public boolean onQueryTextSubmit(String query) {
+                Intrinsics.checkNotNullParameter(query, "query");
+                ActivityLoginBinding activityLoginBinding7 = null;
+                if (!Intrinsics.areEqual(query, "")) {
+                    ActivityLoginBinding activityLoginBinding8 = LoginActivity.this.binding;
+                    if (activityLoginBinding8 == null) {
+                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                    } else {
+                        activityLoginBinding7 = activityLoginBinding8;
+                    }
+                    activityLoginBinding7.rvCollegeList.setVisibility(0);
+                } else {
+                    ActivityLoginBinding activityLoginBinding9 = LoginActivity.this.binding;
+                    if (activityLoginBinding9 == null) {
+                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                    } else {
+                        activityLoginBinding7 = activityLoginBinding9;
+                    }
+                    activityLoginBinding7.rvCollegeList.setVisibility(8);
+                }
+                LoginActivity.this.search(query);
+                return true;
+            }
+
+            @Override // androidx.appcompat.widget.SearchView.OnQueryTextListener
+            public boolean onQueryTextChange(String newText) {
+                Intrinsics.checkNotNullParameter(newText, "newText");
+                ActivityLoginBinding activityLoginBinding7 = null;
+                if (!Intrinsics.areEqual(newText, "")) {
+                    ActivityLoginBinding activityLoginBinding8 = LoginActivity.this.binding;
+                    if (activityLoginBinding8 == null) {
+                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                    } else {
+                        activityLoginBinding7 = activityLoginBinding8;
+                    }
+                    activityLoginBinding7.rvCollegeList.setVisibility(0);
+                } else {
+                    ActivityLoginBinding activityLoginBinding9 = LoginActivity.this.binding;
+                    if (activityLoginBinding9 == null) {
+                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                    } else {
+                        activityLoginBinding7 = activityLoginBinding9;
+                    }
+                    activityLoginBinding7.rvCollegeList.setVisibility(8);
+                }
+                LoginActivity.this.search(newText);
+                return true;
             }
         });
         ActivityLoginBinding activityLoginBinding7 = this.binding;
@@ -402,10 +401,10 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             activityLoginBinding7 = null;
         }
-        activityLoginBinding7.registerBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda2
+        activityLoginBinding7.changeBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LoginActivity.setUp$lambda$1(LoginActivity.this, view);
+                LoginActivity.setUp$lambda$1(this.f$0, view);
             }
         });
         ActivityLoginBinding activityLoginBinding8 = this.binding;
@@ -413,28 +412,87 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             activityLoginBinding8 = null;
         }
-        activityLoginBinding8.loginBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda3
+        activityLoginBinding8.registerBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LoginActivity.setUp$lambda$2(LoginActivity.this, view);
+                LoginActivity.setUp$lambda$2(this.f$0, view);
             }
         });
         ActivityLoginBinding activityLoginBinding9 = this.binding;
         if (activityLoginBinding9 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
-        } else {
-            activityLoginBinding2 = activityLoginBinding9;
+            activityLoginBinding9 = null;
         }
-        activityLoginBinding2.resetBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda4
+        activityLoginBinding9.loginBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LoginActivity.setUp$lambda$3(LoginActivity.this, view);
+                LoginActivity.setUp$lambda$3(this.f$0, view);
+            }
+        });
+        ActivityLoginBinding activityLoginBinding10 = this.binding;
+        if (activityLoginBinding10 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+        } else {
+            activityLoginBinding2 = activityLoginBinding10;
+        }
+        activityLoginBinding2.resetBtn.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda5
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                LoginActivity.setUp$lambda$4(this.f$0, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$0(LoginActivity this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        ActivityLoginBinding activityLoginBinding = null;
+        if (this$0.isPasswordVisible) {
+            ActivityLoginBinding activityLoginBinding2 = this$0.binding;
+            if (activityLoginBinding2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                activityLoginBinding2 = null;
+            }
+            activityLoginBinding2.password.setInputType(129);
+            ActivityLoginBinding activityLoginBinding3 = this$0.binding;
+            if (activityLoginBinding3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                activityLoginBinding3 = null;
+            }
+            activityLoginBinding3.ivEye.setImageResource(R.drawable.ic_eye);
+            this$0.isPasswordVisible = false;
+        } else {
+            ActivityLoginBinding activityLoginBinding4 = this$0.binding;
+            if (activityLoginBinding4 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                activityLoginBinding4 = null;
+            }
+            activityLoginBinding4.password.setInputType(145);
+            ActivityLoginBinding activityLoginBinding5 = this$0.binding;
+            if (activityLoginBinding5 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                activityLoginBinding5 = null;
+            }
+            activityLoginBinding5.ivEye.setImageResource(R.drawable.baseline_clear_24);
+            this$0.isPasswordVisible = true;
+        }
+        ActivityLoginBinding activityLoginBinding6 = this$0.binding;
+        if (activityLoginBinding6 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+            activityLoginBinding6 = null;
+        }
+        EditText editText = activityLoginBinding6.password;
+        ActivityLoginBinding activityLoginBinding7 = this$0.binding;
+        if (activityLoginBinding7 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+        } else {
+            activityLoginBinding = activityLoginBinding7;
+        }
+        editText.setSelection(activityLoginBinding.password.getText().length());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setUp$lambda$1(LoginActivity this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ActivityLoginBinding activityLoginBinding = this$0.binding;
         ActivityLoginBinding activityLoginBinding2 = null;
@@ -483,7 +541,7 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$1(LoginActivity this$0, View view) {
+    public static final void setUp$lambda$2(LoginActivity this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ActivityLoginBinding activityLoginBinding = this$0.binding;
         ActivityLoginBinding activityLoginBinding2 = null;
@@ -555,7 +613,7 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$2(LoginActivity this$0, View view) {
+    public static final void setUp$lambda$3(LoginActivity this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ActivityLoginBinding activityLoginBinding = this$0.binding;
         ActivityLoginBinding activityLoginBinding2 = null;
@@ -573,19 +631,19 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
                 Intrinsics.throwUninitializedPropertyAccessException("binding");
                 activityLoginBinding3 = null;
             }
-            String valueOf = String.valueOf(activityLoginBinding3.username.getText());
-            if (valueOf == null || valueOf.length() == 0) {
+            String string = activityLoginBinding3.username.getText().toString();
+            if (string == null || string.length() == 0) {
                 ActivityLoginBinding activityLoginBinding4 = this$0.binding;
                 if (activityLoginBinding4 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("binding");
                 } else {
                     activityLoginBinding2 = activityLoginBinding4;
                 }
-                TextInputEditText textInputEditText = activityLoginBinding2.username;
-                Intrinsics.checkNotNullExpressionValue(textInputEditText, "binding.username");
-                String string = this$0.getString(R.string.error_username);
-                Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.error_username)");
-                ToastExtKt.showInfoToast(textInputEditText, string);
+                EditText editText = activityLoginBinding2.username;
+                Intrinsics.checkNotNullExpressionValue(editText, "binding.username");
+                String string2 = this$0.getString(R.string.error_username);
+                Intrinsics.checkNotNullExpressionValue(string2, "getString(R.string.error_username)");
+                ToastExtKt.showInfoToast(editText, string2);
                 return;
             }
             ActivityLoginBinding activityLoginBinding5 = this$0.binding;
@@ -593,19 +651,19 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
                 Intrinsics.throwUninitializedPropertyAccessException("binding");
                 activityLoginBinding5 = null;
             }
-            String valueOf2 = String.valueOf(activityLoginBinding5.password.getText());
-            if (valueOf2 == null || valueOf2.length() == 0) {
+            String string3 = activityLoginBinding5.password.getText().toString();
+            if (string3 == null || string3.length() == 0) {
                 ActivityLoginBinding activityLoginBinding6 = this$0.binding;
                 if (activityLoginBinding6 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("binding");
                 } else {
                     activityLoginBinding2 = activityLoginBinding6;
                 }
-                TextInputEditText textInputEditText2 = activityLoginBinding2.password;
-                Intrinsics.checkNotNullExpressionValue(textInputEditText2, "binding.password");
-                String string2 = this$0.getString(R.string.error_password);
-                Intrinsics.checkNotNullExpressionValue(string2, "getString(R.string.error_password)");
-                ToastExtKt.showInfoToast(textInputEditText2, string2);
+                EditText editText2 = activityLoginBinding2.password;
+                Intrinsics.checkNotNullExpressionValue(editText2, "binding.password");
+                String string4 = this$0.getString(R.string.error_password);
+                Intrinsics.checkNotNullExpressionValue(string4, "getString(R.string.error_password)");
+                ToastExtKt.showInfoToast(editText2, string4);
                 return;
             }
             String str = Intrinsics.areEqual(this$0.getPreference().getBaseUrl(), "https://nssce.etlab.in/androidapp/mobile/") ? "99" : null;
@@ -615,21 +673,21 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
                 Intrinsics.throwUninitializedPropertyAccessException("binding");
                 activityLoginBinding7 = null;
             }
-            String obj = StringsKt.trim((CharSequence) String.valueOf(activityLoginBinding7.username.getText())).toString();
+            String string5 = StringsKt.trim((CharSequence) activityLoginBinding7.username.getText().toString()).toString();
             ActivityLoginBinding activityLoginBinding8 = this$0.binding;
             if (activityLoginBinding8 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("binding");
             } else {
                 activityLoginBinding2 = activityLoginBinding8;
             }
-            loginViewModel.validateCredentials(obj, StringsKt.trim((CharSequence) String.valueOf(activityLoginBinding2.password.getText())).toString(), str);
+            loginViewModel.validateCredentials(string5, StringsKt.trim((CharSequence) activityLoginBinding2.password.getText().toString()).toString(), str);
             return;
         }
         this$0.loadRefreshDialog();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$3(LoginActivity this$0, View view) {
+    public static final void setUp$lambda$4(LoginActivity this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.startActivity(new Intent(this$0.getApplicationContext(), (Class<?>) ResetPasswordActivity.class));
     }
@@ -657,17 +715,17 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setMessage(getString(R.string.turn_on_internet_connection));
-        builder.setPositiveButton(getString(R.string.refresh), new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda6
+        builder.setPositiveButton(getString(R.string.refresh), new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda7
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                LoginActivity.loadRefreshDialog$lambda$5(LoginActivity.this, dialogInterface, i);
+                LoginActivity.loadRefreshDialog$lambda$6(this.f$0, dialogInterface, i);
             }
         });
         builder.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadRefreshDialog$lambda$5(LoginActivity this$0, DialogInterface dialogInterface, int i) {
+    public static final void loadRefreshDialog$lambda$6(LoginActivity this$0, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.setUp();
     }
@@ -685,13 +743,13 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
         getLoginViewModel().getResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                LoginActivity.listenLoginResponse$lambda$7(LoginActivity.this, (Resource) obj);
+                LoginActivity.listenLoginResponse$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenLoginResponse$lambda$7(LoginActivity this$0, Resource resource) {
+    public static final void listenLoginResponse$lambda$8(LoginActivity this$0, Resource resource) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
         ActivityLoginBinding activityLoginBinding = null;
@@ -746,16 +804,16 @@ public final class LoginActivity extends BaseActivity implements CollegeListAdap
     }
 
     private final void setupClgSpinner() {
-        getLoginViewModel().getColleges().observe(this, new Observer() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda5
+        getLoginViewModel().getColleges().observe(this, new Observer() { // from class: in.etuwa.app.ui.login.LoginActivity$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                LoginActivity.setupClgSpinner$lambda$9(LoginActivity.this, (Resource) obj);
+                LoginActivity.setupClgSpinner$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupClgSpinner$lambda$9(LoginActivity this$0, Resource resource) {
+    public static final void setupClgSpinner$lambda$10(LoginActivity this$0, Resource resource) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
         if (i == 1) {

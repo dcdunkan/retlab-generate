@@ -17,13 +17,13 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DirectApplyAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: DirectApplyAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class DirectApplyAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<DutyLeaveDirectApply> list = new ArrayList<>();
     private CallBack listener;
 
-    /* compiled from: DirectApplyAdapter.kt */
+    /* JADX INFO: compiled from: DirectApplyAdapter.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J0\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u0005H&J\u0010\u0010\u000b\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\f\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\r"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/DirectApplyAdapter$CallBack;", "", "delete", "", "id", "", "editBtnClicked", "reason", "fromDate", "toDate", XfdfConstants.HEAD, "updateHoursClicked", "viewProofBtnClicked", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void delete(String id);
@@ -39,18 +39,18 @@ public final class DirectApplyAdapter extends RecyclerView.Adapter<BaseViewHolde
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_direct_apply, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …ect_apply, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_direct_apply, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …ect_apply, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -66,7 +66,7 @@ public final class DirectApplyAdapter extends RecyclerView.Adapter<BaseViewHolde
         return !this.list.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: DirectApplyAdapter.kt */
+    /* JADX INFO: compiled from: DirectApplyAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0010\u001a\u00020\u0011H\u0014J\u0010\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u0014H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/DirectApplyAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/leave/duty/directapply/DirectApplyAdapter;Landroid/view/View;)V", "deleteBtn", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "editBtn", "fromDateTv", "headTv", "reasonTv", "statusTv", "toDateTv", "updateHoursBtn", "viewProofBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView deleteBtn;
@@ -117,7 +117,7 @@ public final class DirectApplyAdapter extends RecyclerView.Adapter<BaseViewHolde
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DirectApplyAdapter.ViewHolder.onBind$lambda$0(DirectApplyAdapter.this, dutyLeaveDirectApply, view);
+                        DirectApplyAdapter.ViewHolder.onBind$lambda$0(directApplyAdapter, dutyLeaveDirectApply, view);
                     }
                 });
                 TextView textView2 = this.updateHoursBtn;
@@ -125,7 +125,7 @@ public final class DirectApplyAdapter extends RecyclerView.Adapter<BaseViewHolde
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DirectApplyAdapter.ViewHolder.onBind$lambda$1(DirectApplyAdapter.this, dutyLeaveDirectApply, view);
+                        DirectApplyAdapter.ViewHolder.onBind$lambda$1(directApplyAdapter2, dutyLeaveDirectApply, view);
                     }
                 });
                 TextView textView3 = this.viewProofBtn;
@@ -133,7 +133,7 @@ public final class DirectApplyAdapter extends RecyclerView.Adapter<BaseViewHolde
                 textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyAdapter$ViewHolder$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DirectApplyAdapter.ViewHolder.onBind$lambda$2(DirectApplyAdapter.this, dutyLeaveDirectApply, view);
+                        DirectApplyAdapter.ViewHolder.onBind$lambda$2(directApplyAdapter3, dutyLeaveDirectApply, view);
                     }
                 });
                 TextView textView4 = this.editBtn;
@@ -141,7 +141,7 @@ public final class DirectApplyAdapter extends RecyclerView.Adapter<BaseViewHolde
                 textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.DirectApplyAdapter$ViewHolder$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DirectApplyAdapter.ViewHolder.onBind$lambda$3(DirectApplyAdapter.this, dutyLeaveDirectApply, view);
+                        DirectApplyAdapter.ViewHolder.onBind$lambda$3(directApplyAdapter4, dutyLeaveDirectApply, view);
                     }
                 });
             } catch (Exception unused) {

@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.HostelMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class HostelFragmentTkmBindingImpl extends HostelFragmentTkmBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class HostelFragmentTkmBindingImpl extends HostelFragmentTkmBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (111 != variableId) {
+        if (112 != variableId) {
             return false;
         }
         setHostelMainViewModel((HostelMainViewModel) variable);

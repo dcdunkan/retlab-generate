@@ -4,15 +4,17 @@ import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.session.SessionalViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class SessionalFragmentBindingImpl extends SessionalFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -29,19 +31,21 @@ public class SessionalFragmentBindingImpl extends SessionalFragmentBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.spinner_semester, 3);
-        sparseIntArray.put(R.id.spinner_session, 4);
-        sparseIntArray.put(R.id.swipe_layout, 5);
-        sparseIntArray.put(R.id.rv_result_session, 6);
-        sparseIntArray.put(R.id.fab_session, 7);
+        sparseIntArray.put(R.id.semester_text, 3);
+        sparseIntArray.put(R.id.spinner_semester, 4);
+        sparseIntArray.put(R.id.session_spinner_layout, 5);
+        sparseIntArray.put(R.id.spinner_session, 6);
+        sparseIntArray.put(R.id.swipe_layout, 7);
+        sparseIntArray.put(R.id.rv_result_session, 8);
+        sparseIntArray.put(R.id.fabSession, 9);
     }
 
     public SessionalFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
     }
 
     private SessionalFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (FloatingActionButton) bindings[7], (RecyclerView) bindings[6], (Spinner) bindings[3], (Spinner) bindings[4], (SwipeRefreshLayout) bindings[5]);
+        super(bindingComponent, root, 0, (FloatingActionButton) bindings[9], (RecyclerView) bindings[8], (TextView) bindings[3], (MaterialCardView) bindings[5], (Spinner) bindings[4], (Spinner) bindings[6], (SwipeRefreshLayout) bindings[7]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -71,7 +75,7 @@ public class SessionalFragmentBindingImpl extends SessionalFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (204 != variableId) {
+        if (206 != variableId) {
             return false;
         }
         setSessionalViewModel((SessionalViewModel) variable);

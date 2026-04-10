@@ -4,19 +4,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowActivityPointBinding implements ViewBinding {
     public final TextView activityName;
     public final TextView activityPoint;
     public final TextView activitySem;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
 
-    private RowActivityPointBinding(CardView rootView, TextView activityName, TextView activityPoint, TextView activitySem) {
+    private RowActivityPointBinding(MaterialCardView rootView, TextView activityName, TextView activityPoint, TextView activitySem) {
         this.rootView = rootView;
         this.activityName = activityName;
         this.activityPoint = activityPoint;
@@ -24,7 +24,7 @@ public final class RowActivityPointBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -33,11 +33,11 @@ public final class RowActivityPointBinding implements ViewBinding {
     }
 
     public static RowActivityPointBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_activity_point, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_activity_point, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowActivityPointBinding bind(View rootView) {
@@ -50,7 +50,7 @@ public final class RowActivityPointBinding implements ViewBinding {
                 i = R.id.activity_sem;
                 TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
                 if (textView3 != null) {
-                    return new RowActivityPointBinding((CardView) rootView, textView, textView2, textView3);
+                    return new RowActivityPointBinding((MaterialCardView) rootView, textView, textView2, textView3);
                 }
             }
         }

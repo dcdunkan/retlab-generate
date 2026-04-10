@@ -20,8 +20,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: ParentDetailsViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ParentDetailsViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ParentDetailsViewModel extends ViewModel implements KoinComponent {
     private final MutableLiveData<Resource<AbcResponse>> abcViewResponse;
     private final CompositeDisposable compositeDisposable;
@@ -46,8 +46,8 @@ public final class ParentDetailsViewModel extends ViewModel implements KoinCompo
     public final void getDashData() {
         this.dashResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ProfileResponse> observeOn = this.dashRepository.getProfileApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ProfileResponse, Unit> function1 = new Function1<ProfileResponse, Unit>() { // from class: in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel$getDashData$1
+        Single<ProfileResponse> singleObserveOn = this.dashRepository.getProfileApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ProfileResponse, Unit> function1 = new Function1<ProfileResponse, Unit>() { // from class: in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel.getDashData.1
             {
                 super(1);
             }
@@ -58,20 +58,18 @@ public final class ParentDetailsViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ProfileResponse profileResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ParentDetailsViewModel.this.dashResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(profileResponse));
+                ParentDetailsViewModel.this.dashResponse.postValue(Resource.INSTANCE.success(profileResponse));
             }
         };
         Consumer<? super ProfileResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ParentDetailsViewModel.getDashData$lambda$0(Function1.this, obj);
+                ParentDetailsViewModel.getDashData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel$getDashData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel.getDashData.2
             {
                 super(1);
             }
@@ -82,17 +80,15 @@ public final class ParentDetailsViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ParentDetailsViewModel.this.dashResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ParentDetailsViewModel.this.dashResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.parentdetails.ParentDetailsViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ParentDetailsViewModel.getDashData$lambda$1(Function1.this, obj);
+                ParentDetailsViewModel.getDashData$lambda$1(function12, obj);
             }
         }));
     }

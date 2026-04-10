@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewGrievanceViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ViewGrievanceViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewGrievanceViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final GrievanceRepository grievanceRepository;
@@ -33,8 +33,8 @@ public final class ViewGrievanceViewModel extends ViewModel {
     public final void getGrievance(String id) {
         this.grievanceResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ViewGrievanceResponse> observeOn = this.grievanceRepository.viewGrievanceApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ViewGrievanceResponse, Unit> function1 = new Function1<ViewGrievanceResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel$getGrievance$1
+        Single<ViewGrievanceResponse> singleObserveOn = this.grievanceRepository.viewGrievanceApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ViewGrievanceResponse, Unit> function1 = new Function1<ViewGrievanceResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel.getGrievance.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class ViewGrievanceViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ViewGrievanceResponse viewGrievanceResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ViewGrievanceViewModel.this.grievanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(viewGrievanceResponse));
+                ViewGrievanceViewModel.this.grievanceResponse.postValue(Resource.INSTANCE.success(viewGrievanceResponse));
             }
         };
         Consumer<? super ViewGrievanceResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ViewGrievanceViewModel.getGrievance$lambda$0(Function1.this, obj);
+                ViewGrievanceViewModel.getGrievance$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel$getGrievance$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel.getGrievance.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class ViewGrievanceViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ViewGrievanceViewModel.this.grievanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ViewGrievanceViewModel.this.grievanceResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ViewGrievanceViewModel.getGrievance$lambda$1(Function1.this, obj);
+                ViewGrievanceViewModel.getGrievance$lambda$1(function12, obj);
             }
         }));
     }

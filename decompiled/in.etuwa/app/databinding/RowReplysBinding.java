@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBindings;
 import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowReplysBinding implements ViewBinding {
     private final RelativeLayout rootView;
     public final TextView viewReplyText;
@@ -34,11 +34,11 @@ public final class RowReplysBinding implements ViewBinding {
     }
 
     public static RowReplysBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_replys, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_replys, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowReplysBinding bind(View rootView) {

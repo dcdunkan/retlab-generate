@@ -17,22 +17,22 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: HostelFeeTask.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelFeeTask.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelFeeTask implements KoinComponent {
     private final Context context;
 
-    /* renamed from: preferene$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preferene$delegate, reason: from kotlin metadata */
     private final Lazy preferene;
 
     public HostelFeeTask(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         this.context = context;
         final HostelFeeTask hostelFeeTask = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preferene = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.hostel.fee.HostelFeeTask$special$$inlined$inject$default$1
+        this.preferene = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.hostel.fee.HostelFeeTask$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -42,7 +42,7 @@ public final class HostelFeeTask implements KoinComponent {
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = hostelFeeTask;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {

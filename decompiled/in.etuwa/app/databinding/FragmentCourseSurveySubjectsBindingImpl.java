@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentCourseSurveySubjectsBindingImpl extends FragmentCourseSurveySubjectsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentCourseSurveySubjectsBindingImpl extends FragmentCourseSurve
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (63 != variableId) {
+        if (62 != variableId) {
             return false;
         }
         setCourseSurveySubjectsViewModel((CourseSurveySubjectsViewModel) variable);

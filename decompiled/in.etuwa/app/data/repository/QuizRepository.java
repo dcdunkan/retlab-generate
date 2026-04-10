@@ -20,8 +20,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: QuizRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuizRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class QuizRepository {
     private final ApiHelper apiHelper;
 

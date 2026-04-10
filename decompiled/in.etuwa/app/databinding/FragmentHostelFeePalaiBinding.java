@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentHostelFeePalaiBinding extends ViewDataBinding {
     public final TextView hostelTv;
     public final TextView joinDate;

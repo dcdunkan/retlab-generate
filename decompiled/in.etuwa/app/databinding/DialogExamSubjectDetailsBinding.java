@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDetailViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogExamSubjectDetailsBinding extends ViewDataBinding {
     public final LinearLayout dueLayout;
 

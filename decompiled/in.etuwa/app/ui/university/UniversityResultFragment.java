@@ -56,27 +56,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: UniversityResultFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UniversityResultFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UniversityResultFragment extends BaseFragment implements UniversityResultAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private UniversityResultFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
     private String id;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: universityResultViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: universityResultViewModel$delegate, reason: from kotlin metadata */
     private final Lazy universityResultViewModel;
 
-    /* compiled from: UniversityResultFragment.kt */
+    /* JADX INFO: compiled from: UniversityResultFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -134,7 +134,7 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return universityResultFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(universityResultFragment);
@@ -148,7 +148,7 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -161,7 +161,7 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(UniversityResultViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(UniversityResultViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final UniversityResultFragment universityResultFragment2 = this;
@@ -201,16 +201,12 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.university.UniversityResultFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                UniversityResultAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = UniversityResultFragment.this.downList;
-                    UniversityResultFragment universityResultFragment3 = UniversityResultFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    UniversityResultFragment universityResultFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -219,11 +215,8 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = universityResultFragment3.getAdapter();
-                            arrayList2 = universityResultFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = universityResultFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            universityResultFragment3.getAdapter().notifyDataChanged(((DownloadModel) universityResultFragment3.downList.get(i)).getPosition());
+                            universityResultFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -242,7 +235,7 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
         return (UniversityResultAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final UniversityResultFragmentBinding get_binding() {
         return this._binding;
     }
@@ -259,7 +252,7 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: UniversityResultFragment.kt */
+    /* JADX INFO: compiled from: UniversityResultFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/university/UniversityResultFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/university/UniversityResultFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -339,7 +332,7 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
         getUniversityResultViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.university.UniversityResultFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                UniversityResultFragment.listenResponse$lambda$2(UniversityResultFragment.this, (Resource) obj);
+                UniversityResultFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -379,12 +372,12 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
                 UniversityResultFragmentBinding universityResultFragmentBinding2 = this$0.get_binding();
                 TextView textView = universityResultFragmentBinding2 != null ? universityResultFragmentBinding2.tvEarnedCredit : null;
                 if (textView != null) {
-                    textView.setText("Earned Credits  " + universityResultResponse.getEarned_credit());
+                    textView.setText(universityResultResponse.getEarned_credit());
                 }
                 UniversityResultFragmentBinding universityResultFragmentBinding3 = this$0.get_binding();
                 TextView textView2 = universityResultFragmentBinding3 != null ? universityResultFragmentBinding3.tvSgpa : null;
                 if (textView2 != null) {
-                    textView2.setText("SGPA  " + universityResultResponse.getSgpa());
+                    textView2.setText(universityResultResponse.getSgpa());
                 }
                 UniversityResultFragmentBinding universityResultFragmentBinding4 = this$0.get_binding();
                 TextView textView3 = universityResultFragmentBinding4 != null ? universityResultFragmentBinding4.regNo : null;
@@ -431,15 +424,15 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
 
     private final void downloadClicked(String url, int position, boolean flag) {
         RecyclerView recyclerView;
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
         String str = flag ? AppConstant.INTERNSHIP_PATH : AppConstant.UPLOAD_INTERNSHIP_PATH;
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace, flag)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, str);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace, flag)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, str);
                 return;
             }
             try {
@@ -449,14 +442,14 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(str, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(str, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
@@ -469,13 +462,13 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
     public boolean checkFileExistence(String fileName, boolean flag) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
         if (flag) {
-            Context requireContext = requireContext();
-            Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-            return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.INTERNSHIP_PATH);
+            Context contextRequireContext = requireContext();
+            Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.INTERNSHIP_PATH);
         }
-        Context requireContext2 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-        return new ValidChecker(requireContext2).checkFileExistence(fileName, AppConstant.UPLOAD_INTERNSHIP_PATH);
+        Context contextRequireContext2 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+        return new ValidChecker(contextRequireContext2).checkFileExistence(fileName, AppConstant.UPLOAD_INTERNSHIP_PATH);
     }
 
     private final void requestPermission() {
@@ -484,7 +477,7 @@ public final class UniversityResultFragment extends BaseFragment implements Univ
                 new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.university.UniversityResultFragment$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        UniversityResultFragment.requestPermission$lambda$3(UniversityResultFragment.this, dialogInterface, i);
+                        UniversityResultFragment.requestPermission$lambda$3(this.f$0, dialogInterface, i);
                     }
                 }).create().show();
             } else {

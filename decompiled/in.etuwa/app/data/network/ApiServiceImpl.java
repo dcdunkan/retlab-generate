@@ -18,6 +18,7 @@ import in.etuwa.app.data.model.attendance.AttendanceNewResponse;
 import in.etuwa.app.data.model.attendance.AttendanceRequest;
 import in.etuwa.app.data.model.attendance.AttendanceRequestNew;
 import in.etuwa.app.data.model.attendance.AttendanceResponse;
+import in.etuwa.app.data.model.calendar.AttendanceDetails;
 import in.etuwa.app.data.model.calendar.CalendarResponse;
 import in.etuwa.app.data.model.centralizedinfo.CentralizedInfoResponse;
 import in.etuwa.app.data.model.certificaterequest.CertificateRequestResponse;
@@ -39,6 +40,7 @@ import in.etuwa.app.data.model.dash.MaintenanceResponse;
 import in.etuwa.app.data.model.dash.PendingSurvey;
 import in.etuwa.app.data.model.dash.ProfileResponse;
 import in.etuwa.app.data.model.dash.daywisetimetaable.DayWiseResponse;
+import in.etuwa.app.data.model.due.DueResponse;
 import in.etuwa.app.data.model.due.duepay.DuePayUrl;
 import in.etuwa.app.data.model.due.duepay.NoDueCertificateResponse;
 import in.etuwa.app.data.model.due.duepaynew.DuePayNewResponse;
@@ -180,6 +182,7 @@ import in.etuwa.app.data.model.result.SeasonRequest;
 import in.etuwa.app.data.model.result.moduletest.ResultModuleTestResponse;
 import in.etuwa.app.data.model.result.tutorial.TutorialResultResponse;
 import in.etuwa.app.data.model.result.univ.UnivResponse;
+import in.etuwa.app.data.model.result.univ.UnivTotalResponse;
 import in.etuwa.app.data.model.semregistration.AcademicYearResponse;
 import in.etuwa.app.data.model.semregistration.SemRegViewResponse;
 import in.etuwa.app.data.model.semregistration.list.SemRegisterListResponse;
@@ -200,6 +203,7 @@ import in.etuwa.app.data.model.subjectregistration.SubjectsListResponse;
 import in.etuwa.app.data.model.subjectregistration.ViewSubjectRegistrationResponse;
 import in.etuwa.app.data.model.survey.GenSurveyQuestionRequest;
 import in.etuwa.app.data.model.survey.SubmitResponse;
+import in.etuwa.app.data.model.survey.SubmitTeacherResponse;
 import in.etuwa.app.data.model.survey.Survey;
 import in.etuwa.app.data.model.survey.SurveyQuestion;
 import in.etuwa.app.data.model.survey.SurveyRequest;
@@ -211,7 +215,6 @@ import in.etuwa.app.data.model.survey.graduateexit.DoGraduateSurveyResponse;
 import in.etuwa.app.data.model.survey.graduateexit.GraduateExitSurveyListResponse;
 import in.etuwa.app.data.model.survey.posurvey.POSurveyResponse;
 import in.etuwa.app.data.model.survey.posurvey.PoQuestionsResponse;
-import in.etuwa.app.data.model.timetable.TimetableResponse;
 import in.etuwa.app.data.model.timetable.change.ChangeTimeTableResponse;
 import in.etuwa.app.data.model.timetable.special.SpecialResponse;
 import in.etuwa.app.data.model.transport.TransportFeeResponse;
@@ -224,6 +227,7 @@ import in.etuwa.app.data.model.tutorial.TutorialResponse;
 import in.etuwa.app.data.model.university.UniversityResultResponse;
 import in.etuwa.app.data.model.updateprofile.UpdateProfile;
 import in.etuwa.app.data.model.video.VideoResponse;
+import in.etuwa.app.ui.dashboard.dashtable.TimeTableMonthlyNewResponse;
 import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDetailDialogKt;
 import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import io.reactivex.Observable;
@@ -236,10 +240,9 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import org.bouncycastle.i18n.ErrorBundle;
-import retrofit2.Response;
 
-/* compiled from: ApiServiceImpl.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ApiServiceImpl.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ApiServiceImpl implements ApiService {
     @Override // in.etuwa.app.data.network.ApiService
     public Single<Institution> getInstitutionsApiCall() {
@@ -267,6 +270,17 @@ public final class ApiServiceImpl implements ApiService {
     public Single<SuccessResponse> updateBankDetailsApiCall(Map<String, String> studentDetails) {
         Intrinsics.checkNotNullParameter(studentDetails, "studentDetails");
         return ApiClient.INSTANCE.getInstance().updateBankDetailsApiCall(studentDetails);
+    }
+
+    @Override // in.etuwa.app.data.network.ApiService
+    public Single<AttendanceDetails> getAttendanceDetails() {
+        return ApiClient.INSTANCE.getInstance().getAttendanceDetails();
+    }
+
+    @Override // in.etuwa.app.data.network.ApiService
+    public Single<SuccessResponse> getTimeTableNew(String month) {
+        Intrinsics.checkNotNullParameter(month, "month");
+        return ApiClient.INSTANCE.getInstance().getTimeTableNew(month);
     }
 
     @Override // in.etuwa.app.data.network.ApiService
@@ -327,11 +341,6 @@ public final class ApiServiceImpl implements ApiService {
     @Override // in.etuwa.app.data.network.ApiService
     public Single<ProfileResponse> getProfileApiCall() {
         return ApiClient.INSTANCE.getInstance().getProfileApiCall();
-    }
-
-    @Override // in.etuwa.app.data.network.ApiService
-    public Single<TimetableResponse> getTimetableApiCall() {
-        return ApiClient.INSTANCE.getInstance().getTimetableApiCall();
     }
 
     @Override // in.etuwa.app.data.network.ApiService
@@ -551,6 +560,16 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
+    public Single<SubmitTeacherResponse> submitTeacherSurveyApiCall(String questionId, String optionId, String teacherId, String subjectId, String sessionId) {
+        Intrinsics.checkNotNullParameter(questionId, "questionId");
+        Intrinsics.checkNotNullParameter(optionId, "optionId");
+        Intrinsics.checkNotNullParameter(teacherId, "teacherId");
+        Intrinsics.checkNotNullParameter(subjectId, "subjectId");
+        Intrinsics.checkNotNullParameter(sessionId, "sessionId");
+        return ApiClient.INSTANCE.getInstance().submitTeacherSurveyApiCall(questionId, optionId, teacherId, subjectId, sessionId);
+    }
+
+    @Override // in.etuwa.app.data.network.ApiService
     public Single<ArrayList<TeacherList>> getSurveyTeachersApiCall(GenSurveyQuestionRequest request) {
         Intrinsics.checkNotNullParameter(request, "request");
         return ApiClient.INSTANCE.getInstance().getSurveyTeachersApiCall(request);
@@ -617,6 +636,11 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
+    public Single<UnivTotalResponse> getResultUnivApiCall() {
+        return ApiClient.INSTANCE.getInstance().getResultUnivApiCall();
+    }
+
+    @Override // in.etuwa.app.data.network.ApiService
     public Single<ArrayList<MedicalLeave>> getMedicalLeaveApiCall() {
         return ApiClient.INSTANCE.getInstance().getMedicalLeaveApiCall();
     }
@@ -646,9 +670,9 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
-    public Single<ModuleTestResponse> getModuleTestApiCall(String r2) {
-        Intrinsics.checkNotNullParameter(r2, "new");
-        return ApiClient.INSTANCE.getInstance().getModuleTestApiCall(r2);
+    public Single<ModuleTestResponse> getModuleTestApiCall(String str) {
+        Intrinsics.checkNotNullParameter(str, "new");
+        return ApiClient.INSTANCE.getInstance().getModuleTestApiCall(str);
     }
 
     @Override // in.etuwa.app.data.network.ApiService
@@ -676,11 +700,12 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
-    public Observable<SuccessResponse> uploadAssignmentApiCall(RequestBody username, RequestBody password, RequestBody id, MultipartBody.Part file) {
+    public Observable<SuccessResponse> uploadAssignmentApiCall(RequestBody username, RequestBody password, RequestBody id, RequestBody link, MultipartBody.Part file) {
         Intrinsics.checkNotNullParameter(username, "username");
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(id, "id");
-        return ApiClient.INSTANCE.getInstance().uploadAssignmentApiCall(username, password, id, file);
+        Intrinsics.checkNotNullParameter(link, "link");
+        return ApiClient.INSTANCE.getInstance().uploadAssignmentApiCall(username, password, id, link, file);
     }
 
     @Override // in.etuwa.app.data.network.ApiService
@@ -834,7 +859,7 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
-    public Single<DuePayNewResponse> getDuesApiCall() {
+    public Single<DueResponse> getDuesApiCall() {
         return ApiClient.INSTANCE.getInstance().getDuesApiCall();
     }
 
@@ -1010,7 +1035,7 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
-    public Single<Response<ResetPassword>> getResetPasswordApiCall() {
+    public Single<ResetPassword> getResetPasswordApiCall() {
         return ApiClient.INSTANCE.getInstance().getResetPasswordApiCall();
     }
 
@@ -1504,12 +1529,6 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
-    public Single<SuccessResponse> verifyAbcIdApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return ApiClient.INSTANCE.getInstance().verifyAbcIdApiCall(id);
-    }
-
-    @Override // in.etuwa.app.data.network.ApiService
     public Single<HostelPalaiAdmissionResponse> getPalaiHostelAdmsnApiCall() {
         return ApiClient.INSTANCE.getInstance().getPalaiHostelAdmsnApiCall();
     }
@@ -1681,6 +1700,17 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
+    public Single<SuccessResponse> getHostelApplyLeaveNewApiCall(String leaveType, String fromDate, String toDate, String fromDateTime, String toDateTime, String reason) {
+        Intrinsics.checkNotNullParameter(leaveType, "leaveType");
+        Intrinsics.checkNotNullParameter(fromDate, "fromDate");
+        Intrinsics.checkNotNullParameter(toDate, "toDate");
+        Intrinsics.checkNotNullParameter(fromDateTime, "fromDateTime");
+        Intrinsics.checkNotNullParameter(toDateTime, "toDateTime");
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        return ApiClient.INSTANCE.getInstance().getHostelApplyLeaveNewApiCall(leaveType, fromDate, toDate, fromDateTime, toDateTime, reason);
+    }
+
+    @Override // in.etuwa.app.data.network.ApiService
     public Single<HostelAttParentViewResponse> getHostelLeaveViewParentApiCall(String date) {
         Intrinsics.checkNotNullParameter(date, "date");
         return ApiClient.INSTANCE.getInstance().getHostelLeaveViewParentApiCall(date);
@@ -1711,15 +1741,15 @@ public final class ApiServiceImpl implements ApiService {
     }
 
     @Override // in.etuwa.app.data.network.ApiService
-    public Single<SuccessResponse> getHostelApproveLeaveParentApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return ApiClient.INSTANCE.getInstance().getHostelApproveLeaveParentApiCall(id);
+    public Single<SuccessResponse> getHostelApproveLeaveParentApiCall(Map<String, String> approveCollection) {
+        Intrinsics.checkNotNullParameter(approveCollection, "approveCollection");
+        return ApiClient.INSTANCE.getInstance().getHostelApproveLeaveParentApiCall(approveCollection);
     }
 
     @Override // in.etuwa.app.data.network.ApiService
-    public Single<SuccessResponse> getHostelRejectLeaveParentApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return ApiClient.INSTANCE.getInstance().getHostelRejectLeaveParentApiCall(id);
+    public Single<SuccessResponse> getHostelRejectLeaveParentApiCall(Map<String, String> rejectCollection) {
+        Intrinsics.checkNotNullParameter(rejectCollection, "rejectCollection");
+        return ApiClient.INSTANCE.getInstance().getHostelRejectLeaveParentApiCall(rejectCollection);
     }
 
     @Override // in.etuwa.app.data.network.ApiService
@@ -1785,6 +1815,12 @@ public final class ApiServiceImpl implements ApiService {
     public Single<DayWiseResponse> getDayWiseTimeTable(String date) {
         Intrinsics.checkNotNullParameter(date, "date");
         return ApiClient.INSTANCE.getInstance().getDayWiseTimeTable(date);
+    }
+
+    @Override // in.etuwa.app.data.network.ApiService
+    public Single<TimeTableMonthlyNewResponse> getTimeTableMonthlyApiCall(String date) {
+        Intrinsics.checkNotNullParameter(date, "date");
+        return ApiClient.INSTANCE.getInstance().getTimeTableMonthlyApiCall(date);
     }
 
     @Override // in.etuwa.app.data.network.ApiService

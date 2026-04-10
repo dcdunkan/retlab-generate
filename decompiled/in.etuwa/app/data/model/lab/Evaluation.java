@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.lab;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Evaluation.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Evaluation.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Evaluation {
     private final String output;
     private final String record;
@@ -27,22 +27,22 @@ public final /* data */ class Evaluation {
         return evaluation.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getTopic() {
         return this.topic;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getOutput() {
         return this.output;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getRecord() {
         return this.record;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getViva() {
         return this.viva;
     }

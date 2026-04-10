@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddPositionHeldBindingImpl extends DialogAddPositionHeldBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -85,7 +85,7 @@ public class DialogAddPositionHeldBindingImpl extends DialogAddPositionHeldBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (17 != variableId) {
+        if (16 != variableId) {
             return false;
         }
         setAddPositionHeldViewModel((AddPositionHeldViewModel) variable);

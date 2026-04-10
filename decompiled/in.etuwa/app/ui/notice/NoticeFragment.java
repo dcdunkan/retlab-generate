@@ -26,7 +26,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.sessions.settings.RemoteSettings;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
@@ -44,7 +43,6 @@ import in.etuwa.app.ui.base.BaseFragment;
 import in.etuwa.app.ui.notice.NoticeAdapter;
 import in.etuwa.app.ui.notice.NoticeMainAdapter;
 import in.etuwa.app.utils.AppConstant;
-import in.etuwa.app.utils.RecycleExtKt;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
@@ -66,31 +64,31 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: NoticeFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: NoticeFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class NoticeFragment extends BaseFragment implements NoticeAdapter.NoticeListener, NoticeMainAdapter.NoticeListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private final int REQUEST_CODE;
     private NoticeFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: adapterMain$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapterMain$delegate, reason: from kotlin metadata */
     private final Lazy adapterMain;
     private ArrayList<DownloadModel> downList;
     private MainCallBackListener listener;
 
-    /* renamed from: noticeViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: noticeViewModel$delegate, reason: from kotlin metadata */
     private final Lazy noticeViewModel;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: NoticeFragment.kt */
+    /* JADX INFO: compiled from: NoticeFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -123,7 +121,15 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment
+    protected void hideBaseView() {
+    }
+
+    @Override // in.etuwa.app.ui.base.BaseFragment
     protected void hideProgress() {
+    }
+
+    @Override // in.etuwa.app.ui.base.BaseFragment
+    protected void showBaseView() {
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment
@@ -140,7 +146,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return noticeFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(noticeFragment);
@@ -154,7 +160,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -167,7 +173,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(NoticeViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(NoticeViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final NoticeFragment noticeFragment2 = this;
@@ -224,16 +230,12 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.notice.NoticeFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                NoticeAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = NoticeFragment.this.downList;
-                    NoticeFragment noticeFragment3 = NoticeFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    NoticeFragment noticeFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -242,11 +244,8 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = noticeFragment3.getAdapter();
-                            arrayList2 = noticeFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = noticeFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            noticeFragment3.getAdapter().notifyDataChanged(((DownloadModel) noticeFragment3.downList.get(i)).getPosition());
+                            noticeFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -269,7 +268,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
         return (NoticeMainAdapter) this.adapterMain.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final NoticeFragmentBinding get_binding() {
         return this._binding;
     }
@@ -278,7 +277,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: NoticeFragment.kt */
+    /* JADX INFO: compiled from: NoticeFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/notice/NoticeFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/notice/NoticeFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -323,7 +322,6 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
         CardView cardView;
-        SwipeRefreshLayout swipeRefreshLayout;
         FragmentActivity activity = getActivity();
         if (activity != null) {
             activity.setTitle(getString(R.string.noticeborad));
@@ -336,40 +334,51 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
             if (recyclerView != null) {
                 recyclerView.setAdapter(getAdapter());
             }
+            NoticeFragmentBinding noticeFragmentBinding2 = get_binding();
+            RecyclerView recyclerView2 = noticeFragmentBinding2 != null ? noticeFragmentBinding2.rvNotice : null;
+            if (recyclerView2 != null) {
+                recyclerView2.setVisibility(8);
+            }
+            NoticeFragmentBinding noticeFragmentBinding3 = get_binding();
+            RecyclerView recyclerView3 = noticeFragmentBinding3 != null ? noticeFragmentBinding3.rvNoticeMain : null;
+            if (recyclerView3 != null) {
+                recyclerView3.setVisibility(8);
+            }
             getAdapter().setNoticeListener(this);
             listenResponse();
             getNoticeViewModel().getNotice();
         } else {
-            NoticeFragmentBinding noticeFragmentBinding2 = get_binding();
-            RecyclerView recyclerView2 = noticeFragmentBinding2 != null ? noticeFragmentBinding2.rvNotice : null;
-            if (recyclerView2 != null) {
-                recyclerView2.setAdapter(getAdapterMain());
+            NoticeFragmentBinding noticeFragmentBinding4 = get_binding();
+            RecyclerView recyclerView4 = noticeFragmentBinding4 != null ? noticeFragmentBinding4.rvNotice : null;
+            if (recyclerView4 != null) {
+                recyclerView4.setVisibility(8);
+            }
+            NoticeFragmentBinding noticeFragmentBinding5 = get_binding();
+            RecyclerView recyclerView5 = noticeFragmentBinding5 != null ? noticeFragmentBinding5.rvNoticeMain : null;
+            if (recyclerView5 != null) {
+                recyclerView5.setVisibility(0);
+            }
+            NoticeFragmentBinding noticeFragmentBinding6 = get_binding();
+            RecyclerView recyclerView6 = noticeFragmentBinding6 != null ? noticeFragmentBinding6.rvNoticeMain : null;
+            if (recyclerView6 != null) {
+                recyclerView6.setAdapter(getAdapterMain());
             }
             getAdapterMain().setNoticeListener(this);
             listenResponseMain();
             getNoticeViewModel().getNoticeMain();
         }
-        NoticeFragmentBinding noticeFragmentBinding3 = get_binding();
-        if (noticeFragmentBinding3 != null && (swipeRefreshLayout = noticeFragmentBinding3.swipeLayout) != null) {
-            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda1
-                @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
-                public final void onRefresh() {
-                    NoticeFragment.setUp$lambda$0(NoticeFragment.this);
-                }
-            });
-        }
-        NoticeFragmentBinding noticeFragmentBinding4 = get_binding();
-        if (noticeFragmentBinding4 != null && (cardView = noticeFragmentBinding4.cardInfo) != null) {
-            cardView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda2
+        NoticeFragmentBinding noticeFragmentBinding7 = get_binding();
+        if (noticeFragmentBinding7 != null && (cardView = noticeFragmentBinding7.cardInfo) != null) {
+            cardView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    NoticeFragment.setUp$lambda$1(NoticeFragment.this, view);
+                    NoticeFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
         if (Intrinsics.areEqual(getPreference().getBaseUrl(), "https://chinarts.etlab.in/androidapp/")) {
-            NoticeFragmentBinding noticeFragmentBinding5 = get_binding();
-            TextView textView = noticeFragmentBinding5 != null ? noticeFragmentBinding5.infoBtn : null;
+            NoticeFragmentBinding noticeFragmentBinding8 = get_binding();
+            TextView textView = noticeFragmentBinding8 != null ? noticeFragmentBinding8.infoBtn : null;
             if (textView == null) {
                 return;
             }
@@ -378,23 +387,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$0(NoticeFragment this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "jecc", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "tkmce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "awh", false, 2, (Object) null)) {
-            this$0.getNoticeViewModel().getNotice();
-        } else {
-            this$0.getNoticeViewModel().getNoticeMain();
-        }
-        NoticeFragmentBinding noticeFragmentBinding = this$0.get_binding();
-        SwipeRefreshLayout swipeRefreshLayout = noticeFragmentBinding != null ? noticeFragmentBinding.swipeLayout : null;
-        if (swipeRefreshLayout == null) {
-            return;
-        }
-        swipeRefreshLayout.setRefreshing(false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$1(NoticeFragment this$0, View view) {
+    public static final void setUp$lambda$0(NoticeFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         MainCallBackListener mainCallBackListener = this$0.listener;
         if (mainCallBackListener != null) {
@@ -403,16 +396,16 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     }
 
     private final void listenResponse() {
-        getNoticeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda3
+        getNoticeViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                NoticeFragment.listenResponse$lambda$3(NoticeFragment.this, (Resource) obj);
+                NoticeFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$3(NoticeFragment this$0, Resource resource) {
+    public static final void listenResponse$lambda$2(NoticeFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
@@ -421,10 +414,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
             NoticeJeccResponse noticeJeccResponse = (NoticeJeccResponse) resource.getData();
             if (noticeJeccResponse != null) {
                 this$0.showBaseView();
-                if (noticeJeccResponse.getLogin()) {
-                    this$0.getAdapter().addItems(noticeJeccResponse.getNotice());
-                    return;
-                }
+                noticeJeccResponse.getLogin();
                 return;
             }
             return;
@@ -453,16 +443,16 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     }
 
     private final void listenResponseMain() {
-        getNoticeViewModel().getResponseMain().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda4
+        getNoticeViewModel().getResponseMain().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                NoticeFragment.listenResponseMain$lambda$5(NoticeFragment.this, (Resource) obj);
+                NoticeFragment.listenResponseMain$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponseMain$lambda$5(NoticeFragment this$0, Resource resource) {
+    public static final void listenResponseMain$lambda$4(NoticeFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
@@ -502,26 +492,6 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
         ToastExtKt.showErrorToast(recyclerView, message);
     }
 
-    @Override // in.etuwa.app.ui.base.BaseFragment
-    protected void showBaseView() {
-        RecyclerView recyclerView;
-        NoticeFragmentBinding noticeFragmentBinding = get_binding();
-        if (noticeFragmentBinding == null || (recyclerView = noticeFragmentBinding.rvNotice) == null) {
-            return;
-        }
-        RecycleExtKt.show(recyclerView);
-    }
-
-    @Override // in.etuwa.app.ui.base.BaseFragment
-    protected void hideBaseView() {
-        RecyclerView recyclerView;
-        NoticeFragmentBinding noticeFragmentBinding = get_binding();
-        if (noticeFragmentBinding == null || (recyclerView = noticeFragmentBinding.rvNotice) == null) {
-            return;
-        }
-        RecycleExtKt.hide(recyclerView);
-    }
-
     @Override // androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
@@ -532,17 +502,17 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     public void downloadFile(String url, int position) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
         if (checkPermissions()) {
             System.out.println((Object) "");
         } else {
             System.out.println((Object) "");
         }
         if (Build.VERSION.SDK_INT >= 34 || checkPermissions()) {
-            if (checkFileExistence(replace)) {
-                Context requireContext = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                new DownloadManagerHelper(requireContext).openFile(replace, AppConstant.NOTICE_BOARD_PATH);
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext).openFile(strReplace, AppConstant.NOTICE_BOARD_PATH);
                 return;
             }
             try {
@@ -552,14 +522,14 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext2).startDownloading(AppConstant.NOTICE_BOARD_PATH, url);
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext2).startDownloading(AppConstant.NOTICE_BOARD_PATH, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 2);
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception e) {
                 Log.e("DownloadError", "Error during download: " + e.getMessage());
@@ -570,10 +540,10 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     }
 
     private final boolean checkPermissions() {
-        int checkSelfPermission = ContextCompat.checkSelfPermission(requireContext(), "android.permission.READ_EXTERNAL_STORAGE");
-        int checkSelfPermission2 = ContextCompat.checkSelfPermission(requireContext(), "android.permission.WRITE_EXTERNAL_STORAGE");
-        Log.d("Permissions", "Read Permission: " + checkSelfPermission + ", Write Permission: " + checkSelfPermission2);
-        return checkSelfPermission == 0 && checkSelfPermission2 == 0;
+        int iCheckSelfPermission = ContextCompat.checkSelfPermission(requireContext(), "android.permission.READ_EXTERNAL_STORAGE");
+        int iCheckSelfPermission2 = ContextCompat.checkSelfPermission(requireContext(), "android.permission.WRITE_EXTERNAL_STORAGE");
+        Log.d("Permissions", "Read Permission: " + iCheckSelfPermission + ", Write Permission: " + iCheckSelfPermission2);
+        return iCheckSelfPermission == 0 && iCheckSelfPermission2 == 0;
     }
 
     private final void requestPermission() {
@@ -581,7 +551,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
             new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.notice.NoticeFragment$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    NoticeFragment.requestPermission$lambda$6(NoticeFragment.this, dialogInterface, i);
+                    NoticeFragment.requestPermission$lambda$5(this.f$0, dialogInterface, i);
                 }
             }).create().show();
         } else {
@@ -590,7 +560,7 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void requestPermission$lambda$6(NoticeFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void requestPermission$lambda$5(NoticeFragment this$0, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ActivityCompat.requestPermissions(this$0.requireActivity(), new String[]{"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"}, this$0.REQUEST_CODE);
     }
@@ -611,9 +581,9 @@ public final class NoticeFragment extends BaseFragment implements NoticeAdapter.
     @Override // in.etuwa.app.ui.notice.NoticeAdapter.NoticeListener, in.etuwa.app.ui.notice.NoticeMainAdapter.NoticeListener
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.NOTICE_BOARD_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.NOTICE_BOARD_PATH);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

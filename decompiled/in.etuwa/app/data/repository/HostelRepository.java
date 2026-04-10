@@ -42,8 +42,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: HostelRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class HostelRepository implements KoinComponent {
     private final ApiHelper apiHelper;
 
@@ -204,6 +204,16 @@ public final class HostelRepository implements KoinComponent {
         return this.apiHelper.getHostelApplyLeaveApiCall(leaveType, fromDate, toDate, reason);
     }
 
+    public final Single<SuccessResponse> getHostelApplyLeaveNewApiCall(String leaveType, String fromDate, String toDate, String fromDateTime, String toDateTime, String reason) {
+        Intrinsics.checkNotNullParameter(leaveType, "leaveType");
+        Intrinsics.checkNotNullParameter(fromDate, "fromDate");
+        Intrinsics.checkNotNullParameter(toDate, "toDate");
+        Intrinsics.checkNotNullParameter(fromDateTime, "fromDateTime");
+        Intrinsics.checkNotNullParameter(toDateTime, "toDateTime");
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        return this.apiHelper.getHostelApplyLeaveNewApiCall(leaveType, fromDate, toDate, fromDateTime, toDateTime, reason);
+    }
+
     public final Single<HostelAttParentViewResponse> getHostelLeaveViewParentApiCall(String date) {
         Intrinsics.checkNotNullParameter(date, "date");
         return this.apiHelper.getHostelLeaveViewParentApiCall(date);
@@ -224,14 +234,14 @@ public final class HostelRepository implements KoinComponent {
         return this.apiHelper.getHostelRevokeLeaveParentApiCall(id);
     }
 
-    public final Single<SuccessResponse> getHostelApproveLeaveParentApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiHelper.getHostelApproveLeaveParentApiCall(id);
+    public final Single<SuccessResponse> getHostelApproveLeaveParentApiCall(Map<String, String> approveDetails) {
+        Intrinsics.checkNotNullParameter(approveDetails, "approveDetails");
+        return this.apiHelper.getHostelApproveLeaveParentApiCall(approveDetails);
     }
 
-    public final Single<SuccessResponse> getHostelRejectLeaveParentApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiHelper.getHostelRejectLeaveParentApiCall(id);
+    public final Single<SuccessResponse> getHostelRejectLeaveParentApiCall(Map<String, String> approveDetails) {
+        Intrinsics.checkNotNullParameter(approveDetails, "approveDetails");
+        return this.apiHelper.getHostelRejectLeaveParentApiCall(approveDetails);
     }
 
     public final Single<HostelAttCalResponse> getHostelAttCalApiCall(String month, String year) {

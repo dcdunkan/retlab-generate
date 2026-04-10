@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AddGrievanceDialogBinding extends ViewDataBinding {
     public final TextView addGrievanceBtn;
     public final TextInputLayout comntLayout;

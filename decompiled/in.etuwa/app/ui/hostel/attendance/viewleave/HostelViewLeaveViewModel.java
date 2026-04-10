@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelViewLeaveViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelViewLeaveViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelViewLeaveViewModel extends ViewModel {
     private final MutableLiveData<Resource<SuccessResponse>> alreadyExitResponse;
     private final CompositeDisposable compositeDisposable;
@@ -40,8 +40,8 @@ public final class HostelViewLeaveViewModel extends ViewModel {
     public final void getHostelAttView() {
         this.hostelResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelAttViewResponse> observeOn = this.hostelRepository.getHostelViewLeaveApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelAttViewResponse, Unit> function1 = new Function1<HostelAttViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$getHostelAttView$1
+        Single<HostelAttViewResponse> singleObserveOn = this.hostelRepository.getHostelViewLeaveApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelAttViewResponse, Unit> function1 = new Function1<HostelAttViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.getHostelAttView.1
             {
                 super(1);
             }
@@ -52,20 +52,18 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelAttViewResponse hostelAttViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelAttViewResponse));
+                HostelViewLeaveViewModel.this.hostelResponse.postValue(Resource.INSTANCE.success(hostelAttViewResponse));
             }
         };
         Consumer<? super HostelAttViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.getHostelAttView$lambda$0(Function1.this, obj);
+                HostelViewLeaveViewModel.getHostelAttView$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$getHostelAttView$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.getHostelAttView.2
             {
                 super(1);
             }
@@ -76,17 +74,15 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelViewLeaveViewModel.this.hostelResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.getHostelAttView$lambda$1(Function1.this, obj);
+                HostelViewLeaveViewModel.getHostelAttView$lambda$1(function12, obj);
             }
         }));
     }
@@ -111,8 +107,8 @@ public final class HostelViewLeaveViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.getHostelDeleteLeaveApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$getDeleteLeave$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.getHostelDeleteLeaveApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.getDeleteLeave.1
             {
                 super(1);
             }
@@ -123,20 +119,18 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.deleteResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                HostelViewLeaveViewModel.this.deleteResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.getDeleteLeave$lambda$2(Function1.this, obj);
+                HostelViewLeaveViewModel.getDeleteLeave$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$getDeleteLeave$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.getDeleteLeave.2
             {
                 super(1);
             }
@@ -147,17 +141,15 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.deleteResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelViewLeaveViewModel.this.deleteResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.getDeleteLeave$lambda$3(Function1.this, obj);
+                HostelViewLeaveViewModel.getDeleteLeave$lambda$3(function12, obj);
             }
         }));
     }
@@ -182,8 +174,8 @@ public final class HostelViewLeaveViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.exitResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.checkExitApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$exitLeaveApproveSecurityData$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.checkExitApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.exitLeaveApproveSecurityData.1
             {
                 super(1);
             }
@@ -194,20 +186,18 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.exitResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                HostelViewLeaveViewModel.this.exitResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.exitLeaveApproveSecurityData$lambda$4(Function1.this, obj);
+                HostelViewLeaveViewModel.exitLeaveApproveSecurityData$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$exitLeaveApproveSecurityData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.exitLeaveApproveSecurityData.2
             {
                 super(1);
             }
@@ -218,17 +208,15 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.exitResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelViewLeaveViewModel.this.exitResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.exitLeaveApproveSecurityData$lambda$5(Function1.this, obj);
+                HostelViewLeaveViewModel.exitLeaveApproveSecurityData$lambda$5(function12, obj);
             }
         }));
     }
@@ -253,8 +241,8 @@ public final class HostelViewLeaveViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.alreadyExitResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.checkAlreadyExitApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$alreadyExitLeaveApproveSecurityData$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.checkAlreadyExitApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.alreadyExitLeaveApproveSecurityData.1
             {
                 super(1);
             }
@@ -265,20 +253,18 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.alreadyExitResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                HostelViewLeaveViewModel.this.alreadyExitResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.alreadyExitLeaveApproveSecurityData$lambda$6(Function1.this, obj);
+                HostelViewLeaveViewModel.alreadyExitLeaveApproveSecurityData$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$alreadyExitLeaveApproveSecurityData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel.alreadyExitLeaveApproveSecurityData.2
             {
                 super(1);
             }
@@ -289,17 +275,15 @@ public final class HostelViewLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelViewLeaveViewModel.this.alreadyExitResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelViewLeaveViewModel.this.alreadyExitResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelViewLeaveViewModel.alreadyExitLeaveApproveSecurityData$lambda$7(Function1.this, obj);
+                HostelViewLeaveViewModel.alreadyExitLeaveApproveSecurityData$lambda$7(function12, obj);
             }
         }));
     }

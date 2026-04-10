@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogVisionBindingImpl extends DialogVisionBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -59,7 +59,7 @@ public class DialogVisionBindingImpl extends DialogVisionBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (249 != variableId) {
+        if (251 != variableId) {
             return false;
         }
         setVisionDialogViewModel((VisionDialogViewModel) variable);

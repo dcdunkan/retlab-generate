@@ -10,8 +10,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: HomeWorkRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HomeWorkRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class HomeWorkRepository {
     private final ApiHelper apiHelper;
 

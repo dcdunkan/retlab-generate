@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.dashboard.dashtable.DashTableViewViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentDashTableViewBindingImpl extends FragmentDashTableViewBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -58,7 +58,7 @@ public class FragmentDashTableViewBindingImpl extends FragmentDashTableViewBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (68 != variableId) {
+        if (67 != variableId) {
             return false;
         }
         setDashTableViewViewModel((DashTableViewViewModel) variable);

@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.posurvey.POSurveyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentPoSurveyBindingImpl extends FragmentPoSurveyBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentPoSurveyBindingImpl extends FragmentPoSurveyBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (153 != variableId) {
+        if (154 != variableId) {
             return false;
         }
         setPOSurveyViewModel((POSurveyViewModel) variable);

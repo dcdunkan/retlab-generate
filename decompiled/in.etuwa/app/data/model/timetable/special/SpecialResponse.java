@@ -4,8 +4,8 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SpecialResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SpecialResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SpecialResponse {
     private String date;
     private String period;
@@ -28,22 +28,22 @@ public final /* data */ class SpecialResponse {
         return specialResponse.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getTeacher() {
         return this.teacher;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getPeriod() {
         return this.period;
     }

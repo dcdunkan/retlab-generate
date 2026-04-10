@@ -3,13 +3,13 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowFeeArtsBinding implements ViewBinding {
     public final TextView artsAmountLbl;
     public final TextView artsBalanceLbl;
@@ -17,10 +17,10 @@ public final class RowFeeArtsBinding implements ViewBinding {
     public final TextView artsPaidLbl;
     public final TextView artsPayableLbl;
     public final TextView artsScholorshipLbl;
-    public final LinearLayout linearArtsFee;
-    private final LinearLayout rootView;
+    public final MaterialCardView linearArtsFee;
+    private final MaterialCardView rootView;
 
-    private RowFeeArtsBinding(LinearLayout rootView, TextView artsAmountLbl, TextView artsBalanceLbl, TextView artsFeeName, TextView artsPaidLbl, TextView artsPayableLbl, TextView artsScholorshipLbl, LinearLayout linearArtsFee) {
+    private RowFeeArtsBinding(MaterialCardView rootView, TextView artsAmountLbl, TextView artsBalanceLbl, TextView artsFeeName, TextView artsPaidLbl, TextView artsPayableLbl, TextView artsScholorshipLbl, MaterialCardView linearArtsFee) {
         this.rootView = rootView;
         this.artsAmountLbl = artsAmountLbl;
         this.artsBalanceLbl = artsBalanceLbl;
@@ -32,7 +32,7 @@ public final class RowFeeArtsBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -41,11 +41,11 @@ public final class RowFeeArtsBinding implements ViewBinding {
     }
 
     public static RowFeeArtsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_fee_arts, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_fee_arts, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowFeeArtsBinding bind(View rootView) {
@@ -67,8 +67,8 @@ public final class RowFeeArtsBinding implements ViewBinding {
                             i = R.id.arts_scholorship_lbl;
                             TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
                             if (textView6 != null) {
-                                LinearLayout linearLayout = (LinearLayout) rootView;
-                                return new RowFeeArtsBinding(linearLayout, textView, textView2, textView3, textView4, textView5, textView6, linearLayout);
+                                MaterialCardView materialCardView = (MaterialCardView) rootView;
+                                return new RowFeeArtsBinding(materialCardView, textView, textView2, textView3, textView4, textView5, textView6, materialCardView);
                             }
                         }
                     }

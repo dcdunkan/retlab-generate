@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowReceiptBinding implements ViewBinding {
     public final LinearLayout reasonLayout;
     public final TextView receiptAmount;
@@ -19,9 +19,9 @@ public final class RowReceiptBinding implements ViewBinding {
     public final TextView receiptPayMethod;
     public final TextView receiptRefund;
     public final TextView receiptStatus;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
 
-    private RowReceiptBinding(CardView rootView, LinearLayout reasonLayout, TextView receiptAmount, TextView receiptDate, TextView receiptNo, TextView receiptPayMethod, TextView receiptRefund, TextView receiptStatus) {
+    private RowReceiptBinding(MaterialCardView rootView, LinearLayout reasonLayout, TextView receiptAmount, TextView receiptDate, TextView receiptNo, TextView receiptPayMethod, TextView receiptRefund, TextView receiptStatus) {
         this.rootView = rootView;
         this.reasonLayout = reasonLayout;
         this.receiptAmount = receiptAmount;
@@ -33,7 +33,7 @@ public final class RowReceiptBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -42,11 +42,11 @@ public final class RowReceiptBinding implements ViewBinding {
     }
 
     public static RowReceiptBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_receipt, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_receipt, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowReceiptBinding bind(View rootView) {
@@ -71,7 +71,7 @@ public final class RowReceiptBinding implements ViewBinding {
                                 i = R.id.receipt_status;
                                 TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                 if (textView6 != null) {
-                                    return new RowReceiptBinding((CardView) rootView, linearLayout, textView, textView2, textView3, textView4, textView5, textView6);
+                                    return new RowReceiptBinding((MaterialCardView) rootView, linearLayout, textView, textView2, textView3, textView4, textView5, textView6);
                                 }
                             }
                         }

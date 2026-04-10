@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.covidcertificate.CovidCertificateListMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CovidCertificateListMainFragmentBindingImpl extends CovidCertificateListMainFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -59,7 +59,7 @@ public class CovidCertificateListMainFragmentBindingImpl extends CovidCertificat
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (66 != variableId) {
+        if (65 != variableId) {
             return false;
         }
         setCovidCertificateListMainViewModel((CovidCertificateListMainViewModel) variable);

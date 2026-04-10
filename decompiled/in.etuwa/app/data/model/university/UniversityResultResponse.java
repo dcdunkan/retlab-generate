@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UniversityResultResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: UniversityResultResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class UniversityResultResponse {
     private final String branch;
     private final String earned_credit;
@@ -18,32 +18,32 @@ public final /* data */ class UniversityResultResponse {
     private final String semester;
     private final String sgpa;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getReg_no() {
         return this.reg_no;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getBranch() {
         return this.branch;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getProgram() {
         return this.program;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getEarned_credit() {
         return this.earned_credit;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getSgpa() {
         return this.sgpa;
     }
@@ -52,7 +52,7 @@ public final /* data */ class UniversityResultResponse {
         return this.result;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getError() {
         return this.error;
     }

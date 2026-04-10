@@ -4,8 +4,8 @@ import com.itextpdf.kernel.xmp.PdfConst;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Membership.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Membership.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Membership {
     private final String description;
     private final String file;
@@ -45,37 +45,37 @@ public final /* data */ class Membership {
         return membership.copy(str, str8, str9, str10, str11, str12, str7);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getMember_id() {
         return this.member_id;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDescription() {
         return this.description;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getFile() {
         return this.file;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getMember_since() {
         return this.member_since;
     }

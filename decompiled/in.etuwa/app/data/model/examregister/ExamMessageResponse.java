@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamMessageResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamMessageResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamMessageResponse {
     private final String error;
     private final ArrayList<ExamMessage> exam;
@@ -16,6 +16,7 @@ public final /* data */ class ExamMessageResponse {
     private final String message;
     private final boolean success;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ ExamMessageResponse copy$default(ExamMessageResponse examMessageResponse, boolean z, boolean z2, String str, boolean z3, String str2, ArrayList arrayList, int i, Object obj) {
         if ((i & 1) != 0) {
             z = examMessageResponse.login;
@@ -42,27 +43,27 @@ public final /* data */ class ExamMessageResponse {
         return examMessageResponse.copy(z, z4, str3, z5, str4, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getIs_registered() {
         return this.is_registered;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getError() {
         return this.error;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getMessage() {
         return this.message;
     }
@@ -93,7 +94,12 @@ public final /* data */ class ExamMessageResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v12 */
     /* JADX WARN: Type inference failed for: r0v13 */
-    /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v6 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v5 */
+    /* JADX WARN: Type inference failed for: r2v6 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -101,14 +107,14 @@ public final /* data */ class ExamMessageResponse {
             r0 = 1;
         }
         int i = r0 * 31;
-        ?? r2 = this.is_registered;
-        int i2 = r2;
-        if (r2 != 0) {
-            i2 = 1;
+        boolean z2 = this.is_registered;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int hashCode = (((i + i2) * 31) + this.error.hashCode()) * 31;
-        boolean z2 = this.success;
-        return ((((hashCode + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.message.hashCode()) * 31) + this.exam.hashCode();
+        int iHashCode = (((i + r2) * 31) + this.error.hashCode()) * 31;
+        boolean z3 = this.success;
+        return ((((iHashCode + (z3 ? 1 : z3)) * 31) + this.message.hashCode()) * 31) + this.exam.hashCode();
     }
 
     public String toString() {

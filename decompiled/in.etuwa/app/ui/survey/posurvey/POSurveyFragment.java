@@ -43,27 +43,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: POSurveyFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: POSurveyFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class POSurveyFragment extends BaseFragment implements POSurveyAdapter.SurveyCallBack, CourseSurveyQuestionsAdapter.SurveyCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentPoSurveyBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private boolean flag;
     private int i;
     private MainCallBackListener listener;
 
-    /* renamed from: pOSurveyViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: pOSurveyViewModel$delegate, reason: from kotlin metadata */
     private final Lazy pOSurveyViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: POSurveyFragment.kt */
+    /* JADX INFO: compiled from: POSurveyFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -113,7 +113,7 @@ public final class POSurveyFragment extends BaseFragment implements POSurveyAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return pOSurveyFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(pOSurveyFragment);
@@ -127,7 +127,7 @@ public final class POSurveyFragment extends BaseFragment implements POSurveyAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -140,7 +140,7 @@ public final class POSurveyFragment extends BaseFragment implements POSurveyAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(POSurveyViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(POSurveyViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final POSurveyFragment pOSurveyFragment2 = this;
@@ -186,7 +186,7 @@ public final class POSurveyFragment extends BaseFragment implements POSurveyAdap
         return (POSurveyAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentPoSurveyBinding get_binding() {
         return this._binding;
     }
@@ -211,7 +211,7 @@ public final class POSurveyFragment extends BaseFragment implements POSurveyAdap
         this.i = i;
     }
 
-    /* compiled from: POSurveyFragment.kt */
+    /* JADX INFO: compiled from: POSurveyFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0017\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/survey/posurvey/POSurveyFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/survey/posurvey/POSurveyFragment;", "id", "", "(Ljava/lang/Integer;)Lin/etuwa/app/ui/survey/posurvey/POSurveyFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -291,7 +291,7 @@ public final class POSurveyFragment extends BaseFragment implements POSurveyAdap
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyFragment$$ExternalSyntheticLambda1
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                POSurveyFragment.setUp$lambda$1(POSurveyFragment.this);
+                POSurveyFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -312,7 +312,7 @@ public final class POSurveyFragment extends BaseFragment implements POSurveyAdap
         getPOSurveyViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                POSurveyFragment.listenResponse$lambda$3(POSurveyFragment.this, (Resource) obj);
+                POSurveyFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }

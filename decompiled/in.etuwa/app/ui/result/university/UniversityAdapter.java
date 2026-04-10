@@ -15,8 +15,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: UniversityAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UniversityAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UniversityAdapter extends FragmentStatePagerAdapter {
     private UnivDetails details;
     private ArrayList<UnivSubjects> subjects;

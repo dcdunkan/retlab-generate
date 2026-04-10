@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowGrDocsBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final TextView tvGrDoc;
@@ -33,11 +33,11 @@ public final class RowGrDocsBinding implements ViewBinding {
     }
 
     public static RowGrDocsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_gr_docs, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_gr_docs, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowGrDocsBinding bind(View rootView) {

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelPalaiResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelPalaiResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class HostelPalaiResponse {
     private final String date;
     private final ArrayList<HostelPalaiMonth> hostel;

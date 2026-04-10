@@ -52,15 +52,15 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ProofDutyLeave.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ProofDutyLeave.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ProofDutyLeave extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogDutyLeaveBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<String> appDates;
     private String id;
@@ -68,16 +68,16 @@ public final class ProofDutyLeave extends BaseDialog {
     private AddLeaveCallBack listener;
     private File pickFile;
 
-    /* renamed from: proofDutyLeaveViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: proofDutyLeaveViewModel$delegate, reason: from kotlin metadata */
     private final Lazy proofDutyLeaveViewModel;
 
-    /* compiled from: ProofDutyLeave.kt */
+    /* JADX INFO: compiled from: ProofDutyLeave.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/leave/duty/proof/ProofDutyLeave$AddLeaveCallBack;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddLeaveCallBack {
         void onDismiss();
     }
 
-    /* compiled from: ProofDutyLeave.kt */
+    /* JADX INFO: compiled from: ProofDutyLeave.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -122,7 +122,7 @@ public final class ProofDutyLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return proofDutyLeave;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(proofDutyLeave);
@@ -136,7 +136,7 @@ public final class ProofDutyLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -149,7 +149,7 @@ public final class ProofDutyLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ProofDutyLeaveViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ProofDutyLeaveViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ProofDutyLeave proofDutyLeave2 = this;
@@ -176,7 +176,7 @@ public final class ProofDutyLeave extends BaseDialog {
         return (ProofDutyLeaveViewModel) this.proofDutyLeaveViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogDutyLeaveBinding get_binding() {
         return this._binding;
     }
@@ -185,7 +185,7 @@ public final class ProofDutyLeave extends BaseDialog {
         return (ProofDutyLeaveAdapter) this.adapter.getValue();
     }
 
-    /* compiled from: ProofDutyLeave.kt */
+    /* JADX INFO: compiled from: ProofDutyLeave.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J&\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0016\u0010\u0007\u001a\u0012\u0012\u0004\u0012\u00020\u00060\bj\b\u0012\u0004\u0012\u00020\u0006`\t¨\u0006\n"}, d2 = {"Lin/etuwa/app/ui/leave/duty/proof/ProofDutyLeave$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/leave/duty/proof/ProofDutyLeave;", "id", "", "appDates", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -405,7 +405,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox10.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$1(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -414,7 +414,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox9.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$2(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -423,7 +423,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox8.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$3(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -432,7 +432,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox7.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$4(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -441,7 +441,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$5(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -450,7 +450,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$6(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
@@ -459,7 +459,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$7(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -468,7 +468,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$8(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$8(this.f$0, view);
                 }
             });
         }
@@ -477,7 +477,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$9(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$9(this.f$0, view);
                 }
             });
         }
@@ -486,7 +486,7 @@ public final class ProofDutyLeave extends BaseDialog {
             checkBox.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$10(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$10(this.f$0, view);
                 }
             });
         }
@@ -495,20 +495,20 @@ public final class ProofDutyLeave extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ProofDutyLeave.setUp$lambda$12(ProofDutyLeave.this, view);
+                    ProofDutyLeave.setUp$lambda$12(this.f$0, view);
                 }
             });
         }
         ArrayList<String> arrayList28 = this.appDates;
-        Integer valueOf = arrayList28 != null ? Integer.valueOf(arrayList28.size()) : null;
-        System.out.println(valueOf);
-        if (valueOf != null && valueOf.intValue() == 1) {
+        Integer numValueOf = arrayList28 != null ? Integer.valueOf(arrayList28.size()) : null;
+        System.out.println(numValueOf);
+        if (numValueOf != null && numValueOf.intValue() == 1) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding28 = get_binding();
             linearLayout = dialogDutyLeaveBinding28 != null ? dialogDutyLeaveBinding28.datelt1 : null;
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 2) {
+        } else if (numValueOf != null && numValueOf.intValue() == 2) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding29 = get_binding();
             LinearLayout linearLayout2 = dialogDutyLeaveBinding29 != null ? dialogDutyLeaveBinding29.datelt1 : null;
             if (linearLayout2 != null) {
@@ -519,7 +519,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 3) {
+        } else if (numValueOf != null && numValueOf.intValue() == 3) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding31 = get_binding();
             LinearLayout linearLayout3 = dialogDutyLeaveBinding31 != null ? dialogDutyLeaveBinding31.datelt1 : null;
             if (linearLayout3 != null) {
@@ -535,7 +535,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 4) {
+        } else if (numValueOf != null && numValueOf.intValue() == 4) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding34 = get_binding();
             LinearLayout linearLayout5 = dialogDutyLeaveBinding34 != null ? dialogDutyLeaveBinding34.datelt1 : null;
             if (linearLayout5 != null) {
@@ -556,7 +556,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 5) {
+        } else if (numValueOf != null && numValueOf.intValue() == 5) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding38 = get_binding();
             LinearLayout linearLayout8 = dialogDutyLeaveBinding38 != null ? dialogDutyLeaveBinding38.datelt1 : null;
             if (linearLayout8 != null) {
@@ -582,7 +582,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 6) {
+        } else if (numValueOf != null && numValueOf.intValue() == 6) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding43 = get_binding();
             LinearLayout linearLayout12 = dialogDutyLeaveBinding43 != null ? dialogDutyLeaveBinding43.datelt1 : null;
             if (linearLayout12 != null) {
@@ -613,7 +613,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 7) {
+        } else if (numValueOf != null && numValueOf.intValue() == 7) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding49 = get_binding();
             LinearLayout linearLayout17 = dialogDutyLeaveBinding49 != null ? dialogDutyLeaveBinding49.datelt1 : null;
             if (linearLayout17 != null) {
@@ -649,7 +649,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 8) {
+        } else if (numValueOf != null && numValueOf.intValue() == 8) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding56 = get_binding();
             LinearLayout linearLayout23 = dialogDutyLeaveBinding56 != null ? dialogDutyLeaveBinding56.datelt1 : null;
             if (linearLayout23 != null) {
@@ -690,7 +690,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 9) {
+        } else if (numValueOf != null && numValueOf.intValue() == 9) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding64 = get_binding();
             LinearLayout linearLayout30 = dialogDutyLeaveBinding64 != null ? dialogDutyLeaveBinding64.datelt1 : null;
             if (linearLayout30 != null) {
@@ -736,7 +736,7 @@ public final class ProofDutyLeave extends BaseDialog {
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
-        } else if (valueOf != null && valueOf.intValue() == 10) {
+        } else if (numValueOf != null && numValueOf.intValue() == 10) {
             DialogDutyLeaveBinding dialogDutyLeaveBinding73 = get_binding();
             LinearLayout linearLayout38 = dialogDutyLeaveBinding73 != null ? dialogDutyLeaveBinding73.datelt1 : null;
             if (linearLayout38 != null) {
@@ -795,7 +795,7 @@ public final class ProofDutyLeave extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ProofDutyLeave.setUp$lambda$14(ProofDutyLeave.this, view);
+                ProofDutyLeave.setUp$lambda$14(this.f$0, view);
             }
         });
     }
@@ -992,7 +992,7 @@ public final class ProofDutyLeave extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 200) {
+                if (file2.length() / ((long) 1024) <= 200) {
                     this$0.setCancelable(false);
                     String str = this$0.id;
                     if (str != null) {
@@ -1042,7 +1042,7 @@ public final class ProofDutyLeave extends BaseDialog {
         getProofDutyLeaveViewModel().getUploadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ProofDutyLeave.listenResponse$lambda$16(ProofDutyLeave.this, (Resource) obj);
+                ProofDutyLeave.listenResponse$lambda$16(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1110,7 +1110,7 @@ public final class ProofDutyLeave extends BaseDialog {
         getProofDutyLeaveViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.duty.proof.ProofDutyLeave$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ProofDutyLeave.listenProgressResponse$lambda$18(ProofDutyLeave.this, (Resource) obj);
+                ProofDutyLeave.listenProgressResponse$lambda$18(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1141,18 +1141,18 @@ public final class ProofDutyLeave extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogDutyLeaveBinding dialogDutyLeaveBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogDutyLeaveBinding2 != null ? dialogDutyLeaveBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogDutyLeaveBinding dialogDutyLeaveBinding3 = this$0.get_binding();
             TextView textView2 = dialogDutyLeaveBinding3 != null ? dialogDutyLeaveBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1161,10 +1161,10 @@ public final class ProofDutyLeave extends BaseDialog {
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
-        String str2;
+        String fileName2;
         ContentResolver contentResolver3;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -1178,27 +1178,27 @@ public final class ProofDutyLeave extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver3 = context.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver3, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
                     File cacheDir = context3 != null ? context3.getCacheDir() : null;
                     Context context4 = getContext();
                     if (context4 == null || (contentResolver2 = context4.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                 }
             }

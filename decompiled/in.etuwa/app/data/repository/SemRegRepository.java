@@ -23,8 +23,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: SemRegRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SemRegRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class SemRegRepository {
     private final ApiHelper apiHelper;
 

@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentKmeaBindingImpl extends FragmentKmeaBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -70,7 +70,7 @@ public class FragmentKmeaBindingImpl extends FragmentKmeaBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (122 != variableId) {
+        if (123 != variableId) {
             return false;
         }
         setKmeaHostelViewModel((KmeaHostelViewModel) variable);

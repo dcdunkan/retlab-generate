@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RevaluationViewViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: RevaluationViewViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class RevaluationViewViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final ExamRegistrationRepository examRegistrationRepository;
@@ -34,8 +34,8 @@ public final class RevaluationViewViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.revaluationResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<RevaluationViewResponse> observeOn = this.examRegistrationRepository.getExamRevaluationViewApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<RevaluationViewResponse, Unit> function1 = new Function1<RevaluationViewResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewViewModel$getExamData$1
+        Single<RevaluationViewResponse> singleObserveOn = this.examRegistrationRepository.getExamRevaluationViewApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<RevaluationViewResponse, Unit> function1 = new Function1<RevaluationViewResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewViewModel.getExamData.1
             {
                 super(1);
             }
@@ -46,20 +46,18 @@ public final class RevaluationViewViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(RevaluationViewResponse revaluationViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = RevaluationViewViewModel.this.revaluationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(revaluationViewResponse));
+                RevaluationViewViewModel.this.revaluationResponse.postValue(Resource.INSTANCE.success(revaluationViewResponse));
             }
         };
         Consumer<? super RevaluationViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RevaluationViewViewModel.getExamData$lambda$0(Function1.this, obj);
+                RevaluationViewViewModel.getExamData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewViewModel$getExamData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewViewModel.getExamData.2
             {
                 super(1);
             }
@@ -70,17 +68,15 @@ public final class RevaluationViewViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = RevaluationViewViewModel.this.revaluationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                RevaluationViewViewModel.this.revaluationResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RevaluationViewViewModel.getExamData$lambda$1(Function1.this, obj);
+                RevaluationViewViewModel.getExamData$lambda$1(function12, obj);
             }
         }));
     }

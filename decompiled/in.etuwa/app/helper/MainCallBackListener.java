@@ -10,18 +10,18 @@ import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import java.util.ArrayList;
 import kotlin.Metadata;
 
-/* compiled from: MainCallBackListener.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MainCallBackListener.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public interface MainCallBackListener {
     void answerCourseSurvey(String id, String sessionId);
 
     void dismissView();
 
-    void doGeneralSurvey(String id);
+    void doGeneralSurvey(String id, String surveyName);
 
     void doPOSurvey(String id);
 
-    void doTeacherSurvey(String id, String teacherId, String subjectId, String image, String semester, String subject);
+    void doTeacherSurvey(String id, String teacherId, String subjectId, String image, String semester, String subject, String teacherName);
 
     void editProfileBtnClicked();
 
@@ -105,6 +105,10 @@ public interface MainCallBackListener {
 
     void onMessOrderHistoryClicked();
 
+    void onNewDashItemClicked(String title);
+
+    void onNoticeBoardClicked();
+
     void onPOSurveyCompleted();
 
     void onPalaiHostelPayClick();
@@ -187,6 +191,8 @@ public interface MainCallBackListener {
 
     void showDoGraduateSurvey(String sessionId, String surveyId);
 
+    void showEvaluation();
+
     void showExamRegFragment(String id);
 
     void showExamRegisterFragment(String id, String category);
@@ -196,6 +202,8 @@ public interface MainCallBackListener {
     void showKmeaHostelFragment(int position);
 
     void showMissionDialog();
+
+    void showResults();
 
     void showRevaluationFee(ArrayList<String> id, ArrayList<String> id2, boolean flag);
 
@@ -210,6 +218,8 @@ public interface MainCallBackListener {
     void showVisionDialog();
 
     void spotRegistrationClicked(String name, String mobileNumber, String number, String port, String zone, String type, String ton, String place, String distance);
+
+    void subjectBtnClicked();
 
     void transportBtnClicked();
 

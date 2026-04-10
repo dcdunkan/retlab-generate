@@ -2,8 +2,8 @@ package in.etuwa.app.ui.timetable;
 
 import kotlin.Metadata;
 
-/* compiled from: TimetableListener.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TimetableListener.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public interface TimetableListener {
     void loadPage();
 }

@@ -16,11 +16,13 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TeacherViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TeacherViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TeacherViewModel extends ViewModel {
+    private final long CACHE_DURATION;
     private final CommonRepository commonRepository;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<TeacherResponse>> teacherResponse;
 
     public TeacherViewModel(CommonRepository commonRepository) {
@@ -28,14 +30,31 @@ public final class TeacherViewModel extends ViewModel {
         this.commonRepository = commonRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.teacherResponse = new MutableLiveData<>();
+        this.CACHE_DURATION = 259200000L;
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getTeacher();
     }
 
     public final void getTeacher() {
+        String cachedTeacher = this.commonRepository.getCachedTeacher();
+        long teacherCacheTime = this.commonRepository.getTeacherCacheTime();
+        long jCurrentTimeMillis = System.currentTimeMillis();
+        String str = cachedTeacher;
+        if (!(str == null || str.length() == 0) && jCurrentTimeMillis - teacherCacheTime < this.CACHE_DURATION) {
+            this.teacherResponse.postValue(Resource.INSTANCE.success(this.commonRepository.parseTeacher(cachedTeacher)));
+            return;
+        }
         this.teacherResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<TeacherResponse> observeOn = this.commonRepository.getTeacherApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<TeacherResponse, Unit> function1 = new Function1<TeacherResponse, Unit>() { // from class: in.etuwa.app.ui.teacher.TeacherViewModel$getTeacher$1
+        Single<TeacherResponse> singleObserveOn = this.commonRepository.getTeacherApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<TeacherResponse, Unit> function1 = new Function1<TeacherResponse, Unit>() { // from class: in.etuwa.app.ui.teacher.TeacherViewModel.getTeacher.1
             {
                 super(1);
             }
@@ -46,20 +65,21 @@ public final class TeacherViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            public final void invoke2(TeacherResponse teacherResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TeacherViewModel.this.teacherResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(teacherResponse));
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(TeacherResponse response) {
+                CommonRepository commonRepository = TeacherViewModel.this.commonRepository;
+                Intrinsics.checkNotNullExpressionValue(response, "response");
+                commonRepository.saveTeacherCache(response);
+                TeacherViewModel.this.teacherResponse.postValue(Resource.INSTANCE.success(response));
             }
         };
         Consumer<? super TeacherResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.teacher.TeacherViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TeacherViewModel.getTeacher$lambda$0(Function1.this, obj);
+                TeacherViewModel.getTeacher$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.teacher.TeacherViewModel$getTeacher$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.teacher.TeacherViewModel.getTeacher.2
             {
                 super(1);
             }
@@ -70,17 +90,15 @@ public final class TeacherViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TeacherViewModel.this.teacherResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TeacherViewModel.this.teacherResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.teacher.TeacherViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.teacher.TeacherViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TeacherViewModel.getTeacher$lambda$1(Function1.this, obj);
+                TeacherViewModel.getTeacher$lambda$1(function12, obj);
             }
         }));
     }

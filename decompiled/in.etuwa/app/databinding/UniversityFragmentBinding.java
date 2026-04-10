@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -12,9 +13,10 @@ import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.university.UniversityViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class UniversityFragmentBinding extends ViewDataBinding {
     public final FloatingActionButton fabUniv;
+    public final TextView internalSemText;
 
     @Bindable
     protected UniversityViewModel mUniversityViewModel;
@@ -23,9 +25,10 @@ public abstract class UniversityFragmentBinding extends ViewDataBinding {
 
     public abstract void setUniversityViewModel(UniversityViewModel universityViewModel);
 
-    protected UniversityFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabUniv, ViewPager univPager, TabLayout univTabs) {
+    protected UniversityFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabUniv, TextView internalSemText, ViewPager univPager, TabLayout univTabs) {
         super(_bindingComponent, _root, _localFieldCount);
         this.fabUniv = fabUniv;
+        this.internalSemText = internalSemText;
         this.univPager = univPager;
         this.univTabs = univTabs;
     }

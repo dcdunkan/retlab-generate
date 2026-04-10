@@ -11,10 +11,12 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.transport.TransportFeeViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentTransportBinding extends ViewDataBinding {
     public final TextView boardingPointTv;
 
@@ -22,8 +24,8 @@ public abstract class FragmentTransportBinding extends ViewDataBinding {
     protected TransportFeeViewModel mTransportFeeViewModel;
     public final LinearLayout noDataLyt;
     public final TextView noDataTv;
-    public final LinearLayout payBtnLyt;
-    public final TextView payTransportBtn;
+    public final MaterialCardView payBtnLyt;
+    public final MaterialButton payTransportBtn;
     public final RecyclerView rvTransport;
     public final Spinner spinnerYearTransport;
     public final SwipeRefreshLayout swipeLayout;
@@ -31,7 +33,7 @@ public abstract class FragmentTransportBinding extends ViewDataBinding {
 
     public abstract void setTransportFeeViewModel(TransportFeeViewModel transportFeeViewModel);
 
-    protected FragmentTransportBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView boardingPointTv, LinearLayout noDataLyt, TextView noDataTv, LinearLayout payBtnLyt, TextView payTransportBtn, RecyclerView rvTransport, Spinner spinnerYearTransport, SwipeRefreshLayout swipeLayout, TextView tvTransportTotal) {
+    protected FragmentTransportBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView boardingPointTv, LinearLayout noDataLyt, TextView noDataTv, MaterialCardView payBtnLyt, MaterialButton payTransportBtn, RecyclerView rvTransport, Spinner spinnerYearTransport, SwipeRefreshLayout swipeLayout, TextView tvTransportTotal) {
         super(_bindingComponent, _root, _localFieldCount);
         this.boardingPointTv = boardingPointTv;
         this.noDataLyt = noDataLyt;

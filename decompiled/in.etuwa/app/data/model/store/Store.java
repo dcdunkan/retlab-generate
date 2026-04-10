@@ -4,8 +4,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Store.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Store.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Store {
     private final String name;
     private final String price;
@@ -20,12 +20,12 @@ public final /* data */ class Store {
         return store.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getPrice() {
         return this.price;
     }

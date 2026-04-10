@@ -49,24 +49,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: FundedResearchFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: FundedResearchFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class FundedResearchFragment extends BaseFragment implements FundedResearchAdapter.ResearchListener, AddFundedResearchDialog.AddFundedResearchListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentFundedResearchBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: fundedResearchViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: fundedResearchViewModel$delegate, reason: from kotlin metadata */
     private final Lazy fundedResearchViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: FundedResearchFragment.kt */
+    /* JADX INFO: compiled from: FundedResearchFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -126,7 +126,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return fundedResearchFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(fundedResearchFragment);
@@ -140,7 +140,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -153,7 +153,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(FundedResearchViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(FundedResearchViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final FundedResearchFragment fundedResearchFragment2 = this;
@@ -199,7 +199,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
         return (FundedResearchAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentFundedResearchBinding get_binding() {
         return this._binding;
     }
@@ -208,7 +208,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: FundedResearchFragment.kt */
+    /* JADX INFO: compiled from: FundedResearchFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/fundedresearch/FundedResearchFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/fundedresearch/FundedResearchFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -274,7 +274,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchFragment$$ExternalSyntheticLambda0
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    FundedResearchFragment.setUp$lambda$0(FundedResearchFragment.this);
+                    FundedResearchFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
@@ -285,7 +285,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FundedResearchFragment.setUp$lambda$1(FundedResearchFragment.this, view);
+                FundedResearchFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -307,16 +307,16 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddFundedResearchDialog newInstance = AddFundedResearchDialog.INSTANCE.newInstance("", "", "", "", "");
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        AddFundedResearchDialog addFundedResearchDialogNewInstance = AddFundedResearchDialog.INSTANCE.newInstance("", "", "", "", "");
+        addFundedResearchDialogNewInstance.setCallBack(this$0);
+        addFundedResearchDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
         getFundedResearchViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FundedResearchFragment.listenResponse$lambda$3(FundedResearchFragment.this, (Resource) obj);
+                FundedResearchFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -363,7 +363,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
         getFundedResearchViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                FundedResearchFragment.listenDeleteResponse$lambda$5(FundedResearchFragment.this, (Resource) obj);
+                FundedResearchFragment.listenDeleteResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -458,9 +458,9 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
         Intrinsics.checkNotNullParameter(duration, "duration");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddFundedResearchDialog newInstance = AddFundedResearchDialog.INSTANCE.newInstance(id, title, agency, amount, duration);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddFundedResearchDialog addFundedResearchDialogNewInstance = AddFundedResearchDialog.INSTANCE.newInstance(id, title, agency, amount, duration);
+        addFundedResearchDialogNewInstance.setCallBack(this);
+        addFundedResearchDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void deleteView(final String id) {
@@ -469,7 +469,7 @@ public final class FundedResearchFragment extends BaseFragment implements Funded
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchFragment$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                FundedResearchFragment.deleteView$lambda$6(FundedResearchFragment.this, id, dialogInterface, i);
+                FundedResearchFragment.deleteView$lambda$6(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.FundedResearchFragment$$ExternalSyntheticLambda4

@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.mea.MeaSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogMeaSemRegBindingImpl extends DialogMeaSemRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -119,7 +119,7 @@ public class DialogMeaSemRegBindingImpl extends DialogMeaSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (137 != variableId) {
+        if (138 != variableId) {
             return false;
         }
         setMeaSemRegViewModel((MeaSemRegViewModel) variable);

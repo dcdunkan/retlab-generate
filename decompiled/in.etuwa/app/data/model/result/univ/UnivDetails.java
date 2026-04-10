@@ -8,11 +8,11 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UnivDetails.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: UnivDetails.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class UnivDetails implements Parcelable {
 
-    /* renamed from: CREATOR, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: CREATOR, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private String cgpa;
     private String credit;
@@ -46,27 +46,27 @@ public final /* data */ class UnivDetails implements Parcelable {
         return univDetails.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getCredit() {
         return this.credit;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTotalInternal() {
         return this.totalInternal;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPassStatus() {
         return this.passStatus;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSgpa() {
         return this.sgpa;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getCgpa() {
         return this.cgpa;
     }
@@ -93,15 +93,15 @@ public final /* data */ class UnivDetails implements Parcelable {
 
     public int hashCode() {
         String str = this.credit;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.totalInternal;
-        int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
+        int iHashCode2 = (iHashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.passStatus;
-        int hashCode3 = (hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        int iHashCode3 = (iHashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
         String str4 = this.sgpa;
-        int hashCode4 = (hashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
+        int iHashCode4 = (iHashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
         String str5 = this.cgpa;
-        return hashCode4 + (str5 != null ? str5.hashCode() : 0);
+        return iHashCode4 + (str5 != null ? str5.hashCode() : 0);
     }
 
     public String toString() {
@@ -172,9 +172,9 @@ public final /* data */ class UnivDetails implements Parcelable {
         parcel.writeString(this.cgpa);
     }
 
-    /* compiled from: UnivDetails.kt */
+    /* JADX INFO: renamed from: in.etuwa.app.data.model.result.univ.UnivDetails$CREATOR, reason: from kotlin metadata */
+    /* JADX INFO: compiled from: UnivDetails.kt */
     @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0006H\u0016J\u001d\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0016¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"Lin/etuwa/app/data/model/result/univ/UnivDetails$CREATOR;", "Landroid/os/Parcelable$Creator;", "Lin/etuwa/app/data/model/result/univ/UnivDetails;", "()V", "createFromParcel", "parcel", "Landroid/os/Parcel;", "newArray", "", "size", "", "(I)[Lin/etuwa/app/data/model/result/univ/UnivDetails;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
-    /* renamed from: in.etuwa.app.data.model.result.univ.UnivDetails$CREATOR, reason: from kotlin metadata */
     public static final class Companion implements Parcelable.Creator<UnivDetails> {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

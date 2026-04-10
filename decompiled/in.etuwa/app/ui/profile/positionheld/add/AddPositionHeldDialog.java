@@ -67,16 +67,16 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddPositionHeldDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddPositionHeldDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddPositionHeldDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddPositionHeldBinding _binding;
     private String achievements;
 
-    /* renamed from: addPositionHeldViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addPositionHeldViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addPositionHeldViewModel;
     private String days;
     private String days2;
@@ -92,18 +92,18 @@ public final class AddPositionHeldDialog extends BaseDialog {
     private File pickFile;
     private String secondDate;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String toDate;
     private String yearId;
 
-    /* compiled from: AddPositionHeldDialog.kt */
+    /* JADX INFO: compiled from: AddPositionHeldDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/positionheld/add/AddPositionHeldDialog$AddPositionHeldListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddPositionHeldListener {
         void onDismiss();
     }
 
-    /* compiled from: AddPositionHeldDialog.kt */
+    /* JADX INFO: compiled from: AddPositionHeldDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -153,7 +153,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addPositionHeldDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addPositionHeldDialog);
@@ -167,7 +167,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -180,7 +180,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddPositionHeldViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddPositionHeldViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.firstDate = "2022-10-22";
@@ -197,7 +197,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddPositionHeldDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -222,7 +222,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddPositionHeldBinding get_binding() {
         return this._binding;
     }
@@ -250,7 +250,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: AddPositionHeldDialog.kt */
+    /* JADX INFO: compiled from: AddPositionHeldDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J(\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0007¨\u0006\n"}, d2 = {"Lin/etuwa/app/ui/profile/positionheld/add/AddPositionHeldDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/positionheld/add/AddPositionHeldDialog;", "id", "", "name", "fromDate", "toDate", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -384,7 +384,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
             textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddPositionHeldDialog.setUp$lambda$2(AddPositionHeldDialog.this, i, i2, i3, view);
+                    AddPositionHeldDialog.setUp$lambda$2(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -393,24 +393,22 @@ public final class AddPositionHeldDialog extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddPositionHeldDialog.setUp$lambda$4(AddPositionHeldDialog.this, i, i2, i3, view);
+                    AddPositionHeldDialog.setUp$lambda$4(this.f$0, i, i2, i3, view);
                 }
             });
         }
         DialogAddPositionHeldBinding dialogAddPositionHeldBinding11 = get_binding();
         Spinner spinner2 = dialogAddPositionHeldBinding11 != null ? dialogAddPositionHeldBinding11.spinnerYear : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$setUp$3
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter;
                     AddPositionHeldDialog addPositionHeldDialog = AddPositionHeldDialog.this;
-                    spinnerAdapter = addPositionHeldDialog.getSpinnerAdapter();
-                    addPositionHeldDialog.yearId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    addPositionHeldDialog.yearId = String.valueOf(addPositionHeldDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
@@ -419,7 +417,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddPositionHeldDialog.setUp$lambda$6(AddPositionHeldDialog.this, view);
+                    AddPositionHeldDialog.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
@@ -428,7 +426,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddPositionHeldDialog.setUp$lambda$7(AddPositionHeldDialog.this, view);
+                    AddPositionHeldDialog.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -439,7 +437,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddPositionHeldDialog.setUp$lambda$8(AddPositionHeldDialog.this, view);
+                AddPositionHeldDialog.setUp$lambda$8(this.f$0, view);
             }
         });
     }
@@ -450,7 +448,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda3
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddPositionHeldDialog.setUp$lambda$2$lambda$1(AddPositionHeldDialog.this, datePicker, i4, i5, i6);
+                AddPositionHeldDialog.setUp$lambda$2$lambda$1(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -484,7 +482,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda1
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddPositionHeldDialog.setUp$lambda$4$lambda$3(AddPositionHeldDialog.this, datePicker, i4, i5, i6);
+                AddPositionHeldDialog.setUp$lambda$4$lambda$3(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -558,7 +556,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddPositionHeldBinding2 == null || (textInputEditText4 = dialogAddPositionHeldBinding2.etName) == null) ? null : textInputEditText4.getText()), "")) {
@@ -579,13 +577,13 @@ public final class AddPositionHeldDialog extends BaseDialog {
                                 if (!Intrinsics.areEqual(String.valueOf((dialogAddPositionHeldBinding7 == null || (textView16 = dialogAddPositionHeldBinding7.etEndDate) == null) ? null : textView16.getText()), "To Date")) {
                                     AddPositionHeldViewModel addPositionHeldViewModel = this$0.getAddPositionHeldViewModel();
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding8 = this$0.get_binding();
-                                    String valueOf = String.valueOf((dialogAddPositionHeldBinding8 == null || (textInputEditText3 = dialogAddPositionHeldBinding8.etName) == null) ? null : textInputEditText3.getText());
+                                    String strValueOf = String.valueOf((dialogAddPositionHeldBinding8 == null || (textInputEditText3 = dialogAddPositionHeldBinding8.etName) == null) ? null : textInputEditText3.getText());
                                     String str = this$0.yearId;
                                     Intrinsics.checkNotNull(str);
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding9 = this$0.get_binding();
-                                    String valueOf2 = String.valueOf((dialogAddPositionHeldBinding9 == null || (textView15 = dialogAddPositionHeldBinding9.etFromDate) == null) ? null : textView15.getText());
+                                    String strValueOf2 = String.valueOf((dialogAddPositionHeldBinding9 == null || (textView15 = dialogAddPositionHeldBinding9.etFromDate) == null) ? null : textView15.getText());
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding10 = this$0.get_binding();
-                                    String valueOf3 = String.valueOf((dialogAddPositionHeldBinding10 == null || (textView14 = dialogAddPositionHeldBinding10.etEndDate) == null) ? null : textView14.getText());
+                                    String strValueOf3 = String.valueOf((dialogAddPositionHeldBinding10 == null || (textView14 = dialogAddPositionHeldBinding10.etEndDate) == null) ? null : textView14.getText());
                                     File file3 = this$0.pickFile;
                                     if (file3 == null) {
                                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -593,7 +591,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
                                     } else {
                                         file = file3;
                                     }
-                                    addPositionHeldViewModel.addPositionHeldData(valueOf, str, valueOf2, valueOf3, file);
+                                    addPositionHeldViewModel.addPositionHeldData(strValueOf, str, strValueOf2, strValueOf3, file);
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding11 = this$0.get_binding();
                                     LinearLayout linearLayout = dialogAddPositionHeldBinding11 != null ? dialogAddPositionHeldBinding11.completionCard : null;
                                     if (linearLayout != null) {
@@ -649,13 +647,13 @@ public final class AddPositionHeldDialog extends BaseDialog {
                         if (!Intrinsics.areEqual(String.valueOf((dialogAddPositionHeldBinding21 == null || (textView6 = dialogAddPositionHeldBinding21.etEndDate) == null) ? null : textView6.getText()), "To Date")) {
                             AddPositionHeldViewModel addPositionHeldViewModel2 = this$0.getAddPositionHeldViewModel();
                             DialogAddPositionHeldBinding dialogAddPositionHeldBinding22 = this$0.get_binding();
-                            String valueOf4 = String.valueOf((dialogAddPositionHeldBinding22 == null || (textInputEditText = dialogAddPositionHeldBinding22.etName) == null) ? null : textInputEditText.getText());
+                            String strValueOf4 = String.valueOf((dialogAddPositionHeldBinding22 == null || (textInputEditText = dialogAddPositionHeldBinding22.etName) == null) ? null : textInputEditText.getText());
                             String str2 = this$0.yearId;
                             Intrinsics.checkNotNull(str2);
                             DialogAddPositionHeldBinding dialogAddPositionHeldBinding23 = this$0.get_binding();
-                            String valueOf5 = String.valueOf((dialogAddPositionHeldBinding23 == null || (textView5 = dialogAddPositionHeldBinding23.etFromDate) == null) ? null : textView5.getText());
+                            String strValueOf5 = String.valueOf((dialogAddPositionHeldBinding23 == null || (textView5 = dialogAddPositionHeldBinding23.etFromDate) == null) ? null : textView5.getText());
                             DialogAddPositionHeldBinding dialogAddPositionHeldBinding24 = this$0.get_binding();
-                            addPositionHeldViewModel2.addPositionHeldData(valueOf4, str2, valueOf5, String.valueOf((dialogAddPositionHeldBinding24 == null || (textView4 = dialogAddPositionHeldBinding24.etEndDate) == null) ? null : textView4.getText()));
+                            addPositionHeldViewModel2.addPositionHeldData(strValueOf4, str2, strValueOf5, String.valueOf((dialogAddPositionHeldBinding24 == null || (textView4 = dialogAddPositionHeldBinding24.etEndDate) == null) ? null : textView4.getText()));
                             DialogAddPositionHeldBinding dialogAddPositionHeldBinding25 = this$0.get_binding();
                             LinearLayout linearLayout2 = dialogAddPositionHeldBinding25 != null ? dialogAddPositionHeldBinding25.completionCard : null;
                             if (linearLayout2 == null) {
@@ -717,15 +715,15 @@ public final class AddPositionHeldDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddPositionHeldBinding dialogAddPositionHeldBinding = this$0.get_binding();
-            CharSequence charSequence = null;
-            charSequence = null;
+            CharSequence text = null;
+            text = null;
             if (String.valueOf((dialogAddPositionHeldBinding == null || (textView20 = dialogAddPositionHeldBinding.completionFileName) == null) ? null : textView20.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddPositionHeldBinding2 == null || (textInputEditText4 = dialogAddPositionHeldBinding2.etName) == null) ? null : textInputEditText4.getText()), "")) {
@@ -748,13 +746,13 @@ public final class AddPositionHeldDialog extends BaseDialog {
                                     String str = this$0.id;
                                     Intrinsics.checkNotNull(str);
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding8 = this$0.get_binding();
-                                    String valueOf = String.valueOf((dialogAddPositionHeldBinding8 == null || (textInputEditText3 = dialogAddPositionHeldBinding8.etName) == null) ? null : textInputEditText3.getText());
+                                    String strValueOf = String.valueOf((dialogAddPositionHeldBinding8 == null || (textInputEditText3 = dialogAddPositionHeldBinding8.etName) == null) ? null : textInputEditText3.getText());
                                     String str2 = this$0.yearId;
                                     Intrinsics.checkNotNull(str2);
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding9 = this$0.get_binding();
-                                    String valueOf2 = String.valueOf((dialogAddPositionHeldBinding9 == null || (textView14 = dialogAddPositionHeldBinding9.etFromDate) == null) ? null : textView14.getText());
+                                    String strValueOf2 = String.valueOf((dialogAddPositionHeldBinding9 == null || (textView14 = dialogAddPositionHeldBinding9.etFromDate) == null) ? null : textView14.getText());
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding10 = this$0.get_binding();
-                                    String valueOf3 = String.valueOf((dialogAddPositionHeldBinding10 == null || (textView13 = dialogAddPositionHeldBinding10.etEndDate) == null) ? null : textView13.getText());
+                                    String strValueOf3 = String.valueOf((dialogAddPositionHeldBinding10 == null || (textView13 = dialogAddPositionHeldBinding10.etEndDate) == null) ? null : textView13.getText());
                                     File file3 = this$0.pickFile;
                                     if (file3 == null) {
                                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -762,7 +760,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
                                     } else {
                                         file = file3;
                                     }
-                                    addPositionHeldViewModel.updatePositionHeldData(str, valueOf, str2, valueOf2, valueOf3, file);
+                                    addPositionHeldViewModel.updatePositionHeldData(str, strValueOf, str2, strValueOf2, strValueOf3, file);
                                     DialogAddPositionHeldBinding dialogAddPositionHeldBinding11 = this$0.get_binding();
                                     LinearLayout linearLayout = dialogAddPositionHeldBinding11 != null ? dialogAddPositionHeldBinding11.completionCard : null;
                                     if (linearLayout != null) {
@@ -820,16 +818,16 @@ public final class AddPositionHeldDialog extends BaseDialog {
                             String str3 = this$0.id;
                             Intrinsics.checkNotNull(str3);
                             DialogAddPositionHeldBinding dialogAddPositionHeldBinding22 = this$0.get_binding();
-                            String valueOf4 = String.valueOf((dialogAddPositionHeldBinding22 == null || (textInputEditText = dialogAddPositionHeldBinding22.etName) == null) ? null : textInputEditText.getText());
+                            String strValueOf4 = String.valueOf((dialogAddPositionHeldBinding22 == null || (textInputEditText = dialogAddPositionHeldBinding22.etName) == null) ? null : textInputEditText.getText());
                             String str4 = this$0.yearId;
                             Intrinsics.checkNotNull(str4);
                             DialogAddPositionHeldBinding dialogAddPositionHeldBinding23 = this$0.get_binding();
-                            String valueOf5 = String.valueOf((dialogAddPositionHeldBinding23 == null || (textView4 = dialogAddPositionHeldBinding23.etFromDate) == null) ? null : textView4.getText());
+                            String strValueOf5 = String.valueOf((dialogAddPositionHeldBinding23 == null || (textView4 = dialogAddPositionHeldBinding23.etFromDate) == null) ? null : textView4.getText());
                             DialogAddPositionHeldBinding dialogAddPositionHeldBinding24 = this$0.get_binding();
                             if (dialogAddPositionHeldBinding24 != null && (textView3 = dialogAddPositionHeldBinding24.etEndDate) != null) {
-                                charSequence = textView3.getText();
+                                text = textView3.getText();
                             }
-                            addPositionHeldViewModel2.updatePositionHeldData(str3, valueOf4, str4, valueOf5, String.valueOf(charSequence));
+                            addPositionHeldViewModel2.updatePositionHeldData(str3, strValueOf4, str4, strValueOf5, String.valueOf(text));
                             return;
                         }
                     }
@@ -851,9 +849,10 @@ public final class AddPositionHeldDialog extends BaseDialog {
     }
 
     private final void listenSpinnerResponse() {
-        getAddPositionHeldViewModel().getResponse().observe(getViewLifecycleOwner(), new AddPositionHeldDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$listenSpinnerResponse$1
+        getAddPositionHeldViewModel().getResponse().observe(getViewLifecycleOwner(), new AddPositionHeldDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddPositionHeldDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddPositionHeldDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -890,10 +889,8 @@ public final class AddPositionHeldDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter;
-                DialogAddPositionHeldBinding dialogAddPositionHeldBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -901,8 +898,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
                     PublicationDropDownResponse data = resource.getData();
                     if (data != null) {
                         try {
-                            spinnerAdapter = AddPositionHeldDialog.this.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getYears());
+                            AddPositionHeldDialog.this.getSpinnerAdapter().addItems(data.getYears());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -922,7 +918,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
                     return;
                 }
                 AddPositionHeldDialog.this.hideProgress();
-                dialogAddPositionHeldBinding = AddPositionHeldDialog.this.get_binding();
+                DialogAddPositionHeldBinding dialogAddPositionHeldBinding = AddPositionHeldDialog.this.get_binding();
                 if (dialogAddPositionHeldBinding == null || (spinner = dialogAddPositionHeldBinding.spinnerYear) == null) {
                     return;
                 }
@@ -937,7 +933,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         getAddPositionHeldViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPositionHeldDialog.listenAddResponse$lambda$10(AddPositionHeldDialog.this, (Resource) obj);
+                AddPositionHeldDialog.listenAddResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1005,7 +1001,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         getAddPositionHeldViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda10
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPositionHeldDialog.listenAddResponse2$lambda$12(AddPositionHeldDialog.this, (Resource) obj);
+                AddPositionHeldDialog.listenAddResponse2$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1073,7 +1069,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         getAddPositionHeldViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPositionHeldDialog.listenUpdateResponse$lambda$14(AddPositionHeldDialog.this, (Resource) obj);
+                AddPositionHeldDialog.listenUpdateResponse$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1141,7 +1137,7 @@ public final class AddPositionHeldDialog extends BaseDialog {
         getAddPositionHeldViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.positionheld.add.AddPositionHeldDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddPositionHeldDialog.listenProgressResponse$lambda$16(AddPositionHeldDialog.this, (Resource) obj);
+                AddPositionHeldDialog.listenProgressResponse$lambda$16(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1172,18 +1168,18 @@ public final class AddPositionHeldDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddPositionHeldBinding dialogAddPositionHeldBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddPositionHeldBinding2 != null ? dialogAddPositionHeldBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddPositionHeldBinding dialogAddPositionHeldBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddPositionHeldBinding3 != null ? dialogAddPositionHeldBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1191,13 +1187,13 @@ public final class AddPositionHeldDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -1223,24 +1219,24 @@ public final class AddPositionHeldDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

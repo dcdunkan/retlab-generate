@@ -1,6 +1,7 @@
 package in.etuwa.app.ui.result.session;
 
 import android.content.ComponentCallbacks;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -51,33 +53,33 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SessionalFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SessionalFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SessionalFragment extends BaseFragment implements SemListDialogTwo.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private SessionalFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private boolean flag;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semId;
     private final ArrayList<Semester> sessionList;
 
-    /* renamed from: sessionalViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: sessionalViewModel$delegate, reason: from kotlin metadata */
     private final Lazy sessionalViewModel;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
 
-    /* compiled from: SessionalFragment.kt */
+    /* JADX INFO: compiled from: SessionalFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -127,7 +129,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return sessionalFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(sessionalFragment);
@@ -141,7 +143,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -154,7 +156,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SessionalViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SessionalViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SessionalFragment sessionalFragment2 = this;
@@ -181,7 +183,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(SessionalFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -206,7 +208,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(SessionalFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -254,7 +256,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final SessionalFragmentBinding get_binding() {
         return this._binding;
     }
@@ -283,7 +285,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         this.semId = str;
     }
 
-    /* compiled from: SessionalFragment.kt */
+    /* JADX INFO: compiled from: SessionalFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/result/session/SessionalFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/result/session/SessionalFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -349,88 +351,80 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         if (spinner2 != null) {
             spinner2.setAdapter((SpinnerAdapter) getSpinnerAdapter2());
         }
-        getSpinnerAdapter().addItems(this.sessionList);
         SessionalFragmentBinding sessionalFragmentBinding4 = get_binding();
-        if (sessionalFragmentBinding4 != null && (floatingActionButton = sessionalFragmentBinding4.fabSession) != null) {
+        TextView textView = sessionalFragmentBinding4 != null ? sessionalFragmentBinding4.semesterText : null;
+        if (textView != null) {
+            textView.setText(getPreference().getUserSem());
+        }
+        getSpinnerAdapter().addItems(this.sessionList);
+        SessionalFragmentBinding sessionalFragmentBinding5 = get_binding();
+        if (sessionalFragmentBinding5 != null && (floatingActionButton = sessionalFragmentBinding5.fabSession) != null) {
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.result.session.SessionalFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SessionalFragment.setUp$lambda$0(SessionalFragment.this, view);
+                    SessionalFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
         listenResponse();
         listenSemResponse();
-        SessionalFragmentBinding sessionalFragmentBinding5 = get_binding();
-        Spinner spinner3 = sessionalFragmentBinding5 != null ? sessionalFragmentBinding5.spinnerSession : null;
+        SessionalFragmentBinding sessionalFragmentBinding6 = get_binding();
+        Spinner spinner3 = sessionalFragmentBinding6 != null ? sessionalFragmentBinding6.spinnerSession : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.session.SessionalFragment$setUp$2
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.session.SessionalFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    SessionalViewModel sessionalViewModel;
-                    spinnerAdapter = SessionalFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    sessionalViewModel = SessionalFragment.this.getSessionalViewModel();
-                    sessionalViewModel.getResult(SessionalFragment.this.getSemId(), semester.getId());
+                    SessionalFragment.this.getSessionalViewModel().getResult(SessionalFragment.this.getSemId(), SessionalFragment.this.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
-        SessionalFragmentBinding sessionalFragmentBinding6 = get_binding();
-        Spinner spinner4 = sessionalFragmentBinding6 != null ? sessionalFragmentBinding6.spinnerSemester : null;
+        SessionalFragmentBinding sessionalFragmentBinding7 = get_binding();
+        Spinner spinner4 = sessionalFragmentBinding7 != null ? sessionalFragmentBinding7.spinnerSemester : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.session.SessionalFragment$setUp$3
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.session.SessionalFragment.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter22;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter23;
-                    SessionalFragmentBinding sessionalFragmentBinding7;
-                    SessionalViewModel sessionalViewModel;
-                    SharedPrefManager preference2;
+                    TextView textView2;
                     Spinner spinner5;
-                    SessionalViewModel sessionalViewModel2;
-                    SessionalFragmentBinding sessionalFragmentBinding8;
                     Spinner spinner6;
-                    spinnerAdapter2 = SessionalFragment.this.getSpinnerAdapter2();
-                    Semester semester = spinnerAdapter2.getSemester(position);
-                    z = SessionalFragment.this.flag;
-                    if (z) {
-                        sessionalViewModel2 = SessionalFragment.this.getSessionalViewModel();
-                        sessionalViewModel2.getResult(semester.getId(), "1");
-                        sessionalFragmentBinding8 = SessionalFragment.this.get_binding();
+                    Semester semester = SessionalFragment.this.getSpinnerAdapter2().getSemester(position);
+                    if (SessionalFragment.this.flag) {
+                        SessionalFragment.this.getSessionalViewModel().getResult(semester.getId(), "1");
+                        SessionalFragmentBinding sessionalFragmentBinding8 = SessionalFragment.this.get_binding();
                         if (sessionalFragmentBinding8 != null && (spinner6 = sessionalFragmentBinding8.spinnerSession) != null) {
                             spinner6.setSelection(0);
+                        }
+                        SessionalFragmentBinding sessionalFragmentBinding9 = SessionalFragment.this.get_binding();
+                        textView2 = sessionalFragmentBinding9 != null ? sessionalFragmentBinding9.semesterText : null;
+                        if (textView2 != null) {
+                            textView2.setText(semester.getName());
                         }
                         SessionalFragment.this.setSemId(semester.getId());
                         return;
                     }
                     SessionalFragment.this.flag = true;
-                    spinnerAdapter22 = SessionalFragment.this.getSpinnerAdapter2();
-                    int count = spinnerAdapter22.getCount();
+                    int count = SessionalFragment.this.getSpinnerAdapter2().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = SessionalFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter23 = SessionalFragment.this.getSpinnerAdapter2();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter23.getSemester(i).getId())) {
-                            sessionalFragmentBinding7 = SessionalFragment.this.get_binding();
-                            if (sessionalFragmentBinding7 != null && (spinner5 = sessionalFragmentBinding7.spinnerSemester) != null) {
+                        if (Intrinsics.areEqual(SessionalFragment.this.getPreference().getUserSemId(), SessionalFragment.this.getSpinnerAdapter2().getSemester(i).getId())) {
+                            SessionalFragmentBinding sessionalFragmentBinding10 = SessionalFragment.this.get_binding();
+                            if (sessionalFragmentBinding10 != null && (spinner5 = sessionalFragmentBinding10.spinnerSemester) != null) {
                                 spinner5.setSelection(i);
                             }
+                            SessionalFragmentBinding sessionalFragmentBinding11 = SessionalFragment.this.get_binding();
+                            textView2 = sessionalFragmentBinding11 != null ? sessionalFragmentBinding11.semesterText : null;
+                            if (textView2 != null) {
+                                textView2.setText(SessionalFragment.this.getSpinnerAdapter2().getSemester(i).getName());
+                            }
                             if (position == 0) {
-                                sessionalViewModel = SessionalFragment.this.getSessionalViewModel();
-                                preference2 = SessionalFragment.this.getPreference();
-                                sessionalViewModel.getResult(preference2.getUserSemId(), "1");
+                                SessionalFragment.this.getSessionalViewModel().getResult(SessionalFragment.this.getPreference().getUserSemId(), "1");
                                 return;
                             }
                             return;
@@ -439,14 +433,18 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
                 }
             });
         }
-        SessionalFragmentBinding sessionalFragmentBinding7 = get_binding();
-        if (sessionalFragmentBinding7 == null || (swipeRefreshLayout = sessionalFragmentBinding7.swipeLayout) == null) {
+        SessionalViewModel sessionalViewModel = getSessionalViewModel();
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        sessionalViewModel.getSemester(contextRequireContext);
+        SessionalFragmentBinding sessionalFragmentBinding8 = get_binding();
+        if (sessionalFragmentBinding8 == null || (swipeRefreshLayout = sessionalFragmentBinding8.swipeLayout) == null) {
             return;
         }
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.result.session.SessionalFragment$$ExternalSyntheticLambda3
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                SessionalFragment.setUp$lambda$1(SessionalFragment.this);
+                SessionalFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -456,9 +454,9 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialogTwo newInstance = SemListDialogTwo.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        SemListDialogTwo semListDialogTwoNewInstance = SemListDialogTwo.INSTANCE.newInstance();
+        semListDialogTwoNewInstance.setCallBack(this$0);
+        semListDialogTwoNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -469,7 +467,10 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         if (sessionalFragmentBinding != null && (spinner = sessionalFragmentBinding.spinnerSession) != null) {
             spinner.setSelection(0);
         }
-        this$0.getSessionalViewModel().getSemester();
+        SessionalViewModel sessionalViewModel = this$0.getSessionalViewModel();
+        Context contextRequireContext = this$0.requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        sessionalViewModel.getSemester(contextRequireContext);
         SessionalFragmentBinding sessionalFragmentBinding2 = this$0.get_binding();
         SwipeRefreshLayout swipeRefreshLayout = sessionalFragmentBinding2 != null ? sessionalFragmentBinding2.swipeLayout : null;
         if (swipeRefreshLayout == null) {
@@ -482,7 +483,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         getSessionalViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.result.session.SessionalFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SessionalFragment.listenSemResponse$lambda$3(SessionalFragment.this, (Resource) obj);
+                SessionalFragment.listenSemResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -495,16 +496,16 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 SessionalFragmentBinding sessionalFragmentBinding = this$0.get_binding();
                 if (sessionalFragmentBinding != null && (swipeRefreshLayout2 = sessionalFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -535,9 +536,9 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         if (arrayList != null) {
             this$0.getSpinnerAdapter2().addItems(arrayList);
             SessionalFragmentBinding sessionalFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (sessionalFragmentBinding3 == null || (swipeRefreshLayout = sessionalFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
+            Boolean boolValueOf2 = (sessionalFragmentBinding3 == null || (swipeRefreshLayout = sessionalFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+            Intrinsics.checkNotNull(boolValueOf2);
+            if (boolValueOf2.booleanValue()) {
                 SessionalFragmentBinding sessionalFragmentBinding4 = this$0.get_binding();
                 SwipeRefreshLayout swipeRefreshLayout3 = sessionalFragmentBinding4 != null ? sessionalFragmentBinding4.swipeLayout : null;
                 if (swipeRefreshLayout3 != null) {
@@ -547,10 +548,15 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
                 for (int i2 = 0; i2 < count; i2++) {
                     if (Intrinsics.areEqual(this$0.getPreference().getUserSemId(), this$0.getSpinnerAdapter2().getSemester(i2).getId())) {
                         SessionalFragmentBinding sessionalFragmentBinding5 = this$0.get_binding();
-                        if (sessionalFragmentBinding5 == null || (spinner = sessionalFragmentBinding5.spinnerSemester) == null) {
+                        if (sessionalFragmentBinding5 != null && (spinner = sessionalFragmentBinding5.spinnerSemester) != null) {
+                            spinner.setSelection(i2);
+                        }
+                        SessionalFragmentBinding sessionalFragmentBinding6 = this$0.get_binding();
+                        TextView textView = sessionalFragmentBinding6 != null ? sessionalFragmentBinding6.semesterText : null;
+                        if (textView == null) {
                             return;
                         }
-                        spinner.setSelection(i2);
+                        textView.setText(this$0.getSpinnerAdapter2().getSemester(i2).getName());
                         return;
                     }
                 }
@@ -562,7 +568,7 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         getSessionalViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.result.session.SessionalFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SessionalFragment.listenResponse$lambda$5(SessionalFragment.this, (Resource) obj);
+                SessionalFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -638,5 +644,24 @@ public final class SessionalFragment extends BaseFragment implements SemListDial
         Intrinsics.checkNotNullParameter(sem, "sem");
         getSessionalViewModel().getResult(id, "1");
         this.semId = id;
+        SessionalFragmentBinding sessionalFragmentBinding = get_binding();
+        TextView textView = sessionalFragmentBinding != null ? sessionalFragmentBinding.semesterText : null;
+        if (textView == null) {
+            return;
+        }
+        textView.setText(sem);
+    }
+
+    public final void onSemesterSelected(String id, String semName) {
+        Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(semName, "semName");
+        getSessionalViewModel().getResult(id, "1");
+        this.semId = id;
+        SessionalFragmentBinding sessionalFragmentBinding = get_binding();
+        TextView textView = sessionalFragmentBinding != null ? sessionalFragmentBinding.semesterText : null;
+        if (textView == null) {
+            return;
+        }
+        textView.setText(semName);
     }
 }

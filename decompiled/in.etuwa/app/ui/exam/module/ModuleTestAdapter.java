@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.cli.HelpFormatter;
@@ -25,8 +24,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 
-/* compiled from: ModuleTestAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ModuleTestAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<Exam> exams = new ArrayList<>();
     private ExamListener listener;
@@ -35,18 +34,18 @@ public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_exam, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   ….row_exam, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_exam, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   ….row_exam, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -62,15 +61,14 @@ public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder
         return !this.exams.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: ModuleTestAdapter.kt */
-    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0011\u001a\u00020\u0012H\u0014J\u0010\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u0015H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lin/etuwa/app/ui/exam/module/ModuleTestAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/exam/module/ModuleTestAdapter;Landroid/view/View;)V", "deleteBtn", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "dwnBtn", "issueDate", "lastDate", AttendanceDayDialogKt.ARG_SEM, NotificationCompat.CATEGORY_STATUS, "sub", "submittedView", "title", "upBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    /* JADX INFO: compiled from: ModuleTestAdapter.kt */
+    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0010\u001a\u00020\u0011H\u0014J\u0010\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u0014H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lin/etuwa/app/ui/exam/module/ModuleTestAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/exam/module/ModuleTestAdapter;Landroid/view/View;)V", "deleteBtn", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "dwnBtn", "issueDate", "lastDate", AttendanceDayDialogKt.ARG_SEM, "sub", "submittedView", "title", "upBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView deleteBtn;
         private final TextView dwnBtn;
         private final TextView issueDate;
         private final TextView lastDate;
         private final TextView semester;
-        private final TextView status;
         private final TextView sub;
         private final View submittedView;
         final /* synthetic */ ModuleTestAdapter this$0;
@@ -91,7 +89,6 @@ public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder
             this.title = (TextView) itemView.findViewById(R.id.exm_title);
             this.issueDate = (TextView) itemView.findViewById(R.id.exm_issue_date);
             this.lastDate = (TextView) itemView.findViewById(R.id.exm_last_date);
-            this.status = (TextView) itemView.findViewById(R.id.exm_status);
             this.dwnBtn = (TextView) itemView.findViewById(R.id.exm_download);
             this.upBtn = (TextView) itemView.findViewById(R.id.exm_upload_btn);
             this.deleteBtn = (TextView) itemView.findViewById(R.id.delete_exm);
@@ -110,7 +107,6 @@ public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder
                 this.title.setText(exam.getTitle());
                 this.issueDate.setText(exam.getStartTime());
                 this.lastDate.setText(exam.getFinishTime());
-                this.status.setText(exam.getStatus());
                 if (Intrinsics.areEqual(exam.getStatus(), "SUBMITTED")) {
                     this.deleteBtn.setVisibility(0);
                 } else {
@@ -126,7 +122,7 @@ public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.exam.module.ModuleTestAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ModuleTestAdapter.ViewHolder.onBind$lambda$0(ModuleTestAdapter.this, exam, view);
+                        ModuleTestAdapter.ViewHolder.onBind$lambda$0(moduleTestAdapter, exam, view);
                     }
                 });
                 TextView textView2 = this.dwnBtn;
@@ -134,15 +130,15 @@ public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.exam.module.ModuleTestAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ModuleTestAdapter.ViewHolder.onBind$lambda$1(Exam.this, moduleTestAdapter2, this, view);
+                        ModuleTestAdapter.ViewHolder.onBind$lambda$1(exam, moduleTestAdapter2, this, view);
                     }
                 });
-                String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(exam.getUploadedFile(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(exam.getUploadedFile(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
                 if (Intrinsics.areEqual(exam.getStatus(), "SUBMITTED")) {
                     ExamListener examListener = this.this$0.listener;
-                    Boolean valueOf = examListener != null ? Boolean.valueOf(examListener.checkFileExistence(replace)) : null;
-                    Intrinsics.checkNotNull(valueOf);
-                    if (valueOf.booleanValue()) {
+                    Boolean boolValueOf = examListener != null ? Boolean.valueOf(examListener.checkFileExistence(strReplace)) : null;
+                    Intrinsics.checkNotNull(boolValueOf);
+                    if (boolValueOf.booleanValue()) {
                         this.upBtn.setText("Open Submitted File");
                         this.upBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
                     } else {
@@ -158,7 +154,7 @@ public final class ModuleTestAdapter extends RecyclerView.Adapter<BaseViewHolder
                 textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.exam.module.ModuleTestAdapter$ViewHolder$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ModuleTestAdapter.ViewHolder.onBind$lambda$2(Exam.this, moduleTestAdapter3, this, position, view);
+                        ModuleTestAdapter.ViewHolder.onBind$lambda$2(exam, moduleTestAdapter3, this, position, view);
                     }
                 });
             } catch (Exception unused) {

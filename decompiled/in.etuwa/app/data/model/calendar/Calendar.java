@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Calendar.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Calendar.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Calendar {
 
     @SerializedName("date")
@@ -27,12 +27,12 @@ public final /* data */ class Calendar {
         return calendar.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }

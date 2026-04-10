@@ -51,23 +51,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: DayWiseTimeTableFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: DayWiseTimeTableFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class DayWiseTimeTableFragment extends BaseFragment implements DayWiseTimeTableAdapter.CallBack, SubjectPlanDialog.StoreListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentDayWiseTimeTableBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String date;
 
-    /* renamed from: dayWiseTimeTableViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: dayWiseTimeTableViewModel$delegate, reason: from kotlin metadata */
     private final Lazy dayWiseTimeTableViewModel;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     @JvmStatic
@@ -97,7 +97,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return dayWiseTimeTableFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(dayWiseTimeTableFragment);
@@ -111,7 +111,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -124,7 +124,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(DayWiseTimeTableViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(DayWiseTimeTableViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final DayWiseTimeTableFragment dayWiseTimeTableFragment2 = this;
@@ -173,7 +173,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentDayWiseTimeTableBinding get_binding() {
         return this._binding;
     }
@@ -191,7 +191,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
         this.date = str;
     }
 
-    /* compiled from: DayWiseTimeTableFragment.kt */
+    /* JADX INFO: compiled from: DayWiseTimeTableFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/dashboard/daywisetimetable/DayWiseTimeTableFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/dashboard/daywisetimetable/DayWiseTimeTableFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -254,10 +254,10 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
         final int i = calendar.get(1);
         final int i2 = calendar.get(2);
         final int i3 = calendar.get(5);
-        Date parse = new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3);
+        Date date = new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Intrinsics.checkNotNull(parse);
-        String outputDateStr = simpleDateFormat.format(parse);
+        Intrinsics.checkNotNull(date);
+        String outputDateStr = simpleDateFormat.format(date);
         DayWiseTimeTableViewModel dayWiseTimeTableViewModel = getDayWiseTimeTableViewModel();
         Intrinsics.checkNotNullExpressionValue(outputDateStr, "outputDateStr");
         dayWiseTimeTableViewModel.getTableData(outputDateStr);
@@ -267,7 +267,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DayWiseTimeTableFragment.setUp$lambda$1(DayWiseTimeTableFragment.this, i, i2, i3, view);
+                    DayWiseTimeTableFragment.setUp$lambda$1(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -278,7 +278,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableFragment$$ExternalSyntheticLambda1
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                DayWiseTimeTableFragment.setUp$lambda$2(DayWiseTimeTableFragment.this);
+                DayWiseTimeTableFragment.setUp$lambda$2(this.f$0);
             }
         });
     }
@@ -289,7 +289,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableFragment$$ExternalSyntheticLambda2
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                DayWiseTimeTableFragment.setUp$lambda$1$lambda$0(DayWiseTimeTableFragment.this, datePicker, i4, i5, i6);
+                DayWiseTimeTableFragment.setUp$lambda$1$lambda$0(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -297,10 +297,10 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$1$lambda$0(DayWiseTimeTableFragment this$0, DatePicker datePicker, int i, int i2, int i3) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Date parse = new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3);
+        Date date = new SimpleDateFormat("yyyy-M-d").parse(i + HelpFormatter.DEFAULT_OPT_PREFIX + (i2 + 1) + HelpFormatter.DEFAULT_OPT_PREFIX + i3);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Intrinsics.checkNotNull(parse);
-        String outputDateStr1 = simpleDateFormat.format(parse);
+        Intrinsics.checkNotNull(date);
+        String outputDateStr1 = simpleDateFormat.format(date);
         Intrinsics.checkNotNullExpressionValue(outputDateStr1, "outputDateStr1");
         this$0.date = outputDateStr1;
         this$0.getDayWiseTimeTableViewModel().getTableData(outputDateStr1);
@@ -319,9 +319,10 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
     }
 
     private final void listenResponse() {
-        getDayWiseTimeTableViewModel().getTimeTableResponse().observe(getViewLifecycleOwner(), new DayWiseTimeTableFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DayWiseResponse>, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableFragment$listenResponse$1
+        getDayWiseTimeTableViewModel().getTimeTableResponse().observe(getViewLifecycleOwner(), new DayWiseTimeTableFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DayWiseResponse>, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableFragment.listenResponse.1
 
-            /* compiled from: DayWiseTimeTableFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: DayWiseTimeTableFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -358,11 +359,8 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DayWiseResponse> resource) {
-                DayWiseTimeTableAdapter adapter;
-                DayWiseTimeTableAdapter adapter2;
-                FragmentDayWiseTimeTableBinding fragmentDayWiseTimeTableBinding;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -372,12 +370,10 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
                         DayWiseTimeTableFragment dayWiseTimeTableFragment = DayWiseTimeTableFragment.this;
                         dayWiseTimeTableFragment.showBaseView();
                         if (data.getTimetable().size() > 0) {
-                            adapter2 = dayWiseTimeTableFragment.getAdapter();
-                            adapter2.addItems(data.getTimetable().get(0).getSub());
+                            dayWiseTimeTableFragment.getAdapter().addItems(data.getTimetable().get(0).getSub());
                             return;
                         } else {
-                            adapter = dayWiseTimeTableFragment.getAdapter();
-                            adapter.clearItems();
+                            dayWiseTimeTableFragment.getAdapter().clearItems();
                             return;
                         }
                     }
@@ -397,7 +393,7 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
                 }
                 DayWiseTimeTableFragment.this.hideProgress();
                 DayWiseTimeTableFragment.this.showBaseView();
-                fragmentDayWiseTimeTableBinding = DayWiseTimeTableFragment.this.get_binding();
+                FragmentDayWiseTimeTableBinding fragmentDayWiseTimeTableBinding = DayWiseTimeTableFragment.this.get_binding();
                 if (fragmentDayWiseTimeTableBinding == null || (recyclerView = fragmentDayWiseTimeTableBinding.rvTimetable) == null) {
                     return;
                 }
@@ -457,8 +453,8 @@ public final class DayWiseTimeTableFragment extends BaseFragment implements DayW
     public void subjectPlanClicked(int postion, int hour) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SubjectPlanDialog newInstance = SubjectPlanDialog.INSTANCE.newInstance(postion, this.date, hour);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        SubjectPlanDialog subjectPlanDialogNewInstance = SubjectPlanDialog.INSTANCE.newInstance(postion, this.date, hour);
+        subjectPlanDialogNewInstance.setCallBack(this);
+        subjectPlanDialogNewInstance.show(childFragmentManager, (String) null);
     }
 }

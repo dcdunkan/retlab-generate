@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowSubjectCoverageBinding implements ViewBinding {
     private final CardView rootView;
     public final LinearLayout topicView;
@@ -32,11 +32,11 @@ public final class RowSubjectCoverageBinding implements ViewBinding {
     }
 
     public static RowSubjectCoverageBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_subject_coverage, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_subject_coverage, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowSubjectCoverageBinding bind(View rootView) {

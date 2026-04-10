@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamCourse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamCourse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamCourse {
     private final String amount;
     private final String course;
@@ -45,37 +45,37 @@ public final /* data */ class ExamCourse {
         return examCourse.copy(i, str6, str7, str8, str9, str10, z);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getNo() {
         return this.no;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getFeehead_id() {
         return this.feehead_id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getCourse() {
         return this.course;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getIs_eligible() {
         return this.is_eligible;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getIs_selected() {
         return this.is_selected;
     }
@@ -101,14 +101,17 @@ public final /* data */ class ExamCourse {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v11, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v13 */
     public int hashCode() {
-        int hashCode = ((((((((((this.no * 31) + this.feehead_id.hashCode()) * 31) + this.course.hashCode()) * 31) + this.type.hashCode()) * 31) + this.is_eligible.hashCode()) * 31) + this.amount.hashCode()) * 31;
+        int iHashCode = ((((((((((this.no * 31) + this.feehead_id.hashCode()) * 31) + this.course.hashCode()) * 31) + this.type.hashCode()) * 31) + this.is_eligible.hashCode()) * 31) + this.amount.hashCode()) * 31;
         boolean z = this.is_selected;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return hashCode + i;
+        return iHashCode + r1;
     }
 
     public String toString() {

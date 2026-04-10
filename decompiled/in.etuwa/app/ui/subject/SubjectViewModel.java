@@ -19,10 +19,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SubjectViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SubjectViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private final MutableLiveData<Resource<ArrayList<Semester>>> semResponse;
     private final SubjectRepository subjectRepository;
     private MutableLiveData<Resource<ArrayList<Subjects>>> subjectResponse;
@@ -33,14 +34,22 @@ public final class SubjectViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.subjectResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getSemester();
     }
 
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.subjectRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.subjectRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel.getSemester.1
             {
                 super(1);
             }
@@ -51,20 +60,18 @@ public final class SubjectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SubjectViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                SubjectViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubjectViewModel.getSemester$lambda$0(Function1.this, obj);
+                SubjectViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel.getSemester.2
             {
                 super(1);
             }
@@ -75,17 +82,15 @@ public final class SubjectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SubjectViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SubjectViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubjectViewModel.getSemester$lambda$1(Function1.this, obj);
+                SubjectViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -117,8 +122,8 @@ public final class SubjectViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(semId, "semId");
         this.subjectResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Subjects>> observeOn = this.subjectRepository.getSubjectsApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Subjects>, Unit> function1 = new Function1<ArrayList<Subjects>, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$getSubjects$1
+        Single<ArrayList<Subjects>> singleObserveOn = this.subjectRepository.getSubjectsApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Subjects>, Unit> function1 = new Function1<ArrayList<Subjects>, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel.getSubjects.1
             {
                 super(1);
             }
@@ -129,20 +134,18 @@ public final class SubjectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Subjects> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SubjectViewModel.this.subjectResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                SubjectViewModel.this.subjectResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Subjects>> consumer = new Consumer() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubjectViewModel.getSubjects$lambda$2(Function1.this, obj);
+                SubjectViewModel.getSubjects$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$getSubjects$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.SubjectViewModel.getSubjects.2
             {
                 super(1);
             }
@@ -153,17 +156,15 @@ public final class SubjectViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SubjectViewModel.this.subjectResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SubjectViewModel.this.subjectResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.SubjectViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubjectViewModel.getSubjects$lambda$3(Function1.this, obj);
+                SubjectViewModel.getSubjects$lambda$3(function12, obj);
             }
         }));
     }

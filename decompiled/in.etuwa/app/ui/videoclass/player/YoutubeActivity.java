@@ -11,8 +11,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 
-/* compiled from: YoutubeActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: YoutubeActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
     private String videoLink = "";
 
@@ -44,8 +44,8 @@ public final class YoutubeActivity extends YouTubeBaseActivity implements YouTub
             return;
         }
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-        String format = String.format("There was an error initializing the YouTubePlayer \n", Arrays.copyOf(new Object[]{errorReason.toString()}, 1));
-        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-        Toast.makeText(this, format, 1).show();
+        String str = String.format("There was an error initializing the YouTubePlayer \n", Arrays.copyOf(new Object[]{errorReason.toString()}, 1));
+        Intrinsics.checkNotNullExpressionValue(str, "format(...)");
+        Toast.makeText(this, str, 1).show();
     }
 }

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ActivityPointResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ActivityPointResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ActivityPointResponse {
 
     @SerializedName("activity_points")
@@ -44,12 +44,12 @@ public final /* data */ class ActivityPointResponse {
         return activityPointResponse.copy(z, str, arrayList, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getTotalActivityPoint() {
         return this.totalActivityPoint;
     }
@@ -58,7 +58,7 @@ public final /* data */ class ActivityPointResponse {
         return this.activityPoints;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getError() {
         return this.error;
     }
@@ -90,11 +90,11 @@ public final /* data */ class ActivityPointResponse {
         }
         int i = r0 * 31;
         String str = this.totalActivityPoint;
-        int hashCode = (i + (str == null ? 0 : str.hashCode())) * 31;
+        int iHashCode = (i + (str == null ? 0 : str.hashCode())) * 31;
         ArrayList<ActivityPoints> arrayList = this.activityPoints;
-        int hashCode2 = (hashCode + (arrayList == null ? 0 : arrayList.hashCode())) * 31;
+        int iHashCode2 = (iHashCode + (arrayList == null ? 0 : arrayList.hashCode())) * 31;
         String str2 = this.error;
-        return hashCode2 + (str2 != null ? str2.hashCode() : 0);
+        return iHashCode2 + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {

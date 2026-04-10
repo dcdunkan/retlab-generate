@@ -16,7 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class CommentReplyDialogBinding extends ViewDataBinding {
     public final RelativeLayout commentLayout;
     public final EditText etReplyMsg;

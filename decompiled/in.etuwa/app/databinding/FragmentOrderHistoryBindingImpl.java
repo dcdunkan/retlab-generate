@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.mess.orderhistory.OrderHistoryViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentOrderHistoryBindingImpl extends FragmentOrderHistoryBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -60,7 +60,7 @@ public class FragmentOrderHistoryBindingImpl extends FragmentOrderHistoryBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (151 != variableId) {
+        if (152 != variableId) {
             return false;
         }
         setOrderHistoryViewModel((OrderHistoryViewModel) variable);

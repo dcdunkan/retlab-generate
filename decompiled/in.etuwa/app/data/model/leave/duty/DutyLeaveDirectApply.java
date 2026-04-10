@@ -5,8 +5,8 @@ import com.itextpdf.forms.xfdf.XfdfConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DutyLeaveDirectApply.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DutyLeaveDirectApply.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DutyLeaveDirectApply {
     private final String from_date;
     private final String head;
@@ -46,37 +46,37 @@ public final /* data */ class DutyLeaveDirectApply {
         return dutyLeaveDirectApply.copy(str, str8, str9, str10, str11, str12, str7);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getReason() {
         return this.reason;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getFrom_date() {
         return this.from_date;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTo_date() {
         return this.to_date;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getHead() {
         return this.head;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getUrl() {
         return this.url;
     }

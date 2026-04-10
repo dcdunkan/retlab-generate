@@ -26,8 +26,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: ApplyDirectDutyLeaveViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ApplyDirectDutyLeaveViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<SuccessResponse>> applyResponse;
     private final CompositeDisposable compositeDisposable;
@@ -103,8 +103,8 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
     public final void getHeadTypeData() {
         this.headTypeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DutyLeaveHeadResponse> observeOn = this.leaveRepository.getDutyLeaveDirectHeadApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DutyLeaveHeadResponse, Unit> function1 = new Function1<DutyLeaveHeadResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$getHeadTypeData$1
+        Single<DutyLeaveHeadResponse> singleObserveOn = this.leaveRepository.getDutyLeaveDirectHeadApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DutyLeaveHeadResponse, Unit> function1 = new Function1<DutyLeaveHeadResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.getHeadTypeData.1
             {
                 super(1);
             }
@@ -115,20 +115,18 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DutyLeaveHeadResponse dutyLeaveHeadResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyDirectDutyLeaveViewModel.this.headTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(dutyLeaveHeadResponse));
+                ApplyDirectDutyLeaveViewModel.this.headTypeResponse.postValue(Resource.INSTANCE.success(dutyLeaveHeadResponse));
             }
         };
         Consumer<? super DutyLeaveHeadResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.getHeadTypeData$lambda$0(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.getHeadTypeData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$getHeadTypeData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.getHeadTypeData.2
             {
                 super(1);
             }
@@ -139,17 +137,15 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ApplyDirectDutyLeaveViewModel.this.headTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ApplyDirectDutyLeaveViewModel.this.headTypeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.getHeadTypeData$lambda$1(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.getHeadTypeData$lambda$1(function12, obj);
             }
         }));
     }
@@ -176,14 +172,14 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
         Intrinsics.checkNotNullParameter(fromDate, "fromDate");
         Intrinsics.checkNotNullParameter(toDate, "toDate");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, headId);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, fromDate);
-        RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, toDate);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, headId);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, fromDate);
+        RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, toDate);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("DutyLeaveStudentApply[proofFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$applyDutyLeaveApiCall$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("DutyLeaveStudentApply[proofFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall.1
             {
                 super(1);
             }
@@ -194,20 +190,20 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 ApplyDirectDutyLeaveViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda0
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall$lambda$2(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall$lambda$2(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.leaveRepository.applyDutyLeaveDirectViewApiCall(create, create2, create3, create4, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$applyDutyLeaveApiCall$2
+        Single<SuccessResponse> singleObserveOn = this.leaveRepository.applyDutyLeaveDirectViewApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, requestBodyCreate4, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall.2
             {
                 super(1);
             }
@@ -218,7 +214,7 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 ApplyDirectDutyLeaveViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -226,10 +222,10 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall$lambda$3(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall$lambda$3(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$applyDutyLeaveApiCall$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall.3
             {
                 super(1);
             }
@@ -240,7 +236,7 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     ApplyDirectDutyLeaveViewModel.this.getApplyResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -249,10 +245,10 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall$lambda$4(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.applyDutyLeaveApiCall$lambda$4(function13, obj);
             }
         }));
     }
@@ -282,15 +278,15 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
         Intrinsics.checkNotNullParameter(fromDate, "fromDate");
         Intrinsics.checkNotNullParameter(toDate, "toDate");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, headId);
-        RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, fromDate);
-        RequestBody create5 = RequestBody.INSTANCE.create(MultipartBody.FORM, toDate);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, reason);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, headId);
+        RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, fromDate);
+        RequestBody requestBodyCreate5 = RequestBody.INSTANCE.create(MultipartBody.FORM, toDate);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("DutyLeaveStudentApply[proofFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$updateDutyLeaveApiCall$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("DutyLeaveStudentApply[proofFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall.1
             {
                 super(1);
             }
@@ -301,20 +297,20 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 ApplyDirectDutyLeaveViewModel.this.getProgressResponse2().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda5
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall$lambda$5(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall$lambda$5(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.leaveRepository.updateDutyLeaveDirectViewApiCall(create, create2, create3, create4, create5, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$updateDutyLeaveApiCall$2
+        Single<SuccessResponse> singleObserveOn = this.leaveRepository.updateDutyLeaveDirectViewApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, requestBodyCreate4, requestBodyCreate5, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall.2
             {
                 super(1);
             }
@@ -325,7 +321,7 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 ApplyDirectDutyLeaveViewModel.this.getUpdateResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -333,10 +329,10 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall$lambda$6(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall$lambda$6(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$updateDutyLeaveApiCall$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall.3
             {
                 super(1);
             }
@@ -347,7 +343,7 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     ApplyDirectDutyLeaveViewModel.this.getUpdateResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -356,10 +352,10 @@ public final class ApplyDirectDutyLeaveViewModel extends ViewModel implements Ko
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall$lambda$7(Function1.this, obj);
+                ApplyDirectDutyLeaveViewModel.updateDutyLeaveApiCall$lambda$7(function13, obj);
             }
         }));
     }

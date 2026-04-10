@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.statusview.SubjectRegStatusViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogSubRegStatusBindingImpl extends DialogSubRegStatusBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class DialogSubRegStatusBindingImpl extends DialogSubRegStatusBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (212 != variableId) {
+        if (214 != variableId) {
             return false;
         }
         setSubjectRegStatusViewModel((SubjectRegStatusViewModel) variable);

@@ -4,22 +4,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowExamScheduleBinding implements ViewBinding {
     public final TextView examDescription;
-    public final TextView examDownload;
+    public final MaterialButton examDownload;
     public final TextView examName;
     public final TextView examSubject;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView tvDateExam;
     public final TextView tvTimeExam;
 
-    private RowExamScheduleBinding(CardView rootView, TextView examDescription, TextView examDownload, TextView examName, TextView examSubject, TextView tvDateExam, TextView tvTimeExam) {
+    private RowExamScheduleBinding(MaterialCardView rootView, TextView examDescription, MaterialButton examDownload, TextView examName, TextView examSubject, TextView tvDateExam, TextView tvTimeExam) {
         this.rootView = rootView;
         this.examDescription = examDescription;
         this.examDownload = examDownload;
@@ -30,7 +31,7 @@ public final class RowExamScheduleBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -39,11 +40,11 @@ public final class RowExamScheduleBinding implements ViewBinding {
     }
 
     public static RowExamScheduleBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_exam_schedule, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_exam_schedule, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowExamScheduleBinding bind(View rootView) {
@@ -51,21 +52,21 @@ public final class RowExamScheduleBinding implements ViewBinding {
         TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
         if (textView != null) {
             i = R.id.exam_download;
-            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView2 != null) {
+            MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+            if (materialButton != null) {
                 i = R.id.exam_name;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView3 != null) {
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView2 != null) {
                     i = R.id.exam_subject;
-                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView4 != null) {
+                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView3 != null) {
                         i = R.id.tv_date_exam;
-                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView5 != null) {
+                        TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView4 != null) {
                             i = R.id.tv_time_exam;
-                            TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView6 != null) {
-                                return new RowExamScheduleBinding((CardView) rootView, textView, textView2, textView3, textView4, textView5, textView6);
+                            TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                            if (textView5 != null) {
+                                return new RowExamScheduleBinding((MaterialCardView) rootView, textView, materialButton, textView2, textView3, textView4, textView5);
                             }
                         }
                     }

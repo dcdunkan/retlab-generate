@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: SportViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SportViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SportViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<SuccessResponse>> deleteResponse;
@@ -47,8 +47,8 @@ public final class SportViewModel extends ViewModel implements KoinComponent {
     public final void getSportData() {
         this.sportResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SportResponse> observeOn = this.profileRepository.getSportUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SportResponse, Unit> function1 = new Function1<SportResponse, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$getSportData$1
+        Single<SportResponse> singleObserveOn = this.profileRepository.getSportUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SportResponse, Unit> function1 = new Function1<SportResponse, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel.getSportData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class SportViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SportResponse sportResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SportViewModel.this.sportResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(sportResponse));
+                SportViewModel.this.sportResponse.postValue(Resource.INSTANCE.success(sportResponse));
             }
         };
         Consumer<? super SportResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SportViewModel.getSportData$lambda$0(Function1.this, obj);
+                SportViewModel.getSportData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$getSportData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel.getSportData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class SportViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SportViewModel.this.sportResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SportViewModel.this.sportResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SportViewModel.getSportData$lambda$1(Function1.this, obj);
+                SportViewModel.getSportData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class SportViewModel extends ViewModel implements KoinComponent {
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteSportUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$deleteSportData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteSportUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel.deleteSportData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class SportViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 SportViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class SportViewModel extends ViewModel implements KoinComponent {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SportViewModel.deleteSportData$lambda$2(Function1.this, obj);
+                SportViewModel.deleteSportData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$deleteSportData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel.deleteSportData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class SportViewModel extends ViewModel implements KoinComponent {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 SportViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.sport.SportViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SportViewModel.deleteSportData$lambda$3(Function1.this, obj);
+                SportViewModel.deleteSportData$lambda$3(function12, obj);
             }
         }));
     }

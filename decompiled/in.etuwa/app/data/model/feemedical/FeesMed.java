@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeesMed.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeesMed.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeesMed {
     private final String installment_id;
     private final String installment_name;
@@ -25,12 +25,12 @@ public final /* data */ class FeesMed {
         return feesMed.copy(str, str2, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getInstallment_id() {
         return this.installment_id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getInstallment_name() {
         return this.installment_name;
     }

@@ -28,21 +28,21 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ViewProofDutyLeave.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ViewProofDutyLeave.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewProofDutyLeave extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogViewProofDutyLeaveBinding _binding;
     private String id;
     private ViewProofDutyLeaveCallBack listener;
     private String url;
 
-    /* renamed from: viewProofDutyLeaveViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: viewProofDutyLeaveViewModel$delegate, reason: from kotlin metadata */
     private final Lazy viewProofDutyLeaveViewModel;
 
-    /* compiled from: ViewProofDutyLeave.kt */
+    /* JADX INFO: compiled from: ViewProofDutyLeave.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/leave/duty/proof/ViewProofDutyLeave$ViewProofDutyLeaveCallBack;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ViewProofDutyLeaveCallBack {
         void onDismiss();
@@ -66,7 +66,7 @@ public final class ViewProofDutyLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return viewProofDutyLeave;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(viewProofDutyLeave);
@@ -80,7 +80,7 @@ public final class ViewProofDutyLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -93,7 +93,7 @@ public final class ViewProofDutyLeave extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ViewProofDutyLeaveViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ViewProofDutyLeaveViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -102,12 +102,12 @@ public final class ViewProofDutyLeave extends BaseDialog {
         return (ViewProofDutyLeaveViewModel) this.viewProofDutyLeaveViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogViewProofDutyLeaveBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ViewProofDutyLeave.kt */
+    /* JADX INFO: compiled from: ViewProofDutyLeave.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0016\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/leave/duty/proof/ViewProofDutyLeave$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/leave/duty/proof/ViewProofDutyLeave;", "id", "", "url", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -173,7 +173,7 @@ public final class ViewProofDutyLeave extends BaseDialog {
         DialogViewProofDutyLeaveBinding dialogViewProofDutyLeaveBinding;
         WebView webView3;
         DialogViewProofDutyLeaveBinding dialogViewProofDutyLeaveBinding2 = get_binding();
-        WebSettings webSettings = null;
+        WebSettings settings2 = null;
         WebView webView4 = dialogViewProofDutyLeaveBinding2 != null ? dialogViewProofDutyLeaveBinding2.webview : null;
         if (webView4 != null) {
             webView4.setWebViewClient(new WebViewClient());
@@ -184,10 +184,10 @@ public final class ViewProofDutyLeave extends BaseDialog {
         }
         DialogViewProofDutyLeaveBinding dialogViewProofDutyLeaveBinding3 = get_binding();
         if (dialogViewProofDutyLeaveBinding3 != null && (webView2 = dialogViewProofDutyLeaveBinding3.webview) != null) {
-            webSettings = webView2.getSettings();
+            settings2 = webView2.getSettings();
         }
-        if (webSettings != null) {
-            webSettings.setJavaScriptEnabled(true);
+        if (settings2 != null) {
+            settings2.setJavaScriptEnabled(true);
         }
         DialogViewProofDutyLeaveBinding dialogViewProofDutyLeaveBinding4 = get_binding();
         if (dialogViewProofDutyLeaveBinding4 == null || (webView = dialogViewProofDutyLeaveBinding4.webview) == null || (settings = webView.getSettings()) == null) {

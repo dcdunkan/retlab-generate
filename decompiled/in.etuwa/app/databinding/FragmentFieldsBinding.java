@@ -13,7 +13,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.webview.fields.FieldsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentFieldsBinding extends ViewDataBinding {
     public final EditText distanceEt;
     public final TextView distanceTv;

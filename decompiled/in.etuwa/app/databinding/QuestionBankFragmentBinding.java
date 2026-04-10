@@ -3,8 +3,11 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -13,26 +16,34 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.questionbank.QuestionBankViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class QuestionBankFragmentBinding extends ViewDataBinding {
+    public final ImageView ivClearSearch;
+    public final ImageView ivSearch;
 
     @Bindable
     protected QuestionBankViewModel mQuestionBankViewModel;
-    public final LinearLayout questionLayout;
     public final RecyclerView rvQuestion;
+    public final CardView searchCard;
+    public final EditText searchInput;
     public final Spinner spinnerFill;
-    public final Spinner spinnerSem;
+    public final ImageView spinnerSem;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setQuestionBankViewModel(QuestionBankViewModel questionBankViewModel);
 
-    protected QuestionBankFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout questionLayout, RecyclerView rvQuestion, Spinner spinnerFill, Spinner spinnerSem, SwipeRefreshLayout swipeLayout) {
+    protected QuestionBankFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, ImageView ivClearSearch, ImageView ivSearch, RecyclerView rvQuestion, CardView searchCard, EditText searchInput, Spinner spinnerFill, ImageView spinnerSem, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
-        this.questionLayout = questionLayout;
+        this.ivClearSearch = ivClearSearch;
+        this.ivSearch = ivSearch;
         this.rvQuestion = rvQuestion;
+        this.searchCard = searchCard;
+        this.searchInput = searchInput;
         this.spinnerFill = spinnerFill;
         this.spinnerSem = spinnerSem;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public QuestionBankViewModel getQuestionBankViewModel() {

@@ -34,13 +34,13 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: SubmitExamDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: SubmitExamDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class SubmitExamDialogViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final ExamRepository examRepository;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private MutableLiveData<Resource<Float>> progressResponse;
     private MutableLiveData<Resource<SuccessResponse>> uploadResponse;
@@ -54,10 +54,10 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
         Intrinsics.checkNotNullParameter(examRepository, "examRepository");
         this.examRepository = examRepository;
         final SubmitExamDialogViewModel submitExamDialogViewModel = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -67,7 +67,7 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = submitExamDialogViewModel;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -108,13 +108,13 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
     public final void submitSeriesExam(String examId, File filePath) {
         Intrinsics.checkNotNullParameter(examId, "examId");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, examId);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getUserName());
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getPassword());
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, examId);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getUserName());
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getPassword());
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("upload_file", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$submitSeriesExam$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("upload_file", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel.submitSeriesExam.1
             {
                 super(1);
             }
@@ -125,20 +125,20 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 SubmitExamDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda3
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubmitExamDialogViewModel.submitSeriesExam$lambda$0(Function1.this, obj);
+                SubmitExamDialogViewModel.submitSeriesExam$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.examRepository.uploadSeriesExamApiCall(create2, create3, create, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$submitSeriesExam$2
+        Observable<SuccessResponse> observableObserveOn = this.examRepository.uploadSeriesExamApiCall(requestBodyCreate2, requestBodyCreate3, requestBodyCreate, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel.submitSeriesExam.2
             {
                 super(1);
             }
@@ -149,7 +149,7 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 SubmitExamDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -157,10 +157,10 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubmitExamDialogViewModel.submitSeriesExam$lambda$1(Function1.this, obj);
+                SubmitExamDialogViewModel.submitSeriesExam$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$submitSeriesExam$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel.submitSeriesExam.3
             {
                 super(1);
             }
@@ -171,7 +171,7 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     SubmitExamDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Socket Time out. Please try again."));
@@ -180,10 +180,10 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubmitExamDialogViewModel.submitSeriesExam$lambda$2(Function1.this, obj);
+                SubmitExamDialogViewModel.submitSeriesExam$lambda$2(function13, obj);
             }
         }));
     }
@@ -209,13 +209,13 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
     public final void submitModuleTest(String examId, File filePath) {
         Intrinsics.checkNotNullParameter(examId, "examId");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, examId);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getUserName());
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getPassword());
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, examId);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getUserName());
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, getPreference().getPassword());
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("upload_file", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$submitModuleTest$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("upload_file", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel.submitModuleTest.1
             {
                 super(1);
             }
@@ -226,20 +226,20 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 SubmitExamDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda0
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubmitExamDialogViewModel.submitModuleTest$lambda$3(Function1.this, obj);
+                SubmitExamDialogViewModel.submitModuleTest$lambda$3(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.examRepository.uploadModuleTestApiCall(create2, create3, create, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$submitModuleTest$2
+        Observable<SuccessResponse> observableObserveOn = this.examRepository.uploadModuleTestApiCall(requestBodyCreate2, requestBodyCreate3, requestBodyCreate, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel.submitModuleTest.2
             {
                 super(1);
             }
@@ -250,7 +250,7 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 SubmitExamDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -258,10 +258,10 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubmitExamDialogViewModel.submitModuleTest$lambda$4(Function1.this, obj);
+                SubmitExamDialogViewModel.submitModuleTest$lambda$4(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$submitModuleTest$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel.submitModuleTest.3
             {
                 super(1);
             }
@@ -272,7 +272,7 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     SubmitExamDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Socket Time out. Please try again."));
@@ -281,10 +281,10 @@ public final class SubmitExamDialogViewModel extends ViewModel implements KoinCo
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.submit.SubmitExamDialogViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubmitExamDialogViewModel.submitModuleTest$lambda$5(Function1.this, obj);
+                SubmitExamDialogViewModel.submitModuleTest$lambda$5(function13, obj);
             }
         }));
     }

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityResetBinding implements ViewBinding {
     public final WebView resetWebView;
     private final ConstraintLayout rootView;
@@ -29,11 +29,11 @@ public final class ActivityResetBinding implements ViewBinding {
     }
 
     public static ActivityResetBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_reset, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_reset, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityResetBinding bind(View rootView) {

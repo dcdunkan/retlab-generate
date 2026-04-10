@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ContentNoDataBinding implements ViewBinding {
     private final ConstraintLayout rootView;
     public final TextView viewNoData;
@@ -29,11 +29,11 @@ public final class ContentNoDataBinding implements ViewBinding {
     }
 
     public static ContentNoDataBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.content_no_data, parent, false);
+        View viewInflate = inflater.inflate(R.layout.content_no_data, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ContentNoDataBinding bind(View rootView) {

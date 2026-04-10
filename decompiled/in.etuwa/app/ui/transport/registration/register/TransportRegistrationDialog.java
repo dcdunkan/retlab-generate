@@ -49,23 +49,23 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: TransportRegistrationDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TransportRegistrationDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TransportRegistrationDialog extends BaseDialog implements AddCompanyDialog.AddCompanyListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddTransRegBinding _binding;
     private AddRegistrationCallBack listener;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: transportRegistrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: transportRegistrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy transportRegistrationViewModel;
     private String type;
 
-    /* compiled from: TransportRegistrationDialog.kt */
+    /* JADX INFO: compiled from: TransportRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/transport/registration/register/TransportRegistrationDialog$AddRegistrationCallBack;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddRegistrationCallBack {
         void onDismiss();
@@ -94,7 +94,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return transportRegistrationDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(transportRegistrationDialog);
@@ -108,7 +108,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -121,7 +121,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(TransportRegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(TransportRegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.type = "";
@@ -133,7 +133,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(TransportRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -158,7 +158,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddTransRegBinding get_binding() {
         return this._binding;
     }
@@ -168,7 +168,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
         return (BoardingSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: TransportRegistrationDialog.kt */
+    /* JADX INFO: compiled from: TransportRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/transport/registration/register/TransportRegistrationDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/transport/registration/register/TransportRegistrationDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -233,17 +233,15 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
         DialogAddTransRegBinding dialogAddTransRegBinding2 = get_binding();
         Spinner spinner2 = dialogAddTransRegBinding2 != null ? dialogAddTransRegBinding2.spinnerBoarding : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    BoardingSpinnerAdapter spinnerAdapter;
                     TransportRegistrationDialog transportRegistrationDialog = TransportRegistrationDialog.this;
-                    spinnerAdapter = transportRegistrationDialog.getSpinnerAdapter();
-                    transportRegistrationDialog.type = String.valueOf(spinnerAdapter.getType(position).getId());
+                    transportRegistrationDialog.type = String.valueOf(transportRegistrationDialog.getSpinnerAdapter().getType(position).getId());
                 }
             });
         }
@@ -252,7 +250,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
             editText.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TransportRegistrationDialog.setUp$lambda$1(TransportRegistrationDialog.this, i, i2, i3, view);
+                    TransportRegistrationDialog.setUp$lambda$1(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -261,7 +259,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TransportRegistrationDialog.setUp$lambda$3(TransportRegistrationDialog.this, i, i2, i3, view);
+                    TransportRegistrationDialog.setUp$lambda$3(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -272,7 +270,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TransportRegistrationDialog.setUp$lambda$4(TransportRegistrationDialog.this, view);
+                TransportRegistrationDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -283,7 +281,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$$ExternalSyntheticLambda4
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                TransportRegistrationDialog.setUp$lambda$1$lambda$0(TransportRegistrationDialog.this, datePicker, i4, i5, i6);
+                TransportRegistrationDialog.setUp$lambda$1$lambda$0(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -305,7 +303,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$$ExternalSyntheticLambda0
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                TransportRegistrationDialog.setUp$lambda$3$lambda$2(TransportRegistrationDialog.this, datePicker, i4, i5, i6);
+                TransportRegistrationDialog.setUp$lambda$3$lambda$2(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -327,7 +325,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
         EditText editText2;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         DialogAddTransRegBinding dialogAddTransRegBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(String.valueOf((dialogAddTransRegBinding == null || (editText2 = dialogAddTransRegBinding.etDate) == null) ? null : editText2.getText()), "") || Intrinsics.areEqual(this$0.type, "")) {
             return;
         }
@@ -335,15 +333,16 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
         String str = this$0.type;
         DialogAddTransRegBinding dialogAddTransRegBinding2 = this$0.get_binding();
         if (dialogAddTransRegBinding2 != null && (editText = dialogAddTransRegBinding2.etDate) != null) {
-            editable = editText.getText();
+            text = editText.getText();
         }
-        transportRegistrationViewModel.addTransportReg(str, String.valueOf(editable));
+        transportRegistrationViewModel.addTransportReg(str, String.valueOf(text));
     }
 
     private final void listenResponse() {
-        getTransportRegistrationViewModel().getAddResponse().observe(getViewLifecycleOwner(), new TransportRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegisterSucessResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$listenResponse$1
+        getTransportRegistrationViewModel().getAddResponse().observe(getViewLifecycleOwner(), new TransportRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegisterSucessResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog.listenResponse.1
 
-            /* compiled from: TransportRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: TransportRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -380,15 +379,11 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<RegisterSucessResponse> resource) {
-                DialogAddTransRegBinding dialogAddTransRegBinding;
                 TextView registerBtn;
-                DialogAddTransRegBinding dialogAddTransRegBinding2;
                 TextView registerBtn2;
-                DialogAddTransRegBinding dialogAddTransRegBinding3;
                 TextView registerBtn3;
-                DialogAddTransRegBinding dialogAddTransRegBinding4;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -404,8 +399,8 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
                         return;
                     }
                     TransportRegistrationDialog.this.hideProgress();
-                    dialogAddTransRegBinding4 = TransportRegistrationDialog.this.get_binding();
-                    if (dialogAddTransRegBinding4 == null || (textView = dialogAddTransRegBinding4.registerBtn) == null) {
+                    DialogAddTransRegBinding dialogAddTransRegBinding = TransportRegistrationDialog.this.get_binding();
+                    if (dialogAddTransRegBinding == null || (textView = dialogAddTransRegBinding.registerBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -419,8 +414,8 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
                     TransportRegistrationDialog transportRegistrationDialog = TransportRegistrationDialog.this;
                     try {
                         if (data.getSuccess()) {
-                            dialogAddTransRegBinding3 = transportRegistrationDialog.get_binding();
-                            if (dialogAddTransRegBinding3 != null && (registerBtn3 = dialogAddTransRegBinding3.registerBtn) != null) {
+                            DialogAddTransRegBinding dialogAddTransRegBinding2 = transportRegistrationDialog.get_binding();
+                            if (dialogAddTransRegBinding2 != null && (registerBtn3 = dialogAddTransRegBinding2.registerBtn) != null) {
                                 Intrinsics.checkNotNullExpressionValue(registerBtn3, "registerBtn");
                                 ToastExtKt.showSuccessToast(registerBtn3, data.getMessage());
                             }
@@ -428,16 +423,16 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
                             Unit unit = Unit.INSTANCE;
                             return;
                         }
-                        dialogAddTransRegBinding2 = transportRegistrationDialog.get_binding();
-                        if (dialogAddTransRegBinding2 == null || (registerBtn2 = dialogAddTransRegBinding2.registerBtn) == null) {
+                        DialogAddTransRegBinding dialogAddTransRegBinding3 = transportRegistrationDialog.get_binding();
+                        if (dialogAddTransRegBinding3 == null || (registerBtn2 = dialogAddTransRegBinding3.registerBtn) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(registerBtn2, "registerBtn");
                         ToastExtKt.showErrorToast(registerBtn2, "Your request for transport registration is pending for approval.");
                         Unit unit2 = Unit.INSTANCE;
                     } catch (NullPointerException unused) {
-                        dialogAddTransRegBinding = transportRegistrationDialog.get_binding();
-                        if (dialogAddTransRegBinding == null || (registerBtn = dialogAddTransRegBinding.registerBtn) == null) {
+                        DialogAddTransRegBinding dialogAddTransRegBinding4 = transportRegistrationDialog.get_binding();
+                        if (dialogAddTransRegBinding4 == null || (registerBtn = dialogAddTransRegBinding4.registerBtn) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
@@ -450,9 +445,10 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
     }
 
     private final void listenSpinner() {
-        getTransportRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new TransportRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegisterViewResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$listenSpinner$1
+        getTransportRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new TransportRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegisterViewResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog.listenSpinner.1
 
-            /* compiled from: TransportRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.transport.registration.register.TransportRegistrationDialog$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: TransportRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -489,18 +485,15 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<RegisterViewResponse> resource) {
-                BoardingSpinnerAdapter spinnerAdapter;
-                DialogAddTransRegBinding dialogAddTransRegBinding;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
                     TransportRegistrationDialog.this.hideProgress();
                     RegisterViewResponse data = resource.getData();
                     if (data != null) {
-                        spinnerAdapter = TransportRegistrationDialog.this.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getBoardings());
+                        TransportRegistrationDialog.this.getSpinnerAdapter().addItems(data.getBoardings());
                         return;
                     }
                     return;
@@ -517,7 +510,7 @@ public final class TransportRegistrationDialog extends BaseDialog implements Add
                     return;
                 }
                 TransportRegistrationDialog.this.hideProgress();
-                dialogAddTransRegBinding = TransportRegistrationDialog.this.get_binding();
+                DialogAddTransRegBinding dialogAddTransRegBinding = TransportRegistrationDialog.this.get_binding();
                 if (dialogAddTransRegBinding == null || (textView = dialogAddTransRegBinding.registerBtn) == null) {
                     return;
                 }

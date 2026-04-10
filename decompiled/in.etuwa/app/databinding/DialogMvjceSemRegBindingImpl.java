@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogMvjceSemRegBindingImpl extends DialogMvjceSemRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -213,7 +213,7 @@ public class DialogMvjceSemRegBindingImpl extends DialogMvjceSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (146 != variableId) {
+        if (147 != variableId) {
             return false;
         }
         setMvjceSemRegViewModel((MvjceSemRegViewModel) variable);

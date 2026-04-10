@@ -31,8 +31,8 @@ import kotlin.jvm.internal.Reflection;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: HostelFeeFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelFeeFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelFeeFragment extends Fragment {
     public ArrayAdapter<String> arrayAdapterMethod;
     public ArrayAdapter<String> arrayAdapterMonth;
@@ -44,7 +44,7 @@ public final class HostelFeeFragment extends Fragment {
     public TextView nextBtn;
     public TextView payMSg;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     public TextView recDate;
     public RecyclerView recyclerView;
@@ -345,45 +345,45 @@ public final class HostelFeeFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Intrinsics.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        View findViewById = view.findViewById(R.id.recyc_HostelFee);
-        Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.recyc_HostelFee)");
-        setRecyclerView((RecyclerView) findViewById);
-        View findViewById2 = view.findViewById(R.id.spinnerHostelFeeMonth);
-        Intrinsics.checkNotNullExpressionValue(findViewById2, "view.findViewById(R.id.spinnerHostelFeeMonth)");
-        setSpinnerMonth((Spinner) findViewById2);
-        View findViewById3 = view.findViewById(R.id.spinnerHostelFeeYear);
-        Intrinsics.checkNotNullExpressionValue(findViewById3, "view.findViewById(R.id.spinnerHostelFeeYear)");
-        setSpinnerYear((Spinner) findViewById3);
+        View viewFindViewById = view.findViewById(R.id.recyc_HostelFee);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById, "view.findViewById(R.id.recyc_HostelFee)");
+        setRecyclerView((RecyclerView) viewFindViewById);
+        View viewFindViewById2 = view.findViewById(R.id.spinnerHostelFeeMonth);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById2, "view.findViewById(R.id.spinnerHostelFeeMonth)");
+        setSpinnerMonth((Spinner) viewFindViewById2);
+        View viewFindViewById3 = view.findViewById(R.id.spinnerHostelFeeYear);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById3, "view.findViewById(R.id.spinnerHostelFeeYear)");
+        setSpinnerYear((Spinner) viewFindViewById3);
         getRecyclerView().setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
         TextView textView = (TextView) view.findViewById(R.id.hFeeSearchBtn);
-        View findViewById4 = view.findViewById(R.id.layoutPayable);
-        Intrinsics.checkNotNullExpressionValue(findViewById4, "view.findViewById(R.id.layoutPayable)");
-        setLayoutPayable((LinearLayout) findViewById4);
-        View findViewById5 = view.findViewById(R.id.hostFeeAmount);
-        Intrinsics.checkNotNullExpressionValue(findViewById5, "view.findViewById(R.id.hostFeeAmount)");
-        setFeeAmount((TextView) findViewById5);
-        View findViewById6 = view.findViewById(R.id.hostFeeFine);
-        Intrinsics.checkNotNullExpressionValue(findViewById6, "view.findViewById(R.id.hostFeeFine)");
-        setFineAmount((TextView) findViewById6);
-        View findViewById7 = view.findViewById(R.id.hostTotPayebl);
-        Intrinsics.checkNotNullExpressionValue(findViewById7, "view.findViewById(R.id.hostTotPayebl)");
-        setTotalPayable((TextView) findViewById7);
-        View findViewById8 = view.findViewById(R.id.hostReciptDate);
-        Intrinsics.checkNotNullExpressionValue(findViewById8, "view.findViewById(R.id.hostReciptDate)");
-        setRecDate((TextView) findViewById8);
-        View findViewById9 = view.findViewById(R.id.hostPayMsg);
-        Intrinsics.checkNotNullExpressionValue(findViewById9, "view.findViewById(R.id.hostPayMsg)");
-        setPayMSg((TextView) findViewById9);
-        View findViewById10 = view.findViewById(R.id.hostPayNext);
-        Intrinsics.checkNotNullExpressionValue(findViewById10, "view.findViewById(R.id.hostPayNext)");
-        setNextBtn((TextView) findViewById10);
-        View findViewById11 = view.findViewById(R.id.method_layout);
-        Intrinsics.checkNotNullExpressionValue(findViewById11, "view.findViewById(R.id.method_layout)");
-        setMethodLayout((LinearLayout) findViewById11);
+        View viewFindViewById4 = view.findViewById(R.id.layoutPayable);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById4, "view.findViewById(R.id.layoutPayable)");
+        setLayoutPayable((LinearLayout) viewFindViewById4);
+        View viewFindViewById5 = view.findViewById(R.id.hostFeeAmount);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById5, "view.findViewById(R.id.hostFeeAmount)");
+        setFeeAmount((TextView) viewFindViewById5);
+        View viewFindViewById6 = view.findViewById(R.id.hostFeeFine);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById6, "view.findViewById(R.id.hostFeeFine)");
+        setFineAmount((TextView) viewFindViewById6);
+        View viewFindViewById7 = view.findViewById(R.id.hostTotPayebl);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById7, "view.findViewById(R.id.hostTotPayebl)");
+        setTotalPayable((TextView) viewFindViewById7);
+        View viewFindViewById8 = view.findViewById(R.id.hostReciptDate);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById8, "view.findViewById(R.id.hostReciptDate)");
+        setRecDate((TextView) viewFindViewById8);
+        View viewFindViewById9 = view.findViewById(R.id.hostPayMsg);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById9, "view.findViewById(R.id.hostPayMsg)");
+        setPayMSg((TextView) viewFindViewById9);
+        View viewFindViewById10 = view.findViewById(R.id.hostPayNext);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById10, "view.findViewById(R.id.hostPayNext)");
+        setNextBtn((TextView) viewFindViewById10);
+        View viewFindViewById11 = view.findViewById(R.id.method_layout);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById11, "view.findViewById(R.id.method_layout)");
+        setMethodLayout((LinearLayout) viewFindViewById11);
         getMethodLayout().setVisibility(8);
-        View findViewById12 = view.findViewById(R.id.spinner_hostel_fee_method);
-        Intrinsics.checkNotNullExpressionValue(findViewById12, "view.findViewById(R.id.spinner_hostel_fee_method)");
-        setSpinnerMethod((Spinner) findViewById12);
+        View viewFindViewById12 = view.findViewById(R.id.spinner_hostel_fee_method);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById12, "view.findViewById(R.id.spinner_hostel_fee_method)");
+        setSpinnerMethod((Spinner) viewFindViewById12);
         getPreference().setNewLogin(false);
         Calendar calendar = Calendar.getInstance();
         this.year = calendar.get(1);
@@ -396,10 +396,10 @@ public final class HostelFeeFragment extends Fragment {
                 getSpinnerYear().setAdapter((SpinnerAdapter) null);
                 String string = arguments.getString("month");
                 Intrinsics.checkNotNull(string);
-                int parseInt = Integer.parseInt(string);
+                int i = Integer.parseInt(string);
                 String string2 = arguments.getString("year");
                 Intrinsics.checkNotNull(string2);
-                loadView(parseInt, string2, true);
+                loadView(i, string2, true);
                 String string3 = arguments.getString("month");
                 Intrinsics.checkNotNull(string3);
                 setSpinner(Integer.parseInt(string3), this.year, true);
@@ -411,13 +411,13 @@ public final class HostelFeeFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.fee.HostelFeeFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                HostelFeeFragment.onViewCreated$lambda$0(HostelFeeFragment.this, view2);
+                HostelFeeFragment.onViewCreated$lambda$0(this.f$0, view2);
             }
         });
         getNextBtn().setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.fee.HostelFeeFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                HostelFeeFragment.onViewCreated$lambda$1(HostelFeeFragment.this, view2);
+                HostelFeeFragment.onViewCreated$lambda$1(this.f$0, view2);
             }
         });
     }
@@ -433,17 +433,17 @@ public final class HostelFeeFragment extends Fragment {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager fragmentManager = this$0.getFragmentManager();
         Intrinsics.checkNotNull(fragmentManager);
-        FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
-        Intrinsics.checkNotNullExpressionValue(beginTransaction, "manager!!.beginTransaction()");
-        beginTransaction.addToBackStack(null);
+        FragmentTransaction fragmentTransactionBeginTransaction = fragmentManager.beginTransaction();
+        Intrinsics.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "manager!!.beginTransaction()");
+        fragmentTransactionBeginTransaction.addToBackStack(null);
         Bundle bundle = new Bundle();
         bundle.putString("month", String.valueOf(this$0.getSpinnerMonth().getSelectedItemPosition() + 1));
         bundle.putString("year", String.valueOf(this$0.getSpinnerYear().getSelectedItem()));
         bundle.putString(FirebaseAnalytics.Param.METHOD, String.valueOf(this$0.getSpinnerMethod().getSelectedItemPosition() + 2));
         HostelNextFragment hostelNextFragment = new HostelNextFragment();
         hostelNextFragment.setArguments(bundle);
-        beginTransaction.replace(R.id.main_container, hostelNextFragment);
-        beginTransaction.commit();
+        fragmentTransactionBeginTransaction.replace(R.id.main_container, hostelNextFragment);
+        fragmentTransactionBeginTransaction.commit();
         this$0.getSpinnerMonth().setAdapter((SpinnerAdapter) null);
         this$0.getSpinnerYear().setAdapter((SpinnerAdapter) null);
     }
@@ -457,16 +457,16 @@ public final class HostelFeeFragment extends Fragment {
     private final void setSpinner(int month, int year, boolean mnthflag) {
         this.yearList.clear();
         try {
-            int parseInt = Integer.parseInt(getPreference().getAcademicYear());
-            if (parseInt <= year) {
-                int i = 0;
-                while (i < 6) {
-                    this.yearList.add(Integer.valueOf(parseInt));
-                    i++;
-                    if (parseInt == year) {
+            int i = Integer.parseInt(getPreference().getAcademicYear());
+            if (i <= year) {
+                int i2 = 0;
+                while (i2 < 6) {
+                    this.yearList.add(Integer.valueOf(i));
+                    i2++;
+                    if (i == year) {
                         break;
                     } else {
-                        parseInt++;
+                        i++;
                     }
                 }
             }

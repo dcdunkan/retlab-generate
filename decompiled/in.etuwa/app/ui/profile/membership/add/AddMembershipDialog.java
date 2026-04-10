@@ -63,15 +63,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddMembershipDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddMembershipDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddMembershipDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddMembershipBinding _binding;
 
-    /* renamed from: addMembershipViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addMembershipViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addMembershipViewModel;
     private String description;
     private String id;
@@ -80,21 +80,21 @@ public final class AddMembershipDialog extends BaseDialog {
     private String name;
     private File pickFile;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
     private String type;
     private String yearId;
 
-    /* compiled from: AddMembershipDialog.kt */
+    /* JADX INFO: compiled from: AddMembershipDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/membership/add/AddMembershipDialog$AddMembershipListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddMembershipListener {
         void onDismiss();
     }
 
-    /* compiled from: AddMembershipDialog.kt */
+    /* JADX INFO: compiled from: AddMembershipDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -144,7 +144,7 @@ public final class AddMembershipDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addMembershipDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addMembershipDialog);
@@ -158,7 +158,7 @@ public final class AddMembershipDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -171,7 +171,7 @@ public final class AddMembershipDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddMembershipViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddMembershipViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AddMembershipDialog addMembershipDialog2 = this;
@@ -182,7 +182,7 @@ public final class AddMembershipDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddMembershipDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -207,7 +207,7 @@ public final class AddMembershipDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddMembershipDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -232,7 +232,7 @@ public final class AddMembershipDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddMembershipBinding get_binding() {
         return this._binding;
     }
@@ -247,7 +247,7 @@ public final class AddMembershipDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter2.getValue();
     }
 
-    /* compiled from: AddMembershipDialog.kt */
+    /* JADX INFO: compiled from: AddMembershipDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J(\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0007¨\u0006\n"}, d2 = {"Lin/etuwa/app/ui/profile/membership/add/AddMembershipDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/membership/add/AddMembershipDialog;", "id", "", "name", "membershipId", PdfConst.Description, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -374,34 +374,30 @@ public final class AddMembershipDialog extends BaseDialog {
         DialogAddMembershipBinding dialogAddMembershipBinding10 = get_binding();
         Spinner spinner3 = dialogAddMembershipBinding10 != null ? dialogAddMembershipBinding10.spinnerSince : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$setUp$1
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter;
                     AddMembershipDialog addMembershipDialog = AddMembershipDialog.this;
-                    spinnerAdapter = addMembershipDialog.getSpinnerAdapter();
-                    addMembershipDialog.yearId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    addMembershipDialog.yearId = String.valueOf(addMembershipDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
         DialogAddMembershipBinding dialogAddMembershipBinding11 = get_binding();
         Spinner spinner4 = dialogAddMembershipBinding11 != null ? dialogAddMembershipBinding11.spinnerType : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$setUp$2
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter2;
                     AddMembershipDialog addMembershipDialog = AddMembershipDialog.this;
-                    spinnerAdapter2 = addMembershipDialog.getSpinnerAdapter2();
-                    addMembershipDialog.type = String.valueOf(spinnerAdapter2.getSemester(position).getId());
+                    addMembershipDialog.type = String.valueOf(addMembershipDialog.getSpinnerAdapter2().getSemester(position).getId());
                 }
             });
         }
@@ -410,7 +406,7 @@ public final class AddMembershipDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMembershipDialog.setUp$lambda$2(AddMembershipDialog.this, view);
+                    AddMembershipDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -419,7 +415,7 @@ public final class AddMembershipDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMembershipDialog.setUp$lambda$3(AddMembershipDialog.this, view);
+                    AddMembershipDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -430,7 +426,7 @@ public final class AddMembershipDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddMembershipDialog.setUp$lambda$4(AddMembershipDialog.this, view);
+                AddMembershipDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -470,7 +466,7 @@ public final class AddMembershipDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 200) {
+                if (file2.length() / ((long) 1024) <= 200) {
                     this$0.setCancelable(false);
                     DialogAddMembershipBinding dialogAddMembershipBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddMembershipBinding2 == null || (textInputEditText8 = dialogAddMembershipBinding2.etName) == null) ? null : textInputEditText8.getText()), "")) {
@@ -483,15 +479,15 @@ public final class AddMembershipDialog extends BaseDialog {
                     }
                     AddMembershipViewModel addMembershipViewModel = this$0.getAddMembershipViewModel();
                     DialogAddMembershipBinding dialogAddMembershipBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddMembershipBinding4 == null || (textInputEditText7 = dialogAddMembershipBinding4.etName) == null) ? null : textInputEditText7.getText());
+                    String strValueOf = String.valueOf((dialogAddMembershipBinding4 == null || (textInputEditText7 = dialogAddMembershipBinding4.etName) == null) ? null : textInputEditText7.getText());
                     String str = this$0.type;
                     Intrinsics.checkNotNull(str);
                     String str2 = this$0.yearId;
                     Intrinsics.checkNotNull(str2);
                     DialogAddMembershipBinding dialogAddMembershipBinding5 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddMembershipBinding5 == null || (textInputEditText6 = dialogAddMembershipBinding5.etMembershipId) == null) ? null : textInputEditText6.getText());
+                    String strValueOf2 = String.valueOf((dialogAddMembershipBinding5 == null || (textInputEditText6 = dialogAddMembershipBinding5.etMembershipId) == null) ? null : textInputEditText6.getText());
                     DialogAddMembershipBinding dialogAddMembershipBinding6 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogAddMembershipBinding6 == null || (textInputEditText5 = dialogAddMembershipBinding6.etDescription) == null) ? null : textInputEditText5.getText());
+                    String strValueOf3 = String.valueOf((dialogAddMembershipBinding6 == null || (textInputEditText5 = dialogAddMembershipBinding6.etDescription) == null) ? null : textInputEditText5.getText());
                     File file3 = this$0.pickFile;
                     if (file3 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -499,7 +495,7 @@ public final class AddMembershipDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addMembershipViewModel.addMembershipData(valueOf, str, str2, valueOf2, valueOf3, file);
+                    addMembershipViewModel.addMembershipData(strValueOf, str, str2, strValueOf2, strValueOf3, file);
                     DialogAddMembershipBinding dialogAddMembershipBinding7 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddMembershipBinding7 != null ? dialogAddMembershipBinding7.completionCard : null;
                     if (linearLayout != null) {
@@ -531,15 +527,15 @@ public final class AddMembershipDialog extends BaseDialog {
             }
             AddMembershipViewModel addMembershipViewModel2 = this$0.getAddMembershipViewModel();
             DialogAddMembershipBinding dialogAddMembershipBinding12 = this$0.get_binding();
-            String valueOf4 = String.valueOf((dialogAddMembershipBinding12 == null || (textInputEditText3 = dialogAddMembershipBinding12.etName) == null) ? null : textInputEditText3.getText());
+            String strValueOf4 = String.valueOf((dialogAddMembershipBinding12 == null || (textInputEditText3 = dialogAddMembershipBinding12.etName) == null) ? null : textInputEditText3.getText());
             String str3 = this$0.type;
             Intrinsics.checkNotNull(str3);
             String str4 = this$0.yearId;
             Intrinsics.checkNotNull(str4);
             DialogAddMembershipBinding dialogAddMembershipBinding13 = this$0.get_binding();
-            String valueOf5 = String.valueOf((dialogAddMembershipBinding13 == null || (textInputEditText2 = dialogAddMembershipBinding13.etMembershipId) == null) ? null : textInputEditText2.getText());
+            String strValueOf5 = String.valueOf((dialogAddMembershipBinding13 == null || (textInputEditText2 = dialogAddMembershipBinding13.etMembershipId) == null) ? null : textInputEditText2.getText());
             DialogAddMembershipBinding dialogAddMembershipBinding14 = this$0.get_binding();
-            addMembershipViewModel2.addMembershipData(valueOf4, str3, str4, valueOf5, String.valueOf((dialogAddMembershipBinding14 == null || (textInputEditText = dialogAddMembershipBinding14.etDescription) == null) ? null : textInputEditText.getText()));
+            addMembershipViewModel2.addMembershipData(strValueOf4, str3, str4, strValueOf5, String.valueOf((dialogAddMembershipBinding14 == null || (textInputEditText = dialogAddMembershipBinding14.etDescription) == null) ? null : textInputEditText.getText()));
             DialogAddMembershipBinding dialogAddMembershipBinding15 = this$0.get_binding();
             LinearLayout linearLayout2 = dialogAddMembershipBinding15 != null ? dialogAddMembershipBinding15.completionCard : null;
             if (linearLayout2 == null) {
@@ -573,15 +569,15 @@ public final class AddMembershipDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddMembershipBinding dialogAddMembershipBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddMembershipBinding == null || (textView4 = dialogAddMembershipBinding.completionFileName) == null) ? null : textView4.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddMembershipBinding dialogAddMembershipBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddMembershipBinding2 == null || (textInputEditText8 = dialogAddMembershipBinding2.etName) == null) ? null : textInputEditText8.getText()), "")) {
@@ -596,15 +592,15 @@ public final class AddMembershipDialog extends BaseDialog {
                     String str = this$0.id;
                     Intrinsics.checkNotNull(str);
                     DialogAddMembershipBinding dialogAddMembershipBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddMembershipBinding4 == null || (textInputEditText7 = dialogAddMembershipBinding4.etName) == null) ? null : textInputEditText7.getText());
+                    String strValueOf = String.valueOf((dialogAddMembershipBinding4 == null || (textInputEditText7 = dialogAddMembershipBinding4.etName) == null) ? null : textInputEditText7.getText());
                     String str2 = this$0.type;
                     Intrinsics.checkNotNull(str2);
                     String str3 = this$0.yearId;
                     Intrinsics.checkNotNull(str3);
                     DialogAddMembershipBinding dialogAddMembershipBinding5 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddMembershipBinding5 == null || (textInputEditText6 = dialogAddMembershipBinding5.etMembershipId) == null) ? null : textInputEditText6.getText());
+                    String strValueOf2 = String.valueOf((dialogAddMembershipBinding5 == null || (textInputEditText6 = dialogAddMembershipBinding5.etMembershipId) == null) ? null : textInputEditText6.getText());
                     DialogAddMembershipBinding dialogAddMembershipBinding6 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogAddMembershipBinding6 == null || (textInputEditText5 = dialogAddMembershipBinding6.etDescription) == null) ? null : textInputEditText5.getText());
+                    String strValueOf3 = String.valueOf((dialogAddMembershipBinding6 == null || (textInputEditText5 = dialogAddMembershipBinding6.etDescription) == null) ? null : textInputEditText5.getText());
                     File file3 = this$0.pickFile;
                     if (file3 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -612,7 +608,7 @@ public final class AddMembershipDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addMembershipViewModel.updateMembershipData(str, valueOf, str2, str3, valueOf2, valueOf3, file);
+                    addMembershipViewModel.updateMembershipData(str, strValueOf, str2, str3, strValueOf2, strValueOf3, file);
                     DialogAddMembershipBinding dialogAddMembershipBinding7 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddMembershipBinding7 != null ? dialogAddMembershipBinding7.completionCard : null;
                     if (linearLayout != null) {
@@ -646,26 +642,27 @@ public final class AddMembershipDialog extends BaseDialog {
             String str4 = this$0.id;
             Intrinsics.checkNotNull(str4);
             DialogAddMembershipBinding dialogAddMembershipBinding12 = this$0.get_binding();
-            String valueOf4 = String.valueOf((dialogAddMembershipBinding12 == null || (textInputEditText3 = dialogAddMembershipBinding12.etName) == null) ? null : textInputEditText3.getText());
+            String strValueOf4 = String.valueOf((dialogAddMembershipBinding12 == null || (textInputEditText3 = dialogAddMembershipBinding12.etName) == null) ? null : textInputEditText3.getText());
             String str5 = this$0.type;
             Intrinsics.checkNotNull(str5);
             String str6 = this$0.yearId;
             Intrinsics.checkNotNull(str6);
             DialogAddMembershipBinding dialogAddMembershipBinding13 = this$0.get_binding();
-            String valueOf5 = String.valueOf((dialogAddMembershipBinding13 == null || (textInputEditText2 = dialogAddMembershipBinding13.etMembershipId) == null) ? null : textInputEditText2.getText());
+            String strValueOf5 = String.valueOf((dialogAddMembershipBinding13 == null || (textInputEditText2 = dialogAddMembershipBinding13.etMembershipId) == null) ? null : textInputEditText2.getText());
             DialogAddMembershipBinding dialogAddMembershipBinding14 = this$0.get_binding();
             if (dialogAddMembershipBinding14 != null && (textInputEditText = dialogAddMembershipBinding14.etDescription) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            addMembershipViewModel2.updateMembershipData(str4, valueOf4, str5, str6, valueOf5, String.valueOf(editable));
+            addMembershipViewModel2.updateMembershipData(str4, strValueOf4, str5, str6, strValueOf5, String.valueOf(text));
         } catch (Exception unused) {
         }
     }
 
     private final void listenSpinnerResponse() {
-        getAddMembershipViewModel().getResponse().observe(getViewLifecycleOwner(), new AddMembershipDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$listenSpinnerResponse$1
+        getAddMembershipViewModel().getResponse().observe(getViewLifecycleOwner(), new AddMembershipDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddMembershipDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddMembershipDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -702,11 +699,8 @@ public final class AddMembershipDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter;
-                IndexSpinnerAdapter spinnerAdapter2;
-                DialogAddMembershipBinding dialogAddMembershipBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -715,10 +709,8 @@ public final class AddMembershipDialog extends BaseDialog {
                     if (data != null) {
                         AddMembershipDialog addMembershipDialog = AddMembershipDialog.this;
                         try {
-                            spinnerAdapter = addMembershipDialog.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getYears());
-                            spinnerAdapter2 = addMembershipDialog.getSpinnerAdapter2();
-                            spinnerAdapter2.addItems(data.getMembership());
+                            addMembershipDialog.getSpinnerAdapter().addItems(data.getYears());
+                            addMembershipDialog.getSpinnerAdapter2().addItems(data.getMembership());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -738,7 +730,7 @@ public final class AddMembershipDialog extends BaseDialog {
                     return;
                 }
                 AddMembershipDialog.this.hideProgress();
-                dialogAddMembershipBinding = AddMembershipDialog.this.get_binding();
+                DialogAddMembershipBinding dialogAddMembershipBinding = AddMembershipDialog.this.get_binding();
                 if (dialogAddMembershipBinding == null || (spinner = dialogAddMembershipBinding.spinnerType) == null) {
                     return;
                 }
@@ -753,7 +745,7 @@ public final class AddMembershipDialog extends BaseDialog {
         getAddMembershipViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMembershipDialog.listenAddResponse$lambda$6(AddMembershipDialog.this, (Resource) obj);
+                AddMembershipDialog.listenAddResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -821,7 +813,7 @@ public final class AddMembershipDialog extends BaseDialog {
         getAddMembershipViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMembershipDialog.listenAddResponse2$lambda$8(AddMembershipDialog.this, (Resource) obj);
+                AddMembershipDialog.listenAddResponse2$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -889,7 +881,7 @@ public final class AddMembershipDialog extends BaseDialog {
         getAddMembershipViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMembershipDialog.listenUpdateResponse$lambda$10(AddMembershipDialog.this, (Resource) obj);
+                AddMembershipDialog.listenUpdateResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -957,7 +949,7 @@ public final class AddMembershipDialog extends BaseDialog {
         getAddMembershipViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipDialog$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMembershipDialog.listenProgressResponse$lambda$12(AddMembershipDialog.this, (Resource) obj);
+                AddMembershipDialog.listenProgressResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -988,18 +980,18 @@ public final class AddMembershipDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddMembershipBinding dialogAddMembershipBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddMembershipBinding2 != null ? dialogAddMembershipBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddMembershipBinding dialogAddMembershipBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddMembershipBinding3 != null ? dialogAddMembershipBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1007,13 +999,13 @@ public final class AddMembershipDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -1039,24 +1031,24 @@ public final class AddMembershipDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

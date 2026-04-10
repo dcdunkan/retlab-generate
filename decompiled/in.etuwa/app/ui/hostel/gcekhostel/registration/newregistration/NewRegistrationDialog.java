@@ -62,39 +62,39 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: NewRegistrationDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: NewRegistrationDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class NewRegistrationDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogNewRegistrationBinding _binding;
     private String category;
     private NewRegistrationListener listener;
 
-    /* renamed from: newRegistrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: newRegistrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy newRegistrationViewModel;
     private File pickFile;
     private int pos;
     private String reAdmission;
     private String semester;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
 
-    /* renamed from: spinnerAdapter3$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter3$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter3;
 
-    /* compiled from: NewRegistrationDialog.kt */
+    /* JADX INFO: compiled from: NewRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/registration/newregistration/NewRegistrationDialog$NewRegistrationListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface NewRegistrationListener {
         void onDismiss();
     }
 
-    /* compiled from: NewRegistrationDialog.kt */
+    /* JADX INFO: compiled from: NewRegistrationDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -144,7 +144,7 @@ public final class NewRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return newRegistrationDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(newRegistrationDialog);
@@ -158,7 +158,7 @@ public final class NewRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -171,7 +171,7 @@ public final class NewRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(NewRegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(NewRegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.category = "";
@@ -186,7 +186,7 @@ public final class NewRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(NewRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -211,7 +211,7 @@ public final class NewRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(NewRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -236,7 +236,7 @@ public final class NewRegistrationDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(NewRegistrationDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -261,7 +261,7 @@ public final class NewRegistrationDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogNewRegistrationBinding get_binding() {
         return this._binding;
     }
@@ -281,7 +281,7 @@ public final class NewRegistrationDialog extends BaseDialog {
         return (ReAdmissionSpinnerAdapter) this.spinnerAdapter3.getValue();
     }
 
-    /* compiled from: NewRegistrationDialog.kt */
+    /* JADX INFO: compiled from: NewRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/registration/newregistration/NewRegistrationDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/gcekhostel/registration/newregistration/NewRegistrationDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -361,51 +361,45 @@ public final class NewRegistrationDialog extends BaseDialog {
         DialogNewRegistrationBinding dialogNewRegistrationBinding4 = get_binding();
         Spinner spinner4 = dialogNewRegistrationBinding4 != null ? dialogNewRegistrationBinding4.spinnerCatogory : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$setUp$1
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    CategorySpinnerAdapter spinnerAdapter;
                     NewRegistrationDialog newRegistrationDialog = NewRegistrationDialog.this;
-                    spinnerAdapter = newRegistrationDialog.getSpinnerAdapter();
-                    newRegistrationDialog.category = String.valueOf(spinnerAdapter.getType(position).getId());
+                    newRegistrationDialog.category = String.valueOf(newRegistrationDialog.getSpinnerAdapter().getType(position).getId());
                 }
             });
         }
         DialogNewRegistrationBinding dialogNewRegistrationBinding5 = get_binding();
         Spinner spinner5 = dialogNewRegistrationBinding5 != null ? dialogNewRegistrationBinding5.spinnerSemesterApplied : null;
         if (spinner5 != null) {
-            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$setUp$2
+            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter2;
                     NewRegistrationDialog newRegistrationDialog = NewRegistrationDialog.this;
-                    spinnerAdapter2 = newRegistrationDialog.getSpinnerAdapter2();
-                    newRegistrationDialog.semester = spinnerAdapter2.getSemester(position).getId();
+                    newRegistrationDialog.semester = newRegistrationDialog.getSpinnerAdapter2().getSemester(position).getId();
                 }
             });
         }
         DialogNewRegistrationBinding dialogNewRegistrationBinding6 = get_binding();
         Spinner spinner6 = dialogNewRegistrationBinding6 != null ? dialogNewRegistrationBinding6.spinnerReadmission : null;
         if (spinner6 != null) {
-            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$setUp$3
+            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    ReAdmissionSpinnerAdapter spinnerAdapter32;
                     NewRegistrationDialog newRegistrationDialog = NewRegistrationDialog.this;
-                    spinnerAdapter32 = newRegistrationDialog.getSpinnerAdapter3();
-                    newRegistrationDialog.reAdmission = spinnerAdapter32.getSemester(position);
+                    newRegistrationDialog.reAdmission = newRegistrationDialog.getSpinnerAdapter3().getSemester(position);
                     NewRegistrationDialog.this.pos = position + 1;
                 }
             });
@@ -415,7 +409,7 @@ public final class NewRegistrationDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    NewRegistrationDialog.setUp$lambda$2(NewRegistrationDialog.this, view);
+                    NewRegistrationDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -426,7 +420,7 @@ public final class NewRegistrationDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                NewRegistrationDialog.setUp$lambda$3(NewRegistrationDialog.this, view);
+                NewRegistrationDialog.setUp$lambda$3(this.f$0, view);
             }
         });
     }
@@ -478,7 +472,7 @@ public final class NewRegistrationDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file5 = null;
                 }
-                if (file5.length() / 1024 <= 500) {
+                if (file5.length() / ((long) 1024) <= 500) {
                     this$0.setCancelable(false);
                     DialogNewRegistrationBinding dialogNewRegistrationBinding = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogNewRegistrationBinding == null || (textInputEditText10 = dialogNewRegistrationBinding.etAnnualIncome) == null) ? null : textInputEditText10.getText()), "")) {
@@ -502,13 +496,13 @@ public final class NewRegistrationDialog extends BaseDialog {
                     String str = this$0.reAdmission;
                     String str2 = this$0.category;
                     DialogNewRegistrationBinding dialogNewRegistrationBinding5 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogNewRegistrationBinding5 == null || (textInputEditText8 = dialogNewRegistrationBinding5.etNameAddress) == null) ? null : textInputEditText8.getText());
+                    String strValueOf = String.valueOf((dialogNewRegistrationBinding5 == null || (textInputEditText8 = dialogNewRegistrationBinding5.etNameAddress) == null) ? null : textInputEditText8.getText());
                     DialogNewRegistrationBinding dialogNewRegistrationBinding6 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogNewRegistrationBinding6 == null || (textInputEditText7 = dialogNewRegistrationBinding6.etPhone) == null) ? null : textInputEditText7.getText());
+                    String strValueOf2 = String.valueOf((dialogNewRegistrationBinding6 == null || (textInputEditText7 = dialogNewRegistrationBinding6.etPhone) == null) ? null : textInputEditText7.getText());
                     DialogNewRegistrationBinding dialogNewRegistrationBinding7 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogNewRegistrationBinding7 == null || (textInputEditText6 = dialogNewRegistrationBinding7.etAnnualIncome) == null) ? null : textInputEditText6.getText());
+                    String strValueOf3 = String.valueOf((dialogNewRegistrationBinding7 == null || (textInputEditText6 = dialogNewRegistrationBinding7.etAnnualIncome) == null) ? null : textInputEditText6.getText());
                     DialogNewRegistrationBinding dialogNewRegistrationBinding8 = this$0.get_binding();
-                    String valueOf4 = String.valueOf((dialogNewRegistrationBinding8 == null || (textInputEditText5 = dialogNewRegistrationBinding8.etDistance) == null) ? null : textInputEditText5.getText());
+                    String strValueOf4 = String.valueOf((dialogNewRegistrationBinding8 == null || (textInputEditText5 = dialogNewRegistrationBinding8.etDistance) == null) ? null : textInputEditText5.getText());
                     String str3 = this$0.semester;
                     File file6 = this$0.pickFile;
                     if (file6 == null) {
@@ -517,7 +511,7 @@ public final class NewRegistrationDialog extends BaseDialog {
                     } else {
                         file2 = file6;
                     }
-                    newRegistrationViewModel.newHostelRegistrationApiCall(str, str2, valueOf, valueOf2, valueOf3, valueOf4, str3, file2);
+                    newRegistrationViewModel.newHostelRegistrationApiCall(str, str2, strValueOf, strValueOf2, strValueOf3, strValueOf4, str3, file2);
                     DialogNewRegistrationBinding dialogNewRegistrationBinding9 = this$0.get_binding();
                     LinearLayout linearLayout = dialogNewRegistrationBinding9 != null ? dialogNewRegistrationBinding9.completionCard : null;
                     if (linearLayout != null) {
@@ -548,13 +542,13 @@ public final class NewRegistrationDialog extends BaseDialog {
             String str4 = this$0.reAdmission;
             String str5 = this$0.category;
             DialogNewRegistrationBinding dialogNewRegistrationBinding13 = this$0.get_binding();
-            String valueOf5 = String.valueOf((dialogNewRegistrationBinding13 == null || (textInputEditText4 = dialogNewRegistrationBinding13.etNameAddress) == null) ? null : textInputEditText4.getText());
+            String strValueOf5 = String.valueOf((dialogNewRegistrationBinding13 == null || (textInputEditText4 = dialogNewRegistrationBinding13.etNameAddress) == null) ? null : textInputEditText4.getText());
             DialogNewRegistrationBinding dialogNewRegistrationBinding14 = this$0.get_binding();
-            String valueOf6 = String.valueOf((dialogNewRegistrationBinding14 == null || (textInputEditText3 = dialogNewRegistrationBinding14.etPhone) == null) ? null : textInputEditText3.getText());
+            String strValueOf6 = String.valueOf((dialogNewRegistrationBinding14 == null || (textInputEditText3 = dialogNewRegistrationBinding14.etPhone) == null) ? null : textInputEditText3.getText());
             DialogNewRegistrationBinding dialogNewRegistrationBinding15 = this$0.get_binding();
-            String valueOf7 = String.valueOf((dialogNewRegistrationBinding15 == null || (textInputEditText2 = dialogNewRegistrationBinding15.etAnnualIncome) == null) ? null : textInputEditText2.getText());
+            String strValueOf7 = String.valueOf((dialogNewRegistrationBinding15 == null || (textInputEditText2 = dialogNewRegistrationBinding15.etAnnualIncome) == null) ? null : textInputEditText2.getText());
             DialogNewRegistrationBinding dialogNewRegistrationBinding16 = this$0.get_binding();
-            String valueOf8 = String.valueOf((dialogNewRegistrationBinding16 == null || (textInputEditText = dialogNewRegistrationBinding16.etDistance) == null) ? null : textInputEditText.getText());
+            String strValueOf8 = String.valueOf((dialogNewRegistrationBinding16 == null || (textInputEditText = dialogNewRegistrationBinding16.etDistance) == null) ? null : textInputEditText.getText());
             String str6 = this$0.semester;
             File file7 = this$0.pickFile;
             if (file7 == null) {
@@ -563,14 +557,15 @@ public final class NewRegistrationDialog extends BaseDialog {
             } else {
                 file = file7;
             }
-            newRegistrationViewModel2.newHostelRegistrationApiCall(str4, str5, valueOf5, valueOf6, valueOf7, valueOf8, str6, file);
+            newRegistrationViewModel2.newHostelRegistrationApiCall(str4, str5, strValueOf5, strValueOf6, strValueOf7, strValueOf8, str6, file);
         }
     }
 
     private final void listenSpinnerResponse() {
-        getNewRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new NewRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CategoryTypeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$listenSpinnerResponse$1
+        getNewRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new NewRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends CategoryTypeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog.listenSpinnerResponse.1
 
-            /* compiled from: NewRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: NewRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -607,10 +602,8 @@ public final class NewRegistrationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<CategoryTypeResponse> resource) {
-                CategorySpinnerAdapter spinnerAdapter;
-                DialogNewRegistrationBinding dialogNewRegistrationBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -618,8 +611,7 @@ public final class NewRegistrationDialog extends BaseDialog {
                     CategoryTypeResponse data = resource.getData();
                     if (data != null) {
                         try {
-                            spinnerAdapter = NewRegistrationDialog.this.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getCategory());
+                            NewRegistrationDialog.this.getSpinnerAdapter().addItems(data.getCategory());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -639,7 +631,7 @@ public final class NewRegistrationDialog extends BaseDialog {
                     return;
                 }
                 NewRegistrationDialog.this.hideProgress();
-                dialogNewRegistrationBinding = NewRegistrationDialog.this.get_binding();
+                DialogNewRegistrationBinding dialogNewRegistrationBinding = NewRegistrationDialog.this.get_binding();
                 if (dialogNewRegistrationBinding == null || (spinner = dialogNewRegistrationBinding.spinnerCatogory) == null) {
                     return;
                 }
@@ -654,7 +646,7 @@ public final class NewRegistrationDialog extends BaseDialog {
         getNewRegistrationViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                NewRegistrationDialog.listenSemResponse$lambda$5(NewRegistrationDialog.this, (Resource) obj);
+                NewRegistrationDialog.listenSemResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -698,7 +690,7 @@ public final class NewRegistrationDialog extends BaseDialog {
         getNewRegistrationViewModel().getUploadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                NewRegistrationDialog.listenResponse$lambda$7(NewRegistrationDialog.this, (Resource) obj);
+                NewRegistrationDialog.listenResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -766,7 +758,7 @@ public final class NewRegistrationDialog extends BaseDialog {
         getNewRegistrationViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.newregistration.NewRegistrationDialog$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                NewRegistrationDialog.listenProgressResponse$lambda$9(NewRegistrationDialog.this, (Resource) obj);
+                NewRegistrationDialog.listenProgressResponse$lambda$9(this.f$0, (Resource) obj);
             }
         });
     }
@@ -797,18 +789,18 @@ public final class NewRegistrationDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogNewRegistrationBinding dialogNewRegistrationBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogNewRegistrationBinding2 != null ? dialogNewRegistrationBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogNewRegistrationBinding dialogNewRegistrationBinding3 = this$0.get_binding();
             TextView textView2 = dialogNewRegistrationBinding3 != null ? dialogNewRegistrationBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -817,10 +809,10 @@ public final class NewRegistrationDialog extends BaseDialog {
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
-        String str2;
+        String fileName2;
         ContentResolver contentResolver3;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -834,27 +826,27 @@ public final class NewRegistrationDialog extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver3 = context.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver3, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
                     File cacheDir = context3 != null ? context3.getCacheDir() : null;
                     Context context4 = getContext();
                     if (context4 == null || (contentResolver2 = context4.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                 }
             }

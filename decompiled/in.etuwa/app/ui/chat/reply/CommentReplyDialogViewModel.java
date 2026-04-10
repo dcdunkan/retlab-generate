@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CommentReplyDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CommentReplyDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CommentReplyDialogViewModel extends ViewModel {
     private final ChatRepository chatRepository;
     private MutableLiveData<Resource<ReplyResponse>> chatResponse;
@@ -37,8 +37,8 @@ public final class CommentReplyDialogViewModel extends ViewModel {
     public final void getReply(String subId, String commentId) {
         this.chatResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ReplyResponse> observeOn = this.chatRepository.getReplyApiCall(subId, commentId, "0").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ReplyResponse, Unit> function1 = new Function1<ReplyResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$getReply$1
+        Single<ReplyResponse> singleObserveOn = this.chatRepository.getReplyApiCall(subId, commentId, "0").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ReplyResponse, Unit> function1 = new Function1<ReplyResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.getReply.1
             {
                 super(1);
             }
@@ -49,20 +49,18 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ReplyResponse replyResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.chatResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(replyResponse));
+                CommentReplyDialogViewModel.this.chatResponse.postValue(Resource.INSTANCE.success(replyResponse));
             }
         };
         Consumer<? super ReplyResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.getReply$lambda$0(Function1.this, obj);
+                CommentReplyDialogViewModel.getReply$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$getReply$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.getReply.2
             {
                 super(1);
             }
@@ -73,17 +71,15 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.chatResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CommentReplyDialogViewModel.this.chatResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.getReply$lambda$1(Function1.this, obj);
+                CommentReplyDialogViewModel.getReply$lambda$1(function12, obj);
             }
         }));
     }
@@ -104,8 +100,8 @@ public final class CommentReplyDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(reply, "reply");
         this.setReplyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.chatRepository.setReplyApiCall(subId, batchId, semId, commentId, reply).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$setReply$1
+        Single<SuccessResponse> singleObserveOn = this.chatRepository.setReplyApiCall(subId, batchId, semId, commentId, reply).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.setReply.1
             {
                 super(1);
             }
@@ -116,20 +112,18 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.setReplyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                CommentReplyDialogViewModel.this.setReplyResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.setReply$lambda$2(Function1.this, obj);
+                CommentReplyDialogViewModel.setReply$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$setReply$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.setReply.2
             {
                 super(1);
             }
@@ -140,17 +134,15 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.setReplyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CommentReplyDialogViewModel.this.setReplyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.setReply$lambda$3(Function1.this, obj);
+                CommentReplyDialogViewModel.setReply$lambda$3(function12, obj);
             }
         }));
     }
@@ -170,8 +162,8 @@ public final class CommentReplyDialogViewModel extends ViewModel {
     public final void getParentReply(String batchId, String commentId) {
         this.chatResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ReplyResponse> observeOn = this.chatRepository.getParentReplyApiCall(batchId, commentId, "0").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ReplyResponse, Unit> function1 = new Function1<ReplyResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$getParentReply$1
+        Single<ReplyResponse> singleObserveOn = this.chatRepository.getParentReplyApiCall(batchId, commentId, "0").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ReplyResponse, Unit> function1 = new Function1<ReplyResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.getParentReply.1
             {
                 super(1);
             }
@@ -182,20 +174,18 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ReplyResponse replyResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.chatResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(replyResponse));
+                CommentReplyDialogViewModel.this.chatResponse.postValue(Resource.INSTANCE.success(replyResponse));
             }
         };
         Consumer<? super ReplyResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.getParentReply$lambda$4(Function1.this, obj);
+                CommentReplyDialogViewModel.getParentReply$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$getParentReply$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.getParentReply.2
             {
                 super(1);
             }
@@ -206,17 +196,15 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.chatResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CommentReplyDialogViewModel.this.chatResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.getParentReply$lambda$5(Function1.this, obj);
+                CommentReplyDialogViewModel.getParentReply$lambda$5(function12, obj);
             }
         }));
     }
@@ -237,8 +225,8 @@ public final class CommentReplyDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(reply, "reply");
         this.setReplyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.chatRepository.setParentReplyApiCall(batchId, semId, commentId, reply).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$setParentReply$1
+        Single<SuccessResponse> singleObserveOn = this.chatRepository.setParentReplyApiCall(batchId, semId, commentId, reply).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.setParentReply.1
             {
                 super(1);
             }
@@ -249,20 +237,18 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.setReplyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                CommentReplyDialogViewModel.this.setReplyResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.setParentReply$lambda$6(Function1.this, obj);
+                CommentReplyDialogViewModel.setParentReply$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$setParentReply$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel.setParentReply.2
             {
                 super(1);
             }
@@ -273,17 +259,15 @@ public final class CommentReplyDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CommentReplyDialogViewModel.this.setReplyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CommentReplyDialogViewModel.this.setReplyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CommentReplyDialogViewModel.setParentReply$lambda$7(Function1.this, obj);
+                CommentReplyDialogViewModel.setParentReply$lambda$7(function12, obj);
             }
         }));
     }

@@ -35,20 +35,20 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: RemindDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: RemindDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RemindDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private RemindDialogBinding _binding;
     private String id;
     private RemindGrievanceListener listener;
 
-    /* renamed from: remindDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: remindDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy remindDialogViewModel;
 
-    /* compiled from: RemindDialog.kt */
+    /* JADX INFO: compiled from: RemindDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/grievance/remind/RemindDialog$RemindGrievanceListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface RemindGrievanceListener {
         void dismiss();
@@ -77,7 +77,7 @@ public final class RemindDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return remindDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(remindDialog);
@@ -91,7 +91,7 @@ public final class RemindDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -104,7 +104,7 @@ public final class RemindDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(RemindDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(RemindDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -114,12 +114,12 @@ public final class RemindDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final RemindDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: RemindDialog.kt */
+    /* JADX INFO: compiled from: RemindDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/grievance/remind/RemindDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/grievance/remind/RemindDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -186,7 +186,7 @@ public final class RemindDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.remind.RemindDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RemindDialog.setUp$lambda$1(RemindDialog.this, view);
+                RemindDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -202,9 +202,10 @@ public final class RemindDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getRemindDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new RemindDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.remind.RemindDialog$listenResponse$1
+        getRemindDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new RemindDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.remind.RemindDialog.listenResponse.1
 
-            /* compiled from: RemindDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.remind.RemindDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: RemindDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -241,13 +242,10 @@ public final class RemindDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                RemindDialogBinding remindDialogBinding;
                 TextView remindBtn;
-                RemindDialogBinding remindDialogBinding2;
                 TextView remindBtn2;
-                RemindDialogBinding remindDialogBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -263,8 +261,8 @@ public final class RemindDialog extends BaseDialog {
                         return;
                     }
                     RemindDialog.this.hideProgress();
-                    remindDialogBinding3 = RemindDialog.this.get_binding();
-                    if (remindDialogBinding3 == null || (textView = remindDialogBinding3.remindBtn) == null) {
+                    RemindDialogBinding remindDialogBinding = RemindDialog.this.get_binding();
+                    if (remindDialogBinding == null || (textView = remindDialogBinding.remindBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -277,7 +275,7 @@ public final class RemindDialog extends BaseDialog {
                 if (data != null) {
                     RemindDialog remindDialog = RemindDialog.this;
                     if (data.getSuccess()) {
-                        remindDialogBinding2 = remindDialog.get_binding();
+                        RemindDialogBinding remindDialogBinding2 = remindDialog.get_binding();
                         if (remindDialogBinding2 != null && (remindBtn2 = remindDialogBinding2.remindBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(remindBtn2, "remindBtn");
                             ToastExtKt.showSuccessToast(remindBtn2, data.getMessage());
@@ -285,8 +283,8 @@ public final class RemindDialog extends BaseDialog {
                         remindDialog.dismiss();
                         return;
                     }
-                    remindDialogBinding = remindDialog.get_binding();
-                    if (remindDialogBinding == null || (remindBtn = remindDialogBinding.remindBtn) == null) {
+                    RemindDialogBinding remindDialogBinding3 = remindDialog.get_binding();
+                    if (remindDialogBinding3 == null || (remindBtn = remindDialogBinding3.remindBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(remindBtn, "remindBtn");

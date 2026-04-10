@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowMedicalBinding implements ViewBinding {
     public final TextView medicalDateF;
     public final TextView medicalDateTo;
@@ -37,15 +37,15 @@ public final class RowMedicalBinding implements ViewBinding {
     }
 
     public static RowMedicalBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_medical, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_medical, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowMedicalBinding bind(View rootView) {
-        View findChildViewById;
+        View viewFindChildViewById;
         int i = R.id.medical_date_f;
         TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
         if (textView != null) {
@@ -57,8 +57,8 @@ public final class RowMedicalBinding implements ViewBinding {
                 if (textView3 != null) {
                     i = R.id.medical_remark;
                     TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView4 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.medical_view_side))) != null) {
-                        return new RowMedicalBinding((CardView) rootView, textView, textView2, textView3, textView4, findChildViewById);
+                    if (textView4 != null && (viewFindChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.medical_view_side))) != null) {
+                        return new RowMedicalBinding((CardView) rootView, textView, textView2, textView3, textView4, viewFindChildViewById);
                     }
                 }
             }

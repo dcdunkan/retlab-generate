@@ -8,15 +8,15 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import in.etuwa.app.R;
-import in.etuwa.app.data.model.timetable.TimeTable;
 import in.etuwa.app.helper.EmptyViewHolder;
 import in.etuwa.app.ui.base.BaseViewHolder;
+import in.etuwa.etlabstaff.data.model.timetable.TimeTable;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TimetableViewAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TimetableViewAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TimetableViewAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<TimeTable> tables = new ArrayList<>();
 
@@ -24,18 +24,18 @@ public final class TimetableViewAdapter extends RecyclerView.Adapter<BaseViewHol
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_timetable_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …able_view, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_timetable_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …able_view, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -51,7 +51,7 @@ public final class TimetableViewAdapter extends RecyclerView.Adapter<BaseViewHol
         return !this.tables.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: TimetableViewAdapter.kt */
+    /* JADX INFO: compiled from: TimetableViewAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u000b\u001a\u00020\fH\u0014J\u0010\u0010\r\u001a\u00020\f2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lin/etuwa/app/ui/timetable/tableview/TimetableViewAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/timetable/tableview/TimetableViewAdapter;Landroid/view/View;)V", "sideBar", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "subject", "teacher", "time", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView sideBar;
@@ -83,24 +83,27 @@ public final class TimetableViewAdapter extends RecyclerView.Adapter<BaseViewHol
                 Intrinsics.checkNotNullExpressionValue(obj, "tables[position]");
                 TimeTable timeTable = (TimeTable) obj;
                 this.sideBar.setText(String.valueOf(position + 1));
-                this.subject.setText(timeTable.getSubject());
-                this.time.setText(timeTable.getTimeperiod());
-                String type = timeTable.getType();
-                if (type != null) {
-                    int hashCode = type.hashCode();
-                    if (hashCode != 2215) {
-                        if (hashCode != 2252) {
-                            if (hashCode == 2562 && type.equals("PR")) {
-                                this.sideBar.setBackgroundColor(Color.argb(255, 231, 76, 60));
-                            }
-                        } else if (type.equals("FR")) {
-                            this.sideBar.setBackgroundColor(Color.argb(255, 52, 73, 94));
+                this.subject.setText(timeTable.getDate());
+                this.time.setText(timeTable.getDay());
+                String day = timeTable.getDay();
+                int iHashCode = day.hashCode();
+                if (iHashCode != 2215) {
+                    if (iHashCode != 2252) {
+                        if (iHashCode == 2562 && day.equals("PR")) {
+                            this.sideBar.setBackgroundColor(Color.argb(255, 231, 76, 60));
+                        } else {
+                            this.sideBar.setBackgroundColor(Color.argb(255, 68, 82, 209));
                         }
-                    } else if (type.equals("EL")) {
-                        this.sideBar.setBackgroundColor(Color.argb(255, 255, 214, 0));
+                    } else if (day.equals("FR")) {
+                        this.sideBar.setBackgroundColor(Color.argb(255, 52, 73, 94));
+                    } else {
+                        this.sideBar.setBackgroundColor(Color.argb(255, 68, 82, 209));
                     }
+                } else if (day.equals("EL")) {
+                    this.sideBar.setBackgroundColor(Color.argb(255, 255, 214, 0));
+                } else {
+                    this.sideBar.setBackgroundColor(Color.argb(255, 68, 82, 209));
                 }
-                this.sideBar.setBackgroundColor(Color.argb(255, 68, 82, 209));
             } catch (Exception unused) {
             }
         }

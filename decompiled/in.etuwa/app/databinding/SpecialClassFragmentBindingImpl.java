@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.timetable.special.SpecialClassViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class SpecialClassFragmentBindingImpl extends SpecialClassFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -61,7 +61,7 @@ public class SpecialClassFragmentBindingImpl extends SpecialClassFragmentBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (205 != variableId) {
+        if (207 != variableId) {
             return false;
         }
         setSpecialClassViewModel((SpecialClassViewModel) variable);

@@ -3,8 +3,8 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -13,24 +13,26 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.onlineclass.OnlineClassViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class OnlineClassFragmentBinding extends ViewDataBinding {
     public final TextView batchClass;
-    public final CardView cardBatch;
+    public final LinearLayout batchContainer;
 
     @Bindable
     protected OnlineClassViewModel mOnlineClassViewModel;
     public final RecyclerView rvOnlineClass;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setOnlineClassViewModel(OnlineClassViewModel onlineClassViewModel);
 
-    protected OnlineClassFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView batchClass, CardView cardBatch, RecyclerView rvOnlineClass, SwipeRefreshLayout swipeLayout) {
+    protected OnlineClassFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView batchClass, LinearLayout batchContainer, RecyclerView rvOnlineClass, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.batchClass = batchClass;
-        this.cardBatch = cardBatch;
+        this.batchContainer = batchContainer;
         this.rvOnlineClass = rvOnlineClass;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public OnlineClassViewModel getOnlineClassViewModel() {

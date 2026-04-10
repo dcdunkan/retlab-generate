@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TransportFeeResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: TransportFeeResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class TransportFeeResponse {
     private final String boarding_point;
     private final String error;
@@ -17,6 +17,7 @@ public final /* data */ class TransportFeeResponse {
     private final String student_id;
     private final ArrayList<Boardings> years;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ TransportFeeResponse copy$default(TransportFeeResponse transportFeeResponse, boolean z, ArrayList arrayList, String str, ArrayList arrayList2, String str2, String str3, int i, Object obj) {
         if ((i & 1) != 0) {
             z = transportFeeResponse.login;
@@ -43,7 +44,7 @@ public final /* data */ class TransportFeeResponse {
         return transportFeeResponse.copy(z, arrayList3, str4, arrayList4, str5, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -52,7 +53,7 @@ public final /* data */ class TransportFeeResponse {
         return this.years;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getBoarding_point() {
         return this.boarding_point;
     }
@@ -61,12 +62,12 @@ public final /* data */ class TransportFeeResponse {
         return this.installments;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getStudent_id() {
         return this.student_id;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getError() {
         return this.error;
     }

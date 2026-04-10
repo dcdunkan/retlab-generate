@@ -4,23 +4,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import at.blogc.android.views.ExpandableTextView;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowNoticeMainBinding implements ViewBinding {
     public final ExpandableTextView noticeContent;
     public final TextView noticeCreate;
     public final TextView noticeDate;
     public final TextView noticeHeading;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView topicToggle;
-    public final TextView viewBtnHr;
+    public final MaterialButton viewBtnHr;
 
-    private RowNoticeMainBinding(CardView rootView, ExpandableTextView noticeContent, TextView noticeCreate, TextView noticeDate, TextView noticeHeading, TextView topicToggle, TextView viewBtnHr) {
+    private RowNoticeMainBinding(MaterialCardView rootView, ExpandableTextView noticeContent, TextView noticeCreate, TextView noticeDate, TextView noticeHeading, TextView topicToggle, MaterialButton viewBtnHr) {
         this.rootView = rootView;
         this.noticeContent = noticeContent;
         this.noticeCreate = noticeCreate;
@@ -31,7 +32,7 @@ public final class RowNoticeMainBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -40,11 +41,11 @@ public final class RowNoticeMainBinding implements ViewBinding {
     }
 
     public static RowNoticeMainBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_notice_main, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_notice_main, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowNoticeMainBinding bind(View rootView) {
@@ -64,9 +65,9 @@ public final class RowNoticeMainBinding implements ViewBinding {
                         TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
                         if (textView4 != null) {
                             i = R.id.view_btn_hr;
-                            TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView5 != null) {
-                                return new RowNoticeMainBinding((CardView) rootView, expandableTextView, textView, textView2, textView3, textView4, textView5);
+                            MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                            if (materialButton != null) {
+                                return new RowNoticeMainBinding((MaterialCardView) rootView, expandableTextView, textView, textView2, textView3, textView4, materialButton);
                             }
                         }
                     }

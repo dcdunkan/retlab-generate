@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.grievance.remind.RemindDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class RemindDialogBindingImpl extends RemindDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -68,7 +68,7 @@ public class RemindDialogBindingImpl extends RemindDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (183 != variableId) {
+        if (185 != variableId) {
             return false;
         }
         setRemindDialogViewModel((RemindDialogViewModel) variable);

@@ -2,8 +2,8 @@ package in.etuwa.app.data.model.main;
 
 import kotlin.Metadata;
 
-/* compiled from: CourseSurveyPending.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CourseSurveyPending.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class CourseSurveyPending {
     private final boolean coursesurvey_status;
 
@@ -14,7 +14,7 @@ public final /* data */ class CourseSurveyPending {
         return courseSurveyPending.copy(z);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getCoursesurvey_status() {
         return this.coursesurvey_status;
     }

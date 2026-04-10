@@ -2,7 +2,7 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
-import android.widget.FrameLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,13 +10,13 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.examschedules.ExamViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ExamFragmentBindingImpl extends ExamFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
     private long mDirtyFlags;
     private final ViewProgressBarBinding mboundView0;
-    private final FrameLayout mboundView01;
+    private final CoordinatorLayout mboundView01;
 
     @Override // androidx.databinding.ViewDataBinding
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
@@ -39,9 +39,9 @@ public class ExamFragmentBindingImpl extends ExamFragmentBinding {
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
-        FrameLayout frameLayout = (FrameLayout) bindings[0];
-        this.mboundView01 = frameLayout;
-        frameLayout.setTag(null);
+        CoordinatorLayout coordinatorLayout = (CoordinatorLayout) bindings[0];
+        this.mboundView01 = coordinatorLayout;
+        coordinatorLayout.setTag(null);
         setRootTag(root);
         invalidateAll();
     }

@@ -30,12 +30,13 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: UniversityViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UniversityViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UniversityViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private final ResultRepository resultRepository;
     private MutableLiveData<Resource<UnivResponse>> resultResponse;
@@ -46,10 +47,10 @@ public final class UniversityViewModel extends ViewModel implements KoinComponen
         this.compositeDisposable = new CompositeDisposable();
         this.resultResponse = new MutableLiveData<>();
         final UniversityViewModel universityViewModel = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -59,7 +60,7 @@ public final class UniversityViewModel extends ViewModel implements KoinComponen
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = universityViewModel;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -70,7 +71,7 @@ public final class UniversityViewModel extends ViewModel implements KoinComponen
                 return rootScope.get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), qualifier2, function0);
             }
         });
-        getResult(getPreference().getUserSemId());
+        loadDataIfNeeded();
     }
 
     @Override // org.koin.core.component.KoinComponent
@@ -82,12 +83,20 @@ public final class UniversityViewModel extends ViewModel implements KoinComponen
         return (SharedPrefManager) this.preference.getValue();
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getResult(getPreference().getUserSemId());
+    }
+
     public final void getResult(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
         this.resultResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<UnivResponse> observeOn = this.resultRepository.getResultUnivApiCall(new AttendanceRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<UnivResponse, Unit> function1 = new Function1<UnivResponse, Unit>() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel$getResult$1
+        Single<UnivResponse> singleObserveOn = this.resultRepository.getResultUnivApiCall(new AttendanceRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<UnivResponse, Unit> function1 = new Function1<UnivResponse, Unit>() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel.getResult.1
             {
                 super(1);
             }
@@ -98,20 +107,18 @@ public final class UniversityViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(UnivResponse univResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UniversityViewModel.this.resultResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(univResponse));
+                UniversityViewModel.this.resultResponse.postValue(Resource.INSTANCE.success(univResponse));
             }
         };
         Consumer<? super UnivResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UniversityViewModel.getResult$lambda$0(Function1.this, obj);
+                UniversityViewModel.getResult$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel$getResult$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel.getResult.2
             {
                 super(1);
             }
@@ -122,17 +129,15 @@ public final class UniversityViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UniversityViewModel.this.resultResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UniversityViewModel.this.resultResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.result.university.UniversityViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UniversityViewModel.getResult$lambda$1(Function1.this, obj);
+                UniversityViewModel.getResult$lambda$1(function12, obj);
             }
         }));
     }

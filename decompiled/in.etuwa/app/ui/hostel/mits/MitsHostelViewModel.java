@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MitsHostelViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MitsHostelViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MitsHostelViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final HostelRepository hostelRepository;
@@ -33,8 +33,8 @@ public final class MitsHostelViewModel extends ViewModel {
     public final void getUrl() {
         this.mitsFeePay.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<MitsFeePay> observeOn = this.hostelRepository.getMitsFeePayUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<MitsFeePay, Unit> function1 = new Function1<MitsFeePay, Unit>() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelViewModel$getUrl$1
+        Single<MitsFeePay> singleObserveOn = this.hostelRepository.getMitsFeePayUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<MitsFeePay, Unit> function1 = new Function1<MitsFeePay, Unit>() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelViewModel.getUrl.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class MitsHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MitsFeePay mitsFeePay) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MitsHostelViewModel.this.mitsFeePay;
-                mutableLiveData.postValue(Resource.INSTANCE.success(mitsFeePay));
+                MitsHostelViewModel.this.mitsFeePay.postValue(Resource.INSTANCE.success(mitsFeePay));
             }
         };
         Consumer<? super MitsFeePay> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MitsHostelViewModel.getUrl$lambda$0(Function1.this, obj);
+                MitsHostelViewModel.getUrl$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelViewModel$getUrl$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelViewModel.getUrl.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class MitsHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MitsHostelViewModel.this.mitsFeePay;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                MitsHostelViewModel.this.mitsFeePay.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MitsHostelViewModel.getUrl$lambda$1(Function1.this, obj);
+                MitsHostelViewModel.getUrl$lambda$1(function12, obj);
             }
         }));
     }

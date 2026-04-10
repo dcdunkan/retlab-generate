@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeHeadGroup.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeHeadGroup.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeHeadGroup {
 
     @SerializedName("feeheadgroup_id")
@@ -18,7 +18,7 @@ public final /* data */ class FeeHeadGroup {
         return feeHeadGroup.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFeeHeadGroupId() {
         return this.feeHeadGroupId;
     }

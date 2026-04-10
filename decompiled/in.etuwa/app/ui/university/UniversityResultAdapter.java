@@ -1,6 +1,5 @@
 package in.etuwa.app.ui.university;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +16,13 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UniversityResultAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UniversityResultAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UniversityResultAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private CallBack listener;
     private final ArrayList<UniversityResult> result = new ArrayList<>();
 
-    /* compiled from: UniversityResultAdapter.kt */
+    /* JADX INFO: compiled from: UniversityResultAdapter.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0003H&¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/university/UniversityResultAdapter$CallBack;", "", "checkFileExistence", "", "fileName", "", "flag", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         boolean checkFileExistence(String fileName, boolean flag);
@@ -33,18 +32,18 @@ public final class UniversityResultAdapter extends RecyclerView.Adapter<BaseView
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_tkm_university, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …niversity, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_tkm_university, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …niversity, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -60,7 +59,7 @@ public final class UniversityResultAdapter extends RecyclerView.Adapter<BaseView
         return !this.result.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: UniversityResultAdapter.kt */
+    /* JADX INFO: compiled from: UniversityResultAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\n\u001a\u00020\u000bH\u0014J\u0010\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/university/UniversityResultAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/university/UniversityResultAdapter;Landroid/view/View;)V", "credit", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "grade", "name", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView credit;
@@ -89,44 +88,48 @@ public final class UniversityResultAdapter extends RecyclerView.Adapter<BaseView
                 Object obj = this.this$0.result.get(position);
                 Intrinsics.checkNotNullExpressionValue(obj, "result[position]");
                 UniversityResult universityResult = (UniversityResult) obj;
-                this.name.setText(universityResult.getCode() + HelpFormatter.DEFAULT_OPT_PREFIX + universityResult.getName());
+                this.name.setText(universityResult.getCode() + " - " + universityResult.getName());
                 this.grade.setText(universityResult.getGrade());
                 this.credit.setText(universityResult.getCredit());
-                this.credit.setBackgroundColor(Color.parseColor("#808080"));
+                this.credit.setBackgroundResource(R.drawable.credit_badge_background);
                 String pass_status = universityResult.getPass_status();
-                int hashCode = pass_status.hashCode();
-                if (hashCode == 45) {
-                    if (pass_status.equals(HelpFormatter.DEFAULT_OPT_PREFIX)) {
-                        this.grade.setBackgroundColor(Color.parseColor("#808080"));
-                    }
-                    this.grade.setBackgroundColor(Color.parseColor("#266d19"));
-                }
-                if (hashCode == 73) {
-                    if (pass_status.equals("I")) {
-                        this.grade.setBackgroundColor(Color.parseColor("#E10000"));
+                int iHashCode = pass_status.hashCode();
+                if (iHashCode != 45) {
+                    if (iHashCode == 73) {
+                        if (!pass_status.equals("I")) {
+                        }
+                        this.grade.setBackgroundResource(R.drawable.grade_badge_fail);
+                        this.grade.setTextColor(-1);
+                        return;
+                    } else if (iHashCode == 2239) {
+                        if (!pass_status.equals("FE")) {
+                        }
+                        this.grade.setBackgroundResource(R.drawable.grade_badge_fail);
+                        this.grade.setTextColor(-1);
+                        return;
                     } else {
-                        this.grade.setBackgroundColor(Color.parseColor("#266d19"));
+                        if (iHashCode != 1954926425) {
+                            if (iHashCode != 2096857181 || !pass_status.equals("Failed")) {
+                            }
+                            this.grade.setBackgroundResource(R.drawable.grade_badge_fail);
+                            this.grade.setTextColor(-1);
+                            return;
+                        }
+                        if (pass_status.equals("Absent")) {
+                            this.grade.setBackgroundResource(R.drawable.grade_badge_neutral);
+                            this.grade.setTextColor(-1);
+                            return;
+                        }
                     }
+                } else if (pass_status.equals(HelpFormatter.DEFAULT_OPT_PREFIX)) {
+                    this.grade.setBackgroundResource(R.drawable.grade_badge_neutral);
+                    this.grade.setTextColor(-1);
+                    return;
                 }
-                if (hashCode == 2239) {
-                    if (pass_status.equals("FE")) {
-                        this.grade.setBackgroundColor(Color.parseColor("#E10000"));
-                    } else {
-                        this.grade.setBackgroundColor(Color.parseColor("#266d19"));
-                    }
-                }
-                if (hashCode == 1954926425) {
-                    if (pass_status.equals("Absent")) {
-                        this.grade.setBackgroundColor(Color.parseColor("#808080"));
-                    } else {
-                        this.grade.setBackgroundColor(Color.parseColor("#266d19"));
-                    }
-                }
-                if (hashCode == 2096857181 && pass_status.equals("Failed")) {
-                    this.grade.setBackgroundColor(Color.parseColor("#E10000"));
-                }
-                this.grade.setBackgroundColor(Color.parseColor("#266d19"));
-            } catch (Exception unused) {
+                this.grade.setBackgroundResource(R.drawable.grade_badge_pass);
+                this.grade.setTextColor(-1);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AttendanceByDayDialogBinding extends ViewDataBinding {
     public final LinearLayout attandamceBydayLayout1;
     public final TextView coverage1;

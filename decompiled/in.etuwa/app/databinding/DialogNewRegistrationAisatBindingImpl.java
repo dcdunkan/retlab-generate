@@ -14,7 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogNewRegistrationAisatBindingImpl extends DialogNewRegistrationAisatBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -82,7 +82,7 @@ public class DialogNewRegistrationAisatBindingImpl extends DialogNewRegistration
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (179 != variableId) {
+        if (181 != variableId) {
             return false;
         }
         setReRegistrationViewModel((ReRegistrationViewModel) variable);

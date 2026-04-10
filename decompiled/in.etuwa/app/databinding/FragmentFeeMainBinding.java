@@ -4,17 +4,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.textview.MaterialTextView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.FeeMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentFeeMainBinding extends ViewDataBinding {
-    public final LinearLayout dealBtn;
-    public final View dealBtnView;
 
     @Bindable
     protected FeeMainViewModel mFeeMainViewModel;
@@ -23,17 +21,15 @@ public abstract class FragmentFeeMainBinding extends ViewDataBinding {
     public final LinearLayout transportFeeBtn;
     public final LinearLayout transportHistoryBtn;
     public final LinearLayout transportRegBtn;
-    public final TextView tvTransportView;
+    public final MaterialTextView tvTransportView;
     public final LinearLayout viewReceipt;
     public final LinearLayout viewTransportBuspass;
     public final LinearLayout viewTransportReceipt;
 
     public abstract void setFeeMainViewModel(FeeMainViewModel feeMainViewModel);
 
-    protected FragmentFeeMainBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout dealBtn, View dealBtnView, LinearLayout payBtn, LinearLayout paymentGatewayBtn, LinearLayout transportFeeBtn, LinearLayout transportHistoryBtn, LinearLayout transportRegBtn, TextView tvTransportView, LinearLayout viewReceipt, LinearLayout viewTransportBuspass, LinearLayout viewTransportReceipt) {
+    protected FragmentFeeMainBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout payBtn, LinearLayout paymentGatewayBtn, LinearLayout transportFeeBtn, LinearLayout transportHistoryBtn, LinearLayout transportRegBtn, MaterialTextView tvTransportView, LinearLayout viewReceipt, LinearLayout viewTransportBuspass, LinearLayout viewTransportReceipt) {
         super(_bindingComponent, _root, _localFieldCount);
-        this.dealBtn = dealBtn;
-        this.dealBtnView = dealBtnView;
         this.payBtn = payBtn;
         this.paymentGatewayBtn = paymentGatewayBtn;
         this.transportFeeBtn = transportFeeBtn;

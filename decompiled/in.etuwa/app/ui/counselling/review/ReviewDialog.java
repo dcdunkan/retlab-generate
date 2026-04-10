@@ -35,20 +35,20 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ReviewDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ReviewDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ReviewDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ReviewDialogBinding _binding;
     private String id;
     private ReviewCounsellingListener listener;
 
-    /* renamed from: reviewDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: reviewDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy reviewDialogViewModel;
 
-    /* compiled from: ReviewDialog.kt */
+    /* JADX INFO: compiled from: ReviewDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/counselling/review/ReviewDialog$ReviewCounsellingListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ReviewCounsellingListener {
         void dismiss();
@@ -77,7 +77,7 @@ public final class ReviewDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return reviewDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(reviewDialog);
@@ -91,7 +91,7 @@ public final class ReviewDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -104,7 +104,7 @@ public final class ReviewDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ReviewDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ReviewDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -114,12 +114,12 @@ public final class ReviewDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final ReviewDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ReviewDialog.kt */
+    /* JADX INFO: compiled from: ReviewDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/counselling/review/ReviewDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/counselling/review/ReviewDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -186,7 +186,7 @@ public final class ReviewDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ReviewDialog.setUp$lambda$1(ReviewDialog.this, view);
+                ReviewDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -202,9 +202,10 @@ public final class ReviewDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getReviewDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new ReviewDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialog$listenResponse$1
+        getReviewDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new ReviewDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialog.listenResponse.1
 
-            /* compiled from: ReviewDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.counselling.review.ReviewDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ReviewDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -241,13 +242,10 @@ public final class ReviewDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                ReviewDialogBinding reviewDialogBinding;
                 TextView reviewBtn;
-                ReviewDialogBinding reviewDialogBinding2;
                 TextView reviewBtn2;
-                ReviewDialogBinding reviewDialogBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -263,8 +261,8 @@ public final class ReviewDialog extends BaseDialog {
                         return;
                     }
                     ReviewDialog.this.hideProgress();
-                    reviewDialogBinding3 = ReviewDialog.this.get_binding();
-                    if (reviewDialogBinding3 == null || (textView = reviewDialogBinding3.reviewBtn) == null) {
+                    ReviewDialogBinding reviewDialogBinding = ReviewDialog.this.get_binding();
+                    if (reviewDialogBinding == null || (textView = reviewDialogBinding.reviewBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -277,7 +275,7 @@ public final class ReviewDialog extends BaseDialog {
                 if (data != null) {
                     ReviewDialog reviewDialog = ReviewDialog.this;
                     if (data.getSuccess()) {
-                        reviewDialogBinding2 = reviewDialog.get_binding();
+                        ReviewDialogBinding reviewDialogBinding2 = reviewDialog.get_binding();
                         if (reviewDialogBinding2 != null && (reviewBtn2 = reviewDialogBinding2.reviewBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(reviewBtn2, "reviewBtn");
                             ToastExtKt.showSuccessToast(reviewBtn2, data.getMessage());
@@ -285,8 +283,8 @@ public final class ReviewDialog extends BaseDialog {
                         reviewDialog.dismiss();
                         return;
                     }
-                    reviewDialogBinding = reviewDialog.get_binding();
-                    if (reviewDialogBinding == null || (reviewBtn = reviewDialogBinding.reviewBtn) == null) {
+                    ReviewDialogBinding reviewDialogBinding3 = reviewDialog.get_binding();
+                    if (reviewDialogBinding3 == null || (reviewBtn = reviewDialogBinding3.reviewBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(reviewBtn, "reviewBtn");

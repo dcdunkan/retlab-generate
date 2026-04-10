@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeArtsResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeArtsResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeArtsResponse {
     private final String bal;
     private final String date;
@@ -18,12 +18,12 @@ public final /* data */ class FeeArtsResponse {
     private final boolean success;
     private final String total;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
@@ -32,27 +32,27 @@ public final /* data */ class FeeArtsResponse {
         return this.fee_groups;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getStudent_id() {
         return this.student_id;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getBal() {
         return this.bal;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getFine() {
         return this.fine;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getTotal() {
         return this.total;
     }
@@ -82,6 +82,9 @@ public final /* data */ class FeeArtsResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v16 */
     /* JADX WARN: Type inference failed for: r0v17 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v14 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -90,7 +93,7 @@ public final /* data */ class FeeArtsResponse {
         }
         int i = r0 * 31;
         boolean z2 = this.success;
-        return ((((((((((((i + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.fee_groups.hashCode()) * 31) + this.student_id.hashCode()) * 31) + this.date.hashCode()) * 31) + this.bal.hashCode()) * 31) + this.fine.hashCode()) * 31) + this.total.hashCode();
+        return ((((((((((((i + (z2 ? 1 : z2)) * 31) + this.fee_groups.hashCode()) * 31) + this.student_id.hashCode()) * 31) + this.date.hashCode()) * 31) + this.bal.hashCode()) * 31) + this.fine.hashCode()) * 31) + this.total.hashCode();
     }
 
     public String toString() {

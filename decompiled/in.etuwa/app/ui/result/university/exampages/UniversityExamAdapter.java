@@ -15,35 +15,36 @@ import in.etuwa.app.helper.EmptyViewHolder;
 import in.etuwa.app.ui.base.BaseViewHolder;
 import java.util.ArrayList;
 import kotlin.Metadata;
+import kotlin.Pair;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.TuplesKt;
+import kotlin.Unit;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: UniversityExamAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UniversityExamAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UniversityExamAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<UnivExamSubjects> results = new ArrayList<>();
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
-        }
+        LayoutInflater layoutInflaterFrom = LayoutInflater.from(parent.getContext());
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_univ_exam_subjects, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …_subjects, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate = layoutInflaterFrom.inflate(R.layout.row_univ_exam_subjects, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "inflater.inflate(R.layou…_subjects, parent, false)");
+            return new ViewHolder(this, viewInflate);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate2 = layoutInflaterFrom.inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate2, "inflater.inflate(R.layou…mpty_view, parent, false)");
+        return new EmptyViewHolder(viewInflate2);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
-        if (this.results.size() > 0) {
+        if (!this.results.isEmpty()) {
             return this.results.size();
         }
         return 1;
@@ -54,7 +55,24 @@ public final class UniversityExamAdapter extends RecyclerView.Adapter<BaseViewHo
         return !this.results.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: UniversityExamAdapter.kt */
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onBindViewHolder(BaseViewHolder holder, int position) {
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        holder.onBind(position);
+    }
+
+    public final void addItems(ArrayList<UnivExamSubjects> list) {
+        Intrinsics.checkNotNullParameter(list, "list");
+        this.results.addAll(list);
+        notifyDataSetChanged();
+    }
+
+    public final void clearItems() {
+        this.results.clear();
+        notifyDataSetChanged();
+    }
+
+    /* JADX INFO: compiled from: UniversityExamAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/result/university/exampages/UniversityExamAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/result/university/exampages/UniversityExamAdapter;Landroid/view/View;)V", "attendance", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "credit", NotificationCompat.CATEGORY_STATUS, "subject", "uniMark", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView attendance;
@@ -82,66 +100,72 @@ public final class UniversityExamAdapter extends RecyclerView.Adapter<BaseViewHo
 
         @Override // in.etuwa.app.ui.base.BaseViewHolder
         public void onBind(int position) {
+            String string;
+            String string2;
+            String string3;
+            String string4;
+            Pair pair;
+            String string5 = HelpFormatter.DEFAULT_OPT_PREFIX;
             super.onBind(position);
+            UniversityExamAdapter universityExamAdapter = this.this$0;
             try {
-                Object obj = this.this$0.results.get(position);
+                Result.Companion companion = Result.INSTANCE;
+                ViewHolder viewHolder = this;
+                Object obj = universityExamAdapter.results.get(position);
                 Intrinsics.checkNotNullExpressionValue(obj, "results[position]");
                 UnivExamSubjects univExamSubjects = (UnivExamSubjects) obj;
                 String univMark = univExamSubjects.getUnivMark();
-                if (!Intrinsics.areEqual(univMark != null ? StringsKt.trim((CharSequence) univMark).toString() : null, HelpFormatter.DEFAULT_OPT_PREFIX)) {
-                    TextView textView = this.subject;
+                boolean z = !Intrinsics.areEqual(univMark != null ? StringsKt.trim((CharSequence) univMark).toString() : null, HelpFormatter.DEFAULT_OPT_PREFIX);
+                TextView textView = this.subject;
+                if (z) {
                     String subject = univExamSubjects.getSubject();
-                    textView.setText(subject != null ? StringsKt.trim((CharSequence) subject).toString() : null);
-                    TextView textView2 = this.attendance;
+                    string = subject != null ? StringsKt.trim((CharSequence) subject).toString() : null;
+                }
+                textView.setText(string);
+                TextView textView2 = this.attendance;
+                if (z) {
                     String attendance = univExamSubjects.getAttendance();
-                    textView2.setText(attendance != null ? StringsKt.trim((CharSequence) attendance).toString() : null);
-                    TextView textView3 = this.credit;
+                    string2 = attendance != null ? StringsKt.trim((CharSequence) attendance).toString() : null;
+                }
+                textView2.setText(string2);
+                TextView textView3 = this.credit;
+                if (z) {
                     String credits = univExamSubjects.getCredits();
-                    textView3.setText(credits != null ? StringsKt.trim((CharSequence) credits).toString() : null);
-                    TextView textView4 = this.uniMark;
+                    string3 = credits != null ? StringsKt.trim((CharSequence) credits).toString() : null;
+                }
+                textView3.setText(string3);
+                TextView textView4 = this.uniMark;
+                if (z) {
                     String univMark2 = univExamSubjects.getUnivMark();
-                    textView4.setText(univMark2 != null ? StringsKt.trim((CharSequence) univMark2).toString() : null);
-                    TextView textView5 = this.status;
+                    string4 = univMark2 != null ? StringsKt.trim((CharSequence) univMark2).toString() : null;
+                }
+                textView4.setText(string4);
+                TextView textView5 = this.status;
+                if (z) {
                     String status = univExamSubjects.getStatus();
-                    textView5.setText(status != null ? StringsKt.trim((CharSequence) status).toString() : null);
+                    string5 = status != null ? StringsKt.trim((CharSequence) status).toString() : null;
+                }
+                textView5.setText(string5);
+                if (!z) {
+                    pair = TuplesKt.to("#808080", "#FFFFFF");
+                } else {
                     String status2 = univExamSubjects.getStatus();
-                    if (Intrinsics.areEqual(status2, "P")) {
-                        this.status.setBackgroundColor(Color.parseColor("#266d19"));
-                        return;
-                    } else if (Intrinsics.areEqual(status2, "F")) {
-                        this.status.setBackgroundColor(Color.parseColor("#E10000"));
-                        return;
+                    if (Intrinsics.areEqual(status2 != null ? StringsKt.trim((CharSequence) status2).toString() : null, "P")) {
+                        pair = TuplesKt.to("#266d19", "#FFFFFF");
                     } else {
-                        this.status.setBackgroundColor(Color.parseColor("#808080"));
-                        return;
+                        String status3 = univExamSubjects.getStatus();
+                        pair = Intrinsics.areEqual(status3 != null ? StringsKt.trim((CharSequence) status3).toString() : null, "F") ? TuplesKt.to("#E10000", "#FFFFFF") : TuplesKt.to("#808080", "#FFFFFF");
                     }
                 }
-                this.subject.setText(HelpFormatter.DEFAULT_OPT_PREFIX);
-                this.attendance.setText(HelpFormatter.DEFAULT_OPT_PREFIX);
-                this.credit.setText(HelpFormatter.DEFAULT_OPT_PREFIX);
-                this.uniMark.setText(HelpFormatter.DEFAULT_OPT_PREFIX);
-                this.status.setText(HelpFormatter.DEFAULT_OPT_PREFIX);
-                this.status.setBackgroundColor(Color.parseColor("#808080"));
-            } catch (Exception unused) {
+                String str = (String) pair.component1();
+                String str2 = (String) pair.component2();
+                this.status.setBackgroundColor(Color.parseColor(str));
+                this.status.setTextColor(Color.parseColor(str2));
+                Result.m1430constructorimpl(Unit.INSTANCE);
+            } catch (Throwable th) {
+                Result.Companion companion2 = Result.INSTANCE;
+                Result.m1430constructorimpl(ResultKt.createFailure(th));
             }
         }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public void onBindViewHolder(BaseViewHolder holder, int position) {
-        Intrinsics.checkNotNullParameter(holder, "holder");
-        holder.onBind(position);
-    }
-
-    public final void addItems(ArrayList<UnivExamSubjects> list) {
-        Intrinsics.checkNotNullParameter(list, "list");
-        this.results.clear();
-        this.results.addAll(list);
-        notifyDataSetChanged();
-    }
-
-    public final void clearItems() {
-        this.results.clear();
-        notifyDataSetChanged();
     }
 }

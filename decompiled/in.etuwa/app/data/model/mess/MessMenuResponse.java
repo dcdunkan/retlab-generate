@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MessMenuResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MessMenuResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MessMenuResponse {
     private final ArrayList<MessItem> item;
     private final boolean login;
@@ -22,7 +22,7 @@ public final /* data */ class MessMenuResponse {
         return messMenuResponse.copy(z, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

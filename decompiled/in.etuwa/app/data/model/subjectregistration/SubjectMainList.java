@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectMainList.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubjectMainList.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubjectMainList {
     private String ans;
     private String mark;
@@ -13,6 +13,7 @@ public final /* data */ class SubjectMainList {
     private final int sem_id;
     private final ArrayList<SemSubList> subjects;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ SubjectMainList copy$default(SubjectMainList subjectMainList, String str, int i, String str2, String str3, ArrayList arrayList, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             str = subjectMainList.name;
@@ -35,22 +36,22 @@ public final /* data */ class SubjectMainList {
         return subjectMainList.copy(str, i3, str4, str5, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final int getSem_id() {
         return this.sem_id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMark() {
         return this.mark;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAns() {
         return this.ans;
     }

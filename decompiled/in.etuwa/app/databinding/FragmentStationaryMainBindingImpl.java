@@ -11,7 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.stationary.StationaryMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentStationaryMainBindingImpl extends FragmentStationaryMainBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -62,7 +62,7 @@ public class FragmentStationaryMainBindingImpl extends FragmentStationaryMainBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (207 != variableId) {
+        if (209 != variableId) {
             return false;
         }
         setStationaryMainViewModel((StationaryMainViewModel) variable);

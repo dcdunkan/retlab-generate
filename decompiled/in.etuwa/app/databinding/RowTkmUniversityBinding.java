@@ -4,19 +4,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowTkmUniversityBinding implements ViewBinding {
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView univCredit;
     public final TextView univGrade;
     public final TextView univSubjectName;
 
-    private RowTkmUniversityBinding(CardView rootView, TextView univCredit, TextView univGrade, TextView univSubjectName) {
+    private RowTkmUniversityBinding(MaterialCardView rootView, TextView univCredit, TextView univGrade, TextView univSubjectName) {
         this.rootView = rootView;
         this.univCredit = univCredit;
         this.univGrade = univGrade;
@@ -24,7 +24,7 @@ public final class RowTkmUniversityBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -33,11 +33,11 @@ public final class RowTkmUniversityBinding implements ViewBinding {
     }
 
     public static RowTkmUniversityBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_tkm_university, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_tkm_university, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowTkmUniversityBinding bind(View rootView) {
@@ -50,7 +50,7 @@ public final class RowTkmUniversityBinding implements ViewBinding {
                 i = R.id.univ_subject_name;
                 TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
                 if (textView3 != null) {
-                    return new RowTkmUniversityBinding((CardView) rootView, textView, textView2, textView3);
+                    return new RowTkmUniversityBinding((MaterialCardView) rootView, textView, textView2, textView3);
                 }
             }
         }

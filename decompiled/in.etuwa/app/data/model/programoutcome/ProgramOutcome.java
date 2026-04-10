@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.programoutcome;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ProgramOutcome.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ProgramOutcome.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ProgramOutcome {
     private final String content;
     private final String heading;
@@ -19,12 +19,12 @@ public final /* data */ class ProgramOutcome {
         return programOutcome.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getHeading() {
         return this.heading;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getContent() {
         return this.content;
     }

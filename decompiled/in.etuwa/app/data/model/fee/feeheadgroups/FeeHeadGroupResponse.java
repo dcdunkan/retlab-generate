@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeHeadGroupResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeHeadGroupResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeHeadGroupResponse {
 
     @SerializedName("fees")

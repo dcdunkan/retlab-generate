@@ -23,8 +23,8 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PalaiHostelAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PalaiHostelAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PalaiHostelAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private int c;
     private CallBack listener;
@@ -39,7 +39,7 @@ public final class PalaiHostelAdapter extends RecyclerView.Adapter<BaseViewHolde
     private List<String> selectedTotal = new ArrayList();
     private List<String> deatilPosition = new ArrayList();
 
-    /* compiled from: PalaiHostelAdapter.kt */
+    /* JADX INFO: compiled from: PalaiHostelAdapter.kt */
     @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0018\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u0005H&J$\u0010\b\u001a\u00020\u00032\f\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000b0\nH&¨\u0006\r"}, d2 = {"Lin/etuwa/app/ui/hostel/palaihostel/PalaiHostelAdapter$CallBack;", "", "kmeaFees", "", CommonCssConstants.POSITION, "", "selectedIds", "type", "updateSelected", "sel", "", "", FeeConfirmDialogKt.ARG_TOTAL, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void kmeaFees(int position);
@@ -116,18 +116,18 @@ public final class PalaiHostelAdapter extends RecyclerView.Adapter<BaseViewHolde
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_palai_hostel, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …ai_hostel, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_palai_hostel, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …ai_hostel, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -154,7 +154,7 @@ public final class PalaiHostelAdapter extends RecyclerView.Adapter<BaseViewHolde
         return ((this.hostel.isEmpty() ^ true) || (this.hostelnew.isEmpty() ^ true)) ? 1 : 0;
     }
 
-    /* compiled from: PalaiHostelAdapter.kt */
+    /* JADX INFO: compiled from: PalaiHostelAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u000e\u001a\u00020\u000fH\u0014J\u0010\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u0012H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lin/etuwa/app/ui/hostel/palaihostel/PalaiHostelAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/hostel/palaihostel/PalaiHostelAdapter;Landroid/view/View;)V", ExamSubjectDetailDialogKt.ARG_AMOUNT, "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "balance", "checkBox", "Landroid/widget/CheckBox;", "detailBtn", "month", "paid", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView amount;
@@ -200,7 +200,7 @@ public final class PalaiHostelAdapter extends RecyclerView.Adapter<BaseViewHolde
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PalaiHostelAdapter.ViewHolder.onBind$lambda$0(PalaiHostelAdapter.this, position, view);
+                        PalaiHostelAdapter.ViewHolder.onBind$lambda$0(palaiHostelAdapter, position, view);
                     }
                 });
                 CheckBox checkBox = this.checkBox;
@@ -208,7 +208,7 @@ public final class PalaiHostelAdapter extends RecyclerView.Adapter<BaseViewHolde
                 checkBox.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        PalaiHostelAdapter.ViewHolder.onBind$lambda$1(PalaiHostelAdapter.this, position, this, hostelMonth, view);
+                        PalaiHostelAdapter.ViewHolder.onBind$lambda$1(palaiHostelAdapter2, position, this, hostelMonth, view);
                     }
                 });
             } catch (Exception unused) {

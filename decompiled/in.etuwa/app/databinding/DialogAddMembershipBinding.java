@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogAddMembershipBinding extends ViewDataBinding {
     public final TextView addBtn;
     public final LinearLayout completionCard;

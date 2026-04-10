@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PoQuestions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PoQuestions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PoQuestions {
     private String answer;
     private final ArrayList<PoOptions> options;
@@ -14,6 +14,7 @@ public final /* data */ class PoQuestions {
     private final String q_name;
     private final boolean required;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ PoQuestions copy$default(PoQuestions poQuestions, String str, String str2, String str3, boolean z, ArrayList arrayList, int i, Object obj) {
         if ((i & 1) != 0) {
             str = poQuestions.q_id;
@@ -36,22 +37,22 @@ public final /* data */ class PoQuestions {
         return poQuestions.copy(str, str4, str5, z2, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQ_id() {
         return this.q_id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getQ_name() {
         return this.q_name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getAnswer() {
         return this.answer;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final boolean getRequired() {
         return this.required;
     }
@@ -80,14 +81,17 @@ public final /* data */ class PoQuestions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v5, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v8 */
+    /* JADX WARN: Type inference failed for: r1v9 */
     public int hashCode() {
-        int hashCode = ((((this.q_id.hashCode() * 31) + this.q_name.hashCode()) * 31) + this.answer.hashCode()) * 31;
+        int iHashCode = ((((this.q_id.hashCode() * 31) + this.q_name.hashCode()) * 31) + this.answer.hashCode()) * 31;
         boolean z = this.required;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((hashCode + i) * 31) + this.options.hashCode();
+        return ((iHashCode + r1) * 31) + this.options.hashCode();
     }
 
     public String toString() {

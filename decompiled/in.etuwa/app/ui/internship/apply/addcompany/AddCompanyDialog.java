@@ -37,20 +37,20 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddCompanyDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddCompanyDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddCompanyDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private AddCompanyDialogBinding _binding;
 
-    /* renamed from: addCompanyViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addCompanyViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addCompanyViewModel;
     private String id;
     private AddCompanyListener listener;
 
-    /* compiled from: AddCompanyDialog.kt */
+    /* JADX INFO: compiled from: AddCompanyDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/internship/apply/addcompany/AddCompanyDialog$AddCompanyListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddCompanyListener {
         void dismiss();
@@ -79,7 +79,7 @@ public final class AddCompanyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addCompanyDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addCompanyDialog);
@@ -93,7 +93,7 @@ public final class AddCompanyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -106,7 +106,7 @@ public final class AddCompanyDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddCompanyViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddCompanyViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -116,12 +116,12 @@ public final class AddCompanyDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final AddCompanyDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: AddCompanyDialog.kt */
+    /* JADX INFO: compiled from: AddCompanyDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/internship/apply/addcompany/AddCompanyDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/internship/apply/addcompany/AddCompanyDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -186,7 +186,7 @@ public final class AddCompanyDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.addcompany.AddCompanyDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddCompanyDialog.setUp$lambda$1(AddCompanyDialog.this, view);
+                    AddCompanyDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -197,7 +197,7 @@ public final class AddCompanyDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.internship.apply.addcompany.AddCompanyDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddCompanyDialog.setUp$lambda$2(AddCompanyDialog.this, view);
+                AddCompanyDialog.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -210,7 +210,7 @@ public final class AddCompanyDialog extends BaseDialog {
         TextInputEditText textInputEditText4;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AddCompanyDialogBinding addCompanyDialogBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (Intrinsics.areEqual(String.valueOf((addCompanyDialogBinding == null || (textInputEditText4 = addCompanyDialogBinding.etCompanyName) == null) ? null : textInputEditText4.getText()), "")) {
             return;
         }
@@ -220,12 +220,12 @@ public final class AddCompanyDialog extends BaseDialog {
         }
         AddCompanyViewModel addCompanyViewModel = this$0.getAddCompanyViewModel();
         AddCompanyDialogBinding addCompanyDialogBinding3 = this$0.get_binding();
-        String valueOf = String.valueOf((addCompanyDialogBinding3 == null || (textInputEditText2 = addCompanyDialogBinding3.etCompanyName) == null) ? null : textInputEditText2.getText());
+        String strValueOf = String.valueOf((addCompanyDialogBinding3 == null || (textInputEditText2 = addCompanyDialogBinding3.etCompanyName) == null) ? null : textInputEditText2.getText());
         AddCompanyDialogBinding addCompanyDialogBinding4 = this$0.get_binding();
         if (addCompanyDialogBinding4 != null && (textInputEditText = addCompanyDialogBinding4.etCompanyAddress) != null) {
-            editable = textInputEditText.getText();
+            text = textInputEditText.getText();
         }
-        addCompanyViewModel.addCompany(valueOf, String.valueOf(editable));
+        addCompanyViewModel.addCompany(strValueOf, String.valueOf(text));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -238,9 +238,10 @@ public final class AddCompanyDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getAddCompanyViewModel().getResponse().observe(getViewLifecycleOwner(), new AddCompanyDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.addcompany.AddCompanyDialog$listenResponse$1
+        getAddCompanyViewModel().getResponse().observe(getViewLifecycleOwner(), new AddCompanyDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.internship.apply.addcompany.AddCompanyDialog.listenResponse.1
 
-            /* compiled from: AddCompanyDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.internship.apply.addcompany.AddCompanyDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddCompanyDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -277,13 +278,10 @@ public final class AddCompanyDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                AddCompanyDialogBinding addCompanyDialogBinding;
                 TextView addBtn;
-                AddCompanyDialogBinding addCompanyDialogBinding2;
                 TextView addBtn2;
-                AddCompanyDialogBinding addCompanyDialogBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -299,8 +297,8 @@ public final class AddCompanyDialog extends BaseDialog {
                         return;
                     }
                     AddCompanyDialog.this.hideProgress();
-                    addCompanyDialogBinding3 = AddCompanyDialog.this.get_binding();
-                    if (addCompanyDialogBinding3 == null || (textView = addCompanyDialogBinding3.addBtn) == null) {
+                    AddCompanyDialogBinding addCompanyDialogBinding = AddCompanyDialog.this.get_binding();
+                    if (addCompanyDialogBinding == null || (textView = addCompanyDialogBinding.addBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -313,7 +311,7 @@ public final class AddCompanyDialog extends BaseDialog {
                 if (data != null) {
                     AddCompanyDialog addCompanyDialog = AddCompanyDialog.this;
                     if (data.getSuccess()) {
-                        addCompanyDialogBinding2 = addCompanyDialog.get_binding();
+                        AddCompanyDialogBinding addCompanyDialogBinding2 = addCompanyDialog.get_binding();
                         if (addCompanyDialogBinding2 != null && (addBtn2 = addCompanyDialogBinding2.addBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(addBtn2, "addBtn");
                             ToastExtKt.showSuccessToast(addBtn2, data.getMessage());
@@ -324,8 +322,8 @@ public final class AddCompanyDialog extends BaseDialog {
                         addCompanyDialog.onStop();
                         return;
                     }
-                    addCompanyDialogBinding = addCompanyDialog.get_binding();
-                    if (addCompanyDialogBinding == null || (addBtn = addCompanyDialogBinding.addBtn) == null) {
+                    AddCompanyDialogBinding addCompanyDialogBinding3 = addCompanyDialog.get_binding();
+                    if (addCompanyDialogBinding3 == null || (addBtn = addCompanyDialogBinding3.addBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(addBtn, "addBtn");

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowExamRegisterBinding implements ViewBinding {
     public final CardView cvCoverageRow;
     public final TextView deleteBtn;
@@ -35,11 +35,11 @@ public final class RowExamRegisterBinding implements ViewBinding {
     }
 
     public static RowExamRegisterBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_exam_register, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_exam_register, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowExamRegisterBinding bind(View rootView) {

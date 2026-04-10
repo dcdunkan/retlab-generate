@@ -14,8 +14,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: ExamRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ExamRepository {
     private final ApiHelper apiHelper;
 
@@ -33,9 +33,9 @@ public final class ExamRepository {
         return this.apiHelper.getSeriesExamApiCall(request);
     }
 
-    public final Single<ModuleTestResponse> getModuleTestApiCall(String r2) {
-        Intrinsics.checkNotNullParameter(r2, "new");
-        return this.apiHelper.getModuleTestApiCall(r2);
+    public final Single<ModuleTestResponse> getModuleTestApiCall(String str) {
+        Intrinsics.checkNotNullParameter(str, "new");
+        return this.apiHelper.getModuleTestApiCall(str);
     }
 
     public final Single<SuccessResponse> deleteSeriesExamApiCall(String id) {

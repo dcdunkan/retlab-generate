@@ -12,7 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.mvjce.view.ViewMvjceSemRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class ViewMvjceSemRegDialogBinding extends ViewDataBinding {
     public final LinearLayout dueLayout;
     public final LinearLayout hodRemarkLayout;

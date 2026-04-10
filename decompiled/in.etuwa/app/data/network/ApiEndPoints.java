@@ -2,8 +2,8 @@ package in.etuwa.app.data.network;
 
 import kotlin.Metadata;
 
-/* compiled from: ApiEndPoints.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ApiEndPoints.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ApiEndPoints {
     public static final String ACADEMIC_FEES_URL = "app/acadamicfees";
     public static final String ACADEMIC_FEE_CONF_URL = "app/acadamicfeeconfirm";
@@ -72,7 +72,7 @@ public final class ApiEndPoints {
     public static final String COURSE_SURVEY_ANSWERS = "app/coursesurveyanswer";
     public static final String COURSE_SURVEY_PENDING_STATUS_API = "student/coursesurveypending";
     public static final String COURSE_SURVEY_QUESTIONS = "app/coursesurveyquestions";
-    public static final String DASH_TIMETABLE = "app/timetable";
+    public static final String DASH_TIMETABLE = "app/timetablenew";
     public static final String DASH_URL = "app/profile";
     public static final String DAY_WISE_TIMETABLE_URL = "app/datewisetimetable";
     public static final String DELETE_ACHIEVEMENTS = "app/deleteotherachievement";
@@ -128,7 +128,7 @@ public final class ApiEndPoints {
     public static final String EDIT_RESEARCH = "app/updatefunded";
     public static final String EDIT_SCHOLARSHIPS = "app/updatescholarship";
     public static final String EDIT_SPORT = "app/updateparticipation";
-    public static final String EXAM_COURSE = "UniversityExam/examcoursenew";
+    public static final String EXAM_COURSE = "UniversityExam/examcourse";
     public static final String EXAM_PAY = "UniversityExam/register";
     public static final String EXAM_PAY_SLIP = "UniversityExam/registrationslip";
     public static final String EXAM_RECEIPT = "UniversityExam/viewreceipts";
@@ -145,7 +145,6 @@ public final class ApiEndPoints {
     public static final String EXAM_REVALUATION_VIEW = "UniversityExam/viewrevaluation";
     public static final String EXAM_SCHEDULE_URL = "app/examschedules";
     public static final String EXAM_UPDATE = "UniversityExam/updateregister";
-    public static final String EXAM_VERIFY_ABC_ID = "UniversityExam/verifyabcid";
     public static final String EXAM_VIEW = "UniversityExam/viewregister";
     public static final String FEES_MED_URL = "fee/installments";
     public static final String FEE_ARTS = "fee/academicfees";
@@ -178,6 +177,7 @@ public final class ApiEndPoints {
     public static final String GRIEVANCE_TYPE = "app/grievancetypes";
     public static final String HOMEWORK = "app/homework";
     public static final String HOSTEL_APPLY_LEAVE = "hostel/applyleave";
+    public static final String HOSTEL_APPLY_LEAVE_NEW = "hostel/applyleavenew";
     public static final String HOSTEL_APPLY_URL = "app/applyhostel";
     public static final String HOSTEL_APPROVE_LEAVE_PARENT = "hostel/approvalleavebyparent";
     public static final String HOSTEL_ATT_CAL = "hostel/attendanceincalendar";
@@ -249,6 +249,7 @@ public final class ApiEndPoints {
     public static final String PO_SURVEY_PENDING_STATUS_API = "student/posurveypending";
     public static final String PO_SURVEY_QUESTIONS_URL = "student/poanswer";
     public static final String PO_SURVEY_URL = "student/viewallposurvey";
+    public static final String PROFILE_ATTENDANCE_URL = "app/profileattendance";
     public static final String PROFILE_DROP_LIST = "app/profiledroplist";
     public static final String PROFILE_UPDATE_URL = "app/updatefullprofile";
     public static final String PROFILE_URL = "app/getstudentdetails";
@@ -259,7 +260,7 @@ public final class ApiEndPoints {
     public static final String QUIZ_DELETE_UPLOAD = "quiz/deletefile";
     public static final String QUIZ_LIST = "quiz/list";
     public static final String QUIZ_QUESTIONS = "quiz/questions";
-    public static final String QUIZ_RESULT = "quiz/result";
+    public static final String QUIZ_RESULT = "quiz/resultnew";
     public static final String QUIZ_RESULT_NEW = "quiz/resultnew";
     public static final String QUIZ_STATUS = "quiz/savestatus";
     public static final String QUIZ_UPLOAD = "quiz/upload";
@@ -275,6 +276,7 @@ public final class ApiEndPoints {
     public static final String RESULT_MODULE_TEST_URL = "app/resultmoduletest";
     public static final String RESULT_SEASONAL_URL = "app/resultsessional";
     public static final String RESULT_TUTORIAL_URL = "app/resulttutorials";
+    public static final String RESULT_UNIV_TOTAL_URL = "app/studentacademicanalysis";
     public static final String RESULT_UNIV_URL = "app/resultsuniversity";
     public static final String SCST_REGISTER = "UniversityExam/registerpaylater";
     public static final String SEMESTER_LIST = "semester-list";
@@ -308,6 +310,7 @@ public final class ApiEndPoints {
     public static final String SUBMIT_MODULE_TEST = "app/submitmoduletest";
     public static final String SUBMIT_SERIES_EXAM = "app/submitseriesexam";
     public static final String SUBMIT_SURVEY_URL = "app/submitsurvey";
+    public static final String SUBMIT_TEACHER_SURVEY_NEW_URL = "app/savesurvey";
     public static final String SUBMIT_TUTORIALS = "app/submittutorial";
     public static final String SURVEY_MANDATORY_STATUS_API = "student/surveyaccess";
     public static final String SURVEY_PENDING_STATUS = "student/pendingsurvey";
@@ -317,6 +320,7 @@ public final class ApiEndPoints {
     public static final String SURVEY_URL = "app/survey";
     public static final String SYLLABUS_URL = "app/syllabus";
     public static final String TEACHER_URL = "app/teachers";
+    public static final String TIMETABLE_NEW_URL = "app/timetablenew";
     public static final String TIMETABLE_URL = "app/timetable";
     public static final String TIME_TABLE_CHANGE_URL = "app/timetablechange";
     public static final String TKMCE_ABC_UPDATE = "app/updateAbcID";

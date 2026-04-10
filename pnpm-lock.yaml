@@ -7,6 +7,9 @@ settings:
 importers:
     .:
         dependencies:
+            "@std/fs":
+                specifier: jsr:^1.0.23
+                version: "@jsr/std__fs@1.0.23"
             code-block-writer:
                 specifier: ^13.0.3
                 version: 13.0.3
@@ -330,6 +333,24 @@ packages:
         cpu: [x64]
         os: [win32]
 
+    "@jsr/std__fs@1.0.23":
+        resolution: {
+            integrity: sha512-e8jspB3M44E5YhWiLCTqibBBTwVmxQaHN06WvFa/elAKm5E/LfAe8Hj5XGNC8P7a0MIPASlNJsnF1bgO/g+aqg==,
+            tarball: https://npm.jsr.io/~/11/@jsr/std__fs/1.0.23.tgz,
+        }
+
+    "@jsr/std__internal@1.0.12":
+        resolution: {
+            integrity: sha512-6xReMW9p+paJgqoFRpOE2nogJFvzPfaLHLIlyADYjKMUcwDyjKZxryIbgcU+gxiTygn8yCjld1HoI0ET4/iZeA==,
+            tarball: https://npm.jsr.io/~/11/@jsr/std__internal/1.0.12.tgz,
+        }
+
+    "@jsr/std__path@1.1.4":
+        resolution: {
+            integrity: sha512-SK4u9H6NVTfolhPdlvdYXfNFefy1W04AEHWJydryYbk+xqzNiVmr5o7TLJLJFqwHXuwMRhwrn+mcYeUfS0YFaA==,
+            tarball: https://npm.jsr.io/~/11/@jsr/std__path/1.1.4.tgz,
+        }
+
     "@types/node@24.9.2":
         resolution: {
             integrity: sha512-uWN8YqxXxqFMX2RqGOrumsKeti4LlmIMIyV0lgut4jx7KQBcBiW6vkDtIBvHnHIquwNfJhk8v2OtmO8zXWHfPA==,
@@ -565,6 +586,17 @@ snapshots:
 
     "@esbuild/win32-x64@0.25.11":
         optional: true
+
+    "@jsr/std__fs@1.0.23":
+        dependencies:
+            "@jsr/std__internal": 1.0.12
+            "@jsr/std__path": 1.1.4
+
+    "@jsr/std__internal@1.0.12": {}
+
+    "@jsr/std__path@1.1.4":
+        dependencies:
+            "@jsr/std__internal": 1.0.12
 
     "@types/node@24.9.2":
         dependencies:

@@ -14,7 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.reregistration.ReRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogNewRegistrationAisatBinding extends ViewDataBinding {
     public final TextView completionFileName;
     public final TextView completionSelect;

@@ -45,22 +45,22 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SubjectCoverageFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SubjectCoverageFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SubjectCoverageFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private SubjectCoverageFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String subId;
 
-    /* renamed from: subjectCoverageViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: subjectCoverageViewModel$delegate, reason: from kotlin metadata */
     private final Lazy subjectCoverageViewModel;
 
     @JvmStatic
@@ -86,7 +86,7 @@ public final class SubjectCoverageFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return subjectCoverageFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(subjectCoverageFragment);
@@ -100,7 +100,7 @@ public final class SubjectCoverageFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -113,7 +113,7 @@ public final class SubjectCoverageFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SubjectCoverageViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SubjectCoverageViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SubjectCoverageFragment subjectCoverageFragment2 = this;
@@ -161,7 +161,7 @@ public final class SubjectCoverageFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final SubjectCoverageFragmentBinding get_binding() {
         return this._binding;
     }
@@ -170,7 +170,7 @@ public final class SubjectCoverageFragment extends BaseFragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: SubjectCoverageFragment.kt */
+    /* JADX INFO: compiled from: SubjectCoverageFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/subject/coverage/SubjectCoverageFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/subject/coverage/SubjectCoverageFragment;", StoreFragmentKt.SUB_ID, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -261,7 +261,7 @@ public final class SubjectCoverageFragment extends BaseFragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageFragment$$ExternalSyntheticLambda0
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                SubjectCoverageFragment.setUp$lambda$1(SubjectCoverageFragment.this);
+                SubjectCoverageFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -282,9 +282,10 @@ public final class SubjectCoverageFragment extends BaseFragment {
     }
 
     private final void listenResponse() {
-        getSubjectCoverageViewModel().getResponse().observe(getViewLifecycleOwner(), new SubjectCoverageFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubCoverageResponse>, Unit>() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageFragment$listenResponse$1
+        getSubjectCoverageViewModel().getResponse().observe(getViewLifecycleOwner(), new SubjectCoverageFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubCoverageResponse>, Unit>() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageFragment.listenResponse.1
 
-            /* compiled from: SubjectCoverageFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subject.coverage.SubjectCoverageFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: SubjectCoverageFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -321,10 +322,8 @@ public final class SubjectCoverageFragment extends BaseFragment {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SubCoverageResponse> resource) {
-                SubjectCoverageAdapter adapter;
-                SubjectCoverageFragmentBinding subjectCoverageFragmentBinding;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -333,11 +332,11 @@ public final class SubjectCoverageFragment extends BaseFragment {
                     if (data != null) {
                         SubjectCoverageFragment subjectCoverageFragment = SubjectCoverageFragment.this;
                         subjectCoverageFragment.showBaseView();
-                        adapter = subjectCoverageFragment.getAdapter();
+                        SubjectCoverageAdapter adapter = subjectCoverageFragment.getAdapter();
                         ArrayList<SubCoverage> coverage = data.getCoverage();
-                        Context requireContext = subjectCoverageFragment.requireContext();
-                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                        adapter.addItems(coverage, requireContext);
+                        Context contextRequireContext = subjectCoverageFragment.requireContext();
+                        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                        adapter.addItems(coverage, contextRequireContext);
                         return;
                     }
                     return;
@@ -356,7 +355,7 @@ public final class SubjectCoverageFragment extends BaseFragment {
                 }
                 SubjectCoverageFragment.this.hideProgress();
                 SubjectCoverageFragment.this.showBaseView();
-                subjectCoverageFragmentBinding = SubjectCoverageFragment.this.get_binding();
+                SubjectCoverageFragmentBinding subjectCoverageFragmentBinding = SubjectCoverageFragment.this.get_binding();
                 if (subjectCoverageFragmentBinding == null || (recyclerView = subjectCoverageFragmentBinding.rvSubCoverage) == null) {
                     return;
                 }

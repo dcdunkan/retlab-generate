@@ -2,15 +2,15 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
-import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.button.MaterialButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.changepassword.ChangePasswordViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogChangePasswordBindingImpl extends DialogChangePasswordBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -36,7 +36,7 @@ public class DialogChangePasswordBindingImpl extends DialogChangePasswordBinding
     }
 
     private DialogChangePasswordBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextView) bindings[4], (TextInputEditText) bindings[3], (TextInputEditText) bindings[1], (TextInputEditText) bindings[2]);
+        super(bindingComponent, root, 0, (MaterialButton) bindings[4], (EditText) bindings[3], (EditText) bindings[1], (EditText) bindings[2]);
         this.mDirtyFlags = -1L;
         ScrollView scrollView = (ScrollView) bindings[0];
         this.mboundView0 = scrollView;
@@ -62,7 +62,7 @@ public class DialogChangePasswordBindingImpl extends DialogChangePasswordBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (51 != variableId) {
+        if (50 != variableId) {
             return false;
         }
         setChangePasswordDialogViewModel((ChangePasswordViewModel) variable);

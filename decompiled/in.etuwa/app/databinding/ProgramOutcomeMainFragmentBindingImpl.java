@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.programoutcome.main.ProgramOutcomeMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ProgramOutcomeMainFragmentBindingImpl extends ProgramOutcomeMainFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -60,7 +60,7 @@ public class ProgramOutcomeMainFragmentBindingImpl extends ProgramOutcomeMainFra
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (166 != variableId) {
+        if (168 != variableId) {
             return false;
         }
         setProgramOutcomeMainViewModel((ProgramOutcomeMainViewModel) variable);

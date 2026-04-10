@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: VideoResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: VideoResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class VideoResponse {
 
     @SerializedName(Constants.IPC_BUNDLE_KEY_SEND_ERROR)
@@ -38,7 +38,7 @@ public final /* data */ class VideoResponse {
         return videoResponse.copy(z, arrayList, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -47,7 +47,7 @@ public final /* data */ class VideoResponse {
         return this.videos;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getError() {
         return this.error;
     }

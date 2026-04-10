@@ -17,13 +17,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HomeWorkViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: HomeWorkViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HomeWorkViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<SuccessResponse>> deleteResponse;
     private final HomeWorkRepository homeWorkRepository;
     private MutableLiveData<Resource<HomeWorkResponse>> homeworkResponse;
+    private boolean isDataLoaded;
 
     public HomeWorkViewModel(HomeWorkRepository homeWorkRepository) {
         Intrinsics.checkNotNullParameter(homeWorkRepository, "homeWorkRepository");
@@ -31,7 +32,7 @@ public final class HomeWorkViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.homeworkResponse = new MutableLiveData<>();
         this.deleteResponse = new MutableLiveData<>();
-        getHomeWork();
+        loadDataIfNeeded();
     }
 
     public final MutableLiveData<Resource<HomeWorkResponse>> getHomeworkResponse() {
@@ -52,11 +53,19 @@ public final class HomeWorkViewModel extends ViewModel {
         this.deleteResponse = mutableLiveData;
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getHomeWork();
+    }
+
     public final void getHomeWork() {
         this.homeworkResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HomeWorkResponse> observeOn = this.homeWorkRepository.getHomeWorksApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HomeWorkResponse, Unit> function1 = new Function1<HomeWorkResponse, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$getHomeWork$1
+        Single<HomeWorkResponse> singleObserveOn = this.homeWorkRepository.getHomeWorksApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HomeWorkResponse, Unit> function1 = new Function1<HomeWorkResponse, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel.getHomeWork.1
             {
                 super(1);
             }
@@ -67,7 +76,7 @@ public final class HomeWorkViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HomeWorkResponse homeWorkResponse) {
                 HomeWorkViewModel.this.getHomeworkResponse().postValue(Resource.INSTANCE.success(homeWorkResponse));
             }
@@ -75,10 +84,10 @@ public final class HomeWorkViewModel extends ViewModel {
         Consumer<? super HomeWorkResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HomeWorkViewModel.getHomeWork$lambda$0(Function1.this, obj);
+                HomeWorkViewModel.getHomeWork$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$getHomeWork$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel.getHomeWork.2
             {
                 super(1);
             }
@@ -89,15 +98,15 @@ public final class HomeWorkViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 HomeWorkViewModel.this.getHomeworkResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HomeWorkViewModel.getHomeWork$lambda$1(Function1.this, obj);
+                HomeWorkViewModel.getHomeWork$lambda$1(function12, obj);
             }
         }));
     }
@@ -122,8 +131,8 @@ public final class HomeWorkViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.homeWorkRepository.deleteHomeWorkApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$deleteHomeWork$1
+        Single<SuccessResponse> singleObserveOn = this.homeWorkRepository.deleteHomeWorkApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel.deleteHomeWork.1
             {
                 super(1);
             }
@@ -134,7 +143,7 @@ public final class HomeWorkViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 HomeWorkViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -142,10 +151,10 @@ public final class HomeWorkViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HomeWorkViewModel.deleteHomeWork$lambda$2(Function1.this, obj);
+                HomeWorkViewModel.deleteHomeWork$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$deleteHomeWork$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel.deleteHomeWork.2
             {
                 super(1);
             }
@@ -156,15 +165,15 @@ public final class HomeWorkViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 HomeWorkViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.homework.HomeWorkViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HomeWorkViewModel.deleteHomeWork$lambda$3(Function1.this, obj);
+                HomeWorkViewModel.deleteHomeWork$lambda$3(function12, obj);
             }
         }));
     }

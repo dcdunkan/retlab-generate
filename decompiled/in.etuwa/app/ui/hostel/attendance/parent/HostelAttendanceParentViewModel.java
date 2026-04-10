@@ -12,13 +12,14 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import java.util.Map;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelAttendanceParentViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelAttendanceParentViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelAttendanceParentViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> approveResponse;
     private final CompositeDisposable compositeDisposable;
@@ -45,8 +46,8 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(date, "date");
         this.hostelResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelAttParentViewResponse> observeOn = this.hostelRepository.getHostelLeaveViewParentApiCall(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelAttParentViewResponse, Unit> function1 = new Function1<HostelAttParentViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getHostelAttParentView$1
+        Single<HostelAttParentViewResponse> singleObserveOn = this.hostelRepository.getHostelLeaveViewParentApiCall(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelAttParentViewResponse, Unit> function1 = new Function1<HostelAttParentViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getHostelAttParentView.1
             {
                 super(1);
             }
@@ -57,20 +58,18 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelAttParentViewResponse hostelAttParentViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelAttParentViewResponse));
+                HostelAttendanceParentViewModel.this.hostelResponse.postValue(Resource.INSTANCE.success(hostelAttParentViewResponse));
             }
         };
         Consumer<? super HostelAttParentViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getHostelAttParentView$lambda$0(Function1.this, obj);
+                HostelAttendanceParentViewModel.getHostelAttParentView$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getHostelAttParentView$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getHostelAttParentView.2
             {
                 super(1);
             }
@@ -81,17 +80,15 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelAttendanceParentViewModel.this.hostelResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getHostelAttParentView$lambda$1(Function1.this, obj);
+                HostelAttendanceParentViewModel.getHostelAttParentView$lambda$1(function12, obj);
             }
         }));
     }
@@ -116,8 +113,8 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(date, "date");
         this.hostelApproveResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelAttParentViewResponse> observeOn = this.hostelRepository.getHostelLeaveViewParentApproveApiCall(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelAttParentViewResponse, Unit> function1 = new Function1<HostelAttParentViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getHostelAttParentApproveView$1
+        Single<HostelAttParentViewResponse> singleObserveOn = this.hostelRepository.getHostelLeaveViewParentApproveApiCall(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelAttParentViewResponse, Unit> function1 = new Function1<HostelAttParentViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getHostelAttParentApproveView.1
             {
                 super(1);
             }
@@ -128,20 +125,18 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelAttParentViewResponse hostelAttParentViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.hostelApproveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelAttParentViewResponse));
+                HostelAttendanceParentViewModel.this.hostelApproveResponse.postValue(Resource.INSTANCE.success(hostelAttParentViewResponse));
             }
         };
         Consumer<? super HostelAttParentViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getHostelAttParentApproveView$lambda$2(Function1.this, obj);
+                HostelAttendanceParentViewModel.getHostelAttParentApproveView$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getHostelAttParentApproveView$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getHostelAttParentApproveView.2
             {
                 super(1);
             }
@@ -152,17 +147,15 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.hostelApproveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelAttendanceParentViewModel.this.hostelApproveResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getHostelAttParentApproveView$lambda$3(Function1.this, obj);
+                HostelAttendanceParentViewModel.getHostelAttParentApproveView$lambda$3(function12, obj);
             }
         }));
     }
@@ -187,8 +180,8 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(date, "date");
         this.hostelRejectResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelAttParentViewResponse> observeOn = this.hostelRepository.getHostelLeaveViewParentRejectApiCall(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelAttParentViewResponse, Unit> function1 = new Function1<HostelAttParentViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getHostelAttParentRejectView$1
+        Single<HostelAttParentViewResponse> singleObserveOn = this.hostelRepository.getHostelLeaveViewParentRejectApiCall(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelAttParentViewResponse, Unit> function1 = new Function1<HostelAttParentViewResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getHostelAttParentRejectView.1
             {
                 super(1);
             }
@@ -199,20 +192,18 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelAttParentViewResponse hostelAttParentViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.hostelRejectResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelAttParentViewResponse));
+                HostelAttendanceParentViewModel.this.hostelRejectResponse.postValue(Resource.INSTANCE.success(hostelAttParentViewResponse));
             }
         };
-        Consumer<? super HostelAttParentViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda1
+        Consumer<? super HostelAttParentViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getHostelAttParentRejectView$lambda$4(Function1.this, obj);
+                HostelAttendanceParentViewModel.getHostelAttParentRejectView$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getHostelAttParentRejectView$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getHostelAttParentRejectView.2
             {
                 super(1);
             }
@@ -223,17 +214,15 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.hostelRejectResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelAttendanceParentViewModel.this.hostelRejectResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda11
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getHostelAttParentRejectView$lambda$5(Function1.this, obj);
+                HostelAttendanceParentViewModel.getHostelAttParentRejectView$lambda$5(function12, obj);
             }
         }));
     }
@@ -258,8 +247,8 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.successResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.getHostelRevokeLeaveParentApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getRevokeParent$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.getHostelRevokeLeaveParentApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getRevokeParent.1
             {
                 super(1);
             }
@@ -270,20 +259,18 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.successResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                HostelAttendanceParentViewModel.this.successResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getRevokeParent$lambda$6(Function1.this, obj);
+                HostelAttendanceParentViewModel.getRevokeParent$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getRevokeParent$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getRevokeParent.2
             {
                 super(1);
             }
@@ -294,17 +281,15 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.successResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelAttendanceParentViewModel.this.successResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getRevokeParent$lambda$7(Function1.this, obj);
+                HostelAttendanceParentViewModel.getRevokeParent$lambda$7(function12, obj);
             }
         }));
     }
@@ -325,12 +310,12 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
         return this.successResponse;
     }
 
-    public final void getAApproveResponse(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
+    public final void getAApproveResponse(Map<String, String> approveDetails) {
+        Intrinsics.checkNotNullParameter(approveDetails, "approveDetails");
         this.approveResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.getHostelApproveLeaveParentApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getAApproveResponse$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.getHostelApproveLeaveParentApiCall(approveDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getAApproveResponse.1
             {
                 super(1);
             }
@@ -341,20 +326,18 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.approveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                HostelAttendanceParentViewModel.this.approveResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
-        Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda10
+        Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getAApproveResponse$lambda$8(Function1.this, obj);
+                HostelAttendanceParentViewModel.getAApproveResponse$lambda$8(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getAApproveResponse$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getAApproveResponse.2
             {
                 super(1);
             }
@@ -365,17 +348,15 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.approveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelAttendanceParentViewModel.this.approveResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda11
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getAApproveResponse$lambda$9(Function1.this, obj);
+                HostelAttendanceParentViewModel.getAApproveResponse$lambda$9(function12, obj);
             }
         }));
     }
@@ -396,12 +377,12 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
         return this.approveResponse;
     }
 
-    public final void getRejectParent(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
+    public final void getRejectParent(Map<String, String> approveDetails) {
+        Intrinsics.checkNotNullParameter(approveDetails, "approveDetails");
         this.rejectResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.hostelRepository.getHostelRejectLeaveParentApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getRejectParent$1
+        Single<SuccessResponse> singleObserveOn = this.hostelRepository.getHostelRejectLeaveParentApiCall(approveDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getRejectParent.1
             {
                 super(1);
             }
@@ -412,20 +393,18 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.rejectResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                HostelAttendanceParentViewModel.this.rejectResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getRejectParent$lambda$10(Function1.this, obj);
+                HostelAttendanceParentViewModel.getRejectParent$lambda$10(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$getRejectParent$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel.getRejectParent.2
             {
                 super(1);
             }
@@ -436,17 +415,15 @@ public final class HostelAttendanceParentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = HostelAttendanceParentViewModel.this.rejectResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                HostelAttendanceParentViewModel.this.rejectResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda9
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.attendance.parent.HostelAttendanceParentViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                HostelAttendanceParentViewModel.getRejectParent$lambda$11(Function1.this, obj);
+                HostelAttendanceParentViewModel.getRejectParent$lambda$11(function12, obj);
             }
         }));
     }

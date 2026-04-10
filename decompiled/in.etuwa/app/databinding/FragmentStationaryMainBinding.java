@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.stationary.StationaryMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentStationaryMainBinding extends ViewDataBinding {
     public final AppBarLayout appBarLayout;
 

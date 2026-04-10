@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowLeaveTakenBinding implements ViewBinding {
     public final TextView leaveAvailable;
     public final TextView leaveTaken;
@@ -33,11 +33,11 @@ public final class RowLeaveTakenBinding implements ViewBinding {
     }
 
     public static RowLeaveTakenBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_leave_taken, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_leave_taken, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowLeaveTakenBinding bind(View rootView) {

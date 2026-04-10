@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.hostel;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelFeeTypes.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelFeeTypes.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelFeeTypes {
     private final int id;
     private final String name;
@@ -19,12 +19,12 @@ public final /* data */ class HostelFeeTypes {
         return hostelFeeTypes.copy(i, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }

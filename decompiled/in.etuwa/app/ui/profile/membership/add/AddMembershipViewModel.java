@@ -27,8 +27,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: AddMembershipViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddMembershipViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddMembershipViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<SuccessResponse>> addResponse;
     private final MutableLiveData<Resource<SuccessResponse>> addResponse2;
@@ -93,15 +93,15 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Intrinsics.checkNotNullParameter(memberId, "memberId");
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, type);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, memberId);
-        RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
-        RequestBody create5 = RequestBody.INSTANCE.create(MultipartBody.FORM, description);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, type);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, memberId);
+        RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
+        RequestBody requestBodyCreate5 = RequestBody.INSTANCE.create(MultipartBody.FORM, description);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$addMembershipData$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.addMembershipData.1
             {
                 super(1);
             }
@@ -112,20 +112,20 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddMembershipViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda2
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.addMembershipData$lambda$0(Function1.this, obj);
+                AddMembershipViewModel.addMembershipData$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.addMembershipUrlApiCall(create, create2, create4, create3, create5, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$addMembershipData$2
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.addMembershipUrlApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate4, requestBodyCreate3, requestBodyCreate5, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.addMembershipData.2
             {
                 super(1);
             }
@@ -136,7 +136,7 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddMembershipViewModel.this.getAddResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -144,10 +144,10 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.addMembershipData$lambda$1(Function1.this, obj);
+                AddMembershipViewModel.addMembershipData$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$addMembershipData$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.addMembershipData.3
             {
                 super(1);
             }
@@ -158,7 +158,7 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddMembershipViewModel.this.getAddResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -167,10 +167,10 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.addMembershipData$lambda$2(Function1.this, obj);
+                AddMembershipViewModel.addMembershipData$lambda$2(function13, obj);
             }
         }));
     }
@@ -201,16 +201,16 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Intrinsics.checkNotNullParameter(memberId, "memberId");
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, type);
-        RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, memberId);
-        RequestBody create5 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
-        RequestBody create6 = RequestBody.INSTANCE.create(MultipartBody.FORM, description);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, type);
+        RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, memberId);
+        RequestBody requestBodyCreate5 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
+        RequestBody requestBodyCreate6 = RequestBody.INSTANCE.create(MultipartBody.FORM, description);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$updateMembershipData$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.updateMembershipData.1
             {
                 super(1);
             }
@@ -221,20 +221,20 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddMembershipViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda6
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.updateMembershipData$lambda$3(Function1.this, obj);
+                AddMembershipViewModel.updateMembershipData$lambda$3(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.updateMembershipUrlApiCall(create, create2, create3, create5, create4, create6, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$updateMembershipData$2
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.updateMembershipUrlApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, requestBodyCreate5, requestBodyCreate4, requestBodyCreate6, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.updateMembershipData.2
             {
                 super(1);
             }
@@ -245,7 +245,7 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddMembershipViewModel.this.getAddResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -253,10 +253,10 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.updateMembershipData$lambda$4(Function1.this, obj);
+                AddMembershipViewModel.updateMembershipData$lambda$4(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$updateMembershipData$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.updateMembershipData.3
             {
                 super(1);
             }
@@ -267,7 +267,7 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddMembershipViewModel.this.getAddResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -276,10 +276,10 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda8
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.updateMembershipData$lambda$5(Function1.this, obj);
+                AddMembershipViewModel.updateMembershipData$lambda$5(function13, obj);
             }
         }));
     }
@@ -305,8 +305,8 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
     public final void getDropDownData() {
         this.publicationResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<PublicationDropDownResponse> observeOn = this.profileRepository.getProfileDropListUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<PublicationDropDownResponse, Unit> function1 = new Function1<PublicationDropDownResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$getDropDownData$1
+        Single<PublicationDropDownResponse> singleObserveOn = this.profileRepository.getProfileDropListUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<PublicationDropDownResponse, Unit> function1 = new Function1<PublicationDropDownResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.getDropDownData.1
             {
                 super(1);
             }
@@ -317,20 +317,18 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(PublicationDropDownResponse publicationDropDownResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddMembershipViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(publicationDropDownResponse));
+                AddMembershipViewModel.this.publicationResponse.postValue(Resource.INSTANCE.success(publicationDropDownResponse));
             }
         };
         Consumer<? super PublicationDropDownResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.getDropDownData$lambda$6(Function1.this, obj);
+                AddMembershipViewModel.getDropDownData$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$getDropDownData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.getDropDownData.2
             {
                 super(1);
             }
@@ -341,17 +339,15 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddMembershipViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddMembershipViewModel.this.publicationResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda10
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.getDropDownData$lambda$7(Function1.this, obj);
+                AddMembershipViewModel.getDropDownData$lambda$7(function12, obj);
             }
         }));
     }
@@ -380,8 +376,8 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Intrinsics.checkNotNullParameter(description, "description");
         this.addResponse2.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.addMembershipUrlApiCall(title, type, yearId, memberId, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$addMembershipData$4
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.addMembershipUrlApiCall(title, type, yearId, memberId, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.addMembershipData.4
             {
                 super(1);
             }
@@ -392,7 +388,7 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddMembershipViewModel.this.getAddResponse2().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -400,10 +396,10 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda13
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.addMembershipData$lambda$8(Function1.this, obj);
+                AddMembershipViewModel.addMembershipData$lambda$8(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$addMembershipData$5
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.addMembershipData.5
             {
                 super(1);
             }
@@ -414,15 +410,15 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddMembershipViewModel.this.getAddResponse2().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.addMembershipData$lambda$9(Function1.this, obj);
+                AddMembershipViewModel.addMembershipData$lambda$9(function12, obj);
             }
         }));
     }
@@ -448,8 +444,8 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Intrinsics.checkNotNullParameter(description, "description");
         this.updateResponse2.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.updateMembershipUrlApiCall(id, title, type, yearId, memberId, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$updateMembershipData$4
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.updateMembershipUrlApiCall(id, title, type, yearId, memberId, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.updateMembershipData.4
             {
                 super(1);
             }
@@ -460,7 +456,7 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddMembershipViewModel.this.getUpdateResponse2().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -468,10 +464,10 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda11
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.updateMembershipData$lambda$10(Function1.this, obj);
+                AddMembershipViewModel.updateMembershipData$lambda$10(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$updateMembershipData$5
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.updateMembershipData.5
             {
                 super(1);
             }
@@ -482,15 +478,15 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddMembershipViewModel.this.getUpdateResponse2().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda12
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda12
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.updateMembershipData$lambda$11(Function1.this, obj);
+                AddMembershipViewModel.updateMembershipData$lambda$11(function12, obj);
             }
         }));
     }
@@ -511,8 +507,8 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteMembershipUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$deleteMembershipData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteMembershipUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.deleteMembershipData.1
             {
                 super(1);
             }
@@ -523,7 +519,7 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddMembershipViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -531,10 +527,10 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.deleteMembershipData$lambda$12(Function1.this, obj);
+                AddMembershipViewModel.deleteMembershipData$lambda$12(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$deleteMembershipData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel.deleteMembershipData.2
             {
                 super(1);
             }
@@ -545,15 +541,15 @@ public final class AddMembershipViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddMembershipViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.add.AddMembershipViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddMembershipViewModel.deleteMembershipData$lambda$13(Function1.this, obj);
+                AddMembershipViewModel.deleteMembershipData$lambda$13(function12, obj);
             }
         }));
     }

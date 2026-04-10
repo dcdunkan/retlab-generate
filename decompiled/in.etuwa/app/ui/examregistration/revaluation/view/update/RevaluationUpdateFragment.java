@@ -45,15 +45,15 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: RevaluationUpdateFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: RevaluationUpdateFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class RevaluationUpdateFragment extends BaseFragment implements RevaluationUpdateAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentRevaluationUpdateBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private List<String> answerSheetPosition;
     private ArrayList<String> arrayList;
@@ -62,15 +62,15 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
     private String id;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> revaluationPosition;
     private List<String> revaluationPosition2;
 
-    /* renamed from: revaluationUpdateViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: revaluationUpdateViewModel$delegate, reason: from kotlin metadata */
     private final Lazy revaluationUpdateViewModel;
 
-    /* compiled from: RevaluationUpdateFragment.kt */
+    /* JADX INFO: compiled from: RevaluationUpdateFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -120,7 +120,7 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return revaluationUpdateFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(revaluationUpdateFragment);
@@ -134,7 +134,7 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -147,7 +147,7 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(RevaluationUpdateViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(RevaluationUpdateViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final RevaluationUpdateFragment revaluationUpdateFragment2 = this;
@@ -196,7 +196,7 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
         return (RevaluationUpdateAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentRevaluationUpdateBinding get_binding() {
         return this._binding;
     }
@@ -248,7 +248,7 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: RevaluationUpdateFragment.kt */
+    /* JADX INFO: compiled from: RevaluationUpdateFragment.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/examregistration/revaluation/view/update/RevaluationUpdateFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/examregistration/revaluation/view/update/RevaluationUpdateFragment;", "id", "", "flag", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -333,7 +333,7 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.update.RevaluationUpdateFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RevaluationUpdateFragment.setUp$lambda$1(RevaluationUpdateFragment.this, view);
+                RevaluationUpdateFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -367,15 +367,13 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
         getRevaluationUpdateViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.revaluation.view.update.RevaluationUpdateFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                RevaluationUpdateFragment.listenResponse$lambda$3(RevaluationUpdateFragment.this, (Resource) obj);
+                RevaluationUpdateFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v6, types: [kotlin.Unit] */
-    /* JADX WARN: Type inference failed for: r5v8, types: [kotlin.Unit] */
     public static final void listenResponse$lambda$3(RevaluationUpdateFragment this$0, Resource resource) {
         RecyclerView rvExamRevaluation;
         RecyclerView recyclerView;
@@ -413,9 +411,9 @@ public final class RevaluationUpdateFragment extends BaseFragment implements Rev
                 if (revaluationUpdateResponse.getRevaluation().size() > 0) {
                     RevaluationUpdateAdapter adapter = this$0.getAdapter();
                     ArrayList<RevaluationUpdate> revaluation = revaluationUpdateResponse.getRevaluation();
-                    Context requireContext = this$0.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                    adapter.addItems(revaluation, requireContext);
+                    Context contextRequireContext = this$0.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                    adapter.addItems(revaluation, contextRequireContext);
                     this$0 = Unit.INSTANCE;
                 } else {
                     FragmentRevaluationUpdateBinding fragmentRevaluationUpdateBinding2 = this$0.get_binding();

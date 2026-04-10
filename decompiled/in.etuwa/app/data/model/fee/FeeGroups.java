@@ -5,8 +5,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeGroups.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeGroups.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeGroups {
     private final String amount;
     private final String balance;
@@ -26,47 +26,47 @@ public final /* data */ class FeeGroups {
     private final String paid;
     private final String scholarship;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFeeHeadId() {
         return this.feeHeadId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getFeeHeadGroupId() {
         return this.feeHeadGroupId;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getFeeGroupId() {
         return this.feeGroupId;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getFeeTypeId() {
         return this.feeTypeId;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getScholarship() {
         return this.scholarship;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getBalance() {
         return this.balance;
     }

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SemRegViewResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SemRegViewResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SemRegViewResponse {
 
     @SerializedName("academic_due")
@@ -142,212 +142,212 @@ public final /* data */ class SemRegViewResponse {
     private final String uniRegNo;
     private final boolean update_btn;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getUniRegNo() {
         return this.uniRegNo;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final String getExamMonthYear() {
         return this.examMonthYear;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final String getBackPaper() {
         return this.backPaper;
     }
 
-    /* renamed from: component13, reason: from getter */
+    /* JADX INFO: renamed from: component13, reason: from getter */
     public final String getBackPaperCount() {
         return this.backPaperCount;
     }
 
-    /* renamed from: component14, reason: from getter */
+    /* JADX INFO: renamed from: component14, reason: from getter */
     public final String getEarnedCredits() {
         return this.earnedCredits;
     }
 
-    /* renamed from: component15, reason: from getter */
+    /* JADX INFO: renamed from: component15, reason: from getter */
     public final String getFeePaid() {
         return this.feePaid;
     }
 
-    /* renamed from: component16, reason: from getter */
+    /* JADX INFO: renamed from: component16, reason: from getter */
     public final String getBankName() {
         return this.bankName;
     }
 
-    /* renamed from: component17, reason: from getter */
+    /* JADX INFO: renamed from: component17, reason: from getter */
     public final String getAmountPaid() {
         return this.amountPaid;
     }
 
-    /* renamed from: component18, reason: from getter */
+    /* JADX INFO: renamed from: component18, reason: from getter */
     public final String getPaymentDate() {
         return this.paymentDate;
     }
 
-    /* renamed from: component19, reason: from getter */
+    /* JADX INFO: renamed from: component19, reason: from getter */
     public final String getPaymentReferenceNo() {
         return this.paymentReferenceNo;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getAdmissionNo() {
         return this.admissionNo;
     }
 
-    /* renamed from: component20, reason: from getter */
+    /* JADX INFO: renamed from: component20, reason: from getter */
     public final String getPaymentMode() {
         return this.paymentMode;
     }
 
-    /* renamed from: component21, reason: from getter */
+    /* JADX INFO: renamed from: component21, reason: from getter */
     public final String getFeeReceiptFile() {
         return this.feeReceiptFile;
     }
 
-    /* renamed from: component22, reason: from getter */
+    /* JADX INFO: renamed from: component22, reason: from getter */
     public final String getRegSlipFile() {
         return this.regSlipFile;
     }
 
-    /* renamed from: component23, reason: from getter */
+    /* JADX INFO: renamed from: component23, reason: from getter */
     public final String getFeeConcession() {
         return this.feeConcession;
     }
 
-    /* renamed from: component24, reason: from getter */
+    /* JADX INFO: renamed from: component24, reason: from getter */
     public final String getFeeConcessionCategory() {
         return this.feeConcessionCategory;
     }
 
-    /* renamed from: component25, reason: from getter */
+    /* JADX INFO: renamed from: component25, reason: from getter */
     public final String getDepartmentDue() {
         return this.departmentDue;
     }
 
-    /* renamed from: component26, reason: from getter */
+    /* JADX INFO: renamed from: component26, reason: from getter */
     public final String getDepartmentDueDetails() {
         return this.departmentDueDetails;
     }
 
-    /* renamed from: component27, reason: from getter */
+    /* JADX INFO: renamed from: component27, reason: from getter */
     public final String getLibraryDue() {
         return this.libraryDue;
     }
 
-    /* renamed from: component28, reason: from getter */
+    /* JADX INFO: renamed from: component28, reason: from getter */
     public final String getLibraryDueDetails() {
         return this.libraryDueDetails;
     }
 
-    /* renamed from: component29, reason: from getter */
+    /* JADX INFO: renamed from: component29, reason: from getter */
     public final String getAccountsDue() {
         return this.accountsDue;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSemAppliedFor() {
         return this.semAppliedFor;
     }
 
-    /* renamed from: component30, reason: from getter */
+    /* JADX INFO: renamed from: component30, reason: from getter */
     public final String getAccountsDueDetails() {
         return this.accountsDueDetails;
     }
 
-    /* renamed from: component31, reason: from getter */
+    /* JADX INFO: renamed from: component31, reason: from getter */
     public final String getAcademicDue() {
         return this.academicDue;
     }
 
-    /* renamed from: component32, reason: from getter */
+    /* JADX INFO: renamed from: component32, reason: from getter */
     public final String getAcademicDueDetails() {
         return this.academicDueDetails;
     }
 
-    /* renamed from: component33, reason: from getter */
+    /* JADX INFO: renamed from: component33, reason: from getter */
     public final String getHostelDue() {
         return this.hostelDue;
     }
 
-    /* renamed from: component34, reason: from getter */
+    /* JADX INFO: renamed from: component34, reason: from getter */
     public final String getHostelDueDetails() {
         return this.hostelDueDetails;
     }
 
-    /* renamed from: component35, reason: from getter */
+    /* JADX INFO: renamed from: component35, reason: from getter */
     public final String getBusDue() {
         return this.busDue;
     }
 
-    /* renamed from: component36, reason: from getter */
+    /* JADX INFO: renamed from: component36, reason: from getter */
     public final String getBusDueDetails() {
         return this.busDueDetails;
     }
 
-    /* renamed from: component37, reason: from getter */
+    /* JADX INFO: renamed from: component37, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component38, reason: from getter */
+    /* JADX INFO: renamed from: component38, reason: from getter */
     public final boolean getIsApplied() {
         return this.isApplied;
     }
 
-    /* renamed from: component39, reason: from getter */
+    /* JADX INFO: renamed from: component39, reason: from getter */
     public final boolean getCanEdit() {
         return this.canEdit;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final boolean getUpdate_btn() {
         return this.update_btn;
     }
 
-    /* renamed from: component40, reason: from getter */
+    /* JADX INFO: renamed from: component40, reason: from getter */
     public final String getCanEditMessage() {
         return this.canEditMessage;
     }
 
-    /* renamed from: component41, reason: from getter */
+    /* JADX INFO: renamed from: component41, reason: from getter */
     public final boolean getSemRegistrationStatus() {
         return this.semRegistrationStatus;
     }
 
-    /* renamed from: component42, reason: from getter */
+    /* JADX INFO: renamed from: component42, reason: from getter */
     public final String getSemRegistrationStatusMessage() {
         return this.semRegistrationStatusMessage;
     }
 
-    /* renamed from: component43, reason: from getter */
+    /* JADX INFO: renamed from: component43, reason: from getter */
     public final boolean getFeeExemption() {
         return this.feeExemption;
     }
 
-    /* renamed from: component44, reason: from getter */
+    /* JADX INFO: renamed from: component44, reason: from getter */
     public final String getClassTeacherRemark() {
         return this.classTeacherRemark;
     }
 
-    /* renamed from: component45, reason: from getter */
+    /* JADX INFO: renamed from: component45, reason: from getter */
     public final String getHodRemarks() {
         return this.hodRemarks;
     }
 
-    /* renamed from: component46, reason: from getter */
+    /* JADX INFO: renamed from: component46, reason: from getter */
     public final String getLastAttendedSem() {
         return this.lastAttendedSem;
     }
 
-    /* renamed from: component47, reason: from getter */
+    /* JADX INFO: renamed from: component47, reason: from getter */
     public final String getLastAttendedSemText() {
         return this.lastAttendedSemText;
     }
@@ -356,27 +356,27 @@ public final /* data */ class SemRegViewResponse {
         return this.semList;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getGender() {
         return this.gender;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getPhone() {
         return this.phone;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getEmail() {
         return this.email;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getExamAppear() {
         return this.examAppear;
     }
@@ -442,43 +442,54 @@ public final /* data */ class SemRegViewResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v96 */
     /* JADX WARN: Type inference failed for: r0v97 */
-    /* JADX WARN: Type inference failed for: r2v4, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v72, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v74, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v78, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r2v5, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v73, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v75, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v79, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v83 */
+    /* JADX WARN: Type inference failed for: r2v84 */
+    /* JADX WARN: Type inference failed for: r2v85 */
+    /* JADX WARN: Type inference failed for: r2v86 */
+    /* JADX WARN: Type inference failed for: r2v87 */
+    /* JADX WARN: Type inference failed for: r2v88 */
+    /* JADX WARN: Type inference failed for: r2v89 */
+    /* JADX WARN: Type inference failed for: r2v90 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
         if (z) {
             r0 = 1;
         }
-        int hashCode = ((((r0 * 31) + this.admissionNo.hashCode()) * 31) + this.semAppliedFor.hashCode()) * 31;
-        ?? r2 = this.update_btn;
-        int i = r2;
-        if (r2 != 0) {
-            i = 1;
+        int iHashCode = ((((r0 * 31) + this.admissionNo.hashCode()) * 31) + this.semAppliedFor.hashCode()) * 31;
+        boolean z2 = this.update_btn;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int hashCode2 = (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((hashCode + i) * 31) + this.name.hashCode()) * 31) + this.gender.hashCode()) * 31) + this.phone.hashCode()) * 31) + this.email.hashCode()) * 31) + this.examAppear.hashCode()) * 31) + this.uniRegNo.hashCode()) * 31) + this.examMonthYear.hashCode()) * 31) + this.backPaper.hashCode()) * 31) + this.backPaperCount.hashCode()) * 31) + this.earnedCredits.hashCode()) * 31) + this.feePaid.hashCode()) * 31) + this.bankName.hashCode()) * 31) + this.amountPaid.hashCode()) * 31) + this.paymentDate.hashCode()) * 31) + this.paymentReferenceNo.hashCode()) * 31) + this.paymentMode.hashCode()) * 31) + this.feeReceiptFile.hashCode()) * 31) + this.regSlipFile.hashCode()) * 31) + this.feeConcession.hashCode()) * 31) + this.feeConcessionCategory.hashCode()) * 31) + this.departmentDue.hashCode()) * 31) + this.departmentDueDetails.hashCode()) * 31) + this.libraryDue.hashCode()) * 31) + this.libraryDueDetails.hashCode()) * 31) + this.accountsDue.hashCode()) * 31) + this.accountsDueDetails.hashCode()) * 31) + this.academicDue.hashCode()) * 31) + this.academicDueDetails.hashCode()) * 31) + this.hostelDue.hashCode()) * 31) + this.hostelDueDetails.hashCode()) * 31) + this.busDue.hashCode()) * 31) + this.busDueDetails.hashCode()) * 31) + this.status.hashCode()) * 31;
-        ?? r22 = this.isApplied;
-        int i2 = r22;
-        if (r22 != 0) {
-            i2 = 1;
+        int iHashCode2 = (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((iHashCode + r2) * 31) + this.name.hashCode()) * 31) + this.gender.hashCode()) * 31) + this.phone.hashCode()) * 31) + this.email.hashCode()) * 31) + this.examAppear.hashCode()) * 31) + this.uniRegNo.hashCode()) * 31) + this.examMonthYear.hashCode()) * 31) + this.backPaper.hashCode()) * 31) + this.backPaperCount.hashCode()) * 31) + this.earnedCredits.hashCode()) * 31) + this.feePaid.hashCode()) * 31) + this.bankName.hashCode()) * 31) + this.amountPaid.hashCode()) * 31) + this.paymentDate.hashCode()) * 31) + this.paymentReferenceNo.hashCode()) * 31) + this.paymentMode.hashCode()) * 31) + this.feeReceiptFile.hashCode()) * 31) + this.regSlipFile.hashCode()) * 31) + this.feeConcession.hashCode()) * 31) + this.feeConcessionCategory.hashCode()) * 31) + this.departmentDue.hashCode()) * 31) + this.departmentDueDetails.hashCode()) * 31) + this.libraryDue.hashCode()) * 31) + this.libraryDueDetails.hashCode()) * 31) + this.accountsDue.hashCode()) * 31) + this.accountsDueDetails.hashCode()) * 31) + this.academicDue.hashCode()) * 31) + this.academicDueDetails.hashCode()) * 31) + this.hostelDue.hashCode()) * 31) + this.hostelDueDetails.hashCode()) * 31) + this.busDue.hashCode()) * 31) + this.busDueDetails.hashCode()) * 31) + this.status.hashCode()) * 31;
+        boolean z3 = this.isApplied;
+        ?? r22 = z3;
+        if (z3) {
+            r22 = 1;
         }
-        int i3 = (hashCode2 + i2) * 31;
-        ?? r23 = this.canEdit;
-        int i4 = r23;
-        if (r23 != 0) {
-            i4 = 1;
+        int i = (iHashCode2 + r22) * 31;
+        boolean z4 = this.canEdit;
+        ?? r23 = z4;
+        if (z4) {
+            r23 = 1;
         }
-        int hashCode3 = (((i3 + i4) * 31) + this.canEditMessage.hashCode()) * 31;
-        ?? r24 = this.semRegistrationStatus;
-        int i5 = r24;
-        if (r24 != 0) {
-            i5 = 1;
+        int iHashCode3 = (((i + r23) * 31) + this.canEditMessage.hashCode()) * 31;
+        boolean z5 = this.semRegistrationStatus;
+        ?? r24 = z5;
+        if (z5) {
+            r24 = 1;
         }
-        int hashCode4 = (((hashCode3 + i5) * 31) + this.semRegistrationStatusMessage.hashCode()) * 31;
-        boolean z2 = this.feeExemption;
-        return ((((((((((hashCode4 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.classTeacherRemark.hashCode()) * 31) + this.hodRemarks.hashCode()) * 31) + this.lastAttendedSem.hashCode()) * 31) + this.lastAttendedSemText.hashCode()) * 31) + this.semList.hashCode();
+        int iHashCode4 = (((iHashCode3 + r24) * 31) + this.semRegistrationStatusMessage.hashCode()) * 31;
+        boolean z6 = this.feeExemption;
+        return ((((((((((iHashCode4 + (z6 ? 1 : z6)) * 31) + this.classTeacherRemark.hashCode()) * 31) + this.hodRemarks.hashCode()) * 31) + this.lastAttendedSem.hashCode()) * 31) + this.lastAttendedSemText.hashCode()) * 31) + this.semList.hashCode();
     }
 
     public String toString() {

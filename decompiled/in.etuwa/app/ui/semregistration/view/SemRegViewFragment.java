@@ -58,11 +58,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SemRegViewFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SemRegViewFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SemRegViewFragment extends BaseFragment implements MvjceSemRegDialog.AddSemRegListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private SemRegViewFragmentBinding _binding;
     private boolean canEdit;
@@ -73,17 +73,17 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
     private MainCallBackListener listener;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private long receiptId;
     private boolean registrationActive;
 
-    /* renamed from: semRegViewViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: semRegViewViewModel$delegate, reason: from kotlin metadata */
     private final Lazy semRegViewViewModel;
     private String slipFile;
     private String statusMessage;
 
-    /* compiled from: SemRegViewFragment.kt */
+    /* JADX INFO: compiled from: SemRegViewFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -141,7 +141,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return semRegViewFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(semRegViewFragment);
@@ -155,7 +155,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -168,7 +168,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SemRegViewViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SemRegViewViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SemRegViewFragment semRegViewFragment2 = this;
@@ -195,20 +195,15 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.semregistration.view.SemRegViewFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                long j;
-                SemRegViewFragmentBinding semRegViewFragmentBinding;
-                SemRegViewFragmentBinding semRegViewFragmentBinding2;
                 TextView textView;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
-                long longExtra = intent.getLongExtra("extra_download_id", -1L);
-                j = SemRegViewFragment.this.receiptId;
-                if (longExtra == j) {
-                    semRegViewFragmentBinding = SemRegViewFragment.this.get_binding();
+                if (intent.getLongExtra("extra_download_id", -1L) == this.this$0.receiptId) {
+                    SemRegViewFragmentBinding semRegViewFragmentBinding = this.this$0.get_binding();
                     if (semRegViewFragmentBinding != null && (textView = semRegViewFragmentBinding.semRegFeeReceipt) != null) {
                         ToastExtKt.showInfoToast(textView, "Download Completed");
                     }
-                    semRegViewFragmentBinding2 = SemRegViewFragment.this.get_binding();
+                    SemRegViewFragmentBinding semRegViewFragmentBinding2 = this.this$0.get_binding();
                     TextView textView2 = semRegViewFragmentBinding2 != null ? semRegViewFragmentBinding2.semRegFeeReceipt : null;
                     if (textView2 == null) {
                         return;
@@ -224,7 +219,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final SemRegViewFragmentBinding get_binding() {
         return this._binding;
     }
@@ -241,7 +236,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
         this.id = str;
     }
 
-    /* compiled from: SemRegViewFragment.kt */
+    /* JADX INFO: compiled from: SemRegViewFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/semregistration/view/SemRegViewFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/view/SemRegViewFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -308,11 +303,11 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
         }
         try {
             if (getPreference().getUserImg().length() > 0) {
-                RequestBuilder<Drawable> load = Glide.with(requireActivity()).load(getPreference().getUserImg());
+                RequestBuilder<Drawable> requestBuilderLoad = Glide.with(requireActivity()).load(getPreference().getUserImg());
                 SemRegViewFragmentBinding semRegViewFragmentBinding = get_binding();
                 CircleImageView circleImageView = semRegViewFragmentBinding != null ? semRegViewFragmentBinding.semRegProfileImage : null;
                 Intrinsics.checkNotNull(circleImageView);
-                load.into(circleImageView);
+                requestBuilderLoad.into(circleImageView);
             }
         } catch (Exception unused) {
         }
@@ -349,7 +344,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.semregistration.view.SemRegViewFragment$$ExternalSyntheticLambda0
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    SemRegViewFragment.setUp$lambda$1(SemRegViewFragment.this);
+                    SemRegViewFragment.setUp$lambda$1(this.f$0);
                 }
             });
         }
@@ -358,7 +353,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.view.SemRegViewFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SemRegViewFragment.setUp$lambda$2(SemRegViewFragment.this, view);
+                    SemRegViewFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -367,7 +362,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.view.SemRegViewFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SemRegViewFragment.setUp$lambda$3(SemRegViewFragment.this, view);
+                    SemRegViewFragment.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -378,7 +373,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.view.SemRegViewFragment$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SemRegViewFragment.setUp$lambda$4(SemRegViewFragment.this, view);
+                SemRegViewFragment.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -421,9 +416,9 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
         if ((StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) && this$0.registrationActive) || ((StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) && this$0.registrationActive) || (StringsKt.contains$default((CharSequence) this$0.getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) && this$0.registrationActive))) {
             FragmentManager childFragmentManager = this$0.getChildFragmentManager();
             Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            MvjceSemRegDialog newInstance = MvjceSemRegDialog.INSTANCE.newInstance(this$0.id);
-            newInstance.setCallBack2(this$0);
-            newInstance.show(childFragmentManager, (String) null);
+            MvjceSemRegDialog mvjceSemRegDialogNewInstance = MvjceSemRegDialog.INSTANCE.newInstance(this$0.id);
+            mvjceSemRegDialogNewInstance.setCallBack2(this$0);
+            mvjceSemRegDialogNewInstance.show(childFragmentManager, (String) null);
             return;
         }
         if (this$0.registrationActive) {
@@ -473,7 +468,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
         getSemRegViewViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.view.SemRegViewFragment$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SemRegViewFragment.listenResponse$lambda$6(SemRegViewFragment.this, (Resource) obj);
+                SemRegViewFragment.listenResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -518,7 +513,7 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
         getSemRegViewViewModel().getSlipResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.view.SemRegViewFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SemRegViewFragment.listenSlipResponse$lambda$8(SemRegViewFragment.this, (Resource) obj);
+                SemRegViewFragment.listenSlipResponse$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -835,14 +830,14 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
 
     private final void downloadFile(String url) {
         TextView textView;
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission()) {
-            if (checkFileExistence(replace)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, AppConstant.SEM_REG_PATH);
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission()) {
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, AppConstant.SEM_REG_PATH);
                 return;
             }
             try {
@@ -852,9 +847,9 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(textView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                this.receiptId = new DownloadManagerHelper(requireContext3).startDownloading(AppConstant.SEM_REG_PATH, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                this.receiptId = new DownloadManagerHelper(contextRequireContext3).startDownloading(AppConstant.SEM_REG_PATH, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
@@ -865,15 +860,15 @@ public final class SemRegViewFragment extends BaseFragment implements MvjceSemRe
                 return;
             }
         }
-        Context requireContext4 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext4, "requireContext()");
-        new ValidChecker(requireContext4).showPermissionDialog();
+        Context contextRequireContext4 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext4, "requireContext()");
+        new ValidChecker(contextRequireContext4).showPermissionDialog();
     }
 
     private final boolean checkFileExistence(String fileName) {
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.SEM_REG_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.SEM_REG_PATH);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

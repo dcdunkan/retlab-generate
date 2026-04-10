@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AcadamicFeeAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AcadamicFeeAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AcadamicFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final Context context;
     private final ArrayList<AcadamicFeeBean> list;
@@ -41,9 +41,9 @@ public final class AcadamicFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_acadamic_pay, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…damic_pay, parent, false)");
-        return new ViewHolder(inflate);
+        View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_acadamic_pay, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…damic_pay, parent, false)");
+        return new ViewHolder(viewInflate);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -59,7 +59,7 @@ public final class AcadamicFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.getLayout().setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.academicfee.AcadamicFeeAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AcadamicFeeAdapter.onBindViewHolder$lambda$0(AcadamicFeeAdapter.this, position, view);
+                AcadamicFeeAdapter.onBindViewHolder$lambda$0(this.f$0, position, view);
             }
         });
     }
@@ -69,25 +69,25 @@ public final class AcadamicFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this$0.context);
-            View inflate = LayoutInflater.from(this$0.context).inflate(R.layout.dialog_acadamic, (ViewGroup) null);
-            TextView textView = (TextView) inflate.findViewById(R.id.acadaDialoPayAmount);
-            TextView textView2 = (TextView) inflate.findViewById(R.id.acadaDialoPaySchol);
-            TextView textView3 = (TextView) inflate.findViewById(R.id.acadaDialoPayPaid);
-            TextView textView4 = (TextView) inflate.findViewById(R.id.acadaDialoPayBal);
-            TextView textView5 = (TextView) inflate.findViewById(R.id.acadaDialoTotPayable);
+            View viewInflate = LayoutInflater.from(this$0.context).inflate(R.layout.dialog_acadamic, (ViewGroup) null);
+            TextView textView = (TextView) viewInflate.findViewById(R.id.acadaDialoPayAmount);
+            TextView textView2 = (TextView) viewInflate.findViewById(R.id.acadaDialoPaySchol);
+            TextView textView3 = (TextView) viewInflate.findViewById(R.id.acadaDialoPayPaid);
+            TextView textView4 = (TextView) viewInflate.findViewById(R.id.acadaDialoPayBal);
+            TextView textView5 = (TextView) viewInflate.findViewById(R.id.acadaDialoTotPayable);
             textView.setText(this$0.list.get(i).getAmount());
             textView2.setText(this$0.list.get(i).getScholer());
             textView3.setText(this$0.list.get(i).getPaid());
             textView4.setText(this$0.list.get(i).getBalance());
             textView5.setText("Total : " + this$0.list.get(i).getPayable());
             builder.setNegativeButton(HTTP.CONN_CLOSE, (DialogInterface.OnClickListener) null);
-            builder.setView(inflate);
+            builder.setView(viewInflate);
             builder.show();
         } catch (Exception unused) {
         }
     }
 
-    /* compiled from: AcadamicFeeAdapter.kt */
+    /* JADX INFO: compiled from: AcadamicFeeAdapter.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004R\u0019\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0019\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0019\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\t¨\u0006\u0010"}, d2 = {"Lin/etuwa/app/ui/academicfee/AcadamicFeeAdapter$ViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "(Landroid/view/View;)V", ExamSubjectDetailDialogKt.ARG_AMOUNT, "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "getAmount", "()Landroid/widget/TextView;", "layout", "Landroid/widget/LinearLayout;", "getLayout", "()Landroid/widget/LinearLayout;", "name", "getName", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView amount;

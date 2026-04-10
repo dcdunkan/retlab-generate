@@ -12,7 +12,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.medical.add.AddMedicalLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AddMedicalLeaveBindingImpl extends AddMedicalLeaveBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -71,7 +71,7 @@ public class AddMedicalLeaveBindingImpl extends AddMedicalLeaveBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (14 != variableId) {
+        if (13 != variableId) {
             return false;
         }
         setAddMedicalLeaveViewModel((AddMedicalLeaveViewModel) variable);

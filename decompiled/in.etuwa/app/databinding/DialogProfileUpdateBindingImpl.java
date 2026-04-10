@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.gcekhostel.registration.editregistration.EditRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogProfileUpdateBindingImpl extends DialogProfileUpdateBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -87,7 +87,7 @@ public class DialogProfileUpdateBindingImpl extends DialogProfileUpdateBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (76 != variableId) {
+        if (75 != variableId) {
             return false;
         }
         setEditRegistrationViewModel((EditRegistrationViewModel) variable);

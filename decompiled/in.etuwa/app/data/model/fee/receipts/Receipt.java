@@ -7,8 +7,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Receipt.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Receipt.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Receipt {
     private final String amount;
     private final String date;
@@ -25,42 +25,42 @@ public final /* data */ class Receipt {
     private final boolean refundStatus;
     private final String status;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getReceiptNo() {
         return this.receiptNo;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getInstallment() {
         return this.installment;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getMethod() {
         return this.method;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getRefundStatus() {
         return this.refundStatus;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getRefundReason() {
         return this.refundReason;
     }
@@ -88,14 +88,17 @@ public final /* data */ class Receipt {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v11, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v14 */
+    /* JADX WARN: Type inference failed for: r1v15 */
     public int hashCode() {
-        int hashCode = ((((((((((this.receiptNo.hashCode() * 31) + this.date.hashCode()) * 31) + this.installment.hashCode()) * 31) + this.method.hashCode()) * 31) + this.status.hashCode()) * 31) + this.amount.hashCode()) * 31;
+        int iHashCode = ((((((((((this.receiptNo.hashCode() * 31) + this.date.hashCode()) * 31) + this.installment.hashCode()) * 31) + this.method.hashCode()) * 31) + this.status.hashCode()) * 31) + this.amount.hashCode()) * 31;
         boolean z = this.refundStatus;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((hashCode + i) * 31) + this.refundReason.hashCode();
+        return ((iHashCode + r1) * 31) + this.refundReason.hashCode();
     }
 
     public String toString() {

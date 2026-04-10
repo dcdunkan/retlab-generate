@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FragmentCovidCertificateTwoDialogBinding implements ViewBinding {
     private final FrameLayout rootView;
 
@@ -25,11 +25,11 @@ public final class FragmentCovidCertificateTwoDialogBinding implements ViewBindi
     }
 
     public static FragmentCovidCertificateTwoDialogBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.fragment_covid_certificate_two_dialog, parent, false);
+        View viewInflate = inflater.inflate(R.layout.fragment_covid_certificate_two_dialog, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static FragmentCovidCertificateTwoDialogBinding bind(View rootView) {

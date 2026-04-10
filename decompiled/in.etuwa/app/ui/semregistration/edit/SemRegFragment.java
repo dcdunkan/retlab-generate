@@ -74,11 +74,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SemRegFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SemRegFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SemRegFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private SemRegFragmentBinding _binding;
     private String academicCheck;
@@ -102,17 +102,17 @@ public final class SemRegFragment extends BaseFragment {
     private int mYear;
     private File pickFile;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semId;
 
-    /* renamed from: semRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: semRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy semRegViewModel;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: SemRegFragment.kt */
+    /* JADX INFO: compiled from: SemRegFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -170,7 +170,7 @@ public final class SemRegFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return semRegFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(semRegFragment);
@@ -184,7 +184,7 @@ public final class SemRegFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -197,7 +197,7 @@ public final class SemRegFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SemRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SemRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SemRegFragment semRegFragment2 = this;
@@ -224,7 +224,7 @@ public final class SemRegFragment extends BaseFragment {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(SemRegFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -265,7 +265,7 @@ public final class SemRegFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final SemRegFragmentBinding get_binding() {
         return this._binding;
     }
@@ -279,7 +279,7 @@ public final class SemRegFragment extends BaseFragment {
         return (SemesterSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: SemRegFragment.kt */
+    /* JADX INFO: compiled from: SemRegFragment.kt */
     @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\"\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\bH\u0007¨\u0006\n"}, d2 = {"Lin/etuwa/app/ui/semregistration/edit/SemRegFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/edit/SemRegFragment;", "id", "", "edit", "", "feeStatus", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -428,52 +428,39 @@ public final class SemRegFragment extends BaseFragment {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SemRegFragment.setUp$lambda$1(SemRegFragment.this, view);
+                    SemRegFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
         SemRegFragmentBinding semRegFragmentBinding11 = get_binding();
         Spinner spinner4 = semRegFragmentBinding11 != null ? semRegFragmentBinding11.spinnerSemReg : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$setUp$2
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    String str;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SemRegFragmentBinding semRegFragmentBinding12;
-                    SemesterSpinnerAdapter spinnerAdapter3;
                     Spinner spinner5;
-                    SemesterSpinnerAdapter spinnerAdapter4;
-                    z = SemRegFragment.this.flag;
-                    if (!z) {
+                    if (!SemRegFragment.this.flag) {
                         SemRegFragment.this.flag = true;
-                        spinnerAdapter = SemRegFragment.this.getSpinnerAdapter();
-                        int count = spinnerAdapter.getCount();
+                        int count = SemRegFragment.this.getSpinnerAdapter().getCount();
                         for (int i = 0; i < count; i++) {
-                            str = SemRegFragment.this.semId;
-                            spinnerAdapter2 = SemRegFragment.this.getSpinnerAdapter();
-                            if (Intrinsics.areEqual(str, spinnerAdapter2.getSemester(i).getId())) {
-                                semRegFragmentBinding12 = SemRegFragment.this.get_binding();
+                            if (Intrinsics.areEqual(SemRegFragment.this.semId, SemRegFragment.this.getSpinnerAdapter().getSemester(i).getId())) {
+                                SemRegFragmentBinding semRegFragmentBinding12 = SemRegFragment.this.get_binding();
                                 if (semRegFragmentBinding12 != null && (spinner5 = semRegFragmentBinding12.spinnerSemReg) != null) {
                                     spinner5.setSelection(i);
                                 }
                                 SemRegFragment semRegFragment = SemRegFragment.this;
-                                spinnerAdapter3 = semRegFragment.getSpinnerAdapter();
-                                semRegFragment.semId = spinnerAdapter3.getSemester(position).getId();
+                                semRegFragment.semId = semRegFragment.getSpinnerAdapter().getSemester(position).getId();
                                 return;
                             }
                         }
                         return;
                     }
                     SemRegFragment semRegFragment2 = SemRegFragment.this;
-                    spinnerAdapter4 = semRegFragment2.getSpinnerAdapter();
-                    semRegFragment2.semId = spinnerAdapter4.getSemester(position).getId();
+                    semRegFragment2.semId = semRegFragment2.getSpinnerAdapter().getSemester(position).getId();
                 }
             });
         }
@@ -482,7 +469,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda17
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$2(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$2(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -491,7 +478,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda18
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$3(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$3(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -500,7 +487,7 @@ public final class SemRegFragment extends BaseFragment {
             textInputEditText.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SemRegFragment.setUp$lambda$4(SemRegFragment.this, view);
+                    SemRegFragment.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -509,7 +496,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda2
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$5(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$5(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -518,7 +505,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda3
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$6(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$6(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -527,7 +514,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda4
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$7(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$7(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -536,7 +523,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda5
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$8(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$8(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -545,7 +532,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda6
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$9(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$9(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -554,7 +541,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda7
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$10(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$10(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -563,7 +550,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda13
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$11(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$11(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -572,7 +559,7 @@ public final class SemRegFragment extends BaseFragment {
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda14
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    SemRegFragment.setUp$lambda$12(SemRegFragment.this, radioGroup11, i);
+                    SemRegFragment.setUp$lambda$12(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -581,7 +568,7 @@ public final class SemRegFragment extends BaseFragment {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SemRegFragment.setUp$lambda$14(SemRegFragment.this, view);
+                    SemRegFragment.setUp$lambda$14(this.f$0, view);
                 }
             });
         }
@@ -592,7 +579,7 @@ public final class SemRegFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SemRegFragment.setUp$lambda$15(SemRegFragment.this, view);
+                SemRegFragment.setUp$lambda$15(this.f$0, view);
             }
         });
     }
@@ -973,7 +960,7 @@ public final class SemRegFragment extends BaseFragment {
         RadioGroup radioGroup20;
         String baseUrl = getPreference().getBaseUrl();
         SemRegFragmentBinding semRegFragmentBinding = get_binding();
-        CharSequence charSequence = null;
+        CharSequence hint = null;
         if ((semRegFragmentBinding == null || (radioGroup20 = semRegFragmentBinding.examGroup) == null || radioGroup20.getCheckedRadioButtonId() != R.id.exam_yes) ? false : true) {
             SemRegFragmentBinding semRegFragmentBinding2 = get_binding();
             if (String.valueOf((semRegFragmentBinding2 == null || (textInputEditText42 = semRegFragmentBinding2.etSemMonthYear) == null) ? null : textInputEditText42.getText()).length() == 0) {
@@ -984,9 +971,9 @@ public final class SemRegFragment extends BaseFragment {
                 RadioGroup radioGroup21 = radioGroup19;
                 SemRegFragmentBinding semRegFragmentBinding4 = get_binding();
                 if (semRegFragmentBinding4 != null && (textInputEditText41 = semRegFragmentBinding4.etSemMonthYear) != null) {
-                    charSequence = textInputEditText41.getHint();
+                    hint = textInputEditText41.getHint();
                 }
-                ToastExtKt.showWarningToast(radioGroup21, "Please Fill " + ((Object) charSequence));
+                ToastExtKt.showWarningToast(radioGroup21, "Please Fill " + ((Object) hint));
                 return;
             }
         }
@@ -1001,9 +988,9 @@ public final class SemRegFragment extends BaseFragment {
                 RadioGroup radioGroup22 = radioGroup17;
                 SemRegFragmentBinding semRegFragmentBinding8 = get_binding();
                 if (semRegFragmentBinding8 != null && (textInputEditText39 = semRegFragmentBinding8.etSemCountBackPaper) != null) {
-                    charSequence = textInputEditText39.getHint();
+                    hint = textInputEditText39.getHint();
                 }
-                ToastExtKt.showWarningToast(radioGroup22, "Please Fill " + ((Object) charSequence));
+                ToastExtKt.showWarningToast(radioGroup22, "Please Fill " + ((Object) hint));
                 return;
             }
         }
@@ -1016,9 +1003,9 @@ public final class SemRegFragment extends BaseFragment {
             RadioGroup radioGroup23 = radioGroup16;
             SemRegFragmentBinding semRegFragmentBinding11 = get_binding();
             if (semRegFragmentBinding11 != null && (textInputEditText37 = semRegFragmentBinding11.etSemEarnedCredit) != null) {
-                charSequence = textInputEditText37.getHint();
+                hint = textInputEditText37.getHint();
             }
-            ToastExtKt.showWarningToast(radioGroup23, "Please Fill " + ((Object) charSequence));
+            ToastExtKt.showWarningToast(radioGroup23, "Please Fill " + ((Object) hint));
             return;
         }
         if (!this.feeStatus) {
@@ -1033,9 +1020,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText43 = textInputEditText34;
                     SemRegFragmentBinding semRegFragmentBinding15 = get_binding();
                     if (semRegFragmentBinding15 != null && (textInputEditText35 = semRegFragmentBinding15.etSemBankName) != null) {
-                        charSequence = textInputEditText35.getHint();
+                        hint = textInputEditText35.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText43, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText43, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1052,9 +1039,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText44 = textInputEditText31;
                     SemRegFragmentBinding semRegFragmentBinding19 = get_binding();
                     if (semRegFragmentBinding19 != null && (textInputEditText32 = semRegFragmentBinding19.etSemAmount) != null) {
-                        charSequence = textInputEditText32.getHint();
+                        hint = textInputEditText32.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText44, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText44, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1071,9 +1058,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText45 = textInputEditText28;
                     SemRegFragmentBinding semRegFragmentBinding23 = get_binding();
                     if (semRegFragmentBinding23 != null && (textInputEditText29 = semRegFragmentBinding23.etSemPaidDate) != null) {
-                        charSequence = textInputEditText29.getHint();
+                        hint = textInputEditText29.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText45, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText45, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1090,9 +1077,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText46 = textInputEditText25;
                     SemRegFragmentBinding semRegFragmentBinding27 = get_binding();
                     if (semRegFragmentBinding27 != null && (textInputEditText26 = semRegFragmentBinding27.etSemModeOfPayment) != null) {
-                        charSequence = textInputEditText26.getHint();
+                        hint = textInputEditText26.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText46, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText46, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1109,9 +1096,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText47 = textInputEditText22;
                     SemRegFragmentBinding semRegFragmentBinding31 = get_binding();
                     if (semRegFragmentBinding31 != null && (textInputEditText23 = semRegFragmentBinding31.etSemRefNo) != null) {
-                        charSequence = textInputEditText23.getHint();
+                        hint = textInputEditText23.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText47, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText47, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1144,9 +1131,9 @@ public final class SemRegFragment extends BaseFragment {
                         RadioGroup radioGroup24 = radioGroup7;
                         SemRegFragmentBinding semRegFragmentBinding39 = get_binding();
                         if (semRegFragmentBinding39 != null && (textInputEditText19 = semRegFragmentBinding39.etSemFeeConcessionCategory) != null) {
-                            charSequence = textInputEditText19.getHint();
+                            hint = textInputEditText19.getHint();
                         }
-                        ToastExtKt.showWarningToast(radioGroup24, "Please Fill " + ((Object) charSequence));
+                        ToastExtKt.showWarningToast(radioGroup24, "Please Fill " + ((Object) hint));
                         return;
                     }
                 }
@@ -1164,9 +1151,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText48 = textInputEditText16;
                     SemRegFragmentBinding semRegFragmentBinding43 = get_binding();
                     if (semRegFragmentBinding43 != null && (textInputEditText17 = semRegFragmentBinding43.etSemDepartmentDue) != null) {
-                        charSequence = textInputEditText17.getHint();
+                        hint = textInputEditText17.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText48, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText48, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1183,9 +1170,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText49 = textInputEditText13;
                     SemRegFragmentBinding semRegFragmentBinding47 = get_binding();
                     if (semRegFragmentBinding47 != null && (textInputEditText14 = semRegFragmentBinding47.etSemLibraryDue) != null) {
-                        charSequence = textInputEditText14.getHint();
+                        hint = textInputEditText14.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText49, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText49, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1202,9 +1189,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText50 = textInputEditText10;
                     SemRegFragmentBinding semRegFragmentBinding51 = get_binding();
                     if (semRegFragmentBinding51 != null && (textInputEditText11 = semRegFragmentBinding51.etSemAccountDue) != null) {
-                        charSequence = textInputEditText11.getHint();
+                        hint = textInputEditText11.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText50, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText50, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1221,9 +1208,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText51 = textInputEditText7;
                     SemRegFragmentBinding semRegFragmentBinding55 = get_binding();
                     if (semRegFragmentBinding55 != null && (textInputEditText8 = semRegFragmentBinding55.etSemAcademicDue) != null) {
-                        charSequence = textInputEditText8.getHint();
+                        hint = textInputEditText8.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText51, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText51, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1240,9 +1227,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText52 = textInputEditText4;
                     SemRegFragmentBinding semRegFragmentBinding59 = get_binding();
                     if (semRegFragmentBinding59 != null && (textInputEditText5 = semRegFragmentBinding59.etSemHostelDue) != null) {
-                        charSequence = textInputEditText5.getHint();
+                        hint = textInputEditText5.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText52, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText52, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1259,9 +1246,9 @@ public final class SemRegFragment extends BaseFragment {
                     TextInputEditText textInputEditText53 = textInputEditText;
                     SemRegFragmentBinding semRegFragmentBinding63 = get_binding();
                     if (semRegFragmentBinding63 != null && (textInputEditText2 = semRegFragmentBinding63.etSemBusDue) != null) {
-                        charSequence = textInputEditText2.getHint();
+                        hint = textInputEditText2.getHint();
                     }
-                    ToastExtKt.showWarningToast(textInputEditText53, "Please Fill " + ((Object) charSequence));
+                    ToastExtKt.showWarningToast(textInputEditText53, "Please Fill " + ((Object) hint));
                     return;
                 }
             }
@@ -1285,125 +1272,125 @@ public final class SemRegFragment extends BaseFragment {
         TextInputEditText textInputEditText13;
         TextInputEditText textInputEditText14;
         TextInputEditText textInputEditText15;
-        HashMap<String, RequestBody> hashMap = new HashMap<>();
-        HashMap<String, RequestBody> hashMap2 = hashMap;
-        hashMap2.put("SemesterRegistration[semester_id]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.semId));
-        hashMap2.put("SemesterRegistration[exam_appear]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.examCheck));
+        HashMap<String, RequestBody> map = new HashMap<>();
+        HashMap<String, RequestBody> map2 = map;
+        map2.put("SemesterRegistration[semester_id]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.semId));
+        map2.put("SemesterRegistration[exam_appear]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.examCheck));
         if (Intrinsics.areEqual(this.examCheck, getString(R.string.yes))) {
             RequestBody.Companion companion = RequestBody.INSTANCE;
             MediaType mediaType = MultipartBody.FORM;
             SemRegFragmentBinding semRegFragmentBinding = get_binding();
-            hashMap2.put("SemesterRegistration[exam_month_year]", companion.create(mediaType, String.valueOf((semRegFragmentBinding == null || (textInputEditText15 = semRegFragmentBinding.etSemMonthYear) == null) ? null : textInputEditText15.getText())));
+            map2.put("SemesterRegistration[exam_month_year]", companion.create(mediaType, String.valueOf((semRegFragmentBinding == null || (textInputEditText15 = semRegFragmentBinding.etSemMonthYear) == null) ? null : textInputEditText15.getText())));
         } else {
-            hashMap2.put("SemesterRegistration[exam_month_year]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+            map2.put("SemesterRegistration[exam_month_year]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
         }
-        hashMap2.put("SemesterRegistration[backpaper]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.backPaperCheck));
+        map2.put("SemesterRegistration[backpaper]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.backPaperCheck));
         if (Intrinsics.areEqual(this.backPaperCheck, getString(R.string.yes))) {
             RequestBody.Companion companion2 = RequestBody.INSTANCE;
             MediaType mediaType2 = MultipartBody.FORM;
             SemRegFragmentBinding semRegFragmentBinding2 = get_binding();
-            hashMap2.put("SemesterRegistration[backlogs_count]", companion2.create(mediaType2, String.valueOf((semRegFragmentBinding2 == null || (textInputEditText14 = semRegFragmentBinding2.etSemCountBackPaper) == null) ? null : textInputEditText14.getText())));
+            map2.put("SemesterRegistration[backlogs_count]", companion2.create(mediaType2, String.valueOf((semRegFragmentBinding2 == null || (textInputEditText14 = semRegFragmentBinding2.etSemCountBackPaper) == null) ? null : textInputEditText14.getText())));
         } else {
-            hashMap2.put("SemesterRegistration[backlogs_count]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+            map2.put("SemesterRegistration[backlogs_count]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
         }
         RequestBody.Companion companion3 = RequestBody.INSTANCE;
         MediaType mediaType3 = MultipartBody.FORM;
         SemRegFragmentBinding semRegFragmentBinding3 = get_binding();
-        hashMap2.put("SemesterRegistration[earned_credits]", companion3.create(mediaType3, String.valueOf((semRegFragmentBinding3 == null || (textInputEditText13 = semRegFragmentBinding3.etSemEarnedCredit) == null) ? null : textInputEditText13.getText())));
+        map2.put("SemesterRegistration[earned_credits]", companion3.create(mediaType3, String.valueOf((semRegFragmentBinding3 == null || (textInputEditText13 = semRegFragmentBinding3.etSemEarnedCredit) == null) ? null : textInputEditText13.getText())));
         if (!this.feeStatus) {
-            hashMap2.put("SemesterRegistration[fee_paid]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.feePaidCheck));
+            map2.put("SemesterRegistration[fee_paid]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.feePaidCheck));
             if (Intrinsics.areEqual(this.feePaidCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion4 = RequestBody.INSTANCE;
                 MediaType mediaType4 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding4 = get_binding();
-                hashMap2.put("SemesterRegistration[bank_name]", companion4.create(mediaType4, String.valueOf((semRegFragmentBinding4 == null || (textInputEditText12 = semRegFragmentBinding4.etSemBankName) == null) ? null : textInputEditText12.getText())));
+                map2.put("SemesterRegistration[bank_name]", companion4.create(mediaType4, String.valueOf((semRegFragmentBinding4 == null || (textInputEditText12 = semRegFragmentBinding4.etSemBankName) == null) ? null : textInputEditText12.getText())));
                 RequestBody.Companion companion5 = RequestBody.INSTANCE;
                 MediaType mediaType5 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding5 = get_binding();
-                hashMap2.put("SemesterRegistration[amount_paid]", companion5.create(mediaType5, String.valueOf((semRegFragmentBinding5 == null || (textInputEditText11 = semRegFragmentBinding5.etSemAmount) == null) ? null : textInputEditText11.getText())));
+                map2.put("SemesterRegistration[amount_paid]", companion5.create(mediaType5, String.valueOf((semRegFragmentBinding5 == null || (textInputEditText11 = semRegFragmentBinding5.etSemAmount) == null) ? null : textInputEditText11.getText())));
                 RequestBody.Companion companion6 = RequestBody.INSTANCE;
                 MediaType mediaType6 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding6 = get_binding();
-                hashMap2.put("SemesterRegistration[payment_date]", companion6.create(mediaType6, String.valueOf((semRegFragmentBinding6 == null || (textInputEditText10 = semRegFragmentBinding6.etSemPaidDate) == null) ? null : textInputEditText10.getText())));
+                map2.put("SemesterRegistration[payment_date]", companion6.create(mediaType6, String.valueOf((semRegFragmentBinding6 == null || (textInputEditText10 = semRegFragmentBinding6.etSemPaidDate) == null) ? null : textInputEditText10.getText())));
                 RequestBody.Companion companion7 = RequestBody.INSTANCE;
                 MediaType mediaType7 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding7 = get_binding();
-                hashMap2.put("SemesterRegistration[payment_mode]", companion7.create(mediaType7, String.valueOf((semRegFragmentBinding7 == null || (textInputEditText9 = semRegFragmentBinding7.etSemModeOfPayment) == null) ? null : textInputEditText9.getText())));
+                map2.put("SemesterRegistration[payment_mode]", companion7.create(mediaType7, String.valueOf((semRegFragmentBinding7 == null || (textInputEditText9 = semRegFragmentBinding7.etSemModeOfPayment) == null) ? null : textInputEditText9.getText())));
                 RequestBody.Companion companion8 = RequestBody.INSTANCE;
                 MediaType mediaType8 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding8 = get_binding();
-                hashMap2.put("SemesterRegistration[payment_reference_no]", companion8.create(mediaType8, String.valueOf((semRegFragmentBinding8 == null || (textInputEditText8 = semRegFragmentBinding8.etSemRefNo) == null) ? null : textInputEditText8.getText())));
+                map2.put("SemesterRegistration[payment_reference_no]", companion8.create(mediaType8, String.valueOf((semRegFragmentBinding8 == null || (textInputEditText8 = semRegFragmentBinding8.etSemRefNo) == null) ? null : textInputEditText8.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[bank_name]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
-                hashMap2.put("SemesterRegistration[amount_paid]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
-                hashMap2.put("SemesterRegistration[payment_date]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
-                hashMap2.put("SemesterRegistration[payment_mode]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
-                hashMap2.put("SemesterRegistration[payment_reference_no]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[bank_name]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[amount_paid]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[payment_date]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[payment_mode]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[payment_reference_no]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
-            hashMap2.put("SemesterRegistration[fee_concession]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.eGrandCheck));
+            map2.put("SemesterRegistration[fee_concession]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.eGrandCheck));
             if (Intrinsics.areEqual(this.eGrandCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion9 = RequestBody.INSTANCE;
                 MediaType mediaType9 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding9 = get_binding();
-                hashMap2.put("SemesterRegistration[fee_concession_category]", companion9.create(mediaType9, String.valueOf((semRegFragmentBinding9 == null || (textInputEditText7 = semRegFragmentBinding9.etSemFeeConcessionCategory) == null) ? null : textInputEditText7.getText())));
+                map2.put("SemesterRegistration[fee_concession_category]", companion9.create(mediaType9, String.valueOf((semRegFragmentBinding9 == null || (textInputEditText7 = semRegFragmentBinding9.etSemFeeConcessionCategory) == null) ? null : textInputEditText7.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[fee_concession_category]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[fee_concession_category]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
         }
         if (!Intrinsics.areEqual(getPreference().getBaseUrl(), "https://tkmce.etlab.in/androidapp/")) {
-            hashMap2.put("SemesterRegistration[department_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.departmentCheck));
+            map2.put("SemesterRegistration[department_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.departmentCheck));
             if (Intrinsics.areEqual(this.departmentCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion10 = RequestBody.INSTANCE;
                 MediaType mediaType10 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding10 = get_binding();
-                hashMap2.put("SemesterRegistration[department_due_details]", companion10.create(mediaType10, String.valueOf((semRegFragmentBinding10 == null || (textInputEditText6 = semRegFragmentBinding10.etSemDepartmentDue) == null) ? null : textInputEditText6.getText())));
+                map2.put("SemesterRegistration[department_due_details]", companion10.create(mediaType10, String.valueOf((semRegFragmentBinding10 == null || (textInputEditText6 = semRegFragmentBinding10.etSemDepartmentDue) == null) ? null : textInputEditText6.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[department_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[department_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
-            hashMap2.put("SemesterRegistration[library_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.libraryCheck));
+            map2.put("SemesterRegistration[library_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.libraryCheck));
             if (Intrinsics.areEqual(this.libraryCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion11 = RequestBody.INSTANCE;
                 MediaType mediaType11 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding11 = get_binding();
-                hashMap2.put("SemesterRegistration[librarary_due_details]", companion11.create(mediaType11, String.valueOf((semRegFragmentBinding11 == null || (textInputEditText5 = semRegFragmentBinding11.etSemLibraryDue) == null) ? null : textInputEditText5.getText())));
+                map2.put("SemesterRegistration[librarary_due_details]", companion11.create(mediaType11, String.valueOf((semRegFragmentBinding11 == null || (textInputEditText5 = semRegFragmentBinding11.etSemLibraryDue) == null) ? null : textInputEditText5.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[librarary_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[librarary_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
-            hashMap2.put("SemesterRegistration[accounts_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.accountCheck));
+            map2.put("SemesterRegistration[accounts_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.accountCheck));
             if (Intrinsics.areEqual(this.accountCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion12 = RequestBody.INSTANCE;
                 MediaType mediaType12 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding12 = get_binding();
-                hashMap2.put("SemesterRegistration[accounts_due_details]", companion12.create(mediaType12, String.valueOf((semRegFragmentBinding12 == null || (textInputEditText4 = semRegFragmentBinding12.etSemAccountDue) == null) ? null : textInputEditText4.getText())));
+                map2.put("SemesterRegistration[accounts_due_details]", companion12.create(mediaType12, String.valueOf((semRegFragmentBinding12 == null || (textInputEditText4 = semRegFragmentBinding12.etSemAccountDue) == null) ? null : textInputEditText4.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[accounts_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[accounts_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
-            hashMap2.put("SemesterRegistration[academic_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.academicCheck));
+            map2.put("SemesterRegistration[academic_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.academicCheck));
             if (Intrinsics.areEqual(this.academicCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion13 = RequestBody.INSTANCE;
                 MediaType mediaType13 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding13 = get_binding();
-                hashMap2.put("SemesterRegistration[academic_due_details]", companion13.create(mediaType13, String.valueOf((semRegFragmentBinding13 == null || (textInputEditText3 = semRegFragmentBinding13.etSemAcademicDue) == null) ? null : textInputEditText3.getText())));
+                map2.put("SemesterRegistration[academic_due_details]", companion13.create(mediaType13, String.valueOf((semRegFragmentBinding13 == null || (textInputEditText3 = semRegFragmentBinding13.etSemAcademicDue) == null) ? null : textInputEditText3.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[academic_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[academic_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
-            hashMap2.put("SemesterRegistration[hostel_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.hostelCheck));
+            map2.put("SemesterRegistration[hostel_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.hostelCheck));
             if (Intrinsics.areEqual(this.hostelCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion14 = RequestBody.INSTANCE;
                 MediaType mediaType14 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding14 = get_binding();
-                hashMap2.put("SemesterRegistration[hostel_due_details]", companion14.create(mediaType14, String.valueOf((semRegFragmentBinding14 == null || (textInputEditText2 = semRegFragmentBinding14.etSemHostelDue) == null) ? null : textInputEditText2.getText())));
+                map2.put("SemesterRegistration[hostel_due_details]", companion14.create(mediaType14, String.valueOf((semRegFragmentBinding14 == null || (textInputEditText2 = semRegFragmentBinding14.etSemHostelDue) == null) ? null : textInputEditText2.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[hostel_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[hostel_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
-            hashMap2.put("SemesterRegistration[bus_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.busCheck));
+            map2.put("SemesterRegistration[bus_due]", RequestBody.INSTANCE.create(MultipartBody.FORM, this.busCheck));
             if (Intrinsics.areEqual(this.busCheck, getString(R.string.yes))) {
                 RequestBody.Companion companion15 = RequestBody.INSTANCE;
                 MediaType mediaType15 = MultipartBody.FORM;
                 SemRegFragmentBinding semRegFragmentBinding15 = get_binding();
-                hashMap2.put("SemesterRegistration[bus_due_details]", companion15.create(mediaType15, String.valueOf((semRegFragmentBinding15 == null || (textInputEditText = semRegFragmentBinding15.etSemBusDue) == null) ? null : textInputEditText.getText())));
+                map2.put("SemesterRegistration[bus_due_details]", companion15.create(mediaType15, String.valueOf((semRegFragmentBinding15 == null || (textInputEditText = semRegFragmentBinding15.etSemBusDue) == null) ? null : textInputEditText.getText())));
             } else {
-                hashMap2.put("SemesterRegistration[bus_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
+                map2.put("SemesterRegistration[bus_due_details]", RequestBody.INSTANCE.create(MultipartBody.FORM, ""));
             }
         }
         try {
@@ -1419,10 +1406,10 @@ public final class SemRegFragment extends BaseFragment {
                 MediaType mediaType16 = MultipartBody.FORM;
                 String str = this.id;
                 Intrinsics.checkNotNull(str);
-                getSemRegViewModel().updateRegister(companion16.create(mediaType16, str), hashMap, this.pickFile);
+                getSemRegViewModel().updateRegister(companion16.create(mediaType16, str), map, this.pickFile);
                 return;
             }
-            getSemRegViewModel().register(hashMap, this.pickFile);
+            getSemRegViewModel().register(map, this.pickFile);
         } catch (Exception e) {
             System.out.println((Object) ("================================================ " + e.getMessage()));
         }
@@ -1432,7 +1419,7 @@ public final class SemRegFragment extends BaseFragment {
         new DatePickerDialog(requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda8
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i, int i2, int i3) {
-                SemRegFragment.showDatePicker$lambda$17(SemRegFragment.this, datePicker, i, i2, i3);
+                SemRegFragment.showDatePicker$lambda$17(this.f$0, datePicker, i, i2, i3);
             }
         }, this.mCalendar.get(1), this.mCalendar.get(2), this.mCalendar.get(5)).show();
     }
@@ -1456,7 +1443,7 @@ public final class SemRegFragment extends BaseFragment {
         getSemRegViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda10
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SemRegFragment.listenProgressResponse$lambda$19(SemRegFragment.this, (Resource) obj);
+                SemRegFragment.listenProgressResponse$lambda$19(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1487,18 +1474,18 @@ public final class SemRegFragment extends BaseFragment {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             SemRegFragmentBinding semRegFragmentBinding2 = this$0.get_binding();
             ProgressBar progressBar = semRegFragmentBinding2 != null ? semRegFragmentBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             SemRegFragmentBinding semRegFragmentBinding3 = this$0.get_binding();
             TextView textView = semRegFragmentBinding3 != null ? semRegFragmentBinding3.progressText : null;
             if (textView != null) {
-                textView.setText(((int) floatValue) + " %");
+                textView.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 SemRegFragmentBinding semRegFragmentBinding4 = this$0.get_binding();
                 LinearLayout linearLayout = semRegFragmentBinding4 != null ? semRegFragmentBinding4.progressView : null;
                 if (linearLayout != null) {
@@ -1513,7 +1500,7 @@ public final class SemRegFragment extends BaseFragment {
         getSemRegViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SemRegFragment.listenResponse$lambda$21(SemRegFragment.this, (Resource) obj);
+                SemRegFragment.listenResponse$lambda$21(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1599,7 +1586,7 @@ public final class SemRegFragment extends BaseFragment {
         getSemRegViewModel().getDataResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda9
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SemRegFragment.getData$lambda$23(SemRegFragment.this, (Resource) obj);
+                SemRegFragment.getData$lambda$23(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1842,9 +1829,9 @@ public final class SemRegFragment extends BaseFragment {
         SemRegFragmentBinding semRegFragmentBinding23 = get_binding();
         TextView textView3 = semRegFragmentBinding23 != null ? semRegFragmentBinding23.tvSemRegFilePath : null;
         if (textView3 != null) {
-            String substring = response.getFeeReceiptFile().substring(StringsKt.lastIndexOf$default((CharSequence) response.getFeeReceiptFile(), RemoteSettings.FORWARD_SLASH_STRING, 0, false, 6, (Object) null) + 1);
-            Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-            textView3.setText(substring);
+            String strSubstring = response.getFeeReceiptFile().substring(StringsKt.lastIndexOf$default((CharSequence) response.getFeeReceiptFile(), RemoteSettings.FORWARD_SLASH_STRING, 0, false, 6, (Object) null) + 1);
+            Intrinsics.checkNotNullExpressionValue(strSubstring, "substring(...)");
+            textView3.setText(strSubstring);
         }
         if (StringsKt.equals(response.getFeeConcession(), "Yes", true)) {
             SemRegFragmentBinding semRegFragmentBinding24 = get_binding();
@@ -2070,7 +2057,7 @@ public final class SemRegFragment extends BaseFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Context context;
         ContentResolver contentResolver;
-        String str;
+        String fileName;
         TextView tvSemRegFilePath;
         TextView tvSemRegFilePath2;
         ContentResolver contentResolver2;
@@ -2084,23 +2071,23 @@ public final class SemRegFragment extends BaseFragment {
             if (data2 == null || (context = getContext()) == null || (contentResolver = context.getContentResolver()) == null) {
                 return;
             }
-            String str2 = null;
-            ParcelFileDescriptor openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null);
-            if (openFileDescriptor == null) {
+            String fileName2 = null;
+            ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null);
+            if (parcelFileDescriptorOpenFileDescriptor == null) {
                 return;
             }
-            Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+            Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
             Context context2 = getContext();
             File cacheDir = context2 != null ? context2.getCacheDir() : null;
             Context context3 = getContext();
             if (context3 == null || (contentResolver3 = context3.getContentResolver()) == null) {
-                str = null;
+                fileName = null;
             } else {
                 Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                str = ResolvUtilKt.getFileName(contentResolver3, data2);
+                fileName = ResolvUtilKt.getFileName(contentResolver3, data2);
             }
-            File file = new File(cacheDir, str);
-            ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+            File file = new File(cacheDir, fileName);
+            ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
             if (!file.exists()) {
                 SemRegFragmentBinding semRegFragmentBinding = get_binding();
                 if (semRegFragmentBinding == null || (tvSemRegFilePath = semRegFragmentBinding.tvSemRegFilePath) == null) {
@@ -2118,9 +2105,9 @@ public final class SemRegFragment extends BaseFragment {
                     Context context4 = getContext();
                     if (context4 != null && (contentResolver2 = context4.getContentResolver()) != null) {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 this.pickFile = file;
                 return;
@@ -2140,7 +2127,7 @@ public final class SemRegFragment extends BaseFragment {
         getSemRegViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.edit.SemRegFragment$$ExternalSyntheticLambda11
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SemRegFragment.listenSemResponse$lambda$26(SemRegFragment.this, (Resource) obj);
+                SemRegFragment.listenSemResponse$lambda$26(this.f$0, (Resource) obj);
             }
         });
     }

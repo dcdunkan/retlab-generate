@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelAttViewBindingImpl extends FragmentHostelAttViewBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -70,7 +70,7 @@ public class FragmentHostelAttViewBindingImpl extends FragmentHostelAttViewBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (118 != variableId) {
+        if (119 != variableId) {
             return false;
         }
         setHostelViewLeaveViewModel((HostelViewLeaveViewModel) variable);

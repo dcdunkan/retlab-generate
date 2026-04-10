@@ -5,8 +5,8 @@ import com.google.firebase.messaging.Constants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SemRegSuccessResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SemRegSuccessResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SemRegSuccessResponse {
     private final String error;
     private final boolean login;
@@ -29,22 +29,22 @@ public final /* data */ class SemRegSuccessResponse {
         return semRegSuccessResponse.copy(z, z2, str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMessage() {
         return this.message;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getError() {
         return this.error;
     }
@@ -70,6 +70,9 @@ public final /* data */ class SemRegSuccessResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v8 */
     /* JADX WARN: Type inference failed for: r0v9 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v6 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -78,7 +81,7 @@ public final /* data */ class SemRegSuccessResponse {
         }
         int i = r0 * 31;
         boolean z2 = this.success;
-        return ((((i + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.message.hashCode()) * 31) + this.error.hashCode();
+        return ((((i + (z2 ? 1 : z2)) * 31) + this.message.hashCode()) * 31) + this.error.hashCode();
     }
 
     public String toString() {

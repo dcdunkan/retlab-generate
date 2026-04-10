@@ -21,8 +21,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PalaiHostelViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PalaiHostelViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PalaiHostelViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<HostelPalaiAdmissionResponse>> hostelFeePalaiResponse;
@@ -46,8 +46,8 @@ public final class PalaiHostelViewModel extends ViewModel {
     public final void getHostelFee() {
         this.hostelResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelResponse> observeOn = this.hostelRepository.getHostelApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelResponse, Unit> function1 = new Function1<HostelResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelFee$1
+        Single<HostelResponse> singleObserveOn = this.hostelRepository.getHostelApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelResponse, Unit> function1 = new Function1<HostelResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelFee.1
             {
                 super(1);
             }
@@ -58,20 +58,18 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelResponse hostelResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelResponse));
+                PalaiHostelViewModel.this.hostelResponse.postValue(Resource.INSTANCE.success(hostelResponse));
             }
         };
         Consumer<? super HostelResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelFee$lambda$0(Function1.this, obj);
+                PalaiHostelViewModel.getHostelFee$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelFee$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelFee.2
             {
                 super(1);
             }
@@ -82,17 +80,15 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PalaiHostelViewModel.this.hostelResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelFee$lambda$1(Function1.this, obj);
+                PalaiHostelViewModel.getHostelFee$lambda$1(function12, obj);
             }
         }));
     }
@@ -116,8 +112,8 @@ public final class PalaiHostelViewModel extends ViewModel {
     public final void getHostelMonthFee() {
         this.hostelMonthResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelMonthResponse> observeOn = this.hostelRepository.getHostelTkmApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelMonthResponse, Unit> function1 = new Function1<HostelMonthResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelMonthFee$1
+        Single<HostelMonthResponse> singleObserveOn = this.hostelRepository.getHostelTkmApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelMonthResponse, Unit> function1 = new Function1<HostelMonthResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelMonthFee.1
             {
                 super(1);
             }
@@ -128,20 +124,18 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelMonthResponse hostelMonthResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelMonthResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelMonthResponse));
+                PalaiHostelViewModel.this.hostelMonthResponse.postValue(Resource.INSTANCE.success(hostelMonthResponse));
             }
         };
         Consumer<? super HostelMonthResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelMonthFee$lambda$2(Function1.this, obj);
+                PalaiHostelViewModel.getHostelMonthFee$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelMonthFee$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelMonthFee.2
             {
                 super(1);
             }
@@ -152,17 +146,15 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelMonthResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PalaiHostelViewModel.this.hostelMonthResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelMonthFee$lambda$3(Function1.this, obj);
+                PalaiHostelViewModel.getHostelMonthFee$lambda$3(function12, obj);
             }
         }));
     }
@@ -188,8 +180,8 @@ public final class PalaiHostelViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(feeReceipt, "feeReceipt");
         this.hostelFeeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelFeePalaiResponse> observeOn = this.hostelRepository.getHostelFeeConfirmPalaiApiCall(feeCollection, feeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelFeePalaiResponse, Unit> function1 = new Function1<HostelFeePalaiResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelFee$3
+        Single<HostelFeePalaiResponse> singleObserveOn = this.hostelRepository.getHostelFeeConfirmPalaiApiCall(feeCollection, feeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelFeePalaiResponse, Unit> function1 = new Function1<HostelFeePalaiResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelFee.3
             {
                 super(1);
             }
@@ -200,20 +192,18 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelFeePalaiResponse hostelFeePalaiResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelFeeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelFeePalaiResponse));
+                PalaiHostelViewModel.this.hostelFeeResponse.postValue(Resource.INSTANCE.success(hostelFeePalaiResponse));
             }
         };
         Consumer<? super HostelFeePalaiResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelFee$lambda$4(Function1.this, obj);
+                PalaiHostelViewModel.getHostelFee$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelFee$4
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelFee.4
             {
                 super(1);
             }
@@ -224,17 +214,15 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelFeeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PalaiHostelViewModel.this.hostelFeeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda9
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelFee$lambda$5(Function1.this, obj);
+                PalaiHostelViewModel.getHostelFee$lambda$5(function12, obj);
             }
         }));
     }
@@ -259,8 +247,8 @@ public final class PalaiHostelViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.hostelFeePalaiResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelPalaiAdmissionResponse> observeOn = this.hostelRepository.getPalaiHostelAdmsnApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelPalaiAdmissionResponse, Unit> function1 = new Function1<HostelPalaiAdmissionResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelPalaiFee$1
+        Single<HostelPalaiAdmissionResponse> singleObserveOn = this.hostelRepository.getPalaiHostelAdmsnApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelPalaiAdmissionResponse, Unit> function1 = new Function1<HostelPalaiAdmissionResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelPalaiFee.1
             {
                 super(1);
             }
@@ -271,20 +259,18 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelPalaiAdmissionResponse hostelPalaiAdmissionResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelFeePalaiResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelPalaiAdmissionResponse));
+                PalaiHostelViewModel.this.hostelFeePalaiResponse.postValue(Resource.INSTANCE.success(hostelPalaiAdmissionResponse));
             }
         };
         Consumer<? super HostelPalaiAdmissionResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelPalaiFee$lambda$6(Function1.this, obj);
+                PalaiHostelViewModel.getHostelPalaiFee$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelPalaiFee$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelPalaiFee.2
             {
                 super(1);
             }
@@ -295,17 +281,15 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelFeePalaiResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PalaiHostelViewModel.this.hostelFeePalaiResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelPalaiFee$lambda$7(Function1.this, obj);
+                PalaiHostelViewModel.getHostelPalaiFee$lambda$7(function12, obj);
             }
         }));
     }
@@ -329,8 +313,8 @@ public final class PalaiHostelViewModel extends ViewModel {
     public final void getHostelPalaiFeeTypes() {
         this.hostelFeePalaiTypeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<HostelPalaiTypesResponse> observeOn = this.hostelRepository.getHostelFeeTypesApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<HostelPalaiTypesResponse, Unit> function1 = new Function1<HostelPalaiTypesResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelPalaiFeeTypes$1
+        Single<HostelPalaiTypesResponse> singleObserveOn = this.hostelRepository.getHostelFeeTypesApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<HostelPalaiTypesResponse, Unit> function1 = new Function1<HostelPalaiTypesResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelPalaiFeeTypes.1
             {
                 super(1);
             }
@@ -341,20 +325,18 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(HostelPalaiTypesResponse hostelPalaiTypesResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelFeePalaiTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(hostelPalaiTypesResponse));
+                PalaiHostelViewModel.this.hostelFeePalaiTypeResponse.postValue(Resource.INSTANCE.success(hostelPalaiTypesResponse));
             }
         };
         Consumer<? super HostelPalaiTypesResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelPalaiFeeTypes$lambda$8(Function1.this, obj);
+                PalaiHostelViewModel.getHostelPalaiFeeTypes$lambda$8(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$getHostelPalaiFeeTypes$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel.getHostelPalaiFeeTypes.2
             {
                 super(1);
             }
@@ -365,17 +347,15 @@ public final class PalaiHostelViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PalaiHostelViewModel.this.hostelFeePalaiTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PalaiHostelViewModel.this.hostelFeePalaiTypeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PalaiHostelViewModel.getHostelPalaiFeeTypes$lambda$9(Function1.this, obj);
+                PalaiHostelViewModel.getHostelPalaiFeeTypes$lambda$9(function12, obj);
             }
         }));
     }

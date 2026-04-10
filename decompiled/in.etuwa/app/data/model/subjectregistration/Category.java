@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewSubjectRegistrationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewSubjectRegistrationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Category {
     private final String name;
     private final ArrayList<Subject> subjects;
@@ -21,7 +21,7 @@ public final /* data */ class Category {
         return category.copy(str, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }

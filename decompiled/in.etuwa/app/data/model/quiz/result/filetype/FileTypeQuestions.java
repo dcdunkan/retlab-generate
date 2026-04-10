@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FileTypeQuestions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FileTypeQuestions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FileTypeQuestions {
     private final ArrayList<QuizResultFile> file;
 
@@ -22,6 +22,7 @@ public final /* data */ class FileTypeQuestions {
     @SerializedName("question_no")
     private final String questionNo;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ FileTypeQuestions copy$default(FileTypeQuestions fileTypeQuestions, String str, boolean z, String str2, String str3, ArrayList arrayList, int i, Object obj) {
         if ((i & 1) != 0) {
             str = fileTypeQuestions.questionNo;
@@ -44,22 +45,22 @@ public final /* data */ class FileTypeQuestions {
         return fileTypeQuestions.copy(str, z2, str4, str5, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQuestionNo() {
         return this.questionNo;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getIsAttended() {
         return this.isAttended;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMarkObtained() {
         return this.markObtained;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getQuestionContent() {
         return this.questionContent;
     }
@@ -85,19 +86,22 @@ public final /* data */ class FileTypeQuestions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v7 */
+    /* JADX WARN: Type inference failed for: r2v8 */
     public int hashCode() {
         String str = this.questionNo;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         boolean z = this.isAttended;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r2 = z;
+        if (z) {
+            r2 = 1;
         }
-        int i2 = (hashCode + i) * 31;
+        int i = (iHashCode + r2) * 31;
         String str2 = this.markObtained;
-        int hashCode2 = (i2 + (str2 == null ? 0 : str2.hashCode())) * 31;
+        int iHashCode2 = (i + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.questionContent;
-        return ((hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31) + this.file.hashCode();
+        return ((iHashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31) + this.file.hashCode();
     }
 
     public String toString() {

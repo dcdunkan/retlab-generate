@@ -5,8 +5,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: StationaryReceipt.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: StationaryReceipt.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class StationaryReceipt {
     private final String create_time;
     private final String created_user;
@@ -19,52 +19,52 @@ public final /* data */ class StationaryReceipt {
     private final String total_amount;
     private final String view_url;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getCreate_time() {
         return this.create_time;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getReceipt_no() {
         return this.receipt_no;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getTotal_amount() {
         return this.total_amount;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getMethod() {
         return this.method;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getReceipt_date() {
         return this.receipt_date;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getCreated_user() {
         return this.created_user;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getView_url() {
         return this.view_url;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getPrint_url() {
         return this.print_url;
     }

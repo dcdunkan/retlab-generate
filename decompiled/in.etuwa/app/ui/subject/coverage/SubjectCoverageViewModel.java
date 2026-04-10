@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectCoverageViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SubjectCoverageViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SubjectCoverageViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<SubCoverageResponse>> coverageResponse;
@@ -36,8 +36,8 @@ public final class SubjectCoverageViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(batchId, "batchId");
         this.coverageResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SubCoverageResponse> observeOn = this.subjectRepository.getSubjectCoverageApiCall(subId, batchId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SubCoverageResponse, Unit> function1 = new Function1<SubCoverageResponse, Unit>() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel$getCoverage$1
+        Single<SubCoverageResponse> singleObserveOn = this.subjectRepository.getSubjectCoverageApiCall(subId, batchId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SubCoverageResponse, Unit> function1 = new Function1<SubCoverageResponse, Unit>() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel.getCoverage.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class SubjectCoverageViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SubCoverageResponse subCoverageResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SubjectCoverageViewModel.this.coverageResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(subCoverageResponse));
+                SubjectCoverageViewModel.this.coverageResponse.postValue(Resource.INSTANCE.success(subCoverageResponse));
             }
         };
         Consumer<? super SubCoverageResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubjectCoverageViewModel.getCoverage$lambda$0(Function1.this, obj);
+                SubjectCoverageViewModel.getCoverage$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel$getCoverage$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel.getCoverage.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class SubjectCoverageViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SubjectCoverageViewModel.this.coverageResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SubjectCoverageViewModel.this.coverageResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SubjectCoverageViewModel.getCoverage$lambda$1(Function1.this, obj);
+                SubjectCoverageViewModel.getCoverage$lambda$1(function12, obj);
             }
         }));
     }

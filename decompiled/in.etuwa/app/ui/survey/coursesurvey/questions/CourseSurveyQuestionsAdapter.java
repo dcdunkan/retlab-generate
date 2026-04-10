@@ -18,13 +18,13 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CourseSurveyQuestionsAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CourseSurveyQuestionsAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CourseSurveyQuestionsAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private SurveyCallBack listener;
     private final ArrayList<CourseSurveyQuestions> surveyList = new ArrayList<>();
 
-    /* compiled from: CourseSurveyQuestionsAdapter.kt */
+    /* JADX INFO: compiled from: CourseSurveyQuestionsAdapter.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\bf\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Lin/etuwa/app/ui/survey/coursesurvey/questions/CourseSurveyQuestionsAdapter$SurveyCallBack;", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface SurveyCallBack {
     }
@@ -33,18 +33,18 @@ public final class CourseSurveyQuestionsAdapter extends RecyclerView.Adapter<Bas
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_course_survey_questions, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …questions, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_course_survey_questions, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …questions, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -60,7 +60,7 @@ public final class CourseSurveyQuestionsAdapter extends RecyclerView.Adapter<Bas
         return !this.surveyList.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: CourseSurveyQuestionsAdapter.kt */
+    /* JADX INFO: compiled from: CourseSurveyQuestionsAdapter.kt */
     @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0012\u001a\u00020\u0013H\u0014J\u0010\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u00100\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0007*\u0004\u0018\u00010\r0\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lin/etuwa/app/ui/survey/coursesurvey/questions/CourseSurveyQuestionsAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/survey/coursesurvey/questions/CourseSurveyQuestionsAdapter;Landroid/view/View;)V", "option1", "Landroid/widget/RadioButton;", "kotlin.jvm.PlatformType", "option2", "option3", "option4", "option5", "questionNumber", "Landroid/widget/TextView;", "questionTv", "radioBtn", "Landroid/widget/RadioGroup;", "requiredTv", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final RadioButton option1;
@@ -153,7 +153,7 @@ public final class CourseSurveyQuestionsAdapter extends RecyclerView.Adapter<Bas
                 radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.survey.coursesurvey.questions.CourseSurveyQuestionsAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.widget.RadioGroup.OnCheckedChangeListener
                     public final void onCheckedChanged(RadioGroup radioGroup2, int i) {
-                        CourseSurveyQuestionsAdapter.ViewHolder.onBind$lambda$0(CourseSurveyQuestions.this, courseSurveyQuestionsAdapter, radioGroup2, i);
+                        CourseSurveyQuestionsAdapter.ViewHolder.onBind$lambda$0(courseSurveyQuestions, courseSurveyQuestionsAdapter, radioGroup2, i);
                     }
                 });
             } catch (Exception unused) {

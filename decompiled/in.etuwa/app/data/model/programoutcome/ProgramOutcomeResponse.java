@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ProgramOutcomeResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ProgramOutcomeResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ProgramOutcomeResponse {
     private final boolean login;
     private final ArrayList<ProgramOutcome> pgm_educational;
@@ -30,7 +30,7 @@ public final /* data */ class ProgramOutcomeResponse {
         return programOutcomeResponse.copy(z, arrayList, arrayList2, arrayList3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

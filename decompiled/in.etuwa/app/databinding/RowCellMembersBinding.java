@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCellMembersBinding implements ViewBinding {
     public final TextView cellLevel;
     public final TextView cellName;
@@ -31,11 +31,11 @@ public final class RowCellMembersBinding implements ViewBinding {
     }
 
     public static RowCellMembersBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_cell_members, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_cell_members, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCellMembersBinding bind(View rootView) {

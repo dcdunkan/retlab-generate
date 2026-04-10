@@ -4,7 +4,6 @@ import android.content.ComponentCallbacks;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -12,11 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.activity.ComponentActivity;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.browser.customtabs.CustomTabsIntent;
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.OnApplyWindowInsetsListener;
@@ -33,12 +30,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelLazy;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
-import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.cookie.ClientCookie;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.itextpdf.forms.xfdf.XfdfConstants;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
@@ -60,7 +57,6 @@ import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogKt;
 import in.etuwa.app.ui.attendance.bysubject.AttendanceFragment;
 import in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewFragment;
 import in.etuwa.app.ui.base.BaseActivity;
-import in.etuwa.app.ui.calendar.CalendarFragment;
 import in.etuwa.app.ui.centralizedinfo.CentralizedInfoFragment;
 import in.etuwa.app.ui.certificate_request.CertificateRequestFragment;
 import in.etuwa.app.ui.changepassword.ChangePasswordDialog;
@@ -79,6 +75,7 @@ import in.etuwa.app.ui.due.DueMainFragment;
 import in.etuwa.app.ui.due.duepay.DuePayFragment;
 import in.etuwa.app.ui.exam.module.ModuleTestFragment;
 import in.etuwa.app.ui.exam.series.SeriesExamFragment;
+import in.etuwa.app.ui.examregistration.ExamRegistrationMainNewFragment;
 import in.etuwa.app.ui.examregistration.exammain.ExamMainFragment;
 import in.etuwa.app.ui.examregistration.examreceipt.ExamReceiptFragment;
 import in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment;
@@ -91,14 +88,10 @@ import in.etuwa.app.ui.examregistration.revaluation.view.RevaluationViewFragment
 import in.etuwa.app.ui.examregistration.revaluation.view.receipt.RevaluationReceiptFragment;
 import in.etuwa.app.ui.examregistration.revaluation.view.update.RevaluationUpdateFragment;
 import in.etuwa.app.ui.examschedules.ExamFragment;
-import in.etuwa.app.ui.feenewarts.payment.FeeArtsFragment;
-import in.etuwa.app.ui.feenewengineer.payment.FeeEngineerFragment;
 import in.etuwa.app.ui.feenewengineer.payment.feeconfirmdialog.FeeConfirmDialogKt;
-import in.etuwa.app.ui.feepartial.kmea.FeeListFragment;
 import in.etuwa.app.ui.fees.FeeMainFragment;
+import in.etuwa.app.ui.fees.FeeMainNewFragment;
 import in.etuwa.app.ui.fees.gateway.GatewayFragment;
-import in.etuwa.app.ui.fees.payment.FeeFragment;
-import in.etuwa.app.ui.fees.receipt.ReceiptFragment;
 import in.etuwa.app.ui.fees.transport.TransportFeeFragment;
 import in.etuwa.app.ui.fees.transport.receipt.TransportReceiptFragment;
 import in.etuwa.app.ui.fees.webview.WebViewFragment;
@@ -176,13 +169,13 @@ import in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewFragment
 import in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyFragment;
 import in.etuwa.app.ui.survey.teachersurvey.teachersurveyquestions.TeacherSurveyQuestionFragment;
 import in.etuwa.app.ui.teacher.TeacherFragment;
-import in.etuwa.app.ui.timetable.TimeTableFragment;
 import in.etuwa.app.ui.timetable.change.ChangeInTimetableFragment;
 import in.etuwa.app.ui.timetable.special.SpecialClassFragment;
 import in.etuwa.app.ui.transport.buspass.BusPassFragment;
 import in.etuwa.app.ui.transport.history.TransportHistoryFragment;
 import in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegFragment;
 import in.etuwa.app.ui.transport.registration.view.TransportRegHistoryFragment;
+import in.etuwa.app.ui.transportmain.TransportMainFragment;
 import in.etuwa.app.ui.tutorial.TutorialFragment;
 import in.etuwa.app.ui.university.UniversityResultFragment;
 import in.etuwa.app.ui.videoclass.VideoClassFragment;
@@ -193,6 +186,7 @@ import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
 import in.etuwa.etlabstaff.ui.library.bookrecord.BookRecordFragment;
 import java.util.ArrayList;
+import java.util.Locale;
 import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
@@ -209,28 +203,28 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MainActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MainActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MainActivity extends BaseActivity implements MainCallBackListener {
     private static boolean flag;
     private ActivityMainBinding binding;
 
-    /* renamed from: dataBase$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: dataBase$delegate, reason: from kotlin metadata */
     private final Lazy dataBase;
 
-    /* renamed from: mainViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: mainViewModel$delegate, reason: from kotlin metadata */
     private final Lazy mainViewModel;
     private FragmentManager manager;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private static boolean surveyFlag = true;
     private static final ArrayList<SurveyAnswer> answerList = new ArrayList<>();
 
-    /* compiled from: MainActivity.kt */
+    /* JADX INFO: compiled from: MainActivity.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -258,7 +252,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void logoutView$lambda$11(DialogInterface dialogInterface, int i) {
+    public static final void logoutView$lambda$12(DialogInterface dialogInterface, int i) {
     }
 
     @Override // in.etuwa.app.ui.base.BaseActivity
@@ -307,7 +301,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ComponentActivity.this.getViewModelStore();
+                ViewModelStore viewModelStore = mainActivity.getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "viewModelStore");
                 return viewModelStore;
             }
@@ -320,7 +314,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory(ViewModelStoreOwner.this, Reflection.getOrCreateKotlinClass(MainViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory(mainActivity2, Reflection.getOrCreateKotlinClass(MainViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MainActivity mainActivity3 = this;
@@ -370,6 +364,14 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
         return (MyDataBase) this.dataBase.getValue();
     }
 
+    @Override // androidx.activity.ComponentActivity, android.app.Activity
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if (intent != null) {
+            handleBottomNavigationFromIntent(intent);
+        }
+    }
+
     @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -389,18 +391,48 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
         } else {
             activityMainBinding2 = activityMainBinding3;
         }
-        activityMainBinding2.setLifecycleOwner(this);
+        MainActivity mainActivity = this;
+        activityMainBinding2.setLifecycleOwner(mainActivity);
         setUp();
+        Intent intent = getIntent();
+        Intrinsics.checkNotNullExpressionValue(intent, "intent");
+        handleBottomNavigationFromIntent(intent);
+        getOnBackPressedDispatcher().addCallback(mainActivity, new OnBackPressedCallback() { // from class: in.etuwa.app.ui.main.MainActivity.onCreate.1
+            {
+                super(true);
+            }
+
+            @Override // androidx.activity.OnBackPressedCallback
+            public void handleOnBackPressed() {
+                if (MainActivity.this.getSupportFragmentManager().getBackStackEntryCount() <= 1) {
+                    MainActivity.this.finish();
+                } else {
+                    MainActivity.this.getSupportFragmentManager().popBackStack();
+                }
+            }
+        });
+    }
+
+    private final void handleBottomNavigationFromIntent(Intent intent) {
+        int intExtra = intent.getIntExtra("bottom_index", -1);
+        if (intExtra == 0) {
+            loadBottomItems(DashboardFragment.INSTANCE.newInstance(0));
+        } else if (intExtra == 1) {
+            loadBottomItems(MessageFragment.INSTANCE.newInstance());
+        } else {
+            if (intExtra != 2) {
+                return;
+            }
+            loadBottomItems(ProfileFragment.INSTANCE.newInstance());
+        }
     }
 
     @Override // in.etuwa.app.ui.base.BaseActivity
     protected void setUp() {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root), new OnApplyWindowInsetsListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda6
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root), new OnApplyWindowInsetsListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda2
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-                WindowInsetsCompat up$lambda$0;
-                up$lambda$0 = MainActivity.setUp$lambda$0(view, windowInsetsCompat);
-                return up$lambda$0;
+                return MainActivity.setUp$lambda$1(view, windowInsetsCompat);
             }
         });
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
@@ -412,7 +444,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
         if (checkNetworkAvailability() && !getPreference().getPushTokenServerStatus()) {
             storePushToken();
         }
-        new ValidChecker(this).checkPermission();
         loadDashboard();
         ActivityMainBinding activityMainBinding = this.binding;
         ActivityMainBinding activityMainBinding2 = null;
@@ -420,7 +451,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             activityMainBinding = null;
         }
-        activityMainBinding.bottomNavNew.setOnItemSelected(new Function1<Integer, Unit>() { // from class: in.etuwa.app.ui.main.MainActivity$setUp$2
+        activityMainBinding.bottomNavNew.setOnItemSelected(new Function1<Integer, Unit>() { // from class: in.etuwa.app.ui.main.MainActivity.setUp.2
             {
                 super(1);
             }
@@ -437,12 +468,8 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     return;
                 }
                 if (i == 1) {
-                    MainActivity.this.loadBottomItems(CalendarFragment.INSTANCE.newInstance());
-                    return;
-                }
-                if (i == 2) {
-                    MainActivity.this.loadBottomItems(MessageFragment.Companion.newInstance());
-                } else if (i != 3) {
+                    MainActivity.this.loadBottomItems(MessageFragment.INSTANCE.newInstance());
+                } else if (i != 2) {
                     MainActivity.this.loadBottomItems(DashboardFragment.INSTANCE.newInstance(0));
                 } else {
                     MainActivity.this.loadBottomItems(ProfileFragment.INSTANCE.newInstance());
@@ -455,7 +482,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
         } else {
             activityMainBinding2 = activityMainBinding3;
         }
-        activityMainBinding2.bottomNavNew.setOnItemReselected(new Function1<Integer, Unit>() { // from class: in.etuwa.app.ui.main.MainActivity$setUp$3
+        activityMainBinding2.bottomNavNew.setOnItemReselected(new Function1<Integer, Unit>() { // from class: in.etuwa.app.ui.main.MainActivity.setUp.3
             {
                 super(1);
             }
@@ -469,14 +496,10 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             public final void invoke(int i) {
                 if (i == 0) {
                     MainActivity.this.loadBottomItems(DashboardFragment.INSTANCE.newInstance(0));
-                    return;
-                }
-                if (i == 1) {
-                    MainActivity.this.loadBottomItems(CalendarFragment.INSTANCE.newInstance());
-                } else if (i == 2) {
-                    MainActivity.this.loadBottomItems(MessageFragment.Companion.newInstance());
+                } else if (i == 1) {
+                    MainActivity.this.loadBottomItems(MessageFragment.INSTANCE.newInstance());
                 } else {
-                    if (i != 3) {
+                    if (i != 2) {
                         return;
                     }
                     MainActivity.this.loadBottomItems(ProfileFragment.INSTANCE.newInstance());
@@ -486,7 +509,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final WindowInsetsCompat setUp$lambda$0(View view, WindowInsetsCompat insets) {
+    public static final WindowInsetsCompat setUp$lambda$1(View view, WindowInsetsCompat insets) {
         Intrinsics.checkNotNullParameter(view, "view");
         Intrinsics.checkNotNullParameter(insets, "insets");
         Insets insets2 = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -498,29 +521,19 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     /* JADX INFO: Access modifiers changed from: private */
     public final void loadBottomItems(Fragment fragment) {
         FragmentManager fragmentManager = this.manager;
+        FragmentManager fragmentManager2 = null;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        int backStackEntryCount = fragmentManager.getBackStackEntryCount();
-        for (int i = 0; i < backStackEntryCount; i++) {
-            FragmentManager fragmentManager2 = this.manager;
-            if (fragmentManager2 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("manager");
-                fragmentManager2 = null;
-            }
-            fragmentManager2.popBackStack();
-        }
+        fragmentManager.popBackStack((String) null, 1);
         FragmentManager fragmentManager3 = this.manager;
         if (fragmentManager3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
-            fragmentManager3 = null;
+        } else {
+            fragmentManager2 = fragmentManager3;
         }
-        FragmentTransaction beginTransaction = fragmentManager3.beginTransaction();
-        Intrinsics.checkNotNullExpressionValue(beginTransaction, "manager.beginTransaction()");
-        beginTransaction.add(R.id.main_container, fragment);
-        beginTransaction.addToBackStack(null);
-        beginTransaction.commitAllowingStateLoss();
+        fragmentManager2.beginTransaction().replace(R.id.main_container, fragment).commit();
     }
 
     private final void loadDashboard() {
@@ -529,11 +542,11 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
-        Intrinsics.checkNotNullExpressionValue(beginTransaction, "manager.beginTransaction()");
-        beginTransaction.add(R.id.main_container, DashboardFragment.INSTANCE.newInstance(0));
-        beginTransaction.addToBackStack(null);
-        beginTransaction.commit();
+        FragmentTransaction fragmentTransactionBeginTransaction = fragmentManager.beginTransaction();
+        Intrinsics.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "manager.beginTransaction()");
+        fragmentTransactionBeginTransaction.add(R.id.main_container, DashboardFragment.INSTANCE.newInstance(0));
+        fragmentTransactionBeginTransaction.addToBackStack(null);
+        fragmentTransactionBeginTransaction.commit();
     }
 
     @Override // android.app.Activity
@@ -551,10 +564,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             LinearLayout linearLayout4 = (LinearLayout) findViewById(R.id.internal_layout);
             LinearLayout linearLayout5 = (LinearLayout) findViewById(R.id.module_layout);
             LinearLayout linearLayout6 = (LinearLayout) findViewById(R.id.tutorial_result_layout);
-            LinearLayout linearLayout7 = (LinearLayout) findViewById(R.id.video_layout);
-            LinearLayout linearLayout8 = (LinearLayout) findViewById(R.id.question_layout);
-            LinearLayout linearLayout9 = (LinearLayout) findViewById(R.id.subject_layout);
-            TextView textView = (TextView) findViewById(R.id.tvassignment);
+            LinearLayout linearLayout7 = (LinearLayout) findViewById(R.id.subject_layout);
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
@@ -573,19 +583,10 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             if (linearLayout6 != null) {
                 linearLayout6.setVisibility(0);
             }
-            if (linearLayout7 != null) {
-                linearLayout7.setVisibility(0);
-            }
-            if (linearLayout8 != null) {
-                linearLayout8.setVisibility(0);
-            }
-            if (linearLayout9 != null) {
-                linearLayout9.setVisibility(0);
-            }
-            if (textView == null) {
+            if (linearLayout7 == null) {
                 return true;
             }
-            textView.setVisibility(8);
+            linearLayout7.setVisibility(0);
             return true;
         }
         super.onOptionsItemSelected(item);
@@ -606,7 +607,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 loadView(SeriesExamFragment.INSTANCE.newInstance());
                 break;
             case 3:
-                loadView(ResultFragment.INSTANCE.newInstance());
+                loadView(ResultFragment.INSTANCE.newInstance(false));
                 break;
             case 4:
                 loadView(MaterialFragment.INSTANCE.newInstance());
@@ -646,7 +647,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 13:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "cev", false, 2, (Object) null)) {
                     loadView(CounsellingFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding3 = this.binding;
                     if (activityMainBinding3 == null) {
@@ -657,35 +657,27 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout2 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout2, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout2, "You Do Not Have This Feature");
-                    break;
                 }
                 break;
             case 14:
                 if (StringsKt.contains$default((CharSequence) getPreference().getDueNew(), (CharSequence) "1", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null)) {
                     System.out.println((Object) getPreference().getDueNew());
                     loadView(DueMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     loadView(DueFragment.INSTANCE.newInstance());
-                    break;
                 }
                 break;
             case 15:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "rgrege", false, 2, (Object) null)) {
                     loadView(AcademicFeeFragment.INSTANCE.newInstance(null));
-                    break;
-                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcp", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmeaarts", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "naher", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tkmit", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "christ", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "ukfcet", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "uat", false, 2, (Object) null)) {
+                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcp", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmeaarts", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "naher", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tkmit", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "christ", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "ukfcet", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
-                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "uat", false, 2, (Object) null)) {
+                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmealotta", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "nssce", false, 2, (Object) null)) {
                     loadView(AcademicFeeFragment.INSTANCE.newInstance(null));
-                    break;
                 } else if (getPreference().getFeeStatus()) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding4 = this.binding;
                     if (activityMainBinding4 == null) {
@@ -696,7 +688,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout3 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout3, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout3, "You Do Not Have This Feature");
-                    break;
                 }
                 break;
             case 16:
@@ -708,7 +699,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 18:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null)) {
                     loadView(InternshipFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding5 = this.binding;
                     if (activityMainBinding5 == null) {
@@ -719,8 +709,8 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout4 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout4, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout4, "You Do Not Have This Feature");
-                    break;
                 }
+                break;
             case 19:
                 loadView(LabFragment.INSTANCE.newInstance());
                 break;
@@ -751,11 +741,10 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 28:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
                     loadView(PalaiSemesterRegFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     loadView(SemRegisterListFragment.INSTANCE.newInstance());
-                    break;
                 }
+                break;
             case 29:
                 loadView(SubjectRegistrationFragment.INSTANCE.newInstance());
                 break;
@@ -764,9 +753,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 break;
             case 31:
                 loadView(TeacherFragment.INSTANCE.newInstance());
-                break;
-            case 32:
-                loadView(TimeTableFragment.INSTANCE.newInstance());
                 break;
             case 33:
                 loadView(TutorialFragment.INSTANCE.newInstance());
@@ -791,7 +777,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                         if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE") || Intrinsics.areEqual(getPreference().getHostelStatus(), "APPLIED")) {
                             loadView(HostelMainFragment.INSTANCE.newInstance());
-                            break;
                         } else {
                             String hostelStatus = getPreference().getHostelStatus();
                             if (Intrinsics.areEqual(hostelStatus, "INACTIVE")) {
@@ -804,7 +789,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout5 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout5, "binding.mainContainer");
                                 ToastExtKt.showWarningToast(frameLayout5, "Hostel Status Is INACTIVE...!");
-                                break;
                             } else if (Intrinsics.areEqual(hostelStatus, "REJECTED")) {
                                 ActivityMainBinding activityMainBinding7 = this.binding;
                                 if (activityMainBinding7 == null) {
@@ -815,35 +799,34 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout6 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout6, "binding.mainContainer");
                                 ToastExtKt.showErrorToast(frameLayout6, "Hostel Status Is REJECTED...!");
-                                break;
                             }
                         }
                     } else {
                         loadApplyHostelView();
-                        break;
                     }
+                    break;
                 } else if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                     if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE")) {
                         loadView(HostelMainFragment.INSTANCE.newInstance());
                         break;
                     } else {
                         String hostelStatus2 = getPreference().getHostelStatus();
-                        int hashCode = hostelStatus2.hashCode();
-                        if (hashCode == -75252643) {
-                            if (hostelStatus2.equals("APPLIED")) {
-                                ActivityMainBinding activityMainBinding8 = this.binding;
-                                if (activityMainBinding8 == null) {
-                                    Intrinsics.throwUninitializedPropertyAccessException("binding");
-                                } else {
-                                    activityMainBinding = activityMainBinding8;
+                        int iHashCode = hostelStatus2.hashCode();
+                        if (iHashCode != -75252643) {
+                            if (iHashCode != 174130302) {
+                                if (iHashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                                    ActivityMainBinding activityMainBinding8 = this.binding;
+                                    if (activityMainBinding8 == null) {
+                                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                                    } else {
+                                        activityMainBinding = activityMainBinding8;
+                                    }
+                                    FrameLayout frameLayout7 = activityMainBinding.mainContainer;
+                                    Intrinsics.checkNotNullExpressionValue(frameLayout7, "binding.mainContainer");
+                                    ToastExtKt.showWarningToast(frameLayout7, "Hostel Status Is INACTIVE...!");
                                 }
-                                FrameLayout frameLayout7 = activityMainBinding.mainContainer;
-                                Intrinsics.checkNotNullExpressionValue(frameLayout7, "binding.mainContainer");
-                                ToastExtKt.showErrorToast(frameLayout7, "Hostel Is Not Yet Activated...!");
                                 break;
-                            }
-                        } else if (hashCode == 174130302) {
-                            if (hostelStatus2.equals("REJECTED")) {
+                            } else if (hostelStatus2.equals("REJECTED")) {
                                 ActivityMainBinding activityMainBinding9 = this.binding;
                                 if (activityMainBinding9 == null) {
                                     Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -855,7 +838,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 ToastExtKt.showErrorToast(frameLayout8, "Hostel Status Is REJECTED...!");
                                 break;
                             }
-                        } else if (hashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                        } else if (hostelStatus2.equals("APPLIED")) {
                             ActivityMainBinding activityMainBinding10 = this.binding;
                             if (activityMainBinding10 == null) {
                                 Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -864,7 +847,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                             }
                             FrameLayout frameLayout9 = activityMainBinding.mainContainer;
                             Intrinsics.checkNotNullExpressionValue(frameLayout9, "binding.mainContainer");
-                            ToastExtKt.showWarningToast(frameLayout9, "Hostel Status Is INACTIVE...!");
+                            ToastExtKt.showErrorToast(frameLayout9, "Hostel Is Not Yet Activated...!");
                             break;
                         }
                     }
@@ -876,7 +859,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 38:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo.", false, 2, (Object) null)) {
                     loadView(StationaryMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding11 = this.binding;
                     if (activityMainBinding11 == null) {
@@ -887,7 +869,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout10 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout10, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout10, "You Don't Have This Feature");
-                    break;
                 }
                 break;
         }
@@ -907,7 +888,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 loadView(SeriesExamFragment.INSTANCE.newInstance());
                 break;
             case 3:
-                loadView(ResultFragment.INSTANCE.newInstance());
+                loadView(ResultFragment.INSTANCE.newInstance(false));
                 break;
             case 4:
                 loadView(ExamMainFragment.INSTANCE.newInstance());
@@ -950,7 +931,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 14:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "cev", false, 2, (Object) null)) {
                     loadView(CounsellingFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding3 = this.binding;
                     if (activityMainBinding3 == null) {
@@ -961,35 +941,27 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout2 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout2, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout2, "You Do Not Have This Feature");
-                    break;
                 }
                 break;
             case 15:
                 if (StringsKt.contains$default((CharSequence) getPreference().getDueNew(), (CharSequence) "1", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null)) {
                     System.out.println((Object) getPreference().getDueNew());
                     loadView(DueMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     loadView(DueFragment.INSTANCE.newInstance());
-                    break;
                 }
                 break;
             case 16:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "gcek", false, 2, (Object) null)) {
                     loadView(AcademicFeeFragment.INSTANCE.newInstance(null));
-                    break;
-                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcp", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmeaarts", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "naher", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tkmit", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "vjec", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "uat", false, 2, (Object) null)) {
+                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcp", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmeaarts", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "naher", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tkmit", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "vjec", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmealotta", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "nssce", false, 2, (Object) null)) {
                     loadView(AcademicFeeFragment.INSTANCE.newInstance(null));
-                    break;
                 } else if (getPreference().getFeeStatus()) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding4 = this.binding;
                     if (activityMainBinding4 == null) {
@@ -1000,7 +972,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout3 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout3, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout3, "You Do Not Have This Feature");
-                    break;
                 }
                 break;
             case 17:
@@ -1012,7 +983,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 19:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null)) {
                     loadView(InternshipFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding5 = this.binding;
                     if (activityMainBinding5 == null) {
@@ -1023,7 +993,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout4 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout4, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout4, "You Do Not Have This Feature");
-                    break;
                 }
                 break;
             case 20:
@@ -1056,19 +1025,15 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 29:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
                     loadView(PalaiSemesterRegFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     loadView(SemRegisterListFragment.INSTANCE.newInstance());
-                    break;
                 }
+                break;
             case 30:
                 loadView(SurveyFragment.INSTANCE.newInstance(0));
                 break;
             case 31:
                 loadView(TeacherFragment.INSTANCE.newInstance());
-                break;
-            case 32:
-                loadView(TimeTableFragment.INSTANCE.newInstance());
                 break;
             case 33:
                 loadView(TutorialFragment.INSTANCE.newInstance());
@@ -1083,14 +1048,13 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mits", false, 2, (Object) null)) {
                     startActivity(new Intent(getApplicationContext(), (Class<?>) MitsHostelView.class));
                     break;
-                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tkmce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmea", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "uat", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tmc", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mits", false, 2, (Object) null)) {
+                } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tkmce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmea", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tmc", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mits", false, 2, (Object) null)) {
                     loadView(HostelMainFragment.INSTANCE.newInstance());
                     break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "gcek", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null)) {
                     if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                         if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE") || Intrinsics.areEqual(getPreference().getHostelStatus(), "APPLIED")) {
                             loadView(HostelMainFragment.INSTANCE.newInstance());
-                            break;
                         } else {
                             String hostelStatus = getPreference().getHostelStatus();
                             if (Intrinsics.areEqual(hostelStatus, "INACTIVE")) {
@@ -1103,7 +1067,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout5 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout5, "binding.mainContainer");
                                 ToastExtKt.showWarningToast(frameLayout5, "Hostel Status Is INACTIVE...!");
-                                break;
                             } else if (Intrinsics.areEqual(hostelStatus, "REJECTED")) {
                                 ActivityMainBinding activityMainBinding7 = this.binding;
                                 if (activityMainBinding7 == null) {
@@ -1114,35 +1077,34 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout6 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout6, "binding.mainContainer");
                                 ToastExtKt.showErrorToast(frameLayout6, "Hostel Status Is REJECTED...!");
-                                break;
                             }
                         }
                     } else {
                         loadApplyHostelView();
-                        break;
                     }
+                    break;
                 } else if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                     if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE")) {
                         loadView(HostelMainFragment.INSTANCE.newInstance());
                         break;
                     } else {
                         String hostelStatus2 = getPreference().getHostelStatus();
-                        int hashCode = hostelStatus2.hashCode();
-                        if (hashCode == -75252643) {
-                            if (hostelStatus2.equals("APPLIED")) {
-                                ActivityMainBinding activityMainBinding8 = this.binding;
-                                if (activityMainBinding8 == null) {
-                                    Intrinsics.throwUninitializedPropertyAccessException("binding");
-                                } else {
-                                    activityMainBinding = activityMainBinding8;
+                        int iHashCode = hostelStatus2.hashCode();
+                        if (iHashCode != -75252643) {
+                            if (iHashCode != 174130302) {
+                                if (iHashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                                    ActivityMainBinding activityMainBinding8 = this.binding;
+                                    if (activityMainBinding8 == null) {
+                                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                                    } else {
+                                        activityMainBinding = activityMainBinding8;
+                                    }
+                                    FrameLayout frameLayout7 = activityMainBinding.mainContainer;
+                                    Intrinsics.checkNotNullExpressionValue(frameLayout7, "binding.mainContainer");
+                                    ToastExtKt.showWarningToast(frameLayout7, "Hostel Status Is INACTIVE...!");
                                 }
-                                FrameLayout frameLayout7 = activityMainBinding.mainContainer;
-                                Intrinsics.checkNotNullExpressionValue(frameLayout7, "binding.mainContainer");
-                                ToastExtKt.showErrorToast(frameLayout7, "Hostel Is Not Yet Activated...!");
                                 break;
-                            }
-                        } else if (hashCode == 174130302) {
-                            if (hostelStatus2.equals("REJECTED")) {
+                            } else if (hostelStatus2.equals("REJECTED")) {
                                 ActivityMainBinding activityMainBinding9 = this.binding;
                                 if (activityMainBinding9 == null) {
                                     Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -1154,7 +1116,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 ToastExtKt.showErrorToast(frameLayout8, "Hostel Status Is REJECTED...!");
                                 break;
                             }
-                        } else if (hashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                        } else if (hostelStatus2.equals("APPLIED")) {
                             ActivityMainBinding activityMainBinding10 = this.binding;
                             if (activityMainBinding10 == null) {
                                 Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -1163,7 +1125,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                             }
                             FrameLayout frameLayout9 = activityMainBinding.mainContainer;
                             Intrinsics.checkNotNullExpressionValue(frameLayout9, "binding.mainContainer");
-                            ToastExtKt.showWarningToast(frameLayout9, "Hostel Status Is INACTIVE...!");
+                            ToastExtKt.showErrorToast(frameLayout9, "Hostel Is Not Yet Activated...!");
                             break;
                         }
                     }
@@ -1189,7 +1151,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 loadView(SeriesExamFragment.INSTANCE.newInstance());
                 break;
             case 3:
-                loadView(ResultFragment.INSTANCE.newInstance());
+                loadView(ResultFragment.INSTANCE.newInstance(false));
                 break;
             case 4:
                 loadView(ExamMainFragment.INSTANCE.newInstance());
@@ -1224,7 +1186,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 14:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "cev", false, 2, (Object) null)) {
                     loadView(CounsellingFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding2 = this.binding;
                     if (activityMainBinding2 == null) {
@@ -1235,36 +1196,28 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout, "You Do Not Have This Feature");
-                    break;
                 }
                 break;
             case 15:
                 if (StringsKt.contains$default((CharSequence) getPreference().getDueNew(), (CharSequence) "1", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null)) {
                     System.out.println((Object) getPreference().getDueNew());
                     loadView(DueMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     loadView(DueFragment.INSTANCE.newInstance());
-                    break;
                 }
                 break;
             case 16:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "gcek", false, 2, (Object) null)) {
                     getMainViewModel().getFeeStatus();
                     listenFeeResponse();
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcp", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmeaarts", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "naher", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmealotta", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "nssce", false, 2, (Object) null)) {
                     loadView(AcademicFeeFragment.INSTANCE.newInstance(null));
-                    break;
                 } else if (getPreference().getFeeStatus()) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding3 = this.binding;
                     if (activityMainBinding3 == null) {
@@ -1275,7 +1228,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout2 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout2, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout2, "You Do Not Have This Feature");
-                    break;
                 }
                 break;
             case 17:
@@ -1287,7 +1239,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 19:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null)) {
                     loadView(InternshipFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding4 = this.binding;
                     if (activityMainBinding4 == null) {
@@ -1298,8 +1249,8 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout3 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout3, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout3, "You Do Not Have This Feature");
-                    break;
                 }
+                break;
             case 20:
                 loadView(LabFragment.INSTANCE.newInstance());
                 break;
@@ -1330,10 +1281,8 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 29:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
                     loadView(PalaiSemesterRegFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     loadView(SemRegisterListFragment.INSTANCE.newInstance());
-                    break;
                 }
                 break;
             case 30:
@@ -1341,9 +1290,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 break;
             case 31:
                 loadView(TeacherFragment.INSTANCE.newInstance());
-                break;
-            case 32:
-                loadView(TimeTableFragment.INSTANCE.newInstance());
                 break;
             case 33:
                 loadView(TutorialFragment.INSTANCE.newInstance());
@@ -1362,7 +1308,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                         if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE") || Intrinsics.areEqual(getPreference().getHostelStatus(), "APPLIED")) {
                             loadView(HostelMainFragment.INSTANCE.newInstance());
-                            break;
                         } else {
                             String hostelStatus = getPreference().getHostelStatus();
                             if (Intrinsics.areEqual(hostelStatus, "INACTIVE")) {
@@ -1375,7 +1320,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout4 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout4, "binding.mainContainer");
                                 ToastExtKt.showWarningToast(frameLayout4, "Hostel Status Is INACTIVE...!");
-                                break;
                             } else if (Intrinsics.areEqual(hostelStatus, "REJECTED")) {
                                 ActivityMainBinding activityMainBinding6 = this.binding;
                                 if (activityMainBinding6 == null) {
@@ -1386,35 +1330,34 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout5 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout5, "binding.mainContainer");
                                 ToastExtKt.showErrorToast(frameLayout5, "Hostel Status Is REJECTED...!");
-                                break;
                             }
                         }
                     } else {
                         loadApplyHostelView();
-                        break;
                     }
+                    break;
                 } else if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                     if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE")) {
                         loadView(HostelMainFragment.INSTANCE.newInstance());
                         break;
                     } else {
                         String hostelStatus2 = getPreference().getHostelStatus();
-                        int hashCode = hostelStatus2.hashCode();
-                        if (hashCode == -75252643) {
-                            if (hostelStatus2.equals("APPLIED")) {
-                                ActivityMainBinding activityMainBinding7 = this.binding;
-                                if (activityMainBinding7 == null) {
-                                    Intrinsics.throwUninitializedPropertyAccessException("binding");
-                                } else {
-                                    activityMainBinding = activityMainBinding7;
+                        int iHashCode = hostelStatus2.hashCode();
+                        if (iHashCode != -75252643) {
+                            if (iHashCode != 174130302) {
+                                if (iHashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                                    ActivityMainBinding activityMainBinding7 = this.binding;
+                                    if (activityMainBinding7 == null) {
+                                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                                    } else {
+                                        activityMainBinding = activityMainBinding7;
+                                    }
+                                    FrameLayout frameLayout6 = activityMainBinding.mainContainer;
+                                    Intrinsics.checkNotNullExpressionValue(frameLayout6, "binding.mainContainer");
+                                    ToastExtKt.showWarningToast(frameLayout6, "Hostel Status Is INACTIVE...!");
                                 }
-                                FrameLayout frameLayout6 = activityMainBinding.mainContainer;
-                                Intrinsics.checkNotNullExpressionValue(frameLayout6, "binding.mainContainer");
-                                ToastExtKt.showErrorToast(frameLayout6, "Hostel Is Not Yet Activated...!");
                                 break;
-                            }
-                        } else if (hashCode == 174130302) {
-                            if (hostelStatus2.equals("REJECTED")) {
+                            } else if (hostelStatus2.equals("REJECTED")) {
                                 ActivityMainBinding activityMainBinding8 = this.binding;
                                 if (activityMainBinding8 == null) {
                                     Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -1426,7 +1369,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 ToastExtKt.showErrorToast(frameLayout7, "Hostel Status Is REJECTED...!");
                                 break;
                             }
-                        } else if (hashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                        } else if (hostelStatus2.equals("APPLIED")) {
                             ActivityMainBinding activityMainBinding9 = this.binding;
                             if (activityMainBinding9 == null) {
                                 Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -1435,7 +1378,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                             }
                             FrameLayout frameLayout8 = activityMainBinding.mainContainer;
                             Intrinsics.checkNotNullExpressionValue(frameLayout8, "binding.mainContainer");
-                            ToastExtKt.showWarningToast(frameLayout8, "Hostel Status Is INACTIVE...!");
+                            ToastExtKt.showErrorToast(frameLayout8, "Hostel Is Not Yet Activated...!");
                             break;
                         }
                     }
@@ -1461,7 +1404,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 loadView(SeriesExamFragment.INSTANCE.newInstance());
                 break;
             case 3:
-                loadView(ResultFragment.INSTANCE.newInstance());
+                loadView(ResultFragment.INSTANCE.newInstance(false));
                 break;
             case 4:
                 loadView(MaterialFragment.INSTANCE.newInstance());
@@ -1494,28 +1437,22 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                 if (StringsKt.contains$default((CharSequence) getPreference().getDueNew(), (CharSequence) "1", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null)) {
                     System.out.println((Object) getPreference().getDueNew());
                     loadView(DueMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     loadView(DueFragment.INSTANCE.newInstance());
-                    break;
                 }
+                break;
             case 14:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "gcek", false, 2, (Object) null)) {
                     getMainViewModel().getFeeStatus();
                     listenFeeResponse();
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcp", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmeaarts", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "naher", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet.", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmealotta", false, 2, (Object) null)) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "nssce", false, 2, (Object) null)) {
                     loadView(AcademicFeeFragment.INSTANCE.newInstance(null));
-                    break;
                 } else if (getPreference().getFeeStatus()) {
                     loadView(FeeMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding2 = this.binding;
                     if (activityMainBinding2 == null) {
@@ -1526,15 +1463,14 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout, "You Do Not Have This Feature");
-                    break;
                 }
+                break;
             case 15:
                 loadView(HomeWorkFragment.INSTANCE.newInstance());
                 break;
             case 16:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null)) {
                     loadView(InternshipFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding3 = this.binding;
                     if (activityMainBinding3 == null) {
@@ -1545,8 +1481,8 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout2 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout2, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout2, "You Do Not Have This Feature");
-                    break;
                 }
+                break;
             case 17:
                 loadView(LabFragment.INSTANCE.newInstance());
                 break;
@@ -1580,9 +1516,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 27:
                 loadView(TeacherFragment.INSTANCE.newInstance());
                 break;
-            case 28:
-                loadView(TimeTableFragment.INSTANCE.newInstance());
-                break;
             case 29:
                 loadView(TutorialFragment.INSTANCE.newInstance());
                 break;
@@ -1603,7 +1536,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                         if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE") || Intrinsics.areEqual(getPreference().getHostelStatus(), "APPLIED")) {
                             loadView(HostelMainFragment.INSTANCE.newInstance());
-                            break;
                         } else {
                             String hostelStatus = getPreference().getHostelStatus();
                             if (Intrinsics.areEqual(hostelStatus, "INACTIVE")) {
@@ -1616,7 +1548,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout3 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout3, "binding.mainContainer");
                                 ToastExtKt.showWarningToast(frameLayout3, "Hostel Status Is INACTIVE...!");
-                                break;
                             } else if (Intrinsics.areEqual(hostelStatus, "REJECTED")) {
                                 ActivityMainBinding activityMainBinding5 = this.binding;
                                 if (activityMainBinding5 == null) {
@@ -1627,35 +1558,34 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 FrameLayout frameLayout4 = activityMainBinding.mainContainer;
                                 Intrinsics.checkNotNullExpressionValue(frameLayout4, "binding.mainContainer");
                                 ToastExtKt.showErrorToast(frameLayout4, "Hostel Status Is REJECTED...!");
-                                break;
                             }
                         }
                     } else {
                         loadApplyHostelView();
-                        break;
                     }
+                    break;
                 } else if (getPreference().getHostel() == 1 || getPreference().getHostel() == 2) {
                     if (Intrinsics.areEqual(getPreference().getHostelStatus(), "ACTIVE")) {
                         loadView(HostelFragment.INSTANCE.newInstance());
                         break;
                     } else {
                         String hostelStatus2 = getPreference().getHostelStatus();
-                        int hashCode = hostelStatus2.hashCode();
-                        if (hashCode == -75252643) {
-                            if (hostelStatus2.equals("APPLIED")) {
-                                ActivityMainBinding activityMainBinding6 = this.binding;
-                                if (activityMainBinding6 == null) {
-                                    Intrinsics.throwUninitializedPropertyAccessException("binding");
-                                } else {
-                                    activityMainBinding = activityMainBinding6;
+                        int iHashCode = hostelStatus2.hashCode();
+                        if (iHashCode != -75252643) {
+                            if (iHashCode != 174130302) {
+                                if (iHashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                                    ActivityMainBinding activityMainBinding6 = this.binding;
+                                    if (activityMainBinding6 == null) {
+                                        Intrinsics.throwUninitializedPropertyAccessException("binding");
+                                    } else {
+                                        activityMainBinding = activityMainBinding6;
+                                    }
+                                    FrameLayout frameLayout5 = activityMainBinding.mainContainer;
+                                    Intrinsics.checkNotNullExpressionValue(frameLayout5, "binding.mainContainer");
+                                    ToastExtKt.showWarningToast(frameLayout5, "Hostel Status Is INACTIVE...!");
                                 }
-                                FrameLayout frameLayout5 = activityMainBinding.mainContainer;
-                                Intrinsics.checkNotNullExpressionValue(frameLayout5, "binding.mainContainer");
-                                ToastExtKt.showErrorToast(frameLayout5, "Hostel Is Not Yet Activated...!");
                                 break;
-                            }
-                        } else if (hashCode == 174130302) {
-                            if (hostelStatus2.equals("REJECTED")) {
+                            } else if (hostelStatus2.equals("REJECTED")) {
                                 ActivityMainBinding activityMainBinding7 = this.binding;
                                 if (activityMainBinding7 == null) {
                                     Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -1667,7 +1597,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                                 ToastExtKt.showErrorToast(frameLayout6, "Hostel Status Is REJECTED...!");
                                 break;
                             }
-                        } else if (hashCode == 807292011 && hostelStatus2.equals("INACTIVE")) {
+                        } else if (hostelStatus2.equals("APPLIED")) {
                             ActivityMainBinding activityMainBinding8 = this.binding;
                             if (activityMainBinding8 == null) {
                                 Intrinsics.throwUninitializedPropertyAccessException("binding");
@@ -1676,7 +1606,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                             }
                             FrameLayout frameLayout7 = activityMainBinding.mainContainer;
                             Intrinsics.checkNotNullExpressionValue(frameLayout7, "binding.mainContainer");
-                            ToastExtKt.showWarningToast(frameLayout7, "Hostel Status Is INACTIVE...!");
+                            ToastExtKt.showErrorToast(frameLayout7, "Hostel Is Not Yet Activated...!");
                             break;
                         }
                     }
@@ -1688,7 +1618,6 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             case 34:
                 if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
                     loadView(StationaryMainFragment.INSTANCE.newInstance());
-                    break;
                 } else {
                     ActivityMainBinding activityMainBinding9 = this.binding;
                     if (activityMainBinding9 == null) {
@@ -1699,21 +1628,21 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
                     FrameLayout frameLayout8 = activityMainBinding.mainContainer;
                     Intrinsics.checkNotNullExpressionValue(frameLayout8, "binding.mainContainer");
                     ToastExtKt.showInfoToast(frameLayout8, "You Don't Have This Feature");
-                    break;
                 }
+                break;
         }
     }
 
     private final void showStoreDialog() {
         ActivityMainBinding activityMainBinding = null;
         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "aisat", false, 2, (Object) null)) {
-            StoreDialog newInstance = StoreDialog.INSTANCE.newInstance();
+            StoreDialog storeDialogNewInstance = StoreDialog.INSTANCE.newInstance();
             FragmentManager fragmentManager = this.manager;
             if (fragmentManager == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("manager");
                 fragmentManager = null;
             }
-            newInstance.show(fragmentManager, (String) null);
+            storeDialogNewInstance.show(fragmentManager, (String) null);
             return;
         }
         ActivityMainBinding activityMainBinding2 = this.binding;
@@ -1728,36 +1657,36 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     private final void loadCommentDialog() {
-        CommentDialog newInstance = CommentDialog.INSTANCE.newInstance();
+        CommentDialog commentDialogNewInstance = CommentDialog.INSTANCE.newInstance();
         FragmentManager fragmentManager = this.manager;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        newInstance.show(fragmentManager, (String) null);
+        commentDialogNewInstance.show(fragmentManager, (String) null);
     }
 
     private final void loadVaccineDialog() {
-        CovidCertificateDialog newInstance = CovidCertificateDialog.INSTANCE.newInstance();
+        CovidCertificateDialog covidCertificateDialogNewInstance = CovidCertificateDialog.INSTANCE.newInstance();
         FragmentManager fragmentManager = this.manager;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        newInstance.show(fragmentManager, (String) null);
+        covidCertificateDialogNewInstance.show(fragmentManager, (String) null);
     }
 
     private final void listenFeeResponse() {
-        getMainViewModel().getFeeResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda2
+        getMainViewModel().getFeeResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda8
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MainActivity.listenFeeResponse$lambda$3(MainActivity.this, (Resource) obj);
+                MainActivity.listenFeeResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenFeeResponse$lambda$3(MainActivity this$0, Resource resource) {
+    public static final void listenFeeResponse$lambda$4(MainActivity this$0, Resource resource) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
         ActivityMainBinding activityMainBinding = null;
@@ -1810,10 +1739,10 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     private final void loadApplyHostelView() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Do You Want To Apply For Hostel?");
-        builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda7
+        builder.setPositiveButton("Apply", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MainActivity.loadApplyHostelView$lambda$4(MainActivity.this, dialogInterface, i);
+                MainActivity.loadApplyHostelView$lambda$5(this.f$0, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", (DialogInterface.OnClickListener) null);
@@ -1821,23 +1750,23 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadApplyHostelView$lambda$4(MainActivity this$0, DialogInterface dialogInterface, int i) {
+    public static final void loadApplyHostelView$lambda$5(MainActivity this$0, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getMainViewModel().applyHostel();
         this$0.listenApplyResponse();
     }
 
     private final void listenApplyResponse() {
-        getMainViewModel().getHostelResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda10
+        getMainViewModel().getHostelResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MainActivity.listenApplyResponse$lambda$6(MainActivity.this, (Resource) obj);
+                MainActivity.listenApplyResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenApplyResponse$lambda$6(MainActivity this$0, Resource resource) {
+    public static final void listenApplyResponse$lambda$7(MainActivity this$0, Resource resource) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
         ActivityMainBinding activityMainBinding = null;
@@ -1955,7 +1884,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
 
     @Override // in.etuwa.app.helper.MainCallBackListener
     public void onSurveyCompleted(boolean flag2, String surveyId) {
-        SurveyFragment newInstance;
+        SurveyFragment surveyFragmentNewInstance;
         FragmentManager fragmentManager = this.manager;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
@@ -1971,11 +1900,11 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             fragmentManager2.popBackStack();
         }
         if (flag2) {
-            newInstance = TeacherSurveyFragment.INSTANCE.newInstance(surveyId);
+            surveyFragmentNewInstance = TeacherSurveyFragment.INSTANCE.newInstance(surveyId);
         } else {
-            newInstance = SurveyFragment.INSTANCE.newInstance(0);
+            surveyFragmentNewInstance = SurveyFragment.INSTANCE.newInstance(0);
         }
-        loadView(newInstance);
+        loadView(surveyFragmentNewInstance);
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
@@ -2167,9 +2096,10 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
-    public void doGeneralSurvey(String id) {
+    public void doGeneralSurvey(String id, String surveyName) {
         Intrinsics.checkNotNullParameter(id, "id");
-        loadView(TeacherSurveyQuestionFragment.INSTANCE.newInstance(id, "", "", "", "", "", false));
+        Intrinsics.checkNotNullParameter(surveyName, "surveyName");
+        loadView(TeacherSurveyQuestionFragment.INSTANCE.newInstance(id, "", "", "", "", "", false, surveyName));
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
@@ -2179,14 +2109,15 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
-    public void doTeacherSurvey(String id, String teacherId, String subjectId, String image, String semester, String subject) {
+    public void doTeacherSurvey(String id, String teacherId, String subjectId, String image, String semester, String subject, String teacherName) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(teacherId, "teacherId");
         Intrinsics.checkNotNullParameter(subjectId, "subjectId");
         Intrinsics.checkNotNullParameter(image, "image");
         Intrinsics.checkNotNullParameter(semester, "semester");
         Intrinsics.checkNotNullParameter(subject, "subject");
-        loadView(TeacherSurveyQuestionFragment.INSTANCE.newInstance(id, teacherId, subjectId, image, semester, subject, true));
+        Intrinsics.checkNotNullParameter(teacherName, "teacherName");
+        loadView(TeacherSurveyQuestionFragment.INSTANCE.newInstance(id, teacherId, subjectId, image, semester, subject, true, teacherName));
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
@@ -2331,24 +2262,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
 
     @Override // in.etuwa.app.helper.MainCallBackListener
     public void onMainFeeClick(boolean flag2) {
-        if (flag2) {
-            System.out.println(getPreference().getFeeEngnrNew());
-            if (getPreference().getFeeEngnrNew() || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mvjce", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tkmit", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "vjec", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "christ", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "ukfcet", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "uat", false, 2, (Object) null)) {
-                loadView(FeeEngineerFragment.INSTANCE.newInstance());
-                return;
-            }
-            if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmeaarts", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "naher", false, 2, (Object) null)) {
-                loadView(FeeArtsFragment.INSTANCE.newInstance());
-                return;
-            } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tmc", false, 2, (Object) null)) {
-                loadView(FeeListFragment.INSTANCE.newInstance());
-                return;
-            } else {
-                loadView(FeeFragment.INSTANCE.newInstance());
-                return;
-            }
-        }
-        loadView(ReceiptFragment.INSTANCE.newInstance());
+        loadView(FeeMainNewFragment.INSTANCE.newInstance());
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
@@ -2357,13 +2271,13 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             logoutView();
             return;
         }
-        ChangePasswordDialog newInstance = ChangePasswordDialog.INSTANCE.newInstance();
+        ChangePasswordDialog changePasswordDialogNewInstance = ChangePasswordDialog.INSTANCE.newInstance();
         FragmentManager fragmentManager = this.manager;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        newInstance.show(fragmentManager, (String) null);
+        changePasswordDialogNewInstance.show(fragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
@@ -2430,24 +2344,24 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
 
     @Override // in.etuwa.app.helper.MainCallBackListener
     public void showVisionDialog() {
-        VisionDialog newInstance = VisionDialog.INSTANCE.newInstance();
+        VisionDialog visionDialogNewInstance = VisionDialog.INSTANCE.newInstance();
         FragmentManager fragmentManager = this.manager;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        newInstance.show(fragmentManager, (String) null);
+        visionDialogNewInstance.show(fragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
     public void showMissionDialog() {
-        MissionDialog newInstance = MissionDialog.INSTANCE.newInstance();
+        MissionDialog missionDialogNewInstance = MissionDialog.INSTANCE.newInstance();
         FragmentManager fragmentManager = this.manager;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        newInstance.show(fragmentManager, (String) null);
+        missionDialogNewInstance.show(fragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
@@ -2481,19 +2395,37 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     public void showExamRegFragment(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
         FragmentManager fragmentManager = this.manager;
+        FragmentManager fragmentManager2 = null;
         if (fragmentManager == null) {
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager = null;
         }
-        int backStackEntryCount = fragmentManager.getBackStackEntryCount() - 2;
-        for (int i = 0; i < backStackEntryCount; i++) {
-            FragmentManager fragmentManager2 = this.manager;
-            if (fragmentManager2 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("manager");
-                fragmentManager2 = null;
-            }
-            fragmentManager2.popBackStack();
+        if (fragmentManager.findFragmentById(R.id.main_container) instanceof ExamViewFragment) {
+            return;
         }
+        while (true) {
+            FragmentManager fragmentManager3 = this.manager;
+            if (fragmentManager3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("manager");
+                fragmentManager3 = null;
+            }
+            if (fragmentManager3.getBackStackEntryCount() <= 2) {
+                break;
+            }
+            FragmentManager fragmentManager4 = this.manager;
+            if (fragmentManager4 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("manager");
+                fragmentManager4 = null;
+            }
+            fragmentManager4.popBackStack();
+        }
+        FragmentManager fragmentManager5 = this.manager;
+        if (fragmentManager5 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("manager");
+        } else {
+            fragmentManager2 = fragmentManager5;
+        }
+        fragmentManager2.executePendingTransactions();
         loadView(ExamViewFragment.INSTANCE.newInstance(id));
     }
 
@@ -2501,7 +2433,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     public void showExamRegisterFragment(String id, String category) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(category, "category");
-        loadView(ExamRegisterFragment.INSTANCE.newInstance(id, category, false, false));
+        loadView(ExamRegisterFragment.INSTANCE.newInstance(id, category));
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
@@ -2605,6 +2537,16 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
+    public void showEvaluation() {
+        loadView(in.etuwa.app.ui.evaluation.EvaluationFragment.INSTANCE.newInstance());
+    }
+
+    @Override // in.etuwa.app.helper.MainCallBackListener
+    public void showResults() {
+        loadView(ResultFragment.INSTANCE.newInstance(true));
+    }
+
+    @Override // in.etuwa.app.helper.MainCallBackListener
     public void openPoSurvey() {
         loadView(POSurveyFragment.INSTANCE.newInstance(0));
     }
@@ -2629,9 +2571,9 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     public void openPaymentPage(String url) {
         ActivityMainBinding activityMainBinding = null;
         try {
-            CustomTabsIntent build = new CustomTabsIntent.Builder().build();
-            Intrinsics.checkNotNullExpressionValue(build, "Builder().build()");
-            build.launchUrl(this, Uri.parse(url));
+            CustomTabsIntent customTabsIntentBuild = new CustomTabsIntent.Builder().build();
+            Intrinsics.checkNotNullExpressionValue(customTabsIntentBuild, "Builder().build()");
+            customTabsIntentBuild.launchUrl(this, Uri.parse(url));
             FragmentManager fragmentManager = this.manager;
             if (fragmentManager == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("manager");
@@ -2680,6 +2622,191 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
+    public void subjectBtnClicked() {
+        loadView(SubjectFragment.INSTANCE.newInstance());
+    }
+
+    @Override // in.etuwa.app.helper.MainCallBackListener
+    public void onNoticeBoardClicked() {
+        loadView(NoticeFragment.INSTANCE.newInstance());
+    }
+
+    @Override // in.etuwa.app.helper.MainCallBackListener
+    public void onNewDashItemClicked(String title) {
+        Intrinsics.checkNotNullParameter(title, "title");
+        String lowerCase = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase, (CharSequence) "evaluations", false, 2, (Object) null)) {
+            loadView(in.etuwa.app.ui.evaluation.EvaluationFragment.INSTANCE.newInstance());
+        }
+        String lowerCase2 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase2, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase2, (CharSequence) "result", false, 2, (Object) null)) {
+            loadView(ResultFragment.INSTANCE.newInstance(false));
+        }
+        String lowerCase3 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase3, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase3, (CharSequence) "study materials", false, 2, (Object) null)) {
+            loadView(MaterialFragment.INSTANCE.newInstance());
+        }
+        String lowerCase4 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase4, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase4, (CharSequence) "academic", false, 2, (Object) null)) {
+            loadView(FeeMainNewFragment.INSTANCE.newInstance());
+        }
+        String lowerCase5 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase5, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase5, (CharSequence) "courses", false, 2, (Object) null)) {
+            loadView(SubjectFragment.INSTANCE.newInstance());
+        }
+        String lowerCase6 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase6, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase6, (CharSequence) "faculties", false, 2, (Object) null)) {
+            loadView(TeacherFragment.INSTANCE.newInstance());
+        }
+        String lowerCase7 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase7, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase7, (CharSequence) "question bank", false, 2, (Object) null)) {
+            loadView(QuestionBankFragment.INSTANCE.newInstance());
+        }
+        String lowerCase8 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase8, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase8, (CharSequence) NotificationCompat.CATEGORY_TRANSPORT, false, 2, (Object) null)) {
+            loadView(TransportMainFragment.INSTANCE.newInstance());
+        }
+        String lowerCase9 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase9, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase9, (CharSequence) "hostel", false, 2, (Object) null)) {
+            loadView(HostelMainFragment.INSTANCE.newInstance());
+        }
+        String lowerCase10 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase10, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase10, (CharSequence) "analysis", false, 2, (Object) null)) {
+            ActivityMediator.INSTANCE.startAnalysisActivity(this);
+        }
+        String lowerCase11 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase11, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase11, (CharSequence) "notifications", false, 2, (Object) null)) {
+            ActivityMediator.INSTANCE.startPushActivity(this);
+        }
+        String lowerCase12 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase12, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase12, (CharSequence) "laboratory", false, 2, (Object) null)) {
+            loadView(LabFragment.INSTANCE.newInstance());
+        }
+        String lowerCase13 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase13, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase13, (CharSequence) "exam schedule", false, 2, (Object) null)) {
+            loadView(ExamFragment.INSTANCE.newInstance());
+        }
+        String lowerCase14 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase14, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase14, (CharSequence) "exam or quiz", false, 2, (Object) null)) {
+            loadView(NewQuizFragment.INSTANCE.newInstance());
+        }
+        String lowerCase15 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase15, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase15, (CharSequence) "video", false, 2, (Object) null)) {
+            loadView(VideoClassFragment.INSTANCE.newInstance());
+        }
+        String lowerCase16 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase16, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase16, (CharSequence) "university exam", false, 2, (Object) null)) {
+            loadView(ExamRegistrationMainNewFragment.INSTANCE.newInstance());
+        }
+        String lowerCase17 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase17, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase17, (CharSequence) "dues", false, 2, (Object) null)) {
+            loadView(DueMainFragment.INSTANCE.newInstance());
+        }
+        String lowerCase18 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase18, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase18, (CharSequence) "online class", false, 2, (Object) null)) {
+            loadView(OnlineClassFragment.INSTANCE.newInstance());
+        }
+        String lowerCase19 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase19, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase19, (CharSequence) "circulars", false, 2, (Object) null)) {
+            loadView(CircularFragment.INSTANCE.newInstance());
+        }
+        String lowerCase20 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase20, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase20, (CharSequence) "program outcomes", false, 2, (Object) null)) {
+            loadView(ProgramOutcomeFragment.INSTANCE.newInstance(0));
+        }
+        String lowerCase21 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase21, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase21, (CharSequence) "survey", false, 2, (Object) null)) {
+            loadView(SurveyFragment.INSTANCE.newInstance(0));
+        }
+        String lowerCase22 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase22, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase22, (CharSequence) "library", false, 2, (Object) null)) {
+            loadView(LibraryFragmeent.INSTANCE.newInstance());
+        }
+        String lowerCase23 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase23, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase23, (CharSequence) "remarks", false, 2, (Object) null)) {
+            loadView(RemarkFragment.INSTANCE.newInstance());
+        }
+        String lowerCase24 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase24, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase24, (CharSequence) "semester registration", false, 2, (Object) null)) {
+            loadView(SemRegisterListFragment.INSTANCE.newInstance());
+        }
+        String lowerCase25 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase25, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase25, (CharSequence) "counselling", false, 2, (Object) null)) {
+            loadView(CounsellingFragment.INSTANCE.newInstance());
+        }
+        String lowerCase26 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase26, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase26, (CharSequence) "certificate request", false, 2, (Object) null)) {
+            loadView(CertificateRequestFragment.INSTANCE.newInstance());
+        }
+        String lowerCase27 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase27, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase27, (CharSequence) "leave", false, 2, (Object) null)) {
+            loadView(LeaveFragment.INSTANCE.newInstance());
+        }
+        String lowerCase28 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase28, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase28, (CharSequence) "grievance", false, 2, (Object) null)) {
+            loadView(GrievanceFragment.INSTANCE.newInstance());
+        }
+        String lowerCase29 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase29, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase29, (CharSequence) "activity point", false, 2, (Object) null)) {
+            loadView(ActivityPointFragment.INSTANCE.newInstance());
+        }
+        String lowerCase30 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase30, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase30, (CharSequence) "subject registration", false, 2, (Object) null)) {
+            loadView(SubjectRegistrationFragment.INSTANCE.newInstance());
+        }
+        String lowerCase31 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase31, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase31, (CharSequence) "stationary", false, 2, (Object) null)) {
+            loadView(StationaryMainFragment.INSTANCE.newInstance());
+        }
+        String lowerCase32 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase32, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase32, (CharSequence) "digital library", false, 2, (Object) null)) {
+            loadView(LibraryFragmeent.INSTANCE.newInstance());
+        }
+        String lowerCase33 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase33, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase33, (CharSequence) "placement", false, 2, (Object) null)) {
+            loadView(PlacementFragment.INSTANCE.newInstance());
+        }
+        String lowerCase34 = title.toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase34, "toLowerCase(...)");
+        if (StringsKt.contains$default((CharSequence) lowerCase34, (CharSequence) "internship", false, 2, (Object) null)) {
+            loadView(InternshipFragment.INSTANCE.newInstance());
+        }
+    }
+
+    @Override // in.etuwa.app.helper.MainCallBackListener
     public void transportBusPassBtnClicked() {
         loadView(BusPassFragment.INSTANCE.newInstance());
     }
@@ -2716,10 +2843,10 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
             getMainViewModel().sendPushToken(getPreference().getPushToken());
         } else {
             try {
-                FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda1
+                FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda7
                     @Override // com.google.android.gms.tasks.OnCompleteListener
                     public final void onComplete(Task task) {
-                        MainActivity.storePushToken$lambda$7(task);
+                        MainActivity.storePushToken$lambda$8(task);
                     }
                 });
             } catch (Exception unused) {
@@ -2729,7 +2856,7 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void storePushToken$lambda$7(Task task) {
+    public static final void storePushToken$lambda$8(Task task) {
         Intrinsics.checkNotNullParameter(task, "task");
         if (!task.isSuccessful() || task.getResult() == null || TextUtils.isEmpty((CharSequence) task.getResult())) {
             return;
@@ -2739,16 +2866,16 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     private final void listenPushResponse() {
-        getMainViewModel().getPushTokenResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda11
+        getMainViewModel().getPushTokenResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MainActivity.listenPushResponse$lambda$9(MainActivity.this, (Resource) obj);
+                MainActivity.listenPushResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenPushResponse$lambda$9(MainActivity this$0, Resource resource) {
+    public static final void listenPushResponse$lambda$10(MainActivity this$0, Resource resource) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
         ActivityMainBinding activityMainBinding = null;
@@ -2801,16 +2928,16 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     private final void logoutView() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(getString(R.string.logout_msg));
-        builder.setPositiveButton("Logout", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda4
+        builder.setPositiveButton("Logout", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MainActivity.logoutView$lambda$10(MainActivity.this, dialogInterface, i);
+                MainActivity.logoutView$lambda$11(this.f$0, dialogInterface, i);
             }
         });
-        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda5
+        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MainActivity.logoutView$lambda$11(dialogInterface, i);
+                MainActivity.logoutView$lambda$12(dialogInterface, i);
             }
         });
         builder.setCancelable(false);
@@ -2818,23 +2945,23 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void logoutView$lambda$10(MainActivity this$0, DialogInterface dialogInterface, int i) {
+    public static final void logoutView$lambda$11(MainActivity this$0, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.doLogout();
     }
 
     private final void doLogout() {
         getMainViewModel().logout(getPreference().getPushToken());
-        getMainViewModel().getLogoutResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda9
+        getMainViewModel().getLogoutResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MainActivity.doLogout$lambda$13(MainActivity.this, (Resource) obj);
+                MainActivity.doLogout$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void doLogout$lambda$13(MainActivity this$0, Resource resource) {
+    public static final void doLogout$lambda$14(MainActivity this$0, Resource resource) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
         ActivityMainBinding activityMainBinding = null;
@@ -2917,116 +3044,29 @@ public final class MainActivity extends BaseActivity implements MainCallBackList
         return false;
     }
 
-    private final void requestPermission() {
-        try {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, "android.permission.WRITE_EXTERNAL_STORAGE")) {
-                new AlertDialog.Builder(this).setTitle(getString(R.string.storage_permission_needed)).setMessage(getString(R.string.storage_msg)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda8
-                    @Override // android.content.DialogInterface.OnClickListener
-                    public final void onClick(DialogInterface dialogInterface, int i) {
-                        MainActivity.requestPermission$lambda$14(MainActivity.this, dialogInterface, i);
-                    }
-                }).create().show();
-            } else if (Build.VERSION.SDK_INT >= 33) {
-                ActivityCompat.requestPermissions(this, new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"}, 1);
-            } else {
-                ActivityCompat.requestPermissions(this, new String[]{"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"}, 1);
-            }
-        } catch (Exception unused) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void requestPermission$lambda$14(MainActivity this$0, DialogInterface dialogInterface, int i) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        if (Build.VERSION.SDK_INT >= 33) {
-            ActivityCompat.requestPermissions(this$0, new String[]{"android.permission.READ_MEDIA_VIDEO", "android.permission.READ_MEDIA_IMAGES", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"}, 1);
-        } else {
-            ActivityCompat.requestPermissions(this$0, new String[]{"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"}, 1);
-        }
-    }
-
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        boolean shouldShowRequestPermissionRationale;
-        Intrinsics.checkNotNullParameter(permissions, "permissions");
-        Intrinsics.checkNotNullParameter(grantResults, "grantResults");
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1) {
-            try {
-                if ((!(grantResults.length == 0)) && grantResults[0] == 0) {
-                    return;
-                }
-                if (Build.VERSION.SDK_INT >= 23) {
-                    shouldShowRequestPermissionRationale = shouldShowRequestPermissionRationale(permissions[0]);
-                    if (!shouldShowRequestPermissionRationale) {
-                        new AlertDialog.Builder(this).setTitle(getString(R.string.storage_permission_needed)).setMessage(getString(R.string.storage_msg)).setPositiveButton("Settings", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.main.MainActivity$$ExternalSyntheticLambda3
-                            @Override // android.content.DialogInterface.OnClickListener
-                            public final void onClick(DialogInterface dialogInterface, int i) {
-                                MainActivity.onRequestPermissionsResult$lambda$15(MainActivity.this, dialogInterface, i);
-                            }
-                        }).create().show();
-                        return;
-                    }
-                }
-                ActivityMainBinding activityMainBinding = this.binding;
-                if (activityMainBinding == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("binding");
-                    activityMainBinding = null;
-                }
-                FrameLayout frameLayout = activityMainBinding.mainContainer;
-                Intrinsics.checkNotNullExpressionValue(frameLayout, "binding.mainContainer");
-                ToastExtKt.showInfoToast(frameLayout, "Permission Denied, You cannot Download Files .");
-            } catch (Exception unused) {
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void onRequestPermissionsResult$lambda$15(MainActivity this$0, DialogInterface dialogInterface, int i) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intent intent = new Intent();
-        intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-        intent.addCategory("android.intent.category.DEFAULT");
-        intent.setData(Uri.parse("package:" + this$0.getPackageName()));
-        intent.addFlags(268435456);
-        intent.addFlags(1073741824);
-        intent.addFlags(8388608);
-        this$0.startActivity(intent);
-    }
-
-    @Override // androidx.activity.ComponentActivity, android.app.Activity
-    public void onBackPressed() {
-        FragmentManager supportFragmentManager = getSupportFragmentManager();
-        Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if (supportFragmentManager.getBackStackEntryCount() == 1) {
-            finish();
-        }
-        super.onBackPressed();
-    }
-
     @Override // in.etuwa.app.helper.MainCallBackListener
     public void navigateToFragment(Fragment newFragment) {
         Intrinsics.checkNotNullParameter(newFragment, "newFragment");
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();
-        Intrinsics.checkNotNullExpressionValue(beginTransaction, "fragmentManager.beginTransaction()");
-        beginTransaction.replace(R.id.main_container, newFragment);
-        beginTransaction.commit();
+        FragmentTransaction fragmentTransactionBeginTransaction = supportFragmentManager.beginTransaction();
+        Intrinsics.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "fragmentManager.beginTransaction()");
+        fragmentTransactionBeginTransaction.replace(R.id.main_container, newFragment);
+        fragmentTransactionBeginTransaction.commit();
     }
 
     @Override // in.etuwa.app.helper.MainCallBackListener
     public void removeFragment() {
-        Fragment findFragmentById = getSupportFragmentManager().findFragmentById(R.id.main_container);
-        if (findFragmentById != null) {
-            FragmentTransaction beginTransaction = getSupportFragmentManager().beginTransaction();
-            Intrinsics.checkNotNullExpressionValue(beginTransaction, "supportFragmentManager.beginTransaction()");
-            beginTransaction.remove(findFragmentById);
-            beginTransaction.commit();
+        Fragment fragmentFindFragmentById = getSupportFragmentManager().findFragmentById(R.id.main_container);
+        if (fragmentFindFragmentById != null) {
+            FragmentTransaction fragmentTransactionBeginTransaction = getSupportFragmentManager().beginTransaction();
+            Intrinsics.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "supportFragmentManager.beginTransaction()");
+            fragmentTransactionBeginTransaction.remove(fragmentFindFragmentById);
+            fragmentTransactionBeginTransaction.commit();
         }
     }
 
-    /* compiled from: MainActivity.kt */
+    /* JADX INFO: compiled from: MainActivity.kt */
     @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0006\u0010\u0010\u001a\u00020\u0011J\u000e\u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\u0014J\u0016\u0010\u0015\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u0004j\b\u0012\u0004\u0012\u00020\u0005`\u0006J\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0013\u001a\u00020\u0014J\u0006\u0010\u0017\u001a\u00020\u0011J&\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00020\u001a2\u0006\u0010\u0013\u001a\u00020\u0014J\u0006\u0010\u000b\u001a\u00020\u0011R\u001e\u0010\u0003\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u0004j\b\u0012\u0004\u0012\u00020\u0005`\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u001a\u0010\r\u001a\u00020\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\n\"\u0004\b\u000f\u0010\f¨\u0006\u001d"}, d2 = {"Lin/etuwa/app/ui/main/MainActivity$Companion;", "", "()V", "answerList", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/survey/SurveyAnswer;", "Lkotlin/collections/ArrayList;", "flag", "", "getFlag", "()Z", "setFlag", "(Z)V", "surveyFlag", "getSurveyFlag", "setSurveyFlag", "clearIdLists", "", "deleteAnswer", "pos", "", "getAns", "getPosAns", "resetFlag", "saveAnswers", "qid", "", "option", "type", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

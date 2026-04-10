@@ -7,8 +7,8 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QuestionsNew.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuestionsNew.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QuestionsNew {
 
     @SerializedName("answer_id")
@@ -48,12 +48,12 @@ public final /* data */ class QuestionsNew {
     @Expose
     private String userAnswer;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQuestionType() {
         return this.questionType;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getFileId() {
         return this.fileId;
     }
@@ -62,42 +62,42 @@ public final /* data */ class QuestionsNew {
         return this.options;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getQno() {
         return this.qno;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSessionId() {
         return this.sessionId;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getQuestion() {
         return this.question;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAnswerId() {
         return this.answerId;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDuration() {
         return this.duration;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getIsAttended() {
         return this.isAttended;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getUserAnswer() {
         return this.userAnswer;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getFileUrl() {
         return this.fileUrl;
     }
@@ -120,29 +120,32 @@ public final /* data */ class QuestionsNew {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v15, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v25 */
+    /* JADX WARN: Type inference failed for: r2v30 */
     public int hashCode() {
         String str = this.questionType;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.qno;
-        int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
+        int iHashCode2 = (iHashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.sessionId;
-        int hashCode3 = (((hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31) + this.question.hashCode()) * 31;
+        int iHashCode3 = (((iHashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31) + this.question.hashCode()) * 31;
         String str4 = this.answerId;
-        int hashCode4 = (hashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
+        int iHashCode4 = (iHashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
         String str5 = this.duration;
-        int hashCode5 = (hashCode4 + (str5 == null ? 0 : str5.hashCode())) * 31;
+        int iHashCode5 = (iHashCode4 + (str5 == null ? 0 : str5.hashCode())) * 31;
         boolean z = this.isAttended;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r2 = z;
+        if (z) {
+            r2 = 1;
         }
-        int i2 = (hashCode5 + i) * 31;
+        int i = (iHashCode5 + r2) * 31;
         String str6 = this.userAnswer;
-        int hashCode6 = (i2 + (str6 == null ? 0 : str6.hashCode())) * 31;
+        int iHashCode6 = (i + (str6 == null ? 0 : str6.hashCode())) * 31;
         String str7 = this.fileUrl;
-        int hashCode7 = (hashCode6 + (str7 == null ? 0 : str7.hashCode())) * 31;
+        int iHashCode7 = (iHashCode6 + (str7 == null ? 0 : str7.hashCode())) * 31;
         String str8 = this.fileId;
-        return ((hashCode7 + (str8 != null ? str8.hashCode() : 0)) * 31) + this.options.hashCode();
+        return ((iHashCode7 + (str8 != null ? str8.hashCode() : 0)) * 31) + this.options.hashCode();
     }
 
     public String toString() {

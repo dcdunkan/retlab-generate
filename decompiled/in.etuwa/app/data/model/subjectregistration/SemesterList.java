@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewSubjectRegistrationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewSubjectRegistrationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SemesterList {
     private final ArrayList<SemSubjects> mdc_subjects;
     private final ArrayList<SemSubjects> minor_subjects;
@@ -29,12 +29,12 @@ public final /* data */ class SemesterList {
         return semesterList.copy(str, str2, arrayList, arrayList2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSeme_pos() {
         return this.seme_pos;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSgpa() {
         return this.sgpa;
     }

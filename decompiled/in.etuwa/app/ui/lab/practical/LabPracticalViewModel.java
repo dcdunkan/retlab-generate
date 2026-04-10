@@ -19,10 +19,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LabPracticalViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LabPracticalViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LabPracticalViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private final LabRepository labRepository;
     private MutableLiveData<Resource<ArrayList<Practical>>> practicalResponse;
     private MutableLiveData<Resource<ArrayList<Semester>>> semResponse;
@@ -33,14 +34,22 @@ public final class LabPracticalViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.practicalResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getSemester();
     }
 
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.labRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.labRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel.getSemester.1
             {
                 super(1);
             }
@@ -51,20 +60,18 @@ public final class LabPracticalViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LabPracticalViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                LabPracticalViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LabPracticalViewModel.getSemester$lambda$0(Function1.this, obj);
+                LabPracticalViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel.getSemester.2
             {
                 super(1);
             }
@@ -75,17 +82,15 @@ public final class LabPracticalViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LabPracticalViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                LabPracticalViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LabPracticalViewModel.getSemester$lambda$1(Function1.this, obj);
+                LabPracticalViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -110,8 +115,8 @@ public final class LabPracticalViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(semId, "semId");
         this.practicalResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Practical>> observeOn = this.labRepository.getPracticalsApiCall(new AttendanceRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Practical>, Unit> function1 = new Function1<ArrayList<Practical>, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$getPractical$1
+        Single<ArrayList<Practical>> singleObserveOn = this.labRepository.getPracticalsApiCall(new AttendanceRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Practical>, Unit> function1 = new Function1<ArrayList<Practical>, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel.getPractical.1
             {
                 super(1);
             }
@@ -122,20 +127,18 @@ public final class LabPracticalViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Practical> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LabPracticalViewModel.this.practicalResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                LabPracticalViewModel.this.practicalResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Practical>> consumer = new Consumer() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LabPracticalViewModel.getPractical$lambda$2(Function1.this, obj);
+                LabPracticalViewModel.getPractical$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$getPractical$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel.getPractical.2
             {
                 super(1);
             }
@@ -146,17 +149,15 @@ public final class LabPracticalViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LabPracticalViewModel.this.practicalResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                LabPracticalViewModel.this.practicalResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.lab.practical.LabPracticalViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LabPracticalViewModel.getPractical$lambda$3(Function1.this, obj);
+                LabPracticalViewModel.getPractical$lambda$3(function12, obj);
             }
         }));
     }

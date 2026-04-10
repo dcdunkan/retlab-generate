@@ -17,13 +17,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ModuleTestViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ModuleTestViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ModuleTestViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<SuccessResponse>> deleteResponse;
     private final ExamRepository examRepository;
     private MutableLiveData<Resource<ModuleTestResponse>> examResponse;
+    private boolean isDataLoaded;
 
     public ModuleTestViewModel(ExamRepository examRepository) {
         Intrinsics.checkNotNullParameter(examRepository, "examRepository");
@@ -31,7 +32,7 @@ public final class ModuleTestViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.examResponse = new MutableLiveData<>();
         this.deleteResponse = new MutableLiveData<>();
-        getExams();
+        loadDataIfNeeded();
     }
 
     public final MutableLiveData<Resource<SuccessResponse>> getDeleteResponse() {
@@ -43,11 +44,19 @@ public final class ModuleTestViewModel extends ViewModel {
         this.deleteResponse = mutableLiveData;
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getExams();
+    }
+
     public final void getExams() {
         this.examResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ModuleTestResponse> observeOn = this.examRepository.getModuleTestApiCall("new").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ModuleTestResponse, Unit> function1 = new Function1<ModuleTestResponse, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$getExams$1
+        Single<ModuleTestResponse> singleObserveOn = this.examRepository.getModuleTestApiCall("new").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ModuleTestResponse, Unit> function1 = new Function1<ModuleTestResponse, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel.getExams.1
             {
                 super(1);
             }
@@ -58,20 +67,18 @@ public final class ModuleTestViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ModuleTestResponse moduleTestResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ModuleTestViewModel.this.examResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(moduleTestResponse));
+                ModuleTestViewModel.this.examResponse.postValue(Resource.INSTANCE.success(moduleTestResponse));
             }
         };
         Consumer<? super ModuleTestResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ModuleTestViewModel.getExams$lambda$0(Function1.this, obj);
+                ModuleTestViewModel.getExams$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$getExams$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel.getExams.2
             {
                 super(1);
             }
@@ -82,17 +89,15 @@ public final class ModuleTestViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ModuleTestViewModel.this.examResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ModuleTestViewModel.this.examResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ModuleTestViewModel.getExams$lambda$1(Function1.this, obj);
+                ModuleTestViewModel.getExams$lambda$1(function12, obj);
             }
         }));
     }
@@ -117,8 +122,8 @@ public final class ModuleTestViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.examRepository.deleteModuleTestApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$deleteExam$1
+        Single<SuccessResponse> singleObserveOn = this.examRepository.deleteModuleTestApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel.deleteExam.1
             {
                 super(1);
             }
@@ -129,7 +134,7 @@ public final class ModuleTestViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 ModuleTestViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -137,10 +142,10 @@ public final class ModuleTestViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ModuleTestViewModel.deleteExam$lambda$2(Function1.this, obj);
+                ModuleTestViewModel.deleteExam$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$deleteExam$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel.deleteExam.2
             {
                 super(1);
             }
@@ -151,15 +156,15 @@ public final class ModuleTestViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 ModuleTestViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.exam.module.ModuleTestViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ModuleTestViewModel.deleteExam$lambda$3(Function1.this, obj);
+                ModuleTestViewModel.deleteExam$lambda$3(function12, obj);
             }
         }));
     }

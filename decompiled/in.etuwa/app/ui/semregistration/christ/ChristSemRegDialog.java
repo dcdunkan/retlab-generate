@@ -55,11 +55,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ChristSemRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ChristSemRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ChristSemRegDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogChristSemRegBinding _binding;
     private String academics;
@@ -72,7 +72,7 @@ public final class ChristSemRegDialog extends BaseDialog {
     private String busDetails;
     private boolean cgpaClicked;
 
-    /* renamed from: christSemRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: christSemRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy christSemRegViewModel;
     private String dept;
     private String deptDetails;
@@ -93,24 +93,24 @@ public final class ChristSemRegDialog extends BaseDialog {
     private AddCounsellingListener listener;
     private String minor;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private boolean prevSemClicked;
     private String reg;
     private String regDetails;
     private String sem;
 
-    /* renamed from: spinnerSem$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerSem$delegate, reason: from kotlin metadata */
     private final Lazy spinnerSem;
     private boolean supplyClicked;
 
-    /* compiled from: ChristSemRegDialog.kt */
+    /* JADX INFO: compiled from: ChristSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/semregistration/christ/ChristSemRegDialog$AddCounsellingListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddCounsellingListener {
         void dismiss();
     }
 
-    /* compiled from: ChristSemRegDialog.kt */
+    /* JADX INFO: compiled from: ChristSemRegDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -160,7 +160,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return christSemRegDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(christSemRegDialog);
@@ -174,7 +174,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -187,7 +187,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ChristSemRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ChristSemRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ChristSemRegDialog christSemRegDialog2 = this;
@@ -234,7 +234,7 @@ public final class ChristSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(ChristSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -259,7 +259,7 @@ public final class ChristSemRegDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogChristSemRegBinding get_binding() {
         return this._binding;
     }
@@ -274,7 +274,7 @@ public final class ChristSemRegDialog extends BaseDialog {
         return (SemesterSpinnerAdapter) this.spinnerSem.getValue();
     }
 
-    /* compiled from: ChristSemRegDialog.kt */
+    /* JADX INFO: compiled from: ChristSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/semregistration/christ/ChristSemRegDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/christ/ChristSemRegDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -349,7 +349,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             radioGroup7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda0
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup8, int i) {
-                    ChristSemRegDialog.setUp$lambda$0(ChristSemRegDialog.this, radioGroup8, i);
+                    ChristSemRegDialog.setUp$lambda$0(this.f$0, radioGroup8, i);
                 }
             });
         }
@@ -358,7 +358,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda1
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup8, int i) {
-                    ChristSemRegDialog.setUp$lambda$1(ChristSemRegDialog.this, radioGroup8, i);
+                    ChristSemRegDialog.setUp$lambda$1(this.f$0, radioGroup8, i);
                 }
             });
         }
@@ -367,7 +367,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda2
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup8, int i) {
-                    ChristSemRegDialog.setUp$lambda$2(ChristSemRegDialog.this, radioGroup8, i);
+                    ChristSemRegDialog.setUp$lambda$2(this.f$0, radioGroup8, i);
                 }
             });
         }
@@ -376,7 +376,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda3
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup8, int i) {
-                    ChristSemRegDialog.setUp$lambda$3(ChristSemRegDialog.this, radioGroup8, i);
+                    ChristSemRegDialog.setUp$lambda$3(this.f$0, radioGroup8, i);
                 }
             });
         }
@@ -385,7 +385,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda4
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup8, int i) {
-                    ChristSemRegDialog.setUp$lambda$4(ChristSemRegDialog.this, radioGroup8, i);
+                    ChristSemRegDialog.setUp$lambda$4(this.f$0, radioGroup8, i);
                 }
             });
         }
@@ -394,7 +394,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda5
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup8, int i) {
-                    ChristSemRegDialog.setUp$lambda$5(ChristSemRegDialog.this, radioGroup8, i);
+                    ChristSemRegDialog.setUp$lambda$5(this.f$0, radioGroup8, i);
                 }
             });
         }
@@ -403,7 +403,7 @@ public final class ChristSemRegDialog extends BaseDialog {
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda6
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup8, int i) {
-                    ChristSemRegDialog.setUp$lambda$6(ChristSemRegDialog.this, radioGroup8, i);
+                    ChristSemRegDialog.setUp$lambda$6(this.f$0, radioGroup8, i);
                 }
             });
         }
@@ -412,43 +412,31 @@ public final class ChristSemRegDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChristSemRegDialog.setUp$lambda$7(ChristSemRegDialog.this, view);
+                    ChristSemRegDialog.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
         DialogChristSemRegBinding dialogChristSemRegBinding11 = get_binding();
         Spinner spinner3 = dialogChristSemRegBinding11 != null ? dialogChristSemRegBinding11.spinnerSemesterLastAttended : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$setUp$9
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog.setUp.9
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerSem;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerSem2;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerSem3;
-                    DialogChristSemRegBinding dialogChristSemRegBinding12;
                     Spinner spinner4;
                     ChristSemRegDialog christSemRegDialog = ChristSemRegDialog.this;
-                    spinnerSem = christSemRegDialog.getSpinnerSem();
-                    christSemRegDialog.sem = spinnerSem.getSemester(position).getId();
-                    z = ChristSemRegDialog.this.flag;
-                    if (z) {
+                    christSemRegDialog.sem = christSemRegDialog.getSpinnerSem().getSemester(position).getId();
+                    if (ChristSemRegDialog.this.flag) {
                         return;
                     }
                     ChristSemRegDialog.this.flag = true;
-                    spinnerSem2 = ChristSemRegDialog.this.getSpinnerSem();
-                    int count = spinnerSem2.getCount();
+                    int count = ChristSemRegDialog.this.getSpinnerSem().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = ChristSemRegDialog.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerSem3 = ChristSemRegDialog.this.getSpinnerSem();
-                        if (Intrinsics.areEqual(userSemId, spinnerSem3.getSemester(i).getId())) {
-                            dialogChristSemRegBinding12 = ChristSemRegDialog.this.get_binding();
+                        if (Intrinsics.areEqual(ChristSemRegDialog.this.getPreference().getUserSemId(), ChristSemRegDialog.this.getSpinnerSem().getSemester(i).getId())) {
+                            DialogChristSemRegBinding dialogChristSemRegBinding12 = ChristSemRegDialog.this.get_binding();
                             if (dialogChristSemRegBinding12 == null || (spinner4 = dialogChristSemRegBinding12.spinnerSemesterLastAttended) == null) {
                                 return;
                             }
@@ -466,7 +454,7 @@ public final class ChristSemRegDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChristSemRegDialog.setUp$lambda$8(ChristSemRegDialog.this, view);
+                ChristSemRegDialog.setUp$lambda$8(this.f$0, view);
             }
         });
     }
@@ -692,63 +680,64 @@ public final class ChristSemRegDialog extends BaseDialog {
         TextInputEditText textInputEditText5;
         TextInputEditText textInputEditText6;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = new HashMap();
-        hashMap.clear();
-        HashMap hashMap2 = hashMap;
-        hashMap2.put("SemesterRegistration[semester_id]", this$0.sem);
-        hashMap2.put("SemesterRegistration[department_due]", this$0.dept);
-        Editable editable = null;
+        HashMap map = new HashMap();
+        map.clear();
+        HashMap map2 = map;
+        map2.put("SemesterRegistration[semester_id]", this$0.sem);
+        map2.put("SemesterRegistration[department_due]", this$0.dept);
+        Editable text = null;
         if (Intrinsics.areEqual(this$0.dept, "Yes")) {
             DialogChristSemRegBinding dialogChristSemRegBinding = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[department_due_details]", String.valueOf((dialogChristSemRegBinding == null || (textInputEditText6 = dialogChristSemRegBinding.etDeptDetails) == null) ? null : textInputEditText6.getText()));
+            map2.put("SemesterRegistration[department_due_details]", String.valueOf((dialogChristSemRegBinding == null || (textInputEditText6 = dialogChristSemRegBinding.etDeptDetails) == null) ? null : textInputEditText6.getText()));
         } else {
-            hashMap2.put("SemesterRegistration[department_due_details]", "");
+            map2.put("SemesterRegistration[department_due_details]", "");
         }
-        hashMap2.put("SemesterRegistration[library_due]", this$0.library);
+        map2.put("SemesterRegistration[library_due]", this$0.library);
         if (Intrinsics.areEqual(this$0.library, "Yes")) {
             DialogChristSemRegBinding dialogChristSemRegBinding2 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[librarary_due_details]", String.valueOf((dialogChristSemRegBinding2 == null || (textInputEditText5 = dialogChristSemRegBinding2.etLibraryDetails) == null) ? null : textInputEditText5.getText()));
+            map2.put("SemesterRegistration[librarary_due_details]", String.valueOf((dialogChristSemRegBinding2 == null || (textInputEditText5 = dialogChristSemRegBinding2.etLibraryDetails) == null) ? null : textInputEditText5.getText()));
         } else {
-            hashMap2.put("SemesterRegistration[librarary_due_details]", "");
+            map2.put("SemesterRegistration[librarary_due_details]", "");
         }
-        hashMap2.put("SemesterRegistration[accounts_due]", this$0.accounts);
+        map2.put("SemesterRegistration[accounts_due]", this$0.accounts);
         if (Intrinsics.areEqual(this$0.accounts, "Yes")) {
             DialogChristSemRegBinding dialogChristSemRegBinding3 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[accounts_due_details]", String.valueOf((dialogChristSemRegBinding3 == null || (textInputEditText4 = dialogChristSemRegBinding3.etAccountsDetails) == null) ? null : textInputEditText4.getText()));
+            map2.put("SemesterRegistration[accounts_due_details]", String.valueOf((dialogChristSemRegBinding3 == null || (textInputEditText4 = dialogChristSemRegBinding3.etAccountsDetails) == null) ? null : textInputEditText4.getText()));
         } else {
-            hashMap2.put("SemesterRegistration[accounts_due_details]", "");
+            map2.put("SemesterRegistration[accounts_due_details]", "");
         }
-        hashMap2.put("SemesterRegistration[academic_due]", this$0.academics);
+        map2.put("SemesterRegistration[academic_due]", this$0.academics);
         if (Intrinsics.areEqual(this$0.academics, "Yes")) {
             DialogChristSemRegBinding dialogChristSemRegBinding4 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[academic_due_details]", String.valueOf((dialogChristSemRegBinding4 == null || (textInputEditText3 = dialogChristSemRegBinding4.etAcademicDetails) == null) ? null : textInputEditText3.getText()));
+            map2.put("SemesterRegistration[academic_due_details]", String.valueOf((dialogChristSemRegBinding4 == null || (textInputEditText3 = dialogChristSemRegBinding4.etAcademicDetails) == null) ? null : textInputEditText3.getText()));
         } else {
-            hashMap2.put("SemesterRegistration[academic_due_details]", "");
+            map2.put("SemesterRegistration[academic_due_details]", "");
         }
-        hashMap2.put("SemesterRegistration[hostel_due]", this$0.hostel);
+        map2.put("SemesterRegistration[hostel_due]", this$0.hostel);
         if (Intrinsics.areEqual(this$0.hostel, "Yes")) {
             DialogChristSemRegBinding dialogChristSemRegBinding5 = this$0.get_binding();
-            hashMap2.put("SemesterRegistration[hostel_due_details]", String.valueOf((dialogChristSemRegBinding5 == null || (textInputEditText2 = dialogChristSemRegBinding5.etHostelDetails) == null) ? null : textInputEditText2.getText()));
+            map2.put("SemesterRegistration[hostel_due_details]", String.valueOf((dialogChristSemRegBinding5 == null || (textInputEditText2 = dialogChristSemRegBinding5.etHostelDetails) == null) ? null : textInputEditText2.getText()));
         } else {
-            hashMap2.put("SemesterRegistration[hostel_due_details]", "");
+            map2.put("SemesterRegistration[hostel_due_details]", "");
         }
-        hashMap2.put("SemesterRegistration[bus_due]", this$0.bus);
+        map2.put("SemesterRegistration[bus_due]", this$0.bus);
         if (Intrinsics.areEqual(this$0.bus, "Yes")) {
             DialogChristSemRegBinding dialogChristSemRegBinding6 = this$0.get_binding();
             if (dialogChristSemRegBinding6 != null && (textInputEditText = dialogChristSemRegBinding6.etBusDetails) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            hashMap2.put("SemesterRegistration[bus_due_details]", String.valueOf(editable));
+            map2.put("SemesterRegistration[bus_due_details]", String.valueOf(text));
         } else {
-            hashMap2.put("SemesterRegistration[bus_due_details]", "");
+            map2.put("SemesterRegistration[bus_due_details]", "");
         }
-        this$0.getChristSemRegViewModel().getAddData(hashMap2);
+        this$0.getChristSemRegViewModel().getAddData(map2);
     }
 
     private final void listenAddResponse() {
-        getChristSemRegViewModel().getResponse().observe(getViewLifecycleOwner(), new ChristSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$listenAddResponse$1
+        getChristSemRegViewModel().getResponse().observe(getViewLifecycleOwner(), new ChristSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog.listenAddResponse.1
 
-            /* compiled from: ChristSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$listenAddResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ChristSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -785,11 +774,9 @@ public final class ChristSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SemRegSuccessResponse> resource) {
-                DialogChristSemRegBinding dialogChristSemRegBinding;
                 TextView registerBtn;
-                DialogChristSemRegBinding dialogChristSemRegBinding2;
                 TextView registerBtn2;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -812,7 +799,7 @@ public final class ChristSemRegDialog extends BaseDialog {
                 if (data != null) {
                     ChristSemRegDialog christSemRegDialog = ChristSemRegDialog.this;
                     if (!data.getSuccess() || !data.getLogin()) {
-                        dialogChristSemRegBinding = christSemRegDialog.get_binding();
+                        DialogChristSemRegBinding dialogChristSemRegBinding = christSemRegDialog.get_binding();
                         if (dialogChristSemRegBinding == null || (registerBtn = dialogChristSemRegBinding.registerBtn) == null) {
                             return;
                         }
@@ -820,7 +807,7 @@ public final class ChristSemRegDialog extends BaseDialog {
                         ToastExtKt.showErrorToast(registerBtn, "Something Went Wrong");
                         return;
                     }
-                    dialogChristSemRegBinding2 = christSemRegDialog.get_binding();
+                    DialogChristSemRegBinding dialogChristSemRegBinding2 = christSemRegDialog.get_binding();
                     if (dialogChristSemRegBinding2 == null || (registerBtn2 = dialogChristSemRegBinding2.registerBtn) == null) {
                         return;
                     }
@@ -835,7 +822,7 @@ public final class ChristSemRegDialog extends BaseDialog {
         getChristSemRegViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.christ.ChristSemRegDialog$$ExternalSyntheticLambda9
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ChristSemRegDialog.listenSemResponse$lambda$10(ChristSemRegDialog.this, (Resource) obj);
+                ChristSemRegDialog.listenSemResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }

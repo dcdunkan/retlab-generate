@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ReplyViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ReplyViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ReplyViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> composeResponse;
     private final CompositeDisposable compositeDisposable;
@@ -35,8 +35,8 @@ public final class ReplyViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(message, "message");
         this.composeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.msgRepository.composeMsgApiCall(new ReplyRequest(toId, selfId, message)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.message.reply.ReplyViewModel$composeMsg$1
+        Single<SuccessResponse> singleObserveOn = this.msgRepository.composeMsgApiCall(new ReplyRequest(toId, selfId, message)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.message.reply.ReplyViewModel.composeMsg.1
             {
                 super(1);
             }
@@ -47,20 +47,18 @@ public final class ReplyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReplyViewModel.this.composeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                ReplyViewModel.this.composeResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.message.reply.ReplyViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReplyViewModel.composeMsg$lambda$0(Function1.this, obj);
+                ReplyViewModel.composeMsg$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.message.reply.ReplyViewModel$composeMsg$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.message.reply.ReplyViewModel.composeMsg.2
             {
                 super(1);
             }
@@ -71,17 +69,15 @@ public final class ReplyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReplyViewModel.this.composeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ReplyViewModel.this.composeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.message.reply.ReplyViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.message.reply.ReplyViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReplyViewModel.composeMsg$lambda$1(Function1.this, obj);
+                ReplyViewModel.composeMsg$lambda$1(function12, obj);
             }
         }));
     }

@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subject.coverage.SubjectCoverageViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class SubjectCoverageFragmentBindingImpl extends SubjectCoverageFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -66,7 +66,7 @@ public class SubjectCoverageFragmentBindingImpl extends SubjectCoverageFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (210 != variableId) {
+        if (212 != variableId) {
             return false;
         }
         setSubjectCoverageViewModel((SubjectCoverageViewModel) variable);

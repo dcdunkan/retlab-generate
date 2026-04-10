@@ -17,13 +17,13 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CoursesAttendedAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CoursesAttendedAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CoursesAttendedAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<CoursesAttended> coursesAttended = new ArrayList<>();
     private CoursesListener listener;
 
-    /* compiled from: CoursesAttendedAdapter.kt */
+    /* JADX INFO: compiled from: CoursesAttendedAdapter.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0005H&J\u0018\u0010\t\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\u0005H&J@\u0010\f\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u0005H&¨\u0006\u0013"}, d2 = {"Lin/etuwa/app/ui/profile/coursesattended/CoursesAttendedAdapter$CoursesListener;", "", "checkFileExistence", "", "fileName", "", "deleteBtnClicked", "", "id", "downloadFile", "url", CommonCssConstants.POSITION, "editBtnClicked", "name", "organised", TypedValues.TransitionType.S_DURATION, "achievements", "fromDate", "toDate", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CoursesListener {
         boolean checkFileExistence(String fileName);
@@ -39,18 +39,18 @@ public final class CoursesAttendedAdapter extends RecyclerView.Adapter<BaseViewH
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_courses_attended, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …_attended, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_courses_attended, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …_attended, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -66,7 +66,7 @@ public final class CoursesAttendedAdapter extends RecyclerView.Adapter<BaseViewH
         return !this.coursesAttended.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: CoursesAttendedAdapter.kt */
+    /* JADX INFO: compiled from: CoursesAttendedAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0011\u001a\u00020\u0012H\u0014J\u0010\u0010\u0013\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u0015H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lin/etuwa/app/ui/profile/coursesattended/CoursesAttendedAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/profile/coursesattended/CoursesAttendedAdapter;Landroid/view/View;)V", "academicYear", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "achievements", "deleteBtn", "durationTv", "editBtn", "fromDate", "organisedBy", "title", "toDate", "viewBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView academicYear;
@@ -127,7 +127,7 @@ public final class CoursesAttendedAdapter extends RecyclerView.Adapter<BaseViewH
                     textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedAdapter$ViewHolder$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            CoursesAttendedAdapter.ViewHolder.onBind$lambda$0(CoursesAttendedAdapter.this, coursesAttended, view);
+                            CoursesAttendedAdapter.ViewHolder.onBind$lambda$0(coursesAttendedAdapter, coursesAttended, view);
                         }
                     });
                 }
@@ -137,7 +137,7 @@ public final class CoursesAttendedAdapter extends RecyclerView.Adapter<BaseViewH
                     textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedAdapter$ViewHolder$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            CoursesAttendedAdapter.ViewHolder.onBind$lambda$1(CoursesAttendedAdapter.this, coursesAttended, view);
+                            CoursesAttendedAdapter.ViewHolder.onBind$lambda$1(coursesAttendedAdapter2, coursesAttended, view);
                         }
                     });
                 }
@@ -147,7 +147,7 @@ public final class CoursesAttendedAdapter extends RecyclerView.Adapter<BaseViewH
                     textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedAdapter$ViewHolder$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            CoursesAttendedAdapter.ViewHolder.onBind$lambda$2(CoursesAttendedAdapter.this, coursesAttended, view);
+                            CoursesAttendedAdapter.ViewHolder.onBind$lambda$2(coursesAttendedAdapter3, coursesAttended, view);
                         }
                     });
                 }

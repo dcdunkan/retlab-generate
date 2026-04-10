@@ -20,8 +20,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: BankDetailsViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: BankDetailsViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class BankDetailsViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final DashRepository dashRepository;
@@ -44,8 +44,8 @@ public final class BankDetailsViewModel extends ViewModel implements KoinCompone
     public final void getDashData() {
         this.dashResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ProfileResponse> observeOn = this.dashRepository.getProfileApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ProfileResponse, Unit> function1 = new Function1<ProfileResponse, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$getDashData$1
+        Single<ProfileResponse> singleObserveOn = this.dashRepository.getProfileApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ProfileResponse, Unit> function1 = new Function1<ProfileResponse, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel.getDashData.1
             {
                 super(1);
             }
@@ -56,20 +56,18 @@ public final class BankDetailsViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ProfileResponse profileResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = BankDetailsViewModel.this.dashResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(profileResponse));
+                BankDetailsViewModel.this.dashResponse.postValue(Resource.INSTANCE.success(profileResponse));
             }
         };
         Consumer<? super ProfileResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BankDetailsViewModel.getDashData$lambda$0(Function1.this, obj);
+                BankDetailsViewModel.getDashData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$getDashData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel.getDashData.2
             {
                 super(1);
             }
@@ -80,17 +78,15 @@ public final class BankDetailsViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = BankDetailsViewModel.this.dashResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                BankDetailsViewModel.this.dashResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BankDetailsViewModel.getDashData$lambda$1(Function1.this, obj);
+                BankDetailsViewModel.getDashData$lambda$1(function12, obj);
             }
         }));
     }
@@ -115,8 +111,8 @@ public final class BankDetailsViewModel extends ViewModel implements KoinCompone
         Intrinsics.checkNotNullParameter(studentDetails, "studentDetails");
         this.updateResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.dashRepository.updateBankDetailsApiCall(studentDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$getUpdateData$1
+        Single<SuccessResponse> singleObserveOn = this.dashRepository.updateBankDetailsApiCall(studentDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel.getUpdateData.1
             {
                 super(1);
             }
@@ -127,20 +123,18 @@ public final class BankDetailsViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = BankDetailsViewModel.this.updateResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                BankDetailsViewModel.this.updateResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BankDetailsViewModel.getUpdateData$lambda$2(Function1.this, obj);
+                BankDetailsViewModel.getUpdateData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$getUpdateData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel.getUpdateData.2
             {
                 super(1);
             }
@@ -151,17 +145,15 @@ public final class BankDetailsViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = BankDetailsViewModel.this.updateResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                BankDetailsViewModel.this.updateResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.bankdetails.BankDetailsViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                BankDetailsViewModel.getUpdateData$lambda$3(Function1.this, obj);
+                BankDetailsViewModel.getUpdateData$lambda$3(function12, obj);
             }
         }));
     }

@@ -8,8 +8,8 @@ import in.etuwa.app.ui.leave.duty.fullday.FullDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Placement.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Placement.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Placement {
     private boolean btn;
     private final String date;
@@ -52,37 +52,37 @@ public final /* data */ class Placement {
         return placement.copy(str, str7, str8, str9, str10, str11, z);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDescription() {
         return this.description;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getLastDate() {
         return this.lastDate;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getBtn() {
         return this.btn;
     }
@@ -109,14 +109,17 @@ public final /* data */ class Placement {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v11, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v13 */
     public int hashCode() {
-        int hashCode = ((((((((((this.id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.date.hashCode()) * 31) + this.lastDate.hashCode()) * 31) + this.status.hashCode()) * 31;
+        int iHashCode = ((((((((((this.id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.date.hashCode()) * 31) + this.lastDate.hashCode()) * 31) + this.status.hashCode()) * 31;
         boolean z = this.btn;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return hashCode + i;
+        return iHashCode + r1;
     }
 
     public String toString() {

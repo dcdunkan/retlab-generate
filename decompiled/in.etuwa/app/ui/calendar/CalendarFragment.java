@@ -21,7 +21,6 @@ import in.etuwa.app.data.model.calendar.CalendarResponse;
 import in.etuwa.app.data.preference.SharedPrefManager;
 import in.etuwa.app.databinding.FragmentCalendarBinding;
 import in.etuwa.app.ui.base.BaseFragment;
-import in.etuwa.app.ui.calendar.CalendarFragment;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
 import in.etuwa.app.utils.ToastExtKt;
@@ -49,24 +48,24 @@ import ru.cleverpumpkin.calendar.CalendarDate;
 import ru.cleverpumpkin.calendar.CalendarView;
 import ru.cleverpumpkin.calendar.extension.ContextExtenisonKt;
 
-/* compiled from: CalendarFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CalendarFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CalendarFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentCalendarBinding _binding;
     private Calendar calendar;
 
-    /* renamed from: calendarViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: calendarViewModel$delegate, reason: from kotlin metadata */
     private final Lazy calendarViewModel;
     private final Integer[] color;
     private final List<CalendarView.DateIndicator> indicators;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: CalendarFragment.kt */
+    /* JADX INFO: compiled from: CalendarFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -124,7 +123,7 @@ public final class CalendarFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return calendarFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(calendarFragment);
@@ -138,7 +137,7 @@ public final class CalendarFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -151,7 +150,7 @@ public final class CalendarFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CalendarViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CalendarViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.indicators = new ArrayList();
@@ -180,7 +179,7 @@ public final class CalendarFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentCalendarBinding get_binding() {
         return this._binding;
     }
@@ -193,7 +192,7 @@ public final class CalendarFragment extends BaseFragment {
         return this.color;
     }
 
-    /* compiled from: CalendarFragment.kt */
+    /* JADX INFO: compiled from: CalendarFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/calendar/CalendarFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/calendar/CalendarFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -309,7 +308,7 @@ public final class CalendarFragment extends BaseFragment {
         if (calendarView2 == null) {
             return;
         }
-        calendarView2.setOnDateClickListener(new Function1<CalendarDate, Unit>() { // from class: in.etuwa.app.ui.calendar.CalendarFragment$setUp$1
+        calendarView2.setOnDateClickListener(new Function1<CalendarDate, Unit>() { // from class: in.etuwa.app.ui.calendar.CalendarFragment.setUp.1
             {
                 super(1);
             }
@@ -320,33 +319,32 @@ public final class CalendarFragment extends BaseFragment {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CalendarDate date) {
-                FragmentCalendarBinding fragmentCalendarBinding3;
-                CalendarFragment.CalendarDateIndicator[] calendarDateIndicatorArr;
+                CalendarDateIndicator[] calendarDateIndicatorArr;
                 CalendarView calendarView3;
                 List<CalendarView.DateIndicator> dateIndicators;
                 Intrinsics.checkNotNullParameter(date, "date");
-                fragmentCalendarBinding3 = CalendarFragment.this.get_binding();
+                FragmentCalendarBinding fragmentCalendarBinding3 = CalendarFragment.this.get_binding();
                 if (fragmentCalendarBinding3 == null || (calendarView3 = fragmentCalendarBinding3.calendarView) == null || (dateIndicators = calendarView3.getDateIndicators(date)) == null) {
                     calendarDateIndicatorArr = null;
                 } else {
                     ArrayList arrayList2 = new ArrayList();
                     for (Object obj : dateIndicators) {
-                        if (obj instanceof CalendarFragment.CalendarDateIndicator) {
+                        if (obj instanceof CalendarDateIndicator) {
                             arrayList2.add(obj);
                         }
                     }
-                    calendarDateIndicatorArr = (CalendarFragment.CalendarDateIndicator[]) arrayList2.toArray(new CalendarFragment.CalendarDateIndicator[0]);
+                    calendarDateIndicatorArr = (CalendarDateIndicator[]) arrayList2.toArray(new CalendarDateIndicator[0]);
                 }
                 if (calendarDateIndicatorArr != null) {
                     if (!(calendarDateIndicatorArr.length == 0)) {
                         AlertDialog.Builder title = new AlertDialog.Builder(CalendarFragment.this.requireContext()).setTitle(String.valueOf(date));
-                        Context requireContext = CalendarFragment.this.requireContext();
-                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                        AlertDialog create = title.setAdapter(new DateIndicatorsDialogAdapter(requireContext, calendarDateIndicatorArr), null).create();
-                        Intrinsics.checkNotNullExpressionValue(create, "builder.create()");
-                        create.show();
+                        Context contextRequireContext = CalendarFragment.this.requireContext();
+                        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                        AlertDialog alertDialogCreate = title.setAdapter(new DateIndicatorsDialogAdapter(contextRequireContext, calendarDateIndicatorArr), null).create();
+                        Intrinsics.checkNotNullExpressionValue(alertDialogCreate, "builder.create()");
+                        alertDialogCreate.show();
                     }
                 }
             }
@@ -357,7 +355,7 @@ public final class CalendarFragment extends BaseFragment {
         getCalendarViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.calendar.CalendarFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CalendarFragment.listenResponse$lambda$3(CalendarFragment.this, (Resource) obj);
+                CalendarFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -404,13 +402,13 @@ public final class CalendarFragment extends BaseFragment {
                 loop0: while (true) {
                     int i2 = 0;
                     for (in.etuwa.app.data.model.calendar.Calendar calendar : calendarResponse2.getData()) {
-                        List split$default = StringsKt.split$default((CharSequence) calendar.getDate(), new String[]{HelpFormatter.DEFAULT_OPT_PREFIX}, false, 0, 6, (Object) null);
+                        List listSplit$default = StringsKt.split$default((CharSequence) calendar.getDate(), new String[]{HelpFormatter.DEFAULT_OPT_PREFIX}, false, 0, 6, (Object) null);
                         Calendar calendar2 = this$0.calendar;
                         if (calendar2 == null) {
                             Intrinsics.throwUninitializedPropertyAccessException("calendar");
                             calendar2 = null;
                         }
-                        calendar2.set(Integer.parseInt(StringsKt.trim((CharSequence) split$default.get(0)).toString()), Integer.parseInt(StringsKt.trim((CharSequence) split$default.get(1)).toString()) - 1, Integer.parseInt(StringsKt.trim((CharSequence) split$default.get(2)).toString()));
+                        calendar2.set(Integer.parseInt(StringsKt.trim((CharSequence) listSplit$default.get(0)).toString()), Integer.parseInt(StringsKt.trim((CharSequence) listSplit$default.get(1)).toString()) - 1, Integer.parseInt(StringsKt.trim((CharSequence) listSplit$default.get(2)).toString()));
                         List<CalendarView.DateIndicator> list = this$0.indicators;
                         Calendar calendar3 = this$0.calendar;
                         if (calendar3 == null) {
@@ -420,9 +418,9 @@ public final class CalendarFragment extends BaseFragment {
                         Date time = calendar3.getTime();
                         Intrinsics.checkNotNullExpressionValue(time, "calendar.time");
                         CalendarDate calendarDate = new CalendarDate(time);
-                        Context requireContext = this$0.requireContext();
-                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                        list.add(new CalendarDateIndicator(calendarDate, ContextExtenisonKt.getColorInt(requireContext, this$0.color[i2].intValue()), calendar.getSubject()));
+                        Context contextRequireContext = this$0.requireContext();
+                        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                        list.add(new CalendarDateIndicator(calendarDate, ContextExtenisonKt.getColorInt(contextRequireContext, this$0.color[i2].intValue()), calendar.getSubject()));
                         if (i2 == 5) {
                             break;
                         } else {
@@ -440,7 +438,7 @@ public final class CalendarFragment extends BaseFragment {
         }
     }
 
-    /* compiled from: CalendarFragment.kt */
+    /* JADX INFO: compiled from: CalendarFragment.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\b\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bR\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/calendar/CalendarFragment$CalendarDateIndicator;", "Lru/cleverpumpkin/calendar/CalendarView$DateIndicator;", "date", "Lru/cleverpumpkin/calendar/CalendarDate;", "color", "", "eventName", "", "(Lru/cleverpumpkin/calendar/CalendarDate;ILjava/lang/String;)V", "getColor", "()I", "getDate", "()Lru/cleverpumpkin/calendar/CalendarDate;", "getEventName", "()Ljava/lang/String;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class CalendarDateIndicator implements CalendarView.DateIndicator {
         private final int color;

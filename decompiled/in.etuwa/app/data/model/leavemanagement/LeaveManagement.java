@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.leavemanagement;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LeaveManagement.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LeaveManagement.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class LeaveManagement {
     private final String allocated_leave;
     private final int balance;
@@ -39,32 +39,32 @@ public final /* data */ class LeaveManagement {
         return leaveManagement.copy(i, str4, str5, str6, i5, i3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getStaff_id() {
         return this.staff_id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getLeave_type() {
         return this.leave_type;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAllocated_leave() {
         return this.allocated_leave;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final int getBalance() {
         return this.balance;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final int getTaken() {
         return this.taken;
     }

@@ -1,23 +1,33 @@
 package in.etuwa.app.ui.analysis;
 
 import android.content.ComponentCallbacks;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
+import com.applandeo.materialcalendarview.utils.CalendarProperties;
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.formatter.IValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
+import in.etuwa.app.data.network.CallBackResponse;
 import in.etuwa.app.data.preference.SharedPrefManager;
+import in.etuwa.app.utils.ToastExtKt;
 import java.util.ArrayList;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -26,16 +36,17 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
+import org.json.JSONArray;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: AcademicProgressFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AcademicProgressFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AcademicProgressFragment extends Fragment {
     public LinearLayout layout;
     public TextView noData;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private ArrayList<BarEntry> entries = new ArrayList<>();
     private ArrayList<String> academic = new ArrayList<>();
@@ -117,20 +128,81 @@ public final class AcademicProgressFragment extends Fragment {
     }
 
     @Override // androidx.fragment.app.Fragment
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(final View view, Bundle savedInstanceState) {
         Intrinsics.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        View findViewById = view.findViewById(R.id.viewNoData);
-        Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.viewNoData)");
-        setNoData((TextView) findViewById);
+        View viewFindViewById = view.findViewById(R.id.viewNoData);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById, "view.findViewById(R.id.viewNoData)");
+        setNoData((TextView) viewFindViewById);
         getNoData().setVisibility(4);
-        View findViewById2 = view.findViewById(R.id.acadamic_layout);
-        Intrinsics.checkNotNullExpressionValue(findViewById2, "view.findViewById(R.id.acadamic_layout)");
-        setLayout((LinearLayout) findViewById2);
+        View viewFindViewById2 = view.findViewById(R.id.acadamic_layout);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById2, "view.findViewById(R.id.acadamic_layout)");
+        setLayout((LinearLayout) viewFindViewById2);
         getPreference().setNewLogin(false);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        new AnalysisTask(contextRequireContext).getAcademic(new CallBackResponse() { // from class: in.etuwa.app.ui.analysis.AcademicProgressFragment.onViewCreated.1
+            @Override // in.etuwa.app.data.network.CallBackResponse
+            public void serverResponse(String response) {
+                Intrinsics.checkNotNullParameter(response, "response");
+                AcademicProgressFragment.this.getAcademic().clear();
+                try {
+                    JSONArray jSONArray = new JSONArray(response);
+                    if (jSONArray.length() == 0) {
+                        AcademicProgressFragment.this.getNoData().setVisibility(0);
+                        AcademicProgressFragment.this.getLayout().setVisibility(8);
+                        return;
+                    }
+                    int length = jSONArray.length();
+                    for (int i = 0; i < length; i++) {
+                        AcademicProgressFragment.this.getAcademic().add(jSONArray.getString(i));
+                    }
+                    BarChart barChart = (BarChart) view.findViewById(R.id.acadamic_progress_chart);
+                    AcademicProgressFragment academicProgressFragment = AcademicProgressFragment.this;
+                    barChart.setData(new BarData(academicProgressFragment.getBarData(academicProgressFragment.getAcademic())));
+                    YAxis axisLeft = barChart.getAxisLeft();
+                    axisLeft.setAxisMinimum(0.0f);
+                    axisLeft.setAxisMaximum(100.0f);
+                    axisLeft.setLabelCount(10);
+                    axisLeft.setDrawTopYLabelEntry(true);
+                    axisLeft.setDrawGridLines(false);
+                    axisLeft.setDrawAxisLine(false);
+                    axisLeft.setValueFormatter(new ValueFormatter() { // from class: in.etuwa.app.ui.analysis.AcademicProgressFragment$onViewCreated$1$serverResponse$1$1
+                        @Override // com.github.mikephil.charting.formatter.ValueFormatter
+                        public String getAxisLabel(float value, AxisBase axis) {
+                            return String.valueOf((int) value);
+                        }
+                    });
+                    YAxis axisRight = barChart.getAxisRight();
+                    axisRight.setDrawLabels(false);
+                    axisRight.setDrawGridLines(false);
+                    axisRight.setDrawZeroLine(false);
+                    axisRight.setDrawTopYLabelEntry(true);
+                    axisRight.setDrawAxisLine(false);
+                    String[] strArr = {"10th", "12th", "1", ExifInterface.GPS_MEASUREMENT_2D, ExifInterface.GPS_MEASUREMENT_3D, "4", "5", "6", "7", "8"};
+                    XAxis xAxis = barChart.getXAxis();
+                    AcademicProgressFragment academicProgressFragment2 = AcademicProgressFragment.this;
+                    xAxis.setValueFormatter(new IndexAxisValueFormatter(strArr));
+                    xAxis.setLabelCount(academicProgressFragment2.getEntries().size());
+                    xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+                    xAxis.setDrawLabels(true);
+                    xAxis.setDrawGridLines(false);
+                    xAxis.setDrawAxisLine(false);
+                    barChart.setDrawValueAboveBar(true);
+                    barChart.getDescription().setEnabled(false);
+                    barChart.setClickable(false);
+                    barChart.getLegend().setEnabled(false);
+                    barChart.setScaleEnabled(false);
+                    barChart.animateY(CalendarProperties.FIRST_VISIBLE_PAGE, Easing.Linear);
+                } catch (Exception unused) {
+                    ToastExtKt.showInfoToast(AcademicProgressFragment.this.getLayout(), "Something Went Wrong");
+                }
+            }
+        });
     }
 
-    private final ArrayList<IBarDataSet> getBarData(ArrayList<String> academic) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final ArrayList<IBarDataSet> getBarData(ArrayList<String> academic) {
         ArrayList<BarEntry> arrayList = new ArrayList<>();
         int size = academic.size();
         for (int i = 0; i < size; i++) {
@@ -140,12 +212,10 @@ public final class AcademicProgressFragment extends Fragment {
         }
         this.entries = arrayList;
         BarDataSet barDataSet = new BarDataSet(this.entries, "bar");
-        barDataSet.setValueFormatter(new IValueFormatter() { // from class: in.etuwa.app.ui.analysis.AcademicProgressFragment$$ExternalSyntheticLambda0
-            @Override // com.github.mikephil.charting.formatter.IValueFormatter
-            public final String getFormattedValue(float f, Entry entry, int i2, ViewPortHandler viewPortHandler) {
-                String barData$lambda$2$lambda$1;
-                barData$lambda$2$lambda$1 = AcademicProgressFragment.getBarData$lambda$2$lambda$1(f, entry, i2, viewPortHandler);
-                return barData$lambda$2$lambda$1;
+        barDataSet.setValueFormatter(new ValueFormatter() { // from class: in.etuwa.app.ui.analysis.AcademicProgressFragment$getBarData$dataSet$1$1
+            @Override // com.github.mikephil.charting.formatter.ValueFormatter
+            public String getFormattedValue(float value) {
+                return String.valueOf((int) value);
             }
         });
         barDataSet.setHighlightEnabled(false);
@@ -153,12 +223,5 @@ public final class AcademicProgressFragment extends Fragment {
         ArrayList<IBarDataSet> arrayList2 = new ArrayList<>();
         arrayList2.add(barDataSet);
         return arrayList2;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final String getBarData$lambda$2$lambda$1(float f, Entry entry, int i, ViewPortHandler viewPortHandler) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(f);
-        return sb.toString();
     }
 }

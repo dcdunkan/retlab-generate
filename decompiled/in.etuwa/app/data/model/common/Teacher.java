@@ -6,8 +6,8 @@ import com.itextpdf.svg.SvgConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Teacher.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Teacher.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Teacher {
 
     @SerializedName("image_url")
@@ -52,27 +52,27 @@ public final /* data */ class Teacher {
         return teacher.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getTeacher() {
         return this.teacher;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPhone() {
         return this.phone;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getMail() {
         return this.mail;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getImage() {
         return this.image;
     }

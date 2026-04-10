@@ -50,28 +50,28 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MessBookingDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MessBookingDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MessBookingDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogMessBookingBinding _binding;
     private BookMessListener listener;
     private int maxQty;
     private String menu;
 
-    /* renamed from: messBookingViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: messBookingViewModel$delegate, reason: from kotlin metadata */
     private final Lazy messBookingViewModel;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
     private String type;
 
-    /* compiled from: MessBookingDialog.kt */
+    /* JADX INFO: compiled from: MessBookingDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/hostel/mess/booknow/MessBookingDialog$BookMessListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface BookMessListener {
         void dismiss();
@@ -104,7 +104,7 @@ public final class MessBookingDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return messBookingDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(messBookingDialog);
@@ -118,7 +118,7 @@ public final class MessBookingDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -131,7 +131,7 @@ public final class MessBookingDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MessBookingViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MessBookingViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.type = "";
@@ -144,7 +144,7 @@ public final class MessBookingDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MessBookingDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -169,7 +169,7 @@ public final class MessBookingDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MessBookingDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -195,7 +195,7 @@ public final class MessBookingDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogMessBookingBinding get_binding() {
         return this._binding;
     }
@@ -210,7 +210,7 @@ public final class MessBookingDialog extends BaseDialog {
         return (MessTypeSpinnerAdapter) this.spinnerAdapter2.getValue();
     }
 
-    /* compiled from: MessBookingDialog.kt */
+    /* JADX INFO: compiled from: MessBookingDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/mess/booknow/MessBookingDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/mess/booknow/MessBookingDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -277,52 +277,39 @@ public final class MessBookingDialog extends BaseDialog {
         DialogMessBookingBinding dialogMessBookingBinding3 = get_binding();
         Spinner spinner3 = dialogMessBookingBinding3 != null ? dialogMessBookingBinding3.spinnerMessMenu : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$setUp$1
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    MessMenuSpinnerAdapter spinnerAdapter;
-                    MessBookingViewModel messBookingViewModel;
-                    String str;
                     MessBookingDialog messBookingDialog = MessBookingDialog.this;
-                    spinnerAdapter = messBookingDialog.getSpinnerAdapter();
-                    messBookingDialog.type = spinnerAdapter.getType(position).getId();
-                    messBookingViewModel = MessBookingDialog.this.getMessBookingViewModel();
-                    str = MessBookingDialog.this.type;
-                    messBookingViewModel.getMessMenuType(str);
+                    messBookingDialog.type = messBookingDialog.getSpinnerAdapter().getType(position).getId();
+                    MessBookingDialog.this.getMessBookingViewModel().getMessMenuType(MessBookingDialog.this.type);
                 }
             });
         }
         DialogMessBookingBinding dialogMessBookingBinding4 = get_binding();
         Spinner spinner4 = dialogMessBookingBinding4 != null ? dialogMessBookingBinding4.spinnerMessType : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$setUp$2
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    MessTypeSpinnerAdapter spinnerAdapter2;
-                    MessTypeSpinnerAdapter spinnerAdapter22;
-                    DialogMessBookingBinding dialogMessBookingBinding5;
                     TextView textView2;
-                    MessTypeSpinnerAdapter spinnerAdapter23;
                     MessBookingDialog messBookingDialog = MessBookingDialog.this;
-                    spinnerAdapter2 = messBookingDialog.getSpinnerAdapter2();
-                    messBookingDialog.menu = spinnerAdapter2.getType(position).getId();
+                    messBookingDialog.menu = messBookingDialog.getSpinnerAdapter2().getType(position).getId();
                     MessBookingDialog messBookingDialog2 = MessBookingDialog.this;
-                    spinnerAdapter22 = messBookingDialog2.getSpinnerAdapter2();
-                    messBookingDialog2.maxQty = Integer.parseInt(spinnerAdapter22.getType(position).getMax_qty());
-                    dialogMessBookingBinding5 = MessBookingDialog.this.get_binding();
+                    messBookingDialog2.maxQty = Integer.parseInt(messBookingDialog2.getSpinnerAdapter2().getType(position).getMax_qty());
+                    DialogMessBookingBinding dialogMessBookingBinding5 = MessBookingDialog.this.get_binding();
                     if (dialogMessBookingBinding5 == null || (textView2 = dialogMessBookingBinding5.maxQtyTv) == null) {
                         return;
                     }
-                    spinnerAdapter23 = MessBookingDialog.this.getSpinnerAdapter2();
-                    textView2.setText("* Max quantity is " + spinnerAdapter23.getType(position).getMax_qty() + ". Extra quantity, extra charges..!!");
+                    textView2.setText("* Max quantity is " + MessBookingDialog.this.getSpinnerAdapter2().getType(position).getMax_qty() + ". Extra quantity, extra charges..!!");
                 }
             });
         }
@@ -333,7 +320,7 @@ public final class MessBookingDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MessBookingDialog.setUp$lambda$0(MessBookingDialog.this, view);
+                MessBookingDialog.setUp$lambda$0(this.f$0, view);
             }
         });
     }
@@ -348,11 +335,11 @@ public final class MessBookingDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogMessBookingBinding dialogMessBookingBinding = this$0.get_binding();
-            Editable editable = null;
-            int parseInt = Integer.parseInt(String.valueOf((dialogMessBookingBinding == null || (textInputEditText3 = dialogMessBookingBinding.messQuantity) == null) ? null : textInputEditText3.getText()));
+            Editable text = null;
+            int i = Integer.parseInt(String.valueOf((dialogMessBookingBinding == null || (textInputEditText3 = dialogMessBookingBinding.messQuantity) == null) ? null : textInputEditText3.getText()));
             DialogMessBookingBinding dialogMessBookingBinding2 = this$0.get_binding();
             if (!Intrinsics.areEqual(String.valueOf((dialogMessBookingBinding2 == null || (textInputEditText2 = dialogMessBookingBinding2.messQuantity) == null) ? null : textInputEditText2.getText()), "") && !Intrinsics.areEqual(this$0.menu, "")) {
-                if (parseInt > this$0.maxQty) {
+                if (i > this$0.maxQty) {
                     this$0.maxQuantityDialog();
                     return;
                 }
@@ -364,9 +351,9 @@ public final class MessBookingDialog extends BaseDialog {
                 String str2 = this$0.menu;
                 DialogMessBookingBinding dialogMessBookingBinding3 = this$0.get_binding();
                 if (dialogMessBookingBinding3 != null && (textInputEditText = dialogMessBookingBinding3.messQuantity) != null) {
-                    editable = textInputEditText.getText();
+                    text = textInputEditText.getText();
                 }
-                messBookingViewModel.getMessBookingResponse(str, str2, String.valueOf(editable));
+                messBookingViewModel.getMessBookingResponse(str, str2, String.valueOf(text));
                 return;
             }
             DialogMessBookingBinding dialogMessBookingBinding4 = this$0.get_binding();
@@ -384,9 +371,10 @@ public final class MessBookingDialog extends BaseDialog {
     }
 
     private final void listenSpinner() {
-        getMessBookingViewModel().getMessTypeResponse().observe(getViewLifecycleOwner(), new MessBookingDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends MessTypeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$listenSpinner$1
+        getMessBookingViewModel().getMessTypeResponse().observe(getViewLifecycleOwner(), new MessBookingDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends MessTypeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog.listenSpinner.1
 
-            /* compiled from: MessBookingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: MessBookingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -423,14 +411,10 @@ public final class MessBookingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<MessTypeResponse> resource) {
-                MessMenuSpinnerAdapter spinnerAdapter;
-                DialogMessBookingBinding dialogMessBookingBinding;
-                DialogMessBookingBinding dialogMessBookingBinding2;
                 TextInputEditText textInputEditText;
                 TextInputEditText textInputEditText2;
-                DialogMessBookingBinding dialogMessBookingBinding3;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -446,8 +430,8 @@ public final class MessBookingDialog extends BaseDialog {
                         return;
                     }
                     MessBookingDialog.this.hideProgress();
-                    dialogMessBookingBinding3 = MessBookingDialog.this.get_binding();
-                    if (dialogMessBookingBinding3 == null || (spinner = dialogMessBookingBinding3.spinnerMessMenu) == null) {
+                    DialogMessBookingBinding dialogMessBookingBinding = MessBookingDialog.this.get_binding();
+                    if (dialogMessBookingBinding == null || (spinner = dialogMessBookingBinding.spinnerMessMenu) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -459,15 +443,14 @@ public final class MessBookingDialog extends BaseDialog {
                 MessTypeResponse data = resource.getData();
                 if (data != null) {
                     MessBookingDialog messBookingDialog = MessBookingDialog.this;
-                    spinnerAdapter = messBookingDialog.getSpinnerAdapter();
-                    spinnerAdapter.addItems(data.getType());
+                    messBookingDialog.getSpinnerAdapter().addItems(data.getType());
                     System.out.println(data.getType());
-                    dialogMessBookingBinding = messBookingDialog.get_binding();
-                    if (dialogMessBookingBinding != null && (textInputEditText2 = dialogMessBookingBinding.etBookingDate) != null) {
+                    DialogMessBookingBinding dialogMessBookingBinding2 = messBookingDialog.get_binding();
+                    if (dialogMessBookingBinding2 != null && (textInputEditText2 = dialogMessBookingBinding2.etBookingDate) != null) {
                         textInputEditText2.setText(data.getData().get(0).getBooking_date());
                     }
-                    dialogMessBookingBinding2 = messBookingDialog.get_binding();
-                    if (dialogMessBookingBinding2 == null || (textInputEditText = dialogMessBookingBinding2.etBookingDay) == null) {
+                    DialogMessBookingBinding dialogMessBookingBinding3 = messBookingDialog.get_binding();
+                    if (dialogMessBookingBinding3 == null || (textInputEditText = dialogMessBookingBinding3.etBookingDay) == null) {
                         return;
                     }
                     textInputEditText.setText(data.getData().get(0).getDay());
@@ -477,9 +460,10 @@ public final class MessBookingDialog extends BaseDialog {
     }
 
     private final void listenSpinner2() {
-        getMessBookingViewModel().getMessMenuResponse().observe(getViewLifecycleOwner(), new MessBookingDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends MessMenuResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$listenSpinner2$1
+        getMessBookingViewModel().getMessMenuResponse().observe(getViewLifecycleOwner(), new MessBookingDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends MessMenuResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog.listenSpinner2.1
 
-            /* compiled from: MessBookingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$listenSpinner2$1$WhenMappings */
+            /* JADX INFO: compiled from: MessBookingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -516,17 +500,11 @@ public final class MessBookingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<MessMenuResponse> resource) {
-                DialogMessBookingBinding dialogMessBookingBinding;
                 TextView bookNowBtn;
-                MessTypeSpinnerAdapter spinnerAdapter2;
-                DialogMessBookingBinding dialogMessBookingBinding2;
                 TextView bookNowBtn2;
-                DialogMessBookingBinding dialogMessBookingBinding3;
-                DialogMessBookingBinding dialogMessBookingBinding4;
                 TextView textView;
-                DialogMessBookingBinding dialogMessBookingBinding5;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -542,8 +520,8 @@ public final class MessBookingDialog extends BaseDialog {
                         return;
                     }
                     MessBookingDialog.this.hideProgress();
-                    dialogMessBookingBinding5 = MessBookingDialog.this.get_binding();
-                    if (dialogMessBookingBinding5 == null || (spinner = dialogMessBookingBinding5.spinnerMessMenu) == null) {
+                    DialogMessBookingBinding dialogMessBookingBinding = MessBookingDialog.this.get_binding();
+                    if (dialogMessBookingBinding == null || (spinner = dialogMessBookingBinding.spinnerMessMenu) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -556,24 +534,23 @@ public final class MessBookingDialog extends BaseDialog {
                 if (data != null) {
                     MessBookingDialog messBookingDialog = MessBookingDialog.this;
                     try {
-                        spinnerAdapter2 = messBookingDialog.getSpinnerAdapter2();
-                        spinnerAdapter2.addItems(data.getItem());
+                        messBookingDialog.getSpinnerAdapter2().addItems(data.getItem());
                         try {
                             messBookingDialog.menu = data.getItem().get(0).getId();
                             messBookingDialog.maxQty = Integer.parseInt(data.getItem().get(0).getMax_qty());
-                            dialogMessBookingBinding3 = messBookingDialog.get_binding();
-                            if (dialogMessBookingBinding3 != null && (textView = dialogMessBookingBinding3.maxQtyTv) != null) {
+                            DialogMessBookingBinding dialogMessBookingBinding2 = messBookingDialog.get_binding();
+                            if (dialogMessBookingBinding2 != null && (textView = dialogMessBookingBinding2.maxQtyTv) != null) {
                                 textView.setText("* Max quantity is " + data.getItem().get(0).getMax_qty() + ". Extra quantity, extra charges..!!");
                             }
-                            dialogMessBookingBinding4 = messBookingDialog.get_binding();
-                            TextView textView2 = dialogMessBookingBinding4 != null ? dialogMessBookingBinding4.maxQtyTv : null;
+                            DialogMessBookingBinding dialogMessBookingBinding3 = messBookingDialog.get_binding();
+                            TextView textView2 = dialogMessBookingBinding3 != null ? dialogMessBookingBinding3.maxQtyTv : null;
                             if (textView2 != null) {
                                 textView2.setVisibility(0);
                             }
                         } catch (IndexOutOfBoundsException unused) {
                             messBookingDialog.menu = "";
-                            dialogMessBookingBinding2 = messBookingDialog.get_binding();
-                            if (dialogMessBookingBinding2 != null && (bookNowBtn2 = dialogMessBookingBinding2.bookNowBtn) != null) {
+                            DialogMessBookingBinding dialogMessBookingBinding4 = messBookingDialog.get_binding();
+                            if (dialogMessBookingBinding4 != null && (bookNowBtn2 = dialogMessBookingBinding4.bookNowBtn) != null) {
                                 Intrinsics.checkNotNullExpressionValue(bookNowBtn2, "bookNowBtn");
                                 ToastExtKt.showErrorToast(bookNowBtn2, "Item has been Disabled..!!");
                             }
@@ -581,8 +558,8 @@ public final class MessBookingDialog extends BaseDialog {
                         System.out.println(data.getItem());
                         Unit unit = Unit.INSTANCE;
                     } catch (NullPointerException unused2) {
-                        dialogMessBookingBinding = messBookingDialog.get_binding();
-                        if (dialogMessBookingBinding == null || (bookNowBtn = dialogMessBookingBinding.bookNowBtn) == null) {
+                        DialogMessBookingBinding dialogMessBookingBinding5 = messBookingDialog.get_binding();
+                        if (dialogMessBookingBinding5 == null || (bookNowBtn = dialogMessBookingBinding5.bookNowBtn) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(bookNowBtn, "bookNowBtn");
@@ -595,9 +572,10 @@ public final class MessBookingDialog extends BaseDialog {
     }
 
     private final void listenBookResponse() {
-        getMessBookingViewModel().getResponse().observe(getViewLifecycleOwner(), new MessBookingDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$listenBookResponse$1
+        getMessBookingViewModel().getResponse().observe(getViewLifecycleOwner(), new MessBookingDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog.listenBookResponse.1
 
-            /* compiled from: MessBookingDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$listenBookResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: MessBookingDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -634,20 +612,12 @@ public final class MessBookingDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogMessBookingBinding dialogMessBookingBinding;
                 TextView bookNowBtn;
-                DialogMessBookingBinding dialogMessBookingBinding2;
                 CardView cardView;
-                DialogMessBookingBinding dialogMessBookingBinding3;
                 TextView bookNowBtn2;
-                DialogMessBookingBinding dialogMessBookingBinding4;
-                DialogMessBookingBinding dialogMessBookingBinding5;
                 TextView bookNowBtn3;
-                DialogMessBookingBinding dialogMessBookingBinding6;
-                DialogMessBookingBinding dialogMessBookingBinding7;
-                DialogMessBookingBinding dialogMessBookingBinding8;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -657,8 +627,8 @@ public final class MessBookingDialog extends BaseDialog {
                     }
                     if (i == 3) {
                         MessBookingDialog.this.hideProgress();
-                        dialogMessBookingBinding6 = MessBookingDialog.this.get_binding();
-                        cardView = dialogMessBookingBinding6 != null ? dialogMessBookingBinding6.progressView : null;
+                        DialogMessBookingBinding dialogMessBookingBinding = MessBookingDialog.this.get_binding();
+                        cardView = dialogMessBookingBinding != null ? dialogMessBookingBinding.progressView : null;
                         if (cardView == null) {
                             return;
                         }
@@ -669,13 +639,13 @@ public final class MessBookingDialog extends BaseDialog {
                         return;
                     }
                     MessBookingDialog.this.hideProgress();
-                    dialogMessBookingBinding7 = MessBookingDialog.this.get_binding();
-                    cardView = dialogMessBookingBinding7 != null ? dialogMessBookingBinding7.progressView : null;
+                    DialogMessBookingBinding dialogMessBookingBinding2 = MessBookingDialog.this.get_binding();
+                    cardView = dialogMessBookingBinding2 != null ? dialogMessBookingBinding2.progressView : null;
                     if (cardView != null) {
                         cardView.setVisibility(8);
                     }
-                    dialogMessBookingBinding8 = MessBookingDialog.this.get_binding();
-                    if (dialogMessBookingBinding8 == null || (textView = dialogMessBookingBinding8.bookNowBtn) == null) {
+                    DialogMessBookingBinding dialogMessBookingBinding3 = MessBookingDialog.this.get_binding();
+                    if (dialogMessBookingBinding3 == null || (textView = dialogMessBookingBinding3.bookNowBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -689,13 +659,13 @@ public final class MessBookingDialog extends BaseDialog {
                     MessBookingDialog messBookingDialog = MessBookingDialog.this;
                     if (data.getSuccess()) {
                         try {
-                            dialogMessBookingBinding2 = messBookingDialog.get_binding();
-                            cardView = dialogMessBookingBinding2 != null ? dialogMessBookingBinding2.progressView : null;
+                            DialogMessBookingBinding dialogMessBookingBinding4 = messBookingDialog.get_binding();
+                            cardView = dialogMessBookingBinding4 != null ? dialogMessBookingBinding4.progressView : null;
                             if (cardView != null) {
                                 cardView.setVisibility(8);
                             }
-                            dialogMessBookingBinding3 = messBookingDialog.get_binding();
-                            if (dialogMessBookingBinding3 != null && (bookNowBtn2 = dialogMessBookingBinding3.bookNowBtn) != null) {
+                            DialogMessBookingBinding dialogMessBookingBinding5 = messBookingDialog.get_binding();
+                            if (dialogMessBookingBinding5 != null && (bookNowBtn2 = dialogMessBookingBinding5.bookNowBtn) != null) {
                                 Intrinsics.checkNotNullExpressionValue(bookNowBtn2, "bookNowBtn");
                                 ToastExtKt.showSuccessToast(bookNowBtn2, data.getMessage());
                             }
@@ -703,8 +673,8 @@ public final class MessBookingDialog extends BaseDialog {
                             Unit unit = Unit.INSTANCE;
                             return;
                         } catch (NullPointerException unused) {
-                            dialogMessBookingBinding = messBookingDialog.get_binding();
-                            if (dialogMessBookingBinding == null || (bookNowBtn = dialogMessBookingBinding.bookNowBtn) == null) {
+                            DialogMessBookingBinding dialogMessBookingBinding6 = messBookingDialog.get_binding();
+                            if (dialogMessBookingBinding6 == null || (bookNowBtn = dialogMessBookingBinding6.bookNowBtn) == null) {
                                 return;
                             }
                             Intrinsics.checkNotNullExpressionValue(bookNowBtn, "bookNowBtn");
@@ -713,13 +683,13 @@ public final class MessBookingDialog extends BaseDialog {
                             return;
                         }
                     }
-                    dialogMessBookingBinding4 = messBookingDialog.get_binding();
-                    cardView = dialogMessBookingBinding4 != null ? dialogMessBookingBinding4.progressView : null;
+                    DialogMessBookingBinding dialogMessBookingBinding7 = messBookingDialog.get_binding();
+                    cardView = dialogMessBookingBinding7 != null ? dialogMessBookingBinding7.progressView : null;
                     if (cardView != null) {
                         cardView.setVisibility(8);
                     }
-                    dialogMessBookingBinding5 = messBookingDialog.get_binding();
-                    if (dialogMessBookingBinding5 == null || (bookNowBtn3 = dialogMessBookingBinding5.bookNowBtn) == null) {
+                    DialogMessBookingBinding dialogMessBookingBinding8 = messBookingDialog.get_binding();
+                    if (dialogMessBookingBinding8 == null || (bookNowBtn3 = dialogMessBookingBinding8.bookNowBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(bookNowBtn3, "bookNowBtn");
@@ -735,7 +705,7 @@ public final class MessBookingDialog extends BaseDialog {
         builder.setPositiveButton("Proceed", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MessBookingDialog.maxQuantityDialog$lambda$1(MessBookingDialog.this, dialogInterface, i);
+                MessBookingDialog.maxQuantityDialog$lambda$1(this.f$0, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.hostel.mess.booknow.MessBookingDialog$$ExternalSyntheticLambda1

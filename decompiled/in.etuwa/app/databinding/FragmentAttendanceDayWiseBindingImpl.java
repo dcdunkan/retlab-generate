@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentAttendanceDayWiseBindingImpl extends FragmentAttendanceDayWiseBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds = null;

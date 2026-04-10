@@ -49,24 +49,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CoursesAttendedFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CoursesAttendedFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CoursesAttendedFragment extends BaseFragment implements CoursesAttendedAdapter.CoursesListener, AddCourseAttendedDialog.AddCourseListener, AddSportDialog.AddSportListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentCourseAttendedBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: coursesAttendedViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: coursesAttendedViewModel$delegate, reason: from kotlin metadata */
     private final Lazy coursesAttendedViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: CoursesAttendedFragment.kt */
+    /* JADX INFO: compiled from: CoursesAttendedFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -126,7 +126,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return coursesAttendedFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(coursesAttendedFragment);
@@ -140,7 +140,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -153,7 +153,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CoursesAttendedViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CoursesAttendedViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final CoursesAttendedFragment coursesAttendedFragment2 = this;
@@ -199,7 +199,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
         return (CoursesAttendedAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentCourseAttendedBinding get_binding() {
         return this._binding;
     }
@@ -208,7 +208,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: CoursesAttendedFragment.kt */
+    /* JADX INFO: compiled from: CoursesAttendedFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/coursesattended/CoursesAttendedFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/coursesattended/CoursesAttendedFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -274,7 +274,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedFragment$$ExternalSyntheticLambda2
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    CoursesAttendedFragment.setUp$lambda$0(CoursesAttendedFragment.this);
+                    CoursesAttendedFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
@@ -285,7 +285,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedFragment$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CoursesAttendedFragment.setUp$lambda$1(CoursesAttendedFragment.this, view);
+                CoursesAttendedFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -307,16 +307,16 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddCourseAttendedDialog newInstance = AddCourseAttendedDialog.INSTANCE.newInstance("", "", "", "", "", "", "");
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        AddCourseAttendedDialog addCourseAttendedDialogNewInstance = AddCourseAttendedDialog.INSTANCE.newInstance("", "", "", "", "", "", "");
+        addCourseAttendedDialogNewInstance.setCallBack(this$0);
+        addCourseAttendedDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
         getCoursesAttendedViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CoursesAttendedFragment.listenResponse$lambda$3(CoursesAttendedFragment.this, (Resource) obj);
+                CoursesAttendedFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -363,7 +363,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
         getCoursesAttendedViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedFragment$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CoursesAttendedFragment.listenDeleteResponse$lambda$5(CoursesAttendedFragment.this, (Resource) obj);
+                CoursesAttendedFragment.listenDeleteResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -460,9 +460,9 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
         Intrinsics.checkNotNullParameter(toDate, "toDate");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddCourseAttendedDialog newInstance = AddCourseAttendedDialog.INSTANCE.newInstance(id, name, organised, duration, achievements, fromDate, toDate);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddCourseAttendedDialog addCourseAttendedDialogNewInstance = AddCourseAttendedDialog.INSTANCE.newInstance(id, name, organised, duration, achievements, fromDate, toDate);
+        addCourseAttendedDialogNewInstance.setCallBack(this);
+        addCourseAttendedDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void deleteView(final String id) {
@@ -471,7 +471,7 @@ public final class CoursesAttendedFragment extends BaseFragment implements Cours
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedFragment$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                CoursesAttendedFragment.deleteView$lambda$6(CoursesAttendedFragment.this, id, dialogInterface, i);
+                CoursesAttendedFragment.deleteView$lambda$6(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedFragment$$ExternalSyntheticLambda1

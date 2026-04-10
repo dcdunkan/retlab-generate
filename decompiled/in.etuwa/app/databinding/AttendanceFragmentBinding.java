@@ -3,7 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,42 +14,61 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import at.grabner.circleprogress.CircleProgressView;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.attendance.bysubject.AttendanceViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AttendanceFragmentBinding extends ViewDataBinding {
+    public final CardView atteandceByDayLyt;
     public final CircleProgressView attendanceByPer;
     public final TextView attendanceBySub;
     public final TextView attendanceByTotal;
-    public final Button byDayBtn;
+    public final TextView byDayBtn;
+    public final TextView bySubjectBtn;
+    public final LinearLayout bySubjectLyt;
+    public final HorizontalScrollView hrView;
 
     @Bindable
     protected AttendanceViewModel mAttendanceViewModel;
+    public final TextView monthTv;
+    public final CardView nextBtn;
+    public final CardView previousBtn;
     public final RecyclerView rvAttendance;
-    public final LinearLayout segmentView;
-    public final LinearLayout spinnerLt;
+    public final RecyclerView rvCalender;
+    public final MaterialCardView segmentView;
+    public final MaterialCardView spinnerLt;
     public final Spinner spinnerSem;
     public final SwipeRefreshLayout swipeLayout;
-    public final CardView totalCv;
+    public final TextView toolbar;
+    public final MaterialCardView totalCv;
     public final LinearLayout withBtn;
-    public final TextView withTv;
+    public final View withTv;
     public final LinearLayout withoutBtn;
-    public final TextView withoutTv;
+    public final View withoutTv;
 
     public abstract void setAttendanceViewModel(AttendanceViewModel attendanceViewModel);
 
-    protected AttendanceFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, CircleProgressView attendanceByPer, TextView attendanceBySub, TextView attendanceByTotal, Button byDayBtn, RecyclerView rvAttendance, LinearLayout segmentView, LinearLayout spinnerLt, Spinner spinnerSem, SwipeRefreshLayout swipeLayout, CardView totalCv, LinearLayout withBtn, TextView withTv, LinearLayout withoutBtn, TextView withoutTv) {
+    protected AttendanceFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, CardView atteandceByDayLyt, CircleProgressView attendanceByPer, TextView attendanceBySub, TextView attendanceByTotal, TextView byDayBtn, TextView bySubjectBtn, LinearLayout bySubjectLyt, HorizontalScrollView hrView, TextView monthTv, CardView nextBtn, CardView previousBtn, RecyclerView rvAttendance, RecyclerView rvCalender, MaterialCardView segmentView, MaterialCardView spinnerLt, Spinner spinnerSem, SwipeRefreshLayout swipeLayout, TextView toolbar, MaterialCardView totalCv, LinearLayout withBtn, View withTv, LinearLayout withoutBtn, View withoutTv) {
         super(_bindingComponent, _root, _localFieldCount);
+        this.atteandceByDayLyt = atteandceByDayLyt;
         this.attendanceByPer = attendanceByPer;
         this.attendanceBySub = attendanceBySub;
         this.attendanceByTotal = attendanceByTotal;
         this.byDayBtn = byDayBtn;
+        this.bySubjectBtn = bySubjectBtn;
+        this.bySubjectLyt = bySubjectLyt;
+        this.hrView = hrView;
+        this.monthTv = monthTv;
+        this.nextBtn = nextBtn;
+        this.previousBtn = previousBtn;
         this.rvAttendance = rvAttendance;
+        this.rvCalender = rvCalender;
         this.segmentView = segmentView;
         this.spinnerLt = spinnerLt;
         this.spinnerSem = spinnerSem;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
         this.totalCv = totalCv;
         this.withBtn = withBtn;
         this.withTv = withTv;

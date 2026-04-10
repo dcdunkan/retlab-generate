@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.hostel;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelFeeResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelFeeResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelFeeResponse {
     private final String url;
 
@@ -15,7 +15,7 @@ public final /* data */ class HostelFeeResponse {
         return hostelFeeResponse.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getUrl() {
         return this.url;
     }

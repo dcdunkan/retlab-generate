@@ -18,8 +18,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: DayWiseTimeTableViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: DayWiseTimeTableViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class DayWiseTimeTableViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final DashRepository dashRepository;
@@ -41,8 +41,8 @@ public final class DayWiseTimeTableViewModel extends ViewModel implements KoinCo
         Intrinsics.checkNotNullParameter(date, "date");
         this.tableResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DayWiseResponse> observeOn = this.dashRepository.getDayWiseTimeTable(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DayWiseResponse, Unit> function1 = new Function1<DayWiseResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableViewModel$getTableData$1
+        Single<DayWiseResponse> singleObserveOn = this.dashRepository.getDayWiseTimeTable(date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DayWiseResponse, Unit> function1 = new Function1<DayWiseResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableViewModel.getTableData.1
             {
                 super(1);
             }
@@ -53,20 +53,18 @@ public final class DayWiseTimeTableViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DayWiseResponse dayWiseResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DayWiseTimeTableViewModel.this.tableResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(dayWiseResponse));
+                DayWiseTimeTableViewModel.this.tableResponse.postValue(Resource.INSTANCE.success(dayWiseResponse));
             }
         };
         Consumer<? super DayWiseResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DayWiseTimeTableViewModel.getTableData$lambda$0(Function1.this, obj);
+                DayWiseTimeTableViewModel.getTableData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableViewModel$getTableData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableViewModel.getTableData.2
             {
                 super(1);
             }
@@ -77,17 +75,15 @@ public final class DayWiseTimeTableViewModel extends ViewModel implements KoinCo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DayWiseTimeTableViewModel.this.tableResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                DayWiseTimeTableViewModel.this.tableResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.daywisetimetable.DayWiseTimeTableViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DayWiseTimeTableViewModel.getTableData$lambda$1(Function1.this, obj);
+                DayWiseTimeTableViewModel.getTableData$lambda$1(function12, obj);
             }
         }));
     }

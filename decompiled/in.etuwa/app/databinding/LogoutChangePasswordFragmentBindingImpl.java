@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.changepassword.main.LogoutChangePasswordViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class LogoutChangePasswordFragmentBindingImpl extends LogoutChangePasswordFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -59,7 +59,7 @@ public class LogoutChangePasswordFragmentBindingImpl extends LogoutChangePasswor
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (131 != variableId) {
+        if (132 != variableId) {
             return false;
         }
         setLogoutChangePasswordViewModel((LogoutChangePasswordViewModel) variable);

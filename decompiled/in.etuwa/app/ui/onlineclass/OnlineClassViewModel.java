@@ -16,11 +16,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: OnlineClassViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: OnlineClassViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class OnlineClassViewModel extends ViewModel {
     private MutableLiveData<Resource<OnlineClassResponse>> classResponse;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private final VideoClassRepository videoClassRepository;
 
     public OnlineClassViewModel(VideoClassRepository videoClassRepository) {
@@ -28,14 +29,22 @@ public final class OnlineClassViewModel extends ViewModel {
         this.videoClassRepository = videoClassRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.classResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getClass();
     }
 
     public final void getClass() {
         this.classResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<OnlineClassResponse> observeOn = this.videoClassRepository.getOnlineClassApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<OnlineClassResponse, Unit> function1 = new Function1<OnlineClassResponse, Unit>() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassViewModel$getClass$1
+        Single<OnlineClassResponse> singleObserveOn = this.videoClassRepository.getOnlineClassApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<OnlineClassResponse, Unit> function1 = new Function1<OnlineClassResponse, Unit>() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassViewModel.getClass.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class OnlineClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(OnlineClassResponse onlineClassResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OnlineClassViewModel.this.classResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(onlineClassResponse));
+                OnlineClassViewModel.this.classResponse.postValue(Resource.INSTANCE.success(onlineClassResponse));
             }
         };
         Consumer<? super OnlineClassResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OnlineClassViewModel.getClass$lambda$0(Function1.this, obj);
+                OnlineClassViewModel.getClass$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassViewModel$getClass$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassViewModel.getClass.2
             {
                 super(1);
             }
@@ -70,17 +77,15 @@ public final class OnlineClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = OnlineClassViewModel.this.classResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                OnlineClassViewModel.this.classResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                OnlineClassViewModel.getClass$lambda$1(Function1.this, obj);
+                OnlineClassViewModel.getClass$lambda$1(function12, obj);
             }
         }));
     }

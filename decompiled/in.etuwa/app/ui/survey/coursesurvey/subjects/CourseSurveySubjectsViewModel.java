@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CourseSurveySubjectsViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CourseSurveySubjectsViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CourseSurveySubjectsViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final SurveyRepository surveyRepository;
@@ -34,8 +34,8 @@ public final class CourseSurveySubjectsViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.surveyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DoCourseSurveyResponse> observeOn = this.surveyRepository.getDoCourseSurveyList(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DoCourseSurveyResponse, Unit> function1 = new Function1<DoCourseSurveyResponse, Unit>() { // from class: in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel$getSurveySubjectsList$1
+        Single<DoCourseSurveyResponse> singleObserveOn = this.surveyRepository.getDoCourseSurveyList(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DoCourseSurveyResponse, Unit> function1 = new Function1<DoCourseSurveyResponse, Unit>() { // from class: in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel.getSurveySubjectsList.1
             {
                 super(1);
             }
@@ -46,20 +46,18 @@ public final class CourseSurveySubjectsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DoCourseSurveyResponse doCourseSurveyResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CourseSurveySubjectsViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(doCourseSurveyResponse));
+                CourseSurveySubjectsViewModel.this.surveyResponse.postValue(Resource.INSTANCE.success(doCourseSurveyResponse));
             }
         };
         Consumer<? super DoCourseSurveyResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CourseSurveySubjectsViewModel.getSurveySubjectsList$lambda$0(Function1.this, obj);
+                CourseSurveySubjectsViewModel.getSurveySubjectsList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel$getSurveySubjectsList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel.getSurveySubjectsList.2
             {
                 super(1);
             }
@@ -70,17 +68,15 @@ public final class CourseSurveySubjectsViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CourseSurveySubjectsViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CourseSurveySubjectsViewModel.this.surveyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.coursesurvey.subjects.CourseSurveySubjectsViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CourseSurveySubjectsViewModel.getSurveySubjectsList$lambda$1(Function1.this, obj);
+                CourseSurveySubjectsViewModel.getSurveySubjectsList$lambda$1(function12, obj);
             }
         }));
     }

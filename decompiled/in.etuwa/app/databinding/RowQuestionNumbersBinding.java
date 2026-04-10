@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowQuestionNumbersBinding implements ViewBinding {
     public final LinearLayout cardDash;
     public final TextView questionTv;
@@ -31,11 +31,11 @@ public final class RowQuestionNumbersBinding implements ViewBinding {
     }
 
     public static RowQuestionNumbersBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_question_numbers, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_question_numbers, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowQuestionNumbersBinding bind(View rootView) {

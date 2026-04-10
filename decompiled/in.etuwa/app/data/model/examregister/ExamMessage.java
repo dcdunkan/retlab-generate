@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamMessage.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamMessage.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamMessage {
     private final String amount;
     private final String course;
@@ -45,37 +45,37 @@ public final /* data */ class ExamMessage {
         return examMessage.copy(str, str8, str9, str10, str11, str12, str7);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getCourse() {
         return this.course;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getIs_eligible() {
         return this.is_eligible;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getFixed_amount() {
         return this.fixed_amount;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getFineAmount() {
         return this.fineAmount;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getTotalAmount() {
         return this.totalAmount;
     }

@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.survey.posurvey;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PoOptions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PoOptions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PoOptions {
     private final String option_id;
     private final String option_name;
@@ -19,12 +19,12 @@ public final /* data */ class PoOptions {
         return poOptions.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getOption_id() {
         return this.option_id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getOption_name() {
         return this.option_name;
     }

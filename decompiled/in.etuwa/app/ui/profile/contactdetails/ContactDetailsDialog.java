@@ -36,23 +36,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ContactDetailsDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ContactDetailsDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ContactDetailsDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogContactDetailsBinding _binding;
     private String abcId;
 
-    /* renamed from: contactDetailsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: contactDetailsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy contactDetailsViewModel;
     private String instruction;
     private ProfileListener listener;
     private MainCallBackListener listener2;
     private String video;
 
-    /* compiled from: ContactDetailsDialog.kt */
+    /* JADX INFO: compiled from: ContactDetailsDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/contactdetails/ContactDetailsDialog$ProfileListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ProfileListener {
         void dismiss();
@@ -81,7 +81,7 @@ public final class ContactDetailsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return contactDetailsDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(contactDetailsDialog);
@@ -95,7 +95,7 @@ public final class ContactDetailsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -108,7 +108,7 @@ public final class ContactDetailsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ContactDetailsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ContactDetailsViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -118,12 +118,12 @@ public final class ContactDetailsDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogContactDetailsBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ContactDetailsDialog.kt */
+    /* JADX INFO: compiled from: ContactDetailsDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/contactdetails/ContactDetailsDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/contactdetails/ContactDetailsDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -180,9 +180,10 @@ public final class ContactDetailsDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getContactDetailsViewModel().getResponse().observe(getViewLifecycleOwner(), new ContactDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.contactdetails.ContactDetailsDialog$listenResponse$1
+        getContactDetailsViewModel().getResponse().observe(getViewLifecycleOwner(), new ContactDetailsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ProfileResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.contactdetails.ContactDetailsDialog.listenResponse.1
 
-            /* compiled from: ContactDetailsDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.contactdetails.ContactDetailsDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ContactDetailsDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -219,14 +220,8 @@ public final class ContactDetailsDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ProfileResponse> resource) {
-                DialogContactDetailsBinding dialogContactDetailsBinding;
-                DialogContactDetailsBinding dialogContactDetailsBinding2;
-                DialogContactDetailsBinding dialogContactDetailsBinding3;
-                DialogContactDetailsBinding dialogContactDetailsBinding4;
-                DialogContactDetailsBinding dialogContactDetailsBinding5;
-                DialogContactDetailsBinding dialogContactDetailsBinding6;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -242,8 +237,8 @@ public final class ContactDetailsDialog extends BaseDialog {
                         return;
                     }
                     ContactDetailsDialog.this.hideProgress();
-                    dialogContactDetailsBinding6 = ContactDetailsDialog.this.get_binding();
-                    if (dialogContactDetailsBinding6 == null || (textView = dialogContactDetailsBinding6.number) == null) {
+                    DialogContactDetailsBinding dialogContactDetailsBinding = ContactDetailsDialog.this.get_binding();
+                    if (dialogContactDetailsBinding == null || (textView = dialogContactDetailsBinding.number) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -255,28 +250,28 @@ public final class ContactDetailsDialog extends BaseDialog {
                 ProfileResponse data = resource.getData();
                 if (data != null) {
                     ContactDetailsDialog contactDetailsDialog = ContactDetailsDialog.this;
-                    dialogContactDetailsBinding = contactDetailsDialog.get_binding();
-                    TextView textView2 = dialogContactDetailsBinding != null ? dialogContactDetailsBinding.address : null;
+                    DialogContactDetailsBinding dialogContactDetailsBinding2 = contactDetailsDialog.get_binding();
+                    TextView textView2 = dialogContactDetailsBinding2 != null ? dialogContactDetailsBinding2.address : null;
                     if (textView2 != null) {
                         textView2.setText(data.getAddress1() + "           " + data.getAddress2() + "           " + data.getAddress3());
                     }
-                    dialogContactDetailsBinding2 = contactDetailsDialog.get_binding();
-                    TextView textView3 = dialogContactDetailsBinding2 != null ? dialogContactDetailsBinding2.district : null;
+                    DialogContactDetailsBinding dialogContactDetailsBinding3 = contactDetailsDialog.get_binding();
+                    TextView textView3 = dialogContactDetailsBinding3 != null ? dialogContactDetailsBinding3.district : null;
                     if (textView3 != null) {
                         textView3.setText(data.getDistrict());
                     }
-                    dialogContactDetailsBinding3 = contactDetailsDialog.get_binding();
-                    TextView textView4 = dialogContactDetailsBinding3 != null ? dialogContactDetailsBinding3.pin : null;
+                    DialogContactDetailsBinding dialogContactDetailsBinding4 = contactDetailsDialog.get_binding();
+                    TextView textView4 = dialogContactDetailsBinding4 != null ? dialogContactDetailsBinding4.pin : null;
                     if (textView4 != null) {
                         textView4.setText(data.getPin());
                     }
-                    dialogContactDetailsBinding4 = contactDetailsDialog.get_binding();
-                    TextView textView5 = dialogContactDetailsBinding4 != null ? dialogContactDetailsBinding4.state : null;
+                    DialogContactDetailsBinding dialogContactDetailsBinding5 = contactDetailsDialog.get_binding();
+                    TextView textView5 = dialogContactDetailsBinding5 != null ? dialogContactDetailsBinding5.state : null;
                     if (textView5 != null) {
                         textView5.setText(data.getState());
                     }
-                    dialogContactDetailsBinding5 = contactDetailsDialog.get_binding();
-                    TextView textView6 = dialogContactDetailsBinding5 != null ? dialogContactDetailsBinding5.number : null;
+                    DialogContactDetailsBinding dialogContactDetailsBinding6 = contactDetailsDialog.get_binding();
+                    TextView textView6 = dialogContactDetailsBinding6 != null ? dialogContactDetailsBinding6.number : null;
                     if (textView6 == null) {
                         return;
                     }

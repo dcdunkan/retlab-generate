@@ -40,11 +40,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ViewGrievanceFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ViewGrievanceFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewGrievanceFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ViewGrievanceFragmentBinding _binding;
     private ArrayList<Actions> actions;
@@ -53,7 +53,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
     private String id;
     private ArrayList<GrievanceDoc> replyDocs;
 
-    /* renamed from: viewGrievanceViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: viewGrievanceViewModel$delegate, reason: from kotlin metadata */
     private final Lazy viewGrievanceViewModel;
 
     @JvmStatic
@@ -87,7 +87,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return viewGrievanceFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(viewGrievanceFragment);
@@ -101,7 +101,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -114,7 +114,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ViewGrievanceViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ViewGrievanceViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.actions = new ArrayList<>();
@@ -128,12 +128,12 @@ public final class ViewGrievanceFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final ViewGrievanceFragmentBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ViewGrievanceFragment.kt */
+    /* JADX INFO: compiled from: ViewGrievanceFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/grievance/view/ViewGrievanceFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/grievance/view/ViewGrievanceFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -207,7 +207,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment$$ExternalSyntheticLambda0
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    ViewGrievanceFragment.setUp$lambda$1(ViewGrievanceFragment.this);
+                    ViewGrievanceFragment.setUp$lambda$1(this.f$0);
                 }
             });
         }
@@ -216,7 +216,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ViewGrievanceFragment.setUp$lambda$2(ViewGrievanceFragment.this, view);
+                    ViewGrievanceFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -225,7 +225,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ViewGrievanceFragment.setUp$lambda$3(ViewGrievanceFragment.this, view);
+                    ViewGrievanceFragment.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -234,7 +234,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ViewGrievanceFragment.setUp$lambda$4(ViewGrievanceFragment.this, view);
+                    ViewGrievanceFragment.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -245,7 +245,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ViewGrievanceFragment.setUp$lambda$5(ViewGrievanceFragment.this, view);
+                ViewGrievanceFragment.setUp$lambda$5(this.f$0, view);
             }
         });
     }
@@ -287,9 +287,10 @@ public final class ViewGrievanceFragment extends BaseFragment {
     }
 
     private final void listenResponse() {
-        getViewGrievanceViewModel().getResponse().observe(getViewLifecycleOwner(), new ViewGrievanceFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewGrievanceResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment$listenResponse$1
+        getViewGrievanceViewModel().getResponse().observe(getViewLifecycleOwner(), new ViewGrievanceFragmentKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewGrievanceResponse>, Unit>() { // from class: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment.listenResponse.1
 
-            /* compiled from: ViewGrievanceFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.grievance.view.ViewGrievanceFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ViewGrievanceFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -326,9 +327,8 @@ public final class ViewGrievanceFragment extends BaseFragment {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ViewGrievanceResponse> resource) {
-                ViewGrievanceFragmentBinding viewGrievanceFragmentBinding;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -356,7 +356,7 @@ public final class ViewGrievanceFragment extends BaseFragment {
                 }
                 ViewGrievanceFragment.this.hideProgress();
                 ViewGrievanceFragment.this.showBaseView();
-                viewGrievanceFragmentBinding = ViewGrievanceFragment.this.get_binding();
+                ViewGrievanceFragmentBinding viewGrievanceFragmentBinding = ViewGrievanceFragment.this.get_binding();
                 if (viewGrievanceFragmentBinding == null || (textView = viewGrievanceFragmentBinding.actionLevelBtn) == null) {
                     return;
                 }

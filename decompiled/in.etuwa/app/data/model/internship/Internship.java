@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Internship.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Internship.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Internship {
 
     @SerializedName("completion_certificate")
@@ -26,47 +26,47 @@ public final /* data */ class Internship {
     @SerializedName("verified_certificate")
     private final String verifiedCertificate;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSlno() {
         return this.slno;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getFromDate() {
         return this.fromDate;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getToDate() {
         return this.toDate;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getCompletion() {
         return this.completion;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getVerifiedCertificate() {
         return this.verifiedCertificate;
     }

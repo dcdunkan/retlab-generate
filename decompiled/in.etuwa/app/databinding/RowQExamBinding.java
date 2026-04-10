@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowQExamBinding implements ViewBinding {
     public final TextView academicYrTv;
     public final LinearLayout comletionLayout;
@@ -46,11 +46,11 @@ public final class RowQExamBinding implements ViewBinding {
     }
 
     public static RowQExamBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_q_exam, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_q_exam, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowQExamBinding bind(View rootView) {

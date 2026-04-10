@@ -9,7 +9,7 @@ import in.etuwa.app.R;
 import in.etuwa.app.ui.calendar.CalendarViewModel;
 import ru.cleverpumpkin.calendar.CalendarView;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentCalendarBindingImpl extends FragmentCalendarBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -61,7 +61,7 @@ public class FragmentCalendarBindingImpl extends FragmentCalendarBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (45 != variableId) {
+        if (44 != variableId) {
             return false;
         }
         setCalendarViewModel((CalendarViewModel) variable);

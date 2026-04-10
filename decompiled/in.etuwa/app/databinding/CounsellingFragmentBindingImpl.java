@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.counselling.CounsellingViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CounsellingFragmentBindingImpl extends CounsellingFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -27,17 +28,18 @@ public class CounsellingFragmentBindingImpl extends CounsellingFragmentBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.swipe_layout, 2);
-        sparseIntArray.put(R.id.rv_counselling, 3);
-        sparseIntArray.put(R.id.fab_add_counselling, 4);
+        sparseIntArray.put(R.id.toolbar, 2);
+        sparseIntArray.put(R.id.swipe_layout, 3);
+        sparseIntArray.put(R.id.rv_counselling, 4);
+        sparseIntArray.put(R.id.fab_add_counselling, 5);
     }
 
     public CounsellingFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
     }
 
     private CounsellingFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (FloatingActionButton) bindings[4], (RecyclerView) bindings[3], (SwipeRefreshLayout) bindings[2]);
+        super(bindingComponent, root, 0, (FloatingActionButton) bindings[5], (RecyclerView) bindings[4], (SwipeRefreshLayout) bindings[3], (TextView) bindings[2]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -65,7 +67,7 @@ public class CounsellingFragmentBindingImpl extends CounsellingFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (61 != variableId) {
+        if (60 != variableId) {
             return false;
         }
         setCounsellingViewModel((CounsellingViewModel) variable);

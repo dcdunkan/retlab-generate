@@ -12,7 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.examregistration.revaluation.fee.RevaluationFeeViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentRevaluationFeeBindingImpl extends FragmentRevaluationFeeBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentRevaluationFeeBindingImpl extends FragmentRevaluationFeeBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (188 != variableId) {
+        if (190 != variableId) {
             return false;
         }
         setRevaluationFeeViewModel((RevaluationFeeViewModel) variable);

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FragmentSearchDialogBinding implements ViewBinding {
     public final Spinner monSpin;
     private final FrameLayout rootView;
@@ -36,11 +36,11 @@ public final class FragmentSearchDialogBinding implements ViewBinding {
     }
 
     public static FragmentSearchDialogBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.fragment_search_dialog, parent, false);
+        View viewInflate = inflater.inflate(R.layout.fragment_search_dialog, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static FragmentSearchDialogBinding bind(View rootView) {

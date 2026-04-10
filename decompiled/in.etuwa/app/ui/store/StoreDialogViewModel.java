@@ -16,11 +16,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: StoreDialogViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: StoreDialogViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class StoreDialogViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<DepartmentListResponse>> depResponse;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<DepartmentListResponse>> semResponse;
     private final StoreRepository storeRepository;
     private MutableLiveData<Resource<DepartmentListResponse>> subResponse;
@@ -32,15 +33,15 @@ public final class StoreDialogViewModel extends ViewModel {
         this.depResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
         this.subResponse = new MutableLiveData<>();
-        getDepartment();
+        loadDataIfNeeded();
     }
 
     public final void getSemester(String dept_id) {
         Intrinsics.checkNotNullParameter(dept_id, "dept_id");
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DepartmentListResponse> observeOn = this.storeRepository.getSemesterListApiCall(dept_id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DepartmentListResponse, Unit> function1 = new Function1<DepartmentListResponse, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$getSemester$1
+        Single<DepartmentListResponse> singleObserveOn = this.storeRepository.getSemesterListApiCall(dept_id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DepartmentListResponse, Unit> function1 = new Function1<DepartmentListResponse, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel.getSemester.1
             {
                 super(1);
             }
@@ -51,20 +52,18 @@ public final class StoreDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DepartmentListResponse departmentListResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = StoreDialogViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(departmentListResponse));
+                StoreDialogViewModel.this.semResponse.postValue(Resource.INSTANCE.success(departmentListResponse));
             }
         };
         Consumer<? super DepartmentListResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                StoreDialogViewModel.getSemester$lambda$0(Function1.this, obj);
+                StoreDialogViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel.getSemester.2
             {
                 super(1);
             }
@@ -75,17 +74,15 @@ public final class StoreDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = StoreDialogViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                StoreDialogViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                StoreDialogViewModel.getSemester$lambda$1(Function1.this, obj);
+                StoreDialogViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -106,11 +103,19 @@ public final class StoreDialogViewModel extends ViewModel {
         return this.semResponse;
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getDepartment();
+    }
+
     public final void getDepartment() {
         this.depResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DepartmentListResponse> observeOn = this.storeRepository.getDepartmentApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DepartmentListResponse, Unit> function1 = new Function1<DepartmentListResponse, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$getDepartment$1
+        Single<DepartmentListResponse> singleObserveOn = this.storeRepository.getDepartmentApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DepartmentListResponse, Unit> function1 = new Function1<DepartmentListResponse, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel.getDepartment.1
             {
                 super(1);
             }
@@ -121,20 +126,18 @@ public final class StoreDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DepartmentListResponse departmentListResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = StoreDialogViewModel.this.depResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(departmentListResponse));
+                StoreDialogViewModel.this.depResponse.postValue(Resource.INSTANCE.success(departmentListResponse));
             }
         };
         Consumer<? super DepartmentListResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                StoreDialogViewModel.getDepartment$lambda$2(Function1.this, obj);
+                StoreDialogViewModel.getDepartment$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$getDepartment$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel.getDepartment.2
             {
                 super(1);
             }
@@ -145,17 +148,15 @@ public final class StoreDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = StoreDialogViewModel.this.depResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                StoreDialogViewModel.this.depResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                StoreDialogViewModel.getDepartment$lambda$3(Function1.this, obj);
+                StoreDialogViewModel.getDepartment$lambda$3(function12, obj);
             }
         }));
     }
@@ -181,8 +182,8 @@ public final class StoreDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(sem_id, "sem_id");
         this.subResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DepartmentListResponse> observeOn = this.storeRepository.getSubjectListApiCall(dept_id, sem_id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DepartmentListResponse, Unit> function1 = new Function1<DepartmentListResponse, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$getSubject$1
+        Single<DepartmentListResponse> singleObserveOn = this.storeRepository.getSubjectListApiCall(dept_id, sem_id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DepartmentListResponse, Unit> function1 = new Function1<DepartmentListResponse, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel.getSubject.1
             {
                 super(1);
             }
@@ -193,20 +194,18 @@ public final class StoreDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DepartmentListResponse departmentListResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = StoreDialogViewModel.this.subResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(departmentListResponse));
+                StoreDialogViewModel.this.subResponse.postValue(Resource.INSTANCE.success(departmentListResponse));
             }
         };
         Consumer<? super DepartmentListResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                StoreDialogViewModel.getSubject$lambda$4(Function1.this, obj);
+                StoreDialogViewModel.getSubject$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$getSubject$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel.getSubject.2
             {
                 super(1);
             }
@@ -217,17 +216,15 @@ public final class StoreDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = StoreDialogViewModel.this.subResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                StoreDialogViewModel.this.subResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.store.StoreDialogViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                StoreDialogViewModel.getSubject$lambda$5(Function1.this, obj);
+                StoreDialogViewModel.getSubject$lambda$5(function12, obj);
             }
         }));
     }

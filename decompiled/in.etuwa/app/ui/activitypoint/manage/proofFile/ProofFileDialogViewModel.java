@@ -23,8 +23,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: ProofFileDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ProofFileDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ProofFileDialogViewModel extends ViewModel implements KoinComponent {
     private final ActivityPointRepository activityPointRepository;
     private final CompositeDisposable compositeDisposable;
@@ -65,11 +65,11 @@ public final class ProofFileDialogViewModel extends ViewModel implements KoinCom
     public final void uploadProofFile(String assignmentId, File filePath) {
         Intrinsics.checkNotNullParameter(assignmentId, "assignmentId");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, assignmentId);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, assignmentId);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("ActivityPointProofFile", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$uploadProofFile$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("ActivityPointProofFile", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel.uploadProofFile.1
             {
                 super(1);
             }
@@ -80,20 +80,20 @@ public final class ProofFileDialogViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 ProofFileDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$$ExternalSyntheticLambda0
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProofFileDialogViewModel.uploadProofFile$lambda$0(Function1.this, obj);
+                ProofFileDialogViewModel.uploadProofFile$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.activityPointRepository.requestActivityApiCall(create, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$uploadProofFile$2
+        Observable<SuccessResponse> observableObserveOn = this.activityPointRepository.requestActivityApiCall(requestBodyCreate, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel.uploadProofFile.2
             {
                 super(1);
             }
@@ -104,7 +104,7 @@ public final class ProofFileDialogViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 ProofFileDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -112,10 +112,10 @@ public final class ProofFileDialogViewModel extends ViewModel implements KoinCom
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProofFileDialogViewModel.uploadProofFile$lambda$1(Function1.this, obj);
+                ProofFileDialogViewModel.uploadProofFile$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$uploadProofFile$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel.uploadProofFile.3
             {
                 super(1);
             }
@@ -126,7 +126,7 @@ public final class ProofFileDialogViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     ProofFileDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -135,10 +135,10 @@ public final class ProofFileDialogViewModel extends ViewModel implements KoinCom
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProofFileDialogViewModel.uploadProofFile$lambda$2(Function1.this, obj);
+                ProofFileDialogViewModel.uploadProofFile$lambda$2(function13, obj);
             }
         }));
     }

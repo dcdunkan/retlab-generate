@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.activitypoint.manage.proofFile.ProofFileDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ProofFileDialogBindingImpl extends ProofFileDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -67,7 +67,7 @@ public class ProofFileDialogBindingImpl extends ProofFileDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (170 != variableId) {
+        if (172 != variableId) {
             return false;
         }
         setProofFileDialogViewModel((ProofFileDialogViewModel) variable);

@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.examregistration.ExamRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentExamRegistrationMainBinding extends ViewDataBinding {
     public final TextView examResult;
     public final LinearLayout examResultLyt;

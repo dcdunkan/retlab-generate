@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubCoverage.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubCoverage.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubCoverage {
     private final String module;
     private final float ratio;
@@ -25,7 +25,7 @@ public final /* data */ class SubCoverage {
         return subCoverage.copy(str, arrayList, f);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getModule() {
         return this.module;
     }
@@ -34,7 +34,7 @@ public final /* data */ class SubCoverage {
         return this.topic;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final float getRatio() {
         return this.ratio;
     }

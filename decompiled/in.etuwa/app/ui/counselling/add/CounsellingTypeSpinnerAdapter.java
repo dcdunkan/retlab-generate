@@ -14,15 +14,15 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CounsellingTypeSpinnerAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CounsellingTypeSpinnerAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CounsellingTypeSpinnerAdapter extends BaseAdapter {
     private AppCompatActivity activity;
     private ArrayList<CounsellingTypes> items;
 
     @Override // android.widget.Adapter
-    public long getItemId(int i) {
-        return i;
+    public long getItemId(int position) {
+        return position;
     }
 
     public CounsellingTypeSpinnerAdapter(AppCompatActivity activity) {
@@ -31,59 +31,47 @@ public final class CounsellingTypeSpinnerAdapter extends BaseAdapter {
         this.items = new ArrayList<>();
     }
 
-    /* compiled from: CounsellingTypeSpinnerAdapter.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0002\u0010\u0004R\u001c\u0010\u0005\u001a\u0004\u0018\u00010\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/counselling/add/CounsellingTypeSpinnerAdapter$ViewHolder;", "", CommonCssConstants.ROW, "Landroid/view/View;", "(Landroid/view/View;)V", "semName", "Landroid/widget/TextView;", "getSemName", "()Landroid/widget/TextView;", "setSemName", "(Landroid/widget/TextView;)V", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
-    private static final class ViewHolder {
-        private TextView semName;
+    public final ArrayList<CounsellingTypes> getItems() {
+        return this.items;
+    }
 
-        public ViewHolder(View view) {
-            this.semName = view != null ? (TextView) view.findViewById(R.id.fill_name) : null;
-        }
-
-        public final TextView getSemName() {
-            return this.semName;
-        }
-
-        public final void setSemName(TextView textView) {
-            this.semName = textView;
-        }
+    public final void setItems(ArrayList<CounsellingTypes> arrayList) {
+        Intrinsics.checkNotNullParameter(arrayList, "<set-?>");
+        this.items = arrayList;
     }
 
     @Override // android.widget.Adapter
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
-        if (convertView == null) {
-            Object systemService = this.activity.getSystemService("layout_inflater");
-            Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.LayoutInflater");
-            convertView = ((LayoutInflater) systemService).inflate(R.layout.layout_fill_list, (ViewGroup) null);
-            Intrinsics.checkNotNullExpressionValue(convertView, "inflater.inflate(R.layout.layout_fill_list, null)");
-            viewHolder = new ViewHolder(convertView);
-            convertView.setTag(viewHolder);
-        } else {
-            Object tag = convertView.getTag();
-            Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type in.etuwa.app.ui.counselling.add.CounsellingTypeSpinnerAdapter.ViewHolder");
-            viewHolder = (ViewHolder) tag;
-        }
-        CounsellingTypes counsellingTypes = this.items.get(position);
-        Intrinsics.checkNotNullExpressionValue(counsellingTypes, "items[position]");
-        CounsellingTypes counsellingTypes2 = counsellingTypes;
-        TextView semName = viewHolder.getSemName();
-        if (semName != null) {
-            semName.setText(counsellingTypes2.getName());
-        }
-        return convertView;
+    public int getCount() {
+        return this.items.size();
     }
 
     @Override // android.widget.Adapter
-    public Object getItem(int position) {
+    public CounsellingTypes getItem(int position) {
         CounsellingTypes counsellingTypes = this.items.get(position);
         Intrinsics.checkNotNullExpressionValue(counsellingTypes, "items[position]");
         return counsellingTypes;
     }
 
     @Override // android.widget.Adapter
-    public int getCount() {
-        return this.items.size();
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return createView(position, convertView, parent);
+    }
+
+    @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        return createView(position, convertView, parent);
+    }
+
+    private final View createView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent != null ? parent.getContext() : null).inflate(R.layout.layout_fill_list, parent, false);
+        }
+        TextView textView = (TextView) convertView.findViewById(R.id.fill_name);
+        CounsellingTypes counsellingTypes = this.items.get(position);
+        Intrinsics.checkNotNullExpressionValue(counsellingTypes, "items[position]");
+        textView.setText(counsellingTypes.getName());
+        Intrinsics.checkNotNullExpressionValue(convertView, "view");
+        return convertView;
     }
 
     public final void addItems(ArrayList<CounsellingTypes> list) {

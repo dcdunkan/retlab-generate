@@ -3,37 +3,50 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subject.SubjectViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class SubjectFragmentBinding extends ViewDataBinding {
-    public final FloatingActionButton fabSubjectSemester;
+    public final ImageView fabSubjectSemester;
+    public final ImageView ivClearSearch;
+    public final ImageView ivSearch;
 
     @Bindable
     protected SubjectViewModel mSubjectViewModel;
     public final RecyclerView rvSubject;
+    public final CardView searchCard;
+    public final EditText searchInput;
     public final Spinner spinnerSem;
-    public final LinearLayout subjectLayout;
+    public final MaterialCardView subjectLayout;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setSubjectViewModel(SubjectViewModel subjectViewModel);
 
-    protected SubjectFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabSubjectSemester, RecyclerView rvSubject, Spinner spinnerSem, LinearLayout subjectLayout, SwipeRefreshLayout swipeLayout) {
+    protected SubjectFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, ImageView fabSubjectSemester, ImageView ivClearSearch, ImageView ivSearch, RecyclerView rvSubject, CardView searchCard, EditText searchInput, Spinner spinnerSem, MaterialCardView subjectLayout, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.fabSubjectSemester = fabSubjectSemester;
+        this.ivClearSearch = ivClearSearch;
+        this.ivSearch = ivSearch;
         this.rvSubject = rvSubject;
+        this.searchCard = searchCard;
+        this.searchInput = searchInput;
         this.spinnerSem = spinnerSem;
         this.subjectLayout = subjectLayout;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public SubjectViewModel getSubjectViewModel() {

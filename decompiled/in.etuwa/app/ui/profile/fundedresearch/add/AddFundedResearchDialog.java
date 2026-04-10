@@ -62,15 +62,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddFundedResearchDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddFundedResearchDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddFundedResearchDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddFundedResearchBinding _binding;
 
-    /* renamed from: addFundedResearchViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addFundedResearchViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addFundedResearchViewModel;
     private String agency;
     private String amount;
@@ -79,18 +79,18 @@ public final class AddFundedResearchDialog extends BaseDialog {
     private AddFundedResearchListener listener;
     private File pickFile;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
     private String title;
     private String yearId;
 
-    /* compiled from: AddFundedResearchDialog.kt */
+    /* JADX INFO: compiled from: AddFundedResearchDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/fundedresearch/add/AddFundedResearchDialog$AddFundedResearchListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddFundedResearchListener {
         void onDismiss();
     }
 
-    /* compiled from: AddFundedResearchDialog.kt */
+    /* JADX INFO: compiled from: AddFundedResearchDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -140,7 +140,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addFundedResearchDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addFundedResearchDialog);
@@ -154,7 +154,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -167,7 +167,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddFundedResearchViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddFundedResearchViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AddFundedResearchDialog addFundedResearchDialog2 = this;
@@ -178,7 +178,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddFundedResearchDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -203,7 +203,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddFundedResearchBinding get_binding() {
         return this._binding;
     }
@@ -213,7 +213,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter2.getValue();
     }
 
-    /* compiled from: AddFundedResearchDialog.kt */
+    /* JADX INFO: compiled from: AddFundedResearchDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J0\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u0006H\u0007¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/profile/fundedresearch/add/AddFundedResearchDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/fundedresearch/add/AddFundedResearchDialog;", "id", "", "title", "agency", ExamSubjectDetailDialogKt.ARG_AMOUNT, TypedValues.TransitionType.S_DURATION, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -343,17 +343,15 @@ public final class AddFundedResearchDialog extends BaseDialog {
         DialogAddFundedResearchBinding dialogAddFundedResearchBinding10 = get_binding();
         Spinner spinner2 = dialogAddFundedResearchBinding10 != null ? dialogAddFundedResearchBinding10.spinnerYear : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter2;
                     AddFundedResearchDialog addFundedResearchDialog = AddFundedResearchDialog.this;
-                    spinnerAdapter2 = addFundedResearchDialog.getSpinnerAdapter2();
-                    addFundedResearchDialog.yearId = String.valueOf(spinnerAdapter2.getSemester(position).getId());
+                    addFundedResearchDialog.yearId = String.valueOf(addFundedResearchDialog.getSpinnerAdapter2().getSemester(position).getId());
                 }
             });
         }
@@ -362,7 +360,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddFundedResearchDialog.setUp$lambda$2(AddFundedResearchDialog.this, view);
+                    AddFundedResearchDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -371,7 +369,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddFundedResearchDialog.setUp$lambda$3(AddFundedResearchDialog.this, view);
+                    AddFundedResearchDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -382,7 +380,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddFundedResearchDialog.setUp$lambda$4(AddFundedResearchDialog.this, view);
+                AddFundedResearchDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -427,7 +425,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddFundedResearchBinding2 == null || (textInputEditText12 = dialogAddFundedResearchBinding2.etTitle) == null) ? null : textInputEditText12.getText()), "")) {
@@ -449,13 +447,13 @@ public final class AddFundedResearchDialog extends BaseDialog {
                     }
                     AddFundedResearchViewModel addFundedResearchViewModel = this$0.getAddFundedResearchViewModel();
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding6 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddFundedResearchBinding6 == null || (textInputEditText10 = dialogAddFundedResearchBinding6.etTitle) == null) ? null : textInputEditText10.getText());
+                    String strValueOf = String.valueOf((dialogAddFundedResearchBinding6 == null || (textInputEditText10 = dialogAddFundedResearchBinding6.etTitle) == null) ? null : textInputEditText10.getText());
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding7 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddFundedResearchBinding7 == null || (textInputEditText9 = dialogAddFundedResearchBinding7.etAmount) == null) ? null : textInputEditText9.getText());
+                    String strValueOf2 = String.valueOf((dialogAddFundedResearchBinding7 == null || (textInputEditText9 = dialogAddFundedResearchBinding7.etAmount) == null) ? null : textInputEditText9.getText());
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding8 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogAddFundedResearchBinding8 == null || (textInputEditText8 = dialogAddFundedResearchBinding8.etAgency) == null) ? null : textInputEditText8.getText());
+                    String strValueOf3 = String.valueOf((dialogAddFundedResearchBinding8 == null || (textInputEditText8 = dialogAddFundedResearchBinding8.etAgency) == null) ? null : textInputEditText8.getText());
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding9 = this$0.get_binding();
-                    String valueOf4 = String.valueOf((dialogAddFundedResearchBinding9 == null || (textInputEditText7 = dialogAddFundedResearchBinding9.etDuration) == null) ? null : textInputEditText7.getText());
+                    String strValueOf4 = String.valueOf((dialogAddFundedResearchBinding9 == null || (textInputEditText7 = dialogAddFundedResearchBinding9.etDuration) == null) ? null : textInputEditText7.getText());
                     String str = this$0.yearId;
                     Intrinsics.checkNotNull(str);
                     File file3 = this$0.pickFile;
@@ -465,7 +463,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addFundedResearchViewModel.addFundedResearchData(valueOf, valueOf2, valueOf3, valueOf4, str, file);
+                    addFundedResearchViewModel.addFundedResearchData(strValueOf, strValueOf2, strValueOf3, strValueOf4, str, file);
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding10 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddFundedResearchBinding10 != null ? dialogAddFundedResearchBinding10.completionCard : null;
                     if (linearLayout != null) {
@@ -506,16 +504,16 @@ public final class AddFundedResearchDialog extends BaseDialog {
             }
             AddFundedResearchViewModel addFundedResearchViewModel2 = this$0.getAddFundedResearchViewModel();
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding17 = this$0.get_binding();
-            String valueOf5 = String.valueOf((dialogAddFundedResearchBinding17 == null || (textInputEditText4 = dialogAddFundedResearchBinding17.etTitle) == null) ? null : textInputEditText4.getText());
+            String strValueOf5 = String.valueOf((dialogAddFundedResearchBinding17 == null || (textInputEditText4 = dialogAddFundedResearchBinding17.etTitle) == null) ? null : textInputEditText4.getText());
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding18 = this$0.get_binding();
-            String valueOf6 = String.valueOf((dialogAddFundedResearchBinding18 == null || (textInputEditText3 = dialogAddFundedResearchBinding18.etAmount) == null) ? null : textInputEditText3.getText());
+            String strValueOf6 = String.valueOf((dialogAddFundedResearchBinding18 == null || (textInputEditText3 = dialogAddFundedResearchBinding18.etAmount) == null) ? null : textInputEditText3.getText());
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding19 = this$0.get_binding();
-            String valueOf7 = String.valueOf((dialogAddFundedResearchBinding19 == null || (textInputEditText2 = dialogAddFundedResearchBinding19.etAgency) == null) ? null : textInputEditText2.getText());
+            String strValueOf7 = String.valueOf((dialogAddFundedResearchBinding19 == null || (textInputEditText2 = dialogAddFundedResearchBinding19.etAgency) == null) ? null : textInputEditText2.getText());
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding20 = this$0.get_binding();
-            String valueOf8 = String.valueOf((dialogAddFundedResearchBinding20 == null || (textInputEditText = dialogAddFundedResearchBinding20.etDuration) == null) ? null : textInputEditText.getText());
+            String strValueOf8 = String.valueOf((dialogAddFundedResearchBinding20 == null || (textInputEditText = dialogAddFundedResearchBinding20.etDuration) == null) ? null : textInputEditText.getText());
             String str2 = this$0.yearId;
             Intrinsics.checkNotNull(str2);
-            addFundedResearchViewModel2.addFundedResearchData(valueOf5, valueOf6, valueOf7, valueOf8, str2);
+            addFundedResearchViewModel2.addFundedResearchData(strValueOf5, strValueOf6, strValueOf7, strValueOf8, str2);
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding21 = this$0.get_binding();
             LinearLayout linearLayout2 = dialogAddFundedResearchBinding21 != null ? dialogAddFundedResearchBinding21.completionCard : null;
             if (linearLayout2 == null) {
@@ -550,15 +548,15 @@ public final class AddFundedResearchDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddFundedResearchBinding == null || (textView6 = dialogAddFundedResearchBinding.completionFileName) == null) ? null : textView6.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddFundedResearchBinding2 == null || (textInputEditText12 = dialogAddFundedResearchBinding2.etTitle) == null) ? null : textInputEditText12.getText()), "")) {
@@ -582,13 +580,13 @@ public final class AddFundedResearchDialog extends BaseDialog {
                     String str = this$0.id;
                     Intrinsics.checkNotNull(str);
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding6 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddFundedResearchBinding6 == null || (textInputEditText10 = dialogAddFundedResearchBinding6.etTitle) == null) ? null : textInputEditText10.getText());
+                    String strValueOf = String.valueOf((dialogAddFundedResearchBinding6 == null || (textInputEditText10 = dialogAddFundedResearchBinding6.etTitle) == null) ? null : textInputEditText10.getText());
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding7 = this$0.get_binding();
-                    String valueOf2 = String.valueOf((dialogAddFundedResearchBinding7 == null || (textInputEditText9 = dialogAddFundedResearchBinding7.etAmount) == null) ? null : textInputEditText9.getText());
+                    String strValueOf2 = String.valueOf((dialogAddFundedResearchBinding7 == null || (textInputEditText9 = dialogAddFundedResearchBinding7.etAmount) == null) ? null : textInputEditText9.getText());
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding8 = this$0.get_binding();
-                    String valueOf3 = String.valueOf((dialogAddFundedResearchBinding8 == null || (textInputEditText8 = dialogAddFundedResearchBinding8.etAgency) == null) ? null : textInputEditText8.getText());
+                    String strValueOf3 = String.valueOf((dialogAddFundedResearchBinding8 == null || (textInputEditText8 = dialogAddFundedResearchBinding8.etAgency) == null) ? null : textInputEditText8.getText());
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding9 = this$0.get_binding();
-                    String valueOf4 = String.valueOf((dialogAddFundedResearchBinding9 == null || (textInputEditText7 = dialogAddFundedResearchBinding9.etDuration) == null) ? null : textInputEditText7.getText());
+                    String strValueOf4 = String.valueOf((dialogAddFundedResearchBinding9 == null || (textInputEditText7 = dialogAddFundedResearchBinding9.etDuration) == null) ? null : textInputEditText7.getText());
                     String str2 = this$0.yearId;
                     Intrinsics.checkNotNull(str2);
                     File file3 = this$0.pickFile;
@@ -598,7 +596,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addFundedResearchViewModel.updateFundedResearchData(str, valueOf, valueOf2, valueOf3, valueOf4, str2, file);
+                    addFundedResearchViewModel.updateFundedResearchData(str, strValueOf, strValueOf2, strValueOf3, strValueOf4, str2, file);
                     DialogAddFundedResearchBinding dialogAddFundedResearchBinding10 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddFundedResearchBinding10 != null ? dialogAddFundedResearchBinding10.completionCard : null;
                     if (linearLayout != null) {
@@ -641,27 +639,28 @@ public final class AddFundedResearchDialog extends BaseDialog {
             String str3 = this$0.id;
             Intrinsics.checkNotNull(str3);
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding17 = this$0.get_binding();
-            String valueOf5 = String.valueOf((dialogAddFundedResearchBinding17 == null || (textInputEditText4 = dialogAddFundedResearchBinding17.etTitle) == null) ? null : textInputEditText4.getText());
+            String strValueOf5 = String.valueOf((dialogAddFundedResearchBinding17 == null || (textInputEditText4 = dialogAddFundedResearchBinding17.etTitle) == null) ? null : textInputEditText4.getText());
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding18 = this$0.get_binding();
-            String valueOf6 = String.valueOf((dialogAddFundedResearchBinding18 == null || (textInputEditText3 = dialogAddFundedResearchBinding18.etAmount) == null) ? null : textInputEditText3.getText());
+            String strValueOf6 = String.valueOf((dialogAddFundedResearchBinding18 == null || (textInputEditText3 = dialogAddFundedResearchBinding18.etAmount) == null) ? null : textInputEditText3.getText());
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding19 = this$0.get_binding();
-            String valueOf7 = String.valueOf((dialogAddFundedResearchBinding19 == null || (textInputEditText2 = dialogAddFundedResearchBinding19.etAgency) == null) ? null : textInputEditText2.getText());
+            String strValueOf7 = String.valueOf((dialogAddFundedResearchBinding19 == null || (textInputEditText2 = dialogAddFundedResearchBinding19.etAgency) == null) ? null : textInputEditText2.getText());
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding20 = this$0.get_binding();
             if (dialogAddFundedResearchBinding20 != null && (textInputEditText = dialogAddFundedResearchBinding20.etDuration) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            String valueOf8 = String.valueOf(editable);
+            String strValueOf8 = String.valueOf(text);
             String str4 = this$0.yearId;
             Intrinsics.checkNotNull(str4);
-            addFundedResearchViewModel2.updateFundedResearchData(str3, valueOf5, valueOf6, valueOf7, valueOf8, str4);
+            addFundedResearchViewModel2.updateFundedResearchData(str3, strValueOf5, strValueOf6, strValueOf7, strValueOf8, str4);
         } catch (Exception unused) {
         }
     }
 
     private final void listenSpinnerResponse() {
-        getAddFundedResearchViewModel().getResponse().observe(getViewLifecycleOwner(), new AddFundedResearchDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$listenSpinnerResponse$1
+        getAddFundedResearchViewModel().getResponse().observe(getViewLifecycleOwner(), new AddFundedResearchDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddFundedResearchDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddFundedResearchDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -698,10 +697,8 @@ public final class AddFundedResearchDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter2;
-                DialogAddFundedResearchBinding dialogAddFundedResearchBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -709,8 +706,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
                     PublicationDropDownResponse data = resource.getData();
                     if (data != null) {
                         try {
-                            spinnerAdapter2 = AddFundedResearchDialog.this.getSpinnerAdapter2();
-                            spinnerAdapter2.addItems(data.getYears());
+                            AddFundedResearchDialog.this.getSpinnerAdapter2().addItems(data.getYears());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -730,7 +726,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
                     return;
                 }
                 AddFundedResearchDialog.this.hideProgress();
-                dialogAddFundedResearchBinding = AddFundedResearchDialog.this.get_binding();
+                DialogAddFundedResearchBinding dialogAddFundedResearchBinding = AddFundedResearchDialog.this.get_binding();
                 if (dialogAddFundedResearchBinding == null || (spinner = dialogAddFundedResearchBinding.spinnerYear) == null) {
                     return;
                 }
@@ -745,7 +741,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
         getAddFundedResearchViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddFundedResearchDialog.listenAddResponse$lambda$6(AddFundedResearchDialog.this, (Resource) obj);
+                AddFundedResearchDialog.listenAddResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -813,7 +809,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
         getAddFundedResearchViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddFundedResearchDialog.listenAddResponse2$lambda$8(AddFundedResearchDialog.this, (Resource) obj);
+                AddFundedResearchDialog.listenAddResponse2$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -881,7 +877,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
         getAddFundedResearchViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddFundedResearchDialog.listenUpdateResponse$lambda$10(AddFundedResearchDialog.this, (Resource) obj);
+                AddFundedResearchDialog.listenUpdateResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -949,7 +945,7 @@ public final class AddFundedResearchDialog extends BaseDialog {
         getAddFundedResearchViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddFundedResearchDialog.listenProgressResponse$lambda$12(AddFundedResearchDialog.this, (Resource) obj);
+                AddFundedResearchDialog.listenProgressResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -980,18 +976,18 @@ public final class AddFundedResearchDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddFundedResearchBinding2 != null ? dialogAddFundedResearchBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddFundedResearchBinding dialogAddFundedResearchBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddFundedResearchBinding3 != null ? dialogAddFundedResearchBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -999,13 +995,13 @@ public final class AddFundedResearchDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -1031,24 +1027,24 @@ public final class AddFundedResearchDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

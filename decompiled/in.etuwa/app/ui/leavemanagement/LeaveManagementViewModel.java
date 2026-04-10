@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LeaveManagementViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: LeaveManagementViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class LeaveManagementViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<LeaveManagementResponse>> leaveResponse;
@@ -33,8 +33,8 @@ public final class LeaveManagementViewModel extends ViewModel {
     public final void getLeave() {
         this.leaveResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<LeaveManagementResponse> observeOn = this.leavemanagementRepository.getLeaveManagementApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<LeaveManagementResponse, Unit> function1 = new Function1<LeaveManagementResponse, Unit>() { // from class: in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel$getLeave$1
+        Single<LeaveManagementResponse> singleObserveOn = this.leavemanagementRepository.getLeaveManagementApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<LeaveManagementResponse, Unit> function1 = new Function1<LeaveManagementResponse, Unit>() { // from class: in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel.getLeave.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class LeaveManagementViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(LeaveManagementResponse leaveManagementResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LeaveManagementViewModel.this.leaveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(leaveManagementResponse));
+                LeaveManagementViewModel.this.leaveResponse.postValue(Resource.INSTANCE.success(leaveManagementResponse));
             }
         };
         Consumer<? super LeaveManagementResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LeaveManagementViewModel.getLeave$lambda$0(Function1.this, obj);
+                LeaveManagementViewModel.getLeave$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel$getLeave$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel.getLeave.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class LeaveManagementViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = LeaveManagementViewModel.this.leaveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                LeaveManagementViewModel.this.leaveResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                LeaveManagementViewModel.getLeave$lambda$1(Function1.this, obj);
+                LeaveManagementViewModel.getLeave$lambda$1(function12, obj);
             }
         }));
     }

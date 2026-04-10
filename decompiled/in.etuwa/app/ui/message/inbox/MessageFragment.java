@@ -8,8 +8,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationCompat;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentViewModelLazyKt;
@@ -26,11 +28,13 @@ import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.data.model.message.Inbox;
+import in.etuwa.app.data.model.message.Outbox;
 import in.etuwa.app.data.preference.SharedPrefManager;
 import in.etuwa.app.databinding.FragmentMessageBinding;
 import in.etuwa.app.ui.base.BaseFragment;
 import in.etuwa.app.ui.message.inbox.InboxAdapter;
 import in.etuwa.app.ui.message.reply.ReplyDialog;
+import in.etuwa.app.ui.message.sentItems.SentItemAdapter;
 import in.etuwa.app.utils.RecycleExtKt;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
@@ -52,24 +56,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MessageFragment.kt */
-/* loaded from: classes5.dex */
-public final class MessageFragment extends BaseFragment implements InboxAdapter.CallBack {
+/* JADX INFO: compiled from: MessageFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
+public final class MessageFragment extends BaseFragment implements InboxAdapter.CallBack, SentItemAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentMessageBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: messageViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapterOutbox$delegate, reason: from kotlin metadata */
+    private final Lazy adapterOutbox;
+
+    /* JADX INFO: renamed from: messageViewModel$delegate, reason: from kotlin metadata */
     private final Lazy messageViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: MessageFragment.kt */
+    /* JADX INFO: compiled from: MessageFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -119,7 +126,7 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return messageFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(messageFragment);
@@ -133,7 +140,7 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -146,7 +153,7 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MessageViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MessageViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MessageFragment messageFragment2 = this;
@@ -169,7 +176,23 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
         final byte b4 = 0 == true ? 1 : 0;
         final byte b5 = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(lazyThreadSafetyMode2, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$special$$inlined$inject$default$2
+        this.adapterOutbox = LazyKt.lazy(lazyThreadSafetyMode2, (Function0) new Function0<SentItemAdapter>() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$special$$inlined$inject$default$2
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(0);
+            }
+
+            /* JADX WARN: Type inference failed for: r0v2, types: [in.etuwa.app.ui.message.sentItems.SentItemAdapter, java.lang.Object] */
+            @Override // kotlin.jvm.functions.Function0
+            public final SentItemAdapter invoke() {
+                ComponentCallbacks componentCallbacks = messageFragment2;
+                return AndroidKoinScopeExtKt.getKoinScope(componentCallbacks).get(Reflection.getOrCreateKotlinClass(SentItemAdapter.class), b4, b5);
+            }
+        });
+        LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
+        final byte b6 = 0 == true ? 1 : 0;
+        final byte b7 = 0 == true ? 1 : 0;
+        this.preference = LazyKt.lazy(lazyThreadSafetyMode3, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$special$$inlined$inject$default$3
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -179,7 +202,7 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 ComponentCallbacks componentCallbacks = messageFragment2;
-                return AndroidKoinScopeExtKt.getKoinScope(componentCallbacks).get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), b4, b5);
+                return AndroidKoinScopeExtKt.getKoinScope(componentCallbacks).get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), b6, b7);
             }
         });
     }
@@ -194,12 +217,16 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
         return (InboxAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    private final SentItemAdapter getAdapterOutbox() {
+        return (SentItemAdapter) this.adapterOutbox.getValue();
+    }
+
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentMessageBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: MessageFragment.kt */
+    /* JADX INFO: compiled from: MessageFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/message/inbox/MessageFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/message/inbox/MessageFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -247,6 +274,8 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
 
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
+        TextView textView;
+        TextView textView2;
         SwipeRefreshLayout swipeRefreshLayout;
         FragmentActivity activity = getActivity();
         if (activity != null) {
@@ -260,33 +289,131 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
             recyclerView.setAdapter(getAdapter());
         }
         getAdapter().setCallBack(this);
+        FragmentMessageBinding fragmentMessageBinding2 = get_binding();
+        RecyclerView recyclerView2 = fragmentMessageBinding2 != null ? fragmentMessageBinding2.rvSentItems : null;
+        if (recyclerView2 != null) {
+            recyclerView2.setAdapter(getAdapterOutbox());
+        }
+        getAdapterOutbox().setCallBack2(this);
         getPreference().setNewLogin(false);
         listenResponse();
         listenDeleteResponse();
-        FragmentMessageBinding fragmentMessageBinding2 = get_binding();
-        if (fragmentMessageBinding2 != null && (swipeRefreshLayout = fragmentMessageBinding2.swipeLayout) != null) {
-            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda2
+        listenOutboxResponse();
+        FragmentMessageBinding fragmentMessageBinding3 = get_binding();
+        if (fragmentMessageBinding3 != null && (swipeRefreshLayout = fragmentMessageBinding3.swipeLayout) != null) {
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda3
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    MessageFragment.setUp$lambda$0(MessageFragment.this);
+                    MessageFragment.setUp$lambda$0(this.f$0);
+                }
+            });
+        }
+        FragmentMessageBinding fragmentMessageBinding4 = get_binding();
+        if (fragmentMessageBinding4 != null && (textView2 = fragmentMessageBinding4.inboxBtn) != null) {
+            textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda4
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    MessageFragment.setUp$lambda$1(this.f$0, view);
+                }
+            });
+        }
+        FragmentMessageBinding fragmentMessageBinding5 = get_binding();
+        if (fragmentMessageBinding5 != null && (textView = fragmentMessageBinding5.sentBtn) != null) {
+            textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda5
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    MessageFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new MessageFragment$setUp$swipeHandler$1(this, requireContext()));
-        FragmentMessageBinding fragmentMessageBinding3 = get_binding();
-        itemTouchHelper.attachToRecyclerView(fragmentMessageBinding3 != null ? fragmentMessageBinding3.rvInbox : null);
+        FragmentMessageBinding fragmentMessageBinding6 = get_binding();
+        itemTouchHelper.attachToRecyclerView(fragmentMessageBinding6 != null ? fragmentMessageBinding6.rvInbox : null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$0(MessageFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getMessageViewModel().getInboxMsg();
+        this$0.getMessageViewModel().getOutboxMsg();
         FragmentMessageBinding fragmentMessageBinding = this$0.get_binding();
         SwipeRefreshLayout swipeRefreshLayout = fragmentMessageBinding != null ? fragmentMessageBinding.swipeLayout : null;
         if (swipeRefreshLayout == null) {
             return;
         }
         swipeRefreshLayout.setRefreshing(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setUp$lambda$1(MessageFragment this$0, View view) {
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
+        TextView textView4;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        FragmentMessageBinding fragmentMessageBinding = this$0.get_binding();
+        if (fragmentMessageBinding != null && (textView4 = fragmentMessageBinding.sentBtn) != null) {
+            textView4.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentMessageBinding fragmentMessageBinding2 = this$0.get_binding();
+        if (fragmentMessageBinding2 != null && (textView3 = fragmentMessageBinding2.inboxBtn) != null) {
+            textView3.setBackgroundResource(R.drawable.shape_round_selected);
+        }
+        FragmentMessageBinding fragmentMessageBinding3 = this$0.get_binding();
+        if (fragmentMessageBinding3 != null && (textView2 = fragmentMessageBinding3.sentBtn) != null) {
+            textView2.setTextColor(ViewCompat.MEASURED_STATE_MASK);
+        }
+        FragmentMessageBinding fragmentMessageBinding4 = this$0.get_binding();
+        if (fragmentMessageBinding4 != null && (textView = fragmentMessageBinding4.inboxBtn) != null) {
+            textView.setTextColor(-1);
+        }
+        FragmentMessageBinding fragmentMessageBinding5 = this$0.get_binding();
+        RecyclerView recyclerView = fragmentMessageBinding5 != null ? fragmentMessageBinding5.rvSentItems : null;
+        if (recyclerView != null) {
+            recyclerView.setVisibility(8);
+        }
+        FragmentMessageBinding fragmentMessageBinding6 = this$0.get_binding();
+        RecyclerView recyclerView2 = fragmentMessageBinding6 != null ? fragmentMessageBinding6.rvInbox : null;
+        if (recyclerView2 == null) {
+            return;
+        }
+        recyclerView2.setVisibility(0);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setUp$lambda$2(MessageFragment this$0, View view) {
+        TextView textView;
+        TextView textView2;
+        TextView textView3;
+        TextView textView4;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        FragmentMessageBinding fragmentMessageBinding = this$0.get_binding();
+        RecyclerView recyclerView = fragmentMessageBinding != null ? fragmentMessageBinding.rvInbox : null;
+        if (recyclerView != null) {
+            recyclerView.setVisibility(8);
+        }
+        FragmentMessageBinding fragmentMessageBinding2 = this$0.get_binding();
+        RecyclerView recyclerView2 = fragmentMessageBinding2 != null ? fragmentMessageBinding2.rvSentItems : null;
+        if (recyclerView2 != null) {
+            recyclerView2.setVisibility(0);
+        }
+        FragmentMessageBinding fragmentMessageBinding3 = this$0.get_binding();
+        if (fragmentMessageBinding3 != null && (textView4 = fragmentMessageBinding3.sentBtn) != null) {
+            textView4.setBackgroundResource(R.drawable.shape_round_selected);
+        }
+        FragmentMessageBinding fragmentMessageBinding4 = this$0.get_binding();
+        if (fragmentMessageBinding4 != null && (textView3 = fragmentMessageBinding4.inboxBtn) != null) {
+            textView3.setBackgroundResource(R.drawable.shape_round_unselected);
+        }
+        FragmentMessageBinding fragmentMessageBinding5 = this$0.get_binding();
+        if (fragmentMessageBinding5 != null && (textView2 = fragmentMessageBinding5.sentBtn) != null) {
+            textView2.setTextColor(-1);
+        }
+        FragmentMessageBinding fragmentMessageBinding6 = this$0.get_binding();
+        if (fragmentMessageBinding6 == null || (textView = fragmentMessageBinding6.inboxBtn) == null) {
+            return;
+        }
+        textView.setTextColor(ViewCompat.MEASURED_STATE_MASK);
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -299,16 +426,16 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
     }
 
     private final void listenResponse() {
-        getMessageViewModel().getInboxResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda0
+        getMessageViewModel().getInboxResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MessageFragment.listenResponse$lambda$2(MessageFragment.this, (Resource) obj);
+                MessageFragment.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$2(MessageFragment this$0, Resource resource) {
+    public static final void listenResponse$lambda$4(MessageFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
@@ -346,16 +473,16 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
     }
 
     private final void listenDeleteResponse() {
-        getMessageViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda3
+        getMessageViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MessageFragment.listenDeleteResponse$lambda$4(MessageFragment.this, (Resource) obj);
+                MessageFragment.listenDeleteResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenDeleteResponse$lambda$4(MessageFragment this$0, Resource resource) {
+    public static final void listenDeleteResponse$lambda$6(MessageFragment this$0, Resource resource) {
         RecyclerView rvInbox;
         RecyclerView rvInbox2;
         RecyclerView recyclerView;
@@ -410,6 +537,66 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
         }
     }
 
+    private final void listenOutboxResponse() {
+        getMessageViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda0
+            @Override // androidx.lifecycle.Observer
+            public final void onChanged(Object obj) {
+                MessageFragment.listenOutboxResponse$lambda$8(this.f$0, (Resource) obj);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void listenOutboxResponse$lambda$8(MessageFragment this$0, Resource resource) {
+        RecyclerView recyclerView;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+        if (i == 1) {
+            this$0.hideProgress();
+            ArrayList<Outbox> arrayList = (ArrayList) resource.getData();
+            if (arrayList != null) {
+                this$0.showBaseView();
+                this$0.getAdapterOutbox().addItems(arrayList);
+                return;
+            }
+            return;
+        }
+        if (i == 2) {
+            this$0.showProgress();
+            return;
+        }
+        if (i == 3) {
+            this$0.hideProgress();
+            this$0.showBaseView();
+            return;
+        }
+        if (i != 4) {
+            return;
+        }
+        this$0.hideProgress();
+        this$0.showBaseView();
+        FragmentMessageBinding fragmentMessageBinding = this$0.get_binding();
+        if (fragmentMessageBinding == null || (recyclerView = fragmentMessageBinding.rvInbox) == null) {
+            return;
+        }
+        String message = resource.getMessage();
+        Intrinsics.checkNotNull(message);
+        ToastExtKt.showErrorToast(recyclerView, message);
+    }
+
+    @Override // in.etuwa.app.ui.message.sentItems.SentItemAdapter.CallBack
+    public void onRead(Outbox msg) {
+        Intrinsics.checkNotNullParameter(msg, "msg");
+        try {
+            AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+            builder.setTitle("To : " + StringsKt.capitalize(msg.getTo()));
+            builder.setMessage(msg.getContent());
+            builder.setNegativeButton(HTTP.CONN_CLOSE, (DialogInterface.OnClickListener) null);
+            builder.show();
+        } catch (Exception unused) {
+        }
+    }
+
     @Override // in.etuwa.app.ui.message.inbox.InboxAdapter.CallBack
     public void onReadClick(final String id, final Inbox msg) {
         Intrinsics.checkNotNullParameter(id, "id");
@@ -418,10 +605,10 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setTitle("From : " + StringsKt.capitalize(msg.getFrom()));
         builder.setMessage(msg.getContent());
-        builder.setPositiveButton("Reply", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda1
+        builder.setPositiveButton("Reply", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.message.inbox.MessageFragment$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                MessageFragment.onReadClick$lambda$5(MessageFragment.this, id, msg, dialogInterface, i);
+                MessageFragment.onReadClick$lambda$9(this.f$0, id, msg, dialogInterface, i);
             }
         });
         builder.setNegativeButton(HTTP.CONN_CLOSE, (DialogInterface.OnClickListener) null);
@@ -429,7 +616,7 @@ public final class MessageFragment extends BaseFragment implements InboxAdapter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onReadClick$lambda$5(MessageFragment this$0, String id, Inbox msg, DialogInterface dialogInterface, int i) {
+    public static final void onReadClick$lambda$9(MessageFragment this$0, String id, Inbox msg, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(id, "$id");
         Intrinsics.checkNotNullParameter(msg, "$msg");

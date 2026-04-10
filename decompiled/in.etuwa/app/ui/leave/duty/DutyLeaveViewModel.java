@@ -19,8 +19,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DutyLeaveViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: DutyLeaveViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class DutyLeaveViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final LeaveRepository leaveRepository;
@@ -37,8 +37,8 @@ public final class DutyLeaveViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(filter, "filter");
         this.leaveResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<DutyLeave>> observeOn = this.leaveRepository.getDutyLeaveApiCall(new DutyLeaveViewRequest(filter)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<DutyLeave>, Unit> function1 = new Function1<ArrayList<DutyLeave>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveViewModel$getLeave$1
+        Single<ArrayList<DutyLeave>> singleObserveOn = this.leaveRepository.getDutyLeaveApiCall(new DutyLeaveViewRequest(filter)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<DutyLeave>, Unit> function1 = new Function1<ArrayList<DutyLeave>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveViewModel.getLeave.1
             {
                 super(1);
             }
@@ -49,20 +49,18 @@ public final class DutyLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<DutyLeave> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DutyLeaveViewModel.this.leaveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                DutyLeaveViewModel.this.leaveResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<DutyLeave>> consumer = new Consumer() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DutyLeaveViewModel.getLeave$lambda$0(Function1.this, obj);
+                DutyLeaveViewModel.getLeave$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveViewModel$getLeave$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveViewModel.getLeave.2
             {
                 super(1);
             }
@@ -73,17 +71,15 @@ public final class DutyLeaveViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = DutyLeaveViewModel.this.leaveResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                DutyLeaveViewModel.this.leaveResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                DutyLeaveViewModel.getLeave$lambda$1(Function1.this, obj);
+                DutyLeaveViewModel.getLeave$lambda$1(function12, obj);
             }
         }));
     }

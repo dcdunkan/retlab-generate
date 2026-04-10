@@ -19,12 +19,13 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendanceCalendarViewViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AttendanceCalendarViewViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AttendanceCalendarViewViewModel extends ViewModel {
     private final AttendanceRepository attendanceRepository;
     private MutableLiveData<Resource<AttendanceNewResponse>> attendanceResponse;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<ArrayList<Semester>>> semResponse;
 
     public AttendanceCalendarViewViewModel(AttendanceRepository attendanceRepository) {
@@ -33,14 +34,22 @@ public final class AttendanceCalendarViewViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.attendanceResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getSemester();
     }
 
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.attendanceRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.attendanceRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel.getSemester.1
             {
                 super(1);
             }
@@ -51,20 +60,18 @@ public final class AttendanceCalendarViewViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AttendanceCalendarViewViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                AttendanceCalendarViewViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AttendanceCalendarViewViewModel.getSemester$lambda$0(Function1.this, obj);
+                AttendanceCalendarViewViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel.getSemester.2
             {
                 super(1);
             }
@@ -75,17 +82,15 @@ public final class AttendanceCalendarViewViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AttendanceCalendarViewViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AttendanceCalendarViewViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AttendanceCalendarViewViewModel.getSemester$lambda$1(Function1.this, obj);
+                AttendanceCalendarViewViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -112,8 +117,8 @@ public final class AttendanceCalendarViewViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(month, "month");
         this.attendanceResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<AttendanceNewResponse> observeOn = this.attendanceRepository.getAttendanceByDayNewApiCall(new AttendanceRequestNew(sem, year, month)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<AttendanceNewResponse, Unit> function1 = new Function1<AttendanceNewResponse, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$getAttendanceByDay$1
+        Single<AttendanceNewResponse> singleObserveOn = this.attendanceRepository.getAttendanceByDayNewApiCall(new AttendanceRequestNew(sem, year, month)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<AttendanceNewResponse, Unit> function1 = new Function1<AttendanceNewResponse, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel.getAttendanceByDay.1
             {
                 super(1);
             }
@@ -124,20 +129,18 @@ public final class AttendanceCalendarViewViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(AttendanceNewResponse attendanceNewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AttendanceCalendarViewViewModel.this.attendanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(attendanceNewResponse));
+                AttendanceCalendarViewViewModel.this.attendanceResponse.postValue(Resource.INSTANCE.success(attendanceNewResponse));
             }
         };
         Consumer<? super AttendanceNewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AttendanceCalendarViewViewModel.getAttendanceByDay$lambda$2(Function1.this, obj);
+                AttendanceCalendarViewViewModel.getAttendanceByDay$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$getAttendanceByDay$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel.getAttendanceByDay.2
             {
                 super(1);
             }
@@ -148,17 +151,15 @@ public final class AttendanceCalendarViewViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AttendanceCalendarViewViewModel.this.attendanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AttendanceCalendarViewViewModel.this.attendanceResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.attendance.calendarview.AttendanceCalendarViewViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AttendanceCalendarViewViewModel.getAttendanceByDay$lambda$3(Function1.this, obj);
+                AttendanceCalendarViewViewModel.getAttendanceByDay$lambda$3(function12, obj);
             }
         }));
     }

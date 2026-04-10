@@ -18,6 +18,7 @@ import in.etuwa.app.data.model.attendance.AttendanceNewResponse;
 import in.etuwa.app.data.model.attendance.AttendanceRequest;
 import in.etuwa.app.data.model.attendance.AttendanceRequestNew;
 import in.etuwa.app.data.model.attendance.AttendanceResponse;
+import in.etuwa.app.data.model.calendar.AttendanceDetails;
 import in.etuwa.app.data.model.calendar.CalendarResponse;
 import in.etuwa.app.data.model.centralizedinfo.CentralizedInfoResponse;
 import in.etuwa.app.data.model.certificaterequest.CertificateRequestResponse;
@@ -39,6 +40,7 @@ import in.etuwa.app.data.model.dash.MaintenanceResponse;
 import in.etuwa.app.data.model.dash.PendingSurvey;
 import in.etuwa.app.data.model.dash.ProfileResponse;
 import in.etuwa.app.data.model.dash.daywisetimetaable.DayWiseResponse;
+import in.etuwa.app.data.model.due.DueResponse;
 import in.etuwa.app.data.model.due.duepay.DuePayUrl;
 import in.etuwa.app.data.model.due.duepay.NoDueCertificateResponse;
 import in.etuwa.app.data.model.due.duepaynew.DuePayNewResponse;
@@ -180,6 +182,7 @@ import in.etuwa.app.data.model.result.SeasonRequest;
 import in.etuwa.app.data.model.result.moduletest.ResultModuleTestResponse;
 import in.etuwa.app.data.model.result.tutorial.TutorialResultResponse;
 import in.etuwa.app.data.model.result.univ.UnivResponse;
+import in.etuwa.app.data.model.result.univ.UnivTotalResponse;
 import in.etuwa.app.data.model.semregistration.AcademicYearResponse;
 import in.etuwa.app.data.model.semregistration.SemRegViewResponse;
 import in.etuwa.app.data.model.semregistration.list.SemRegisterListResponse;
@@ -200,6 +203,7 @@ import in.etuwa.app.data.model.subjectregistration.SubjectsListResponse;
 import in.etuwa.app.data.model.subjectregistration.ViewSubjectRegistrationResponse;
 import in.etuwa.app.data.model.survey.GenSurveyQuestionRequest;
 import in.etuwa.app.data.model.survey.SubmitResponse;
+import in.etuwa.app.data.model.survey.SubmitTeacherResponse;
 import in.etuwa.app.data.model.survey.Survey;
 import in.etuwa.app.data.model.survey.SurveyQuestion;
 import in.etuwa.app.data.model.survey.SurveyRequest;
@@ -211,7 +215,6 @@ import in.etuwa.app.data.model.survey.graduateexit.DoGraduateSurveyResponse;
 import in.etuwa.app.data.model.survey.graduateexit.GraduateExitSurveyListResponse;
 import in.etuwa.app.data.model.survey.posurvey.POSurveyResponse;
 import in.etuwa.app.data.model.survey.posurvey.PoQuestionsResponse;
-import in.etuwa.app.data.model.timetable.TimetableResponse;
 import in.etuwa.app.data.model.timetable.change.ChangeTimeTableResponse;
 import in.etuwa.app.data.model.timetable.special.SpecialResponse;
 import in.etuwa.app.data.model.transport.TransportFeeResponse;
@@ -224,6 +227,7 @@ import in.etuwa.app.data.model.tutorial.TutorialResponse;
 import in.etuwa.app.data.model.university.UniversityResultResponse;
 import in.etuwa.app.data.model.updateprofile.UpdateProfile;
 import in.etuwa.app.data.model.video.VideoResponse;
+import in.etuwa.app.ui.dashboard.dashtable.TimeTableMonthlyNewResponse;
 import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDetailDialogKt;
 import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import io.reactivex.Observable;
@@ -235,7 +239,6 @@ import kotlin.Metadata;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import org.bouncycastle.i18n.ErrorBundle;
-import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
@@ -247,8 +250,8 @@ import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 import retrofit2.http.Path;
 
-/* compiled from: ApiService.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ApiService.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public interface ApiService {
     @FormUrlEncoded
     @POST(ApiEndPoints.ADD_ACHIEVEMENTS)
@@ -543,6 +546,9 @@ public interface ApiService {
     @POST(ApiEndPoints.ATTENDANCE_BY_SUBJECT_URL)
     Single<AttendanceResponse> getAttendanceBySubjectApiCall(@Body AttendanceRequest request);
 
+    @GET(ApiEndPoints.PROFILE_ATTENDANCE_URL)
+    Single<AttendanceDetails> getAttendanceDetails();
+
     @POST(ApiEndPoints.CALENDAR_EVENTS_URL)
     Single<CalendarResponse> getCalendarEventApiCall();
 
@@ -637,7 +643,7 @@ public interface ApiService {
     Single<DuePayUrl> getDuePayUrlApiCall(@FieldMap Map<String, String> dueFeeCollection, @FieldMap Map<String, String> dueFeeReceipt);
 
     @POST(ApiEndPoints.DUE)
-    Single<DuePayNewResponse> getDuesApiCall();
+    Single<DueResponse> getDuesApiCall();
 
     @POST(ApiEndPoints.DUTY_LEAVE_URL)
     Single<ArrayList<DutyLeave>> getDutyLeaveApiCall(@Body DutyLeaveViewRequest request);
@@ -664,7 +670,7 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(ApiEndPoints.EXAM_COURSE)
-    Single<ExamCourseResponse> getExamCourseApiCall(@Field("exam_id") String id);
+    Single<ExamCourseResponse> getExamCourseApiCall(@Field("id") String id);
 
     @FormUrlEncoded
     @POST(ApiEndPoints.EXAM_PAY)
@@ -799,8 +805,12 @@ public interface ApiService {
     Single<SuccessResponse> getHostelApplyLeaveApiCall(@Field("HostelStudentLeave[leavetype]") String leaveType, @Field("HostelStudentLeave[from_date]") String fromDate, @Field("HostelStudentLeave[to_date]") String toDate, @Field("HostelStudentLeave[reason]") String reason);
 
     @FormUrlEncoded
+    @POST(ApiEndPoints.HOSTEL_APPLY_LEAVE_NEW)
+    Single<SuccessResponse> getHostelApplyLeaveNewApiCall(@Field("HostelStudentLeave[leavetype]") String leaveType, @Field("HostelStudentLeave[from_date]") String fromDate, @Field("HostelStudentLeave[to_date]") String toDate, @Field("HostelStudentLeave[from_time]") String fromDateTime, @Field("HostelStudentLeave[to_time]") String toDateTime, @Field("HostelStudentLeave[reason]") String reason);
+
+    @FormUrlEncoded
     @POST(ApiEndPoints.HOSTEL_APPROVE_LEAVE_PARENT)
-    Single<SuccessResponse> getHostelApproveLeaveParentApiCall(@Field("id") String id);
+    Single<SuccessResponse> getHostelApproveLeaveParentApiCall(@FieldMap Map<String, String> approveCollection);
 
     @FormUrlEncoded
     @POST(ApiEndPoints.HOSTEL_ATT_CAL)
@@ -867,7 +877,7 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(ApiEndPoints.HOSTEL_REJECT_LEAVE_PARENT)
-    Single<SuccessResponse> getHostelRejectLeaveParentApiCall(@Field("id") String id);
+    Single<SuccessResponse> getHostelRejectLeaveParentApiCall(@FieldMap Map<String, String> rejectCollection);
 
     @FormUrlEncoded
     @POST(ApiEndPoints.HOSTEL_REVOKE_LEAVE_PARENT)
@@ -943,7 +953,7 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(ApiEndPoints.MODULE_TEST)
-    Single<ModuleTestResponse> getModuleTestApiCall(@Field("new") String r1);
+    Single<ModuleTestResponse> getModuleTestApiCall(@Field("new") String str);
 
     @GET(ApiEndPoints.VIEW_MOOC_COURSE)
     Single<MoocCourseResponse> getMoocCourseUrlApiCall();
@@ -1066,7 +1076,7 @@ public interface ApiService {
     Single<ReplyResponse> getReplyApiCall(@Field("sub_id") String subId, @Field("comment_id") String commentId, @Field("view_reply") String reply);
 
     @GET(ApiEndPoints.RESET_PASSWORD)
-    Single<Response<ResetPassword>> getResetPasswordApiCall();
+    Single<ResetPassword> getResetPasswordApiCall();
 
     @POST(ApiEndPoints.RESULT_ASSIGNMENT_URL)
     Single<ArrayList<ResultAssignment>> getResultAssignmentApiCall(@Body AttendanceRequest request);
@@ -1079,6 +1089,9 @@ public interface ApiService {
 
     @POST(ApiEndPoints.RESULT_SEASONAL_URL)
     Single<ArrayList<ResultSeasonal>> getResultSeasonalApiCall(@Body SeasonRequest request);
+
+    @GET(ApiEndPoints.RESULT_UNIV_TOTAL_URL)
+    Single<UnivTotalResponse> getResultUnivApiCall();
 
     @POST(ApiEndPoints.RESULT_UNIV_URL)
     Single<UnivResponse> getResultUnivApiCall(@Body AttendanceRequest request);
@@ -1187,8 +1200,12 @@ public interface ApiService {
     @POST(ApiEndPoints.TEACHER_URL)
     Single<TeacherResponse> getTeacherApiCall();
 
-    @GET("app/timetable")
-    Single<TimetableResponse> getTimetableApiCall();
+    @FormUrlEncoded
+    @POST("app/timetablenew")
+    Single<TimeTableMonthlyNewResponse> getTimeTableMonthlyApiCall(@Field("month") String date);
+
+    @POST("app/timetablenew")
+    Single<SuccessResponse> getTimeTableNew(@Field("month") String month);
 
     @FormUrlEncoded
     @POST("transport/installments")
@@ -1275,11 +1292,11 @@ public interface ApiService {
     @POST(ApiEndPoints.GRADUATE_EXIT_SURVEY_ANSWERS)
     Single<SuccessResponse> postGESurveyAnswer(@FieldMap Map<String, String> answerCollection);
 
-    @POST("quiz/result/{id}")
+    @POST("quiz/resultnew/{id}")
     Single<QuizResultResponse> quizResultApiCall(@Path("id") String id);
 
     @FormUrlEncoded
-    @POST(ApiEndPoints.QUIZ_RESULT)
+    @POST("quiz/resultnew")
     Single<QuizResultResponse> quizResultNewApiCall(@Field("id") String id);
 
     @FormUrlEncoded
@@ -1346,11 +1363,11 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(ApiEndPoints.CHAT_STUDENT)
-    Single<SuccessResponse> setCommentsApiCall(@Field("sub_id") String subId, @Field("batch_id") String batchId, @Field("sem_id") String semId, @Field("comment") String comment);
+    Single<SuccessResponse> setCommentsApiCall(@Field("sub_id") String subId, @Field("batch_id") String batchId, @Field("sem_id") String semId, @Field(ClientCookie.COMMENT_ATTR) String comment);
 
     @FormUrlEncoded
     @POST(ApiEndPoints.CHAT_PARENT)
-    Single<SuccessResponse> setParentCommentsApiCall(@Field("batch_id") String batchId, @Field("sem_id") String semId, @Field("comment") String comment);
+    Single<SuccessResponse> setParentCommentsApiCall(@Field("batch_id") String batchId, @Field("sem_id") String semId, @Field(ClientCookie.COMMENT_ATTR) String comment);
 
     @FormUrlEncoded
     @POST(ApiEndPoints.CHAT_PARENT)
@@ -1378,6 +1395,10 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(ApiEndPoints.SUBMIT_SURVEY_URL)
     Single<SubmitResponse> submitSurveyApiCall(@Field("survey_id") String surveyId, @Field("teacher_id") String teacherId, @Field("subject_id") String subjectId, @Field("AnswerDetail[remark]") String remark, @Field("AnswerDetail[special_remark]") String specialRemark, @FieldMap Map<String, String> option);
+
+    @FormUrlEncoded
+    @POST(ApiEndPoints.SUBMIT_TEACHER_SURVEY_NEW_URL)
+    Single<SubmitTeacherResponse> submitTeacherSurveyApiCall(@Field("question_id") String questionId, @Field("option_id") String optionId, @Field("teacher_id") String teacherId, @Field("subject_id") String subjectId, @Field("session_id") String sessionId);
 
     @POST(ApiEndPoints.SUBMIT_TUTORIALS)
     @Multipart
@@ -1517,7 +1538,7 @@ public interface ApiService {
 
     @POST(ApiEndPoints.UPLOAD_ASSIGNMENT_URL)
     @Multipart
-    Observable<SuccessResponse> uploadAssignmentApiCall(@Part("LoginForm[username]") RequestBody username, @Part("LoginForm[password]") RequestBody password, @Part("assignment_id") RequestBody id, @Part MultipartBody.Part file);
+    Observable<SuccessResponse> uploadAssignmentApiCall(@Part("LoginForm[username]") RequestBody username, @Part("LoginForm[password]") RequestBody password, @Part("assignment_id") RequestBody id, @Part("AssignmentData[link]") RequestBody link, @Part MultipartBody.Part file);
 
     @POST(ApiEndPoints.UPLOAD_COVID_CERTIFICATE_URL)
     @Multipart
@@ -1542,10 +1563,6 @@ public interface ApiService {
     @POST(ApiEndPoints.SUBMIT_SERIES_EXAM)
     @Multipart
     Observable<SuccessResponse> uploadSeriesExamApiCall(@Part("LoginForm[username]") RequestBody username, @Part("LoginForm[password]") RequestBody password, @Part("id") RequestBody id, @Part MultipartBody.Part file);
-
-    @FormUrlEncoded
-    @POST(ApiEndPoints.EXAM_VERIFY_ABC_ID)
-    Single<SuccessResponse> verifyAbcIdApiCall(@Field("abc_id") String id);
 
     @FormUrlEncoded
     @POST(ApiEndPoints.VERIFY_BANK_DETAILS)

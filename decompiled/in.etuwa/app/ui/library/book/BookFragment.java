@@ -41,18 +41,18 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: BookFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: BookFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class BookFragment extends BaseFragment implements BookAdapter.BooksCallBack, BookDetailsDialog.BooksDetailsListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentBooksBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: booksViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: booksViewModel$delegate, reason: from kotlin metadata */
     private final Lazy booksViewModel;
     private boolean hel;
     private MainCallBackListener listener;
@@ -88,7 +88,7 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return bookFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(bookFragment);
@@ -102,7 +102,7 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -115,7 +115,7 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(BookViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(BookViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final BookFragment bookFragment2 = this;
@@ -147,7 +147,7 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentBooksBinding get_binding() {
         return this._binding;
     }
@@ -160,7 +160,7 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
         this.hel = z;
     }
 
-    /* compiled from: BookFragment.kt */
+    /* JADX INFO: compiled from: BookFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/library/book/BookFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/library/book/BookFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -216,9 +216,10 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
     }
 
     private final void listenResponse() {
-        getBooksViewModel().getResponse().observe(getViewLifecycleOwner(), new BookFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends BooksResponse>, Unit>() { // from class: in.etuwa.app.ui.library.book.BookFragment$listenResponse$1
+        getBooksViewModel().getResponse().observe(getViewLifecycleOwner(), new BookFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends BooksResponse>, Unit>() { // from class: in.etuwa.app.ui.library.book.BookFragment.listenResponse.1
 
-            /* compiled from: BookFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.library.book.BookFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: BookFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -255,10 +256,8 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<BooksResponse> resource) {
-                BookAdapter adapter;
-                FragmentBooksBinding fragmentBooksBinding;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -267,8 +266,7 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
                     if (data != null) {
                         BookFragment bookFragment = BookFragment.this;
                         bookFragment.showBaseView();
-                        adapter = bookFragment.getAdapter();
-                        adapter.addItems(data.getBooks());
+                        bookFragment.getAdapter().addItems(data.getBooks());
                         return;
                     }
                     return;
@@ -287,7 +285,7 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
                 }
                 BookFragment.this.hideProgress();
                 BookFragment.this.showBaseView();
-                fragmentBooksBinding = BookFragment.this.get_binding();
+                FragmentBooksBinding fragmentBooksBinding = BookFragment.this.get_binding();
                 if (fragmentBooksBinding == null || (recyclerView = fragmentBooksBinding.rvBooks) == null) {
                     return;
                 }
@@ -326,8 +324,8 @@ public final class BookFragment extends BaseFragment implements BookAdapter.Book
     public void onDetailsBtnClicked(int position) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        BookDetailsDialog newInstance = BookDetailsDialog.INSTANCE.newInstance(position);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        BookDetailsDialog bookDetailsDialogNewInstance = BookDetailsDialog.INSTANCE.newInstance(position);
+        bookDetailsDialogNewInstance.setCallBack(this);
+        bookDetailsDialogNewInstance.show(childFragmentManager, (String) null);
     }
 }

@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.gateway2.GatewayTwoViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogGatewayTwoBindingImpl extends DialogGatewayTwoBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -76,7 +76,7 @@ public class DialogGatewayTwoBindingImpl extends DialogGatewayTwoBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (98 != variableId) {
+        if (99 != variableId) {
             return false;
         }
         setGatewayTwoViewModel((GatewayTwoViewModel) variable);

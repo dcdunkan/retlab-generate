@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.moduletest.ResultModuleTestViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ResultModuleTestFragmentBindingImpl extends ResultModuleTestFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -71,7 +71,7 @@ public class ResultModuleTestFragmentBindingImpl extends ResultModuleTestFragmen
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (186 != variableId) {
+        if (188 != variableId) {
             return false;
         }
         setResultModuleTestViewModel((ResultModuleTestViewModel) variable);

@@ -26,6 +26,7 @@ import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.databinding.SubmitHomeWorkDialogBinding;
 import in.etuwa.app.ui.base.BaseDialog;
+import in.etuwa.app.ui.evaluation.EvaluationFragment;
 import in.etuwa.app.ui.homework.HomeWorkFragment;
 import in.etuwa.app.utils.ResolvUtilKt;
 import in.etuwa.app.utils.Resource;
@@ -47,27 +48,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SubmitHomeWorkDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: SubmitHomeWorkDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SubmitHomeWorkDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private SubmitHomeWorkDialogBinding _binding;
     private String id;
     private SubmitHomeWorkCallBack listener;
     private File pickFile;
 
-    /* renamed from: submitHomeWorkDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: submitHomeWorkDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy submitHomeWorkDialogViewModel;
 
-    /* compiled from: SubmitHomeWorkDialog.kt */
+    /* JADX INFO: compiled from: SubmitHomeWorkDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/homework/submit/SubmitHomeWorkDialog$SubmitHomeWorkCallBack;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface SubmitHomeWorkCallBack {
         void onDismiss();
     }
 
-    /* compiled from: SubmitHomeWorkDialog.kt */
+    /* JADX INFO: compiled from: SubmitHomeWorkDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -109,7 +110,7 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return submitHomeWorkDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(submitHomeWorkDialog);
@@ -123,7 +124,7 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -136,7 +137,7 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SubmitHomeWorkDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SubmitHomeWorkDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -145,12 +146,12 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
         return (SubmitHomeWorkDialogViewModel) this.submitHomeWorkDialogViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final SubmitHomeWorkDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: SubmitHomeWorkDialog.kt */
+    /* JADX INFO: compiled from: SubmitHomeWorkDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/homework/submit/SubmitHomeWorkDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/homework/submit/SubmitHomeWorkDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -222,7 +223,7 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.homework.submit.SubmitHomeWorkDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SubmitHomeWorkDialog.setUp$lambda$2(SubmitHomeWorkDialog.this, view);
+                    SubmitHomeWorkDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -233,7 +234,7 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.homework.submit.SubmitHomeWorkDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SubmitHomeWorkDialog.setUp$lambda$3(SubmitHomeWorkDialog.this, view);
+                SubmitHomeWorkDialog.setUp$lambda$3(this.f$0, view);
             }
         });
     }
@@ -316,7 +317,7 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
         getSubmitHomeWorkDialogViewModel().getUploadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.homework.submit.SubmitHomeWorkDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SubmitHomeWorkDialog.listenResponse$lambda$5(SubmitHomeWorkDialog.this, (Resource) obj);
+                SubmitHomeWorkDialog.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -384,7 +385,7 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
         getSubmitHomeWorkDialogViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.homework.submit.SubmitHomeWorkDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SubmitHomeWorkDialog.listenProgressResponse$lambda$7(SubmitHomeWorkDialog.this, (Resource) obj);
+                SubmitHomeWorkDialog.listenProgressResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -415,18 +416,18 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             SubmitHomeWorkDialogBinding submitHomeWorkDialogBinding2 = this$0.get_binding();
             ProgressBar progressBar = submitHomeWorkDialogBinding2 != null ? submitHomeWorkDialogBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             SubmitHomeWorkDialogBinding submitHomeWorkDialogBinding3 = this$0.get_binding();
             TextView textView2 = submitHomeWorkDialogBinding3 != null ? submitHomeWorkDialogBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -435,10 +436,10 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
-        String str2;
+        String fileName2;
         ContentResolver contentResolver3;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -452,27 +453,27 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver3 = context.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver3, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
                     File cacheDir = context3 != null ? context3.getCacheDir() : null;
                     Context context4 = getContext();
                     if (context4 == null || (contentResolver2 = context4.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                 }
             }
@@ -482,6 +483,11 @@ public final class SubmitHomeWorkDialog extends BaseDialog {
     }
 
     public final void setSubmitHomeWorkCallBack(HomeWorkFragment context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.listener = context;
+    }
+
+    public final void setSubmitHomeWorkCallBack(EvaluationFragment context) {
         Intrinsics.checkNotNullParameter(context, "context");
         this.listener = context;
     }

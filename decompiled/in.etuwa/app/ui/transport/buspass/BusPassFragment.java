@@ -42,23 +42,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: BusPassFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: BusPassFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class BusPassFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentTransportBuspassBinding _binding;
 
-    /* renamed from: busPassViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: busPassViewModel$delegate, reason: from kotlin metadata */
     private final Lazy busPassViewModel;
     private String downloadUrl;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String url;
 
-    /* compiled from: BusPassFragment.kt */
+    /* JADX INFO: compiled from: BusPassFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -116,7 +116,7 @@ public final class BusPassFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return busPassFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(busPassFragment);
@@ -130,7 +130,7 @@ public final class BusPassFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -143,7 +143,7 @@ public final class BusPassFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(BusPassViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(BusPassViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final BusPassFragment busPassFragment2 = this;
@@ -169,7 +169,7 @@ public final class BusPassFragment extends BaseFragment {
         return (BusPassViewModel) this.busPassViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentTransportBuspassBinding get_binding() {
         return this._binding;
     }
@@ -178,7 +178,7 @@ public final class BusPassFragment extends BaseFragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: BusPassFragment.kt */
+    /* JADX INFO: compiled from: BusPassFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/transport/buspass/BusPassFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/transport/buspass/BusPassFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -238,7 +238,7 @@ public final class BusPassFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.buspass.BusPassFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BusPassFragment.setUp$lambda$0(BusPassFragment.this, view);
+                BusPassFragment.setUp$lambda$0(this.f$0, view);
             }
         });
     }
@@ -260,7 +260,7 @@ public final class BusPassFragment extends BaseFragment {
         getBusPassViewModel().getBusPassResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.transport.buspass.BusPassFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                BusPassFragment.listenResponse$lambda$2(BusPassFragment.this, (Resource) obj);
+                BusPassFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -372,20 +372,20 @@ public final class BusPassFragment extends BaseFragment {
                 this$0.url = busPass.getQr_code();
                 this$0.downloadUrl = busPass.getUrl();
                 if (!Intrinsics.areEqual(busPass.getPhoto_url(), "")) {
-                    RequestCreator fit = Picasso.get().load(busPass.getPhoto_url()).placeholder(R.drawable.ic_user_profile).fit();
+                    RequestCreator requestCreatorFit = Picasso.get().load(busPass.getPhoto_url()).placeholder(R.drawable.ic_user_profile).fit();
                     FragmentTransportBuspassBinding fragmentTransportBuspassBinding16 = this$0.get_binding();
                     ImageView imageView = fragmentTransportBuspassBinding16 != null ? fragmentTransportBuspassBinding16.bpImage : null;
                     Intrinsics.checkNotNull(imageView);
-                    fit.into(imageView);
+                    requestCreatorFit.into(imageView);
                 }
                 if (Intrinsics.areEqual(busPass.getQr_code(), "")) {
                     return;
                 }
-                RequestCreator error = Picasso.get().load(busPass.getQr_code()).fit().error(R.drawable.ic_user_profile);
+                RequestCreator requestCreatorError = Picasso.get().load(busPass.getQr_code()).fit().error(R.drawable.ic_user_profile);
                 FragmentTransportBuspassBinding fragmentTransportBuspassBinding17 = this$0.get_binding();
                 ImageView imageView2 = fragmentTransportBuspassBinding17 != null ? fragmentTransportBuspassBinding17.bpQr : null;
                 Intrinsics.checkNotNull(imageView2);
-                error.into(imageView2);
+                requestCreatorError.into(imageView2);
                 return;
             }
             FragmentTransportBuspassBinding fragmentTransportBuspassBinding18 = this$0.get_binding();

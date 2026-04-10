@@ -39,24 +39,24 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: MyFirebaseMessagingService.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MyFirebaseMessagingService.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class MyFirebaseMessagingService extends FirebaseMessagingService implements KoinComponent {
 
-    /* renamed from: dataBase$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: dataBase$delegate, reason: from kotlin metadata */
     private final Lazy dataBase;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private final int msgId = random(new IntRange(0, 50));
     private final String NOTIFICATION_CHANNEL_ID = "10001";
 
     public MyFirebaseMessagingService() {
         final MyFirebaseMessagingService myFirebaseMessagingService = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.service.MyFirebaseMessagingService$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.service.MyFirebaseMessagingService$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -66,7 +66,7 @@ public final class MyFirebaseMessagingService extends FirebaseMessagingService i
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = myFirebaseMessagingService;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -77,10 +77,10 @@ public final class MyFirebaseMessagingService extends FirebaseMessagingService i
                 return rootScope.get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), qualifier2, function0);
             }
         });
-        LazyThreadSafetyMode defaultLazyMode2 = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode2 = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final byte b2 = 0 == true ? 1 : 0;
         final byte b3 = 0 == true ? 1 : 0;
-        this.dataBase = LazyKt.lazy(defaultLazyMode2, (Function0) new Function0<MyDataBase>() { // from class: in.etuwa.app.service.MyFirebaseMessagingService$special$$inlined$inject$default$2
+        this.dataBase = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode2, (Function0) new Function0<MyDataBase>() { // from class: in.etuwa.app.service.MyFirebaseMessagingService$special$$inlined$inject$default$2
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -90,7 +90,7 @@ public final class MyFirebaseMessagingService extends FirebaseMessagingService i
             @Override // kotlin.jvm.functions.Function0
             public final MyDataBase invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = myFirebaseMessagingService;
                 Qualifier qualifier2 = b2;
                 Function0<? extends ParametersHolder> function0 = b3;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -168,14 +168,14 @@ public final class MyFirebaseMessagingService extends FirebaseMessagingService i
         Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.app.NotificationManager");
         NotificationManager notificationManager = (NotificationManager) systemService;
         if (Build.VERSION.SDK_INT >= 26) {
-            ValidChecker$$ExternalSyntheticApiModelOutline0.m599m();
-            NotificationChannel m = ValidChecker$$ExternalSyntheticApiModelOutline0.m(this.NOTIFICATION_CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", 4);
-            m.enableLights(true);
-            m.setLightColor(SupportMenu.CATEGORY_MASK);
-            m.enableVibration(true);
-            m.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            ValidChecker$$ExternalSyntheticApiModelOutline0.m604m();
+            NotificationChannel notificationChannelM = ValidChecker$$ExternalSyntheticApiModelOutline0.m(this.NOTIFICATION_CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", 4);
+            notificationChannelM.enableLights(true);
+            notificationChannelM.setLightColor(SupportMenu.CATEGORY_MASK);
+            notificationChannelM.enableVibration(true);
+            notificationChannelM.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             contentIntent.setChannelId(this.NOTIFICATION_CHANNEL_ID);
-            notificationManager.createNotificationChannel(m);
+            notificationManager.createNotificationChannel(notificationChannelM);
         }
         notificationManager.notify(this.msgId, contentIntent.build());
     }
@@ -191,14 +191,14 @@ public final class MyFirebaseMessagingService extends FirebaseMessagingService i
         Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.app.NotificationManager");
         NotificationManager notificationManager = (NotificationManager) systemService;
         if (Build.VERSION.SDK_INT >= 26) {
-            ValidChecker$$ExternalSyntheticApiModelOutline0.m599m();
-            NotificationChannel m = ValidChecker$$ExternalSyntheticApiModelOutline0.m(this.NOTIFICATION_CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", 4);
-            m.enableLights(true);
-            m.setLightColor(SupportMenu.CATEGORY_MASK);
-            m.enableVibration(true);
-            m.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            ValidChecker$$ExternalSyntheticApiModelOutline0.m604m();
+            NotificationChannel notificationChannelM = ValidChecker$$ExternalSyntheticApiModelOutline0.m(this.NOTIFICATION_CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", 4);
+            notificationChannelM.enableLights(true);
+            notificationChannelM.setLightColor(SupportMenu.CATEGORY_MASK);
+            notificationChannelM.enableVibration(true);
+            notificationChannelM.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             sound.setChannelId(this.NOTIFICATION_CHANNEL_ID);
-            notificationManager.createNotificationChannel(m);
+            notificationManager.createNotificationChannel(notificationChannelM);
         }
         notificationManager.notify(this.msgId, sound.build());
         storeMsgToDB(title, message, timestamp);
@@ -209,6 +209,6 @@ public final class MyFirebaseMessagingService extends FirebaseMessagingService i
     }
 
     private final int random(ClosedRange<Integer> closedRange) {
-        return new Random().nextInt((closedRange.getEndInclusive().intValue() + 1) - closedRange.getStart().intValue()) + closedRange.getStart().intValue();
+        return new Random().nextInt((((Number) closedRange.getEndInclusive()).intValue() + 1) - ((Number) closedRange.getStart()).intValue()) + ((Number) closedRange.getStart()).intValue();
     }
 }

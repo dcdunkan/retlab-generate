@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.projectwork.add.AddProjectWorkViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogAddProjectWorkBinding extends ViewDataBinding {
     public final TextView addBtn;
     public final LinearLayout completionCard;

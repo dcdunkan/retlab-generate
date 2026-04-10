@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentPoQuestionsNewBindingImpl extends FragmentPoQuestionsNewBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -91,7 +91,7 @@ public class FragmentPoQuestionsNewBindingImpl extends FragmentPoQuestionsNewBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (162 != variableId) {
+        if (164 != variableId) {
             return false;
         }
         setPoSurveyQuestionsNewViewModel((PoSurveyQuestionsNewViewModel) variable);

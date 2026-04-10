@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendanceDayResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AttendanceDayResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AttendanceDayResponse {
     private final ArrayList<AttendanceDay> attends;
 

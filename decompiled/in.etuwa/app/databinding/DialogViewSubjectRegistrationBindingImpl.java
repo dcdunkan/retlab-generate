@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.view.ViewSubjectRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogViewSubjectRegistrationBindingImpl extends DialogViewSubjectRegistrationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -79,7 +79,7 @@ public class DialogViewSubjectRegistrationBindingImpl extends DialogViewSubjectR
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (248 != variableId) {
+        if (250 != variableId) {
             return false;
         }
         setViewSubjectRegistrationViewModel((ViewSubjectRegistrationViewModel) variable);

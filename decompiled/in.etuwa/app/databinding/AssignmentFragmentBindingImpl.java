@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.assignment.AssignmentViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AssignmentFragmentBindingImpl extends AssignmentFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -34,22 +34,21 @@ public class AssignmentFragmentBindingImpl extends AssignmentFragmentBinding {
         sparseIntArray.put(R.id.assi_sort, 3);
         sparseIntArray.put(R.id.spin_layout, 4);
         sparseIntArray.put(R.id.spinner_sem, 5);
-        sparseIntArray.put(R.id.tvassignment, 6);
-        sparseIntArray.put(R.id.filter_all, 7);
-        sparseIntArray.put(R.id.filter_submitted, 8);
-        sparseIntArray.put(R.id.filter_notsubmited, 9);
-        sparseIntArray.put(R.id.swipe_layout, 10);
-        sparseIntArray.put(R.id.rv_assignment, 11);
-        sparseIntArray.put(R.id.fab_ass, 12);
-        sparseIntArray.put(R.id.fab_assignment_semester, 13);
+        sparseIntArray.put(R.id.filter_all, 6);
+        sparseIntArray.put(R.id.filter_submitted, 7);
+        sparseIntArray.put(R.id.filter_notsubmited, 8);
+        sparseIntArray.put(R.id.swipe_layout, 9);
+        sparseIntArray.put(R.id.rv_assignment, 10);
+        sparseIntArray.put(R.id.fab_ass, 11);
+        sparseIntArray.put(R.id.fab_assignment_semester, 12);
     }
 
     public AssignmentFragmentBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 13, sIncludes, sViewsWithIds));
     }
 
     private AssignmentFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (LinearLayout) bindings[2], (LinearLayout) bindings[3], (FloatingActionButton) bindings[12], (FloatingActionButton) bindings[13], (TextView) bindings[7], (TextView) bindings[9], (TextView) bindings[8], (RecyclerView) bindings[11], (LinearLayout) bindings[4], (Spinner) bindings[5], (SwipeRefreshLayout) bindings[10], (TextView) bindings[6]);
+        super(bindingComponent, root, 0, (LinearLayout) bindings[2], (LinearLayout) bindings[3], (FloatingActionButton) bindings[11], (FloatingActionButton) bindings[12], (TextView) bindings[6], (TextView) bindings[8], (TextView) bindings[7], (RecyclerView) bindings[10], (FrameLayout) bindings[4], (Spinner) bindings[5], (SwipeRefreshLayout) bindings[9]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -77,7 +76,7 @@ public class AssignmentFragmentBindingImpl extends AssignmentFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (33 != variableId) {
+        if (32 != variableId) {
             return false;
         }
         setAssignmentViewModel((AssignmentViewModel) variable);

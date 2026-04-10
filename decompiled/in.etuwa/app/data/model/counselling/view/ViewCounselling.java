@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewCounselling.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewCounselling.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ViewCounselling {
     private final String applicant;
     private final String concern;
@@ -14,6 +14,10 @@ public final /* data */ class ViewCounselling {
     @SerializedName("counselling_history")
     @Expose
     private final String counsellingHistory;
+
+    @SerializedName("counselling_no")
+    @Expose
+    private final String counsellingNo;
 
     @SerializedName("counselling_session_required")
     @Expose
@@ -41,63 +45,69 @@ public final /* data */ class ViewCounselling {
     @Expose
     private final String impactStudies;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component10, reason: from getter */
-    public final String getCounsellingHistory() {
-        return this.counsellingHistory;
-    }
-
-    /* renamed from: component11, reason: from getter */
-    public final String getCounsellingSessionRequired() {
-        return this.counsellingSessionRequired;
-    }
-
-    /* renamed from: component2, reason: from getter */
-    public final String getCounsellingType() {
-        return this.counsellingType;
-    }
-
-    /* renamed from: component3, reason: from getter */
-    public final String getApplicant() {
-        return this.applicant;
-    }
-
-    /* renamed from: component4, reason: from getter */
-    public final String getDate() {
-        return this.date;
-    }
-
-    /* renamed from: component5, reason: from getter */
-    public final String getConcern() {
-        return this.concern;
-    }
-
-    /* renamed from: component6, reason: from getter */
-    public final String getImpactHome() {
-        return this.impactHome;
-    }
-
-    /* renamed from: component7, reason: from getter */
-    public final String getImpactStudies() {
-        return this.impactStudies;
-    }
-
-    /* renamed from: component8, reason: from getter */
-    public final String getImpactRelationship() {
-        return this.impactRelationship;
-    }
-
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getImpactPhysicallyEmotionally() {
         return this.impactPhysicallyEmotionally;
     }
 
-    public final ViewCounselling copy(String id, String counsellingType, String applicant, String date, String concern, String impactHome, String impactStudies, String impactRelationship, String impactPhysicallyEmotionally, String counsellingHistory, String counsellingSessionRequired) {
+    /* JADX INFO: renamed from: component11, reason: from getter */
+    public final String getCounsellingHistory() {
+        return this.counsellingHistory;
+    }
+
+    /* JADX INFO: renamed from: component12, reason: from getter */
+    public final String getCounsellingSessionRequired() {
+        return this.counsellingSessionRequired;
+    }
+
+    /* JADX INFO: renamed from: component2, reason: from getter */
+    public final String getCounsellingNo() {
+        return this.counsellingNo;
+    }
+
+    /* JADX INFO: renamed from: component3, reason: from getter */
+    public final String getCounsellingType() {
+        return this.counsellingType;
+    }
+
+    /* JADX INFO: renamed from: component4, reason: from getter */
+    public final String getApplicant() {
+        return this.applicant;
+    }
+
+    /* JADX INFO: renamed from: component5, reason: from getter */
+    public final String getDate() {
+        return this.date;
+    }
+
+    /* JADX INFO: renamed from: component6, reason: from getter */
+    public final String getConcern() {
+        return this.concern;
+    }
+
+    /* JADX INFO: renamed from: component7, reason: from getter */
+    public final String getImpactHome() {
+        return this.impactHome;
+    }
+
+    /* JADX INFO: renamed from: component8, reason: from getter */
+    public final String getImpactStudies() {
+        return this.impactStudies;
+    }
+
+    /* JADX INFO: renamed from: component9, reason: from getter */
+    public final String getImpactRelationship() {
+        return this.impactRelationship;
+    }
+
+    public final ViewCounselling copy(String id, String counsellingNo, String counsellingType, String applicant, String date, String concern, String impactHome, String impactStudies, String impactRelationship, String impactPhysicallyEmotionally, String counsellingHistory, String counsellingSessionRequired) {
         Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(counsellingNo, "counsellingNo");
         Intrinsics.checkNotNullParameter(counsellingType, "counsellingType");
         Intrinsics.checkNotNullParameter(applicant, "applicant");
         Intrinsics.checkNotNullParameter(date, "date");
@@ -108,7 +118,7 @@ public final /* data */ class ViewCounselling {
         Intrinsics.checkNotNullParameter(impactPhysicallyEmotionally, "impactPhysicallyEmotionally");
         Intrinsics.checkNotNullParameter(counsellingHistory, "counsellingHistory");
         Intrinsics.checkNotNullParameter(counsellingSessionRequired, "counsellingSessionRequired");
-        return new ViewCounselling(id, counsellingType, applicant, date, concern, impactHome, impactStudies, impactRelationship, impactPhysicallyEmotionally, counsellingHistory, counsellingSessionRequired);
+        return new ViewCounselling(id, counsellingNo, counsellingType, applicant, date, concern, impactHome, impactStudies, impactRelationship, impactPhysicallyEmotionally, counsellingHistory, counsellingSessionRequired);
     }
 
     public boolean equals(Object other) {
@@ -119,19 +129,20 @@ public final /* data */ class ViewCounselling {
             return false;
         }
         ViewCounselling viewCounselling = (ViewCounselling) other;
-        return Intrinsics.areEqual(this.id, viewCounselling.id) && Intrinsics.areEqual(this.counsellingType, viewCounselling.counsellingType) && Intrinsics.areEqual(this.applicant, viewCounselling.applicant) && Intrinsics.areEqual(this.date, viewCounselling.date) && Intrinsics.areEqual(this.concern, viewCounselling.concern) && Intrinsics.areEqual(this.impactHome, viewCounselling.impactHome) && Intrinsics.areEqual(this.impactStudies, viewCounselling.impactStudies) && Intrinsics.areEqual(this.impactRelationship, viewCounselling.impactRelationship) && Intrinsics.areEqual(this.impactPhysicallyEmotionally, viewCounselling.impactPhysicallyEmotionally) && Intrinsics.areEqual(this.counsellingHistory, viewCounselling.counsellingHistory) && Intrinsics.areEqual(this.counsellingSessionRequired, viewCounselling.counsellingSessionRequired);
+        return Intrinsics.areEqual(this.id, viewCounselling.id) && Intrinsics.areEqual(this.counsellingNo, viewCounselling.counsellingNo) && Intrinsics.areEqual(this.counsellingType, viewCounselling.counsellingType) && Intrinsics.areEqual(this.applicant, viewCounselling.applicant) && Intrinsics.areEqual(this.date, viewCounselling.date) && Intrinsics.areEqual(this.concern, viewCounselling.concern) && Intrinsics.areEqual(this.impactHome, viewCounselling.impactHome) && Intrinsics.areEqual(this.impactStudies, viewCounselling.impactStudies) && Intrinsics.areEqual(this.impactRelationship, viewCounselling.impactRelationship) && Intrinsics.areEqual(this.impactPhysicallyEmotionally, viewCounselling.impactPhysicallyEmotionally) && Intrinsics.areEqual(this.counsellingHistory, viewCounselling.counsellingHistory) && Intrinsics.areEqual(this.counsellingSessionRequired, viewCounselling.counsellingSessionRequired);
     }
 
     public int hashCode() {
-        return (((((((((((((((((((this.id.hashCode() * 31) + this.counsellingType.hashCode()) * 31) + this.applicant.hashCode()) * 31) + this.date.hashCode()) * 31) + this.concern.hashCode()) * 31) + this.impactHome.hashCode()) * 31) + this.impactStudies.hashCode()) * 31) + this.impactRelationship.hashCode()) * 31) + this.impactPhysicallyEmotionally.hashCode()) * 31) + this.counsellingHistory.hashCode()) * 31) + this.counsellingSessionRequired.hashCode();
+        return (((((((((((((((((((((this.id.hashCode() * 31) + this.counsellingNo.hashCode()) * 31) + this.counsellingType.hashCode()) * 31) + this.applicant.hashCode()) * 31) + this.date.hashCode()) * 31) + this.concern.hashCode()) * 31) + this.impactHome.hashCode()) * 31) + this.impactStudies.hashCode()) * 31) + this.impactRelationship.hashCode()) * 31) + this.impactPhysicallyEmotionally.hashCode()) * 31) + this.counsellingHistory.hashCode()) * 31) + this.counsellingSessionRequired.hashCode();
     }
 
     public String toString() {
-        return "ViewCounselling(id=" + this.id + ", counsellingType=" + this.counsellingType + ", applicant=" + this.applicant + ", date=" + this.date + ", concern=" + this.concern + ", impactHome=" + this.impactHome + ", impactStudies=" + this.impactStudies + ", impactRelationship=" + this.impactRelationship + ", impactPhysicallyEmotionally=" + this.impactPhysicallyEmotionally + ", counsellingHistory=" + this.counsellingHistory + ", counsellingSessionRequired=" + this.counsellingSessionRequired + ")";
+        return "ViewCounselling(id=" + this.id + ", counsellingNo=" + this.counsellingNo + ", counsellingType=" + this.counsellingType + ", applicant=" + this.applicant + ", date=" + this.date + ", concern=" + this.concern + ", impactHome=" + this.impactHome + ", impactStudies=" + this.impactStudies + ", impactRelationship=" + this.impactRelationship + ", impactPhysicallyEmotionally=" + this.impactPhysicallyEmotionally + ", counsellingHistory=" + this.counsellingHistory + ", counsellingSessionRequired=" + this.counsellingSessionRequired + ")";
     }
 
-    public ViewCounselling(String id, String counsellingType, String applicant, String date, String concern, String impactHome, String impactStudies, String impactRelationship, String impactPhysicallyEmotionally, String counsellingHistory, String counsellingSessionRequired) {
+    public ViewCounselling(String id, String counsellingNo, String counsellingType, String applicant, String date, String concern, String impactHome, String impactStudies, String impactRelationship, String impactPhysicallyEmotionally, String counsellingHistory, String counsellingSessionRequired) {
         Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(counsellingNo, "counsellingNo");
         Intrinsics.checkNotNullParameter(counsellingType, "counsellingType");
         Intrinsics.checkNotNullParameter(applicant, "applicant");
         Intrinsics.checkNotNullParameter(date, "date");
@@ -143,6 +154,7 @@ public final /* data */ class ViewCounselling {
         Intrinsics.checkNotNullParameter(counsellingHistory, "counsellingHistory");
         Intrinsics.checkNotNullParameter(counsellingSessionRequired, "counsellingSessionRequired");
         this.id = id;
+        this.counsellingNo = counsellingNo;
         this.counsellingType = counsellingType;
         this.applicant = applicant;
         this.date = date;
@@ -157,6 +169,10 @@ public final /* data */ class ViewCounselling {
 
     public final String getId() {
         return this.id;
+    }
+
+    public final String getCounsellingNo() {
+        return this.counsellingNo;
     }
 
     public final String getCounsellingType() {

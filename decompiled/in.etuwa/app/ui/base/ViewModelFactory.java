@@ -9,8 +9,8 @@ import in.etuwa.app.ui.login.LoginViewModel;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewModelFactory.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ViewModelFactory.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ViewModelFactory implements ViewModelProvider.Factory {
     private final ApiHelper apiHelper;
 

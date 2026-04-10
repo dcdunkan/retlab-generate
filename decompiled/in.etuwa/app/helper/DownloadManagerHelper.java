@@ -21,8 +21,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 
-/* compiled from: DownloadManagerHelper.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DownloadManagerHelper.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class DownloadManagerHelper {
     private final Context context;
     private final Regex re;
@@ -45,15 +45,15 @@ public final class DownloadManagerHelper {
         Intrinsics.checkNotNullParameter(path, "path");
         Intrinsics.checkNotNullParameter(url, "url");
         try {
-            String replace = this.re.replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+            String strReplace = this.re.replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
             Object systemService = this.context.getSystemService("download");
             Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.app.DownloadManager");
             DownloadManager downloadManager = (DownloadManager) systemService;
             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
             if (Build.VERSION.SDK_INT >= 29) {
-                request.setTitle(replace).setDestinationInExternalFilesDir(this.context, null, Environment.DIRECTORY_DOWNLOADS + path + replace).setNotificationVisibility(1);
+                request.setTitle(strReplace).setDestinationInExternalFilesDir(this.context, null, Environment.DIRECTORY_DOWNLOADS + path + strReplace).setNotificationVisibility(1);
             } else {
-                request.setTitle(replace).setDestinationInExternalPublicDir(path, replace).setNotificationVisibility(1);
+                request.setTitle(strReplace).setDestinationInExternalPublicDir(path, strReplace).setNotificationVisibility(1);
             }
             return downloadManager.enqueue(request);
         } catch (Exception unused) {
@@ -63,7 +63,7 @@ public final class DownloadManagerHelper {
 
     public final void openFile(String title, String path) {
         File file;
-        Uri fromFile;
+        Uri uriFromFile;
         Intrinsics.checkNotNullParameter(title, "title");
         Intrinsics.checkNotNullParameter(path, "path");
         try {
@@ -77,11 +77,11 @@ public final class DownloadManagerHelper {
                 return;
             }
             if (Build.VERSION.SDK_INT >= 24) {
-                fromFile = FileProvider.getUriForFile(this.context, "in.etuwa.app.fileprovider", file);
-                Intrinsics.checkNotNullExpressionValue(fromFile, "{\n                // ✅ M…\", newFile)\n            }");
+                uriFromFile = FileProvider.getUriForFile(this.context, "in.etuwa.app.fileprovider", file);
+                Intrinsics.checkNotNullExpressionValue(uriFromFile, "{\n                // ✅ M…\", newFile)\n            }");
             } else {
-                fromFile = Uri.fromFile(file);
-                Intrinsics.checkNotNullExpressionValue(fromFile, "{\n                Uri.fr…le(newFile)\n            }");
+                uriFromFile = Uri.fromFile(file);
+                Intrinsics.checkNotNullExpressionValue(uriFromFile, "{\n                Uri.fr…le(newFile)\n            }");
             }
             MimeTypeMap singleton = MimeTypeMap.getSingleton();
             String lowerCase = FilesKt.getExtension(file).toLowerCase(Locale.ROOT);
@@ -91,12 +91,12 @@ public final class DownloadManagerHelper {
                 mimeTypeFromExtension = "*/*";
             }
             Intent intent = new Intent("android.intent.action.VIEW");
-            intent.setDataAndType(fromFile, mimeTypeFromExtension);
+            intent.setDataAndType(uriFromFile, mimeTypeFromExtension);
             intent.addFlags(1);
             intent.addFlags(67108864);
-            List<ResolveInfo> queryIntentActivities = this.context.getPackageManager().queryIntentActivities(intent, 0);
-            Intrinsics.checkNotNullExpressionValue(queryIntentActivities, "context.packageManager.q…tentActivities(intent, 0)");
-            if (true ^ queryIntentActivities.isEmpty()) {
+            List<ResolveInfo> listQueryIntentActivities = this.context.getPackageManager().queryIntentActivities(intent, 0);
+            Intrinsics.checkNotNullExpressionValue(listQueryIntentActivities, "context.packageManager.q…tentActivities(intent, 0)");
+            if (true ^ listQueryIntentActivities.isEmpty()) {
                 this.context.startActivity(Intent.createChooser(intent, "Open with"));
             } else {
                 Toast.makeText(this.context, "No app found to open this file", 0).show();

@@ -48,33 +48,33 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: OrderPageDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: OrderPageDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class OrderPageDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogStationaryPayBinding _binding;
     private String id;
     private StationaryListener listener;
     private MainCallBackListener listener2;
 
-    /* renamed from: orderPageViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: orderPageViewModel$delegate, reason: from kotlin metadata */
     private final Lazy orderPageViewModel;
     private Integer position;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private Double total;
     private Double unitPrice;
 
-    /* compiled from: OrderPageDialog.kt */
+    /* JADX INFO: compiled from: OrderPageDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/stationary/booking/orderpage/OrderPageDialog$StationaryListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface StationaryListener {
         void dismiss();
     }
 
-    /* compiled from: OrderPageDialog.kt */
+    /* JADX INFO: compiled from: OrderPageDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -124,7 +124,7 @@ public final class OrderPageDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return orderPageDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(orderPageDialog);
@@ -138,7 +138,7 @@ public final class OrderPageDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -151,7 +151,7 @@ public final class OrderPageDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(OrderPageViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(OrderPageViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final OrderPageDialog orderPageDialog2 = this;
@@ -177,7 +177,7 @@ public final class OrderPageDialog extends BaseDialog {
         return (OrderPageViewModel) this.orderPageViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogStationaryPayBinding get_binding() {
         return this._binding;
     }
@@ -186,7 +186,7 @@ public final class OrderPageDialog extends BaseDialog {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: OrderPageDialog.kt */
+    /* JADX INFO: compiled from: OrderPageDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/stationary/booking/orderpage/OrderPageDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/stationary/booking/orderpage/OrderPageDialog;", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -255,7 +255,7 @@ public final class OrderPageDialog extends BaseDialog {
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OrderPageDialog.setUp$lambda$1(OrderPageDialog.this, view);
+                    OrderPageDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -264,7 +264,7 @@ public final class OrderPageDialog extends BaseDialog {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OrderPageDialog.setUp$lambda$2(OrderPageDialog.this, view);
+                    OrderPageDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -275,7 +275,7 @@ public final class OrderPageDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                OrderPageDialog.setUp$lambda$3(OrderPageDialog.this, view);
+                OrderPageDialog.setUp$lambda$3(this.f$0, view);
             }
         });
     }
@@ -295,20 +295,20 @@ public final class OrderPageDialog extends BaseDialog {
             }
         }
         DialogStationaryPayBinding dialogStationaryPayBinding3 = this$0.get_binding();
-        int parseInt = Integer.parseInt(String.valueOf((dialogStationaryPayBinding3 == null || (editText2 = dialogStationaryPayBinding3.etQuantity) == null) ? null : editText2.getText())) + 1;
+        int i = Integer.parseInt(String.valueOf((dialogStationaryPayBinding3 == null || (editText2 = dialogStationaryPayBinding3.etQuantity) == null) ? null : editText2.getText())) + 1;
         DialogStationaryPayBinding dialogStationaryPayBinding4 = this$0.get_binding();
         if (dialogStationaryPayBinding4 != null && (editText = dialogStationaryPayBinding4.etQuantity) != null) {
-            editText.setText(String.valueOf(parseInt));
+            editText.setText(String.valueOf(i));
         }
         Double d = this$0.unitPrice;
         Intrinsics.checkNotNull(d);
-        double doubleValue = d.doubleValue() * parseInt;
+        double dDoubleValue = d.doubleValue() * ((double) i);
         DialogStationaryPayBinding dialogStationaryPayBinding5 = this$0.get_binding();
         TextView textView = dialogStationaryPayBinding5 != null ? dialogStationaryPayBinding5.tvTotalPrice : null;
         if (textView != null) {
-            textView.setText(String.valueOf(doubleValue));
+            textView.setText(String.valueOf(dDoubleValue));
         }
-        this$0.total = Double.valueOf(doubleValue);
+        this$0.total = Double.valueOf(dDoubleValue);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -326,20 +326,20 @@ public final class OrderPageDialog extends BaseDialog {
             }
         }
         DialogStationaryPayBinding dialogStationaryPayBinding3 = this$0.get_binding();
-        int parseInt = Integer.parseInt(String.valueOf((dialogStationaryPayBinding3 == null || (editText2 = dialogStationaryPayBinding3.etQuantity) == null) ? null : editText2.getText())) - 1;
+        int i = Integer.parseInt(String.valueOf((dialogStationaryPayBinding3 == null || (editText2 = dialogStationaryPayBinding3.etQuantity) == null) ? null : editText2.getText())) - 1;
         DialogStationaryPayBinding dialogStationaryPayBinding4 = this$0.get_binding();
         if (dialogStationaryPayBinding4 != null && (editText = dialogStationaryPayBinding4.etQuantity) != null) {
-            editText.setText(String.valueOf(parseInt));
+            editText.setText(String.valueOf(i));
         }
         Double d = this$0.unitPrice;
         Intrinsics.checkNotNull(d);
-        double doubleValue = d.doubleValue() * parseInt;
+        double dDoubleValue = d.doubleValue() * ((double) i);
         DialogStationaryPayBinding dialogStationaryPayBinding5 = this$0.get_binding();
         TextView textView = dialogStationaryPayBinding5 != null ? dialogStationaryPayBinding5.tvTotalPrice : null;
         if (textView != null) {
-            textView.setText(String.valueOf(doubleValue));
+            textView.setText(String.valueOf(dDoubleValue));
         }
-        this$0.total = Double.valueOf(doubleValue);
+        this$0.total = Double.valueOf(dDoubleValue);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -347,34 +347,34 @@ public final class OrderPageDialog extends BaseDialog {
         TextView textView;
         EditText editText;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = new HashMap();
-        hashMap.put("pay", "1");
+        HashMap map = new HashMap();
+        map.put("pay", "1");
         String str = this$0.id;
         Intrinsics.checkNotNull(str);
-        hashMap.put("InventoryAdvanceBookingCollections[product_id]", str);
+        map.put("InventoryAdvanceBookingCollections[product_id]", str);
         DialogStationaryPayBinding dialogStationaryPayBinding = this$0.get_binding();
-        CharSequence charSequence = null;
-        hashMap.put("InventoryAdvanceBookingCollections[quantity]", String.valueOf((dialogStationaryPayBinding == null || (editText = dialogStationaryPayBinding.etQuantity) == null) ? null : editText.getText()));
+        CharSequence text = null;
+        map.put("InventoryAdvanceBookingCollections[quantity]", String.valueOf((dialogStationaryPayBinding == null || (editText = dialogStationaryPayBinding.etQuantity) == null) ? null : editText.getText()));
         Double d = this$0.unitPrice;
         Intrinsics.checkNotNull(d);
-        hashMap.put("InventoryAdvanceBookingCollections[unit_price]", String.valueOf(d.doubleValue()));
+        map.put("InventoryAdvanceBookingCollections[unit_price]", String.valueOf(d.doubleValue()));
         DialogStationaryPayBinding dialogStationaryPayBinding2 = this$0.get_binding();
         if (dialogStationaryPayBinding2 != null && (textView = dialogStationaryPayBinding2.tvTotalPrice) != null) {
-            charSequence = textView.getText();
+            text = textView.getText();
         }
-        hashMap.put("InventoryAdvanceBookingCollections[total_price]", String.valueOf(charSequence));
+        map.put("InventoryAdvanceBookingCollections[total_price]", String.valueOf(text));
         Double d2 = this$0.unitPrice;
         Intrinsics.checkNotNull(d2);
         System.out.println(d2.doubleValue());
         System.out.println(this$0.total);
-        this$0.getOrderPageViewModel().getAdvancePaymentUrl(hashMap);
+        this$0.getOrderPageViewModel().getAdvancePaymentUrl(map);
     }
 
     private final void listenResponse() {
         getOrderPageViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageDialog$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                OrderPageDialog.listenResponse$lambda$5(OrderPageDialog.this, (Resource) obj);
+                OrderPageDialog.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -453,7 +453,7 @@ public final class OrderPageDialog extends BaseDialog {
         getOrderPageViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.stationary.booking.orderpage.OrderPageDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                OrderPageDialog.listenUrlResponse$lambda$7(OrderPageDialog.this, (Resource) obj);
+                OrderPageDialog.listenUrlResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }

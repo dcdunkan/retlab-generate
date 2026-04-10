@@ -29,8 +29,8 @@ import kotlin.jvm.internal.Reflection;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: HostelNextFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelNextFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelNextFragment extends Fragment {
     private ArrayList<HostelConfBean> list = new ArrayList<>();
     private MainCallBackListener listener;
@@ -38,7 +38,7 @@ public final class HostelNextFragment extends Fragment {
     public String month;
     public TextView payNow;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     public TextView recDate;
     public TableLayout tableLayout;
@@ -190,18 +190,18 @@ public final class HostelNextFragment extends Fragment {
         Intrinsics.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
         try {
-            View findViewById = view.findViewById(R.id.tableLayoutFeeConfirm);
-            Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.tableLayoutFeeConfirm)");
-            setTableLayout((TableLayout) findViewById);
-            View findViewById2 = view.findViewById(R.id.hostelPayNextdate);
-            Intrinsics.checkNotNullExpressionValue(findViewById2, "view.findViewById(R.id.hostelPayNextdate)");
-            setRecDate((TextView) findViewById2);
-            View findViewById3 = view.findViewById(R.id.hostelPayNow);
-            Intrinsics.checkNotNullExpressionValue(findViewById3, "view.findViewById(R.id.hostelPayNow)");
-            setPayNow((TextView) findViewById3);
-            View findViewById4 = view.findViewById(R.id.hostel_payment_method);
-            Intrinsics.checkNotNullExpressionValue(findViewById4, "view.findViewById(R.id.hostel_payment_method)");
-            setMethod((TextView) findViewById4);
+            View viewFindViewById = view.findViewById(R.id.tableLayoutFeeConfirm);
+            Intrinsics.checkNotNullExpressionValue(viewFindViewById, "view.findViewById(R.id.tableLayoutFeeConfirm)");
+            setTableLayout((TableLayout) viewFindViewById);
+            View viewFindViewById2 = view.findViewById(R.id.hostelPayNextdate);
+            Intrinsics.checkNotNullExpressionValue(viewFindViewById2, "view.findViewById(R.id.hostelPayNextdate)");
+            setRecDate((TextView) viewFindViewById2);
+            View viewFindViewById3 = view.findViewById(R.id.hostelPayNow);
+            Intrinsics.checkNotNullExpressionValue(viewFindViewById3, "view.findViewById(R.id.hostelPayNow)");
+            setPayNow((TextView) viewFindViewById3);
+            View viewFindViewById4 = view.findViewById(R.id.hostel_payment_method);
+            Intrinsics.checkNotNullExpressionValue(viewFindViewById4, "view.findViewById(R.id.hostel_payment_method)");
+            setMethod((TextView) viewFindViewById4);
             Bundle arguments = getArguments();
             String string = arguments != null ? arguments.getString("month") : null;
             Intrinsics.checkNotNull(string);
@@ -225,7 +225,7 @@ public final class HostelNextFragment extends Fragment {
             getPayNow().setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.fee.HostelNextFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    HostelNextFragment.onViewCreated$lambda$0(HostelNextFragment.this, view2);
+                    HostelNextFragment.onViewCreated$lambda$0(this.f$0, view2);
                 }
             });
         } catch (Exception unused) {

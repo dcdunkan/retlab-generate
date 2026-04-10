@@ -3,20 +3,20 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.session.semlistdialogsession.SemListDialogViewModelTwo;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class SemListDialogSessionBindingImpl extends SemListDialogSessionBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
     private long mDirtyFlags;
     private final FrameLayout mboundView0;
-    private final CardView mboundView1;
+    private final MaterialCardView mboundView1;
     private final ViewProgressBarBinding mboundView11;
 
     @Override // androidx.databinding.ViewDataBinding
@@ -40,9 +40,9 @@ public class SemListDialogSessionBindingImpl extends SemListDialogSessionBinding
         FrameLayout frameLayout = (FrameLayout) bindings[0];
         this.mboundView0 = frameLayout;
         frameLayout.setTag(null);
-        CardView cardView = (CardView) bindings[1];
-        this.mboundView1 = cardView;
-        cardView.setTag(null);
+        MaterialCardView materialCardView = (MaterialCardView) bindings[1];
+        this.mboundView1 = materialCardView;
+        materialCardView.setTag(null);
         Object obj = bindings[2];
         this.mboundView11 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
         setRootTag(root);
@@ -66,7 +66,7 @@ public class SemListDialogSessionBindingImpl extends SemListDialogSessionBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (198 != variableId) {
+        if (200 != variableId) {
             return false;
         }
         setSemListDialogViewModelTwo((SemListDialogViewModelTwo) variable);

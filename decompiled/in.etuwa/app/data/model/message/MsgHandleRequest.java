@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MsgHandleRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MsgHandleRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MsgHandleRequest {
 
     @SerializedName("id")
@@ -20,7 +20,7 @@ public final /* data */ class MsgHandleRequest {
         return msgHandleRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }

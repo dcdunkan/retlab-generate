@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.timetable.change.ChangeInTimetableViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ChangeInTimetableFragmentBindingImpl extends ChangeInTimetableFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -61,7 +61,7 @@ public class ChangeInTimetableFragmentBindingImpl extends ChangeInTimetableFragm
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (50 != variableId) {
+        if (49 != variableId) {
             return false;
         }
         setChangeInTimetableViewModel((ChangeInTimetableViewModel) variable);

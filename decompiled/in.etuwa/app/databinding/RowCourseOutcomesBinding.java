@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCourseOutcomesBinding implements ViewBinding {
     public final TextView coId;
     public final TextView coTopic;
@@ -31,11 +31,11 @@ public final class RowCourseOutcomesBinding implements ViewBinding {
     }
 
     public static RowCourseOutcomesBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_course_outcomes, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_course_outcomes, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCourseOutcomesBinding bind(View rootView) {

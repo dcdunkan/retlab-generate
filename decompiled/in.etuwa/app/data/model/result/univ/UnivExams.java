@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UnivExams.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: UnivExams.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class UnivExams {
 
     @SerializedName("exam_name")
@@ -24,7 +24,7 @@ public final /* data */ class UnivExams {
         return univExams.copy(str, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getExamName() {
         return this.examName;
     }

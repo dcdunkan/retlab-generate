@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCollegesBinding implements ViewBinding {
     private final CardView rootView;
     public final TextView tvName;
@@ -29,11 +29,11 @@ public final class RowCollegesBinding implements ViewBinding {
     }
 
     public static RowCollegesBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_colleges, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_colleges, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCollegesBinding bind(View rootView) {

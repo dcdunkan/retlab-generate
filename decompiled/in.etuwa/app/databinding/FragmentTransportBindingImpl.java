@@ -10,10 +10,12 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.transport.TransportFeeViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentTransportBindingImpl extends FragmentTransportBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -45,7 +47,7 @@ public class FragmentTransportBindingImpl extends FragmentTransportBinding {
     }
 
     private FragmentTransportBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextView) bindings[3], (LinearLayout) bindings[6], (TextView) bindings[7], (LinearLayout) bindings[8], (TextView) bindings[10], (RecyclerView) bindings[5], (Spinner) bindings[2], (SwipeRefreshLayout) bindings[4], (TextView) bindings[9]);
+        super(bindingComponent, root, 0, (TextView) bindings[3], (LinearLayout) bindings[6], (TextView) bindings[7], (MaterialCardView) bindings[8], (MaterialButton) bindings[10], (RecyclerView) bindings[5], (Spinner) bindings[2], (SwipeRefreshLayout) bindings[4], (TextView) bindings[9]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -73,7 +75,7 @@ public class FragmentTransportBindingImpl extends FragmentTransportBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (225 != variableId) {
+        if (226 != variableId) {
             return false;
         }
         setTransportFeeViewModel((TransportFeeViewModel) variable);

@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostelnew.confirm.HostelNewConfirmViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogHostelNewConfirmBinding extends ViewDataBinding {
     public final TextView fine;
 

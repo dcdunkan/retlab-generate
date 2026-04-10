@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.covidcertificate.CovidCertificateDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CovidCertificateDialogBindingImpl extends CovidCertificateDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -67,7 +67,7 @@ public class CovidCertificateDialogBindingImpl extends CovidCertificateDialogBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (65 != variableId) {
+        if (64 != variableId) {
             return false;
         }
         setCovidCertificateDialogViewModel((CovidCertificateDialogViewModel) variable);

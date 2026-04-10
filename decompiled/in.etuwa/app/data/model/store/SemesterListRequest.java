@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SemesterListRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SemesterListRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SemesterListRequest {
 
     @SerializedName("dept_id")
@@ -20,7 +20,7 @@ public final /* data */ class SemesterListRequest {
         return semesterListRequest.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDeptId() {
         return this.deptId;
     }

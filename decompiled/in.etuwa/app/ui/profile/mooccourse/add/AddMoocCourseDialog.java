@@ -61,16 +61,16 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddMoocCourseDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddMoocCourseDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddMoocCourseDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddMoocCourseBinding _binding;
     private String achievements;
 
-    /* renamed from: addMoocCourseViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addMoocCourseViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addMoocCourseViewModel;
     private String days;
     private String days2;
@@ -88,13 +88,13 @@ public final class AddMoocCourseDialog extends BaseDialog {
     private String toDate;
     private String yearId;
 
-    /* compiled from: AddMoocCourseDialog.kt */
+    /* JADX INFO: compiled from: AddMoocCourseDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/mooccourse/add/AddMoocCourseDialog$AddMoocCourseListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddMoocCourseListener {
         void onDismiss();
     }
 
-    /* compiled from: AddMoocCourseDialog.kt */
+    /* JADX INFO: compiled from: AddMoocCourseDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -144,7 +144,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addMoocCourseDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addMoocCourseDialog);
@@ -158,7 +158,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -171,7 +171,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddMoocCourseViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddMoocCourseViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.firstDate = "2022-10-22";
@@ -186,7 +186,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         return (AddMoocCourseViewModel) this.addMoocCourseViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogAddMoocCourseBinding get_binding() {
         return this._binding;
     }
@@ -209,7 +209,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         this.secondDate = str;
     }
 
-    /* compiled from: AddMoocCourseDialog.kt */
+    /* JADX INFO: compiled from: AddMoocCourseDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J@\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u00062\u0006\u0010\f\u001a\u00020\u0006H\u0007¨\u0006\r"}, d2 = {"Lin/etuwa/app/ui/profile/mooccourse/add/AddMoocCourseDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/mooccourse/add/AddMoocCourseDialog;", "id", "", "name", "organised", "fromDate", "toDate", TypedValues.TransitionType.S_DURATION, "achievements", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -360,7 +360,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
             textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMoocCourseDialog.setUp$lambda$2(AddMoocCourseDialog.this, i, i2, i3, view);
+                    AddMoocCourseDialog.setUp$lambda$2(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -369,7 +369,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMoocCourseDialog.setUp$lambda$4(AddMoocCourseDialog.this, i, i2, i3, view);
+                    AddMoocCourseDialog.setUp$lambda$4(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -378,7 +378,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMoocCourseDialog.setUp$lambda$6(AddMoocCourseDialog.this, view);
+                    AddMoocCourseDialog.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
@@ -387,7 +387,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddMoocCourseDialog.setUp$lambda$7(AddMoocCourseDialog.this, view);
+                    AddMoocCourseDialog.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -398,7 +398,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddMoocCourseDialog.setUp$lambda$8(AddMoocCourseDialog.this, view);
+                AddMoocCourseDialog.setUp$lambda$8(this.f$0, view);
             }
         });
     }
@@ -409,7 +409,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda7
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddMoocCourseDialog.setUp$lambda$2$lambda$1(AddMoocCourseDialog.this, datePicker, i4, i5, i6);
+                AddMoocCourseDialog.setUp$lambda$2$lambda$1(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -437,15 +437,15 @@ public final class AddMoocCourseDialog extends BaseDialog {
             textView3.setText(i + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.months + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.days);
         }
         DialogAddMoocCourseBinding dialogAddMoocCourseBinding2 = this$0.get_binding();
-        CharSequence charSequence = null;
+        CharSequence text = null;
         if (Intrinsics.areEqual(String.valueOf((dialogAddMoocCourseBinding2 == null || (textView2 = dialogAddMoocCourseBinding2.etEndDate) == null) ? null : textView2.getText()), "")) {
             return;
         }
         DialogAddMoocCourseBinding dialogAddMoocCourseBinding3 = this$0.get_binding();
         if (dialogAddMoocCourseBinding3 != null && (textView = dialogAddMoocCourseBinding3.etEndDate) != null) {
-            charSequence = textView.getText();
+            text = textView.getText();
         }
-        if (Intrinsics.areEqual(String.valueOf(charSequence), "To Date")) {
+        if (Intrinsics.areEqual(String.valueOf(text), "To Date")) {
             return;
         }
         this$0.noofdays();
@@ -457,7 +457,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda6
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AddMoocCourseDialog.setUp$lambda$4$lambda$3(AddMoocCourseDialog.this, datePicker, i4, i5, i6);
+                AddMoocCourseDialog.setUp$lambda$4$lambda$3(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -485,15 +485,15 @@ public final class AddMoocCourseDialog extends BaseDialog {
         }
         this$0.secondDate = i + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.months2 + HelpFormatter.DEFAULT_OPT_PREFIX + this$0.days2;
         DialogAddMoocCourseBinding dialogAddMoocCourseBinding2 = this$0.get_binding();
-        CharSequence charSequence = null;
+        CharSequence text = null;
         if (Intrinsics.areEqual(String.valueOf((dialogAddMoocCourseBinding2 == null || (textView2 = dialogAddMoocCourseBinding2.etFromDate) == null) ? null : textView2.getText()), "")) {
             return;
         }
         DialogAddMoocCourseBinding dialogAddMoocCourseBinding3 = this$0.get_binding();
         if (dialogAddMoocCourseBinding3 != null && (textView = dialogAddMoocCourseBinding3.etFromDate) != null) {
-            charSequence = textView.getText();
+            text = textView.getText();
         }
-        if (Intrinsics.areEqual(String.valueOf(charSequence), "From Date")) {
+        if (Intrinsics.areEqual(String.valueOf(text), "From Date")) {
             return;
         }
         this$0.noofdays();
@@ -552,7 +552,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddMoocCourseBinding2 == null || (textInputEditText10 = dialogAddMoocCourseBinding2.etTitle) == null) ? null : textInputEditText10.getText()), "")) {
@@ -573,17 +573,17 @@ public final class AddMoocCourseDialog extends BaseDialog {
                                 if (!Intrinsics.areEqual(String.valueOf((dialogAddMoocCourseBinding7 == null || (textView16 = dialogAddMoocCourseBinding7.etEndDate) == null) ? null : textView16.getText()), "To Date")) {
                                     AddMoocCourseViewModel addMoocCourseViewModel = this$0.getAddMoocCourseViewModel();
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding8 = this$0.get_binding();
-                                    String valueOf = String.valueOf((dialogAddMoocCourseBinding8 == null || (textInputEditText9 = dialogAddMoocCourseBinding8.etTitle) == null) ? null : textInputEditText9.getText());
+                                    String strValueOf = String.valueOf((dialogAddMoocCourseBinding8 == null || (textInputEditText9 = dialogAddMoocCourseBinding8.etTitle) == null) ? null : textInputEditText9.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding9 = this$0.get_binding();
-                                    String valueOf2 = String.valueOf((dialogAddMoocCourseBinding9 == null || (textInputEditText8 = dialogAddMoocCourseBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
+                                    String strValueOf2 = String.valueOf((dialogAddMoocCourseBinding9 == null || (textInputEditText8 = dialogAddMoocCourseBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding10 = this$0.get_binding();
-                                    String valueOf3 = String.valueOf((dialogAddMoocCourseBinding10 == null || (textView15 = dialogAddMoocCourseBinding10.etFromDate) == null) ? null : textView15.getText());
+                                    String strValueOf3 = String.valueOf((dialogAddMoocCourseBinding10 == null || (textView15 = dialogAddMoocCourseBinding10.etFromDate) == null) ? null : textView15.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding11 = this$0.get_binding();
-                                    String valueOf4 = String.valueOf((dialogAddMoocCourseBinding11 == null || (textView14 = dialogAddMoocCourseBinding11.etEndDate) == null) ? null : textView14.getText());
+                                    String strValueOf4 = String.valueOf((dialogAddMoocCourseBinding11 == null || (textView14 = dialogAddMoocCourseBinding11.etEndDate) == null) ? null : textView14.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding12 = this$0.get_binding();
-                                    String valueOf5 = String.valueOf((dialogAddMoocCourseBinding12 == null || (textInputEditText7 = dialogAddMoocCourseBinding12.etDuration) == null) ? null : textInputEditText7.getText());
+                                    String strValueOf5 = String.valueOf((dialogAddMoocCourseBinding12 == null || (textInputEditText7 = dialogAddMoocCourseBinding12.etDuration) == null) ? null : textInputEditText7.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding13 = this$0.get_binding();
-                                    String valueOf6 = String.valueOf((dialogAddMoocCourseBinding13 == null || (textInputEditText6 = dialogAddMoocCourseBinding13.etAchievements) == null) ? null : textInputEditText6.getText());
+                                    String strValueOf6 = String.valueOf((dialogAddMoocCourseBinding13 == null || (textInputEditText6 = dialogAddMoocCourseBinding13.etAchievements) == null) ? null : textInputEditText6.getText());
                                     File file3 = this$0.pickFile;
                                     if (file3 == null) {
                                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -591,7 +591,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
                                     } else {
                                         file = file3;
                                     }
-                                    addMoocCourseViewModel.addMoocCourseData(valueOf, valueOf2, valueOf3, valueOf4, valueOf5, valueOf6, file);
+                                    addMoocCourseViewModel.addMoocCourseData(strValueOf, strValueOf2, strValueOf3, strValueOf4, strValueOf5, strValueOf6, file);
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding14 = this$0.get_binding();
                                     LinearLayout linearLayout = dialogAddMoocCourseBinding14 != null ? dialogAddMoocCourseBinding14.completionCard : null;
                                     if (linearLayout != null) {
@@ -647,17 +647,17 @@ public final class AddMoocCourseDialog extends BaseDialog {
                         if (!Intrinsics.areEqual(String.valueOf((dialogAddMoocCourseBinding24 == null || (textView6 = dialogAddMoocCourseBinding24.etEndDate) == null) ? null : textView6.getText()), "To Date")) {
                             AddMoocCourseViewModel addMoocCourseViewModel2 = this$0.getAddMoocCourseViewModel();
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding25 = this$0.get_binding();
-                            String valueOf7 = String.valueOf((dialogAddMoocCourseBinding25 == null || (textInputEditText4 = dialogAddMoocCourseBinding25.etTitle) == null) ? null : textInputEditText4.getText());
+                            String strValueOf7 = String.valueOf((dialogAddMoocCourseBinding25 == null || (textInputEditText4 = dialogAddMoocCourseBinding25.etTitle) == null) ? null : textInputEditText4.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding26 = this$0.get_binding();
-                            String valueOf8 = String.valueOf((dialogAddMoocCourseBinding26 == null || (textInputEditText3 = dialogAddMoocCourseBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
+                            String strValueOf8 = String.valueOf((dialogAddMoocCourseBinding26 == null || (textInputEditText3 = dialogAddMoocCourseBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding27 = this$0.get_binding();
-                            String valueOf9 = String.valueOf((dialogAddMoocCourseBinding27 == null || (textView5 = dialogAddMoocCourseBinding27.etFromDate) == null) ? null : textView5.getText());
+                            String strValueOf9 = String.valueOf((dialogAddMoocCourseBinding27 == null || (textView5 = dialogAddMoocCourseBinding27.etFromDate) == null) ? null : textView5.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding28 = this$0.get_binding();
-                            String valueOf10 = String.valueOf((dialogAddMoocCourseBinding28 == null || (textView4 = dialogAddMoocCourseBinding28.etEndDate) == null) ? null : textView4.getText());
+                            String strValueOf10 = String.valueOf((dialogAddMoocCourseBinding28 == null || (textView4 = dialogAddMoocCourseBinding28.etEndDate) == null) ? null : textView4.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding29 = this$0.get_binding();
-                            String valueOf11 = String.valueOf((dialogAddMoocCourseBinding29 == null || (textInputEditText2 = dialogAddMoocCourseBinding29.etDuration) == null) ? null : textInputEditText2.getText());
+                            String strValueOf11 = String.valueOf((dialogAddMoocCourseBinding29 == null || (textInputEditText2 = dialogAddMoocCourseBinding29.etDuration) == null) ? null : textInputEditText2.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding30 = this$0.get_binding();
-                            addMoocCourseViewModel2.addMoocCourseData(valueOf7, valueOf8, valueOf9, valueOf10, valueOf11, String.valueOf((dialogAddMoocCourseBinding30 == null || (textInputEditText = dialogAddMoocCourseBinding30.etAchievements) == null) ? null : textInputEditText.getText()));
+                            addMoocCourseViewModel2.addMoocCourseData(strValueOf7, strValueOf8, strValueOf9, strValueOf10, strValueOf11, String.valueOf((dialogAddMoocCourseBinding30 == null || (textInputEditText = dialogAddMoocCourseBinding30.etAchievements) == null) ? null : textInputEditText.getText()));
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding31 = this$0.get_binding();
                             LinearLayout linearLayout2 = dialogAddMoocCourseBinding31 != null ? dialogAddMoocCourseBinding31.completionCard : null;
                             if (linearLayout2 == null) {
@@ -725,15 +725,15 @@ public final class AddMoocCourseDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddMoocCourseBinding dialogAddMoocCourseBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddMoocCourseBinding == null || (textView20 = dialogAddMoocCourseBinding.completionFileName) == null) ? null : textView20.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddMoocCourseBinding2 == null || (textInputEditText10 = dialogAddMoocCourseBinding2.etTitle) == null) ? null : textInputEditText10.getText()), "")) {
@@ -756,17 +756,17 @@ public final class AddMoocCourseDialog extends BaseDialog {
                                     String str = this$0.id;
                                     Intrinsics.checkNotNull(str);
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding8 = this$0.get_binding();
-                                    String valueOf = String.valueOf((dialogAddMoocCourseBinding8 == null || (textInputEditText9 = dialogAddMoocCourseBinding8.etTitle) == null) ? null : textInputEditText9.getText());
+                                    String strValueOf = String.valueOf((dialogAddMoocCourseBinding8 == null || (textInputEditText9 = dialogAddMoocCourseBinding8.etTitle) == null) ? null : textInputEditText9.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding9 = this$0.get_binding();
-                                    String valueOf2 = String.valueOf((dialogAddMoocCourseBinding9 == null || (textInputEditText8 = dialogAddMoocCourseBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
+                                    String strValueOf2 = String.valueOf((dialogAddMoocCourseBinding9 == null || (textInputEditText8 = dialogAddMoocCourseBinding9.etOrgaanisedBy) == null) ? null : textInputEditText8.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding10 = this$0.get_binding();
-                                    String valueOf3 = String.valueOf((dialogAddMoocCourseBinding10 == null || (textView14 = dialogAddMoocCourseBinding10.etFromDate) == null) ? null : textView14.getText());
+                                    String strValueOf3 = String.valueOf((dialogAddMoocCourseBinding10 == null || (textView14 = dialogAddMoocCourseBinding10.etFromDate) == null) ? null : textView14.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding11 = this$0.get_binding();
-                                    String valueOf4 = String.valueOf((dialogAddMoocCourseBinding11 == null || (textView13 = dialogAddMoocCourseBinding11.etEndDate) == null) ? null : textView13.getText());
+                                    String strValueOf4 = String.valueOf((dialogAddMoocCourseBinding11 == null || (textView13 = dialogAddMoocCourseBinding11.etEndDate) == null) ? null : textView13.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding12 = this$0.get_binding();
-                                    String valueOf5 = String.valueOf((dialogAddMoocCourseBinding12 == null || (textInputEditText7 = dialogAddMoocCourseBinding12.etDuration) == null) ? null : textInputEditText7.getText());
+                                    String strValueOf5 = String.valueOf((dialogAddMoocCourseBinding12 == null || (textInputEditText7 = dialogAddMoocCourseBinding12.etDuration) == null) ? null : textInputEditText7.getText());
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding13 = this$0.get_binding();
-                                    String valueOf6 = String.valueOf((dialogAddMoocCourseBinding13 == null || (textInputEditText6 = dialogAddMoocCourseBinding13.etAchievements) == null) ? null : textInputEditText6.getText());
+                                    String strValueOf6 = String.valueOf((dialogAddMoocCourseBinding13 == null || (textInputEditText6 = dialogAddMoocCourseBinding13.etAchievements) == null) ? null : textInputEditText6.getText());
                                     File file3 = this$0.pickFile;
                                     if (file3 == null) {
                                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
@@ -774,7 +774,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
                                     } else {
                                         file = file3;
                                     }
-                                    addMoocCourseViewModel.updateMoocCourseData(str, valueOf, valueOf2, valueOf3, valueOf4, valueOf5, valueOf6, file);
+                                    addMoocCourseViewModel.updateMoocCourseData(str, strValueOf, strValueOf2, strValueOf3, strValueOf4, strValueOf5, strValueOf6, file);
                                     DialogAddMoocCourseBinding dialogAddMoocCourseBinding14 = this$0.get_binding();
                                     LinearLayout linearLayout = dialogAddMoocCourseBinding14 != null ? dialogAddMoocCourseBinding14.completionCard : null;
                                     if (linearLayout != null) {
@@ -832,20 +832,20 @@ public final class AddMoocCourseDialog extends BaseDialog {
                             String str2 = this$0.id;
                             Intrinsics.checkNotNull(str2);
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding25 = this$0.get_binding();
-                            String valueOf7 = String.valueOf((dialogAddMoocCourseBinding25 == null || (textInputEditText4 = dialogAddMoocCourseBinding25.etTitle) == null) ? null : textInputEditText4.getText());
+                            String strValueOf7 = String.valueOf((dialogAddMoocCourseBinding25 == null || (textInputEditText4 = dialogAddMoocCourseBinding25.etTitle) == null) ? null : textInputEditText4.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding26 = this$0.get_binding();
-                            String valueOf8 = String.valueOf((dialogAddMoocCourseBinding26 == null || (textInputEditText3 = dialogAddMoocCourseBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
+                            String strValueOf8 = String.valueOf((dialogAddMoocCourseBinding26 == null || (textInputEditText3 = dialogAddMoocCourseBinding26.etOrgaanisedBy) == null) ? null : textInputEditText3.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding27 = this$0.get_binding();
-                            String valueOf9 = String.valueOf((dialogAddMoocCourseBinding27 == null || (textView4 = dialogAddMoocCourseBinding27.etFromDate) == null) ? null : textView4.getText());
+                            String strValueOf9 = String.valueOf((dialogAddMoocCourseBinding27 == null || (textView4 = dialogAddMoocCourseBinding27.etFromDate) == null) ? null : textView4.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding28 = this$0.get_binding();
-                            String valueOf10 = String.valueOf((dialogAddMoocCourseBinding28 == null || (textView3 = dialogAddMoocCourseBinding28.etEndDate) == null) ? null : textView3.getText());
+                            String strValueOf10 = String.valueOf((dialogAddMoocCourseBinding28 == null || (textView3 = dialogAddMoocCourseBinding28.etEndDate) == null) ? null : textView3.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding29 = this$0.get_binding();
-                            String valueOf11 = String.valueOf((dialogAddMoocCourseBinding29 == null || (textInputEditText2 = dialogAddMoocCourseBinding29.etDuration) == null) ? null : textInputEditText2.getText());
+                            String strValueOf11 = String.valueOf((dialogAddMoocCourseBinding29 == null || (textInputEditText2 = dialogAddMoocCourseBinding29.etDuration) == null) ? null : textInputEditText2.getText());
                             DialogAddMoocCourseBinding dialogAddMoocCourseBinding30 = this$0.get_binding();
                             if (dialogAddMoocCourseBinding30 != null && (textInputEditText = dialogAddMoocCourseBinding30.etAchievements) != null) {
-                                editable = textInputEditText.getText();
+                                text = textInputEditText.getText();
                             }
-                            addMoocCourseViewModel2.updateMoocCourseData(str2, valueOf7, valueOf8, valueOf9, valueOf10, valueOf11, String.valueOf(editable));
+                            addMoocCourseViewModel2.updateMoocCourseData(str2, strValueOf7, strValueOf8, strValueOf9, strValueOf10, strValueOf11, String.valueOf(text));
                             return;
                         }
                     }
@@ -867,29 +867,21 @@ public final class AddMoocCourseDialog extends BaseDialog {
     }
 
     public final void noofdays() {
-        DateTimeFormatter ofPattern;
-        LocalDate parse;
-        LocalDate parse2;
-        ChronoUnit chronoUnit;
-        long between;
         TextInputEditText textInputEditText;
-        ofPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        parse = LocalDate.parse(this.firstDate, ofPattern);
-        parse2 = LocalDate.parse(this.secondDate, ofPattern);
-        chronoUnit = ChronoUnit.DAYS;
-        between = chronoUnit.between(ValidChecker$$ExternalSyntheticApiModelOutline0.m((Object) parse), ValidChecker$$ExternalSyntheticApiModelOutline0.m((Object) parse2));
+        DateTimeFormatter dateTimeFormatterOfPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        long jBetween = ChronoUnit.DAYS.between(ValidChecker$$ExternalSyntheticApiModelOutline0.m603m((Object) LocalDate.parse(this.firstDate, dateTimeFormatterOfPattern)), ValidChecker$$ExternalSyntheticApiModelOutline0.m603m((Object) LocalDate.parse(this.secondDate, dateTimeFormatterOfPattern)));
         DialogAddMoocCourseBinding dialogAddMoocCourseBinding = get_binding();
         if (dialogAddMoocCourseBinding == null || (textInputEditText = dialogAddMoocCourseBinding.etDuration) == null) {
             return;
         }
-        textInputEditText.setText(String.valueOf(between + 1));
+        textInputEditText.setText(String.valueOf(jBetween + 1));
     }
 
     private final void listenAddResponse() {
         getAddMoocCourseViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda10
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMoocCourseDialog.listenAddResponse$lambda$10(AddMoocCourseDialog.this, (Resource) obj);
+                AddMoocCourseDialog.listenAddResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -957,7 +949,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         getAddMoocCourseViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda8
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMoocCourseDialog.listenAddResponse2$lambda$12(AddMoocCourseDialog.this, (Resource) obj);
+                AddMoocCourseDialog.listenAddResponse2$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1025,7 +1017,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         getAddMoocCourseViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda9
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMoocCourseDialog.listenUpdateResponse$lambda$14(AddMoocCourseDialog.this, (Resource) obj);
+                AddMoocCourseDialog.listenUpdateResponse$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1093,7 +1085,7 @@ public final class AddMoocCourseDialog extends BaseDialog {
         getAddMoocCourseViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.mooccourse.add.AddMoocCourseDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddMoocCourseDialog.listenProgressResponse$lambda$16(AddMoocCourseDialog.this, (Resource) obj);
+                AddMoocCourseDialog.listenProgressResponse$lambda$16(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1124,18 +1116,18 @@ public final class AddMoocCourseDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddMoocCourseBinding dialogAddMoocCourseBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddMoocCourseBinding2 != null ? dialogAddMoocCourseBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddMoocCourseBinding dialogAddMoocCourseBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddMoocCourseBinding3 != null ? dialogAddMoocCourseBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -1143,13 +1135,13 @@ public final class AddMoocCourseDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -1175,24 +1167,24 @@ public final class AddMoocCourseDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

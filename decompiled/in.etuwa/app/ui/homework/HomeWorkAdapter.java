@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import at.blogc.android.views.ExpandableTextView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
@@ -29,13 +28,13 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: HomeWorkAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: HomeWorkAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<HomeWork> homeWork = new ArrayList<>();
     private HomeWorkListener listener;
 
-    /* compiled from: HomeWorkAdapter.kt */
+    /* JADX INFO: compiled from: HomeWorkAdapter.kt */
     @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0005H&J\u0018\u0010\t\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\fH&J\u0010\u0010\r\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0005H&J \u0010\u000e\u001a\u00020\u00072\u0016\u0010\u000f\u001a\u0012\u0012\u0004\u0012\u00020\u00110\u0010j\b\u0012\u0004\u0012\u00020\u0011`\u0012H&¨\u0006\u0013"}, d2 = {"Lin/etuwa/app/ui/homework/HomeWorkAdapter$HomeWorkListener;", "", "checkFileExistence", "", "fileName", "", "deleteHomeWork", "", "id", "downloadFile", "url", CommonCssConstants.POSITION, "", "onPickDoc", "openDownloadDialog", "list", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/exam/ExamFiles;", "Lkotlin/collections/ArrayList;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface HomeWorkListener {
         boolean checkFileExistence(String fileName);
@@ -53,18 +52,18 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_home_work, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …home_work, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_home_work, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …home_work, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -80,8 +79,8 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
         return !this.homeWork.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: HomeWorkAdapter.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u001d\u001a\u00020\u001eH\u0014J\u0010\u0010\u001f\u001a\u00020\u001e2\u0006\u0010 \u001a\u00020!H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0015\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0019\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001c\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lin/etuwa/app/ui/homework/HomeWorkAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/homework/HomeWorkAdapter;Landroid/view/View;)V", "deleteBtn", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", ErrorBundle.DETAIL_ENTRY, "Lat/blogc/android/views/ExpandableTextView;", "detailsLayout", "Landroid/widget/LinearLayout;", "dwnBtn", "feedLayout", "feedback", "hwDetailsLayout", "hwExpandLayout", "issueDate", "lastDate", "lateDate", "lateLayout", "lateStatus", AttendanceDayDialogKt.ARG_SEM, NotificationCompat.CATEGORY_STATUS, "sub", "submittedView", "title", "toggle", "upBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    /* JADX INFO: compiled from: HomeWorkAdapter.kt */
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u001c\u001a\u00020\u001dH\u0014J\u0010\u0010\u001e\u001a\u00020\u001d2\u0006\u0010\u001f\u001a\u00020 H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0014\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0015\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0019\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lin/etuwa/app/ui/homework/HomeWorkAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/homework/HomeWorkAdapter;Landroid/view/View;)V", "deleteBtn", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", ErrorBundle.DETAIL_ENTRY, "Lat/blogc/android/views/ExpandableTextView;", "detailsLayout", "Landroid/widget/LinearLayout;", "dwnBtn", "feedLayout", "feedback", "hwDetailsLayout", "hwExpandLayout", "issueDate", "lastDate", "lateDate", "lateLayout", "lateStatus", AttendanceDayDialogKt.ARG_SEM, "sub", "submittedView", "title", "toggle", "upBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView deleteBtn;
         private final ExpandableTextView details;
@@ -97,7 +96,6 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
         private final LinearLayout lateLayout;
         private final TextView lateStatus;
         private final TextView semester;
-        private final TextView status;
         private final TextView sub;
         private final View submittedView;
         final /* synthetic */ HomeWorkAdapter this$0;
@@ -119,7 +117,6 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
             this.title = (TextView) itemView.findViewById(R.id.home_work_title);
             this.issueDate = (TextView) itemView.findViewById(R.id.home_work_issue_date);
             this.lastDate = (TextView) itemView.findViewById(R.id.home_work_last_date);
-            this.status = (TextView) itemView.findViewById(R.id.home_work_status);
             this.dwnBtn = (TextView) itemView.findViewById(R.id.home_work_download);
             this.upBtn = (TextView) itemView.findViewById(R.id.home_work_upload_btn);
             this.deleteBtn = (TextView) itemView.findViewById(R.id.delete_home_work);
@@ -149,7 +146,6 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 this.title.setText(homeWork.getTitle());
                 this.issueDate.setText(homeWork.getIssuedDate());
                 this.lastDate.setText(homeWork.getLastDate());
-                this.status.setText(homeWork.getStatus());
                 this.details.setText(homeWork.getDetails());
                 this.feedback.setText(homeWork.getTeacherFeedback());
                 this.lateDate.setText(homeWork.getLateSubmissionDate());
@@ -168,7 +164,7 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 this.toggle.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.homework.HomeWorkAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        HomeWorkAdapter.ViewHolder.onBind$lambda$0(HomeWorkAdapter.ViewHolder.this, view);
+                        HomeWorkAdapter.ViewHolder.onBind$lambda$0(this.f$0, view);
                     }
                 });
                 String lowerCase = homeWork.getLateSubmissionStatus().toLowerCase();
@@ -197,7 +193,7 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.homework.HomeWorkAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        HomeWorkAdapter.ViewHolder.onBind$lambda$1(HomeWorkAdapter.this, homeWork, view);
+                        HomeWorkAdapter.ViewHolder.onBind$lambda$1(homeWorkAdapter, homeWork, view);
                     }
                 });
                 TextView textView2 = this.dwnBtn;
@@ -205,15 +201,15 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.homework.HomeWorkAdapter$ViewHolder$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        HomeWorkAdapter.ViewHolder.onBind$lambda$2(HomeWorkAdapter.this, homeWork, view);
+                        HomeWorkAdapter.ViewHolder.onBind$lambda$2(homeWorkAdapter2, homeWork, view);
                     }
                 });
-                String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(homeWork.getUploadedFile(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(homeWork.getUploadedFile(), RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
                 if (Intrinsics.areEqual(homeWork.getStatus(), "SUBMITTED")) {
                     HomeWorkListener homeWorkListener = this.this$0.listener;
-                    Boolean valueOf = homeWorkListener != null ? Boolean.valueOf(homeWorkListener.checkFileExistence(replace)) : null;
-                    Intrinsics.checkNotNull(valueOf);
-                    if (valueOf.booleanValue()) {
+                    Boolean boolValueOf = homeWorkListener != null ? Boolean.valueOf(homeWorkListener.checkFileExistence(strReplace)) : null;
+                    Intrinsics.checkNotNull(boolValueOf);
+                    if (boolValueOf.booleanValue()) {
                         this.upBtn.setText("Open Submitted File");
                         this.upBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
                     } else {
@@ -229,13 +225,13 @@ public final class HomeWorkAdapter extends RecyclerView.Adapter<BaseViewHolder> 
                 textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.homework.HomeWorkAdapter$ViewHolder$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        HomeWorkAdapter.ViewHolder.onBind$lambda$3(HomeWork.this, homeWorkAdapter3, this, position, view);
+                        HomeWorkAdapter.ViewHolder.onBind$lambda$3(homeWork, homeWorkAdapter3, this, position, view);
                     }
                 });
                 this.hwExpandLayout.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.homework.HomeWorkAdapter$ViewHolder$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        HomeWorkAdapter.ViewHolder.onBind$lambda$4(HomeWorkAdapter.ViewHolder.this, view);
+                        HomeWorkAdapter.ViewHolder.onBind$lambda$4(this.f$0, view);
                     }
                 });
             } catch (Exception unused) {

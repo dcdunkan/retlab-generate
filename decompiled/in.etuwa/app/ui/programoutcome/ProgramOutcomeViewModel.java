@@ -16,10 +16,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ProgramOutcomeViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ProgramOutcomeViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ProgramOutcomeViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<ProgramOutcomeResponse>> outcomeResponse;
     private final ProgramOutcomeRepository programOutcomeRepository;
 
@@ -28,14 +29,22 @@ public final class ProgramOutcomeViewModel extends ViewModel {
         this.programOutcomeRepository = programOutcomeRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.outcomeResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getOutcomes();
     }
 
     public final void getOutcomes() {
         this.outcomeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ProgramOutcomeResponse> observeOn = this.programOutcomeRepository.getProgramOutcomeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ProgramOutcomeResponse, Unit> function1 = new Function1<ProgramOutcomeResponse, Unit>() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel$getOutcomes$1
+        Single<ProgramOutcomeResponse> singleObserveOn = this.programOutcomeRepository.getProgramOutcomeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ProgramOutcomeResponse, Unit> function1 = new Function1<ProgramOutcomeResponse, Unit>() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel.getOutcomes.1
             {
                 super(1);
             }
@@ -46,20 +55,18 @@ public final class ProgramOutcomeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ProgramOutcomeResponse programOutcomeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProgramOutcomeViewModel.this.outcomeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(programOutcomeResponse));
+                ProgramOutcomeViewModel.this.outcomeResponse.postValue(Resource.INSTANCE.success(programOutcomeResponse));
             }
         };
         Consumer<? super ProgramOutcomeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProgramOutcomeViewModel.getOutcomes$lambda$0(Function1.this, obj);
+                ProgramOutcomeViewModel.getOutcomes$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel$getOutcomes$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel.getOutcomes.2
             {
                 super(1);
             }
@@ -70,17 +77,15 @@ public final class ProgramOutcomeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ProgramOutcomeViewModel.this.outcomeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ProgramOutcomeViewModel.this.outcomeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.programoutcome.ProgramOutcomeViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ProgramOutcomeViewModel.getOutcomes$lambda$1(Function1.this, obj);
+                ProgramOutcomeViewModel.getOutcomes$lambda$1(function12, obj);
             }
         }));
     }

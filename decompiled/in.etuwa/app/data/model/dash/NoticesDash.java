@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: NoticesDash.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: NoticesDash.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class NoticesDash {
 
     @SerializedName("content")
@@ -20,7 +20,7 @@ public final /* data */ class NoticesDash {
         return noticesDash.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getContent() {
         return this.content;
     }

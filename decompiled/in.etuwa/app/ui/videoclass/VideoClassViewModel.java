@@ -20,10 +20,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: VideoClassViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: VideoClassViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class VideoClassViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<ArrayList<Semester>>> semResponse;
     private final VideoClassRepository videoClassRepository;
     private MutableLiveData<Resource<VideoResponse>> videoResponse;
@@ -34,14 +35,22 @@ public final class VideoClassViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.videoResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getSemester();
     }
 
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.videoClassRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.videoClassRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel.getSemester.1
             {
                 super(1);
             }
@@ -52,20 +61,18 @@ public final class VideoClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = VideoClassViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                VideoClassViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VideoClassViewModel.getSemester$lambda$0(Function1.this, obj);
+                VideoClassViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel.getSemester.2
             {
                 super(1);
             }
@@ -76,17 +83,15 @@ public final class VideoClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = VideoClassViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                VideoClassViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VideoClassViewModel.getSemester$lambda$1(Function1.this, obj);
+                VideoClassViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +123,8 @@ public final class VideoClassViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(semId, "semId");
         this.videoResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<VideoResponse> observeOn = this.videoClassRepository.getVideoClassApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<VideoResponse, Unit> function1 = new Function1<VideoResponse, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$getVideoClass$1
+        Single<VideoResponse> singleObserveOn = this.videoClassRepository.getVideoClassApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<VideoResponse, Unit> function1 = new Function1<VideoResponse, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel.getVideoClass.1
             {
                 super(1);
             }
@@ -130,20 +135,18 @@ public final class VideoClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(VideoResponse videoResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = VideoClassViewModel.this.videoResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(videoResponse));
+                VideoClassViewModel.this.videoResponse.postValue(Resource.INSTANCE.success(videoResponse));
             }
         };
         Consumer<? super VideoResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VideoClassViewModel.getVideoClass$lambda$2(Function1.this, obj);
+                VideoClassViewModel.getVideoClass$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$getVideoClass$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel.getVideoClass.2
             {
                 super(1);
             }
@@ -154,17 +157,15 @@ public final class VideoClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = VideoClassViewModel.this.videoResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                VideoClassViewModel.this.videoResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VideoClassViewModel.getVideoClass$lambda$3(Function1.this, obj);
+                VideoClassViewModel.getVideoClass$lambda$3(function12, obj);
             }
         }));
     }
@@ -189,9 +190,9 @@ public final class VideoClassViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(videoId, "videoId");
         Intrinsics.checkNotNullParameter(youtubeId, "youtubeId");
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.videoClassRepository.getWatchVideoApiCall(videoId, youtubeId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final VideoClassViewModel$watchVideoClass$1 videoClassViewModel$watchVideoClass$1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$watchVideoClass$1
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+        Single<SuccessResponse> singleObserveOn = this.videoClassRepository.getWatchVideoApiCall(videoId, youtubeId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final C08121 c08121 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel.watchVideoClass.1
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
             }
 
@@ -204,11 +205,11 @@ public final class VideoClassViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VideoClassViewModel.watchVideoClass$lambda$4(Function1.this, obj);
+                VideoClassViewModel.watchVideoClass$lambda$4(c08121, obj);
             }
         };
-        final VideoClassViewModel$watchVideoClass$2 videoClassViewModel$watchVideoClass$2 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$watchVideoClass$2
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+        final C08132 c08132 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel.watchVideoClass.2
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
             }
 
@@ -218,10 +219,10 @@ public final class VideoClassViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.videoclass.VideoClassViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VideoClassViewModel.watchVideoClass$lambda$5(Function1.this, obj);
+                VideoClassViewModel.watchVideoClass$lambda$5(c08132, obj);
             }
         }));
     }

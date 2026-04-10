@@ -7,8 +7,8 @@ import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ActivityBatch.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ActivityBatch.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ActivityBatch {
 
     @SerializedName("activity_batch_id")
@@ -49,32 +49,32 @@ public final /* data */ class ActivityBatch {
         return activityBatch.copy(str, str7, str8, str9, str10, str6);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getActivityBatchId() {
         return this.activityBatchId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getActivityName() {
         return this.activityName;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getMaxPoint() {
         return this.maxPoint;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDescription() {
         return this.description;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

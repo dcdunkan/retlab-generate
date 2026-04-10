@@ -10,6 +10,7 @@ import android.webkit.WebView;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.actions.SearchIntents;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
@@ -28,14 +29,15 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: VideoClassAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: VideoClassAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class VideoClassAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private PlayerCallBack listener;
     private final ArrayList<Videos> videos = new ArrayList<>();
     private boolean readyForLoadingYoutubeThumbnail = true;
+    private final ArrayList<Videos> filteredVideos = new ArrayList<>();
 
-    /* compiled from: VideoClassAdapter.kt */
+    /* JADX INFO: compiled from: VideoClassAdapter.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006"}, d2 = {"Lin/etuwa/app/ui/videoclass/VideoClassAdapter$PlayerCallBack;", "", "loadPlayer", "", "video", "Lin/etuwa/app/data/model/video/Videos;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface PlayerCallBack {
         void loadPlayer(Videos video);
@@ -45,18 +47,18 @@ public final class VideoClassAdapter extends RecyclerView.Adapter<BaseViewHolder
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_video, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …row_video, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_video, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …row_video, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -72,7 +74,7 @@ public final class VideoClassAdapter extends RecyclerView.Adapter<BaseViewHolder
         return !this.videos.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: VideoClassAdapter.kt */
+    /* JADX INFO: compiled from: VideoClassAdapter.kt */
     @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u0012\u001a\u00020\u0013H\u0014J\u0010\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\f0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0007*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lin/etuwa/app/ui/videoclass/VideoClassAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/videoclass/VideoClassAdapter;Landroid/view/View;)V", "card", "Landroidx/cardview/widget/CardView;", "kotlin.jvm.PlatformType", "date", "Landroid/widget/TextView;", "descriptionTxt", SvgConstants.Tags.IMAGE, "Lcom/google/android/youtube/player/YouTubeThumbnailView;", "sem", "subject", "title", "web", "Landroid/webkit/WebView;", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final CardView card;
@@ -128,20 +130,20 @@ public final class VideoClassAdapter extends RecyclerView.Adapter<BaseViewHolder
                             public void onInitializationSuccess(YouTubeThumbnailView youTubeThumbnailView2, final YouTubeThumbnailLoader youTubeThumbnailLoader) {
                                 Intrinsics.checkNotNullParameter(youTubeThumbnailView2, "youTubeThumbnailView");
                                 Intrinsics.checkNotNullParameter(youTubeThumbnailLoader, "youTubeThumbnailLoader");
-                                youTubeThumbnailLoader.setVideo(Videos.this.getUrl());
+                                youTubeThumbnailLoader.setVideo(videos.getUrl());
                                 youTubeThumbnailLoader.setOnThumbnailLoadedListener(new YouTubeThumbnailLoader.OnThumbnailLoadedListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassAdapter$ViewHolder$onBind$1$onInitializationSuccess$1
                                     @Override // com.google.android.youtube.player.YouTubeThumbnailLoader.OnThumbnailLoadedListener
                                     public void onThumbnailLoaded(YouTubeThumbnailView youTubeThumbnailView3, String s) {
                                         Intrinsics.checkNotNullParameter(youTubeThumbnailView3, "youTubeThumbnailView");
                                         Intrinsics.checkNotNullParameter(s, "s");
-                                        YouTubeThumbnailLoader.this.release();
+                                        youTubeThumbnailLoader.release();
                                     }
 
                                     @Override // com.google.android.youtube.player.YouTubeThumbnailLoader.OnThumbnailLoadedListener
                                     public void onThumbnailError(YouTubeThumbnailView youTubeThumbnailView3, YouTubeThumbnailLoader.ErrorReason errorReason) {
                                         Intrinsics.checkNotNullParameter(youTubeThumbnailView3, "youTubeThumbnailView");
                                         Intrinsics.checkNotNullParameter(errorReason, "errorReason");
-                                        YouTubeThumbnailLoader.this.release();
+                                        youTubeThumbnailLoader.release();
                                     }
                                 });
                                 videoClassAdapter.readyForLoadingYoutubeThumbnail = true;
@@ -173,7 +175,7 @@ public final class VideoClassAdapter extends RecyclerView.Adapter<BaseViewHolder
                 cardView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        VideoClassAdapter.ViewHolder.onBind$lambda$0(VideoClassAdapter.this, videos, view);
+                        VideoClassAdapter.ViewHolder.onBind$lambda$0(videoClassAdapter2, videos, view);
                     }
                 });
                 WebView webView = this.web;
@@ -181,9 +183,7 @@ public final class VideoClassAdapter extends RecyclerView.Adapter<BaseViewHolder
                 webView.setOnTouchListener(new View.OnTouchListener() { // from class: in.etuwa.app.ui.videoclass.VideoClassAdapter$ViewHolder$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnTouchListener
                     public final boolean onTouch(View view, MotionEvent motionEvent) {
-                        boolean onBind$lambda$1;
-                        onBind$lambda$1 = VideoClassAdapter.ViewHolder.onBind$lambda$1(VideoClassAdapter.this, videos, view, motionEvent);
-                        return onBind$lambda$1;
+                        return VideoClassAdapter.ViewHolder.onBind$lambda$1(videoClassAdapter3, videos, view, motionEvent);
                     }
                 });
             } catch (Exception unused) {
@@ -224,6 +224,79 @@ public final class VideoClassAdapter extends RecyclerView.Adapter<BaseViewHolder
         this.videos.clear();
         this.videos.addAll(list);
         notifyDataSetChanged();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x006c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct code enable 'Show inconsistent code' option in preferences
+    */
+    public final void applyCombinedFilter(java.lang.String r12) {
+        /*
+            r11 = this;
+            java.lang.String r0 = "query"
+            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r12, r0)
+            java.util.ArrayList<in.etuwa.app.data.model.video.Videos> r0 = r11.filteredVideos
+            r0.clear()
+            java.util.ArrayList<in.etuwa.app.data.model.video.Videos> r0 = r11.videos
+            r1 = r12
+            java.lang.CharSequence r1 = (java.lang.CharSequence) r1
+            boolean r1 = kotlin.text.StringsKt.isBlank(r1)
+            r2 = 1
+            r1 = r1 ^ r2
+            if (r1 == 0) goto L78
+            java.util.Locale r1 = java.util.Locale.ROOT
+            java.lang.String r12 = r12.toLowerCase(r1)
+            java.lang.String r1 = "toLowerCase(...)"
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r12, r1)
+            java.lang.Iterable r0 = (java.lang.Iterable) r0
+            java.util.ArrayList r3 = new java.util.ArrayList
+            r3.<init>()
+            java.util.Collection r3 = (java.util.Collection) r3
+            java.util.Iterator r0 = r0.iterator()
+        L2f:
+            boolean r4 = r0.hasNext()
+            if (r4 == 0) goto L73
+            java.lang.Object r4 = r0.next()
+            r5 = r4
+            in.etuwa.app.data.model.video.Videos r5 = (in.etuwa.app.data.model.video.Videos) r5
+            java.lang.String r6 = r5.getSubject()
+            java.util.Locale r7 = java.util.Locale.ROOT
+            java.lang.String r6 = r6.toLowerCase(r7)
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r6, r1)
+            java.lang.CharSequence r6 = (java.lang.CharSequence) r6
+            r7 = r12
+            java.lang.CharSequence r7 = (java.lang.CharSequence) r7
+            r8 = 0
+            r9 = 2
+            r10 = 0
+            boolean r6 = kotlin.text.StringsKt.contains$default(r6, r7, r8, r9, r10)
+            if (r6 != 0) goto L6c
+            java.lang.String r5 = r5.getTitle()
+            java.util.Locale r6 = java.util.Locale.ROOT
+            java.lang.String r5 = r5.toLowerCase(r6)
+            kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r5, r1)
+            java.lang.CharSequence r5 = (java.lang.CharSequence) r5
+            boolean r5 = kotlin.text.StringsKt.contains$default(r5, r7, r8, r9, r10)
+            if (r5 == 0) goto L6d
+        L6c:
+            r8 = 1
+        L6d:
+            if (r8 == 0) goto L2f
+            r3.add(r4)
+            goto L2f
+        L73:
+            java.util.List r3 = (java.util.List) r3
+            r0 = r3
+            java.util.ArrayList r0 = (java.util.ArrayList) r0
+        L78:
+            java.util.ArrayList<in.etuwa.app.data.model.video.Videos> r12 = r11.filteredVideos
+            java.util.Collection r0 = (java.util.Collection) r0
+            r12.addAll(r0)
+            r11.notifyDataSetChanged()
+            return
+        */
+        throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.videoclass.VideoClassAdapter.applyCombinedFilter(java.lang.String):void");
     }
 
     public final void setPlayerCallBack(VideoClassFragment context) {

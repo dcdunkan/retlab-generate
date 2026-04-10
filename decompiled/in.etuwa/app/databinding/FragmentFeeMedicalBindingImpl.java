@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.feemedical.FeeMedicalViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentFeeMedicalBindingImpl extends FragmentFeeMedicalBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -71,7 +71,7 @@ public class FragmentFeeMedicalBindingImpl extends FragmentFeeMedicalBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (94 != variableId) {
+        if (95 != variableId) {
             return false;
         }
         setFeeMedicalViewModel((FeeMedicalViewModel) variable);

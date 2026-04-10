@@ -28,8 +28,8 @@ import okhttp3.RequestBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: AddFundedResearchViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddFundedResearchViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddFundedResearchViewModel extends ViewModel implements KoinComponent {
     private MutableLiveData<Resource<SuccessResponse>> addResponse;
     private final MutableLiveData<Resource<SuccessResponse>> addResponse2;
@@ -94,15 +94,15 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Intrinsics.checkNotNullParameter(duration, "duration");
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, amount);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, agency);
-        RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, duration);
-        RequestBody create5 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, amount);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, agency);
+        RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, duration);
+        RequestBody requestBodyCreate5 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$addFundedResearchData$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.addFundedResearchData.1
             {
                 super(1);
             }
@@ -113,20 +113,20 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddFundedResearchViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda9
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.addFundedResearchData$lambda$0(Function1.this, obj);
+                AddFundedResearchViewModel.addFundedResearchData$lambda$0(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.addRResearchUrlApiCall(create, create2, create3, create4, create5, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$addFundedResearchData$2
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.addRResearchUrlApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, requestBodyCreate4, requestBodyCreate5, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.addFundedResearchData.2
             {
                 super(1);
             }
@@ -137,7 +137,7 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddFundedResearchViewModel.this.getAddResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -145,10 +145,10 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.addFundedResearchData$lambda$1(Function1.this, obj);
+                AddFundedResearchViewModel.addFundedResearchData$lambda$1(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$addFundedResearchData$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.addFundedResearchData.3
             {
                 super(1);
             }
@@ -159,7 +159,7 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddFundedResearchViewModel.this.getAddResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -168,10 +168,10 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda11
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda11
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.addFundedResearchData$lambda$2(Function1.this, obj);
+                AddFundedResearchViewModel.addFundedResearchData$lambda$2(function13, obj);
             }
         }));
     }
@@ -202,16 +202,16 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Intrinsics.checkNotNullParameter(duration, "duration");
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         Intrinsics.checkNotNullParameter(filePath, "filePath");
-        RequestBody create = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
-        RequestBody create2 = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
-        RequestBody create3 = RequestBody.INSTANCE.create(MultipartBody.FORM, amount);
-        RequestBody create4 = RequestBody.INSTANCE.create(MultipartBody.FORM, agency);
-        RequestBody create5 = RequestBody.INSTANCE.create(MultipartBody.FORM, duration);
-        RequestBody create6 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
+        RequestBody requestBodyCreate = RequestBody.INSTANCE.create(MultipartBody.FORM, id);
+        RequestBody requestBodyCreate2 = RequestBody.INSTANCE.create(MultipartBody.FORM, title);
+        RequestBody requestBodyCreate3 = RequestBody.INSTANCE.create(MultipartBody.FORM, amount);
+        RequestBody requestBodyCreate4 = RequestBody.INSTANCE.create(MultipartBody.FORM, agency);
+        RequestBody requestBodyCreate5 = RequestBody.INSTANCE.create(MultipartBody.FORM, duration);
+        RequestBody requestBodyCreate6 = RequestBody.INSTANCE.create(MultipartBody.FORM, yearId);
         ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-        MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
-        Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$updateFundedResearchData$1
+        MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("StudentProfile[uploadedFile]", filePath.getName(), progressRequestBody);
+        Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+        final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.updateFundedResearchData.1
             {
                 super(1);
             }
@@ -222,20 +222,20 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Float f) {
                 AddFundedResearchViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
             }
         };
-        subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda6
+        observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.updateFundedResearchData$lambda$3(Function1.this, obj);
+                AddFundedResearchViewModel.updateFundedResearchData$lambda$3(function1, obj);
             }
         });
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.updateResearchUrlApiCall(create, create2, create3, create4, create5, create6, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$updateFundedResearchData$2
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.updateResearchUrlApiCall(requestBodyCreate, requestBodyCreate2, requestBodyCreate3, requestBodyCreate4, requestBodyCreate5, requestBodyCreate6, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.updateFundedResearchData.2
             {
                 super(1);
             }
@@ -246,7 +246,7 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddFundedResearchViewModel.this.getAddResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -254,10 +254,10 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.updateFundedResearchData$lambda$4(Function1.this, obj);
+                AddFundedResearchViewModel.updateFundedResearchData$lambda$4(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$updateFundedResearchData$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.updateFundedResearchData.3
             {
                 super(1);
             }
@@ -268,7 +268,7 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th instanceof SocketTimeoutException) {
                     AddFundedResearchViewModel.this.getAddResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -277,10 +277,10 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 }
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda8
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.updateFundedResearchData$lambda$5(Function1.this, obj);
+                AddFundedResearchViewModel.updateFundedResearchData$lambda$5(function13, obj);
             }
         }));
     }
@@ -306,8 +306,8 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
     public final void getDropDownData() {
         this.publicationResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<PublicationDropDownResponse> observeOn = this.profileRepository.getProfileDropListUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<PublicationDropDownResponse, Unit> function1 = new Function1<PublicationDropDownResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$getDropDownData$1
+        Single<PublicationDropDownResponse> singleObserveOn = this.profileRepository.getProfileDropListUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<PublicationDropDownResponse, Unit> function1 = new Function1<PublicationDropDownResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.getDropDownData.1
             {
                 super(1);
             }
@@ -318,20 +318,18 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(PublicationDropDownResponse publicationDropDownResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddFundedResearchViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(publicationDropDownResponse));
+                AddFundedResearchViewModel.this.publicationResponse.postValue(Resource.INSTANCE.success(publicationDropDownResponse));
             }
         };
         Consumer<? super PublicationDropDownResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.getDropDownData$lambda$6(Function1.this, obj);
+                AddFundedResearchViewModel.getDropDownData$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$getDropDownData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.getDropDownData.2
             {
                 super(1);
             }
@@ -342,17 +340,15 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddFundedResearchViewModel.this.publicationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddFundedResearchViewModel.this.publicationResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.getDropDownData$lambda$7(Function1.this, obj);
+                AddFundedResearchViewModel.getDropDownData$lambda$7(function12, obj);
             }
         }));
     }
@@ -381,8 +377,8 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         this.addResponse2.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.addRResearchUrlApiCall(title, amount, agency, duration, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$addFundedResearchData$4
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.addRResearchUrlApiCall(title, amount, agency, duration, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.addFundedResearchData.4
             {
                 super(1);
             }
@@ -393,7 +389,7 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddFundedResearchViewModel.this.getAddResponse2().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -401,10 +397,10 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.addFundedResearchData$lambda$8(Function1.this, obj);
+                AddFundedResearchViewModel.addFundedResearchData$lambda$8(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$addFundedResearchData$5
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.addFundedResearchData.5
             {
                 super(1);
             }
@@ -415,15 +411,15 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddFundedResearchViewModel.this.getAddResponse2().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.addFundedResearchData$lambda$9(Function1.this, obj);
+                AddFundedResearchViewModel.addFundedResearchData$lambda$9(function12, obj);
             }
         }));
     }
@@ -449,8 +445,8 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Intrinsics.checkNotNullParameter(yearId, "yearId");
         this.updateResponse2.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.updateResearchUrlApiCall(id, title, amount, agency, duration, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$updateFundedResearchData$4
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.updateResearchUrlApiCall(id, title, amount, agency, duration, yearId).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.updateFundedResearchData.4
             {
                 super(1);
             }
@@ -461,7 +457,7 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddFundedResearchViewModel.this.getUpdateResponse2().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -469,10 +465,10 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.updateFundedResearchData$lambda$10(Function1.this, obj);
+                AddFundedResearchViewModel.updateFundedResearchData$lambda$10(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$updateFundedResearchData$5
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.updateFundedResearchData.5
             {
                 super(1);
             }
@@ -483,15 +479,15 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddFundedResearchViewModel.this.getUpdateResponse2().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.updateFundedResearchData$lambda$11(Function1.this, obj);
+                AddFundedResearchViewModel.updateFundedResearchData$lambda$11(function12, obj);
             }
         }));
     }
@@ -512,8 +508,8 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteResearchUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$deleteFundedResearchData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteResearchUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.deleteFundedResearchData.1
             {
                 super(1);
             }
@@ -524,7 +520,7 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddFundedResearchViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -532,10 +528,10 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda12
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.deleteFundedResearchData$lambda$12(Function1.this, obj);
+                AddFundedResearchViewModel.deleteFundedResearchData$lambda$12(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$deleteFundedResearchData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel.deleteFundedResearchData.2
             {
                 super(1);
             }
@@ -546,15 +542,15 @@ public final class AddFundedResearchViewModel extends ViewModel implements KoinC
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddFundedResearchViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda13
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.fundedresearch.add.AddFundedResearchViewModel$$ExternalSyntheticLambda13
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddFundedResearchViewModel.deleteFundedResearchData$lambda$13(Function1.this, obj);
+                AddFundedResearchViewModel.deleteFundedResearchData$lambda$13(function12, obj);
             }
         }));
     }

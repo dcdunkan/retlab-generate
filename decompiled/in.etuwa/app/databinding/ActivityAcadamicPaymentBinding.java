@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityAcadamicPaymentBinding implements ViewBinding {
     public final WebView acadamicWeb;
     private final FrameLayout rootView;
@@ -29,11 +29,11 @@ public final class ActivityAcadamicPaymentBinding implements ViewBinding {
     }
 
     public static ActivityAcadamicPaymentBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_acadamic_payment, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_acadamic_payment, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityAcadamicPaymentBinding bind(View rootView) {

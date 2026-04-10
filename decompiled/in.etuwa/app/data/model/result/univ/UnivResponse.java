@@ -8,8 +8,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: UnivResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: UnivResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class UnivResponse {
     private final UnivDetails details;
     private final String error;
@@ -19,6 +19,7 @@ public final /* data */ class UnivResponse {
     @SerializedName("univ_exams")
     private final ArrayList<UnivExams> univExams;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ UnivResponse copy$default(UnivResponse univResponse, boolean z, UnivDetails univDetails, ArrayList arrayList, ArrayList arrayList2, String str, int i, Object obj) {
         if ((i & 1) != 0) {
             z = univResponse.login;
@@ -41,12 +42,12 @@ public final /* data */ class UnivResponse {
         return univResponse.copy(z, univDetails2, arrayList3, arrayList4, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final UnivDetails getDetails() {
         return this.details;
     }
@@ -59,7 +60,7 @@ public final /* data */ class UnivResponse {
         return this.univExams;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getError() {
         return this.error;
     }

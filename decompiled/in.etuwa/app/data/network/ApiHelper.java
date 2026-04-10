@@ -18,6 +18,7 @@ import in.etuwa.app.data.model.attendance.AttendanceNewResponse;
 import in.etuwa.app.data.model.attendance.AttendanceRequest;
 import in.etuwa.app.data.model.attendance.AttendanceRequestNew;
 import in.etuwa.app.data.model.attendance.AttendanceResponse;
+import in.etuwa.app.data.model.calendar.AttendanceDetails;
 import in.etuwa.app.data.model.calendar.CalendarResponse;
 import in.etuwa.app.data.model.centralizedinfo.CentralizedInfoResponse;
 import in.etuwa.app.data.model.certificaterequest.CertificateRequestResponse;
@@ -39,6 +40,7 @@ import in.etuwa.app.data.model.dash.MaintenanceResponse;
 import in.etuwa.app.data.model.dash.PendingSurvey;
 import in.etuwa.app.data.model.dash.ProfileResponse;
 import in.etuwa.app.data.model.dash.daywisetimetaable.DayWiseResponse;
+import in.etuwa.app.data.model.due.DueResponse;
 import in.etuwa.app.data.model.due.duepay.DuePayUrl;
 import in.etuwa.app.data.model.due.duepay.NoDueCertificateResponse;
 import in.etuwa.app.data.model.due.duepaynew.DuePayNewResponse;
@@ -180,6 +182,7 @@ import in.etuwa.app.data.model.result.SeasonRequest;
 import in.etuwa.app.data.model.result.moduletest.ResultModuleTestResponse;
 import in.etuwa.app.data.model.result.tutorial.TutorialResultResponse;
 import in.etuwa.app.data.model.result.univ.UnivResponse;
+import in.etuwa.app.data.model.result.univ.UnivTotalResponse;
 import in.etuwa.app.data.model.semregistration.AcademicYearResponse;
 import in.etuwa.app.data.model.semregistration.SemRegViewResponse;
 import in.etuwa.app.data.model.semregistration.list.SemRegisterListResponse;
@@ -200,6 +203,7 @@ import in.etuwa.app.data.model.subjectregistration.SubjectsListResponse;
 import in.etuwa.app.data.model.subjectregistration.ViewSubjectRegistrationResponse;
 import in.etuwa.app.data.model.survey.GenSurveyQuestionRequest;
 import in.etuwa.app.data.model.survey.SubmitResponse;
+import in.etuwa.app.data.model.survey.SubmitTeacherResponse;
 import in.etuwa.app.data.model.survey.Survey;
 import in.etuwa.app.data.model.survey.SurveyQuestion;
 import in.etuwa.app.data.model.survey.SurveyRequest;
@@ -211,7 +215,6 @@ import in.etuwa.app.data.model.survey.graduateexit.DoGraduateSurveyResponse;
 import in.etuwa.app.data.model.survey.graduateexit.GraduateExitSurveyListResponse;
 import in.etuwa.app.data.model.survey.posurvey.POSurveyResponse;
 import in.etuwa.app.data.model.survey.posurvey.PoQuestionsResponse;
-import in.etuwa.app.data.model.timetable.TimetableResponse;
 import in.etuwa.app.data.model.timetable.change.ChangeTimeTableResponse;
 import in.etuwa.app.data.model.timetable.special.SpecialResponse;
 import in.etuwa.app.data.model.transport.TransportFeeResponse;
@@ -224,6 +227,7 @@ import in.etuwa.app.data.model.tutorial.TutorialResponse;
 import in.etuwa.app.data.model.university.UniversityResultResponse;
 import in.etuwa.app.data.model.updateprofile.UpdateProfile;
 import in.etuwa.app.data.model.video.VideoResponse;
+import in.etuwa.app.ui.dashboard.dashtable.TimeTableMonthlyNewResponse;
 import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDetailDialogKt;
 import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import io.reactivex.Observable;
@@ -236,10 +240,9 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import org.bouncycastle.i18n.ErrorBundle;
-import retrofit2.Response;
 
-/* compiled from: ApiHelper.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ApiHelper.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ApiHelper {
     private final ApiService apiService;
 
@@ -271,12 +274,25 @@ public final class ApiHelper {
         return this.apiService.sendPushTokenApiCall(request);
     }
 
+    public final Single<CalendarResponse> getCalendarEventApiCall() {
+        return this.apiService.getCalendarEventApiCall();
+    }
+
     public final Single<ArrayList<Semester>> getSemestersApiCall() {
         return this.apiService.getSemestersApiCall();
     }
 
     public final Single<CalendarResponse> getCalendarEvents() {
         return this.apiService.getCalendarEventApiCall();
+    }
+
+    public final Single<TimeTableMonthlyNewResponse> getTimeTableMonthlyApiCall(String date) {
+        Intrinsics.checkNotNullParameter(date, "date");
+        return this.apiService.getTimeTableMonthlyApiCall(date);
+    }
+
+    public final Single<AttendanceDetails> getAttendanceDetails() {
+        return this.apiService.getAttendanceDetails();
     }
 
     public final Single<ArrayList<Inbox>> getInboxApiCall() {
@@ -308,10 +324,6 @@ public final class ApiHelper {
 
     public final Single<DashResponse> getDashApiCall() {
         return this.apiService.getDashApiCall();
-    }
-
-    public final Single<TimetableResponse> getTimetableApiCall() {
-        return this.apiService.getTimetableApiCall();
     }
 
     public final Single<ArrayList<ChangeTimeTableResponse>> getChangeInTimetableApiCall() {
@@ -492,6 +504,15 @@ public final class ApiHelper {
         return this.apiService.submitGenSurveyApiCall(surveyId, remark, option);
     }
 
+    public final Single<SubmitTeacherResponse> submitTeacherSurveyApiCall(String questionId, String optionId, String teacherId, String subjectId, String sessionId) {
+        Intrinsics.checkNotNullParameter(questionId, "questionId");
+        Intrinsics.checkNotNullParameter(optionId, "optionId");
+        Intrinsics.checkNotNullParameter(teacherId, "teacherId");
+        Intrinsics.checkNotNullParameter(subjectId, "subjectId");
+        Intrinsics.checkNotNullParameter(sessionId, "sessionId");
+        return this.apiService.submitTeacherSurveyApiCall(questionId, optionId, teacherId, subjectId, sessionId);
+    }
+
     public final Single<ArrayList<TeacherList>> getSurveyTeachersApiCall(GenSurveyQuestionRequest request) {
         Intrinsics.checkNotNullParameter(request, "request");
         return this.apiService.getSurveyTeachersApiCall(request);
@@ -547,6 +568,10 @@ public final class ApiHelper {
         return this.apiService.getResultUnivApiCall(request);
     }
 
+    public final Single<UnivTotalResponse> getResultUnivApiCall() {
+        return this.apiService.getResultUnivApiCall();
+    }
+
     public final Single<ArrayList<MedicalLeave>> getMedicalLeaveApiCall() {
         return this.apiService.getMedicalLeaveApiCall();
     }
@@ -571,9 +596,9 @@ public final class ApiHelper {
         return this.apiService.getSeriesExamApiCall(request);
     }
 
-    public final Single<ModuleTestResponse> getModuleTestApiCall(String r2) {
-        Intrinsics.checkNotNullParameter(r2, "new");
-        return this.apiService.getModuleTestApiCall(r2);
+    public final Single<ModuleTestResponse> getModuleTestApiCall(String str) {
+        Intrinsics.checkNotNullParameter(str, "new");
+        return this.apiService.getModuleTestApiCall(str);
     }
 
     public final Single<AssignmentResponse> getAssignmentApiCall(AssignmentRequest request) {
@@ -596,11 +621,12 @@ public final class ApiHelper {
         return this.apiService.deleteModuleTestApiCall(id);
     }
 
-    public final Observable<SuccessResponse> uploadAssignmentApiCall(RequestBody username, RequestBody password, RequestBody id, MultipartBody.Part file) {
+    public final Observable<SuccessResponse> uploadAssignmentApiCall(RequestBody username, RequestBody password, RequestBody id, RequestBody link, MultipartBody.Part file) {
         Intrinsics.checkNotNullParameter(username, "username");
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiService.uploadAssignmentApiCall(username, password, id, file);
+        Intrinsics.checkNotNullParameter(link, "link");
+        return this.apiService.uploadAssignmentApiCall(username, password, id, link, file);
     }
 
     public final Observable<SuccessResponse> uploadSeriesExamApiCall(RequestBody username, RequestBody password, RequestBody id, MultipartBody.Part file) {
@@ -728,7 +754,7 @@ public final class ApiHelper {
         return this.apiService.getLiveTvApiCall();
     }
 
-    public final Single<DuePayNewResponse> getDuesApiCall() {
+    public final Single<DueResponse> getDuesApiCall() {
         return this.apiService.getDuesApiCall();
     }
 
@@ -868,7 +894,7 @@ public final class ApiHelper {
         return this.apiService.uploadCovidCertificateTwoApiCall(vaccineFileTwo);
     }
 
-    public final Single<Response<ResetPassword>> getResetPasswordApiCall() {
+    public final Single<ResetPassword> getResetPasswordApiCall() {
         return this.apiService.getResetPasswordApiCall();
     }
 
@@ -1292,11 +1318,6 @@ public final class ApiHelper {
         return this.apiService.getAbcUpdateApiCall(id);
     }
 
-    public final Single<SuccessResponse> verifyAbcIdApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiService.verifyAbcIdApiCall(id);
-    }
-
     public final Single<HostelPalaiTypesResponse> getHostelFeeTypesApiCall() {
         return this.apiService.getHostelFeeTypesApiCall();
     }
@@ -1440,6 +1461,16 @@ public final class ApiHelper {
         return this.apiService.getHostelApplyLeaveApiCall(leaveType, fromDate, toDate, reason);
     }
 
+    public final Single<SuccessResponse> getHostelApplyLeaveNewApiCall(String leaveType, String fromDate, String toDate, String fromDateTime, String toDateTime, String reason) {
+        Intrinsics.checkNotNullParameter(leaveType, "leaveType");
+        Intrinsics.checkNotNullParameter(fromDate, "fromDate");
+        Intrinsics.checkNotNullParameter(toDate, "toDate");
+        Intrinsics.checkNotNullParameter(fromDateTime, "fromDateTime");
+        Intrinsics.checkNotNullParameter(toDateTime, "toDateTime");
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        return this.apiService.getHostelApplyLeaveNewApiCall(leaveType, fromDate, toDate, fromDateTime, toDateTime, reason);
+    }
+
     public final Single<HostelAttParentViewResponse> getHostelLeaveViewParentApiCall(String date) {
         Intrinsics.checkNotNullParameter(date, "date");
         return this.apiService.getHostelLeaveViewParentApiCall(date);
@@ -1465,14 +1496,14 @@ public final class ApiHelper {
         return this.apiService.getHostelRevokeLeaveParentApiCall(id);
     }
 
-    public final Single<SuccessResponse> getHostelApproveLeaveParentApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiService.getHostelApproveLeaveParentApiCall(id);
+    public final Single<SuccessResponse> getHostelApproveLeaveParentApiCall(Map<String, String> approveDetails) {
+        Intrinsics.checkNotNullParameter(approveDetails, "approveDetails");
+        return this.apiService.getHostelApproveLeaveParentApiCall(approveDetails);
     }
 
-    public final Single<SuccessResponse> getHostelRejectLeaveParentApiCall(String id) {
-        Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiService.getHostelRejectLeaveParentApiCall(id);
+    public final Single<SuccessResponse> getHostelRejectLeaveParentApiCall(Map<String, String> rejectDetails) {
+        Intrinsics.checkNotNullParameter(rejectDetails, "rejectDetails");
+        return this.apiService.getHostelRejectLeaveParentApiCall(rejectDetails);
     }
 
     public final Single<HostelAttCalResponse> getHostelAttCalApiCall(String month, String year) {

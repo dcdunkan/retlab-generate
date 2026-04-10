@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.quiz.submit;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubmitRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubmitRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubmitRequest {
     private final String option;
     private final String qno;
@@ -19,12 +19,12 @@ public final /* data */ class SubmitRequest {
         return submitRequest.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQno() {
         return this.qno;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getOption() {
         return this.option;
     }
@@ -46,9 +46,9 @@ public final /* data */ class SubmitRequest {
 
     public int hashCode() {
         String str = this.qno;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.option;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
+        return iHashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {

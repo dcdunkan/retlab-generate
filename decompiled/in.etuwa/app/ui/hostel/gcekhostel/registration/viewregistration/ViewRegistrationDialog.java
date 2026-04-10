@@ -53,11 +53,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ViewRegistrationDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ViewRegistrationDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewRegistrationDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogViewregistrationDialogBinding _binding;
     private ArrayList<DownloadModel> downList;
@@ -66,10 +66,10 @@ public final class ViewRegistrationDialog extends BaseDialog {
     private final BroadcastReceiver onDownloadComplete;
     private String url;
 
-    /* renamed from: viewRegistrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: viewRegistrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy viewRegistrationViewModel;
 
-    /* compiled from: ViewRegistrationDialog.kt */
+    /* JADX INFO: compiled from: ViewRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/registration/viewregistration/ViewRegistrationDialog$ViewRegistrationListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ViewRegistrationListener {
         void onDismiss();
@@ -98,7 +98,7 @@ public final class ViewRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return viewRegistrationDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(viewRegistrationDialog);
@@ -112,7 +112,7 @@ public final class ViewRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -125,21 +125,19 @@ public final class ViewRegistrationDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ViewRegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ViewRegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.downList = new ArrayList<>();
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationDialog$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                ArrayList arrayList2;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = ViewRegistrationDialog.this.downList;
-                    ViewRegistrationDialog viewRegistrationDialog2 = ViewRegistrationDialog.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    ViewRegistrationDialog viewRegistrationDialog2 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -148,8 +146,7 @@ public final class ViewRegistrationDialog extends BaseDialog {
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            arrayList2 = viewRegistrationDialog2.downList;
-                            arrayList2.remove(new DownloadModel(downloadModel.getId(), i));
+                            viewRegistrationDialog2.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -164,12 +161,12 @@ public final class ViewRegistrationDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogViewregistrationDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ViewRegistrationDialog.kt */
+    /* JADX INFO: compiled from: ViewRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/registration/viewregistration/ViewRegistrationDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/gcekhostel/registration/viewregistration/ViewRegistrationDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -239,7 +236,7 @@ public final class ViewRegistrationDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ViewRegistrationDialog.setUp$lambda$2(ViewRegistrationDialog.this, view);
+                ViewRegistrationDialog.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -262,9 +259,10 @@ public final class ViewRegistrationDialog extends BaseDialog {
     }
 
     private final void listenSpinnerResponse() {
-        getViewRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new ViewRegistrationDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationDialog$listenSpinnerResponse$1
+        getViewRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new ViewRegistrationDialogKt$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationDialog.listenSpinnerResponse.1
 
-            /* compiled from: ViewRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ViewRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -301,20 +299,8 @@ public final class ViewRegistrationDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ViewRegistrationResponse> resource) {
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding2;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding3;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding4;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding5;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding6;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding7;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding8;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding9;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding10;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding11;
-                DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding12;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -330,8 +316,8 @@ public final class ViewRegistrationDialog extends BaseDialog {
                         return;
                     }
                     ViewRegistrationDialog.this.hideProgress();
-                    dialogViewregistrationDialogBinding12 = ViewRegistrationDialog.this.get_binding();
-                    if (dialogViewregistrationDialogBinding12 == null || (textView = dialogViewregistrationDialogBinding12.certificateDwnRe) == null) {
+                    DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding = ViewRegistrationDialog.this.get_binding();
+                    if (dialogViewregistrationDialogBinding == null || (textView = dialogViewregistrationDialogBinding.certificateDwnRe) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -344,58 +330,58 @@ public final class ViewRegistrationDialog extends BaseDialog {
                 if (data != null) {
                     ViewRegistrationDialog viewRegistrationDialog = ViewRegistrationDialog.this;
                     try {
-                        dialogViewregistrationDialogBinding = viewRegistrationDialog.get_binding();
-                        TextView textView2 = dialogViewregistrationDialogBinding != null ? dialogViewregistrationDialogBinding.admsnNumberRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding2 = viewRegistrationDialog.get_binding();
+                        TextView textView2 = dialogViewregistrationDialogBinding2 != null ? dialogViewregistrationDialogBinding2.admsnNumberRe : null;
                         if (textView2 != null) {
                             textView2.setText(data.getAdmission_no());
                         }
-                        dialogViewregistrationDialogBinding2 = viewRegistrationDialog.get_binding();
-                        TextView textView3 = dialogViewregistrationDialogBinding2 != null ? dialogViewregistrationDialogBinding2.nameRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding3 = viewRegistrationDialog.get_binding();
+                        TextView textView3 = dialogViewregistrationDialogBinding3 != null ? dialogViewregistrationDialogBinding3.nameRe : null;
                         if (textView3 != null) {
                             textView3.setText(data.getFull_name());
                         }
-                        dialogViewregistrationDialogBinding3 = viewRegistrationDialog.get_binding();
-                        TextView textView4 = dialogViewregistrationDialogBinding3 != null ? dialogViewregistrationDialogBinding3.hostelAppliedForRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding4 = viewRegistrationDialog.get_binding();
+                        TextView textView4 = dialogViewregistrationDialogBinding4 != null ? dialogViewregistrationDialogBinding4.hostelAppliedForRe : null;
                         if (textView4 != null) {
                             textView4.setText(data.getSemester());
                         }
-                        dialogViewregistrationDialogBinding4 = viewRegistrationDialog.get_binding();
-                        TextView textView5 = dialogViewregistrationDialogBinding4 != null ? dialogViewregistrationDialogBinding4.statusRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding5 = viewRegistrationDialog.get_binding();
+                        TextView textView5 = dialogViewregistrationDialogBinding5 != null ? dialogViewregistrationDialogBinding5.statusRe : null;
                         if (textView5 != null) {
                             textView5.setText(data.getStatus());
                         }
-                        dialogViewregistrationDialogBinding5 = viewRegistrationDialog.get_binding();
-                        TextView textView6 = dialogViewregistrationDialogBinding5 != null ? dialogViewregistrationDialogBinding5.remarksRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding6 = viewRegistrationDialog.get_binding();
+                        TextView textView6 = dialogViewregistrationDialogBinding6 != null ? dialogViewregistrationDialogBinding6.remarksRe : null;
                         if (textView6 != null) {
                             textView6.setText(data.getRemarks());
                         }
-                        dialogViewregistrationDialogBinding6 = viewRegistrationDialog.get_binding();
-                        TextView textView7 = dialogViewregistrationDialogBinding6 != null ? dialogViewregistrationDialogBinding6.typeRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding7 = viewRegistrationDialog.get_binding();
+                        TextView textView7 = dialogViewregistrationDialogBinding7 != null ? dialogViewregistrationDialogBinding7.typeRe : null;
                         if (textView7 != null) {
                             textView7.setText(data.getType());
                         }
-                        dialogViewregistrationDialogBinding7 = viewRegistrationDialog.get_binding();
-                        TextView textView8 = dialogViewregistrationDialogBinding7 != null ? dialogViewregistrationDialogBinding7.addressRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding8 = viewRegistrationDialog.get_binding();
+                        TextView textView8 = dialogViewregistrationDialogBinding8 != null ? dialogViewregistrationDialogBinding8.addressRe : null;
                         if (textView8 != null) {
                             textView8.setText(data.getGuardian_address());
                         }
-                        dialogViewregistrationDialogBinding8 = viewRegistrationDialog.get_binding();
-                        TextView textView9 = dialogViewregistrationDialogBinding8 != null ? dialogViewregistrationDialogBinding8.phoneRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding9 = viewRegistrationDialog.get_binding();
+                        TextView textView9 = dialogViewregistrationDialogBinding9 != null ? dialogViewregistrationDialogBinding9.phoneRe : null;
                         if (textView9 != null) {
                             textView9.setText(data.getPhone_guardian());
                         }
-                        dialogViewregistrationDialogBinding9 = viewRegistrationDialog.get_binding();
-                        TextView textView10 = dialogViewregistrationDialogBinding9 != null ? dialogViewregistrationDialogBinding9.distanceRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding10 = viewRegistrationDialog.get_binding();
+                        TextView textView10 = dialogViewregistrationDialogBinding10 != null ? dialogViewregistrationDialogBinding10.distanceRe : null;
                         if (textView10 != null) {
                             textView10.setText(data.getDistance());
                         }
-                        dialogViewregistrationDialogBinding10 = viewRegistrationDialog.get_binding();
-                        TextView textView11 = dialogViewregistrationDialogBinding10 != null ? dialogViewregistrationDialogBinding10.readmissionRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding11 = viewRegistrationDialog.get_binding();
+                        TextView textView11 = dialogViewregistrationDialogBinding11 != null ? dialogViewregistrationDialogBinding11.readmissionRe : null;
                         if (textView11 != null) {
                             textView11.setText(data.getReadmission());
                         }
-                        dialogViewregistrationDialogBinding11 = viewRegistrationDialog.get_binding();
-                        TextView textView12 = dialogViewregistrationDialogBinding11 != null ? dialogViewregistrationDialogBinding11.annualIncomeRe : null;
+                        DialogViewregistrationDialogBinding dialogViewregistrationDialogBinding12 = viewRegistrationDialog.get_binding();
+                        TextView textView12 = dialogViewregistrationDialogBinding12 != null ? dialogViewregistrationDialogBinding12.annualIncomeRe : null;
                         if (textView12 != null) {
                             textView12.setText(data.getAnnual_income());
                         }
@@ -409,15 +395,15 @@ public final class ViewRegistrationDialog extends BaseDialog {
 
     private final void downloadCertificate(String url, int position, boolean flag) {
         TextView textView;
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
         String str = flag ? AppConstant.INTERNSHIP_PATH : AppConstant.UPLOAD_INTERNSHIP_PATH;
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission()) {
-            if (checkFileExistence(replace, flag)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, str);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission()) {
+            if (checkFileExistence(strReplace, flag)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, str);
                 return;
             }
             try {
@@ -427,14 +413,14 @@ public final class ViewRegistrationDialog extends BaseDialog {
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(textView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(str, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(str, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
@@ -445,13 +431,13 @@ public final class ViewRegistrationDialog extends BaseDialog {
 
     private final boolean checkFileExistence(String fileName, boolean flag) {
         if (flag) {
-            Context requireContext = requireContext();
-            Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-            return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.INTERNSHIP_PATH);
+            Context contextRequireContext = requireContext();
+            Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.INTERNSHIP_PATH);
         }
-        Context requireContext2 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-        return new ValidChecker(requireContext2).checkFileExistence(fileName, AppConstant.UPLOAD_INTERNSHIP_PATH);
+        Context contextRequireContext2 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+        return new ValidChecker(contextRequireContext2).checkFileExistence(fileName, AppConstant.UPLOAD_INTERNSHIP_PATH);
     }
 
     public final void setCallBack(RegistrationFragment context) {
@@ -477,7 +463,7 @@ public final class ViewRegistrationDialog extends BaseDialog {
                 new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.viewregistration.ViewRegistrationDialog$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        ViewRegistrationDialog.requestPermission$lambda$3(ViewRegistrationDialog.this, dialogInterface, i);
+                        ViewRegistrationDialog.requestPermission$lambda$3(this.f$0, dialogInterface, i);
                     }
                 }).create().show();
             } else {
@@ -501,9 +487,9 @@ public final class ViewRegistrationDialog extends BaseDialog {
             try {
                 if (!(!(grantResults.length == 0)) || grantResults[0] != 0) {
                     if (Build.VERSION.SDK_INT >= 23 && !shouldShowRequestPermissionRationale(permissions[0])) {
-                        Context requireContext = requireContext();
-                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                        new ValidChecker(requireContext).showPermissionDialog();
+                        Context contextRequireContext = requireContext();
+                        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                        new ValidChecker(contextRequireContext).showPermissionDialog();
                     } else {
                         Toast.makeText(requireContext(), "Permission Denied, You cannot Upload Profile Image .", 0).show();
                     }

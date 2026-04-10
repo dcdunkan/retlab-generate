@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: POSurveyViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: POSurveyViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class POSurveyViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final SurveyRepository surveyRepository;
@@ -33,8 +33,8 @@ public final class POSurveyViewModel extends ViewModel {
     public final void getSurveyList() {
         this.surveyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<POSurveyResponse> observeOn = this.surveyRepository.getPoSurveyUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<POSurveyResponse, Unit> function1 = new Function1<POSurveyResponse, Unit>() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyViewModel$getSurveyList$1
+        Single<POSurveyResponse> singleObserveOn = this.surveyRepository.getPoSurveyUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<POSurveyResponse, Unit> function1 = new Function1<POSurveyResponse, Unit>() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyViewModel.getSurveyList.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class POSurveyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(POSurveyResponse pOSurveyResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = POSurveyViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(pOSurveyResponse));
+                POSurveyViewModel.this.surveyResponse.postValue(Resource.INSTANCE.success(pOSurveyResponse));
             }
         };
         Consumer<? super POSurveyResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                POSurveyViewModel.getSurveyList$lambda$0(Function1.this, obj);
+                POSurveyViewModel.getSurveyList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyViewModel$getSurveyList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyViewModel.getSurveyList.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class POSurveyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = POSurveyViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                POSurveyViewModel.this.surveyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.posurvey.POSurveyViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                POSurveyViewModel.getSurveyList$lambda$1(Function1.this, obj);
+                POSurveyViewModel.getSurveyList$lambda$1(function12, obj);
             }
         }));
     }

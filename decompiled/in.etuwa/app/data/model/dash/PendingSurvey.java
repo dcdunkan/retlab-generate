@@ -4,8 +4,8 @@ import com.google.firebase.messaging.Constants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PendingSurvey.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PendingSurvey.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PendingSurvey {
     private final boolean coursesurvey_status;
     private final String error;
@@ -40,32 +40,32 @@ public final /* data */ class PendingSurvey {
         return pendingSurvey.copy(z, z6, z7, z8, z9, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getSurvey_status() {
         return this.survey_status;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getCoursesurvey_status() {
         return this.coursesurvey_status;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final boolean getPosurvey_status() {
         return this.posurvey_status;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final boolean getSemreg_default() {
         return this.semreg_default;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final boolean getProfile_status() {
         return this.profile_status;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getError() {
         return this.error;
     }
@@ -90,9 +90,18 @@ public final /* data */ class PendingSurvey {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v12 */
     /* JADX WARN: Type inference failed for: r0v13 */
-    /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v2, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v4, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v4 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v10 */
+    /* JADX WARN: Type inference failed for: r2v11 */
+    /* JADX WARN: Type inference failed for: r2v12 */
+    /* JADX WARN: Type inference failed for: r2v3, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v5, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v7 */
+    /* JADX WARN: Type inference failed for: r2v8 */
+    /* JADX WARN: Type inference failed for: r2v9 */
     public int hashCode() {
         boolean z = this.survey_status;
         ?? r0 = z;
@@ -100,26 +109,26 @@ public final /* data */ class PendingSurvey {
             r0 = 1;
         }
         int i = r0 * 31;
-        ?? r2 = this.coursesurvey_status;
-        int i2 = r2;
-        if (r2 != 0) {
-            i2 = 1;
+        boolean z2 = this.coursesurvey_status;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int i3 = (i + i2) * 31;
-        ?? r22 = this.posurvey_status;
-        int i4 = r22;
-        if (r22 != 0) {
-            i4 = 1;
+        int i2 = (i + r2) * 31;
+        boolean z3 = this.posurvey_status;
+        ?? r22 = z3;
+        if (z3) {
+            r22 = 1;
         }
-        int i5 = (i3 + i4) * 31;
-        ?? r23 = this.semreg_default;
-        int i6 = r23;
-        if (r23 != 0) {
-            i6 = 1;
+        int i3 = (i2 + r22) * 31;
+        boolean z4 = this.semreg_default;
+        ?? r23 = z4;
+        if (z4) {
+            r23 = 1;
         }
-        int i7 = (i5 + i6) * 31;
-        boolean z2 = this.profile_status;
-        return ((i7 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.error.hashCode();
+        int i4 = (i3 + r23) * 31;
+        boolean z5 = this.profile_status;
+        return ((i4 + (z5 ? 1 : z5)) * 31) + this.error.hashCode();
     }
 
     public String toString() {

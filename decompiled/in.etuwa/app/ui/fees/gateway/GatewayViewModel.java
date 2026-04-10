@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: GatewayViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: GatewayViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class GatewayViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final FeeRepository feeRepository;
@@ -33,8 +33,8 @@ public final class GatewayViewModel extends ViewModel {
     public final void getDetails() {
         this.gatewayResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<GatewayDetailsResponse> observeOn = this.feeRepository.getGatewayDetailsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<GatewayDetailsResponse, Unit> function1 = new Function1<GatewayDetailsResponse, Unit>() { // from class: in.etuwa.app.ui.fees.gateway.GatewayViewModel$getDetails$1
+        Single<GatewayDetailsResponse> singleObserveOn = this.feeRepository.getGatewayDetailsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<GatewayDetailsResponse, Unit> function1 = new Function1<GatewayDetailsResponse, Unit>() { // from class: in.etuwa.app.ui.fees.gateway.GatewayViewModel.getDetails.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class GatewayViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(GatewayDetailsResponse gatewayDetailsResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = GatewayViewModel.this.gatewayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(gatewayDetailsResponse));
+                GatewayViewModel.this.gatewayResponse.postValue(Resource.INSTANCE.success(gatewayDetailsResponse));
             }
         };
         Consumer<? super GatewayDetailsResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.gateway.GatewayViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                GatewayViewModel.getDetails$lambda$0(Function1.this, obj);
+                GatewayViewModel.getDetails$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.gateway.GatewayViewModel$getDetails$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.gateway.GatewayViewModel.getDetails.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class GatewayViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = GatewayViewModel.this.gatewayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                GatewayViewModel.this.gatewayResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.gateway.GatewayViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.gateway.GatewayViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                GatewayViewModel.getDetails$lambda$1(Function1.this, obj);
+                GatewayViewModel.getDetails$lambda$1(function12, obj);
             }
         }));
     }

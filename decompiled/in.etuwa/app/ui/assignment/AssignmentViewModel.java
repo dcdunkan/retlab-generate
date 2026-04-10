@@ -21,13 +21,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AssignmentViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AssignmentViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AssignmentViewModel extends ViewModel {
     private final AssignmentRepository assignmentRepository;
     private MutableLiveData<Resource<AssignmentResponse>> assignmentResponse;
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<SuccessResponse>> deleteResponse;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<ArrayList<Semester>>> semResponse;
 
     public AssignmentViewModel(AssignmentRepository assignmentRepository) {
@@ -37,7 +38,7 @@ public final class AssignmentViewModel extends ViewModel {
         this.assignmentResponse = new MutableLiveData<>();
         this.deleteResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
-        getSemester();
+        loadDataIfNeeded();
     }
 
     public final MutableLiveData<Resource<AssignmentResponse>> getAssignmentResponse() {
@@ -58,11 +59,19 @@ public final class AssignmentViewModel extends ViewModel {
         this.deleteResponse = mutableLiveData;
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getSemester();
+    }
+
     public final void getSemester() {
         this.semResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.assignmentRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$getSemester$1
+        Single<ArrayList<Semester>> singleObserveOn = this.assignmentRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel.getSemester.1
             {
                 super(1);
             }
@@ -73,20 +82,18 @@ public final class AssignmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AssignmentViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                AssignmentViewModel.this.semResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AssignmentViewModel.getSemester$lambda$0(Function1.this, obj);
+                AssignmentViewModel.getSemester$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$getSemester$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel.getSemester.2
             {
                 super(1);
             }
@@ -97,17 +104,15 @@ public final class AssignmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AssignmentViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AssignmentViewModel.this.semResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AssignmentViewModel.getSemester$lambda$1(Function1.this, obj);
+                AssignmentViewModel.getSemester$lambda$1(function12, obj);
             }
         }));
     }
@@ -147,8 +152,8 @@ public final class AssignmentViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(semId, "semId");
         this.assignmentResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<AssignmentResponse> observeOn = this.assignmentRepository.getAssignmentApiCall(new AssignmentRequest(filter, sort, semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<AssignmentResponse, Unit> function1 = new Function1<AssignmentResponse, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$getAssignment$1
+        Single<AssignmentResponse> singleObserveOn = this.assignmentRepository.getAssignmentApiCall(new AssignmentRequest(filter, sort, semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<AssignmentResponse, Unit> function1 = new Function1<AssignmentResponse, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel.getAssignment.1
             {
                 super(1);
             }
@@ -159,7 +164,7 @@ public final class AssignmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(AssignmentResponse assignmentResponse) {
                 AssignmentViewModel.this.getAssignmentResponse().postValue(Resource.INSTANCE.success(assignmentResponse));
             }
@@ -167,10 +172,10 @@ public final class AssignmentViewModel extends ViewModel {
         Consumer<? super AssignmentResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AssignmentViewModel.getAssignment$lambda$2(Function1.this, obj);
+                AssignmentViewModel.getAssignment$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$getAssignment$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel.getAssignment.2
             {
                 super(1);
             }
@@ -181,15 +186,15 @@ public final class AssignmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AssignmentViewModel.this.getAssignmentResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AssignmentViewModel.getAssignment$lambda$3(Function1.this, obj);
+                AssignmentViewModel.getAssignment$lambda$3(function12, obj);
             }
         }));
     }
@@ -214,8 +219,8 @@ public final class AssignmentViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.assignmentRepository.deleteAssignmentApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$deleteAssignment$1
+        Single<SuccessResponse> singleObserveOn = this.assignmentRepository.deleteAssignmentApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel.deleteAssignment.1
             {
                 super(1);
             }
@@ -226,7 +231,7 @@ public final class AssignmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AssignmentViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -234,10 +239,10 @@ public final class AssignmentViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AssignmentViewModel.deleteAssignment$lambda$4(Function1.this, obj);
+                AssignmentViewModel.deleteAssignment$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$deleteAssignment$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel.deleteAssignment.2
             {
                 super(1);
             }
@@ -248,15 +253,15 @@ public final class AssignmentViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AssignmentViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.assignment.AssignmentViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AssignmentViewModel.deleteAssignment$lambda$5(Function1.this, obj);
+                AssignmentViewModel.deleteAssignment$lambda$5(function12, obj);
             }
         }));
     }

@@ -5,13 +5,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import at.blogc.android.views.ExpandableTextView;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowAssignmentBinding implements ViewBinding {
     public final LinearLayout assDetailsLayout;
     public final LinearLayout assiDetailLayout;
@@ -24,12 +24,16 @@ public final class RowAssignmentBinding implements ViewBinding {
     public final TextView assiToggle;
     public final TextView assiUpload;
     public final TextView deleteAssignment;
+    public final MaterialCardView deleteCv;
     public final TextView details;
+    public final MaterialCardView downloadCv;
     public final LinearLayout expandAssLayout;
-    private final CardView rootView;
+    public final TextView linkTv;
+    private final MaterialCardView rootView;
     public final View submittedView;
+    public final MaterialCardView uploadCv;
 
-    private RowAssignmentBinding(CardView rootView, LinearLayout assDetailsLayout, LinearLayout assiDetailLayout, ExpandableTextView assiDetails, TextView assiDownload, TextView assiIssueDate, TextView assiLastDate, TextView assiName, TextView assiTitle, TextView assiToggle, TextView assiUpload, TextView deleteAssignment, TextView details, LinearLayout expandAssLayout, View submittedView) {
+    private RowAssignmentBinding(MaterialCardView rootView, LinearLayout assDetailsLayout, LinearLayout assiDetailLayout, ExpandableTextView assiDetails, TextView assiDownload, TextView assiIssueDate, TextView assiLastDate, TextView assiName, TextView assiTitle, TextView assiToggle, TextView assiUpload, TextView deleteAssignment, MaterialCardView deleteCv, TextView details, MaterialCardView downloadCv, LinearLayout expandAssLayout, TextView linkTv, View submittedView, MaterialCardView uploadCv) {
         this.rootView = rootView;
         this.assDetailsLayout = assDetailsLayout;
         this.assiDetailLayout = assiDetailLayout;
@@ -42,13 +46,17 @@ public final class RowAssignmentBinding implements ViewBinding {
         this.assiToggle = assiToggle;
         this.assiUpload = assiUpload;
         this.deleteAssignment = deleteAssignment;
+        this.deleteCv = deleteCv;
         this.details = details;
+        this.downloadCv = downloadCv;
         this.expandAssLayout = expandAssLayout;
+        this.linkTv = linkTv;
         this.submittedView = submittedView;
+        this.uploadCv = uploadCv;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -57,15 +65,15 @@ public final class RowAssignmentBinding implements ViewBinding {
     }
 
     public static RowAssignmentBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_assignment, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_assignment, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowAssignmentBinding bind(View rootView) {
-        View findChildViewById;
+        View viewFindChildViewById;
         int i = R.id.ass_details_layout;
         LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
         if (linearLayout != null) {
@@ -99,13 +107,29 @@ public final class RowAssignmentBinding implements ViewBinding {
                                                 i = R.id.delete_assignment;
                                                 TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                                 if (textView8 != null) {
-                                                    i = R.id.details;
-                                                    TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                    if (textView9 != null) {
-                                                        i = R.id.expand_ass_layout;
-                                                        LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                        if (linearLayout3 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.submitted_view))) != null) {
-                                                            return new RowAssignmentBinding((CardView) rootView, linearLayout, linearLayout2, expandableTextView, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, linearLayout3, findChildViewById);
+                                                    i = R.id.deleteCv;
+                                                    MaterialCardView materialCardView = (MaterialCardView) ViewBindings.findChildViewById(rootView, i);
+                                                    if (materialCardView != null) {
+                                                        i = R.id.details;
+                                                        TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                        if (textView9 != null) {
+                                                            i = R.id.downloadCv;
+                                                            MaterialCardView materialCardView2 = (MaterialCardView) ViewBindings.findChildViewById(rootView, i);
+                                                            if (materialCardView2 != null) {
+                                                                i = R.id.expand_ass_layout;
+                                                                LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                if (linearLayout3 != null) {
+                                                                    i = R.id.linkTv;
+                                                                    TextView textView10 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                    if (textView10 != null && (viewFindChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.submitted_view))) != null) {
+                                                                        i = R.id.uploadCv;
+                                                                        MaterialCardView materialCardView3 = (MaterialCardView) ViewBindings.findChildViewById(rootView, i);
+                                                                        if (materialCardView3 != null) {
+                                                                            return new RowAssignmentBinding((MaterialCardView) rootView, linearLayout, linearLayout2, expandableTextView, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, materialCardView, textView9, materialCardView2, linearLayout3, textView10, viewFindChildViewById, materialCardView3);
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }

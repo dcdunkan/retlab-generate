@@ -19,12 +19,13 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PlacementViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PlacementViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PlacementViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> applyPlacementResponse;
     private final CommonRepository commonRepository;
     private final CompositeDisposable compositeDisposable;
+    private boolean isDataLoaded;
     private MutableLiveData<Resource<ArrayList<Placement>>> placementResponse;
 
     public PlacementViewModel(CommonRepository commonRepository) {
@@ -33,14 +34,22 @@ public final class PlacementViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.placementResponse = new MutableLiveData<>();
         this.applyPlacementResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getPlacement();
     }
 
     public final void getPlacement() {
         this.placementResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Placement>> observeOn = this.commonRepository.getPlacementsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Placement>, Unit> function1 = new Function1<ArrayList<Placement>, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$getPlacement$1
+        Single<ArrayList<Placement>> singleObserveOn = this.commonRepository.getPlacementsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Placement>, Unit> function1 = new Function1<ArrayList<Placement>, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel.getPlacement.1
             {
                 super(1);
             }
@@ -51,20 +60,18 @@ public final class PlacementViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Placement> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PlacementViewModel.this.placementResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                PlacementViewModel.this.placementResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<Placement>> consumer = new Consumer() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PlacementViewModel.getPlacement$lambda$0(Function1.this, obj);
+                PlacementViewModel.getPlacement$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$getPlacement$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel.getPlacement.2
             {
                 super(1);
             }
@@ -75,17 +82,15 @@ public final class PlacementViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PlacementViewModel.this.placementResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PlacementViewModel.this.placementResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PlacementViewModel.getPlacement$lambda$1(Function1.this, obj);
+                PlacementViewModel.getPlacement$lambda$1(function12, obj);
             }
         }));
     }
@@ -110,8 +115,8 @@ public final class PlacementViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.applyPlacementResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.commonRepository.applyPlacementsApiCall(new PlacementRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$applyPlacement$1
+        Single<SuccessResponse> singleObserveOn = this.commonRepository.applyPlacementsApiCall(new PlacementRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel.applyPlacement.1
             {
                 super(1);
             }
@@ -122,20 +127,18 @@ public final class PlacementViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PlacementViewModel.this.applyPlacementResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                PlacementViewModel.this.applyPlacementResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PlacementViewModel.applyPlacement$lambda$2(Function1.this, obj);
+                PlacementViewModel.applyPlacement$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$applyPlacement$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.placement.PlacementViewModel.applyPlacement.2
             {
                 super(1);
             }
@@ -146,17 +149,15 @@ public final class PlacementViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = PlacementViewModel.this.applyPlacementResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                PlacementViewModel.this.applyPlacementResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.placement.PlacementViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                PlacementViewModel.applyPlacement$lambda$3(Function1.this, obj);
+                PlacementViewModel.applyPlacement$lambda$3(function12, obj);
             }
         }));
     }

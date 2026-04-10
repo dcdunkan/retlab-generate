@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: NewQuizViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: NewQuizViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class NewQuizViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> applyPlacementResponse;
     private final CompositeDisposable compositeDisposable;
@@ -36,8 +36,8 @@ public final class NewQuizViewModel extends ViewModel {
     public final void getQuizList() {
         this.quizResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<QuizResponse> observeOn = this.quizRepository.getQuizListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<QuizResponse, Unit> function1 = new Function1<QuizResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.NewQuizViewModel$getQuizList$1
+        Single<QuizResponse> singleObserveOn = this.quizRepository.getQuizListApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<QuizResponse, Unit> function1 = new Function1<QuizResponse, Unit>() { // from class: in.etuwa.app.ui.newquiz.NewQuizViewModel.getQuizList.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class NewQuizViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(QuizResponse quizResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = NewQuizViewModel.this.quizResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(quizResponse));
+                NewQuizViewModel.this.quizResponse.postValue(Resource.INSTANCE.success(quizResponse));
             }
         };
         Consumer<? super QuizResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.newquiz.NewQuizViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NewQuizViewModel.getQuizList$lambda$0(Function1.this, obj);
+                NewQuizViewModel.getQuizList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.NewQuizViewModel$getQuizList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.newquiz.NewQuizViewModel.getQuizList.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class NewQuizViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = NewQuizViewModel.this.quizResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                NewQuizViewModel.this.quizResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.NewQuizViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.newquiz.NewQuizViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                NewQuizViewModel.getQuizList$lambda$1(Function1.this, obj);
+                NewQuizViewModel.getQuizList$lambda$1(function12, obj);
             }
         }));
     }

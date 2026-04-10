@@ -3,8 +3,8 @@ package in.etuwa.app.data.preference;
 import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 
-/* compiled from: SharedPrefManagerHelper.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SharedPrefManagerHelper.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public interface SharedPrefManagerHelper {
     void clearData();
 
@@ -109,6 +109,8 @@ public interface SharedPrefManagerHelper {
     void setSurveyStatus(boolean status);
 
     void setUpdateUserData(String batchId, String semId, String semName, String hostelStatus, int hostel, String course, String img);
+
+    void setUserSemId(String status);
 
     void setUserTypeNew(String status);
 

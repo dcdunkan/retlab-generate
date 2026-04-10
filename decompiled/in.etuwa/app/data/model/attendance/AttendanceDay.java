@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendanceDay.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AttendanceDay.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AttendanceDay {
     private final String attendance;
     private final ArrayList<String> coverage;
@@ -30,12 +30,12 @@ public final /* data */ class AttendanceDay {
         return attendanceDay.copy(str, str2, arrayList, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getHour() {
         return this.hour;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
@@ -44,7 +44,7 @@ public final /* data */ class AttendanceDay {
         return this.coverage;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAttendance() {
         return this.attendance;
     }

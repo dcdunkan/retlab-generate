@@ -4,8 +4,8 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeEngineerInstallment.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeEngineerInstallment.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeEngineerInstallment {
     private final String balance;
     private final String discount;
@@ -16,42 +16,42 @@ public final /* data */ class FeeEngineerInstallment {
     private final String payable;
     private final String scholarship;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getFeehead() {
         return this.feehead;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getFees() {
         return this.fees;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getScholarship() {
         return this.scholarship;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getDiscount() {
         return this.discount;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getPayable() {
         return this.payable;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getBalance() {
         return this.balance;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getFeeheadgroup_id() {
         return this.feeheadgroup_id;
     }

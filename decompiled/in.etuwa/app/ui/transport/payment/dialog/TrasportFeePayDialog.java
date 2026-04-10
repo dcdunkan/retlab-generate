@@ -32,16 +32,16 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: TrasportFeePayDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TrasportFeePayDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TrasportFeePayDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogHostelNewConfirmBinding _binding;
     private String fine;
 
-    /* renamed from: hostelNewConfirmViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: hostelNewConfirmViewModel$delegate, reason: from kotlin metadata */
     private final Lazy hostelNewConfirmViewModel;
     private FeeDetailListner listener;
     private MainCallBackListener listener2;
@@ -49,7 +49,7 @@ public final class TrasportFeePayDialog extends BaseDialog {
     private String total;
     private String url;
 
-    /* compiled from: TrasportFeePayDialog.kt */
+    /* JADX INFO: compiled from: TrasportFeePayDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\u0010\u0010\u0004\u001a\u00020\u00032\u0006\u0010\u0005\u001a\u00020\u0006H&¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/transport/payment/dialog/TrasportFeePayDialog$FeeDetailListner;", "", "dismiss", "", "openPaymentPage", "url", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface FeeDetailListner {
         void dismiss();
@@ -80,7 +80,7 @@ public final class TrasportFeePayDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return trasportFeePayDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(trasportFeePayDialog);
@@ -94,7 +94,7 @@ public final class TrasportFeePayDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -107,7 +107,7 @@ public final class TrasportFeePayDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HostelNewConfirmViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HostelNewConfirmViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -116,7 +116,7 @@ public final class TrasportFeePayDialog extends BaseDialog {
         return (HostelNewConfirmViewModel) this.hostelNewConfirmViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogHostelNewConfirmBinding get_binding() {
         return this._binding;
     }
@@ -153,7 +153,7 @@ public final class TrasportFeePayDialog extends BaseDialog {
         this.url = str;
     }
 
-    /* compiled from: TrasportFeePayDialog.kt */
+    /* JADX INFO: compiled from: TrasportFeePayDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J(\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0006H\u0007¨\u0006\n"}, d2 = {"Lin/etuwa/app/ui/transport/payment/dialog/TrasportFeePayDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostelnew/confirm/HostelNewConfirmDialog;", "subTotal", "", "fine", FeeConfirmDialogKt.ARG_TOTAL, "url", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -243,7 +243,7 @@ public final class TrasportFeePayDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.payment.dialog.TrasportFeePayDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TrasportFeePayDialog.setUp$lambda$1(TrasportFeePayDialog.this, view);
+                TrasportFeePayDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }

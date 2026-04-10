@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QuizResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuizResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QuizResponse {
     private final ArrayList<Quiz> quizes;
 

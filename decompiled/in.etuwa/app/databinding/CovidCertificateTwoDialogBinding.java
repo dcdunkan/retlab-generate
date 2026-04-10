@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class CovidCertificateTwoDialogBinding extends ViewDataBinding {
     public final LinearLayout covidCard;
     public final TextView covidSelectSecond;

@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogApplyAddDirectLeaveBinding extends ViewDataBinding {
     public final TextView applyBtn;
     public final LinearLayout completionCard;

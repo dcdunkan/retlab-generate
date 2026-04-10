@@ -4,8 +4,8 @@ import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RevaluationUpdate.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: RevaluationUpdate.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class RevaluationUpdate {
     private final String answer_script;
     private final String course;
@@ -40,32 +40,32 @@ public final /* data */ class RevaluationUpdate {
         return revaluationUpdate.copy(str, str7, str8, str9, str10, str6);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getCourse() {
         return this.course;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getGrade() {
         return this.grade;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getRevaluation() {
         return this.revaluation;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAnswer_script() {
         return this.answer_script;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getStatus() {
         return this.status;
     }

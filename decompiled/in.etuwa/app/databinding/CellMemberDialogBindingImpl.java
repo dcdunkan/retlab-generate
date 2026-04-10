@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.grievance.view.cellmembers.CellMemberDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CellMemberDialogBindingImpl extends CellMemberDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -58,7 +58,7 @@ public class CellMemberDialogBindingImpl extends CellMemberDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (47 != variableId) {
+        if (46 != variableId) {
             return false;
         }
         setCellMemberDialogViewModel((CellMemberDialogViewModel) variable);

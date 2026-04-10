@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelNewMonthly.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelNewMonthly.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelNewMonthly {
     private final int amount;
     private final int balance;
@@ -22,12 +22,12 @@ public final /* data */ class HostelNewMonthly {
     private final String y;
     private final String year;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getInstallment() {
         return this.installment;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final int getFine() {
         return this.fine;
     }
@@ -36,42 +36,42 @@ public final /* data */ class HostelNewMonthly {
         return this.payment;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final int getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final int getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final int getBalance() {
         return this.balance;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getMonth() {
         return this.month;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getYear() {
         return this.year;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getM() {
         return this.m;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getY() {
         return this.y;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final boolean getIs_selected() {
         return this.is_selected;
     }
@@ -98,14 +98,17 @@ public final /* data */ class HostelNewMonthly {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v12, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v16 */
+    /* JADX WARN: Type inference failed for: r1v17 */
     public int hashCode() {
-        int hashCode = ((((((((((((((this.installment.hashCode() * 31) + this.amount) * 31) + this.paid) * 31) + this.balance) * 31) + this.month.hashCode()) * 31) + this.year.hashCode()) * 31) + this.m.hashCode()) * 31) + this.y.hashCode()) * 31;
+        int iHashCode = ((((((((((((((this.installment.hashCode() * 31) + this.amount) * 31) + this.paid) * 31) + this.balance) * 31) + this.month.hashCode()) * 31) + this.year.hashCode()) * 31) + this.m.hashCode()) * 31) + this.y.hashCode()) * 31;
         boolean z = this.is_selected;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return ((((hashCode + i) * 31) + this.fine) * 31) + this.payment.hashCode();
+        return ((((iHashCode + r1) * 31) + this.fine) * 31) + this.payment.hashCode();
     }
 
     public String toString() {

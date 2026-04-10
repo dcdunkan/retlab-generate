@@ -62,32 +62,32 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddAchievementsDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddAchievementsDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddAchievementsDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddAchievementsBinding _binding;
 
-    /* renamed from: addAchievementsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addAchievementsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addAchievementsViewModel;
     private String details;
     private String id;
     private AddPublicationListener listener;
     private File pickFile;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String yearId;
 
-    /* compiled from: AddAchievementsDialog.kt */
+    /* JADX INFO: compiled from: AddAchievementsDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/achievements/add/AddAchievementsDialog$AddPublicationListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddPublicationListener {
         void onDismiss();
     }
 
-    /* compiled from: AddAchievementsDialog.kt */
+    /* JADX INFO: compiled from: AddAchievementsDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -137,7 +137,7 @@ public final class AddAchievementsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addAchievementsDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addAchievementsDialog);
@@ -151,7 +151,7 @@ public final class AddAchievementsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -164,7 +164,7 @@ public final class AddAchievementsDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddAchievementsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddAchievementsViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AddAchievementsDialog addAchievementsDialog2 = this;
@@ -175,7 +175,7 @@ public final class AddAchievementsDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddAchievementsDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -200,7 +200,7 @@ public final class AddAchievementsDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddAchievementsBinding get_binding() {
         return this._binding;
     }
@@ -210,7 +210,7 @@ public final class AddAchievementsDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: AddAchievementsDialog.kt */
+    /* JADX INFO: compiled from: AddAchievementsDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/profile/achievements/add/AddAchievementsDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/achievements/add/AddAchievementsDialog;", "id", "", "reason", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -316,17 +316,15 @@ public final class AddAchievementsDialog extends BaseDialog {
         DialogAddAchievementsBinding dialogAddAchievementsBinding7 = get_binding();
         Spinner spinner2 = dialogAddAchievementsBinding7 != null ? dialogAddAchievementsBinding7.spinnerYear : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter;
                     AddAchievementsDialog addAchievementsDialog = AddAchievementsDialog.this;
-                    spinnerAdapter = addAchievementsDialog.getSpinnerAdapter();
-                    addAchievementsDialog.yearId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    addAchievementsDialog.yearId = String.valueOf(addAchievementsDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
@@ -335,7 +333,7 @@ public final class AddAchievementsDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddAchievementsDialog.setUp$lambda$2(AddAchievementsDialog.this, view);
+                    AddAchievementsDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -344,7 +342,7 @@ public final class AddAchievementsDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddAchievementsDialog.setUp$lambda$3(AddAchievementsDialog.this, view);
+                    AddAchievementsDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -355,7 +353,7 @@ public final class AddAchievementsDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddAchievementsDialog.setUp$lambda$4(AddAchievementsDialog.this, view);
+                AddAchievementsDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -389,7 +387,7 @@ public final class AddAchievementsDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file = null;
                 }
-                if (file.length() / 1024 <= 100) {
+                if (file.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddAchievementsBinding dialogAddAchievementsBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddAchievementsBinding2 == null || (textInputEditText4 = dialogAddAchievementsBinding2.etDetails) == null) ? null : textInputEditText4.getText()), "")) {
@@ -402,7 +400,7 @@ public final class AddAchievementsDialog extends BaseDialog {
                     }
                     AddAchievementsViewModel addAchievementsViewModel = this$0.getAddAchievementsViewModel();
                     DialogAddAchievementsBinding dialogAddAchievementsBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddAchievementsBinding4 == null || (textInputEditText3 = dialogAddAchievementsBinding4.etDetails) == null) ? null : textInputEditText3.getText());
+                    String strValueOf = String.valueOf((dialogAddAchievementsBinding4 == null || (textInputEditText3 = dialogAddAchievementsBinding4.etDetails) == null) ? null : textInputEditText3.getText());
                     String str = this$0.yearId;
                     Intrinsics.checkNotNull(str);
                     File file2 = this$0.pickFile;
@@ -410,7 +408,7 @@ public final class AddAchievementsDialog extends BaseDialog {
                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                         file2 = null;
                     }
-                    addAchievementsViewModel.addAchievementData(valueOf, str, file2);
+                    addAchievementsViewModel.addAchievementData(strValueOf, str, file2);
                     DialogAddAchievementsBinding dialogAddAchievementsBinding5 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddAchievementsBinding5 != null ? dialogAddAchievementsBinding5.completionCard : null;
                     if (linearLayout != null) {
@@ -442,10 +440,10 @@ public final class AddAchievementsDialog extends BaseDialog {
             }
             AddAchievementsViewModel addAchievementsViewModel2 = this$0.getAddAchievementsViewModel();
             DialogAddAchievementsBinding dialogAddAchievementsBinding10 = this$0.get_binding();
-            String valueOf2 = String.valueOf((dialogAddAchievementsBinding10 == null || (textInputEditText = dialogAddAchievementsBinding10.etDetails) == null) ? null : textInputEditText.getText());
+            String strValueOf2 = String.valueOf((dialogAddAchievementsBinding10 == null || (textInputEditText = dialogAddAchievementsBinding10.etDetails) == null) ? null : textInputEditText.getText());
             String str2 = this$0.yearId;
             Intrinsics.checkNotNull(str2);
-            addAchievementsViewModel2.addAchievementData(valueOf2, str2);
+            addAchievementsViewModel2.addAchievementData(strValueOf2, str2);
             DialogAddAchievementsBinding dialogAddAchievementsBinding11 = this$0.get_binding();
             LinearLayout linearLayout2 = dialogAddAchievementsBinding11 != null ? dialogAddAchievementsBinding11.completionCard : null;
             if (linearLayout2 == null) {
@@ -469,15 +467,15 @@ public final class AddAchievementsDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddAchievementsBinding dialogAddAchievementsBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddAchievementsBinding == null || (textView4 = dialogAddAchievementsBinding.completionFileName) == null) ? null : textView4.getText()).length() > 0) {
                 File file = this$0.pickFile;
                 if (file == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file = null;
                 }
-                if (file.length() / 1024 <= 100) {
+                if (file.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddAchievementsBinding dialogAddAchievementsBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddAchievementsBinding2 == null || (textInputEditText4 = dialogAddAchievementsBinding2.etDetails) == null) ? null : textInputEditText4.getText()), "")) {
@@ -492,7 +490,7 @@ public final class AddAchievementsDialog extends BaseDialog {
                     String str = this$0.id;
                     Intrinsics.checkNotNull(str);
                     DialogAddAchievementsBinding dialogAddAchievementsBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddAchievementsBinding4 == null || (textInputEditText3 = dialogAddAchievementsBinding4.etDetails) == null) ? null : textInputEditText3.getText());
+                    String strValueOf = String.valueOf((dialogAddAchievementsBinding4 == null || (textInputEditText3 = dialogAddAchievementsBinding4.etDetails) == null) ? null : textInputEditText3.getText());
                     String str2 = this$0.yearId;
                     Intrinsics.checkNotNull(str2);
                     File file2 = this$0.pickFile;
@@ -500,7 +498,7 @@ public final class AddAchievementsDialog extends BaseDialog {
                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                         file2 = null;
                     }
-                    addAchievementsViewModel.updateAchievementData(str, valueOf, str2, file2);
+                    addAchievementsViewModel.updateAchievementData(str, strValueOf, str2, file2);
                     DialogAddAchievementsBinding dialogAddAchievementsBinding5 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddAchievementsBinding5 != null ? dialogAddAchievementsBinding5.completionCard : null;
                     if (linearLayout != null) {
@@ -535,20 +533,21 @@ public final class AddAchievementsDialog extends BaseDialog {
             Intrinsics.checkNotNull(str3);
             DialogAddAchievementsBinding dialogAddAchievementsBinding10 = this$0.get_binding();
             if (dialogAddAchievementsBinding10 != null && (textInputEditText = dialogAddAchievementsBinding10.etDetails) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            String valueOf2 = String.valueOf(editable);
+            String strValueOf2 = String.valueOf(text);
             String str4 = this$0.yearId;
             Intrinsics.checkNotNull(str4);
-            addAchievementsViewModel2.updateAchievementData(str3, valueOf2, str4);
+            addAchievementsViewModel2.updateAchievementData(str3, strValueOf2, str4);
         } catch (Exception unused) {
         }
     }
 
     private final void listenSpinnerResponse() {
-        getAddAchievementsViewModel().getResponse().observe(getViewLifecycleOwner(), new AddAchievementsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$listenSpinnerResponse$1
+        getAddAchievementsViewModel().getResponse().observe(getViewLifecycleOwner(), new AddAchievementsDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddAchievementsDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddAchievementsDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -585,10 +584,8 @@ public final class AddAchievementsDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter;
-                DialogAddAchievementsBinding dialogAddAchievementsBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -596,8 +593,7 @@ public final class AddAchievementsDialog extends BaseDialog {
                     PublicationDropDownResponse data = resource.getData();
                     if (data != null) {
                         try {
-                            spinnerAdapter = AddAchievementsDialog.this.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getYears());
+                            AddAchievementsDialog.this.getSpinnerAdapter().addItems(data.getYears());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -617,7 +613,7 @@ public final class AddAchievementsDialog extends BaseDialog {
                     return;
                 }
                 AddAchievementsDialog.this.hideProgress();
-                dialogAddAchievementsBinding = AddAchievementsDialog.this.get_binding();
+                DialogAddAchievementsBinding dialogAddAchievementsBinding = AddAchievementsDialog.this.get_binding();
                 if (dialogAddAchievementsBinding == null || (spinner = dialogAddAchievementsBinding.spinnerYear) == null) {
                     return;
                 }
@@ -632,7 +628,7 @@ public final class AddAchievementsDialog extends BaseDialog {
         getAddAchievementsViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddAchievementsDialog.listenAddResponse$lambda$6(AddAchievementsDialog.this, (Resource) obj);
+                AddAchievementsDialog.listenAddResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -700,7 +696,7 @@ public final class AddAchievementsDialog extends BaseDialog {
         getAddAchievementsViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddAchievementsDialog.listenAddResponse2$lambda$8(AddAchievementsDialog.this, (Resource) obj);
+                AddAchievementsDialog.listenAddResponse2$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -768,7 +764,7 @@ public final class AddAchievementsDialog extends BaseDialog {
         getAddAchievementsViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddAchievementsDialog.listenUpdateResponse$lambda$10(AddAchievementsDialog.this, (Resource) obj);
+                AddAchievementsDialog.listenUpdateResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -836,7 +832,7 @@ public final class AddAchievementsDialog extends BaseDialog {
         getAddAchievementsViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.achievements.add.AddAchievementsDialog$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddAchievementsDialog.listenProgressResponse$lambda$12(AddAchievementsDialog.this, (Resource) obj);
+                AddAchievementsDialog.listenProgressResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -867,18 +863,18 @@ public final class AddAchievementsDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddAchievementsBinding dialogAddAchievementsBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddAchievementsBinding2 != null ? dialogAddAchievementsBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddAchievementsBinding dialogAddAchievementsBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddAchievementsBinding3 != null ? dialogAddAchievementsBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -886,13 +882,13 @@ public final class AddAchievementsDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -918,24 +914,24 @@ public final class AddAchievementsDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

@@ -59,30 +59,30 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: DutyLeaveFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: DutyLeaveFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAdapter.LeaveCallBack, ProofDutyLeave.AddLeaveCallBack, ViewProofDutyLeave.ViewProofDutyLeaveCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DutyLeaveFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: dutyLeaveViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: dutyLeaveViewModel$delegate, reason: from kotlin metadata */
     private final Lazy dutyLeaveViewModel;
     private String id2;
     private final ArrayList<Semester> leaveList;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: DutyLeaveFragment.kt */
+    /* JADX INFO: compiled from: DutyLeaveFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -132,7 +132,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return dutyLeaveFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(dutyLeaveFragment);
@@ -146,7 +146,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -159,7 +159,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(DutyLeaveViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(DutyLeaveViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final DutyLeaveFragment dutyLeaveFragment2 = this;
@@ -203,7 +203,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(DutyLeaveFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -233,7 +233,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
         return (DutyLeaveAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DutyLeaveFragmentBinding get_binding() {
         return this._binding;
     }
@@ -247,7 +247,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
         return (SemesterSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: DutyLeaveFragment.kt */
+    /* JADX INFO: compiled from: DutyLeaveFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/leave/duty/DutyLeaveFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/leave/duty/DutyLeaveFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -306,7 +306,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
         }
         getSpinnerAdapter().addItems(this.leaveList);
         listenResponse();
-        if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mea", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mits", false, 2, (Object) null)) {
+        if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mea", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mace", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mits", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null)) {
             DutyLeaveFragmentBinding dutyLeaveFragmentBinding3 = get_binding();
             TextView textView2 = dutyLeaveFragmentBinding3 != null ? dutyLeaveFragmentBinding3.directApplyBtn : null;
             if (textView2 != null) {
@@ -322,19 +322,15 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
         DutyLeaveFragmentBinding dutyLeaveFragmentBinding5 = get_binding();
         Spinner spinner2 = dutyLeaveFragmentBinding5 != null ? dutyLeaveFragmentBinding5.spinnerLeave : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveFragment$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveFragment.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    DutyLeaveViewModel dutyLeaveViewModel;
-                    spinnerAdapter = DutyLeaveFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    dutyLeaveViewModel = DutyLeaveFragment.this.getDutyLeaveViewModel();
-                    dutyLeaveViewModel.getLeave(semester.getId());
+                    Semester semester = DutyLeaveFragment.this.getSpinnerAdapter().getSemester(position);
+                    DutyLeaveFragment.this.getDutyLeaveViewModel().getLeave(semester.getId());
                     DutyLeaveFragment.this.id2 = semester.getId();
                 }
             });
@@ -346,7 +342,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DutyLeaveFragment.setUp$lambda$0(DutyLeaveFragment.this, view);
+                DutyLeaveFragment.setUp$lambda$0(this.f$0, view);
             }
         });
     }
@@ -364,7 +360,7 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
         getDutyLeaveViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.leave.duty.DutyLeaveFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                DutyLeaveFragment.listenResponse$lambda$2(DutyLeaveFragment.this, (Resource) obj);
+                DutyLeaveFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -410,16 +406,16 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
 
     @Override // in.etuwa.app.ui.leave.duty.DutyLeaveAdapter.LeaveCallBack
     public void onBtnClick(DutyLeave leave) {
-        HourDialog newInstance;
+        HourDialog hourDialogNewInstance;
         Intrinsics.checkNotNullParameter(leave, "leave");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
         if (Intrinsics.areEqual(leave.getType(), "1")) {
-            newInstance = FullDayDialog.INSTANCE.newInstance(leave.getId(), leave.getBtnStatus());
+            hourDialogNewInstance = FullDayDialog.INSTANCE.newInstance(leave.getId(), leave.getBtnStatus());
         } else {
-            newInstance = HourDialog.INSTANCE.newInstance(leave.getId(), leave.getBtnStatus());
+            hourDialogNewInstance = HourDialog.INSTANCE.newInstance(leave.getId(), leave.getBtnStatus());
         }
-        newInstance.show(childFragmentManager, (String) null);
+        hourDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.leave.duty.DutyLeaveAdapter.LeaveCallBack
@@ -449,9 +445,9 @@ public final class DutyLeaveFragment extends BaseFragment implements DutyLeaveAd
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
         if (StringsKt.contains$default((CharSequence) status, (CharSequence) "Apply", false, 2, (Object) null)) {
-            ProofDutyLeave newInstance = ProofDutyLeave.INSTANCE.newInstance(id, new ArrayList<>());
-            newInstance.setAddLeaveCallBack(this);
-            newInstance.show(childFragmentManager, (String) null);
+            ProofDutyLeave proofDutyLeaveNewInstance = ProofDutyLeave.INSTANCE.newInstance(id, new ArrayList<>());
+            proofDutyLeaveNewInstance.setAddLeaveCallBack(this);
+            proofDutyLeaveNewInstance.show(childFragmentManager, (String) null);
         }
     }
 

@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class UploadTutorialDialogBinding extends ViewDataBinding {
     public final TextView fileName;
     public final ProgressBar loader;

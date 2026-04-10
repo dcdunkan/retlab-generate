@@ -27,16 +27,16 @@ import kotlin.jvm.internal.Reflection;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: HostelFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelFragment extends Fragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     public FloatingActionButton fab;
     public TextView noDateView;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     public RecyclerView recyclerView;
 
@@ -106,7 +106,7 @@ public final class HostelFragment extends Fragment {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: HostelFragment.kt */
+    /* JADX INFO: compiled from: HostelFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0006\u0010\u0003\u001a\u00020\u0004¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/HostelFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/HostelFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -135,21 +135,21 @@ public final class HostelFragment extends Fragment {
         if (activity != null) {
             activity.setTitle(getString(R.string.hostel));
         }
-        View findViewById = view.findViewById(R.id.recyc_feerecip);
-        Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.recyc_feerecip)");
-        setRecyclerView((RecyclerView) findViewById);
-        View findViewById2 = view.findViewById(R.id.fabHostelFee);
-        Intrinsics.checkNotNullExpressionValue(findViewById2, "view.findViewById(R.id.fabHostelFee)");
-        setFab((FloatingActionButton) findViewById2);
-        View findViewById3 = view.findViewById(R.id.viewNoData);
-        Intrinsics.checkNotNullExpressionValue(findViewById3, "view.findViewById(R.id.viewNoData)");
-        setNoDateView((TextView) findViewById3);
+        View viewFindViewById = view.findViewById(R.id.recyc_feerecip);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById, "view.findViewById(R.id.recyc_feerecip)");
+        setRecyclerView((RecyclerView) viewFindViewById);
+        View viewFindViewById2 = view.findViewById(R.id.fabHostelFee);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById2, "view.findViewById(R.id.fabHostelFee)");
+        setFab((FloatingActionButton) viewFindViewById2);
+        View viewFindViewById3 = view.findViewById(R.id.viewNoData);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById3, "view.findViewById(R.id.viewNoData)");
+        setNoDateView((TextView) viewFindViewById3);
         getNoDateView().setVisibility(4);
         getPreference().setNewLogin(false);
         getFab().setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.HostelFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                HostelFragment.onViewCreated$lambda$0(HostelFragment.this, view2);
+                HostelFragment.onViewCreated$lambda$0(this.f$0, view2);
             }
         });
     }
@@ -159,9 +159,9 @@ public final class HostelFragment extends Fragment {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager fragmentManager = this$0.getFragmentManager();
         Intrinsics.checkNotNull(fragmentManager);
-        FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
-        Intrinsics.checkNotNullExpressionValue(beginTransaction, "manager!!.beginTransaction()");
-        beginTransaction.addToBackStack(null);
-        beginTransaction.replace(R.id.main_container, new HostelFeeFragment()).commit();
+        FragmentTransaction fragmentTransactionBeginTransaction = fragmentManager.beginTransaction();
+        Intrinsics.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "manager!!.beginTransaction()");
+        fragmentTransactionBeginTransaction.addToBackStack(null);
+        fragmentTransactionBeginTransaction.replace(R.id.main_container, new HostelFeeFragment()).commit();
     }
 }

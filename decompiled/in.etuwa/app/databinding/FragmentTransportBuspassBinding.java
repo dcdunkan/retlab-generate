@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.buspass.BusPassViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentTransportBuspassBinding extends ViewDataBinding {
     public final TextView bpAcademicProgram;
     public final TextView bpAdmssnNo;

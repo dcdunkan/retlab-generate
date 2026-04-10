@@ -27,15 +27,15 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CovidCertificateListMainFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CovidCertificateListMainFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CovidCertificateListMainFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private CovidCertificateListMainFragmentBinding _binding;
 
-    /* renamed from: covidCertificateListMainViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: covidCertificateListMainViewModel$delegate, reason: from kotlin metadata */
     private final Lazy covidCertificateListMainViewModel;
 
     public CovidCertificateListMainFragment() {
@@ -48,7 +48,7 @@ public final class CovidCertificateListMainFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return covidCertificateListMainFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(covidCertificateListMainFragment);
@@ -62,7 +62,7 @@ public final class CovidCertificateListMainFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -75,7 +75,7 @@ public final class CovidCertificateListMainFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CovidCertificateListMainViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CovidCertificateListMainViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -84,12 +84,12 @@ public final class CovidCertificateListMainFragment extends BaseFragment {
         return (CovidCertificateListMainViewModel) this.covidCertificateListMainViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final CovidCertificateListMainFragmentBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: CovidCertificateListMainFragment.kt */
+    /* JADX INFO: compiled from: CovidCertificateListMainFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0006\u0010\u0003\u001a\u00020\u0004¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/covidcertificate/CovidCertificateListMainFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/covidcertificate/CovidCertificateListMainFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -143,7 +143,7 @@ public final class CovidCertificateListMainFragment extends BaseFragment {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateListMainFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CovidCertificateListMainFragment.setUp$lambda$1(CovidCertificateListMainFragment.this, view);
+                    CovidCertificateListMainFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -154,7 +154,7 @@ public final class CovidCertificateListMainFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateListMainFragment$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CovidCertificateListMainFragment.setUp$lambda$3(CovidCertificateListMainFragment.this, view);
+                CovidCertificateListMainFragment.setUp$lambda$3(this.f$0, view);
             }
         });
     }
@@ -162,20 +162,20 @@ public final class CovidCertificateListMainFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$1(CovidCertificateListMainFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        CovidCertificateDialog newInstance = CovidCertificateDialog.INSTANCE.newInstance();
+        CovidCertificateDialog covidCertificateDialogNewInstance = CovidCertificateDialog.INSTANCE.newInstance();
         FragmentManager fragmentManager = this$0.getFragmentManager();
         if (fragmentManager != null) {
-            newInstance.show(fragmentManager, (String) null);
+            covidCertificateDialogNewInstance.show(fragmentManager, (String) null);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$3(CovidCertificateListMainFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        CovidCertificateTwoDialog newInstance = CovidCertificateTwoDialog.INSTANCE.newInstance();
+        CovidCertificateTwoDialog covidCertificateTwoDialogNewInstance = CovidCertificateTwoDialog.INSTANCE.newInstance();
         FragmentManager fragmentManager = this$0.getFragmentManager();
         if (fragmentManager != null) {
-            newInstance.show(fragmentManager, (String) null);
+            covidCertificateTwoDialogNewInstance.show(fragmentManager, (String) null);
         }
     }
 

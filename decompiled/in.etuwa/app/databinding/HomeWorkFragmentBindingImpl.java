@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.homework.HomeWorkViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class HomeWorkFragmentBindingImpl extends HomeWorkFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -66,7 +66,7 @@ public class HomeWorkFragmentBindingImpl extends HomeWorkFragmentBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (105 != variableId) {
+        if (106 != variableId) {
             return false;
         }
         setHomeWorkViewModel((HomeWorkViewModel) variable);

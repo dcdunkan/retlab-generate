@@ -48,15 +48,15 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: GatewayTwoDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: GatewayTwoDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class GatewayTwoDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogGatewayTwoBinding _binding;
 
-    /* renamed from: gatewayTwoViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: gatewayTwoViewModel$delegate, reason: from kotlin metadata */
     private final Lazy gatewayTwoViewModel;
     private MainCallBackListener listener;
     private String url;
@@ -84,7 +84,7 @@ public final class GatewayTwoDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return gatewayTwoDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(gatewayTwoDialog);
@@ -98,7 +98,7 @@ public final class GatewayTwoDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -111,7 +111,7 @@ public final class GatewayTwoDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(GatewayTwoViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(GatewayTwoViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -120,12 +120,12 @@ public final class GatewayTwoDialog extends BaseDialog {
         return (GatewayTwoViewModel) this.gatewayTwoViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogGatewayTwoBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: GatewayTwoDialog.kt */
+    /* JADX INFO: compiled from: GatewayTwoDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/fees/gateway2/GatewayTwoDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/fees/gateway2/GatewayTwoDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -185,7 +185,7 @@ public final class GatewayTwoDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.fees.gateway2.GatewayTwoDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                GatewayTwoDialog.setUp$lambda$1(GatewayTwoDialog.this, view);
+                GatewayTwoDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -202,24 +202,24 @@ public final class GatewayTwoDialog extends BaseDialog {
         EditText editText6;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         DialogGatewayTwoBinding dialogGatewayTwoBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text2 = null;
         if (!Intrinsics.areEqual(String.valueOf((dialogGatewayTwoBinding == null || (editText6 = dialogGatewayTwoBinding.start) == null) ? null : editText6.getText()), "")) {
             DialogGatewayTwoBinding dialogGatewayTwoBinding2 = this$0.get_binding();
             if (!Intrinsics.areEqual((dialogGatewayTwoBinding2 == null || (editText5 = dialogGatewayTwoBinding2.end) == null || (text = editText5.getText()) == null) ? null : text.toString(), "")) {
                 DialogGatewayTwoBinding dialogGatewayTwoBinding3 = this$0.get_binding();
                 if (!Intrinsics.areEqual(String.valueOf((dialogGatewayTwoBinding3 == null || (editText4 = dialogGatewayTwoBinding3.noOfEntries) == null) ? null : editText4.getText()), "")) {
                     DialogGatewayTwoBinding dialogGatewayTwoBinding4 = this$0.get_binding();
-                    double parseDouble = Double.parseDouble(String.valueOf((dialogGatewayTwoBinding4 == null || (editText3 = dialogGatewayTwoBinding4.start) == null) ? null : editText3.getText()));
+                    double d = Double.parseDouble(String.valueOf((dialogGatewayTwoBinding4 == null || (editText3 = dialogGatewayTwoBinding4.start) == null) ? null : editText3.getText()));
                     DialogGatewayTwoBinding dialogGatewayTwoBinding5 = this$0.get_binding();
-                    double parseDouble2 = Double.parseDouble(String.valueOf((dialogGatewayTwoBinding5 == null || (editText2 = dialogGatewayTwoBinding5.end) == null) ? null : editText2.getText()));
+                    double d2 = Double.parseDouble(String.valueOf((dialogGatewayTwoBinding5 == null || (editText2 = dialogGatewayTwoBinding5.end) == null) ? null : editText2.getText()));
                     DialogGatewayTwoBinding dialogGatewayTwoBinding6 = this$0.get_binding();
                     if (dialogGatewayTwoBinding6 != null && (editText = dialogGatewayTwoBinding6.noOfEntries) != null) {
-                        editable = editText.getText();
+                        text2 = editText.getText();
                     }
-                    Map<String, List<Double>> distributeUniqueNumbers = this$0.distributeUniqueNumbers(parseDouble, parseDouble2, Integer.parseInt(String.valueOf(editable)));
-                    Context requireContext = this$0.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                    this$0.generatePdf(requireContext, distributeUniqueNumbers);
+                    Map<String, List<Double>> mapDistributeUniqueNumbers = this$0.distributeUniqueNumbers(d, d2, Integer.parseInt(String.valueOf(text2)));
+                    Context contextRequireContext = this$0.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                    this$0.generatePdf(contextRequireContext, mapDistributeUniqueNumbers);
                     return;
                 }
             }
@@ -240,9 +240,9 @@ public final class GatewayTwoDialog extends BaseDialog {
                 break;
             }
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-            String format = String.format("%.2f", Arrays.copyOf(new Object[]{Double.valueOf(start)}, 1));
-            Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-            arrayList.add(Double.valueOf(Double.parseDouble(format)));
+            String str = String.format("%.2f", Arrays.copyOf(new Object[]{Double.valueOf(start)}, 1));
+            Intrinsics.checkNotNullExpressionValue(str, "format(...)");
+            arrayList.add(Double.valueOf(Double.parseDouble(str)));
             start += 0.01d;
         }
         int size = arrayList.size() / countPerAccount;

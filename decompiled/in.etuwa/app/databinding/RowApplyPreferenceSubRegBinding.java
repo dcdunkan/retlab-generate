@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 import in.etuwa.app.utils.CustomEditText;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowApplyPreferenceSubRegBinding implements ViewBinding {
     private final CardView rootView;
     public final Spinner spinnerSubjects;
@@ -35,11 +35,11 @@ public final class RowApplyPreferenceSubRegBinding implements ViewBinding {
     }
 
     public static RowApplyPreferenceSubRegBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_apply_preference_sub_reg, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_apply_preference_sub_reg, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowApplyPreferenceSubRegBinding bind(View rootView) {

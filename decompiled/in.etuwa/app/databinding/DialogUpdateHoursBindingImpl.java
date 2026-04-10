@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogUpdateHoursBindingImpl extends DialogUpdateHoursBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -62,7 +62,7 @@ public class DialogUpdateHoursBindingImpl extends DialogUpdateHoursBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (237 != variableId) {
+        if (239 != variableId) {
             return false;
         }
         setUpdateHoursDirectViewModel((UpdateHoursDirectViewModel) variable);

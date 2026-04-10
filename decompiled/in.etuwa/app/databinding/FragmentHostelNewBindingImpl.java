@@ -3,16 +3,17 @@ package in.etuwa.app.databinding;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostelnew.HostelNewViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelNewBindingImpl extends FragmentHostelNewBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -48,7 +49,7 @@ public class FragmentHostelNewBindingImpl extends FragmentHostelNewBinding {
     }
 
     private FragmentHostelNewBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (LinearLayout) bindings[12], (TextView) bindings[14], (TextView) bindings[2], (TextView) bindings[3], (RecyclerView) bindings[10], (RecyclerView) bindings[7], (RecyclerView) bindings[11], (RecyclerView) bindings[8], (RecyclerView) bindings[5], (SwipeRefreshLayout) bindings[9], (SwipeRefreshLayout) bindings[6], (SwipeRefreshLayout) bindings[4], (TextView) bindings[13]);
+        super(bindingComponent, root, 0, (MaterialCardView) bindings[12], (MaterialButton) bindings[14], (MaterialButton) bindings[2], (MaterialButton) bindings[3], (RecyclerView) bindings[10], (RecyclerView) bindings[7], (RecyclerView) bindings[11], (RecyclerView) bindings[8], (RecyclerView) bindings[5], (SwipeRefreshLayout) bindings[9], (SwipeRefreshLayout) bindings[6], (SwipeRefreshLayout) bindings[4], (TextView) bindings[13]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -76,7 +77,7 @@ public class FragmentHostelNewBindingImpl extends FragmentHostelNewBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (114 != variableId) {
+        if (115 != variableId) {
             return false;
         }
         setHostelNewViewModel((HostelNewViewModel) variable);

@@ -45,18 +45,18 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: UpdateHoursDirectDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UpdateHoursDirectDialog extends BaseDialog implements HourAdapter.LeaveCallBack, DateAdapter.LeaveCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogUpdateHoursBinding _binding;
 
-    /* renamed from: adapterDate$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapterDate$delegate, reason: from kotlin metadata */
     private final Lazy adapterDate;
 
-    /* renamed from: adapterHour$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapterHour$delegate, reason: from kotlin metadata */
     private final Lazy adapterHour;
     private String date;
     private ArrayList<DutyLeaveDate> datesd;
@@ -64,10 +64,10 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
     private NewDutyLeaveListener listener;
     private int position;
 
-    /* renamed from: updateHoursDirectViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: updateHoursDirectViewModel$delegate, reason: from kotlin metadata */
     private final Lazy updateHoursDirectViewModel;
 
-    /* compiled from: UpdateHoursDirectDialog.kt */
+    /* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/updatehours/UpdateHoursDirectDialog$NewDutyLeaveListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface NewDutyLeaveListener {
         void onDismiss();
@@ -108,7 +108,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return updateHoursDirectDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(updateHoursDirectDialog);
@@ -122,7 +122,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -135,7 +135,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(UpdateHoursDirectViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(UpdateHoursDirectViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final UpdateHoursDirectDialog updateHoursDirectDialog2 = this;
@@ -181,7 +181,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogUpdateHoursBinding get_binding() {
         return this._binding;
     }
@@ -213,7 +213,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
         this.date = str;
     }
 
-    /* compiled from: UpdateHoursDirectDialog.kt */
+    /* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/updatehours/UpdateHoursDirectDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/leave/duty/directapply/updatehours/UpdateHoursDirectDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -300,7 +300,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                UpdateHoursDirectDialog.setUp$lambda$1(UpdateHoursDirectDialog.this, view);
+                UpdateHoursDirectDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -312,9 +312,10 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
     }
 
     private final void listenResponse() {
-        getUpdateHoursDirectViewModel().getResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DutyLeaveDateResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenResponse$1
+        getUpdateHoursDirectViewModel().getResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DutyLeaveDateResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog.listenResponse.1
 
-            /* compiled from: UpdateHoursDirectDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -351,13 +352,8 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DutyLeaveDateResponse> resource) {
-                DateAdapter adapterDate;
-                UpdateHoursDirectViewModel updateHoursDirectViewModel;
-                String str;
-                DialogUpdateHoursBinding dialogUpdateHoursBinding;
-                DialogUpdateHoursBinding dialogUpdateHoursBinding2;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -373,8 +369,8 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                         return;
                     }
                     UpdateHoursDirectDialog.this.hideProgress();
-                    dialogUpdateHoursBinding2 = UpdateHoursDirectDialog.this.get_binding();
-                    if (dialogUpdateHoursBinding2 == null || (recyclerView = dialogUpdateHoursBinding2.rvHours) == null) {
+                    DialogUpdateHoursBinding dialogUpdateHoursBinding = UpdateHoursDirectDialog.this.get_binding();
+                    if (dialogUpdateHoursBinding == null || (recyclerView = dialogUpdateHoursBinding.rvHours) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -387,18 +383,17 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                 if (data != null) {
                     UpdateHoursDirectDialog updateHoursDirectDialog = UpdateHoursDirectDialog.this;
                     try {
-                        adapterDate = updateHoursDirectDialog.getAdapterDate();
-                        adapterDate.addItems(data.getData());
+                        updateHoursDirectDialog.getAdapterDate().addItems(data.getData());
                         updateHoursDirectDialog.datesd = data.getData();
                         if (data.getData().size() == 1) {
-                            dialogUpdateHoursBinding = updateHoursDirectDialog.get_binding();
-                            RecyclerView recyclerView2 = dialogUpdateHoursBinding != null ? dialogUpdateHoursBinding.rvDates : null;
+                            DialogUpdateHoursBinding dialogUpdateHoursBinding2 = updateHoursDirectDialog.get_binding();
+                            RecyclerView recyclerView2 = dialogUpdateHoursBinding2 != null ? dialogUpdateHoursBinding2.rvDates : null;
                             if (recyclerView2 != null) {
                                 recyclerView2.setVisibility(8);
                             }
                         }
-                        updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
-                        str = updateHoursDirectDialog.id;
+                        UpdateHoursDirectViewModel updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
+                        String str = updateHoursDirectDialog.id;
                         Intrinsics.checkNotNull(str);
                         updateHoursDirectViewModel.getHours(str);
                     } catch (NullPointerException unused) {
@@ -409,9 +404,10 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
     }
 
     private final void listenHoursResponse() {
-        getUpdateHoursDirectViewModel().getHourResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DutyLeaveDateResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenHoursResponse$1
+        getUpdateHoursDirectViewModel().getHourResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DutyLeaveDateResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog.listenHoursResponse.1
 
-            /* compiled from: UpdateHoursDirectDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenHoursResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -448,11 +444,8 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DutyLeaveDateResponse> resource) {
-                HourAdapter adapterHour;
-                DialogUpdateHoursBinding dialogUpdateHoursBinding;
-                DialogUpdateHoursBinding dialogUpdateHoursBinding2;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -468,8 +461,8 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                         return;
                     }
                     UpdateHoursDirectDialog.this.hideProgress();
-                    dialogUpdateHoursBinding2 = UpdateHoursDirectDialog.this.get_binding();
-                    if (dialogUpdateHoursBinding2 == null || (recyclerView = dialogUpdateHoursBinding2.rvHours) == null) {
+                    DialogUpdateHoursBinding dialogUpdateHoursBinding = UpdateHoursDirectDialog.this.get_binding();
+                    if (dialogUpdateHoursBinding == null || (recyclerView = dialogUpdateHoursBinding.rvHours) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -483,10 +476,9 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                     UpdateHoursDirectDialog updateHoursDirectDialog = UpdateHoursDirectDialog.this;
                     try {
                         if (data.getData().size() > 0) {
-                            adapterHour = updateHoursDirectDialog.getAdapterHour();
-                            adapterHour.addItems(data.getData().get(updateHoursDirectDialog.getPosition()).getHours());
-                            dialogUpdateHoursBinding = updateHoursDirectDialog.get_binding();
-                            TextView textView = dialogUpdateHoursBinding != null ? dialogUpdateHoursBinding.tvDate : null;
+                            updateHoursDirectDialog.getAdapterHour().addItems(data.getData().get(updateHoursDirectDialog.getPosition()).getHours());
+                            DialogUpdateHoursBinding dialogUpdateHoursBinding2 = updateHoursDirectDialog.get_binding();
+                            TextView textView = dialogUpdateHoursBinding2 != null ? dialogUpdateHoursBinding2.tvDate : null;
                             if (textView != null) {
                                 textView.setText("Date - " + data.getData().get(updateHoursDirectDialog.getPosition()).getDate());
                             }
@@ -500,9 +492,10 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
     }
 
     private final void listenAddResponse() {
-        getUpdateHoursDirectViewModel().getAddResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenAddResponse$1
+        getUpdateHoursDirectViewModel().getAddResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog.listenAddResponse.1
 
-            /* compiled from: UpdateHoursDirectDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenAddResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -539,13 +532,9 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogUpdateHoursBinding dialogUpdateHoursBinding;
-                UpdateHoursDirectViewModel updateHoursDirectViewModel;
-                String str;
                 RecyclerView rvHours;
-                DialogUpdateHoursBinding dialogUpdateHoursBinding2;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -561,8 +550,8 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                         return;
                     }
                     UpdateHoursDirectDialog.this.hideProgress();
-                    dialogUpdateHoursBinding2 = UpdateHoursDirectDialog.this.get_binding();
-                    if (dialogUpdateHoursBinding2 == null || (recyclerView = dialogUpdateHoursBinding2.rvHours) == null) {
+                    DialogUpdateHoursBinding dialogUpdateHoursBinding = UpdateHoursDirectDialog.this.get_binding();
+                    if (dialogUpdateHoursBinding == null || (recyclerView = dialogUpdateHoursBinding.rvHours) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -576,13 +565,13 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                     UpdateHoursDirectDialog updateHoursDirectDialog = UpdateHoursDirectDialog.this;
                     try {
                         if (data.getSuccess()) {
-                            dialogUpdateHoursBinding = updateHoursDirectDialog.get_binding();
-                            if (dialogUpdateHoursBinding != null && (rvHours = dialogUpdateHoursBinding.rvHours) != null) {
+                            DialogUpdateHoursBinding dialogUpdateHoursBinding2 = updateHoursDirectDialog.get_binding();
+                            if (dialogUpdateHoursBinding2 != null && (rvHours = dialogUpdateHoursBinding2.rvHours) != null) {
                                 Intrinsics.checkNotNullExpressionValue(rvHours, "rvHours");
                                 ToastExtKt.showSuccessToast(rvHours, data.getMessage());
                             }
-                            updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
-                            str = updateHoursDirectDialog.id;
+                            UpdateHoursDirectViewModel updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
+                            String str = updateHoursDirectDialog.id;
                             Intrinsics.checkNotNull(str);
                             updateHoursDirectViewModel.getHours(str);
                         }
@@ -594,9 +583,10 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
     }
 
     private final void listenRemoveResponse() {
-        getUpdateHoursDirectViewModel().getRemoveResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenRemoveResponse$1
+        getUpdateHoursDirectViewModel().getRemoveResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog.listenRemoveResponse.1
 
-            /* compiled from: UpdateHoursDirectDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenRemoveResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -633,13 +623,9 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogUpdateHoursBinding dialogUpdateHoursBinding;
-                UpdateHoursDirectViewModel updateHoursDirectViewModel;
-                String str;
                 RecyclerView rvHours;
-                DialogUpdateHoursBinding dialogUpdateHoursBinding2;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -655,8 +641,8 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                         return;
                     }
                     UpdateHoursDirectDialog.this.hideProgress();
-                    dialogUpdateHoursBinding2 = UpdateHoursDirectDialog.this.get_binding();
-                    if (dialogUpdateHoursBinding2 == null || (recyclerView = dialogUpdateHoursBinding2.rvHours) == null) {
+                    DialogUpdateHoursBinding dialogUpdateHoursBinding = UpdateHoursDirectDialog.this.get_binding();
+                    if (dialogUpdateHoursBinding == null || (recyclerView = dialogUpdateHoursBinding.rvHours) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -670,13 +656,13 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                     UpdateHoursDirectDialog updateHoursDirectDialog = UpdateHoursDirectDialog.this;
                     try {
                         if (data.getSuccess()) {
-                            dialogUpdateHoursBinding = updateHoursDirectDialog.get_binding();
-                            if (dialogUpdateHoursBinding != null && (rvHours = dialogUpdateHoursBinding.rvHours) != null) {
+                            DialogUpdateHoursBinding dialogUpdateHoursBinding2 = updateHoursDirectDialog.get_binding();
+                            if (dialogUpdateHoursBinding2 != null && (rvHours = dialogUpdateHoursBinding2.rvHours) != null) {
                                 Intrinsics.checkNotNullExpressionValue(rvHours, "rvHours");
                                 ToastExtKt.showSuccessToast(rvHours, data.getMessage());
                             }
-                            updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
-                            str = updateHoursDirectDialog.id;
+                            UpdateHoursDirectViewModel updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
+                            String str = updateHoursDirectDialog.id;
                             Intrinsics.checkNotNull(str);
                             updateHoursDirectViewModel.getHours(str);
                         }
@@ -688,9 +674,10 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
     }
 
     private final void listenRemoveDateResponse() {
-        getUpdateHoursDirectViewModel().getRemoveDateResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenRemoveDateResponse$1
+        getUpdateHoursDirectViewModel().getRemoveDateResponse().observe(getViewLifecycleOwner(), new UpdateHoursDirectDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog.listenRemoveDateResponse.1
 
-            /* compiled from: UpdateHoursDirectDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$listenRemoveDateResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: UpdateHoursDirectDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -727,13 +714,9 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogUpdateHoursBinding dialogUpdateHoursBinding;
-                UpdateHoursDirectViewModel updateHoursDirectViewModel;
-                String str;
                 RecyclerView rvHours;
-                DialogUpdateHoursBinding dialogUpdateHoursBinding2;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -749,8 +732,8 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                         return;
                     }
                     UpdateHoursDirectDialog.this.hideProgress();
-                    dialogUpdateHoursBinding2 = UpdateHoursDirectDialog.this.get_binding();
-                    if (dialogUpdateHoursBinding2 == null || (recyclerView = dialogUpdateHoursBinding2.rvHours) == null) {
+                    DialogUpdateHoursBinding dialogUpdateHoursBinding = UpdateHoursDirectDialog.this.get_binding();
+                    if (dialogUpdateHoursBinding == null || (recyclerView = dialogUpdateHoursBinding.rvHours) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -764,13 +747,13 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
                     UpdateHoursDirectDialog updateHoursDirectDialog = UpdateHoursDirectDialog.this;
                     try {
                         if (data.getSuccess()) {
-                            dialogUpdateHoursBinding = updateHoursDirectDialog.get_binding();
-                            if (dialogUpdateHoursBinding != null && (rvHours = dialogUpdateHoursBinding.rvHours) != null) {
+                            DialogUpdateHoursBinding dialogUpdateHoursBinding2 = updateHoursDirectDialog.get_binding();
+                            if (dialogUpdateHoursBinding2 != null && (rvHours = dialogUpdateHoursBinding2.rvHours) != null) {
                                 Intrinsics.checkNotNullExpressionValue(rvHours, "rvHours");
                                 ToastExtKt.showSuccessToast(rvHours, data.getMessage());
                             }
-                            updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
-                            str = updateHoursDirectDialog.id;
+                            UpdateHoursDirectViewModel updateHoursDirectViewModel = updateHoursDirectDialog.getUpdateHoursDirectViewModel();
+                            String str = updateHoursDirectDialog.id;
                             Intrinsics.checkNotNull(str);
                             updateHoursDirectViewModel.getHours(str);
                         }
@@ -843,7 +826,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
         builder.setPositiveButton("Remove", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                UpdateHoursDirectDialog.deleteDateView$lambda$2(UpdateHoursDirectDialog.this, dialogInterface, i);
+                UpdateHoursDirectDialog.deleteDateView$lambda$2(this.f$0, dialogInterface, i);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$$ExternalSyntheticLambda1
@@ -871,7 +854,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
         builder.setPositiveButton("Remove", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                UpdateHoursDirectDialog.deleteHourView$lambda$4(UpdateHoursDirectDialog.this, hour, dialogInterface, i);
+                UpdateHoursDirectDialog.deleteHourView$lambda$4(this.f$0, hour, dialogInterface, i);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$$ExternalSyntheticLambda5
@@ -900,7 +883,7 @@ public final class UpdateHoursDirectDialog extends BaseDialog implements HourAda
         builder.setPositiveButton("Add", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                UpdateHoursDirectDialog.addHourView$lambda$6(UpdateHoursDirectDialog.this, hour, dialogInterface, i);
+                UpdateHoursDirectDialog.addHourView$lambda$6(this.f$0, hour, dialogInterface, i);
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.leave.duty.directapply.updatehours.UpdateHoursDirectDialog$$ExternalSyntheticLambda3

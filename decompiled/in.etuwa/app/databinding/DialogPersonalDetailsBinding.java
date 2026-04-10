@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.personaldetails.PersonalDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogPersonalDetailsBinding extends ViewDataBinding {
     public final TextView aadharNo;
     public final TextView abcId;

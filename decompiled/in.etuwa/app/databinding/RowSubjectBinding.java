@@ -4,25 +4,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import at.grabner.circleprogress.CircleProgressView;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowSubjectBinding implements ViewBinding {
     public final TextView attendanceText;
     public final TextView coBtn;
     public final TextView coverageBtn;
     public final TextView geSubject;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView subName;
     public final CircleProgressView subjectProgressBar;
     public final TextView subjectTeacherName;
     public final TextView syllabusBtn;
 
-    private RowSubjectBinding(CardView rootView, TextView attendanceText, TextView coBtn, TextView coverageBtn, TextView geSubject, TextView subName, CircleProgressView subjectProgressBar, TextView subjectTeacherName, TextView syllabusBtn) {
+    private RowSubjectBinding(MaterialCardView rootView, TextView attendanceText, TextView coBtn, TextView coverageBtn, TextView geSubject, TextView subName, CircleProgressView subjectProgressBar, TextView subjectTeacherName, TextView syllabusBtn) {
         this.rootView = rootView;
         this.attendanceText = attendanceText;
         this.coBtn = coBtn;
@@ -35,7 +35,7 @@ public final class RowSubjectBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -44,11 +44,11 @@ public final class RowSubjectBinding implements ViewBinding {
     }
 
     public static RowSubjectBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_subject, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_subject, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowSubjectBinding bind(View rootView) {
@@ -76,7 +76,7 @@ public final class RowSubjectBinding implements ViewBinding {
                                     i = R.id.syllabus_btn;
                                     TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                     if (textView7 != null) {
-                                        return new RowSubjectBinding((CardView) rootView, textView, textView2, textView3, textView4, textView5, circleProgressView, textView6, textView7);
+                                        return new RowSubjectBinding((MaterialCardView) rootView, textView, textView2, textView3, textView4, textView5, circleProgressView, textView6, textView7);
                                     }
                                 }
                             }

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RevaluationResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: RevaluationResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class RevaluationResponse {
     private final ArrayList<Revaluation> revaluation;
 

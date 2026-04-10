@@ -16,7 +16,7 @@ import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.applywithpreference.ApplyPreferenceSubRegViewModel;
 import in.etuwa.app.utils.CustomEditText;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogApplyPreferenceSubRegBinding extends ViewDataBinding {
     public final TextView addBtn;
     public final TextView backBtn;

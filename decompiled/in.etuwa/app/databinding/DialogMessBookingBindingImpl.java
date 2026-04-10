@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.mess.booknow.MessBookingViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogMessBookingBindingImpl extends DialogMessBookingBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -79,7 +79,7 @@ public class DialogMessBookingBindingImpl extends DialogMessBookingBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (140 != variableId) {
+        if (141 != variableId) {
             return false;
         }
         setMessBookingViewModel((MessBookingViewModel) variable);

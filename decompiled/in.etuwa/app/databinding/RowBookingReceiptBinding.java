@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowBookingReceiptBinding implements ViewBinding {
     public final TextView preBookBtn;
     private final CardView rootView;
@@ -43,11 +43,11 @@ public final class RowBookingReceiptBinding implements ViewBinding {
     }
 
     public static RowBookingReceiptBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_booking_receipt, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_booking_receipt, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowBookingReceiptBinding bind(View rootView) {

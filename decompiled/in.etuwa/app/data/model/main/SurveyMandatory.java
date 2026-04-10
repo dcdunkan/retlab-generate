@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.main;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Metadata;
 
-/* compiled from: SurveyMandatory.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SurveyMandatory.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SurveyMandatory {
     private final boolean login;
     private final boolean survey_mandatory;
@@ -19,12 +19,12 @@ public final /* data */ class SurveyMandatory {
         return surveyMandatory.copy(z, z2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSurvey_mandatory() {
         return this.survey_mandatory;
     }
@@ -48,6 +48,9 @@ public final /* data */ class SurveyMandatory {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r0v5 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v2 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -56,7 +59,7 @@ public final /* data */ class SurveyMandatory {
         }
         int i = r0 * 31;
         boolean z2 = this.survey_mandatory;
-        return i + (z2 ? 1 : z2 ? 1 : 0);
+        return i + (z2 ? 1 : z2);
     }
 
     public String toString() {

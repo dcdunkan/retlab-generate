@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ReviewDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ReviewDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ReviewDialogViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final CounsellingRepository counsellingRepository;
@@ -35,8 +35,8 @@ public final class ReviewDialogViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(description, "description");
         this.reviewResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.counsellingRepository.reviewCounsellingApiCall(id, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialogViewModel$reviewCounselling$1
+        Single<SuccessResponse> singleObserveOn = this.counsellingRepository.reviewCounsellingApiCall(id, description).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialogViewModel.reviewCounselling.1
             {
                 super(1);
             }
@@ -47,20 +47,18 @@ public final class ReviewDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReviewDialogViewModel.this.reviewResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                ReviewDialogViewModel.this.reviewResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReviewDialogViewModel.reviewCounselling$lambda$0(Function1.this, obj);
+                ReviewDialogViewModel.reviewCounselling$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialogViewModel$reviewCounselling$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialogViewModel.reviewCounselling.2
             {
                 super(1);
             }
@@ -71,17 +69,15 @@ public final class ReviewDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = ReviewDialogViewModel.this.reviewResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                ReviewDialogViewModel.this.reviewResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.review.ReviewDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ReviewDialogViewModel.reviewCounselling$lambda$1(Function1.this, obj);
+                ReviewDialogViewModel.reviewCounselling$lambda$1(function12, obj);
             }
         }));
     }

@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AttendancePeriod.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AttendancePeriod.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class AttendancePeriod {
 
     @SerializedName("attendance")
@@ -34,17 +34,17 @@ public final /* data */ class AttendancePeriod {
         return attendancePeriod.copy(i, str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final int getHour() {
         return this.hour;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getAttendance() {
         return this.attendance;
     }

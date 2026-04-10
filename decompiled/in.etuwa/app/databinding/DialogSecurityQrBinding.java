@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.viewleave.qrdialog.SecurityQrViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogSecurityQrBinding extends ViewDataBinding {
     public final TextView addressTv;
     public final ImageView approvedImage;

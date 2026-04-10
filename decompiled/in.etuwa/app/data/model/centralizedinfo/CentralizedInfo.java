@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.centralizedinfo;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CentralizedInfo.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CentralizedInfo.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class CentralizedInfo {
     private final String date;
     private final String link;
@@ -27,22 +27,22 @@ public final /* data */ class CentralizedInfo {
         return centralizedInfo.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getTitle() {
         return this.title;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getLink() {
         return this.link;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getDate() {
         return this.date;
     }

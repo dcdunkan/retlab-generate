@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class TableviewCellLayoutBinding implements ViewBinding {
     public final LinearLayout cellContainer;
     public final TextView cellData;
@@ -31,11 +31,11 @@ public final class TableviewCellLayoutBinding implements ViewBinding {
     }
 
     public static TableviewCellLayoutBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.tableview_cell_layout, parent, false);
+        View viewInflate = inflater.inflate(R.layout.tableview_cell_layout, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static TableviewCellLayoutBinding bind(View rootView) {

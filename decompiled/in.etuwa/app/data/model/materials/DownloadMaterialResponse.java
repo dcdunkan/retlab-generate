@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DownloadMaterialResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DownloadMaterialResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DownloadMaterialResponse {
     private final ArrayList<DownloadMaterial> files;
 

@@ -17,13 +17,13 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: RegistrationAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: RegistrationAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RegistrationAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private CallBack listener;
     private final ArrayList<Registration> registration = new ArrayList<>();
 
-    /* compiled from: RegistrationAdapter.kt */
+    /* JADX INFO: compiled from: RegistrationAdapter.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\u0005H&J\u0010\u0010\b\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/registration/RegistrationAdapter$CallBack;", "", "editBtnClicked", "", "id", "", "printCertificate", "url", "viewBtnClicked", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void editBtnClicked(String id);
@@ -37,18 +37,18 @@ public final class RegistrationAdapter extends RecyclerView.Adapter<BaseViewHold
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_registration, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …istration, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_registration, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …istration, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -64,7 +64,7 @@ public final class RegistrationAdapter extends RecyclerView.Adapter<BaseViewHold
         return !this.registration.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: RegistrationAdapter.kt */
+    /* JADX INFO: compiled from: RegistrationAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u000e\u001a\u00020\u000fH\u0014J\u0010\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u0012H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/registration/RegistrationAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/hostel/gcekhostel/registration/RegistrationAdapter;Landroid/view/View;)V", "addedAtHr", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "editBtn", "printBtn", "registrationTypeHr", "semName", "statusHr", "viewBtn", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView addedAtHr;
@@ -111,7 +111,7 @@ public final class RegistrationAdapter extends RecyclerView.Adapter<BaseViewHold
                     textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationAdapter$ViewHolder$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            RegistrationAdapter.ViewHolder.onBind$lambda$0(Registration.this, registrationAdapter, view);
+                            RegistrationAdapter.ViewHolder.onBind$lambda$0(registration, registrationAdapter, view);
                         }
                     });
                 }
@@ -121,7 +121,7 @@ public final class RegistrationAdapter extends RecyclerView.Adapter<BaseViewHold
                     textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationAdapter$ViewHolder$$ExternalSyntheticLambda1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            RegistrationAdapter.ViewHolder.onBind$lambda$1(RegistrationAdapter.this, registration, view);
+                            RegistrationAdapter.ViewHolder.onBind$lambda$1(registrationAdapter2, registration, view);
                         }
                     });
                 }
@@ -137,7 +137,7 @@ public final class RegistrationAdapter extends RecyclerView.Adapter<BaseViewHold
                 textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationAdapter$ViewHolder$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        RegistrationAdapter.ViewHolder.onBind$lambda$2(RegistrationAdapter.this, registration, view);
+                        RegistrationAdapter.ViewHolder.onBind$lambda$2(registrationAdapter3, registration, view);
                     }
                 });
             } catch (Exception unused) {

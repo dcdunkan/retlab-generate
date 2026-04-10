@@ -7,8 +7,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ApplyHostelResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ApplyHostelResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ApplyHostelResponse {
 
     @SerializedName(Constants.IPC_BUNDLE_KEY_SEND_ERROR)
@@ -53,27 +53,27 @@ public final /* data */ class ApplyHostelResponse {
         return applyHostelResponse.copy(z, z3, i3, str3, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final int getHostel() {
         return this.hostel;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getHostelStatus() {
         return this.hostelStatus;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getError() {
         return this.error;
     }
@@ -99,6 +99,9 @@ public final /* data */ class ApplyHostelResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v10 */
     /* JADX WARN: Type inference failed for: r0v11 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v7 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -107,7 +110,7 @@ public final /* data */ class ApplyHostelResponse {
         }
         int i = r0 * 31;
         boolean z2 = this.success;
-        return ((((((i + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.hostel) * 31) + this.hostelStatus.hashCode()) * 31) + this.error.hashCode();
+        return ((((((i + (z2 ? 1 : z2)) * 31) + this.hostel) * 31) + this.hostelStatus.hashCode()) * 31) + this.error.hashCode();
     }
 
     public String toString() {

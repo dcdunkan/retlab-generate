@@ -54,27 +54,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: HostelFeeTkmFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelFeeTkmFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelFeeTkmFragment extends BaseFragment implements HostelMonthAdapter.CallBack, HostelFeeConfirmFragment.FeeDetailListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentHostelFeeTkmBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private int amounts;
     private String date;
     private int fineAmount;
     private ArrayList<HostelMonth> hostel;
 
-    /* renamed from: hostelFeeTkmViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: hostelFeeTkmViewModel$delegate, reason: from kotlin metadata */
     private final Lazy hostelFeeTkmViewModel;
     private MainCallBackListener listener;
     private String month;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
     private int total;
@@ -105,7 +105,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return hostelFeeTkmFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(hostelFeeTkmFragment);
@@ -119,7 +119,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -132,7 +132,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HostelFeeTkmViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HostelFeeTkmViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final HostelFeeTkmFragment hostelFeeTkmFragment2 = this;
@@ -186,7 +186,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentHostelFeeTkmBinding get_binding() {
         return this._binding;
     }
@@ -272,7 +272,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
         this.fineAmount = i;
     }
 
-    /* compiled from: HostelFeeTkmFragment.kt */
+    /* JADX INFO: compiled from: HostelFeeTkmFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/tkmhostel/fee/HostelFeeTkmFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/tkmhostel/fee/HostelFeeTkmFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -333,8 +333,8 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
             recyclerView.setAdapter(getAdapter());
         }
         getAdapter().setCallBack(this);
-        final HashMap hashMap = new HashMap();
-        final HashMap hashMap2 = new HashMap();
+        final HashMap map = new HashMap();
+        final HashMap map2 = new HashMap();
         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmea", false, 2, (Object) null)) {
             FragmentHostelFeeTkmBinding fragmentHostelFeeTkmBinding2 = get_binding();
             LinearLayout linearLayout = fragmentHostelFeeTkmBinding2 != null ? fragmentHostelFeeTkmBinding2.monthLayout : null;
@@ -366,7 +366,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
         textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HostelFeeTkmFragment.setUp$lambda$0(HostelFeeTkmFragment.this, hashMap2, hashMap, view);
+                HostelFeeTkmFragment.setUp$lambda$0(this.f$0, map2, map, view);
             }
         });
     }
@@ -392,7 +392,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
                         feeReceipt.put("payment", "1");
                         feeReceipt.put("Transaction[method]", "5");
                         feeReceipt.put("FeeReceipt[receipt_date]", this$0.date);
-                        feeReceipt.put("FeeReceipt[fine_amount]", String.valueOf(Integer.parseInt(payment.get(i2).getAmount()) - (payment.get(i2).getPayable() + payment.get(i2).getPaid())));
+                        feeReceipt.put("FeeReceipt[fine_amount]", String.valueOf(((double) ((int) payment.get(i2).getAmount())) - (payment.get(i2).getPayable() + ((double) payment.get(i2).getPaid()))));
                         feeReceipt.put("FeeReceipt[total_amount]", String.valueOf(this$0.hostel.get(i2).getAmount()));
                         feeReceipt.put("FeeReceipt[amount]", String.valueOf(this$0.hostel.get(i2).getBalance()));
                         int i3 = size2 - 1;
@@ -400,7 +400,7 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
                             int i4 = 0;
                             while (true) {
                                 if (!Intrinsics.areEqual(payment.get(i4).getName(), "Fine") && !Intrinsics.areEqual(payment.get(i4).getName(), "Sub Total") && !Intrinsics.areEqual(payment.get(i4).getName(), "Total")) {
-                                    feeCollection.put("FeeCollection[" + this$0.hostel.get(i2).getYear() + "][" + this$0.hostel.get(i2).getMonth() + "][" + payment.get(i4).getFeehead_id() + "][amount]", payment.get(i4).getAmount());
+                                    feeCollection.put("FeeCollection[" + this$0.hostel.get(i2).getYear() + "][" + this$0.hostel.get(i2).getMonth() + "][" + payment.get(i4).getFeehead_id() + "][amount]", String.valueOf(payment.get(i4).getAmount()));
                                     feeCollection.put("FeeCollection[" + this$0.hostel.get(i2).getYear() + "][" + this$0.hostel.get(i2).getMonth() + "][" + payment.get(i4).getFeehead_id() + "][feegroup_id]", payment.get(i4).getFeeheadgroup_id());
                                     feeCollection.put("FeeCollection[" + this$0.hostel.get(i2).getYear() + "][" + this$0.hostel.get(i2).getMonth() + "][" + payment.get(i4).getFeehead_id() + "][feehead_id]", payment.get(i4).getFeehead_id());
                                     feeCollection.put("FeeCollection[" + this$0.hostel.get(i2).getYear() + "][" + this$0.hostel.get(i2).getMonth() + "][" + payment.get(i4).getFeehead_id() + "][tenant_id]", payment.get(i4).getTenant_id());
@@ -412,7 +412,11 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
                                     feeCollection.put("FeeCollection[" + this$0.hostel.get(i2).getYear() + "][" + this$0.hostel.get(i2).getMonth() + "][" + payment.get(i4).getFeehead_id() + "][month]", this$0.hostel.get(i2).getMonth());
                                     feeCollection.put("FeeCollection[" + this$0.hostel.get(i2).getYear() + "][" + this$0.hostel.get(i2).getMonth() + "][" + payment.get(i4).getFeehead_id() + "][year]", this$0.hostel.get(i2).getYear());
                                 }
-                                i4++;
+                                if (i4 == i3) {
+                                    break;
+                                } else {
+                                    i4++;
+                                }
                             }
                         }
                     }
@@ -430,9 +434,10 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
     }
 
     private final void listenResponse() {
-        getHostelFeeTkmViewModel().getResponse().observe(getViewLifecycleOwner(), new HostelFeeTkmFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenResponse$1
+        getHostelFeeTkmViewModel().getResponse().observe(getViewLifecycleOwner(), new HostelFeeTkmFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.listenResponse.1
 
-            /* compiled from: HostelFeeTkmFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelFeeTkmFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -469,11 +474,8 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelResponse> resource) {
-                FragmentHostelFeeTkmBinding fragmentHostelFeeTkmBinding;
-                FragmentHostelFeeTkmBinding fragmentHostelFeeTkmBinding2;
-                FragmentHostelFeeTkmBinding fragmentHostelFeeTkmBinding3;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -498,17 +500,17 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
                 if (data != null) {
                     HostelFeeTkmFragment hostelFeeTkmFragment = HostelFeeTkmFragment.this;
                     hostelFeeTkmFragment.showBaseView();
-                    fragmentHostelFeeTkmBinding = hostelFeeTkmFragment.get_binding();
+                    FragmentHostelFeeTkmBinding fragmentHostelFeeTkmBinding = hostelFeeTkmFragment.get_binding();
                     TextView textView = fragmentHostelFeeTkmBinding != null ? fragmentHostelFeeTkmBinding.roomNo : null;
                     if (textView != null) {
                         textView.setText(data.getRoomNo());
                     }
-                    fragmentHostelFeeTkmBinding2 = hostelFeeTkmFragment.get_binding();
+                    FragmentHostelFeeTkmBinding fragmentHostelFeeTkmBinding2 = hostelFeeTkmFragment.get_binding();
                     TextView textView2 = fragmentHostelFeeTkmBinding2 != null ? fragmentHostelFeeTkmBinding2.joinDate : null;
                     if (textView2 != null) {
                         textView2.setText(data.getJoinDate());
                     }
-                    fragmentHostelFeeTkmBinding3 = hostelFeeTkmFragment.get_binding();
+                    FragmentHostelFeeTkmBinding fragmentHostelFeeTkmBinding3 = hostelFeeTkmFragment.get_binding();
                     TextView textView3 = fragmentHostelFeeTkmBinding3 != null ? fragmentHostelFeeTkmBinding3.hostelTv : null;
                     if (textView3 != null) {
                         textView3.setText(data.getHostel());
@@ -524,9 +526,10 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
     }
 
     private final void listenMonthResponse() {
-        getHostelFeeTkmViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new HostelFeeTkmFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenMonthResponse$1
+        getHostelFeeTkmViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new HostelFeeTkmFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.listenMonthResponse.1
 
-            /* compiled from: HostelFeeTkmFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenMonthResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelFeeTkmFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -563,40 +566,39 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelMonthResponse> resource) {
-                HostelMonthAdapter adapter;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-                if (i != 1) {
-                    if (i == 2) {
-                        HostelFeeTkmFragment.this.showProgress();
-                        return;
-                    }
-                    if (i == 3) {
-                        HostelFeeTkmFragment.this.hideProgress();
-                        HostelFeeTkmFragment.this.showBaseView();
-                        return;
-                    } else {
-                        if (i != 4) {
+                if (i == 1) {
+                    HostelFeeTkmFragment.this.hideProgress();
+                    HostelMonthResponse data = resource.getData();
+                    if (data != null) {
+                        HostelFeeTkmFragment hostelFeeTkmFragment = HostelFeeTkmFragment.this;
+                        hostelFeeTkmFragment.showBaseView();
+                        try {
+                            hostelFeeTkmFragment.getAdapter().addItems(data.getHostel());
+                            hostelFeeTkmFragment.hostel = data.getHostel();
+                            hostelFeeTkmFragment.setDate(data.getDate());
+                            return;
+                        } catch (NullPointerException unused) {
                             return;
                         }
-                        HostelFeeTkmFragment.this.hideProgress();
-                        HostelFeeTkmFragment.this.showBaseView();
+                    }
+                    return;
+                }
+                if (i == 2) {
+                    HostelFeeTkmFragment.this.showProgress();
+                    return;
+                }
+                if (i == 3) {
+                    HostelFeeTkmFragment.this.hideProgress();
+                    HostelFeeTkmFragment.this.showBaseView();
+                } else {
+                    if (i != 4) {
                         return;
                     }
-                }
-                HostelFeeTkmFragment.this.hideProgress();
-                HostelMonthResponse data = resource.getData();
-                if (data != null) {
-                    HostelFeeTkmFragment hostelFeeTkmFragment = HostelFeeTkmFragment.this;
-                    hostelFeeTkmFragment.showBaseView();
-                    try {
-                        adapter = hostelFeeTkmFragment.getAdapter();
-                        adapter.addItems(data.getHostel());
-                        hostelFeeTkmFragment.hostel = data.getHostel();
-                        hostelFeeTkmFragment.setDate(data.getDate());
-                    } catch (NullPointerException unused) {
-                    }
+                    HostelFeeTkmFragment.this.hideProgress();
+                    HostelFeeTkmFragment.this.showBaseView();
                 }
             }
         }));
@@ -650,9 +652,9 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
     public void selectedIds(int total) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        HostelFeeConfirmFragment newInstance = HostelFeeConfirmFragment.INSTANCE.newInstance(total, 2);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        HostelFeeConfirmFragment hostelFeeConfirmFragmentNewInstance = HostelFeeConfirmFragment.INSTANCE.newInstance(total, 2);
+        hostelFeeConfirmFragmentNewInstance.setCallBack(this);
+        hostelFeeConfirmFragmentNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.hostel.tkmhostel.fee.HostelMonthAdapter.CallBack
@@ -725,9 +727,10 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
     }
 
     private final void listenUrlResponse() {
-        getHostelFeeTkmViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new HostelFeeTkmFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenUrlResponse$1
+        getHostelFeeTkmViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new HostelFeeTkmFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.listenUrlResponse.1
 
-            /* compiled from: HostelFeeTkmFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: HostelFeeTkmFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -764,70 +767,39 @@ public final class HostelFeeTkmFragment extends BaseFragment implements HostelMo
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
-            
-                r0 = r0.listener;
-             */
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.hostel.HostelFeeResponse> r4) {
-                /*
-                    r3 = this;
-                    in.etuwa.app.utils.Status r0 = r4.getStatus()
-                    int[] r1 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenUrlResponse$1.WhenMappings.$EnumSwitchMapping$0
-                    int r0 = r0.ordinal()
-                    r0 = r1[r0]
-                    r1 = 1
-                    if (r0 == r1) goto L35
-                    r4 = 2
-                    if (r0 == r4) goto L2f
-                    r4 = 3
-                    if (r0 == r4) goto L24
-                    r4 = 4
-                    if (r0 == r4) goto L19
-                    goto L69
-                L19:
-                    in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.this
-                    r4.hideProgress()
-                    in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.this
-                    r4.showBaseView()
-                    goto L69
-                L24:
-                    in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.this
-                    r4.hideProgress()
-                    in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.this
-                    r4.showBaseView()
-                    goto L69
-                L2f:
-                    in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.this
-                    r4.showProgress()
-                    goto L69
-                L35:
-                    in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment r0 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.this
-                    r0.hideProgress()
-                    java.lang.Object r4 = r4.getData()
-                    in.etuwa.app.data.model.hostel.HostelFeeResponse r4 = (in.etuwa.app.data.model.hostel.HostelFeeResponse) r4
-                    if (r4 == 0) goto L69
-                    in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment r0 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.this
-                    r0.showBaseView()
-                    java.lang.String r1 = r4.getUrl()
-                    java.io.PrintStream r2 = java.lang.System.out
-                    r2.println(r1)
-                    java.lang.String r1 = r4.getUrl()
-                    java.lang.String r2 = ""
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r2)
-                    if (r1 != 0) goto L69
-                    in.etuwa.app.helper.MainCallBackListener r0 = in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment.access$getListener$p(r0)
-                    if (r0 == 0) goto L69
-                    java.lang.String r4 = r4.getUrl()
-                    r0.openPaymentPage(r4)
-                L69:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmFragment$listenUrlResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<HostelFeeResponse> resource) {
+                MainCallBackListener mainCallBackListener;
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        HostelFeeTkmFragment.this.showProgress();
+                        return;
+                    }
+                    if (i == 3) {
+                        HostelFeeTkmFragment.this.hideProgress();
+                        HostelFeeTkmFragment.this.showBaseView();
+                        return;
+                    } else {
+                        if (i != 4) {
+                            return;
+                        }
+                        HostelFeeTkmFragment.this.hideProgress();
+                        HostelFeeTkmFragment.this.showBaseView();
+                        return;
+                    }
+                }
+                HostelFeeTkmFragment.this.hideProgress();
+                HostelFeeResponse data = resource.getData();
+                if (data != null) {
+                    HostelFeeTkmFragment hostelFeeTkmFragment = HostelFeeTkmFragment.this;
+                    hostelFeeTkmFragment.showBaseView();
+                    System.out.println((Object) data.getUrl());
+                    if (Intrinsics.areEqual(data.getUrl(), "") || (mainCallBackListener = hostelFeeTkmFragment.listener) == null) {
+                        return;
+                    }
+                    mainCallBackListener.openPaymentPage(data.getUrl());
+                }
             }
         }));
     }

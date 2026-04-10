@@ -12,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.registration.asiet.registerview.AsietTransRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentAsietTransRegHistoryBinding extends ViewDataBinding {
     public final FloatingActionButton fabAddTransReg;
 

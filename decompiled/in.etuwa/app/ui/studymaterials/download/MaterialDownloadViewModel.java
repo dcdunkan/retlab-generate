@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MaterialDownloadViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MaterialDownloadViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MaterialDownloadViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final MaterialRepository materialRepository;
@@ -38,8 +38,8 @@ public final class MaterialDownloadViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(semId, "semId");
         this.materialResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<MaterialsNew>> observeOn = this.materialRepository.getStudyMaterialsApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<MaterialsNew>, Unit> function1 = new Function1<ArrayList<MaterialsNew>, Unit>() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel$getMaterials$1
+        Single<ArrayList<MaterialsNew>> singleObserveOn = this.materialRepository.getStudyMaterialsApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<MaterialsNew>, Unit> function1 = new Function1<ArrayList<MaterialsNew>, Unit>() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel.getMaterials.1
             {
                 super(1);
             }
@@ -50,20 +50,18 @@ public final class MaterialDownloadViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<MaterialsNew> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MaterialDownloadViewModel.this.materialResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                MaterialDownloadViewModel.this.materialResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<MaterialsNew>> consumer = new Consumer() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MaterialDownloadViewModel.getMaterials$lambda$0(Function1.this, obj);
+                MaterialDownloadViewModel.getMaterials$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel$getMaterials$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel.getMaterials.2
             {
                 super(1);
             }
@@ -74,17 +72,15 @@ public final class MaterialDownloadViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MaterialDownloadViewModel.this.materialResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(th.getMessage()));
+                MaterialDownloadViewModel.this.materialResponse.postValue(Resource.INSTANCE.exception(th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MaterialDownloadViewModel.getMaterials$lambda$1(Function1.this, obj);
+                MaterialDownloadViewModel.getMaterials$lambda$1(function12, obj);
             }
         }));
     }

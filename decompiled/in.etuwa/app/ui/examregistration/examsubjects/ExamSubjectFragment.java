@@ -20,7 +20,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
-import in.etuwa.app.data.model.dash.AbcResponse;
 import in.etuwa.app.data.model.examregister.ExamCourseResponse;
 import in.etuwa.app.data.model.examregister.ExamRegister;
 import in.etuwa.app.data.model.examregister.ExamRegisterResponse;
@@ -45,7 +44,6 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
@@ -55,35 +53,34 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ExamSubjectFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ExamSubjectFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ExamSubjectFragment extends BaseFragment implements ExamSubjectAdapter.CallBack, ExamSubjectDetailDialog.ExamDetailListner, ExamSubjectAdapter2.CallBack, ExamSubjectAdapter3.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentExamSubjectBinding _binding;
-    private String abcId;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: adapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter2$delegate, reason: from kotlin metadata */
     private final Lazy adapter2;
 
-    /* renamed from: adapter3$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter3$delegate, reason: from kotlin metadata */
     private final Lazy adapter3;
 
-    /* renamed from: examSubjectViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: examSubjectViewModel$delegate, reason: from kotlin metadata */
     private final Lazy examSubjectViewModel;
     private String flag;
     private String id;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private boolean regFlag;
 
-    /* compiled from: ExamSubjectFragment.kt */
+    /* JADX INFO: compiled from: ExamSubjectFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -123,7 +120,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
     protected void showProgress() {
     }
 
-    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter2.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter3.CallBack
+    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack
     public void viewBtnClicked(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
     }
@@ -138,7 +135,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return examSubjectFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(examSubjectFragment);
@@ -152,7 +149,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -165,7 +162,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ExamSubjectViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ExamSubjectViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ExamSubjectFragment examSubjectFragment2 = this;
@@ -251,7 +248,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         return (ExamSubjectAdapter3) this.adapter3.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentExamSubjectBinding get_binding() {
         return this._binding;
     }
@@ -260,7 +257,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: ExamSubjectFragment.kt */
+    /* JADX INFO: compiled from: ExamSubjectFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/examregistration/examsubjects/ExamSubjectFragment;", "flag", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -333,7 +330,6 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         }
         getAdapter().setCallBack(this);
         listenResponse();
-        listenAbcResponse();
         getExamSubjectViewModel().getExamData();
         FragmentExamSubjectBinding fragmentExamSubjectBinding2 = get_binding();
         LinearLayout linearLayout = fragmentExamSubjectBinding2 != null ? fragmentExamSubjectBinding2.regLyt : null;
@@ -345,7 +341,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ExamSubjectFragment.setUp$lambda$1(ExamSubjectFragment.this, view);
+                    ExamSubjectFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -354,7 +350,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
             textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ExamSubjectFragment.setUp$lambda$2(ExamSubjectFragment.this, view);
+                    ExamSubjectFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -365,7 +361,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$$ExternalSyntheticLambda2
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                ExamSubjectFragment.setUp$lambda$3(ExamSubjectFragment.this);
+                ExamSubjectFragment.setUp$lambda$3(this.f$0);
             }
         });
     }
@@ -418,87 +414,11 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         swipeRefreshLayout.setRefreshing(false);
     }
 
-    private final void listenAbcResponse() {
-        getExamSubjectViewModel().getAbcResponse().observe(getViewLifecycleOwner(), new ExamSubjectFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AbcResponse>, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$listenAbcResponse$1
-
-            /* compiled from: ExamSubjectFragment.kt */
-            @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-            public /* synthetic */ class WhenMappings {
-                public static final /* synthetic */ int[] $EnumSwitchMapping$0;
-
-                static {
-                    int[] iArr = new int[Status.values().length];
-                    try {
-                        iArr[Status.SUCCESS.ordinal()] = 1;
-                    } catch (NoSuchFieldError unused) {
-                    }
-                    try {
-                        iArr[Status.LOADING.ordinal()] = 2;
-                    } catch (NoSuchFieldError unused2) {
-                    }
-                    try {
-                        iArr[Status.ERROR.ordinal()] = 3;
-                    } catch (NoSuchFieldError unused3) {
-                    }
-                    try {
-                        iArr[Status.EXCEPTION.ordinal()] = 4;
-                    } catch (NoSuchFieldError unused4) {
-                    }
-                    $EnumSwitchMapping$0 = iArr;
-                }
-            }
-
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Resource<? extends AbcResponse> resource) {
-                invoke2((Resource<AbcResponse>) resource);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            public final void invoke2(Resource<AbcResponse> resource) {
-                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-                if (i == 1) {
-                    ExamSubjectFragment.this.hideProgress();
-                    AbcResponse data = resource.getData();
-                    if (data != null) {
-                        ExamSubjectFragment examSubjectFragment = ExamSubjectFragment.this;
-                        examSubjectFragment.showBaseView();
-                        String abc_id = data.getAbc_id();
-                        if (abc_id == null) {
-                            abc_id = "";
-                        }
-                        examSubjectFragment.abcId = abc_id;
-                        return;
-                    }
-                    return;
-                }
-                if (i == 2) {
-                    ExamSubjectFragment.this.showProgress();
-                    return;
-                }
-                if (i == 3) {
-                    ExamSubjectFragment.this.hideProgress();
-                    ExamSubjectFragment.this.showBaseView();
-                } else {
-                    if (i != 4) {
-                        return;
-                    }
-                    ExamSubjectFragment.this.hideProgress();
-                    ExamSubjectFragment.this.showBaseView();
-                }
-            }
-        }));
-    }
-
     private final void listenResponse() {
         getExamSubjectViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExamSubjectFragment.listenResponse$lambda$5(ExamSubjectFragment.this, (Resource) obj);
+                ExamSubjectFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -579,7 +499,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         getExamSubjectViewModel().getStatusResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExamSubjectFragment.listenStatusResponse$lambda$7(ExamSubjectFragment.this, (Resource) obj);
+                ExamSubjectFragment.listenStatusResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
@@ -646,7 +566,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         getExamSubjectViewModel().getDueResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExamSubjectFragment.listenDueResponse$lambda$9(ExamSubjectFragment.this, id, (Resource) obj);
+                ExamSubjectFragment.listenDueResponse$lambda$9(this.f$0, id, (Resource) obj);
             }
         });
     }
@@ -717,7 +637,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         getExamSubjectViewModel().getDueResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectFragment$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExamSubjectFragment.listenErrorResponse$lambda$11(ExamSubjectFragment.this, id, (Resource) obj);
+                ExamSubjectFragment.listenErrorResponse$lambda$11(this.f$0, id, (Resource) obj);
             }
         });
     }
@@ -822,10 +742,9 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         throw new RuntimeException(context + " must implement OnFragmentInteractionListener");
     }
 
-    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter2.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter3.CallBack
+    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack
     public void viewRegisterBtnClicked(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        Intrinsics.areEqual(this.abcId, "");
         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sbce", false, 2, (Object) null)) {
             getExamSubjectViewModel().getExamDetails(id);
             listenDueResponse(id);
@@ -835,7 +754,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         }
     }
 
-    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter2.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter3.CallBack
+    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack
     public void viewResultBtnClicked(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
         MainCallBackListener mainCallBackListener = this.listener;
@@ -844,7 +763,7 @@ public final class ExamSubjectFragment extends BaseFragment implements ExamSubje
         }
     }
 
-    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter2.CallBack, in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter3.CallBack
+    @Override // in.etuwa.app.ui.examregistration.examsubjects.ExamSubjectAdapter.CallBack
     public void viewRevaatuation(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
         this.id = id;

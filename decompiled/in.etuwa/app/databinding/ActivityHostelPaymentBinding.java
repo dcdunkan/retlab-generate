@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityHostelPaymentBinding implements ViewBinding {
     public final WebView hostelWeb;
     private final FrameLayout rootView;
@@ -29,11 +29,11 @@ public final class ActivityHostelPaymentBinding implements ViewBinding {
     }
 
     public static ActivityHostelPaymentBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_hostel_payment, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_hostel_payment, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityHostelPaymentBinding bind(View rootView) {

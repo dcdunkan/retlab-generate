@@ -19,8 +19,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: UpdateRegisterViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: UpdateRegisterViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class UpdateRegisterViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private MutableLiveData<Resource<ExamPayResponse>> examPayResponse;
@@ -43,8 +43,8 @@ public final class UpdateRegisterViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.examViewResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ExamUpdateResponse> observeOn = this.examRegistrationRepository.getExamUpdateApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ExamUpdateResponse, Unit> function1 = new Function1<ExamUpdateResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getExamDetails$1
+        Single<ExamUpdateResponse> singleObserveOn = this.examRegistrationRepository.getExamUpdateApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ExamUpdateResponse, Unit> function1 = new Function1<ExamUpdateResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getExamDetails.1
             {
                 super(1);
             }
@@ -55,20 +55,18 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ExamUpdateResponse examUpdateResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.examViewResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(examUpdateResponse));
+                UpdateRegisterViewModel.this.examViewResponse.postValue(Resource.INSTANCE.success(examUpdateResponse));
             }
         };
         Consumer<? super ExamUpdateResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getExamDetails$lambda$0(Function1.this, obj);
+                UpdateRegisterViewModel.getExamDetails$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getExamDetails$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getExamDetails.2
             {
                 super(1);
             }
@@ -79,17 +77,15 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.examViewResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateRegisterViewModel.this.examViewResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getExamDetails$lambda$1(Function1.this, obj);
+                UpdateRegisterViewModel.getExamDetails$lambda$1(function12, obj);
             }
         }));
     }
@@ -114,8 +110,8 @@ public final class UpdateRegisterViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(FeeCollection, "FeeCollection");
         this.examPayResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ExamPayResponse> observeOn = this.examRegistrationRepository.getExamPayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ExamPayResponse, Unit> function1 = new Function1<ExamPayResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getExamPay$1
+        Single<ExamPayResponse> singleObserveOn = this.examRegistrationRepository.getExamPayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ExamPayResponse, Unit> function1 = new Function1<ExamPayResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getExamPay.1
             {
                 super(1);
             }
@@ -126,20 +122,18 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ExamPayResponse examPayResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.examPayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(examPayResponse));
+                UpdateRegisterViewModel.this.examPayResponse.postValue(Resource.INSTANCE.success(examPayResponse));
             }
         };
         Consumer<? super ExamPayResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getExamPay$lambda$2(Function1.this, obj);
+                UpdateRegisterViewModel.getExamPay$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getExamPay$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getExamPay.2
             {
                 super(1);
             }
@@ -150,17 +144,15 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.examPayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateRegisterViewModel.this.examPayResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getExamPay$lambda$3(Function1.this, obj);
+                UpdateRegisterViewModel.getExamPay$lambda$3(function12, obj);
             }
         }));
     }
@@ -185,8 +177,8 @@ public final class UpdateRegisterViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(FeeCollection, "FeeCollection");
         this.pioPayResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ExamMessageResponse> observeOn = this.examRegistrationRepository.getPioPayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ExamMessageResponse, Unit> function1 = new Function1<ExamMessageResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getPioPay$1
+        Single<ExamMessageResponse> singleObserveOn = this.examRegistrationRepository.getPioPayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ExamMessageResponse, Unit> function1 = new Function1<ExamMessageResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getPioPay.1
             {
                 super(1);
             }
@@ -197,20 +189,18 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ExamMessageResponse examMessageResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.pioPayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(examMessageResponse));
+                UpdateRegisterViewModel.this.pioPayResponse.postValue(Resource.INSTANCE.success(examMessageResponse));
             }
         };
         Consumer<? super ExamMessageResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getPioPay$lambda$4(Function1.this, obj);
+                UpdateRegisterViewModel.getPioPay$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getPioPay$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getPioPay.2
             {
                 super(1);
             }
@@ -221,17 +211,15 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.pioPayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateRegisterViewModel.this.pioPayResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getPioPay$lambda$5(Function1.this, obj);
+                UpdateRegisterViewModel.getPioPay$lambda$5(function12, obj);
             }
         }));
     }
@@ -256,8 +244,8 @@ public final class UpdateRegisterViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(FeeCollection, "FeeCollection");
         this.scstPayResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ExamMessageResponse> observeOn = this.examRegistrationRepository.getScStPayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ExamMessageResponse, Unit> function1 = new Function1<ExamMessageResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getScStPay$1
+        Single<ExamMessageResponse> singleObserveOn = this.examRegistrationRepository.getScStPayUrlApiCall(FeeCollection).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ExamMessageResponse, Unit> function1 = new Function1<ExamMessageResponse, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getScStPay.1
             {
                 super(1);
             }
@@ -268,20 +256,18 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ExamMessageResponse examMessageResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.scstPayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(examMessageResponse));
+                UpdateRegisterViewModel.this.scstPayResponse.postValue(Resource.INSTANCE.success(examMessageResponse));
             }
         };
         Consumer<? super ExamMessageResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getScStPay$lambda$6(Function1.this, obj);
+                UpdateRegisterViewModel.getScStPay$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$getScStPay$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel.getScStPay.2
             {
                 super(1);
             }
@@ -292,17 +278,15 @@ public final class UpdateRegisterViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = UpdateRegisterViewModel.this.scstPayResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                UpdateRegisterViewModel.this.scstPayResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.examregistration.examsubjects.updateregister.UpdateRegisterViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                UpdateRegisterViewModel.getScStPay$lambda$7(Function1.this, obj);
+                UpdateRegisterViewModel.getScStPay$lambda$7(function12, obj);
             }
         }));
     }

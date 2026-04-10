@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class HostelMainFragmentBinding implements ViewBinding {
     public final TextView hostelNewRegistration;
     public final TextView hostelPayBtn;
@@ -35,11 +35,11 @@ public final class HostelMainFragmentBinding implements ViewBinding {
     }
 
     public static HostelMainFragmentBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.hostel_main_fragment, parent, false);
+        View viewInflate = inflater.inflate(R.layout.hostel_main_fragment, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static HostelMainFragmentBinding bind(View rootView) {

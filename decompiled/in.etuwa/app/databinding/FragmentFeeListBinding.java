@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.feenewengineer.payment.FeeEngineerViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentFeeListBinding extends ViewDataBinding {
     public final CheckBox installmentMainCheck;
     public final TextView installmentName;

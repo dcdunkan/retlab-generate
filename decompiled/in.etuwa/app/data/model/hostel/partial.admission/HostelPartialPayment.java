@@ -6,8 +6,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelPartialPayment.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelPartialPayment.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelPartialPayment {
     private final String amount;
     private final int balance;
@@ -27,87 +27,87 @@ public final /* data */ class HostelPartialPayment {
     private final String user_id;
     private final String y;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final int getBalance() {
         return this.balance;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final int getPayable() {
         return this.payable;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final int getScholarship() {
         return this.scholarship;
     }
 
-    /* renamed from: component13, reason: from getter */
+    /* JADX INFO: renamed from: component13, reason: from getter */
     public final String getUser_id() {
         return this.user_id;
     }
 
-    /* renamed from: component14, reason: from getter */
+    /* JADX INFO: renamed from: component14, reason: from getter */
     public final int getStatus() {
         return this.status;
     }
 
-    /* renamed from: component15, reason: from getter */
+    /* JADX INFO: renamed from: component15, reason: from getter */
     public final String getM() {
         return this.m;
     }
 
-    /* renamed from: component16, reason: from getter */
+    /* JADX INFO: renamed from: component16, reason: from getter */
     public final String getY() {
         return this.y;
     }
 
-    /* renamed from: component17, reason: from getter */
+    /* JADX INFO: renamed from: component17, reason: from getter */
     public final boolean getIs_selected() {
         return this.is_selected;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getHostel_id() {
         return this.hostel_id;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTenant_id() {
         return this.tenant_id;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getFeetype() {
         return this.feetype;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getFeeheadgroup_id() {
         return this.feeheadgroup_id;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getFeehead_id() {
         return this.feehead_id;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final int getInstallment() {
         return this.installment;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final int getPaid() {
         return this.paid;
     }
@@ -138,14 +138,17 @@ public final /* data */ class HostelPartialPayment {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v25, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v26 */
+    /* JADX WARN: Type inference failed for: r1v27 */
     public int hashCode() {
-        int hashCode = ((((((((((((((((((((((((((((((this.name.hashCode() * 31) + this.amount.hashCode()) * 31) + this.hostel_id.hashCode()) * 31) + this.tenant_id.hashCode()) * 31) + this.feetype.hashCode()) * 31) + this.feeheadgroup_id.hashCode()) * 31) + this.feehead_id.hashCode()) * 31) + this.installment) * 31) + this.paid) * 31) + this.balance) * 31) + this.payable) * 31) + this.scholarship) * 31) + this.user_id.hashCode()) * 31) + this.status) * 31) + this.m.hashCode()) * 31) + this.y.hashCode()) * 31;
+        int iHashCode = ((((((((((((((((((((((((((((((this.name.hashCode() * 31) + this.amount.hashCode()) * 31) + this.hostel_id.hashCode()) * 31) + this.tenant_id.hashCode()) * 31) + this.feetype.hashCode()) * 31) + this.feeheadgroup_id.hashCode()) * 31) + this.feehead_id.hashCode()) * 31) + this.installment) * 31) + this.paid) * 31) + this.balance) * 31) + this.payable) * 31) + this.scholarship) * 31) + this.user_id.hashCode()) * 31) + this.status) * 31) + this.m.hashCode()) * 31) + this.y.hashCode()) * 31;
         boolean z = this.is_selected;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        return hashCode + i;
+        return iHashCode + r1;
     }
 
     public String toString() {

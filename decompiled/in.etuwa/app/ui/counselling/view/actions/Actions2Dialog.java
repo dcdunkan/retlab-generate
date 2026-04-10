@@ -30,19 +30,19 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: Actions2Dialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: Actions2Dialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class Actions2Dialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private Actions2DialogBinding _binding;
     private ArrayList<Actions2> actions;
 
-    /* renamed from: actions2DialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: actions2DialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy actions2DialogViewModel;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
     @JvmStatic
@@ -68,7 +68,7 @@ public final class Actions2Dialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return actions2Dialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(actions2Dialog);
@@ -82,7 +82,7 @@ public final class Actions2Dialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -95,7 +95,7 @@ public final class Actions2Dialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(Actions2DialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(Actions2DialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final Actions2Dialog actions2Dialog2 = this;
@@ -122,7 +122,7 @@ public final class Actions2Dialog extends BaseDialog {
         return (Actions2DialogViewModel) this.actions2DialogViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final Actions2DialogBinding get_binding() {
         return this._binding;
     }
@@ -131,7 +131,7 @@ public final class Actions2Dialog extends BaseDialog {
         return (Actions2Adapter) this.adapter.getValue();
     }
 
-    /* compiled from: Actions2Dialog.kt */
+    /* JADX INFO: compiled from: Actions2Dialog.kt */
     @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J \u0010\u0003\u001a\u00020\u00042\u0016\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bH\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/counselling/view/actions/Actions2Dialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/counselling/view/actions/Actions2Dialog;", "actions", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/counselling/view/Actions2;", "Lkotlin/collections/ArrayList;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -13,7 +13,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.store.StoreDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class StoreDialogBindingImpl extends StoreDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -75,7 +75,7 @@ public class StoreDialogBindingImpl extends StoreDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (208 != variableId) {
+        if (210 != variableId) {
             return false;
         }
         setStoreDialogViewModel((StoreDialogViewModel) variable);

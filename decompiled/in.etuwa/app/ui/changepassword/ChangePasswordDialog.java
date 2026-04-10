@@ -8,14 +8,14 @@ import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
-import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.button.MaterialButton;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.SuccessResponse;
 import in.etuwa.app.data.preference.SharedPrefManager;
@@ -43,24 +43,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ChangePasswordDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ChangePasswordDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ChangePasswordDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogChangePasswordBinding _binding;
 
-    /* renamed from: changePasswordDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: changePasswordDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy changePasswordDialogViewModel;
     private String id;
     private RemindCounsellingListener listener;
     private MainCallBackListener listener2;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: ChangePasswordDialog.kt */
+    /* JADX INFO: compiled from: ChangePasswordDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/changepassword/ChangePasswordDialog$RemindCounsellingListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface RemindCounsellingListener {
         void dismiss();
@@ -89,7 +89,7 @@ public final class ChangePasswordDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return changePasswordDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(changePasswordDialog);
@@ -103,7 +103,7 @@ public final class ChangePasswordDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -116,7 +116,7 @@ public final class ChangePasswordDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ChangePasswordViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ChangePasswordViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ChangePasswordDialog changePasswordDialog2 = this;
@@ -143,7 +143,7 @@ public final class ChangePasswordDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogChangePasswordBinding get_binding() {
         return this._binding;
     }
@@ -152,7 +152,7 @@ public final class ChangePasswordDialog extends BaseDialog {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: ChangePasswordDialog.kt */
+    /* JADX INFO: compiled from: ChangePasswordDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/changepassword/ChangePasswordDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/changepassword/ChangePasswordDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -201,44 +201,45 @@ public final class ChangePasswordDialog extends BaseDialog {
 
     @Override // in.etuwa.app.ui.base.BaseDialog
     protected void setUp() {
-        TextView textView;
+        MaterialButton materialButton;
         listenChangePasswordResponse();
         getPreference().setNewLogin(false);
         DialogChangePasswordBinding dialogChangePasswordBinding = get_binding();
-        if (dialogChangePasswordBinding == null || (textView = dialogChangePasswordBinding.changePassBtn) == null) {
+        if (dialogChangePasswordBinding == null || (materialButton = dialogChangePasswordBinding.changePassBtn) == null) {
             return;
         }
-        textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordDialog$$ExternalSyntheticLambda0
+        materialButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChangePasswordDialog.setUp$lambda$0(ChangePasswordDialog.this, view);
+                ChangePasswordDialog.setUp$lambda$0(this.f$0, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$0(ChangePasswordDialog this$0, View view) {
-        TextInputEditText textInputEditText;
-        TextInputEditText textInputEditText2;
-        TextInputEditText textInputEditText3;
+        EditText editText;
+        EditText editText2;
+        EditText editText3;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         ChangePasswordViewModel changePasswordDialogViewModel = this$0.getChangePasswordDialogViewModel();
         DialogChangePasswordBinding dialogChangePasswordBinding = this$0.get_binding();
-        Editable editable = null;
-        String valueOf = String.valueOf((dialogChangePasswordBinding == null || (textInputEditText3 = dialogChangePasswordBinding.etCurrentPassword) == null) ? null : textInputEditText3.getText());
+        Editable text = null;
+        String strValueOf = String.valueOf((dialogChangePasswordBinding == null || (editText3 = dialogChangePasswordBinding.etCurrentPassword) == null) ? null : editText3.getText());
         DialogChangePasswordBinding dialogChangePasswordBinding2 = this$0.get_binding();
-        String valueOf2 = String.valueOf((dialogChangePasswordBinding2 == null || (textInputEditText2 = dialogChangePasswordBinding2.etNewPassword) == null) ? null : textInputEditText2.getText());
+        String strValueOf2 = String.valueOf((dialogChangePasswordBinding2 == null || (editText2 = dialogChangePasswordBinding2.etNewPassword) == null) ? null : editText2.getText());
         DialogChangePasswordBinding dialogChangePasswordBinding3 = this$0.get_binding();
-        if (dialogChangePasswordBinding3 != null && (textInputEditText = dialogChangePasswordBinding3.etConfirmPass) != null) {
-            editable = textInputEditText.getText();
+        if (dialogChangePasswordBinding3 != null && (editText = dialogChangePasswordBinding3.etConfirmPass) != null) {
+            text = editText.getText();
         }
-        changePasswordDialogViewModel.changePassword(valueOf, valueOf2, String.valueOf(editable));
+        changePasswordDialogViewModel.changePassword(strValueOf, strValueOf2, String.valueOf(text));
     }
 
     private final void listenChangePasswordResponse() {
-        getChangePasswordDialogViewModel().getChangePasswordResponse().observe(getViewLifecycleOwner(), new ChangePasswordDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordDialog$listenChangePasswordResponse$1
+        getChangePasswordDialogViewModel().getChangePasswordResponse().observe(getViewLifecycleOwner(), new ChangePasswordDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordDialog.listenChangePasswordResponse.1
 
-            /* compiled from: ChangePasswordDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.changepassword.ChangePasswordDialog$listenChangePasswordResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ChangePasswordDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -275,14 +276,11 @@ public final class ChangePasswordDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogChangePasswordBinding dialogChangePasswordBinding;
-                TextView changePassBtn;
-                DialogChangePasswordBinding dialogChangePasswordBinding2;
-                TextView changePassBtn2;
-                DialogChangePasswordBinding dialogChangePasswordBinding3;
-                TextView textView;
+                MaterialButton changePassBtn;
+                MaterialButton changePassBtn2;
+                MaterialButton materialButton;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -297,13 +295,13 @@ public final class ChangePasswordDialog extends BaseDialog {
                         return;
                     }
                     ChangePasswordDialog.this.hideProgress();
-                    dialogChangePasswordBinding3 = ChangePasswordDialog.this.get_binding();
-                    if (dialogChangePasswordBinding3 == null || (textView = dialogChangePasswordBinding3.changePassBtn) == null) {
+                    DialogChangePasswordBinding dialogChangePasswordBinding = ChangePasswordDialog.this.get_binding();
+                    if (dialogChangePasswordBinding == null || (materialButton = dialogChangePasswordBinding.changePassBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
                     Intrinsics.checkNotNull(message);
-                    ToastExtKt.showErrorToast(textView, message);
+                    ToastExtKt.showErrorToast(materialButton, message);
                     return;
                 }
                 ChangePasswordDialog.this.hideProgress();
@@ -311,7 +309,7 @@ public final class ChangePasswordDialog extends BaseDialog {
                 if (data != null) {
                     ChangePasswordDialog changePasswordDialog = ChangePasswordDialog.this;
                     if (data.getSuccess()) {
-                        dialogChangePasswordBinding2 = changePasswordDialog.get_binding();
+                        DialogChangePasswordBinding dialogChangePasswordBinding2 = changePasswordDialog.get_binding();
                         if (dialogChangePasswordBinding2 != null && (changePassBtn2 = dialogChangePasswordBinding2.changePassBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(changePassBtn2, "changePassBtn");
                             ToastExtKt.showInfoToast(changePassBtn2, data.getMessage());
@@ -319,8 +317,8 @@ public final class ChangePasswordDialog extends BaseDialog {
                         changePasswordDialog.dismiss();
                         return;
                     }
-                    dialogChangePasswordBinding = changePasswordDialog.get_binding();
-                    if (dialogChangePasswordBinding == null || (changePassBtn = dialogChangePasswordBinding.changePassBtn) == null) {
+                    DialogChangePasswordBinding dialogChangePasswordBinding3 = changePasswordDialog.get_binding();
+                    if (dialogChangePasswordBinding3 == null || (changePassBtn = dialogChangePasswordBinding3.changePassBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(changePassBtn, "changePassBtn");

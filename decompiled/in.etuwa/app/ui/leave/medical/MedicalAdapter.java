@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MedicalAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MedicalAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MedicalAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<MedicalLeave> leaves = new ArrayList<>();
 
@@ -24,18 +24,18 @@ public final class MedicalAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_medical, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …w_medical, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_medical, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …w_medical, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -51,7 +51,7 @@ public final class MedicalAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         return !this.leaves.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: MedicalAdapter.kt */
+    /* JADX INFO: compiled from: MedicalAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/leave/medical/MedicalAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/leave/medical/MedicalAdapter;Landroid/view/View;)V", "dFrom", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "dTo", "remark", "reson", "side", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView dFrom;
@@ -77,13 +77,7 @@ public final class MedicalAdapter extends RecyclerView.Adapter<BaseViewHolder> {
             this.side = itemView.findViewById(R.id.medical_view_side);
         }
 
-        /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-        java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-        	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-        	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-         */
+        /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
         @Override // in.etuwa.app.ui.base.BaseViewHolder
         public void onBind(int position) {
             super.onBind(position);
@@ -98,33 +92,25 @@ public final class MedicalAdapter extends RecyclerView.Adapter<BaseViewHolder> {
                 String status = medicalLeave.getStatus();
                 switch (status.hashCode()) {
                     case -543852386:
-                        if (!status.equals("Rejected")) {
-                            break;
-                        } else {
+                        if (status.equals("Rejected")) {
                             this.side.setBackgroundColor(Color.parseColor("#c51212"));
-                            break;
                         }
+                        break;
                     case 871417949:
-                        if (!status.equals("Applied")) {
-                            break;
-                        } else {
+                        if (status.equals("Applied")) {
                             this.side.setBackgroundColor(Color.parseColor("#0952B5"));
-                            break;
                         }
+                        break;
                     case 1249888983:
-                        if (!status.equals("Approved")) {
-                            break;
-                        } else {
+                        if (status.equals("Approved")) {
                             this.side.setBackgroundColor(Color.parseColor("#286718"));
-                            break;
                         }
+                        break;
                     case 1909758217:
-                        if (!status.equals("Attendance Added")) {
-                            break;
-                        } else {
+                        if (status.equals("Attendance Added")) {
                             this.side.setBackgroundColor(Color.parseColor("#E74C3C"));
-                            break;
                         }
+                        break;
                 }
             } catch (Exception unused) {
             }

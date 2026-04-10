@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowPublicaatiionSemBinding implements ViewBinding {
     public final TextView indexTv;
     public final TextView journalNameTv;
@@ -33,11 +33,11 @@ public final class RowPublicaatiionSemBinding implements ViewBinding {
     }
 
     public static RowPublicaatiionSemBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_publicaatiion_sem, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_publicaatiion_sem, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowPublicaatiionSemBinding bind(View rootView) {

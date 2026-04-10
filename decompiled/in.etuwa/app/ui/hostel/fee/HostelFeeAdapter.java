@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelFeeAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelFeeAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final Context context;
     private final ArrayList<HostelFeeBean> list;
@@ -40,9 +40,9 @@ public final class HostelFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_hostelfee_detail, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…ee_detail, parent, false)");
-        return new ViewHolder(inflate);
+        View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_hostelfee_detail, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…ee_detail, parent, false)");
+        return new ViewHolder(viewInflate);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -58,7 +58,7 @@ public final class HostelFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.getLayout().setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.fee.HostelFeeAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                HostelFeeAdapter.onBindViewHolder$lambda$0(HostelFeeAdapter.this, position, view);
+                HostelFeeAdapter.onBindViewHolder$lambda$0(this.f$0, position, view);
             }
         });
     }
@@ -67,19 +67,19 @@ public final class HostelFeeAdapter extends RecyclerView.Adapter<ViewHolder> {
     public static final void onBindViewHolder$lambda$0(HostelFeeAdapter this$0, int i, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         AlertDialog.Builder builder = new AlertDialog.Builder(this$0.context);
-        View inflate = LayoutInflater.from(this$0.context).inflate(R.layout.show_hostel_fee, (ViewGroup) null);
-        TextView textView = (TextView) inflate.findViewById(R.id.hostdiloPayAmount);
-        TextView textView2 = (TextView) inflate.findViewById(R.id.hostdiloPaySchol);
-        TextView textView3 = (TextView) inflate.findViewById(R.id.hostdialPayable);
+        View viewInflate = LayoutInflater.from(this$0.context).inflate(R.layout.show_hostel_fee, (ViewGroup) null);
+        TextView textView = (TextView) viewInflate.findViewById(R.id.hostdiloPayAmount);
+        TextView textView2 = (TextView) viewInflate.findViewById(R.id.hostdiloPaySchol);
+        TextView textView3 = (TextView) viewInflate.findViewById(R.id.hostdialPayable);
         textView.setText(this$0.list.get(i).getAmount());
         textView2.setText(this$0.list.get(i).getScholar());
         textView3.setText("Total payeble : " + this$0.list.get(i).getPayable());
         builder.setNegativeButton("close", (DialogInterface.OnClickListener) null);
-        builder.setView(inflate);
+        builder.setView(viewInflate);
         builder.show();
     }
 
-    /* compiled from: HostelFeeAdapter.kt */
+    /* JADX INFO: compiled from: HostelFeeAdapter.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004R\u0019\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0019\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0019\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\t¨\u0006\u0010"}, d2 = {"Lin/etuwa/app/ui/hostel/fee/HostelFeeAdapter$ViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "(Landroid/view/View;)V", ExamSubjectDetailDialogKt.ARG_AMOUNT, "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "getAmount", "()Landroid/widget/TextView;", "layout", "Landroid/widget/LinearLayout;", "getLayout", "()Landroid/widget/LinearLayout;", "name", "getName", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView amount;

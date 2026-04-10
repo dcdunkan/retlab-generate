@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LeaveManagementResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LeaveManagementResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class LeaveManagementResponse {
     private final ArrayList<LeaveManagement> leave_data;
     private final boolean login;
@@ -26,12 +26,12 @@ public final /* data */ class LeaveManagementResponse {
         return leaveManagementResponse.copy(z, z2, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
@@ -60,6 +60,9 @@ public final /* data */ class LeaveManagementResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v6 */
     /* JADX WARN: Type inference failed for: r0v7 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v4 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -68,7 +71,7 @@ public final /* data */ class LeaveManagementResponse {
         }
         int i = r0 * 31;
         boolean z2 = this.success;
-        return ((i + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.leave_data.hashCode();
+        return ((i + (z2 ? 1 : z2)) * 31) + this.leave_data.hashCode();
     }
 
     public String toString() {

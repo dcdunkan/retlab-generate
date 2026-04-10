@@ -9,8 +9,8 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeArtsRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeArtsRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FeeArtsRepository {
     private final ApiHelper apiHelper;
 

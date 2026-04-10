@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QuestionsNewResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: QuestionsNewResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class QuestionsNewResponse {
     private final ArrayList<QuestionsNew> questions;
 

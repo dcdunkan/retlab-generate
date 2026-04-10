@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.due.DueMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentDuesMainBindingImpl extends FragmentDuesMainBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -60,7 +60,7 @@ public class FragmentDuesMainBindingImpl extends FragmentDuesMainBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (72 != variableId) {
+        if (71 != variableId) {
             return false;
         }
         setDueMainViewModel((DueMainViewModel) variable);

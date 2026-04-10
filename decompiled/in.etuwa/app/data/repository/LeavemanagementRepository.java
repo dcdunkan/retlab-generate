@@ -6,8 +6,8 @@ import io.reactivex.Single;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: LeavemanagementRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: LeavemanagementRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class LeavemanagementRepository {
     private final ApiHelper apiHelper;
 

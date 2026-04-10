@@ -3,12 +3,10 @@ package in.etuwa.app.ui.registration;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.activity.ComponentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelLazy;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
-import androidx.lifecycle.ViewModelStoreOwner;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.resetpassword.ResetPassword;
 import in.etuwa.app.ui.base.BaseActivity;
@@ -24,14 +22,14 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: RegistrationActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: RegistrationActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RegistrationActivity extends BaseActivity {
 
-    /* renamed from: registrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: registrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy registrationViewModel;
 
-    /* compiled from: RegistrationActivity.kt */
+    /* JADX INFO: compiled from: RegistrationActivity.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -80,7 +78,7 @@ public final class RegistrationActivity extends BaseActivity {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ComponentActivity.this.getViewModelStore();
+                ViewModelStore viewModelStore = registrationActivity.getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "viewModelStore");
                 return viewModelStore;
             }
@@ -93,7 +91,7 @@ public final class RegistrationActivity extends BaseActivity {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory(ViewModelStoreOwner.this, Reflection.getOrCreateKotlinClass(RegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory(registrationActivity2, Reflection.getOrCreateKotlinClass(RegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -126,7 +124,7 @@ public final class RegistrationActivity extends BaseActivity {
         getRegistrationViewModel().getResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.registration.RegistrationActivity$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                RegistrationActivity.listenResponse$lambda$3(RegistrationActivity.this, (Resource) obj);
+                RegistrationActivity.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }

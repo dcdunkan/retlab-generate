@@ -16,8 +16,8 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FeeRepository {
     private final ApiHelper apiHelper;
 

@@ -18,13 +18,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 
-/* compiled from: MaterialDownloadAdapter.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MaterialDownloadAdapter.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MaterialDownloadAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<String> exams = new ArrayList<>();
     private QuestionListener listener;
 
-    /* compiled from: MaterialDownloadAdapter.kt */
+    /* JADX INFO: compiled from: MaterialDownloadAdapter.kt */
     @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0018\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\nH&¨\u0006\u000b"}, d2 = {"Lin/etuwa/app/ui/studymaterials/download/MaterialDownloadAdapter$QuestionListener;", "", "checkFileExistence", "", "fileName", "", "downloadFile", "", "url", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface QuestionListener {
         boolean checkFileExistence(String fileName);
@@ -36,18 +36,18 @@ public final class MaterialDownloadAdapter extends RecyclerView.Adapter<BaseView
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_question, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …_question, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_question, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …_question, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -63,7 +63,7 @@ public final class MaterialDownloadAdapter extends RecyclerView.Adapter<BaseView
         return !this.exams.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: MaterialDownloadAdapter.kt */
+    /* JADX INFO: compiled from: MaterialDownloadAdapter.kt */
     @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\n\u001a\u00020\u000bH\u0014J\u0010\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/ui/studymaterials/download/MaterialDownloadAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/studymaterials/download/MaterialDownloadAdapter;Landroid/view/View;)V", "doc", "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "downBtn", "no", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView doc;
@@ -96,11 +96,11 @@ public final class MaterialDownloadAdapter extends RecyclerView.Adapter<BaseView
                 this.doc.setText(str);
                 this.downBtn.setText("Open");
                 this.downBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_dark);
-                String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(str, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+                String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(str, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
                 QuestionListener questionListener = this.this$0.listener;
-                Boolean valueOf = questionListener != null ? Boolean.valueOf(questionListener.checkFileExistence(replace)) : null;
-                Intrinsics.checkNotNull(valueOf);
-                if (valueOf.booleanValue()) {
+                Boolean boolValueOf = questionListener != null ? Boolean.valueOf(questionListener.checkFileExistence(strReplace)) : null;
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     this.downBtn.setText("Open");
                     this.downBtn.setBackgroundResource(R.drawable.shape_round_corner_fill_inactive);
                 } else {
@@ -112,7 +112,7 @@ public final class MaterialDownloadAdapter extends RecyclerView.Adapter<BaseView
                 textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        MaterialDownloadAdapter.ViewHolder.onBind$lambda$0(MaterialDownloadAdapter.this, str, position, view);
+                        MaterialDownloadAdapter.ViewHolder.onBind$lambda$0(materialDownloadAdapter, str, position, view);
                     }
                 });
             } catch (Exception unused) {

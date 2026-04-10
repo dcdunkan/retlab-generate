@@ -6,8 +6,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MaterialsNew.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MaterialsNew.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MaterialsNew {
     private String date;
     private final String download;
@@ -18,17 +18,17 @@ public final /* data */ class MaterialsNew {
     private final String title;
     private final ArrayList<String> url;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getTitle() {
         return this.title;
     }
@@ -37,22 +37,22 @@ public final /* data */ class MaterialsNew {
         return this.url;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDownload() {
         return this.download;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getLink() {
         return this.link;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getModule() {
         return this.module;
     }

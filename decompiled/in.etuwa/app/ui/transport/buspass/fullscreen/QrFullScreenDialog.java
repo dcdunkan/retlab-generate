@@ -48,11 +48,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: QrFullScreenDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: QrFullScreenDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class QrFullScreenDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogQrFullScreenBinding _binding;
     private ArrayList<DownloadModel> downList;
@@ -60,7 +60,7 @@ public final class QrFullScreenDialog extends BaseDialog {
     private MainCallBackListener listener;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: qrFullScreenViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: qrFullScreenViewModel$delegate, reason: from kotlin metadata */
     private final Lazy qrFullScreenViewModel;
     private String url;
 
@@ -87,7 +87,7 @@ public final class QrFullScreenDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return qrFullScreenDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(qrFullScreenDialog);
@@ -101,7 +101,7 @@ public final class QrFullScreenDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -114,27 +114,24 @@ public final class QrFullScreenDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(QrFullScreenViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(QrFullScreenViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.downList = new ArrayList<>();
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.transport.buspass.fullscreen.QrFullScreenDialog$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                DialogQrFullScreenBinding dialogQrFullScreenBinding;
-                ArrayList arrayList;
-                ArrayList arrayList2;
                 TextView textView;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
-                dialogQrFullScreenBinding = QrFullScreenDialog.this.get_binding();
+                DialogQrFullScreenBinding dialogQrFullScreenBinding = this.this$0.get_binding();
                 if (dialogQrFullScreenBinding != null && (textView = dialogQrFullScreenBinding.qrDownloadBtn) != null) {
                     ToastExtKt.showInfoToast(textView, "Download Completed");
                 }
                 try {
-                    arrayList = QrFullScreenDialog.this.downList;
-                    QrFullScreenDialog qrFullScreenDialog2 = QrFullScreenDialog.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    QrFullScreenDialog qrFullScreenDialog2 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -143,8 +140,7 @@ public final class QrFullScreenDialog extends BaseDialog {
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            arrayList2 = qrFullScreenDialog2.downList;
-                            arrayList2.remove(new DownloadModel(downloadModel.getId(), i));
+                            qrFullScreenDialog2.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -159,12 +155,12 @@ public final class QrFullScreenDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogQrFullScreenBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: QrFullScreenDialog.kt */
+    /* JADX INFO: compiled from: QrFullScreenDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/transport/buspass/fullscreen/QrFullScreenDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/transport/buspass/fullscreen/QrFullScreenDialog;", "url", "", "downloadUrl", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -227,11 +223,11 @@ public final class QrFullScreenDialog extends BaseDialog {
     protected void setUp() {
         TextView textView;
         if (!Intrinsics.areEqual(this.url, "")) {
-            RequestCreator error = Picasso.get().load(this.url).placeholder(R.drawable.ic_user_profile).fit().error(R.drawable.ic_user_profile);
+            RequestCreator requestCreatorError = Picasso.get().load(this.url).placeholder(R.drawable.ic_user_profile).fit().error(R.drawable.ic_user_profile);
             DialogQrFullScreenBinding dialogQrFullScreenBinding = get_binding();
             ImageView imageView = dialogQrFullScreenBinding != null ? dialogQrFullScreenBinding.qrImageView : null;
             Intrinsics.checkNotNull(imageView);
-            error.into(imageView);
+            requestCreatorError.into(imageView);
         }
         DialogQrFullScreenBinding dialogQrFullScreenBinding2 = get_binding();
         if (dialogQrFullScreenBinding2 == null || (textView = dialogQrFullScreenBinding2.qrDownloadBtn) == null) {
@@ -240,7 +236,7 @@ public final class QrFullScreenDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.buspass.fullscreen.QrFullScreenDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QrFullScreenDialog.setUp$lambda$1(QrFullScreenDialog.this, view);
+                QrFullScreenDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -256,23 +252,23 @@ public final class QrFullScreenDialog extends BaseDialog {
     private final void downloadFile(String url, int position) {
         TextView textView;
         TextView textView2;
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission()) {
-            if (checkFileExistence(replace)) {
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission()) {
+            if (checkFileExistence(strReplace)) {
                 DialogQrFullScreenBinding dialogQrFullScreenBinding = get_binding();
                 if (dialogQrFullScreenBinding != null && (textView2 = dialogQrFullScreenBinding.qrDownloadBtn) != null) {
                     ToastExtKt.showInfoToast(textView2, "Download Started");
                 }
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext2).startDownloading(AppConstant.BUSS_PASS_PATH, url);
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext2).startDownloading(AppConstant.BUSS_PASS_PATH, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             }
             try {
@@ -280,28 +276,28 @@ public final class QrFullScreenDialog extends BaseDialog {
                 if (dialogQrFullScreenBinding2 != null && (textView = dialogQrFullScreenBinding2.qrDownloadBtn) != null) {
                     ToastExtKt.showInfoToast(textView, "Download Started");
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading2 = new DownloadManagerHelper(requireContext3).startDownloading(AppConstant.BUSS_PASS_PATH, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading2 = new DownloadManagerHelper(contextRequireContext3).startDownloading(AppConstant.BUSS_PASS_PATH, url);
                 Context context2 = getContext();
                 if (context2 != null) {
                     context2.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading2, position));
+                this.downList.add(new DownloadModel(jStartDownloading2, position));
                 return;
             } catch (Exception unused) {
                 return;
             }
         }
-        Context requireContext4 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext4, "requireContext()");
-        new ValidChecker(requireContext4).showPermissionDialog();
+        Context contextRequireContext4 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext4, "requireContext()");
+        new ValidChecker(contextRequireContext4).showPermissionDialog();
     }
 
     private final boolean checkFileExistence(String fileName) {
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.BUSS_PASS_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.BUSS_PASS_PATH);
     }
 
     @Override // androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment

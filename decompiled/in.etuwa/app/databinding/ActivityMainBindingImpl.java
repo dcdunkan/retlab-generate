@@ -10,7 +10,7 @@ import in.etuwa.app.R;
 import in.etuwa.app.ui.main.MainViewModel;
 import me.ibrahimsn.lib.SmoothBottomBar;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ActivityMainBindingImpl extends ActivityMainBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -57,7 +57,7 @@ public class ActivityMainBindingImpl extends ActivityMainBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (133 != variableId) {
+        if (134 != variableId) {
             return false;
         }
         setMainViewModel((MainViewModel) variable);

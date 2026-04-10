@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.etlabstaff.ui.library.bookrecord.BookRecordViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentBooksRecordsBindingImpl extends FragmentBooksRecordsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -55,7 +55,7 @@ public class FragmentBooksRecordsBindingImpl extends FragmentBooksRecordsBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (39 != variableId) {
+        if (38 != variableId) {
             return false;
         }
         setBookRecordViewModel((BookRecordViewModel) variable);

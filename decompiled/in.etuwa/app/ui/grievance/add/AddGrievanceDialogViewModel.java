@@ -26,13 +26,14 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: AddGrievanceDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AddGrievanceDialogViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddGrievanceDialogViewModel extends ViewModel {
     private MutableLiveData<Resource<SuccessResponse>> addGrievanceResponse;
     private final CompositeDisposable compositeDisposable;
     private final GrievanceRepository grievanceRepository;
     private MutableLiveData<Resource<GrievanceTypeResponse>> grievanceTypeResponse;
+    private boolean isDataLoaded;
     private ArrayList<MultipartBody.Part> multipartFile;
     private MutableLiveData<Resource<Float>> progressResponse;
     private MutableLiveData<Resource<ViewGrievanceResponse>> viewGrievanceResponse;
@@ -46,7 +47,7 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
         this.addGrievanceResponse = new MutableLiveData<>();
         this.progressResponse = new MutableLiveData<>();
         this.multipartFile = new ArrayList<>();
-        getGrievanceTypes();
+        loadDataIfNeeded();
     }
 
     public final MutableLiveData<Resource<SuccessResponse>> getAddGrievanceResponse() {
@@ -67,11 +68,19 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
         this.progressResponse = mutableLiveData;
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        getGrievanceTypes();
+    }
+
     private final void getGrievanceTypes() {
         this.grievanceTypeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<GrievanceTypeResponse> observeOn = this.grievanceRepository.getGrievanceTypeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<GrievanceTypeResponse, Unit> function1 = new Function1<GrievanceTypeResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$getGrievanceTypes$1
+        Single<GrievanceTypeResponse> singleObserveOn = this.grievanceRepository.getGrievanceTypeApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<GrievanceTypeResponse, Unit> function1 = new Function1<GrievanceTypeResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.getGrievanceTypes.1
             {
                 super(1);
             }
@@ -82,20 +91,18 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(GrievanceTypeResponse grievanceTypeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddGrievanceDialogViewModel.this.grievanceTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(grievanceTypeResponse));
+                AddGrievanceDialogViewModel.this.grievanceTypeResponse.postValue(Resource.INSTANCE.success(grievanceTypeResponse));
             }
         };
         Consumer<? super GrievanceTypeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.getGrievanceTypes$lambda$0(Function1.this, obj);
+                AddGrievanceDialogViewModel.getGrievanceTypes$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$getGrievanceTypes$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.getGrievanceTypes.2
             {
                 super(1);
             }
@@ -106,17 +113,15 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddGrievanceDialogViewModel.this.grievanceTypeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddGrievanceDialogViewModel.this.grievanceTypeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.getGrievanceTypes$lambda$1(Function1.this, obj);
+                AddGrievanceDialogViewModel.getGrievanceTypes$lambda$1(function12, obj);
             }
         }));
     }
@@ -136,8 +141,8 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
     public final void viewGrievance(String id) {
         this.viewGrievanceResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ViewGrievanceResponse> observeOn = this.grievanceRepository.viewGrievanceApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ViewGrievanceResponse, Unit> function1 = new Function1<ViewGrievanceResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$viewGrievance$1
+        Single<ViewGrievanceResponse> singleObserveOn = this.grievanceRepository.viewGrievanceApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ViewGrievanceResponse, Unit> function1 = new Function1<ViewGrievanceResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.viewGrievance.1
             {
                 super(1);
             }
@@ -148,20 +153,18 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ViewGrievanceResponse viewGrievanceResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddGrievanceDialogViewModel.this.viewGrievanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(viewGrievanceResponse));
+                AddGrievanceDialogViewModel.this.viewGrievanceResponse.postValue(Resource.INSTANCE.success(viewGrievanceResponse));
             }
         };
         Consumer<? super ViewGrievanceResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.viewGrievance$lambda$2(Function1.this, obj);
+                AddGrievanceDialogViewModel.viewGrievance$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$viewGrievance$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.viewGrievance.2
             {
                 super(1);
             }
@@ -172,17 +175,15 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddGrievanceDialogViewModel.this.viewGrievanceResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddGrievanceDialogViewModel.this.viewGrievanceResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda9
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.viewGrievance$lambda$3(Function1.this, obj);
+                AddGrievanceDialogViewModel.viewGrievance$lambda$3(function12, obj);
             }
         }));
     }
@@ -209,7 +210,7 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
             for (File file : pickFiles) {
                 ProgressRequestBody progressRequestBody = new ProgressRequestBody(file, FilesKt.getExtension(file), 1);
                 this.multipartFile.add(MultipartBody.Part.INSTANCE.createFormData("Grievance[file][]", file.getName(), progressRequestBody));
-                Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+                Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
                 final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$addGrievance$1$1
                     {
                         super(1);
@@ -221,22 +222,22 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                         return Unit.INSTANCE;
                     }
 
-                    /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2(Float f) {
-                        AddGrievanceDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
+                        this.this$0.getProgressResponse().postValue(Resource.INSTANCE.success(f));
                     }
                 };
-                subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda5
+                observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda5
                     @Override // io.reactivex.functions.Consumer
                     public final void accept(Object obj) {
-                        AddGrievanceDialogViewModel.addGrievance$lambda$5$lambda$4(Function1.this, obj);
+                        AddGrievanceDialogViewModel.addGrievance$lambda$5$lambda$4(function1, obj);
                     }
                 });
             }
         }
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.grievanceRepository.addGrievanceApiCall(map, this.multipartFile).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$addGrievance$2
+        Observable<SuccessResponse> observableObserveOn = this.grievanceRepository.addGrievanceApiCall(map, this.multipartFile).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.addGrievance.2
             {
                 super(1);
             }
@@ -247,7 +248,7 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddGrievanceDialogViewModel.this.getAddGrievanceResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -255,10 +256,10 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.addGrievance$lambda$6(Function1.this, obj);
+                AddGrievanceDialogViewModel.addGrievance$lambda$6(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$addGrievance$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.addGrievance.3
             {
                 super(1);
             }
@@ -269,16 +270,16 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 System.out.println((Object) ("============================================= " + th.getMessage()));
                 AddGrievanceDialogViewModel.this.getAddGrievanceResponse().postValue(Resource.INSTANCE.exception(th.getMessage()));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.addGrievance$lambda$7(Function1.this, obj);
+                AddGrievanceDialogViewModel.addGrievance$lambda$7(function13, obj);
             }
         }));
     }
@@ -312,7 +313,7 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
             for (File file : pickFiles) {
                 ProgressRequestBody progressRequestBody = new ProgressRequestBody(file, FilesKt.getExtension(file), 1);
                 this.multipartFile.add(MultipartBody.Part.INSTANCE.createFormData("Grievance[file][]", file.getName(), progressRequestBody));
-                Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+                Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
                 final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$updateGrievance$1$1
                     {
                         super(1);
@@ -324,22 +325,22 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                         return Unit.INSTANCE;
                     }
 
-                    /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2(Float f) {
-                        AddGrievanceDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
+                        this.this$0.getProgressResponse().postValue(Resource.INSTANCE.success(f));
                     }
                 };
-                subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda2
+                observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda2
                     @Override // io.reactivex.functions.Consumer
                     public final void accept(Object obj) {
-                        AddGrievanceDialogViewModel.updateGrievance$lambda$9$lambda$8(Function1.this, obj);
+                        AddGrievanceDialogViewModel.updateGrievance$lambda$9$lambda$8(function1, obj);
                     }
                 });
             }
         }
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Observable<SuccessResponse> observeOn = this.grievanceRepository.updateGrievanceApiCall(id, map, this.multipartFile).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$updateGrievance$2
+        Observable<SuccessResponse> observableObserveOn = this.grievanceRepository.updateGrievanceApiCall(id, map, this.multipartFile).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.updateGrievance.2
             {
                 super(1);
             }
@@ -350,7 +351,7 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AddGrievanceDialogViewModel.this.getAddGrievanceResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -358,10 +359,10 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.updateGrievance$lambda$10(Function1.this, obj);
+                AddGrievanceDialogViewModel.updateGrievance$lambda$10(function12, obj);
             }
         };
-        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$updateGrievance$3
+        final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel.updateGrievance.3
             {
                 super(1);
             }
@@ -372,15 +373,15 @@ public final class AddGrievanceDialogViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AddGrievanceDialogViewModel.this.getAddGrievanceResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.grievance.add.AddGrievanceDialogViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddGrievanceDialogViewModel.updateGrievance$lambda$11(Function1.this, obj);
+                AddGrievanceDialogViewModel.updateGrievance$lambda$11(function13, obj);
             }
         }));
     }

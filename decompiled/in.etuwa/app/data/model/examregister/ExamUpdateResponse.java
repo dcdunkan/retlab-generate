@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ExamUpdateResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ExamUpdateResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ExamUpdateResponse {
     private final String admission_no;
     private final String batch_id;
@@ -30,17 +30,17 @@ public final /* data */ class ExamUpdateResponse {
         return examUpdateResponse.copy(z, str, str2, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getBatch_id() {
         return this.batch_id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getAdmission_no() {
         return this.admission_no;
     }

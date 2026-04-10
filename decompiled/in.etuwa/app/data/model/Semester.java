@@ -3,8 +3,8 @@ package in.etuwa.app.data.model;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Semester.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Semester.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Semester {
     private final String id;
     private final String name;
@@ -19,12 +19,12 @@ public final /* data */ class Semester {
         return semester.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getName() {
         return this.name;
     }

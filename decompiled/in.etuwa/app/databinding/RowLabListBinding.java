@@ -4,19 +4,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowLabListBinding implements ViewBinding {
     public final TextView labListName;
-    private final CardView rootView;
-    public final TextView safetyMeasures;
-    public final TextView viewEquipment;
+    private final MaterialCardView rootView;
+    public final MaterialButton safetyMeasures;
+    public final MaterialButton viewEquipment;
 
-    private RowLabListBinding(CardView rootView, TextView labListName, TextView safetyMeasures, TextView viewEquipment) {
+    private RowLabListBinding(MaterialCardView rootView, TextView labListName, MaterialButton safetyMeasures, MaterialButton viewEquipment) {
         this.rootView = rootView;
         this.labListName = labListName;
         this.safetyMeasures = safetyMeasures;
@@ -24,7 +25,7 @@ public final class RowLabListBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -33,11 +34,11 @@ public final class RowLabListBinding implements ViewBinding {
     }
 
     public static RowLabListBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_lab_list, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_lab_list, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowLabListBinding bind(View rootView) {
@@ -45,12 +46,12 @@ public final class RowLabListBinding implements ViewBinding {
         TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
         if (textView != null) {
             i = R.id.safety_measures;
-            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView2 != null) {
+            MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+            if (materialButton != null) {
                 i = R.id.view_equipment;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView3 != null) {
-                    return new RowLabListBinding((CardView) rootView, textView, textView2, textView3);
+                MaterialButton materialButton2 = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+                if (materialButton2 != null) {
+                    return new RowLabListBinding((MaterialCardView) rootView, textView, materialButton, materialButton2);
                 }
             }
         }

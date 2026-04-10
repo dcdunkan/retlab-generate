@@ -51,30 +51,30 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MaterialDownloadDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MaterialDownloadDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MaterialDownloadDialog extends BaseDialog implements MaterialDownloadAdapter.QuestionListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogMaterialDownloadBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
     private Boolean examType;
 
-    /* renamed from: materialDownloadViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: materialDownloadViewModel$delegate, reason: from kotlin metadata */
     private final Lazy materialDownloadViewModel;
     private final BroadcastReceiver onDownloadComplete;
     private String path;
     private Integer pos;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semId;
 
-    /* compiled from: MaterialDownloadDialog.kt */
+    /* JADX INFO: compiled from: MaterialDownloadDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -124,7 +124,7 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return materialDownloadDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(materialDownloadDialog);
@@ -138,7 +138,7 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -151,7 +151,7 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MaterialDownloadViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MaterialDownloadViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MaterialDownloadDialog materialDownloadDialog2 = this;
@@ -192,16 +192,12 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadDialog$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                MaterialDownloadAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = MaterialDownloadDialog.this.downList;
-                    MaterialDownloadDialog materialDownloadDialog3 = MaterialDownloadDialog.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    MaterialDownloadDialog materialDownloadDialog3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -210,11 +206,8 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = materialDownloadDialog3.getAdapter();
-                            arrayList2 = materialDownloadDialog3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = materialDownloadDialog3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            materialDownloadDialog3.getAdapter().notifyDataChanged(((DownloadModel) materialDownloadDialog3.downList.get(i)).getPosition());
+                            materialDownloadDialog3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -233,7 +226,7 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
         return (MaterialDownloadAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogMaterialDownloadBinding get_binding() {
         return this._binding;
     }
@@ -242,7 +235,7 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: MaterialDownloadDialog.kt */
+    /* JADX INFO: compiled from: MaterialDownloadDialog.kt */
     @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/studymaterials/download/MaterialDownloadDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/studymaterials/download/MaterialDownloadDialog;", CommonCssConstants.POSITION, "", "semId", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -327,7 +320,7 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
         getMaterialDownloadViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.studymaterials.download.MaterialDownloadDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MaterialDownloadDialog.listenResponse$lambda$2(MaterialDownloadDialog.this, (Resource) obj);
+                MaterialDownloadDialog.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -374,14 +367,14 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
     public void downloadFile(String url, int position) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, this.path);
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, this.path);
                 return;
             }
             try {
@@ -391,30 +384,30 @@ public final class MaterialDownloadDialog extends BaseDialog implements Material
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(this.path, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(this.path, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
             }
         }
-        Context requireContext4 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext4, "requireContext()");
-        new ValidChecker(requireContext4).showPermissionDialog();
+        Context contextRequireContext4 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext4, "requireContext()");
+        new ValidChecker(contextRequireContext4).showPermissionDialog();
     }
 
     @Override // in.etuwa.app.ui.studymaterials.download.MaterialDownloadAdapter.QuestionListener
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, this.path);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, this.path);
     }
 
     @Override // androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment

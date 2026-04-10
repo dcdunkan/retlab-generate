@@ -7,15 +7,16 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.counselling.add.AddCounsellingViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AddCounsellingDialogBindingImpl extends AddCounsellingDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -54,7 +55,7 @@ public class AddCounsellingDialogBindingImpl extends AddCounsellingDialogBinding
     }
 
     private AddCounsellingDialogBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextView) bindings[14], (TextInputLayout) bindings[12], (TextView) bindings[3], (TextInputEditText) bindings[13], (TextInputEditText) bindings[7], (TextInputEditText) bindings[9], (TextInputEditText) bindings[8], (TextInputEditText) bindings[5], (TextInputEditText) bindings[6], (TextView) bindings[17], (CardView) bindings[15], (Spinner) bindings[10], (Spinner) bindings[11], (Spinner) bindings[4], (ProgressBar) bindings[16]);
+        super(bindingComponent, root, 0, (MaterialButton) bindings[14], (TextInputLayout) bindings[12], (TextView) bindings[3], (TextInputEditText) bindings[13], (TextInputEditText) bindings[7], (TextInputEditText) bindings[9], (TextInputEditText) bindings[8], (TextInputEditText) bindings[5], (TextInputEditText) bindings[6], (TextView) bindings[17], (MaterialCardView) bindings[15], (Spinner) bindings[10], (Spinner) bindings[11], (Spinner) bindings[4], (ProgressBar) bindings[16]);
         this.mDirtyFlags = -1L;
         ScrollView scrollView = (ScrollView) bindings[0];
         this.mboundView0 = scrollView;
@@ -85,7 +86,7 @@ public class AddCounsellingDialogBindingImpl extends AddCounsellingDialogBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (10 != variableId) {
+        if (9 != variableId) {
             return false;
         }
         setAddCounsellingDialogViewModel((AddCounsellingViewModel) variable);

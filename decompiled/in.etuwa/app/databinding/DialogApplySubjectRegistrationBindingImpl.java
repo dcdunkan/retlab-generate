@@ -14,7 +14,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.apply.ApplySubjectRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogApplySubjectRegistrationBindingImpl extends DialogApplySubjectRegistrationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -116,7 +116,7 @@ public class DialogApplySubjectRegistrationBindingImpl extends DialogApplySubjec
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (28 != variableId) {
+        if (27 != variableId) {
             return false;
         }
         setApplySubjectRegistrationViewModel((ApplySubjectRegistrationViewModel) variable);

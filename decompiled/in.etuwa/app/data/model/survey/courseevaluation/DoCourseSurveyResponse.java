@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DoCourseSurveyResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DoCourseSurveyResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DoCourseSurveyResponse {
     private final String description;
     private final boolean login;
@@ -17,6 +17,7 @@ public final /* data */ class DoCourseSurveyResponse {
     private final ArrayList<DoCourseSurvey> subjects;
     private final String type;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ DoCourseSurveyResponse copy$default(DoCourseSurveyResponse doCourseSurveyResponse, boolean z, String str, String str2, String str3, String str4, ArrayList arrayList, int i, Object obj) {
         if ((i & 1) != 0) {
             z = doCourseSurveyResponse.login;
@@ -43,27 +44,27 @@ public final /* data */ class DoCourseSurveyResponse {
         return doCourseSurveyResponse.copy(z, str5, str6, str7, str8, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSession() {
         return this.session;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getPeriod() {
         return this.period;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDescription() {
         return this.description;
     }

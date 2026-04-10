@@ -17,8 +17,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TransportRegistrationViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TransportRegistrationViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TransportRegistrationViewModel extends ViewModel {
     private MutableLiveData<Resource<RegisterSucessResponse>> addResponse;
     private final CompositeDisposable compositeDisposable;
@@ -38,8 +38,8 @@ public final class TransportRegistrationViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(date, "date");
         this.addResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<RegisterSucessResponse> observeOn = this.transportRepository.addTransRegApiCall(id, date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<RegisterSucessResponse, Unit> function1 = new Function1<RegisterSucessResponse, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$addTransportReg$1
+        Single<RegisterSucessResponse> singleObserveOn = this.transportRepository.addTransRegApiCall(id, date).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<RegisterSucessResponse, Unit> function1 = new Function1<RegisterSucessResponse, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel.addTransportReg.1
             {
                 super(1);
             }
@@ -50,20 +50,18 @@ public final class TransportRegistrationViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(RegisterSucessResponse registerSucessResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportRegistrationViewModel.this.addResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(registerSucessResponse));
+                TransportRegistrationViewModel.this.addResponse.postValue(Resource.INSTANCE.success(registerSucessResponse));
             }
         };
         Consumer<? super RegisterSucessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportRegistrationViewModel.addTransportReg$lambda$0(Function1.this, obj);
+                TransportRegistrationViewModel.addTransportReg$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$addTransportReg$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel.addTransportReg.2
             {
                 super(1);
             }
@@ -74,17 +72,15 @@ public final class TransportRegistrationViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportRegistrationViewModel.this.addResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TransportRegistrationViewModel.this.addResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportRegistrationViewModel.addTransportReg$lambda$1(Function1.this, obj);
+                TransportRegistrationViewModel.addTransportReg$lambda$1(function12, obj);
             }
         }));
     }
@@ -108,8 +104,8 @@ public final class TransportRegistrationViewModel extends ViewModel {
     public final void getRegHistory() {
         this.historyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<RegisterViewResponse> observeOn = this.transportRepository.getRegisterViewApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<RegisterViewResponse, Unit> function1 = new Function1<RegisterViewResponse, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$getRegHistory$1
+        Single<RegisterViewResponse> singleObserveOn = this.transportRepository.getRegisterViewApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<RegisterViewResponse, Unit> function1 = new Function1<RegisterViewResponse, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel.getRegHistory.1
             {
                 super(1);
             }
@@ -120,20 +116,18 @@ public final class TransportRegistrationViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(RegisterViewResponse registerViewResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportRegistrationViewModel.this.historyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(registerViewResponse));
+                TransportRegistrationViewModel.this.historyResponse.postValue(Resource.INSTANCE.success(registerViewResponse));
             }
         };
         Consumer<? super RegisterViewResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportRegistrationViewModel.getRegHistory$lambda$2(Function1.this, obj);
+                TransportRegistrationViewModel.getRegHistory$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$getRegHistory$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel.getRegHistory.2
             {
                 super(1);
             }
@@ -144,17 +138,15 @@ public final class TransportRegistrationViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TransportRegistrationViewModel.this.historyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TransportRegistrationViewModel.this.historyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.transport.registration.register.TransportRegistrationViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TransportRegistrationViewModel.getRegHistory$lambda$3(Function1.this, obj);
+                TransportRegistrationViewModel.getRegHistory$lambda$3(function12, obj);
             }
         }));
     }

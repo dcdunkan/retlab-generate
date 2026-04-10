@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DayWise.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: DayWise.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class DayWise {
     private final String day;
     private final ArrayList<DayWiseTopicName> sub;
@@ -21,7 +21,7 @@ public final /* data */ class DayWise {
         return dayWise.copy(str, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getDay() {
         return this.day;
     }

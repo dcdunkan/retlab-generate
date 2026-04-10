@@ -43,7 +43,6 @@ import in.etuwa.app.data.preference.SharedPrefManager;
 import in.etuwa.app.databinding.DialogMvjceSemRegBinding;
 import in.etuwa.app.ui.base.BaseDialog;
 import in.etuwa.app.ui.semregistration.mace.AcademicYearSpinnerAdapter;
-import in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog;
 import in.etuwa.app.ui.semregistration.sjcetpalai.PalaiSemesterRegFragment;
 import in.etuwa.app.ui.semregistration.view.SemRegViewFragment;
 import in.etuwa.app.utils.ResolvUtilKt;
@@ -78,11 +77,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MvjceSemRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MvjceSemRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MvjceSemRegDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogMvjceSemRegBinding _binding;
     private String academics;
@@ -122,12 +121,12 @@ public final class MvjceSemRegDialog extends BaseDialog {
     private AddSemRegListener listener;
     private String minor;
 
-    /* renamed from: mvjceSemRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: mvjceSemRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy mvjceSemRegViewModel;
     private File pickFile;
     private boolean pickedFile;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private boolean prevSemClicked;
     private String programElective1;
@@ -137,36 +136,36 @@ public final class MvjceSemRegDialog extends BaseDialog {
     private String regDetails;
     private String semester_id;
 
-    /* renamed from: spinnerAdditional$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdditional$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdditional;
 
-    /* renamed from: spinnerElective$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerElective$delegate, reason: from kotlin metadata */
     private final Lazy spinnerElective;
 
-    /* renamed from: spinnerGlobal$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerGlobal$delegate, reason: from kotlin metadata */
     private final Lazy spinnerGlobal;
 
-    /* renamed from: spinnerHonour$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerHonour$delegate, reason: from kotlin metadata */
     private final Lazy spinnerHonour;
 
-    /* renamed from: spinnerMinors$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerMinors$delegate, reason: from kotlin metadata */
     private final Lazy spinnerMinors;
 
-    /* renamed from: spinnerProgramElective$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerProgramElective$delegate, reason: from kotlin metadata */
     private final Lazy spinnerProgramElective;
 
-    /* renamed from: spinnerSem$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerSem$delegate, reason: from kotlin metadata */
     private final Lazy spinnerSem;
     private boolean supplyClicked;
     private String type;
 
-    /* compiled from: MvjceSemRegDialog.kt */
+    /* JADX INFO: compiled from: MvjceSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/semregistration/mvjce/MvjceSemRegDialog$AddSemRegListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddSemRegListener {
         void dismiss();
     }
 
-    /* compiled from: MvjceSemRegDialog.kt */
+    /* JADX INFO: compiled from: MvjceSemRegDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -216,7 +215,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return mvjceSemRegDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(mvjceSemRegDialog);
@@ -230,7 +229,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -243,7 +242,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MvjceSemRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MvjceSemRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MvjceSemRegDialog mvjceSemRegDialog2 = this;
@@ -305,7 +304,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MvjceSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -330,7 +329,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MvjceSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -355,7 +354,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MvjceSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode4 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -380,7 +379,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MvjceSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode5 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -405,7 +404,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MvjceSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode6 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -430,7 +429,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MvjceSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode7 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -455,7 +454,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(MvjceSemRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode8 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -480,7 +479,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogMvjceSemRegBinding get_binding() {
         return this._binding;
     }
@@ -524,7 +523,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
         return (AcademicYearSpinnerAdapter) this.spinnerProgramElective.getValue();
     }
 
-    /* compiled from: MvjceSemRegDialog.kt */
+    /* JADX INFO: compiled from: MvjceSemRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/semregistration/mvjce/MvjceSemRegDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/semregistration/mvjce/MvjceSemRegDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -783,7 +782,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView24.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda22
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$2(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -792,7 +791,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView23.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$3(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -801,7 +800,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView22.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda16
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$4(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$4(this.f$0, view);
                 }
             });
         }
@@ -810,7 +809,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView21.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$5(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -819,7 +818,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView20.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda23
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$6(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$6(this.f$0, view);
                 }
             });
         }
@@ -828,7 +827,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView19.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda24
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$7(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -837,7 +836,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView18.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda25
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$8(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$8(this.f$0, view);
                 }
             });
         }
@@ -846,7 +845,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView17.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda26
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$9(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$9(this.f$0, view);
                 }
             });
         }
@@ -855,7 +854,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView16.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda27
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$10(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$10(this.f$0, view);
                 }
             });
         }
@@ -864,7 +863,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView15.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda28
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$11(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$11(this.f$0, view);
                 }
             });
         }
@@ -873,7 +872,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView14.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda29
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$12(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$12(this.f$0, view);
                 }
             });
         }
@@ -882,7 +881,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView13.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda30
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$13(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$13(this.f$0, view);
                 }
             });
         }
@@ -891,7 +890,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView12.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda31
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$14(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$14(this.f$0, view);
                 }
             });
         }
@@ -900,7 +899,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView11.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda32
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$15(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$15(this.f$0, view);
                 }
             });
         }
@@ -909,7 +908,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView10.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda33
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$16(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$16(this.f$0, view);
                 }
             });
         }
@@ -918,7 +917,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda34
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$17(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$17(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -927,7 +926,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda35
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$18(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$18(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -936,7 +935,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda1
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$19(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$19(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -945,7 +944,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda2
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$20(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$20(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -954,7 +953,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda3
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$21(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$21(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -963,7 +962,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda5
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$22(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$22(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -972,7 +971,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda6
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$23(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$23(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -981,7 +980,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda7
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$24(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$24(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -990,7 +989,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda8
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$25(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$25(this.f$0, radioGroup11, i);
                 }
             });
         }
@@ -999,25 +998,23 @@ public final class MvjceSemRegDialog extends BaseDialog {
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda9
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup11, int i) {
-                    MvjceSemRegDialog.setUp$lambda$26(MvjceSemRegDialog.this, radioGroup11, i);
+                    MvjceSemRegDialog.setUp$lambda$26(this.f$0, radioGroup11, i);
                 }
             });
         }
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding56 = get_binding();
         Spinner spinner25 = dialogMvjceSemRegBinding56 != null ? dialogMvjceSemRegBinding56.spinnerHonour : null;
         if (spinner25 != null) {
-            spinner25.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$26
+            spinner25.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.26
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerHonour;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerHonour = mvjceSemRegDialog.getSpinnerHonour();
-                        mvjceSemRegDialog.honor = String.valueOf(spinnerHonour.getType(position).getId());
+                        mvjceSemRegDialog.honor = String.valueOf(mvjceSemRegDialog.getSpinnerHonour().getType(position).getId());
                     }
                 }
             });
@@ -1025,18 +1022,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding57 = get_binding();
         Spinner spinner26 = dialogMvjceSemRegBinding57 != null ? dialogMvjceSemRegBinding57.spinnerMinor : null;
         if (spinner26 != null) {
-            spinner26.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$27
+            spinner26.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.27
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerMinors;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerMinors = mvjceSemRegDialog.getSpinnerMinors();
-                        mvjceSemRegDialog.minor = String.valueOf(spinnerMinors.getType(position).getId());
+                        mvjceSemRegDialog.minor = String.valueOf(mvjceSemRegDialog.getSpinnerMinors().getType(position).getId());
                     }
                 }
             });
@@ -1044,18 +1039,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding58 = get_binding();
         Spinner spinner27 = dialogMvjceSemRegBinding58 != null ? dialogMvjceSemRegBinding58.elective1 : null;
         if (spinner27 != null) {
-            spinner27.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$28
+            spinner27.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.28
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerElective = mvjceSemRegDialog.getSpinnerElective();
-                        mvjceSemRegDialog.elective1 = String.valueOf(spinnerElective.getType(position).getId());
+                        mvjceSemRegDialog.elective1 = String.valueOf(mvjceSemRegDialog.getSpinnerElective().getType(position).getId());
                     }
                 }
             });
@@ -1063,18 +1056,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding59 = get_binding();
         Spinner spinner28 = dialogMvjceSemRegBinding59 != null ? dialogMvjceSemRegBinding59.elective2 : null;
         if (spinner28 != null) {
-            spinner28.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$29
+            spinner28.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.29
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerElective = mvjceSemRegDialog.getSpinnerElective();
-                        mvjceSemRegDialog.elective2 = String.valueOf(spinnerElective.getType(position).getId());
+                        mvjceSemRegDialog.elective2 = String.valueOf(mvjceSemRegDialog.getSpinnerElective().getType(position).getId());
                     }
                 }
             });
@@ -1082,18 +1073,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding60 = get_binding();
         Spinner spinner29 = dialogMvjceSemRegBinding60 != null ? dialogMvjceSemRegBinding60.thirdElective3 : null;
         if (spinner29 != null) {
-            spinner29.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$30
+            spinner29.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.30
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerElective = mvjceSemRegDialog.getSpinnerElective();
-                        mvjceSemRegDialog.elective3 = String.valueOf(spinnerElective.getType(position).getId());
+                        mvjceSemRegDialog.elective3 = String.valueOf(mvjceSemRegDialog.getSpinnerElective().getType(position).getId());
                     }
                 }
             });
@@ -1101,18 +1090,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding61 = get_binding();
         Spinner spinner30 = dialogMvjceSemRegBinding61 != null ? dialogMvjceSemRegBinding61.thirdElective1 : null;
         if (spinner30 != null) {
-            spinner30.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$31
+            spinner30.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.31
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerElective = mvjceSemRegDialog.getSpinnerElective();
-                        mvjceSemRegDialog.elective1 = String.valueOf(spinnerElective.getType(position).getId());
+                        mvjceSemRegDialog.elective1 = String.valueOf(mvjceSemRegDialog.getSpinnerElective().getType(position).getId());
                     }
                 }
             });
@@ -1120,18 +1107,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding62 = get_binding();
         Spinner spinner31 = dialogMvjceSemRegBinding62 != null ? dialogMvjceSemRegBinding62.thirdElective2 : null;
         if (spinner31 != null) {
-            spinner31.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$32
+            spinner31.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.32
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerElective = mvjceSemRegDialog.getSpinnerElective();
-                        mvjceSemRegDialog.elective2 = String.valueOf(spinnerElective.getType(position).getId());
+                        mvjceSemRegDialog.elective2 = String.valueOf(mvjceSemRegDialog.getSpinnerElective().getType(position).getId());
                     }
                 }
             });
@@ -1139,18 +1124,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding63 = get_binding();
         Spinner spinner32 = dialogMvjceSemRegBinding63 != null ? dialogMvjceSemRegBinding63.elective3 : null;
         if (spinner32 != null) {
-            spinner32.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$33
+            spinner32.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.33
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerElective = mvjceSemRegDialog.getSpinnerElective();
-                        mvjceSemRegDialog.elective3 = String.valueOf(spinnerElective.getType(position).getId());
+                        mvjceSemRegDialog.elective3 = String.valueOf(mvjceSemRegDialog.getSpinnerElective().getType(position).getId());
                     }
                 }
             });
@@ -1158,18 +1141,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding64 = get_binding();
         Spinner spinner33 = dialogMvjceSemRegBinding64 != null ? dialogMvjceSemRegBinding64.thirdGlobalElective1 : null;
         if (spinner33 != null) {
-            spinner33.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$34
+            spinner33.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.34
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerGlobal;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerGlobal = mvjceSemRegDialog.getSpinnerGlobal();
-                        mvjceSemRegDialog.global1 = String.valueOf(spinnerGlobal.getType(position).getId());
+                        mvjceSemRegDialog.global1 = String.valueOf(mvjceSemRegDialog.getSpinnerGlobal().getType(position).getId());
                     }
                 }
             });
@@ -1177,18 +1158,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding65 = get_binding();
         Spinner spinner34 = dialogMvjceSemRegBinding65 != null ? dialogMvjceSemRegBinding65.globalElective1 : null;
         if (spinner34 != null) {
-            spinner34.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$35
+            spinner34.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.35
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerGlobal;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerGlobal = mvjceSemRegDialog.getSpinnerGlobal();
-                        mvjceSemRegDialog.global1 = String.valueOf(spinnerGlobal.getType(position).getId());
+                        mvjceSemRegDialog.global1 = String.valueOf(mvjceSemRegDialog.getSpinnerGlobal().getType(position).getId());
                     }
                 }
             });
@@ -1196,18 +1175,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding66 = get_binding();
         Spinner spinner35 = dialogMvjceSemRegBinding66 != null ? dialogMvjceSemRegBinding66.globalElective2 : null;
         if (spinner35 != null) {
-            spinner35.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$36
+            spinner35.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.36
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerGlobal;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerGlobal = mvjceSemRegDialog.getSpinnerGlobal();
-                        mvjceSemRegDialog.global2 = String.valueOf(spinnerGlobal.getType(position).getId());
+                        mvjceSemRegDialog.global2 = String.valueOf(mvjceSemRegDialog.getSpinnerGlobal().getType(position).getId());
                     }
                 }
             });
@@ -1215,18 +1192,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding67 = get_binding();
         Spinner spinner36 = dialogMvjceSemRegBinding67 != null ? dialogMvjceSemRegBinding67.globalElective3 : null;
         if (spinner36 != null) {
-            spinner36.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$37
+            spinner36.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.37
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerGlobal;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerGlobal = mvjceSemRegDialog.getSpinnerGlobal();
-                        mvjceSemRegDialog.global3 = String.valueOf(spinnerGlobal.getType(position).getId());
+                        mvjceSemRegDialog.global3 = String.valueOf(mvjceSemRegDialog.getSpinnerGlobal().getType(position).getId());
                     }
                 }
             });
@@ -1234,18 +1209,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding68 = get_binding();
         Spinner spinner37 = dialogMvjceSemRegBinding68 != null ? dialogMvjceSemRegBinding68.additionalElective1 : null;
         if (spinner37 != null) {
-            spinner37.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$38
+            spinner37.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.38
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerAdditional;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                        mvjceSemRegDialog.additional1 = String.valueOf(spinnerAdditional.getType(position).getId());
+                        mvjceSemRegDialog.additional1 = String.valueOf(mvjceSemRegDialog.getSpinnerAdditional().getType(position).getId());
                     }
                 }
             });
@@ -1253,18 +1226,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding69 = get_binding();
         Spinner spinner38 = dialogMvjceSemRegBinding69 != null ? dialogMvjceSemRegBinding69.additionalElective2 : null;
         if (spinner38 != null) {
-            spinner38.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$39
+            spinner38.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.39
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerAdditional;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                        mvjceSemRegDialog.additional2 = String.valueOf(spinnerAdditional.getType(position).getId());
+                        mvjceSemRegDialog.additional2 = String.valueOf(mvjceSemRegDialog.getSpinnerAdditional().getType(position).getId());
                     }
                 }
             });
@@ -1272,39 +1243,35 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding70 = get_binding();
         Spinner spinner39 = dialogMvjceSemRegBinding70 != null ? dialogMvjceSemRegBinding70.additionalElective3 : null;
         if (spinner39 != null) {
-            spinner39.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$40
+            spinner39.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.40
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerAdditional;
                     if (position <= 0) {
                         MvjceSemRegDialog.this.additional3 = "I";
-                        return;
+                    } else {
+                        MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
+                        mvjceSemRegDialog.additional3 = String.valueOf(mvjceSemRegDialog.getSpinnerAdditional().getType(position).getId());
                     }
-                    MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                    spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                    mvjceSemRegDialog.additional3 = String.valueOf(spinnerAdditional.getType(position).getId());
                 }
             });
         }
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding71 = get_binding();
         Spinner spinner40 = dialogMvjceSemRegBinding71 != null ? dialogMvjceSemRegBinding71.thirdAdditionalElective1 : null;
         if (spinner40 != null) {
-            spinner40.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$41
+            spinner40.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.41
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerAdditional;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                        mvjceSemRegDialog.additional1 = String.valueOf(spinnerAdditional.getType(position).getId());
+                        mvjceSemRegDialog.additional1 = String.valueOf(mvjceSemRegDialog.getSpinnerAdditional().getType(position).getId());
                     }
                 }
             });
@@ -1312,18 +1279,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding72 = get_binding();
         Spinner spinner41 = dialogMvjceSemRegBinding72 != null ? dialogMvjceSemRegBinding72.thirdAdditionalElective2 : null;
         if (spinner41 != null) {
-            spinner41.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$42
+            spinner41.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.42
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerAdditional;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                        mvjceSemRegDialog.additional2 = String.valueOf(spinnerAdditional.getType(position).getId());
+                        mvjceSemRegDialog.additional2 = String.valueOf(mvjceSemRegDialog.getSpinnerAdditional().getType(position).getId());
                     }
                 }
             });
@@ -1331,60 +1296,54 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding73 = get_binding();
         Spinner spinner42 = dialogMvjceSemRegBinding73 != null ? dialogMvjceSemRegBinding73.thirdAdditionalElective3 : null;
         if (spinner42 != null) {
-            spinner42.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$43
+            spinner42.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.43
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerAdditional;
                     if (position <= 0) {
                         MvjceSemRegDialog.this.additional3 = "I";
-                        return;
+                    } else {
+                        MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
+                        mvjceSemRegDialog.additional3 = String.valueOf(mvjceSemRegDialog.getSpinnerAdditional().getType(position).getId());
                     }
-                    MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                    spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                    mvjceSemRegDialog.additional3 = String.valueOf(spinnerAdditional.getType(position).getId());
                 }
             });
         }
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding74 = get_binding();
         Spinner spinner43 = dialogMvjceSemRegBinding74 != null ? dialogMvjceSemRegBinding74.thirdAdditionalElective4 : null;
         if (spinner43 != null) {
-            spinner43.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$44
+            spinner43.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.44
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerAdditional;
                     if (position <= 0) {
                         MvjceSemRegDialog.this.additional4 = "I";
-                        return;
+                    } else {
+                        MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
+                        mvjceSemRegDialog.additional4 = String.valueOf(mvjceSemRegDialog.getSpinnerAdditional().getType(position).getId());
                     }
-                    MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                    spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                    mvjceSemRegDialog.additional4 = String.valueOf(spinnerAdditional.getType(position).getId());
                 }
             });
         }
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding75 = get_binding();
         Spinner spinner44 = dialogMvjceSemRegBinding75 != null ? dialogMvjceSemRegBinding75.thirdProgramElective1 : null;
         if (spinner44 != null) {
-            spinner44.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$45
+            spinner44.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.45
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerProgramElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerProgramElective = mvjceSemRegDialog.getSpinnerProgramElective();
-                        mvjceSemRegDialog.programElective1 = String.valueOf(spinnerProgramElective.getType(position).getId());
+                        mvjceSemRegDialog.programElective1 = String.valueOf(mvjceSemRegDialog.getSpinnerProgramElective().getType(position).getId());
                     }
                 }
             });
@@ -1392,18 +1351,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding76 = get_binding();
         Spinner spinner45 = dialogMvjceSemRegBinding76 != null ? dialogMvjceSemRegBinding76.thirdProgramElective2 : null;
         if (spinner45 != null) {
-            spinner45.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$46
+            spinner45.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.46
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerProgramElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerProgramElective = mvjceSemRegDialog.getSpinnerProgramElective();
-                        mvjceSemRegDialog.programElective2 = String.valueOf(spinnerProgramElective.getType(position).getId());
+                        mvjceSemRegDialog.programElective2 = String.valueOf(mvjceSemRegDialog.getSpinnerProgramElective().getType(position).getId());
                     }
                 }
             });
@@ -1411,18 +1368,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding77 = get_binding();
         Spinner spinner46 = dialogMvjceSemRegBinding77 != null ? dialogMvjceSemRegBinding77.thirdProgramElective3 : null;
         if (spinner46 != null) {
-            spinner46.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$setUp$47
+            spinner46.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp.47
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AcademicYearSpinnerAdapter spinnerProgramElective;
                     if (position > 0) {
                         MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                        spinnerProgramElective = mvjceSemRegDialog.getSpinnerProgramElective();
-                        mvjceSemRegDialog.programElective3 = String.valueOf(spinnerProgramElective.getType(position).getId());
+                        mvjceSemRegDialog.programElective3 = String.valueOf(mvjceSemRegDialog.getSpinnerProgramElective().getType(position).getId());
                     }
                 }
             });
@@ -1432,7 +1387,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView9.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$27(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$27(this.f$0, view);
                 }
             });
         }
@@ -1441,7 +1396,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView8.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$28(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$28(this.f$0, view);
                 }
             });
         }
@@ -1450,7 +1405,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView7.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$29(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$29(this.f$0, view);
                 }
             });
         }
@@ -1459,7 +1414,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView6.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda14
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$30(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$30(this.f$0, view);
                 }
             });
         }
@@ -1468,7 +1423,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView5.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda15
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$31(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$31(this.f$0, view);
                 }
             });
         }
@@ -1477,7 +1432,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView4.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda17
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$32(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$32(this.f$0, view);
                 }
             });
         }
@@ -1486,7 +1441,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda18
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$33(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$33(this.f$0, view);
                 }
             });
         }
@@ -1495,7 +1450,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda19
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    MvjceSemRegDialog.setUp$lambda$34(MvjceSemRegDialog.this, view);
+                    MvjceSemRegDialog.setUp$lambda$34(this.f$0, view);
                 }
             });
         }
@@ -1506,7 +1461,7 @@ public final class MvjceSemRegDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MvjceSemRegDialog.setUp$lambda$35(MvjceSemRegDialog.this, view);
+                MvjceSemRegDialog.setUp$lambda$35(this.f$0, view);
             }
         });
     }
@@ -1522,15 +1477,16 @@ public final class MvjceSemRegDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x03f6  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0415  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00ab  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
     public static final void setUp$lambda$3(in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog r6, android.view.View r7) {
         /*
-            Method dump skipped, instructions count: 1076
+            Method dump skipped, instruction units count: 1076
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
         throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.setUp$lambda$3(in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog, android.view.View):void");
@@ -4195,11 +4151,11 @@ public final class MvjceSemRegDialog extends BaseDialog {
         TextInputEditText textInputEditText12;
         TextInputEditText textInputEditText13;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap.clear();
-        hashMap2.clear();
-        Editable editable = null;
+        HashMap map = new HashMap();
+        HashMap map2 = new HashMap();
+        map.clear();
+        map2.clear();
+        Editable text = null;
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding = this$0.get_binding();
             if (Intrinsics.areEqual(String.valueOf((dialogMvjceSemRegBinding == null || (textInputEditText13 = dialogMvjceSemRegBinding.etMonthYear) == null) ? null : textInputEditText13.getText()), "") && Intrinsics.areEqual(this$0.back, "Yes")) {
@@ -4227,71 +4183,71 @@ public final class MvjceSemRegDialog extends BaseDialog {
         if (!Intrinsics.areEqual(this$0.id, "")) {
             String str = this$0.id;
             Intrinsics.checkNotNull(str);
-            hashMap.put("id", str);
+            map.put("id", str);
         }
-        HashMap hashMap3 = hashMap;
-        hashMap3.put("SemesterRegistration[semester_id]", this$0.semester_id);
-        hashMap3.put("SemesterRegistration[exam_appear]", this$0.reg);
-        hashMap3.put("SemesterRegistration[backpaper]", this$0.back);
+        HashMap map3 = map;
+        map3.put("SemesterRegistration[semester_id]", this$0.semester_id);
+        map3.put("SemesterRegistration[exam_appear]", this$0.reg);
+        map3.put("SemesterRegistration[backpaper]", this$0.back);
         DialogMvjceSemRegBinding dialogMvjceSemRegBinding5 = this$0.get_binding();
-        hashMap3.put("SemesterRegistration[earned_credits]", String.valueOf((dialogMvjceSemRegBinding5 == null || (textInputEditText9 = dialogMvjceSemRegBinding5.etEarnedCredits) == null) ? null : textInputEditText9.getText()));
+        map3.put("SemesterRegistration[earned_credits]", String.valueOf((dialogMvjceSemRegBinding5 == null || (textInputEditText9 = dialogMvjceSemRegBinding5.etEarnedCredits) == null) ? null : textInputEditText9.getText()));
         if (Intrinsics.areEqual(this$0.reg, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding6 = this$0.get_binding();
-            hashMap3.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogMvjceSemRegBinding6 == null || (textInputEditText8 = dialogMvjceSemRegBinding6.etMonthYear) == null) ? null : textInputEditText8.getText()));
+            map3.put("SemesterRegistration[exam_month_year]", String.valueOf((dialogMvjceSemRegBinding6 == null || (textInputEditText8 = dialogMvjceSemRegBinding6.etMonthYear) == null) ? null : textInputEditText8.getText()));
         }
         if (Intrinsics.areEqual(this$0.back, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding7 = this$0.get_binding();
-            hashMap3.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogMvjceSemRegBinding7 == null || (textInputEditText7 = dialogMvjceSemRegBinding7.etBackPaperCount) == null) ? null : textInputEditText7.getText()));
+            map3.put("SemesterRegistration[backlogs_count]", String.valueOf((dialogMvjceSemRegBinding7 == null || (textInputEditText7 = dialogMvjceSemRegBinding7.etBackPaperCount) == null) ? null : textInputEditText7.getText()));
         }
-        hashMap3.put("SemesterRegistration[department_due]", this$0.dept);
+        map3.put("SemesterRegistration[department_due]", this$0.dept);
         if (Intrinsics.areEqual(this$0.dept, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding8 = this$0.get_binding();
-            hashMap3.put("SemesterRegistration[department_due_details]", String.valueOf((dialogMvjceSemRegBinding8 == null || (textInputEditText6 = dialogMvjceSemRegBinding8.etDeptDetails) == null) ? null : textInputEditText6.getText()));
+            map3.put("SemesterRegistration[department_due_details]", String.valueOf((dialogMvjceSemRegBinding8 == null || (textInputEditText6 = dialogMvjceSemRegBinding8.etDeptDetails) == null) ? null : textInputEditText6.getText()));
         }
-        hashMap3.put("SemesterRegistration[library_due]", this$0.library);
+        map3.put("SemesterRegistration[library_due]", this$0.library);
         if (Intrinsics.areEqual(this$0.library, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding9 = this$0.get_binding();
-            hashMap3.put("SemesterRegistration[librarary_due_details]", String.valueOf((dialogMvjceSemRegBinding9 == null || (textInputEditText5 = dialogMvjceSemRegBinding9.etLibraryDetails) == null) ? null : textInputEditText5.getText()));
+            map3.put("SemesterRegistration[librarary_due_details]", String.valueOf((dialogMvjceSemRegBinding9 == null || (textInputEditText5 = dialogMvjceSemRegBinding9.etLibraryDetails) == null) ? null : textInputEditText5.getText()));
         }
-        hashMap3.put("SemesterRegistration[accounts_due]", this$0.accounts);
+        map3.put("SemesterRegistration[accounts_due]", this$0.accounts);
         if (Intrinsics.areEqual(this$0.accounts, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding10 = this$0.get_binding();
-            hashMap3.put("SemesterRegistration[accounts_due_details]", String.valueOf((dialogMvjceSemRegBinding10 == null || (textInputEditText4 = dialogMvjceSemRegBinding10.etAccountsDetails) == null) ? null : textInputEditText4.getText()));
+            map3.put("SemesterRegistration[accounts_due_details]", String.valueOf((dialogMvjceSemRegBinding10 == null || (textInputEditText4 = dialogMvjceSemRegBinding10.etAccountsDetails) == null) ? null : textInputEditText4.getText()));
         }
-        hashMap3.put("SemesterRegistration[academic_due]", this$0.academics);
+        map3.put("SemesterRegistration[academic_due]", this$0.academics);
         if (Intrinsics.areEqual(this$0.academics, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding11 = this$0.get_binding();
-            hashMap3.put("SemesterRegistration[academic_due_details]", String.valueOf((dialogMvjceSemRegBinding11 == null || (textInputEditText3 = dialogMvjceSemRegBinding11.etAcademicDetails) == null) ? null : textInputEditText3.getText()));
+            map3.put("SemesterRegistration[academic_due_details]", String.valueOf((dialogMvjceSemRegBinding11 == null || (textInputEditText3 = dialogMvjceSemRegBinding11.etAcademicDetails) == null) ? null : textInputEditText3.getText()));
         }
-        hashMap3.put("SemesterRegistration[hostel_due]", this$0.hostel);
+        map3.put("SemesterRegistration[hostel_due]", this$0.hostel);
         if (Intrinsics.areEqual(this$0.hostel, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding12 = this$0.get_binding();
-            hashMap3.put("SemesterRegistration[hostel_due_details]", String.valueOf((dialogMvjceSemRegBinding12 == null || (textInputEditText2 = dialogMvjceSemRegBinding12.etHostelDetails) == null) ? null : textInputEditText2.getText()));
+            map3.put("SemesterRegistration[hostel_due_details]", String.valueOf((dialogMvjceSemRegBinding12 == null || (textInputEditText2 = dialogMvjceSemRegBinding12.etHostelDetails) == null) ? null : textInputEditText2.getText()));
         }
-        hashMap3.put("SemesterRegistration[bus_due]", this$0.bus);
+        map3.put("SemesterRegistration[bus_due]", this$0.bus);
         if (Intrinsics.areEqual(this$0.bus, "Yes")) {
             DialogMvjceSemRegBinding dialogMvjceSemRegBinding13 = this$0.get_binding();
             if (dialogMvjceSemRegBinding13 != null && (textInputEditText = dialogMvjceSemRegBinding13.etBusDetails) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            hashMap3.put("SemesterRegistration[bus_due_details]", String.valueOf(editable));
+            map3.put("SemesterRegistration[bus_due_details]", String.valueOf(text));
         }
         if (!Intrinsics.areEqual(this$0.id, "")) {
             MvjceSemRegViewModel mvjceSemRegViewModel = this$0.getMvjceSemRegViewModel();
             String str2 = this$0.id;
             Intrinsics.checkNotNull(str2);
-            mvjceSemRegViewModel.registerWithoutReceipt(str2, hashMap3);
+            mvjceSemRegViewModel.registerWithoutReceipt(str2, map3);
             return;
         }
-        System.out.println(hashMap);
-        this$0.getMvjceSemRegViewModel().registerWithoutReceipt(hashMap3);
+        System.out.println(map);
+        this$0.getMvjceSemRegViewModel().registerWithoutReceipt(map3);
     }
 
     private final void listenViewResponse() {
         getMvjceSemRegViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MvjceSemRegDialog.listenViewResponse$lambda$37(MvjceSemRegDialog.this, (Resource) obj);
+                MvjceSemRegDialog.listenViewResponse$lambda$37(this.f$0, (Resource) obj);
             }
         });
     }
@@ -4835,11 +4791,11 @@ public final class MvjceSemRegDialog extends BaseDialog {
     public final String toRoman(int i) {
         String str = "";
         for (Pair pair : CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to(1000, "M"), TuplesKt.to(900, "CM"), TuplesKt.to(500, "D"), TuplesKt.to(400, "CD"), TuplesKt.to(100, SvgConstants.Attributes.PATH_DATA_CURVE_TO), TuplesKt.to(90, "XC"), TuplesKt.to(50, "L"), TuplesKt.to(40, "XL"), TuplesKt.to(10, "X"), TuplesKt.to(9, "IX"), TuplesKt.to(5, "V"), TuplesKt.to(4, "IV"), TuplesKt.to(1, "I")})) {
-            int intValue = ((Number) pair.component1()).intValue();
+            int iIntValue = ((Number) pair.component1()).intValue();
             String str2 = (String) pair.component2();
-            while (i >= intValue) {
+            while (i >= iIntValue) {
                 str = str + str2;
-                i -= intValue;
+                i -= iIntValue;
             }
         }
         return str;
@@ -4862,9 +4818,10 @@ public final class MvjceSemRegDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getMvjceSemRegViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new MvjceSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$listenResponse$1
+        getMvjceSemRegViewModel().getRegisterResponse().observe(getViewLifecycleOwner(), new MvjceSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.listenResponse.1
 
-            /* compiled from: MvjceSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: MvjceSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -4901,10 +4858,8 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SemRegSuccessResponse> resource) {
-                DialogMvjceSemRegBinding dialogMvjceSemRegBinding;
-                MvjceSemRegDialog.AddSemRegListener addSemRegListener;
                 TextView registerBtn;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -4927,12 +4882,12 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 if (data != null) {
                     MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
                     if (data.getSuccess()) {
-                        dialogMvjceSemRegBinding = mvjceSemRegDialog.get_binding();
+                        DialogMvjceSemRegBinding dialogMvjceSemRegBinding = mvjceSemRegDialog.get_binding();
                         if (dialogMvjceSemRegBinding != null && (registerBtn = dialogMvjceSemRegBinding.registerBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
                             ToastExtKt.showSuccessToast(registerBtn, data.getMessage());
                         }
-                        addSemRegListener = mvjceSemRegDialog.listener;
+                        AddSemRegListener addSemRegListener = mvjceSemRegDialog.listener;
                         if (addSemRegListener != null) {
                             addSemRegListener.dismiss();
                         }
@@ -4946,9 +4901,10 @@ public final class MvjceSemRegDialog extends BaseDialog {
     }
 
     private final void listenSpinners() {
-        getMvjceSemRegViewModel().getDropResponse().observe(getViewLifecycleOwner(), new MvjceSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AcademicYearResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$listenSpinners$1
+        getMvjceSemRegViewModel().getDropResponse().observe(getViewLifecycleOwner(), new MvjceSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends AcademicYearResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.listenSpinners.1
 
-            /* compiled from: MvjceSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$listenSpinners$1$WhenMappings */
+            /* JADX INFO: compiled from: MvjceSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -4985,24 +4941,8 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<AcademicYearResponse> resource) {
-                String roman;
-                String roman2;
-                CurrentSemSpinnerAdapter spinnerSem;
-                String str;
-                String str2;
-                AcademicYearSpinnerAdapter spinnerAdditional;
-                AcademicYearSpinnerAdapter spinnerElective;
-                AcademicYearSpinnerAdapter spinnerGlobal;
-                AcademicYearSpinnerAdapter spinnerHonour;
-                AcademicYearSpinnerAdapter spinnerMinors;
-                AcademicYearSpinnerAdapter spinnerProgramElective;
-                AcademicYearSpinnerAdapter spinnerAdditional2;
-                AcademicYearSpinnerAdapter spinnerElective2;
-                AcademicYearSpinnerAdapter spinnerGlobal2;
-                AcademicYearSpinnerAdapter spinnerHonour2;
-                AcademicYearSpinnerAdapter spinnerMinors2;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -5023,8 +4963,8 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 AcademicYearResponse data = resource.getData();
                 if (data != null) {
                     MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
-                    roman = mvjceSemRegDialog.toRoman(1);
-                    roman2 = mvjceSemRegDialog.toRoman(3);
+                    String roman = mvjceSemRegDialog.toRoman(1);
+                    String roman2 = mvjceSemRegDialog.toRoman(3);
                     if (StringsKt.contains$default((CharSequence) data.getSemester(), (CharSequence) (roman + "st Semester"), false, 2, (Object) null)) {
                         mvjceSemRegDialog.type = "1";
                     } else {
@@ -5035,35 +4975,21 @@ public final class MvjceSemRegDialog extends BaseDialog {
                         }
                     }
                     mvjceSemRegDialog.semester_id = data.getSemester_id();
-                    spinnerSem = mvjceSemRegDialog.getSpinnerSem();
-                    spinnerSem.addItems(CollectionsKt.arrayListOf(data.getSemester()));
-                    str = mvjceSemRegDialog.type;
-                    if (Intrinsics.areEqual(str, ExifInterface.GPS_MEASUREMENT_2D)) {
-                        spinnerAdditional2 = mvjceSemRegDialog.getSpinnerAdditional();
-                        spinnerAdditional2.addItems(data.getAdditional_electives());
-                        spinnerElective2 = mvjceSemRegDialog.getSpinnerElective();
-                        spinnerElective2.addItems(data.getElectives());
-                        spinnerGlobal2 = mvjceSemRegDialog.getSpinnerGlobal();
-                        spinnerGlobal2.addItems(data.getGlobalelectives());
-                        spinnerHonour2 = mvjceSemRegDialog.getSpinnerHonour();
-                        spinnerHonour2.addItems(data.getHonours());
-                        spinnerMinors2 = mvjceSemRegDialog.getSpinnerMinors();
-                        spinnerMinors2.addItems(data.getMinors());
+                    mvjceSemRegDialog.getSpinnerSem().addItems(CollectionsKt.arrayListOf(data.getSemester()));
+                    if (Intrinsics.areEqual(mvjceSemRegDialog.type, ExifInterface.GPS_MEASUREMENT_2D)) {
+                        mvjceSemRegDialog.getSpinnerAdditional().addItems(data.getAdditional_electives());
+                        mvjceSemRegDialog.getSpinnerElective().addItems(data.getElectives());
+                        mvjceSemRegDialog.getSpinnerGlobal().addItems(data.getGlobalelectives());
+                        mvjceSemRegDialog.getSpinnerHonour().addItems(data.getHonours());
+                        mvjceSemRegDialog.getSpinnerMinors().addItems(data.getMinors());
                     }
-                    str2 = mvjceSemRegDialog.type;
-                    if (Intrinsics.areEqual(str2, ExifInterface.GPS_MEASUREMENT_3D)) {
-                        spinnerAdditional = mvjceSemRegDialog.getSpinnerAdditional();
-                        spinnerAdditional.addItems(data.getAdditional_electives());
-                        spinnerElective = mvjceSemRegDialog.getSpinnerElective();
-                        spinnerElective.addItems(data.getElectives());
-                        spinnerGlobal = mvjceSemRegDialog.getSpinnerGlobal();
-                        spinnerGlobal.addItems(data.getGlobalelectives());
-                        spinnerHonour = mvjceSemRegDialog.getSpinnerHonour();
-                        spinnerHonour.addItems(data.getHonours());
-                        spinnerMinors = mvjceSemRegDialog.getSpinnerMinors();
-                        spinnerMinors.addItems(data.getMinors());
-                        spinnerProgramElective = mvjceSemRegDialog.getSpinnerProgramElective();
-                        spinnerProgramElective.addItems(data.getProgram_electives());
+                    if (Intrinsics.areEqual(mvjceSemRegDialog.type, ExifInterface.GPS_MEASUREMENT_3D)) {
+                        mvjceSemRegDialog.getSpinnerAdditional().addItems(data.getAdditional_electives());
+                        mvjceSemRegDialog.getSpinnerElective().addItems(data.getElectives());
+                        mvjceSemRegDialog.getSpinnerGlobal().addItems(data.getGlobalelectives());
+                        mvjceSemRegDialog.getSpinnerHonour().addItems(data.getHonours());
+                        mvjceSemRegDialog.getSpinnerMinors().addItems(data.getMinors());
+                        mvjceSemRegDialog.getSpinnerProgramElective().addItems(data.getProgram_electives());
                     }
                 }
             }
@@ -5071,9 +4997,10 @@ public final class MvjceSemRegDialog extends BaseDialog {
     }
 
     private final void listenResponse2() {
-        getMvjceSemRegViewModel().getRegResponse().observe(getViewLifecycleOwner(), new MvjceSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$listenResponse2$1
+        getMvjceSemRegViewModel().getRegResponse().observe(getViewLifecycleOwner(), new MvjceSemRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SemRegSuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog.listenResponse2.1
 
-            /* compiled from: MvjceSemRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.semregistration.mvjce.MvjceSemRegDialog$listenResponse2$1$WhenMappings */
+            /* JADX INFO: compiled from: MvjceSemRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -5110,10 +5037,8 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SemRegSuccessResponse> resource) {
-                DialogMvjceSemRegBinding dialogMvjceSemRegBinding;
-                MvjceSemRegDialog.AddSemRegListener addSemRegListener;
                 TextView registerBtn;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -5136,12 +5061,12 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 if (data != null) {
                     MvjceSemRegDialog mvjceSemRegDialog = MvjceSemRegDialog.this;
                     if (data.getSuccess()) {
-                        dialogMvjceSemRegBinding = mvjceSemRegDialog.get_binding();
+                        DialogMvjceSemRegBinding dialogMvjceSemRegBinding = mvjceSemRegDialog.get_binding();
                         if (dialogMvjceSemRegBinding != null && (registerBtn = dialogMvjceSemRegBinding.registerBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
                             ToastExtKt.showSuccessToast(registerBtn, data.getMessage());
                         }
-                        addSemRegListener = mvjceSemRegDialog.listener;
+                        AddSemRegListener addSemRegListener = mvjceSemRegDialog.listener;
                         if (addSemRegListener != null) {
                             addSemRegListener.dismiss();
                         }
@@ -5157,10 +5082,10 @@ public final class MvjceSemRegDialog extends BaseDialog {
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
-        String str2;
+        String fileName2;
         ContentResolver contentResolver3;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -5174,12 +5099,12 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver3 = context.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver3, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 DialogMvjceSemRegBinding dialogMvjceSemRegBinding2 = get_binding();
                 TextView textView2 = dialogMvjceSemRegBinding2 != null ? dialogMvjceSemRegBinding2.completionFileName : null;
@@ -5188,19 +5113,19 @@ public final class MvjceSemRegDialog extends BaseDialog {
                 }
                 this.pickedFile = true;
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
                     File cacheDir = context3 != null ? context3.getCacheDir() : null;
                     Context context4 = getContext();
                     if (context4 == null || (contentResolver2 = context4.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                 }
             }

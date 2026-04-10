@@ -4,17 +4,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowTransportBinding implements ViewBinding {
     public final CheckBox feeTransportCheckBox;
-    public final LinearLayout linearHost;
-    private final LinearLayout rootView;
+    public final MaterialCardView linearHost;
+    private final MaterialCardView rootView;
     public final TextView transportAdjustmentTv;
     public final TextView transportAmountTv;
     public final TextView transportBalanceTv;
@@ -23,7 +23,7 @@ public final class RowTransportBinding implements ViewBinding {
     public final TextView transportParticularTvPaid;
     public final TextView transportStatusTv;
 
-    private RowTransportBinding(LinearLayout rootView, CheckBox feeTransportCheckBox, LinearLayout linearHost, TextView transportAdjustmentTv, TextView transportAmountTv, TextView transportBalanceTv, TextView transportPaidTv, TextView transportParticularTv, TextView transportParticularTvPaid, TextView transportStatusTv) {
+    private RowTransportBinding(MaterialCardView rootView, CheckBox feeTransportCheckBox, MaterialCardView linearHost, TextView transportAdjustmentTv, TextView transportAmountTv, TextView transportBalanceTv, TextView transportPaidTv, TextView transportParticularTv, TextView transportParticularTvPaid, TextView transportStatusTv) {
         this.rootView = rootView;
         this.feeTransportCheckBox = feeTransportCheckBox;
         this.linearHost = linearHost;
@@ -37,7 +37,7 @@ public final class RowTransportBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -46,18 +46,18 @@ public final class RowTransportBinding implements ViewBinding {
     }
 
     public static RowTransportBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_transport, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_transport, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowTransportBinding bind(View rootView) {
         int i = R.id.fee_transport_check_box;
         CheckBox checkBox = (CheckBox) ViewBindings.findChildViewById(rootView, i);
         if (checkBox != null) {
-            LinearLayout linearLayout = (LinearLayout) rootView;
+            MaterialCardView materialCardView = (MaterialCardView) rootView;
             i = R.id.transport_adjustment_tv;
             TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
             if (textView != null) {
@@ -79,7 +79,7 @@ public final class RowTransportBinding implements ViewBinding {
                                     i = R.id.transport_status_tv;
                                     TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                     if (textView7 != null) {
-                                        return new RowTransportBinding(linearLayout, checkBox, linearLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7);
+                                        return new RowTransportBinding(materialCardView, checkBox, materialCardView, textView, textView2, textView3, textView4, textView5, textView6, textView7);
                                     }
                                 }
                             }

@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: RegistrationViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: RegistrationViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class RegistrationViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final HostelRepository hostelRepository;
@@ -33,8 +33,8 @@ public final class RegistrationViewModel extends ViewModel {
     public final void getRegistrationData() {
         this.registrationResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<RegistrationResponse> observeOn = this.hostelRepository.getHostelRegistrationData().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<RegistrationResponse, Unit> function1 = new Function1<RegistrationResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel$getRegistrationData$1
+        Single<RegistrationResponse> singleObserveOn = this.hostelRepository.getHostelRegistrationData().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<RegistrationResponse, Unit> function1 = new Function1<RegistrationResponse, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel.getRegistrationData.1
             {
                 super(1);
             }
@@ -45,20 +45,18 @@ public final class RegistrationViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(RegistrationResponse registrationResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = RegistrationViewModel.this.registrationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(registrationResponse));
+                RegistrationViewModel.this.registrationResponse.postValue(Resource.INSTANCE.success(registrationResponse));
             }
         };
         Consumer<? super RegistrationResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RegistrationViewModel.getRegistrationData$lambda$0(Function1.this, obj);
+                RegistrationViewModel.getRegistrationData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel$getRegistrationData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel.getRegistrationData.2
             {
                 super(1);
             }
@@ -69,17 +67,15 @@ public final class RegistrationViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = RegistrationViewModel.this.registrationResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                RegistrationViewModel.this.registrationResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.hostel.gcekhostel.registration.RegistrationViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                RegistrationViewModel.getRegistrationData$lambda$1(Function1.this, obj);
+                RegistrationViewModel.getRegistrationData$lambda$1(function12, obj);
             }
         }));
     }

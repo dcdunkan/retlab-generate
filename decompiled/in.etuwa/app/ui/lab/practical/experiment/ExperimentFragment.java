@@ -38,23 +38,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ExperimentFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ExperimentFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ExperimentFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ExperementFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: experimentViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: experimentViewModel$delegate, reason: from kotlin metadata */
     private final Lazy experimentViewModel;
     private String subId;
     private String subPid;
 
-    /* compiled from: ExperimentFragment.kt */
+    /* JADX INFO: compiled from: ExperimentFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -104,7 +104,7 @@ public final class ExperimentFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return experimentFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(experimentFragment);
@@ -118,7 +118,7 @@ public final class ExperimentFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -131,7 +131,7 @@ public final class ExperimentFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ExperimentViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ExperimentViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ExperimentFragment experimentFragment2 = this;
@@ -161,12 +161,12 @@ public final class ExperimentFragment extends BaseFragment {
         return (ExperimentAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final ExperementFragmentBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ExperimentFragment.kt */
+    /* JADX INFO: compiled from: ExperimentFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001c\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\b\u0010\u0007\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/lab/practical/experiment/ExperimentFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/lab/practical/experiment/ExperimentFragment;", StoreFragmentKt.SUB_ID, "", "subPid", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -245,7 +245,7 @@ public final class ExperimentFragment extends BaseFragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentFragment$$ExternalSyntheticLambda1
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                ExperimentFragment.setUp$lambda$1(ExperimentFragment.this);
+                ExperimentFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -266,7 +266,7 @@ public final class ExperimentFragment extends BaseFragment {
         getExperimentViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.lab.practical.experiment.ExperimentFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ExperimentFragment.listenResponse$lambda$3(ExperimentFragment.this, (Resource) obj);
+                ExperimentFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }

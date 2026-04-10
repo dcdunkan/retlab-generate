@@ -62,36 +62,36 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddScholarshipDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddScholarshipDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddScholarshipDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddScholarshipBinding _binding;
 
-    /* renamed from: addScholarshipViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addScholarshipViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addScholarshipViewModel;
     private String details;
     private String id;
     private AddScholarshipListener listener;
     private File pickFile;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter2$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter2;
     private String type;
     private String yearId;
 
-    /* compiled from: AddScholarshipDialog.kt */
+    /* JADX INFO: compiled from: AddScholarshipDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/scholarships/add/AddScholarshipDialog$AddScholarshipListener;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddScholarshipListener {
         void onDismiss();
     }
 
-    /* compiled from: AddScholarshipDialog.kt */
+    /* JADX INFO: compiled from: AddScholarshipDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -141,7 +141,7 @@ public final class AddScholarshipDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addScholarshipDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addScholarshipDialog);
@@ -155,7 +155,7 @@ public final class AddScholarshipDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -168,7 +168,7 @@ public final class AddScholarshipDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddScholarshipViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddScholarshipViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AddScholarshipDialog addScholarshipDialog2 = this;
@@ -179,7 +179,7 @@ public final class AddScholarshipDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddScholarshipDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -204,7 +204,7 @@ public final class AddScholarshipDialog extends BaseDialog {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AddScholarshipDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -229,7 +229,7 @@ public final class AddScholarshipDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddScholarshipBinding get_binding() {
         return this._binding;
     }
@@ -244,7 +244,7 @@ public final class AddScholarshipDialog extends BaseDialog {
         return (IndexSpinnerAdapter) this.spinnerAdapter2.getValue();
     }
 
-    /* compiled from: AddScholarshipDialog.kt */
+    /* JADX INFO: compiled from: AddScholarshipDialog.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0007¨\u0006\b"}, d2 = {"Lin/etuwa/app/ui/profile/scholarships/add/AddScholarshipDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/scholarships/add/AddScholarshipDialog;", "id", "", ErrorBundle.DETAIL_ENTRY, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -355,34 +355,30 @@ public final class AddScholarshipDialog extends BaseDialog {
         DialogAddScholarshipBinding dialogAddScholarshipBinding8 = get_binding();
         Spinner spinner3 = dialogAddScholarshipBinding8 != null ? dialogAddScholarshipBinding8.spinnerSince : null;
         if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$setUp$1
+            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter;
                     AddScholarshipDialog addScholarshipDialog = AddScholarshipDialog.this;
-                    spinnerAdapter = addScholarshipDialog.getSpinnerAdapter();
-                    addScholarshipDialog.yearId = String.valueOf(spinnerAdapter.getSemester(position).getId());
+                    addScholarshipDialog.yearId = String.valueOf(addScholarshipDialog.getSpinnerAdapter().getSemester(position).getId());
                 }
             });
         }
         DialogAddScholarshipBinding dialogAddScholarshipBinding9 = get_binding();
         Spinner spinner4 = dialogAddScholarshipBinding9 != null ? dialogAddScholarshipBinding9.spinnerType : null;
         if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$setUp$2
+            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    IndexSpinnerAdapter spinnerAdapter2;
                     AddScholarshipDialog addScholarshipDialog = AddScholarshipDialog.this;
-                    spinnerAdapter2 = addScholarshipDialog.getSpinnerAdapter2();
-                    addScholarshipDialog.type = String.valueOf(spinnerAdapter2.getSemester(position).getId());
+                    addScholarshipDialog.type = String.valueOf(addScholarshipDialog.getSpinnerAdapter2().getSemester(position).getId());
                 }
             });
         }
@@ -391,7 +387,7 @@ public final class AddScholarshipDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddScholarshipDialog.setUp$lambda$2(AddScholarshipDialog.this, view);
+                    AddScholarshipDialog.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -400,7 +396,7 @@ public final class AddScholarshipDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddScholarshipDialog.setUp$lambda$3(AddScholarshipDialog.this, view);
+                    AddScholarshipDialog.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -411,7 +407,7 @@ public final class AddScholarshipDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddScholarshipDialog.setUp$lambda$4(AddScholarshipDialog.this, view);
+                AddScholarshipDialog.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -446,7 +442,7 @@ public final class AddScholarshipDialog extends BaseDialog {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file = null;
                 }
-                if (file.length() / 1024 <= 100) {
+                if (file.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddScholarshipBinding dialogAddScholarshipBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddScholarshipBinding2 == null || (textInputEditText4 = dialogAddScholarshipBinding2.etName) == null) ? null : textInputEditText4.getText()), "")) {
@@ -461,7 +457,7 @@ public final class AddScholarshipDialog extends BaseDialog {
                     String str = this$0.type;
                     Intrinsics.checkNotNull(str);
                     DialogAddScholarshipBinding dialogAddScholarshipBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddScholarshipBinding4 == null || (textInputEditText3 = dialogAddScholarshipBinding4.etName) == null) ? null : textInputEditText3.getText());
+                    String strValueOf = String.valueOf((dialogAddScholarshipBinding4 == null || (textInputEditText3 = dialogAddScholarshipBinding4.etName) == null) ? null : textInputEditText3.getText());
                     String str2 = this$0.yearId;
                     Intrinsics.checkNotNull(str2);
                     File file2 = this$0.pickFile;
@@ -469,7 +465,7 @@ public final class AddScholarshipDialog extends BaseDialog {
                         Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                         file2 = null;
                     }
-                    addScholarshipViewModel.addScholarshipData(str, valueOf, str2, file2);
+                    addScholarshipViewModel.addScholarshipData(str, strValueOf, str2, file2);
                     DialogAddScholarshipBinding dialogAddScholarshipBinding5 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddScholarshipBinding5 != null ? dialogAddScholarshipBinding5.completionCard : null;
                     if (linearLayout != null) {
@@ -503,10 +499,10 @@ public final class AddScholarshipDialog extends BaseDialog {
             String str3 = this$0.type;
             Intrinsics.checkNotNull(str3);
             DialogAddScholarshipBinding dialogAddScholarshipBinding10 = this$0.get_binding();
-            String valueOf2 = String.valueOf((dialogAddScholarshipBinding10 == null || (textInputEditText = dialogAddScholarshipBinding10.etName) == null) ? null : textInputEditText.getText());
+            String strValueOf2 = String.valueOf((dialogAddScholarshipBinding10 == null || (textInputEditText = dialogAddScholarshipBinding10.etName) == null) ? null : textInputEditText.getText());
             String str4 = this$0.yearId;
             Intrinsics.checkNotNull(str4);
-            addScholarshipViewModel2.addScholarshipData(str3, valueOf2, str4);
+            addScholarshipViewModel2.addScholarshipData(str3, strValueOf2, str4);
             DialogAddScholarshipBinding dialogAddScholarshipBinding11 = this$0.get_binding();
             LinearLayout linearLayout2 = dialogAddScholarshipBinding11 != null ? dialogAddScholarshipBinding11.completionCard : null;
             if (linearLayout2 == null) {
@@ -536,15 +532,15 @@ public final class AddScholarshipDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
             DialogAddScholarshipBinding dialogAddScholarshipBinding = this$0.get_binding();
-            Editable editable = null;
-            editable = null;
+            Editable text = null;
+            text = null;
             if (String.valueOf((dialogAddScholarshipBinding == null || (textView4 = dialogAddScholarshipBinding.completionFileName) == null) ? null : textView4.getText()).length() > 0) {
                 File file2 = this$0.pickFile;
                 if (file2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("pickFile");
                     file2 = null;
                 }
-                if (file2.length() / 1024 <= 100) {
+                if (file2.length() / ((long) 1024) <= 100) {
                     this$0.setCancelable(false);
                     DialogAddScholarshipBinding dialogAddScholarshipBinding2 = this$0.get_binding();
                     if (Intrinsics.areEqual(String.valueOf((dialogAddScholarshipBinding2 == null || (textInputEditText4 = dialogAddScholarshipBinding2.etName) == null) ? null : textInputEditText4.getText()), "")) {
@@ -561,7 +557,7 @@ public final class AddScholarshipDialog extends BaseDialog {
                     String str2 = this$0.type;
                     Intrinsics.checkNotNull(str2);
                     DialogAddScholarshipBinding dialogAddScholarshipBinding4 = this$0.get_binding();
-                    String valueOf = String.valueOf((dialogAddScholarshipBinding4 == null || (textInputEditText3 = dialogAddScholarshipBinding4.etName) == null) ? null : textInputEditText3.getText());
+                    String strValueOf = String.valueOf((dialogAddScholarshipBinding4 == null || (textInputEditText3 = dialogAddScholarshipBinding4.etName) == null) ? null : textInputEditText3.getText());
                     String str3 = this$0.yearId;
                     Intrinsics.checkNotNull(str3);
                     File file3 = this$0.pickFile;
@@ -571,7 +567,7 @@ public final class AddScholarshipDialog extends BaseDialog {
                     } else {
                         file = file3;
                     }
-                    addScholarshipViewModel.updateScholarshipData(str, str2, valueOf, str3, file);
+                    addScholarshipViewModel.updateScholarshipData(str, str2, strValueOf, str3, file);
                     DialogAddScholarshipBinding dialogAddScholarshipBinding5 = this$0.get_binding();
                     LinearLayout linearLayout = dialogAddScholarshipBinding5 != null ? dialogAddScholarshipBinding5.completionCard : null;
                     if (linearLayout != null) {
@@ -608,20 +604,21 @@ public final class AddScholarshipDialog extends BaseDialog {
             Intrinsics.checkNotNull(str5);
             DialogAddScholarshipBinding dialogAddScholarshipBinding10 = this$0.get_binding();
             if (dialogAddScholarshipBinding10 != null && (textInputEditText = dialogAddScholarshipBinding10.etName) != null) {
-                editable = textInputEditText.getText();
+                text = textInputEditText.getText();
             }
-            String valueOf2 = String.valueOf(editable);
+            String strValueOf2 = String.valueOf(text);
             String str6 = this$0.yearId;
             Intrinsics.checkNotNull(str6);
-            addScholarshipViewModel2.updateScholarshipData(str4, str5, valueOf2, str6);
+            addScholarshipViewModel2.updateScholarshipData(str4, str5, strValueOf2, str6);
         } catch (Exception unused) {
         }
     }
 
     private final void listenSpinnerResponse() {
-        getAddScholarshipViewModel().getResponse().observe(getViewLifecycleOwner(), new AddScholarshipDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$listenSpinnerResponse$1
+        getAddScholarshipViewModel().getResponse().observe(getViewLifecycleOwner(), new AddScholarshipDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends PublicationDropDownResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog.listenSpinnerResponse.1
 
-            /* compiled from: AddScholarshipDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$listenSpinnerResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddScholarshipDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -658,11 +655,8 @@ public final class AddScholarshipDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<PublicationDropDownResponse> resource) {
-                IndexSpinnerAdapter spinnerAdapter;
-                IndexSpinnerAdapter spinnerAdapter2;
-                DialogAddScholarshipBinding dialogAddScholarshipBinding;
                 Spinner spinner;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -671,10 +665,8 @@ public final class AddScholarshipDialog extends BaseDialog {
                     if (data != null) {
                         AddScholarshipDialog addScholarshipDialog = AddScholarshipDialog.this;
                         try {
-                            spinnerAdapter = addScholarshipDialog.getSpinnerAdapter();
-                            spinnerAdapter.addItems(data.getYears());
-                            spinnerAdapter2 = addScholarshipDialog.getSpinnerAdapter2();
-                            spinnerAdapter2.addItems(data.getScholarship());
+                            addScholarshipDialog.getSpinnerAdapter().addItems(data.getYears());
+                            addScholarshipDialog.getSpinnerAdapter2().addItems(data.getScholarship());
                             return;
                         } catch (NullPointerException unused) {
                             return;
@@ -694,7 +686,7 @@ public final class AddScholarshipDialog extends BaseDialog {
                     return;
                 }
                 AddScholarshipDialog.this.hideProgress();
-                dialogAddScholarshipBinding = AddScholarshipDialog.this.get_binding();
+                DialogAddScholarshipBinding dialogAddScholarshipBinding = AddScholarshipDialog.this.get_binding();
                 if (dialogAddScholarshipBinding == null || (spinner = dialogAddScholarshipBinding.spinnerType) == null) {
                     return;
                 }
@@ -709,7 +701,7 @@ public final class AddScholarshipDialog extends BaseDialog {
         getAddScholarshipViewModel().getAddResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$$ExternalSyntheticLambda4
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddScholarshipDialog.listenAddResponse$lambda$6(AddScholarshipDialog.this, (Resource) obj);
+                AddScholarshipDialog.listenAddResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -777,7 +769,7 @@ public final class AddScholarshipDialog extends BaseDialog {
         getAddScholarshipViewModel().getAddResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$$ExternalSyntheticLambda5
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddScholarshipDialog.listenAddResponse2$lambda$8(AddScholarshipDialog.this, (Resource) obj);
+                AddScholarshipDialog.listenAddResponse2$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -845,7 +837,7 @@ public final class AddScholarshipDialog extends BaseDialog {
         getAddScholarshipViewModel().getUpdateResponse2().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddScholarshipDialog.listenUpdateResponse$lambda$10(AddScholarshipDialog.this, (Resource) obj);
+                AddScholarshipDialog.listenUpdateResponse$lambda$10(this.f$0, (Resource) obj);
             }
         });
     }
@@ -913,7 +905,7 @@ public final class AddScholarshipDialog extends BaseDialog {
         getAddScholarshipViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.scholarships.add.AddScholarshipDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AddScholarshipDialog.listenProgressResponse$lambda$12(AddScholarshipDialog.this, (Resource) obj);
+                AddScholarshipDialog.listenProgressResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -944,18 +936,18 @@ public final class AddScholarshipDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             DialogAddScholarshipBinding dialogAddScholarshipBinding2 = this$0.get_binding();
             ProgressBar progressBar = dialogAddScholarshipBinding2 != null ? dialogAddScholarshipBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             DialogAddScholarshipBinding dialogAddScholarshipBinding3 = this$0.get_binding();
             TextView textView2 = dialogAddScholarshipBinding3 != null ? dialogAddScholarshipBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -963,13 +955,13 @@ public final class AddScholarshipDialog extends BaseDialog {
 
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String str;
+        String fileName;
         ContentResolver contentResolver;
         ContentResolver contentResolver2;
-        ParcelFileDescriptor openFileDescriptor;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
         File file;
         ContentResolver contentResolver3;
-        String fileName;
+        String fileName2;
         TextView completionFileName;
         ContentResolver contentResolver4;
         super.onActivityResult(requestCode, resultCode, data);
@@ -995,24 +987,24 @@ public final class AddScholarshipDialog extends BaseDialog {
                 if (textView != null) {
                     Context context2 = getContext();
                     if (context2 == null || (contentResolver = context2.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver, data2);
                     }
-                    textView.setText("File : " + str);
+                    textView.setText("File : " + fileName);
                 }
                 Context context3 = getContext();
-                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (openFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…              ) ?: return");
+                if (context3 != null && (contentResolver2 = context3.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver2.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…              ) ?: return");
                     Context context4 = getContext();
-                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
+                    if (context4 == null || (contentResolver3 = context4.getContentResolver()) == null || (fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2)) == null) {
                         file = null;
                     } else {
                         Context context5 = getContext();
-                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName);
+                        file = new File(context5 != null ? context5.getCacheDir() : null, fileName2);
                     }
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     if (file != null) {
                         this.pickFile = file;
                     }

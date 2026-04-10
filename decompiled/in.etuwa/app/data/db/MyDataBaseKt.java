@@ -2,8 +2,8 @@ package in.etuwa.app.data.db;
 
 import kotlin.Metadata;
 
-/* compiled from: MyDataBase.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MyDataBase.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class MyDataBaseKt {
     private static final String COL_ID = "_id";
     private static final String COL_MSG = "msg";

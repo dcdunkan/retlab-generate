@@ -41,6 +41,7 @@ import in.etuwa.app.R;
 import in.etuwa.app.data.model.DownloadModel;
 import in.etuwa.app.data.model.Semester;
 import in.etuwa.app.data.model.SuccessResponse;
+import in.etuwa.app.data.model.assignment.Assignment;
 import in.etuwa.app.data.model.assignment.AssignmentResponse;
 import in.etuwa.app.data.preference.SharedPrefManager;
 import in.etuwa.app.databinding.AssignmentFragmentBinding;
@@ -76,32 +77,33 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AssignmentFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AssignmentFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AssignmentFragment extends BaseFragment implements AssignmentAdapter.AssignmentListener, UploadAssignmentDialog.UploadAssignmentCallBack, SemListDialogTwo.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private AssignmentFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: assignmentViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: assignmentViewModel$delegate, reason: from kotlin metadata */
     private final Lazy assignmentViewModel;
     private String current;
     private ArrayList<DownloadModel> downList;
     private boolean flag;
+    private Boolean flaglink;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semId;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: AssignmentFragment.kt */
+    /* JADX INFO: compiled from: AssignmentFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -151,7 +153,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return assignmentFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(assignmentFragment);
@@ -165,7 +167,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -178,7 +180,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AssignmentViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AssignmentViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AssignmentFragment assignmentFragment2 = this;
@@ -206,7 +208,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AssignmentFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -245,16 +247,12 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                AssignmentAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = AssignmentFragment.this.downList;
-                    AssignmentFragment assignmentFragment3 = AssignmentFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    AssignmentFragment assignmentFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -263,11 +261,8 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = assignmentFragment3.getAdapter();
-                            arrayList2 = assignmentFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = assignmentFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            assignmentFragment3.getAdapter().notifyDataChanged(((DownloadModel) assignmentFragment3.downList.get(i)).getPosition());
+                            assignmentFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -288,7 +283,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final AssignmentFragmentBinding get_binding() {
         return this._binding;
     }
@@ -312,7 +307,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         this.semId = str;
     }
 
-    /* compiled from: AssignmentFragment.kt */
+    /* JADX INFO: compiled from: AssignmentFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/assignment/AssignmentFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/assignment/AssignmentFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -386,7 +381,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             floatingActionButton2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentFragment.setUp$lambda$0(AssignmentFragment.this, view);
+                    AssignmentFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -398,7 +393,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentFragment.setUp$lambda$1(AssignmentFragment.this, view);
+                    AssignmentFragment.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -407,7 +402,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda10
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentFragment.setUp$lambda$2(AssignmentFragment.this, view);
+                    AssignmentFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -416,7 +411,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentFragment.setUp$lambda$3(AssignmentFragment.this, view);
+                    AssignmentFragment.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -425,7 +420,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda12
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentFragment.setUp$lambda$5(AssignmentFragment.this, view);
+                    AssignmentFragment.setUp$lambda$5(this.f$0, view);
                 }
             });
         }
@@ -434,7 +429,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             linearLayout.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentFragment.setUp$lambda$7(AssignmentFragment.this, view);
+                    AssignmentFragment.setUp$lambda$7(this.f$0, view);
                 }
             });
         }
@@ -443,55 +438,37 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda14
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentFragment.setUp$lambda$9(AssignmentFragment.this, view);
+                    AssignmentFragment.setUp$lambda$9(this.f$0, view);
                 }
             });
         }
         AssignmentFragmentBinding assignmentFragmentBinding10 = get_binding();
         Spinner spinner2 = assignmentFragmentBinding10 != null ? assignmentFragmentBinding10.spinnerSem : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$setUp$8
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment.setUp.8
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter3;
-                    AssignmentFragmentBinding assignmentFragmentBinding11;
-                    AssignmentViewModel assignmentViewModel;
-                    SharedPrefManager preference2;
                     Spinner spinner3;
-                    AssignmentViewModel assignmentViewModel2;
-                    spinnerAdapter = AssignmentFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    z = AssignmentFragment.this.flag;
-                    if (z) {
-                        assignmentViewModel2 = AssignmentFragment.this.getAssignmentViewModel();
-                        assignmentViewModel2.getAssignment("", "", semester.getId());
+                    Semester semester = AssignmentFragment.this.getSpinnerAdapter().getSemester(position);
+                    if (AssignmentFragment.this.flag) {
+                        AssignmentFragment.this.getAssignmentViewModel().getAssignment("", "", semester.getId());
                         AssignmentFragment.this.current = semester.getId();
                         return;
                     }
                     AssignmentFragment.this.flag = true;
-                    spinnerAdapter2 = AssignmentFragment.this.getSpinnerAdapter();
-                    int count = spinnerAdapter2.getCount();
+                    int count = AssignmentFragment.this.getSpinnerAdapter().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = AssignmentFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter3 = AssignmentFragment.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter3.getSemester(i).getId())) {
-                            assignmentFragmentBinding11 = AssignmentFragment.this.get_binding();
+                        if (Intrinsics.areEqual(AssignmentFragment.this.getPreference().getUserSemId(), AssignmentFragment.this.getSpinnerAdapter().getSemester(i).getId())) {
+                            AssignmentFragmentBinding assignmentFragmentBinding11 = AssignmentFragment.this.get_binding();
                             if (assignmentFragmentBinding11 != null && (spinner3 = assignmentFragmentBinding11.spinnerSem) != null) {
                                 spinner3.setSelection(i);
                             }
                             if (position == 0) {
-                                assignmentViewModel = AssignmentFragment.this.getAssignmentViewModel();
-                                preference2 = AssignmentFragment.this.getPreference();
-                                assignmentViewModel.getAssignment("", "", preference2.getUserSemId());
+                                AssignmentFragment.this.getAssignmentViewModel().getAssignment("", "", AssignmentFragment.this.getPreference().getUserSemId());
                                 return;
                             }
                             return;
@@ -507,7 +484,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda15
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                AssignmentFragment.setUp$lambda$10(AssignmentFragment.this);
+                AssignmentFragment.setUp$lambda$10(this.f$0);
             }
         });
     }
@@ -517,9 +494,9 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialogTwo newInstance = SemListDialogTwo.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        SemListDialogTwo semListDialogTwoNewInstance = SemListDialogTwo.INSTANCE.newInstance();
+        semListDialogTwoNewInstance.setCallBack(this$0);
+        semListDialogTwoNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -544,14 +521,14 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     public static final void setUp$lambda$5(final AssignmentFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
-            View inflate = this$0.getLayoutInflater().inflate(R.layout.bottom_sheet_filter, (ViewGroup) null);
-            RadioGroup radioGroup = (RadioGroup) inflate.findViewById(R.id.filter_group);
+            View viewInflate = this$0.getLayoutInflater().inflate(R.layout.bottom_sheet_filter, (ViewGroup) null);
+            RadioGroup radioGroup = (RadioGroup) viewInflate.findViewById(R.id.filter_group);
             final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this$0.requireContext());
-            bottomSheetDialog.setContentView(inflate);
+            bottomSheetDialog.setContentView(viewInflate);
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda4
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup2, int i) {
-                    AssignmentFragment.setUp$lambda$5$lambda$4(AssignmentFragment.this, bottomSheetDialog, radioGroup2, i);
+                    AssignmentFragment.setUp$lambda$5$lambda$4(this.f$0, bottomSheetDialog, radioGroup2, i);
                 }
             });
             bottomSheetDialog.show();
@@ -578,14 +555,14 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     public static final void setUp$lambda$7(final AssignmentFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
-            View inflate = this$0.getLayoutInflater().inflate(R.layout.bottom_sheet_sot, (ViewGroup) null);
-            RadioGroup radioGroup = (RadioGroup) inflate.findViewById(R.id.sortBtn);
+            View viewInflate = this$0.getLayoutInflater().inflate(R.layout.bottom_sheet_sot, (ViewGroup) null);
+            RadioGroup radioGroup = (RadioGroup) viewInflate.findViewById(R.id.sortBtn);
             final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this$0.requireContext());
-            bottomSheetDialog.setContentView(inflate);
+            bottomSheetDialog.setContentView(viewInflate);
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda7
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup2, int i) {
-                    AssignmentFragment.setUp$lambda$7$lambda$6(AssignmentFragment.this, bottomSheetDialog, radioGroup2, i);
+                    AssignmentFragment.setUp$lambda$7$lambda$6(this.f$0, bottomSheetDialog, radioGroup2, i);
                 }
             });
             bottomSheetDialog.show();
@@ -612,14 +589,14 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     public static final void setUp$lambda$9(final AssignmentFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         try {
-            View inflate = this$0.getLayoutInflater().inflate(R.layout.bottom_sheet_sot, (ViewGroup) null);
-            RadioGroup radioGroup = (RadioGroup) inflate.findViewById(R.id.sortBtn);
+            View viewInflate = this$0.getLayoutInflater().inflate(R.layout.bottom_sheet_sot, (ViewGroup) null);
+            RadioGroup radioGroup = (RadioGroup) viewInflate.findViewById(R.id.sortBtn);
             final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this$0.requireContext());
-            bottomSheetDialog.setContentView(inflate);
+            bottomSheetDialog.setContentView(viewInflate);
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda5
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup2, int i) {
-                    AssignmentFragment.setUp$lambda$9$lambda$8(AssignmentFragment.this, bottomSheetDialog, radioGroup2, i);
+                    AssignmentFragment.setUp$lambda$9$lambda$8(this.f$0, bottomSheetDialog, radioGroup2, i);
                 }
             });
             bottomSheetDialog.show();
@@ -667,7 +644,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         getAssignmentViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AssignmentFragment.listenSemResponse$lambda$12(AssignmentFragment.this, (Resource) obj);
+                AssignmentFragment.listenSemResponse$lambda$12(this.f$0, (Resource) obj);
             }
         });
     }
@@ -680,16 +657,16 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 AssignmentFragmentBinding assignmentFragmentBinding = this$0.get_binding();
                 if (assignmentFragmentBinding != null && (swipeRefreshLayout2 = assignmentFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -720,9 +697,9 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         if (arrayList != null) {
             this$0.getSpinnerAdapter().addItems(arrayList);
             AssignmentFragmentBinding assignmentFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (assignmentFragmentBinding3 == null || (swipeRefreshLayout = assignmentFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
+            Boolean boolValueOf2 = (assignmentFragmentBinding3 == null || (swipeRefreshLayout = assignmentFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+            Intrinsics.checkNotNull(boolValueOf2);
+            if (boolValueOf2.booleanValue()) {
                 AssignmentFragmentBinding assignmentFragmentBinding4 = this$0.get_binding();
                 SwipeRefreshLayout swipeRefreshLayout3 = assignmentFragmentBinding4 != null ? assignmentFragmentBinding4.swipeLayout : null;
                 if (swipeRefreshLayout3 != null) {
@@ -747,7 +724,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         getAssignmentViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda6
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AssignmentFragment.listenResponse$lambda$14(AssignmentFragment.this, (Resource) obj);
+                AssignmentFragment.listenResponse$lambda$14(this.f$0, (Resource) obj);
             }
         });
     }
@@ -763,7 +740,12 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             if (assignmentResponse != null) {
                 this$0.showBaseView();
                 if (assignmentResponse.getLogin()) {
-                    this$0.getAdapter().addItems(assignmentResponse.getAssignments());
+                    this$0.flaglink = Boolean.valueOf(assignmentResponse.getSubmit_by_link());
+                    AssignmentAdapter adapter = this$0.getAdapter();
+                    ArrayList<Assignment> assignments = assignmentResponse.getAssignments();
+                    Boolean bool = this$0.flaglink;
+                    Intrinsics.checkNotNull(bool);
+                    adapter.addItems(assignments, bool.booleanValue());
                     return;
                 }
                 return;
@@ -797,9 +779,9 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     @Override // in.etuwa.app.ui.assignment.AssignmentAdapter.AssignmentListener
     public void onPickDoc(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
             loadPickerDialog(id);
         } else {
             requestPermission();
@@ -809,9 +791,12 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     private final void loadPickerDialog(String id) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        UploadAssignmentDialog newInstance = UploadAssignmentDialog.INSTANCE.newInstance(id);
-        newInstance.setUploadCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        UploadAssignmentDialog.Companion companion = UploadAssignmentDialog.INSTANCE;
+        Boolean bool = this.flaglink;
+        Intrinsics.checkNotNull(bool);
+        UploadAssignmentDialog uploadAssignmentDialogNewInstance = companion.newInstance(id, bool.booleanValue());
+        uploadAssignmentDialogNewInstance.setUploadCallBack(this);
+        uploadAssignmentDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.assignment.AssignmentAdapter.AssignmentListener
@@ -822,7 +807,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         builder.setPositiveButton("delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                AssignmentFragment.deleteAssignment$lambda$15(AssignmentFragment.this, id, dialogInterface, i);
+                AssignmentFragment.deleteAssignment$lambda$15(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", (DialogInterface.OnClickListener) null);
@@ -841,7 +826,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         getAssignmentViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AssignmentFragment.listenDeleteResponse$lambda$17(AssignmentFragment.this, (Resource) obj);
+                AssignmentFragment.listenDeleteResponse$lambda$17(this.f$0, (Resource) obj);
             }
         });
     }
@@ -881,7 +866,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
         SuccessResponse successResponse = (SuccessResponse) resource.getData();
         if (successResponse != null) {
             this$0.showBaseView();
-            if (successResponse.getLogin() && successResponse.getSuccess()) {
+            if (successResponse.getSuccess()) {
                 AssignmentFragmentBinding assignmentFragmentBinding2 = this$0.get_binding();
                 if (assignmentFragmentBinding2 != null && (rvAssignment2 = assignmentFragmentBinding2.rvAssignment) != null) {
                     Intrinsics.checkNotNullExpressionValue(rvAssignment2, "rvAssignment");
@@ -903,15 +888,15 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     public void downloadFile(String url, int position, boolean flag) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
         String str = flag ? "/etlab/assignments/" : AppConstant.UPLOAD_ASSIGNMENT_PATH;
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace, flag)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, str);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace, flag)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, str);
                 return;
             }
             try {
@@ -921,14 +906,14 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(str, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(str, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 4);
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
@@ -941,13 +926,13 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
     public boolean checkFileExistence(String fileName, boolean flag) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
         if (flag) {
-            Context requireContext = requireContext();
-            Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-            return new ValidChecker(requireContext).checkFileExistence(fileName, "/etlab/assignments/");
+            Context contextRequireContext = requireContext();
+            Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            return new ValidChecker(contextRequireContext).checkFileExistence(fileName, "/etlab/assignments/");
         }
-        Context requireContext2 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-        return new ValidChecker(requireContext2).checkFileExistence(fileName, AppConstant.UPLOAD_ASSIGNMENT_PATH);
+        Context contextRequireContext2 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+        return new ValidChecker(contextRequireContext2).checkFileExistence(fileName, AppConstant.UPLOAD_ASSIGNMENT_PATH);
     }
 
     @Override // in.etuwa.app.ui.assignment.upload.UploadAssignmentDialog.UploadAssignmentCallBack
@@ -961,7 +946,7 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
                 new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.assignment.AssignmentFragment$$ExternalSyntheticLambda16
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        AssignmentFragment.requestPermission$lambda$18(AssignmentFragment.this, dialogInterface, i);
+                        AssignmentFragment.requestPermission$lambda$18(this.f$0, dialogInterface, i);
                     }
                 }).create().show();
             } else {
@@ -985,9 +970,9 @@ public final class AssignmentFragment extends BaseFragment implements Assignment
             try {
                 if (!(!(grantResults.length == 0)) || grantResults[0] != 0) {
                     if (Build.VERSION.SDK_INT >= 23 && !shouldShowRequestPermissionRationale(permissions[0])) {
-                        Context requireContext = requireContext();
-                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                        new ValidChecker(requireContext).showPermissionDialog();
+                        Context contextRequireContext = requireContext();
+                        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                        new ValidChecker(contextRequireContext).showPermissionDialog();
                     } else {
                         Toast.makeText(requireContext(), "Permission Denied, You cannot Upload Profile Image .", 0).show();
                     }

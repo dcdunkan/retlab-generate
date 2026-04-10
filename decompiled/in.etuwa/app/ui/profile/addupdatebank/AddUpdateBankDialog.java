@@ -40,21 +40,21 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AddUpdateBankDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddUpdateBankDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddUpdateBankDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAddUpdateBankBinding _binding;
 
-    /* renamed from: addUpdateBankViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: addUpdateBankViewModel$delegate, reason: from kotlin metadata */
     private final Lazy addUpdateBankViewModel;
     private String id;
     private ProfileListener listener;
     private MainCallBackListener listener2;
 
-    /* compiled from: AddUpdateBankDialog.kt */
+    /* JADX INFO: compiled from: AddUpdateBankDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/profile/addupdatebank/AddUpdateBankDialog$ProfileListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface ProfileListener {
         void dismiss();
@@ -83,7 +83,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return addUpdateBankDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(addUpdateBankDialog);
@@ -97,7 +97,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -110,7 +110,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AddUpdateBankViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AddUpdateBankViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -120,12 +120,12 @@ public final class AddUpdateBankDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAddUpdateBankBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: AddUpdateBankDialog.kt */
+    /* JADX INFO: compiled from: AddUpdateBankDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/profile/addupdatebank/AddUpdateBankDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/addupdatebank/AddUpdateBankDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -187,7 +187,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
         TextView textView;
         TextView textView2;
         TextView textView3;
-        final HashMap hashMap = new HashMap();
+        final HashMap map = new HashMap();
         listenResponse();
         listenVerifyResponse();
         if (Intrinsics.areEqual(this.id, "false")) {
@@ -222,7 +222,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AddUpdateBankDialog.setUp$lambda$1(AddUpdateBankDialog.this, hashMap, view);
+                    AddUpdateBankDialog.setUp$lambda$1(this.f$0, map, view);
                 }
             });
         }
@@ -233,7 +233,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
         textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AddUpdateBankDialog.setUp$lambda$2(AddUpdateBankDialog.this, hashMap, view);
+                AddUpdateBankDialog.setUp$lambda$2(this.f$0, map, view);
             }
         });
     }
@@ -252,7 +252,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(studentDetail, "$studentDetail");
         DialogAddUpdateBankBinding dialogAddUpdateBankBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (!Intrinsics.areEqual(String.valueOf((dialogAddUpdateBankBinding == null || (textInputEditText8 = dialogAddUpdateBankBinding.etAccno) == null) ? null : textInputEditText8.getText()), "")) {
             DialogAddUpdateBankBinding dialogAddUpdateBankBinding2 = this$0.get_binding();
             if (!Intrinsics.areEqual(String.valueOf((dialogAddUpdateBankBinding2 == null || (textInputEditText7 = dialogAddUpdateBankBinding2.etBankName) == null) ? null : textInputEditText7.getText()), "")) {
@@ -261,19 +261,19 @@ public final class AddUpdateBankDialog extends BaseDialog {
                     DialogAddUpdateBankBinding dialogAddUpdateBankBinding4 = this$0.get_binding();
                     if (!Intrinsics.areEqual(String.valueOf((dialogAddUpdateBankBinding4 == null || (textInputEditText5 = dialogAddUpdateBankBinding4.etIfscCode) == null) ? null : textInputEditText5.getText()), "")) {
                         studentDetail.clear();
-                        HashMap hashMap = studentDetail;
+                        HashMap map = studentDetail;
                         DialogAddUpdateBankBinding dialogAddUpdateBankBinding5 = this$0.get_binding();
-                        hashMap.put("StudentDetail[bank_name_repeat]", String.valueOf((dialogAddUpdateBankBinding5 == null || (textInputEditText4 = dialogAddUpdateBankBinding5.etBankName) == null) ? null : textInputEditText4.getText()));
+                        map.put("StudentDetail[bank_name_repeat]", String.valueOf((dialogAddUpdateBankBinding5 == null || (textInputEditText4 = dialogAddUpdateBankBinding5.etBankName) == null) ? null : textInputEditText4.getText()));
                         DialogAddUpdateBankBinding dialogAddUpdateBankBinding6 = this$0.get_binding();
-                        hashMap.put("StudentDetail[bank_accno_repeat]", String.valueOf((dialogAddUpdateBankBinding6 == null || (textInputEditText3 = dialogAddUpdateBankBinding6.etAccno) == null) ? null : textInputEditText3.getText()));
+                        map.put("StudentDetail[bank_accno_repeat]", String.valueOf((dialogAddUpdateBankBinding6 == null || (textInputEditText3 = dialogAddUpdateBankBinding6.etAccno) == null) ? null : textInputEditText3.getText()));
                         DialogAddUpdateBankBinding dialogAddUpdateBankBinding7 = this$0.get_binding();
-                        hashMap.put("StudentDetail[bank_branch_repeat]", String.valueOf((dialogAddUpdateBankBinding7 == null || (textInputEditText2 = dialogAddUpdateBankBinding7.etBranchName) == null) ? null : textInputEditText2.getText()));
+                        map.put("StudentDetail[bank_branch_repeat]", String.valueOf((dialogAddUpdateBankBinding7 == null || (textInputEditText2 = dialogAddUpdateBankBinding7.etBranchName) == null) ? null : textInputEditText2.getText()));
                         DialogAddUpdateBankBinding dialogAddUpdateBankBinding8 = this$0.get_binding();
                         if (dialogAddUpdateBankBinding8 != null && (textInputEditText = dialogAddUpdateBankBinding8.etIfscCode) != null) {
-                            editable = textInputEditText.getText();
+                            text = textInputEditText.getText();
                         }
-                        hashMap.put("StudentDetail[bank_ifsc_code_repeat]", String.valueOf(editable));
-                        this$0.getAddUpdateBankViewModel().verifyBankData(hashMap);
+                        map.put("StudentDetail[bank_ifsc_code_repeat]", String.valueOf(text));
+                        this$0.getAddUpdateBankViewModel().verifyBankData(map);
                         return;
                     }
                 }
@@ -305,7 +305,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(studentDetail, "$studentDetail");
         DialogAddUpdateBankBinding dialogAddUpdateBankBinding = this$0.get_binding();
-        Editable editable = null;
+        Editable text = null;
         if (!Intrinsics.areEqual(String.valueOf((dialogAddUpdateBankBinding == null || (textInputEditText12 = dialogAddUpdateBankBinding.etAccno) == null) ? null : textInputEditText12.getText()), "")) {
             DialogAddUpdateBankBinding dialogAddUpdateBankBinding2 = this$0.get_binding();
             if (!Intrinsics.areEqual(String.valueOf((dialogAddUpdateBankBinding2 == null || (textInputEditText11 = dialogAddUpdateBankBinding2.etBankName) == null) ? null : textInputEditText11.getText()), "")) {
@@ -316,9 +316,9 @@ public final class AddUpdateBankDialog extends BaseDialog {
                         DialogAddUpdateBankBinding dialogAddUpdateBankBinding5 = this$0.get_binding();
                         if (!Intrinsics.areEqual(String.valueOf((dialogAddUpdateBankBinding5 == null || (textInputEditText8 = dialogAddUpdateBankBinding5.etIfscCode) == null) ? null : textInputEditText8.getText()), "")) {
                             DialogAddUpdateBankBinding dialogAddUpdateBankBinding6 = this$0.get_binding();
-                            String valueOf = String.valueOf((dialogAddUpdateBankBinding6 == null || (textInputEditText7 = dialogAddUpdateBankBinding6.etAccno) == null) ? null : textInputEditText7.getText());
+                            String strValueOf = String.valueOf((dialogAddUpdateBankBinding6 == null || (textInputEditText7 = dialogAddUpdateBankBinding6.etAccno) == null) ? null : textInputEditText7.getText());
                             DialogAddUpdateBankBinding dialogAddUpdateBankBinding7 = this$0.get_binding();
-                            if (!Intrinsics.areEqual(valueOf, String.valueOf((dialogAddUpdateBankBinding7 == null || (textInputEditText6 = dialogAddUpdateBankBinding7.etConfirmAccno) == null) ? null : textInputEditText6.getText()))) {
+                            if (!Intrinsics.areEqual(strValueOf, String.valueOf((dialogAddUpdateBankBinding7 == null || (textInputEditText6 = dialogAddUpdateBankBinding7.etConfirmAccno) == null) ? null : textInputEditText6.getText()))) {
                                 DialogAddUpdateBankBinding dialogAddUpdateBankBinding8 = this$0.get_binding();
                                 if (dialogAddUpdateBankBinding8 == null || (textView2 = dialogAddUpdateBankBinding8.updateBtn) == null) {
                                     return;
@@ -327,21 +327,21 @@ public final class AddUpdateBankDialog extends BaseDialog {
                                 return;
                             }
                             studentDetail.clear();
-                            HashMap hashMap = studentDetail;
+                            HashMap map = studentDetail;
                             DialogAddUpdateBankBinding dialogAddUpdateBankBinding9 = this$0.get_binding();
-                            hashMap.put("StudentDetail[bank_name]", String.valueOf((dialogAddUpdateBankBinding9 == null || (textInputEditText5 = dialogAddUpdateBankBinding9.etBankName) == null) ? null : textInputEditText5.getText()));
+                            map.put("StudentDetail[bank_name]", String.valueOf((dialogAddUpdateBankBinding9 == null || (textInputEditText5 = dialogAddUpdateBankBinding9.etBankName) == null) ? null : textInputEditText5.getText()));
                             DialogAddUpdateBankBinding dialogAddUpdateBankBinding10 = this$0.get_binding();
-                            hashMap.put("StudentDetail[bank_accno]", String.valueOf((dialogAddUpdateBankBinding10 == null || (textInputEditText4 = dialogAddUpdateBankBinding10.etAccno) == null) ? null : textInputEditText4.getText()));
+                            map.put("StudentDetail[bank_accno]", String.valueOf((dialogAddUpdateBankBinding10 == null || (textInputEditText4 = dialogAddUpdateBankBinding10.etAccno) == null) ? null : textInputEditText4.getText()));
                             DialogAddUpdateBankBinding dialogAddUpdateBankBinding11 = this$0.get_binding();
-                            hashMap.put("StudentDetail[bank_branch]", String.valueOf((dialogAddUpdateBankBinding11 == null || (textInputEditText3 = dialogAddUpdateBankBinding11.etBranchName) == null) ? null : textInputEditText3.getText()));
+                            map.put("StudentDetail[bank_branch]", String.valueOf((dialogAddUpdateBankBinding11 == null || (textInputEditText3 = dialogAddUpdateBankBinding11.etBranchName) == null) ? null : textInputEditText3.getText()));
                             DialogAddUpdateBankBinding dialogAddUpdateBankBinding12 = this$0.get_binding();
-                            hashMap.put("StudentDetail[bank_ifsc_code]", String.valueOf((dialogAddUpdateBankBinding12 == null || (textInputEditText2 = dialogAddUpdateBankBinding12.etIfscCode) == null) ? null : textInputEditText2.getText()));
+                            map.put("StudentDetail[bank_ifsc_code]", String.valueOf((dialogAddUpdateBankBinding12 == null || (textInputEditText2 = dialogAddUpdateBankBinding12.etIfscCode) == null) ? null : textInputEditText2.getText()));
                             DialogAddUpdateBankBinding dialogAddUpdateBankBinding13 = this$0.get_binding();
                             if (dialogAddUpdateBankBinding13 != null && (textInputEditText = dialogAddUpdateBankBinding13.etConfirmAccno) != null) {
-                                editable = textInputEditText.getText();
+                                text = textInputEditText.getText();
                             }
-                            hashMap.put("StudentDetail[bank_accno_repeat]", String.valueOf(editable));
-                            this$0.getAddUpdateBankViewModel().updateBankData(hashMap);
+                            map.put("StudentDetail[bank_accno_repeat]", String.valueOf(text));
+                            this$0.getAddUpdateBankViewModel().updateBankData(map);
                             return;
                         }
                     }
@@ -356,9 +356,10 @@ public final class AddUpdateBankDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getAddUpdateBankViewModel().getResponse().observe(getViewLifecycleOwner(), new AddUpdateBankDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog$listenResponse$1
+        getAddUpdateBankViewModel().getResponse().observe(getViewLifecycleOwner(), new AddUpdateBankDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog.listenResponse.1
 
-            /* compiled from: AddUpdateBankDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddUpdateBankDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -395,13 +396,10 @@ public final class AddUpdateBankDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogAddUpdateBankBinding dialogAddUpdateBankBinding;
                 TextView updateBtn;
-                DialogAddUpdateBankBinding dialogAddUpdateBankBinding2;
                 TextView updateBtn2;
-                DialogAddUpdateBankBinding dialogAddUpdateBankBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -417,8 +415,8 @@ public final class AddUpdateBankDialog extends BaseDialog {
                         return;
                     }
                     AddUpdateBankDialog.this.hideProgress();
-                    dialogAddUpdateBankBinding3 = AddUpdateBankDialog.this.get_binding();
-                    if (dialogAddUpdateBankBinding3 == null || (textView = dialogAddUpdateBankBinding3.updateBtn) == null) {
+                    DialogAddUpdateBankBinding dialogAddUpdateBankBinding = AddUpdateBankDialog.this.get_binding();
+                    if (dialogAddUpdateBankBinding == null || (textView = dialogAddUpdateBankBinding.updateBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -431,7 +429,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
                 if (data != null) {
                     AddUpdateBankDialog addUpdateBankDialog = AddUpdateBankDialog.this;
                     if (data.getSuccess()) {
-                        dialogAddUpdateBankBinding2 = addUpdateBankDialog.get_binding();
+                        DialogAddUpdateBankBinding dialogAddUpdateBankBinding2 = addUpdateBankDialog.get_binding();
                         if (dialogAddUpdateBankBinding2 != null && (updateBtn2 = dialogAddUpdateBankBinding2.updateBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(updateBtn2, "updateBtn");
                             ToastExtKt.showInfoToast(updateBtn2, data.getMessage());
@@ -439,8 +437,8 @@ public final class AddUpdateBankDialog extends BaseDialog {
                         addUpdateBankDialog.dismiss();
                         return;
                     }
-                    dialogAddUpdateBankBinding = addUpdateBankDialog.get_binding();
-                    if (dialogAddUpdateBankBinding == null || (updateBtn = dialogAddUpdateBankBinding.updateBtn) == null) {
+                    DialogAddUpdateBankBinding dialogAddUpdateBankBinding3 = addUpdateBankDialog.get_binding();
+                    if (dialogAddUpdateBankBinding3 == null || (updateBtn = dialogAddUpdateBankBinding3.updateBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(updateBtn, "updateBtn");
@@ -451,9 +449,10 @@ public final class AddUpdateBankDialog extends BaseDialog {
     }
 
     private final void listenVerifyResponse() {
-        getAddUpdateBankViewModel().getVerifyResponse().observe(getViewLifecycleOwner(), new AddUpdateBankDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog$listenVerifyResponse$1
+        getAddUpdateBankViewModel().getVerifyResponse().observe(getViewLifecycleOwner(), new AddUpdateBankDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SuccessResponse>, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog.listenVerifyResponse.1
 
-            /* compiled from: AddUpdateBankDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankDialog$listenVerifyResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AddUpdateBankDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -490,13 +489,10 @@ public final class AddUpdateBankDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SuccessResponse> resource) {
-                DialogAddUpdateBankBinding dialogAddUpdateBankBinding;
                 TextView verifyBtn;
-                DialogAddUpdateBankBinding dialogAddUpdateBankBinding2;
                 TextView verifyBtn2;
-                DialogAddUpdateBankBinding dialogAddUpdateBankBinding3;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -512,8 +508,8 @@ public final class AddUpdateBankDialog extends BaseDialog {
                         return;
                     }
                     AddUpdateBankDialog.this.hideProgress();
-                    dialogAddUpdateBankBinding3 = AddUpdateBankDialog.this.get_binding();
-                    if (dialogAddUpdateBankBinding3 == null || (textView = dialogAddUpdateBankBinding3.verifyBtn) == null) {
+                    DialogAddUpdateBankBinding dialogAddUpdateBankBinding = AddUpdateBankDialog.this.get_binding();
+                    if (dialogAddUpdateBankBinding == null || (textView = dialogAddUpdateBankBinding.verifyBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -526,7 +522,7 @@ public final class AddUpdateBankDialog extends BaseDialog {
                 if (data != null) {
                     AddUpdateBankDialog addUpdateBankDialog = AddUpdateBankDialog.this;
                     if (data.getSuccess()) {
-                        dialogAddUpdateBankBinding2 = addUpdateBankDialog.get_binding();
+                        DialogAddUpdateBankBinding dialogAddUpdateBankBinding2 = addUpdateBankDialog.get_binding();
                         if (dialogAddUpdateBankBinding2 != null && (verifyBtn2 = dialogAddUpdateBankBinding2.verifyBtn) != null) {
                             Intrinsics.checkNotNullExpressionValue(verifyBtn2, "verifyBtn");
                             ToastExtKt.showInfoToast(verifyBtn2, data.getMessage());
@@ -534,8 +530,8 @@ public final class AddUpdateBankDialog extends BaseDialog {
                         addUpdateBankDialog.dismiss();
                         return;
                     }
-                    dialogAddUpdateBankBinding = addUpdateBankDialog.get_binding();
-                    if (dialogAddUpdateBankBinding == null || (verifyBtn = dialogAddUpdateBankBinding.verifyBtn) == null) {
+                    DialogAddUpdateBankBinding dialogAddUpdateBankBinding3 = addUpdateBankDialog.get_binding();
+                    if (dialogAddUpdateBankBinding3 == null || (verifyBtn = dialogAddUpdateBankBinding3.verifyBtn) == null) {
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(verifyBtn, "verifyBtn");

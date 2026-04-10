@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.directapply.DirectApplyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentDirectApplyBinding extends ViewDataBinding {
     public final TextView applyLeaveBtn;
 

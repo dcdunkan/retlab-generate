@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentQuizQuestionsBindingImpl extends FragmentQuizQuestionsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -91,7 +91,7 @@ public class FragmentQuizQuestionsBindingImpl extends FragmentQuizQuestionsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (177 != variableId) {
+        if (179 != variableId) {
             return false;
         }
         setQuizQuestionsViewModel((QuizQuestionsViewModel) variable);

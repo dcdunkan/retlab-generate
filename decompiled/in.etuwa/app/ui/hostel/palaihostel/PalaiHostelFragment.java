@@ -63,18 +63,18 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: PalaiHostelFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PalaiHostelFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PalaiHostelFragment extends BaseFragment implements PalaiHostelAdapter.CallBack, HostelFeeConfirmFragment.FeeDetailListner, PalaiHostelFeeConfirmDialog.FeeDetailListner, PalaiHostelAdmissionAdapter.CallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentHostelFeePalaiBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: adapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter2$delegate, reason: from kotlin metadata */
     private final Lazy adapter2;
     private int amounts;
     private String date;
@@ -84,14 +84,14 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
     private MainCallBackListener listener;
     private String month;
 
-    /* renamed from: palaiHostelViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: palaiHostelViewModel$delegate, reason: from kotlin metadata */
     private final Lazy palaiHostelViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private List<String> selected;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private int total;
     private int totalAmount;
@@ -122,7 +122,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return palaiHostelFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(palaiHostelFragment);
@@ -136,7 +136,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -149,7 +149,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(PalaiHostelViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(PalaiHostelViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final PalaiHostelFragment palaiHostelFragment2 = this;
@@ -160,7 +160,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(PalaiHostelFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -256,7 +256,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentHostelFeePalaiBinding get_binding() {
         return this._binding;
     }
@@ -350,7 +350,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
         this.type = num;
     }
 
-    /* compiled from: PalaiHostelFragment.kt */
+    /* JADX INFO: compiled from: PalaiHostelFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/palaihostel/PalaiHostelFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/palaihostel/PalaiHostelFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -434,8 +434,8 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
         getAdapter().setCallBack(this);
         getAdapter2().setCallBack(this);
         getPalaiHostelViewModel().getHostelPalaiFeeTypes();
-        final HashMap hashMap = new HashMap();
-        final HashMap hashMap2 = new HashMap();
+        final HashMap map = new HashMap();
+        final HashMap map2 = new HashMap();
         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "kmea", false, 2, (Object) null)) {
             FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding6 = get_binding();
             LinearLayout linearLayout = fragmentHostelFeePalaiBinding6 != null ? fragmentHostelFeePalaiBinding6.monthLayout : null;
@@ -462,89 +462,71 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
         FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding10 = get_binding();
         Spinner spinner2 = fragmentHostelFeePalaiBinding10 != null ? fragmentHostelFeePalaiBinding10.spinnerHostelFee : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding11;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding12;
-                    HostelPalaiSpinnerAdapter spinnerAdapter;
-                    PalaiHostelViewModel palaiHostelViewModel;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding13;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding14;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding15;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding16;
                     LinearLayout linearLayout3;
-                    PalaiHostelViewModel palaiHostelViewModel2;
-                    PalaiHostelViewModel palaiHostelViewModel3;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding17;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding18;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding19;
-                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding20;
-                    fragmentHostelFeePalaiBinding11 = PalaiHostelFragment.this.get_binding();
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding11 = PalaiHostelFragment.this.get_binding();
                     TextView textView4 = fragmentHostelFeePalaiBinding11 != null ? fragmentHostelFeePalaiBinding11.payNowBtn : null;
                     if (textView4 != null) {
                         textView4.setVisibility(8);
                     }
-                    fragmentHostelFeePalaiBinding12 = PalaiHostelFragment.this.get_binding();
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding12 = PalaiHostelFragment.this.get_binding();
                     TextView textView5 = fragmentHostelFeePalaiBinding12 != null ? fragmentHostelFeePalaiBinding12.tvHostelTotal : null;
                     if (textView5 != null) {
                         textView5.setText("0");
                     }
                     PalaiHostelFragment palaiHostelFragment = PalaiHostelFragment.this;
-                    spinnerAdapter = palaiHostelFragment.getSpinnerAdapter();
-                    palaiHostelFragment.setType(Integer.valueOf(spinnerAdapter.getSemester(position).getId()));
+                    palaiHostelFragment.setType(Integer.valueOf(palaiHostelFragment.getSpinnerAdapter().getSemester(position).getId()));
                     Integer type = PalaiHostelFragment.this.getType();
                     if (type != null && type.intValue() == 2) {
-                        palaiHostelViewModel2 = PalaiHostelFragment.this.getPalaiHostelViewModel();
-                        palaiHostelViewModel2.getHostelFee();
-                        palaiHostelViewModel3 = PalaiHostelFragment.this.getPalaiHostelViewModel();
-                        palaiHostelViewModel3.getHostelMonthFee();
-                        fragmentHostelFeePalaiBinding17 = PalaiHostelFragment.this.get_binding();
-                        RecyclerView recyclerView5 = fragmentHostelFeePalaiBinding17 != null ? fragmentHostelFeePalaiBinding17.rvHostelFee : null;
+                        PalaiHostelFragment.this.getPalaiHostelViewModel().getHostelFee();
+                        PalaiHostelFragment.this.getPalaiHostelViewModel().getHostelMonthFee();
+                        FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding13 = PalaiHostelFragment.this.get_binding();
+                        RecyclerView recyclerView5 = fragmentHostelFeePalaiBinding13 != null ? fragmentHostelFeePalaiBinding13.rvHostelFee : null;
                         if (recyclerView5 != null) {
                             recyclerView5.setVisibility(8);
                         }
-                        fragmentHostelFeePalaiBinding18 = PalaiHostelFragment.this.get_binding();
-                        RecyclerView recyclerView6 = fragmentHostelFeePalaiBinding18 != null ? fragmentHostelFeePalaiBinding18.rvHostelFeeAdmission : null;
+                        FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding14 = PalaiHostelFragment.this.get_binding();
+                        RecyclerView recyclerView6 = fragmentHostelFeePalaiBinding14 != null ? fragmentHostelFeePalaiBinding14.rvHostelFeeAdmission : null;
                         if (recyclerView6 != null) {
                             recyclerView6.setVisibility(8);
                         }
-                        fragmentHostelFeePalaiBinding19 = PalaiHostelFragment.this.get_binding();
-                        LinearLayout linearLayout4 = fragmentHostelFeePalaiBinding19 != null ? fragmentHostelFeePalaiBinding19.swipeLayout : null;
+                        FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding15 = PalaiHostelFragment.this.get_binding();
+                        LinearLayout linearLayout4 = fragmentHostelFeePalaiBinding15 != null ? fragmentHostelFeePalaiBinding15.swipeLayout : null;
                         if (linearLayout4 != null) {
                             linearLayout4.setVisibility(0);
                         }
-                        fragmentHostelFeePalaiBinding20 = PalaiHostelFragment.this.get_binding();
-                        linearLayout3 = fragmentHostelFeePalaiBinding20 != null ? fragmentHostelFeePalaiBinding20.swipeLayout2 : null;
+                        FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding16 = PalaiHostelFragment.this.get_binding();
+                        linearLayout3 = fragmentHostelFeePalaiBinding16 != null ? fragmentHostelFeePalaiBinding16.swipeLayout2 : null;
                         if (linearLayout3 == null) {
                             return;
                         }
                         linearLayout3.setVisibility(8);
                         return;
                     }
-                    palaiHostelViewModel = PalaiHostelFragment.this.getPalaiHostelViewModel();
-                    palaiHostelViewModel.getHostelPalaiFee(String.valueOf(PalaiHostelFragment.this.getType()));
-                    fragmentHostelFeePalaiBinding13 = PalaiHostelFragment.this.get_binding();
-                    RecyclerView recyclerView7 = fragmentHostelFeePalaiBinding13 != null ? fragmentHostelFeePalaiBinding13.rvHostelFee : null;
+                    PalaiHostelFragment.this.getPalaiHostelViewModel().getHostelPalaiFee(String.valueOf(PalaiHostelFragment.this.getType()));
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding17 = PalaiHostelFragment.this.get_binding();
+                    RecyclerView recyclerView7 = fragmentHostelFeePalaiBinding17 != null ? fragmentHostelFeePalaiBinding17.rvHostelFee : null;
                     if (recyclerView7 != null) {
                         recyclerView7.setVisibility(8);
                     }
-                    fragmentHostelFeePalaiBinding14 = PalaiHostelFragment.this.get_binding();
-                    RecyclerView recyclerView8 = fragmentHostelFeePalaiBinding14 != null ? fragmentHostelFeePalaiBinding14.rvHostelFeeAdmission : null;
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding18 = PalaiHostelFragment.this.get_binding();
+                    RecyclerView recyclerView8 = fragmentHostelFeePalaiBinding18 != null ? fragmentHostelFeePalaiBinding18.rvHostelFeeAdmission : null;
                     if (recyclerView8 != null) {
                         recyclerView8.setVisibility(0);
                     }
-                    fragmentHostelFeePalaiBinding15 = PalaiHostelFragment.this.get_binding();
-                    LinearLayout linearLayout5 = fragmentHostelFeePalaiBinding15 != null ? fragmentHostelFeePalaiBinding15.swipeLayout : null;
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding19 = PalaiHostelFragment.this.get_binding();
+                    LinearLayout linearLayout5 = fragmentHostelFeePalaiBinding19 != null ? fragmentHostelFeePalaiBinding19.swipeLayout : null;
                     if (linearLayout5 != null) {
                         linearLayout5.setVisibility(8);
                     }
-                    fragmentHostelFeePalaiBinding16 = PalaiHostelFragment.this.get_binding();
-                    linearLayout3 = fragmentHostelFeePalaiBinding16 != null ? fragmentHostelFeePalaiBinding16.swipeLayout2 : null;
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding20 = PalaiHostelFragment.this.get_binding();
+                    linearLayout3 = fragmentHostelFeePalaiBinding20 != null ? fragmentHostelFeePalaiBinding20.swipeLayout2 : null;
                     if (linearLayout3 == null) {
                         return;
                     }
@@ -560,32 +542,33 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PalaiHostelFragment.setUp$lambda$0(hashMap, hashMap2, this, view);
+                PalaiHostelFragment.setUp$lambda$0(map, map2, this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0ab9 A[LOOP:1: B:12:0x06a3->B:21:0x0ab9, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0ad4 A[EDGE_INSN: B:22:0x0ad4->B:23:0x0ad4 BREAK  A[LOOP:1: B:12:0x06a3->B:21:0x0ab9], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x05ad A[LOOP:2: B:40:0x00b6->B:57:0x05ad, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x05d4 A[EDGE_INSN: B:58:0x05d4->B:59:0x05d4 BREAK  A[LOOP:2: B:40:0x00b6->B:57:0x05ad], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x05a8 A[LOOP:2: B:10:0x00af->B:31:0x05a8, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0ac7 A[LOOP:1: B:43:0x06a0->B:55:0x0ac7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0af5 A[EDGE_INSN: B:64:0x0af5->B:58:0x0af5 BREAK  A[LOOP:1: B:43:0x06a0->B:55:0x0ac7], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x05ce A[EDGE_INSN: B:65:0x05ce->B:33:0x05ce BREAK  A[LOOP:2: B:10:0x00af->B:31:0x05a8], SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static final void setUp$lambda$0(java.util.HashMap r36, java.util.HashMap r37, in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r38, android.view.View r39) {
+    public static final void setUp$lambda$0(java.util.HashMap r35, java.util.HashMap r36, in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r37, android.view.View r38) {
         /*
-            Method dump skipped, instructions count: 2838
+            Method dump skipped, instruction units count: 2878
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
         throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.setUp$lambda$0(java.util.HashMap, java.util.HashMap, in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment, android.view.View):void");
     }
 
     private final void listenResponse() {
-        getPalaiHostelViewModel().getResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenResponse$1
+        getPalaiHostelViewModel().getResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.listenResponse.1
 
-            /* compiled from: PalaiHostelFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: PalaiHostelFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -622,11 +605,8 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelResponse> resource) {
-                FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding;
-                FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding2;
-                FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding3;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -651,17 +631,17 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                 if (data != null) {
                     PalaiHostelFragment palaiHostelFragment = PalaiHostelFragment.this;
                     palaiHostelFragment.showBaseView();
-                    fragmentHostelFeePalaiBinding = palaiHostelFragment.get_binding();
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding = palaiHostelFragment.get_binding();
                     TextView textView = fragmentHostelFeePalaiBinding != null ? fragmentHostelFeePalaiBinding.roomNo : null;
                     if (textView != null) {
                         textView.setText(data.getRoomNo());
                     }
-                    fragmentHostelFeePalaiBinding2 = palaiHostelFragment.get_binding();
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding2 = palaiHostelFragment.get_binding();
                     TextView textView2 = fragmentHostelFeePalaiBinding2 != null ? fragmentHostelFeePalaiBinding2.joinDate : null;
                     if (textView2 != null) {
                         textView2.setText(data.getJoinDate());
                     }
-                    fragmentHostelFeePalaiBinding3 = palaiHostelFragment.get_binding();
+                    FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding3 = palaiHostelFragment.get_binding();
                     TextView textView3 = fragmentHostelFeePalaiBinding3 != null ? fragmentHostelFeePalaiBinding3.hostelTv : null;
                     if (textView3 != null) {
                         textView3.setText(data.getHostel());
@@ -677,9 +657,10 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
     }
 
     private final void listenMonthResponse() {
-        getPalaiHostelViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenMonthResponse$1
+        getPalaiHostelViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.listenMonthResponse.1
 
-            /* compiled from: PalaiHostelFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenMonthResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: PalaiHostelFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -716,9 +697,8 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelMonthResponse> resource) {
-                PalaiHostelAdapter adapter;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -744,7 +724,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                     PalaiHostelFragment palaiHostelFragment = PalaiHostelFragment.this;
                     palaiHostelFragment.showBaseView();
                     try {
-                        adapter = palaiHostelFragment.getAdapter();
+                        PalaiHostelAdapter adapter = palaiHostelFragment.getAdapter();
                         ArrayList<HostelMonth> hostel = data.getHostel();
                         Integer type = palaiHostelFragment.getType();
                         Intrinsics.checkNotNull(type);
@@ -759,9 +739,10 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
     }
 
     private final void listenTypesesponse() {
-        getPalaiHostelViewModel().getHostelPalaiFeeTypesResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiTypesResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenTypesesponse$1
+        getPalaiHostelViewModel().getHostelPalaiFeeTypesResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiTypesResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.listenTypesesponse.1
 
-            /* compiled from: PalaiHostelFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenTypesesponse$1$WhenMappings */
+            /* JADX INFO: compiled from: PalaiHostelFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -798,10 +779,8 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelPalaiTypesResponse> resource) {
-                FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding;
-                HostelPalaiSpinnerAdapter spinnerAdapter;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -827,10 +806,9 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                     PalaiHostelFragment palaiHostelFragment = PalaiHostelFragment.this;
                     palaiHostelFragment.showBaseView();
                     try {
-                        spinnerAdapter = palaiHostelFragment.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getTypes());
+                        palaiHostelFragment.getSpinnerAdapter().addItems(data.getTypes());
                     } catch (NullPointerException unused) {
-                        fragmentHostelFeePalaiBinding = palaiHostelFragment.get_binding();
+                        FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding = palaiHostelFragment.get_binding();
                         RecyclerView recyclerView = fragmentHostelFeePalaiBinding != null ? fragmentHostelFeePalaiBinding.rvHostelFee : null;
                         if (recyclerView == null) {
                             return;
@@ -843,9 +821,10 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
     }
 
     private final void listenHostelPalaiResponse() {
-        getPalaiHostelViewModel().getHostelPalaiFeeResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiAdmissionResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenHostelPalaiResponse$1
+        getPalaiHostelViewModel().getHostelPalaiFeeResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelPalaiAdmissionResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.listenHostelPalaiResponse.1
 
-            /* compiled from: PalaiHostelFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenHostelPalaiResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: PalaiHostelFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -882,10 +861,8 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelPalaiAdmissionResponse> resource) {
-                FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding;
-                PalaiHostelAdmissionAdapter adapter2;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -911,7 +888,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                     PalaiHostelFragment palaiHostelFragment = PalaiHostelFragment.this;
                     palaiHostelFragment.showBaseView();
                     try {
-                        adapter2 = palaiHostelFragment.getAdapter2();
+                        PalaiHostelAdmissionAdapter adapter2 = palaiHostelFragment.getAdapter2();
                         ArrayList<HostelPalaiAdmission> hostel = data.getHostel();
                         Integer type = palaiHostelFragment.getType();
                         Intrinsics.checkNotNull(type);
@@ -920,7 +897,7 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                         palaiHostelFragment.setDate(data.getDate());
                         palaiHostelFragment.setFineAmount(data.getFine());
                     } catch (NullPointerException unused) {
-                        fragmentHostelFeePalaiBinding = palaiHostelFragment.get_binding();
+                        FragmentHostelFeePalaiBinding fragmentHostelFeePalaiBinding = palaiHostelFragment.get_binding();
                         RecyclerView recyclerView = fragmentHostelFeePalaiBinding != null ? fragmentHostelFeePalaiBinding.rvHostelFee : null;
                         if (recyclerView == null) {
                             return;
@@ -980,9 +957,9 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
     public void selectedIds(int total, int type) {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        HostelFeeConfirmFragment newInstance = HostelFeeConfirmFragment.INSTANCE.newInstance(total, type);
-        newInstance.setCallBack2(this);
-        newInstance.show(childFragmentManager, (String) null);
+        HostelFeeConfirmFragment hostelFeeConfirmFragmentNewInstance = HostelFeeConfirmFragment.INSTANCE.newInstance(total, type);
+        hostelFeeConfirmFragmentNewInstance.setCallBack2(this);
+        hostelFeeConfirmFragmentNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.hostel.palaihostel.PalaiHostelAdapter.CallBack, in.etuwa.app.ui.hostel.palaihostel.PalaiHostelAdmissionAdapter.CallBack
@@ -1062,9 +1039,10 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
     }
 
     private final void listenUrlResponse() {
-        getPalaiHostelViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeePalaiResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenUrlResponse$1
+        getPalaiHostelViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new PalaiHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeePalaiResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.listenUrlResponse.1
 
-            /* compiled from: PalaiHostelFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: PalaiHostelFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -1101,101 +1079,48 @@ public final class PalaiHostelFragment extends BaseFragment implements PalaiHost
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:31:0x00b6, code lost:
-            
-                r0 = r0.listener;
-             */
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.hostel.HostelFeePalaiResponse> r10) {
-                /*
-                    r9 = this;
-                    in.etuwa.app.utils.Status r0 = r10.getStatus()
-                    int[] r1 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenUrlResponse$1.WhenMappings.$EnumSwitchMapping$0
-                    int r0 = r0.ordinal()
-                    r0 = r1[r0]
-                    r1 = 2
-                    r2 = 1
-                    if (r0 == r2) goto L39
-                    if (r0 == r1) goto L32
-                    r10 = 3
-                    if (r0 == r10) goto L26
-                    r10 = 4
-                    if (r0 == r10) goto L1a
-                    goto Lc3
-                L1a:
-                    in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r10 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.this
-                    r10.hideProgress()
-                    in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r10 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.this
-                    r10.showBaseView()
-                    goto Lc3
-                L26:
-                    in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r10 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.this
-                    r10.hideProgress()
-                    in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r10 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.this
-                    r10.showBaseView()
-                    goto Lc3
-                L32:
-                    in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r10 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.this
-                    r10.showProgress()
-                    goto Lc3
-                L39:
-                    in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r0 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.this
-                    r0.hideProgress()
-                    java.lang.Object r10 = r10.getData()
-                    in.etuwa.app.data.model.hostel.HostelFeePalaiResponse r10 = (in.etuwa.app.data.model.hostel.HostelFeePalaiResponse) r10
-                    if (r10 == 0) goto Lc3
-                    in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment r0 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.this
-                    r0.showBaseView()
-                    java.lang.String r3 = r10.getUrl()
-                    java.io.PrintStream r4 = java.lang.System.out
-                    r4.println(r3)
-                    java.lang.Integer r3 = r0.getType()
-                    java.lang.String r4 = ""
-                    if (r3 != 0) goto L5d
-                    goto L9f
-                L5d:
-                    int r3 = r3.intValue()
-                    if (r3 != r1) goto L9f
-                    java.lang.String r1 = r10.getUrl()
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r4)
-                    if (r1 != 0) goto L9f
-                    androidx.fragment.app.FragmentManager r1 = r0.getChildFragmentManager()
-                    java.lang.String r3 = "childFragmentManager"
-                    kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, r3)
-                    in.etuwa.app.ui.hostel.palaihostel.confirmpage.PalaiHostelFeeConfirmDialog$Companion r3 = in.etuwa.app.ui.hostel.palaihostel.confirmpage.PalaiHostelFeeConfirmDialog.INSTANCE
-                    int r5 = r10.getTotal()
-                    java.lang.String r5 = java.lang.String.valueOf(r5)
-                    int r6 = r10.getFine()
-                    java.lang.String r6 = java.lang.String.valueOf(r6)
-                    int r7 = r10.getSubtotal()
-                    java.lang.String r7 = java.lang.String.valueOf(r7)
-                    java.lang.String r8 = r10.getUrl()
-                    in.etuwa.app.ui.hostel.palaihostel.confirmpage.PalaiHostelFeeConfirmDialog r3 = r3.newInstance(r5, r6, r7, r8)
-                    r3.setCallBack(r0)
-                    r5 = 0
-                    r3.show(r1, r5)
-                L9f:
-                    java.lang.Integer r1 = r0.getType()
-                    if (r1 != 0) goto La6
-                    goto Lc3
-                La6:
-                    int r1 = r1.intValue()
-                    if (r1 != r2) goto Lc3
-                    java.lang.String r1 = r10.getUrl()
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r4)
-                    if (r1 != 0) goto Lc3
-                    in.etuwa.app.helper.MainCallBackListener r0 = in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment.access$getListener$p(r0)
-                    if (r0 == 0) goto Lc3
-                    java.lang.String r10 = r10.getUrl()
-                    r0.openPaymentPage(r10)
-                Lc3:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.hostel.palaihostel.PalaiHostelFragment$listenUrlResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<HostelFeePalaiResponse> resource) {
+                MainCallBackListener mainCallBackListener;
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        PalaiHostelFragment.this.showProgress();
+                        return;
+                    }
+                    if (i == 3) {
+                        PalaiHostelFragment.this.hideProgress();
+                        PalaiHostelFragment.this.showBaseView();
+                        return;
+                    } else {
+                        if (i != 4) {
+                            return;
+                        }
+                        PalaiHostelFragment.this.hideProgress();
+                        PalaiHostelFragment.this.showBaseView();
+                        return;
+                    }
+                }
+                PalaiHostelFragment.this.hideProgress();
+                HostelFeePalaiResponse data = resource.getData();
+                if (data != null) {
+                    PalaiHostelFragment palaiHostelFragment = PalaiHostelFragment.this;
+                    palaiHostelFragment.showBaseView();
+                    System.out.println((Object) data.getUrl());
+                    Integer type = palaiHostelFragment.getType();
+                    if (type != null && type.intValue() == 2 && !Intrinsics.areEqual(data.getUrl(), "")) {
+                        FragmentManager childFragmentManager = palaiHostelFragment.getChildFragmentManager();
+                        Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
+                        PalaiHostelFeeConfirmDialog palaiHostelFeeConfirmDialogNewInstance = PalaiHostelFeeConfirmDialog.INSTANCE.newInstance(String.valueOf(data.getTotal()), String.valueOf(data.getFine()), String.valueOf(data.getSubtotal()), data.getUrl());
+                        palaiHostelFeeConfirmDialogNewInstance.setCallBack(palaiHostelFragment);
+                        palaiHostelFeeConfirmDialogNewInstance.show(childFragmentManager, (String) null);
+                    }
+                    Integer type2 = palaiHostelFragment.getType();
+                    if (type2 == null || type2.intValue() != 1 || Intrinsics.areEqual(data.getUrl(), "") || (mainCallBackListener = palaiHostelFragment.listener) == null) {
+                        return;
+                    }
+                    mainCallBackListener.openPaymentPage(data.getUrl());
+                }
             }
         }));
     }

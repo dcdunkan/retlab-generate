@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ItemDialogDateIndicatorBinding implements ViewBinding {
     public final View colorView;
     public final TextView eventNameView;
@@ -31,21 +31,21 @@ public final class ItemDialogDateIndicatorBinding implements ViewBinding {
     }
 
     public static ItemDialogDateIndicatorBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.item_dialog_date_indicator, parent, false);
+        View viewInflate = inflater.inflate(R.layout.item_dialog_date_indicator, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ItemDialogDateIndicatorBinding bind(View rootView) {
         int i = R.id.color_view;
-        View findChildViewById = ViewBindings.findChildViewById(rootView, i);
-        if (findChildViewById != null) {
+        View viewFindChildViewById = ViewBindings.findChildViewById(rootView, i);
+        if (viewFindChildViewById != null) {
             i = R.id.event_name_view;
             TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
             if (textView != null) {
-                return new ItemDialogDateIndicatorBinding((LinearLayout) rootView, findChildViewById, textView);
+                return new ItemDialogDateIndicatorBinding((LinearLayout) rootView, viewFindChildViewById, textView);
             }
         }
         throw new NullPointerException("Missing required view with ID: ".concat(rootView.getResources().getResourceName(i)));

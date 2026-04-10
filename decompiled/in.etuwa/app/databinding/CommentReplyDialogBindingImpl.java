@@ -15,7 +15,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.chat.reply.CommentReplyDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class CommentReplyDialogBindingImpl extends CommentReplyDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -79,7 +79,7 @@ public class CommentReplyDialogBindingImpl extends CommentReplyDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (58 != variableId) {
+        if (57 != variableId) {
             return false;
         }
         setCommentReplyDialogViewModel((CommentReplyDialogViewModel) variable);

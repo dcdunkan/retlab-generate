@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.studymaterials.download.MaterialDownloadViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogMaterialDownloadBindingImpl extends DialogMaterialDownloadBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -58,7 +58,7 @@ public class DialogMaterialDownloadBindingImpl extends DialogMaterialDownloadBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (135 != variableId) {
+        if (136 != variableId) {
             return false;
         }
         setMaterialDownloadViewModel((MaterialDownloadViewModel) variable);

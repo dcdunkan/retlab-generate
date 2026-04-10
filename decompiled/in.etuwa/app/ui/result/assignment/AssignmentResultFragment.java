@@ -1,6 +1,7 @@
 package in.etuwa.app.ui.result.assignment;
 
 import android.content.ComponentCallbacks;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -8,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
@@ -54,28 +55,28 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AssignmentResultFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AssignmentResultFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AssignmentResultFragment extends BaseFragment implements SemListDialogTwo.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private AssignmentResultFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: assignmentResultViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: assignmentResultViewModel$delegate, reason: from kotlin metadata */
     private final Lazy assignmentResultViewModel;
     private boolean flag;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* compiled from: AssignmentResultFragment.kt */
+    /* JADX INFO: compiled from: AssignmentResultFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -125,7 +126,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return assignmentResultFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(assignmentResultFragment);
@@ -139,7 +140,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -152,7 +153,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AssignmentResultViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AssignmentResultViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final AssignmentResultFragment assignmentResultFragment2 = this;
@@ -179,7 +180,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AssignmentResultFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -225,7 +226,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final AssignmentResultFragmentBinding get_binding() {
         return this._binding;
     }
@@ -240,7 +241,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: AssignmentResultFragment.kt */
+    /* JADX INFO: compiled from: AssignmentResultFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/result/assignment/AssignmentResultFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/result/assignment/AssignmentResultFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -297,9 +298,9 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
             textView.setText(getPreference().getUserSem());
         }
         AssignmentResultFragmentBinding assignmentResultFragmentBinding2 = get_binding();
-        LinearLayout linearLayout = assignmentResultFragmentBinding2 != null ? assignmentResultFragmentBinding2.assignmentResultLayout : null;
-        if (linearLayout != null) {
-            linearLayout.setVisibility(8);
+        MaterialCardView materialCardView = assignmentResultFragmentBinding2 != null ? assignmentResultFragmentBinding2.assignmentResultLayout : null;
+        if (materialCardView != null) {
+            materialCardView.setVisibility(8);
         }
         AssignmentResultFragmentBinding assignmentResultFragmentBinding3 = get_binding();
         RecyclerView recyclerView = assignmentResultFragmentBinding3 != null ? assignmentResultFragmentBinding3.rvResultAssignment : null;
@@ -319,54 +320,48 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.result.assignment.AssignmentResultFragment$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AssignmentResultFragment.setUp$lambda$0(AssignmentResultFragment.this, view);
+                    AssignmentResultFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
         AssignmentResultFragmentBinding assignmentResultFragmentBinding6 = get_binding();
         Spinner spinner2 = assignmentResultFragmentBinding6 != null ? assignmentResultFragmentBinding6.spinnerSem : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.assignment.AssignmentResultFragment$setUp$2
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.assignment.AssignmentResultFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter3;
-                    AssignmentResultFragmentBinding assignmentResultFragmentBinding7;
-                    AssignmentResultViewModel assignmentResultViewModel;
-                    SharedPrefManager preference2;
+                    TextView textView2;
                     Spinner spinner3;
-                    AssignmentResultViewModel assignmentResultViewModel2;
-                    spinnerAdapter = AssignmentResultFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    z = AssignmentResultFragment.this.flag;
-                    if (z) {
-                        assignmentResultViewModel2 = AssignmentResultFragment.this.getAssignmentResultViewModel();
-                        assignmentResultViewModel2.getResult(semester.getId());
+                    Semester semester = AssignmentResultFragment.this.getSpinnerAdapter().getSemester(position);
+                    if (AssignmentResultFragment.this.flag) {
+                        AssignmentResultFragment.this.getAssignmentResultViewModel().getResult(semester.getId());
+                        AssignmentResultFragmentBinding assignmentResultFragmentBinding7 = AssignmentResultFragment.this.get_binding();
+                        textView2 = assignmentResultFragmentBinding7 != null ? assignmentResultFragmentBinding7.semesterText : null;
+                        if (textView2 == null) {
+                            return;
+                        }
+                        textView2.setText(semester.getName());
                         return;
                     }
                     AssignmentResultFragment.this.flag = true;
-                    spinnerAdapter2 = AssignmentResultFragment.this.getSpinnerAdapter();
-                    int count = spinnerAdapter2.getCount();
+                    int count = AssignmentResultFragment.this.getSpinnerAdapter().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = AssignmentResultFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter3 = AssignmentResultFragment.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter3.getSemester(i).getId())) {
-                            assignmentResultFragmentBinding7 = AssignmentResultFragment.this.get_binding();
-                            if (assignmentResultFragmentBinding7 != null && (spinner3 = assignmentResultFragmentBinding7.spinnerSem) != null) {
+                        if (Intrinsics.areEqual(AssignmentResultFragment.this.getPreference().getUserSemId(), AssignmentResultFragment.this.getSpinnerAdapter().getSemester(i).getId())) {
+                            AssignmentResultFragmentBinding assignmentResultFragmentBinding8 = AssignmentResultFragment.this.get_binding();
+                            if (assignmentResultFragmentBinding8 != null && (spinner3 = assignmentResultFragmentBinding8.spinnerSem) != null) {
                                 spinner3.setSelection(i);
                             }
+                            AssignmentResultFragmentBinding assignmentResultFragmentBinding9 = AssignmentResultFragment.this.get_binding();
+                            textView2 = assignmentResultFragmentBinding9 != null ? assignmentResultFragmentBinding9.semesterText : null;
+                            if (textView2 != null) {
+                                textView2.setText(AssignmentResultFragment.this.getSpinnerAdapter().getSemester(i).getName());
+                            }
                             if (position == 0) {
-                                assignmentResultViewModel = AssignmentResultFragment.this.getAssignmentResultViewModel();
-                                preference2 = AssignmentResultFragment.this.getPreference();
-                                assignmentResultViewModel.getResult(preference2.getUserSemId());
+                                AssignmentResultFragment.this.getAssignmentResultViewModel().getResult(AssignmentResultFragment.this.getPreference().getUserSemId());
                                 return;
                             }
                             return;
@@ -375,6 +370,10 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
                 }
             });
         }
+        AssignmentResultViewModel assignmentResultViewModel = getAssignmentResultViewModel();
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        assignmentResultViewModel.getSemester(contextRequireContext);
         AssignmentResultFragmentBinding assignmentResultFragmentBinding7 = get_binding();
         if (assignmentResultFragmentBinding7 == null || (swipeRefreshLayout = assignmentResultFragmentBinding7.swipeLayout) == null) {
             return;
@@ -382,7 +381,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.result.assignment.AssignmentResultFragment$$ExternalSyntheticLambda3
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                AssignmentResultFragment.setUp$lambda$1(AssignmentResultFragment.this);
+                AssignmentResultFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -392,15 +391,18 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialogTwo newInstance = SemListDialogTwo.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        SemListDialogTwo semListDialogTwoNewInstance = SemListDialogTwo.INSTANCE.newInstance();
+        semListDialogTwoNewInstance.setCallBack(this$0);
+        semListDialogTwoNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$1(AssignmentResultFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getAssignmentResultViewModel().getSemester();
+        AssignmentResultViewModel assignmentResultViewModel = this$0.getAssignmentResultViewModel();
+        Context contextRequireContext = this$0.requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        assignmentResultViewModel.getSemester(contextRequireContext);
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -416,7 +418,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
         getAssignmentResultViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.result.assignment.AssignmentResultFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AssignmentResultFragment.listenSemResponse$lambda$3(AssignmentResultFragment.this, (Resource) obj);
+                AssignmentResultFragment.listenSemResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -429,16 +431,16 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 AssignmentResultFragmentBinding assignmentResultFragmentBinding = this$0.get_binding();
                 if (assignmentResultFragmentBinding != null && (swipeRefreshLayout2 = assignmentResultFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -469,9 +471,9 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
         if (arrayList != null) {
             this$0.getSpinnerAdapter().addItems(arrayList);
             AssignmentResultFragmentBinding assignmentResultFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (assignmentResultFragmentBinding3 == null || (swipeRefreshLayout = assignmentResultFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
+            Boolean boolValueOf2 = (assignmentResultFragmentBinding3 == null || (swipeRefreshLayout = assignmentResultFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+            Intrinsics.checkNotNull(boolValueOf2);
+            if (boolValueOf2.booleanValue()) {
                 AssignmentResultFragmentBinding assignmentResultFragmentBinding4 = this$0.get_binding();
                 SwipeRefreshLayout swipeRefreshLayout3 = assignmentResultFragmentBinding4 != null ? assignmentResultFragmentBinding4.swipeLayout : null;
                 if (swipeRefreshLayout3 != null) {
@@ -481,10 +483,15 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
                 for (int i2 = 0; i2 < count; i2++) {
                     if (Intrinsics.areEqual(this$0.getPreference().getUserSemId(), this$0.getSpinnerAdapter().getSemester(i2).getId())) {
                         AssignmentResultFragmentBinding assignmentResultFragmentBinding5 = this$0.get_binding();
-                        if (assignmentResultFragmentBinding5 == null || (spinner = assignmentResultFragmentBinding5.spinnerSem) == null) {
+                        if (assignmentResultFragmentBinding5 != null && (spinner = assignmentResultFragmentBinding5.spinnerSem) != null) {
+                            spinner.setSelection(i2);
+                        }
+                        AssignmentResultFragmentBinding assignmentResultFragmentBinding6 = this$0.get_binding();
+                        TextView textView = assignmentResultFragmentBinding6 != null ? assignmentResultFragmentBinding6.semesterText : null;
+                        if (textView == null) {
                             return;
                         }
-                        spinner.setSelection(i2);
+                        textView.setText(this$0.getSpinnerAdapter().getSemester(i2).getName());
                         return;
                     }
                 }
@@ -496,7 +503,7 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
         getAssignmentResultViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.result.assignment.AssignmentResultFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AssignmentResultFragment.listenResponse$lambda$5(AssignmentResultFragment.this, (Resource) obj);
+                AssignmentResultFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -564,6 +571,18 @@ public final class AssignmentResultFragment extends BaseFragment implements SemL
     public void onDestroy() {
         super.onDestroy();
         this._binding = null;
+    }
+
+    public final void onSemesterSelected(String id, String semName) {
+        Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(semName, "semName");
+        getAssignmentResultViewModel().getResult(id);
+        AssignmentResultFragmentBinding assignmentResultFragmentBinding = get_binding();
+        TextView textView = assignmentResultFragmentBinding != null ? assignmentResultFragmentBinding.semesterText : null;
+        if (textView == null) {
+            return;
+        }
+        textView.setText(semName);
     }
 
     @Override // in.etuwa.app.ui.result.session.semlistdialogsession.SemListDialogTwo.SemDialogCallBack

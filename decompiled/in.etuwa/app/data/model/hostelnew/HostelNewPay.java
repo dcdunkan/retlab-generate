@@ -1,55 +1,59 @@
 package in.etuwa.app.data.model.hostelnew;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+import in.etuwa.app.data.model.DownloadModel$$ExternalSyntheticBackport0;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelNewPay.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelNewPay.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelNewPay {
     private final int fine;
-    private final int subtotal;
-    private final int total_amount;
+    private final boolean login;
+    private final double total_amount;
     private final String url;
 
-    public static /* synthetic */ HostelNewPay copy$default(HostelNewPay hostelNewPay, String str, int i, int i2, int i3, int i4, Object obj) {
-        if ((i4 & 1) != 0) {
+    public static /* synthetic */ HostelNewPay copy$default(HostelNewPay hostelNewPay, boolean z, String str, double d, int i, int i2, Object obj) {
+        if ((i2 & 1) != 0) {
+            z = hostelNewPay.login;
+        }
+        if ((i2 & 2) != 0) {
             str = hostelNewPay.url;
         }
-        if ((i4 & 2) != 0) {
-            i = hostelNewPay.subtotal;
+        String str2 = str;
+        if ((i2 & 4) != 0) {
+            d = hostelNewPay.total_amount;
         }
-        if ((i4 & 4) != 0) {
-            i2 = hostelNewPay.total_amount;
+        double d2 = d;
+        if ((i2 & 8) != 0) {
+            i = hostelNewPay.fine;
         }
-        if ((i4 & 8) != 0) {
-            i3 = hostelNewPay.fine;
-        }
-        return hostelNewPay.copy(str, i, i2, i3);
+        return hostelNewPay.copy(z, str2, d2, i);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
+    public final boolean getLogin() {
+        return this.login;
+    }
+
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component2, reason: from getter */
-    public final int getSubtotal() {
-        return this.subtotal;
-    }
-
-    /* renamed from: component3, reason: from getter */
-    public final int getTotal_amount() {
+    /* JADX INFO: renamed from: component3, reason: from getter */
+    public final double getTotal_amount() {
         return this.total_amount;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final int getFine() {
         return this.fine;
     }
 
-    public final HostelNewPay copy(String url, int subtotal, int total_amount, int fine) {
+    public final HostelNewPay copy(boolean login, String url, double total_amount, int fine) {
         Intrinsics.checkNotNullParameter(url, "url");
-        return new HostelNewPay(url, subtotal, total_amount, fine);
+        return new HostelNewPay(login, url, total_amount, fine);
     }
 
     public boolean equals(Object other) {
@@ -60,34 +64,43 @@ public final /* data */ class HostelNewPay {
             return false;
         }
         HostelNewPay hostelNewPay = (HostelNewPay) other;
-        return Intrinsics.areEqual(this.url, hostelNewPay.url) && this.subtotal == hostelNewPay.subtotal && this.total_amount == hostelNewPay.total_amount && this.fine == hostelNewPay.fine;
+        return this.login == hostelNewPay.login && Intrinsics.areEqual(this.url, hostelNewPay.url) && Double.compare(this.total_amount, hostelNewPay.total_amount) == 0 && this.fine == hostelNewPay.fine;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v8 */
+    /* JADX WARN: Type inference failed for: r0v9 */
     public int hashCode() {
-        return (((((this.url.hashCode() * 31) + this.subtotal) * 31) + this.total_amount) * 31) + this.fine;
+        boolean z = this.login;
+        ?? r0 = z;
+        if (z) {
+            r0 = 1;
+        }
+        return (((((r0 * 31) + this.url.hashCode()) * 31) + DownloadModel$$ExternalSyntheticBackport0.m(this.total_amount)) * 31) + this.fine;
     }
 
     public String toString() {
-        return "HostelNewPay(url=" + this.url + ", subtotal=" + this.subtotal + ", total_amount=" + this.total_amount + ", fine=" + this.fine + ")";
+        return "HostelNewPay(login=" + this.login + ", url=" + this.url + ", total_amount=" + this.total_amount + ", fine=" + this.fine + ")";
     }
 
-    public HostelNewPay(String url, int i, int i2, int i3) {
+    public HostelNewPay(boolean z, String url, double d, int i) {
         Intrinsics.checkNotNullParameter(url, "url");
+        this.login = z;
         this.url = url;
-        this.subtotal = i;
-        this.total_amount = i2;
-        this.fine = i3;
+        this.total_amount = d;
+        this.fine = i;
+    }
+
+    public final boolean getLogin() {
+        return this.login;
     }
 
     public final String getUrl() {
         return this.url;
     }
 
-    public final int getSubtotal() {
-        return this.subtotal;
-    }
-
-    public final int getTotal_amount() {
+    public final double getTotal_amount() {
         return this.total_amount;
     }
 

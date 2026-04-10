@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.directapply.apply.ApplyDirectDutyLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogApplyAddDirectLeaveBindingImpl extends DialogApplyAddDirectLeaveBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -86,7 +86,7 @@ public class DialogApplyAddDirectLeaveBindingImpl extends DialogApplyAddDirectLe
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (25 != variableId) {
+        if (24 != variableId) {
             return false;
         }
         setApplyDirectDutyLeaveViewModel((ApplyDirectDutyLeaveViewModel) variable);

@@ -19,8 +19,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: AttendanceAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AttendanceAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AttendanceAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private final ArrayList<Attendance> attendances = new ArrayList<>();
     private Boolean dutyLeave;
@@ -31,18 +31,18 @@ public final class AttendanceAdapter extends RecyclerView.Adapter<BaseViewHolder
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_by_subject, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …y_subject, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_by_subject, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …y_subject, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -58,7 +58,7 @@ public final class AttendanceAdapter extends RecyclerView.Adapter<BaseViewHolder
         return !this.attendances.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: AttendanceAdapter.kt */
+    /* JADX INFO: compiled from: AttendanceAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/attendance/bysubject/AttendanceAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/attendance/bysubject/AttendanceAdapter;Landroid/view/View;)V", "perBar", "Lat/grabner/circleprogress/CircleProgressView;", "kotlin.jvm.PlatformType", "sideView", "sub", "Landroid/widget/TextView;", FeeConfirmDialogKt.ARG_TOTAL, "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final CircleProgressView perBar;
@@ -101,20 +101,21 @@ public final class AttendanceAdapter extends RecyclerView.Adapter<BaseViewHolder
                             if (Intrinsics.areEqual(attendance.getPercentage_subject(), "N/A")) {
                                 this.perBar.setValueAnimated(0);
                             } else {
-                                this.perBar.setValueAnimated(Float.parseFloat(attendance.getPercentage_subject()));
+                                this.perBar.setValueAnimated(Float.parseFloat(StringsKt.replace$default(attendance.getPercentage_subject(), CommonCssConstants.PERCENTAGE, "", false, 4, (Object) null)));
                             }
+                            int i = Integer.parseInt(StringsKt.replace$default(attendance.getPercentage_subject(), CommonCssConstants.PERCENTAGE, "", false, 4, (Object) null));
                             if (Intrinsics.areEqual(attendance.getPercentage_subject(), "N/A")) {
                                 this.sideView.setBackgroundColor(Color.parseColor("#34495E"));
                                 return;
                             }
-                            if (Integer.parseInt(attendance.getPercentage_subject()) >= 75) {
+                            if (i >= 75) {
                                 this.sideView.setBackgroundColor(Color.parseColor("#18460c"));
                                 return;
-                            } else if (Integer.parseInt(attendance.getPercentage_subject()) >= 50) {
+                            } else if (i >= 50) {
                                 this.sideView.setBackgroundColor(Color.parseColor("#266d19"));
                                 return;
                             } else {
-                                if (Integer.parseInt(attendance.getPercentage_subject()) < 50) {
+                                if (i < 50) {
                                     this.sideView.setBackgroundColor(Color.parseColor("#B71C1C"));
                                     return;
                                 }
@@ -125,20 +126,20 @@ public final class AttendanceAdapter extends RecyclerView.Adapter<BaseViewHolder
                         if (Intrinsics.areEqual(attendance.getPercentage_dutyleave(), "N/A")) {
                             this.perBar.setValueAnimated(0);
                         } else {
-                            this.perBar.setValueAnimated(Float.parseFloat(attendance.getPercentage_dutyleave()));
+                            this.perBar.setValueAnimated(Float.parseFloat(StringsKt.replace$default(attendance.getPercentage_dutyleave(), CommonCssConstants.PERCENTAGE, "", false, 4, (Object) null)));
                         }
                         if (Intrinsics.areEqual(attendance.getPercentage_dutyleave(), "N/A")) {
                             this.sideView.setBackgroundColor(Color.parseColor("#34495E"));
                             return;
                         }
-                        if (Integer.parseInt(attendance.getPercentage_dutyleave()) >= 75) {
+                        if (Integer.parseInt(StringsKt.replace$default(attendance.getPercentage_dutyleave(), CommonCssConstants.PERCENTAGE, "", false, 4, (Object) null)) >= 75) {
                             this.sideView.setBackgroundColor(Color.parseColor("#18460c"));
                             return;
-                        } else if (Integer.parseInt(attendance.getPercentage_dutyleave()) >= 50) {
+                        } else if (Integer.parseInt(StringsKt.replace$default(attendance.getPercentage_dutyleave(), CommonCssConstants.PERCENTAGE, "", false, 4, (Object) null)) >= 50) {
                             this.sideView.setBackgroundColor(Color.parseColor("#266d19"));
                             return;
                         } else {
-                            if (Integer.parseInt(attendance.getPercentage_dutyleave()) < 50) {
+                            if (Integer.parseInt(StringsKt.replace$default(attendance.getPercentage_dutyleave(), CommonCssConstants.PERCENTAGE, "", false, 4, (Object) null)) < 50) {
                                 this.sideView.setBackgroundColor(Color.parseColor("#B71C1C"));
                                 return;
                             }

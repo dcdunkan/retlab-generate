@@ -36,14 +36,15 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: ChangeProPicDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ChangeProPicDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ChangeProPicDialogViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final DashRepository dashRepository;
     private final MutableLiveData<Resource<DashResponse>> dashResponse;
+    private boolean isDataLoaded;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private MutableLiveData<Resource<Float>> progressResponse;
     private MutableLiveData<Resource<SuccessResponse>> uploadResponse;
@@ -61,10 +62,10 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
         this.progressResponse = new MutableLiveData<>();
         this.dashResponse = new MutableLiveData<>();
         final ChangeProPicDialogViewModel changeProPicDialogViewModel = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -74,7 +75,7 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = changeProPicDialogViewModel;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -85,11 +86,7 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                 return rootScope.get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), qualifier2, function0);
             }
         });
-        if (Intrinsics.areEqual(getPreference().getBaseUrl(), "https://nssce.etlab.in/androidapp/mobile/")) {
-            getDashData("99");
-        } else {
-            getDashData(null);
-        }
+        loadDataIfNeeded();
     }
 
     public final MutableLiveData<Resource<SuccessResponse>> getUploadResponse() {
@@ -118,11 +115,23 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
         return (SharedPrefManager) this.preference.getValue();
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        if (Intrinsics.areEqual(getPreference().getBaseUrl(), "https://nssce.etlab.in/androidapp/mobile/")) {
+            getDashData("99");
+        } else {
+            getDashData(null);
+        }
+    }
+
     public final void getDashData(String hostel) {
         this.dashResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DashResponse> observeOn = this.dashRepository.getDashApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DashResponse, Unit> function1 = new Function1<DashResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$getDashData$1
+        Single<DashResponse> singleObserveOn = this.dashRepository.getDashApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DashResponse, Unit> function1 = new Function1<DashResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.getDashData.1
             {
                 super(1);
             }
@@ -133,7 +142,7 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DashResponse dashResponse) {
                 ChangeProPicDialogViewModel.this.getDashResponse().postValue(Resource.INSTANCE.success(dashResponse));
             }
@@ -141,10 +150,10 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
         Consumer<? super DashResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ChangeProPicDialogViewModel.getDashData$lambda$0(Function1.this, obj);
+                ChangeProPicDialogViewModel.getDashData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$getDashData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.getDashData.2
             {
                 super(1);
             }
@@ -155,15 +164,15 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 ChangeProPicDialogViewModel.this.getDashResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ChangeProPicDialogViewModel.getDashData$lambda$1(Function1.this, obj);
+                ChangeProPicDialogViewModel.getDashData$lambda$1(function12, obj);
             }
         }));
     }
@@ -188,9 +197,9 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
         try {
             Intrinsics.checkNotNull(filePath);
             ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-            MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("uploadedFile", filePath.getName(), progressRequestBody);
-            Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-            final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$uploadProPic$1
+            MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("uploadedFile", filePath.getName(), progressRequestBody);
+            Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+            final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.uploadProPic.1
                 {
                     super(1);
                 }
@@ -201,20 +210,20 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Float f) {
                     ChangeProPicDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
                 }
             };
-            subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda2
+            observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda2
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    ChangeProPicDialogViewModel.uploadProPic$lambda$2(Function1.this, obj);
+                    ChangeProPicDialogViewModel.uploadProPic$lambda$2(function1, obj);
                 }
             });
             CompositeDisposable compositeDisposable = this.compositeDisposable;
-            Observable<SuccessResponse> observeOn = this.dashRepository.updateProPicApiCall(createFormData, null).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-            final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$uploadProPic$2
+            Observable<SuccessResponse> observableObserveOn = this.dashRepository.updateProPicApiCall(partCreateFormData, null).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+            final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.uploadProPic.2
                 {
                     super(1);
                 }
@@ -225,7 +234,7 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(SuccessResponse successResponse) {
                     ChangeProPicDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
                 }
@@ -233,10 +242,10 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
             Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda3
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    ChangeProPicDialogViewModel.uploadProPic$lambda$3(Function1.this, obj);
+                    ChangeProPicDialogViewModel.uploadProPic$lambda$3(function12, obj);
                 }
             };
-            final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$uploadProPic$3
+            final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.uploadProPic.3
                 {
                     super(1);
                 }
@@ -247,7 +256,7 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Throwable th) {
                     if (th instanceof SocketTimeoutException) {
                         ChangeProPicDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -256,10 +265,10 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     }
                 }
             };
-            compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda4
+            compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda4
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    ChangeProPicDialogViewModel.uploadProPic$lambda$4(Function1.this, obj);
+                    ChangeProPicDialogViewModel.uploadProPic$lambda$4(function13, obj);
                 }
             }));
         } catch (Exception unused) {
@@ -288,9 +297,9 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
         try {
             Intrinsics.checkNotNull(signPath);
             ProgressRequestBody progressRequestBody = new ProgressRequestBody(signPath, FilesKt.getExtension(signPath), 1);
-            MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("uploadedSign", signPath.getName(), progressRequestBody);
-            Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-            final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$uploadSignPic$1
+            MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("uploadedSign", signPath.getName(), progressRequestBody);
+            Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+            final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.uploadSignPic.1
                 {
                     super(1);
                 }
@@ -301,20 +310,20 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Float f) {
                     ChangeProPicDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
                 }
             };
-            subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda5
+            observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda5
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    ChangeProPicDialogViewModel.uploadSignPic$lambda$5(Function1.this, obj);
+                    ChangeProPicDialogViewModel.uploadSignPic$lambda$5(function1, obj);
                 }
             });
             CompositeDisposable compositeDisposable = this.compositeDisposable;
-            Observable<SuccessResponse> observeOn = this.dashRepository.updateProPicApiCall(null, createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-            final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$uploadSignPic$2
+            Observable<SuccessResponse> observableObserveOn = this.dashRepository.updateProPicApiCall(null, partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+            final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.uploadSignPic.2
                 {
                     super(1);
                 }
@@ -325,7 +334,7 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(SuccessResponse successResponse) {
                     ChangeProPicDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
                 }
@@ -333,10 +342,10 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
             Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda6
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    ChangeProPicDialogViewModel.uploadSignPic$lambda$6(Function1.this, obj);
+                    ChangeProPicDialogViewModel.uploadSignPic$lambda$6(function12, obj);
                 }
             };
-            final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$uploadSignPic$3
+            final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel.uploadSignPic.3
                 {
                     super(1);
                 }
@@ -347,7 +356,7 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Throwable th) {
                     if (th instanceof SocketTimeoutException) {
                         ChangeProPicDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -356,10 +365,10 @@ public final class ChangeProPicDialogViewModel extends ViewModel implements Koin
                     }
                 }
             };
-            compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda7
+            compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.changepic.ChangeProPicDialogViewModel$$ExternalSyntheticLambda7
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    ChangeProPicDialogViewModel.uploadSignPic$lambda$7(Function1.this, obj);
+                    ChangeProPicDialogViewModel.uploadSignPic$lambda$7(function13, obj);
                 }
             }));
         } catch (Exception unused) {

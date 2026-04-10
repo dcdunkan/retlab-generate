@@ -11,7 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.examregistration.exammain.ExamMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentExamMainBindingImpl extends FragmentExamMainBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -62,7 +62,7 @@ public class FragmentExamMainBindingImpl extends FragmentExamMainBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (79 != variableId) {
+        if (78 != variableId) {
             return false;
         }
         setExamMainViewModel((ExamMainViewModel) variable);

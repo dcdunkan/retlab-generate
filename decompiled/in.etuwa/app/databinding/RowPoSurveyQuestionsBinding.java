@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowPoSurveyQuestionsBinding implements ViewBinding {
     public final CardView cardSurvey;
     public final RadioButton check1;
@@ -65,11 +65,11 @@ public final class RowPoSurveyQuestionsBinding implements ViewBinding {
     }
 
     public static RowPoSurveyQuestionsBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_po_survey_questions, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_po_survey_questions, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowPoSurveyQuestionsBinding bind(View rootView) {

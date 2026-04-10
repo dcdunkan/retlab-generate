@@ -4,8 +4,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import org.bouncycastle.i18n.ErrorBundle;
 
-/* compiled from: ProjectWork.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ProjectWork.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ProjectWork {
     private final String details;
     private final String file;
@@ -35,27 +35,27 @@ public final /* data */ class ProjectWork {
         return projectWork.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getType() {
         return this.type;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getYear() {
         return this.year;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getDetails() {
         return this.details;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getFile() {
         return this.file;
     }

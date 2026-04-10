@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.viewleave.HostelViewLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentHostelAttViewBinding extends ViewDataBinding {
     public final TextView applyNowBtn;
 

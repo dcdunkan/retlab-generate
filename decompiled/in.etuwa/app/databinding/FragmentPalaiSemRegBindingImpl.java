@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.semregistration.sjcetpalai.PalaiSemesterRegViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentPalaiSemRegBindingImpl extends FragmentPalaiSemRegBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -66,7 +66,7 @@ public class FragmentPalaiSemRegBindingImpl extends FragmentPalaiSemRegBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (156 != variableId) {
+        if (157 != variableId) {
             return false;
         }
         setPalaiSemesterRegViewModel((PalaiSemesterRegViewModel) variable);

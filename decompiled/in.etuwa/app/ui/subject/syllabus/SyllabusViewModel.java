@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SyllabusViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SyllabusViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SyllabusViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final SubjectRepository subjectRepository;
@@ -36,8 +36,8 @@ public final class SyllabusViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(subId, "subId");
         this.syllabusResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SyllabusResponse> observeOn = this.subjectRepository.getSyllabusApiCall(new CoSyllabusRequest(subId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SyllabusResponse, Unit> function1 = new Function1<SyllabusResponse, Unit>() { // from class: in.etuwa.app.ui.subject.syllabus.SyllabusViewModel$getSyllabus$1
+        Single<SyllabusResponse> singleObserveOn = this.subjectRepository.getSyllabusApiCall(new CoSyllabusRequest(subId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SyllabusResponse, Unit> function1 = new Function1<SyllabusResponse, Unit>() { // from class: in.etuwa.app.ui.subject.syllabus.SyllabusViewModel.getSyllabus.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class SyllabusViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SyllabusResponse syllabusResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SyllabusViewModel.this.syllabusResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(syllabusResponse));
+                SyllabusViewModel.this.syllabusResponse.postValue(Resource.INSTANCE.success(syllabusResponse));
             }
         };
         Consumer<? super SyllabusResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.subject.syllabus.SyllabusViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SyllabusViewModel.getSyllabus$lambda$0(Function1.this, obj);
+                SyllabusViewModel.getSyllabus$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.syllabus.SyllabusViewModel$getSyllabus$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.subject.syllabus.SyllabusViewModel.getSyllabus.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class SyllabusViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = SyllabusViewModel.this.syllabusResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                SyllabusViewModel.this.syllabusResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.syllabus.SyllabusViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.subject.syllabus.SyllabusViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                SyllabusViewModel.getSyllabus$lambda$1(Function1.this, obj);
+                SyllabusViewModel.getSyllabus$lambda$1(function12, obj);
             }
         }));
     }

@@ -14,8 +14,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: CertificateRequestRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CertificateRequestRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class CertificateRequestRepository {
     private final ApiHelper apiHelper;
 

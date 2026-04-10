@@ -11,7 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.subjectregistration.SubjectRegistrationViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentSubjectRegistrationBindingImpl extends FragmentSubjectRegistrationBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentSubjectRegistrationBindingImpl extends FragmentSubjectRegis
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (213 != variableId) {
+        if (215 != variableId) {
             return false;
         }
         setSubjectRegistrationViewModel((SubjectRegistrationViewModel) variable);

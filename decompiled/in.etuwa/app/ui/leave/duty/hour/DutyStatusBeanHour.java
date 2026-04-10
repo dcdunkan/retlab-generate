@@ -5,8 +5,8 @@ import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: DutyStatusBeanHour.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: DutyStatusBeanHour.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class DutyStatusBeanHour {
     private String status;
     private String valid;

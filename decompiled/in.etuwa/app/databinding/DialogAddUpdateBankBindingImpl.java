@@ -11,7 +11,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddUpdateBankBindingImpl extends DialogAddUpdateBankBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -67,7 +67,7 @@ public class DialogAddUpdateBankBindingImpl extends DialogAddUpdateBankBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (24 != variableId) {
+        if (23 != variableId) {
             return false;
         }
         setAddUpdateBankViewModel((AddUpdateBankViewModel) variable);

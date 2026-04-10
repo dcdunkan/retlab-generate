@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentViewModelLazyKt;
@@ -44,25 +43,25 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: OnlineClassFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: OnlineClassFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class OnlineClassFragment extends BaseFragment implements OnlineClassAdapter.OnlineCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private OnlineClassFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String batchLink;
 
-    /* renamed from: onlineClassViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: onlineClassViewModel$delegate, reason: from kotlin metadata */
     private final Lazy onlineClassViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: OnlineClassFragment.kt */
+    /* JADX INFO: compiled from: OnlineClassFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -112,7 +111,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return onlineClassFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(onlineClassFragment);
@@ -126,7 +125,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -139,7 +138,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(OnlineClassViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(OnlineClassViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final OnlineClassFragment onlineClassFragment2 = this;
@@ -186,7 +185,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
         return (OnlineClassAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final OnlineClassFragmentBinding get_binding() {
         return this._binding;
     }
@@ -195,7 +194,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: OnlineClassFragment.kt */
+    /* JADX INFO: compiled from: OnlineClassFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/onlineclass/OnlineClassFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/onlineclass/OnlineClassFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -240,7 +239,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
         SwipeRefreshLayout swipeRefreshLayout;
-        CardView cardView;
+        TextView textView;
         FragmentActivity activity = getActivity();
         if (activity != null) {
             activity.setTitle(getString(R.string.onlinelinks));
@@ -255,11 +254,11 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
         getPreference().setNewLogin(false);
         listenResponse();
         OnlineClassFragmentBinding onlineClassFragmentBinding2 = get_binding();
-        if (onlineClassFragmentBinding2 != null && (cardView = onlineClassFragmentBinding2.cardBatch) != null) {
-            cardView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassFragment$$ExternalSyntheticLambda1
+        if (onlineClassFragmentBinding2 != null && (textView = onlineClassFragmentBinding2.batchClass) != null) {
+            textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OnlineClassFragment.setUp$lambda$0(OnlineClassFragment.this, view);
+                    OnlineClassFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -270,7 +269,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassFragment$$ExternalSyntheticLambda2
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                OnlineClassFragment.setUp$lambda$1(OnlineClassFragment.this);
+                OnlineClassFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -297,7 +296,7 @@ public final class OnlineClassFragment extends BaseFragment implements OnlineCla
         getOnlineClassViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.onlineclass.OnlineClassFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                OnlineClassFragment.listenResponse$lambda$3(OnlineClassFragment.this, (Resource) obj);
+                OnlineClassFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }

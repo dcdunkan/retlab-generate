@@ -8,21 +8,21 @@ import kotlin.Unit;
 import kotlin.io.CloseableKt;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ResolvUtil.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ResolvUtil.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ResolvUtilKt {
     public static final String getFileName(ContentResolver contentResolver, Uri uri) {
         Intrinsics.checkNotNullParameter(contentResolver, "<this>");
         Intrinsics.checkNotNullParameter(uri, "uri");
-        Cursor query = contentResolver.query(uri, null, null, null, null);
-        if (query == null) {
+        Cursor cursorQuery = contentResolver.query(uri, null, null, null, null);
+        if (cursorQuery == null) {
             return "";
         }
-        Cursor cursor = query;
+        Cursor cursor = cursorQuery;
         try {
             Cursor cursor2 = cursor;
             cursor2.moveToFirst();
-            String string = query.getString(cursor2.getColumnIndex("_display_name"));
+            String string = cursorQuery.getString(cursor2.getColumnIndex("_display_name"));
             Intrinsics.checkNotNullExpressionValue(string, "cursor.getString(it.getC…bleColumns.DISPLAY_NAME))");
             Unit unit = Unit.INSTANCE;
             CloseableKt.closeFinally(cursor, null);

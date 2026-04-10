@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityCrashDisplayBinding implements ViewBinding {
     public final Button btnClose;
     public final Button btnIgnore;
@@ -42,11 +42,11 @@ public final class ActivityCrashDisplayBinding implements ViewBinding {
     }
 
     public static ActivityCrashDisplayBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_crash_display, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_crash_display, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityCrashDisplayBinding bind(View rootView) {

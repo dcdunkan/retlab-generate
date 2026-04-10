@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.fees.gateway2.GatewayTwoViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogGatewayTwoBinding extends ViewDataBinding {
     public final EditText accNoEt;
     public final TextView accNoTv;

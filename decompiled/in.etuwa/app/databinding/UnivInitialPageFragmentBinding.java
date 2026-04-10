@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.university.initialpage.UnivInitialPageViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class UnivInitialPageFragmentBinding extends ViewDataBinding {
     public final TextView cgpa;
     public final TextView credits;

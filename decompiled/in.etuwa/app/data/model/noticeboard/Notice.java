@@ -3,10 +3,11 @@ package in.etuwa.app.data.model.noticeboard;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Notice.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Notice.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Notice {
     private final String content;
 
@@ -17,6 +18,8 @@ public final /* data */ class Notice {
     @SerializedName("created time")
     @Expose
     private final String createdTime;
+
+    @SerializedName("document")
     private final String document;
     private final String heading;
 
@@ -42,27 +45,27 @@ public final /* data */ class Notice {
         return notice.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getHeading() {
         return this.heading;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getContent() {
         return this.content;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getCreatedTime() {
         return this.createdTime;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getCreateBy() {
         return this.createBy;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDocument() {
         return this.document;
     }
@@ -106,6 +109,10 @@ public final /* data */ class Notice {
         this.createdTime = createdTime;
         this.createBy = createBy;
         this.document = document;
+    }
+
+    public /* synthetic */ Notice(String str, String str2, String str3, String str4, String str5, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(str, str2, str3, str4, (i & 16) != 0 ? "" : str5);
     }
 
     public final String getHeading() {

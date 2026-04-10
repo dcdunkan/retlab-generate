@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Colleges.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Colleges.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Colleges {
 
     @SerializedName("base_url")
@@ -41,22 +41,22 @@ public final /* data */ class Colleges {
         return colleges.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getClgId() {
         return this.clgId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getBaseUrl() {
         return this.baseUrl;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getRegUrl() {
         return this.regUrl;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getClgName() {
         return this.clgName;
     }

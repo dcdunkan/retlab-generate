@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowQuestionBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final TextView tvDoc;
@@ -33,11 +33,11 @@ public final class RowQuestionBinding implements ViewBinding {
     }
 
     public static RowQuestionBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_question, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_question, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowQuestionBinding bind(View rootView) {

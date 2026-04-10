@@ -54,26 +54,26 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CircularFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CircularFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CircularFragment extends BaseFragment implements CircularAdapter.CircularListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private CircularFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: circularViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: circularViewModel$delegate, reason: from kotlin metadata */
     private final Lazy circularViewModel;
     private ArrayList<DownloadModel> downList;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: CircularFragment.kt */
+    /* JADX INFO: compiled from: CircularFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -123,7 +123,7 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return circularFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(circularFragment);
@@ -137,7 +137,7 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -150,7 +150,7 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CircularViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CircularViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final CircularFragment circularFragment2 = this;
@@ -190,16 +190,12 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.circular.CircularFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                CircularAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = CircularFragment.this.downList;
-                    CircularFragment circularFragment3 = CircularFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    CircularFragment circularFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -208,11 +204,8 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = circularFragment3.getAdapter();
-                            arrayList2 = circularFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = circularFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            circularFragment3.getAdapter().notifyDataChanged(((DownloadModel) circularFragment3.downList.get(i)).getPosition());
+                            circularFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -231,7 +224,7 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
         return (CircularAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final CircularFragmentBinding get_binding() {
         return this._binding;
     }
@@ -240,7 +233,7 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: CircularFragment.kt */
+    /* JADX INFO: compiled from: CircularFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/circular/CircularFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/circular/CircularFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -305,7 +298,7 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.circular.CircularFragment$$ExternalSyntheticLambda1
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                CircularFragment.setUp$lambda$0(CircularFragment.this);
+                CircularFragment.setUp$lambda$0(this.f$0);
             }
         });
     }
@@ -326,7 +319,7 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
         getCircularViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.circular.CircularFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CircularFragment.listenResponse$lambda$2(CircularFragment.this, (Resource) obj);
+                CircularFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -373,14 +366,14 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
     public void downloadFile(String url, int position) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, AppConstant.CIRCULAR_PATH);
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, AppConstant.CIRCULAR_PATH);
                 return;
             }
             try {
@@ -390,30 +383,30 @@ public final class CircularFragment extends BaseFragment implements CircularAdap
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(AppConstant.CIRCULAR_PATH, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(AppConstant.CIRCULAR_PATH, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
             }
         }
-        Context requireContext4 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext4, "requireContext()");
-        new ValidChecker(requireContext4).showPermissionDialog();
+        Context contextRequireContext4 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext4, "requireContext()");
+        new ValidChecker(contextRequireContext4).showPermissionDialog();
     }
 
     @Override // in.etuwa.app.ui.circular.CircularAdapter.CircularListener
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.CIRCULAR_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.CIRCULAR_PATH);
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment

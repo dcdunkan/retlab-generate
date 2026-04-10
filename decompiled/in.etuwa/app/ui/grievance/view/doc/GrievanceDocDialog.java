@@ -53,22 +53,22 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: GrievanceDocDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: GrievanceDocDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class GrievanceDocDialog extends BaseDialog implements GrievanceDocAdapter.GrievanceDocListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private final int REQUEST_CODE;
     private GrievanceDocDialogBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
     private Boolean fileType;
     private ArrayList<GrievanceDoc> grDocs;
 
-    /* renamed from: grievanceDocDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: grievanceDocDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy grievanceDocDialogViewModel;
     private final BroadcastReceiver onDownloadComplete;
     private String path;
@@ -96,7 +96,7 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return grievanceDocDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(grievanceDocDialog);
@@ -110,7 +110,7 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -123,7 +123,7 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(GrievanceDocDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(GrievanceDocDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final GrievanceDocDialog grievanceDocDialog2 = this;
@@ -150,16 +150,12 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.grievance.view.doc.GrievanceDocDialog$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                GrievanceDocAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = GrievanceDocDialog.this.downList;
-                    GrievanceDocDialog grievanceDocDialog3 = GrievanceDocDialog.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    GrievanceDocDialog grievanceDocDialog3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -168,11 +164,8 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = grievanceDocDialog3.getAdapter();
-                            arrayList2 = grievanceDocDialog3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = grievanceDocDialog3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            grievanceDocDialog3.getAdapter().notifyDataChanged(((DownloadModel) grievanceDocDialog3.downList.get(i)).getPosition());
+                            grievanceDocDialog3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -191,12 +184,12 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
         return (GrievanceDocAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final GrievanceDocDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: GrievanceDocDialog.kt */
+    /* JADX INFO: compiled from: GrievanceDocDialog.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u001e\u0010\u0003\u001a\u00020\u00042\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u00062\u0006\u0010\b\u001a\u00020\tH\u0007¨\u0006\n"}, d2 = {"Lin/etuwa/app/ui/grievance/view/doc/GrievanceDocDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/grievance/view/doc/GrievanceDocDialog;", "docs", "Ljava/util/ArrayList;", "Lin/etuwa/app/data/model/grievance/view/GrievanceDoc;", "type", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -281,17 +274,17 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
     public void downloadFile(String url, int position) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
         if (checkPermissions()) {
             System.out.println((Object) "");
         } else {
             System.out.println((Object) "");
         }
         if (Build.VERSION.SDK_INT >= 34 || checkPermissions()) {
-            if (checkFileExistence(replace)) {
-                Context requireContext = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                new DownloadManagerHelper(requireContext).openFile(replace, AppConstant.GRIEVANCE_PATH);
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext).openFile(strReplace, AppConstant.GRIEVANCE_PATH);
                 return;
             }
             try {
@@ -301,14 +294,14 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext2).startDownloading(AppConstant.UPLOAD_SERIES_EXAM_PATH, url);
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext2).startDownloading(AppConstant.UPLOAD_SERIES_EXAM_PATH, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 2);
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception e) {
                 Log.e("DownloadError", "Error during download: " + e.getMessage());
@@ -321,16 +314,16 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
     @Override // in.etuwa.app.ui.grievance.view.doc.GrievanceDocAdapter.GrievanceDocListener
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.GRIEVANCE_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.GRIEVANCE_PATH);
     }
 
     private final boolean checkPermissions() {
-        int checkSelfPermission = ContextCompat.checkSelfPermission(requireContext(), "android.permission.READ_EXTERNAL_STORAGE");
-        int checkSelfPermission2 = ContextCompat.checkSelfPermission(requireContext(), "android.permission.WRITE_EXTERNAL_STORAGE");
-        Log.d("Permissions", "Read Permission: " + checkSelfPermission + ", Write Permission: " + checkSelfPermission2);
-        return checkSelfPermission == 0 && checkSelfPermission2 == 0;
+        int iCheckSelfPermission = ContextCompat.checkSelfPermission(requireContext(), "android.permission.READ_EXTERNAL_STORAGE");
+        int iCheckSelfPermission2 = ContextCompat.checkSelfPermission(requireContext(), "android.permission.WRITE_EXTERNAL_STORAGE");
+        Log.d("Permissions", "Read Permission: " + iCheckSelfPermission + ", Write Permission: " + iCheckSelfPermission2);
+        return iCheckSelfPermission == 0 && iCheckSelfPermission2 == 0;
     }
 
     private final void requestPermission() {
@@ -338,7 +331,7 @@ public final class GrievanceDocDialog extends BaseDialog implements GrievanceDoc
             new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.grievance.view.doc.GrievanceDocDialog$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    GrievanceDocDialog.requestPermission$lambda$1(GrievanceDocDialog.this, dialogInterface, i);
+                    GrievanceDocDialog.requestPermission$lambda$1(this.f$0, dialogInterface, i);
                 }
             }).create().show();
         } else {

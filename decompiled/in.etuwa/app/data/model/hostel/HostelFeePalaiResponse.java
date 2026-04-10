@@ -4,8 +4,8 @@ import in.etuwa.app.ui.feenewengineer.payment.feeconfirmdialog.FeeConfirmDialogK
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelFeePalaiResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelFeePalaiResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelFeePalaiResponse {
     private final int fine;
     private final int subtotal;
@@ -28,22 +28,22 @@ public final /* data */ class HostelFeePalaiResponse {
         return hostelFeePalaiResponse.copy(str, i, i2, i3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final int getSubtotal() {
         return this.subtotal;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final int getTotal() {
         return this.total;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final int getFine() {
         return this.fine;
     }

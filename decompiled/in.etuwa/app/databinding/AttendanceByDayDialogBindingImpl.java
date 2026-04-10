@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class AttendanceByDayDialogBindingImpl extends AttendanceByDayDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -96,7 +96,7 @@ public class AttendanceByDayDialogBindingImpl extends AttendanceByDayDialogBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (36 != variableId) {
+        if (35 != variableId) {
             return false;
         }
         setAttendanceDayDialogViewModel((AttendanceDayDialogViewModel) variable);

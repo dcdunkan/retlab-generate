@@ -64,26 +64,26 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: AsietTransRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AsietTransRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AsietTransRegDialog extends BaseDialog implements AddCompanyDialog.AddCompanyListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogAsietTransportRegistrationBinding _binding;
 
-    /* renamed from: asietTransRegViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: asietTransRegViewModel$delegate, reason: from kotlin metadata */
     private final Lazy asietTransRegViewModel;
     private ArrayList<DownloadModel> downList;
     private AddRegistrationCallBack listener;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
     private String type;
     private String url;
 
-    /* compiled from: AsietTransRegDialog.kt */
+    /* JADX INFO: compiled from: AsietTransRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/transport/registration/asiet/registration/AsietTransRegDialog$AddRegistrationCallBack;", "", "onDismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface AddRegistrationCallBack {
         void onDismiss();
@@ -116,7 +116,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return asietTransRegDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(asietTransRegDialog);
@@ -130,7 +130,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -143,7 +143,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AsietTransRegViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AsietTransRegViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.type = "";
@@ -155,7 +155,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(AsietTransRegDialog.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -178,20 +178,17 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding;
-                ArrayList arrayList;
-                ArrayList arrayList2;
                 TextView textView;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
-                dialogAsietTransportRegistrationBinding = AsietTransRegDialog.this.get_binding();
+                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding = this.this$0.get_binding();
                 if (dialogAsietTransportRegistrationBinding != null && (textView = dialogAsietTransportRegistrationBinding.busDetailsBtn) != null) {
                     ToastExtKt.showInfoToast(textView, "Download Completed");
                 }
                 try {
-                    arrayList = AsietTransRegDialog.this.downList;
-                    AsietTransRegDialog asietTransRegDialog3 = AsietTransRegDialog.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    AsietTransRegDialog asietTransRegDialog3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -200,8 +197,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            arrayList2 = asietTransRegDialog3.downList;
-                            arrayList2.remove(new DownloadModel(downloadModel.getId(), i));
+                            asietTransRegDialog3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -216,7 +212,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogAsietTransportRegistrationBinding get_binding() {
         return this._binding;
     }
@@ -226,7 +222,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
         return (AsietBoardingSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
-    /* compiled from: AsietTransRegDialog.kt */
+    /* JADX INFO: compiled from: AsietTransRegDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/transport/registration/asiet/registration/AsietTransRegDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/transport/registration/asiet/registration/AsietTransRegDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -292,26 +288,21 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
         DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding2 = get_binding();
         Spinner spinner2 = dialogAsietTransportRegistrationBinding2 != null ? dialogAsietTransportRegistrationBinding2.spinnerBoarding : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$setUp$1
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    AsietBoardingSpinnerAdapter spinnerAdapter;
-                    DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding3;
                     TextInputEditText textInputEditText;
-                    AsietBoardingSpinnerAdapter spinnerAdapter2;
                     AsietTransRegDialog asietTransRegDialog = AsietTransRegDialog.this;
-                    spinnerAdapter = asietTransRegDialog.getSpinnerAdapter();
-                    asietTransRegDialog.type = spinnerAdapter.getType(position).getId().toString();
-                    dialogAsietTransportRegistrationBinding3 = AsietTransRegDialog.this.get_binding();
+                    asietTransRegDialog.type = asietTransRegDialog.getSpinnerAdapter().getType(position).getId().toString();
+                    DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding3 = AsietTransRegDialog.this.get_binding();
                     if (dialogAsietTransportRegistrationBinding3 == null || (textInputEditText = dialogAsietTransportRegistrationBinding3.etAmount) == null) {
                         return;
                     }
-                    spinnerAdapter2 = AsietTransRegDialog.this.getSpinnerAdapter();
-                    textInputEditText.setText(spinnerAdapter2.getType(position).getAmount());
+                    textInputEditText.setText(AsietTransRegDialog.this.getSpinnerAdapter().getType(position).getAmount());
                 }
             });
         }
@@ -320,7 +311,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
             editText.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AsietTransRegDialog.setUp$lambda$1(AsietTransRegDialog.this, i, i2, i3, view);
+                    AsietTransRegDialog.setUp$lambda$1(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -329,7 +320,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    AsietTransRegDialog.setUp$lambda$3(AsietTransRegDialog.this, i, i2, i3, view);
+                    AsietTransRegDialog.setUp$lambda$3(this.f$0, i, i2, i3, view);
                 }
             });
         }
@@ -349,7 +340,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AsietTransRegDialog.setUp$lambda$5(AsietTransRegDialog.this, view);
+                AsietTransRegDialog.setUp$lambda$5(this.f$0, view);
             }
         });
     }
@@ -360,7 +351,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$$ExternalSyntheticLambda4
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AsietTransRegDialog.setUp$lambda$1$lambda$0(AsietTransRegDialog.this, datePicker, i4, i5, i6);
+                AsietTransRegDialog.setUp$lambda$1$lambda$0(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -382,7 +373,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
         new DatePickerDialog(this$0.requireContext(), new DatePickerDialog.OnDateSetListener() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$$ExternalSyntheticLambda5
             @Override // android.app.DatePickerDialog.OnDateSetListener
             public final void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-                AsietTransRegDialog.setUp$lambda$3$lambda$2(AsietTransRegDialog.this, datePicker, i4, i5, i6);
+                AsietTransRegDialog.setUp$lambda$3$lambda$2(this.f$0, datePicker, i4, i5, i6);
             }
         }, i, i2, i3).show();
     }
@@ -405,9 +396,10 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
     }
 
     private final void listenResponse() {
-        getAsietTransRegViewModel().getAddResponse().observe(getViewLifecycleOwner(), new AsietTransRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegisterSucessResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$listenResponse$1
+        getAsietTransRegViewModel().getAddResponse().observe(getViewLifecycleOwner(), new AsietTransRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends RegisterSucessResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog.listenResponse.1
 
-            /* compiled from: AsietTransRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: AsietTransRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -444,15 +436,11 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<RegisterSucessResponse> resource) {
-                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding;
                 TextView registerBtn;
-                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding2;
                 TextView registerBtn2;
-                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding3;
                 TextView registerBtn3;
-                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding4;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -468,8 +456,8 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                         return;
                     }
                     AsietTransRegDialog.this.hideProgress();
-                    dialogAsietTransportRegistrationBinding4 = AsietTransRegDialog.this.get_binding();
-                    if (dialogAsietTransportRegistrationBinding4 == null || (textView = dialogAsietTransportRegistrationBinding4.registerBtn) == null) {
+                    DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding = AsietTransRegDialog.this.get_binding();
+                    if (dialogAsietTransportRegistrationBinding == null || (textView = dialogAsietTransportRegistrationBinding.registerBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -483,8 +471,8 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                     AsietTransRegDialog asietTransRegDialog = AsietTransRegDialog.this;
                     try {
                         if (data.getSuccess()) {
-                            dialogAsietTransportRegistrationBinding3 = asietTransRegDialog.get_binding();
-                            if (dialogAsietTransportRegistrationBinding3 != null && (registerBtn3 = dialogAsietTransportRegistrationBinding3.registerBtn) != null) {
+                            DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding2 = asietTransRegDialog.get_binding();
+                            if (dialogAsietTransportRegistrationBinding2 != null && (registerBtn3 = dialogAsietTransportRegistrationBinding2.registerBtn) != null) {
                                 Intrinsics.checkNotNullExpressionValue(registerBtn3, "registerBtn");
                                 ToastExtKt.showSuccessToast(registerBtn3, data.getMessage());
                             }
@@ -492,16 +480,16 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                             Unit unit = Unit.INSTANCE;
                             return;
                         }
-                        dialogAsietTransportRegistrationBinding2 = asietTransRegDialog.get_binding();
-                        if (dialogAsietTransportRegistrationBinding2 == null || (registerBtn2 = dialogAsietTransportRegistrationBinding2.registerBtn) == null) {
+                        DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding3 = asietTransRegDialog.get_binding();
+                        if (dialogAsietTransportRegistrationBinding3 == null || (registerBtn2 = dialogAsietTransportRegistrationBinding3.registerBtn) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(registerBtn2, "registerBtn");
                         ToastExtKt.showErrorToast(registerBtn2, data.getError());
                         Unit unit2 = Unit.INSTANCE;
                     } catch (NullPointerException unused) {
-                        dialogAsietTransportRegistrationBinding = asietTransRegDialog.get_binding();
-                        if (dialogAsietTransportRegistrationBinding == null || (registerBtn = dialogAsietTransportRegistrationBinding.registerBtn) == null) {
+                        DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding4 = asietTransRegDialog.get_binding();
+                        if (dialogAsietTransportRegistrationBinding4 == null || (registerBtn = dialogAsietTransportRegistrationBinding4.registerBtn) == null) {
                             return;
                         }
                         Intrinsics.checkNotNullExpressionValue(registerBtn, "registerBtn");
@@ -514,9 +502,10 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
     }
 
     private final void listenSpinner() {
-        getAsietTransRegViewModel().getResponse().observe(getViewLifecycleOwner(), new AsietTransRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelAsietRegisterViewResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$listenSpinner$1
+        getAsietTransRegViewModel().getResponse().observe(getViewLifecycleOwner(), new AsietTransRegDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelAsietRegisterViewResponse>, Unit>() { // from class: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog.listenSpinner.1
 
-            /* compiled from: AsietTransRegDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.transport.registration.asiet.registration.AsietTransRegDialog$listenSpinner$1$WhenMappings */
+            /* JADX INFO: compiled from: AsietTransRegDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -553,10 +542,8 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelAsietRegisterViewResponse> resource) {
-                AsietBoardingSpinnerAdapter spinnerAdapter;
-                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -564,8 +551,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                     HostelAsietRegisterViewResponse data = resource.getData();
                     if (data != null) {
                         AsietTransRegDialog asietTransRegDialog = AsietTransRegDialog.this;
-                        spinnerAdapter = asietTransRegDialog.getSpinnerAdapter();
-                        spinnerAdapter.addItems(data.getBoardings());
+                        asietTransRegDialog.getSpinnerAdapter().addItems(data.getBoardings());
                         asietTransRegDialog.url = data.getRoute_url();
                         return;
                     }
@@ -583,7 +569,7 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                     return;
                 }
                 AsietTransRegDialog.this.hideProgress();
-                dialogAsietTransportRegistrationBinding = AsietTransRegDialog.this.get_binding();
+                DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding = AsietTransRegDialog.this.get_binding();
                 if (dialogAsietTransportRegistrationBinding == null || (textView = dialogAsietTransportRegistrationBinding.registerBtn) == null) {
                     return;
                 }
@@ -598,23 +584,23 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
         Context context;
         TextView textView;
         TextView textView2;
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission()) {
-            if (checkFileExistence(replace)) {
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission()) {
+            if (checkFileExistence(strReplace)) {
                 DialogAsietTransportRegistrationBinding dialogAsietTransportRegistrationBinding = get_binding();
                 if (dialogAsietTransportRegistrationBinding != null && (textView2 = dialogAsietTransportRegistrationBinding.busDetailsBtn) != null) {
                     ToastExtKt.showInfoToast(textView2, "Download Started");
                 }
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext2).startDownloading(AppConstant.BUSS_PASS_PATH, url);
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext2).startDownloading(AppConstant.BUSS_PASS_PATH, url);
                 Context context2 = getContext();
                 if (context2 != null) {
                     context2.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 4);
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             }
             try {
@@ -622,27 +608,27 @@ public final class AsietTransRegDialog extends BaseDialog implements AddCompanyD
                 if (dialogAsietTransportRegistrationBinding2 != null && (textView = dialogAsietTransportRegistrationBinding2.busDetailsBtn) != null) {
                     ToastExtKt.showInfoToast(textView, "Download Started");
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading2 = new DownloadManagerHelper(requireContext3).startDownloading(AppConstant.BUSS_PASS_PATH, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading2 = new DownloadManagerHelper(contextRequireContext3).startDownloading(AppConstant.BUSS_PASS_PATH, url);
                 if (Build.VERSION.SDK_INT >= 33 && (context = getContext()) != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 4);
                 }
-                this.downList.add(new DownloadModel(startDownloading2, position));
+                this.downList.add(new DownloadModel(jStartDownloading2, position));
                 return;
             } catch (Exception unused) {
                 return;
             }
         }
-        Context requireContext4 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext4, "requireContext()");
-        new ValidChecker(requireContext4).showPermissionDialog();
+        Context contextRequireContext4 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext4, "requireContext()");
+        new ValidChecker(contextRequireContext4).showPermissionDialog();
     }
 
     private final boolean checkFileExistence(String fileName) {
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.BUSS_PASS_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.BUSS_PASS_PATH);
     }
 
     public final void setAddRegistrationCallBack(AsietTransRegFragment context) {

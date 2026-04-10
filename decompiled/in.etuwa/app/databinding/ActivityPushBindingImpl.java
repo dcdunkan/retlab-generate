@@ -6,11 +6,11 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.push.PushViewModel;
+import me.ibrahimsn.lib.SmoothBottomBar;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ActivityPushBindingImpl extends ActivityPushBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -26,7 +26,7 @@ public class ActivityPushBindingImpl extends ActivityPushBinding {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
         sparseIntArray.put(R.id.rv_push, 2);
-        sparseIntArray.put(R.id.bottom_nav, 3);
+        sparseIntArray.put(R.id.bottom_nav_new, 3);
     }
 
     public ActivityPushBindingImpl(DataBindingComponent bindingComponent, View root) {
@@ -34,7 +34,7 @@ public class ActivityPushBindingImpl extends ActivityPushBinding {
     }
 
     private ActivityPushBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (BottomNavigationView) bindings[3], (CoordinatorLayout) bindings[0], (RecyclerView) bindings[2]);
+        super(bindingComponent, root, 0, (SmoothBottomBar) bindings[3], (CoordinatorLayout) bindings[0], (RecyclerView) bindings[2]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -60,7 +60,7 @@ public class ActivityPushBindingImpl extends ActivityPushBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (172 != variableId) {
+        if (174 != variableId) {
             return false;
         }
         setPushViewModel((PushViewModel) variable);

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectsList.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SubjectsList.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SubjectsList {
     private final int id;
     private final String name;
@@ -29,12 +29,12 @@ public final /* data */ class SubjectsList {
         return this.subjects;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final int getId() {
         return this.id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getName() {
         return this.name;
     }

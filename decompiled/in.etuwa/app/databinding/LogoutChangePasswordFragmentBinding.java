@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.changepassword.main.LogoutChangePasswordViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class LogoutChangePasswordFragmentBinding extends ViewDataBinding {
     public final TextView changeBtn;
     public final TextView logoutBtn;

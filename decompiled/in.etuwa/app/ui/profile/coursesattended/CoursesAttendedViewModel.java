@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: CoursesAttendedViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CoursesAttendedViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CoursesAttendedViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<CoursesAttendedResponse>> courseResponse;
@@ -47,8 +47,8 @@ public final class CoursesAttendedViewModel extends ViewModel implements KoinCom
     public final void getCoursesAttendedData() {
         this.courseResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CoursesAttendedResponse> observeOn = this.profileRepository.getCoursesAttendedUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CoursesAttendedResponse, Unit> function1 = new Function1<CoursesAttendedResponse, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$getCoursesAttendedData$1
+        Single<CoursesAttendedResponse> singleObserveOn = this.profileRepository.getCoursesAttendedUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CoursesAttendedResponse, Unit> function1 = new Function1<CoursesAttendedResponse, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel.getCoursesAttendedData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class CoursesAttendedViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CoursesAttendedResponse coursesAttendedResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CoursesAttendedViewModel.this.courseResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(coursesAttendedResponse));
+                CoursesAttendedViewModel.this.courseResponse.postValue(Resource.INSTANCE.success(coursesAttendedResponse));
             }
         };
         Consumer<? super CoursesAttendedResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CoursesAttendedViewModel.getCoursesAttendedData$lambda$0(Function1.this, obj);
+                CoursesAttendedViewModel.getCoursesAttendedData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$getCoursesAttendedData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel.getCoursesAttendedData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class CoursesAttendedViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CoursesAttendedViewModel.this.courseResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CoursesAttendedViewModel.this.courseResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CoursesAttendedViewModel.getCoursesAttendedData$lambda$1(Function1.this, obj);
+                CoursesAttendedViewModel.getCoursesAttendedData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class CoursesAttendedViewModel extends ViewModel implements KoinCom
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteCoursesUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$deleteCourseData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteCoursesUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel.deleteCourseData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class CoursesAttendedViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 CoursesAttendedViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class CoursesAttendedViewModel extends ViewModel implements KoinCom
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CoursesAttendedViewModel.deleteCourseData$lambda$2(Function1.this, obj);
+                CoursesAttendedViewModel.deleteCourseData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$deleteCourseData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel.deleteCourseData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class CoursesAttendedViewModel extends ViewModel implements KoinCom
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 CoursesAttendedViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CoursesAttendedViewModel.deleteCourseData$lambda$3(Function1.this, obj);
+                CoursesAttendedViewModel.deleteCourseData$lambda$3(function12, obj);
             }
         }));
     }

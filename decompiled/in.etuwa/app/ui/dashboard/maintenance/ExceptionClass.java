@@ -3,8 +3,8 @@ package in.etuwa.app.ui.dashboard.maintenance;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* compiled from: ExceptionClass.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ExceptionClass.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ExceptionClass extends Exception {
     private final int errorCode;
 

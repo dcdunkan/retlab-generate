@@ -18,8 +18,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: MaintenanceViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: MaintenanceViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class MaintenanceViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final DashRepository dashRepository;
@@ -44,8 +44,8 @@ public final class MaintenanceViewModel extends ViewModel implements KoinCompone
     public final void getDashData() {
         this.maintenanceResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<MaintenanceResponse> observeOn = this.dashRepository.getMaintenanceUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<MaintenanceResponse, Unit> function1 = new Function1<MaintenanceResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceViewModel$getDashData$1
+        Single<MaintenanceResponse> singleObserveOn = this.dashRepository.getMaintenanceUrl().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<MaintenanceResponse, Unit> function1 = new Function1<MaintenanceResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceViewModel.getDashData.1
             {
                 super(1);
             }
@@ -56,7 +56,7 @@ public final class MaintenanceViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MaintenanceResponse maintenanceResponse) {
                 MaintenanceViewModel.this.getMaintenanceResponse().postValue(Resource.INSTANCE.success(maintenanceResponse));
             }
@@ -64,10 +64,10 @@ public final class MaintenanceViewModel extends ViewModel implements KoinCompone
         Consumer<? super MaintenanceResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MaintenanceViewModel.getDashData$lambda$0(Function1.this, obj);
+                MaintenanceViewModel.getDashData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceViewModel$getDashData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceViewModel.getDashData.2
             {
                 super(1);
             }
@@ -78,15 +78,15 @@ public final class MaintenanceViewModel extends ViewModel implements KoinCompone
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 MaintenanceViewModel.this.getMaintenanceResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MaintenanceViewModel.getDashData$lambda$1(Function1.this, obj);
+                MaintenanceViewModel.getDashData$lambda$1(function12, obj);
             }
         }));
     }

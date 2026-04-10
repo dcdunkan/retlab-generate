@@ -42,11 +42,11 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: KmeaHostelFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: KmeaHostelFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class KmeaHostelFragment extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentKmeaBinding _binding;
     private int amounts;
@@ -54,7 +54,7 @@ public final class KmeaHostelFragment extends BaseDialog {
     private int fineAmount;
     private ArrayList<HostelMonth> hostel;
 
-    /* renamed from: kmeaHostelViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: kmeaHostelViewModel$delegate, reason: from kotlin metadata */
     private final Lazy kmeaHostelViewModel;
     private MainCallBackListener listener;
     private String month;
@@ -63,7 +63,7 @@ public final class KmeaHostelFragment extends BaseDialog {
     private int totalAmount;
     private String year;
 
-    /* compiled from: KmeaHostelFragment.kt */
+    /* JADX INFO: compiled from: KmeaHostelFragment.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/hostel/tkmhostel/kmeahostel/KmeaHostelFragment$FeeDetailListner;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface FeeDetailListner {
         void dismiss();
@@ -92,7 +92,7 @@ public final class KmeaHostelFragment extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return kmeaHostelFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(kmeaHostelFragment);
@@ -106,7 +106,7 @@ public final class KmeaHostelFragment extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -119,7 +119,7 @@ public final class KmeaHostelFragment extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(KmeaHostelViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(KmeaHostelViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.month = "";
@@ -134,7 +134,7 @@ public final class KmeaHostelFragment extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final FragmentKmeaBinding get_binding() {
         return this._binding;
     }
@@ -202,7 +202,7 @@ public final class KmeaHostelFragment extends BaseDialog {
         this.date = str;
     }
 
-    /* compiled from: KmeaHostelFragment.kt */
+    /* JADX INFO: compiled from: KmeaHostelFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/hostel/tkmhostel/kmeahostel/KmeaHostelFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/tkmhostel/kmeahostel/KmeaHostelFragment;", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -276,7 +276,7 @@ public final class KmeaHostelFragment extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                KmeaHostelFragment.setUp$lambda$1(KmeaHostelFragment.this, view);
+                KmeaHostelFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -284,14 +284,14 @@ public final class KmeaHostelFragment extends BaseDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setUp$lambda$1(KmeaHostelFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
+        HashMap map = new HashMap();
+        HashMap map2 = new HashMap();
         ArrayList<HostelMonth> arrayList = this$0.hostel;
         Integer num = this$0.pos;
         Intrinsics.checkNotNull(num);
         ArrayList<HostelFee> payment = arrayList.get(num.intValue()).getPayment();
         int size = payment.size();
-        HashMap hashMap3 = hashMap2;
+        HashMap map3 = map2;
         ArrayList<HostelMonth> arrayList2 = this$0.hostel;
         Integer num2 = this$0.pos;
         Intrinsics.checkNotNull(num2);
@@ -303,7 +303,7 @@ public final class KmeaHostelFragment extends BaseDialog {
         ArrayList<HostelMonth> arrayList4 = this$0.hostel;
         Integer num4 = this$0.pos;
         Intrinsics.checkNotNull(num4);
-        hashMap3.put(str, arrayList4.get(num4.intValue()).getFine());
+        map3.put(str, arrayList4.get(num4.intValue()).getFine());
         int i = this$0.amounts;
         ArrayList<HostelMonth> arrayList5 = this$0.hostel;
         Integer num5 = this$0.pos;
@@ -323,14 +323,14 @@ public final class KmeaHostelFragment extends BaseDialog {
         Integer num8 = this$0.pos;
         Intrinsics.checkNotNull(num8);
         this$0.fineAmount = i3 + Integer.parseInt(arrayList8.get(num8.intValue()).getFine());
-        hashMap3.put("payment", "1");
-        hashMap3.put("Transaction[method]", "5");
-        hashMap3.put("FeeReceipt[receipt_date]", this$0.date);
+        map3.put("payment", "1");
+        map3.put("Transaction[method]", "5");
+        map3.put("FeeReceipt[receipt_date]", this$0.date);
         int i4 = size - 1;
         if (i4 >= 0) {
             int i5 = 0;
             while (true) {
-                HashMap hashMap4 = hashMap;
+                HashMap map4 = map;
                 ArrayList<HostelMonth> arrayList9 = this$0.hostel;
                 Integer num9 = this$0.pos;
                 Intrinsics.checkNotNull(num9);
@@ -338,7 +338,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList10 = this$0.hostel;
                 Integer num10 = this$0.pos;
                 Intrinsics.checkNotNull(num10);
-                hashMap4.put("FeeCollection[" + year2 + "][" + arrayList10.get(num10.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][amount]", payment.get(i5).getAmount());
+                map4.put("FeeCollection[" + year2 + "][" + arrayList10.get(num10.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][amount]", String.valueOf(payment.get(i5).getAmount()));
                 ArrayList<HostelMonth> arrayList11 = this$0.hostel;
                 Integer num11 = this$0.pos;
                 Intrinsics.checkNotNull(num11);
@@ -346,7 +346,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList12 = this$0.hostel;
                 Integer num12 = this$0.pos;
                 Intrinsics.checkNotNull(num12);
-                hashMap4.put("FeeCollection[" + year3 + "][" + arrayList12.get(num12.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][feegroup_id]", payment.get(i5).getFeeheadgroup_id());
+                map4.put("FeeCollection[" + year3 + "][" + arrayList12.get(num12.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][feegroup_id]", payment.get(i5).getFeeheadgroup_id());
                 ArrayList<HostelMonth> arrayList13 = this$0.hostel;
                 Integer num13 = this$0.pos;
                 Intrinsics.checkNotNull(num13);
@@ -354,7 +354,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList14 = this$0.hostel;
                 Integer num14 = this$0.pos;
                 Intrinsics.checkNotNull(num14);
-                hashMap4.put("FeeCollection[" + year4 + "][" + arrayList14.get(num14.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][feehead_id]", payment.get(i5).getFeehead_id());
+                map4.put("FeeCollection[" + year4 + "][" + arrayList14.get(num14.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][feehead_id]", payment.get(i5).getFeehead_id());
                 ArrayList<HostelMonth> arrayList15 = this$0.hostel;
                 Integer num15 = this$0.pos;
                 Intrinsics.checkNotNull(num15);
@@ -362,7 +362,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList16 = this$0.hostel;
                 Integer num16 = this$0.pos;
                 Intrinsics.checkNotNull(num16);
-                hashMap4.put("FeeCollection[" + year5 + "][" + arrayList16.get(num16.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][tenant_id]", payment.get(i5).getTenant_id());
+                map4.put("FeeCollection[" + year5 + "][" + arrayList16.get(num16.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][tenant_id]", payment.get(i5).getTenant_id());
                 ArrayList<HostelMonth> arrayList17 = this$0.hostel;
                 Integer num17 = this$0.pos;
                 Intrinsics.checkNotNull(num17);
@@ -370,7 +370,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList18 = this$0.hostel;
                 Integer num18 = this$0.pos;
                 Intrinsics.checkNotNull(num18);
-                hashMap4.put("FeeCollection[" + year6 + "][" + arrayList18.get(num18.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][installment]", String.valueOf(payment.get(i5).getInstallment()));
+                map4.put("FeeCollection[" + year6 + "][" + arrayList18.get(num18.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][installment]", String.valueOf(payment.get(i5).getInstallment()));
                 ArrayList<HostelMonth> arrayList19 = this$0.hostel;
                 Integer num19 = this$0.pos;
                 Intrinsics.checkNotNull(num19);
@@ -378,7 +378,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList20 = this$0.hostel;
                 Integer num20 = this$0.pos;
                 Intrinsics.checkNotNull(num20);
-                hashMap4.put("FeeCollection[" + year7 + "][" + arrayList20.get(num20.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][user_id]", payment.get(i5).getUser_id());
+                map4.put("FeeCollection[" + year7 + "][" + arrayList20.get(num20.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][user_id]", payment.get(i5).getUser_id());
                 ArrayList<HostelMonth> arrayList21 = this$0.hostel;
                 Integer num21 = this$0.pos;
                 Intrinsics.checkNotNull(num21);
@@ -386,7 +386,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList22 = this$0.hostel;
                 Integer num22 = this$0.pos;
                 Intrinsics.checkNotNull(num22);
-                hashMap4.put("FeeCollection[" + year8 + "][" + arrayList22.get(num22.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][status]", String.valueOf(payment.get(i5).getStatus()));
+                map4.put("FeeCollection[" + year8 + "][" + arrayList22.get(num22.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][status]", String.valueOf(payment.get(i5).getStatus()));
                 ArrayList<HostelMonth> arrayList23 = this$0.hostel;
                 Integer num23 = this$0.pos;
                 Intrinsics.checkNotNull(num23);
@@ -394,7 +394,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList24 = this$0.hostel;
                 Integer num24 = this$0.pos;
                 Intrinsics.checkNotNull(num24);
-                hashMap4.put("FeeCollection[" + year9 + "][" + arrayList24.get(num24.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][feetype]", payment.get(i5).getFeetype());
+                map4.put("FeeCollection[" + year9 + "][" + arrayList24.get(num24.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][feetype]", payment.get(i5).getFeetype());
                 ArrayList<HostelMonth> arrayList25 = this$0.hostel;
                 Integer num25 = this$0.pos;
                 Intrinsics.checkNotNull(num25);
@@ -402,7 +402,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList26 = this$0.hostel;
                 Integer num26 = this$0.pos;
                 Intrinsics.checkNotNull(num26);
-                hashMap4.put("FeeCollection[" + year10 + "][" + arrayList26.get(num26.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][hostel_id]", payment.get(i5).getHostel_id());
+                map4.put("FeeCollection[" + year10 + "][" + arrayList26.get(num26.intValue()).getMonth() + "][" + payment.get(i5).getFeehead_id() + "][hostel_id]", payment.get(i5).getHostel_id());
                 ArrayList<HostelMonth> arrayList27 = this$0.hostel;
                 Integer num27 = this$0.pos;
                 Intrinsics.checkNotNull(num27);
@@ -414,7 +414,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList29 = this$0.hostel;
                 Integer num29 = this$0.pos;
                 Intrinsics.checkNotNull(num29);
-                hashMap4.put(str2, arrayList29.get(num29.intValue()).getMonth());
+                map4.put(str2, arrayList29.get(num29.intValue()).getMonth());
                 ArrayList<HostelMonth> arrayList30 = this$0.hostel;
                 Integer num30 = this$0.pos;
                 Intrinsics.checkNotNull(num30);
@@ -426,7 +426,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                 ArrayList<HostelMonth> arrayList32 = this$0.hostel;
                 Integer num32 = this$0.pos;
                 Intrinsics.checkNotNull(num32);
-                hashMap4.put(str3, arrayList32.get(num32.intValue()).getYear());
+                map4.put(str3, arrayList32.get(num32.intValue()).getYear());
                 if (i5 == i4) {
                     break;
                 } else {
@@ -435,17 +435,18 @@ public final class KmeaHostelFragment extends BaseDialog {
             }
         }
         System.out.println((Object) ("amount - " + this$0.amounts + " totalAmount - " + this$0.totalAmount + " fineTotal - " + this$0.fineAmount));
-        hashMap3.put("FeeReceipt[total_amount]", String.valueOf(this$0.totalAmount));
-        hashMap3.put("FeeReceipt[amount]", String.valueOf(this$0.amounts));
-        hashMap3.put("FeeReceipt[fine_amount]", String.valueOf(this$0.fineAmount));
-        this$0.getKmeaHostelViewModel().getHostelFee(hashMap, hashMap3);
+        map3.put("FeeReceipt[total_amount]", String.valueOf(this$0.totalAmount));
+        map3.put("FeeReceipt[amount]", String.valueOf(this$0.amounts));
+        map3.put("FeeReceipt[fine_amount]", String.valueOf(this$0.fineAmount));
+        this$0.getKmeaHostelViewModel().getHostelFee(map, map3);
         this$0.listenUrlResponse();
     }
 
     private final void listenResponse() {
-        getKmeaHostelViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new KmeaHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment$listenResponse$1
+        getKmeaHostelViewModel().getMonthResponse().observe(getViewLifecycleOwner(), new KmeaHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelMonthResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.listenResponse.1
 
-            /* compiled from: KmeaHostelFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: KmeaHostelFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -482,12 +483,8 @@ public final class KmeaHostelFragment extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<HostelMonthResponse> resource) {
-                FragmentKmeaBinding fragmentKmeaBinding;
-                FragmentKmeaBinding fragmentKmeaBinding2;
-                FragmentKmeaBinding fragmentKmeaBinding3;
-                FragmentKmeaBinding fragmentKmeaBinding4;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
                     if (i == 2) {
@@ -511,7 +508,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                     try {
                         kmeaHostelFragment.hostel = data.getHostel();
                         kmeaHostelFragment.setDate(data.getDate());
-                        fragmentKmeaBinding = kmeaHostelFragment.get_binding();
+                        FragmentKmeaBinding fragmentKmeaBinding = kmeaHostelFragment.get_binding();
                         TextView textView = fragmentKmeaBinding != null ? fragmentKmeaBinding.kmeaMonthTv : null;
                         if (textView != null) {
                             ArrayList<HostelMonth> hostel = data.getHostel();
@@ -523,7 +520,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                             Intrinsics.checkNotNull(pos2);
                             textView.setText("01-" + month + HelpFormatter.DEFAULT_OPT_PREFIX + hostel2.get(pos2.intValue()).getYear());
                         }
-                        fragmentKmeaBinding2 = kmeaHostelFragment.get_binding();
+                        FragmentKmeaBinding fragmentKmeaBinding2 = kmeaHostelFragment.get_binding();
                         TextView textView2 = fragmentKmeaBinding2 != null ? fragmentKmeaBinding2.kmeaAmountTv : null;
                         if (textView2 != null) {
                             ArrayList<HostelMonth> hostel3 = data.getHostel();
@@ -531,7 +528,7 @@ public final class KmeaHostelFragment extends BaseDialog {
                             Intrinsics.checkNotNull(pos3);
                             textView2.setText(String.valueOf(hostel3.get(pos3.intValue()).getAmount()));
                         }
-                        fragmentKmeaBinding3 = kmeaHostelFragment.get_binding();
+                        FragmentKmeaBinding fragmentKmeaBinding3 = kmeaHostelFragment.get_binding();
                         TextView textView3 = fragmentKmeaBinding3 != null ? fragmentKmeaBinding3.kmeaFineTv : null;
                         if (textView3 != null) {
                             ArrayList<HostelMonth> hostel4 = data.getHostel();
@@ -546,13 +543,13 @@ public final class KmeaHostelFragment extends BaseDialog {
                         ArrayList<HostelMonth> hostel6 = data.getHostel();
                         Integer pos6 = kmeaHostelFragment.getPos();
                         Intrinsics.checkNotNull(pos6);
-                        int parseInt = amount + Integer.parseInt(hostel6.get(pos6.intValue()).getFine());
-                        fragmentKmeaBinding4 = kmeaHostelFragment.get_binding();
+                        int i2 = amount + Integer.parseInt(hostel6.get(pos6.intValue()).getFine());
+                        FragmentKmeaBinding fragmentKmeaBinding4 = kmeaHostelFragment.get_binding();
                         TextView textView4 = fragmentKmeaBinding4 != null ? fragmentKmeaBinding4.kmeaTotalTv : null;
                         if (textView4 == null) {
                             return;
                         }
-                        textView4.setText(String.valueOf(parseInt));
+                        textView4.setText(String.valueOf(i2));
                     } catch (NullPointerException unused) {
                     }
                 }
@@ -585,9 +582,10 @@ public final class KmeaHostelFragment extends BaseDialog {
     }
 
     private final void listenUrlResponse() {
-        getKmeaHostelViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new KmeaHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment$listenUrlResponse$1
+        getKmeaHostelViewModel().getUrlResponse().observe(getViewLifecycleOwner(), new KmeaHostelFragment$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends HostelFeeResponse>, Unit>() { // from class: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.listenUrlResponse.1
 
-            /* compiled from: KmeaHostelFragment.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment$listenUrlResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: KmeaHostelFragment.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -624,65 +622,35 @@ public final class KmeaHostelFragment extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:21:0x004f, code lost:
-            
-                r0 = r0.listener;
-             */
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-                To view partially-correct code enable 'Show inconsistent code' option in preferences
-            */
-            public final void invoke2(in.etuwa.app.utils.Resource<in.etuwa.app.data.model.hostel.HostelFeeResponse> r4) {
-                /*
-                    r3 = this;
-                    in.etuwa.app.utils.Status r0 = r4.getStatus()
-                    int[] r1 = in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment$listenUrlResponse$1.WhenMappings.$EnumSwitchMapping$0
-                    int r0 = r0.ordinal()
-                    r0 = r1[r0]
-                    r1 = 1
-                    if (r0 == r1) goto L2b
-                    r4 = 2
-                    if (r0 == r4) goto L25
-                    r4 = 3
-                    if (r0 == r4) goto L1f
-                    r4 = 4
-                    if (r0 == r4) goto L19
-                    goto L5c
-                L19:
-                    in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.this
-                    r4.hideProgress()
-                    goto L5c
-                L1f:
-                    in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.this
-                    r4.hideProgress()
-                    goto L5c
-                L25:
-                    in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment r4 = in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.this
-                    r4.showProgress()
-                    goto L5c
-                L2b:
-                    in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment r0 = in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.this
-                    r0.hideProgress()
-                    java.lang.Object r4 = r4.getData()
-                    in.etuwa.app.data.model.hostel.HostelFeeResponse r4 = (in.etuwa.app.data.model.hostel.HostelFeeResponse) r4
-                    if (r4 == 0) goto L5c
-                    in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment r0 = in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.this
-                    java.lang.String r1 = r4.getUrl()
-                    java.io.PrintStream r2 = java.lang.System.out
-                    r2.println(r1)
-                    java.lang.String r1 = r4.getUrl()
-                    java.lang.String r2 = ""
-                    boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r2)
-                    if (r1 != 0) goto L5c
-                    in.etuwa.app.helper.MainCallBackListener r0 = in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment.access$getListener$p(r0)
-                    if (r0 == 0) goto L5c
-                    java.lang.String r4 = r4.getUrl()
-                    r0.openPaymentPage(r4)
-                L5c:
-                    return
-                */
-                throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.hostel.tkmhostel.kmeahostel.KmeaHostelFragment$listenUrlResponse$1.invoke2(in.etuwa.app.utils.Resource):void");
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+            public final void invoke2(Resource<HostelFeeResponse> resource) {
+                MainCallBackListener mainCallBackListener;
+                int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
+                if (i != 1) {
+                    if (i == 2) {
+                        KmeaHostelFragment.this.showProgress();
+                        return;
+                    } else if (i == 3) {
+                        KmeaHostelFragment.this.hideProgress();
+                        return;
+                    } else {
+                        if (i != 4) {
+                            return;
+                        }
+                        KmeaHostelFragment.this.hideProgress();
+                        return;
+                    }
+                }
+                KmeaHostelFragment.this.hideProgress();
+                HostelFeeResponse data = resource.getData();
+                if (data != null) {
+                    KmeaHostelFragment kmeaHostelFragment = KmeaHostelFragment.this;
+                    System.out.println((Object) data.getUrl());
+                    if (Intrinsics.areEqual(data.getUrl(), "") || (mainCallBackListener = kmeaHostelFragment.listener) == null) {
+                        return;
+                    }
+                    mainCallBackListener.openPaymentPage(data.getUrl());
+                }
             }
         }));
     }

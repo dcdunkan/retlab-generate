@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.library.book.details.BookDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogBooksDetailsBinding extends ViewDataBinding {
     public final TextView artsPayableLbl;
     public final TextView bookId;

@@ -7,7 +7,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ItemEmptyViewBinding implements ViewBinding {
     private final TextView rootView;
 
@@ -25,11 +25,11 @@ public final class ItemEmptyViewBinding implements ViewBinding {
     }
 
     public static ItemEmptyViewBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.item_empty_view, parent, false);
+        View viewInflate = inflater.inflate(R.layout.item_empty_view, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ItemEmptyViewBinding bind(View rootView) {

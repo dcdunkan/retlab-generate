@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.hostel.partial.admission.HostelPartialPayment;
@@ -23,15 +24,15 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelPartialEditAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: HostelPartialEditAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class HostelPartialEditAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private boolean isUpdating;
     private CallBack listener;
     private final ArrayList<HostelPartialPayment> hostel = new ArrayList<>();
     private int count = -1;
 
-    /* compiled from: HostelPartialEditAdapter.kt */
+    /* JADX INFO: compiled from: HostelPartialEditAdapter.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&J\b\u0010\u0004\u001a\u00020\u0003H&¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/feepartial/hostel/edit/HostelPartialEditAdapter$CallBack;", "", "calculateTotal", "", "editClicked", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void calculateTotal();
@@ -56,18 +57,18 @@ public final class HostelPartialEditAdapter extends RecyclerView.Adapter<BaseVie
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_hostel_fees, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …stel_fees, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_hostel_fees, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …stel_fees, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -78,7 +79,7 @@ public final class HostelPartialEditAdapter extends RecyclerView.Adapter<BaseVie
         return 1;
     }
 
-    /* compiled from: HostelPartialEditAdapter.kt */
+    /* JADX INFO: compiled from: HostelPartialEditAdapter.kt */
     @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u000f\u001a\u00020\u0010H\u0014J\u0010\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0017R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\t\u001a\n \u0007*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\f\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lin/etuwa/app/ui/feepartial/hostel/edit/HostelPartialEditAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/feepartial/hostel/edit/HostelPartialEditAdapter;Landroid/view/View;)V", ExamSubjectDetailDialogKt.ARG_AMOUNT, "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "balance", "layout", "Landroid/widget/LinearLayout;", "name", "paid", "payable", "scholarship", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView amount;
@@ -124,9 +125,7 @@ public final class HostelPartialEditAdapter extends RecyclerView.Adapter<BaseVie
                 this.payable.setFilters(new InputFilter[]{new InputFilter() { // from class: in.etuwa.app.ui.feepartial.hostel.edit.HostelPartialEditAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.text.InputFilter
                     public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-                        CharSequence onBind$lambda$0;
-                        onBind$lambda$0 = HostelPartialEditAdapter.ViewHolder.onBind$lambda$0(charSequence, i, i2, spanned, i3, i4);
-                        return onBind$lambda$0;
+                        return HostelPartialEditAdapter.ViewHolder.onBind$lambda$0(charSequence, i, i2, spanned, i3, i4);
                     }
                 }});
                 TextView textView = this.payable;
@@ -142,39 +141,32 @@ public final class HostelPartialEditAdapter extends RecyclerView.Adapter<BaseVie
 
                     @Override // android.text.TextWatcher
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        boolean z;
-                        TextView textView2;
-                        HostelPartialEditAdapter.CallBack callBack;
-                        TextView textView3;
-                        z = HostelPartialEditAdapter.this.isUpdating;
-                        if (z) {
+                        if (hostelPartialEditAdapter.isUpdating) {
                             return;
                         }
-                        HostelPartialEditAdapter.this.isUpdating = true;
-                        String obj2 = s != null ? s.toString() : null;
-                        if (Intrinsics.areEqual(obj2, "")) {
+                        hostelPartialEditAdapter.isUpdating = true;
+                        String string = s != null ? s.toString() : null;
+                        if (Intrinsics.areEqual(string, "")) {
                             hostelPartialPayment.setPayable(0);
-                            textView3 = this.payable;
-                            textView3.setText("0");
+                            this.payable.setText("0");
                         } else {
-                            Intrinsics.checkNotNull(obj2);
-                            double parseDouble = Double.parseDouble(obj2);
-                            if (parseDouble < hostelPartialPayment.getBalance()) {
-                                hostelPartialPayment.setPayable(Integer.parseInt(obj2));
+                            Intrinsics.checkNotNull(string);
+                            double d = Double.parseDouble(string);
+                            if (d < hostelPartialPayment.getBalance()) {
+                                hostelPartialPayment.setPayable(Integer.parseInt(string));
                             } else {
-                                if (!(parseDouble == 0.0d)) {
+                                if (!(d == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE)) {
                                     HostelPartialPayment hostelPartialPayment2 = hostelPartialPayment;
                                     hostelPartialPayment2.setPayable(hostelPartialPayment2.getBalance());
-                                    textView2 = this.payable;
-                                    textView2.setText(hostelPartialPayment.getBalance());
+                                    this.payable.setText(hostelPartialPayment.getBalance());
                                 }
                             }
                         }
-                        callBack = HostelPartialEditAdapter.this.listener;
+                        HostelPartialEditAdapter.CallBack callBack = hostelPartialEditAdapter.listener;
                         if (callBack != null) {
                             callBack.calculateTotal();
                         }
-                        HostelPartialEditAdapter.this.isUpdating = false;
+                        hostelPartialEditAdapter.isUpdating = false;
                     }
                 });
             } catch (Exception unused) {

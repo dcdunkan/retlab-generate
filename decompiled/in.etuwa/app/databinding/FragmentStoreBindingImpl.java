@@ -12,7 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.store.storeview.StoreViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentStoreBindingImpl extends FragmentStoreBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -68,7 +68,7 @@ public class FragmentStoreBindingImpl extends FragmentStoreBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (209 != variableId) {
+        if (211 != variableId) {
             return false;
         }
         setStoreViewModel((StoreViewModel) variable);

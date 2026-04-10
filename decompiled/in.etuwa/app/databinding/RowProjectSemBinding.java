@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowProjectSemBinding implements ViewBinding {
     public final TextView detailsTv;
     private final LinearLayout rootView;
@@ -33,11 +33,11 @@ public final class RowProjectSemBinding implements ViewBinding {
     }
 
     public static RowProjectSemBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_project_sem, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_project_sem, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowProjectSemBinding bind(View rootView) {

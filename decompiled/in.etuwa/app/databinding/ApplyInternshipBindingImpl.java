@@ -6,21 +6,21 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.internship.apply.ApplyInternshipViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ApplyInternshipBindingImpl extends ApplyInternshipBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
     private long mDirtyFlags;
     private final FrameLayout mboundView0;
-    private final CardView mboundView1;
+    private final FrameLayout mboundView1;
     private final ViewProgressBarBinding mboundView11;
 
     @Override // androidx.databinding.ViewDataBinding
@@ -54,14 +54,14 @@ public class ApplyInternshipBindingImpl extends ApplyInternshipBinding {
     }
 
     private ApplyInternshipBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextView) bindings[18], (TextView) bindings[5], (LinearLayout) bindings[12], (LinearLayout) bindings[3], (TextView) bindings[11], (TextView) bindings[17], (TextView) bindings[8], (TextInputLayout) bindings[14], (TextInputEditText) bindings[7], (TextInputEditText) bindings[15], (TextInputEditText) bindings[13], (TextView) bindings[9], (TextView) bindings[10], (LinearLayout) bindings[6], (Spinner) bindings[4], (LinearLayout) bindings[16]);
+        super(bindingComponent, root, 0, (MaterialButton) bindings[18], (MaterialButton) bindings[5], (LinearLayout) bindings[12], (LinearLayout) bindings[3], (MaterialButton) bindings[11], (MaterialButton) bindings[17], (MaterialButton) bindings[8], (TextInputLayout) bindings[14], (TextInputEditText) bindings[7], (TextInputEditText) bindings[15], (TextInputEditText) bindings[13], (TextView) bindings[9], (TextView) bindings[10], (LinearLayout) bindings[6], (Spinner) bindings[4], (LinearLayout) bindings[16]);
         this.mDirtyFlags = -1L;
         FrameLayout frameLayout = (FrameLayout) bindings[0];
         this.mboundView0 = frameLayout;
         frameLayout.setTag(null);
-        CardView cardView = (CardView) bindings[1];
-        this.mboundView1 = cardView;
-        cardView.setTag(null);
+        FrameLayout frameLayout2 = (FrameLayout) bindings[1];
+        this.mboundView1 = frameLayout2;
+        frameLayout2.setTag(null);
         Object obj = bindings[2];
         this.mboundView11 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
         setRootTag(root);
@@ -85,7 +85,7 @@ public class ApplyInternshipBindingImpl extends ApplyInternshipBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (26 != variableId) {
+        if (25 != variableId) {
             return false;
         }
         setApplyInternshipViewModel((ApplyInternshipViewModel) variable);

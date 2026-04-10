@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.buspass.BusPassViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentTransportBuspassBindingImpl extends FragmentTransportBuspassBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -76,7 +76,7 @@ public class FragmentTransportBuspassBindingImpl extends FragmentTransportBuspas
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (44 != variableId) {
+        if (43 != variableId) {
             return false;
         }
         setBusPassViewModel((BusPassViewModel) variable);

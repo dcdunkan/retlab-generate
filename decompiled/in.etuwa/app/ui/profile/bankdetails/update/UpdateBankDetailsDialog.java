@@ -2,7 +2,7 @@ package in.etuwa.app.ui.profile.bankdetails.update;
 
 import kotlin.Metadata;
 
-/* compiled from: UpdateBankDetailsDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: UpdateBankDetailsDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class UpdateBankDetailsDialog {
 }

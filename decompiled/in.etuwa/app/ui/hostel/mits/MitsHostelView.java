@@ -3,12 +3,10 @@ package in.etuwa.app.ui.hostel.mits;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.activity.ComponentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelLazy;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
-import androidx.lifecycle.ViewModelStoreOwner;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.hostel.mits.MitsFeePay;
 import in.etuwa.app.ui.base.BaseActivity;
@@ -24,14 +22,14 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MitsHostelView.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MitsHostelView.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MitsHostelView extends BaseActivity {
 
-    /* renamed from: mitsHostelViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: mitsHostelViewModel$delegate, reason: from kotlin metadata */
     private final Lazy mitsHostelViewModel;
 
-    /* compiled from: MitsHostelView.kt */
+    /* JADX INFO: compiled from: MitsHostelView.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -80,7 +78,7 @@ public final class MitsHostelView extends BaseActivity {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ComponentActivity.this.getViewModelStore();
+                ViewModelStore viewModelStore = mitsHostelView.getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "viewModelStore");
                 return viewModelStore;
             }
@@ -93,7 +91,7 @@ public final class MitsHostelView extends BaseActivity {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory(ViewModelStoreOwner.this, Reflection.getOrCreateKotlinClass(MitsHostelViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory(mitsHostelView2, Reflection.getOrCreateKotlinClass(MitsHostelViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -121,7 +119,7 @@ public final class MitsHostelView extends BaseActivity {
         getMitsHostelViewModel().getResponse().observe(this, new Observer() { // from class: in.etuwa.app.ui.hostel.mits.MitsHostelView$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                MitsHostelView.listenResponse$lambda$2(MitsHostelView.this, (Resource) obj);
+                MitsHostelView.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }

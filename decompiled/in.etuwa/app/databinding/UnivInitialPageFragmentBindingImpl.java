@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.university.initialpage.UnivInitialPageViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class UnivInitialPageFragmentBindingImpl extends UnivInitialPageFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class UnivInitialPageFragmentBindingImpl extends UnivInitialPageFragmentB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (232 != variableId) {
+        if (234 != variableId) {
             return false;
         }
         setUnivInitialPageViewModel((UnivInitialPageViewModel) variable);

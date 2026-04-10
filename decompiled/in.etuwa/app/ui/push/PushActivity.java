@@ -1,8 +1,8 @@
 package in.etuwa.app.ui.push;
 
 import android.content.ComponentCallbacks;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
@@ -10,22 +10,20 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import in.etuwa.app.R;
 import in.etuwa.app.data.db.MyDataBase;
 import in.etuwa.app.databinding.ActivityPushBinding;
 import in.etuwa.app.helper.MainCallBackListener;
 import in.etuwa.app.ui.assignment.AssignmentFragment;
 import in.etuwa.app.ui.base.BaseActivity;
-import in.etuwa.app.ui.calendar.CalendarFragment;
 import in.etuwa.app.ui.counselling.CounsellingFragment;
-import in.etuwa.app.ui.dashboard.DashboardFragment;
 import in.etuwa.app.ui.exam.module.ModuleTestFragment;
 import in.etuwa.app.ui.exam.series.SeriesExamFragment;
 import in.etuwa.app.ui.grievance.GrievanceFragment;
 import in.etuwa.app.ui.homework.HomeWorkFragment;
 import in.etuwa.app.ui.internship.InternshipFragment;
-import in.etuwa.app.ui.message.inbox.MessageFragment;
+import in.etuwa.app.ui.main.MainActivity;
 import in.etuwa.app.ui.notice.NoticeFragment;
 import in.etuwa.app.ui.push.PushAdapter;
 import in.etuwa.app.ui.result.assignment.AssignmentResultFragment;
@@ -39,21 +37,24 @@ import kotlin.Lazy;
 import kotlin.LazyKt;
 import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
+import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
+import me.ibrahimsn.lib.SmoothBottomBar;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: PushActivity.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PushActivity.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PushActivity extends BaseActivity implements PushAdapter.CallBack {
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ActivityPushBinding binding;
 
-    /* renamed from: dataBase$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: dataBase$delegate, reason: from kotlin metadata */
     private final Lazy dataBase;
     private MainCallBackListener listener;
     private FragmentManager manager;
@@ -141,51 +142,57 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
         this.manager = supportFragmentManager;
         getAdapter().setCallBack(this);
-        ActivityPushBinding activityPushBinding3 = this.binding;
-        if (activityPushBinding3 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            activityPushBinding3 = null;
-        }
-        activityPushBinding3.bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() { // from class: in.etuwa.app.ui.push.PushActivity$$ExternalSyntheticLambda0
-            @Override // com.google.android.material.navigation.NavigationBarView.OnItemSelectedListener
-            public final boolean onNavigationItemSelected(MenuItem menuItem) {
-                boolean up$lambda$0;
-                up$lambda$0 = PushActivity.setUp$lambda$0(PushActivity.this, menuItem);
-                return up$lambda$0;
+        SmoothBottomBar smoothBottomBar = (SmoothBottomBar) findViewById(R.id.bottom_nav_new);
+        smoothBottomBar.setOnItemSelected(new Function1<Integer, Unit>() { // from class: in.etuwa.app.ui.push.PushActivity.setUp.1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                invoke(num.intValue());
+                return Unit.INSTANCE;
+            }
+
+            public final void invoke(int i) {
+                if (i != 0) {
+                    PushActivity.this.openMain(i);
+                } else {
+                    PushActivity.this.finish();
+                }
+            }
+        });
+        smoothBottomBar.setOnItemReselected(new Function1<Integer, Unit>() { // from class: in.etuwa.app.ui.push.PushActivity.setUp.2
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
+                invoke(num.intValue());
+                return Unit.INSTANCE;
+            }
+
+            public final void invoke(int i) {
+                if (i != 0) {
+                    PushActivity.this.openMain(i);
+                } else {
+                    PushActivity.this.finish();
+                }
             }
         });
         getAdapter().addItems(getDataBase().queryMessages());
         try {
             ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new PushActivity$setUp$swipeHandler$1(this));
-            ActivityPushBinding activityPushBinding4 = this.binding;
-            if (activityPushBinding4 == null) {
+            ActivityPushBinding activityPushBinding3 = this.binding;
+            if (activityPushBinding3 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("binding");
             } else {
-                activityPushBinding2 = activityPushBinding4;
+                activityPushBinding2 = activityPushBinding3;
             }
             itemTouchHelper.attachToRecyclerView(activityPushBinding2.rvPush);
         } catch (IndexOutOfBoundsException unused) {
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean setUp$lambda$0(PushActivity this$0, MenuItem it) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(it, "it");
-        int itemId = it.getItemId();
-        if (itemId == R.id.action_home) {
-            this$0.loadBottomItems(DashboardFragment.INSTANCE.newInstance(0));
-            return true;
-        }
-        if (itemId == R.id.action_calender) {
-            this$0.loadBottomItems(CalendarFragment.INSTANCE.newInstance());
-            return true;
-        }
-        if (itemId != R.id.action_message) {
-            return true;
-        }
-        this$0.loadBottomItems(MessageFragment.INSTANCE.newInstance());
-        return true;
     }
 
     private final void loadBottomItems(Fragment fragment) {
@@ -208,11 +215,11 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
             Intrinsics.throwUninitializedPropertyAccessException("manager");
             fragmentManager3 = null;
         }
-        FragmentTransaction beginTransaction = fragmentManager3.beginTransaction();
-        Intrinsics.checkNotNullExpressionValue(beginTransaction, "manager.beginTransaction()");
-        beginTransaction.add(R.id.push_layout, fragment);
-        beginTransaction.addToBackStack(null);
-        beginTransaction.commitAllowingStateLoss();
+        FragmentTransaction fragmentTransactionBeginTransaction = fragmentManager3.beginTransaction();
+        Intrinsics.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "manager.beginTransaction()");
+        fragmentTransactionBeginTransaction.add(R.id.push_layout, fragment);
+        fragmentTransactionBeginTransaction.addToBackStack(null);
+        fragmentTransactionBeginTransaction.commitAllowingStateLoss();
     }
 
     @Override // in.etuwa.app.ui.push.PushAdapter.CallBack
@@ -224,10 +231,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         AssignmentFragment assignmentFragment = new AssignmentFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(assignmentFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(assignmentFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof AssignmentFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof AssignmentFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, assignmentFragment, "AssignmentFragment").commit();
@@ -242,10 +249,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         AssignmentResultFragment assignmentResultFragment = new AssignmentResultFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(assignmentResultFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(assignmentResultFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof AssignmentResultFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof AssignmentResultFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, assignmentResultFragment, "AssignmentResultFragment").commit();
@@ -260,10 +267,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         SeriesExamFragment seriesExamFragment = new SeriesExamFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(seriesExamFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(seriesExamFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof SeriesExamFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof SeriesExamFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, seriesExamFragment, "SeriesExamFragment").commit();
@@ -278,10 +285,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         SessionalFragment sessionalFragment = new SessionalFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(sessionalFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(sessionalFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof SessionalFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof SessionalFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, sessionalFragment, "SessionalFragment").commit();
@@ -296,10 +303,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         HomeWorkFragment homeWorkFragment = new HomeWorkFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(homeWorkFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(homeWorkFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof HomeWorkFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof HomeWorkFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, homeWorkFragment, "HomeWorkFragment").commit();
@@ -314,10 +321,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         ModuleTestFragment moduleTestFragment = new ModuleTestFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(moduleTestFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(moduleTestFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof ModuleTestFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof ModuleTestFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, moduleTestFragment, "ModuleTestFragment").commit();
@@ -347,10 +354,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         MaterialFragment materialFragment = new MaterialFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(materialFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(materialFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof MaterialFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof MaterialFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, materialFragment, "MaterialFragment").commit();
@@ -365,10 +372,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         NoticeFragment noticeFragment = new NoticeFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(noticeFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(noticeFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof NoticeFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof NoticeFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, noticeFragment, "NoticeFragment").commit();
@@ -383,10 +390,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         TutorialFragment tutorialFragment = new TutorialFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(tutorialFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(tutorialFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof TutorialFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof TutorialFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, tutorialFragment, "TutorialFragment").commit();
@@ -401,10 +408,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         TutorialResultFragment tutorialResultFragment = new TutorialResultFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(tutorialResultFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(tutorialResultFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof TutorialResultFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof TutorialResultFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, tutorialResultFragment, "TutorialResultFragment").commit();
@@ -419,10 +426,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         InternalResultFragment internalResultFragment = new InternalResultFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(internalResultFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(internalResultFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof InternalResultFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof InternalResultFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, internalResultFragment, "InternalResultFragment").commit();
@@ -437,10 +444,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         GrievanceFragment grievanceFragment = new GrievanceFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(grievanceFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(grievanceFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof GrievanceFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof GrievanceFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, grievanceFragment, "GrievanceFragment").commit();
@@ -455,10 +462,10 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         CounsellingFragment counsellingFragment = new CounsellingFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(counsellingFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(counsellingFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof CounsellingFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof CounsellingFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, counsellingFragment, "CounsellingFragment").commit();
@@ -473,12 +480,21 @@ public final class PushActivity extends BaseActivity implements PushAdapter.Call
         }
         activityPushBinding.rvPush.setVisibility(8);
         InternshipFragment internshipFragment = new InternshipFragment();
-        Fragment findFragmentByTag = getSupportFragmentManager().findFragmentByTag(internshipFragment.getClass().getSimpleName());
+        Fragment fragmentFindFragmentByTag = getSupportFragmentManager().findFragmentByTag(internshipFragment.getClass().getSimpleName());
         FragmentManager supportFragmentManager = getSupportFragmentManager();
         Intrinsics.checkNotNullExpressionValue(supportFragmentManager, "supportFragmentManager");
-        if ((findFragmentByTag instanceof InternshipFragment) || supportFragmentManager.isDestroyed()) {
+        if ((fragmentFindFragmentByTag instanceof InternshipFragment) || supportFragmentManager.isDestroyed()) {
             return;
         }
         getSupportFragmentManager().beginTransaction().add(R.id.push_layout, internshipFragment, "InternshipFragment").commit();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void openMain(int index) {
+        Intent intent = new Intent(this, (Class<?>) MainActivity.class);
+        intent.putExtra("bottom_index", index);
+        intent.setFlags(131072);
+        startActivity(intent);
+        finish();
     }
 }

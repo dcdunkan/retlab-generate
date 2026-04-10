@@ -2,15 +2,24 @@ package in.etuwa.app.ui.subject;
 
 import android.content.ComponentCallbacks;
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -21,8 +30,8 @@ import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.gms.actions.SearchIntents;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
@@ -57,30 +66,31 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SubjectFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SubjectFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SubjectFragment extends BaseFragment implements SubjectAdapter.SubjectCallBack, SemListDialogTwo.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private SubjectFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private String current;
     private boolean flag;
+    private boolean isSearchOpen;
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: subjectViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: subjectViewModel$delegate, reason: from kotlin metadata */
     private final Lazy subjectViewModel;
 
-    /* compiled from: SubjectFragment.kt */
+    /* JADX INFO: compiled from: SubjectFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -130,7 +140,7 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return subjectFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(subjectFragment);
@@ -144,7 +154,7 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -157,7 +167,7 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SubjectViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SubjectViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SubjectFragment subjectFragment2 = this;
@@ -184,7 +194,7 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(SubjectFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -231,7 +241,7 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final SubjectFragmentBinding get_binding() {
         return this._binding;
     }
@@ -246,7 +256,7 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: SubjectFragment.kt */
+    /* JADX INFO: compiled from: SubjectFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/subject/SubjectFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/subject/SubjectFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -291,7 +301,7 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
         SwipeRefreshLayout swipeRefreshLayout;
-        FloatingActionButton floatingActionButton;
+        ImageView imageView;
         FragmentActivity activity = getActivity();
         if (activity != null) {
             activity.setTitle(getString(R.string.subjects));
@@ -312,60 +322,43 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
         getSubjectViewModel().getSubjects(getPreference().getUserSemId());
         listenSemResponse();
         listenResponse();
+        setupSearch();
         SubjectFragmentBinding subjectFragmentBinding3 = get_binding();
-        if (subjectFragmentBinding3 != null && (floatingActionButton = subjectFragmentBinding3.fabSubjectSemester) != null) {
-            floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda2
+        if (subjectFragmentBinding3 != null && (imageView = subjectFragmentBinding3.fabSubjectSemester) != null) {
+            imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    SubjectFragment.setUp$lambda$0(SubjectFragment.this, view);
+                    SubjectFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
         SubjectFragmentBinding subjectFragmentBinding4 = get_binding();
         Spinner spinner2 = subjectFragmentBinding4 != null ? subjectFragmentBinding4.spinnerSem : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment$setUp$2
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter3;
-                    SubjectFragmentBinding subjectFragmentBinding5;
-                    SubjectViewModel subjectViewModel;
-                    SharedPrefManager preference2;
                     Spinner spinner3;
-                    SubjectViewModel subjectViewModel2;
-                    spinnerAdapter = SubjectFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    z = SubjectFragment.this.flag;
-                    if (z) {
-                        subjectViewModel2 = SubjectFragment.this.getSubjectViewModel();
-                        subjectViewModel2.getSubjects(semester.getId());
+                    Semester semester = SubjectFragment.this.getSpinnerAdapter().getSemester(position);
+                    if (SubjectFragment.this.flag) {
+                        SubjectFragment.this.getSubjectViewModel().getSubjects(semester.getId());
                         SubjectFragment.this.current = semester.getId();
                         return;
                     }
                     SubjectFragment.this.flag = true;
-                    spinnerAdapter2 = SubjectFragment.this.getSpinnerAdapter();
-                    int count = spinnerAdapter2.getCount();
+                    int count = SubjectFragment.this.getSpinnerAdapter().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = SubjectFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter3 = SubjectFragment.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter3.getSemester(i).getId())) {
-                            subjectFragmentBinding5 = SubjectFragment.this.get_binding();
+                        if (Intrinsics.areEqual(SubjectFragment.this.getPreference().getUserSemId(), SubjectFragment.this.getSpinnerAdapter().getSemester(i).getId())) {
+                            SubjectFragmentBinding subjectFragmentBinding5 = SubjectFragment.this.get_binding();
                             if (subjectFragmentBinding5 != null && (spinner3 = subjectFragmentBinding5.spinnerSem) != null) {
                                 spinner3.setSelection(i);
                             }
                             if (position == 0) {
-                                subjectViewModel = SubjectFragment.this.getSubjectViewModel();
-                                preference2 = SubjectFragment.this.getPreference();
-                                subjectViewModel.getSubjects(preference2.getUserSemId());
+                                SubjectFragment.this.getSubjectViewModel().getSubjects(SubjectFragment.this.getPreference().getUserSemId());
                                 return;
                             }
                             return;
@@ -378,10 +371,10 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
         if (subjectFragmentBinding5 == null || (swipeRefreshLayout = subjectFragmentBinding5.swipeLayout) == null) {
             return;
         }
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda3
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda5
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                SubjectFragment.setUp$lambda$1(SubjectFragment.this);
+                SubjectFragment.setUp$lambda$1(this.f$0);
             }
         });
     }
@@ -391,9 +384,9 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialogTwo newInstance = SemListDialogTwo.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        SemListDialogTwo semListDialogTwoNewInstance = SemListDialogTwo.INSTANCE.newInstance();
+        semListDialogTwoNewInstance.setCallBack(this$0);
+        semListDialogTwoNewInstance.show(childFragmentManager, (String) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -406,6 +399,149 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
             return;
         }
         swipeRefreshLayout.setRefreshing(false);
+    }
+
+    private final void setupSearch() {
+        EditText editText;
+        ImageView imageView;
+        ImageView imageView2;
+        SubjectFragmentBinding subjectFragmentBinding = get_binding();
+        if (subjectFragmentBinding != null && (imageView2 = subjectFragmentBinding.ivSearch) != null) {
+            imageView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda2
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    SubjectFragment.setupSearch$lambda$2(this.f$0, view);
+                }
+            });
+        }
+        SubjectFragmentBinding subjectFragmentBinding2 = get_binding();
+        if (subjectFragmentBinding2 != null && (imageView = subjectFragmentBinding2.ivClearSearch) != null) {
+            imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda3
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    SubjectFragment.setupSearch$lambda$3(this.f$0, view);
+                }
+            });
+        }
+        SubjectFragmentBinding subjectFragmentBinding3 = get_binding();
+        if (subjectFragmentBinding3 == null || (editText = subjectFragmentBinding3.searchInput) == null) {
+            return;
+        }
+        editText.addTextChangedListener(new TextWatcher() { // from class: in.etuwa.app.ui.subject.SubjectFragment.setupSearch.3
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable s) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String string;
+                if (s == null || (string = s.toString()) == null) {
+                    string = "";
+                }
+                SubjectFragmentBinding subjectFragmentBinding4 = SubjectFragment.this.get_binding();
+                ImageView imageView3 = subjectFragmentBinding4 != null ? subjectFragmentBinding4.ivClearSearch : null;
+                if (imageView3 != null) {
+                    imageView3.setVisibility(string.length() > 0 ? 0 : 8);
+                }
+                SubjectFragment.this.filterCurrentAdapter(string);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupSearch$lambda$2(SubjectFragment this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        if (this$0.isSearchOpen) {
+            this$0.closeSearch();
+        } else {
+            this$0.openSearch();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupSearch$lambda$3(SubjectFragment this$0, View view) {
+        EditText editText;
+        Editable text;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        SubjectFragmentBinding subjectFragmentBinding = this$0.get_binding();
+        if (subjectFragmentBinding == null || (editText = subjectFragmentBinding.searchInput) == null || (text = editText.getText()) == null) {
+            return;
+        }
+        text.clear();
+    }
+
+    private final void openSearch() {
+        EditText editText;
+        ImageView imageView;
+        this.isSearchOpen = true;
+        SubjectFragmentBinding subjectFragmentBinding = get_binding();
+        CardView cardView = subjectFragmentBinding != null ? subjectFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(0);
+        }
+        SubjectFragmentBinding subjectFragmentBinding2 = get_binding();
+        if (subjectFragmentBinding2 != null && (imageView = subjectFragmentBinding2.ivSearch) != null) {
+            imageView.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
+        }
+        SubjectFragmentBinding subjectFragmentBinding3 = get_binding();
+        ImageView imageView2 = subjectFragmentBinding3 != null ? subjectFragmentBinding3.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        SubjectFragmentBinding subjectFragmentBinding4 = get_binding();
+        if (subjectFragmentBinding4 != null && (editText = subjectFragmentBinding4.searchInput) != null) {
+            editText.requestFocus();
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        SubjectFragmentBinding subjectFragmentBinding5 = get_binding();
+        inputMethodManager.showSoftInput(subjectFragmentBinding5 != null ? subjectFragmentBinding5.searchInput : null, 1);
+    }
+
+    private final void closeSearch() {
+        EditText editText;
+        ImageView imageView;
+        EditText editText2;
+        Editable text;
+        this.isSearchOpen = false;
+        SubjectFragmentBinding subjectFragmentBinding = get_binding();
+        IBinder windowToken = null;
+        CardView cardView = subjectFragmentBinding != null ? subjectFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(8);
+        }
+        SubjectFragmentBinding subjectFragmentBinding2 = get_binding();
+        if (subjectFragmentBinding2 != null && (editText2 = subjectFragmentBinding2.searchInput) != null && (text = editText2.getText()) != null) {
+            text.clear();
+        }
+        SubjectFragmentBinding subjectFragmentBinding3 = get_binding();
+        if (subjectFragmentBinding3 != null && (imageView = subjectFragmentBinding3.ivSearch) != null) {
+            imageView.setImageResource(R.drawable.ic_search);
+        }
+        SubjectFragmentBinding subjectFragmentBinding4 = get_binding();
+        ImageView imageView2 = subjectFragmentBinding4 != null ? subjectFragmentBinding4.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        SubjectFragmentBinding subjectFragmentBinding5 = get_binding();
+        if (subjectFragmentBinding5 != null && (editText = subjectFragmentBinding5.searchInput) != null) {
+            windowToken = editText.getWindowToken();
+        }
+        inputMethodManager.hideSoftInputFromWindow(windowToken, 0);
+        filterCurrentAdapter("");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void filterCurrentAdapter(String query) {
+        getAdapter().applyCombinedFilter(query);
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -421,29 +557,29 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
         getSubjectViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SubjectFragment.listenSemResponse$lambda$3(SubjectFragment.this, (Resource) obj);
+                SubjectFragment.listenSemResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenSemResponse$lambda$3(SubjectFragment this$0, Resource resource) {
+    public static final void listenSemResponse$lambda$5(SubjectFragment this$0, Resource resource) {
         Spinner spinner;
         SwipeRefreshLayout swipeRefreshLayout;
         SwipeRefreshLayout swipeRefreshLayout2;
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 SubjectFragmentBinding subjectFragmentBinding = this$0.get_binding();
                 if (subjectFragmentBinding != null && (swipeRefreshLayout2 = subjectFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -474,9 +610,9 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
         if (arrayList != null) {
             this$0.getSpinnerAdapter().addItems(arrayList);
             SubjectFragmentBinding subjectFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (subjectFragmentBinding3 == null || (swipeRefreshLayout = subjectFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
+            Boolean boolValueOf2 = (subjectFragmentBinding3 == null || (swipeRefreshLayout = subjectFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+            Intrinsics.checkNotNull(boolValueOf2);
+            if (boolValueOf2.booleanValue()) {
                 SubjectFragmentBinding subjectFragmentBinding4 = this$0.get_binding();
                 SwipeRefreshLayout swipeRefreshLayout3 = subjectFragmentBinding4 != null ? subjectFragmentBinding4.swipeLayout : null;
                 if (swipeRefreshLayout3 != null) {
@@ -501,13 +637,13 @@ public final class SubjectFragment extends BaseFragment implements SubjectAdapte
         getSubjectViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.subject.SubjectFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SubjectFragment.listenResponse$lambda$5(SubjectFragment.this, (Resource) obj);
+                SubjectFragment.listenResponse$lambda$7(this.f$0, (Resource) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenResponse$lambda$5(SubjectFragment this$0, Resource resource) {
+    public static final void listenResponse$lambda$7(SubjectFragment this$0, Resource resource) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];

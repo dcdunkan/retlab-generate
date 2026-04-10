@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeEngineerResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeEngineerResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeEngineerResponse {
     private final ArrayList<FeeEngineer> fees;
     private final boolean login;
@@ -30,17 +30,17 @@ public final /* data */ class FeeEngineerResponse {
         return feeEngineerResponse.copy(z, z2, str, arrayList);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMessage() {
         return this.message;
     }
@@ -70,6 +70,9 @@ public final /* data */ class FeeEngineerResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v8 */
     /* JADX WARN: Type inference failed for: r0v9 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v6 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -78,7 +81,7 @@ public final /* data */ class FeeEngineerResponse {
         }
         int i = r0 * 31;
         boolean z2 = this.success;
-        return ((((i + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.message.hashCode()) * 31) + this.fees.hashCode();
+        return ((((i + (z2 ? 1 : z2)) * 31) + this.message.hashCode()) * 31) + this.fees.hashCode();
     }
 
     public String toString() {

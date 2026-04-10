@@ -4,29 +4,34 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowTechSurveyBinding implements ViewBinding {
-    private final CardView rootView;
-    public final TextView surTeachBtn;
+    public final MaterialCardView cardTeacherSurvey;
+    private final MaterialCardView rootView;
+    public final MaterialButton surTeachBtn;
     public final TextView surTeachName;
-    public final TextView surTeachStatus;
+    public final TextView surTeachStatusBadge;
     public final TextView surTeachSubName;
+    public final View viewAccentBar;
 
-    private RowTechSurveyBinding(CardView rootView, TextView surTeachBtn, TextView surTeachName, TextView surTeachStatus, TextView surTeachSubName) {
+    private RowTechSurveyBinding(MaterialCardView rootView, MaterialCardView cardTeacherSurvey, MaterialButton surTeachBtn, TextView surTeachName, TextView surTeachStatusBadge, TextView surTeachSubName, View viewAccentBar) {
         this.rootView = rootView;
+        this.cardTeacherSurvey = cardTeacherSurvey;
         this.surTeachBtn = surTeachBtn;
         this.surTeachName = surTeachName;
-        this.surTeachStatus = surTeachStatus;
+        this.surTeachStatusBadge = surTeachStatusBadge;
         this.surTeachSubName = surTeachSubName;
+        this.viewAccentBar = viewAccentBar;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -35,27 +40,29 @@ public final class RowTechSurveyBinding implements ViewBinding {
     }
 
     public static RowTechSurveyBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_tech_survey, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_tech_survey, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowTechSurveyBinding bind(View rootView) {
+        View viewFindChildViewById;
+        MaterialCardView materialCardView = (MaterialCardView) rootView;
         int i = R.id.sur_teach_btn;
-        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-        if (textView != null) {
+        MaterialButton materialButton = (MaterialButton) ViewBindings.findChildViewById(rootView, i);
+        if (materialButton != null) {
             i = R.id.sur_teach_name;
-            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView2 != null) {
-                i = R.id.sur_teach_status;
-                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView3 != null) {
+            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+            if (textView != null) {
+                i = R.id.sur_teach_status_badge;
+                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView2 != null) {
                     i = R.id.sur_teach_sub_name;
-                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView4 != null) {
-                        return new RowTechSurveyBinding((CardView) rootView, textView, textView2, textView3, textView4);
+                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView3 != null && (viewFindChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.view_accent_bar))) != null) {
+                        return new RowTechSurveyBinding(materialCardView, materialCardView, materialButton, textView, textView2, textView3, viewFindChildViewById);
                     }
                 }
             }

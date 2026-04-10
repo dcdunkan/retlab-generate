@@ -30,17 +30,17 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: DashboardAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: DashboardAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class DashboardAdapter extends RecyclerView.Adapter<BaseViewHolder> implements KoinComponent {
     private final ArrayList<Integer> iconList;
     private CallBack listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private final ArrayList<String> titleList;
 
-    /* compiled from: DashboardAdapter.kt */
+    /* JADX INFO: compiled from: DashboardAdapter.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006"}, d2 = {"Lin/etuwa/app/ui/dashboard/DashboardAdapter$CallBack;", "", "onDashItemClicked", "", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void onDashItemClicked(int position);
@@ -48,10 +48,10 @@ public final class DashboardAdapter extends RecyclerView.Adapter<BaseViewHolder>
 
     public DashboardAdapter() {
         final DashboardAdapter dashboardAdapter = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.dashboard.DashboardAdapter$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.dashboard.DashboardAdapter$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -61,7 +61,7 @@ public final class DashboardAdapter extends RecyclerView.Adapter<BaseViewHolder>
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = dashboardAdapter;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -88,17 +88,15 @@ public final class DashboardAdapter extends RecyclerView.Adapter<BaseViewHolder>
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_dash, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context)\n   ….row_dash, parent, false)");
-        return new ViewHolder(this, inflate);
+        View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_dash, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context)\n   ….row_dash, parent, false)");
+        return new ViewHolder(this, viewInflate);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
         int size;
-        if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "gcek", false, 2, (Object) null)) {
-            size = this.titleList.size();
-        } else if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "nssce", false, 2, (Object) null)) {
+        if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "gcek", false, 2, (Object) null) || StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "nssce", false, 2, (Object) null)) {
             size = this.titleList.size();
         } else {
             if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mcet", false, 2, (Object) null)) {
@@ -112,17 +110,13 @@ public final class DashboardAdapter extends RecyclerView.Adapter<BaseViewHolder>
                         if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "engnr", false, 2, (Object) null)) {
                             return this.titleList.size();
                         }
-                        if (StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "aisat", false, 2, (Object) null)) {
-                            size = this.titleList.size();
-                        } else {
-                            if (!StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mea", false, 2, (Object) null)) {
-                                if (!StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tmc", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mits", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "vjec.", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "ukfcet.", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "uat", false, 2, (Object) null)) {
-                                    return this.titleList.size() - 2;
-                                }
-                                return this.titleList.size();
+                        if (!StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "aisat", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mea", false, 2, (Object) null)) {
+                            if (!StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sjcetpalai", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "asiet", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "tmc", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "demo", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "mits", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "sngce.", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "vjec.", false, 2, (Object) null) && !StringsKt.contains$default((CharSequence) getPreference().getBaseUrl(), (CharSequence) "ukfcet.", false, 2, (Object) null)) {
+                                return this.titleList.size() - 2;
                             }
-                            size = this.titleList.size();
+                            return this.titleList.size();
                         }
+                        size = this.titleList.size();
                     }
                 }
                 return this.titleList.size();
@@ -132,7 +126,7 @@ public final class DashboardAdapter extends RecyclerView.Adapter<BaseViewHolder>
         return size - 1;
     }
 
-    /* compiled from: DashboardAdapter.kt */
+    /* JADX INFO: compiled from: DashboardAdapter.kt */
     @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\f\u001a\u00020\rH\u0014J\u0010\u0010\u000e\u001a\u00020\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u000b0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lin/etuwa/app/ui/dashboard/DashboardAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/dashboard/DashboardAdapter;Landroid/view/View;)V", "card", "Landroid/widget/LinearLayout;", "kotlin.jvm.PlatformType", "iconView", "Landroid/widget/ImageView;", "titleView", "Landroid/widget/TextView;", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final LinearLayout card;
@@ -169,7 +163,7 @@ public final class DashboardAdapter extends RecyclerView.Adapter<BaseViewHolder>
                 linearLayout.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.dashboard.DashboardAdapter$ViewHolder$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        DashboardAdapter.ViewHolder.onBind$lambda$0(DashboardAdapter.this, position, view);
+                        DashboardAdapter.ViewHolder.onBind$lambda$0(dashboardAdapter, position, view);
                     }
                 });
             } catch (Exception unused) {

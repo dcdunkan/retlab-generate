@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TransportHistory.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: TransportHistory.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class TransportHistory {
     private final String adjustment;
     private final String amount;
@@ -35,27 +35,27 @@ public final /* data */ class TransportHistory {
         return transportHistory.copy(str, str5, str6, str7, i);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getParticular() {
         return this.particular;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getAmount() {
         return this.amount;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getAdjustment() {
         return this.adjustment;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final int getBalance() {
         return this.balance;
     }

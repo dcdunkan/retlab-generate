@@ -1,6 +1,8 @@
 package in.etuwa.app.data.network;
 
+import in.etuwa.app.EtlabApp;
 import in.etuwa.app.data.preference.SharedPrefManager;
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -9,6 +11,7 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
+import okhttp3.Cache;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -26,14 +29,17 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/* compiled from: ApiClientLeave.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ApiClientLeave.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ApiClientLeave implements KoinComponent {
     public static final ApiClientLeave INSTANCE;
+    private static final Cache cache;
+    private static volatile ApiService cachedApiService;
+    private static volatile String cachedBaseUrl;
     private static final HttpLoggingInterceptor logger;
     private static final OkHttpClient okHttpClient;
 
-    /* renamed from: preferenceManager$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preferenceManager$delegate, reason: from kotlin metadata */
     private static final Lazy preferenceManager;
 
     private ApiClientLeave() {
@@ -48,10 +54,10 @@ public final class ApiClientLeave implements KoinComponent {
         ApiClientLeave apiClientLeave = new ApiClientLeave();
         INSTANCE = apiClientLeave;
         final ApiClientLeave apiClientLeave2 = apiClientLeave;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        preferenceManager = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.data.network.ApiClientLeave$special$$inlined$inject$default$1
+        preferenceManager = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.data.network.ApiClientLeave$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -61,7 +67,7 @@ public final class ApiClientLeave implements KoinComponent {
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = apiClientLeave2;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -72,21 +78,23 @@ public final class ApiClientLeave implements KoinComponent {
                 return rootScope.get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), qualifier2, function0);
             }
         });
-        HttpLoggingInterceptor level = new HttpLoggingInterceptor(0 == true ? 1 : 0, 1, 0 == true ? 1 : 0).setLevel(HttpLoggingInterceptor.Level.BODY);
+        HttpLoggingInterceptor level = new HttpLoggingInterceptor(0 == true ? 1 : 0, 1, 0 == true ? 1 : 0).setLevel(HttpLoggingInterceptor.Level.NONE);
         logger = level;
-        okHttpClient = new OkHttpClient.Builder().connectTimeout(20L, TimeUnit.MINUTES).readTimeout(20L, TimeUnit.MINUTES).writeTimeout(20L, TimeUnit.MINUTES).addInterceptor(level).addInterceptor(new Interceptor() { // from class: in.etuwa.app.data.network.ApiClientLeave$special$$inlined$-addInterceptor$1
+        Cache cache2 = new Cache(new File(EtlabApp.INSTANCE.get().getCacheDir(), "http_cache_leave"), 10485760L);
+        cache = cache2;
+        okHttpClient = new OkHttpClient.Builder().cache(cache2).connectTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).writeTimeout(60L, TimeUnit.SECONDS).addInterceptor(level).addInterceptor(new Interceptor() { // from class: in.etuwa.app.data.network.ApiClientLeave$special$$inlined$-addInterceptor$1
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
-                Request.Builder url;
+                Request.Builder builderUrl;
                 Intrinsics.checkNotNullParameter(chain, "chain");
                 Request request = chain.request();
-                HttpUrl build = request.url().newBuilder().build();
+                HttpUrl httpUrlBuild = request.url().newBuilder().build();
                 if (request.header("No-Authentication") == null) {
-                    url = request.newBuilder().method(request.method(), request.body()).url(build);
+                    builderUrl = request.newBuilder().method(request.method(), request.body()).url(httpUrlBuild);
                 } else {
-                    url = request.newBuilder().method(request.method(), request.body()).url(build);
+                    builderUrl = request.newBuilder().method(request.method(), request.body()).url(httpUrlBuild);
                 }
-                return chain.proceed(url.build());
+                return chain.proceed(builderUrl.build());
             }
         }).build();
     }
@@ -96,8 +104,21 @@ public final class ApiClientLeave implements KoinComponent {
     }
 
     public final ApiService getInstance() {
-        Object create = new Retrofit.Builder().baseUrl(getPreferenceManager().getBaseUrl()).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).client(okHttpClient).build().create(ApiService.class);
-        Intrinsics.checkNotNullExpressionValue(create, "retrofit.create(ApiService::class.java)");
-        return (ApiService) create;
+        String baseUrl = getPreferenceManager().getBaseUrl();
+        ApiService apiService = cachedApiService;
+        if (apiService != null && Intrinsics.areEqual(cachedBaseUrl, baseUrl)) {
+            return apiService;
+        }
+        synchronized (this) {
+            ApiService apiService2 = cachedApiService;
+            if (apiService2 != null && Intrinsics.areEqual(cachedBaseUrl, baseUrl)) {
+                return apiService2;
+            }
+            ApiService newService = (ApiService) new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).client(okHttpClient).build().create(ApiService.class);
+            cachedBaseUrl = baseUrl;
+            cachedApiService = newService;
+            Intrinsics.checkNotNullExpressionValue(newService, "newService");
+            return newService;
+        }
     }
 }

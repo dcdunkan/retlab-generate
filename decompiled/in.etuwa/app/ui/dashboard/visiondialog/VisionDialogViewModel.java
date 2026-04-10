@@ -29,14 +29,15 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.mp.KoinPlatformTools;
 
-/* compiled from: VisionDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: VisionDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class VisionDialogViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final DashRepository dashRepository;
     private final MutableLiveData<Resource<DashResponse>> dashResponse;
+    private boolean isDataLoaded;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     public VisionDialogViewModel(DashRepository dashRepository) {
@@ -45,10 +46,10 @@ public final class VisionDialogViewModel extends ViewModel implements KoinCompon
         this.compositeDisposable = new CompositeDisposable();
         this.dashResponse = new MutableLiveData<>();
         final VisionDialogViewModel visionDialogViewModel = this;
-        LazyThreadSafetyMode defaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
+        LazyThreadSafetyMode lazyThreadSafetyModeDefaultLazyMode = KoinPlatformTools.INSTANCE.defaultLazyMode();
         final Qualifier qualifier = null;
         final byte b = 0 == true ? 1 : 0;
-        this.preference = LazyKt.lazy(defaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel$special$$inlined$inject$default$1
+        this.preference = LazyKt.lazy(lazyThreadSafetyModeDefaultLazyMode, (Function0) new Function0<SharedPrefManager>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel$special$$inlined$inject$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
@@ -58,7 +59,7 @@ public final class VisionDialogViewModel extends ViewModel implements KoinCompon
             @Override // kotlin.jvm.functions.Function0
             public final SharedPrefManager invoke() {
                 Scope rootScope;
-                KoinComponent koinComponent = KoinComponent.this;
+                KoinComponent koinComponent = visionDialogViewModel;
                 Qualifier qualifier2 = qualifier;
                 Function0<? extends ParametersHolder> function0 = b;
                 if (koinComponent instanceof KoinScopeComponent) {
@@ -69,11 +70,7 @@ public final class VisionDialogViewModel extends ViewModel implements KoinCompon
                 return rootScope.get(Reflection.getOrCreateKotlinClass(SharedPrefManager.class), qualifier2, function0);
             }
         });
-        if (Intrinsics.areEqual(getPreference().getBaseUrl(), "https://nssce.etlab.in/androidapp/mobile/")) {
-            getDashData("99");
-        } else {
-            getDashData(null);
-        }
+        loadDataIfNeeded();
     }
 
     @Override // org.koin.core.component.KoinComponent
@@ -89,11 +86,23 @@ public final class VisionDialogViewModel extends ViewModel implements KoinCompon
         return (SharedPrefManager) this.preference.getValue();
     }
 
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
+        if (Intrinsics.areEqual(getPreference().getBaseUrl(), "https://nssce.etlab.in/androidapp/mobile/")) {
+            getDashData("99");
+        } else {
+            getDashData(null);
+        }
+    }
+
     public final void getDashData(String hostel) {
         this.dashResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DashResponse> observeOn = this.dashRepository.getDashApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DashResponse, Unit> function1 = new Function1<DashResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel$getDashData$1
+        Single<DashResponse> singleObserveOn = this.dashRepository.getDashApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DashResponse, Unit> function1 = new Function1<DashResponse, Unit>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel.getDashData.1
             {
                 super(1);
             }
@@ -104,7 +113,7 @@ public final class VisionDialogViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DashResponse dashResponse) {
                 VisionDialogViewModel.this.getDashResponse().postValue(Resource.INSTANCE.success(dashResponse));
             }
@@ -112,10 +121,10 @@ public final class VisionDialogViewModel extends ViewModel implements KoinCompon
         Consumer<? super DashResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VisionDialogViewModel.getDashData$lambda$0(Function1.this, obj);
+                VisionDialogViewModel.getDashData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel$getDashData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel.getDashData.2
             {
                 super(1);
             }
@@ -126,15 +135,15 @@ public final class VisionDialogViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 VisionDialogViewModel.this.getDashResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialogViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                VisionDialogViewModel.getDashData$lambda$1(Function1.this, obj);
+                VisionDialogViewModel.getDashData$lambda$1(function12, obj);
             }
         }));
     }

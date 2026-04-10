@@ -34,23 +34,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: MaintenanceDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: MaintenanceDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class MaintenanceDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogMmaintenanceBinding _binding;
     private StoreListener listener;
     private MainCallBackListener listner2;
 
-    /* renamed from: maintenanceViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: maintenanceViewModel$delegate, reason: from kotlin metadata */
     private final Lazy maintenanceViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: MaintenanceDialog.kt */
+    /* JADX INFO: compiled from: MaintenanceDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/dashboard/maintenance/MaintenanceDialog$StoreListener;", "", "dismissView", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface StoreListener {
         void dismissView();
@@ -79,7 +79,7 @@ public final class MaintenanceDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return maintenanceDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(maintenanceDialog);
@@ -93,7 +93,7 @@ public final class MaintenanceDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -106,7 +106,7 @@ public final class MaintenanceDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(MaintenanceViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(MaintenanceViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final MaintenanceDialog maintenanceDialog2 = this;
@@ -132,7 +132,7 @@ public final class MaintenanceDialog extends BaseDialog {
         return (MaintenanceViewModel) this.maintenanceViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogMmaintenanceBinding get_binding() {
         return this._binding;
     }
@@ -141,7 +141,7 @@ public final class MaintenanceDialog extends BaseDialog {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: MaintenanceDialog.kt */
+    /* JADX INFO: compiled from: MaintenanceDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/dashboard/maintenance/MaintenanceDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/dashboard/maintenance/MaintenanceDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -201,7 +201,7 @@ public final class MaintenanceDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.dashboard.maintenance.MaintenanceDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MaintenanceDialog.setUp$lambda$1(MaintenanceDialog.this, view);
+                MaintenanceDialog.setUp$lambda$1(this.f$0, view);
             }
         });
     }

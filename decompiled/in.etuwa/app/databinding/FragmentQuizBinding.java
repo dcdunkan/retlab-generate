@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -11,20 +12,22 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.newquiz.NewQuizViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentQuizBinding extends ViewDataBinding {
 
     @Bindable
     protected NewQuizViewModel mNewQuizViewModel;
     public final RecyclerView rvQuiz;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setNewQuizViewModel(NewQuizViewModel newQuizViewModel);
 
-    protected FragmentQuizBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvQuiz, SwipeRefreshLayout swipeLayout) {
+    protected FragmentQuizBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvQuiz, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.rvQuiz = rvQuiz;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public NewQuizViewModel getNewQuizViewModel() {

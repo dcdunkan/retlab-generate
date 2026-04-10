@@ -6,18 +6,19 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.counselling.add.AddCounsellingViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AddCounsellingDialogBinding extends ViewDataBinding {
-    public final TextView addCounsellingBtn;
+    public final MaterialButton addCounsellingBtn;
     public final TextInputLayout comntLayout;
     public final TextView councTitle;
     public final TextInputEditText csComment;
@@ -30,7 +31,7 @@ public abstract class AddCounsellingDialogBinding extends ViewDataBinding {
     @Bindable
     protected AddCounsellingViewModel mAddCounsellingDialogViewModel;
     public final TextView progressText;
-    public final CardView progressView;
+    public final MaterialCardView progressView;
     public final Spinner spinnerCouncellingBefore;
     public final Spinner spinnerCouncellingMeet;
     public final Spinner spinnerCouncellingType;
@@ -38,7 +39,7 @@ public abstract class AddCounsellingDialogBinding extends ViewDataBinding {
 
     public abstract void setAddCounsellingDialogViewModel(AddCounsellingViewModel addCounsellingDialogViewModel);
 
-    protected AddCounsellingDialogBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView addCounsellingBtn, TextInputLayout comntLayout, TextView councTitle, TextInputEditText csComment, TextInputEditText csConcernStudies, TextInputEditText csPhisical, TextInputEditText csRelationship, TextInputEditText etCsConcern, TextInputEditText etCsConcernHome, TextView progressText, CardView progressView, Spinner spinnerCouncellingBefore, Spinner spinnerCouncellingMeet, Spinner spinnerCouncellingType, ProgressBar uploadProgressbar) {
+    protected AddCounsellingDialogBinding(Object _bindingComponent, View _root, int _localFieldCount, MaterialButton addCounsellingBtn, TextInputLayout comntLayout, TextView councTitle, TextInputEditText csComment, TextInputEditText csConcernStudies, TextInputEditText csPhisical, TextInputEditText csRelationship, TextInputEditText etCsConcern, TextInputEditText etCsConcernHome, TextView progressText, MaterialCardView progressView, Spinner spinnerCouncellingBefore, Spinner spinnerCouncellingMeet, Spinner spinnerCouncellingType, ProgressBar uploadProgressbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.addCounsellingBtn = addCounsellingBtn;
         this.comntLayout = comntLayout;

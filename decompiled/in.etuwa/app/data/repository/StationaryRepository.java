@@ -9,8 +9,8 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: StationaryRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: StationaryRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class StationaryRepository {
     private final ApiHelper apiHelper;
 

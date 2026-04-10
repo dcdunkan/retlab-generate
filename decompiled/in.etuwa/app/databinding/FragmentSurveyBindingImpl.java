@@ -2,22 +2,27 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.survey.SurveyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentSurveyBindingImpl extends FragmentSurveyBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
     private long mDirtyFlags;
     private final ViewProgressBarBinding mboundView0;
-    private final FrameLayout mboundView01;
+    private final LinearLayout mboundView01;
 
     @Override // androidx.databinding.ViewDataBinding
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
@@ -27,25 +32,36 @@ public class FragmentSurveyBindingImpl extends FragmentSurveyBinding {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.po_survey_btn, 2);
-        sparseIntArray.put(R.id.course_btn, 3);
-        sparseIntArray.put(R.id.graduate_btn, 4);
-        sparseIntArray.put(R.id.swipe_layout, 5);
-        sparseIntArray.put(R.id.rv_survey, 6);
+        sparseIntArray.put(R.id.app_bar_layout, 2);
+        sparseIntArray.put(R.id.ivFilter, 3);
+        sparseIntArray.put(R.id.ivSearch, 4);
+        sparseIntArray.put(R.id.search_card, 5);
+        sparseIntArray.put(R.id.search_input, 6);
+        sparseIntArray.put(R.id.ivClearSearch, 7);
+        sparseIntArray.put(R.id.po_survey_btn, 8);
+        sparseIntArray.put(R.id.graduate_btn, 9);
+        sparseIntArray.put(R.id.course_btn, 10);
+        sparseIntArray.put(R.id.chip_group_filter, 11);
+        sparseIntArray.put(R.id.chip_open, 12);
+        sparseIntArray.put(R.id.chip_pending, 13);
+        sparseIntArray.put(R.id.chip_completed, 14);
+        sparseIntArray.put(R.id.chip_all, 15);
+        sparseIntArray.put(R.id.swipe_layout, 16);
+        sparseIntArray.put(R.id.rv_survey, 17);
     }
 
     public FragmentSurveyBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
     }
 
     private FragmentSurveyBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextView) bindings[3], (TextView) bindings[4], (TextView) bindings[2], (RecyclerView) bindings[6], (SwipeRefreshLayout) bindings[5]);
+        super(bindingComponent, root, 0, (AppBarLayout) bindings[2], (Chip) bindings[15], (Chip) bindings[14], (ChipGroup) bindings[11], (Chip) bindings[12], (Chip) bindings[13], (CardView) bindings[10], (CardView) bindings[9], (ImageView) bindings[7], (ImageView) bindings[3], (ImageView) bindings[4], (CardView) bindings[8], (RecyclerView) bindings[17], (CardView) bindings[5], (EditText) bindings[6], (SwipeRefreshLayout) bindings[16]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
-        FrameLayout frameLayout = (FrameLayout) bindings[0];
-        this.mboundView01 = frameLayout;
-        frameLayout.setTag(null);
+        LinearLayout linearLayout = (LinearLayout) bindings[0];
+        this.mboundView01 = linearLayout;
+        linearLayout.setTag(null);
         setRootTag(root);
         invalidateAll();
     }
@@ -67,7 +83,7 @@ public class FragmentSurveyBindingImpl extends FragmentSurveyBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (218 != variableId) {
+        if (220 != variableId) {
             return false;
         }
         setSurveyViewModel((SurveyViewModel) variable);

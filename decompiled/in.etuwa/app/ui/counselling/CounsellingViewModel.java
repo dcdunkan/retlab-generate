@@ -17,13 +17,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: CounsellingViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CounsellingViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CounsellingViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final CounsellingRepository counsellingRepository;
     private MutableLiveData<Resource<CounsellingResponse>> counsellingResponse;
     private MutableLiveData<Resource<SuccessResponse>> deleteResponse;
+    private boolean isDataLoaded;
 
     public CounsellingViewModel(CounsellingRepository counsellingRepository) {
         Intrinsics.checkNotNullParameter(counsellingRepository, "counsellingRepository");
@@ -31,14 +32,22 @@ public final class CounsellingViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.counsellingResponse = new MutableLiveData<>();
         this.deleteResponse = new MutableLiveData<>();
+        loadDataIfNeeded();
+    }
+
+    public final void loadDataIfNeeded() {
+        if (this.isDataLoaded) {
+            return;
+        }
+        this.isDataLoaded = true;
         getCounselling();
     }
 
     public final void getCounselling() {
         this.counsellingResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<CounsellingResponse> observeOn = this.counsellingRepository.getCounsellingRequestApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<CounsellingResponse, Unit> function1 = new Function1<CounsellingResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$getCounselling$1
+        Single<CounsellingResponse> singleObserveOn = this.counsellingRepository.getCounsellingRequestApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<CounsellingResponse, Unit> function1 = new Function1<CounsellingResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel.getCounselling.1
             {
                 super(1);
             }
@@ -49,20 +58,18 @@ public final class CounsellingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(CounsellingResponse counsellingResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CounsellingViewModel.this.counsellingResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(counsellingResponse));
+                CounsellingViewModel.this.counsellingResponse.postValue(Resource.INSTANCE.success(counsellingResponse));
             }
         };
         Consumer<? super CounsellingResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CounsellingViewModel.getCounselling$lambda$0(Function1.this, obj);
+                CounsellingViewModel.getCounselling$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$getCounselling$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel.getCounselling.2
             {
                 super(1);
             }
@@ -73,17 +80,15 @@ public final class CounsellingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CounsellingViewModel.this.counsellingResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CounsellingViewModel.this.counsellingResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CounsellingViewModel.getCounselling$lambda$1(Function1.this, obj);
+                CounsellingViewModel.getCounselling$lambda$1(function12, obj);
             }
         }));
     }
@@ -103,8 +108,8 @@ public final class CounsellingViewModel extends ViewModel {
     public final void deleteCounselling(String id) {
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.counsellingRepository.deleteCounsellingApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$deleteCounselling$1
+        Single<SuccessResponse> singleObserveOn = this.counsellingRepository.deleteCounsellingApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel.deleteCounselling.1
             {
                 super(1);
             }
@@ -115,20 +120,18 @@ public final class CounsellingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CounsellingViewModel.this.deleteResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                CounsellingViewModel.this.deleteResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CounsellingViewModel.deleteCounselling$lambda$2(Function1.this, obj);
+                CounsellingViewModel.deleteCounselling$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$deleteCounselling$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel.deleteCounselling.2
             {
                 super(1);
             }
@@ -139,17 +142,15 @@ public final class CounsellingViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = CounsellingViewModel.this.deleteResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                CounsellingViewModel.this.deleteResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.counselling.CounsellingViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                CounsellingViewModel.deleteCounselling$lambda$3(Function1.this, obj);
+                CounsellingViewModel.deleteCounselling$lambda$3(function12, obj);
             }
         }));
     }

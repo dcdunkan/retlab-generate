@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.coursesattended.CoursesAttendedViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentCourseAttendedBindingImpl extends FragmentCourseAttendedBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentCourseAttendedBindingImpl extends FragmentCourseAttendedBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (64 != variableId) {
+        if (63 != variableId) {
             return false;
         }
         setCoursesAttendedViewModel((CoursesAttendedViewModel) variable);

@@ -6,8 +6,8 @@ import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Registration.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Registration.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Registration {
     private final String added_at;
     private final String id;
@@ -42,32 +42,32 @@ public final /* data */ class Registration {
         return registration.copy(str, str7, str8, str9, str10, str6);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getReg_type() {
         return this.reg_type;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAdded_at() {
         return this.added_at;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getPrint() {
         return this.print;
     }

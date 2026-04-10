@@ -15,7 +15,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.achievements.add.AddAchievementsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogAddAchievementsBindingImpl extends DialogAddAchievementsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -81,7 +81,7 @@ public class DialogAddAchievementsBindingImpl extends DialogAddAchievementsBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (8 != variableId) {
+        if (7 != variableId) {
             return false;
         }
         setAddAchievementsViewModel((AddAchievementsViewModel) variable);

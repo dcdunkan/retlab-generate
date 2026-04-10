@@ -9,33 +9,44 @@ import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.applyleave.HostelApplyLeaveViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogApplyHostelAttendanceBinding extends ViewDataBinding {
     public final TextView etEndDate;
+    public final TextView etEndDateTime;
     public final TextView etFromDate;
+    public final TextView etFromDateTime;
     public final TextInputEditText etReason;
     public final CardView ltEndDate;
+    public final CardView ltEndDateTime;
     public final CardView ltFromDate;
+    public final CardView ltFromDateTime;
 
     @Bindable
     protected HostelApplyLeaveViewModel mHostelApplyLeaveViewModel;
-    public final TextView saveBtn;
+    public final MaterialButton saveBtn;
+    public final Spinner spinnerDateType;
     public final Spinner spinnerLeaveType;
 
     public abstract void setHostelApplyLeaveViewModel(HostelApplyLeaveViewModel hostelApplyLeaveViewModel);
 
-    protected DialogApplyHostelAttendanceBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView etEndDate, TextView etFromDate, TextInputEditText etReason, CardView ltEndDate, CardView ltFromDate, TextView saveBtn, Spinner spinnerLeaveType) {
+    protected DialogApplyHostelAttendanceBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView etEndDate, TextView etEndDateTime, TextView etFromDate, TextView etFromDateTime, TextInputEditText etReason, CardView ltEndDate, CardView ltEndDateTime, CardView ltFromDate, CardView ltFromDateTime, MaterialButton saveBtn, Spinner spinnerDateType, Spinner spinnerLeaveType) {
         super(_bindingComponent, _root, _localFieldCount);
         this.etEndDate = etEndDate;
+        this.etEndDateTime = etEndDateTime;
         this.etFromDate = etFromDate;
+        this.etFromDateTime = etFromDateTime;
         this.etReason = etReason;
         this.ltEndDate = ltEndDate;
+        this.ltEndDateTime = ltEndDateTime;
         this.ltFromDate = ltFromDate;
+        this.ltFromDateTime = ltFromDateTime;
         this.saveBtn = saveBtn;
+        this.spinnerDateType = spinnerDateType;
         this.spinnerLeaveType = spinnerLeaveType;
     }
 

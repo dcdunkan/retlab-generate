@@ -4,8 +4,8 @@ import in.etuwa.app.ui.examregistration.examsubjects.detaildialog.ExamSubjectDet
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelReciptBean.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelReciptBean.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelReciptBean {
     private final String amount;
     private final String date;

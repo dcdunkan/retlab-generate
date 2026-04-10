@@ -3,27 +3,27 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.EditText;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.button.MaterialButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.changepassword.ChangePasswordViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogChangePasswordBinding extends ViewDataBinding {
-    public final TextView changePassBtn;
-    public final TextInputEditText etConfirmPass;
-    public final TextInputEditText etCurrentPassword;
-    public final TextInputEditText etNewPassword;
+    public final MaterialButton changePassBtn;
+    public final EditText etConfirmPass;
+    public final EditText etCurrentPassword;
+    public final EditText etNewPassword;
 
     @Bindable
     protected ChangePasswordViewModel mChangePasswordDialogViewModel;
 
     public abstract void setChangePasswordDialogViewModel(ChangePasswordViewModel changePasswordDialogViewModel);
 
-    protected DialogChangePasswordBinding(Object _bindingComponent, View _root, int _localFieldCount, TextView changePassBtn, TextInputEditText etConfirmPass, TextInputEditText etCurrentPassword, TextInputEditText etNewPassword) {
+    protected DialogChangePasswordBinding(Object _bindingComponent, View _root, int _localFieldCount, MaterialButton changePassBtn, EditText etConfirmPass, EditText etCurrentPassword, EditText etNewPassword) {
         super(_bindingComponent, _root, _localFieldCount);
         this.changePassBtn = changePassBtn;
         this.etConfirmPass = etConfirmPass;

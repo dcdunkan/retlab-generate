@@ -10,7 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.stationary.bookinghistory.BookingHistoryViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentBookingHistoryBindingImpl extends FragmentBookingHistoryBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -63,7 +63,7 @@ public class FragmentBookingHistoryBindingImpl extends FragmentBookingHistoryBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (40 != variableId) {
+        if (39 != variableId) {
             return false;
         }
         setBookingHistoryViewModel((BookingHistoryViewModel) variable);

@@ -1,6 +1,7 @@
 package in.etuwa.app.ui.result.university.semlistdialog;
 
 import android.content.ComponentCallbacks;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,9 @@ import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.data.model.Semester;
 import in.etuwa.app.databinding.SemListDialogBinding;
 import in.etuwa.app.ui.base.BaseDialog;
+import in.etuwa.app.ui.evaluation.EvaluationFragment;
+import in.etuwa.app.ui.questionbank.QuestionBankFragment;
+import in.etuwa.app.ui.result.ResultFragment;
 import in.etuwa.app.ui.result.university.semlistdialog.SemListAdapter;
 import in.etuwa.app.utils.Resource;
 import in.etuwa.app.utils.Status;
@@ -36,28 +40,28 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SemListDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SemListDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SemListDialog extends BaseDialog implements SemListAdapter.SemCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private SemListDialogBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private SemDialogCallBack listener;
 
-    /* renamed from: semListDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: semListDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy semListDialogViewModel;
 
-    /* compiled from: SemListDialog.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006"}, d2 = {"Lin/etuwa/app/ui/result/university/semlistdialog/SemListDialog$SemDialogCallBack;", "", "loadSelectedSem", "", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    /* JADX INFO: compiled from: SemListDialog.kt */
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\bf\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H&¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/result/university/semlistdialog/SemListDialog$SemDialogCallBack;", "", "loadSelectedSem", "", "id", "", "semName", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface SemDialogCallBack {
-        void loadSelectedSem(String id);
+        void loadSelectedSem(String id, String semName);
     }
 
-    /* compiled from: SemListDialog.kt */
+    /* JADX INFO: compiled from: SemListDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -107,7 +111,7 @@ public final class SemListDialog extends BaseDialog implements SemListAdapter.Se
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return semListDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(semListDialog);
@@ -121,7 +125,7 @@ public final class SemListDialog extends BaseDialog implements SemListAdapter.Se
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -134,7 +138,7 @@ public final class SemListDialog extends BaseDialog implements SemListAdapter.Se
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SemListDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SemListDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SemListDialog semListDialog2 = this;
@@ -164,12 +168,12 @@ public final class SemListDialog extends BaseDialog implements SemListAdapter.Se
         return (SemListAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final SemListDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: SemListDialog.kt */
+    /* JADX INFO: compiled from: SemListDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/result/university/semlistdialog/SemListDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/result/university/semlistdialog/SemListDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -220,13 +224,17 @@ public final class SemListDialog extends BaseDialog implements SemListAdapter.Se
         }
         getAdapter().setCallBack(this);
         listenSemResponse();
+        SemListDialogViewModel semListDialogViewModel = getSemListDialogViewModel();
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        semListDialogViewModel.getSemester(contextRequireContext);
     }
 
     private final void listenSemResponse() {
         getSemListDialogViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.result.university.semlistdialog.SemListDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                SemListDialog.listenSemResponse$lambda$1(SemListDialog.this, (Resource) obj);
+                SemListDialog.listenSemResponse$lambda$1(this.f$0, (Resource) obj);
             }
         });
     }
@@ -267,17 +275,33 @@ public final class SemListDialog extends BaseDialog implements SemListAdapter.Se
     }
 
     @Override // in.etuwa.app.ui.result.university.semlistdialog.SemListAdapter.SemCallBack
-    public void onSemSelected(String id) {
+    public void onSemSelected(String id, String semName) {
         Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(semName, "semName");
         SemDialogCallBack semDialogCallBack = this.listener;
         if (semDialogCallBack != null) {
-            semDialogCallBack.loadSelectedSem(id);
+            semDialogCallBack.loadSelectedSem(id, semName);
         }
         getAdapter().clearItems();
         dismiss();
     }
 
     public final void setCallBack(SemDialogCallBack context) {
+        this.listener = context;
+    }
+
+    public final void setCallBack2(ResultFragment context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.listener = context;
+    }
+
+    public final void setCallBack3(QuestionBankFragment context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.listener = context;
+    }
+
+    public final void setCallBackEvaluation(EvaluationFragment context) {
+        Intrinsics.checkNotNullParameter(context, "context");
         this.listener = context;
     }
 

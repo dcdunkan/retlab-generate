@@ -50,33 +50,33 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: FieldsFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FieldsFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FieldsFragment extends BaseFragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentFieldsBinding _binding;
 
-    /* renamed from: fieldsViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: fieldsViewModel$delegate, reason: from kotlin metadata */
     private final Lazy fieldsViewModel;
     private String id;
     private MainCallBackListener listener;
     private String port;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapterPort$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterPort$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterPort;
 
-    /* renamed from: spinnerAdapterTon$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterTon$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterTon;
 
-    /* renamed from: spinnerAdapterType$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterType$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterType;
 
-    /* renamed from: spinnerAdapterZone$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapterZone$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapterZone;
     private String ton;
     private String type;
@@ -113,7 +113,7 @@ public final class FieldsFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return fieldsFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(fieldsFragment);
@@ -127,7 +127,7 @@ public final class FieldsFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -140,7 +140,7 @@ public final class FieldsFragment extends BaseFragment {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(FieldsViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(FieldsViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final FieldsFragment fieldsFragment2 = this;
@@ -167,7 +167,7 @@ public final class FieldsFragment extends BaseFragment {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(FieldsFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -192,7 +192,7 @@ public final class FieldsFragment extends BaseFragment {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(FieldsFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -217,7 +217,7 @@ public final class FieldsFragment extends BaseFragment {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(FieldsFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode4 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -242,7 +242,7 @@ public final class FieldsFragment extends BaseFragment {
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(FieldsFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode5 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -266,7 +266,7 @@ public final class FieldsFragment extends BaseFragment {
         return (FieldsViewModel) this.fieldsViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentFieldsBinding get_binding() {
         return this._binding;
     }
@@ -295,7 +295,7 @@ public final class FieldsFragment extends BaseFragment {
         return (SemesterSpinnerAdapter) this.spinnerAdapterType.getValue();
     }
 
-    /* compiled from: FieldsFragment.kt */
+    /* JADX INFO: compiled from: FieldsFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/fees/webview/fields/FieldsFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/fees/webview/fields/FieldsFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -366,151 +366,107 @@ public final class FieldsFragment extends BaseFragment {
         if (spinner4 != null) {
             spinner4.setAdapter((SpinnerAdapter) getSpinnerAdapterType());
         }
-        ArrayList<Semester> arrayListOf = CollectionsKt.arrayListOf(new Semester("654c59cbb5e9b226a8af97c7", "Kasargod"), new Semester("654b9b67b5e9b226a8af96ae", "Vatakara"), new Semester("654b985bb5e9b226a8af967f", "Kodungallur"), new Semester("654b8bf9b5e9b226a8af959f", "Beypore"));
-        ArrayList<Semester> arrayListOf2 = CollectionsKt.arrayListOf(new Semester("654c5cf9b5e9b226a8af9813", "SHIRIYA-ARIKKADY"), new Semester("654c5c4bb5e9b226a8af980c", "MOGRALPUTHUR"), new Semester("654c5b93b5e9b226a8af9807", "MATTUMMAL"), new Semester("654c5b7cb5e9b226a8af9800", "ORIKKADAVU"), new Semester("654c5b48b5e9b226a8af97f9", "ACHAMTHURUTHI"), new Semester("654c5b33b5e9b226a8af97ed", "KAITHAKKAD"), new Semester("654c5b1db5e9b226a8af97e6", "MADAKKARA"), new Semester("654c5d0eb5e9b226a8af981a", "CHALIYAMCODE"), new Semester("654c5e88b5e9b226a8af9883", "SHIRIYA-OLAYAM"), new Semester("654c5d31b5e9b226a8af9828", "MANJESHWAR"), new Semester("654c5d21b5e9b226a8af9821", "THALANKARA"));
-        final ArrayList arrayListOf3 = CollectionsKt.arrayListOf(new Semester("67ee276c91cd9664eb664d87", "5"), new Semester("67ee276c91cd9664eb664d86", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee276c91cd9664eb664d88", "7"), new Semester("67ee276c91cd9664eb664d89", "10"));
-        final ArrayList arrayListOf4 = CollectionsKt.arrayListOf(new Semester("67ee272791cd9664eb664b7d", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee272791cd9664eb664b7e", "5"), new Semester("67ee272791cd9664eb664b7f", "7"), new Semester("67ee272791cd9664eb664b80", "10"));
-        final ArrayList arrayListOf5 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee275491cd9664eb664d16", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee275491cd9664eb664d17", "5"));
-        final ArrayList arrayListOf6 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee271191cd9664eb664ac1", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee271191cd9664eb664ac2", "5"));
-        final ArrayList arrayListOf7 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee26ec91cd9664eb664a33", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee26ec91cd9664eb664a34", "5"), new Semester("67ee26ec91cd9664eb664a35", "7"), new Semester("67ee26ec91cd9664eb664a36", "10"));
-        final ArrayList arrayListOf8 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee267e91cd9664eb664826", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee267e91cd9664eb664827", "5"));
-        final ArrayList arrayListOf9 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee26a391cd9664eb66488e", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee26a391cd9664eb66488f", "5"));
-        final ArrayList arrayListOf10 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee268f91cd9664eb664854", "5"), new Semester("67ee268f91cd9664eb664853", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee4d9c13786e892bc41147", "5"), new Semester("67ee4d9c13786e892bc41149", ExifInterface.GPS_MEASUREMENT_3D));
-        final ArrayList arrayListOf11 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee266691cd9664eb6647c3", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee266691cd9664eb6647c4", "5"), new Semester("67ee2a867833f3f035554030", "5"), new Semester("67ee2a867833f3f03555402e", ExifInterface.GPS_MEASUREMENT_3D));
-        final ArrayList arrayListOf12 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee273f91cd9664eb664c44", "5"), new Semester("67ee273f91cd9664eb664c45", "7"), new Semester("67ee273f91cd9664eb664c43", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee273f91cd9664eb664c46", "10"), new Semester("67ee2cdc844842249a8bbcee", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee2cdc844842249a8bbcf0", "5"));
-        ArrayList<Semester> arrayListOf13 = CollectionsKt.arrayListOf(new Semester("Lorry", "Lorry"));
-        getSpinnerAdapterPort().addItems(arrayListOf);
-        getSpinnerAdapterType().addItems(arrayListOf13);
-        getSpinnerAdapterZone().addItems(arrayListOf2);
+        ArrayList<Semester> arrayListArrayListOf = CollectionsKt.arrayListOf(new Semester("654c59cbb5e9b226a8af97c7", "Kasargod"), new Semester("654b9b67b5e9b226a8af96ae", "Vatakara"), new Semester("654b985bb5e9b226a8af967f", "Kodungallur"), new Semester("654b8bf9b5e9b226a8af959f", "Beypore"));
+        ArrayList<Semester> arrayListArrayListOf2 = CollectionsKt.arrayListOf(new Semester("654c5cf9b5e9b226a8af9813", "SHIRIYA-ARIKKADY"), new Semester("654c5c4bb5e9b226a8af980c", "MOGRALPUTHUR"), new Semester("654c5b93b5e9b226a8af9807", "MATTUMMAL"), new Semester("654c5b7cb5e9b226a8af9800", "ORIKKADAVU"), new Semester("654c5b48b5e9b226a8af97f9", "ACHAMTHURUTHI"), new Semester("654c5b33b5e9b226a8af97ed", "KAITHAKKAD"), new Semester("654c5b1db5e9b226a8af97e6", "MADAKKARA"), new Semester("654c5d0eb5e9b226a8af981a", "CHALIYAMCODE"), new Semester("654c5e88b5e9b226a8af9883", "SHIRIYA-OLAYAM"), new Semester("654c5d31b5e9b226a8af9828", "MANJESHWAR"), new Semester("654c5d21b5e9b226a8af9821", "THALANKARA"));
+        final ArrayList arrayListArrayListOf3 = CollectionsKt.arrayListOf(new Semester("67ee276c91cd9664eb664d87", "5"), new Semester("67ee276c91cd9664eb664d86", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee276c91cd9664eb664d88", "7"), new Semester("67ee276c91cd9664eb664d89", "10"));
+        final ArrayList arrayListArrayListOf4 = CollectionsKt.arrayListOf(new Semester("67ee272791cd9664eb664b7d", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee272791cd9664eb664b7e", "5"), new Semester("67ee272791cd9664eb664b7f", "7"), new Semester("67ee272791cd9664eb664b80", "10"));
+        final ArrayList arrayListArrayListOf5 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee275491cd9664eb664d16", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee275491cd9664eb664d17", "5"));
+        final ArrayList arrayListArrayListOf6 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee271191cd9664eb664ac1", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee271191cd9664eb664ac2", "5"));
+        final ArrayList arrayListArrayListOf7 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee26ec91cd9664eb664a33", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee26ec91cd9664eb664a34", "5"), new Semester("67ee26ec91cd9664eb664a35", "7"), new Semester("67ee26ec91cd9664eb664a36", "10"));
+        final ArrayList arrayListArrayListOf8 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee267e91cd9664eb664826", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee267e91cd9664eb664827", "5"));
+        final ArrayList arrayListArrayListOf9 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee26a391cd9664eb66488e", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee26a391cd9664eb66488f", "5"));
+        final ArrayList arrayListArrayListOf10 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee268f91cd9664eb664854", "5"), new Semester("67ee268f91cd9664eb664853", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee4d9c13786e892bc41147", "5"), new Semester("67ee4d9c13786e892bc41149", ExifInterface.GPS_MEASUREMENT_3D));
+        final ArrayList arrayListArrayListOf11 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee266691cd9664eb6647c3", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee266691cd9664eb6647c4", "5"), new Semester("67ee2a867833f3f035554030", "5"), new Semester("67ee2a867833f3f03555402e", ExifInterface.GPS_MEASUREMENT_3D));
+        final ArrayList arrayListArrayListOf12 = CollectionsKt.arrayListOf(new Semester("id", "Please select ton required"), new Semester("67ee273f91cd9664eb664c44", "5"), new Semester("67ee273f91cd9664eb664c45", "7"), new Semester("67ee273f91cd9664eb664c43", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee273f91cd9664eb664c46", "10"), new Semester("67ee2cdc844842249a8bbcee", ExifInterface.GPS_MEASUREMENT_3D), new Semester("67ee2cdc844842249a8bbcf0", "5"));
+        ArrayList<Semester> arrayListArrayListOf13 = CollectionsKt.arrayListOf(new Semester("Lorry", "Lorry"));
+        getSpinnerAdapterPort().addItems(arrayListArrayListOf);
+        getSpinnerAdapterType().addItems(arrayListArrayListOf13);
+        getSpinnerAdapterZone().addItems(arrayListArrayListOf2);
         FragmentFieldsBinding fragmentFieldsBinding5 = get_binding();
         Spinner spinner5 = fragmentFieldsBinding5 != null ? fragmentFieldsBinding5.spinnerPort : null;
         if (spinner5 != null) {
-            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment$setUp$1
+            spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment.setUp.1
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapterPort;
                     FieldsFragment fieldsFragment = FieldsFragment.this;
-                    spinnerAdapterPort = fieldsFragment.getSpinnerAdapterPort();
-                    fieldsFragment.port = spinnerAdapterPort.getSemester(position).getId();
+                    fieldsFragment.port = fieldsFragment.getSpinnerAdapterPort().getSemester(position).getId();
                 }
             });
         }
         FragmentFieldsBinding fragmentFieldsBinding6 = get_binding();
         Spinner spinner6 = fragmentFieldsBinding6 != null ? fragmentFieldsBinding6.spinnerZone : null;
         if (spinner6 != null) {
-            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment$setUp$2
+            spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapterZone;
-                    SemesterSpinnerAdapter spinnerAdapterZone2;
-                    SemesterSpinnerAdapter spinnerAdapterZone3;
-                    SemesterSpinnerAdapter spinnerAdapterZone4;
-                    SemesterSpinnerAdapter spinnerAdapterZone5;
-                    SemesterSpinnerAdapter spinnerAdapterZone6;
-                    SemesterSpinnerAdapter spinnerAdapterZone7;
-                    SemesterSpinnerAdapter spinnerAdapterZone8;
-                    SemesterSpinnerAdapter spinnerAdapterZone9;
-                    SemesterSpinnerAdapter spinnerAdapterZone10;
-                    SemesterSpinnerAdapter spinnerAdapterZone11;
-                    SemesterSpinnerAdapter spinnerAdapterTon;
-                    SemesterSpinnerAdapter spinnerAdapterTon2;
-                    SemesterSpinnerAdapter spinnerAdapterTon3;
-                    SemesterSpinnerAdapter spinnerAdapterTon4;
-                    SemesterSpinnerAdapter spinnerAdapterTon5;
-                    SemesterSpinnerAdapter spinnerAdapterTon6;
-                    SemesterSpinnerAdapter spinnerAdapterTon7;
-                    SemesterSpinnerAdapter spinnerAdapterTon8;
-                    SemesterSpinnerAdapter spinnerAdapterTon9;
-                    SemesterSpinnerAdapter spinnerAdapterTon10;
                     FieldsFragment fieldsFragment = FieldsFragment.this;
-                    spinnerAdapterZone = fieldsFragment.getSpinnerAdapterZone();
-                    fieldsFragment.zone = spinnerAdapterZone.getSemester(position).getId();
-                    spinnerAdapterZone2 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase = spinnerAdapterZone2.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    fieldsFragment.zone = fieldsFragment.getSpinnerAdapterZone().getSemester(position).getId();
+                    String lowerCase = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase, (CharSequence) "madakkara", false, 2, (Object) null)) {
-                        spinnerAdapterTon10 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon10.addItems(arrayListOf11);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf11);
                         return;
                     }
-                    spinnerAdapterZone3 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase2 = spinnerAdapterZone3.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase2 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase2, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase2, (CharSequence) "kaithakkad", false, 2, (Object) null)) {
-                        spinnerAdapterTon9 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon9.addItems(arrayListOf10);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf10);
                         return;
                     }
-                    spinnerAdapterZone4 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase3 = spinnerAdapterZone4.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase3 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase3, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase3, (CharSequence) "achamthuruthi", false, 2, (Object) null)) {
-                        spinnerAdapterTon8 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon8.addItems(arrayListOf9);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf9);
                         return;
                     }
-                    spinnerAdapterZone5 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase4 = spinnerAdapterZone5.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase4 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase4, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase4, (CharSequence) "orikkadavu", false, 2, (Object) null)) {
-                        spinnerAdapterTon7 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon7.addItems(arrayListOf8);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf8);
                         return;
                     }
-                    spinnerAdapterZone6 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase5 = spinnerAdapterZone6.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase5 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase5, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase5, (CharSequence) "mattummal", false, 2, (Object) null)) {
-                        spinnerAdapterTon6 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon6.addItems(arrayListOf7);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf7);
                         return;
                     }
-                    spinnerAdapterZone7 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase6 = spinnerAdapterZone7.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase6 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase6, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase6, (CharSequence) "mogral", false, 2, (Object) null)) {
-                        spinnerAdapterTon5 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon5.addItems(arrayListOf6);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf6);
                         return;
                     }
-                    spinnerAdapterZone8 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase7 = spinnerAdapterZone8.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase7 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase7, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase7, (CharSequence) "arikkady", false, 2, (Object) null)) {
-                        spinnerAdapterTon4 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon4.addItems(arrayListOf5);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf5);
                         return;
                     }
-                    spinnerAdapterZone9 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase8 = spinnerAdapterZone9.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase8 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase8, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase8, (CharSequence) "chaliyamcode", false, 2, (Object) null)) {
-                        spinnerAdapterTon3 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon3.addItems(arrayListOf4);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf4);
                         return;
                     }
-                    spinnerAdapterZone10 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase9 = spinnerAdapterZone10.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase9 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase9, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase9, (CharSequence) "thalankara", false, 2, (Object) null)) {
-                        spinnerAdapterTon2 = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon2.addItems(arrayListOf12);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf12);
                         return;
                     }
-                    spinnerAdapterZone11 = FieldsFragment.this.getSpinnerAdapterZone();
-                    String lowerCase10 = spinnerAdapterZone11.getSemester(position).getName().toLowerCase(Locale.ROOT);
+                    String lowerCase10 = FieldsFragment.this.getSpinnerAdapterZone().getSemester(position).getName().toLowerCase(Locale.ROOT);
                     Intrinsics.checkNotNullExpressionValue(lowerCase10, "toLowerCase(...)");
                     if (StringsKt.contains$default((CharSequence) lowerCase10, (CharSequence) "manjeshwar", false, 2, (Object) null)) {
-                        spinnerAdapterTon = FieldsFragment.this.getSpinnerAdapterTon();
-                        spinnerAdapterTon.addItems(arrayListOf3);
+                        FieldsFragment.this.getSpinnerAdapterTon().addItems(arrayListArrayListOf3);
                     }
                 }
             });
@@ -518,34 +474,30 @@ public final class FieldsFragment extends BaseFragment {
         FragmentFieldsBinding fragmentFieldsBinding7 = get_binding();
         Spinner spinner7 = fragmentFieldsBinding7 != null ? fragmentFieldsBinding7.spinnerTon : null;
         if (spinner7 != null) {
-            spinner7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment$setUp$3
+            spinner7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment.setUp.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapterTon;
                     FieldsFragment fieldsFragment = FieldsFragment.this;
-                    spinnerAdapterTon = fieldsFragment.getSpinnerAdapterTon();
-                    fieldsFragment.ton = spinnerAdapterTon.getSemester(position).getId();
+                    fieldsFragment.ton = fieldsFragment.getSpinnerAdapterTon().getSemester(position).getId();
                 }
             });
         }
         FragmentFieldsBinding fragmentFieldsBinding8 = get_binding();
         Spinner spinner8 = fragmentFieldsBinding8 != null ? fragmentFieldsBinding8.spinnerVehicle : null;
         if (spinner8 != null) {
-            spinner8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment$setUp$4
+            spinner8.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment.setUp.4
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapterType;
                     FieldsFragment fieldsFragment = FieldsFragment.this;
-                    spinnerAdapterType = fieldsFragment.getSpinnerAdapterType();
-                    fieldsFragment.type = spinnerAdapterType.getSemester(position).getId();
+                    fieldsFragment.type = fieldsFragment.getSpinnerAdapterType().getSemester(position).getId();
                 }
             });
         }
@@ -601,7 +553,7 @@ public final class FieldsFragment extends BaseFragment {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.fees.webview.fields.FieldsFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FieldsFragment.setUp$lambda$0(FieldsFragment.this, view);
+                FieldsFragment.setUp$lambda$0(this.f$0, view);
             }
         });
     }
@@ -619,12 +571,12 @@ public final class FieldsFragment extends BaseFragment {
             return;
         }
         FragmentFieldsBinding fragmentFieldsBinding = this$0.get_binding();
-        Editable editable = null;
-        String valueOf = String.valueOf((fragmentFieldsBinding == null || (editText5 = fragmentFieldsBinding.nameEt) == null) ? null : editText5.getText());
+        Editable text = null;
+        String strValueOf = String.valueOf((fragmentFieldsBinding == null || (editText5 = fragmentFieldsBinding.nameEt) == null) ? null : editText5.getText());
         FragmentFieldsBinding fragmentFieldsBinding2 = this$0.get_binding();
-        String valueOf2 = String.valueOf((fragmentFieldsBinding2 == null || (editText4 = fragmentFieldsBinding2.etMobileNumber) == null) ? null : editText4.getText());
+        String strValueOf2 = String.valueOf((fragmentFieldsBinding2 == null || (editText4 = fragmentFieldsBinding2.etMobileNumber) == null) ? null : editText4.getText());
         FragmentFieldsBinding fragmentFieldsBinding3 = this$0.get_binding();
-        String valueOf3 = String.valueOf((fragmentFieldsBinding3 == null || (editText3 = fragmentFieldsBinding3.etAadhaarNumber) == null) ? null : editText3.getText());
+        String strValueOf3 = String.valueOf((fragmentFieldsBinding3 == null || (editText3 = fragmentFieldsBinding3.etAadhaarNumber) == null) ? null : editText3.getText());
         String str = this$0.port;
         Intrinsics.checkNotNull(str);
         String str2 = this$0.zone;
@@ -634,12 +586,12 @@ public final class FieldsFragment extends BaseFragment {
         String str4 = this$0.ton;
         Intrinsics.checkNotNull(str4);
         FragmentFieldsBinding fragmentFieldsBinding4 = this$0.get_binding();
-        String valueOf4 = String.valueOf((fragmentFieldsBinding4 == null || (editText2 = fragmentFieldsBinding4.placeEt) == null) ? null : editText2.getText());
+        String strValueOf4 = String.valueOf((fragmentFieldsBinding4 == null || (editText2 = fragmentFieldsBinding4.placeEt) == null) ? null : editText2.getText());
         FragmentFieldsBinding fragmentFieldsBinding5 = this$0.get_binding();
         if (fragmentFieldsBinding5 != null && (editText = fragmentFieldsBinding5.distanceEt) != null) {
-            editable = editText.getText();
+            text = editText.getText();
         }
-        mainCallBackListener.spotRegistrationClicked(valueOf, valueOf2, valueOf3, str, str2, str3, str4, valueOf4, String.valueOf(editable));
+        mainCallBackListener.spotRegistrationClicked(strValueOf, strValueOf2, strValueOf3, str, str2, str3, str4, strValueOf4, String.valueOf(text));
     }
 
     private final boolean validateFields() {
@@ -649,36 +601,36 @@ public final class FieldsFragment extends BaseFragment {
         EditText editText4;
         EditText editText5;
         FragmentFieldsBinding fragmentFieldsBinding = get_binding();
-        Editable editable = null;
-        String obj = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding == null || (editText5 = fragmentFieldsBinding.nameEt) == null) ? null : editText5.getText())).toString();
+        Editable text = null;
+        String string = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding == null || (editText5 = fragmentFieldsBinding.nameEt) == null) ? null : editText5.getText())).toString();
         FragmentFieldsBinding fragmentFieldsBinding2 = get_binding();
-        String obj2 = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding2 == null || (editText4 = fragmentFieldsBinding2.etMobileNumber) == null) ? null : editText4.getText())).toString();
+        String string2 = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding2 == null || (editText4 = fragmentFieldsBinding2.etMobileNumber) == null) ? null : editText4.getText())).toString();
         FragmentFieldsBinding fragmentFieldsBinding3 = get_binding();
-        String obj3 = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding3 == null || (editText3 = fragmentFieldsBinding3.etAadhaarNumber) == null) ? null : editText3.getText())).toString();
+        String string3 = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding3 == null || (editText3 = fragmentFieldsBinding3.etAadhaarNumber) == null) ? null : editText3.getText())).toString();
         FragmentFieldsBinding fragmentFieldsBinding4 = get_binding();
-        String obj4 = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding4 == null || (editText2 = fragmentFieldsBinding4.placeEt) == null) ? null : editText2.getText())).toString();
+        String string4 = StringsKt.trim((CharSequence) String.valueOf((fragmentFieldsBinding4 == null || (editText2 = fragmentFieldsBinding4.placeEt) == null) ? null : editText2.getText())).toString();
         FragmentFieldsBinding fragmentFieldsBinding5 = get_binding();
         if (fragmentFieldsBinding5 != null && (editText = fragmentFieldsBinding5.distanceEt) != null) {
-            editable = editText.getText();
+            text = editText.getText();
         }
-        String obj5 = StringsKt.trim((CharSequence) String.valueOf(editable)).toString();
-        if (obj.length() == 0) {
+        String string5 = StringsKt.trim((CharSequence) String.valueOf(text)).toString();
+        if (string.length() == 0) {
             showAlert("Validation Error", "Please enter your name");
             return false;
         }
-        if ((obj2.length() == 0) || obj2.length() != 10) {
+        if ((string2.length() == 0) || string2.length() != 10) {
             showAlert("Validation Error", "Enter a valid 10-digit Mobile number");
             return false;
         }
-        if ((obj3.length() == 0) || obj3.length() != 12) {
+        if ((string3.length() == 0) || string3.length() != 12) {
             showAlert("Validation Error", "Enter a valid 12-digit Aadhaar number");
             return false;
         }
-        if (obj4.length() == 0) {
+        if (string4.length() == 0) {
             showAlert("Validation Error", "Please enter unloading place");
             return false;
         }
-        if (!(obj5.length() == 0)) {
+        if (!(string5.length() == 0)) {
             return true;
         }
         showAlert("Validation Error", "Please enter distance");

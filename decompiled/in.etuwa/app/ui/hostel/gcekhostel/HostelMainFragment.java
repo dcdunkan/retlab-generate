@@ -24,15 +24,15 @@ import kotlin.jvm.internal.Reflection;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: HostelMainFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: HostelMainFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HostelMainFragment extends Fragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private MainCallBackListener listener;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
     @JvmStatic
@@ -60,7 +60,7 @@ public final class HostelMainFragment extends Fragment {
         });
     }
 
-    /* compiled from: HostelMainFragment.kt */
+    /* JADX INFO: compiled from: HostelMainFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/hostel/gcekhostel/HostelMainFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/hostel/gcekhostel/HostelMainFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

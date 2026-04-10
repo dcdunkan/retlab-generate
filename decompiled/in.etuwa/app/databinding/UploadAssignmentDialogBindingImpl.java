@@ -2,6 +2,7 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -11,7 +12,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.assignment.upload.UploadAssignmentDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class UploadAssignmentDialogBindingImpl extends UploadAssignmentDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -33,15 +34,17 @@ public class UploadAssignmentDialogBindingImpl extends UploadAssignmentDialogBin
         sparseIntArray.put(R.id.assi_card, 5);
         sparseIntArray.put(R.id.file_name, 6);
         sparseIntArray.put(R.id.assi_select, 7);
-        sparseIntArray.put(R.id.assi_upload, 8);
+        sparseIntArray.put(R.id.link_input, 8);
+        sparseIntArray.put(R.id.assi_upload, 9);
+        sparseIntArray.put(R.id.assi_dismiss, 10);
     }
 
     public UploadAssignmentDialogBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
 
     private UploadAssignmentDialogBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (LinearLayout) bindings[5], (TextView) bindings[7], (TextView) bindings[8], (TextView) bindings[6], (ProgressBar) bindings[1], (TextView) bindings[4], (LinearLayout) bindings[2], (ProgressBar) bindings[3]);
+        super(bindingComponent, root, 0, (LinearLayout) bindings[5], (TextView) bindings[10], (TextView) bindings[7], (TextView) bindings[9], (TextView) bindings[6], (EditText) bindings[8], (ProgressBar) bindings[1], (TextView) bindings[4], (LinearLayout) bindings[2], (ProgressBar) bindings[3]);
         this.mDirtyFlags = -1L;
         FrameLayout frameLayout = (FrameLayout) bindings[0];
         this.mboundView0 = frameLayout;
@@ -67,7 +70,7 @@ public class UploadAssignmentDialogBindingImpl extends UploadAssignmentDialogBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (239 != variableId) {
+        if (241 != variableId) {
             return false;
         }
         setUploadAssignmentDialogViewModel((UploadAssignmentDialogViewModel) variable);

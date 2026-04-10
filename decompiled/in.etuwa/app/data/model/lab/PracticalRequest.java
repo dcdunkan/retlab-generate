@@ -6,8 +6,8 @@ import in.etuwa.app.ui.store.storeview.StoreFragmentKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PracticalRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PracticalRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PracticalRequest {
 
     @SerializedName("sub_id")
@@ -28,12 +28,12 @@ public final /* data */ class PracticalRequest {
         return practicalRequest.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSubId() {
         return this.subId;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubPid() {
         return this.subPid;
     }
@@ -55,9 +55,9 @@ public final /* data */ class PracticalRequest {
 
     public int hashCode() {
         String str = this.subId;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.subPid;
-        return hashCode + (str2 != null ? str2.hashCode() : 0);
+        return iHashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {

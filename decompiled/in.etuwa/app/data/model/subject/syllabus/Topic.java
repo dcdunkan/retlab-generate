@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.subject.syllabus;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Topic.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Topic.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Topic {
     private final String topic;
 
@@ -15,7 +15,7 @@ public final /* data */ class Topic {
         return topic.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getTopic() {
         return this.topic;
     }

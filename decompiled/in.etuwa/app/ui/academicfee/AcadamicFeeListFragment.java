@@ -29,11 +29,11 @@ import kotlin.jvm.internal.Reflection;
 import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.core.qualifier.Qualifier;
 
-/* compiled from: AcadamicFeeListFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AcadamicFeeListFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AcadamicFeeListFragment extends Fragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     public ArrayAdapter<String> arrayAdapterMethod;
     public TextView balence;
@@ -46,7 +46,7 @@ public final class AcadamicFeeListFragment extends Fragment {
     public TextView paid;
     public TextView payMSg;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     public TextView recDate;
     public RecyclerView recyclerView;
@@ -265,7 +265,7 @@ public final class AcadamicFeeListFragment extends Fragment {
         return this.methodList;
     }
 
-    /* compiled from: AcadamicFeeListFragment.kt */
+    /* JADX INFO: compiled from: AcadamicFeeListFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/academicfee/AcadamicFeeListFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/academicfee/AcadamicFeeListFragment;", CommentReplyDialogKt.ARG_IMG, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -305,38 +305,38 @@ public final class AcadamicFeeListFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Intrinsics.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        View findViewById = view.findViewById(R.id.recyc_payment);
-        Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.recyc_payment)");
-        setRecyclerView((RecyclerView) findViewById);
+        View viewFindViewById = view.findViewById(R.id.recyc_payment);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById, "view.findViewById(R.id.recyc_payment)");
+        setRecyclerView((RecyclerView) viewFindViewById);
         getRecyclerView().setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
-        View findViewById2 = view.findViewById(R.id.acadamicPayTotAmount);
-        Intrinsics.checkNotNullExpressionValue(findViewById2, "view.findViewById(R.id.acadamicPayTotAmount)");
-        setFeeAmount((TextView) findViewById2);
-        View findViewById3 = view.findViewById(R.id.acadamicPayTotSchol);
-        Intrinsics.checkNotNullExpressionValue(findViewById3, "view.findViewById(R.id.acadamicPayTotSchol)");
-        setScholer((TextView) findViewById3);
-        View findViewById4 = view.findViewById(R.id.acadamicPayTotPaid);
-        Intrinsics.checkNotNullExpressionValue(findViewById4, "view.findViewById(R.id.acadamicPayTotPaid)");
-        setPaid((TextView) findViewById4);
-        View findViewById5 = view.findViewById(R.id.acadamicPayTotBal);
-        Intrinsics.checkNotNullExpressionValue(findViewById5, "view.findViewById(R.id.acadamicPayTotBal)");
-        setBalence((TextView) findViewById5);
-        View findViewById6 = view.findViewById(R.id.acadamicPayTotPayebl);
-        Intrinsics.checkNotNullExpressionValue(findViewById6, "view.findViewById(R.id.acadamicPayTotPayebl)");
-        setTotalPayable((TextView) findViewById6);
-        View findViewById7 = view.findViewById(R.id.acadamicReciptDate);
-        Intrinsics.checkNotNullExpressionValue(findViewById7, "view.findViewById(R.id.acadamicReciptDate)");
-        setRecDate((TextView) findViewById7);
-        View findViewById8 = view.findViewById(R.id.acadamicPayMsg);
-        Intrinsics.checkNotNullExpressionValue(findViewById8, "view.findViewById(R.id.acadamicPayMsg)");
-        setPayMSg((TextView) findViewById8);
-        View findViewById9 = view.findViewById(R.id.acadamicPayNext);
-        Intrinsics.checkNotNullExpressionValue(findViewById9, "view.findViewById(R.id.acadamicPayNext)");
-        setNextBtn((TextView) findViewById9);
+        View viewFindViewById2 = view.findViewById(R.id.acadamicPayTotAmount);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById2, "view.findViewById(R.id.acadamicPayTotAmount)");
+        setFeeAmount((TextView) viewFindViewById2);
+        View viewFindViewById3 = view.findViewById(R.id.acadamicPayTotSchol);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById3, "view.findViewById(R.id.acadamicPayTotSchol)");
+        setScholer((TextView) viewFindViewById3);
+        View viewFindViewById4 = view.findViewById(R.id.acadamicPayTotPaid);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById4, "view.findViewById(R.id.acadamicPayTotPaid)");
+        setPaid((TextView) viewFindViewById4);
+        View viewFindViewById5 = view.findViewById(R.id.acadamicPayTotBal);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById5, "view.findViewById(R.id.acadamicPayTotBal)");
+        setBalence((TextView) viewFindViewById5);
+        View viewFindViewById6 = view.findViewById(R.id.acadamicPayTotPayebl);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById6, "view.findViewById(R.id.acadamicPayTotPayebl)");
+        setTotalPayable((TextView) viewFindViewById6);
+        View viewFindViewById7 = view.findViewById(R.id.acadamicReciptDate);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById7, "view.findViewById(R.id.acadamicReciptDate)");
+        setRecDate((TextView) viewFindViewById7);
+        View viewFindViewById8 = view.findViewById(R.id.acadamicPayMsg);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById8, "view.findViewById(R.id.acadamicPayMsg)");
+        setPayMSg((TextView) viewFindViewById8);
+        View viewFindViewById9 = view.findViewById(R.id.acadamicPayNext);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById9, "view.findViewById(R.id.acadamicPayNext)");
+        setNextBtn((TextView) viewFindViewById9);
         getPreference().setNewLogin(false);
-        View findViewById10 = view.findViewById(R.id.spinner_fee_method);
-        Intrinsics.checkNotNullExpressionValue(findViewById10, "view.findViewById(R.id.spinner_fee_method)");
-        setSpinnerMethod((Spinner) findViewById10);
+        View viewFindViewById10 = view.findViewById(R.id.spinner_fee_method);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById10, "view.findViewById(R.id.spinner_fee_method)");
+        setSpinnerMethod((Spinner) viewFindViewById10);
         setArrayAdapterMethod(new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, this.methodList));
         getArrayAdapterMethod().setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         getSpinnerMethod().setAdapter((SpinnerAdapter) getArrayAdapterMethod());

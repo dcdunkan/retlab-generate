@@ -13,8 +13,8 @@ import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/* compiled from: AssignmentRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: AssignmentRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class AssignmentRepository {
     private final ApiHelper apiHelper;
 
@@ -37,10 +37,11 @@ public final class AssignmentRepository {
         return this.apiHelper.deleteAssignmentApiCall(id);
     }
 
-    public final Observable<SuccessResponse> uploadAssignmentApiCall(RequestBody username, RequestBody password, RequestBody id, MultipartBody.Part file) {
+    public final Observable<SuccessResponse> uploadAssignmentApiCall(RequestBody username, RequestBody password, RequestBody id, RequestBody link, MultipartBody.Part file) {
         Intrinsics.checkNotNullParameter(username, "username");
         Intrinsics.checkNotNullParameter(password, "password");
         Intrinsics.checkNotNullParameter(id, "id");
-        return this.apiHelper.uploadAssignmentApiCall(username, password, id, file);
+        Intrinsics.checkNotNullParameter(link, "link");
+        return this.apiHelper.uploadAssignmentApiCall(username, password, id, link, file);
     }
 }

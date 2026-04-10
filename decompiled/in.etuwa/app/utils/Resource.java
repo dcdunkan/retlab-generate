@@ -6,11 +6,11 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Resource.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: Resource.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final /* data */ class Resource<T> {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private final T data;
     private final String message;
@@ -30,7 +30,7 @@ public final /* data */ class Resource<T> {
         return resource.copy(status, obj, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final Status getStatus() {
         return this.status;
     }
@@ -39,7 +39,7 @@ public final /* data */ class Resource<T> {
         return this.data;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getMessage() {
         return this.message;
     }
@@ -61,11 +61,11 @@ public final /* data */ class Resource<T> {
     }
 
     public int hashCode() {
-        int hashCode = this.status.hashCode() * 31;
+        int iHashCode = this.status.hashCode() * 31;
         T t = this.data;
-        int hashCode2 = (hashCode + (t == null ? 0 : t.hashCode())) * 31;
+        int iHashCode2 = (iHashCode + (t == null ? 0 : t.hashCode())) * 31;
         String str = this.message;
-        return hashCode2 + (str != null ? str.hashCode() : 0);
+        return iHashCode2 + (str != null ? str.hashCode() : 0);
     }
 
     public String toString() {
@@ -91,7 +91,7 @@ public final /* data */ class Resource<T> {
         return this.status;
     }
 
-    /* compiled from: Resource.kt */
+    /* JADX INFO: compiled from: Resource.kt */
     @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\b\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J)\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\u0004\b\u0001\u0010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u0001H\u0005¢\u0006\u0002\u0010\tJ\u001c\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\u0004\b\u0001\u0010\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007J!\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\u0004\b\u0001\u0010\u00052\b\u0010\b\u001a\u0004\u0018\u0001H\u0005¢\u0006\u0002\u0010\fJ!\u0010\r\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\u0004\b\u0001\u0010\u00052\b\u0010\b\u001a\u0004\u0018\u0001H\u0005¢\u0006\u0002\u0010\fJ!\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\u0004\b\u0001\u0010\u00052\b\u0010\b\u001a\u0004\u0018\u0001H\u0005¢\u0006\u0002\u0010\f¨\u0006\u000f"}, d2 = {"Lin/etuwa/app/utils/Resource$Companion;", "", "()V", Constants.IPC_BUNDLE_KEY_SEND_ERROR, "Lin/etuwa/app/utils/Resource;", "T", NotificationCompat.CATEGORY_MESSAGE, "", Constants.ScionAnalytics.MessageType.DATA_MESSAGE, "(Ljava/lang/String;Ljava/lang/Object;)Lin/etuwa/app/utils/Resource;", "exception", "exceptionData", "(Ljava/lang/Object;)Lin/etuwa/app/utils/Resource;", "loading", "success", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

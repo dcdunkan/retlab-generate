@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ActivityBatchResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ActivityBatchResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ActivityBatchResponse {
 
     @SerializedName("activity_batch")
@@ -34,7 +34,7 @@ public final /* data */ class ActivityBatchResponse {
         return activityBatchResponse.copy(z, arrayList, str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -43,7 +43,7 @@ public final /* data */ class ActivityBatchResponse {
         return this.activityBatch;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getError() {
         return this.error;
     }
@@ -75,9 +75,9 @@ public final /* data */ class ActivityBatchResponse {
         }
         int i = r0 * 31;
         ArrayList<ActivityBatch> arrayList = this.activityBatch;
-        int hashCode = (i + (arrayList == null ? 0 : arrayList.hashCode())) * 31;
+        int iHashCode = (i + (arrayList == null ? 0 : arrayList.hashCode())) * 31;
         String str = this.error;
-        return hashCode + (str != null ? str.hashCode() : 0);
+        return iHashCode + (str != null ? str.hashCode() : 0);
     }
 
     public String toString() {

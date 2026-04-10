@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.internship.apply.addcompany.AddCompanyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class AddCompanyDialogBinding extends ViewDataBinding {
     public final TextView addBtn;
     public final LinearLayout addCompanyLayout;

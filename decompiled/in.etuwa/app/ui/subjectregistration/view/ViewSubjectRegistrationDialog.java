@@ -47,27 +47,27 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ViewSubjectRegistrationDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ViewSubjectRegistrationDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewSubjectRegistrationDialog extends BaseDialog implements ApplySubjectRegistrationDialog.RegisterListener, ViewSubjectRegistrationAdapter.StatusListCallBack, ViewSemSubHistoryAdapter.StatusListCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogViewSubjectRegistrationBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: adapter2$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter2$delegate, reason: from kotlin metadata */
     private final Lazy adapter2;
     private String id;
     private RegisterListener listener;
     private MainCallBackListener listner2;
 
-    /* renamed from: viewSubjectRegistrationViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: viewSubjectRegistrationViewModel$delegate, reason: from kotlin metadata */
     private final Lazy viewSubjectRegistrationViewModel;
 
-    /* compiled from: ViewSubjectRegistrationDialog.kt */
+    /* JADX INFO: compiled from: ViewSubjectRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/view/ViewSubjectRegistrationDialog$RegisterListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface RegisterListener {
         void dismiss();
@@ -96,7 +96,7 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return viewSubjectRegistrationDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(viewSubjectRegistrationDialog);
@@ -110,7 +110,7 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -123,7 +123,7 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ViewSubjectRegistrationViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ViewSubjectRegistrationViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ViewSubjectRegistrationDialog viewSubjectRegistrationDialog2 = this;
@@ -166,7 +166,7 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogViewSubjectRegistrationBinding get_binding() {
         return this._binding;
     }
@@ -181,7 +181,7 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
         return (ViewSemSubHistoryAdapter) this.adapter2.getValue();
     }
 
-    /* compiled from: ViewSubjectRegistrationDialog.kt */
+    /* JADX INFO: compiled from: ViewSubjectRegistrationDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/view/ViewSubjectRegistrationDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/subjectregistration/view/ViewSubjectRegistrationDialog;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -261,7 +261,7 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.view.ViewSubjectRegistrationDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ViewSubjectRegistrationDialog.setUp$lambda$1(ViewSubjectRegistrationDialog.this, view);
+                    ViewSubjectRegistrationDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -272,7 +272,7 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.subjectregistration.view.ViewSubjectRegistrationDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ViewSubjectRegistrationDialog.setUp$lambda$2(ViewSubjectRegistrationDialog.this, view);
+                ViewSubjectRegistrationDialog.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -330,9 +330,10 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
     }
 
     private final void listenResponse() {
-        getViewSubjectRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new ViewSubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewSubjectRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.view.ViewSubjectRegistrationDialog$listenResponse$1
+        getViewSubjectRegistrationViewModel().getResponse().observe(getViewLifecycleOwner(), new ViewSubjectRegistrationDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends ViewSubjectRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.view.ViewSubjectRegistrationDialog.listenResponse.1
 
-            /* compiled from: ViewSubjectRegistrationDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subjectregistration.view.ViewSubjectRegistrationDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: ViewSubjectRegistrationDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -369,14 +370,8 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<ViewSubjectRegistrationResponse> resource) {
-                DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding;
-                DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding2;
-                DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding3;
-                ViewSubjectRegistrationAdapter adapter;
-                ViewSemSubHistoryAdapter adapter2;
-                DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding4;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -392,8 +387,8 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
                         return;
                     }
                     ViewSubjectRegistrationDialog.this.hideProgress();
-                    dialogViewSubjectRegistrationBinding4 = ViewSubjectRegistrationDialog.this.get_binding();
-                    if (dialogViewSubjectRegistrationBinding4 == null || (textView = dialogViewSubjectRegistrationBinding4.updateBtn) == null) {
+                    DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding = ViewSubjectRegistrationDialog.this.get_binding();
+                    if (dialogViewSubjectRegistrationBinding == null || (textView = dialogViewSubjectRegistrationBinding.updateBtn) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -405,31 +400,31 @@ public final class ViewSubjectRegistrationDialog extends BaseDialog implements A
                 ViewSubjectRegistrationResponse data = resource.getData();
                 if (data != null) {
                     ViewSubjectRegistrationDialog viewSubjectRegistrationDialog = ViewSubjectRegistrationDialog.this;
-                    dialogViewSubjectRegistrationBinding = viewSubjectRegistrationDialog.get_binding();
-                    TextView textView2 = dialogViewSubjectRegistrationBinding != null ? dialogViewSubjectRegistrationBinding.semTv : null;
+                    DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding2 = viewSubjectRegistrationDialog.get_binding();
+                    TextView textView2 = dialogViewSubjectRegistrationBinding2 != null ? dialogViewSubjectRegistrationBinding2.semTv : null;
                     if (textView2 != null) {
                         textView2.setText(data.getSemester());
                     }
-                    dialogViewSubjectRegistrationBinding2 = viewSubjectRegistrationDialog.get_binding();
-                    TextView textView3 = dialogViewSubjectRegistrationBinding2 != null ? dialogViewSubjectRegistrationBinding2.pathwayTv : null;
+                    DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding3 = viewSubjectRegistrationDialog.get_binding();
+                    TextView textView3 = dialogViewSubjectRegistrationBinding3 != null ? dialogViewSubjectRegistrationBinding3.pathwayTv : null;
                     if (textView3 != null) {
                         textView3.setText(data.getPath_way());
                     }
-                    dialogViewSubjectRegistrationBinding3 = viewSubjectRegistrationDialog.get_binding();
-                    TextView textView4 = dialogViewSubjectRegistrationBinding3 != null ? dialogViewSubjectRegistrationBinding3.categoryTv : null;
+                    DialogViewSubjectRegistrationBinding dialogViewSubjectRegistrationBinding4 = viewSubjectRegistrationDialog.get_binding();
+                    TextView textView4 = dialogViewSubjectRegistrationBinding4 != null ? dialogViewSubjectRegistrationBinding4.categoryTv : null;
                     if (textView4 != null) {
                         textView4.setText(data.getCategory());
                     }
-                    adapter = viewSubjectRegistrationDialog.getAdapter();
+                    ViewSubjectRegistrationAdapter adapter = viewSubjectRegistrationDialog.getAdapter();
                     ArrayList<Category> data2 = data.getData();
-                    Context requireContext = viewSubjectRegistrationDialog.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                    adapter.addItems(data2, requireContext);
-                    adapter2 = viewSubjectRegistrationDialog.getAdapter2();
+                    Context contextRequireContext = viewSubjectRegistrationDialog.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                    adapter.addItems(data2, contextRequireContext);
+                    ViewSemSubHistoryAdapter adapter2 = viewSubjectRegistrationDialog.getAdapter2();
                     ArrayList<SemesterList> previousdata = data.getPreviousdata();
-                    Context requireContext2 = viewSubjectRegistrationDialog.requireContext();
-                    Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                    adapter2.addItems(previousdata, requireContext2);
+                    Context contextRequireContext2 = viewSubjectRegistrationDialog.requireContext();
+                    Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                    adapter2.addItems(previousdata, contextRequireContext2);
                 }
             }
         }));

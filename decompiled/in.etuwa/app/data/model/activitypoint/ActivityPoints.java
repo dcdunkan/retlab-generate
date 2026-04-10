@@ -5,8 +5,8 @@ import in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ActivityPoints.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ActivityPoints.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ActivityPoints {
 
     @SerializedName("activity_name")
@@ -27,17 +27,17 @@ public final /* data */ class ActivityPoints {
         return activityPoints.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getActivityName() {
         return this.activityName;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getPoint() {
         return this.point;
     }

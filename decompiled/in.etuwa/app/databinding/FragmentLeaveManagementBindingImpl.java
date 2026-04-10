@@ -11,7 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leavemanagement.LeaveManagementViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentLeaveManagementBindingImpl extends FragmentLeaveManagementBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -65,7 +65,7 @@ public class FragmentLeaveManagementBindingImpl extends FragmentLeaveManagementB
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (127 != variableId) {
+        if (128 != variableId) {
             return false;
         }
         setLeaveManagementViewModel((LeaveManagementViewModel) variable);

@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: AddUpdateBankViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AddUpdateBankViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AddUpdateBankViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final DashRepository dashRepository;
@@ -44,8 +44,8 @@ public final class AddUpdateBankViewModel extends ViewModel implements KoinCompo
         Intrinsics.checkNotNullParameter(studentDetails, "studentDetails");
         this.updateResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.dashRepository.updateBankDetailsApiCall(studentDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$updateBankData$1
+        Single<SuccessResponse> singleObserveOn = this.dashRepository.updateBankDetailsApiCall(studentDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel.updateBankData.1
             {
                 super(1);
             }
@@ -56,20 +56,18 @@ public final class AddUpdateBankViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddUpdateBankViewModel.this.updateResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                AddUpdateBankViewModel.this.updateResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddUpdateBankViewModel.updateBankData$lambda$0(Function1.this, obj);
+                AddUpdateBankViewModel.updateBankData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$updateBankData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel.updateBankData.2
             {
                 super(1);
             }
@@ -80,17 +78,15 @@ public final class AddUpdateBankViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddUpdateBankViewModel.this.updateResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddUpdateBankViewModel.this.updateResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddUpdateBankViewModel.updateBankData$lambda$1(Function1.this, obj);
+                AddUpdateBankViewModel.updateBankData$lambda$1(function12, obj);
             }
         }));
     }
@@ -115,8 +111,8 @@ public final class AddUpdateBankViewModel extends ViewModel implements KoinCompo
         Intrinsics.checkNotNullParameter(studentDetails, "studentDetails");
         this.verifyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.dashRepository.verifyBankDetailsApiCall(studentDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$verifyBankData$1
+        Single<SuccessResponse> singleObserveOn = this.dashRepository.verifyBankDetailsApiCall(studentDetails).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel.verifyBankData.1
             {
                 super(1);
             }
@@ -127,20 +123,18 @@ public final class AddUpdateBankViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddUpdateBankViewModel.this.verifyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(successResponse));
+                AddUpdateBankViewModel.this.verifyResponse.postValue(Resource.INSTANCE.success(successResponse));
             }
         };
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddUpdateBankViewModel.verifyBankData$lambda$2(Function1.this, obj);
+                AddUpdateBankViewModel.verifyBankData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$verifyBankData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel.verifyBankData.2
             {
                 super(1);
             }
@@ -151,17 +145,15 @@ public final class AddUpdateBankViewModel extends ViewModel implements KoinCompo
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AddUpdateBankViewModel.this.verifyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AddUpdateBankViewModel.this.verifyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AddUpdateBankViewModel.verifyBankData$lambda$3(Function1.this, obj);
+                AddUpdateBankViewModel.verifyBankData$lambda$3(function12, obj);
             }
         }));
     }

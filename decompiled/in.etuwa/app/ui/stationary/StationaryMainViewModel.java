@@ -3,7 +3,7 @@ package in.etuwa.app.ui.stationary;
 import androidx.lifecycle.ViewModel;
 import kotlin.Metadata;
 
-/* compiled from: StationaryMainViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: StationaryMainViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class StationaryMainViewModel extends ViewModel {
 }

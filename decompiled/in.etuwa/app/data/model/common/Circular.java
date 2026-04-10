@@ -4,8 +4,8 @@ import com.itextpdf.kernel.xmp.PdfConst;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Circular.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Circular.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Circular {
     private final String date;
     private final String description;
@@ -35,27 +35,27 @@ public final /* data */ class Circular {
         return circular.copy(str, str6, str7, str8, str5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getHeading() {
         return this.heading;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getDescription() {
         return this.description;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getLink() {
         return this.link;
     }

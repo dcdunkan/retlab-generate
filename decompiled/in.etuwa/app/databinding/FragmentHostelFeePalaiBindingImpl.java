@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.palaihostel.PalaiHostelViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelFeePalaiBindingImpl extends FragmentHostelFeePalaiBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -79,7 +79,7 @@ public class FragmentHostelFeePalaiBindingImpl extends FragmentHostelFeePalaiBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (154 != variableId) {
+        if (155 != variableId) {
             return false;
         }
         setPalaiHostelViewModel((PalaiHostelViewModel) variable);

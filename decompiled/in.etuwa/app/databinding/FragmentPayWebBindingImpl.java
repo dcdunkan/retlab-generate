@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.fee.payweb.PayWebViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentPayWebBindingImpl extends FragmentPayWebBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -58,7 +58,7 @@ public class FragmentPayWebBindingImpl extends FragmentPayWebBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (158 != variableId) {
+        if (160 != variableId) {
             return false;
         }
         setPayWebViewModel((PayWebViewModel) variable);

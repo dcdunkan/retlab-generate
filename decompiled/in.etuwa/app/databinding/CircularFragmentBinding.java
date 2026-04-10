@@ -3,6 +3,7 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -11,20 +12,22 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.circular.CircularViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class CircularFragmentBinding extends ViewDataBinding {
 
     @Bindable
     protected CircularViewModel mCircularViewModel;
     public final RecyclerView rvCircular;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setCircularViewModel(CircularViewModel circularViewModel);
 
-    protected CircularFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvCircular, SwipeRefreshLayout swipeLayout) {
+    protected CircularFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, RecyclerView rvCircular, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.rvCircular = rvCircular;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public CircularViewModel getCircularViewModel() {

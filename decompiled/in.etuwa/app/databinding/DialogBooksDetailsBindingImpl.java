@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.library.book.details.BookDetailsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogBooksDetailsBindingImpl extends DialogBooksDetailsBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -69,7 +69,7 @@ public class DialogBooksDetailsBindingImpl extends DialogBooksDetailsBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (42 != variableId) {
+        if (41 != variableId) {
             return false;
         }
         setBooksDetailsViewModel((BookDetailsViewModel) variable);

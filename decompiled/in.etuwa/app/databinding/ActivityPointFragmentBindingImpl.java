@@ -2,17 +2,17 @@ package in.etuwa.app.databinding;
 
 import android.util.SparseIntArray;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.button.MaterialButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.activitypoint.ActivityPointViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ActivityPointFragmentBindingImpl extends ActivityPointFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -28,8 +28,8 @@ public class ActivityPointFragmentBindingImpl extends ActivityPointFragmentBindi
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         sViewsWithIds = sparseIntArray;
-        sparseIntArray.put(R.id.swipe_layout, 2);
-        sparseIntArray.put(R.id.total_point, 3);
+        sparseIntArray.put(R.id.total_point, 2);
+        sparseIntArray.put(R.id.swipe_layout, 3);
         sparseIntArray.put(R.id.rv_activity_point, 4);
         sparseIntArray.put(R.id.manage_btn, 5);
     }
@@ -39,7 +39,7 @@ public class ActivityPointFragmentBindingImpl extends ActivityPointFragmentBindi
     }
 
     private ActivityPointFragmentBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (Button) bindings[5], (RecyclerView) bindings[4], (SwipeRefreshLayout) bindings[2], (TextView) bindings[3]);
+        super(bindingComponent, root, 0, (MaterialButton) bindings[5], (RecyclerView) bindings[4], (SwipeRefreshLayout) bindings[3], (TextView) bindings[2]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -67,7 +67,7 @@ public class ActivityPointFragmentBindingImpl extends ActivityPointFragmentBindi
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (7 != variableId) {
+        if (6 != variableId) {
             return false;
         }
         setActivityPointViewModel((ActivityPointViewModel) variable);

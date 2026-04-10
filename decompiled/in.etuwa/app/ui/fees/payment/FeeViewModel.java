@@ -22,8 +22,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: FeeViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class FeeViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<DashResponse>> dashResponse;
@@ -100,8 +100,8 @@ public final class FeeViewModel extends ViewModel {
     public final void getInstallments() {
         this.instalmentResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<InstallmentResponse> observeOn = this.feeRepository.getFeeInstallmentsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<InstallmentResponse, Unit> function1 = new Function1<InstallmentResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getInstallments$1
+        Single<InstallmentResponse> singleObserveOn = this.feeRepository.getFeeInstallmentsApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<InstallmentResponse, Unit> function1 = new Function1<InstallmentResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getInstallments.1
             {
                 super(1);
             }
@@ -112,7 +112,7 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(InstallmentResponse installmentResponse) {
                 FeeViewModel.this.getInstalmentResponse().postValue(Resource.INSTANCE.success(installmentResponse));
             }
@@ -120,10 +120,10 @@ public final class FeeViewModel extends ViewModel {
         Consumer<? super InstallmentResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getInstallments$lambda$0(Function1.this, obj);
+                FeeViewModel.getInstallments$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getInstallments$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getInstallments.2
             {
                 super(1);
             }
@@ -134,15 +134,15 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 FeeViewModel.this.getInstalmentResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda4
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getInstallments$lambda$1(Function1.this, obj);
+                FeeViewModel.getInstallments$lambda$1(function12, obj);
             }
         }));
     }
@@ -162,8 +162,8 @@ public final class FeeViewModel extends ViewModel {
     public final void getFees(String installment) {
         this.feeResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<FeeResponse> observeOn = this.feeRepository.getFeesApiCall(installment).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<FeeResponse, Unit> function1 = new Function1<FeeResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getFees$1
+        Single<FeeResponse> singleObserveOn = this.feeRepository.getFeesApiCall(installment).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<FeeResponse, Unit> function1 = new Function1<FeeResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getFees.1
             {
                 super(1);
             }
@@ -174,20 +174,18 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(FeeResponse feeResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeViewModel.this.feeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(feeResponse));
+                FeeViewModel.this.feeResponse.postValue(Resource.INSTANCE.success(feeResponse));
             }
         };
         Consumer<? super FeeResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda12
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getFees$lambda$2(Function1.this, obj);
+                FeeViewModel.getFees$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getFees$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getFees.2
             {
                 super(1);
             }
@@ -198,17 +196,15 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = FeeViewModel.this.feeResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                FeeViewModel.this.feeResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda13
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda13
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getFees$lambda$3(Function1.this, obj);
+                FeeViewModel.getFees$lambda$3(function12, obj);
             }
         }));
     }
@@ -228,8 +224,8 @@ public final class FeeViewModel extends ViewModel {
     public final void getFeesHead() {
         this.feeHeadResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<FeeHeadGroupResponse> observeOn = this.feeRepository.getFeeHeadApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<FeeHeadGroupResponse, Unit> function1 = new Function1<FeeHeadGroupResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getFeesHead$1
+        Single<FeeHeadGroupResponse> singleObserveOn = this.feeRepository.getFeeHeadApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<FeeHeadGroupResponse, Unit> function1 = new Function1<FeeHeadGroupResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getFeesHead.1
             {
                 super(1);
             }
@@ -240,7 +236,7 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(FeeHeadGroupResponse feeHeadGroupResponse) {
                 FeeViewModel.this.getFeeHeadResponse().postValue(Resource.INSTANCE.success(feeHeadGroupResponse));
             }
@@ -248,10 +244,10 @@ public final class FeeViewModel extends ViewModel {
         Consumer<? super FeeHeadGroupResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getFeesHead$lambda$4(Function1.this, obj);
+                FeeViewModel.getFeesHead$lambda$4(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getFeesHead$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getFeesHead.2
             {
                 super(1);
             }
@@ -262,15 +258,15 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 FeeViewModel.this.getFeeHeadResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda5
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getFeesHead$lambda$5(Function1.this, obj);
+                FeeViewModel.getFeesHead$lambda$5(function12, obj);
             }
         }));
     }
@@ -292,8 +288,8 @@ public final class FeeViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(feeReceipt, "feeReceipt");
         this.submitResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<FeeUrlResponse> observeOn = this.feeRepository.submitFeesApiCall(feeCollection, feeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<FeeUrlResponse, Unit> function1 = new Function1<FeeUrlResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$submitFees$1
+        Single<FeeUrlResponse> singleObserveOn = this.feeRepository.submitFeesApiCall(feeCollection, feeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<FeeUrlResponse, Unit> function1 = new Function1<FeeUrlResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.submitFees.1
             {
                 super(1);
             }
@@ -304,7 +300,7 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(FeeUrlResponse feeUrlResponse) {
                 FeeViewModel.this.getSubmitResponse().postValue(Resource.INSTANCE.success(feeUrlResponse));
             }
@@ -312,10 +308,10 @@ public final class FeeViewModel extends ViewModel {
         Consumer<? super FeeUrlResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.submitFees$lambda$6(Function1.this, obj);
+                FeeViewModel.submitFees$lambda$6(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$submitFees$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.submitFees.2
             {
                 super(1);
             }
@@ -326,15 +322,15 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 FeeViewModel.this.getSubmitResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda9
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda9
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.submitFees$lambda$7(Function1.this, obj);
+                FeeViewModel.submitFees$lambda$7(function12, obj);
             }
         }));
     }
@@ -356,8 +352,8 @@ public final class FeeViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(feeReceipt, "feeReceipt");
         this.payResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<FeeUrlResponse> observeOn = this.feeRepository.submitFeesApiCall(feeCollection, feeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<FeeUrlResponse, Unit> function1 = new Function1<FeeUrlResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$payFees$1
+        Single<FeeUrlResponse> singleObserveOn = this.feeRepository.submitFeesApiCall(feeCollection, feeReceipt).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<FeeUrlResponse, Unit> function1 = new Function1<FeeUrlResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.payFees.1
             {
                 super(1);
             }
@@ -368,7 +364,7 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(FeeUrlResponse feeUrlResponse) {
                 FeeViewModel.this.getPayResponse().postValue(Resource.INSTANCE.success(feeUrlResponse));
             }
@@ -376,10 +372,10 @@ public final class FeeViewModel extends ViewModel {
         Consumer<? super FeeUrlResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda6
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.payFees$lambda$8(Function1.this, obj);
+                FeeViewModel.payFees$lambda$8(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$payFees$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.payFees.2
             {
                 super(1);
             }
@@ -390,15 +386,15 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 FeeViewModel.this.getPayResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda7
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda7
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.payFees$lambda$9(Function1.this, obj);
+                FeeViewModel.payFees$lambda$9(function12, obj);
             }
         }));
     }
@@ -423,8 +419,8 @@ public final class FeeViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(installment, "installment");
         this.payResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<FeeSreeChitraUrl> observeOn = this.feeRepository.payFeesSreeChitraApiCall(feeCollection, feeReceipt, transaction, payment, installment).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<FeeSreeChitraUrl, Unit> function1 = new Function1<FeeSreeChitraUrl, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$paySreeChitraFees$1
+        Single<FeeSreeChitraUrl> singleObserveOn = this.feeRepository.payFeesSreeChitraApiCall(feeCollection, feeReceipt, transaction, payment, installment).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<FeeSreeChitraUrl, Unit> function1 = new Function1<FeeSreeChitraUrl, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.paySreeChitraFees.1
             {
                 super(1);
             }
@@ -435,7 +431,7 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(FeeSreeChitraUrl feeSreeChitraUrl) {
                 FeeViewModel.this.getPayFeeSreeChitraResponse().postValue(Resource.INSTANCE.success(feeSreeChitraUrl));
             }
@@ -443,10 +439,10 @@ public final class FeeViewModel extends ViewModel {
         Consumer<? super FeeSreeChitraUrl> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.paySreeChitraFees$lambda$10(Function1.this, obj);
+                FeeViewModel.paySreeChitraFees$lambda$10(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$paySreeChitraFees$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.paySreeChitraFees.2
             {
                 super(1);
             }
@@ -457,15 +453,15 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 FeeViewModel.this.getPayFeeSreeChitraResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda2
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.paySreeChitraFees$lambda$11(Function1.this, obj);
+                FeeViewModel.paySreeChitraFees$lambda$11(function12, obj);
             }
         }));
     }
@@ -493,8 +489,8 @@ public final class FeeViewModel extends ViewModel {
     public final void getDashData(String hostel) {
         this.dashResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<DashResponse> observeOn = this.feeRepository.getDashApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<DashResponse, Unit> function1 = new Function1<DashResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getDashData$1
+        Single<DashResponse> singleObserveOn = this.feeRepository.getDashApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<DashResponse, Unit> function1 = new Function1<DashResponse, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getDashData.1
             {
                 super(1);
             }
@@ -505,7 +501,7 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(DashResponse dashResponse) {
                 FeeViewModel.this.getDashResponse().postValue(Resource.INSTANCE.success(dashResponse));
             }
@@ -513,10 +509,10 @@ public final class FeeViewModel extends ViewModel {
         Consumer<? super DashResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda10
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getDashData$lambda$12(Function1.this, obj);
+                FeeViewModel.getDashData$lambda$12(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$getDashData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel.getDashData.2
             {
                 super(1);
             }
@@ -527,15 +523,15 @@ public final class FeeViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 FeeViewModel.this.getDashResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda11
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.fees.payment.FeeViewModel$$ExternalSyntheticLambda11
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                FeeViewModel.getDashData$lambda$13(Function1.this, obj);
+                FeeViewModel.getDashData$lambda$13(function12, obj);
             }
         }));
     }

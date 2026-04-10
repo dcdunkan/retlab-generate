@@ -28,20 +28,20 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ViewProofDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ViewProofDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewProofDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogViewProofBinding _binding;
     private NewDutyLeaveListener listener;
     private String url;
 
-    /* renamed from: viewProofViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: viewProofViewModel$delegate, reason: from kotlin metadata */
     private final Lazy viewProofViewModel;
 
-    /* compiled from: ViewProofDialog.kt */
+    /* JADX INFO: compiled from: ViewProofDialog.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\bf\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/viewproof/ViewProofDialog$NewDutyLeaveListener;", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface NewDutyLeaveListener {
     }
@@ -69,7 +69,7 @@ public final class ViewProofDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return viewProofDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(viewProofDialog);
@@ -83,7 +83,7 @@ public final class ViewProofDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -96,7 +96,7 @@ public final class ViewProofDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ViewProofViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ViewProofViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -105,12 +105,12 @@ public final class ViewProofDialog extends BaseDialog {
         return (ViewProofViewModel) this.viewProofViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final DialogViewProofBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: ViewProofDialog.kt */
+    /* JADX INFO: compiled from: ViewProofDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/leave/duty/directapply/viewproof/ViewProofDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/leave/duty/directapply/viewproof/ViewProofDialog;", "url", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

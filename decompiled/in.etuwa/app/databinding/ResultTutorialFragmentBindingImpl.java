@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.result.tutorials.TutorialResultViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ResultTutorialFragmentBindingImpl extends ResultTutorialFragmentBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -71,7 +71,7 @@ public class ResultTutorialFragmentBindingImpl extends ResultTutorialFragmentBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (230 != variableId) {
+        if (232 != variableId) {
             return false;
         }
         setTutorialResultViewModel((TutorialResultViewModel) variable);

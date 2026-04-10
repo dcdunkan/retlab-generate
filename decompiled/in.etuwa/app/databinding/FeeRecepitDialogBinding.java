@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class FeeRecepitDialogBinding implements ViewBinding {
     public final TextView recieptFeeAmount;
     public final TextView recieptFeeBatch;
@@ -42,11 +42,11 @@ public final class FeeRecepitDialogBinding implements ViewBinding {
     }
 
     public static FeeRecepitDialogBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.fee_recepit_dialog, parent, false);
+        View viewInflate = inflater.inflate(R.layout.fee_recepit_dialog, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static FeeRecepitDialogBinding bind(View rootView) {

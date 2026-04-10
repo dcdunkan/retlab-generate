@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.newquiz.questions.QuizQuestionsViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentQuizQuestionsBinding extends ViewDataBinding {
     public final TextView backBtn;
     public final LinearLayout completionCard;

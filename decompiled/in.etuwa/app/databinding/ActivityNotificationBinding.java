@@ -7,7 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityNotificationBinding implements ViewBinding {
     private final ConstraintLayout rootView;
 
@@ -25,11 +25,11 @@ public final class ActivityNotificationBinding implements ViewBinding {
     }
 
     public static ActivityNotificationBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_notification, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_notification, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityNotificationBinding bind(View rootView) {

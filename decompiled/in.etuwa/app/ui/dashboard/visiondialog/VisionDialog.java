@@ -40,23 +40,23 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: VisionDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: VisionDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class VisionDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogVisionBinding _binding;
     private StoreListener listener;
     private MainCallBackListener listner2;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: visionDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: visionDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy visionDialogViewModel;
 
-    /* compiled from: VisionDialog.kt */
+    /* JADX INFO: compiled from: VisionDialog.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\bf\u0018\u00002\u00020\u0001J\b\u0010\u0002\u001a\u00020\u0003H&¨\u0006\u0004"}, d2 = {"Lin/etuwa/app/ui/dashboard/visiondialog/VisionDialog$StoreListener;", "", "dismiss", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface StoreListener {
         void dismiss();
@@ -85,7 +85,7 @@ public final class VisionDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return visionDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(visionDialog);
@@ -99,7 +99,7 @@ public final class VisionDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -112,7 +112,7 @@ public final class VisionDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(VisionDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(VisionDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final VisionDialog visionDialog2 = this;
@@ -139,7 +139,7 @@ public final class VisionDialog extends BaseDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogVisionBinding get_binding() {
         return this._binding;
     }
@@ -148,7 +148,7 @@ public final class VisionDialog extends BaseDialog {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: VisionDialog.kt */
+    /* JADX INFO: compiled from: VisionDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/dashboard/visiondialog/VisionDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/dashboard/visiondialog/VisionDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -209,9 +209,10 @@ public final class VisionDialog extends BaseDialog {
     }
 
     private final void listenResponse() {
-        getVisionDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new VisionDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DashResponse>, Unit>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialog$listenResponse$1
+        getVisionDialogViewModel().getResponse().observe(getViewLifecycleOwner(), new VisionDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends DashResponse>, Unit>() { // from class: in.etuwa.app.ui.dashboard.visiondialog.VisionDialog.listenResponse.1
 
-            /* compiled from: VisionDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.dashboard.visiondialog.VisionDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: VisionDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -248,13 +249,8 @@ public final class VisionDialog extends BaseDialog {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<DashResponse> resource) {
-                DialogVisionBinding dialogVisionBinding;
-                DialogVisionBinding dialogVisionBinding2;
-                DialogVisionBinding dialogVisionBinding3;
-                DialogVisionBinding dialogVisionBinding4;
-                DialogVisionBinding dialogVisionBinding5;
                 TextView textView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i != 1) {
@@ -270,8 +266,8 @@ public final class VisionDialog extends BaseDialog {
                         return;
                     }
                     VisionDialog.this.hideProgress();
-                    dialogVisionBinding5 = VisionDialog.this.get_binding();
-                    if (dialogVisionBinding5 == null || (textView = dialogVisionBinding5.visColg) == null) {
+                    DialogVisionBinding dialogVisionBinding = VisionDialog.this.get_binding();
+                    if (dialogVisionBinding == null || (textView = dialogVisionBinding.visColg) == null) {
                         return;
                     }
                     String message = resource.getMessage();
@@ -283,23 +279,23 @@ public final class VisionDialog extends BaseDialog {
                 DashResponse data = resource.getData();
                 if (data != null) {
                     VisionDialog visionDialog = VisionDialog.this;
-                    dialogVisionBinding = visionDialog.get_binding();
-                    TextView textView2 = dialogVisionBinding != null ? dialogVisionBinding.visColg : null;
+                    DialogVisionBinding dialogVisionBinding2 = visionDialog.get_binding();
+                    TextView textView2 = dialogVisionBinding2 != null ? dialogVisionBinding2.visColg : null;
                     if (textView2 != null) {
                         textView2.setText(data.getClgVision());
                     }
-                    dialogVisionBinding2 = visionDialog.get_binding();
-                    TextView textView3 = dialogVisionBinding2 != null ? dialogVisionBinding2.visColg : null;
+                    DialogVisionBinding dialogVisionBinding3 = visionDialog.get_binding();
+                    TextView textView3 = dialogVisionBinding3 != null ? dialogVisionBinding3.visColg : null;
                     if (textView3 != null) {
                         textView3.setSelected(true);
                     }
-                    dialogVisionBinding3 = visionDialog.get_binding();
-                    TextView textView4 = dialogVisionBinding3 != null ? dialogVisionBinding3.visDept : null;
+                    DialogVisionBinding dialogVisionBinding4 = visionDialog.get_binding();
+                    TextView textView4 = dialogVisionBinding4 != null ? dialogVisionBinding4.visDept : null;
                     if (textView4 != null) {
                         textView4.setText(data.getDeptVision());
                     }
-                    dialogVisionBinding4 = visionDialog.get_binding();
-                    TextView textView5 = dialogVisionBinding4 != null ? dialogVisionBinding4.visDept : null;
+                    DialogVisionBinding dialogVisionBinding5 = visionDialog.get_binding();
+                    TextView textView5 = dialogVisionBinding5 != null ? dialogVisionBinding5.visDept : null;
                     if (textView5 == null) {
                         return;
                     }

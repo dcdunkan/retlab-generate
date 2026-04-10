@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.tutorial.upload.UploadTutorialDialogViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class UploadTutorialDialogBindingImpl extends UploadTutorialDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -67,7 +67,7 @@ public class UploadTutorialDialogBindingImpl extends UploadTutorialDialogBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (240 != variableId) {
+        if (242 != variableId) {
             return false;
         }
         setUploadTutorialDialogViewModel((UploadTutorialDialogViewModel) variable);

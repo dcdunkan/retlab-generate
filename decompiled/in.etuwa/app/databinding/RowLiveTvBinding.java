@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowLiveTvBinding implements ViewBinding {
     public final CardView cardLive;
     public final TextView liveDate;
@@ -37,11 +37,11 @@ public final class RowLiveTvBinding implements ViewBinding {
     }
 
     public static RowLiveTvBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_live_tv, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_live_tv, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowLiveTvBinding bind(View rootView) {

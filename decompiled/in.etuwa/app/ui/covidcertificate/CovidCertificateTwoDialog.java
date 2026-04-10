@@ -45,19 +45,19 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CovidCertificateTwoDialog.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CovidCertificateTwoDialog.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CovidCertificateTwoDialog extends BaseDialog {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private CovidCertificateTwoDialogBinding _binding;
 
-    /* renamed from: covidCertificateTwoDialogViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: covidCertificateTwoDialogViewModel$delegate, reason: from kotlin metadata */
     private final Lazy covidCertificateTwoDialogViewModel;
     private File pickFile;
 
-    /* compiled from: CovidCertificateTwoDialog.kt */
+    /* JADX INFO: compiled from: CovidCertificateTwoDialog.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -99,7 +99,7 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return covidCertificateTwoDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(covidCertificateTwoDialog);
@@ -113,7 +113,7 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -126,7 +126,7 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CovidCertificateTwoDialogViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CovidCertificateTwoDialogViewModel.class), qualifier, b, null, koinScope);
             }
         });
     }
@@ -135,12 +135,12 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
         return (CovidCertificateTwoDialogViewModel) this.covidCertificateTwoDialogViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final CovidCertificateTwoDialogBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: CovidCertificateTwoDialog.kt */
+    /* JADX INFO: compiled from: CovidCertificateTwoDialog.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/covidcertificate/CovidCertificateTwoDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/covidcertificate/CovidCertificateTwoDialog;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -198,7 +198,7 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialog$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CovidCertificateTwoDialog.setUp$lambda$1(CovidCertificateTwoDialog.this, view);
+                    CovidCertificateTwoDialog.setUp$lambda$1(this.f$0, view);
                 }
             });
         }
@@ -209,7 +209,7 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CovidCertificateTwoDialog.setUp$lambda$2(CovidCertificateTwoDialog.this, view);
+                CovidCertificateTwoDialog.setUp$lambda$2(this.f$0, view);
             }
         });
     }
@@ -310,7 +310,7 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
         getCovidCertificateTwoDialogViewModel().getUploadResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialog$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CovidCertificateTwoDialog.listenResponse$lambda$4(CovidCertificateTwoDialog.this, (Resource) obj);
+                CovidCertificateTwoDialog.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
@@ -365,7 +365,7 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
         getCovidCertificateTwoDialogViewModel().getProgressResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialog$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CovidCertificateTwoDialog.listenProgressResponse$lambda$6(CovidCertificateTwoDialog.this, (Resource) obj);
+                CovidCertificateTwoDialog.listenProgressResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -396,18 +396,18 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
         this$0.hideProgress();
         Float f = (Float) resource.getData();
         if (f != null) {
-            float floatValue = f.floatValue();
+            float fFloatValue = f.floatValue();
             CovidCertificateTwoDialogBinding covidCertificateTwoDialogBinding2 = this$0.get_binding();
             ProgressBar progressBar = covidCertificateTwoDialogBinding2 != null ? covidCertificateTwoDialogBinding2.uploadProgressbar : null;
             if (progressBar != null) {
-                progressBar.setProgress((int) floatValue);
+                progressBar.setProgress((int) fFloatValue);
             }
             CovidCertificateTwoDialogBinding covidCertificateTwoDialogBinding3 = this$0.get_binding();
             TextView textView2 = covidCertificateTwoDialogBinding3 != null ? covidCertificateTwoDialogBinding3.progressText : null;
             if (textView2 != null) {
-                textView2.setText(((int) floatValue) + " %");
+                textView2.setText(((int) fFloatValue) + " %");
             }
-            if (((int) floatValue) == 100) {
+            if (((int) fFloatValue) == 100) {
                 this$0.showProgress();
             }
         }
@@ -416,10 +416,10 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
     @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         ContentResolver contentResolver;
-        ParcelFileDescriptor openFileDescriptor;
-        String str;
+        ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor;
+        String fileName;
         ContentResolver contentResolver2;
-        String str2;
+        String fileName2;
         ContentResolver contentResolver3;
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != -1 || data == null) {
@@ -433,27 +433,27 @@ public final class CovidCertificateTwoDialog extends BaseDialog {
                 if (textView != null) {
                     Context context = getContext();
                     if (context == null || (contentResolver3 = context.getContentResolver()) == null) {
-                        str2 = null;
+                        fileName2 = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver3, "contentResolver");
-                        str2 = ResolvUtilKt.getFileName(contentResolver3, data2);
+                        fileName2 = ResolvUtilKt.getFileName(contentResolver3, data2);
                     }
-                    textView.setText("File : " + str2);
+                    textView.setText("File : " + fileName2);
                 }
                 Context context2 = getContext();
-                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (openFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
-                    Intrinsics.checkNotNullExpressionValue(openFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
+                if (context2 != null && (contentResolver = context2.getContentResolver()) != null && (parcelFileDescriptorOpenFileDescriptor = contentResolver.openFileDescriptor(data2, "r", null)) != null) {
+                    Intrinsics.checkNotNullExpressionValue(parcelFileDescriptorOpenFileDescriptor, "context?.contentResolver…  it, \"r\", null)?: return");
                     Context context3 = getContext();
                     File cacheDir = context3 != null ? context3.getCacheDir() : null;
                     Context context4 = getContext();
                     if (context4 == null || (contentResolver2 = context4.getContentResolver()) == null) {
-                        str = null;
+                        fileName = null;
                     } else {
                         Intrinsics.checkNotNullExpressionValue(contentResolver2, "contentResolver");
-                        str = ResolvUtilKt.getFileName(contentResolver2, data2);
+                        fileName = ResolvUtilKt.getFileName(contentResolver2, data2);
                     }
-                    File file = new File(cacheDir, str);
-                    ByteStreamsKt.copyTo$default(new FileInputStream(openFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
+                    File file = new File(cacheDir, fileName);
+                    ByteStreamsKt.copyTo$default(new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()), new FileOutputStream(file), 0, 2, null);
                     this.pickFile = file;
                 }
             }

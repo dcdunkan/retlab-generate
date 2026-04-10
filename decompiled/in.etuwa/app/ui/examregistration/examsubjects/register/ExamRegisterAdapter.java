@@ -22,11 +22,10 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
-/* compiled from: ExamRegisterAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ExamRegisterAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private String baseUrl;
-    private Boolean checkBoxStatus;
     private Context context;
     private CallBack listener;
     private int total;
@@ -34,7 +33,7 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
     private List<String> selected = new ArrayList();
     private List<String> selectedTotal = new ArrayList();
 
-    /* compiled from: ExamRegisterAdapter.kt */
+    /* JADX INFO: compiled from: ExamRegisterAdapter.kt */
     @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0002\b\u0003\bf\u0018\u00002\u00020\u0001J$\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005H&J$\u0010\b\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005H&¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterAdapter$CallBack;", "", "updateSelected", "", "sel", "", "", FeeConfirmDialogKt.ARG_TOTAL, "updateSelected2", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface CallBack {
         void updateSelected(List<String> sel, List<String> total);
@@ -76,30 +75,22 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
         this.baseUrl = str;
     }
 
-    public final Boolean getCheckBoxStatus() {
-        return this.checkBoxStatus;
-    }
-
-    public final void setCheckBoxStatus(Boolean bool) {
-        this.checkBoxStatus = bool;
-    }
-
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Intrinsics.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate, "from(parent.context).inf…mpty_view, parent, false)");
-            return new EmptyViewHolder(inflate);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate, "from(parent.context).inf…mpty_view, parent, false)");
+            return new EmptyViewHolder(viewInflate);
         }
         if (viewType == 1) {
-            View inflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_exam_update, parent, false);
-            Intrinsics.checkNotNullExpressionValue(inflate2, "from(parent.context)\n   …am_update, parent, false)");
-            return new ViewHolder(this, inflate2);
+            View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_exam_update, parent, false);
+            Intrinsics.checkNotNullExpressionValue(viewInflate2, "from(parent.context)\n   …am_update, parent, false)");
+            return new ViewHolder(this, viewInflate2);
         }
-        View inflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate3, "from(parent.context).inf…  false\n                )");
-        return new EmptyViewHolder(inflate3);
+        View viewInflate3 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_view, parent, false);
+        Intrinsics.checkNotNullExpressionValue(viewInflate3, "from(parent.context).inf…  false\n                )");
+        return new EmptyViewHolder(viewInflate3);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -115,7 +106,7 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
         return !this.list.isEmpty() ? 1 : 0;
     }
 
-    /* compiled from: ExamRegisterAdapter.kt */
+    /* JADX INFO: compiled from: ExamRegisterAdapter.kt */
     @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004J\b\u0010\u000f\u001a\u00020\u0010H\u0014J\u0010\u0010\u0011\u001a\u00020\u00102\u0006\u0010\u0012\u001a\u00020\u0013H\u0016R\u0016\u0010\u0005\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\b\u001a\n \u0007*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\n\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000b\u001a\n \u0007*\u0004\u0018\u00010\f0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\r\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0007*\u0004\u0018\u00010\u00060\u0006X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterAdapter$ViewHolder;", "Lin/etuwa/app/ui/base/BaseViewHolder;", "itemView", "Landroid/view/View;", "(Lin/etuwa/app/ui/examregistration/examsubjects/register/ExamRegisterAdapter;Landroid/view/View;)V", ExamSubjectDetailDialogKt.ARG_AMOUNT, "Landroid/widget/TextView;", "kotlin.jvm.PlatformType", "checkBox", "Landroid/widget/CheckBox;", "concession", "statusLyt", "Landroid/widget/LinearLayout;", "subjectHead", "type", "clear", "", "onBind", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public final class ViewHolder extends BaseViewHolder {
         private final TextView amount;
@@ -143,117 +134,16 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
             this.checkBox = (CheckBox) itemView.findViewById(R.id.exam_check_box);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x00cc A[Catch: Exception -> 0x00f3, TryCatch #0 {Exception -> 0x00f3, blocks: (B:3:0x0003, B:5:0x005f, B:7:0x0074, B:9:0x0089, B:12:0x009f, B:13:0x00bc, B:15:0x00cc, B:16:0x00d1, B:18:0x00e9, B:23:0x00ab), top: B:2:0x0003 }] */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x00e9 A[Catch: Exception -> 0x00f3, TRY_LEAVE, TryCatch #0 {Exception -> 0x00f3, blocks: (B:3:0x0003, B:5:0x005f, B:7:0x0074, B:9:0x0089, B:12:0x009f, B:13:0x00bc, B:15:0x00cc, B:16:0x00d1, B:18:0x00e9, B:23:0x00ab), top: B:2:0x0003 }] */
-        /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x00ab A[Catch: Exception -> 0x00de, TryCatch #0 {Exception -> 0x00de, blocks: (B:3:0x0003, B:5:0x005f, B:7:0x0074, B:9:0x0089, B:12:0x009f, B:14:0x00bc, B:16:0x00d4, B:13:0x00ab), top: B:19:0x0003 }] */
         @Override // in.etuwa.app.ui.base.BaseViewHolder
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public void onBind(final int r8) {
+        public void onBind(final int r7) {
             /*
-                r7 = this;
-                super.onBind(r8)
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r0 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.util.ArrayList r0 = in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter.access$getList$p(r0)     // Catch: java.lang.Exception -> Lf3
-                java.lang.Object r0 = r0.get(r8)     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r1 = "list[position]"
-                kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r0, r1)     // Catch: java.lang.Exception -> Lf3
-                in.etuwa.app.data.model.examregister.ExamCourse r0 = (in.etuwa.app.data.model.examregister.ExamCourse) r0     // Catch: java.lang.Exception -> Lf3
-                android.widget.TextView r1 = r7.subjectHead     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r2 = r0.getCourse()     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lf3
-                r1.setText(r2)     // Catch: java.lang.Exception -> Lf3
-                android.widget.TextView r1 = r7.type     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r2 = r0.getType()     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lf3
-                r1.setText(r2)     // Catch: java.lang.Exception -> Lf3
-                android.widget.TextView r1 = r7.concession     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r2 = r0.is_eligible()     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r2 = (java.lang.CharSequence) r2     // Catch: java.lang.Exception -> Lf3
-                r1.setText(r2)     // Catch: java.lang.Exception -> Lf3
-                android.widget.LinearLayout r1 = r7.statusLyt     // Catch: java.lang.Exception -> Lf3
-                r2 = 8
-                r1.setVisibility(r2)     // Catch: java.lang.Exception -> Lf3
-                android.widget.TextView r1 = r7.amount     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r3 = r0.getAmount()     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
-                r1.setText(r3)     // Catch: java.lang.Exception -> Lf3
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r3 = "sbce"
-                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
-                r4 = 0
-                r5 = 2
-                r6 = 0
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
-                if (r1 != 0) goto Lab
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r3 = "mvjce"
-                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
-                if (r1 != 0) goto Lab
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r3 = "vjec"
-                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
-                if (r1 != 0) goto Lab
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r1 = r1.getBaseUrl()     // Catch: java.lang.Exception -> Lf3
-                kotlin.jvm.internal.Intrinsics.checkNotNull(r1)     // Catch: java.lang.Exception -> Lf3
-                java.lang.CharSequence r1 = (java.lang.CharSequence) r1     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r3 = "uat"
-                java.lang.CharSequence r3 = (java.lang.CharSequence) r3     // Catch: java.lang.Exception -> Lf3
-                boolean r1 = kotlin.text.StringsKt.contains$default(r1, r3, r6, r5, r4)     // Catch: java.lang.Exception -> Lf3
-                if (r1 == 0) goto L9f
-                goto Lab
-            L9f:
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.util.List r1 = r1.getSelected()     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r3 = "false"
-                r1.add(r8, r3)     // Catch: java.lang.Exception -> Lf3
-                goto Lbc
-            Lab:
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.util.List r1 = r1.getSelected()     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r3 = "true"
-                r1.add(r8, r3)     // Catch: java.lang.Exception -> Lf3
-                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
-                r3 = 1
-                r1.setChecked(r3)     // Catch: java.lang.Exception -> Lf3
-            Lbc:
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.lang.Boolean r1 = r1.getCheckBoxStatus()     // Catch: java.lang.Exception -> Lf3
-                java.lang.Boolean r3 = java.lang.Boolean.valueOf(r6)     // Catch: java.lang.Exception -> Lf3
-                boolean r1 = kotlin.jvm.internal.Intrinsics.areEqual(r1, r3)     // Catch: java.lang.Exception -> Lf3
-                if (r1 == 0) goto Ld1
-                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
-                r1.setVisibility(r2)     // Catch: java.lang.Exception -> Lf3
-            Ld1:
-                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
-                boolean r2 = r0.is_selected()     // Catch: java.lang.Exception -> Lf3
-                r1.setChecked(r2)     // Catch: java.lang.Exception -> Lf3
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r1 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                java.util.List r1 = r1.getSelectedTotal()     // Catch: java.lang.Exception -> Lf3
-                java.lang.String r2 = "0"
-                r1.add(r8, r2)     // Catch: java.lang.Exception -> Lf3
-                android.widget.CheckBox r1 = r7.checkBox     // Catch: java.lang.Exception -> Lf3
-                if (r1 == 0) goto Lf3
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter r2 = r7.this$0     // Catch: java.lang.Exception -> Lf3
-                in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter$ViewHolder$$ExternalSyntheticLambda0 r3 = new in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter$ViewHolder$$ExternalSyntheticLambda0     // Catch: java.lang.Exception -> Lf3
-                r3.<init>()     // Catch: java.lang.Exception -> Lf3
-                r1.setOnClickListener(r3)     // Catch: java.lang.Exception -> Lf3
-            Lf3:
-                return
+                Method dump skipped, instruction units count: 223
+                To view this dump change 'Code comments level' option to 'DEBUG'
             */
             throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.ui.examregistration.examsubjects.register.ExamRegisterAdapter.ViewHolder.onBind(int):void");
         }
@@ -322,12 +212,11 @@ public final class ExamRegisterAdapter extends RecyclerView.Adapter<BaseViewHold
         holder.onBind(position);
     }
 
-    public final void addItems(ArrayList<ExamCourse> _list, String baseUrl, boolean checkBoxStatus) {
+    public final void addItems(ArrayList<ExamCourse> _list, String baseUrl) {
         Intrinsics.checkNotNullParameter(_list, "_list");
         Intrinsics.checkNotNullParameter(baseUrl, "baseUrl");
         this.selectedTotal.clear();
         this.selected.clear();
-        this.checkBoxStatus = Boolean.valueOf(checkBoxStatus);
         this.baseUrl = baseUrl;
         this.list.clear();
         this.list.addAll(_list);

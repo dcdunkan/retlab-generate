@@ -7,8 +7,8 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.MultipartBody;
 
-/* compiled from: CovidCertificateRepository.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: CovidCertificateRepository.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final class CovidCertificateRepository {
     private final ApiHelper apiHelper;
 

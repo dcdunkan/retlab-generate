@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Exam.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Exam.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Exam {
 
     @SerializedName("can_download")
@@ -42,7 +42,7 @@ public final /* data */ class Exam {
     @Expose
     private final String uploadedFile;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
@@ -51,52 +51,52 @@ public final /* data */ class Exam {
         return this.files;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final String getUploadedFile() {
         return this.uploadedFile;
     }
 
-    /* renamed from: component12, reason: from getter */
+    /* JADX INFO: renamed from: component12, reason: from getter */
     public final boolean getIsDelete() {
         return this.isDelete;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSemester() {
         return this.semester;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTitle() {
         return this.title;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getStartTime() {
         return this.startTime;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getFinishTime() {
         return this.finishTime;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final boolean getCanDownload() {
         return this.canDownload;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final boolean getCanSubmit() {
         return this.canSubmit;
     }
@@ -126,22 +126,31 @@ public final /* data */ class Exam {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v13, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v15, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v21 */
+    /* JADX WARN: Type inference failed for: r1v22 */
+    /* JADX WARN: Type inference failed for: r1v23 */
+    /* JADX WARN: Type inference failed for: r1v24 */
+    /* JADX WARN: Type inference failed for: r2v0 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v2 */
     public int hashCode() {
-        int hashCode = ((((((((((((this.id.hashCode() * 31) + this.subject.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.title.hashCode()) * 31) + this.startTime.hashCode()) * 31) + this.finishTime.hashCode()) * 31) + this.status.hashCode()) * 31;
+        int iHashCode = ((((((((((((this.id.hashCode() * 31) + this.subject.hashCode()) * 31) + this.semester.hashCode()) * 31) + this.title.hashCode()) * 31) + this.startTime.hashCode()) * 31) + this.finishTime.hashCode()) * 31) + this.status.hashCode()) * 31;
         boolean z = this.canDownload;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r1 = z;
+        if (z) {
+            r1 = 1;
         }
-        int i2 = (hashCode + i) * 31;
+        int i = (iHashCode + r1) * 31;
         boolean z2 = this.canSubmit;
-        int i3 = z2;
-        if (z2 != 0) {
-            i3 = 1;
+        ?? r12 = z2;
+        if (z2) {
+            r12 = 1;
         }
-        int hashCode2 = (((((i2 + i3) * 31) + this.files.hashCode()) * 31) + this.uploadedFile.hashCode()) * 31;
+        int iHashCode2 = (((((i + r12) * 31) + this.files.hashCode()) * 31) + this.uploadedFile.hashCode()) * 31;
         boolean z3 = this.isDelete;
-        return hashCode2 + (z3 ? 1 : z3 ? 1 : 0);
+        return iHashCode2 + (z3 ? 1 : z3);
     }
 
     public String toString() {

@@ -22,8 +22,8 @@ import okhttp3.MultipartBody;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: CovidCertificateTwoDialogViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CovidCertificateTwoDialogViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CovidCertificateTwoDialogViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final CovidCertificateRepository covidCertificateRepository;
@@ -65,9 +65,9 @@ public final class CovidCertificateTwoDialogViewModel extends ViewModel implemen
         try {
             Intrinsics.checkNotNull(filePath);
             ProgressRequestBody progressRequestBody = new ProgressRequestBody(filePath, FilesKt.getExtension(filePath), 1);
-            MultipartBody.Part createFormData = MultipartBody.Part.INSTANCE.createFormData("vaccineTwoFile", filePath.getName(), progressRequestBody);
-            Observable<Float> subscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
-            final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$uploadCovidCertificateTwo$1
+            MultipartBody.Part partCreateFormData = MultipartBody.Part.INSTANCE.createFormData("vaccineTwoFile", filePath.getName(), progressRequestBody);
+            Observable<Float> observableSubscribeOn = progressRequestBody.getProgressSubject().subscribeOn(Schedulers.io());
+            final Function1<Float, Unit> function1 = new Function1<Float, Unit>() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo.1
                 {
                     super(1);
                 }
@@ -78,20 +78,20 @@ public final class CovidCertificateTwoDialogViewModel extends ViewModel implemen
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Float f) {
                     CovidCertificateTwoDialogViewModel.this.getProgressResponse().postValue(Resource.INSTANCE.success(f));
                 }
             };
-            subscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$$ExternalSyntheticLambda0
+            observableSubscribeOn.subscribe(new Consumer() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$$ExternalSyntheticLambda0
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo$lambda$0(Function1.this, obj);
+                    CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo$lambda$0(function1, obj);
                 }
             });
             CompositeDisposable compositeDisposable = this.compositeDisposable;
-            Observable<SuccessResponse> observeOn = this.covidCertificateRepository.uploadCovidCertificateTwoApiCall(createFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-            final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$uploadCovidCertificateTwo$2
+            Observable<SuccessResponse> observableObserveOn = this.covidCertificateRepository.uploadCovidCertificateTwoApiCall(partCreateFormData).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+            final Function1<SuccessResponse, Unit> function12 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo.2
                 {
                     super(1);
                 }
@@ -102,7 +102,7 @@ public final class CovidCertificateTwoDialogViewModel extends ViewModel implemen
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(SuccessResponse successResponse) {
                     CovidCertificateTwoDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.success(successResponse));
                 }
@@ -110,10 +110,10 @@ public final class CovidCertificateTwoDialogViewModel extends ViewModel implemen
             Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$$ExternalSyntheticLambda1
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo$lambda$1(Function1.this, obj);
+                    CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo$lambda$1(function12, obj);
                 }
             };
-            final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$uploadCovidCertificateTwo$3
+            final Function1<Throwable, Unit> function13 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo.3
                 {
                     super(1);
                 }
@@ -124,7 +124,7 @@ public final class CovidCertificateTwoDialogViewModel extends ViewModel implemen
                     return Unit.INSTANCE;
                 }
 
-                /* renamed from: invoke, reason: avoid collision after fix types in other method */
+                /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Throwable th) {
                     if (th instanceof SocketTimeoutException) {
                         CovidCertificateTwoDialogViewModel.this.getUploadResponse().postValue(Resource.INSTANCE.exception("Time out. Please try again."));
@@ -133,10 +133,10 @@ public final class CovidCertificateTwoDialogViewModel extends ViewModel implemen
                     }
                 }
             };
-            compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$$ExternalSyntheticLambda2
+            compositeDisposable.add(observableObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.covidcertificate.CovidCertificateTwoDialogViewModel$$ExternalSyntheticLambda2
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
-                    CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo$lambda$2(Function1.this, obj);
+                    CovidCertificateTwoDialogViewModel.uploadCovidCertificateTwo$lambda$2(function13, obj);
                 }
             }));
         } catch (Exception unused) {

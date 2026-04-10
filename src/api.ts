@@ -1,6 +1,7 @@
 import CodeBlockWriter from "code-block-writer";
 import fs from "node:fs/promises";
 import path, { extname } from "node:path";
+import { styleText } from "node:util";
 import Parser from "tree-sitter";
 import JavaGrammar from "tree-sitter-java";
 import {
@@ -187,6 +188,7 @@ for (
                     }),
                     annotation: parameterAnnotationModifier,
                     required: false,
+                    node: parameterNode,
                 });
             } else {
                 console.log(nodePosition(parameterNode, API_SERVICE_FILE));
@@ -212,7 +214,21 @@ for (
             } else if (methodFields.length === 1) {
                 const type = methodFields[0]?.annotation?.type!;
                 if (type !== "body" && type !== "path") {
-                    throw new Error("cool");
+                    console.log(
+                        type,
+                        nodePosition(methodFields[0]?.node!, API_SERVICE_FILE),
+                    );
+                    if (type === "field") {
+                        console.log(
+                            styleText(["bgYellow", "black"], " warn "),
+                            styleText(
+                                "yellow",
+                                "this is weird: unknown type of type in methodfields but under post or get and not formurlencoded",
+                            ),
+                        );
+                    } else {
+                        throw new Error("cool");
+                    }
                 }
             } else if (methodFields.length === 2) {
                 const types = new Set(
@@ -380,6 +396,7 @@ for (
                         sameScopeTypeDeclarations: API_HELPER_FILE_SAME_SCOPE_IDENTIFIERS,
                     }),
                     required: false,
+                    node: parameterIdentiferNode,
                 });
             } else {
                 console.log(
@@ -656,6 +673,7 @@ for (
                             sameScopeTypeDeclarations: [],
                         }),
                         required: false,
+                        node: parameterNode,
                     });
                 } else {
                     console.log(
@@ -692,7 +710,9 @@ for (
         if (
             returnMethod.childForFieldName("object")?.text !== "this.apiHelper"
         ) {
-            throw new Error("kek");
+            console.log(nodePosition(returnMethod, currentFilePath));
+            // throw new Error("kek"); // todo: revisit here, check whether this broke anything
+            continue;
         }
         const apiHelperMethodName = returnMethod.childForFieldName("name")?.text!;
         if (!(apiHelperMethodName in apiHelperMethods)) {

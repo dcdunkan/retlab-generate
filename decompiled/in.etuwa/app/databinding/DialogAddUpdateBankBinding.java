@@ -12,7 +12,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.profile.addupdatebank.AddUpdateBankViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class DialogAddUpdateBankBinding extends ViewDataBinding {
     public final TextInputEditText etAccno;
     public final TextInputEditText etBankName;

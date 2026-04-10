@@ -2,8 +2,8 @@ package in.etuwa.app.data.model.main;
 
 import kotlin.Metadata;
 
-/* compiled from: SurveyPending.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SurveyPending.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SurveyPending {
     private final boolean profile_status;
     private final boolean semreg_default;
@@ -22,17 +22,17 @@ public final /* data */ class SurveyPending {
         return surveyPending.copy(z, z2, z3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getProfile_status() {
         return this.profile_status;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSemreg_default() {
         return this.semreg_default;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final boolean getSurvey_status() {
         return this.survey_status;
     }
@@ -56,7 +56,12 @@ public final /* data */ class SurveyPending {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v6 */
     /* JADX WARN: Type inference failed for: r0v7 */
-    /* JADX WARN: Type inference failed for: r2v0, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v2 */
+    /* JADX WARN: Type inference failed for: r2v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v3 */
+    /* JADX WARN: Type inference failed for: r2v4 */
     public int hashCode() {
         boolean z = this.profile_status;
         ?? r0 = z;
@@ -64,14 +69,14 @@ public final /* data */ class SurveyPending {
             r0 = 1;
         }
         int i = r0 * 31;
-        ?? r2 = this.semreg_default;
-        int i2 = r2;
-        if (r2 != 0) {
-            i2 = 1;
+        boolean z2 = this.semreg_default;
+        ?? r2 = z2;
+        if (z2) {
+            r2 = 1;
         }
-        int i3 = (i + i2) * 31;
-        boolean z2 = this.survey_status;
-        return i3 + (z2 ? 1 : z2 ? 1 : 0);
+        int i2 = (i + r2) * 31;
+        boolean z3 = this.survey_status;
+        return i2 + (z3 ? 1 : z3);
     }
 
     public String toString() {

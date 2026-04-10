@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.certificate_request.CertificateRequestViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class CertificateRequestFragmentBinding extends ViewDataBinding {
     public final Button addRequestBtn;
 

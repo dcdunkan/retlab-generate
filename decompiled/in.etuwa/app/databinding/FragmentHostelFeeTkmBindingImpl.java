@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.fee.HostelFeeTkmViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelFeeTkmBindingImpl extends FragmentHostelFeeTkmBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -75,7 +75,7 @@ public class FragmentHostelFeeTkmBindingImpl extends FragmentHostelFeeTkmBinding
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (110 != variableId) {
+        if (111 != variableId) {
             return false;
         }
         setHostelFeeTkmViewModel((HostelFeeTkmViewModel) variable);

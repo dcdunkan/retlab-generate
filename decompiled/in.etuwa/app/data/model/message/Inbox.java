@@ -6,8 +6,8 @@ import in.etuwa.app.ui.message.reply.ReplyDialogKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Inbox.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Inbox.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Inbox {
 
     @SerializedName("content")
@@ -68,37 +68,37 @@ public final /* data */ class Inbox {
         return inbox.copy(str, str8, str9, str10, str11, str12, str7);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getId() {
         return this.id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSenderId() {
         return this.senderId;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getFrom() {
         return this.from;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getContent() {
         return this.content;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getIsRead() {
         return this.isRead;
     }

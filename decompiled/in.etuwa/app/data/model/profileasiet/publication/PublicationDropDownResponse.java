@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: PublicationDropDownResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: PublicationDropDownResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class PublicationDropDownResponse {
     private final ArrayList<PublicationDropDown> category;
     private final ArrayList<PublicationDropDown> index;
@@ -20,7 +20,7 @@ public final /* data */ class PublicationDropDownResponse {
     private final String sem_name;
     private final ArrayList<PublicationDropDown> years;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
@@ -33,12 +33,12 @@ public final /* data */ class PublicationDropDownResponse {
         return this.scholarship;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSem_id() {
         return this.sem_id;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSem_name() {
         return this.sem_name;
     }

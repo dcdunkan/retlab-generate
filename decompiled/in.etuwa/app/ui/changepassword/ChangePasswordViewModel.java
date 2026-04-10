@@ -16,8 +16,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ChangePasswordViewModel.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ChangePasswordViewModel.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class ChangePasswordViewModel extends ViewModel {
     private final ChangePasswordRepository changePasswordRepository;
     private MutableLiveData<Resource<SuccessResponse>> changePasswordResponse;
@@ -45,8 +45,8 @@ public final class ChangePasswordViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(newPasswordRepeat, "newPasswordRepeat");
         this.changePasswordResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.changePasswordRepository.getChangePasswordApiCall(oldPassword, newPassword, newPasswordRepeat).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordViewModel$changePassword$1
+        Single<SuccessResponse> singleObserveOn = this.changePasswordRepository.getChangePasswordApiCall(oldPassword, newPassword, newPasswordRepeat).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordViewModel.changePassword.1
             {
                 super(1);
             }
@@ -57,7 +57,7 @@ public final class ChangePasswordViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 ChangePasswordViewModel.this.getChangePasswordResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -65,10 +65,10 @@ public final class ChangePasswordViewModel extends ViewModel {
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ChangePasswordViewModel.changePassword$lambda$0(Function1.this, obj);
+                ChangePasswordViewModel.changePassword$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordViewModel$changePassword$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordViewModel.changePassword.2
             {
                 super(1);
             }
@@ -79,15 +79,15 @@ public final class ChangePasswordViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 ChangePasswordViewModel.this.getChangePasswordResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.changepassword.ChangePasswordViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                ChangePasswordViewModel.changePassword$lambda$1(Function1.this, obj);
+                ChangePasswordViewModel.changePassword$lambda$1(function12, obj);
             }
         }));
     }

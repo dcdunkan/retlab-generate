@@ -53,15 +53,15 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: PoSurveyQuestionsNewFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: PoSurveyQuestionsNewFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class PoSurveyQuestionsNewFragment extends BaseFragment implements PoSurveyQuestionsNewAdapter.SurveyCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentPoQuestionsNewBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private final List<String> attendedOrNot;
     private boolean flag;
@@ -72,10 +72,10 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
     private final List<String> mandatoryQuestions;
     private String option;
 
-    /* renamed from: poSurveyQuestionsNewViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: poSurveyQuestionsNewViewModel$delegate, reason: from kotlin metadata */
     private final Lazy poSurveyQuestionsNewViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String subjectId;
     private final HashMap<String, String> submitAnswer;
@@ -84,7 +84,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
     private ArrayList<PoQuestions> surveyResponse;
     private String teacherId;
 
-    /* compiled from: PoSurveyQuestionsNewFragment.kt */
+    /* JADX INFO: compiled from: PoSurveyQuestionsNewFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -142,7 +142,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return poSurveyQuestionsNewFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(poSurveyQuestionsNewFragment);
@@ -156,7 +156,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -169,7 +169,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(PoSurveyQuestionsNewViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(PoSurveyQuestionsNewViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final PoSurveyQuestionsNewFragment poSurveyQuestionsNewFragment2 = this;
@@ -216,7 +216,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
         return (PoSurveyQuestionsNewViewModel) this.poSurveyQuestionsNewViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentPoQuestionsNewBinding get_binding() {
         return this._binding;
     }
@@ -257,7 +257,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
         this.mandatoryFlag = z;
     }
 
-    /* compiled from: PoSurveyQuestionsNewFragment.kt */
+    /* JADX INFO: compiled from: PoSurveyQuestionsNewFragment.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/survey/posurvey/questionsnew/PoSurveyQuestionsNewFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/survey/posurvey/questionsnew/PoSurveyQuestionsNewFragment;", "id", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -351,7 +351,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() { // from class: in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewFragment$$ExternalSyntheticLambda2
                 @Override // android.widget.RadioGroup.OnCheckedChangeListener
                 public final void onCheckedChanged(RadioGroup radioGroup2, int i) {
-                    PoSurveyQuestionsNewFragment.setUp$lambda$1(PoSurveyQuestionsNewFragment.this, radioGroup2, i);
+                    PoSurveyQuestionsNewFragment.setUp$lambda$1(this.f$0, radioGroup2, i);
                 }
             });
         }
@@ -360,7 +360,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
             textView3.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewFragment$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PoSurveyQuestionsNewFragment.setUp$lambda$2(PoSurveyQuestionsNewFragment.this, view);
+                    PoSurveyQuestionsNewFragment.setUp$lambda$2(this.f$0, view);
                 }
             });
         }
@@ -369,7 +369,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
             textView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewFragment$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PoSurveyQuestionsNewFragment.setUp$lambda$3(PoSurveyQuestionsNewFragment.this, view);
+                    PoSurveyQuestionsNewFragment.setUp$lambda$3(this.f$0, view);
                 }
             });
         }
@@ -380,7 +380,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewFragment$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PoSurveyQuestionsNewFragment.setUp$lambda$4(PoSurveyQuestionsNewFragment.this, view);
+                PoSurveyQuestionsNewFragment.setUp$lambda$4(this.f$0, view);
             }
         });
     }
@@ -1319,20 +1319,20 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
         }
         if (this$0.mandatoryFlag) {
             this$0.submitAnswer.clear();
-            HashMap<String, String> hashMap = this$0.submitAnswer;
+            HashMap<String, String> map = this$0.submitAnswer;
             String str = this$0.id;
             Intrinsics.checkNotNull(str);
-            hashMap.put("id", str);
+            map.put("id", str);
             int size2 = this$0.surveyAnswers.size();
             for (int i2 = 0; i2 < size2; i2++) {
                 if (!Intrinsics.areEqual(this$0.surveyAnswers.get(i2), "")) {
-                    HashMap<String, String> hashMap2 = this$0.submitAnswer;
+                    HashMap<String, String> map2 = this$0.submitAnswer;
                     ArrayList<PoQuestions> arrayList = this$0.surveyResponse;
                     Intrinsics.checkNotNull(arrayList);
                     String str2 = "SurveyPoOption[" + arrayList.get(i2).getQ_id() + "]";
                     ArrayList<PoQuestions> arrayList2 = this$0.surveyResponse;
                     Intrinsics.checkNotNull(arrayList2);
-                    hashMap2.put(str2, arrayList2.get(i2).getOptions().get(Integer.parseInt(this$0.surveyAnswers.get(i2))).getOption_id());
+                    map2.put(str2, arrayList2.get(i2).getOptions().get(Integer.parseInt(this$0.surveyAnswers.get(i2))).getOption_id());
                 }
             }
             System.out.println(this$0.submitAnswer);
@@ -1379,7 +1379,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
         getPoSurveyQuestionsNewViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                PoSurveyQuestionsNewFragment.listenResponse$lambda$6(PoSurveyQuestionsNewFragment.this, (Resource) obj);
+                PoSurveyQuestionsNewFragment.listenResponse$lambda$6(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1906,7 +1906,7 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
         getPoSurveyQuestionsNewViewModel().getSubmitResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.survey.posurvey.questionsnew.PoSurveyQuestionsNewFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                PoSurveyQuestionsNewFragment.listenAnswerResponse$lambda$8(PoSurveyQuestionsNewFragment.this, (Resource) obj);
+                PoSurveyQuestionsNewFragment.listenAnswerResponse$lambda$8(this.f$0, (Resource) obj);
             }
         });
     }
@@ -1975,11 +1975,10 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
     }
 
     public final String convertHtmlToString(String html) {
-        Spanned fromHtml;
         Intrinsics.checkNotNullParameter(html, "html");
-        fromHtml = Html.fromHtml(html, 0);
-        Intrinsics.checkNotNullExpressionValue(fromHtml, "fromHtml(html, Html.FROM_HTML_MODE_LEGACY)");
-        return fromHtml.toString();
+        Spanned spannedFromHtml = Html.fromHtml(html, 0);
+        Intrinsics.checkNotNullExpressionValue(spannedFromHtml, "fromHtml(html, Html.FROM_HTML_MODE_LEGACY)");
+        return spannedFromHtml.toString();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -2057,15 +2056,15 @@ public final class PoSurveyQuestionsNewFragment extends BaseFragment implements 
         FragmentPoQuestionsNewBinding fragmentPoQuestionsNewBinding9 = get_binding();
         TextView textView9 = fragmentPoQuestionsNewBinding9 != null ? fragmentPoQuestionsNewBinding9.questionTv : null;
         if (textView9 != null) {
-            int parseInt = Integer.parseInt(qNo) + 1;
+            int i2 = Integer.parseInt(qNo) + 1;
             ArrayList<PoQuestions> arrayList3 = this.surveyResponse;
             Intrinsics.checkNotNull(arrayList3);
-            textView9.setText(parseInt + RemoteSettings.FORWARD_SLASH_STRING + arrayList3.size());
+            textView9.setText(i2 + RemoteSettings.FORWARD_SLASH_STRING + arrayList3.size());
         }
-        int i2 = this.i;
+        int i3 = this.i;
         ArrayList<PoQuestions> arrayList4 = this.surveyResponse;
         Intrinsics.checkNotNull(arrayList4);
-        if (i2 == arrayList4.size() - 1) {
+        if (i3 == arrayList4.size() - 1) {
             FragmentPoQuestionsNewBinding fragmentPoQuestionsNewBinding10 = get_binding();
             TextView textView10 = fragmentPoQuestionsNewBinding10 != null ? fragmentPoQuestionsNewBinding10.finishBtn : null;
             if (textView10 != null) {

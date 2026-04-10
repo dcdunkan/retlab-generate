@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class ActivityAnalysisSubAttendanceBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final TabLayout semTab;
@@ -32,11 +32,11 @@ public final class ActivityAnalysisSubAttendanceBinding implements ViewBinding {
     }
 
     public static ActivityAnalysisSubAttendanceBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.activity_analysis_sub_attendance, parent, false);
+        View viewInflate = inflater.inflate(R.layout.activity_analysis_sub_attendance, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static ActivityAnalysisSubAttendanceBinding bind(View rootView) {

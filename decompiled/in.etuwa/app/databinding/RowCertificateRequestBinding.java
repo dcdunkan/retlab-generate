@@ -3,28 +3,31 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowCertificateRequestBinding implements ViewBinding {
     public final TextView certificateType;
     public final TextView date;
-    private final CardView rootView;
+    private final MaterialCardView rootView;
     public final TextView status;
+    public final LinearLayout statusBadge;
 
-    private RowCertificateRequestBinding(CardView rootView, TextView certificateType, TextView date, TextView status) {
+    private RowCertificateRequestBinding(MaterialCardView rootView, TextView certificateType, TextView date, TextView status, LinearLayout statusBadge) {
         this.rootView = rootView;
         this.certificateType = certificateType;
         this.date = date;
         this.status = status;
+        this.statusBadge = statusBadge;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public CardView getRoot() {
+    public MaterialCardView getRoot() {
         return this.rootView;
     }
 
@@ -33,11 +36,11 @@ public final class RowCertificateRequestBinding implements ViewBinding {
     }
 
     public static RowCertificateRequestBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_certificate_request, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_certificate_request, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowCertificateRequestBinding bind(View rootView) {
@@ -50,7 +53,11 @@ public final class RowCertificateRequestBinding implements ViewBinding {
                 i = R.id.status;
                 TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
                 if (textView3 != null) {
-                    return new RowCertificateRequestBinding((CardView) rootView, textView, textView2, textView3);
+                    i = R.id.status_badge;
+                    LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                    if (linearLayout != null) {
+                        return new RowCertificateRequestBinding((MaterialCardView) rootView, textView, textView2, textView3, linearLayout);
+                    }
                 }
             }
         }

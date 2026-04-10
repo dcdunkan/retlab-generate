@@ -3,36 +3,49 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.studymaterials.MaterialViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class MaterialFragmentBinding extends ViewDataBinding {
-    public final FloatingActionButton fabUniv;
+    public final ImageView fabUniv;
+    public final ImageView ivClearSearch;
+    public final ImageView ivSearch;
 
     @Bindable
     protected MaterialViewModel mMaterialViewModel;
     public final RecyclerView rvMaterials;
+    public final CardView searchCard;
+    public final EditText searchInput;
     public final Spinner spinnerFill;
     public final Spinner spinnerModule;
     public final SwipeRefreshLayout swipeLayout;
+    public final TextView toolbar;
 
     public abstract void setMaterialViewModel(MaterialViewModel materialViewModel);
 
-    protected MaterialFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, FloatingActionButton fabUniv, RecyclerView rvMaterials, Spinner spinnerFill, Spinner spinnerModule, SwipeRefreshLayout swipeLayout) {
+    protected MaterialFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount, ImageView fabUniv, ImageView ivClearSearch, ImageView ivSearch, RecyclerView rvMaterials, CardView searchCard, EditText searchInput, Spinner spinnerFill, Spinner spinnerModule, SwipeRefreshLayout swipeLayout, TextView toolbar) {
         super(_bindingComponent, _root, _localFieldCount);
         this.fabUniv = fabUniv;
+        this.ivClearSearch = ivClearSearch;
+        this.ivSearch = ivSearch;
         this.rvMaterials = rvMaterials;
+        this.searchCard = searchCard;
+        this.searchInput = searchInput;
         this.spinnerFill = spinnerFill;
         this.spinnerModule = spinnerModule;
         this.swipeLayout = swipeLayout;
+        this.toolbar = toolbar;
     }
 
     public MaterialViewModel getMaterialViewModel() {

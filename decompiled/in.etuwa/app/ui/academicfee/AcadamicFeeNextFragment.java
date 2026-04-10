@@ -23,11 +23,11 @@ import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: AcadamicFeeNextFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AcadamicFeeNextFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AcadamicFeeNextFragment extends Fragment {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private String date;
     private String id;
@@ -127,7 +127,7 @@ public final class AcadamicFeeNextFragment extends Fragment {
         this.method = textView;
     }
 
-    /* compiled from: AcadamicFeeNextFragment.kt */
+    /* JADX INFO: compiled from: AcadamicFeeNextFragment.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\"\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0007¨\u0006\t"}, d2 = {"Lin/etuwa/app/ui/academicfee/AcadamicFeeNextFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/academicfee/AcadamicFeeNextFragment;", "id", "", "date", FirebaseAnalytics.Param.METHOD, "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -172,18 +172,18 @@ public final class AcadamicFeeNextFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Intrinsics.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        View findViewById = view.findViewById(R.id.tableAcadamicFeeConfirm);
-        Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.tableAcadamicFeeConfirm)");
-        setTableLayout((TableLayout) findViewById);
-        View findViewById2 = view.findViewById(R.id.acadamicNextdate);
-        Intrinsics.checkNotNullExpressionValue(findViewById2, "view.findViewById(R.id.acadamicNextdate)");
-        setRecDate((TextView) findViewById2);
-        View findViewById3 = view.findViewById(R.id.acadamicPayNow);
-        Intrinsics.checkNotNullExpressionValue(findViewById3, "view.findViewById(R.id.acadamicPayNow)");
-        setPayNow((TextView) findViewById3);
-        View findViewById4 = view.findViewById(R.id.acadamic_payment_method);
-        Intrinsics.checkNotNullExpressionValue(findViewById4, "view.findViewById(R.id.acadamic_payment_method)");
-        setMethod((TextView) findViewById4);
+        View viewFindViewById = view.findViewById(R.id.tableAcadamicFeeConfirm);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById, "view.findViewById(R.id.tableAcadamicFeeConfirm)");
+        setTableLayout((TableLayout) viewFindViewById);
+        View viewFindViewById2 = view.findViewById(R.id.acadamicNextdate);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById2, "view.findViewById(R.id.acadamicNextdate)");
+        setRecDate((TextView) viewFindViewById2);
+        View viewFindViewById3 = view.findViewById(R.id.acadamicPayNow);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById3, "view.findViewById(R.id.acadamicPayNow)");
+        setPayNow((TextView) viewFindViewById3);
+        View viewFindViewById4 = view.findViewById(R.id.acadamic_payment_method);
+        Intrinsics.checkNotNullExpressionValue(viewFindViewById4, "view.findViewById(R.id.acadamic_payment_method)");
+        setMethod((TextView) viewFindViewById4);
         Bundle arguments = getArguments();
         Intrinsics.checkNotNull(arguments);
         String string = arguments.getString("id");
@@ -201,7 +201,7 @@ public final class AcadamicFeeNextFragment extends Fragment {
         getPayNow().setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.academicfee.AcadamicFeeNextFragment$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                AcadamicFeeNextFragment.onViewCreated$lambda$1(AcadamicFeeNextFragment.this, view2);
+                AcadamicFeeNextFragment.onViewCreated$lambda$1(this.f$0, view2);
             }
         });
     }

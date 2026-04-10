@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.chat.reply;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Reply.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Reply.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Reply {
     private final String img;
     private final String name;
@@ -27,22 +27,22 @@ public final /* data */ class Reply {
         return reply.copy(str, str2, str3, str4);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getName() {
         return this.name;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getReply() {
         return this.reply;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getTime() {
         return this.time;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getImg() {
         return this.img;
     }

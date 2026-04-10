@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.result;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SeasonRequest.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: SeasonRequest.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class SeasonRequest {
     private final String sem_id;
     private final String session;
@@ -19,12 +19,12 @@ public final /* data */ class SeasonRequest {
         return seasonRequest.copy(str, str2);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getSem_id() {
         return this.sem_id;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getSession() {
         return this.session;
     }

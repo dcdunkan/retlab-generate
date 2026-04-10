@@ -47,15 +47,15 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import ru.cleverpumpkin.calendar.CalendarView;
 
-/* compiled from: AttendanceByDayFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: AttendanceByDayFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class AttendanceByDayFragment extends BaseFragment implements AttendanceDayDialog.AttendanceDayListner {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentAttendanceByDayBinding _binding;
 
-    /* renamed from: attendanceByDayViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: attendanceByDayViewModel$delegate, reason: from kotlin metadata */
     private final Lazy attendanceByDayViewModel;
     private ArrayList<AttendanceNew> attendances;
     private Calendar calendar;
@@ -63,11 +63,11 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
     private ArrayList<EventDay> eventList;
     private final List<CalendarView.DateIndicator> indicators;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private String semid;
 
-    /* compiled from: AttendanceByDayFragment.kt */
+    /* JADX INFO: compiled from: AttendanceByDayFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -117,7 +117,7 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return attendanceByDayFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(attendanceByDayFragment);
@@ -131,7 +131,7 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -144,7 +144,7 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(AttendanceByDayViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(AttendanceByDayViewModel.class), qualifier, b, null, koinScope);
             }
         });
         this.indicators = new ArrayList();
@@ -175,7 +175,7 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
         return (AttendanceByDayViewModel) this.attendanceByDayViewModel.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentAttendanceByDayBinding get_binding() {
         return this._binding;
     }
@@ -211,7 +211,7 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: AttendanceByDayFragment.kt */
+    /* JADX INFO: compiled from: AttendanceByDayFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/attendance/bydaynew/AttendanceByDayFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/attendance/bydaynew/AttendanceByDayFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -277,21 +277,21 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
             Intrinsics.throwUninitializedPropertyAccessException("calendar");
             calendar2 = null;
         }
-        String valueOf = String.valueOf(calendar2.get(1));
+        String strValueOf = String.valueOf(calendar2.get(1));
         Calendar calendar4 = this.calendar;
         if (calendar4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("calendar");
         } else {
             calendar3 = calendar4;
         }
-        attendanceByDayViewModel.getAttendanceByDay(str, valueOf, String.valueOf(calendar3.get(2) + 1));
+        attendanceByDayViewModel.getAttendanceByDay(str, strValueOf, String.valueOf(calendar3.get(2) + 1));
     }
 
     private final void listenResponse() {
         getAttendanceByDayViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.attendance.bydaynew.AttendanceByDayFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                AttendanceByDayFragment.listenResponse$lambda$2(AttendanceByDayFragment.this, (Resource) obj);
+                AttendanceByDayFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -337,7 +337,7 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
                 Calendar calendar = Calendar.getInstance();
                 Intrinsics.checkNotNullExpressionValue(calendar, "getInstance()");
                 this$0.calendar = calendar;
-                List split$default = StringsKt.split$default((CharSequence) attendanceNew.getDate(), new String[]{HelpFormatter.DEFAULT_OPT_PREFIX}, false, 0, 6, (Object) null);
+                List listSplit$default = StringsKt.split$default((CharSequence) attendanceNew.getDate(), new String[]{HelpFormatter.DEFAULT_OPT_PREFIX}, false, 0, 6, (Object) null);
                 Calendar calendar2 = this$0.calendar;
                 Calendar calendar3 = null;
                 if (calendar2 == null) {
@@ -345,7 +345,7 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
                     calendar2 = null;
                 }
                 int i2 = 0;
-                calendar2.set(Integer.parseInt(StringsKt.trim((CharSequence) split$default.get(0)).toString()), Integer.parseInt(StringsKt.trim((CharSequence) split$default.get(1)).toString()) - 1, Integer.parseInt(StringsKt.trim((CharSequence) split$default.get(2)).toString()));
+                calendar2.set(Integer.parseInt(StringsKt.trim((CharSequence) listSplit$default.get(0)).toString()), Integer.parseInt(StringsKt.trim((CharSequence) listSplit$default.get(1)).toString()) - 1, Integer.parseInt(StringsKt.trim((CharSequence) listSplit$default.get(2)).toString()));
                 int totalperiod = attendanceNew.getTotalperiod() - 1;
                 int i3 = 0;
                 int i4 = 0;
@@ -882,9 +882,9 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
         Intrinsics.checkNotNullParameter(semester, "semester");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AttendanceDayDialog newInstance = AttendanceDayDialog.INSTANCE.newInstance(date, semester);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AttendanceDayDialog attendanceDayDialogNewInstance = AttendanceDayDialog.INSTANCE.newInstance(date, semester);
+        attendanceDayDialogNewInstance.setCallBack(this);
+        attendanceDayDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.attendance.bydaynew.attendaceday.AttendanceDayDialog.AttendanceDayListner
@@ -897,13 +897,13 @@ public final class AttendanceByDayFragment extends BaseFragment implements Atten
             Intrinsics.throwUninitializedPropertyAccessException("calendar");
             calendar = null;
         }
-        String valueOf = String.valueOf(calendar.get(1));
+        String strValueOf = String.valueOf(calendar.get(1));
         Calendar calendar3 = this.calendar;
         if (calendar3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("calendar");
         } else {
             calendar2 = calendar3;
         }
-        attendanceByDayViewModel.getAttendanceByDay(str, valueOf, String.valueOf(calendar2.get(2) + 1));
+        attendanceByDayViewModel.getAttendanceByDay(str, strValueOf, String.valueOf(calendar2.get(2) + 1));
     }
 }

@@ -1,6 +1,7 @@
 package in.etuwa.app.ui.result.tutorials;
 
 import android.content.ComponentCallbacks;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -53,28 +54,28 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: TutorialResultFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TutorialResultFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TutorialResultFragment extends BaseFragment implements SemListDialogTwo.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private ResultTutorialFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private boolean flag;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: tutorialResultViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: tutorialResultViewModel$delegate, reason: from kotlin metadata */
     private final Lazy tutorialResultViewModel;
 
-    /* compiled from: TutorialResultFragment.kt */
+    /* JADX INFO: compiled from: TutorialResultFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -106,6 +107,10 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         return INSTANCE.newInstance();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setUp$lambda$1() {
+    }
+
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void hideProgress() {
     }
@@ -124,7 +129,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return tutorialResultFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(tutorialResultFragment);
@@ -138,7 +143,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -151,7 +156,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(TutorialResultViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(TutorialResultViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final TutorialResultFragment tutorialResultFragment2 = this;
@@ -178,7 +183,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(TutorialResultFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -224,7 +229,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final ResultTutorialFragmentBinding get_binding() {
         return this._binding;
     }
@@ -239,7 +244,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: TutorialResultFragment.kt */
+    /* JADX INFO: compiled from: TutorialResultFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/result/tutorials/TutorialResultFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/result/tutorials/TutorialResultFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -303,6 +308,10 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         getTutorialResultViewModel().getTutorial(getPreference().getUserSemId());
         listenSemResponse();
         listenResponse();
+        TutorialResultViewModel tutorialResultViewModel = getTutorialResultViewModel();
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        tutorialResultViewModel.getSemester(contextRequireContext);
         ResultTutorialFragmentBinding resultTutorialFragmentBinding3 = get_binding();
         TextView textView = resultTutorialFragmentBinding3 != null ? resultTutorialFragmentBinding3.tutorialSemTv : null;
         if (textView != null) {
@@ -313,54 +322,36 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
             floatingActionButton.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.result.tutorials.TutorialResultFragment$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    TutorialResultFragment.setUp$lambda$0(TutorialResultFragment.this, view);
+                    TutorialResultFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
         ResultTutorialFragmentBinding resultTutorialFragmentBinding5 = get_binding();
         Spinner spinner2 = resultTutorialFragmentBinding5 != null ? resultTutorialFragmentBinding5.spinnerSem : null;
         if (spinner2 != null) {
-            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.tutorials.TutorialResultFragment$setUp$2
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.result.tutorials.TutorialResultFragment.setUp.2
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
 
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    boolean z;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter3;
-                    ResultTutorialFragmentBinding resultTutorialFragmentBinding6;
-                    TutorialResultViewModel tutorialResultViewModel;
-                    SharedPrefManager preference2;
                     Spinner spinner3;
-                    TutorialResultViewModel tutorialResultViewModel2;
-                    spinnerAdapter = TutorialResultFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    z = TutorialResultFragment.this.flag;
-                    if (z) {
-                        tutorialResultViewModel2 = TutorialResultFragment.this.getTutorialResultViewModel();
-                        tutorialResultViewModel2.getTutorial(semester.getId());
+                    Semester semester = TutorialResultFragment.this.getSpinnerAdapter().getSemester(position);
+                    if (TutorialResultFragment.this.flag) {
+                        TutorialResultFragment.this.getTutorialResultViewModel().getTutorial(semester.getId());
                         return;
                     }
                     TutorialResultFragment.this.flag = true;
-                    spinnerAdapter2 = TutorialResultFragment.this.getSpinnerAdapter();
-                    int count = spinnerAdapter2.getCount();
+                    int count = TutorialResultFragment.this.getSpinnerAdapter().getCount();
                     for (int i = 0; i < count; i++) {
-                        preference = TutorialResultFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter3 = TutorialResultFragment.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter3.getSemester(i).getId())) {
-                            resultTutorialFragmentBinding6 = TutorialResultFragment.this.get_binding();
+                        if (Intrinsics.areEqual(TutorialResultFragment.this.getPreference().getUserSemId(), TutorialResultFragment.this.getSpinnerAdapter().getSemester(i).getId())) {
+                            ResultTutorialFragmentBinding resultTutorialFragmentBinding6 = TutorialResultFragment.this.get_binding();
                             if (resultTutorialFragmentBinding6 != null && (spinner3 = resultTutorialFragmentBinding6.spinnerSem) != null) {
                                 spinner3.setSelection(i);
                             }
                             if (position == 0) {
-                                tutorialResultViewModel = TutorialResultFragment.this.getTutorialResultViewModel();
-                                preference2 = TutorialResultFragment.this.getPreference();
-                                tutorialResultViewModel.getTutorial(preference2.getUserSemId());
+                                TutorialResultFragment.this.getTutorialResultViewModel().getTutorial(TutorialResultFragment.this.getPreference().getUserSemId());
                                 return;
                             }
                             return;
@@ -376,7 +367,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.result.tutorials.TutorialResultFragment$$ExternalSyntheticLambda1
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                TutorialResultFragment.setUp$lambda$1(TutorialResultFragment.this);
+                TutorialResultFragment.setUp$lambda$1();
             }
         });
     }
@@ -386,15 +377,9 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        SemListDialogTwo newInstance = SemListDialogTwo.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$1(TutorialResultFragment this$0) {
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getTutorialResultViewModel().getSemester();
+        SemListDialogTwo semListDialogTwoNewInstance = SemListDialogTwo.INSTANCE.newInstance();
+        semListDialogTwoNewInstance.setCallBack(this$0);
+        semListDialogTwoNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -410,7 +395,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         getTutorialResultViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.result.tutorials.TutorialResultFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                TutorialResultFragment.listenSemResponse$lambda$3(TutorialResultFragment.this, (Resource) obj);
+                TutorialResultFragment.listenSemResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -423,16 +408,16 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
+        boolValueOf = null;
+        Boolean boolValueOf = null;
         if (i != 1) {
             if (i == 2) {
                 ResultTutorialFragmentBinding resultTutorialFragmentBinding = this$0.get_binding();
                 if (resultTutorialFragmentBinding != null && (swipeRefreshLayout2 = resultTutorialFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
+                    boolValueOf = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
                 }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
+                Intrinsics.checkNotNull(boolValueOf);
+                if (boolValueOf.booleanValue()) {
                     return;
                 }
                 this$0.showProgress();
@@ -463,9 +448,9 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         if (arrayList != null) {
             this$0.getSpinnerAdapter().addItems(arrayList);
             ResultTutorialFragmentBinding resultTutorialFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (resultTutorialFragmentBinding3 == null || (swipeRefreshLayout = resultTutorialFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
+            Boolean boolValueOf2 = (resultTutorialFragmentBinding3 == null || (swipeRefreshLayout = resultTutorialFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
+            Intrinsics.checkNotNull(boolValueOf2);
+            if (boolValueOf2.booleanValue()) {
                 ResultTutorialFragmentBinding resultTutorialFragmentBinding4 = this$0.get_binding();
                 SwipeRefreshLayout swipeRefreshLayout3 = resultTutorialFragmentBinding4 != null ? resultTutorialFragmentBinding4.swipeLayout : null;
                 if (swipeRefreshLayout3 != null) {
@@ -490,7 +475,7 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
         getTutorialResultViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.result.tutorials.TutorialResultFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                TutorialResultFragment.listenResponse$lambda$5(TutorialResultFragment.this, (Resource) obj);
+                TutorialResultFragment.listenResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -581,5 +566,17 @@ public final class TutorialResultFragment extends BaseFragment implements SemLis
             return;
         }
         textView.setText(sem);
+    }
+
+    public final void onSemesterSelected(String id, String semName) {
+        Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(semName, "semName");
+        getTutorialResultViewModel().getTutorial(id);
+        ResultTutorialFragmentBinding resultTutorialFragmentBinding = get_binding();
+        TextView textView = resultTutorialFragmentBinding != null ? resultTutorialFragmentBinding.tutorialSemTv : null;
+        if (textView == null) {
+            return;
+        }
+        textView.setText(semName);
     }
 }

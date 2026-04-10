@@ -18,8 +18,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TeacherSurveyViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: TeacherSurveyViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class TeacherSurveyViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final SurveyRepository surveyRepository;
@@ -36,8 +36,8 @@ public final class TeacherSurveyViewModel extends ViewModel {
         Intrinsics.checkNotNullParameter(id, "id");
         this.surveyResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<TeacherList>> observeOn = this.surveyRepository.getSurveyTeachersApiCall(new GenSurveyQuestionRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<TeacherList>, Unit> function1 = new Function1<ArrayList<TeacherList>, Unit>() { // from class: in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel$getSurveyList$1
+        Single<ArrayList<TeacherList>> singleObserveOn = this.surveyRepository.getSurveyTeachersApiCall(new GenSurveyQuestionRequest(id)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<TeacherList>, Unit> function1 = new Function1<ArrayList<TeacherList>, Unit>() { // from class: in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel.getSurveyList.1
             {
                 super(1);
             }
@@ -48,20 +48,18 @@ public final class TeacherSurveyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<TeacherList> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TeacherSurveyViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                TeacherSurveyViewModel.this.surveyResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
         Consumer<? super ArrayList<TeacherList>> consumer = new Consumer() { // from class: in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TeacherSurveyViewModel.getSurveyList$lambda$0(Function1.this, obj);
+                TeacherSurveyViewModel.getSurveyList$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel$getSurveyList$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel.getSurveyList.2
             {
                 super(1);
             }
@@ -72,17 +70,15 @@ public final class TeacherSurveyViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = TeacherSurveyViewModel.this.surveyResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                TeacherSurveyViewModel.this.surveyResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.survey.teachersurvey.TeacherSurveyViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                TeacherSurveyViewModel.getSurveyList$lambda$1(Function1.this, obj);
+                TeacherSurveyViewModel.getSurveyList$lambda$1(function12, obj);
             }
         }));
     }

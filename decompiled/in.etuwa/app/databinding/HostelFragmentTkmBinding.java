@@ -11,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.tkmhostel.HostelMainViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class HostelFragmentTkmBinding extends ViewDataBinding {
     public final LinearLayout attendanceHostelBtn;
     public final LinearLayout hostelNewRegistration;

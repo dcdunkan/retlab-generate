@@ -6,11 +6,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
-import com.applandeo.materialcalendarview.CalendarView;
+import androidx.recyclerview.widget.RecyclerView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostel.attendance.HostelAttendanceViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentHostelAttendanceBindingImpl extends FragmentHostelAttendanceBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -28,15 +28,18 @@ public class FragmentHostelAttendanceBindingImpl extends FragmentHostelAttendanc
         sViewsWithIds = sparseIntArray;
         sparseIntArray.put(R.id.btn_apply, 2);
         sparseIntArray.put(R.id.btn_view, 3);
-        sparseIntArray.put(R.id.attendance_view, 4);
+        sparseIntArray.put(R.id.previous_btn, 4);
+        sparseIntArray.put(R.id.month_tv, 5);
+        sparseIntArray.put(R.id.next_btn, 6);
+        sparseIntArray.put(R.id.rv_calender, 7);
     }
 
     public FragmentHostelAttendanceBindingImpl(DataBindingComponent bindingComponent, View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
 
     private FragmentHostelAttendanceBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (CalendarView) bindings[4], (TextView) bindings[2], (TextView) bindings[3]);
+        super(bindingComponent, root, 0, (TextView) bindings[2], (TextView) bindings[3], (TextView) bindings[5], (TextView) bindings[6], (TextView) bindings[4], (RecyclerView) bindings[7]);
         this.mDirtyFlags = -1L;
         Object obj = bindings[1];
         this.mboundView0 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
@@ -64,7 +67,7 @@ public class FragmentHostelAttendanceBindingImpl extends FragmentHostelAttendanc
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (108 != variableId) {
+        if (109 != variableId) {
             return false;
         }
         setHostelAttendanceViewModel((HostelAttendanceViewModel) variable);

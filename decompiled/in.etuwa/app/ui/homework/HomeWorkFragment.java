@@ -65,26 +65,26 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: HomeWorkFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: HomeWorkFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdapter.HomeWorkListener, SubmitHomeWorkDialog.SubmitHomeWorkCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private HomeWorkFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
 
-    /* renamed from: homeWorkViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: homeWorkViewModel$delegate, reason: from kotlin metadata */
     private final Lazy homeWorkViewModel;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* compiled from: HomeWorkFragment.kt */
+    /* JADX INFO: compiled from: HomeWorkFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -134,7 +134,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return homeWorkFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(homeWorkFragment);
@@ -148,7 +148,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -161,7 +161,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(HomeWorkViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(HomeWorkViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final HomeWorkFragment homeWorkFragment2 = this;
@@ -201,16 +201,12 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.homework.HomeWorkFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                HomeWorkAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = HomeWorkFragment.this.downList;
-                    HomeWorkFragment homeWorkFragment3 = HomeWorkFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    HomeWorkFragment homeWorkFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -219,11 +215,8 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = homeWorkFragment3.getAdapter();
-                            arrayList2 = homeWorkFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = homeWorkFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            homeWorkFragment3.getAdapter().notifyDataChanged(((DownloadModel) homeWorkFragment3.downList.get(i)).getPosition());
+                            homeWorkFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -242,7 +235,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
         return (HomeWorkAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final HomeWorkFragmentBinding get_binding() {
         return this._binding;
     }
@@ -251,7 +244,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: HomeWorkFragment.kt */
+    /* JADX INFO: compiled from: HomeWorkFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/homework/HomeWorkFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/homework/HomeWorkFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -326,7 +319,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.homework.HomeWorkFragment$$ExternalSyntheticLambda4
             @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
             public final void onRefresh() {
-                HomeWorkFragment.setUp$lambda$0(HomeWorkFragment.this);
+                HomeWorkFragment.setUp$lambda$0(this.f$0);
             }
         });
     }
@@ -347,7 +340,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
         getHomeWorkViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.homework.HomeWorkFragment$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HomeWorkFragment.listenResponse$lambda$2(HomeWorkFragment.this, (Resource) obj);
+                HomeWorkFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }
@@ -396,14 +389,14 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
     @Override // in.etuwa.app.ui.homework.HomeWorkAdapter.HomeWorkListener
     public void onPickDoc(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
             FragmentManager childFragmentManager = getChildFragmentManager();
             Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            SubmitHomeWorkDialog newInstance = SubmitHomeWorkDialog.INSTANCE.newInstance(id);
-            newInstance.setSubmitHomeWorkCallBack(this);
-            newInstance.show(childFragmentManager, (String) null);
+            SubmitHomeWorkDialog submitHomeWorkDialogNewInstance = SubmitHomeWorkDialog.INSTANCE.newInstance(id);
+            submitHomeWorkDialogNewInstance.setSubmitHomeWorkCallBack(this);
+            submitHomeWorkDialogNewInstance.show(childFragmentManager, (String) null);
             return;
         }
         requestPermission();
@@ -418,14 +411,14 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
     public void downloadFile(String url, int position) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, AppConstant.UPLOAD_HOME_WORK_PATH);
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, AppConstant.UPLOAD_HOME_WORK_PATH);
                 return;
             }
             try {
@@ -435,14 +428,14 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(AppConstant.UPLOAD_HOME_WORK_PATH, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(AppConstant.UPLOAD_HOME_WORK_PATH, url);
                 Context context = getContext();
                 if (context != null) {
                     context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
@@ -454,9 +447,9 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
     @Override // in.etuwa.app.ui.homework.HomeWorkAdapter.HomeWorkListener
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.UPLOAD_HOME_WORK_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.UPLOAD_HOME_WORK_PATH);
     }
 
     @Override // in.etuwa.app.ui.homework.HomeWorkAdapter.HomeWorkListener
@@ -467,7 +460,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
         builder.setPositiveButton("delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.homework.HomeWorkFragment$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                HomeWorkFragment.deleteHomeWork$lambda$3(HomeWorkFragment.this, id, dialogInterface, i);
+                HomeWorkFragment.deleteHomeWork$lambda$3(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", (DialogInterface.OnClickListener) null);
@@ -486,7 +479,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
         getHomeWorkViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.homework.HomeWorkFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                HomeWorkFragment.listenDeleteResponse$lambda$5(HomeWorkFragment.this, (Resource) obj);
+                HomeWorkFragment.listenDeleteResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -561,7 +554,7 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
                 new AlertDialog.Builder(requireContext()).setTitle(getString(R.string.storage_permission_title)).setMessage(getString(R.string.storage_permission)).setPositiveButton("OK", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.homework.HomeWorkFragment$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        HomeWorkFragment.requestPermission$lambda$6(HomeWorkFragment.this, dialogInterface, i);
+                        HomeWorkFragment.requestPermission$lambda$6(this.f$0, dialogInterface, i);
                     }
                 }).create().show();
             } else {
@@ -585,9 +578,9 @@ public final class HomeWorkFragment extends BaseFragment implements HomeWorkAdap
             try {
                 if (!(!(grantResults.length == 0)) || grantResults[0] != 0) {
                     if (Build.VERSION.SDK_INT >= 23 && !shouldShowRequestPermissionRationale(permissions[0])) {
-                        Context requireContext = requireContext();
-                        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-                        new ValidChecker(requireContext).showPermissionDialog();
+                        Context contextRequireContext = requireContext();
+                        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+                        new ValidChecker(contextRequireContext).showPermissionDialog();
                     } else {
                         Toast.makeText(requireContext(), "Permission Denied, You cannot Upload Profile Image .", 0).show();
                     }

@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.leave.duty.directapply.viewproof.ViewProofViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogViewProofBindingImpl extends DialogViewProofBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -58,7 +58,7 @@ public class DialogViewProofBindingImpl extends DialogViewProofBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (246 != variableId) {
+        if (248 != variableId) {
             return false;
         }
         setViewProofViewModel((ViewProofViewModel) variable);

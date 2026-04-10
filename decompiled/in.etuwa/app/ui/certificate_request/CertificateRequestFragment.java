@@ -39,25 +39,25 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: CertificateRequestFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: CertificateRequestFragment.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class CertificateRequestFragment extends BaseFragment implements AddRequestDialog.AddRequestListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private CertificateRequestFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: certificateRequestViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: certificateRequestViewModel$delegate, reason: from kotlin metadata */
     private final Lazy certificateRequestViewModel;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
     private CertificateRequestViewModel viewModel;
 
-    /* compiled from: CertificateRequestFragment.kt */
+    /* JADX INFO: compiled from: CertificateRequestFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -102,7 +102,7 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return certificateRequestFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(certificateRequestFragment);
@@ -116,7 +116,7 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -129,7 +129,7 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(CertificateRequestViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(CertificateRequestViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final CertificateRequestFragment certificateRequestFragment2 = this;
@@ -175,7 +175,7 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
         return (CertificateRequestAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final CertificateRequestFragmentBinding get_binding() {
         return this._binding;
     }
@@ -184,7 +184,7 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: CertificateRequestFragment.kt */
+    /* JADX INFO: compiled from: CertificateRequestFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0006\u0010\u0003\u001a\u00020\u0004¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/certificate_request/CertificateRequestFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/certificate_request/CertificateRequestFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -243,7 +243,7 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
             button.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    CertificateRequestFragment.setUp$lambda$0(CertificateRequestFragment.this, view);
+                    CertificateRequestFragment.setUp$lambda$0(this.f$0, view);
                 }
             });
         }
@@ -256,9 +256,9 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddRequestDialog newInstance = AddRequestDialog.INSTANCE.newInstance();
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        AddRequestDialog addRequestDialogNewInstance = AddRequestDialog.INSTANCE.newInstance();
+        addRequestDialogNewInstance.setCallBack(this$0);
+        addRequestDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment
@@ -285,7 +285,7 @@ public final class CertificateRequestFragment extends BaseFragment implements Ad
         getCertificateRequestViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.certificate_request.CertificateRequestFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                CertificateRequestFragment.listenResponse$lambda$2(CertificateRequestFragment.this, (Resource) obj);
+                CertificateRequestFragment.listenResponse$lambda$2(this.f$0, (Resource) obj);
             }
         });
     }

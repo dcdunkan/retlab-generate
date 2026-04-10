@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.transport.buspass.fullscreen.QrFullScreenViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class DialogQrFullScreenBindingImpl extends DialogQrFullScreenBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -60,7 +60,7 @@ public class DialogQrFullScreenBindingImpl extends DialogQrFullScreenBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (173 != variableId) {
+        if (175 != variableId) {
             return false;
         }
         setQrFullScreenViewModel((QrFullScreenViewModel) variable);

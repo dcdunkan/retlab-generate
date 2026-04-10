@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeResponse {
 
     @SerializedName("balance")
@@ -50,17 +50,17 @@ public final /* data */ class FeeResponse {
     @SerializedName("url")
     private final String url;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getMessage() {
         return this.message;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final boolean getSuccess() {
         return this.success;
     }
@@ -69,32 +69,32 @@ public final /* data */ class FeeResponse {
         return this.feeGroups;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getTotal() {
         return this.total;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getPaid() {
         return this.paid;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getBalance() {
         return this.balance;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getStudentId() {
         return this.studentId;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getUrl() {
         return this.url;
     }
@@ -125,6 +125,9 @@ public final /* data */ class FeeResponse {
     /* JADX WARN: Type inference failed for: r0v1, types: [int] */
     /* JADX WARN: Type inference failed for: r0v20 */
     /* JADX WARN: Type inference failed for: r0v21 */
+    /* JADX WARN: Type inference failed for: r1v0 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v20 */
     public int hashCode() {
         boolean z = this.login;
         ?? r0 = z;
@@ -133,9 +136,9 @@ public final /* data */ class FeeResponse {
         }
         int i = r0 * 31;
         boolean z2 = this.success;
-        int hashCode = (((((((((((((i + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.feeGroups.hashCode()) * 31) + this.total.hashCode()) * 31) + this.paid.hashCode()) * 31) + this.balance.hashCode()) * 31) + this.date.hashCode()) * 31) + this.studentId.hashCode()) * 31;
+        int iHashCode = (((((((((((((i + (z2 ? 1 : z2)) * 31) + this.feeGroups.hashCode()) * 31) + this.total.hashCode()) * 31) + this.paid.hashCode()) * 31) + this.balance.hashCode()) * 31) + this.date.hashCode()) * 31) + this.studentId.hashCode()) * 31;
         String str = this.url;
-        return ((hashCode + (str == null ? 0 : str.hashCode())) * 31) + this.message.hashCode();
+        return ((iHashCode + (str == null ? 0 : str.hashCode())) * 31) + this.message.hashCode();
     }
 
     public String toString() {

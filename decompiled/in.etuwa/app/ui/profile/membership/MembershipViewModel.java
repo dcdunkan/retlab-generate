@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: MembershipViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: MembershipViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class MembershipViewModel extends ViewModel implements KoinComponent {
     private final CompositeDisposable compositeDisposable;
     private final MutableLiveData<Resource<SuccessResponse>> deleteResponse;
@@ -47,8 +47,8 @@ public final class MembershipViewModel extends ViewModel implements KoinComponen
     public final void getMembershipData() {
         this.membershipResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<MembershipResponse> observeOn = this.profileRepository.getMembershipUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<MembershipResponse, Unit> function1 = new Function1<MembershipResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$getMembershipData$1
+        Single<MembershipResponse> singleObserveOn = this.profileRepository.getMembershipUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<MembershipResponse, Unit> function1 = new Function1<MembershipResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel.getMembershipData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class MembershipViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MembershipResponse membershipResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MembershipViewModel.this.membershipResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(membershipResponse));
+                MembershipViewModel.this.membershipResponse.postValue(Resource.INSTANCE.success(membershipResponse));
             }
         };
         Consumer<? super MembershipResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MembershipViewModel.getMembershipData$lambda$0(Function1.this, obj);
+                MembershipViewModel.getMembershipData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$getMembershipData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel.getMembershipData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class MembershipViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = MembershipViewModel.this.membershipResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                MembershipViewModel.this.membershipResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MembershipViewModel.getMembershipData$lambda$1(Function1.this, obj);
+                MembershipViewModel.getMembershipData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class MembershipViewModel extends ViewModel implements KoinComponen
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteMembershipUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$deleteMembershipData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteMembershipUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel.deleteMembershipData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class MembershipViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 MembershipViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class MembershipViewModel extends ViewModel implements KoinComponen
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MembershipViewModel.deleteMembershipData$lambda$2(Function1.this, obj);
+                MembershipViewModel.deleteMembershipData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$deleteMembershipData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel.deleteMembershipData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class MembershipViewModel extends ViewModel implements KoinComponen
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 MembershipViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.membership.MembershipViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                MembershipViewModel.deleteMembershipData$lambda$3(Function1.this, obj);
+                MembershipViewModel.deleteMembershipData$lambda$3(function12, obj);
             }
         }));
     }

@@ -19,8 +19,8 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 
-/* compiled from: AchievementsViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: AchievementsViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class AchievementsViewModel extends ViewModel implements KoinComponent {
     private final MutableLiveData<Resource<AchievementsResponse>> achievementsResponse;
     private final CompositeDisposable compositeDisposable;
@@ -47,8 +47,8 @@ public final class AchievementsViewModel extends ViewModel implements KoinCompon
     public final void getAchievementsData() {
         this.achievementsResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<AchievementsResponse> observeOn = this.profileRepository.getAchievementsUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<AchievementsResponse, Unit> function1 = new Function1<AchievementsResponse, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$getAchievementsData$1
+        Single<AchievementsResponse> singleObserveOn = this.profileRepository.getAchievementsUrlApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<AchievementsResponse, Unit> function1 = new Function1<AchievementsResponse, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel.getAchievementsData.1
             {
                 super(1);
             }
@@ -59,20 +59,18 @@ public final class AchievementsViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(AchievementsResponse achievementsResponse) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AchievementsViewModel.this.achievementsResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(achievementsResponse));
+                AchievementsViewModel.this.achievementsResponse.postValue(Resource.INSTANCE.success(achievementsResponse));
             }
         };
         Consumer<? super AchievementsResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AchievementsViewModel.getAchievementsData$lambda$0(Function1.this, obj);
+                AchievementsViewModel.getAchievementsData$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$getAchievementsData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel.getAchievementsData.2
             {
                 super(1);
             }
@@ -83,17 +81,15 @@ public final class AchievementsViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = AchievementsViewModel.this.achievementsResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                AchievementsViewModel.this.achievementsResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AchievementsViewModel.getAchievementsData$lambda$1(Function1.this, obj);
+                AchievementsViewModel.getAchievementsData$lambda$1(function12, obj);
             }
         }));
     }
@@ -118,8 +114,8 @@ public final class AchievementsViewModel extends ViewModel implements KoinCompon
         Intrinsics.checkNotNullParameter(id, "id");
         this.deleteResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<SuccessResponse> observeOn = this.profileRepository.deleteAchievementUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$deleteAchievementData$1
+        Single<SuccessResponse> singleObserveOn = this.profileRepository.deleteAchievementUrlApiCall(id).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<SuccessResponse, Unit> function1 = new Function1<SuccessResponse, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel.deleteAchievementData.1
             {
                 super(1);
             }
@@ -130,7 +126,7 @@ public final class AchievementsViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SuccessResponse successResponse) {
                 AchievementsViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.success(successResponse));
             }
@@ -138,10 +134,10 @@ public final class AchievementsViewModel extends ViewModel implements KoinCompon
         Consumer<? super SuccessResponse> consumer = new Consumer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AchievementsViewModel.deleteAchievementData$lambda$2(Function1.this, obj);
+                AchievementsViewModel.deleteAchievementData$lambda$2(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$deleteAchievementData$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel.deleteAchievementData.2
             {
                 super(1);
             }
@@ -152,15 +148,15 @@ public final class AchievementsViewModel extends ViewModel implements KoinCompon
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 AchievementsViewModel.this.getDeleteResponse().postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$$ExternalSyntheticLambda1
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.profile.achievements.AchievementsViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                AchievementsViewModel.deleteAchievementData$lambda$3(Function1.this, obj);
+                AchievementsViewModel.deleteAchievementData$lambda$3(function12, obj);
             }
         }));
     }

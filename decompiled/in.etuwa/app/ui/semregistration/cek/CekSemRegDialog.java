@@ -4,8 +4,8 @@ import in.etuwa.app.ui.base.BaseDialog;
 import kotlin.Metadata;
 import kotlin.NotImplementedError;
 
-/* compiled from: CekSemRegDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: CekSemRegDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class CekSemRegDialog extends BaseDialog {
     @Override // in.etuwa.app.ui.base.BaseDialog
     protected void setUp() {

@@ -5,31 +5,40 @@ import android.content.ComponentCallbacks;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.gms.actions.SearchIntents;
 import com.google.firebase.sessions.settings.RemoteSettings;
 import com.itextpdf.styledxmlparser.css.CommonCssConstants;
 import com.itextpdf.svg.SvgConstants;
 import in.etuwa.app.R;
 import in.etuwa.app.data.model.DownloadModel;
-import in.etuwa.app.data.model.Semester;
 import in.etuwa.app.data.model.materials.Materials;
 import in.etuwa.app.data.preference.SharedPrefManager;
 import in.etuwa.app.databinding.QuestionBankFragmentBinding;
@@ -38,7 +47,7 @@ import in.etuwa.app.helper.SemesterSpinnerAdapter;
 import in.etuwa.app.helper.ValidChecker;
 import in.etuwa.app.ui.base.BaseFragment;
 import in.etuwa.app.ui.questionbank.QuestionBankAdapter;
-import in.etuwa.app.ui.studymaterials.MaterialFilterAdapter;
+import in.etuwa.app.ui.result.university.semlistdialog.SemListDialog;
 import in.etuwa.app.utils.AppConstant;
 import in.etuwa.app.utils.RecycleExtKt;
 import in.etuwa.app.utils.Resource;
@@ -66,35 +75,36 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: QuestionBankFragment.kt */
-/* loaded from: classes5.dex */
-public final class QuestionBankFragment extends BaseFragment implements QuestionBankAdapter.QuestionListener {
+/* JADX INFO: compiled from: QuestionBankFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
+public final class QuestionBankFragment extends BaseFragment implements QuestionBankAdapter.QuestionListener, SemListDialog.SemDialogCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private QuestionBankFragmentBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private ArrayList<DownloadModel> downList;
     private final ArrayList<Materials> fillList;
     private boolean flag;
+    private boolean isSearchOpen;
     private final BroadcastReceiver onDownloadComplete;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: questionBankViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: questionBankViewModel$delegate, reason: from kotlin metadata */
     private final Lazy questionBankViewModel;
 
-    /* renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerAdapter;
 
-    /* renamed from: spinnerFillAdapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: spinnerFillAdapter$delegate, reason: from kotlin metadata */
     private final Lazy spinnerFillAdapter;
     private final ArrayList<Materials> subList;
 
-    /* compiled from: QuestionBankFragment.kt */
+    /* JADX INFO: compiled from: QuestionBankFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -144,7 +154,7 @@ public final class QuestionBankFragment extends BaseFragment implements Question
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return questionBankFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(questionBankFragment);
@@ -158,7 +168,7 @@ public final class QuestionBankFragment extends BaseFragment implements Question
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -171,7 +181,7 @@ public final class QuestionBankFragment extends BaseFragment implements Question
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(QuestionBankViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(QuestionBankViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final QuestionBankFragment questionBankFragment2 = this;
@@ -198,7 +208,7 @@ public final class QuestionBankFragment extends BaseFragment implements Question
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(QuestionBankFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode2 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -223,22 +233,22 @@ public final class QuestionBankFragment extends BaseFragment implements Question
 
             @Override // kotlin.jvm.functions.Function0
             public final ParametersHolder invoke() {
-                return ParametersHolderKt.parametersOf(QuestionBankFragment.this.requireActivity());
+                return ParametersHolderKt.parametersOf(this.this$0.requireActivity());
             }
         };
         LazyThreadSafetyMode lazyThreadSafetyMode3 = LazyThreadSafetyMode.SYNCHRONIZED;
         final byte b5 = 0 == true ? 1 : 0;
-        this.spinnerFillAdapter = LazyKt.lazy(lazyThreadSafetyMode3, (Function0) new Function0<MaterialFilterAdapter>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$special$$inlined$inject$default$3
+        this.spinnerFillAdapter = LazyKt.lazy(lazyThreadSafetyMode3, (Function0) new Function0<QBFilterAdapter>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$special$$inlined$inject$default$3
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(0);
             }
 
-            /* JADX WARN: Type inference failed for: r0v2, types: [in.etuwa.app.ui.studymaterials.MaterialFilterAdapter, java.lang.Object] */
+            /* JADX WARN: Type inference failed for: r0v2, types: [in.etuwa.app.ui.questionbank.QBFilterAdapter, java.lang.Object] */
             @Override // kotlin.jvm.functions.Function0
-            public final MaterialFilterAdapter invoke() {
+            public final QBFilterAdapter invoke() {
                 ComponentCallbacks componentCallbacks = questionBankFragment2;
-                return AndroidKoinScopeExtKt.getKoinScope(componentCallbacks).get(Reflection.getOrCreateKotlinClass(MaterialFilterAdapter.class), b5, function03);
+                return AndroidKoinScopeExtKt.getKoinScope(componentCallbacks).get(Reflection.getOrCreateKotlinClass(QBFilterAdapter.class), b5, function03);
             }
         });
         LazyThreadSafetyMode lazyThreadSafetyMode4 = LazyThreadSafetyMode.SYNCHRONIZED;
@@ -263,16 +273,12 @@ public final class QuestionBankFragment extends BaseFragment implements Question
         this.onDownloadComplete = new BroadcastReceiver() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$onDownloadComplete$1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context, Intent intent) {
-                ArrayList arrayList;
-                QuestionBankAdapter adapter;
-                ArrayList arrayList2;
-                ArrayList arrayList3;
                 Intrinsics.checkNotNullParameter(context, "context");
                 Intrinsics.checkNotNullParameter(intent, "intent");
                 long longExtra = intent.getLongExtra("extra_download_id", -1L);
                 try {
-                    arrayList = QuestionBankFragment.this.downList;
-                    QuestionBankFragment questionBankFragment3 = QuestionBankFragment.this;
+                    ArrayList arrayList = this.this$0.downList;
+                    QuestionBankFragment questionBankFragment3 = this.this$0;
                     int i = 0;
                     for (Object obj : arrayList) {
                         int i2 = i + 1;
@@ -281,11 +287,8 @@ public final class QuestionBankFragment extends BaseFragment implements Question
                         }
                         DownloadModel downloadModel = (DownloadModel) obj;
                         if (downloadModel.getId() == longExtra) {
-                            adapter = questionBankFragment3.getAdapter();
-                            arrayList2 = questionBankFragment3.downList;
-                            adapter.notifyDataChanged(((DownloadModel) arrayList2.get(i)).getPosition());
-                            arrayList3 = questionBankFragment3.downList;
-                            arrayList3.remove(new DownloadModel(downloadModel.getId(), i));
+                            questionBankFragment3.getAdapter().notifyDataChanged(((DownloadModel) questionBankFragment3.downList.get(i)).getPosition());
+                            questionBankFragment3.downList.remove(new DownloadModel(downloadModel.getId(), i));
                         }
                         i = i2;
                     }
@@ -295,8 +298,7 @@ public final class QuestionBankFragment extends BaseFragment implements Question
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final QuestionBankViewModel getQuestionBankViewModel() {
+    private final QuestionBankViewModel getQuestionBankViewModel() {
         return (QuestionBankViewModel) this.questionBankViewModel.getValue();
     }
 
@@ -306,27 +308,25 @@ public final class QuestionBankFragment extends BaseFragment implements Question
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final QuestionBankFragmentBinding get_binding() {
         return this._binding;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final SemesterSpinnerAdapter getSpinnerAdapter() {
+    private final SemesterSpinnerAdapter getSpinnerAdapter() {
         return (SemesterSpinnerAdapter) this.spinnerAdapter.getValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final MaterialFilterAdapter getSpinnerFillAdapter() {
-        return (MaterialFilterAdapter) this.spinnerFillAdapter.getValue();
+    public final QBFilterAdapter getSpinnerFillAdapter() {
+        return (QBFilterAdapter) this.spinnerFillAdapter.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final SharedPrefManager getPreference() {
+    private final SharedPrefManager getPreference() {
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: QuestionBankFragment.kt */
+    /* JADX INFO: compiled from: QuestionBankFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/questionbank/QuestionBankFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/questionbank/QuestionBankFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -370,7 +370,7 @@ public final class QuestionBankFragment extends BaseFragment implements Question
 
     @Override // in.etuwa.app.ui.base.BaseFragment
     protected void setUp() {
-        SwipeRefreshLayout swipeRefreshLayout;
+        ImageView imageView;
         FragmentActivity activity = getActivity();
         if (activity != null) {
             activity.setTitle(getString(R.string.quesionbank));
@@ -383,115 +383,192 @@ public final class QuestionBankFragment extends BaseFragment implements Question
             recyclerView.setAdapter(getAdapter());
         }
         QuestionBankFragmentBinding questionBankFragmentBinding2 = get_binding();
-        Spinner spinner = questionBankFragmentBinding2 != null ? questionBankFragmentBinding2.spinnerSem : null;
+        Spinner spinner = questionBankFragmentBinding2 != null ? questionBankFragmentBinding2.spinnerFill : null;
         if (spinner != null) {
-            spinner.setAdapter((SpinnerAdapter) getSpinnerAdapter());
-        }
-        QuestionBankFragmentBinding questionBankFragmentBinding3 = get_binding();
-        Spinner spinner2 = questionBankFragmentBinding3 != null ? questionBankFragmentBinding3.spinnerFill : null;
-        if (spinner2 != null) {
-            spinner2.setAdapter((SpinnerAdapter) getSpinnerFillAdapter());
+            spinner.setAdapter((SpinnerAdapter) getSpinnerFillAdapter());
         }
         getAdapter().setQuestionListener(this);
         getQuestionBankViewModel().getMaterials(getPreference().getUserSemId());
-        listenSemResponse();
         listenResponse();
+        setupSearch();
         getPreference().setNewLogin(false);
+        QuestionBankFragmentBinding questionBankFragmentBinding3 = get_binding();
+        Spinner spinner2 = questionBankFragmentBinding3 != null ? questionBankFragmentBinding3.spinnerFill : null;
+        if (spinner2 != null) {
+            spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment.setUp.1
+                @Override // android.widget.AdapterView.OnItemSelectedListener
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+
+                @Override // android.widget.AdapterView.OnItemSelectedListener
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    QuestionBankFragment.this.filter(QuestionBankFragment.this.getSpinnerFillAdapter().getData(position).getSubject());
+                }
+            });
+        }
         QuestionBankFragmentBinding questionBankFragmentBinding4 = get_binding();
-        Spinner spinner3 = questionBankFragmentBinding4 != null ? questionBankFragmentBinding4.spinnerSem : null;
-        if (spinner3 != null) {
-            spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$setUp$1
-                @Override // android.widget.AdapterView.OnItemSelectedListener
-                public void onNothingSelected(AdapterView<?> parent) {
-                }
-
-                @Override // android.widget.AdapterView.OnItemSelectedListener
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    SemesterSpinnerAdapter spinnerAdapter;
-                    QuestionBankAdapter adapter;
-                    MaterialFilterAdapter spinnerFillAdapter;
-                    boolean z;
-                    SharedPrefManager preference;
-                    SemesterSpinnerAdapter spinnerAdapter2;
-                    SemesterSpinnerAdapter spinnerAdapter3;
-                    SharedPrefManager preference2;
-                    SemesterSpinnerAdapter spinnerAdapter4;
-                    QuestionBankFragmentBinding questionBankFragmentBinding5;
-                    Spinner spinner4;
-                    QuestionBankViewModel questionBankViewModel;
-                    QuestionBankViewModel questionBankViewModel2;
-                    spinnerAdapter = QuestionBankFragment.this.getSpinnerAdapter();
-                    Semester semester = spinnerAdapter.getSemester(position);
-                    adapter = QuestionBankFragment.this.getAdapter();
-                    adapter.clearItems();
-                    spinnerFillAdapter = QuestionBankFragment.this.getSpinnerFillAdapter();
-                    spinnerFillAdapter.clearItems();
-                    z = QuestionBankFragment.this.flag;
-                    if (z) {
-                        questionBankViewModel2 = QuestionBankFragment.this.getQuestionBankViewModel();
-                        questionBankViewModel2.getMaterials(semester.getId());
-                        return;
-                    }
-                    QuestionBankFragment.this.flag = true;
-                    try {
-                        preference = QuestionBankFragment.this.getPreference();
-                        String userSemId = preference.getUserSemId();
-                        spinnerAdapter2 = QuestionBankFragment.this.getSpinnerAdapter();
-                        if (Intrinsics.areEqual(userSemId, spinnerAdapter2.getSemester(0).getId())) {
-                            questionBankViewModel = QuestionBankFragment.this.getQuestionBankViewModel();
-                            questionBankViewModel.getMaterials(semester.getId());
-                        } else {
-                            spinnerAdapter3 = QuestionBankFragment.this.getSpinnerAdapter();
-                            int count = spinnerAdapter3.getCount();
-                            for (int i = 0; i < count; i++) {
-                                preference2 = QuestionBankFragment.this.getPreference();
-                                String userSemId2 = preference2.getUserSemId();
-                                spinnerAdapter4 = QuestionBankFragment.this.getSpinnerAdapter();
-                                if (Intrinsics.areEqual(userSemId2, spinnerAdapter4.getSemester(i).getId())) {
-                                    questionBankFragmentBinding5 = QuestionBankFragment.this.get_binding();
-                                    if (questionBankFragmentBinding5 != null && (spinner4 = questionBankFragmentBinding5.spinnerSem) != null) {
-                                        spinner4.setSelection(i);
-                                    }
-                                }
-                            }
-                        }
-                    } catch (Exception unused) {
-                    }
-                }
-            });
-        }
-        QuestionBankFragmentBinding questionBankFragmentBinding5 = get_binding();
-        Spinner spinner4 = questionBankFragmentBinding5 != null ? questionBankFragmentBinding5.spinnerFill : null;
-        if (spinner4 != null) {
-            spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$setUp$2
-                @Override // android.widget.AdapterView.OnItemSelectedListener
-                public void onNothingSelected(AdapterView<?> parent) {
-                }
-
-                @Override // android.widget.AdapterView.OnItemSelectedListener
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    MaterialFilterAdapter spinnerFillAdapter;
-                    spinnerFillAdapter = QuestionBankFragment.this.getSpinnerFillAdapter();
-                    QuestionBankFragment.this.filter(spinnerFillAdapter.getData(position).getSubject());
-                }
-            });
-        }
-        QuestionBankFragmentBinding questionBankFragmentBinding6 = get_binding();
-        if (questionBankFragmentBinding6 == null || (swipeRefreshLayout = questionBankFragmentBinding6.swipeLayout) == null) {
+        if (questionBankFragmentBinding4 == null || (imageView = questionBankFragmentBinding4.spinnerSem) == null) {
             return;
         }
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$$ExternalSyntheticLambda0
-            @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
-            public final void onRefresh() {
-                QuestionBankFragment.setUp$lambda$0(QuestionBankFragment.this);
+        imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                QuestionBankFragment.setUp$lambda$0(this.f$0, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setUp$lambda$0(QuestionBankFragment this$0) {
+    public static final void setUp$lambda$0(QuestionBankFragment this$0, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.getQuestionBankViewModel().getSemester();
+        FragmentManager childFragmentManager = this$0.getChildFragmentManager();
+        Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
+        SemListDialog semListDialogNewInstance = SemListDialog.INSTANCE.newInstance();
+        semListDialogNewInstance.setCallBack3(this$0);
+        semListDialogNewInstance.show(childFragmentManager, (String) null);
+    }
+
+    private final void setupSearch() {
+        EditText editText;
+        ImageView imageView;
+        ImageView imageView2;
+        QuestionBankFragmentBinding questionBankFragmentBinding = get_binding();
+        if (questionBankFragmentBinding != null && (imageView2 = questionBankFragmentBinding.ivSearch) != null) {
+            imageView2.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$$ExternalSyntheticLambda0
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    QuestionBankFragment.setupSearch$lambda$1(this.f$0, view);
+                }
+            });
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding2 = get_binding();
+        if (questionBankFragmentBinding2 != null && (imageView = questionBankFragmentBinding2.ivClearSearch) != null) {
+            imageView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$$ExternalSyntheticLambda1
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    QuestionBankFragment.setupSearch$lambda$2(this.f$0, view);
+                }
+            });
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding3 = get_binding();
+        if (questionBankFragmentBinding3 == null || (editText = questionBankFragmentBinding3.searchInput) == null) {
+            return;
+        }
+        editText.addTextChangedListener(new TextWatcher() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment.setupSearch.3
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable s) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String string;
+                if (s == null || (string = s.toString()) == null) {
+                    string = "";
+                }
+                QuestionBankFragmentBinding questionBankFragmentBinding4 = QuestionBankFragment.this.get_binding();
+                ImageView imageView3 = questionBankFragmentBinding4 != null ? questionBankFragmentBinding4.ivClearSearch : null;
+                if (imageView3 != null) {
+                    imageView3.setVisibility(string.length() > 0 ? 0 : 8);
+                }
+                QuestionBankFragment.this.filterCurrentAdapter(string);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupSearch$lambda$1(QuestionBankFragment this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        if (this$0.isSearchOpen) {
+            this$0.closeSearch();
+        } else {
+            this$0.openSearch();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupSearch$lambda$2(QuestionBankFragment this$0, View view) {
+        EditText editText;
+        Editable text;
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        QuestionBankFragmentBinding questionBankFragmentBinding = this$0.get_binding();
+        if (questionBankFragmentBinding == null || (editText = questionBankFragmentBinding.searchInput) == null || (text = editText.getText()) == null) {
+            return;
+        }
+        text.clear();
+    }
+
+    private final void openSearch() {
+        EditText editText;
+        ImageView imageView;
+        this.isSearchOpen = true;
+        QuestionBankFragmentBinding questionBankFragmentBinding = get_binding();
+        CardView cardView = questionBankFragmentBinding != null ? questionBankFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(0);
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding2 = get_binding();
+        if (questionBankFragmentBinding2 != null && (imageView = questionBankFragmentBinding2.ivSearch) != null) {
+            imageView.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding3 = get_binding();
+        ImageView imageView2 = questionBankFragmentBinding3 != null ? questionBankFragmentBinding3.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding4 = get_binding();
+        if (questionBankFragmentBinding4 != null && (editText = questionBankFragmentBinding4.searchInput) != null) {
+            editText.requestFocus();
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        QuestionBankFragmentBinding questionBankFragmentBinding5 = get_binding();
+        inputMethodManager.showSoftInput(questionBankFragmentBinding5 != null ? questionBankFragmentBinding5.searchInput : null, 1);
+    }
+
+    private final void closeSearch() {
+        EditText editText;
+        ImageView imageView;
+        EditText editText2;
+        Editable text;
+        this.isSearchOpen = false;
+        QuestionBankFragmentBinding questionBankFragmentBinding = get_binding();
+        IBinder windowToken = null;
+        CardView cardView = questionBankFragmentBinding != null ? questionBankFragmentBinding.searchCard : null;
+        if (cardView != null) {
+            cardView.setVisibility(8);
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding2 = get_binding();
+        if (questionBankFragmentBinding2 != null && (editText2 = questionBankFragmentBinding2.searchInput) != null && (text = editText2.getText()) != null) {
+            text.clear();
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding3 = get_binding();
+        if (questionBankFragmentBinding3 != null && (imageView = questionBankFragmentBinding3.ivSearch) != null) {
+            imageView.setImageResource(R.drawable.ic_search);
+        }
+        QuestionBankFragmentBinding questionBankFragmentBinding4 = get_binding();
+        ImageView imageView2 = questionBankFragmentBinding4 != null ? questionBankFragmentBinding4.ivSearch : null;
+        if (imageView2 != null) {
+            imageView2.setImageTintList(ColorStateList.valueOf(Color.parseColor("#545996")));
+        }
+        Object systemService = requireContext().getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        InputMethodManager inputMethodManager = (InputMethodManager) systemService;
+        QuestionBankFragmentBinding questionBankFragmentBinding5 = get_binding();
+        if (questionBankFragmentBinding5 != null && (editText = questionBankFragmentBinding5.searchInput) != null) {
+            windowToken = editText.getWindowToken();
+        }
+        inputMethodManager.hideSoftInputFromWindow(windowToken, 0);
+        filterCurrentAdapter("");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void filterCurrentAdapter(String query) {
+        getAdapter().applyCombinedFilter(query);
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -503,91 +580,11 @@ public final class QuestionBankFragment extends BaseFragment implements Question
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    private final void listenSemResponse() {
-        getQuestionBankViewModel().getSemResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$$ExternalSyntheticLambda1
-            @Override // androidx.lifecycle.Observer
-            public final void onChanged(Object obj) {
-                QuestionBankFragment.listenSemResponse$lambda$2(QuestionBankFragment.this, (Resource) obj);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void listenSemResponse$lambda$2(QuestionBankFragment this$0, Resource resource) {
-        Spinner spinner;
-        SwipeRefreshLayout swipeRefreshLayout;
-        SwipeRefreshLayout swipeRefreshLayout2;
-        RecyclerView recyclerView;
-        Intrinsics.checkNotNullParameter(this$0, "this$0");
-        int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
-        r2 = null;
-        Boolean bool = null;
-        if (i != 1) {
-            if (i == 2) {
-                QuestionBankFragmentBinding questionBankFragmentBinding = this$0.get_binding();
-                if (questionBankFragmentBinding != null && (swipeRefreshLayout2 = questionBankFragmentBinding.swipeLayout) != null) {
-                    bool = Boolean.valueOf(swipeRefreshLayout2.isRefreshing());
-                }
-                Intrinsics.checkNotNull(bool);
-                if (bool.booleanValue()) {
-                    return;
-                }
-                this$0.showProgress();
-                return;
-            }
-            if (i == 3) {
-                this$0.hideProgress();
-                this$0.showBaseView();
-                return;
-            }
-            if (i != 4) {
-                return;
-            }
-            this$0.hideProgress();
-            this$0.showBaseView();
-            QuestionBankFragmentBinding questionBankFragmentBinding2 = this$0.get_binding();
-            if (questionBankFragmentBinding2 == null || (recyclerView = questionBankFragmentBinding2.rvQuestion) == null) {
-                return;
-            }
-            String message = resource.getMessage();
-            Intrinsics.checkNotNull(message);
-            ToastExtKt.showErrorToast(recyclerView, message);
-            return;
-        }
-        this$0.hideProgress();
-        this$0.showBaseView();
-        ArrayList<Semester> arrayList = (ArrayList) resource.getData();
-        if (arrayList != null) {
-            this$0.getSpinnerAdapter().addItems(arrayList);
-            QuestionBankFragmentBinding questionBankFragmentBinding3 = this$0.get_binding();
-            Boolean valueOf = (questionBankFragmentBinding3 == null || (swipeRefreshLayout = questionBankFragmentBinding3.swipeLayout) == null) ? null : Boolean.valueOf(swipeRefreshLayout.isRefreshing());
-            Intrinsics.checkNotNull(valueOf);
-            if (valueOf.booleanValue()) {
-                QuestionBankFragmentBinding questionBankFragmentBinding4 = this$0.get_binding();
-                SwipeRefreshLayout swipeRefreshLayout3 = questionBankFragmentBinding4 != null ? questionBankFragmentBinding4.swipeLayout : null;
-                if (swipeRefreshLayout3 != null) {
-                    swipeRefreshLayout3.setRefreshing(false);
-                }
-                int count = this$0.getSpinnerAdapter().getCount();
-                for (int i2 = 0; i2 < count; i2++) {
-                    if (Intrinsics.areEqual(this$0.getPreference().getUserSemId(), this$0.getSpinnerAdapter().getSemester(i2).getId())) {
-                        QuestionBankFragmentBinding questionBankFragmentBinding5 = this$0.get_binding();
-                        if (questionBankFragmentBinding5 == null || (spinner = questionBankFragmentBinding5.spinnerSem) == null) {
-                            return;
-                        }
-                        spinner.setSelection(i2);
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
     private final void listenResponse() {
-        getQuestionBankViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$$ExternalSyntheticLambda2
+        getQuestionBankViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankFragment$$ExternalSyntheticLambda3
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                QuestionBankFragment.listenResponse$lambda$4(QuestionBankFragment.this, (Resource) obj);
+                QuestionBankFragment.listenResponse$lambda$4(this.f$0, (Resource) obj);
             }
         });
     }
@@ -645,6 +642,7 @@ public final class QuestionBankFragment extends BaseFragment implements Question
             }
         }
         arrayList.addAll(arrayList2);
+        getSpinnerFillAdapter().addItems(this.fillList);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -674,14 +672,14 @@ public final class QuestionBankFragment extends BaseFragment implements Question
     public void downloadFile(String url, int position) {
         RecyclerView recyclerView;
         Intrinsics.checkNotNullParameter(url, "url");
-        String replace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        if (new ValidChecker(requireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
-            if (checkFileExistence(replace)) {
-                Context requireContext2 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext2, "requireContext()");
-                new DownloadManagerHelper(requireContext2).openFile(replace, AppConstant.QUESTION_BANK_PATH);
+        String strReplace = new Regex("[^A-Za-z0-9.]").replace(StringsKt.substringAfterLast$default(url, RemoteSettings.FORWARD_SLASH_STRING, (String) null, 2, (Object) null), "");
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        if (new ValidChecker(contextRequireContext).checkPermission() || Build.VERSION.SDK_INT >= 33) {
+            if (checkFileExistence(strReplace)) {
+                Context contextRequireContext2 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+                new DownloadManagerHelper(contextRequireContext2).openFile(strReplace, AppConstant.QUESTION_BANK_PATH);
                 return;
             }
             try {
@@ -691,30 +689,30 @@ public final class QuestionBankFragment extends BaseFragment implements Question
                     Intrinsics.checkNotNullExpressionValue(string, "getString(R.string.download_started)");
                     ToastExtKt.showInfoToast(recyclerView, string);
                 }
-                Context requireContext3 = requireContext();
-                Intrinsics.checkNotNullExpressionValue(requireContext3, "requireContext()");
-                long startDownloading = new DownloadManagerHelper(requireContext3).startDownloading(AppConstant.QUESTION_BANK_PATH, url);
+                Context contextRequireContext3 = requireContext();
+                Intrinsics.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
+                long jStartDownloading = new DownloadManagerHelper(contextRequireContext3).startDownloading(AppConstant.QUESTION_BANK_PATH, url);
                 Context context = getContext();
                 if (context != null) {
-                    context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"));
+                    context.registerReceiver(this.onDownloadComplete, new IntentFilter("android.intent.action.DOWNLOAD_COMPLETE"), 4);
                 }
-                this.downList.add(new DownloadModel(startDownloading, position));
+                this.downList.add(new DownloadModel(jStartDownloading, position));
                 return;
             } catch (Exception unused) {
                 return;
             }
         }
-        Context requireContext4 = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext4, "requireContext()");
-        new ValidChecker(requireContext4).showPermissionDialog();
+        Context contextRequireContext4 = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext4, "requireContext()");
+        new ValidChecker(contextRequireContext4).showPermissionDialog();
     }
 
     @Override // in.etuwa.app.ui.questionbank.QuestionBankAdapter.QuestionListener
     public boolean checkFileExistence(String fileName) {
         Intrinsics.checkNotNullParameter(fileName, "fileName");
-        Context requireContext = requireContext();
-        Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        return new ValidChecker(requireContext).checkFileExistence(fileName, AppConstant.QUESTION_BANK_PATH);
+        Context contextRequireContext = requireContext();
+        Intrinsics.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        return new ValidChecker(contextRequireContext).checkFileExistence(fileName, AppConstant.QUESTION_BANK_PATH);
     }
 
     @Override // in.etuwa.app.ui.base.BaseFragment
@@ -747,5 +745,12 @@ public final class QuestionBankFragment extends BaseFragment implements Question
     public void onDestroy() {
         super.onDestroy();
         this._binding = null;
+    }
+
+    @Override // in.etuwa.app.ui.result.university.semlistdialog.SemListDialog.SemDialogCallBack
+    public void loadSelectedSem(String id, String semName) {
+        Intrinsics.checkNotNullParameter(id, "id");
+        Intrinsics.checkNotNullParameter(semName, "semName");
+        getQuestionBankViewModel().getMaterials(id);
     }
 }

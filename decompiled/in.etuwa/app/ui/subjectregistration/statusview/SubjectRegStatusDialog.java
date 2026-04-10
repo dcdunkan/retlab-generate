@@ -43,24 +43,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: SubjectRegStatusDialog.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: SubjectRegStatusDialog.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class SubjectRegStatusDialog extends BaseDialog implements ApplySubjectRegistrationDialog.RegisterListener, SubjectRegStatusAdapter.StatusListCallBack {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private DialogSubRegStatusBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
     private RegisterListener listener;
     private MainCallBackListener listner2;
     private Integer position;
 
-    /* renamed from: subjectRegStatusViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: subjectRegStatusViewModel$delegate, reason: from kotlin metadata */
     private final Lazy subjectRegStatusViewModel;
 
-    /* compiled from: SubjectRegStatusDialog.kt */
+    /* JADX INFO: compiled from: SubjectRegStatusDialog.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\bf\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/statusview/SubjectRegStatusDialog$RegisterListener;", "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public interface RegisterListener {
     }
@@ -88,7 +88,7 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return subjectRegStatusDialog;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(subjectRegStatusDialog);
@@ -102,7 +102,7 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -115,7 +115,7 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(SubjectRegStatusViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(SubjectRegStatusViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final SubjectRegStatusDialog subjectRegStatusDialog2 = this;
@@ -147,12 +147,12 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     public final DialogSubRegStatusBinding get_binding() {
         return this._binding;
     }
 
-    /* compiled from: SubjectRegStatusDialog.kt */
+    /* JADX INFO: compiled from: SubjectRegStatusDialog.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lin/etuwa/app/ui/subjectregistration/statusview/SubjectRegStatusDialog$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/subjectregistration/statusview/SubjectRegStatusDialog;", CommonCssConstants.POSITION, "", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -220,9 +220,10 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
     }
 
     private final void listenResponse() {
-        getSubjectRegStatusViewModel().getResponse().observe(getViewLifecycleOwner(), new SubjectRegStatusDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubjectRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.statusview.SubjectRegStatusDialog$listenResponse$1
+        getSubjectRegStatusViewModel().getResponse().observe(getViewLifecycleOwner(), new SubjectRegStatusDialog$sam$androidx_lifecycle_Observer$0(new Function1<Resource<? extends SubjectRegistrationResponse>, Unit>() { // from class: in.etuwa.app.ui.subjectregistration.statusview.SubjectRegStatusDialog.listenResponse.1
 
-            /* compiled from: SubjectRegStatusDialog.kt */
+            /* JADX INFO: renamed from: in.etuwa.app.ui.subjectregistration.statusview.SubjectRegStatusDialog$listenResponse$1$WhenMappings */
+            /* JADX INFO: compiled from: SubjectRegStatusDialog.kt */
             @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -259,11 +260,8 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Resource<SubjectRegistrationResponse> resource) {
-                SubjectRegStatusAdapter adapter;
-                Integer num;
-                DialogSubRegStatusBinding dialogSubRegStatusBinding;
                 RecyclerView recyclerView;
                 int i = WhenMappings.$EnumSwitchMapping$0[resource.getStatus().ordinal()];
                 if (i == 1) {
@@ -271,9 +269,9 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
                     SubjectRegistrationResponse data = resource.getData();
                     if (data != null) {
                         SubjectRegStatusDialog subjectRegStatusDialog = SubjectRegStatusDialog.this;
-                        adapter = subjectRegStatusDialog.getAdapter();
+                        SubjectRegStatusAdapter adapter = subjectRegStatusDialog.getAdapter();
                         ArrayList<SubjectRegistration> data2 = data.getData();
-                        num = subjectRegStatusDialog.position;
+                        Integer num = subjectRegStatusDialog.position;
                         Intrinsics.checkNotNull(num);
                         adapter.addItems(data2.get(num.intValue()).getStatus());
                         return;
@@ -292,7 +290,7 @@ public final class SubjectRegStatusDialog extends BaseDialog implements ApplySub
                     return;
                 }
                 SubjectRegStatusDialog.this.hideProgress();
-                dialogSubRegStatusBinding = SubjectRegStatusDialog.this.get_binding();
+                DialogSubRegStatusBinding dialogSubRegStatusBinding = SubjectRegStatusDialog.this.get_binding();
                 if (dialogSubRegStatusBinding == null || (recyclerView = dialogSubRegStatusBinding.rvSubStatus) == null) {
                     return;
                 }

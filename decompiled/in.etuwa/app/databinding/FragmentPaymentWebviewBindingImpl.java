@@ -9,7 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.feenewengineer.payment.webview.PaymentWebViewViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class FragmentPaymentWebviewBindingImpl extends FragmentPaymentWebviewBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
@@ -58,7 +58,7 @@ public class FragmentPaymentWebviewBindingImpl extends FragmentPaymentWebviewBin
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (159 != variableId) {
+        if (161 != variableId) {
             return false;
         }
         setPaymentWebViewViewModel((PaymentWebViewViewModel) variable);

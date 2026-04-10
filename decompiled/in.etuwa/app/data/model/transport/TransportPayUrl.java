@@ -4,8 +4,8 @@ import in.etuwa.app.ui.feenewengineer.payment.feeconfirmdialog.FeeConfirmDialogK
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: TransportPayUrl.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: TransportPayUrl.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class TransportPayUrl {
     private final String fine;
     private final String total;
@@ -24,17 +24,17 @@ public final /* data */ class TransportPayUrl {
         return transportPayUrl.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getTotal() {
         return this.total;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getFine() {
         return this.fine;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getUrl() {
         return this.url;
     }

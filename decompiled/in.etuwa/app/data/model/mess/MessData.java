@@ -3,8 +3,8 @@ package in.etuwa.app.data.model.mess;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: MessData.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: MessData.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class MessData {
     private final String booking_date;
     private final String day;
@@ -23,17 +23,17 @@ public final /* data */ class MessData {
         return messData.copy(str, str2, str3);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getBooking_date() {
         return this.booking_date;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getDay() {
         return this.day;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getDay_id() {
         return this.day_id;
     }

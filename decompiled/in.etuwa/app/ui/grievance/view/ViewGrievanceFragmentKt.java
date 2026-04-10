@@ -2,8 +2,8 @@ package in.etuwa.app.ui.grievance.view;
 
 import kotlin.Metadata;
 
-/* compiled from: ViewGrievanceFragment.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: ViewGrievanceFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ViewGrievanceFragmentKt {
     public static final String ARG_ID = "id";
 }

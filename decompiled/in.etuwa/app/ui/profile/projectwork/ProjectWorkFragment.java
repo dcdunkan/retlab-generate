@@ -48,24 +48,24 @@ import org.koin.androidx.viewmodel.ext.android.GetViewModelFactoryKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 
-/* compiled from: ProjectWorkFragment.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: ProjectWorkFragment.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class ProjectWorkFragment extends BaseFragment implements ProjectWorkAdapter.ProjectListener, AddProjectWorkDialog.AddProjectListener {
 
-    /* renamed from: Companion, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private FragmentProjectWorkBinding _binding;
 
-    /* renamed from: adapter$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: adapter$delegate, reason: from kotlin metadata */
     private final Lazy adapter;
 
-    /* renamed from: preference$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: preference$delegate, reason: from kotlin metadata */
     private final Lazy preference;
 
-    /* renamed from: projectWorkViewModel$delegate, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: projectWorkViewModel$delegate, reason: from kotlin metadata */
     private final Lazy projectWorkViewModel;
 
-    /* compiled from: ProjectWorkFragment.kt */
+    /* JADX INFO: compiled from: ProjectWorkFragment.kt */
     @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -125,7 +125,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Fragment invoke() {
-                return Fragment.this;
+                return projectWorkFragment;
             }
         };
         final Scope koinScope = AndroidKoinScopeExtKt.getKoinScope(projectWorkFragment);
@@ -139,7 +139,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelStore invoke() {
-                ViewModelStore viewModelStore = ((ViewModelStoreOwner) Function0.this.invoke()).getViewModelStore();
+                ViewModelStore viewModelStore = ((ViewModelStoreOwner) function0.invoke()).getViewModelStore();
                 Intrinsics.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
                 return viewModelStore;
             }
@@ -152,7 +152,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final ViewModelProvider.Factory invoke() {
-                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) Function0.this.invoke(), Reflection.getOrCreateKotlinClass(ProjectWorkViewModel.class), qualifier, b, null, koinScope);
+                return GetViewModelFactoryKt.getViewModelFactory((ViewModelStoreOwner) function0.invoke(), Reflection.getOrCreateKotlinClass(ProjectWorkViewModel.class), qualifier, b, null, koinScope);
             }
         });
         final ProjectWorkFragment projectWorkFragment2 = this;
@@ -198,7 +198,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
         return (ProjectWorkAdapter) this.adapter.getValue();
     }
 
-    /* renamed from: getBinding, reason: from getter */
+    /* JADX INFO: renamed from: getBinding, reason: from getter */
     private final FragmentProjectWorkBinding get_binding() {
         return this._binding;
     }
@@ -207,7 +207,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
         return (SharedPrefManager) this.preference.getValue();
     }
 
-    /* compiled from: ProjectWorkFragment.kt */
+    /* JADX INFO: compiled from: ProjectWorkFragment.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\b\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006\u0005"}, d2 = {"Lin/etuwa/app/ui/profile/projectwork/ProjectWorkFragment$Companion;", "", "()V", "newInstance", "Lin/etuwa/app/ui/profile/projectwork/ProjectWorkFragment;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -273,7 +273,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
             swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() { // from class: in.etuwa.app.ui.profile.projectwork.ProjectWorkFragment$$ExternalSyntheticLambda2
                 @Override // androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
                 public final void onRefresh() {
-                    ProjectWorkFragment.setUp$lambda$0(ProjectWorkFragment.this);
+                    ProjectWorkFragment.setUp$lambda$0(this.f$0);
                 }
             });
         }
@@ -284,7 +284,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
         textView.setOnClickListener(new View.OnClickListener() { // from class: in.etuwa.app.ui.profile.projectwork.ProjectWorkFragment$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ProjectWorkFragment.setUp$lambda$1(ProjectWorkFragment.this, view);
+                ProjectWorkFragment.setUp$lambda$1(this.f$0, view);
             }
         });
     }
@@ -306,16 +306,16 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddProjectWorkDialog newInstance = AddProjectWorkDialog.INSTANCE.newInstance("", "");
-        newInstance.setCallBack(this$0);
-        newInstance.show(childFragmentManager, (String) null);
+        AddProjectWorkDialog addProjectWorkDialogNewInstance = AddProjectWorkDialog.INSTANCE.newInstance("", "");
+        addProjectWorkDialogNewInstance.setCallBack(this$0);
+        addProjectWorkDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void listenResponse() {
         getProjectWorkViewModel().getResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.projectwork.ProjectWorkFragment$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ProjectWorkFragment.listenResponse$lambda$3(ProjectWorkFragment.this, (Resource) obj);
+                ProjectWorkFragment.listenResponse$lambda$3(this.f$0, (Resource) obj);
             }
         });
     }
@@ -362,7 +362,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
         getProjectWorkViewModel().getDeleteResponse().observe(getViewLifecycleOwner(), new Observer() { // from class: in.etuwa.app.ui.profile.projectwork.ProjectWorkFragment$$ExternalSyntheticLambda1
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
-                ProjectWorkFragment.listenDeleteResponse$lambda$5(ProjectWorkFragment.this, (Resource) obj);
+                ProjectWorkFragment.listenDeleteResponse$lambda$5(this.f$0, (Resource) obj);
             }
         });
     }
@@ -454,9 +454,9 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
         Intrinsics.checkNotNullParameter(details, "details");
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-        AddProjectWorkDialog newInstance = AddProjectWorkDialog.INSTANCE.newInstance(id, details);
-        newInstance.setCallBack(this);
-        newInstance.show(childFragmentManager, (String) null);
+        AddProjectWorkDialog addProjectWorkDialogNewInstance = AddProjectWorkDialog.INSTANCE.newInstance(id, details);
+        addProjectWorkDialogNewInstance.setCallBack(this);
+        addProjectWorkDialogNewInstance.show(childFragmentManager, (String) null);
     }
 
     private final void deleteView(final String id) {
@@ -465,7 +465,7 @@ public final class ProjectWorkFragment extends BaseFragment implements ProjectWo
         builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.projectwork.ProjectWorkFragment$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                ProjectWorkFragment.deleteView$lambda$6(ProjectWorkFragment.this, id, dialogInterface, i);
+                ProjectWorkFragment.deleteView$lambda$6(this.f$0, id, dialogInterface, i);
             }
         });
         builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() { // from class: in.etuwa.app.ui.profile.projectwork.ProjectWorkFragment$$ExternalSyntheticLambda5

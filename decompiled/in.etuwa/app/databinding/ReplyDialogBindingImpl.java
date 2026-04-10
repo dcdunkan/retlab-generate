@@ -4,20 +4,20 @@ import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.message.reply.ReplyViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public class ReplyDialogBindingImpl extends ReplyDialogBinding {
     private static final ViewDataBinding.IncludedLayouts sIncludes = null;
     private static final SparseIntArray sViewsWithIds;
     private long mDirtyFlags;
     private final FrameLayout mboundView0;
-    private final CardView mboundView1;
+    private final FrameLayout mboundView1;
     private final ViewProgressBarBinding mboundView11;
 
     @Override // androidx.databinding.ViewDataBinding
@@ -38,14 +38,14 @@ public class ReplyDialogBindingImpl extends ReplyDialogBinding {
     }
 
     private ReplyDialogBindingImpl(DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0, (TextInputEditText) bindings[4], (TextView) bindings[5], (TextView) bindings[3]);
+        super(bindingComponent, root, 0, (TextInputEditText) bindings[4], (MaterialButton) bindings[5], (TextView) bindings[3]);
         this.mDirtyFlags = -1L;
         FrameLayout frameLayout = (FrameLayout) bindings[0];
         this.mboundView0 = frameLayout;
         frameLayout.setTag(null);
-        CardView cardView = (CardView) bindings[1];
-        this.mboundView1 = cardView;
-        cardView.setTag(null);
+        FrameLayout frameLayout2 = (FrameLayout) bindings[1];
+        this.mboundView1 = frameLayout2;
+        frameLayout2.setTag(null);
         Object obj = bindings[2];
         this.mboundView11 = obj != null ? ViewProgressBarBinding.bind((View) obj) : null;
         setRootTag(root);
@@ -69,7 +69,7 @@ public class ReplyDialogBindingImpl extends ReplyDialogBinding {
 
     @Override // androidx.databinding.ViewDataBinding
     public boolean setVariable(int variableId, Object variable) {
-        if (185 != variableId) {
+        if (187 != variableId) {
             return false;
         }
         setReplyViewModel((ReplyViewModel) variable);

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: HostelAttCalResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: HostelAttCalResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class HostelAttCalResponse {
     private final ArrayList<Boolean> absent;
     private final ArrayList<Boolean> leaves;
@@ -15,6 +15,7 @@ public final /* data */ class HostelAttCalResponse {
     private final ArrayList<Boolean> present;
     private final ArrayList<Boolean> rejects;
 
+    /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ HostelAttCalResponse copy$default(HostelAttCalResponse hostelAttCalResponse, boolean z, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, int i, Object obj) {
         if ((i & 1) != 0) {
             z = hostelAttCalResponse.login;
@@ -41,7 +42,7 @@ public final /* data */ class HostelAttCalResponse {
         return hostelAttCalResponse.copy(z, arrayList6, arrayList7, arrayList8, arrayList9, arrayList5);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final boolean getLogin() {
         return this.login;
     }

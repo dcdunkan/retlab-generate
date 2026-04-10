@@ -19,8 +19,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: QuestionBankViewModel.kt */
-/* loaded from: classes5.dex */
+/* JADX INFO: compiled from: QuestionBankViewModel.kt */
+/* JADX INFO: loaded from: classes5.dex */
 public final class QuestionBankViewModel extends ViewModel {
     private final CompositeDisposable compositeDisposable;
     private final MaterialRepository materialRepository;
@@ -33,85 +33,14 @@ public final class QuestionBankViewModel extends ViewModel {
         this.compositeDisposable = new CompositeDisposable();
         this.materialResponse = new MutableLiveData<>();
         this.semResponse = new MutableLiveData<>();
-        getSemester();
-    }
-
-    public final void getSemester() {
-        this.semResponse.postValue(Resource.INSTANCE.loading(null));
-        CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Semester>> observeOn = this.materialRepository.getSemestersApiCall().subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Semester>, Unit> function1 = new Function1<ArrayList<Semester>, Unit>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$getSemester$1
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(ArrayList<Semester> arrayList) {
-                invoke2(arrayList);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            public final void invoke2(ArrayList<Semester> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuestionBankViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
-            }
-        };
-        Consumer<? super ArrayList<Semester>> consumer = new Consumer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$$ExternalSyntheticLambda0
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Object obj) {
-                QuestionBankViewModel.getSemester$lambda$0(Function1.this, obj);
-            }
-        };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$getSemester$2
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                invoke2(th);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
-            public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuestionBankViewModel.this.semResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
-            }
-        };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$$ExternalSyntheticLambda1
-            @Override // io.reactivex.functions.Consumer
-            public final void accept(Object obj) {
-                QuestionBankViewModel.getSemester$lambda$1(Function1.this, obj);
-            }
-        }));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void getSemester$lambda$0(Function1 tmp0, Object obj) {
-        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        tmp0.invoke(obj);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void getSemester$lambda$1(Function1 tmp0, Object obj) {
-        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        tmp0.invoke(obj);
-    }
-
-    public final MutableLiveData<Resource<ArrayList<Semester>>> getSemResponse() {
-        return this.semResponse;
     }
 
     public final void getMaterials(String semId) {
         Intrinsics.checkNotNullParameter(semId, "semId");
         this.materialResponse.postValue(Resource.INSTANCE.loading(null));
         CompositeDisposable compositeDisposable = this.compositeDisposable;
-        Single<ArrayList<Materials>> observeOn = this.materialRepository.getQuestionBankApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
-        final Function1<ArrayList<Materials>, Unit> function1 = new Function1<ArrayList<Materials>, Unit>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$getMaterials$1
+        Single<ArrayList<Materials>> singleObserveOn = this.materialRepository.getQuestionBankApiCall(new MaterialRequest(semId)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+        final Function1<ArrayList<Materials>, Unit> function1 = new Function1<ArrayList<Materials>, Unit>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel.getMaterials.1
             {
                 super(1);
             }
@@ -122,20 +51,18 @@ public final class QuestionBankViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(ArrayList<Materials> arrayList) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuestionBankViewModel.this.materialResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.success(arrayList));
+                QuestionBankViewModel.this.materialResponse.postValue(Resource.INSTANCE.success(arrayList));
             }
         };
-        Consumer<? super ArrayList<Materials>> consumer = new Consumer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$$ExternalSyntheticLambda2
+        Consumer<? super ArrayList<Materials>> consumer = new Consumer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuestionBankViewModel.getMaterials$lambda$2(Function1.this, obj);
+                QuestionBankViewModel.getMaterials$lambda$0(function1, obj);
             }
         };
-        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$getMaterials$2
+        final Function1<Throwable, Unit> function12 = new Function1<Throwable, Unit>() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel.getMaterials.2
             {
                 super(1);
             }
@@ -146,29 +73,27 @@ public final class QuestionBankViewModel extends ViewModel {
                 return Unit.INSTANCE;
             }
 
-            /* renamed from: invoke, reason: avoid collision after fix types in other method */
+            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
-                MutableLiveData mutableLiveData;
-                mutableLiveData = QuestionBankViewModel.this.materialResponse;
-                mutableLiveData.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
+                QuestionBankViewModel.this.materialResponse.postValue(Resource.INSTANCE.exception(AppConstant.ERROR_MSG));
             }
         };
-        compositeDisposable.add(observeOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$$ExternalSyntheticLambda3
+        compositeDisposable.add(singleObserveOn.subscribe(consumer, new Consumer() { // from class: in.etuwa.app.ui.questionbank.QuestionBankViewModel$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                QuestionBankViewModel.getMaterials$lambda$3(Function1.this, obj);
+                QuestionBankViewModel.getMaterials$lambda$1(function12, obj);
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getMaterials$lambda$2(Function1 tmp0, Object obj) {
+    public static final void getMaterials$lambda$0(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void getMaterials$lambda$3(Function1 tmp0, Object obj) {
+    public static final void getMaterials$lambda$1(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }

@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: FeeUrlOnlyResponse.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: FeeUrlOnlyResponse.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class FeeUrlOnlyResponse {
 
     @SerializedName("url")
@@ -18,7 +18,7 @@ public final /* data */ class FeeUrlOnlyResponse {
         return feeUrlOnlyResponse.copy(str);
     }
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getUrl() {
         return this.url;
     }

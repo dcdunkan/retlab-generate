@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: ViewGrievance.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: ViewGrievance.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class ViewGrievance {
 
     @SerializedName("action_taken")
@@ -38,17 +38,17 @@ public final /* data */ class ViewGrievance {
     private final String status;
     private final String subject;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getGrievanceNo() {
         return this.grievanceNo;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getReplyDate() {
         return this.replyDate;
     }
 
-    /* renamed from: component11, reason: from getter */
+    /* JADX INFO: renamed from: component11, reason: from getter */
     public final String getReplyDetails() {
         return this.replyDetails;
     }
@@ -61,42 +61,42 @@ public final /* data */ class ViewGrievance {
         return this.replyDoc;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getGrievanceType() {
         return this.grievanceType;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSubject() {
         return this.subject;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getDate() {
         return this.date;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getGreivant() {
         return this.greivant;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDescription() {
         return this.description;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final String getStatus() {
         return this.status;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getActionTaken() {
         return this.actionTaken;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getReply() {
         return this.reply;
     }

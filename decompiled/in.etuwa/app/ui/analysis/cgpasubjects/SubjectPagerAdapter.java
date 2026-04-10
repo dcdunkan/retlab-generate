@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: SubjectPagerAdapter.kt */
-/* loaded from: classes4.dex */
+/* JADX INFO: compiled from: SubjectPagerAdapter.kt */
+/* JADX INFO: loaded from: classes4.dex */
 public final class SubjectPagerAdapter extends FragmentPagerAdapter {
     private ArrayList<ArrayList<AnalysisSubjectBean>> subject;
     private final String[] titleList;

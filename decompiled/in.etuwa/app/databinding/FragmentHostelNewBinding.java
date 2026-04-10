@@ -3,25 +3,26 @@ package in.etuwa.app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import in.etuwa.app.R;
 import in.etuwa.app.ui.hostelnew.HostelNewViewModel;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public abstract class FragmentHostelNewBinding extends ViewDataBinding {
 
     @Bindable
     protected HostelNewViewModel mHostelNewViewModel;
-    public final LinearLayout payBtnLyt;
-    public final TextView payFeeEngnrBtn;
-    public final TextView payOnlineBtn;
-    public final TextView receiptBtn;
+    public final MaterialCardView payBtnLyt;
+    public final MaterialButton payFeeEngnrBtn;
+    public final MaterialButton payOnlineBtn;
+    public final MaterialButton receiptBtn;
     public final RecyclerView rvAdmission;
     public final RecyclerView rvAdmissionHistory;
     public final RecyclerView rvMonthly;
@@ -34,7 +35,7 @@ public abstract class FragmentHostelNewBinding extends ViewDataBinding {
 
     public abstract void setHostelNewViewModel(HostelNewViewModel hostelNewViewModel);
 
-    protected FragmentHostelNewBinding(Object _bindingComponent, View _root, int _localFieldCount, LinearLayout payBtnLyt, TextView payFeeEngnrBtn, TextView payOnlineBtn, TextView receiptBtn, RecyclerView rvAdmission, RecyclerView rvAdmissionHistory, RecyclerView rvMonthly, RecyclerView rvMonthlyHistory, RecyclerView rvReceipts, SwipeRefreshLayout swipeLayout, SwipeRefreshLayout swipeLayoutHistory, SwipeRefreshLayout swipeReceiptLayout, TextView tvFeeEngnrTotal) {
+    protected FragmentHostelNewBinding(Object _bindingComponent, View _root, int _localFieldCount, MaterialCardView payBtnLyt, MaterialButton payFeeEngnrBtn, MaterialButton payOnlineBtn, MaterialButton receiptBtn, RecyclerView rvAdmission, RecyclerView rvAdmissionHistory, RecyclerView rvMonthly, RecyclerView rvMonthlyHistory, RecyclerView rvReceipts, SwipeRefreshLayout swipeLayout, SwipeRefreshLayout swipeLayoutHistory, SwipeRefreshLayout swipeReceiptLayout, TextView tvFeeEngnrTotal) {
         super(_bindingComponent, _root, _localFieldCount);
         this.payBtnLyt = payBtnLyt;
         this.payFeeEngnrBtn = payFeeEngnrBtn;

@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import in.etuwa.app.R;
 
-/* loaded from: classes3.dex */
+/* JADX INFO: loaded from: classes3.dex */
 public final class RowHostelFeesBinding implements ViewBinding {
     public final TextView amountLbl;
     public final TextView balanceLbl;
@@ -42,11 +42,11 @@ public final class RowHostelFeesBinding implements ViewBinding {
     }
 
     public static RowHostelFeesBinding inflate(LayoutInflater inflater, ViewGroup parent, boolean attachToParent) {
-        View inflate = inflater.inflate(R.layout.row_hostel_fees, parent, false);
+        View viewInflate = inflater.inflate(R.layout.row_hostel_fees, parent, false);
         if (attachToParent) {
-            parent.addView(inflate);
+            parent.addView(viewInflate);
         }
-        return bind(inflate);
+        return bind(viewInflate);
     }
 
     public static RowHostelFeesBinding bind(View rootView) {

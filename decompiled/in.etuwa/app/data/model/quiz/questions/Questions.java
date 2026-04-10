@@ -6,16 +6,18 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.itextpdf.forms.xfdf.XfdfConstants;
+import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* compiled from: Questions.kt */
-/* loaded from: classes3.dex */
+/* JADX INFO: compiled from: Questions.kt */
+/* JADX INFO: loaded from: classes3.dex */
 public final /* data */ class Questions implements Parcelable {
 
-    /* renamed from: CREATOR, reason: from kotlin metadata */
+    /* JADX INFO: renamed from: CREATOR, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
 
     @SerializedName("answer_id")
@@ -55,12 +57,12 @@ public final /* data */ class Questions implements Parcelable {
     @Expose
     private String userAnswer;
 
-    /* renamed from: component1, reason: from getter */
+    /* JADX INFO: renamed from: component1, reason: from getter */
     public final String getQuestionType() {
         return this.questionType;
     }
 
-    /* renamed from: component10, reason: from getter */
+    /* JADX INFO: renamed from: component10, reason: from getter */
     public final String getFileId() {
         return this.fileId;
     }
@@ -69,42 +71,42 @@ public final /* data */ class Questions implements Parcelable {
         return this.options;
     }
 
-    /* renamed from: component2, reason: from getter */
+    /* JADX INFO: renamed from: component2, reason: from getter */
     public final String getQno() {
         return this.qno;
     }
 
-    /* renamed from: component3, reason: from getter */
+    /* JADX INFO: renamed from: component3, reason: from getter */
     public final String getSessionId() {
         return this.sessionId;
     }
 
-    /* renamed from: component4, reason: from getter */
+    /* JADX INFO: renamed from: component4, reason: from getter */
     public final String getQuestion() {
         return this.question;
     }
 
-    /* renamed from: component5, reason: from getter */
+    /* JADX INFO: renamed from: component5, reason: from getter */
     public final String getAnswerId() {
         return this.answerId;
     }
 
-    /* renamed from: component6, reason: from getter */
+    /* JADX INFO: renamed from: component6, reason: from getter */
     public final String getDuration() {
         return this.duration;
     }
 
-    /* renamed from: component7, reason: from getter */
+    /* JADX INFO: renamed from: component7, reason: from getter */
     public final boolean getIsAttended() {
         return this.isAttended;
     }
 
-    /* renamed from: component8, reason: from getter */
+    /* JADX INFO: renamed from: component8, reason: from getter */
     public final String getUserAnswer() {
         return this.userAnswer;
     }
 
-    /* renamed from: component9, reason: from getter */
+    /* JADX INFO: renamed from: component9, reason: from getter */
     public final String getFileUrl() {
         return this.fileUrl;
     }
@@ -131,31 +133,34 @@ public final /* data */ class Questions implements Parcelable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v16, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v26 */
+    /* JADX WARN: Type inference failed for: r2v32 */
     public int hashCode() {
         String str = this.questionType;
-        int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+        int iHashCode = (str == null ? 0 : str.hashCode()) * 31;
         String str2 = this.qno;
-        int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
+        int iHashCode2 = (iHashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.sessionId;
-        int hashCode3 = (hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        int iHashCode3 = (iHashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
         String str4 = this.question;
-        int hashCode4 = (hashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
+        int iHashCode4 = (iHashCode3 + (str4 == null ? 0 : str4.hashCode())) * 31;
         String str5 = this.answerId;
-        int hashCode5 = (hashCode4 + (str5 == null ? 0 : str5.hashCode())) * 31;
+        int iHashCode5 = (iHashCode4 + (str5 == null ? 0 : str5.hashCode())) * 31;
         String str6 = this.duration;
-        int hashCode6 = (hashCode5 + (str6 == null ? 0 : str6.hashCode())) * 31;
+        int iHashCode6 = (iHashCode5 + (str6 == null ? 0 : str6.hashCode())) * 31;
         boolean z = this.isAttended;
-        int i = z;
-        if (z != 0) {
-            i = 1;
+        ?? r2 = z;
+        if (z) {
+            r2 = 1;
         }
-        int i2 = (hashCode6 + i) * 31;
+        int i = (iHashCode6 + r2) * 31;
         String str7 = this.userAnswer;
-        int hashCode7 = (i2 + (str7 == null ? 0 : str7.hashCode())) * 31;
+        int iHashCode7 = (i + (str7 == null ? 0 : str7.hashCode())) * 31;
         String str8 = this.fileUrl;
-        int hashCode8 = (hashCode7 + (str8 == null ? 0 : str8.hashCode())) * 31;
+        int iHashCode8 = (iHashCode7 + (str8 == null ? 0 : str8.hashCode())) * 31;
         String str9 = this.fileId;
-        return ((hashCode8 + (str9 != null ? str9.hashCode() : 0)) * 31) + this.options.hashCode();
+        return ((iHashCode8 + (str9 != null ? str9.hashCode() : 0)) * 31) + this.options.hashCode();
     }
 
     public String toString() {
@@ -233,47 +238,22 @@ public final /* data */ class Questions implements Parcelable {
         return this.options;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct code enable 'Show inconsistent code' option in preferences
-    */
-    public Questions(android.os.Parcel r14) {
-        /*
-            r13 = this;
-            java.lang.String r0 = "parcel"
-            kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r14, r0)
-            java.lang.String r2 = r14.readString()
-            java.lang.String r3 = r14.readString()
-            java.lang.String r4 = r14.readString()
-            java.lang.String r5 = r14.readString()
-            java.lang.String r6 = r14.readString()
-            java.lang.String r7 = r14.readString()
-            byte r0 = r14.readByte()
-            if (r0 == 0) goto L26
-            r0 = 1
-            r8 = 1
-            goto L28
-        L26:
-            r0 = 0
-            r8 = 0
-        L28:
-            java.lang.String r9 = r14.readString()
-            java.lang.String r10 = r14.readString()
-            java.lang.String r11 = r14.readString()
-            java.util.ArrayList r0 = new java.util.ArrayList
-            r0.<init>()
-            r12 = r0
-            java.util.List r12 = (java.util.List) r12
-            java.lang.Class<in.etuwa.app.data.model.quiz.questions.Options> r0 = in.etuwa.app.data.model.quiz.questions.Options.class
-            java.lang.ClassLoader r0 = r0.getClassLoader()
-            r14.readList(r12, r0)
-            kotlin.Unit r14 = kotlin.Unit.INSTANCE
-            r1 = r13
-            r1.<init>(r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12)
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: in.etuwa.app.data.model.quiz.questions.Questions.<init>(android.os.Parcel):void");
+    public Questions(Parcel parcel) {
+        Intrinsics.checkNotNullParameter(parcel, "parcel");
+        String string = parcel.readString();
+        String string2 = parcel.readString();
+        String string3 = parcel.readString();
+        String string4 = parcel.readString();
+        String string5 = parcel.readString();
+        String string6 = parcel.readString();
+        boolean z = parcel.readByte() != 0;
+        String string7 = parcel.readString();
+        String string8 = parcel.readString();
+        String string9 = parcel.readString();
+        ArrayList arrayList = new ArrayList();
+        parcel.readList(arrayList, Options.class.getClassLoader());
+        Unit unit = Unit.INSTANCE;
+        this(string, string2, string3, string4, string5, string6, z, string7, string8, string9, arrayList);
     }
 
     @Override // android.os.Parcelable
@@ -292,9 +272,9 @@ public final /* data */ class Questions implements Parcelable {
         parcel.writeList(this.options);
     }
 
-    /* compiled from: Questions.kt */
+    /* JADX INFO: renamed from: in.etuwa.app.data.model.quiz.questions.Questions$CREATOR, reason: from kotlin metadata */
+    /* JADX INFO: compiled from: Questions.kt */
     @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0006H\u0016J\u001d\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\b2\u0006\u0010\t\u001a\u00020\nH\u0016¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"Lin/etuwa/app/data/model/quiz/questions/Questions$CREATOR;", "Landroid/os/Parcelable$Creator;", "Lin/etuwa/app/data/model/quiz/questions/Questions;", "()V", "createFromParcel", "parcel", "Landroid/os/Parcel;", "newArray", "", "size", "", "(I)[Lin/etuwa/app/data/model/quiz/questions/Questions;", "app_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
-    /* renamed from: in.etuwa.app.data.model.quiz.questions.Questions$CREATOR, reason: from kotlin metadata */
     public static final class Companion implements Parcelable.Creator<Questions> {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
